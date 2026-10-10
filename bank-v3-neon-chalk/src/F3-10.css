@@ -1,0 +1,26 @@
+/* F3-10: original F0 Neon + Chalk; no independent mascot or drawing system. */
+#F3-10 .nova-stage{padding:6px 10px 2px!important;min-height:0!important;overflow:hidden;background:radial-gradient(ellipse at 50% 50%,rgba(43,220,243,.08),transparent 68%),var(--v-bg)}
+#F3-10 .f310-scene{display:grid;grid-template-columns:minmax(0,2.7fr) minmax(196px,.78fr);gap:12px;align-items:center;min-width:0}
+#F3-10 .f310-svg{display:block;width:100%;height:auto;max-height:780px;filter:drop-shadow(0 10px 18px #0008);touch-action:none}
+#F3-10 .f310-side{display:grid;gap:10px;min-width:0}
+#F3-10 .f310-side .nv-ncard{padding:13px 15px;min-height:93px;border-radius:16px}
+#F3-10 .f310-title{font:850 .79rem var(--nova-font-ui);color:#bfd7e8;letter-spacing:.035em}
+#F3-10 .f310-value{font:770 1.38rem/1.28 var(--nova-font-chalk-write);color:#f5faff;margin:9px 0;overflow-wrap:anywhere;text-shadow:0 0 9px #2bdcf342}
+#F3-10 .f310-desc{font:.90rem/1.42 var(--nova-font-ui);color:#d1e2f0;margin:7px 0 0}
+#F3-10 .f310-row{display:flex;align-items:end;flex-wrap:wrap;gap:9px;margin:10px 0}
+#F3-10 label{display:grid;gap:4px;font:760 .86rem var(--nova-font-ui);color:#d2e7f1}
+#F3-10 input,#F3-10 select{min-height:43px;min-width:0;padding:7px 10px;color:#eaf9ff;background:#10283d;border:1px solid #437895;border-radius:10px;font:750 1rem var(--nova-font-ui)}
+#F3-10 input[type=number]{width:88px}
+#F3-10 .f310-help{font:.90rem/1.4 var(--nova-font-ui);color:#cadfec;margin:7px 0}
+#F3-10 .f310-status{font:740 .95rem/1.4 var(--nova-font-ui);color:#91f3d1;margin:8px 0;min-height:22px}
+#F3-10 .f310-status.bad{color:#ffc09e}
+#F3-10 .f310-win{padding:12px;border:1px solid #4fe2a1;background:#12352e;color:#b8ffe2;border-radius:12px;font:830 1rem var(--nova-font-ui)}
+#F3-10 .f310-fraction{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;color:#e8f8ff;padding:8px;font:750 1.08rem var(--nova-font-chalk-write)}
+#F3-10 .f310-fraction .nv-ntile{font-size:1.65rem;padding:6px 14px}
+#F3-10 .f310-fraction .mt-frac{font-size:.94em}
+#F3-10 .f310-stage-footer{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:3px 0 1px}
+#F3-10 .f310-stage-footer .nv-ntile{padding:5px 12px;font-size:1.15rem}
+#F3-10 .f310-svg [data-drag]{cursor:grab}
+#F3-10 button:focus-visible,#F3-10 input:focus-visible,#F3-10 select:focus-visible{outline:3px solid #ffcc58;outline-offset:2px}
+@media(max-width:720px){#F3-10 .nova-stage{padding:3px!important}#F3-10 .f310-scene{display:block}#F3-10 .f310-svg{width:100%;max-height:none}#F3-10 .f310-side{display:none}#F3-10 .f310-row{gap:6px}#F3-10 .f310-fraction{padding:5px;font-size:.91rem}#F3-10 .f310-fraction .nv-ntile{font-size:1.35rem}#F3-10 .nv-dockbub{max-width:calc(100% - 82px)}}
+@media print{#F3-10 .f310-svg{filter:none}#F3-10 .f310-side,#F3-10 .nova-panel{display:none!important}}

@@ -1,0 +1,12 @@
+
+/* Component-specific only. Foundation styling is provided by locked F0 core. */
+.eq-svg.nv-svg{display:block;width:100%;max-width:1110px;height:auto;margin:0 auto;touch-action:pan-y}
+.eq-controls{display:flex;flex-wrap:wrap;gap:9px;align-items:center;justify-content:center;margin:10px auto}
+.eq-controls label{font:700 1.05rem var(--nova-font-chalk-write);color:#c9e8f7}
+.eq-msg{font:700 1.04rem/1.5 var(--nova-font-chalk-write);color:#d5ecfa;text-align:center;min-height:29px;margin:7px 0}
+.eq-peer{display:flex;gap:10px;align-items:center;justify-content:center;font:700 1.03rem var(--nova-font-chalk-write);color:#d4ecfc}
+.eq-peer img{width:88px;height:100px;object-fit:contain}
+.eq-slide:focus-visible{outline:none;filter:drop-shadow(0 0 12px #85eaff)}
+.eq-input{max-width:116px;text-align:center}
+@media(max-width:520px){.eq-controls{gap:6px}.eq-controls label{font-size:.97rem}.eq-peer img{width:68px;height:82px}.eq-controls .nova-btn{min-height:41px}}
+@media print{.nova-tabs,.nova-tl,.nova-helperbar,.nova-panel{display:none!important}}

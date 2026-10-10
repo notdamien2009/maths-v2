@@ -1,0 +1,102 @@
+<!doctype html><html lang="en" data-theme="dark" data-house="neon-chalk" data-premium="1"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NOVA F5-14 · Premium percentage of an amount</title>
+<style>@@CSS@@
+.pa-svg.nv-svg{display:block;width:100%;max-width:1120px;height:auto;margin:0 auto;touch-action:pan-y}
+.pa-controls{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px;margin:9px auto}
+.pa-controls label{font:700 1.03rem var(--nova-font-chalk-write);color:#e3f4ff}
+.pa-controls .nova-input{min-width:95px;max-width:210px}
+.pa-status{font:700 1rem/1.4 var(--nova-font-chalk-write);color:#def5ff;text-align:center;margin:8px auto;min-height:27px}
+.pa-peer{display:flex;gap:10px;align-items:center;justify-content:center;font:700 1rem var(--nova-font-chalk-write)}
+.pa-peer img{width:75px;height:84px;object-fit:contain}
+.pa-hint{font:700 1rem/1.3 var(--nova-font-chalk-write);color:#bde1f5;text-align:center}
+@media(max-width:550px){.pa-controls label{font-size:.94rem}.pa-controls{gap:6px}.pa-peer img{width:62px;height:74px}}
+@media print{.nova-tabs,.nova-tl,.nova-helperbar,.nova-panel{display:none!important}}
+</style></head><body data-topic="number"><div class="nova-wrap">
+<header id="nova-header" data-run="F5 · Premium Edition rebuild · 14" data-title="Percentage of an Amount" data-sub="Keep 100% fixed. Drag the percentage selector and watch the exact amount follow it."></header>
+<main id="gallery"></main><section class="nova-card nova-logcard" aria-label="NOVA event log"><h2 style="font-size:1.08em">NOVA events</h2><div class="nova-log" id="log" role="log" aria-live="off"></div><button class="nova-btn" id="clearlog">Clear events</button></section></div>
+<script>@@JS@@</script><script>var NOVA_F5_14_CONFIG={startMode:'guided',preset:'quarter',events:['preset','amount','percentage','dragPercent','keyboard','reset','mode','step'],presets:{quarter:{label:'25% of 80',amount:80,percent:25},eighth:{label:'12.5% of 64',amount:64,percent:12.5},thirtyFive:{label:'35% of 240',amount:240,percent:35},overWhole:{label:'150% of 60',amount:60,percent:150},zero:{label:'0% of 180',amount:180,percent:0},double:{label:'200% of 75',amount:75,percent:200}}};
+(function(){'use strict';
+var N=NOVA,S=N.svg,E=S.el,M=N.motion,H=N.h,C=NOVA_F5_14_CONFIG,ID='F5-14',live=null;
+function emit(k,v){if(!C.events.includes(k))throw Error('Unknown event key '+k);N.events.emit('value',{engine:ID,key:k,value:v});}
+function model(a,p){a=Number(a);p=Number(p);if(!Number.isSafeInteger(a)||a<0||a>1000)throw Error('Amount must be a whole number from 0 to 1000.');if(!Number.isFinite(p)||p<0||p>200||Math.abs(p*2-Math.round(p*2))>1e-8)throw Error('Select between 0% and 200% in half-percent steps.');return {a:a,p:p,result:a*Math.round(p*2)/200};}
+function fmt(v){return Number(v.toFixed(3)).toString();}
+function chalk(p,x,y,t,role,size,anchor){return N.chalkText(p,x,y,String(t),{role:role||'support',size:size||22,anchor:anchor||'middle'});}
+function R(p,x,y,w,h,fill,a){return E('rect',Object.assign({x:x,y:y,width:Math.max(w,0),height:h,fill:fill},a||{}),p);}
+function grad(svg){var d=E('defs',{},svg);[['pa-glass',[['0%','#234963'],['16%','#0b203a'],['78%','#081527'],['100%','#1a3652']]],['pa-amber',[['0%','#ffe8aa'],['18%','#fbc866'],['75%','#986022'],['100%','#462e1c']]],['pa-green',[['0%','#e5ffee'],['20%','#4cdeb2'],['75%','#206d5c'],['100%','#10392e']]],['pa-idle',[['0%','#325575'],['30%','#122944'],['100%','#09182b']]]].forEach(function(entry){var g=E('linearGradient',{id:entry[0],x1:'0%',y1:'0%',x2:'0%',y2:'100%'},d);entry[1].forEach(function(c){E('stop',{offset:c[0],'stop-color':c[1]},g);});});}
+function frame(s,x,y,w,h,role){N.neonBox(s,x,y,w,h,{role:role||'op',r:14});R(s,x+4,y+4,w-8,h-8,'url(#pa-glass)',{rx:11,stroke:'#426e89','stroke-width':1.05});R(s,x+10,y+9,w-20,Math.max(3,h*.09),'#c4f0ff',{rx:3,opacity:.07});}
+function draw(stage,v,o){o=o||{};if(live){live.dead=true;live.ac.abort();}var sc={dead:false,ac:new AbortController()},mob=innerWidth<=670,W=mob?420:1120,V=mob?1160:965;live=sc;stage.innerHTML='';N.cap(stage,'F5-14 · '+(o.heading||'Percentage of an amount'));
+var s=S.root(W,V,'Percentage of an amount: an unchanged amber 100 percent whole, a green selected percentage measured against the same whole, a draggable selector and a moving exact-amount indicator. Percentages over 100 use a second matching whole.');s.classList.add('pa-svg');grad(s);
+var barX=mob?56:130,barW=mob?308:860,wholeY=mob?157:165,barH=mob?43:58,selY=mob?335:356,extraY=mob?457:480,meterY=mob?635:650,meterW=barW,hidden=!!o.hidden,level=o.level==null?5:o.level,p=o.p==null?v.p:o.p,selected=level>=3?p:0;
+chalk(s,W/2,mob?40:46,mob?'Keep the whole fixed':'One fixed whole · every percentage uses this scale','support',mob?23:29);
+frame(s,mob?41:105,mob?65:70,mob?338:910,mob?67:70,'focus');
+chalk(s,W/2,mob?91:102,'100% = '+v.a+' units','given',mob?24:31);
+chalk(s,W/2,mob?121:125,level<1?'First identify the whole amount':'The original 100% never changes size','support',mob?17:21);
+
+N.neonBox(s,barX,wholeY,barW,barH,{role:'given',r:11});R(s,barX+4,wholeY+4,barW-8,barH-8,'url(#pa-amber)',{rx:7,opacity:.9});
+// Locked calibrated scale: the only tick generator is the core NOVA.numberLine.
+var lineY=wholeY+barH+19;N.numberLine(s,{x:barX,y:lineY,w:barW,min:0,max:100,major:25,minor:5,labelSize:mob?17:20});
+chalk(s,W/2,selY-21,'Selected percentage · same whole size','support',mob?18:22);
+N.neonBox(s,barX,selY,barW,barH,{role:'op',r:11});R(s,barX+4,selY+4,barW-8,barH-8,'url(#pa-idle)',{rx:7});
+var over=Math.max(0,p-100),first=Math.min(100,selected),upper=R(s,barX+4,selY+4,(barW-8)*first/100,barH-8,'url(#pa-green)',{rx:6,opacity:.95,stroke:S.c('result'),'stroke-width':1.2});
+if(level>=2){N.svg.brace(s,barX,selY+barH+11,barX+Math.max(5,barW*first/100),selY+barH+11,{role:'result',depth:10});}
+if(level>=3&&p>100){chalk(s,barX+barW/2,extraY-12,'Second matching whole · beyond 100%','support',mob?17:21);N.neonBox(s,barX,extraY,barW,barH,{role:'op',r:11});R(s,barX+4,extraY+4,barW-8,barH-8,'url(#pa-idle)',{rx:7});R(s,barX+4,extraY+4,(barW-8)*Math.min(100,over)/100,barH-8,'url(#pa-green)',{rx:6,stroke:S.c('result'),'stroke-width':1.15});}
+if(level>=2&&level<=3){var unitX=mob?W/2:W-180,unitY=mob?extraY+12:505;if(!(p>100&&level>=3)){N.neonBox(s,unitX-(mob?143:145),unitY-(mob?27:31),mob?286:290,54,{role:'focus',r:10});chalk(s,unitX,unitY+7,'10% = '+fmt(v.a/10)+' units','focus',mob?21:23);}}
+chalk(s,W/2,meterY-22,'Drag or use arrow keys · 0% to 200%','support',mob?17:22);
+N.neonBox(s,barX,meterY,meterW,mob?19:25,{role:'op',r:7});R(s,barX+4,meterY+3,(barW-8)*p/200,mob?13:19,'url(#pa-green)',{rx:5});
+var meter=N.numberLine(s,{x:barX,y:meterY+31,w:meterW,min:0,max:200,major:50,minor:10,labelSize:mob?18:21});
+var handleX=barX+meterW*p/200,handleY=meterY-10;
+var grip=E('g',{role:'slider',tabindex:o.interactive?0:-1,'aria-label':'Percentage selector. Left and right arrows change five percent; Shift and arrows change half a percent.','aria-valuemin':0,'aria-valuemax':200,'aria-valuenow':p,'data-percent-handle':'true'},s);
+N.neonRing(grip,handleX,meterY+9,{role:'focus',r:mob?12:14,pulse:false});R(grip,handleX-11,meterY-8,22,30,'transparent',{'pointer-events':'none'});
+// Amount pill follows the exact shaded endpoint on its appropriate 100% band.
+var endP=p<=100?p:p-100,endY=p<=100?selY:extraY,endX=barX+barW*Math.min(100,endP)/100;
+if(level>=4&&!hidden){
+ N.neonRing(s,endX,endY+barH/2,{role:'result',r:mob?8:11,pulse:false});
+ N.svg.arrow(s,endX,endY+barH+3,endX,endY+barH+25,{role:'result',width:2.6});
+ var badgeX=Math.max(barX+65,Math.min(barX+barW-65,endX)),badgeY=endY+barH+54;
+ N.neonBox(s,badgeX-68,badgeY-27,136,43,{role:'result',r:10});chalk(s,badgeX,badgeY+3,fmt(v.result)+' units','result',mob?19:22);
+}
+var amountY=mob?766:777,cardX=mob?43:118,cardW=mob?334:415,cardH=mob?121:136;
+frame(s,cardX,amountY,cardW,cardH,'result');chalk(s,cardX+cardW/2,amountY+36,'Selected amount','support',mob?22:26);
+var answer=chalk(s,cardX+cardW/2,amountY+(mob?94:102),level<4||hidden?'?':fmt(v.result)+' units','result',mob?34:42);
+var proofX=mob?43:574,proofY=mob?906:777,proofW=mob?334:431,proofH=mob?170:136;
+frame(s,proofX,proofY,proofW,proofH,'focus');chalk(s,proofX+proofW/2,proofY+33,'Calculation · divide then multiply','support',mob?21:23);
+chalk(s,proofX+proofW/2,proofY+(mob?81:78),hidden?'Use the scale to find the amount':level<5?'One percent = whole ÷ 100':'1% = '+fmt(v.a/100)+' units','focus',mob?19:21);
+chalk(s,proofX+proofW/2,proofY+(mob?131:111),hidden?'Result hidden until checked':level<5?'Then multiply by the percentage':fmt(v.a)+' × '+fmt(p)+' ÷ 100 = '+fmt(v.result),'result',mob?18:22);
+if(mob){chalk(s,W/2,1131,'All shaded lengths use the fixed 100% whole','support',18);}else{chalk(s,W/2,956,'Read the result on the SAME 100% scale · no rescaling after selection','support',21);}
+if(o.interactive){var lastPx=null;function coord(e){var p0=s.createSVGPoint();p0.x=e.clientX;p0.y=e.clientY;var tr=s.getScreenCTM();return tr?p0.matrixTransform(tr.inverse()):null;}
+window.addEventListener('pointermove',function(e){if(sc.dead||!N.ui._drag||N.ui._drag.el!==grip)return;var xy=coord(e);if(xy)lastPx=xy.x;},{signal:sc.ac.signal});
+function choose(n,method){if(sc.dead)return false;n=Math.max(0,Math.min(200,Math.round(n*2)/2));if(o.onSet){o.onSet(n,method);return true;}return false;}
+grip.addEventListener('keydown',function(e){var diff=e.shiftKey?.5:5;var n=null;if(e.key==='ArrowLeft'||e.key==='ArrowDown')n=p-diff;if(e.key==='ArrowRight'||e.key==='ArrowUp')n=p+diff;if(e.key==='Home')n=0;if(e.key==='End')n=200;if(n!==null){e.preventDefault();if(choose(n,'keyboard'))requestAnimationFrame(function(){var q=stage.querySelector('[data-percent-handle]');if(q)q.focus();});}});
+N.ui.svgDrag(s,grip,{box:{x:handleX-14,y:handleY,w:28,h:39},canStart:function(){return !sc.dead;},zones:function(){return [{id:'percentage-track',kind:'drop',x:barX-15,y:meterY-36,w:barW+30,h:105}]},onDrop:function(){if(!Number.isFinite(lastPx))return false;return choose(Math.round(((lastPx-barX)/barW*200)*2)/2,'drag');}});
+}
+stage.appendChild(s);
+if(o.animate&&level>=3&&!N.reducedMotion()){var target=(barW-8)*first/100;upper.setAttribute('width',0);M.tween(900,function(t){if(sc.dead||!upper.isConnected)return;upper.setAttribute('width',String(Math.max(0,target*t)));},M.ease.inOut,function(){if(!sc.dead)M.flash(s,barX+target,selY+barH/2,'result',30);});}
+N.scene.helperStrip(stage,o.pose||'point-down',o.caption||'Compare each selected amount with the same whole.');return sc;}
+var steps=[
+{name:'Identify the full amount',level:0,pose:'explain',caption:'Eighty units are the full 100 percent',narration:'Begin with eighty units. That is one complete whole, or one hundred percent.'},
+{name:'Keep the whole fixed',level:1,pose:'ruler',caption:'The reference whole stays exactly the same size',narration:'We must keep our whole the same size. Moving to a different percentage never changes what one hundred percent means.'},
+{name:'Use equal tenths of the whole',level:2,pose:'count',caption:'Ten percent is eight units',narration:'Divide eighty by ten. That gives eight units for ten percent of the total.'},
+{name:'Select a quarter of the bar',level:3,pose:'point-down',caption:'Twenty-five percent covers a quarter of the fixed whole',narration:'Select twenty-five percent. That is one quarter of the original whole. The shaded tape fills to that exact position.'},
+{name:'Read the selected amount',level:4,pose:'compare',caption:'The marker follows the selected twenty-five percent',narration:'One quarter of eighty is twenty. The result marker follows the shaded part, while the reference length stays fixed.'},
+{name:'Show the calculation',level:5,pose:'celebrate',caption:'Divide by one hundred then multiply by twenty-five',narration:'To calculate a percentage of an amount, divide the whole by one hundred, then multiply by the number of percent. Twenty-five percent of eighty is twenty.'}
+];
+function guided(i,stage){var t=steps[i],o=model(80,25);draw(stage,o,{heading:t.name,level:t.level,animate:i===3,pose:t.pose,caption:t.caption});}
+function explore(panel,stage){var opt=C.presets[C.preset],o=model(opt.amount,opt.percent),pSel=H('select',{class:'nova-input','aria-label':'Choose percentage example'}),amt=H('input',{type:'number',min:0,max:1000,step:1,class:'nova-input',value:o.a,'aria-label':'Whole amount'}),pct=H('input',{type:'number',min:0,max:200,step:0.5,class:'nova-input',value:o.p,'aria-label':'Percentage selected'}),status=H('p',{class:'pa-status',role:'status','aria-live':'polite'});
+Object.keys(C.presets).forEach(function(k){pSel.appendChild(H('option',{value:k,text:C.presets[k].label}));});pSel.value=C.preset;
+function paint(animated){draw(stage,o,{heading:'Explore · move the percentage marker',level:5,animate:animated,interactive:true,pose:o.p===0?'think':o.p>100?'idea':'point-down',caption:o.p>100?'One hundred percent stays the same size, even above the whole':'Read the selected length against the original one hundred percent',onSet:function(p,method){o=model(o.a,p);pct.value=o.p;emit(method==='drag'?'dragPercent':method==='keyboard'?'keyboard':'percentage',o.p);status.textContent=fmt(o.p)+'% of '+o.a+' = '+fmt(o.result)+' units.';paint(false);}});}
+function sync(){amt.value=o.a;pct.value=o.p;status.textContent=fmt(o.p)+'% of '+o.a+' = '+fmt(o.result)+' units.';paint(false);}
+function update(field){try{o=model(+amt.value,+pct.value);emit(field,field==='amount'?o.a:o.p);sync();}catch(err){status.textContent=err.message;}}
+pSel.onchange=function(){C.preset=pSel.value;var pr=C.presets[C.preset];o=model(pr.amount,pr.percent);emit('preset',C.preset);sync();};amt.onchange=function(){update('amount');};pct.onchange=function(){update('percentage');};
+panel.appendChild(H('div',{class:'pa-controls'},[H('label',{text:'Preset'}),pSel,H('label',{text:'Whole'}),amt,H('label',{text:'Percentage'}),pct]));panel.appendChild(H('div',{class:'pa-controls'},[H('button',{class:'nova-btn',text:'Reset to 25%',onclick:function(){o=model(80,25);C.preset='quarter';pSel.value=C.preset;emit('reset',true);sync();}})]));panel.appendChild(status);panel.appendChild(H('p',{class:'pa-hint',text:'Try 12.5%, 150%, zero or 200%. Drag the ring along the 0–200% meter, or use its arrow keys.'}));
+C._explore={get:function(){return {amount:o.a,percent:o.p,result:o.result};},set:function(a,p){o=model(a,p);sync();},handle:function(){return stage.querySelector('[data-percent-handle]');}};sync();}
+function challenge(panel,api,stage){var tasks=[{a:80,p:25,answer:20,q:'What is 25% of 80?',hint:'A quarter of eighty is one equal part out of four.'},{a:64,p:12.5,answer:8,q:'Find 12.5% of 64.',hint:'Twelve point five percent is one eighth of the original whole.'},{a:60,p:150,answer:90,q:'Find 150% of 60.',hint:'One hundred percent is sixty. Add another half of the original whole.'}],idx=0,wrong=0;
+var q=H('p',{class:'pa-status'}),inp=H('input',{type:'number',step:0.005,class:'nova-input',placeholder:'Amount in units','aria-label':'Your numerical amount'}),check=H('button',{class:'nova-btn primary',text:'Check answer'}),hint=H('button',{class:'nova-btn',text:'Hint'}),status=H('p',{class:'pa-status',role:'status','aria-live':'polite'}),peer=H('img',{alt:'Izaac reviewing the calculation'}),peerTxt=H('span',{text:'Izaac is checking the calculation.'});
+function react(pose,message){var pic=N.helperImg(pose,'teen');peer.src=pic.src;peer.alt=pic.alt;peerTxt.textContent=message;}
+function load(){var t=tasks[idx];wrong=0;q.textContent='Challenge '+(idx+1)+' of 3 · '+t.q;inp.value='';api.fb.textContent='';status.textContent='The answer is hidden. Use the fixed percentage tape to reason.';react('read-tablet','Izaac is solving this one too.');draw(stage,model(t.a,t.p),{heading:'Challenge · percentage of an amount',level:3,hidden:true,pose:'think',caption:'Use the whole to determine the selected amount.'});}
+check.onclick=function(){var t=tasks[idx],val=Number(inp.value),ok=inp.value.trim()!==''&&Number.isFinite(val)&&Math.abs(val-t.answer)<1e-8;api.check(ok,ok?'Correct. The selected percentage has that exact amount.':'Not yet. Check the original whole and the fraction of it.',{task:idx});if(ok){status.textContent='Correct.';react(idx===2?'victory':'proud',idx===2?'All three answered correctly.':'That is the exact selected amount.');if(idx<2){idx++;setTimeout(load,450);}}else{wrong++;status.textContent='Check the scale and try again.';react(wrong>=2?'worried':'read-tablet','Think about the fixed one hundred percent reference.');}};
+hint.onclick=function(){api.hint(tasks[idx].hint);status.textContent=tasks[idx].hint;react('idea','Izaac has a clue.');};
+panel.appendChild(q);panel.appendChild(H('div',{class:'pa-controls'},[H('label',{text:'Your answer'}),inp,check,hint]));panel.appendChild(status);panel.appendChild(H('div',{class:'pa-peer'},[peer,peerTxt]));C._challenge={task:function(){return idx;},setAnswer:function(x){inp.value=x;}};load();}
+var DEF={id:ID,title:'Percentage of an Amount · Fixed Whole Lab',config:C,steps:steps,render:guided,explore:explore,challenge:challenge,alt:'Premium fixed-whole percentage tapes. A 100% amber reference stays constant while a green selection grows from zero to two hundred percent and an amount marker follows the selected endpoint.',usedBy:['F5-14'],skill:'percentage-of-an-amount',tag:'Premium Edition',links:['F0-02','F5-12','F5-15']};
+N.bankMount({id:ID,num:'F5·14',title:DEF.title,def:DEF,years:'KS3 Years 7–9',linked:['F5-12','F5-15'],spec:{purpose:'Compute percentages of an amount by preserving a fixed 100% reference and linking the selected length to the amount.',params:'Whole integer amount from 0 to 1000; percentage 0 to 200 in steps of one half percent.',presets:'25% of 80, 12.5% of 64, 35% of 240, 150% of 60, 0% of 180, 200% of 75.',steps:'Reference whole → equal tenths → ten percent → select percentage → follow amount marker → exact result.',interactions:'Draggable percentage marker, keyboard arrows and Home/End, input fields, reset, challenge.',gcse:'KS3 percentage calculation and percentages over 100%, GCSE foundation.'}});
+var log=document.getElementById('log');function logIt(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,3500);}N.events.history().forEach(logIt);N.events.on('*',logIt);document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+</script></body></html>

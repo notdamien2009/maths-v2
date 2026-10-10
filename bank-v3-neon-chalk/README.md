@@ -1,31 +1,40 @@
-# NOVA F3-09 · Square and Cube Builders · Premium Review
+# NOVA F3-11 — Root Finder · F0 Aligned Premium Review
 
-**Build**: 2026-10-10. **Status**: Review only — not owner-approved GOLD.
+**Status:** Built and browser-tested; awaiting owner review. **Not GOLD.**
 
 ## Open
 
-Open `F3/F3-09-square-and-cube-builders.html` directly. It includes its own CSS, JavaScript, embedded F0 mascots and chalk fonts and requires no network access.
+Open `F3/F3-11-root-finder.html` in a modern browser (offline, complete inline F0 CSS/JS and the F3-11 module). No remote dependencies.
 
-## Specification card
+## Curriculum / specification
 
-- **Maths purpose**: Prove a square has n × n unit tiles and a solid cube contains n layers of n × n unit cubes; connect the counts to n², n³ and inverse square/cube roots.
-- **Year groups**: Years 7, 8 and 9; GCSE link through roots and fractional indices.
-- **Parameters**: Square side 2–5, cube side 2–4, whole-number unit tiles/cubes. Two separate 2D and 3D apparatus layouts.
-- **Presets**: Y7-017 (`3²`); Y8-001 (`3³`); Y9-002 (`4³`); Y9-003 (`3³`, with `27^(1/3) = 3` shown with a stacked fraction).
-- **Named teaching steps**: One row → complete square → one layer → stacked cube → power/root connection. Sir Bob's narration is in each step; the F0 mascot dock uses short encouragement.
-- **Interactions**: F0 SVG drag a unit to the highlighted next grid space; grab completed tiles/cubes and drag back to red Remove; keyboard controls Add unit, Fill row, Fill layer, Undo and Reset. Four modes: Watch, Guided, Explore, Challenge.
-- **Correct answer**: The complete spatial configuration AND the correctly checked total; Challenge stages `2²=4`, `2³=8`, `3³=27`.
-- **Misconceptions**: Confusing square area with volume, treating `n³` as `n × 3`, stopping after one n² layer, incomplete shape, roots not being inverse powers.
-- **GCSE extension**: Fractional indices, roots, exact integer powers through F3-10/F3-11.
+- Y7-017 — Squares, cubes and associated roots: use a fixed area/volume and change the side/edge to discover the inverse.
+- Y9-002 — Exact and approximate roots: show whether side² overshoots/undershoots the fixed target, and bracket the root between consecutive integers.
+- Y9-003 — Fractional indices: interpret `125^{1/3}` with a *stacked Chalk fraction* via F0 maths text and an isometric cube.
 
-## Structure
+The drawing contains the **approved NOVA number line** (`NOVA.numberLine`) with actual labelled integer ticks, a draggable estimate ring, a neon-glass square or a geometrically consistent isometric cube, and a live area/volume comparison. F0 mascot dock uses brief encouragement while Sir Bob narrates the five Watch teaching steps.
 
-- `F3/`: finished standalone HTML
-- `src/`: component JS/CSS
-- `core/`: unmodified canonical F0 core (same SHA256 as F3-08)
-- `build/`: source template and deterministic packer
-- `shots/`: actual Chromium screenshots from 380px and 1280px, plus mode/preset images
-- `tests/`: browser checks, mathematical stress, normal and reduced-motion fast-drag, cancellation and machine-readable outputs
-- `QA-REPORT.md`: evidence per guard rule and outstanding acceptance gates
+## Controls and four modes
 
-The previous F3 engines and all F0/F1/F2/F5 engines are unchanged. Do not mark GOLD until visually inspected and approved.
+- **Watch:** Five teaching stages, including an undershoot, overshoot and better estimate. Uses F0 motion and F0 timeline and narration hooks.
+- **Guided:** Five controllable stages with step/back/scrub/reset from the F0 shell.
+- **Explore:** Three curriculum presets plus shape, area/volume and side controls. Drag, keyboard arrows, ±0.1 buttons, Undo, Reset and the red Remove tray.
+- **Challenge:** Four questions (sqrt 25 exact; sqrt 50 approximate to one decimal; cbrt 27; cube root of 125 interpreted as a one-third index). The learner must move the marker and supply a matching numeric answer. Premature answer revealing is prevented.
+
+## Directory
+
+- `F3/F3-11-root-finder.html`: finished standalone build
+- `src/F3-11.js` and `src/F3-11.css`: editable component
+- `core/nova-core.js` and `.css`: original approved bank core, unchanged
+- `build/F3-11.src.html` and `build/build.py`: deterministic core + component inline build
+- `shots/`: actual browser snapshots, 380px and 1280px modes and geometry presets
+- `tests/`: executable browser and maths suites plus JSON results
+- `QA-REPORT.md`: evidence-based gate outcomes
+
+F0 JS SHA256: `1e3a118ed3a38a0875178dc0acdd4e0fb6c07b38b33807f7cf410523756a9e21`
+F0 CSS SHA256: `eaf043ca9db09bee17c0aa04a1ba3e17ecbde330a3c55acc1b914b48b01c4cc4`
+These hashes match the supplied bank directly; core files were not edited.
+
+## Review gates
+
+The browser QA does not replace the owner's approval for the exact look, narration feel or mouse feel. Expanded character pose manifests were not present in the supplied bank; only canonical F0 helper poses are used, without invented artwork. This engine has not modified any earlier F3 or other family components.

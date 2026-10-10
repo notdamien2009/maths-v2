@@ -1,0 +1,131 @@
+<!doctype html><html lang="en" data-theme="dark" data-house="neon-chalk" data-premium="1"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NOVA F5-12 · Premium fraction of an amount and improper fractions</title>
+<style>@@CSS@@
+.pct-svg.nv-svg{display:block;width:100%;max-width:1120px;height:auto;margin:0 auto;touch-action:pan-y}
+.pct-controls{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:9px;margin:11px auto}
+.pct-controls label{font:700 1.03rem var(--nova-font-chalk-write);color:#daefff}
+.pct-controls .nova-input{min-width:100px;max-width:200px}
+.pct-status{font:700 1.05rem/1.45 var(--nova-font-chalk-write);color:#d8f4ff;min-height:27px;text-align:center;margin:7px auto}
+.pct-answer{max-width:130px}
+.pct-peer{display:flex;align-items:center;justify-content:center;gap:10px;font:700 1rem var(--nova-font-chalk-write)}
+.pct-peer img{width:80px;height:92px;object-fit:contain}
+.pct-grid-cell:focus{outline:none}.pct-grid-cell:focus-visible{filter:drop-shadow(0 0 5px #ffe29a)}
+@media(max-width:550px){.pct-controls{gap:6px}.pct-controls label{font-size:.94rem}.pct-peer img{width:62px;height:74px}}
+@media print{.nova-tabs,.nova-tl,.nova-helperbar,.nova-panel{display:none!important}}
+</style></head><body data-topic="number"><div class="nova-wrap">
+<header id="nova-header" data-run="F5 · Premium Edition rebuild · 12" data-title="Hundred-Square Percentage Studio" data-sub="Paint one hundred equal cells, measure the shaded proportion, and connect percentage, decimal and fraction notation."></header>
+<main id="gallery"></main><section class="nova-card nova-logcard" aria-label="NOVA event log"><h2 style="font-size:1.08em">NOVA events</h2><div class="nova-log" id="log" role="log" aria-live="off"></div><button class="nova-btn" id="clearlog">Clear event log</button></section>
+<script>@@JS@@</script><script>
+var NOVA_F5_12_CONFIG={startMode:'guided',preset:'thirtySeven',events:['preset','paint','shadedCount','clear','fill','cascade','reset','mode','keyboard'],presets:{thirtySeven:{label:'37% · explore shaded area',count:37},quarter:{label:'25% · one quarter',count:25},half:{label:'50% · one half',count:50},seventyFive:{label:'75% · three quarters',count:75},zero:{label:'0% · empty',count:0},whole:{label:'100% · full grid',count:100},thirteen:{label:'13% · thirteen hundredths',count:13}}};
+(function(){'use strict';
+var N=NOVA,S=N.svg,E=S.el,M=N.motion,H=N.h,C=NOVA_F5_12_CONFIG,ID='F5-12',live=null;
+function emit(k,v){if(!C.events.includes(k))throw Error('Undeclared event key '+k);N.events.emit('value',{engine:ID,key:k,value:v});}
+function model(x){if(!Number.isInteger(x)||x<0||x>100)throw RangeError('Shaded cells must be an integer from zero to one hundred.');return new Set(Array.from({length:x},(_,i)=>i));}
+function chalk(p,x,y,t,role,size,anchor){return N.chalkText(p,x,y,String(t),{role:role||'support',size:size||22,anchor:anchor||'middle'});}
+function rect(p,x,y,w,h,fill,attrs){return E('rect',Object.assign({x:x,y:y,width:w,height:h,fill:fill},attrs||{}),p);}
+function gcd(a,b){while(b){var z=a%b;a=b;b=z;}return a||1;}
+function stacked(p,x,y,n,d,role,sz){sz=sz||25;var g=E('g',{'aria-label':n+' over '+d},p);chalk(g,x,y-sz*.34,n,role,sz);N.neonLine(g,x-sz*.85,y+2,x+sz*.85,y+2,{role:role,width:2});chalk(g,x,y+sz*.94,d,role,sz);return g;}
+function grad(s){var d=E('defs',{},s),g=E('linearGradient',{id:'pct-glass',x1:'0%',y1:'0%',x2:'20%',y2:'100%'},d);[['0%','#244b6b'],['12%','#0b203c'],['80%','#061429'],['100%','#193852']].forEach(v=>E('stop',{offset:v[0],'stop-color':v[1]},g));
+var a=E('linearGradient',{id:'pct-lit',x1:'0%',y1:'0%',x2:'0%',y2:'100%'},d);[['0%','#d8ffea'],['24%',S.c('result')],['85%','#287c66'],['100%','#145344']].forEach(v=>E('stop',{offset:v[0],'stop-color':v[1]},a));
+var b=E('linearGradient',{id:'pct-idle',x1:'0%',y1:'0%',x2:'0%',y2:'100%'},d);[['0%','#2b506f'],['25%','#162b4b'],['100%','#091b33']].forEach(v=>E('stop',{offset:v[0],'stop-color':v[1]},b));}
+function frame(s,x,y,w,h,role){N.neonBox(s,x-6,y-6,w+12,h+12,{role:role||'op',r:18});rect(s,x,y,w,h,'url(#pct-glass)',{rx:13,stroke:'#37658a','stroke-width':1.1});}
+function countDecimal(count){return (count/100).toFixed(2);}
+function draw(stage,selected,opt){opt=opt||{};if(live){live.dead=true;if(live.ac)live.ac.abort();}var sc={dead:false,ac:new AbortController()},mob=innerWidth<=670,W=mob?420:1120,V=mob?1070:790;live=sc;stage.innerHTML='';N.cap(stage,'F5-12 · '+(opt.heading||'Explore the hundred-square grid'),'PREMIUM');
+var s=S.root(W,V,'Interactive ten by ten grid. One hundred equal squares represent one whole, with each shaded square equal to one percent. Arrow keys navigate and Space or Enter toggles the focused cell.');s.classList.add('pct-svg');grad(s);
+var GX=mob?44:132,GY=mob?193:157,SIZE=mob?332:452,CELL=SIZE/10,hidden=!!opt.hidden;
+chalk(s,W/2,mob?37:41,'One whole · one hundred equal parts','support',mob?24:28);
+N.neonBox(s,mob?37:113,mob?67:80,mob?346:502,mob?98:68,{role:'focus',r:14});
+chalk(s,mob?207:363,mob?100:107,hidden?'Count the shaded hundredths':'Every square is exactly one percent','focus',mob?22:23);
+chalk(s,mob?207:363,mob?137:138,hidden?'Find the missing percentage':'100 equal cells = 100% of the whole','support',mob?18:21);
+frame(s,GX-9,GY-9,SIZE+18,SIZE+18,'op');
+var handle=null,initialCount=selected.size,lastMeterX=null;var cells=[],tints=[],indexToNode=[],gridGroup=E('g',{role:'grid','aria-label':'Ten by ten percentage grid: arrow keys move, Space paints or erases'},s);
+for(var i=0;i<100;i++){
+ var c=i%10,r=Math.floor(i/10),x=GX+c*CELL,y=GY+r*CELL,cell=E('g',{'data-cell':i,class:'pct-grid-cell',role:'gridcell','aria-label':'Row '+(r+1)+' column '+(c+1)+(selected.has(i)?', shaded':', unshaded'),'aria-selected':selected.has(i)?'true':'false',tabindex:opt.interactive&&i===(opt.focusIndex||0)?0:-1},gridGroup);
+ var plate=rect(cell,x+1.7,y+1.7,CELL-3.4,CELL-3.4,selected.has(i)?'url(#pct-lit)':'url(#pct-idle)',{rx:3.5,stroke:selected.has(i)?S.c('result'):'#2b5676','stroke-width':selected.has(i)?1.35:.8,'data-plate':i});
+ if(selected.has(i))rect(cell,x+4,y+4,CELL-8,Math.max(2,CELL*.12),'#c6ffe3',{rx:2,opacity:.4,'pointer-events':'none'});
+ rect(cell,x,y,CELL,CELL,'transparent',{'data-hit':i,'pointer-events':'all'});
+ cells.push(cell);tints.push(plate);indexToNode.push(cell);
+ }
+// outer guides provide a true square lattice: exactly 10 rows and 10 columns.
+rect(s,GX-10,GY-10,SIZE+20,SIZE+20,'none',{rx:8,stroke:S.c('op'),'stroke-width':2.5,'pointer-events':'none'});
+// Post-render UI reads derive from actual painted state, never an independent percentage variable.
+var yMeter=mob?586:181,xMeter=mob?45:683,meterW=mob?330:376,meterH=mob?19:30;
+if(mob){chalk(s,W/2,574,'Shaded portion of one whole','support',19);}else{chalk(s,xMeter+meterW/2,150,'Shaded part of one whole','support',22);}
+N.neonBox(s,xMeter,yMeter,meterW,meterH,{role:'op',r:6});var fill=rect(s,xMeter+3,yMeter+3,(meterW-6)*selected.size/100,meterH-6,'url(#pct-lit)',{rx:4,stroke:S.c('result'),'stroke-width':.9});
+var cardY=mob?636:264,cardX=mob?39:670,cardW=mob?342:408,cardH=mob?112:118;
+frame(s,cardX,cardY,cardW,cardH,'result');chalk(s,cardX+cardW/2,cardY+29,'Percentage of the whole','support',mob?21:24);
+var percent=chalk(s,cardX+cardW/2,cardY+(mob?86:88),hidden?'?':selected.size+'%','result',mob?37:44);
+var decY=mob?768:404;frame(s,cardX,decY,cardW,cardH,'given');chalk(s,cardX+cardW/2,decY+29,'Decimal form','support',mob?21:24);
+var decimal=chalk(s,cardX+cardW/2,decY+(mob?85:87),hidden?'?':countDecimal(selected.size),'given',mob?34:40);
+var fY=mob?912:567;frame(s,cardX,fY,cardW,mob?107:126,'focus');chalk(s,cardX+cardW/2,fY+27,'Fraction of one whole','support',mob?21:23);
+var frGroup=E('g',{},s);function refreshFrac(){frGroup.innerHTML='';if(hidden){chalk(frGroup,cardX+cardW/2,fY+(mob?77:88),'?','support',mob?26:32);return;}var g=gcd(selected.size,100),n=selected.size/g,d=100/g;
+ if(d===1)chalk(frGroup,cardX+cardW/2,fY+(mob?83:93),n,'focus',mob?31:38);
+ else stacked(frGroup,cardX+cardW/2,fY+(mob?68:77),n,d,'focus',mob?23:30);}
+refreshFrac();
+var focusIndex=Math.max(0,Math.min(99,opt.focusIndex||0)),painting=false,paintId=null,desired=false,visited=null,snapshot=null;
+function refresh(){if(sc.dead)return;for(var j=0;j<100;j++){var lit=selected.has(j);tints[j].setAttribute('fill',lit?'url(#pct-lit)':'url(#pct-idle)');tints[j].setAttribute('stroke',lit?S.c('result'):'#2b5676');tints[j].setAttribute('stroke-width',lit?'1.35':'.8');cells[j].setAttribute('aria-selected',lit?'true':'false');cells[j].setAttribute('aria-label','Row '+(Math.floor(j/10)+1)+' column '+(j%10+1)+(lit?', shaded':', unshaded'));}
+ fill.setAttribute('width',String((meterW-6)*selected.size/100));if(handle&&!N.ui._drag){handle.setAttribute('transform','translate('+((selected.size-initialCount)*meterW/100).toFixed(2)+',0)');handle.setAttribute('aria-valuenow',String(selected.size));}percent.textContent=hidden?'?':selected.size+'%';decimal.textContent=hidden?'?':countDecimal(selected.size);refreshFrac();
+ if(opt.onCount)opt.onCount(selected.size);
+ }
+function setCell(i,value,via){if(i<0||i>99||sc.dead||!opt.interactive)return;var before=selected.has(i);if(before===value)return;value?selected.add(i):selected.delete(i);emit('paint',{cell:i,shaded:value,method:via});emit('shadedCount',selected.size);refresh();}
+function indexAt(e){var mat=s.getScreenCTM();if(!mat)return -1;var p=s.createSVGPoint();p.x=e.clientX;p.y=e.clientY;var q=p.matrixTransform(mat.inverse()),col=Math.floor((q.x-GX)/CELL),row=Math.floor((q.y-GY)/CELL);return col>=0&&col<10&&row>=0&&row<10?row*10+col:-1;}
+function rove(i,setFocus){var old=cells[focusIndex];old.setAttribute('tabindex',-1);focusIndex=Math.max(0,Math.min(99,i));var now=cells[focusIndex];now.setAttribute('tabindex',0);if(setFocus)now.focus();}
+if(opt.interactive){
+ cells.forEach(function(cell,i){cell.addEventListener('focus',function(){if(focusIndex!==i)rove(i,false);});cell.addEventListener('keydown',function(e){var key=e.key,ix=focusIndex,move=key==='ArrowRight'?ix+1:key==='ArrowLeft'?ix-1:key==='ArrowDown'?ix+10:key==='ArrowUp'?ix-10:key==='Home'?Math.floor(ix/10)*10:key==='End'?Math.floor(ix/10)*10+9:-1;
+ if(move>=0&&move<100){e.preventDefault();rove(move,true);emit('keyboard',{index:move,key:key});return;}
+ if(key===' '||key==='Enter'){e.preventDefault();setCell(ix,!selected.has(ix),'keyboard');rove(ix,true);} });});
+ s.addEventListener('pointerdown',function(e){var ix=indexAt(e);if(ix===-1||painting||e.button!==0)return;painting=true;paintId=e.pointerId;desired=!selected.has(ix);visited=new Set();snapshot=new Set(selected);try{s.setPointerCapture(e.pointerId);}catch(_){};paintOver(ix);e.preventDefault();});
+ function paintOver(ix){if(ix<0||visited.has(ix))return;visited.add(ix);setCell(ix,desired,'pointer');}
+ s.addEventListener('pointermove',function(e){if(!painting||e.pointerId!==paintId)return;paintOver(indexAt(e));});
+ function stop(e,cancel){if(!painting||(e&&e.pointerId!==paintId))return;if(cancel){selected.clear();snapshot.forEach(x=>selected.add(x));refresh();}painting=false;paintId=null;visited=null;snapshot=null;try{if(e&&s.hasPointerCapture(e.pointerId))s.releasePointerCapture(e.pointerId);}catch(_){};}
+ s.addEventListener('pointerup',function(e){stop(e,false);});s.addEventListener('pointercancel',function(e){stop(e,true);});window.addEventListener('blur',function(){if(!sc.dead&&painting)stop(null,true);},{signal:sc.signal});
+ window.addEventListener('keydown',function(e){if(e.key==='Escape'&&painting){stop(null,true);e.preventDefault();}}, {signal:sc.ac.signal});
+ // A core v3.6 svgDrag drag-handle controls a filled percentage rail without creating another tick renderer.
+ var hx=xMeter+meterW*selected.size/100-11,hy=yMeter-13;handle=E('g',{'data-pct-handle':1,role:'slider','aria-label':'Adjust shaded percent','aria-valuemin':0,'aria-valuemax':100,'aria-valuenow':selected.size,tabindex:0},s);
+ N.neonBox(handle,hx,hy,23,meterH+24,{role:'focus',r:7});N.neonRing(handle,hx+11,hy+7,{role:'focus',r:5,pulse:false});
+ var box={x:xMeter-10,y:yMeter-16,w:meterW+30,h:meterH+30};
+ s.addEventListener('pointermove',function(e){var mt=s.getScreenCTM();if(!mt)return;var a=s.createSVGPoint();a.x=e.clientX;a.y=e.clientY;lastMeterX=a.matrixTransform(mt.inverse()).x;});
+ N.ui.svgDrag(s,handle,{box:{x:hx,y:hy,w:23,h:meterH+24},canStart:function(){return !sc.dead&&!painting;},zones:function(){return [{id:'percent-meter',kind:'drop',x:box.x,y:box.y,w:box.w,h:box.h}]},onDrop:function(zoneId){if(zoneId!=='percent-meter'||!Number.isFinite(lastMeterX))return false;var p=Math.max(0,Math.min(100,Math.round((lastMeterX-xMeter)/meterW*100)));selected.clear();for(var z=0;z<p;z++)selected.add(z);emit('shadedCount',p);refresh();setTimeout(function(){if(!sc.dead){handle.setAttribute('transform','translate('+((p-initialCount)*meterW/100).toFixed(2)+',0)');handle.setAttribute('aria-valuenow',p);}},0);return true;}});
+ handle.addEventListener('keydown',function(e){var v=e.key==='ArrowRight'||e.key==='ArrowUp'?selected.size+1:e.key==='ArrowLeft'||e.key==='ArrowDown'?selected.size-1:e.key==='Home'?0:e.key==='End'?100:null;if(v===null)return;e.preventDefault();v=Math.min(100,Math.max(0,v));selected.clear();for(var i=0;i<v;i++)selected.add(i);emit('shadedCount',v);refresh();handle.setAttribute('aria-valuenow',v);});
+ }
+ stage.appendChild(s);N.scene.helperStrip(stage,opt.pose||'count',opt.caption||'Each square is one hundredth of the whole.');
+ function cascade(to,duration){var start=selected.size,target=Math.max(0,Math.min(100,to));if(N.reducedMotion()){selected.clear();for(var i=0;i<target;i++)selected.add(i);refresh();return;}
+ M.tween(duration||1050,function(t){if(sc.dead)return;var n=Math.round(start+(target-start)*t);selected.clear();for(var j=0;j<n;j++)selected.add(j);refresh();},M.ease.inOut,function(){if(sc.dead)return;selected.clear();for(var j=0;j<target;j++)selected.add(j);refresh();});}
+ sc.setCount=function(n,animated){n=Math.max(0,Math.min(100,n));if(animated)cascade(n,820);else{selected.clear();for(var j=0;j<n;j++)selected.add(j);refresh();}};
+ sc.toggle=function(i){setCell(i,!selected.has(i),'test');};sc.count=function(){return selected.size;};sc.focus=function(i){rove(i,true);};sc.cells=cells;sc.cancel=function(){selected.clear();refresh();};return sc;
+}
+var steps=[
+ {name:'One whole is a hundred squares',n:0,pose:'explain',caption:'This whole has exactly one hundred equal cells',narration:'Start with one whole square. It is divided into ten rows and ten columns, making one hundred equally sized cells.'},
+ {name:'One cell represents one percent',n:1,pose:'show-one',caption:'One square is one out of a hundred',narration:'Shade one little square. That is one out of a hundred equal parts, so it represents one percent.'},
+ {name:'Build a row of ten percent',n:10,pose:'count',caption:'Ten individual one-percent cells make ten percent',narration:'Now shade one full row of ten cells. Each one is one percent. Ten together make ten percent.'},
+ {name:'Continue to thirty-seven percent',n:37,pose:'point-down',caption:'Three rows and seven more make thirty-seven',narration:'Shade three complete rows and seven extra cells. That is thirty-seven of the one hundred cells.'},
+ {name:'Connect the percentage to the decimal',n:37,pose:'compare',caption:'Thirty-seven hundredths is zero point three seven',narration:'The percentage is thirty-seven percent. Divide thirty-seven by one hundred to write it as zero point three seven.'},
+ {name:'Show the exact fraction of the whole',n:37,pose:'celebrate',caption:'The three forms describe the same shaded area',narration:'Thirty-seven percent, zero point three seven, and thirty-seven hundredths describe exactly the same part of the whole.'}
+];
+function guided(i,stage){var t=steps[i],animate=(i===1||i===2||i===3)&&!N.reducedMotion(),state=model(animate?0:t.n),sc=draw(stage,state,{heading:t.name,pose:t.pose,caption:t.caption,hidden:i<4,interactive:false});if(animate)sc.setCount(t.n,true);}
+function explore(panel,stage){var selected=model(C.presets[C.preset].count),preset=H('select',{class:'nova-input','aria-label':'Choose percentage preset'}),number=H('input',{type:'number',class:'nova-input',min:0,max:100,step:1,'aria-label':'Choose percentage from zero to one hundred'}),status=H('p',{class:'pct-status',role:'status','aria-live':'polite'}),sc=null;
+ Object.keys(C.presets).forEach(k=>preset.appendChild(H('option',{value:k,text:C.presets[k].label})));
+ function refresh(animated){sc=draw(stage,selected,{interactive:true,heading:'Explore · paint any hundredth',pose:'count',caption:'Paint squares or drag the selector to change the shaded amount',onCount:function(n){number.value=n;status.textContent=n+' out of 100 cells shaded = '+n+'%. Each cell changes the percentage by exactly one point.';}});if(animated)sc.setCount(selected.size,true);number.value=selected.size;}
+ preset.value=C.preset;preset.onchange=function(){C.preset=preset.value;emit('preset',C.preset);selected=model(C.presets[C.preset].count);refresh(true);};number.onchange=function(){var n=Number(number.value);if(!Number.isInteger(n)||n<0||n>100){status.textContent='Enter an exact whole number from zero to one hundred.';number.value=selected.size;return;}emit('shadedCount',n);selected=model(n);refresh(true);};
+ panel.appendChild(H('div',{class:'pct-controls'},[H('label',{text:'Preset'}),preset,H('label',{text:'Shaded cells'}),number]));
+ panel.appendChild(H('div',{class:'pct-controls'},[H('button',{class:'nova-btn primary',text:'Paint next ten',onclick:function(){var n=Math.min(100,selected.size+10);emit('cascade',n);sc.setCount(n,true);}}),H('button',{class:'nova-btn',text:'Clear',onclick:function(){emit('clear',true);sc.setCount(0,false);}}),H('button',{class:'nova-btn',text:'Fill all',onclick:function(){emit('fill',true);sc.setCount(100,true);}}),H('button',{class:'nova-btn',text:'Reset',onclick:function(){emit('reset',true);selected=model(37);C.preset='thirtySeven';preset.value=C.preset;refresh(false);}})]));panel.appendChild(status);
+ panel.appendChild(H('p',{class:'pct-status',text:'Drag across squares to paint or erase. Arrow keys move a single keyboard focus between cells; Space or Enter changes one cell.'}));
+ C._explore={get:function(){return sc.count();},set:function(n,animated){selected=model(n);refresh(!!animated);},toggle:function(i){sc.toggle(i);},focus:function(i){sc.focus(i);},cells:function(){return sc.cells.length;}};refresh(false);
+}
+function challenge(panel,api,stage){var tasks=[{type:'readPercent',count:37,q:'Thirty-seven squares are shaded. What percentage of the whole is shaded?',hint:'Each shaded square contributes one percent. Answer with a whole number.'},{type:'paintTarget',count:62,q:'Shade exactly sixty-two percent of the square, then press Check.',hint:'Shade six complete rows, then two extra squares.'},{type:'readDecimal',count:25,q:'Twenty-five squares are shaded. Write the decimal part of the whole.',hint:'Twenty-five hundredths can be written with two digits after the decimal point.'}],idx=0,wrong=0,selected=new Set(),sc=null,question=H('p',{class:'pct-status'}),status=H('p',{class:'pct-status',role:'status','aria-live':'polite'}),answer=H('input',{type:'text',class:'nova-input pct-answer','aria-label':'Percentage or decimal answer'}),check=H('button',{class:'nova-btn primary',text:'Check answer'}),hint=H('button',{class:'nova-btn',text:'Hint'}),peer=H('img',{alt:'Izaac reviews the percentage grid'}),peerText=H('span',{text:'Izaac is checking your working.'});
+ function react(pose,say){var a=N.helperImg(pose,'teen');peer.src=a.src;peer.alt=a.alt;peerText.textContent=say;}
+ function load(){var t=tasks[idx];wrong=0;selected=model(t.type==='paintTarget'?0:t.count);answer.value='';answer.style.display=t.type==='paintTarget'?'none':'';question.textContent='Challenge '+(idx+1)+' of 3 · '+t.q;status.textContent=t.type==='paintTarget'?'Paint the required squares and check. The count is hidden.':'Read the diagram and enter your answer.';api.fb.textContent='';react('read-tablet','Izaac is reading the percentage question.');sc=draw(stage,selected,{heading:'Challenge · percentage grid',interactive:t.type==='paintTarget',hidden:true,pose:'think',caption:'Read or paint the equal hundredths before answering'});}
+ function numeric(v){v=String(v).trim().replace('%','');if(!/^(?:\d+(?:\.\d+)?|\.\d+)$/.test(v))return null;return +v;}
+ check.onclick=function(){var t=tasks[idx],value=numeric(answer.value),ok=t.type==='paintTarget'?selected.size===t.count:t.type==='readPercent'?value===t.count:value===t.count/100;
+ api.check(ok,ok?'Correct. Your diagram and decimal/percentage are equivalent.':'Not yet. Count the painted hundredths carefully.',{task:idx});
+ if(ok){react(idx===2?'victory':'proud',idx===2?'Three percentage problems complete!':'That is the correct value.');status.textContent='Correct.';if(idx<2){idx++;setTimeout(load,550);}}
+ else{wrong++;react(wrong>=2?'worried':'read-tablet','Check one square at a time.');status.textContent='Try again. Every single square is exactly one hundredth.';}
+ };
+ hint.onclick=function(){api.hint(tasks[idx].hint);react('idea','Izaac has a clue.');status.textContent=tasks[idx].hint;};
+ panel.appendChild(question);panel.appendChild(H('div',{class:'pct-controls'},[H('label',{text:'Exact answer'}),answer,check,hint]));panel.appendChild(status);panel.appendChild(H('div',{class:'pct-peer'},[peer,peerText]));
+ C._challenge={get:function(){return {task:idx,count:selected.size};},setAnswer:function(v){answer.value=String(v);},setPaint:function(n){selected=model(n);sc=draw(stage,selected,{heading:'Challenge · percentage grid',interactive:tasks[idx].type==='paintTarget',hidden:true,pose:'think',caption:'Paint exact hundredths'});},task:function(){return idx;}};load();
+}
+var DEF={id:ID,title:'10×10 Percentage Grid · Hundred-Square Studio',config:C,steps:steps,render:guided,explore:explore,challenge:challenge,alt:'Exactly one hundred equal squares form one whole. Paint or erase any square to reveal exact percentages, decimals and simplified stacked fractions. Six narrated teaching steps and three challenges.',usedBy:['F5-12','F5-13','F5-14'],skill:'fraction-decimal-percentage',tag:'Premium Edition',links:['F0-02','F0-04','F0-05','F5-11']};
+N.bankMount({id:ID,num:'F5·12',title:DEF.title,def:DEF,years:'KS3 Years 7–9',linked:['F0-04','F5-13','F5-14'],spec:{purpose:'Represent percentages as shaded hundredths on a precise ten-by-ten grid.',params:'One hundred equal cells, arbitrary painted subsets, counts 0–100, exact two-decimal readout and simplified fraction.',presets:'0%, 13%, 25%, 37%, 50%, 75%, 100%.',steps:'Define whole → show one percent → make ten percent → shade thirty-seven → show decimal → show stacked fraction.',interactions:'Pointer paint/erase stroke, percentage fill cascade, keyboard roving focus, programmable presets and three Challenges.',gcse:'KS3 percentage foundations, GCSE Foundation and Functional Skills.'}});
+var log=document.getElementById('log');function logIt(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,3500);}N.events.history().forEach(logIt);N.events.on('*',logIt);document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+</script></body></html>

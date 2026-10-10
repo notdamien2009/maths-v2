@@ -1,0 +1,29 @@
+{
+  "id": "F5-04",
+  "name": "Fractions on a number line",
+  "family": "F5",
+  "master_family": "F1",
+  "master_engine": "F1-01",
+  "implementation": "F1-01 fractions preset adapter using NOVA.numberLine v3.5 twice, shared v3.6.2 core; no independent number-line primitive",
+  "original_F1_01_modified": false,
+  "precision": "rational ticks at multiples of 1/denominator, exact numerator integer",
+  "notation": "Owner-approved NOVA Chalk traditional stacked fractions",
+  "presets": [
+    "halves",
+    "thirds",
+    "quarters",
+    "eighths",
+    "improper",
+    "negative",
+    "aboveTwo"
+  ],
+  "tests": [
+    "48/48 final functional",
+    "56/56 full stress before last label-only adjustment",
+    "14/14 final desktop stress",
+    "4/4 responsive widths verified"
+  ],
+  "review_status": "Premium review candidate, owner approval outstanding",
+  "source": "build/F5-04.src.html",
+  "built": "F5/F5-04-fractions-number-line-preset.html"
+}

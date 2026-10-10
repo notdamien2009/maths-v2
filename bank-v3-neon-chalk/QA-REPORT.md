@@ -1,33 +1,23 @@
-# NOVA F3-09 · Evidence-Based Quality Report
+# NOVA F3-11 — Evidence-based QA Report
 
-**Status:** Technical QA passed; visual GOLD approval **pending owner review**.
+**Production status:** Premium Review (NOT GOLD). Build generated from `build/F3-11.src.html` using `build/build.py`.
 
-| Build Guard | Evidence | Outcome |
-|---|---|---|
-| 1. Current canonical core, build placeholders | `core/nova-core.js` / `.css` SHA256 are `1e3a118e...` / `eaf043ca...`, identical byte-for-byte to the original current core used by F3-08; `build/F3-09.src.html` and `build/build.py` inline these into a self-contained HTML | Verified |
-| 2. Only core drawing and interaction helpers | `src/F3-09.js:29,40–101`: `N.svg.root`, `N.neonPath`, `N.neonBox`, `N.neonRing`, `N.chalkText`, `N.ui.svgDrag`, `N.motion.arrive`, `N.scene.helperStrip`. The 3D shapes are isometric polygon data rendered through core `N.neonPath`; no handmade SVG filter, no new core style | Verified |
-| 3. Mathematical fractions | `src/F3-09.js:106–109` uses `N.mt.render` on `27^{\\frac{1}{3}}=3` (proper stacked fraction), also visible on mobile in `.f309-frac`. Screenshot `shots/F3-09-380-fractional-index-stage.png`; numerator measured at 21.3px | Verified against approved fraction notation |
-| 4. Premium neon depth and 380px layout | Core `N.neonPath`/`N.neonBox` give glass fill and glow. Actual stage screenshots `shots/F3-09-380-square-stage.png`, `shots/F3-09-380-cube-stage.png`, `shots/F3-09-380-challenge-complete-stage.png`, `shots/F3-09-1280-explore.png`. Stage responsive and no horizontal overflow in `tests/BROWSER-RESULTS.json` | Implemented; visual size/quality owner gate pending |
-| 5. F0/F2-style pointer drag, removal, keyboard and recovery | `src/F3-09.js:85–95,122–147,165–174`; `tests/DRAG-RESULTS.json`, `tests/DRAG-NORMAL-RESULTS.json`: fast source placement, wrong drop, remove tile, Escape and isometric cube placement in both widths, all passed. `tests/CANCEL-RESULTS.json`: reversal/blur cancellation passes in both widths with zero stranded pieces | Verified for tested paths |
-| 6. Mascots | `src/F3-09.js:26–29` routes **short** prompts and F0 pose states through `N.scene.helperStrip`; `shots/F3-09-380-challenge-complete-stage.png` shows the F0 bottom-right dock; Sir Bob narrations `src/F3-09.js:32–38`; F0 already embeds permitted character artwork | Canonical system used; expanded external pose manifests still unverified |
-| 7. Hygiene | `src/F3-09.js:2–11` declares fixed event keys, `emit` rejects unknown keys; developer specs move under collapsed `details.nv-dev` at `src/F3-09.js:177–179`; labelled input and alternative buttons; no local game scoring; ready for F0-12 wrapper | Verified |
-| 8. Self QA with evidence | `tests/BROWSER-RESULTS.json`: 8 mode/viewport checks with one SVG and one dock, no JS errors or page overflow. `tests/STRESS-RESULTS.json`: 188 mathematical assertions × 2 widths, 0 failures; complete 4, 8, 27 proofs at each width. `tests/DRAG-RESULTS.json`: 14 checks passed; `DRAG-NORMAL-RESULTS.json`: 14 checks passed. `CANCEL-RESULTS.json`: 2 width cases with active fast-reversal and clean blur cancellation. | Verified |
-| 9. Owner acceptance | Side-by-side judgement against F2-01–03 and mouse feel must be signed off by owner. Exact expanded pose-manifest requirements cannot be verified from the supplied core. | **Not yet GOLD** |
+| Master guard | Evidence / result |
+|---|---|
+| **1 Canonical core** | `core/nova-core.js` SHA256 `1e3a118ed3a38a087517…` and `core/nova-core.css` SHA256 `eaf043ca9db09bee17c0…` match the ORIGINAL supplied `bank-v3-neon-chalk/core` byte-for-byte. `build/build.py` inlines them using the two placeholder tokens in `build/F3-11.src.html`. |
+| **2 Helpers only** | `src/F3-11.js` uses `NOVA.neonBox`, `NOVA.neonPath`, `NOVA.neonLine`, `NOVA.neonRing`, `NOVA.chalkText`, `NOVA.numberLine`, `NOVA.motion.flash`, `NOVA.ui.svgDrag`. The number-line code is at `src/F3-11.js:75`; there are no separate custom tick loops. |
+| **3 Fractions** | `src/F3-11.js` fractional preset rendered by canonical `NOVA.neonTile` + `NOVA.mt.render` syntax `125^{\frac{1}{3}}=5`; actual stacked fraction visible in `shots/F3-11-380-cube-stage.png`. |
+| **4 Premium glass + mobile** | Main glass square/cube from canonical neon helpers. `shots/F3-11-380-square-stage.png`, `shots/F3-11-380-cube-stage.png`, `shots/F3-11-1280-square-stage.png` and `shots/F3-11-1280-cube-stage.png` show the board. Eight screen/mode checks in `tests/BROWSER-RESULTS.json`: 8/8 passed. No horizontal page overflow. Chalk labels in SVG are 27–63 SVG units, scaling to readable mobile sizes. |
+| **5 Drag and keyboard** | `src/F3-11.js:80–96` core drag handle, discrete snap zones along the actual line and red Remove zone. `tests/fast_drag.py` verifies one-step cursor jump, rapid reversals, wrong drop, Escape, Remove at both 380px and 1280px with normal and reduced motion. **20/20 passed, zero stranded drags.** Slider/Arrow/Home/End and ±0.1 buttons are alternatives. |
+| **6 Mascots & Sir Bob** | `src/F3-11.js:13–18` F0 helper strip with short prompts and F0 helper poses; Watch `STEPS` has dedicated detailed Sir Bob narration. All actual helper images derive from F0 and are observed for alt-text. Expanded pack80/pack60 pose manifests unavailable: **exact pose names not independently verified.** |
+| **7 Hygiene/events** | `src/F3-11.js:2–10` fixed `CONFIG.events` key list; `evt()` asserts keys. Developer/spec details moved under `details.nv-dev` at file end; no visible developer labels. No game logic in engine. |
+| **8 Evidence and QA** | `tests/MATH-RESULTS.json`: **1792 assertions, 0 failures**. `tests/CHALLENGE-RESULTS.json`: **10/10** browser proofs incl. full 4-question sequence at two widths. `tests/DRAG-RESULTS.json`: **20/20** physical drag checks. `tests/BROWSER-RESULTS.json`: **8** mode/width checks. `shots/` includes visual evidence. |
+| **9 Acceptance** | **Awaiting owner side-by-side visual and interaction approval versus F2-01..F2-03. NOT marked GOLD.** |
 
-## Mathematical review
+## Mathematical tests
 
-- Both-dimensional volume is computed as **n³ = n × n × n**, square area as **n² = n × n** (`src/F3-09.js:12–23`).
-- Each unit has a unique slot with index `z*n*n+r*n+c`, so the final figure is a solid volume, not 27 duplicates stacked into one position.
-- The shape must be complete **and** the correct total supplied for Challenge (`src/F3-09.js:141–149`).
-- A bug found in initial stress testing was fixed: for n=2,p=2, n×p equals n² accidentally; correct totals now take precedence over misconception rules (`src/F3-09.js:20`).
-- Challenge numbers 4, 8 and 27 completed using keyboard at both viewport widths.
+`tests/math_sweep.py` tests all target areas 2–144, all cube volumes 8–216, sqrt/cbrt, bracketing, allowed domain, numerical comparison, 0.1 quantisation, perfect-root accuracy and specific misconception feedback. **1792 passed, 0 failed.**
 
-## Regression notes
+## Limitations
 
-The native fast-drag review caught an SVG label blocking pickup of a placed square. Setting the label to non-intercepting fixed re-grab and actual removal. Both normal motion and reduced motion runs were rerun and passed. No canonical F0 file was edited.
-
-## Outstanding
-
-1. Owner's visual review against F2 Premium Edition (including subjective appearance, spacing and stage-size target).
-2. Optional exact pose-manifest verification if those extended asset packs are supplied.
-3. Additional manual testing in the target learner environment is recommended before GOLD sign-off.
+The drag implementation adds a narrow pointer-capture recovery handler in `src/F3-11.js`, because F0's SVG reparenting may lose capture in Chromium at fast speed. **The canonical core itself has not been altered.** The mobile and desktop appearance passed automated checks; the owner's visual sign-off is still required. Core F0 still has its available original mascot art; no extra manifest artwork was fabricated.

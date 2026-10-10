@@ -1,30 +1,569 @@
-[
-  {
-    "width": 380,
-    "maths": {
-      "assertions": 188,
-      "fail": 0
-    },
-    "challenge": [
-      4,
-      8,
-      27
-    ],
-    "won": true,
-    "errors": []
+{
+  "summary": {
+    "total": 112,
+    "passed": 112,
+    "failed": []
   },
-  {
-    "width": 1280,
-    "maths": {
-      "assertions": 188,
-      "fail": 0
+  "checks": [
+    {
+      "ok": true,
+      "name": "signed change 150",
+      "width": 320
     },
-    "challenge": [
-      4,
-      8,
-      27
-    ],
-    "won": true,
-    "errors": []
-  }
-]
+    {
+      "ok": true,
+      "name": "arithmetic 150",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "responsive 150",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "signed change -100",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "arithmetic -100",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "responsive -100",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "signed change 0",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 0",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "responsive 0",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "signed change -25",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "arithmetic -25",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "responsive -25",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "signed change 100",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 100",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "responsive 100",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "signed change 200",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 200",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "responsive 200",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "keyboard right",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "escape idle drag state",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Escape cancels actual drag",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "cancel leaves value unchanged",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "invalid-drop released",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "invalid-drop unchanged",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 0",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 1",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 2",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "zero errors",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "signed change 150",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 150",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "responsive 150",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "signed change -100",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "arithmetic -100",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "responsive -100",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "signed change 0",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 0",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "responsive 0",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "signed change -25",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "arithmetic -25",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "responsive -25",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "signed change 100",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 100",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "responsive 100",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "signed change 200",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 200",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "responsive 200",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "keyboard right",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "escape idle drag state",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "Escape cancels actual drag",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "cancel leaves value unchanged",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "invalid-drop released",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "invalid-drop unchanged",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 0",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 1",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 2",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "zero errors",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "signed change 150",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 150",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "responsive 150",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "signed change -100",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "arithmetic -100",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "responsive -100",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "signed change 0",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 0",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "responsive 0",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "signed change -25",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "arithmetic -25",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "responsive -25",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "signed change 100",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 100",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "responsive 100",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "signed change 200",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 200",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "responsive 200",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "keyboard right",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "escape idle drag state",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "Escape cancels actual drag",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "cancel leaves value unchanged",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "invalid-drop released",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "invalid-drop unchanged",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 0",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 1",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 2",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "zero errors",
+      "width": 380
+    },
+    {
+      "ok": true,
+      "name": "signed change 150",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 150",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "responsive 150",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "signed change -100",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "arithmetic -100",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "responsive -100",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "signed change 0",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 0",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "responsive 0",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "signed change -25",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "arithmetic -25",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "responsive -25",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "signed change 100",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 100",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "responsive 100",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "signed change 200",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "arithmetic 200",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "responsive 200",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "keyboard right",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "escape idle drag state",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "Escape cancels actual drag",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "cancel leaves value unchanged",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "invalid-drop released",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "invalid-drop unchanged",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 0",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 1",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "mode-switch retained one handle 2",
+      "width": 1280
+    },
+    {
+      "ok": true,
+      "name": "zero errors",
+      "width": 1280
+    }
+  ]
+}

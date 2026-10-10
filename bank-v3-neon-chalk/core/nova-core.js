@@ -1097,7 +1097,7 @@ NOVA.ui.svgDrag=function(svg,el,o){o=o||{};var E=NOVA.svg.el,coarse=window.match
     st.move=function(ev){if(st.done||ev.pointerId!==st.id)return;var q=pt(ev);st.tx=q.x-st.x0;st.ty=q.y-st.y0;st.moved=st.moved||Math.abs(st.tx)+Math.abs(st.ty)>3;
       if(rm)frame();else if(!st.raf)st.raf=requestAnimationFrame(frame);var zs=o.zones?o.zones():[],z=null;zs.forEach(function(Z){if(inZ(Z,q.x,q.y))z=Z;});hl(z);};
     function finish(){st.done=true;cancelAnimationFrame(st.raf);hl(null);NOVA.ui._drag=null;try{el.releasePointerCapture(st.id);}catch(_){}
-      el.removeEventListener('pointermove',st.move);el.removeEventListener('pointerup',st.up);el.removeEventListener('pointercancel',st.cancel);el.removeEventListener('lostpointercapture',st.lost);window.removeEventListener('pointermove',st.move);}
+      el.removeEventListener('pointermove',st.move);el.removeEventListener('pointerup',st.up);el.removeEventListener('pointercancel',st.cancel);el.removeEventListener('lostpointercapture',st.lost);window.removeEventListener('pointermove',st.move);window.removeEventListener('pointerup',st.up);window.removeEventListener('pointercancel',st.cancel);}
     function goHome(){clearT();if(home&&home.isConnected&&el.parentNode!==home){try{home.insertBefore(el,next&&next.parentNode===home?next:null);}catch(_){home.appendChild(el);}}}
     function back(){var dx=st.dx,dy=st.dy,r=st.rot;finish();if(!el.isConnected)return;NOVA.motion.tween(380,function(e2){setT(dx*(1-e2),dy*(1-e2),r*(1-e2),1.12-.12*e2);},NOVA.motion.ease.spring,goHome);}
     st.cancel=function(){if(!st.done)back();};
@@ -1109,6 +1109,7 @@ NOVA.ui.svgDrag=function(svg,el,o){o=o||{};var E=NOVA.svg.el,coarse=window.match
         NOVA.motion.tween(300,function(e2){setT(sx+(to.x-cx-sx)*e2,sy+(to.y-cy-sy)*e2,0,1.12-.8*e2);el.style.opacity=String(1-e2);},NOVA.motion.ease.inOut,function(){el.style.opacity='';goHome();o.onRemove();});return;}
       back();};
     el.addEventListener('pointermove',st.move);el.addEventListener('pointerup',st.up);el.addEventListener('pointercancel',st.cancel);el.addEventListener('lostpointercapture',st.lost);
-    if(!st.captured)window.addEventListener('pointermove',st.move);
+    /* v3.6.2-F5 QA fix: reparenting a dragged SVG <g> can silently drop pointer capture. */
+    window.addEventListener('pointermove',st.move);window.addEventListener('pointerup',st.up);window.addEventListener('pointercancel',st.cancel);
     NOVA.ui._drag={cancel:st.cancel,up:st.up,get moved(){return st.moved;},get captured(){return st.captured;},el:el};});
   return el;};

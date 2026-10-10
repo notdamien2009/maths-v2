@@ -1,0 +1,153 @@
+<!doctype html><html lang="en" data-theme="dark" data-house="neon-chalk" data-premium="1"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NOVA F5-07 · Premium add and subtract fractions</title>
+<style>@@CSS@@
+/* Local F5-07 premium instrument styling: core stays version locked. */
+.af-svg.nv-svg{width:100%;max-width:1120px;height:auto;display:block;margin:auto;touch-action:pan-y}
+.af-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px;margin:11px auto}
+.af-controls label{font:700 1.07rem var(--nova-font-chalk-write);color:#cbe6f8}
+.af-msg{font:700 1.08rem/1.45 var(--nova-font-chalk-write);color:#d2eaff;text-align:center;max-width:970px;min-height:28px;margin:7px auto}
+.af-peer{display:flex;align-items:center;justify-content:center;gap:12px;font:700 1.02rem var(--nova-font-chalk-write);color:#c9e9ff}.af-peer img{height:105px;width:83px;object-fit:contain}
+.af-number{width:75px;text-align:center}.af-drag:focus-visible,.af-piece:focus-visible{outline:none;filter:drop-shadow(0 0 10px #71e8ff)}
+@media(max-width:520px){.af-controls{gap:6px}.af-controls label{font-size:.98rem}.af-peer img{height:82px;width:67px}}
+@media print{.nova-tabs,.nova-tl,.nova-helperbar,.nova-panel{display:none!important}}
+</style></head><body data-topic="number"><div class="nova-wrap">
+<header id="nova-header" data-run="F5 · Premium Edition rebuild · 07" data-title="Add & Subtract Fractions · Equal-Unit Workshop" data-sub="Make equal-size pieces, combine them or remove them, and prove each operation on one fixed whole."></header>
+<main id="gallery"></main><section class="nova-card nova-logcard" aria-label="NOVA event log"><h2 style="font-size:1.1em">NOVA events</h2><div id="log" class="nova-log" role="log" aria-live="off"></div><button class="nova-btn" id="clearlog">Clear log</button></section></div>
+<script>@@JS@@</script><script>
+var NOVA_F5_07_CONFIG={startMode:'guided',preset:'halfThird',events:['preset','operation','firstNumerator','firstDenominator','secondNumerator','secondDenominator','repartition','pieceDrag','pieceKeyboard','returnDrag','returnKeyboard','reset'],presets:{
+ halfThird:{label:'1/2 + 1/3',op:'add',a:1,b:2,c:1,d:3},quarters:{label:'1/4 + 2/4',op:'add',a:1,b:4,c:2,d:4},improper:{label:'3/4 + 2/3',op:'add',a:3,b:4,c:2,d:3},fifths:{label:'2/5 + 1/10',op:'add',a:2,b:5,c:1,d:10},subtract:{label:'3/4 − 1/2',op:'subtract',a:3,b:4,c:1,d:2},subtractSame:{label:'5/6 − 1/3',op:'subtract',a:5,b:6,c:1,d:3},zero:{label:'0/3 + 2/3',op:'add',a:0,b:3,c:2,d:3},whole:{label:'1/2 + 1/2',op:'add',a:1,b:2,c:1,d:2}}};
+(function(){'use strict';
+var N=NOVA,S=N.svg,E=S.el,M=N.motion,H=N.h,C=NOVA_F5_07_CONFIG,ID='F5-07',live=null;
+function emit(k,v){if(!C.events.includes(k))throw Error('F5-07 undeclared value key '+k);N.events.emit('value',{engine:ID,key:k,value:v});}
+function t(parent,x,y,str,role,size,anchor){return N.chalkText(parent,x,y,String(str),{role:role||'support',size:size||21,anchor:anchor||'middle'});}
+function box(p,x,y,w,h,fill,attr){return E('rect',Object.assign({x:x,y:y,width:w,height:h,fill:fill},attr||{}),p);}
+function frac(p,x,y,a,b,role,size){size=size||27;var g=E('g',{'aria-label':a+' over '+b},p);t(g,x,y-size*.31,a,role,size);N.neonLine(g,x-size*.7,y+1,x+size*.7,y+1,{role:role,width:2.3});t(g,x,y+size*.84,b,role,size);return g;}
+function gcd(a,b){while(b){var r=a%b;a=b;b=r;}return Math.abs(a)||1;}
+function lcm(a,b){return a/gcd(a,b)*b;}
+function model(a,b,c,d,op,keep){b=Math.max(2,Math.min(12,Math.round(+b||2)));d=Math.max(2,Math.min(12,Math.round(+d||2)));a=Math.max(0,Math.min(b,Math.round(+a||0)));c=Math.max(0,Math.min(d,Math.round(+c||0)));op=op==='subtract'?'subtract':'add';var L=lcm(b,d);if(L>24)throw new RangeError('These denominators require '+L+' units. Choose denominators with an LCM of at most 24.');if(op==='subtract'&&a*d<c*b)throw new RangeError('The first fraction must be at least as large as the fraction being removed.');var A=a*L/b,B=c*L/d;return {a:a,b:b,c:c,d:d,op:op,L:L,A:A,B:B,common:b===d,repartitioned:keep===undefined?b===d:!!keep,placedA:0,placedB:0,removed:0};}
+function fromPreset(k){var q=C.presets[k]||C.presets.halfThird;return model(q.a,q.b,q.c,q.d,q.op);}
+function value(o){return o.op==='add'?o.A+o.B:o.A-o.B;}
+function gradDefs(s){var defs=E('defs',{},s);function gradient(id,stops){var g=E('linearGradient',{id:id,x1:'0%',y1:'0%',x2:'20%',y2:'100%'},defs);stops.forEach(function(z){E('stop',{offset:z[0],'stop-color':z[1]},g);});}
+ gradient('af-steel',[['0%','#e0f4ff'],['12%','#5485a6'],['30%','#0c243e'],['76%','#386180'],['100%','#e0f4ff']]);
+ gradient('af-face',[['0%','#1f4b69'],['40%','#0c2b47'],['100%','#071a31']]);
+ gradient('af-gold',[['0%','#ffefc0'],['38%',S.c('focus')],['100%','#98571f']]);
+ gradient('af-blue',[['0%','#c5f6ff'],['38%',S.c('op')],['100%','#155079']]);
+ gradient('af-green',[['0%','#e0ffee'],['35%',S.c('result')],['100%','#0e674b']]);
+}
+function frame(s,x,y,w,h){box(s,x-16,y-13,w+32,h+26,'url(#af-steel)',{rx:14,stroke:'#9dcce5','stroke-width':1.2});box(s,x-10,y-7,w+20,h+14,'#06152b',{rx:10,stroke:'#386a8f','stroke-width':2});box(s,x-5,y-3,w+10,h+6,'url(#af-face)',{rx:7,stroke:'#6297b6','stroke-width':1.1});}
+function strip(s,x,y,w,h,den,shaded,role,opts){opts=opts||{};frame(s,x,y,w,h);var cells=[],cw=w/den;for(var k=0;k<den;k++){
+ var on=k<shaded,fill=on?(role==='given'?'url(#af-gold)':role==='op'?'url(#af-blue)':'url(#af-green)'):'#112d48';
+ var cell=box(s,x+k*cw+1,y+2,Math.max(.5,cw-2),h-4,fill,{rx:Math.min(4,cw*.11),stroke:on?S.c(role):'#436580','stroke-width':1.2,'data-cell':role+':'+k});cells.push(cell);
+ if(on&&cw>9)box(s,x+k*cw+3,y+3,Math.max(.3,cw-6),6,'#f4fdff',{opacity:.13,rx:2,'pointer-events':'none'});
+ }return cells;}
+function seal(s,x,y,w,h,name,role,n,d,hidden){N.neonBox(s,x,y,w,h,{role:role,r:14});t(s,x+w/2,y+26,name,role,19);if(hidden)t(s,x+w/2,y+h-22,'Work it out','unknown',22);else frac(s,x+w/2,y+72,n,d,role,24);}
+function maxCount(o){return o.op==='add'?o.A+o.B:o.A;}
+function collected(o){return o.op==='add'?o.placedA+o.placedB:Math.max(0,o.A-o.removed);}
+function sourceLabel(o,which,ready){var original=which==='A'?[o.a,o.b]:[o.c,o.d],converted=which==='A'?[o.A,o.L]:[o.B,o.L];return ready?converted:original;}
+function render(stage,o,opt){opt=opt||{};if(live)live.dead=true;var sc={dead:false};live=sc;
+ var mob=window.innerWidth<=670,W=mob?420:1120,V=mob?(o.repartitioned&&o.op==='add'&&o.A+o.B>o.L?1350:1220):730,x=mob?49:116,w=mob?322:656,h=mob?62:66,yA=mob?216:176,yB=mob?395:322,yR=mob?637:545,yR2=mob?760:625,
+ ready=!!o.repartitioned,displayDen=ready?o.L:o.b,sameUnit=ready||o.b===o.d,hide=!!opt.hide,interact=!!opt.interactive,
+ countA=ready?o.A:o.a,countB=ready?o.B:o.c;
+ stage.innerHTML='';N.cap(stage,ID+' · '+(opt.title||'Equal-size piece workshop'),'PREMIUM');var svg=S.root(W,V,'Two fractions represented by glass part strips on a shared whole. Source parts must first become the same size, then their pieces combine or subtract on the result bar.');svg.classList.add('af-svg');gradDefs(svg);
+ t(svg,mob?210:458,mob?39:39,'Match the unit · then move the pieces','support',mob?21:27);t(svg,mob?210:460,mob?72:74,ready?'Every movable piece is now one '+o.L+'th':'Make every piece the same size first','given',mob?17:20);
+ // three directly comparable glass strips: same left boundary and whole length.
+ function row(y,label,den,shade,role,which){t(svg,x,y-39,label,role,mob?20:23,'start');strip(svg,x,y,w,h,den,shade,role);var ab=sourceLabel(o,which,ready);if(mob){N.neonBox(svg,261,y-95,111,82,{role:role,r:12});frac(svg,317,y-51,ab[0],ab[1],role,22);}else seal(svg,813,y-34,238,129,which==='A'?'First fraction':'Second fraction',role,ab[0],ab[1],false);}
+ row(yA,'First · '+(o.op==='add'?'add':'start'),o.b===o.d||ready?o.L:o.b,countA,'given','A');
+ row(yB,'Second · '+(o.op==='add'?'add':'take away'),ready?o.L:o.d,countB,'op','B');
+ if(ready) {var edge1=x+w*o.A/o.L,edge2=x+w*o.B/o.L;N.neonLine(svg,edge1,yA+h+14,edge1,yB-13,{role:'given',width:2});N.neonRing(svg,edge1,yA+h+13,{role:'given',r:6,pulse:false});N.neonRing(svg,edge2,yB+h+11,{role:'op',r:6,pulse:false});}
+ var operatorY=mob?535:455;
+ N.neonBox(svg,mob?64:112,operatorY-41,mob?290:655,mob?60:57,{role:'support',r:11});
+ t(svg,mob?210:440,operatorY-7,ready?(o.op==='add'?'Move matching-size pieces into the answer':'Drag shaded parts out to the red tray'):'Different partitions · make matching units',ready?'result':'focus',mob?17:22);
+ var resultFilled=!ready?0:(opt.demonstrate!==undefined?opt.demonstrate:collected(o)),resultMax=Math.max(0,maxCount(o));
+ var rCells=ready?o.L:o.b;
+ t(svg,x,yR-34,'Result · same-size units', 'result',mob?20:23,'start');
+ var one=Math.max(0,Math.min(rCells,resultFilled));strip(svg,x,yR,w,h,rCells,one,'result');
+ var hasSecond=ready&&o.op==='add'&&(o.A+o.B>o.L||resultFilled>o.L);
+ if(hasSecond){t(svg,x,yR2-30,'Second whole', 'result',mob?19:20,'start');strip(svg,x,yR2,w,h,o.L,Math.max(0,resultFilled-o.L),'result');}
+ // A lined-up frame shows an endpoint without misleading its scale.
+ var endX=x+w*Math.min(1,resultFilled/rCells);if(resultFilled>0){N.neonRing(svg,endX,yR+h+12,{role:'result',r:8,pulse:false});N.neonLine(svg,x,yR+h+12,endX,yR+h+12,{role:'result',width:2.6});}
+ if(!hide&&ready&&opt.animate&&resultFilled>0&&!N.reducedMotion()){for(var q=0;q<Math.min(12,resultFilled);q++)(function(i){M.delay(i*105+130,function(){if(sc.dead)return;M.flash(svg,x+(i+.5)*w/o.L,yR+h/2,'result',Math.min(24,w/o.L*.5));var tip=box(svg,x+i*w/o.L+2,yR+2,Math.max(.5,w/o.L-4),h-4,S.c('result'),{opacity:.45,rx:3,'pointer-events':'none'});M.tween(280,function(v){if(tip.isConnected)tip.setAttribute('opacity',String(.45*(1-v)));},M.ease.inOut,function(){if(tip.isConnected)tip.remove();});});})(q);}
+ var panelX=mob?50:827,panelY=mob?(hasSecond?867:768):523,panelW=mob?320:242,panelH=mob?195:169;
+ N.neonBox(svg,panelX,panelY,panelW,panelH,{role:ready?'result':'focus',r:16});
+ t(svg,panelX+panelW/2,panelY+31,ready?(o.op==='add'?'Combine the counts':'Remove the count'):'First find equal parts',ready?'result':'focus',mob?21:19);
+ if(ready&&!hide){var target=opt.demonstrate!==undefined?opt.demonstrate:value(o),simp=gcd(Math.abs(target),o.L),wholes=Math.floor(target/o.L),rem=target%o.L;if(target<o.L&&simp===1){frac(svg,panelX+panelW/2,panelY+91,target,o.L,'result',mob?29:28);}else{frac(svg,panelX+panelW/2-64,panelY+91,target,o.L,'given',mob?26:24);t(svg,panelX+panelW/2,panelY+101,'=','support',28);if(target>o.L&&rem>0){t(svg,panelX+panelW/2+40,panelY+102,String(wholes),'result',mob?27:26);var rg=gcd(rem,o.L);frac(svg,panelX+panelW/2+85,panelY+91,rem/rg,o.L/rg,'result',mob?24:23);}else if(target===o.L){t(svg,panelX+panelW/2+64,panelY+102,'1 whole','result',mob?21:18);}else frac(svg,panelX+panelW/2+65,panelY+91,target/simp,o.L/simp,'result',mob?26:24);}}
+ else t(svg,panelX+panelW/2,panelY+101,hide?'?':'same units','unknown',mob?29:25);
+ t(svg,panelX+panelW/2,panelY+panelH-19,ready?(hide?'Count the result pieces': 'One fixed whole throughout'):'Repartition before moving','support',mob?18:17);
+ // Each input unit is draggable. For addition pieces go into result zones. For subtraction, result pieces return to red remove zone.
+ var returnX=mob?60:830,returnY=mob?(hasSecond?1120:1000):430,returnW=mob?298:233,returnH=mob?74:76;
+ N.neonBox(svg,returnX,returnY,returnW,returnH,{role:'unknown',r:13});t(svg,returnX+returnW/2,returnY+33,o.op==='subtract'?'Removal tray':'Return pieces','unknown',mob?20:19);t(svg,returnX+returnW/2,returnY+58,'Drag here to take back','support',mob?15:15);
+ // Constrain incoming areas to the next unfilled unit. Both bars cover the same unit length.
+ var zoneList=[{id:'result',kind:'drop',x:x-13,y:yR-12,w:w+26,h:h+27}];if(hasSecond)zoneList.push({id:'result',kind:'drop',x:x-13,y:yR2-12,w:w+26,h:h+27});zoneList.push({id:'return',kind:'remove',x:returnX,y:returnY,w:returnW,h:returnH});
+ function handlePiece(parent,cx,cy,index,operand,groupType){var xx=cx,yy=cy,g=E('g',{'class':'af-piece','data-piece':groupType+':'+operand+':'+index,tabindex:0,role:'button','aria-label':groupType==='remove'?'Remove one '+o.L+'th from the result':'Move one '+o.L+'th from '+(operand==='A'?'first':'second')+' fraction into the result'},parent),cw=w/o.L;
+ N.neonBox(g,xx-cw*.33,yy-18,Math.max(14,cw*.66),36,{role:groupType==='remove'?'result':operand==='A'?'given':'op',r:Math.min(6,cw*.1)});
+ N.neonRing(g,xx,yy,{role:groupType==='remove'?'result':operand==='A'?'given':'op',r:5,pulse:false});
+ g.addEventListener('keydown',function(e){if(['Enter',' ','ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();opt.move(operand,groupType==='remove'?'return':'result','keyboard');}});
+ N.ui.svgDrag(svg,g,{box:{x:xx-cw*.38,y:yy-20,w:Math.max(18,cw*.76),h:40},canStart:function(){return !sc.dead;},zones:function(){return zoneList;},onDrop:function(id){return opt.move(operand,id,'drag');},onRemove:function(){opt.move(operand,'return','drag');}});
+ }
+ if(interact&&ready&&opt.move){if(o.op==='add'){
+  [['A',o.A,o.placedA,yA],['B',o.B,o.placedB,yB]].forEach(function(z){var nm=z[0],n=z[1],used=z[2],yy=z[3];for(var i=used;i<n;i++)handlePiece(svg,x+(i+.5)*w/o.L,yy+h/2,i,nm,'add');});
+  // Filled result pieces can also be removed through the return tray.
+  for(var j=0;j<o.placedA+o.placedB;j++)handlePiece(svg,x+((j%o.L)+.5)*w/o.L,(j<o.L?yR:yR2)+h/2,j,'R','remove');
+ }else{for(var k=0;k<Math.max(0,o.A-o.removed);k++)handlePiece(svg,x+(k+.5)*w/o.L,yR+h/2,k,'R','remove');}}
+ var bottom=mob?(hasSecond?1275:1150):710;
+ t(svg,mob?210:462,bottom,mob?(ready?'Match the unit before you count':'Equal-size pieces share one whole'):(ready?'Same-size pieces are required for a valid result':'Make the denominators agree without changing their value'),'support',mob?21:18);
+ stage.appendChild(svg);N.scene.helperStrip(stage,opt.pose||'compare',opt.caption||'Equal-sized pieces can be combined fairly.');return sc;
+}
+var steps=[
+ {title:'Notice different sizes',a:1,b:2,c:1,d:3,op:'add',ready:false,show:0,pose:'explain',caption:'A half and a third are not the same-size unit',narration:'One half and one third refer to the same whole, but their individual parts have different widths. We must not count them as two pieces of the same kind.',prompt:'Why can we not simply add one plus one over five?'},
+ {title:'Choose the common unit',a:1,b:2,c:1,d:3,op:'add',ready:true,show:0,pose:'ruler',caption:'Split halves and thirds into sixths',narration:'Six is the smallest common multiple of two and three. The half becomes three sixths. The third becomes two sixths. The shaded lengths do not change.',prompt:'How many sixths represent one half?'},
+ {title:'Move the first pieces',a:1,b:2,c:1,d:3,op:'add',ready:true,show:3,pose:'show-three',caption:'Three sixths arrive from the first fraction',narration:'The first fraction contributes three sixths. They cover three equal cells on the result strip.',prompt:'How many sixths have we placed so far?'},
+ {title:'Add the second pieces',a:1,b:2,c:1,d:3,op:'add',ready:true,show:5,pose:'count',caption:'Two more sixths make five sixths',narration:'Now add two more equally-sized sixths from the second fraction. Together that makes five out of six equal parts.',prompt:'Why does the denominator remain six?'},
+ {title:'Subtract by removing',a:3,b:4,c:1,d:2,op:'subtract',ready:true,show:1,pose:'point-down',caption:'Three quarters minus two quarters leaves one quarter',narration:'For subtraction, start with three quarters. One half equals two quarters. Take two quarter-sized pieces away. One quarter remains.',prompt:'How many equal parts remain?'},
+ {title:'Add beyond one whole',a:3,b:4,c:2,d:3,op:'add',ready:true,show:17,pose:'idea',caption:'Seventeen twelfths is one and five twelfths',narration:'Three quarters is nine twelfths. Two thirds is eight twelfths. Seventeen twelfths fills one complete whole and five twelfths of a second whole.',prompt:'Why do the pieces need a second result bar?'}
+];
+function guided(i,stage){var p=steps[i],o=model(p.a,p.b,p.c,p.d,p.op,p.ready);render(stage,o,{title:p.title,demonstrate:p.show,pose:p.pose,caption:p.caption,animate:i===3||i===5});}
+function explore(panel,stage){var o=fromPreset(C.preset),preset=H('select',{class:'nova-input','aria-label':'Fraction operation preset'}),feedback=H('p',{class:'af-msg',role:'status','aria-live':'polite'});
+ Object.keys(C.presets).forEach(function(k){preset.appendChild(H('option',{value:k,text:C.presets[k].label}));});preset.value=C.preset;
+ var operation=H('select',{class:'nova-input','aria-label':'Operation'},[H('option',{value:'add',text:'Addition'}),H('option',{value:'subtract',text:'Subtraction'})]);operation.value=o.op;
+ var inputs={};[['a','firstNumerator'],['b','firstDenominator'],['c','secondNumerator'],['d','secondDenominator']].forEach(function(z){var key=z[0];inputs[key]=H('input',{class:'nova-input af-number',type:'number',min:key==='a'||key==='c'?0:2,max:key==='a'||key==='c'?12:12,step:1,'aria-label':z[1]});inputs[key].value=o[key];inputs[key].onchange=function(){var a=+inputs.a.value,b=+inputs.b.value,c=+inputs.c.value,d=+inputs.d.value;try{o=model(a,b,c,d,o.op);feedback.textContent='Changed the fractions. '+(o.repartitioned?'Now move the pieces.':'Make same size before dragging.');emit(z[1],o[key]);}catch(e){feedback.textContent=e.message+' The original fractions are unchanged.';}sync();paint(false);};});
+ function sync(){Object.keys(inputs).forEach(function(k){inputs[k].value=o[k];});operation.value=o.op;}
+ function paint(anim){render(stage,o,{title:'Explore · combine matching units',interactive:true,animate:!!anim,hide:false,pose:o.repartitioned?'compare':'ruler',caption:o.repartitioned?'Equal units can move into the answer':'Find a common denominator before moving',move:move});}
+ function move(which,destination,via){var key=via==='drag'?'pieceDrag':destination==='return'?'returnKeyboard':'pieceKeyboard',good=false;
+  if(!o.repartitioned){feedback.textContent='Different-sized pieces cannot be combined. Select Make same size first.';emit(key,{which:which,to:destination,accepted:false});return false;}
+  if(o.op==='add'){
+   if(destination==='return'&&which==='R'&&o.placedA+o.placedB>0){if(o.placedB>0)o.placedB--;else o.placedA--;good=true;}
+   else if(destination==='result'&&which==='A'&&o.placedA<o.A){o.placedA++;good=true;}
+   else if(destination==='result'&&which==='B'&&o.placedB<o.B){o.placedB++;good=true;}
+  }else if(destination==='return'&&which==='R'&&o.removed<o.B){o.removed++;good=true;}
+  emit(key,{which:which,to:destination,accepted:good});
+  feedback.textContent=good?(o.op==='add'?'Collected '+(o.placedA+o.placedB)+' of '+(o.A+o.B)+' same-size pieces.':'Removed '+o.removed+' of '+o.B+' matching-size pieces.'):'Invalid move. Drop a source piece into the result, or return a result piece to the tray.';
+  if(good){paint(false);if(via==='keyboard'){var target=stage.querySelector('[data-piece^="add:'+which+':"]')||stage.querySelector('[data-piece^="remove:"]')||stage.querySelector('[data-piece]');if(target)target.focus();}}return good;
+ }
+ var match=H('button',{class:'nova-btn primary',text:'Make same size',onclick:function(){o.repartitioned=true;o.placedA=o.placedB=o.removed=0;emit('repartition',o.L);feedback.textContent='Repartitioned into '+o.L+' equal pieces per whole. Now move the pieces.';paint(true);}}),reset=H('button',{class:'nova-btn ghost',text:'Reset pieces',onclick:function(){o.placedA=0;o.placedB=0;o.removed=0;emit('reset',true);paint(false);}}),fill=H('button',{class:'nova-btn',text:'Show model',onclick:function(){o.repartitioned=true;if(o.op==='add'){o.placedA=o.A;o.placedB=o.B;}else{o.removed=o.B;}emit('repartition',o.L);feedback.textContent='The full worked model is shown. Undo pieces with the return zone in addition.';paint(true);}});
+ preset.onchange=function(){C.preset=preset.value;o=fromPreset(C.preset);emit('preset',C.preset);sync();feedback.textContent='Make equal-sized pieces, then combine or remove.';paint(false);};operation.onchange=function(){try{o=model(o.a,o.b,o.c,o.d,operation.value);emit('operation',o.op);}catch(e){feedback.textContent=e.message+' The original fractions are unchanged.';}sync();paint(false);};
+ panel.appendChild(H('div',{class:'af-controls'},[H('label',{text:'Preset'}),preset,H('label',{text:'Operation'}),operation]));
+ panel.appendChild(H('div',{class:'af-controls'},[H('label',{text:'First'}),inputs.a,H('label',{text:'over'}),inputs.b,H('label',{text:'Second'}),inputs.c,H('label',{text:'over'}),inputs.d]));
+ panel.appendChild(H('div',{class:'af-controls'},[match,fill,reset]));panel.appendChild(feedback);
+ panel.appendChild(H('p',{class:'af-msg',text:'Drag equal-size units from an input into the result. For subtraction, move result pieces into the red tray. Keyboard: focus a piece and press Enter.'}));
+ C._explore={get:function(){return {...o};},set:function(a,b,c,d,op){o=model(a,b,c,d,op);sync();paint(false);},repartition:function(){o.repartitioned=true;paint(false);},move:move,reset:function(){o.placedA=o.placedB=o.removed=0;paint(false);}};
+ feedback.textContent='Make both input partitions the same size before combining them.';paint(false);
+}
+function challenge(panel,api,stage){var tasks=[
+ {a:1,b:2,c:1,d:3,op:'add',ansN:5,ansD:6,q:'Add one half and one third. Make equal-size pieces and enter the answer.',hint:'The smallest common denominator is six.'},
+ {a:3,b:4,c:1,d:2,op:'subtract',ansN:1,ansD:4,q:'Subtract one half from three quarters. Give the answer in simplest form.',hint:'One half is two quarters, so remove two of the three quarters.'},
+ {a:3,b:4,c:2,d:3,op:'add',ansN:17,ansD:12,q:'Add three quarters and two thirds. An improper fraction is allowed.',hint:'Both fractions can be written in twelfths; the answer exceeds one whole.'}
+ ],idx=0,wrong=0,o=model(1,2,1,3,'add'),question=H('p',{class:'af-msg'}),status=H('p',{class:'af-msg',role:'status','aria-live':'polite'}),numer=H('input',{class:'nova-input af-number',type:'number',min:0,step:1,'aria-label':'Answer numerator'}),denom=H('input',{class:'nova-input af-number',type:'number',min:1,step:1,'aria-label':'Answer denominator'}),check=H('button',{class:'nova-btn primary',text:'Check answer'}),hint=H('button',{class:'nova-btn ghost',text:'Hint'}),img=N.helperImg('read-tablet','teen'),peer=H('img',{src:img.src,alt:img.alt}),peerText=H('span',{text:'Izaac is checking the equal parts.'});
+ function pose(k,msg){var a=N.helperImg(k,'teen');peer.src=a.src;peer.alt=a.alt;peerText.textContent=msg;}
+ function repaint(){render(stage,o,{title:'Challenge · calculate the result',hide:true,interactive:true,pose:'think',caption:'Make equal parts, then complete the operation',move:function(which,to,via){if(!o.repartitioned)return false;var good=false;if(o.op==='add'){if(which==='A'&&to==='result'&&o.placedA<o.A){o.placedA++;good=true;}if(which==='B'&&to==='result'&&o.placedB<o.B){o.placedB++;good=true;}if(which==='R'&&to==='return'&&o.placedA+o.placedB){if(o.placedB)o.placedB--;else o.placedA--;good=true;}}else if(which==='R'&&to==='return'&&o.removed<o.B){o.removed++;good=true;}if(good){emit(via==='drag'?'pieceDrag':'pieceKeyboard',{which:which,to:to,accepted:true});repaint();}return good;}});}
+ var match=H('button',{class:'nova-btn',text:'Make equal parts',onclick:function(){o.repartitioned=true;emit('repartition',o.L);repaint();}});
+ function load(){var q=tasks[idx];o=model(q.a,q.b,q.c,q.d,q.op);wrong=0;question.textContent='Challenge '+(idx+1)+' of 3 · '+q.q;numer.value='';denom.value='';api.fb.textContent='';status.textContent='Use a common denominator and count the result.';pose('read-tablet','Izaac is ready to check your maths.');repaint();}
+ check.onclick=function(){var q=tasks[idx],ok=numer.value.trim()!==''&&denom.value.trim()!==''&&Number(numer.value)===q.ansN&&Number(denom.value)===q.ansD&&o.repartitioned;
+ api.check(ok,ok?'Correct. Equal units were combined or removed accurately.':'Not yet. Make equal-sized pieces and check the numerator and denominator.',{task:idx});if(ok){pose(idx===2?'victory':'proud','Good reasoning with equal-sized units.');status.textContent=idx===2?'All three challenges complete.':'Correct — next problem…';if(idx<2)M.delay(620,function(){idx++;load();});else check.disabled=true;}else{wrong++;pose(wrong>1?'worried':'read-tablet','Recheck the equal parts.');status.textContent='Use Make equal parts before submitting the answer.';}};
+ hint.onclick=function(){api.hint(tasks[idx].hint);pose('idea','Try Izaac’s suggestion.');status.textContent=tasks[idx].hint;};
+ panel.appendChild(question);panel.appendChild(H('div',{class:'af-controls'},[match,H('label',{text:'Numerator'}),numer,H('label',{text:'Denominator'}),denom,check,hint]));panel.appendChild(status);panel.appendChild(H('div',{class:'af-peer'},[peer,peerText]));
+ C._challenge={get:function(){return {task:idx,...o};},set:function(n,d,ready){o.repartitioned=ready!==false;numer.value=n;denom.value=d;repaint();}};load();
+}
+var DEF={id:ID,title:'Add & Subtract Fractions · Equal-Unit Workshop',config:C,steps:steps,render:guided,explore:explore,challenge:challenge,
+ alt:'Two premium glass fraction strips with equal-length wholes and original or shared partitions, plus a green result strip, physical draggable fraction pieces and a red removal tray.',
+ staticAlt:'One half plus one third becomes three sixths plus two sixths and equals five sixths. Three quarters minus one half becomes three quarters minus two quarters, leaving one quarter.',
+ exploreIntro:'Choose addition or subtraction. Use a common denominator, move same-sized pieces onto the result, and use the red tray for subtraction or to return placed pieces.'};
+N.registry.add({id:ID,title:DEF.title,family:'F5',topics:['addition of fractions','subtraction of fractions','common denominator'],deps:['F0-02','F0-03','F0-04','F0-05','F5-05','F5-06']});
+N.bankMount({id:ID,num:'F5·07',title:DEF.title,def:DEF,years:'KS3 Years 7–9',linked:['F5-05','F5-06','F5-07'],spec:{purpose:'Add or subtract fractions by physical movement of equal-size units, with a common-denominator reveal and fixed-length whole.',params:'Numerator and denominator per operand, add/subtract, LCM shared partition up to 24, two-whole result when sum exceeds one.',presets:'One half plus one third, same-denominator quarters, three quarters plus two thirds, two fifths plus one tenth, three quarters minus one half, five sixths minus one third, zero and whole.',steps:'Observe incompatible units → common partition → first contribution → second contribution → removal example → improper result.',interactions:'Native svgDrag source-piece transfers, result return zone, subtraction removal tray, Enter keyboard moves, configurable operands, built-in three-question assessment.',traps:'Adding denominators, counting unlike-size pieces, subtraction from the wrong operand, assuming a sum cannot exceed one, keeping fractional quantities off a common whole.',gcse:'Supports fluency through reasoning about common multiples, equivalent fractions and improper answers; visual maths always uses genuine stacked NOVA Chalk fractions.'}});
+var log=document.getElementById('log');function logIt(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,4000);}N.events.history().forEach(logIt);N.events.on('*',logIt);document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();</script></body></html>

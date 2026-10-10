@@ -1,0 +1,175 @@
+<!doctype html><html lang="en" data-theme="dark" data-house="neon-chalk" data-premium="1">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NOVA F5-02 · Premium fraction circle workshop</title>
+<style>@@CSS@@
+/* F5-02 premium dial. Locked F0 design and chalk styles; component-scoped only. */
+.fc-row{display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap;margin:9px 0}
+.fc-row label{font:700 1.05rem var(--nova-font-chalk-write);color:#cbe8f4}
+.fc-hint{font:700 1.02rem/1.45 var(--nova-font-chalk-write);text-align:center;color:#d3eaf5;padding:5px 11px;margin:3px auto}
+.fc-state{font:700 1.07rem/1.4 var(--nova-font-chalk-write);color:#beebfb;text-align:center;min-height:29px}
+.fc-equation{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;margin:5px 0}
+.fc-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+.fc-actions .nova-btn{min-height:40px}
+.fc-peer{display:flex;align-items:center;justify-content:center;gap:10px;font:700 1.02rem var(--nova-font-chalk-write);color:#cceaf8;margin:10px auto}
+.fc-peer img{width:91px;height:103px;object-fit:contain;filter:drop-shadow(0 0 8px #71b4f966)}
+.nova-stage>svg.nv-svg.fc-drawing{width:100%;max-width:1090px;height:auto;display:block;margin:4px auto 0;touch-action:pan-y}
+.fc-keyboard{font:600 .99rem var(--nova-font-chalk-write);color:#accedc;text-align:center}
+.fc-dev{font-size:.9rem}
+@media(max-width:520px){.fc-peer img{width:72px;height:88px}.fc-hint{font-size:1rem}}
+@media print{.nova-tabs,.nova-tl,.nova-helperbar,.nova-panel{display:none!important}}
+</style></head><body data-topic="number"><div class="nova-wrap">
+<header id="nova-header" data-run="F5 · Premium Edition rebuild · 02" data-title="Fraction circles · Precision sector workshop" data-sub="Build equal parts by fitting glass sectors into a circular whole, then prove fraction equivalence."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log"><h2 style="font-size:1.1em">NOVA events</h2><div id="log" class="nova-log" role="log" aria-live="off"></div><button class="nova-btn" id="clearlog">Clear log</button></section></div>
+<script>@@JS@@</script><script>
+var NOVA_F5_02_CONFIG={startMode:'guided',preset:'quarters',events:['denominator','numerator','factor','pieceAdded','pieceRemoved','clear','preset'],presets:{quarters:{label:'A quarter',d:4,n:1},halves:{label:'A half',d:2,n:1},thirds:{label:'Two thirds',d:3,n:2},eighths:{label:'Three eighths',d:8,n:3},empty:{label:'Empty circle',d:4,n:0}}};
+(function(){'use strict';
+var N=NOVA,S=N.svg,E=S.el,M=N.motion,H=N.h,C=NOVA_F5_02_CONFIG,ID='F5-02',TAU=Math.PI*2,active=null;
+function send(k,v){if(C.events.indexOf(k)<0)throw Error('Unregistered F5-02 key: '+k);N.events.emit('value',{engine:ID,key:k,value:v});}
+function rgba(r){return S.c(r)}
+function polar(x,y,r,a){return [x+r*Math.cos(a),y+r*Math.sin(a)]}
+function pathSector(x,y,r,start,end){if(end-start>=TAU-1e-7){return 'M'+(x-r)+' '+y+' a'+r+' '+r+' 0 1 0 '+(2*r)+' 0 a'+r+' '+r+' 0 1 0 '+(-2*r)+' 0 Z';}
+ var a=polar(x,y,r,start),b=polar(x,y,r,end);return 'M'+x+' '+y+' L'+a[0].toFixed(3)+' '+a[1].toFixed(3)+' A'+r+' '+r+' 0 '+(end-start>Math.PI?1:0)+' 1 '+b[0].toFixed(3)+' '+b[1].toFixed(3)+' Z';}
+function stack(parent,x,y,n,d,role,size){var q=size||19,g=E('g',{'aria-label':n+' over '+d},parent);N.chalkText(g,x,y-q*.30,String(n),{size:q,role:role,anchor:'middle'});N.neonLine(g,x-q*.6,y+1,x+q*.6,y+1,{role:role,width:Math.max(1.9,q*.12)});N.chalkText(g,x,y+q*.98,String(d),{size:q,role:role,anchor:'middle'});return g;}
+function label(parent,x,y,t,size,role,anchor){return N.chalkText(parent,x,y,t,{size:size||20,role:role||'support',anchor:anchor||'middle'});}
+function addGradient(s){var defs=E('defs',{},s);
+ function gradient(id,stops,radial){var g=E(radial?'radialGradient':'linearGradient',{id:id,x1:'7%',y1:'5%',x2:'95%',y2:'97%'},defs);stops.forEach(function(v){E('stop',{offset:v[0],'stop-color':v[1],'stop-opacity':v[2]==null?1:v[2]},g);});}
+ gradient('fc-metal',[['0%','#e2f3ff'],['18%','#6b8aa8'],['43%','#152744'],['78%','#799ebc'],['100%','#132840']]);
+ gradient('fc-face',[['0%','#243954'],['45%','#10233a'],['100%','#071529']],true);
+ gradient('fc-vacant',[['0%','#21344e'],['68%','#10223b'],['100%','#07172a']],true);
+ gradient('fc-amber',[['0%','#ffe8a4'],['35%',rgba('focus')],['100%','#805419']],true);
+ gradient('fc-green',[['0%','#bcffe3'],['37%',rgba('result')],['100%','#11624e']],true);
+ gradient('fc-shade',[['0%','#071020',.9],['100%','#071020',0]],true);
+}
+function bezel(s,cx,cy,r,role){var g=E('g',{class:'fc-bezel'},s);
+ E('ellipse',{cx:cx,cy:cy+r+17,rx:r+26,ry:22,fill:'url(#fc-shade)'},g);
+ E('circle',{cx:cx,cy:cy,r:r+23,fill:'url(#fc-metal)',stroke:'#c9ebff','stroke-width':1.1,'stroke-opacity':.63},g);
+ E('circle',{cx:cx,cy:cy,r:r+17,fill:'#06132a',stroke:'#91bfdc','stroke-opacity':.75,'stroke-width':2},g);
+ E('circle',{cx:cx,cy:cy,r:r+10,fill:'url(#fc-face)',stroke:'#406784','stroke-width':1.8},g);
+ for(var a=0;a<48;a++){var phi=-Math.PI/2+a*TAU/48,k=a%4===0,aa=polar(cx,cy,r+12,phi),bb=polar(cx,cy,r+(k?20:16),phi);N.neonLine(g,aa[0],aa[1],bb[0],bb[1],{role:k?'support':role,width:k?1.6:1});}
+ E('circle',{cx:cx,cy:cy,r:r+2,fill:'url(#fc-vacant)',stroke:rgba(role),'stroke-width':1.5,'stroke-opacity':.8},g);return g;}
+function sector(s,cx,cy,r,d,index,on,role,opts){opts=opts||{};var angle=-Math.PI/2+(index+.5)*TAU/d,off=opts.explode||0;
+ var g=E('g',{'data-sector':String(index),'data-d':String(d),transform:'translate('+(Math.cos(angle)*off).toFixed(2)+','+(Math.sin(angle)*off).toFixed(2)+')'},s);
+ var p=pathSector(cx,cy,r,-Math.PI/2+index*TAU/d,-Math.PI/2+(index+1)*TAU/d);
+ var col=on?'url(#fc-'+(role==='result'?'green':'amber')+')':'url(#fc-vacant)';
+ E('path',{d:p,fill:col,stroke:'#b9eaff','stroke-opacity':on?.83:.24,'stroke-width':on?1.7:1.15},g);
+ if(on){E('path',{d:p,fill:'none',stroke:rgba(role),'stroke-width':2.6,'stroke-opacity':.6,filter:'url(#nv-neon-soft)'},g);
+   var vec=polar(cx,cy,r*.72,angle),arc=polar(cx,cy,r*.84,angle);E('circle',{cx:vec[0],cy:vec[1],r:Math.max(2.5,Math.min(5,r/d*1.7)),fill:'#e7fffa','fill-opacity':.4},g);}
+ E('path',{d:p,fill:'transparent',stroke:'none',css:'pointer-events:all'},g);return g;}
+function rail(s,cx,y,ratio,d,role,hide){var w=228,x=cx-w/2;N.neonBox(s,x-9,y-9,w+18,30,{role:role,r:8});
+ E('rect',{x:x,y:y,width:w,height:12,rx:3,fill:'#1b2d47'},s);
+ E('rect',{x:x,y:y,width:w*ratio,height:12,rx:2,fill:rgba(role),opacity:.85},s);
+ for(var i=1;i<d;i++){var xx=x+i*w/d;E('line',{x1:xx,y1:y-1,x2:xx,y2:y+13,stroke:'#eaf8ff','stroke-width':.7,'stroke-opacity':.7},s);}
+ label(s,cx,y+48,hide?'Count the shaded sectors':(Math.round(ratio*d)+' of '+d+' equal parts'),19,role);}
+function dial(s,cx,cy,r,n,d,role,opts){opts=opts||{};var gr=E('g',{'data-dial':role},s);bezel(gr,cx,cy,r,role);
+ if(d===1){sector(gr,cx,cy,r,1,0,n>0,role,opts);}
+ else for(var i=0;i<d;i++){var g=sector(gr,cx,cy,r,d,i,i<n,role,Object.assign({},opts,{explode:(opts.explode&&i<n?opts.explode:0)}));
+ if(opts.interactive&&i<n){(function(index,elt){elt.setAttribute('data-placed',String(index));elt.setAttribute('role','button');elt.setAttribute('tabindex','0');elt.setAttribute('aria-label','Remove sector '+(index+1)+' from the circle');
+ elt.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '||e.key==='Delete'||e.key==='Backspace'){e.preventDefault();opts.remove(index);}});
+ var a=-Math.PI/2+(index+.5)*TAU/d,tx=cx+Math.cos(a)*r*.47,ty=cy+Math.sin(a)*r*.47;
+ N.ui.svgDrag(s,elt,{box:{x:tx-16,y:ty-16,w:32,h:32},canStart:function(){return !opts.dead();},zones:function(){return [{id:'tray',kind:'remove',x:opts.tray.x,y:opts.tray.y,w:opts.tray.w,h:opts.tray.h}];},removeTo:{x:opts.tray.x+opts.tray.w/2,y:opts.tray.y+opts.tray.h/2},onRemove:function(){if(!opts.dead())opts.remove(index);}});
+ })(i,g);}
+ }
+ E('circle',{cx:cx,cy:cy,r:r+3,fill:'none',stroke:rgba(role),'stroke-width':2.1,'stroke-opacity':.85,css:'pointer-events:none'},gr);
+ E('circle',{cx:cx,cy:cy,r:7.5,fill:'#0a1930',stroke:'#b7dff5','stroke-width':1.6,css:'pointer-events:none'},gr);
+ E('circle',{cx:cx,cy:cy,r:3,fill:rgba(role),css:'pointer-events:none'},gr);return gr;}
+function renderScene(stage,state,opt){if(active)active.dead=true;var obj={dead:false},small=innerWidth<=670;active=obj;
+ opt=opt||{};stage.innerHTML='';N.cap(stage,'F5-02 · '+(opt.mode||'precision sector workshop'),'PREMIUM');
+ var W=small?420:1100,V=small?1210:810,sv=S.root(W,V,'Premium fraction circles. One circle is built from equal sectors and a same-size comparison circle shows an equivalent partition.');sv.classList.add('fc-drawing');addGradient(sv);
+ var x1=small?210:283,x2=small?210:817,y1=small?229:244,y2=small?776:244,r=small?122:144;
+ var d=state.d,n=state.n,fac=state.factor||2,mode=!!opt.interactive;
+ label(sv,x1,small?37:39,'Original whole',small?22:25,'support');label(sv,x1,small?63:69,d+' equal sectors',small?19:19,'focus');
+ label(sv,x2,small?603:39,'Same-size whole',small?22:25,'support');label(sv,x2,small?631:69,(d*fac)+' finer sectors',small?19:19,'result');
+ var tray=small?{x:32,y:435,w:356,h:135}:{x:52,y:515,w:996,h:112};
+ dial(sv,x1,y1,r,n,d,'focus',{interactive:mode,dead:function(){return obj.dead;},tray:tray,remove:function(i){if(obj.dead)return;state.n=Math.max(0,state.n-1);send('pieceRemoved',i);send('numerator',state.n);opt.change('remove');},explode:opt.explode||0});
+ var rightGroup=dial(sv,x2,y2,r,n*fac,d*fac,'result',{explode:opt.explode||0});
+ if(opt.animate&&n>0){var filled=rightGroup.querySelectorAll('[data-sector]');Array.from(filled).slice(0,n*fac).forEach(function(el,i){el.style.opacity='0';M.delay(i*85,function(){if(el.isConnected)M.tween(240,function(e){el.style.opacity=String(e);});});});}
+ stack(sv,x1,small?395:449,n||0,d,'focus',small?24:25);
+ if(!opt.hideResult)stack(sv,x2,small?940:449,n*fac,d*fac,'result',small?24:25);
+ else label(sv,x2,small?940:425,'Count first',small?19:20,'unknown');
+ if(small){rail(sv,210,1003,n/d,d,'focus',!!opt.hideResult);rail(sv,210,1096,n/d,d*fac,'result',!!opt.hideResult);}
+ else {rail(sv,x1,690,n/d,d,'focus',opt.hideResult);rail(sv,x2,690,n/d,d*fac,'result',opt.hideResult);
+ label(sv,550,282,'×'+fac,31,'op');label(sv,550,316,'refine',18,'support');
+ N.neonLine(sv,466,690,634,690,{role:'result',width:2});N.neonRing(sv,550,690,{role:'result',r:7,pulse:false});}
+ /* Tray is a genuine piece source: wrong-sized cuts cannot be fitted into a locked partition. */
+ if(mode){N.neonBox(sv,tray.x,tray.y,tray.w,tray.h,{role:'support',r:15});
+ label(sv,tray.x+tray.w/2,tray.y+25,small?'Pick a sector size':'Sector tray · drag to fit the circular whole',small?18:20,'support');
+ var denominations=[2,3,4,5,6,7,8];
+ denominations.forEach(function(den,i){var px=small?tray.x+31+i%4*94:tray.x+98+i*132,py=small?tray.y+67+Math.floor(i/4)*52:tray.y+68;
+ var chip=E('g',{'data-tray-piece':String(den),tabindex:0,role:'button','aria-label':'Add a sector of one '+den+(den===2?' half':' parts')+' to the circle; press Enter to add'},sv);
+ var pr=small?17:23,da=-Math.PI/2,sectorPath=pathSector(px,py,pr,da,da+TAU/den);
+ E('circle',{cx:px,cy:py,r:pr+7,fill:'#08182b',stroke:den===d?rgba('focus'):rgba('support'),'stroke-width':den===d?2.1:1.3,'stroke-opacity':.85},chip);
+ E('path',{d:sectorPath,fill:'url(#fc-amber)',stroke:'#fff1c5','stroke-width':1.0},chip);
+ stack(chip,px+pr+(small?9:16),py,1,den,den===d?'focus':'support',small?20:20);
+ chip.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();place(den);}});
+ chip.addEventListener('pointerdown',function(){if(state.n>=state.d){opt.warn&&opt.warn('The whole is full. Remove a sector before adding another.');}
+   else if(state.n>0&&state.d!==den){opt.warn&&opt.warn('These sector sizes do not match. Remove the existing parts before changing the partition.');}});
+ function place(t){if(obj.dead)return false;if((state.n>0&&state.d!==t)||(state.n>=state.d)){opt.warn&&opt.warn(state.n>=state.d?'The whole is full. Remove a sector before adding another.':'Remove the current sectors before switching to a different partition.');return false;}
+ state.d=t;state.n++;send('denominator',t);send('numerator',state.n);send('pieceAdded',t);opt.change('add');return true;}
+ N.ui.svgDrag(sv,chip,{box:{x:px-pr-5,y:py-pr-5,w:pr*2+10,h:pr*2+10},canStart:function(){return !obj.dead;},zones:function(){return state.n>=state.d||(state.n>0&&state.d!==den)?[]:[{id:'circle',kind:'drop',x:x1-r*.77,y:y1-r*.77,w:2*r*.77,h:2*r*.77}];},onDrop:function(){return place(den);}});
+ });
+ }
+ stage.appendChild(sv);
+ /* The sector cut/merge is real geometric motion: each filled wedge moves radially
+    out while cutting, then returns to its exact equal-angle position. */
+ if(opt.explode||opt.animate){
+  Array.from(sv.querySelectorAll('[data-dial="focus"] [data-sector]')).slice(0,n).forEach(function(g,i){
+   var ang=-Math.PI/2+(i+.5)*TAU/d;
+   var r0=opt.animate?12:0,r1=opt.explode||0;
+   M.tween(500,function(e){if(obj.dead||!g.isConnected)return;var rr=r0+(r1-r0)*e;
+      var theta=(1-e)*3;g.setAttribute('transform','translate('+(Math.cos(ang)*rr).toFixed(2)+','+(Math.sin(ang)*rr).toFixed(2)+') rotate('+theta.toFixed(2)+','+(small?210:283)+','+(small?229:244)+')');},M.ease.inOut);
+  });
+ }
+ if(opt.newPiece&&n>0){var recent=sv.querySelector('[data-dial="focus"] [data-sector="'+(n-1)+'"]');if(recent)M.arrive(recent,0,small?72:115,390,M.ease.spring);}
+ stage.appendChild(H('div',{class:'fc-hint',text:opt.hint||'Every sector has equal area. A different number of cuts does not change the size of the whole.'}));
+ N.scene.helperStrip(stage,opt.pose||'compare',opt.caption||'Compare the coloured areas');
+ return obj;
+}
+function make(n,d,f){return {n:n,d:d,factor:f||2};}
+function currentPreset(k){var p=C.presets[k]||C.presets.quarters;return make(p.n,p.d,2)}
+var teaching=[
+{name:'One complete whole',mood:'neutral',pose:'explain',narration:'Both circular dials represent complete wholes of exactly the same size. We will use sectors with equal areas.',prompt:'Why must the circles stay the same size?',n:0,d:4,caption:'Both discs are equal wholes',hint:'Before shading, establish that the two circles represent exactly one whole each.'},
+{name:'Cut into quarters',mood:'focus',pose:'show-one',narration:'Cut the left circle into four equal sectors. Each sector is one quarter of its whole.',prompt:'Are the four pieces equal in area?',n:1,d:4,caption:'One of four equal sectors',explode:5},
+{name:'Build a half',mood:'focus',pose:'show-two',narration:'Place two quarters into the circle. Two of four parts shade exactly one half.',prompt:'What fraction of the circle is covered?',n:2,d:4,caption:'Two quarters make one half',explode:13},
+{name:'Split the same area',mood:'think',pose:'count',narration:'Split each quarter into two smaller sectors on the right. Four eighths still shade the same half.',prompt:'What happened to the whole circle?',n:2,d:4,caption:'Twice the parts, same area',animate:true},
+{name:'Compare the matching area',mood:'focus',pose:'compare',narration:'The shaded areas cover exactly the same angle and area of two equal-sized circles. Two quarters and four eighths are equivalent.',prompt:'What is the evidence for equivalence?',n:2,d:4,caption:'The coloured areas match',animate:true},
+{name:'Make an equivalent fraction',mood:'cheer',pose:'idea',narration:'If we split every equal sector into three, two thirds becomes six ninths. Changing cuts does not change the coloured area.',prompt:'What stays constant when we subdivide?',n:2,d:3,factor:3,caption:'Subdivision preserves the part',animate:true}
+];
+function render(i,stage){var s=teaching[i],mod=make(s.n,s.d,s.factor||2);renderScene(stage,mod,{mode:'guided',pose:s.pose,caption:s.caption,hint:s.hint||'Follow the coloured sectors. The size of the whole never changes.',explode:s.explode||0,animate:s.animate});}
+function explore(panel,stage,api){var mod=currentPreset(C.preset),hint=H('div',{class:'fc-state',role:'status','aria-live':'polite'}),preset=H('select',{class:'nova-input','aria-label':'Choose circle preset'});
+ Object.keys(C.presets).forEach(function(k){preset.appendChild(H('option',{value:k,text:C.presets[k].label}));});preset.value=C.preset;
+ function redraw(reason){hint.textContent=mod.n===mod.d?'The circle is exactly one whole.':mod.n===0?'Empty circle. Choose a sector piece to begin.':'The shaded area is the same in both circles.';
+ renderScene(stage,mod,{mode:'explore',interactive:true,pose:mod.n===mod.d?'celebrate':'compare',caption:mod.n===mod.d?'A full circle is one whole':'Fit pieces and compare',change:redraw,newPiece:reason==='add',warn:function(t){hint.textContent=t;}});}
+ preset.onchange=function(){C.preset=preset.value;mod=currentPreset(C.preset);send('preset',C.preset);redraw();};
+ var factor=H('select',{class:'nova-input','aria-label':'Subdivision factor'});[2,3].forEach(function(f){factor.appendChild(H('option',{value:f,text:'Split each sector ×'+f}));});factor.value=mod.factor;
+ factor.onchange=function(){mod.factor=+factor.value;send('factor',mod.factor);redraw();};
+ var remove=H('button',{class:'nova-btn',text:'Remove last sector',onclick:function(){mod.n=Math.max(0,mod.n-1);send('numerator',mod.n);send('pieceRemoved',mod.n);redraw();}}),clear=H('button',{class:'nova-btn ghost',text:'Clear whole',onclick:function(){mod.n=0;send('clear',true);redraw();}});
+ panel.appendChild(H('div',{class:'fc-row'},[H('label',{text:'Starter model'}),preset,H('label',{text:'Compare as'}),factor]));
+ panel.appendChild(H('div',{class:'fc-actions'},[remove,clear]));panel.appendChild(hint);
+ panel.appendChild(H('p',{class:'fc-keyboard',text:'Drag a wedge into the circle. Drag a placed wedge back into the tray to remove it, or use Enter/Space on a focused piece.'}));
+ C._explore={get:function(){return {...mod};},set:function(n,d,f){mod=make(n,d,f||2);redraw();},add:function(d){if(mod.n<mod.d&&(mod.n===0||mod.d===d)){mod.d=d;mod.n++;send('pieceAdded',d);redraw();return true;}return false;},remove:function(){mod.n=Math.max(0,mod.n-1);redraw();}};
+ redraw();}
+function challenge(panel,api,stage){var tasks=[
+ {n:2,d:4,q:'Build two quarters from equal sectors. How much of the whole is shaded?',answer:2,hint:'Use two pieces from the quarters section of the tray.'},
+ {n:3,d:6,q:'Build three sixths. How many sixth-sized sectors do you need?',answer:3,hint:'One piece represents one sixth. You need three.'},
+ {n:2,d:3,q:'Build two thirds. How many third-sized sectors cover the circle?',answer:2,hint:'The denominator sets the equal sector size.'}];
+ var ix=0,wrong=0,mod=make(0,tasks[0].d,2),question=H('p',{class:'pr-task'}),status=H('div',{class:'fc-state',role:'status','aria-live':'polite'}),peer=H('img',{src:N.helperImg('read-tablet','teen').src,alt:N.helperImg('read-tablet','teen').alt}),peerText=H('span',{text:'Izaac is checking your sector model.'});
+ function pose(k,msg){var art=N.helperImg(k,'teen');peer.src=art.src;peer.alt=art.alt;peerText.textContent=msg;}
+ function redraw(){renderScene(stage,mod,{mode:'challenge',interactive:true,hideResult:true,pose:'think',caption:'Build the requested fraction',change:redraw,warn:function(msg){status.textContent=msg;}});}
+ function load(){var t=tasks[ix];question.textContent='Challenge '+(ix+1)+' of 3 · '+t.q;mod=make(0,t.d,2);wrong=0;status.textContent='Drop the matching sector pieces into the circle, then check.';pose('read-tablet','Izaac is watching your model.');api.fb.textContent='';redraw();}
+ var check=H('button',{class:'nova-btn primary',text:'Check',onclick:function(){var t=tasks[ix],ok=mod.n===t.answer&&mod.d===t.d;api.check(ok,ok?'Correct. The sectors are equal portions of one whole.':'Not yet. Check both the number and size of pieces.',{task:ix});if(!ok)wrong++;pose(ok?(ix===2?'victory':'proud'):(wrong>=2?'worried':'read-tablet'),ok?'Your model is correct!':'Look at the equal sector sizes.');
+ if(ok){status.textContent=ix===2?'All three sector challenges completed.':'Well done. Next challenge loading…';if(ix<2){var timer=setTimeout(function(){ix++;load();},950);api.onCleanup(function(){clearTimeout(timer);});}}else status.textContent='Build '+t.answer+' sector pieces of the required size.';}});
+ var hint=H('button',{class:'nova-btn ghost',text:'Hint',onclick:function(){api.hint(tasks[ix].hint);pose('idea','Izaac has a clue to share.');status.textContent=tasks[ix].hint;}});
+ var add=H('button',{class:'nova-btn',text:'Add matching sector',onclick:function(){if(mod.n<mod.d){mod.n++;send('pieceAdded',mod.d);redraw();}}});
+ var undo=H('button',{class:'nova-btn',text:'Remove sector',onclick:function(){if(mod.n>0){mod.n--;send('pieceRemoved',mod.n);redraw();}}});
+ panel.appendChild(question);panel.appendChild(H('div',{class:'fc-actions'},[add,undo,check,hint]));panel.appendChild(status);panel.appendChild(H('div',{class:'fc-peer'},[peer,peerText]));
+ C._challenge={task:function(){return ix;},set:function(n,d){mod=make(n,d,2);redraw();},get:function(){return {...mod};}};load();}
+var DEF={id:ID,title:'Fraction circles · Precision sector workshop',config:C,steps:teaching,render:render,explore:explore,challenge:challenge,
+ alt:'Two equal precision-glass circular mathematical models. A tray of sectors can be dragged onto the first circle. An equivalent finer partition is displayed on the second circle.',
+ staticAlt:'Two of four equal sectors cover the same circular area as four of eight equal sectors. The diameter of both whole circles is identical.',
+ exploreIntro:'Create fractions by snapping equal-size sectors into a circle. Try different denominators, remove pieces and compare the same shaded area with a finer partition.'};
+N.registry.add({id:ID,title:DEF.title,family:'F5',topics:['fraction circles','equivalent fractions'],deps:['F0-02','F0-03','F0-04','F0-05','F2-03']});
+N.bankMount({id:ID,num:'F5·02',title:DEF.title,def:DEF,years:'KS3 Year 7–9',linked:['F5-01','F5-03','F5-05'],
+ spec:{purpose:'Precision neon-glass fraction-circle instrument with removable equal-angle sectors, exact same-size whole comparison and stacked NOVA Chalk fractions.',params:'Numerator 0–denominator; denominators 2–8; equivalence subdivision factor ×2/×3; keyboard and pointer piece handling.',presets:'A quarter, a half, two thirds, three eighths, empty circle.',steps:'Same whole → equal cuts → build a half → subdivide into eighths → prove equal area → generalise ×3.',interactions:'Core v3.6.2 svgDrag with drop and red tray remove zones, mismatched partition rejection, keyboard Enter/Space and controls, Watch/Guided/Explore/Challenge, Bob narration, Izaac Challenge poses.',traps:'Sectors from different partitions cannot be combined as if equal-sized; adding beyond a whole is rejected; equivalence changes the pieces, not the area.',gcse:'Equivalent fractions, area proof and foundations of sector geometry.'}});
+var log=document.getElementById('log'),appendLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,4000);};N.events.history().forEach(appendLog);N.events.on('*',appendLog);document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+</script></body></html>
