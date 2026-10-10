@@ -1,0 +1,47 @@
+/* NOVA F3-03: layout only. All neon/glass/chalk artwork uses canonical F0 core. */
+#F3-03 .nova-stage{min-height:0!important;padding:9px 12px 7px!important;overflow:hidden;background:radial-gradient(ellipse at 48% 38%,rgba(54,125,255,.12),transparent 68%),var(--v-bg)}
+#F3-03 .nv-cap{margin:0 0 5px}
+#F3-03 .f303-scene{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(200px,.80fr);gap:14px;align-items:center;width:100%;min-width:0}
+#F3-03 .f303-art{width:100%;height:auto;max-width:100%;display:block;touch-action:none;filter:drop-shadow(0 13px 17px rgba(0,0,0,.22))}
+#F3-03 .f303-aside{display:flex;flex-direction:column;gap:10px;min-width:0}
+#F3-03 .f303-aside .nv-ncard{padding:13px 14px;min-height:66px;border-radius:15px}
+#F3-03 .f303-flag{font:750 .78rem/1.4 var(--nova-font-ui);color:var(--shell-muted);letter-spacing:.02em}
+#F3-03 .f303-maths{margin:6px 0 0;font:750 clamp(1.24rem,1.8vw,1.68rem)/1.34 var(--nova-font-chalk-write);color:#f7f6eb;text-shadow:0 0 11px #c2eaff55}
+#F3-03 .f303-detail{margin:4px 0 0;font:.87rem/1.48 var(--nova-font-ui);color:#b5cfe4}
+#F3-03 .f303-dock{display:flex;align-items:center;gap:10px;min-height:65px}
+#F3-03 .f303-dock img{height:65px;width:auto;max-width:94px;object-fit:contain}
+#F3-03 .f303-say{font:.88rem/1.38 var(--nova-font-ui);color:#cfe0ee;max-width:610px}
+#F3-03 .f303-inputs{display:flex;align-items:flex-end;gap:9px;flex-wrap:wrap;margin:10px 0}
+#F3-03 .f303-inputs label{display:flex;flex-direction:column;gap:4px;color:#a8c3d9;font:750 .84rem/1.2 var(--nova-font-ui)}
+#F3-03 .f303-inputs input,#F3-03 .f303-inputs select{background:#0b263b;color:#f5fcff;border:1px solid #41728c;border-radius:12px;padding:8px 10px;min-height:43px;width:103px;max-width:100%;font:700 1.06rem var(--nova-font-chalk-write)}
+#F3-03 .f303-inputs select{width:min(340px,100%);font:730 .89rem var(--nova-font-ui)}
+#F3-03 .f303-prompt{font:750 1.01rem/1.42 var(--nova-font-ui);color:#f2faff;margin:7px 0 8px}
+#F3-03 .f303-info{color:#b7d0e2;font:.83rem/1.44 var(--nova-font-ui);margin:6px 0}
+#F3-03 .f303-status{min-height:23px;margin:7px 0;color:#b2edd7;font:700 .86rem var(--nova-font-ui)}
+#F3-03 .f303-art [data-slot]{cursor:pointer}
+#F3-03 .f303-art [data-slot]:focus-visible,#F3-03 .f303-art [data-card]:focus-visible{outline:3px solid #ffcc58;outline-offset:2px}
+#F3-03 .f303-art .f303-slot[data-filled="true"]{cursor:grab}
+#F3-03 .f303-badge{display:inline-block;border:1px solid #26796e;background:#13382f;border-radius:9px;padding:4px 9px;font:700 .77rem var(--nova-font-ui);color:#96ffe1}
+@media(max-width:720px){
+ #F3-03 .nova-stage{padding:3px 7px 0!important}
+ #F3-03 .f303-scene{display:flex;flex-direction:column;gap:1px}
+ #F3-03 .f303-art{width:100%!important;min-width:0}
+ #F3-03 .f303-aside{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:7px}
+ #F3-03 .f303-aside .nv-ncard{padding:7px 8px;min-height:49px}
+ #F3-03 .f303-aside .nv-ncard:nth-child(3){display:none}
+ #F3-03 .f303-flag{font-size:.66rem}
+ #F3-03 .f303-maths{font-size:1.08rem;margin-top:1px}
+ #F3-03 .f303-dock{min-height:43px;gap:7px}
+ #F3-03 .f303-dock img{height:43px;max-width:59px}
+ #F3-03 .f303-say{font-size:.75rem;line-height:1.25}
+ #F3-03 .f303-inputs{gap:7px}
+ #F3-03 .f303-inputs input{width:76px}
+}
+@media print{#F3-03 .f303-art{filter:none}#F3-03 .f303-inputs,#F3-03 .nova-panel{display:none!important}#F3-03 .f303-maths,#F3-03 .f303-detail{color:#111;text-shadow:none}}
+/* On mobile the grid itself contains factors, four products, row sums and total.
+   Removing redundant desktop side cards gives the main mathematical drawing its required 60%+ share of the stage. */
+@media(max-width:720px){#F3-03 .f303-aside{display:none!important}}
+@media(max-width:720px){#F3-03 input[aria-label="Final total"]{width:125px!important}}
+
+/* F0 authoritative helper strip. No F3 custom mascot docking or animation. */
+#F3-03 .nova-stage>.nv-dock{margin-top:auto}

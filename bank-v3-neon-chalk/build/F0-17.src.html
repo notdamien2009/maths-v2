@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA F0-17 · Static and print renderer</title>
+<style>
+@@CSS@@
+/* ---- F0-17 local styles ---- */
+.pr-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.pr-task{font-weight:700}
+.rs-opts{display:flex;flex-wrap:wrap;gap:6px}
+.rs-opts button[aria-pressed="true"]{outline:3px solid var(--m-focus)}
+.nova-spec dd{white-space:pre-line}
+.xx-h4{margin:0 0 4px;font:800 .68rem var(--nova-font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--v-muted)}
+@media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
+.pw-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;padding:8px 12px}
+@media (max-width:480px){.pw-wrap{grid-template-columns:1fr}}
+.pw-page{height:236px;overflow:hidden;border-radius:6px;padding:10px 12px;background:#fff;color:#111;font:600 .66rem/1.35 system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.pw-page.dark{background:#0b2032;color:#e6f2ff}
+.pw-page h5{margin:0;font:800 .78rem system-ui,sans-serif}.pw-page .m{color:#555;margin:0 0 6px;font-size:.58rem}.pw-page.dark .m{color:#9ab}
+.pw-page ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 10px}
+.pw-page li{border-bottom:1px solid #bbb;height:20px;overflow:hidden;white-space:nowrap}
+.pw-page li.hl{background:rgba(255,160,40,.25)}
+.pw-page.key li{border-bottom:0;color:#0a6}
+.pw-fig{display:block;width:100%;height:auto;margin-top:4px}
+.pw-side{display:grid;grid-template-rows:repeat(5,30px);gap:4px}
+.pw-side div{height:30px;display:flex;align-items:center;padding:0 9px;border-radius:9px;border:1px solid var(--v-line);background:var(--v-panel2);font:700 .72rem var(--nova-font-ui);color:var(--v-ink);overflow:hidden;white-space:nowrap}
+.pw-side div.hl{border-color:var(--m-focus);box-shadow:0 0 0 1px var(--m-focus)}.pw-side div.empty{opacity:.25}
+.pw-img{display:block;max-width:100%;height:96px;object-fit:contain;background:#fff;border-radius:6px}
+</style>
+</head>
+<body data-topic="number">
+<div class="nova-wrap">
+<header id="nova-header" data-run="F0 · Bank · F0-17" data-title="Static and print renderer" data-sub="Still images for any engine and printable seeded worksheets with an answer key, by print or download."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log">
+<h2 style="font-size:1.1em">Event log (NOVA.events)</h2>
+<div id="log" class="nova-log" role="log" aria-live="off"></div>
+<button class="nova-btn" id="clearlog">Clear log</button>
+</section>
+</div>
+<script>
+@@JS@@
+</script>
+<script>
+/* ===== F0-17 CONFIG: parameters + named presets ===== */
+var NOVA_F0_17_CONFIG={
+  startMode:'watch',
+  topic:'fraction', count:8, seed:'SHEET-A', answers:true, cols:2,
+  presets:{
+    fractions:{label:'Fractions of amounts (8 questions)',topic:'fraction',count:8,seed:'SHEET-A'},
+    negatives:{label:'Negative numbers (10 questions)',topic:'negative',count:10,seed:'NEG-1'},
+    rounding: {label:'Rounding to the nearest 10 (12)',topic:'round',count:12,seed:'RND-7'},
+    equations:{label:'Solve ax + b = c (8)',topic:'equation',count:8,seed:'EQ-3'},
+    gcse:     {label:'GCSE: percentage change (8)',topic:'percent',count:8,seed:'PC-9'}
+  }
+};
+</script>
+<script>
+/* ===== F0-17 ENGINE ===== */
+(function(){
+var h=NOVA.h,S=NOVA.svg,C=NOVA_F0_17_CONFIG;
+function gen(topic,seed,n){var r=NOVA.rng.create(seed),out=[];for(var i=0;i<n;i++){var q;
+  if(topic==='fraction'){var d=r.pick([2,3,4,5,8]),k=r.int(1,d-1),m=d*r.int(2,9);q={q:k+'/'+d+' of '+m,a:String(k*m/d)};}
+  else if(topic==='negative'){var x=r.int(-9,9),y=r.int(-9,9);q={q:x+' − ('+y+')',a:String(x-y)};}
+  else if(topic==='round'){var v=r.int(11,999);q={q:'Round '+v+' to the nearest 10',a:String(Math.round(v/10)*10)};}
+  else if(topic==='equation'){var a=r.int(2,6),xx=r.int(1,9),b=r.int(1,12);q={q:'Solve '+a+'x + '+b+' = '+(a*xx+b),a:'x = '+xx};}
+  else{var p=r.pick([10,20,25,50]),v2=r.pick([40,80,120,200]),up=r.int(0,1);q={q:(up?'Increase ':'Decrease ')+v2+' by '+p+'%',a:String(up?v2*(1+p/100):v2*(1-p/100))};}
+  out.push(q);}return out;}
+function fig(){var sv=S.root(300,90,'Bar of 4 parts, 3 shaded: three quarters');sv.setAttribute('class','nv-svg pw-fig');for(var i=0;i<4;i++){S.el('rect',{x:10+i*70,y:10,width:66,height:50,rx:5,'stroke-width':2,css:'fill:'+(i<3?'var(--m-focus)':'transparent')+';stroke:var(--m-given)'},sv);}var t=S.el('text',{x:150,y:80,'text-anchor':'middle',css:'fill:var(--v-ink);font:800 12px var(--nova-font-ui)'},sv);t.textContent='3/4 of 24 = 18';return sv;}
+function sheet(stage,o){var w=h('div',{class:'pw-wrap'}),L=h('div'),R=h('div',{class:'pw-side'});
+  if(o.figure){L.appendChild(h('h4',{class:'xx-h4',text:o.png?'Static image (PNG)':'Live SVG figure'}));var f=fig();if(o.png){var im=h('img',{class:'pw-img',alt:'Static fallback image: bar of 4 parts with 3 shaded, 3/4 of 24 = 18','data-maths':'png'});L.appendChild(im);document.body.appendChild(f);f.style.cssText='position:absolute;left:-9999px';NOVA.print.toPng(f,2).then(function(u){im.src=u;f.remove();},function(){f.remove();});}else L.appendChild(f);}
+  else{var qs=gen(o.topic,o.seed,o.count),pg=h('div',{class:'pw-page'+(o.dark?' dark':'')+(o.key?' key':''),'aria-label':'Worksheet preview','data-maths':'page'});pg.appendChild(h('h5',{text:(o.key?'Answers · ':'')+o.title}));pg.appendChild(h('p',{class:'m',text:'Name: ________  Seed: '+o.seed+'  ·  '+o.count+' questions'}));
+    var ol=h('ol');qs.slice(0,12).forEach(function(q,i){ol.appendChild(h('li',{class:o.hl===i?'hl':'',text:(i+1)+'. '+(o.key?q.a:q.q)}));});pg.appendChild(ol);L.appendChild(pg);}
+  var side=o.side||[];for(var i=0;i<5;i++){var t=side[i];R.appendChild(h('div',{class:t?(t.hl?'hl':''):'empty',text:t?t.t:''}));}if(o.side)w.appendChild(L),w.appendChild(R);else{w.appendChild(L);w.appendChild(R);}stage.appendChild(w);}
+var B={topic:'fraction',seed:'SHEET-A',count:8,title:'Fractions of amounts'};function D(o){return Object.assign({},B,o);}
+var QA=gen('fraction','SHEET-A',8),QB=gen('fraction','SHEET-B',8);
+var DEMO=[D({figure:1,side:[{t:'Live engines need a screen'},{t:'Print and slow devices need a still'},{t:'Every engine has a static fallback',hl:1}]}),
+ D({figure:1,png:1,side:[{t:'SVG → inline colours → PNG',hl:1},{t:'Same picture, no script needed'},{t:'Alt text travels with it'}],target:'png'}),
+ D({dark:1,side:[{t:'Screen theme: dark, glowing'},{t:'Print theme: white paper, black ink',hl:1},{t:'Saves toner, easy to read'}]}),
+ D({side:[{t:'Title, name line, seed'},{t:'Two columns of questions',hl:1},{t:'Space to write each answer'}],target:'page'}),
+ D({seed:'SHEET-B',hl:0,side:[{t:'Seed A: Q1 '+QA[0].q},{t:'Seed B: Q1 '+QB[0].q,hl:1},{t:'Same seed → same sheet, always'}]}),
+ D({key:1,side:[{t:'Answer key on its own page',hl:1},{t:'Q1: '+QA[0].q+' = '+QA[0].a},{t:'Teachers mark in seconds'}]}),
+ D({side:[{t:'Print: opens the browser print dialog'},{t:'Download: a standalone HTML sheet',hl:1},{t:'Works offline, no login'}]})];
+var steps=[
+ {name:'Why static',mood:'neutral',narration:'Animations are great on screen, but paper and old devices need a still version. Every engine keeps a static fallback.',prompt:'When would you need a static version?'},
+ {name:'Snapshot',mood:'think',narration:'The renderer copies the live SVG, fixes its colours inline and turns it into a PNG image, with the same alt text.',prompt:'What file type is the snapshot?',target:'png'},
+ {name:'Print theme',mood:'think',narration:'Print swaps the dark glowing theme for white paper and black ink. Easier to read, kinder to the printer.',prompt:'Why switch to a light theme?'},
+ {name:'Worksheet',mood:'focus',narration:'A worksheet has a title, a name line, the seed and questions in two columns with space to answer.',prompt:'How many questions on this sheet?',target:'page'},
+ {name:'Seeds',mood:'think',narration:'Change the seed and you get a fresh sheet; keep it and you get the same questions every time, so a class can share one.',prompt:'What gives the same sheet again?'},
+ {name:'Answer key',mood:'cheer',narration:'The answer key prints on its own page. 3/4 of 24 style questions, answers ready to mark.',prompt:'Where does the key go?'},
+ {name:'Export',mood:'cheer',narration:'Print it straight away or download a standalone sheet. No internet needed once it is saved.',prompt:'Name the two export options.'}];
+function render(i,stage){stage.innerHTML='';var s=steps[i];NOVA.cap(stage,'Static and print · '+s.name,'step '+(i+1)+'/'+steps.length);sheet(stage,DEMO[i]);NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
+var def={id:'F0-17',title:'Static and print renderer',config:C,steps:steps,render:render,
+ alt:'Static and print renderer: a live SVG figure turned into a PNG, and a light print-ready worksheet preview with seeded questions and an answer key.',
+ staticAlt:'A bar of 4 parts with 3 shaded (3/4 of 24 = 18) shown as live SVG and as a PNG snapshot. Worksheet "Fractions of amounts", seed SHEET-A, 8 seeded questions in two columns with an answer key page. Exports: Print or Download HTML.',
+ exploreIntro:'Explore: choose a topic, number of questions and seed, toggle the answer key, then Print or Download the worksheet.',
+ explore:function(panel,stage,api){var st={topic:C.topic,count:C.count,seed:C.seed,answers:C.answers,key:false,title:'Fractions of amounts'};
+   function draw(){stage.innerHTML='';NOVA.cap(stage,'Explore · worksheet',st.seed);sheet(stage,{topic:st.topic,count:st.count,seed:st.seed,title:st.title,key:st.key,side:[{t:st.count+' questions · seed '+st.seed,hl:1},{t:'Answer key: '+(st.answers?'included':'off')},{t:'Showing: '+(st.key?'answers':'questions')}]});NOVA.scene.helperStrip(stage,'explain',st.count+' questions');}
+   function val(k,v){NOVA.events.emit('value',{engine:'F0-17',key:k,value:v});}
+   var pre=h('select',{class:'nova-input','aria-label':'Topic'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});pre.onchange=function(){var q=C.presets[pre.value];st.topic=q.topic;st.count=q.count;st.seed=q.seed;st.title=q.label.replace(/\s*\(.*\)/,'');sd.input.value=st.seed;n.set&&n.set(st.count);val('preset',pre.value);draw();};
+   var n=NOVA.ui.stepper({label:'Questions',value:st.count,min:4,max:12,step:2,engine:'F0-17',onChange:function(v){st.count=v;draw();}});
+   var sd=NOVA.ui.entry({label:'Seed',engine:'F0-17-ui'});sd.input.setAttribute('inputmode','text');sd.input.value=st.seed;sd.input.addEventListener('change',function(){st.seed=sd.input.value||'SHEET-A';val('seed',st.seed);draw();});
+   var ak=h('button',{class:'nova-btn','aria-pressed':String(st.answers),text:'Include answer key',onclick:function(){st.answers=!st.answers;ak.setAttribute('aria-pressed',String(st.answers));val('answers',st.answers);draw();}});
+   var sk=h('button',{class:'nova-btn','aria-pressed':'false',text:'Preview answers',onclick:function(){st.key=!st.key;sk.setAttribute('aria-pressed',String(st.key));draw();}});
+   function doc(){return NOVA.print.worksheet({title:st.title,questions:gen(st.topic,st.seed,st.count),answers:st.answers,cols:2,seed:st.seed});}
+   panel.appendChild(h('label',{class:'pr-row'},['Topic ',pre]));panel.appendChild(n);panel.appendChild(sd);panel.appendChild(h('div',{class:'pr-row'},[ak,sk]));
+   panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn primary',text:'Download worksheet',onclick:function(){NOVA.print.download('worksheet-'+st.seed+'.html',doc());val('export','download');}}),
+     h('button',{class:'nova-btn',text:'Print',onclick:function(){var f=h('iframe',{style:'position:fixed;width:0;height:0;border:0;right:0;bottom:0','aria-hidden':'true'});document.body.appendChild(f);f.contentDocument.open();f.contentDocument.write(doc());f.contentDocument.close();setTimeout(function(){try{f.contentWindow.print();}catch(e){}setTimeout(function(){f.remove();},1000);},200);val('export','print');}})]));
+   draw();C._explore={state:st,doc:doc};},
+ challenge:function(panel,api,stage){
+   var tasks=[
+    {q:'Worksheet seed SHEET-A, question 1: '+QA[0].q+'. What goes in the answer key?',build:NOVA.entryTask('answer =','F0-17'),check:function(v){var ok=String(v)===QA[0].a;return [ok,ok?'Yes: '+QA[0].q+' = '+QA[0].a+'.':'Divide by the denominator, multiply by the numerator.'];},hint:'Find one part first, then multiply.',solve:function(c){c._A.input.value=QA[0].a;}},
+    {q:'Two columns of 6 questions fit on a page. How many questions per page?',build:NOVA.entryTask('questions =','F0-17'),check:function(v){var ok=v===12;return [ok,ok?'Yes: 2 × 6 = 12.':v===8?'That is 2 + 6. Columns times rows.':'Multiply columns by rows.'];},hint:'2 columns × 6 rows.',solve:function(c){c._A.input.value='12';}},
+    {q:'A teacher prints the sheet twice with seed SHEET-A. What happens?',build:NOVA.choiceTask(['Same questions both times','Different questions each time'],'F0-17'),check:function(v){var ok=v==='Same questions both times';return [ok,ok?'Yes: the same seed always makes the same sheet.':v?'Only a new seed changes the questions.':'Pick one first.'];},hint:'Seeds make randomness repeatable.',solve:function(c){c._G.set('Same questions both times');}}];
+   NOVA.challengeRun(panel,api,tasks,function(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['answer key','layout','seed'][k]);sheet(stage,D({hl:k===0?0:null,side:[{t:['Answer key for Q1','2 columns × 6 rows','Seed SHEET-A, twice'][k],hl:1}]}));NOVA.scene.helperStrip(stage,'think',['Answer?','Per page?','Same or new?'][k]);},C);}
+};
+NOVA.bankMount({id:'F0-17',num:'17',title:'Static and print renderer (fallback image and worksheet export)',def:def,linked:['F0-01','F0-06','F0-09','F0-10','F0-11','all engines'],
+ spec:{purpose:'Makes every engine usable off screen: snapshots any live SVG to a PNG with inline colours and alt text, switches to a light print theme, and exports seeded worksheets (two columns, name line, seed) with an answer key page, by print or as a standalone HTML download.',
+  params:'topic, count 4–12, seed, answers on | off, cols. Core: NOVA.print.inlineSvg / toPng / worksheet / download / esc; NOVA.rng seeds; each engine\u2019s staticAlt. Year groups: KS3 Years 7–9 (12–15), with GCSE extension.',
+  presets:'Fractions of amounts · Negative numbers · Rounding to the nearest 10 · Solve ax + b = c · GCSE percentage change',
+  steps:'Why static → Snapshot → Print theme → Worksheet → Seeds → Answer key → Export. Each step has a Sir Bob line and a Guided prompt. The helper glides to the PNG snapshot and the worksheet page.',
+  interactions:'Watch: auto-play. Guided: step with prompts. Explore: topic, question count (stepper), seed, answer key toggle, preview answers, Download worksheet (HTML) and Print. Challenge (3 tasks): answer key for Q1; questions per page (12); same seed reprints the same sheet. Events: value, correct, step, hintUsed.',
+  traps:'Dark backgrounds sent to the printer · Images with no alt text · Thinking a re-print gives new questions · Answer key on the same page as the questions',
+  gcse:'Extension: GCSE percentage change sheets; linked: F0-06 seeds, F0-10 gallery print view, F0-11 assessment sets'}});
+})();
+</script>
+<script>
+(function(){var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
+document.getElementById('clearlog').onclick=function(){log.textContent='';};})();
+</script>
+</body>
+</html>

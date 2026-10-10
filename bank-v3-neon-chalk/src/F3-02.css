@@ -1,0 +1,109 @@
+/* F3-01 only: layout styles, never replace core palette or SVG filters. */
+:root{--stage-accent:var(--math-cyan)}
+#F3-02 .nova-stage{min-height:0!important;padding:12px 14px 8px!important;overflow:hidden;background:radial-gradient(ellipse at 53% 30%,rgba(54,125,255,.13),transparent 64%),var(--v-bg)}
+#F3-02 .nv-cap{margin:0 0 9px}
+#F3-02 .f302-scene{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(225px,.80fr);gap:16px;align-items:stretch;width:100%;min-width:0}
+#F3-02 .f302-art{width:100%!important;max-width:100%!important;height:auto!important;display:block;filter:drop-shadow(0 14px 22px rgba(0,0,0,.28));touch-action:pan-y}
+#F3-02 .f302-aside{display:flex;flex-direction:column;justify-content:center;gap:11px;min-width:0}
+#F3-02 .f302-aside .nv-ncard{display:block;padding:13px 15px;min-height:68px;border-radius:16px;position:relative}
+#F3-02 .f302-kicker{display:block;font-size:.77rem;color:var(--shell-muted);letter-spacing:.015em;font-weight:750}
+#F3-02 .f302-maths{display:block;font:700 clamp(1.28rem,1.7vw,1.64rem)/1.4 var(--nova-font-chalk-write);color:#f6f6ea;text-shadow:0 0 12px #b2eaff55;margin-top:5px}
+#F3-02 .f302-note{font-size:.89rem;line-height:1.45;color:var(--shell-ink)}
+#F3-02 .f302-answer{display:flex;align-items:center;gap:9px;justify-content:space-between}
+#F3-02 .f302-answer .nv-ntile{font:800 1.7rem/1.2 var(--nova-font-chalk-write);min-width:64px;text-align:center}
+#F3-02 .f302-instruct{margin:6px 0 0;color:var(--shell-muted);line-height:1.45;font-size:.84rem}
+#F3-02 .f302-controller{display:flex;gap:10px;flex-wrap:wrap;align-items:end;justify-content:flex-start}
+#F3-02 .f302-controller label{display:flex;flex-direction:column;gap:5px;min-width:85px;color:var(--shell-ink);font-size:.81rem;font-weight:750}
+#F3-02 .f302-controller select,#F3-02 .f302-controller input{min-height:42px;border:1px solid #426f8c;background:#0e2538;color:#f2f9ff;border-radius:12px;padding:7px 10px;max-width:100%;font:700 1rem var(--nova-font-chalk-write)}
+#F3-02 .f302-controller button,#F3-02 .f302-modes button{min-height:42px}
+#F3-02 .f302-area{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#F3-02 .f302-submode{padding:7px 12px;font-size:.82rem}
+#F3-02 .f302-chiplist{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+#F3-02 button.f302-chip{font:700 1.05rem/1.2 var(--nova-font-chalk-write);color:#e6fff8;border:1px solid #2d7c67;border-radius:12px;background:#0d2634;padding:9px 13px;cursor:pointer}
+#F3-02 button.f302-chip[data-state="done"]{border-color:#4fe2a1;background:#12392e;box-shadow:inset 0 0 15px #4fe2a111,0 0 12px #4fe2a133}
+#F3-02 button.f302-chip[data-state="bad"]{border-color:#ff6577;background:#461e30}
+#F3-02 .f302-prompt{font:750 1.04rem/1.45 var(--nova-font-ui);color:#f4f9ff;margin:0 0 9px}
+#F3-02 .f302-meter{display:flex;gap:7px;align-items:center;color:#aed3e3;margin-bottom:11px;font-size:.81rem}
+#F3-02 .f302-meter b{border:1px solid #2f688a;border-radius:12px;padding:5px 11px;color:#cbeeff}
+#F3-02 .f302-node-select{font-size:.84rem;color:var(--math-green)}
+#F3-02 .f302-sr{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
+#F3-02 .f302-stagecode{display:none}
+#F3-02 .f302-art:focus-visible,#F3-02 [tabindex]:focus-visible{outline:3px solid var(--math-gold);outline-offset:3px}
+#F3-02 .f302-tree-card{cursor:pointer}
+#F3-02 .f302-pairproof{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+#F3-02 .f302-pairproof .nv-ntile{font-size:.9rem}
+#F3-02 .nova-stage>.nv-dock{height:115px!important;min-height:100px!important}
+#F3-02 .nova-stage .nv-dockbub{max-width:min(70%,490px)}
+#F3-02 .nova-tabs .nova-tab{min-width:0}
+@media(max-width:720px){
+ #F3-02 .nova-stage{padding:7px 7px 5px!important}
+ #F3-02 .f302-scene{display:flex;flex-direction:column;gap:6px}
+ #F3-02 .f302-aside{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+ #F3-02 .f302-aside .nv-ncard{min-height:60px;padding:8px 10px;border-radius:12px}
+ #F3-02 .f302-aside .nv-ncard:nth-child(3){grid-column:1/-1;min-height:0}
+ #F3-02 .f302-aside .f302-note{font-size:.78rem;margin:2px 0}
+ #F3-02 .f302-maths{font-size:1.18rem;margin-top:2px}
+ #F3-02 .f302-answer .nv-ntile{font-size:1.25rem;min-width:50px}
+ #F3-02 .f302-kicker{font-size:.68rem}
+ #F3-02 .f302-instruct{font-size:.76rem}
+ #F3-02 .nova-stage>.nv-dock{height:82px!important;min-height:82px!important}
+ #F3-02 .nova-stage .nv-dock svg.nv-dockfig{height:82px!important}
+}
+@media print{#F3-02 .f302-art{filter:none!important}#F3-02 .f302-controller,#F3-02 .nova-panel{display:none!important}#F3-02 .f302-aside{color:black}#F3-02 .f302-note{color:black}}
+
+@media(max-width:720px){
+ #F3-02 .f302-aside{display:flex;flex-direction:row;gap:7px}
+ #F3-02 .f302-aside .nv-ncard{width:50%;min-width:0;min-height:64px;padding:7px 8px}
+ #F3-02 .f302-aside .nv-ncard:nth-child(3){display:none}
+ #F3-02 .f302-maths{font-size:1.12rem}
+ #F3-02 .f302-dock-row{display:flex;align-items:center;min-height:55px}
+ #F3-02 .f302-dock-row img{height:52px!important}
+ #F3-02 .f302-instruct{font-size:.78rem}
+}
+
+@media(max-width:720px){
+ #F3-02 .nv-cap{margin-bottom:3px}
+ #F3-02 .f302-aside .nv-ncard{min-height:55px}
+ #F3-02 .f302-dock-row{min-height:44px}
+ #F3-02 .f302-dock-row img{height:43px!important}
+}
+@media(max-width:720px){#F3-02 .nova-stage{padding:2px 7px 0!important}}
+
+#F3-02 .f302-art{touch-action:none}
+#F3-02 .f302-division{margin:6px 0 0;color:#b6d5ed;font-size:.83rem}
+#F3-02 .f302-maths .mt{font:inherit}
+#F3-02 .f302-maths .mt-frac{font-family:var(--nova-font-chalk-write);font-style:normal}
+#F3-02 .f302-chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 2px}
+#F3-02 .f302-chip{display:inline-flex;min-height:40px;align-items:center;border-radius:12px;border:1px solid #356d87;background:#0e283c;color:#efffff;font:700 1rem var(--nova-font-chalk-write);padding:6px 12px;cursor:pointer}
+#F3-02 .f302-chip[aria-pressed="true"]{border-color:#ffcc58;box-shadow:0 0 18px #ffcc5850}
+#F3-02 .f302-chip:focus-visible{outline:3px solid #ffcc58}
+#F3-02 .f302-mainlabel{font-size:.93rem}
+#F3-02 .f302-sr{position:absolute;clip-path:inset(50%);height:1px;width:1px;overflow:hidden}
+@media(max-width:720px){#F3-02 .f302-stage-note{display:none}#F3-02 .f302-maths{font-size:1.04rem}}
+@media print{#F3-02 .f302-aside{color:#111}#F3-02 .f302-maths{color:#111;text-shadow:none}}
+
+@media(max-width:720px){
+ #F3-02 .nova-stage .nv-cap{padding:3px 6px 0;font-size:.6rem;min-height:25px}
+ #F3-02 .f302-aside .nv-ncard{min-height:48px;padding:6px 7px}
+ #F3-02 .f302-aside .f302-kicker{font-size:.65rem}
+ #F3-02 .f302-aside .f302-maths{font-size:1rem}
+ #F3-02 .f302-dock-row{min-height:33px;max-height:43px}
+ #F3-02 .f302-dock-row img{height:37px!important}
+ #F3-02 .f302-instruct{font-size:.73rem;line-height:1.25}
+}
+
+@media(max-width:720px){
+ #F3-02 .nova-stage[data-kind="double"] .f302-answer,
+ #F3-02 .nova-stage[data-kind="single"] .f302-answer,
+ #F3-02 .nova-stage[data-kind="factorise"] .f302-answer{flex-direction:column;gap:2px;align-items:flex-start}
+ #F3-02 .nova-stage[data-kind="double"] .f302-answer .f302-maths,
+ #F3-02 .nova-stage[data-kind="single"] .f302-answer .f302-maths,
+ #F3-02 .nova-stage[data-kind="factorise"] .f302-answer .f302-maths{font-size:.96rem;max-width:100%;line-height:1.25}
+ #F3-02 .nova-stage[data-kind="double"] .f302-answer .nv-ntile,
+ #F3-02 .nova-stage[data-kind="single"] .f302-answer .nv-ntile,
+ #F3-02 .nova-stage[data-kind="factorise"] .f302-answer .nv-ntile{max-width:100%;min-width:0;font-size:1rem;padding:5px 7px;text-align:left}
+ #F3-02 .f302-dock-row{padding-top:3px}
+}
+
+/* F0 authoritative helper strip. No F3 custom mascot docking or animation. */
+#F3-02 .nova-stage>.nv-dock{margin-top:auto}

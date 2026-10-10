@@ -1,0 +1,21 @@
+tab('Explore');setTimeout(function(){var X=NOVA_F2_15_CONFIG._explore,sel=document.querySelector('.nova-engine select');function pre(k){sel.value=k;sel.dispatchEvent(new Event('change'));}
+window.GET=function(){return X.w().den();};function COL(i,n){var W=Math.min(130,552/n),x=300-n*W/2+i*W+W/2;return S2C(x,180);}var TR=S2C(150,347);
+step('b5 preset 89',function(){pre('b5');},89);
+step('src -> ones place',function(){dd(q('[data-src]'),COL(3,4));window.SKIP=1;},null);step('carry settled 90',function(){},90);
+step('src -> empty',function(){dd(q('[data-src]'),S2C(595,300));},90);
+step('src -> off',function(){dd(q('[data-src]'),{x:-30,y:-30});},90);
+step('src flick -> fives',function(){dd(q('[data-src]'),COL(2,4),{flick:true});},95);
+step('src touch -> ones',function(){dd(q('[data-src]'),COL(3,4),{pt:'touch',id:3});},96);
+step('counter -> tray',function(){dd(q('[data-c="1_0"]'),TR);window.SKIP=1;},null);step('removed 25',function(){},71);
+step('counter -> other place springs back',function(){dd(q('[data-c="1_0"]'),COL(3,4));},71);
+step('double',function(){var a=q('[data-src]'),b=q('[data-c="1_0"]');P(a,'pointerdown',ctr(a),1);P(b,'pointerdown',ctr(b),2);P(b,'pointermove',TR,2);P(b,'pointerup',TR,2);P(a,'pointermove',COL(3,4),1);P(a,'pointerup',COL(3,4),1);},72);
+step('cancel',function(){var e=q('[data-src]');dd(e,COL(3,4),{noup:true});P(e,'pointercancel',{x:0,y:0});},72);
+step('blur',function(){var e=q('[data-src]');dd(e,COL(3,4),{noup:true});window.dispatchEvent(new Event('blur'));},72);
+step('keyboard + on place',function(){key(q('[data-col="3"]'),'+');},73);
+step('keyboard − on place',function(){key(q('[data-col="3"]'),'-');},72);
+step('binary preset',function(){pre('b2');},11);
+step('bulb click',function(){q('[data-bulb="0"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));},139);
+step('bulb Enter',function(){key(q('[data-col="0"]'),'Enter');},11);
+step('carry chain 0111+1',function(){pre('carry');dd(q('[data-src]'),COL(7,8));window.SKIP=1;},null);step('settle 8',function(){},8);
+step('drag mid-carry blocked',function(){pre('carry');dd(q('[data-src]'),COL(7,8));dd(q('[data-src]'),COL(7,8));window.SKIP=1;},null);step('settle carry',function(){},8);
+run();},500);

@@ -1,0 +1,32 @@
+/* F3-09: canonical F0 shell, original mascot dock, neon/chalk drawings */
+#F3-09 .nova-stage{padding:5px 9px 4px!important;min-height:0!important;overflow:hidden;background:radial-gradient(ellipse at 53% 43%,rgba(43,220,243,.095),transparent 70%),var(--v-bg)}
+#F3-09 .f309-scene{display:grid;grid-template-columns:minmax(0,2.55fr) minmax(195px,.8fr);gap:12px;align-items:center;min-width:0}
+#F3-09 .f309-svg{display:block;width:100%;height:auto;max-height:850px;filter:drop-shadow(0 10px 14px #0007);touch-action:none}
+#F3-09 .f309-side{display:grid;gap:10px;min-width:0}
+#F3-09 .f309-side .nv-ncard{padding:12px 14px;min-height:89px;border-radius:17px}
+#F3-09 .f309-title{font:850 .81rem var(--nova-font-ui);color:#bed5e6;letter-spacing:.03em}
+#F3-09 .f309-value{font:750 1.43rem/1.3 var(--nova-font-chalk-write);color:#f0faff;margin:8px 0;overflow-wrap:anywhere;text-shadow:0 0 8px #2bdcf33a}
+#F3-09 .f309-desc{font:.90rem/1.4 var(--nova-font-ui);color:#c8dfea;margin:7px 0}
+#F3-09 .f309-row{display:flex;align-items:end;flex-wrap:wrap;gap:8px;margin:9px 0}
+#F3-09 .f309-row label{display:grid;gap:4px;font:760 .86rem var(--nova-font-ui);color:#d3e5ef}
+#F3-09 input,#F3-09 select{height:42px;min-width:0;padding:7px 10px;color:#f1faff;background:#10283c;border:1px solid #407390;border-radius:10px;font:700 1rem var(--nova-font-ui)}
+#F3-09 input[type=number]{width:90px}
+#F3-09 .f309-help{font:.92rem/1.35 var(--nova-font-ui);color:#d2e3f1;margin:6px 0}
+#F3-09 .f309-status{font:760 .94rem/1.4 var(--nova-font-ui);color:#9af3d4;min-height:22px;margin:7px 0}
+#F3-09 .f309-status.bad{color:#ffb69a}
+#F3-09 .f309-win{font:850 1rem var(--nova-font-ui);padding:12px;border:1px solid #4fe2a1;background:#113c37;border-radius:13px;color:#b6ffe0}
+#F3-09 .f309-svg [data-drag]{cursor:grab}
+#F3-09 .f309-side .mt-frac{color:#f1ffff}
+#F3-09 button:focus-visible,#F3-09 input:focus-visible,#F3-09 select:focus-visible{outline:3px solid #ffcc58;outline-offset:2px}
+@media(max-width:720px){#F3-09 .nova-stage{padding:3px!important}#F3-09 .f309-scene{display:block}#F3-09 .f309-svg{width:100%;max-height:none}#F3-09 .f309-side{display:none}#F3-09 .f309-row{gap:6px}#F3-09 .f309-row label{font-size:.82rem}#F3-09 .nv-dockbub{max-width:calc(100% - 84px)}}
+@media print{#F3-09 .f309-svg{filter:none}#F3-09 .f309-side,#F3-09 .nova-panel{display:none!important}}
+
+#F3-09 .f309-frac{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 13px;flex-wrap:wrap;color:#d5f7e7;font:740 .91rem var(--nova-font-ui)}
+#F3-09 .f309-frac .nv-ntile{font-size:1.3rem;padding:6px 16px;color:#f4fbff}
+#F3-09 .f309-frac .mt-frac{display:inline-flex;vertical-align:middle}
+@media(max-width:720px){#F3-09 .f309-frac{gap:7px;font-size:.81rem;margin-top:-4px;padding:5px}#F3-09 .f309-frac .nv-ntile{font-size:1.05rem}}
+/* Traditional stacked fractional indices stay legible on mobile (not tiny superscripts). */
+#F3-09 .f309-frac .nv-ntile{font-size:2.05rem}
+#F3-09 .f309-frac .mt .mt-sup{font-size:.77em;top:-.63em}
+#F3-09 .f309-frac .mt .mt-frac{font-size:.91em;line-height:1.09}
+@media(max-width:720px){#F3-09 .f309-frac .nv-ntile{font-size:1.9rem}#F3-09 .f309-frac{font-size:.78rem}}

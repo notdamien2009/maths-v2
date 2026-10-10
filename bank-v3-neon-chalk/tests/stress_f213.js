@@ -1,0 +1,21 @@
+tab('Explore');setTimeout(function(){var X=NOVA_F2_13_CONFIG._explore,sel=document.querySelector('.nova-engine select');function pre(k){sel.value=k;sel.dispatchEvent(new Event('change'));}
+window.GET=function(){return X.st().a*10+(X.st().placed?1000:0);};var FR=S2C(150,100),TR=S2C(300,304),PBZ=S2C(528,206);
+step('empty preset',function(){pre('emp');},0);
+step('src->frame',function(){dd(q('[data-src]'),FR);},10);
+step('src->empty stage',function(){dd(q('[data-src]'),S2C(590,10));},10);
+step('src->off',function(){dd(q('[data-src]'),{x:-40,y:-40});},10);
+step('src flick',function(){dd(q('[data-src]'),FR,{flick:true});},20);
+step('src touch',function(){dd(q('[data-src]'),FR,{pt:'touch',id:3});},30);
+step('frame counter->frame back',function(){dd(q('[data-c="0"]'),FR);},30);
+step('frame counter->tray',function(){dd(q('[data-c="2"]'),TR);window.SKIP=1;},null);step('removed',function(){},20);
+step('double',function(){var a=q('[data-src]'),b=q('[data-c="0"]');P(a,'pointerdown',ctr(a),1);P(b,'pointerdown',ctr(b),2);P(b,'pointermove',TR,2);P(b,'pointerup',TR,2);P(a,'pointermove',FR,1);P(a,'pointerup',FR,1);},30);
+step('cancel',function(){var e=q('[data-src]');dd(e,FR,{noup:true});P(e,'pointercancel',{x:0,y:0});},30);
+step('blur',function(){var e=q('[data-src]');dd(e,FR,{noup:true});window.dispatchEvent(new Event('blur'));},30);
+step('keyboard Enter x4',function(){for(var i=0;i<4;i++)key(q('[data-src]'),'Enter');},70);
+step('wrong tile -> ring springs back',function(){var t=q('[data-tile="0.4"]')||q('[data-tile="4"]');dd(t,PBZ);},70);
+step('right tile -> empty stage',function(){dd(q('[data-tile="3"]'),S2C(300,20));},70);
+step('right tile -> ring',function(){dd(q('[data-tile="3"]'),PBZ);window.SKIP=1;},null);step('placed',function(){},1070);
+step('add after placed resets',function(){key(q('[data-src]'),'Enter');},80);
+step('fill to 10 then refuse',function(){for(var i=0;i<5;i++)key(q('[data-src]'),'Enter');dd(q('[data-src]'),FR);},100);
+step('tile keyboard Enter',function(){key(q('[data-src]'),'Delete');key(q('[data-tile="1"]'),'Enter');window.SKIP=1;},null);step('placed kb',function(){},1090);
+run();},500);

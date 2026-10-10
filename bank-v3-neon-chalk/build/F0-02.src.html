@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-premium="1" data-house="neon-chalk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA F0-02 · SVG primitives (arrows, braces, arcs, grids, axes, labels)</title>
+<style>
+@@CSS@@
+/* ---- F0-02 local styles ---- */
+.pr-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.pr-row label{display:flex;gap:6px;align-items:center;font-size:.85rem}
+.pr-row input[type=range]{width:150px}
+.pr-out{font:800 .9rem var(--nova-font-maths);color:var(--v-ink)}
+.pr-task{font-weight:700}
+.nova-spec dd{white-space:pre-line}
+@media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
+
+/* house v3 polish — Improve rows: number line, braces, angles, labels */
+.nova-stage svg text{paint-order:stroke;stroke:#06111b;stroke-width:.35px}
+.nova-stage .nv-svg{overflow:visible}
+
+</style>
+</head>
+<body data-topic="geometry">
+<div class="nova-wrap">
+<header id="nova-header" data-run="F0 · Bank · F0-02" data-title="SVG primitives" data-sub="Arrows, braces, arcs, grids, axes and labels: the drawing kit every NOVA engine is built from."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log">
+<h2 style="font-size:1.1em">Event log (NOVA.events)</h2>
+<div id="log" class="nova-log" role="log" aria-live="off"></div>
+<button class="nova-btn" id="clearlog">Clear log</button>
+</section>
+</div>
+<script>
+@@JS@@
+</script>
+<script>
+/* ===== F0-02 CONFIG: parameters + named presets ===== */
+var NOVA_F0_02_CONFIG={
+  startMode:'watch',
+  line:{min:-4,max:8,step:1},   /* number line range and tick interval */
+  hop:{start:2,size:3},         /* hop arrow: start value and signed size */
+  brace:true,                   /* brace under the hop with its length */
+  angle:50,                     /* angle arc in degrees (0-360, 90 shows the right-angle box) */
+  side:6,                       /* dimension label on the triangle base */
+  unit:'cm',
+  grid:20,                      /* background grid spacing in px (0 = off) */
+  presets:{
+    addition: {label:'Addition on a number line  2 + 3',line:{min:-4,max:8,step:1},hop:{start:2,size:3},angle:50},
+    negatives:{label:'Negatives  1 + (−5)',line:{min:-6,max:6,step:1},hop:{start:1,size:-5},angle:50},
+    decimals: {label:'Decimals  0.2 + 0.5',line:{min:0,max:1,step:0.1},hop:{start:0.2,size:0.5},angle:50},
+    right:    {label:'Right angle  90°',angle:90},
+    obtuse:   {label:'Obtuse angle  130°',angle:130},
+    reflex:   {label:'GCSE: reflex angle  250°',angle:250},
+    perimeter:{label:'Lengths  base 8 cm',side:8,unit:'cm'}
+  }
+};
+</script>
+<script>
+/* ===== F0-02 ENGINE ===== */
+(function(){
+if(document.documentElement.getAttribute('data-premium')==='1')NOVA.premium.enable();
+var h=NOVA.h,S=NOVA.svg,E=S.el,C=NOVA_F0_02_CONFIG,G=document.getElementById('gallery');
+var W=360,H=250;
+function fmt(v){return S.num(Math.round(v*1000)/1000);}
+/* scene(stage, upto, frac): draws layers 0..upto fully and layer `upto` at progress frac (smooth scrub). */
+var LAYERS=['grid','axes','arrow','brace','arc','labels','all'];
+function scene(stage,upto,frac,st){st=st||C;var sv=S.root(W,H,alt(st));
+  var lay=[];function L(i){var g=E('g',{'data-layer':LAYERS[i]},sv);lay[i]=g;return g;}
+  /* 0 grid */
+  var g0=L(0);if(st.grid)S.grid(g0,10,10,W-20,H-20,st.grid);
+  /* 1 axes: number line along the bottom */
+  var g1=L(1),ax=S.axes(g1,{x:30,y:200,w:300,h:0,xmin:st.line.min,xmax:st.line.max,ymin:0,ymax:0,ticks:st.line.step,numberLine:true});
+  /* 2 arrow: hop from start by size */
+  var g2=L(2),a=st.hop.start,b=+(a+st.hop.size).toFixed(6),role=st.hop.size<0?'focus':'op';
+  var hp=S.hop(g2,ax.sx(a),ax.sx(b),ax.y0-6,{role:role,label:(st.hop.size<0?'\u2212':'+')+fmt(Math.abs(st.hop.size)),height:42});
+  S.point(g2,ax.sx(a),ax.y0,{role:'given',r:5,glow:false});S.point(g2,ax.sx(b),ax.y0,{role:'result',r:5,glow:false});
+  /* 3 brace under the interval */
+  var g3=L(3);if(st.brace&&a!==b){S.brace(g3,Math.max(ax.sx(a),ax.sx(b)),ax.y0+42,Math.min(ax.sx(a),ax.sx(b)),ax.y0+42,{role:'support',depth:8,label:fmt(Math.abs(st.hop.size))});}
+  /* 4 arc on a triangle (apex angle drawn at vertex A) */
+  var g4=L(4),Ax=84,Ay=112,R=60,ang=st.angle,rad=ang*Math.PI/180,Bx=Ax+R*1.6,By=Ay,Cx=Ax+R*1.3*Math.cos(rad),Cy=Ay-R*1.3*Math.sin(rad);
+  var tri=E('g',{},g4);S.inkLine(tri,Ax,Ay,Bx,By,{width:2.5});S.inkLine(tri,Ax,Ay,Cx,Cy,{width:2.5});S.inkLine(tri,Bx,By,Cx,Cy,{width:2.5});
+  S.arc(g4,Ax,Ay,ang>180?20:26,0,ang,{role:'focus',label:fmt(ang)+'\u00B0'});
+  /* 5 labels, equal-length marks and a dimension line */
+  var g5=L(5);S.label(g5,Ax-10,Ay+16,'A',{maths:true,italic:true,size:14});S.label(g5,Bx+8,By+16,'B',{maths:true,italic:true,size:14});S.label(g5,Cx+(Cx<Ax?-10:10),Cy-6,'C',{maths:true,italic:true,size:14});
+  S.dim(g5,Ax,Ay,Bx,By,{label:st.side+' '+st.unit,role:'given',offset:14});S.tickMarks(g5,Ax,Ay,Bx,By,1);S.tickMarks(g5,Ax,Ay,Cx,Cy,1);
+  /* reveal logic */
+  stage.appendChild(sv);for(var i=0;i<6;i++){if(i>upto)lay[i].style.display='none';else if(i===upto&&frac<1)S.drawGroup(lay[i],frac);}
+  sv.setAttribute('aria-label',alt(st));return {svg:sv,ax:ax,end:b};}
+function alt(st){return 'Number line from '+fmt(st.line.min)+' to '+fmt(st.line.max)+' with a hop arrow from '+fmt(st.hop.start)+' of '+fmt(st.hop.size)+' landing on '+fmt(st.hop.start+st.hop.size)+(st.brace?', braced length '+fmt(Math.abs(st.hop.size)):'')+'. Triangle ABC with angle A = '+fmt(st.angle)+'\u00B0'+(st.angle===90?' (right-angle box)':'')+', AB = '+st.side+' '+st.unit+', AB and AC marked equal.';}
+function cap(stage,left,tag){stage.appendChild(h('div',{class:'nv-cap'},[h('span',{text:left}),tag?h('span',{class:'tag',text:tag}):null]));}
+var steps=[
+ {name:'Grid',mood:'neutral',narration:'Everything starts on a grid. It keeps lines straight and spacing equal.',prompt:'Why does equal spacing matter on a number line?'},
+ {name:'Axes',mood:'focus',narration:'The number line is an axis: ticks at equal steps, with an arrow showing it carries on.',prompt:'What is the interval between ticks here?'},
+ {name:'Arrows',mood:'focus',narration:'An arrow hops from the start. Cyan for adding, orange for subtracting, so the direction is clear.',prompt:'Which way would a negative hop go?'},
+ {name:'Braces',mood:'think',narration:'A brace groups a length and names it. It counts the jumps, not the ticks.',prompt:'How many jumps does the brace cover?'},
+ {name:'Arcs',mood:'focus',narration:'An arc marks an angle at a vertex. At exactly 90 degrees it becomes a square box.',prompt:'Is this angle acute, right or obtuse?'},
+ {name:'Labels',mood:'focus',narration:'Labels name points in italics. The dashes show equal sides and the dimension line gives a length.',prompt:'Which two sides are marked equal?'},
+ {name:'Together',mood:'cheer',narration:'Grid, axes, arrows, braces, arcs and labels. Every NOVA diagram is built from these six pieces.',prompt:'Name one lesson that would use each primitive.'}
+];
+/* fractional in-between: going from step i-1 to i, p in (i-1,i) draws layer i at progress p-(i-1) */
+function renderAt2(p,stage){var i=Math.ceil(p-1e-6),f=1-(i-p);if(i<0)i=0;stage.innerHTML='';var s=steps[i];cap(stage,'Primitive · '+s.name,'step '+(i+1)+'/'+steps.length);scene(stage,Math.min(i,5),i>=6?1:f);NOVA.scene.helperStrip(stage,{neutral:'idle',focus:'point',think:'think',cheer:'cheer'}[s.mood]||'idle',s.name);}
+function render(i,stage){renderAt2(i,stage);}
+function slider(lbl,min,max,step,val,on){var inp=h('input',{type:'range',min:min,max:max,step:step,value:val,'aria-label':lbl}),out=h('span',{class:'pr-out',text:fmt(val)});inp.oninput=function(){out.textContent=fmt(+inp.value);on(+inp.value);};return h('label',{},[lbl+' ',inp,out]);}
+function btnRow(api,check,hint){return h('div',{class:'pr-row'},[h('button',{class:'nova-btn primary',text:'Check',onclick:check}),h('button',{class:'nova-btn ghost',text:'Hint',onclick:function(){api.hint(hint);}})]);}
+var def={id:'F0-02',title:'SVG primitives',config:C,steps:steps,render:render,renderAt:renderAt2,
+ alt:'SVG primitives: grid, number-line axis, hop arrow, brace, angle arc, labels and marks.',
+ staticAlt:'A number line from −4 to 8 with a cyan hop arrow +3 from 2 (blue square) to 5 (green tick), braced underneath as length 3. Above, triangle ABC with a 50° orange arc at A, AB = 6 cm with a dimension line, and single dashes showing AB = AC.',
+ exploreIntro:'Explore: change the hop, the angle and the number line. Every primitive updates live.',
+ explore:function(panel,stage,api){var st=JSON.parse(JSON.stringify(C));
+   function draw(){stage.innerHTML='';cap(stage,'Explore','angle '+fmt(st.angle)+'\u00B0');var r=scene(stage,5,1,st);NOVA.scene.helperStrip(stage,'explain',fmt(st.hop.start)+(st.hop.size<0?' \u2212 ':' + ')+fmt(Math.abs(st.hop.size))+' = '+fmt(r.end));}
+   function emit(k,v){NOVA.events.emit('value',{engine:'F0-02',control:k,value:v});draw();}
+   var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});
+   pre.onchange=function(){var p=C.presets[pre.value];Object.keys(p).forEach(function(k){if(k!=='label')st[k]=JSON.parse(JSON.stringify(p[k]));});build();emit('preset',pre.value);};
+   var box=h('div');function build(){box.innerHTML='';var sp=st.line.step;
+     box.appendChild(h('div',{class:'pr-row'},[slider('Start',st.line.min,st.line.max,sp,st.hop.start,function(v){st.hop.start=v;emit('hopStart',v);})]));
+     box.appendChild(h('div',{class:'pr-row'},[slider('Hop',-(st.line.max-st.line.min),st.line.max-st.line.min,sp,st.hop.size,function(v){st.hop.size=v;emit('hopSize',v);})]));
+     box.appendChild(h('div',{class:'pr-row'},[slider('Angle',0,360,1,st.angle,function(v){st.angle=v;emit('angle',v);})]));
+     box.appendChild(h('div',{class:'pr-row'},[slider('Grid',0,40,10,st.grid,function(v){st.grid=v;emit('grid',v);})]));
+     var bc=h('input',{type:'checkbox'});bc.checked=st.brace;bc.onchange=function(){st.brace=bc.checked;emit('brace',bc.checked);};box.appendChild(h('label',{class:'pr-row'},[bc,' Show brace']));}
+   panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(box);build();draw();},
+ challenge:function(panel,api,stage){var st=JSON.parse(JSON.stringify(C)),k=0;st.angle=40;st.hop={start:2,size:1};
+   var T=[
+    {q:'Set the angle arc to show a right angle.',ctl:'angle',check:function(){return st.angle===90;},why:function(){return st.angle===180?'That is 180°, a straight line. A right angle is a quarter turn.':'Not a right angle yet. Watch for the square box.';},hint:'A right angle is 90°, and the arc turns into a small square.'},
+    {q:'Make the arrow show 2 + (−5). Set the start and the hop.',ctl:'hop',check:function(){return st.hop.start===2&&st.hop.size===-5;},why:function(){return st.hop.start===2&&st.hop.size===5?'Check the direction: adding a negative moves left.':'Start at 2, then hop 5 to the left.';},hint:'Adding −5 is a hop of size −5. The arrow should point left and land on −3.'},
+    {q:'The brace covers −1 to 4. How long is it?',ctl:'entry',check:function(){return +ent.value===5;},why:function(){return +ent.value===6?'You counted the ticks. Count the jumps (intervals) instead.':'Count the jumps between −1 and 4.';},hint:'Length = 4 − (−1).'}];
+   var qp=h('p',{class:'pr-task'}),ctl=h('div'),ent=h('input',{class:'nova-input',type:'number','aria-label':'Length of the brace',style:'width:90px'});
+   function draw(){stage.innerHTML='';cap(stage,'Challenge '+(k+1)+' of 3',T[k].ctl);if(k===2){st.hop={start:-1,size:5};st.brace=true;}scene(stage,5,1,st);NOVA.scene.helperStrip(stage,'think',T[k].q.split('.')[0]);}
+   function load(){qp.textContent=T[k].q;ctl.innerHTML='';
+     if(T[k].ctl==='angle')ctl.appendChild(h('div',{class:'pr-row'},[slider('Angle',0,360,5,st.angle,function(v){st.angle=v;NOVA.events.emit('value',{engine:'F0-02',control:'angle',value:v});draw();})]));
+     if(T[k].ctl==='hop'){ctl.appendChild(h('div',{class:'pr-row'},[slider('Start',-4,8,1,st.hop.start,function(v){st.hop.start=v;NOVA.events.emit('value',{engine:'F0-02',control:'hopStart',value:v});draw();})]));ctl.appendChild(h('div',{class:'pr-row'},[slider('Hop',-8,8,1,st.hop.size,function(v){st.hop.size=v;NOVA.events.emit('value',{engine:'F0-02',control:'hopSize',value:v});draw();})]));}
+     if(T[k].ctl==='entry'){ent.value='';ctl.appendChild(h('label',{class:'pr-row'},['Length ',ent]));}draw();}
+   panel.appendChild(qp);panel.appendChild(ctl);
+   panel.appendChild(btnRow(api,function(){var ok=T[k].check();api.check(ok,ok?(k<2?'Yes. Next task.':'Yes, 5 jumps. All three done.'):T[k].why(),{task:k,angle:st.angle,hop:st.hop,entry:ent.value});if(ok&&k<2){var tm=setTimeout(function(){k++;load();},700);api.onCleanup(function(){clearTimeout(tm);});}},''));
+   panel.lastChild.lastChild.onclick=function(){api.hint(T[k].hint);};
+   C._challenge={set:function(o){Object.assign(st,o);draw();},entry:ent,task:function(){return k;}};load();}
+};
+var card=h('section',{class:'nova-card nova-engine',id:'F0-02','aria-labelledby':'F0-02-h'},[h('h2',{id:'F0-02-h',class:'nova-eh'},[h('span',{class:'nova-id',text:'02'}),h('span',{text:'SVG primitives (arrows, braces, arcs, grids, axes, labels)'})])]);
+var spec={purpose:'The shared drawing kit for every NOVA diagram: grids, axes and number lines, hop arrows, braces, angle arcs (with the right-angle box), point markers, labels, equal-length and parallel marks, and dimension lines. Every piece uses the maths colour language plus a shape or pattern cue, and can be drawn on step by step.',
+ params:'line {min, max, step}; hop {start, size} (signed); brace (on/off); angle (0–360°); side + unit (dimension label); grid spacing (0 = off). Year groups: KS3 Years 7–9 (12–15), with GCSE extension.',
+ presets:'addition 2 + 3 · negatives 1 + (−5) · decimals 0.2 + 0.5 (step 0.1) · right 90° · obtuse 130° · reflex 250° (GCSE) · perimeter base 8 cm',
+ steps:'1 Grid → 2 Axes → 3 Arrows → 4 Braces → 5 Arcs → 6 Labels → 7 Together. Each step draws on smoothly, the scrub bar plays the in-between frames, and each has a Sir Bob Maximus narration line and a Guided prompt.',
+ interactions:'Explore: preset, hop start and size, angle, grid spacing and brace sliders, with live redraw. Challenge (3 tasks): set a 90° arc (correct when the angle is exactly 90°); make 2 + (−5) (start 2, hop −5); type the braced length from −1 to 4 (5). Events: value, correct, step, hintUsed.',
+ traps:'180° taken as a right angle (straight line) · adding a negative drawn in the wrong direction · counting ticks (6) instead of jumps (5) for an interval · unequal tick spacing (the grid keeps intervals equal)',
+ gcse:'Extension: reflex angles, decimal number lines and dimension lines feed GCSE bearings, scale drawing and plotting; linked: F0-01 tokens, F0-03 timeline, F0-04 interaction kit, F0-14 axes and plotting, F0-16 geometry canvas'};
+card.appendChild(NOVA.specCard(spec));
+card.appendChild(h('p',{class:'purpose',style:'margin:6px 0 0'},[h('strong',{text:'Year groups: '}),'KS3 Years 7–9 (12–15). ',h('strong',{text:'Linked components: '}),'F0-01, F0-03, F0-04, F0-14, F0-16, F0-17.']));
+var demo=h('div',{'aria-label':'SVG primitives live demo'});card.appendChild(h('h3',{text:'Live demo · F0-02'}));card.appendChild(demo);G.appendChild(card);
+window.F0_02=NOVA.mountEngine(demo,def);
+var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
+document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+</script>
+</body>
+</html>

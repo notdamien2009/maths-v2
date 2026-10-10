@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA F0-12 · Game wrapper</title>
+<style>
+@@CSS@@
+/* ---- F0-12 local styles ---- */
+.pr-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.pr-task{font-weight:700}
+.rs-opts{display:flex;flex-wrap:wrap;gap:6px}
+.rs-opts button[aria-pressed="true"]{outline:3px solid var(--m-focus)}
+.nova-spec dd{white-space:pre-line}
+.xx-h4{margin:0 0 4px;font:800 .68rem var(--nova-font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--v-muted)}
+@media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
+.gw-hud{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:8px 12px 0}
+.gw-hud div{height:46px;border-radius:10px;border:1px solid var(--v-line);background:var(--v-panel2);display:flex;flex-direction:column;justify-content:center;align-items:center;font:800 1rem var(--nova-font-ui);color:var(--v-ink);overflow:hidden}
+.gw-hud div small{font:800 .58rem var(--nova-font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--v-muted)}
+.gw-hud div.hl{box-shadow:0 0 0 2px var(--m-focus)}
+.gw-lives{letter-spacing:2px}.gw-lives .on{color:var(--m-error)}.gw-lives .off{color:var(--v-muted);opacity:.5}
+.gw-q{margin:8px 12px;height:96px;border-radius:12px;border:1px solid var(--v-line);background:var(--v-panel2);display:grid;grid-template-columns:1fr auto;align-items:center;padding:0 14px;gap:10px;overflow:hidden}
+.gw-q .p{font:800 1.25rem var(--nova-font-ui);color:var(--v-ink)}.gw-q .p small{display:block;font:700 .66rem var(--nova-font-ui);color:var(--v-muted)}
+.gw-q .a{font:800 1.1rem var(--nova-font-mono,monospace);min-width:64px;text-align:center;padding:6px 10px;border-radius:9px;border:1.5px dashed var(--v-line);color:var(--v-muted)}
+.gw-q .a.ok{border:1.5px solid var(--m-result);color:var(--m-result)}.gw-q .a.ok::after{content:' \2713'}
+.gw-q .a.no{border:1.5px solid var(--m-error);color:var(--m-error)}.gw-q .a.no::after{content:' \2716'}
+.gw-pts{margin:0 12px;height:22px;font:800 .78rem var(--nova-font-ui);color:var(--m-result)}
+.gw-pts.minus{color:var(--m-error)}
+.gw-res{margin:8px 12px;height:96px;border-radius:12px;border:1px solid var(--m-result);background:linear-gradient(180deg,rgba(80,220,140,.10),transparent);display:flex;align-items:center;justify-content:space-around;text-align:center;font:800 .74rem var(--nova-font-ui);color:var(--v-muted)}
+.gw-res b{display:block;font:800 1.3rem var(--nova-font-ui);color:var(--v-ink)}
+.gw-stars{font-size:1.4rem;letter-spacing:3px}.gw-stars .on{color:var(--math-gold,#ffcc58)}.gw-stars .off{color:var(--v-muted);opacity:.4}
+</style>
+</head>
+<body data-topic="number">
+<div class="nova-wrap">
+<header id="nova-header" data-run="F0 · Bank · F0-12" data-title="Game wrapper" data-sub="Rounds, points, streaks, lives and hints wrapped around any maths engine, with Bob reacting and a results screen at the end."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log">
+<h2 style="font-size:1.1em">Event log (NOVA.events)</h2>
+<div id="log" class="nova-log" role="log" aria-live="off"></div>
+<button class="nova-btn" id="clearlog">Clear log</button>
+</section>
+</div>
+<script>
+@@JS@@
+</script>
+<script>
+/* ===== F0-12 CONFIG: parameters + named presets ===== */
+var NOVA_F0_12_CONFIG={
+  startMode:'watch',
+  rounds:5, lives:3, base:10, streakBonus:5, hintCost:5, stars:[50,70,90], seed:'GAME12',
+  presets:{
+    quick:   {label:'Quick fire: 5 rounds, 3 lives',rounds:5,lives:3,kind:'fraction'},
+    marathon:{label:'Marathon: 10 rounds, 3 lives',rounds:10,lives:3,kind:'fraction'},
+    practice:{label:'Practice: no lives',rounds:8,lives:0,kind:'negative'},
+    tables:  {label:'Times tables sprint',rounds:10,lives:2,kind:'times'},
+    gcse:    {label:'GCSE: percentages of amounts',rounds:6,lives:3,kind:'percent'}
+  }
+};
+</script>
+<script>
+/* ===== F0-12 ENGINE ===== */
+(function(){
+var h=NOVA.h,C=NOVA_F0_12_CONFIG;
+/* question source: any engine can plug in; here a seeded generator per kind */
+function gen(kind,rng){if(kind==='fraction'){var d=rng.pick([2,3,4,5,8]),n=rng.int(1,d-1),m=d*rng.int(2,9);return {p:n+'/'+d+' of '+m,a:n*m/d,hint:'Divide '+m+' by '+d+', then multiply by '+n+'.'};}
+  if(kind==='negative'){var x=rng.int(-9,9),y=rng.int(-9,9);return {p:x+' + ('+y+')',a:x+y,hint:'Start at '+x+' and move '+Math.abs(y)+(y<0?' left.':' right.')};}
+  if(kind==='times'){var a=rng.int(2,12),b=rng.int(2,12);return {p:a+' × '+b,a:a*b,hint:'Try '+a+' × '+(b-1)+' + '+a+'.'};}
+  var pc=rng.pick([10,15,20,25,30,40,75]),v=rng.pick([40,60,80,120,200,360]);return {p:pc+'% of '+v,a:pc*v/100,hint:'Find 10% of '+v+' first.'};}
+function hud(stage,s,o){o=o||{};var hd=h('div',{class:'gw-hud'});var lv=h('span',{class:'gw-lives'});if(s.maxLives){for(var i=0;i<s.maxLives;i++)lv.appendChild(h('span',{class:i<s.lives?'on':'off',text:i<s.lives?'\u2665':'\u2661'}));}else lv.textContent='\u221E';
+  [['Round',Math.min(s.round,s.rounds)+'/'+s.rounds,'round'],['Score',String(s.score),'score'],['Lives',lv,'lives'],['Streak',(s.streak>=2?'\u26A1':'')+s.streak,'streak']].forEach(function(c){hd.appendChild(h('div',{class:o.hl===c[2]?'hl':'','data-maths':o.hl===c[2]?c[2]:null},[h('small',{text:c[0]}),c[1]]));});stage.appendChild(hd);}
+function qcard(stage,q,ans,state){stage.appendChild(h('div',{class:'gw-q'},[h('div',{class:'p'},[h('small',{text:'Question'}),q?q.p:'—']),h('div',{class:'a'+(state?' '+state:''),'data-maths':state?'ans':null,text:ans!=null?String(ans):'?'})]));}
+function pts(stage,t,minus){stage.appendChild(h('div',{class:'gw-pts'+(minus?' minus':''),'aria-live':'polite',text:t||''}));}
+function results(stage,r,stars){var st=h('span',{class:'gw-stars','aria-label':r.stars+' of 3 stars'});for(var i=0;i<3;i++)st.appendChild(h('span',{class:i<r.stars?'on':'off',text:i<r.stars?'\u2605':'\u2606'}));
+  stage.appendChild(h('div',{class:'gw-res','data-maths':'res'},[h('div',{},[h('b',{text:String(r.score)}),'score']),h('div',{},[h('b',{text:r.correct+'/'+r.played}),r.pct+'% correct']),h('div',{},[st,h('div',{text:'stars at '+stars.join(' / ')+'%'})]),h('div',{},[h('b',{text:String(r.best)}),'best streak'])]));}
+/* scripted demo game */
+var DG=NOVA.game.create({engine:'F0-12-demo',rounds:5,lives:3}),FR=[];NOVA.events.emit=(function(em){return em;})(NOVA.events.emit);
+var Qd=[{p:'3/4 of 24',a:18},{p:'2/5 of 30',a:12},{p:'1/3 of 27',a:9},{p:'5/8 of 40',a:25},{p:'3/4 of 24',a:18}];
+function snap(){return DG.state();}
+var mute=function(f){var em=NOVA.events.emit;NOVA.events.emit=function(t,d){return {type:t,detail:d||{}};};try{return f();}finally{NOVA.events.emit=em;}};
+var D=mute(function(){var s0=snap(),a1=DG.answer(true),a2=DG.answer(true),a3=DG.answer(false),hh=DG.hint(),a4=DG.answer(true),a5=DG.answer(true);return {s0:s0,a1:a1,a2:a2,a3:a3,hh:hh,a5:a5,res:DG.results()};});
+var DEMO=[{s:D.s0,q:Qd[0]},{s:D.a1,q:Qd[0],ans:18,st:'ok',pts:'+10 (correct)',hl:'score',target:'score'},{s:D.a2,q:Qd[1],ans:12,st:'ok',pts:'+10 +5 streak bonus',hl:'streak'},{s:D.a3,q:Qd[2],ans:8,st:'no',pts:'No points, lose a life',minus:1,hl:'lives',target:'lives'},
+ {s:D.hh,q:Qd[3],pts:'Hint: −5 points',minus:1,hl:'score'},{s:D.a5,q:Qd[3],ans:25,st:'ok',pts:'Bob reacts: celebrate'},{s:D.a5,res:D.res,target:'res'}];
+var steps=[
+ {name:'Wrap',mood:'neutral',narration:'The game wrapper sits around any engine. Engines just say right or wrong; the wrapper adds rounds, score, lives and hints.',prompt:'Who keeps the score: the engine or the wrapper?'},
+ {name:'Score',mood:'cheer',narration:'3/4 of 24 is 18. Correct: plus 10 points.',prompt:'How many points for a correct answer?',target:'score'},
+ {name:'Streak',mood:'cheer',narration:'2/5 of 30 is 12. Two in a row starts a streak, worth a 5 point bonus.',prompt:'What is the score now?'},
+ {name:'Lives',mood:'oops',narration:'1/3 of 27 is 9, not 8. No points, the streak resets and one life is lost.',prompt:'How many lives are left?',target:'lives'},
+ {name:'Hints',mood:'think',narration:'A hint costs 5 points. Helpful, never free, never a punishment that ends the game.',prompt:'What does a hint cost?'},
+ {name:'Reactions',mood:'cheer',narration:'5/8 of 40 is 25. Bob and the helper react to every answer, with poses that change for right and wrong.',prompt:'Which pose shows for a right answer?'},
+ {name:'Results',mood:'cheer',narration:'At the end: score, percentage, stars and best streak. Four out of five is 80 percent: two stars.',prompt:'How many stars for 80%?',target:'res'}];
+function render(i,stage){stage.innerHTML='';var s=steps[i],d=DEMO[i];NOVA.cap(stage,'Game · '+s.name,'step '+(i+1)+'/'+steps.length);hud(stage,d.s,d);if(d.res)results(stage,d.res,C.stars);else{qcard(stage,d.q,d.ans,d.st);pts(stage,d.pts,d.minus);}NOVA.scene.helperStrip(stage,d.st==='no'?'oops':d.st==='ok'||i===steps.length-1?'cheer':'explain',s.name);}
+var def={id:'F0-12',title:'Game wrapper',config:C,steps:steps,render:render,
+ alt:'Game wrapper: a heads-up display with round, score, lives (hearts) and streak above a question card, with points feedback and a results screen with stars.',
+ staticAlt:'Game wrapper around fraction questions. Correct: +10; second correct in a row: +10 +5 streak bonus (25). Wrong: no points, lose a life (2 left). Hint: −5. Results: score 45, 4/5 correct (80%), 2 stars (stars at 50 / 70 / 90%), best streak 2.',
+ exploreIntro:'Explore: pick a game, answer each question and press Go. Use a hint if you need one. Results appear at the end.',
+ explore:function(panel,stage,api){var P=Object.assign({},C,C.presets.quick),g,rng,q,last=null,lastPts='';
+   function start(){g=NOVA.game.create({engine:'F0-12',rounds:P.rounds,lives:P.lives,base:C.base,streakBonus:C.streakBonus,hintCost:C.hintCost,stars:C.stars});rng=NOVA.rng.create(C.seed+P.kind);q=gen(P.kind,rng);last=null;lastPts='';draw();}
+   function draw(){stage.innerHTML='';var s=g.state();NOVA.cap(stage,'Explore · '+P.label,s.over?'game over':'round '+Math.min(s.round,s.rounds));hud(stage,s);if(s.over)results(stage,g.results(),C.stars);else{qcard(stage,q,last&&last.ans,last&&last.st);pts(stage,lastPts,last&&last.st==='no');}NOVA.scene.helperStrip(stage,s.over?'cheer':'explain',s.over?'Game over':'Round '+s.round);}
+   var pre=h('select',{class:'nova-input','aria-label':'Game'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});pre.onchange=function(){P=Object.assign({},C,C.presets[pre.value]);NOVA.events.emit('value',{engine:'F0-12',key:'preset',value:pre.value});start();};
+   var e=NOVA.ui.entry({label:'Answer',engine:'F0-12-ui'});
+   panel.appendChild(h('label',{class:'pr-row'},['Game ',pre]));panel.appendChild(e);
+   panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn primary',text:'Go',onclick:function(){if(g.state().over)return;var v=NOVA.ui.parseNum(e.get()),ok=Math.abs(v-q.a)<1e-9,before=g.state().score;g.answer(ok);var d=g.state().score-before;last={ans:e.get()||'?',st:ok?'ok':'no'};lastPts=ok?'+'+d+(d>C.base?' (streak bonus)':''):'Answer '+q.a+'. '+(P.lives?'Lose a life.':'Keep going.');api.check(ok,ok?'Yes! '+q.p+' = '+q.a+'.':'Not quite: '+q.p+' = '+q.a+'.',{game:true});e.input.value='';var t=setTimeout(function(){if(!g.state().over){q=gen(P.kind,rng);last=null;}draw();},900);api.onCleanup(function(){clearTimeout(t);});draw();}}),
+     h('button',{class:'nova-btn ghost',text:'Hint (−'+C.hintCost+')',onclick:function(){g.hint();lastPts='Hint: '+q.hint;api.hint(q.hint);draw();}}),h('button',{class:'nova-btn',text:'New game',onclick:start})]));
+   start();C._explore={game:function(){return g;},q:function(){return q;}};},
+ challenge:function(panel,api,stage){var G2=NOVA.game.create({engine:'F0-12-c',rounds:10,lives:3});
+   var tasks=[
+    {q:'Scoring: 10 per correct, +5 streak bonus from the 2nd correct in a row. A pupil goes right, right, wrong. What is the score?',build:NOVA.entryTask('score =','F0-12'),check:function(v){var ok=v===25;return [ok,ok?'Yes: 10, then 10 + 5, then 0. Total 25.':v===20?'Do not forget the streak bonus on the second right answer.':v===30?'The wrong answer scores nothing; the bonus only comes once here.':'Add the points round by round.'];},hint:'Round 1: 10. Round 2: 10 + 5. Round 3: 0.',solve:function(c){c._A.input.value='25';}},
+    {q:'A game starts with 3 lives. The pupil gets 2 wrong and uses 1 hint. How many lives are left?',build:NOVA.entryTask('lives =','F0-12'),check:function(v){var ok=v===1;return [ok,ok?'Yes: two wrong answers cost two lives. Hints cost points, not lives.':v===0?'Hints cost points, not lives.':'Each wrong answer costs one life.'];},hint:'Only wrong answers take lives.',solve:function(c){c._A.input.value='1';}},
+    {q:'Stars are given at 50%, 70% and 90%. How many stars for 7 out of 10?',build:NOVA.entryTask('stars =','F0-12'),check:function(v){var ok=v===2;return [ok,ok?'Yes: 7/10 = 70%, which reaches the 70% line: two stars.':v===1?'70% counts: "at 70%" means 70% or more.':v===3?'Three stars needs 90%.':'Turn 7/10 into a percentage first.'];},hint:'7 out of 10 = 70%.',solve:function(c){c._A.input.value='2';}}];
+   NOVA.challengeRun(panel,api,tasks,function(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['score','lives','stars'][k]);var s=G2.state();if(k===1){s=Object.assign({},s,{lives:3,round:1});}hud(stage,s,{hl:['score','lives','round'][k]});if(k===2)results(stage,{score:'?',correct:7,played:10,pct:70,stars:0,best:'?'},C.stars);else qcard(stage,{p:k===0?'right · right · wrong':'wrong · hint · wrong'},null,null);NOVA.scene.helperStrip(stage,'think',['Score?','Lives?','Stars?'][k]);},C);}
+};
+NOVA.bankMount({id:'F0-12',num:'12',title:'Game wrapper (rounds, scoring, lives, hints, Bob reactions, results)',def:def,linked:['F0-06','F0-07','F0-08','F0-11','any engine'],
+ spec:{purpose:'All game logic lives here, so maths engines stay pure. Wraps any engine or question source with rounds, points, streak bonus, lives, hint cost, Bob and helper reactions, and a results screen with stars. Demo questions: fractions of amounts, negatives, times tables, GCSE percentages.',
+  params:'rounds, lives (0 = practice), base points, streakBonus, hintCost, stars thresholds [50,70,90], seed, question kind. Core: NOVA.game.create(opts) → answer(ok) / hint() / state() / results() / reset() / points(); reactions through NOVA.moment. Year groups: KS3 Years 7–9 (12–15), with GCSE extension.',
+  presets:'Quick fire 5 rounds · Marathon 10 rounds · Practice (no lives) · Times tables sprint · GCSE percentages of amounts',
+  steps:'Wrap → Score → Streak → Lives → Hints → Reactions → Results. Each step has a Sir Bob line and a Guided prompt. The helper glides to the score, the lives and the results panel.',
+  interactions:'Watch: auto-play. Guided: step with prompts. Explore: choose a game, answer seeded questions (Go), Hint (costs points), New game; HUD and results update. Challenge (3 tasks): score after right, right, wrong (25); lives after 2 wrong + 1 hint (1); stars for 7/10 (2). Events: value (game state), correct, step, hintUsed.',
+  traps:'Forgetting the streak bonus · Thinking hints cost lives · "At 70%" read as more than 70% · 1/3 of 27 answered as 8',
+  gcse:'Extension: the GCSE percentages preset; results can feed F0-11 objectives; linked: F0-06 seeds, F0-07 events, F0-08 Bob reactions, F0-11 assessment'}});
+})();
+</script>
+<script>
+(function(){var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
+document.getElementById('clearlog').onclick=function(){log.textContent='';};})();
+</script>
+</body>
+</html>

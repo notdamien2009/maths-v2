@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA F0-06 · Seeded randomiser for variants</title>
+<style>
+@@CSS@@
+/* ---- F0-06 local styles ---- */
+.pr-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.pr-task{font-weight:700}
+.rs-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:8px 12px 0}
+.rs-seed{font:800 .95rem var(--nova-font-mono,monospace);letter-spacing:.08em;padding:4px 12px;border-radius:999px;border:1.5px solid var(--m-given);color:var(--v-ink);background:color-mix(in srgb,var(--m-given) 14%,transparent)}
+.rs-seed::before{content:'\25A0  seed ';font:700 .7rem var(--nova-font-ui);letter-spacing:0;color:var(--m-given)}
+.rs-tag{font:700 .72rem var(--nova-font-ui);color:var(--v-muted)}
+.rs-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:8px 12px}
+.rs-col h4{margin:0 0 4px;font:800 .7rem var(--nova-font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--v-muted);text-align:center}
+.rs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+/* fixed-size cards: randomising never changes layout, so nothing below moves */
+.rs-card{position:relative;height:54px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid var(--v-line);background:linear-gradient(170deg,rgba(255,255,255,.05),transparent 50%),var(--v-panel2);overflow:hidden;font-size:1.05rem}
+.rs-card .n{position:absolute;left:6px;top:3px;font:800 .6rem var(--nova-font-ui);color:var(--v-muted)}
+.rs-card .ans{position:absolute;right:6px;bottom:3px;font:800 .66rem var(--nova-font-maths);color:var(--m-result)}
+.rs-card .ans::before{content:'\2713 '}
+.rs-card.same{border-color:var(--m-result)}
+.rs-card.diff{border-color:var(--m-focus);border-style:dashed}
+.rs-card.held{border-color:var(--m-support)}
+.rs-card.empty{opacity:.35}
+.rs-card .mt{white-space:nowrap;max-width:100%}
+.rs-card .mt-role[data-role="unknown"]{border-bottom:0}
+.rs-card .mt-role[data-role="unknown"] .mt-cue{display:none}
+.rs-bars{display:flex;gap:4px;align-items:flex-end;height:46px;justify-content:center;padding:0 12px}
+.rs-bars span{width:22px;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--m-op),color-mix(in srgb,var(--m-op) 40%,transparent))}
+.rs-bars-l{display:flex;gap:4px;justify-content:center;font:700 .62rem var(--nova-font-mono,monospace);color:var(--v-muted)}
+.rs-bars-l span{width:22px;text-align:center}
+.rs-opts{display:flex;flex-wrap:wrap;gap:6px}
+.rs-opts button[aria-pressed="true"]{outline:3px solid var(--m-focus)}
+.nova-spec dd{white-space:pre-line}
+@media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
+</style>
+</head>
+<body data-topic="number">
+<div class="nova-wrap">
+<header id="nova-header" data-run="F0 · Bank · F0-06" data-title="Seeded randomiser" data-sub="Fresh question variants on demand, yet every set can be recreated exactly from its seed: same seed, same questions, every time."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log">
+<h2 style="font-size:1.1em">Event log (NOVA.events)</h2>
+<div id="log" class="nova-log" role="log" aria-live="off"></div>
+<button class="nova-btn" id="clearlog">Clear log</button>
+</section>
+</div>
+<script>
+@@JS@@
+</script>
+<script>
+/* ===== F0-06 CONFIG: parameters + named presets ===== */
+var NOVA_F0_06_CONFIG={
+  startMode:'watch',
+  seed:'MATHS7',          /* any text or number */
+  template:'times',       /* key of templates below */
+  count:6,                /* variants shown (1-6; the grid always keeps 6 slots) */
+  noRepeat:true,          /* no duplicate questions */
+  avoidTrivial:true,      /* no 0 or 1 as factors / coefficients */
+  showAnswers:false,
+  presets:{
+    times:   {label:'Times tables  a × b (2 to 12)',template:'times'},
+    equation:{label:'One-step and two-step equations  ax + b = c',template:'equation'},
+    fraction:{label:'Simplify fractions',template:'fraction'},
+    percent: {label:'Percent of an amount',template:'percent'},
+    negative:{label:'Directed numbers  a − b',template:'negative'},
+    sform:   {label:'GCSE: write in standard form',template:'sform'}
+  }
+};
+</script>
+<script>
+/* ===== F0-06 ENGINE ===== */
+(function(){
+var h=NOVA.h,M=NOVA.mt,R=NOVA.rng,C=NOVA_F0_06_CONFIG,G=document.getElementById('gallery');
+/* templates: (rng, opts) -> {q: maths markup, a: answer (number or text)}; all answers are exact */
+var TPL={
+ times:function(r,o){var lo=o.avoidTrivial?2:0,a=r.int(lo,12),b=r.int(lo,12);return {q:a+'\\times'+b+'=\\r{unknown}{?}',a:a*b};},
+ equation:function(r,o){var a=r.int(o.avoidTrivial?2:1,9),x=r.int(-6,12),b=r.int(o.avoidTrivial?1:0,20)*r.sign();return {q:a+'x'+(b<0?'-'+(-b):'+'+b)+'='+(a*x+b),a:x};},
+ fraction:function(r,o){var p=r.int(1,8),q=r.intExcept(p+1,12,[]),g=function(m,n){return n?g(n,m%n):m;},k=r.int(2,6),d=g(p,q);p/=d;q/=d;if(o.avoidTrivial&&p===q)q++;return {q:'\\frac{'+(p*k)+'}{'+(q*k)+'}',a:p+'/'+q};},
+ percent:function(r,o){var p=r.pick([10,20,25,50,5,75,15,30]),n=r.int(2,40)*20;return {q:p+'\\%\\ of\\ '+n,a:p*n/100};},
+ negative:function(r,o){var a=r.int(-12,12),b=r.int(-12,12);if(o.avoidTrivial&&b===0)b=3;return {q:a+'-'+(b<0?'('+b+')':b),a:a-b};},
+ sform:function(r,o){var m=r.int(11,99)/10,e=r.int(-5,7),v=+(m*Math.pow(10,e)).toPrecision(6);return {q:String(v),a:M.sf(v).src};}};
+/* each question has its own forked stream, so changing one never changes the others */
+function make(seed,o,n){var root=R.create(seed),out=[],seen={};for(var i=0;out.length<n&&i<n*40;i++){var r=root.fork('q'+i),v=TPL[o.template](r,o);if(o.noRepeat&&seen[v.q])continue;seen[v.q]=1;out.push(v);}return out;}
+function aStr(a){return typeof a==='number'?String(a).replace('-','\u2212'):a;}
+function cap(stage,left,tag){stage.appendChild(h('div',{class:'nv-cap'},[h('span',{text:left}),tag?h('span',{class:'tag',text:tag}):null]));}
+function grid(list,o,cls){var g=h('div',{class:'rs-grid'});for(var i=0;i<6;i++){var v=list[i],c=h('div',{class:'rs-card'+(v?'':' empty')+(cls&&cls[i]?' '+cls[i]:'')});c.appendChild(h('span',{class:'n',text:'Q'+(i+1)}));
+  if(v){c.appendChild(M.render(v.q));if(o.showAnswers){var an=h('span',{class:'ans'});if(/\\/.test(String(v.a)))an.appendChild(M.render(v.a));else if(/\//.test(String(v.a))){var f=String(v.a).split('/');an.appendChild(M.render('\\frac{'+f[0]+'}{'+f[1]+'}'));}else an.textContent=aStr(v.a);c.appendChild(an);}c.setAttribute('aria-label','Question '+(i+1)+': '+M.speak(v.q));}else c.appendChild(h('span',{text:'—'}));g.appendChild(c);}return g;}
+function col(title,seed,list,o,cls){var c=h('div',{class:'rs-col'},[h('h4',{text:title})]);c.appendChild(h('div',{class:'rs-head'},[h('span',{class:'rs-seed','data-maths':'seed',text:String(seed)})]));c.appendChild(grid(list,o,cls));return c;}
+function bars(seed){var r=R.create(seed),b=h('div',{class:'rs-bars','aria-hidden':'true'}),l=h('div',{class:'rs-bars-l','aria-hidden':'true'});for(var i=0;i<8;i++){var x=r.next();b.appendChild(h('span',{style:'height:'+Math.round(6+x*40)+'px'}));l.appendChild(h('span',{text:x.toFixed(2).slice(1)}));}return [b,l];}
+var O=function(x){return Object.assign({template:C.template,noRepeat:C.noRepeat,avoidTrivial:C.avoidTrivial,showAnswers:C.showAnswers},x||{});};
+var steps=[
+ {name:'Seed',mood:'neutral',narration:'A seed is a starting code. From it the randomiser makes a stream of numbers that looks random but is fixed by the seed.',prompt:'If you use the same seed again, what happens?'},
+ {name:'Same seed',mood:'focus',narration:'Same seed, same questions. MATHS7 gives exactly the same six questions on every device, so a class can share one worksheet.',prompt:'Are the two sets the same?',target:'seed'},
+ {name:'New seed',mood:'think',narration:'Change the seed and you get a fresh set. Dashed cards changed; that is a new variant of the same skill.',prompt:'What changed, and what stayed the same?'},
+ {name:'Constraints',mood:'think',narration:'Rules keep variants fair: no repeats, no times 0 or times 1, and whole-number answers. Random does not mean anything goes.',prompt:'Why is 7 × 1 a weak question?'},
+ {name:'Templates',mood:'focus',narration:'The same seed drives any template: equations, fractions, percentages or standard form. The skill changes; the seed still recreates it.',prompt:'Pick a template you would use for homework.'},
+ {name:'Fork per question',mood:'focus',narration:'Each question has its own stream. Re-roll Q3 and Q1, Q2 and the rest stay put, so a teacher can swap one question without changing the others.',prompt:'Which questions stayed the same?'},
+ {name:'All set',mood:'cheer',narration:'Seed, template and rules: that is all an engine needs to make endless fair variants it can always recreate.',prompt:'Write down the seed so you can get this set back.'}];
+function render(i,stage){stage.innerHTML='';var s=steps[i],o=O({showAnswers:i>=3}),A=make('MATHS7',o,6);cap(stage,'Randomiser · '+s.name,'step '+(i+1)+'/'+steps.length);var wrap=h('div',{class:'rs-cols'});
+  if(i===0){var bb=bars('MATHS7'),c=h('div',{class:'rs-col'},[h('h4',{text:'Stream from the seed'}),h('div',{class:'rs-head'},[h('span',{class:'rs-seed','data-maths':'seed',text:'MATHS7'})]),bb[0],bb[1]]);wrap.appendChild(c);wrap.appendChild(col('First variants',' MATHS7',A.slice(0,2),o));}
+  else if(i===1){wrap.appendChild(col('Laptop','MATHS7',A,o,A.map(function(){return 'same';})));wrap.appendChild(col('Phone','MATHS7',make('MATHS7',o,6),o,A.map(function(){return 'same';})));}
+  else if(i===2){var B=make('QUIZ42',o,6);wrap.appendChild(col('Seed MATHS7','MATHS7',A,o));wrap.appendChild(col('Seed QUIZ42','QUIZ42',B,o,B.map(function(v,j){return A[j]&&A[j].q===v.q?'same':'diff';})));}
+  else if(i===3){var L=make('MATHS7',O({avoidTrivial:false,noRepeat:false,showAnswers:true}),6);wrap.appendChild(col('No rules','MATHS7',L,O({showAnswers:true})));wrap.appendChild(col('Fair rules','MATHS7',A,o));}
+  else if(i===4){wrap.appendChild(col('Equations','MATHS7',make('MATHS7',O({template:'equation',showAnswers:true}),6),O({showAnswers:true})));wrap.appendChild(col('Fractions','MATHS7',make('MATHS7',O({template:'fraction',showAnswers:true}),6),O({showAnswers:true})));}
+  else if(i===5){var F=A.slice();F[2]=TPL.times(R.create('MATHS7').fork('reroll-q3'),o);wrap.appendChild(col('Before','MATHS7',A,o));wrap.appendChild(col('Re-roll Q3','MATHS7',F,o,F.map(function(v,j){return j===2?'diff':'held';})));}
+  else {wrap.appendChild(col('Times','MATHS7',A,o));wrap.appendChild(col('Standard form','MATHS7',make('MATHS7',O({template:'sform',showAnswers:true}),6),O({showAnswers:true})));}
+  stage.appendChild(wrap);NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
+NOVA.events.on('step',function(e){var d=e.detail||{};if(d.engine!=='F0-06')return;var s=steps[d.index];if(!s||!s.target)return;setTimeout(function(){var st=document.querySelector('#F0-06 .nova-stage'),t=st&&st.querySelector('[data-maths='+s.target+']');if(t)NOVA.scene.pointTo(st,t);},350);});
+var def={id:'F0-06',title:'Seeded randomiser',config:C,steps:steps,render:render,
+ alt:'Seeded randomiser: a seed code makes a fixed set of six question variants; the same seed always recreates the same set.',
+ staticAlt:'Seed MATHS7 makes six times-table questions; the same seed on a second device gives the identical six. A new seed QUIZ42 gives a different set. Rules: no repeats, no ×0 or ×1, whole-number answers. Templates: equations, fractions, percentages, directed numbers, standard form.',
+ exploreIntro:'Explore: type a seed or roll a new one, pick a template and rules, and re-roll single questions. The layout never jumps.',
+ explore:function(panel,stage,api){var st={seed:C.seed,template:C.template,count:C.count,noRepeat:C.noRepeat,avoidTrivial:C.avoidTrivial,showAnswers:C.showAnswers},rr={};
+   function list(){var L=make(st.seed,st,st.count);Object.keys(rr).forEach(function(k){if(L[k])L[k]=TPL[st.template](R.create(st.seed).fork('re'+k+':'+rr[k]),st);});return L;}
+   function draw(){stage.innerHTML='';cap(stage,'Explore · '+C.presets[st.template].label.split('  ')[0],'seed '+st.seed);var w=h('div',{class:'rs-cols'});w.appendChild(col('Your set',st.seed,list(),st,Object.keys(rr).reduce(function(a,k){a[k]='diff';return a;},[])));stage.appendChild(w);NOVA.scene.helperStrip(stage,'explain','Seed '+st.seed);}
+   function emit(k,v){NOVA.events.emit('value',{engine:'F0-06',control:k,value:v});}
+   var se=NOVA.ui.entry({label:'Seed',engine:'F0-06'});se.input.value=st.seed;se.input.inputMode='text';se.input.oninput=function(){st.seed=se.input.value.trim()||'0';rr={};draw();};
+   var roll=h('button',{class:'nova-btn primary',text:'\u2684 New seed',onclick:function(){st.seed=R.code();se.input.value=st.seed;rr={};draw();emit('seed',st.seed);}});
+   var pre=h('select',{class:'nova-input','aria-label':'Template'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});pre.value=st.template;pre.onchange=function(){st.template=C.presets[pre.value].template;rr={};draw();emit('template',st.template);};
+   var cnt=NOVA.ui.stepper({label:'Questions',value:st.count,min:1,max:6,step:1,engine:'F0-06',onChange:function(v){st.count=v;draw();}});
+   function cb(lbl,key){var c=h('input',{type:'checkbox'});c.checked=st[key];c.onchange=function(){st[key]=c.checked;draw();emit(key,c.checked);};return h('label',{class:'pr-row'},[c,' '+lbl]);}
+   var rq=h('select',{class:'nova-input','aria-label':'Question to re-roll'});for(var i=0;i<6;i++)rq.appendChild(h('option',{value:i,text:'Q'+(i+1)}));
+   panel.appendChild(h('div',{class:'pr-row'},[se,roll]));panel.appendChild(h('label',{class:'pr-row'},['Template ',pre]));panel.appendChild(cnt);
+   panel.appendChild(cb('No repeats','noRepeat'));panel.appendChild(cb('Avoid 0 and 1','avoidTrivial'));panel.appendChild(cb('Show answers','showAnswers'));
+   panel.appendChild(h('div',{class:'pr-row'},['Re-roll only ',rq,h('button',{class:'nova-btn',text:'Re-roll',onclick:function(){var k=+rq.value;rr[k]=(rr[k]||0)+1;draw();emit('reroll','Q'+(k+1));}})]));
+   draw();C._explore={roll:function(){roll.click();},set:function(o){Object.assign(st,o);draw();}};},
+ challenge:function(panel,api,stage){var k=0,pick=null,target=make('MATHS7',O(),6),qv=TPL.equation(R.create('NOVA').fork('q0'),O()),A;
+   var T=[{q:'Which seed recreates this exact set? Preview each, then pick.',kind:'seed'},{q:'Solve the generated question.',kind:'solve'},{q:'Which rule stops questions like 7 × 1?',kind:'rule'}];
+   var qp=h('p',{class:'pr-task'}),ctl=h('div'),prev=null;
+   function draw(){stage.innerHTML='';cap(stage,'Challenge '+(k+1)+' of 3',T[k].kind);var w=h('div',{class:'rs-cols'});
+     if(k===0){w.appendChild(col('Target set','?',target,O()));w.appendChild(col('Preview',prev||'pick a seed',prev?make(prev,O(),6):[],O(),prev?make(prev,O(),6).map(function(v,j){return v.q===target[j].q?'same':'diff';}):null));}
+     else if(k===1)w.appendChild(col('Seed NOVA · Q1','NOVA',[qv],O()));else w.appendChild(col('No rules','MATHS7',make('MATHS7',O({avoidTrivial:false,noRepeat:false}),6),O()));
+     stage.appendChild(w);NOVA.scene.helperStrip(stage,'think',T[k].q.split(/[.?]/)[0]);}
+   function opts(list,on){var o=h('div',{class:'rs-opts',role:'group'});list.forEach(function(x){var b=h('button',{class:'nova-btn','aria-pressed':'false',text:x,onclick:function(){o.querySelectorAll('button').forEach(function(y){y.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');pick=x;NOVA.events.emit('value',{engine:'F0-06',control:'pick',value:x});if(on)on(x);}});o.appendChild(b);});return o;}
+   function load(){qp.textContent=T[k].q;ctl.innerHTML='';pick=null;prev=null;
+     if(k===0)ctl.appendChild(opts(['MATHS 7','maths7','MATHS7','MATHS8'],function(x){prev=x;draw();}));
+     else if(k===1){A=NOVA.ui.entry({label:'x =',engine:'F0-06'});ctl.appendChild(A);}
+     else ctl.appendChild(opts(['No repeats','Avoid 0 and 1','Whole-number answers','A new seed']));draw();}
+   function check(){if(k===0){var ok=pick==='MATHS7';return [ok,ok?'Yes: the exact seed recreates the exact set.':pick==='maths7'||pick==='MATHS 7'?'Close is not enough: seeds are exact, even capitals and spaces.':pick==='MATHS8'?'One character different gives a completely different set.':'Pick a seed first.'];}
+     if(k===1){var v=NOVA.ui.parseNum(A.get()),ok2=v===qv.a;return [ok2,ok2?'Yes, x = '+aStr(qv.a)+'.':'Undo the + or − first, then divide by the number in front of x.'];}
+     var ok3=pick==='Avoid 0 and 1';return [ok3,ok3?'Yes: avoiding 0 and 1 keeps questions worth doing.':pick==='A new seed'?'A new seed can still roll × 1. You need a rule.':pick?'That rule helps fairness, but × 1 can still appear.':'Pick a rule first.'];}
+   panel.appendChild(qp);panel.appendChild(ctl);
+   panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn primary',text:'Check',onclick:function(){var r=check();api.check(r[0],r[1]+(r[0]&&k<2?' Next task.':''),{task:k});if(r[0]&&k<2){var tm=setTimeout(function(){k++;load();},800);api.onCleanup(function(){clearTimeout(tm);});}}}),
+     h('button',{class:'nova-btn ghost',text:'Hint',onclick:function(){api.hint(['A seed must match exactly, character for character.','Get x on its own: do the opposite of each step.','Which numbers make a times question trivial?'][k]);}})]));
+   C._challenge={solve:function(){if(k===0){pick='MATHS7';}else if(k===1)A.input.value=String(qv.a);else pick='Avoid 0 and 1';},answer:qv.a};load();}
+};
+var card=h('section',{class:'nova-card nova-engine',id:'F0-06','aria-labelledby':'F0-06-h'},[h('h2',{id:'F0-06-h',class:'nova-eh'},[h('span',{class:'nova-id',text:'06'}),h('span',{text:'Seeded randomiser for variants'})])]);
+var spec={purpose:'Makes fresh, fair question variants for any engine, and recreates any set exactly from its seed. Teachers can share one code with a class, pupils can retry a new variant of the same skill, and marking can regenerate the answers.',
+ params:'seed (text or number); template (times, equation, fraction, percent, negative, sform); count 1–6; noRepeat; avoidTrivial; showAnswers. Core: NOVA.rng.create(seed) → next / int / intExcept / pick / shuffle / decimal / sign / nonZero / weighted / sample / fork(label) / reset; NOVA.rng.variants, unique, code, hash. Year groups: KS3 Years 7–9 (12–15), with GCSE extension.',
+ presets:'times a × b · equations ax + b = c · simplify fractions · percent of an amount · directed numbers · GCSE standard form',
+ steps:'Seed → Same seed → New seed → Constraints → Templates → Fork per question → All set. Each step has a Sir Bob Maximus line and a Guided prompt. On Same seed the helper glides to point at the seed.',
+ interactions:'Watch: auto-play. Guided: step with prompts. Explore: type a seed or roll a new one, template, number of questions, rules, show answers, and re-roll one question. Cards are fixed-size, so randomising never shifts the layout or the helper. Challenge (3 tasks): pick the seed that recreates a set (MATHS7); solve a generated equation; pick the rule that stops × 1. Events: value, correct, step, hintUsed.',
+ traps:'"Random" means it can never be repeated · A nearly-right seed (maths7, MATHS 7) gives the same set · A new seed fixes unfair questions · Re-rolling one question changes them all',
+ gcse:'Extension: standard form and equation templates feed GCSE practice; seeds make assessments reproducible for marking; linked: F0-04 entry, F0-05 maths text, F0-07 events, F0-11 assessment, F0-12 game wrapper, F0-13 worked examples'};
+card.appendChild(NOVA.specCard(spec));
+card.appendChild(h('p',{class:'purpose',style:'margin:6px 0 0'},[h('strong',{text:'Year groups: '}),'KS3 Years 7–9 (12–15). ',h('strong',{text:'Linked components: '}),'F0-04, F0-05, F0-07, F0-11, F0-12, F0-13.']));
+var demo=h('div',{'aria-label':'Seeded randomiser live demo'});card.appendChild(h('h3',{text:'Live demo · F0-06'}));card.appendChild(demo);G.appendChild(card);
+window.F0_06=NOVA.mountEngine(demo,def);
+var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
+document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+</script>
+</body>
+</html>
