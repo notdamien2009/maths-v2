@@ -1,0 +1,28 @@
+/* F3-15 local composition. All mathematical SVG strokes/glass use F0 primitives. */
+#F3-15 .nova-stage{padding:5px 7px 0!important;min-height:0!important;overflow:hidden;background:radial-gradient(ellipse at 45% 40%,rgba(43,220,243,.06),transparent 65%),var(--v-bg)}
+#F3-15 .f315-scene{display:grid;grid-template-columns:minmax(0,3fr) minmax(180px,.78fr);gap:12px;align-items:center;min-width:0}
+#F3-15 .f315-svg{width:100%;height:auto;display:block;filter:drop-shadow(0 12px 21px #0009);touch-action:none}
+#F3-15 .f315-side{display:grid;gap:12px;align-content:center}
+#F3-15 .f315-side .nv-ncard{padding:15px;border-radius:17px}
+#F3-15 .f315-side strong{font:800 1.16rem var(--nova-font-chalk-write);color:#f2faff}
+#F3-15 .f315-side p{color:#badde9;font:.9rem/1.5 var(--nova-font-ui);margin:9px 0 3px}
+#F3-15 .f315-formula{min-height:54px;padding:8px 12px;border:1px solid #427b9b;border-radius:14px;background:linear-gradient(135deg,#0c2a40,#06182c);display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap;font:750 1.6rem var(--nova-font-chalk-write);color:#edf9ff;box-shadow:inset 0 1px #ffffff16,0 9px 18px #0004}
+#F3-15 .f315-formula .mt{font-family:var(--nova-font-chalk-write);color:#dffaf7;font-weight:800}
+#F3-15 .f315-formula.result{border-color:#4fe2a1}
+#F3-15 .f315-top-proof{display:grid;gap:8px;margin:3px 2px 8px}
+#F3-15 .f315-stage-desc{color:#b9deed;font:.85rem/1.45 var(--nova-font-ui);text-align:center}
+#F3-15 .f315-form{display:flex;flex-wrap:wrap;gap:8px;align-items:end;margin:12px 0}
+#F3-15 .f315-form label{display:grid;gap:5px;color:#cae9f7;font:750 .84rem var(--nova-font-ui)}
+#F3-15 .f315-form select,#F3-15 .f315-form input{background:#0b293f;color:#edfaff;border:1px solid #43819a;min-height:43px;border-radius:10px;padding:8px 10px;font:750 .95rem var(--nova-font-ui)}
+#F3-15 .f315-form input[type=number]{max-width:96px}
+#F3-15 .f315-status{color:#aef3d1;font:800 .95rem/1.45 var(--nova-font-ui);min-height:22px;margin:7px 0}
+#F3-15 .f315-status.bad{color:#ffc49a}
+#F3-15 .f315-info{color:#cce9f5;font:.91rem/1.5 var(--nova-font-ui)}
+#F3-15 .f315-card-math{display:flex;align-items:center;justify-content:center;height:100%;width:100%;font:800 48px/1.2 var(--nova-font-chalk-write);color:#eff8ff;pointer-events:none}
+#F3-15 .f315-card-math .mt{font-family:var(--nova-font-chalk-write);white-space:nowrap}
+#F3-15 .f315-card-math .mt-root{white-space:nowrap}
+#F3-15 .f315-svg [data-drag='1']{cursor:grab}
+#F3-15 .f315-banner{border:1px solid #4fe2a1;padding:12px;border-radius:12px;background:#10392d;color:#d6ffea;font:850 1rem var(--nova-font-chalk-write)}
+#F3-15 :is(button,select,input):focus-visible{outline:3px solid #ffcc58;outline-offset:3px}
+@media(max-width:760px){#F3-15 .nova-stage{padding:2px!important}#F3-15 .f315-scene{display:block}#F3-15 .f315-side{display:none}#F3-15 .f315-svg{width:100%}#F3-15 .f315-formula{font-size:1.31rem;min-height:47px}#F3-15 .f315-form{gap:7px}}
+@media print{#F3-15 .f315-svg{filter:none}#F3-15 .f315-side,#F3-15 .nova-panel{display:none!important}#F3-15 .f315-formula{background:white;color:black;border:1px solid black}}

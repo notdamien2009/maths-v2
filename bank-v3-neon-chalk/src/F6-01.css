@@ -1,0 +1,17 @@
+/* F6-01 — canonical NOVA Neon Tube + Chalk. No core overrides. */
+#F6-01 .nova-stage{padding:7px 11px 4px;min-height:0;overflow:hidden}
+#F6-01 .f601-svg{display:block;width:100%;max-width:1120px;height:auto;margin:0 auto;touch-action:pan-y;overflow:visible;filter:drop-shadow(0 10px 22px #0006)}
+#F6-01 .f601-controls{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:12px 0}
+#F6-01 .f601-controls label{display:grid;gap:5px;font:750 .92rem var(--nova-font-chalk-write);color:var(--v-ink)}
+#F6-01 select,#F6-01 input{background:#081d2d;border:1px solid #346486;border-radius:9px;color:#f2faff;padding:10px 12px;font:740 1rem var(--nova-font-chalk-write);min-height:43px;max-width:100%}
+#F6-01 select{min-width:255px;max-width:100%}
+#F6-01 .f601-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#F6-01 .f601-status{font:720 1.04rem/1.5 var(--nova-font-chalk-write);color:#def8ff;min-height:26px;margin:9px 0}
+#F6-01 .f601-note{color:#b9d6e8;font:.92rem/1.5 var(--nova-font-ui);margin:4px 0}
+#F6-01 .f601-challenge-row{display:flex;align-items:end;gap:10px;flex-wrap:wrap;margin:12px 0}
+#F6-01 .f601-challenge-row input{min-width:155px;max-width:200px}
+#F6-01 button:focus-visible,#F6-01 select:focus-visible,#F6-01 input:focus-visible{outline:3px solid #ffcc58;outline-offset:4px}
+#F6-01 .f601-selected{color:#4fe2a1}
+#F6-01 .f601-sr{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+@media(max-width:640px){#F6-01 .nova-stage{padding:5px 4px 2px}#F6-01 .f601-svg{max-width:100%}#F6-01 .f601-controls label{width:100%}#F6-01 .f601-controls select{width:100%}#F6-01 .f601-challenge-row input{max-width:100%}}
+@media print{#F6-01 .f601-svg{filter:none}#F6-01 .f601-controls,#F6-01 .f601-actions{display:none}}

@@ -1,122 +1,68 @@
-[
-  {
-    "width": 380,
-    "motion": "reduce",
-    "action": "crosshair fast place",
-    "result": "5,6"
-  },
-  {
-    "width": 380,
-    "motion": "reduce",
-    "action": "keyboard arrow",
-    "result": "6,6"
-  },
-  {
-    "width": 380,
-    "motion": "reduce",
-    "action": "Escape cancellation",
-    "result": "cleared"
-  },
-  {
-    "width": 380,
-    "motion": "reduce",
-    "action": "wrong card returns",
-    "result": "not accepted"
-  },
-  {
-    "width": 380,
-    "motion": "reduce",
-    "action": "correct fast card",
-    "result": "proof 2"
-  },
-  {
-    "width": 380,
-    "motion": "no-preference",
-    "action": "crosshair fast place",
-    "result": "5,6"
-  },
-  {
-    "width": 380,
-    "motion": "no-preference",
-    "action": "keyboard arrow",
-    "result": "6,6"
-  },
-  {
-    "width": 380,
-    "motion": "no-preference",
-    "action": "Escape cancellation",
-    "result": "cleared"
-  },
-  {
-    "width": 380,
-    "motion": "no-preference",
-    "action": "wrong card returns",
-    "result": "not accepted"
-  },
-  {
-    "width": 380,
-    "motion": "no-preference",
-    "action": "correct fast card",
-    "result": "proof 2"
-  },
-  {
-    "width": 1280,
-    "motion": "reduce",
-    "action": "crosshair fast place",
-    "result": "5,6"
-  },
-  {
-    "width": 1280,
-    "motion": "reduce",
-    "action": "keyboard arrow",
-    "result": "6,6"
-  },
-  {
-    "width": 1280,
-    "motion": "reduce",
-    "action": "Escape cancellation",
-    "result": "cleared"
-  },
-  {
-    "width": 1280,
-    "motion": "reduce",
-    "action": "wrong card returns",
-    "result": "not accepted"
-  },
-  {
-    "width": 1280,
-    "motion": "reduce",
-    "action": "correct fast card",
-    "result": "proof 2"
-  },
-  {
-    "width": 1280,
-    "motion": "no-preference",
-    "action": "crosshair fast place",
-    "result": "5,6"
-  },
-  {
-    "width": 1280,
-    "motion": "no-preference",
-    "action": "keyboard arrow",
-    "result": "6,6"
-  },
-  {
-    "width": 1280,
-    "motion": "no-preference",
-    "action": "Escape cancellation",
-    "result": "cleared"
-  },
-  {
-    "width": 1280,
-    "motion": "no-preference",
-    "action": "wrong card returns",
-    "result": "not accepted"
-  },
-  {
-    "width": 1280,
-    "motion": "no-preference",
-    "action": "correct fast card",
-    "result": "proof 2"
-  }
-]
+{
+  "assertions": 12,
+  "passed": 12,
+  "results": [
+    {
+      "width": 380,
+      "name": "wrong factor returned",
+      "ok": true
+    },
+    {
+      "width": 380,
+      "name": "correct factor drag",
+      "ok": true
+    },
+    {
+      "width": 380,
+      "name": "correct exact-card drag",
+      "ok": true
+    },
+    {
+      "width": 380,
+      "name": "drag back to Remove",
+      "ok": true
+    },
+    {
+      "width": 380,
+      "name": "Escape cancels drag",
+      "ok": true
+    },
+    {
+      "width": 380,
+      "name": "no runtime errors",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "name": "wrong factor returned",
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "name": "correct factor drag",
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "name": "correct exact-card drag",
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "name": "drag back to Remove",
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "name": "Escape cancels drag",
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "name": "no runtime errors",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}

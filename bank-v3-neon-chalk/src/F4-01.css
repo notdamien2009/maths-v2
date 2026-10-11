@@ -1,0 +1,45 @@
+/* F4-01 — scoped styling only. All drawing/font/colours inherit canonical NOVA core. */
+#F4-01{--f401-soft:rgba(43,220,243,.09)}
+#F4-01 .nova-stage{padding:6px 10px 2px!important;min-height:0!important;overflow:hidden}
+#F4-01 .f401-layout{display:grid;grid-template-columns:minmax(0,3.4fr) minmax(220px,1fr);gap:13px;align-items:center;padding:3px 10px 0}
+#F4-01 .f401-apparatus{min-width:0;align-self:center}
+#F4-01 .f401-svg{display:block;width:100%;max-width:none;height:auto;overflow:visible;user-select:none}
+#F4-01 .f401-side{display:flex;flex-direction:column;gap:10px;min-width:0;align-self:stretch;justify-content:center}
+#F4-01 .f401-side .nv-ncard{padding:14px 12px;min-height:101px;overflow:hidden}
+#F4-01 .f401-sidek{font-family:var(--nova-font-ui);font-size:.76rem;letter-spacing:.13em;font-weight:900;opacity:.87;margin:0 0 4px}
+#F4-01 .f401-sidev{font-family:var(--nova-font-chalk-write);font-size:clamp(1.45rem,2.9vw,2.3rem);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:var(--nv-chalk-glow)}
+#F4-01 .f401-sidesub{font:500 .82rem/1.35 var(--nova-font-ui);margin:5px 0 0;color:var(--v-muted)}
+#F4-01 .f401-proof{margin:1px 18px 0;font:800 clamp(1rem,2vw,1.25rem) var(--nova-font-chalk-write);color:var(--math-green);text-align:center}
+#F4-01 .f401-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:end;margin:9px 0}
+#F4-01 .f401-controls button{min-height:43px}
+#F4-01 .f401-field{display:flex;flex-direction:column;gap:5px;min-width:135px;font:.8rem/1.25 var(--nova-font-ui);font-weight:800;color:var(--shell-ink)}
+#F4-01 .f401-field input,#F4-01 .f401-field select{background:#08192c;color:#eef7ff;border:1.5px solid #2b7898;border-radius:11px;padding:9px 12px;min-height:44px;font:700 1.05rem var(--nova-font-chalk-write);max-width:100%}
+#F4-01 .f401-field select{min-width:240px}
+#F4-01 .f401-instruction{font:700 1.05rem var(--nova-font-chalk-write);color:var(--shell-ink);margin:8px 0}
+#F4-01 .f401-status{border-left:3px solid var(--math-cyan);background:var(--f401-soft);border-radius:0 11px 11px 0;padding:9px 12px;font:.96rem/1.35 var(--nova-font-chalk-write);min-height:44px}
+#F4-01 .f401-status.bad{border-color:#ef7676;color:#ffd2d2}
+#F4-01 .f401-status.good{border-color:var(--math-green);color:var(--math-green)}
+#F4-01 .f401-help{color:var(--v-muted);font:.85rem var(--nova-font-ui);max-width:330px}
+#F4-01 .f401-progress{font:900 .91rem var(--nova-font-ui);color:var(--math-cyan)}
+#F4-01 .f401-finish{font:800 1.3rem/1.6 var(--nova-font-chalk-write);padding:17px;border:1px solid var(--math-green);border-radius:14px}
+#F4-01 .f401-complete{font:800 1.1rem var(--nova-font-chalk-write);color:var(--math-green)}
+#F4-01 .f401-divider[data-drag],#F4-01 .f401-piece[data-drag],#F4-01 .f401-placed[data-drag]{cursor:grab;outline:none}
+#F4-01 .f401-piece:focus-visible,#F4-01 .f401-divider:focus-visible,#F4-01 .f401-placed:focus-visible{filter:drop-shadow(0 0 14px #ffcc58)}
+#F4-01 .f401-next{display:flex;justify-content:flex-start;margin:8px 0 0}
+#F4-01 .nv-dev{margin:6px 0;padding:7px;color:#9bb2c7}
+@media(max-width:750px){
+ #F4-01 .f401-layout{grid-template-columns:1fr;gap:3px;padding:0 2px}
+ #F4-01 .f401-svg{width:100%;max-width:none!important}
+ #F4-01 .f401-side{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ #F4-01 .f401-side .nv-ncard{padding:7px 5px;min-height:76px}
+ #F4-01 .f401-sidek{font-size:.61rem;letter-spacing:.07em}
+ #F4-01 .f401-sidev{font-size:1.45rem}
+ #F4-01 .f401-sidesub{font-size:.65rem}
+ #F4-01 .f401-field select{min-width:0;width:100%}
+ #F4-01 .f401-controls{gap:5px}
+ #F4-01 .f401-controls button{font-size:.82rem;padding:7px 10px}
+ #F4-01 .f401-progress{font-size:.82rem}
+}
+@media(max-width:390px){#F4-01 .f401-layout{padding:0}#F4-01 .f401-sidev{font-size:1.15rem}#F4-01 .f401-side .nv-ncard{min-height:66px}#F4-01 .f401-sidesub{display:none}}
+@media(prefers-reduced-motion:reduce){#F4-01 .f401-svg *{transition:none!important;animation:none!important}}
+@media print{#F4-01 .f401-side .nv-ncard{background:#fff!important;color:#000!important;box-shadow:none}#F4-01 .f401-layout{grid-template-columns:3fr 1fr}#F4-01 .f401-svg{filter:grayscale(1)}#F4-01 .f401-proof{color:#000}}

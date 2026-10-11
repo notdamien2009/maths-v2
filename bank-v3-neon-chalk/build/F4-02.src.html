@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="dark" data-premium="1" data-house="neon-chalk">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA F4-02 · Comparison Bar · Premium Review</title>
+<style>
+@@CSS@@
+@@F4CSS@@
+</style>
+</head>
+<body data-topic="algebra">
+<div class="nova-wrap">
+<header id="nova-header" data-run="F4 · Run 02 · Review" data-title="Comparison Bar" data-sub="Align two quantities, measure the difference, and prove comparison with subtraction."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log">
+<h2 style="font-size:1.1em">Event log (NOVA.events)</h2>
+<div id="log" class="nova-log" role="log" aria-live="off"></div>
+<button class="nova-btn" id="clearlog">Clear log</button>
+</section></div>
+<script>
+@@JS@@
+</script>
+<script>
+@@F4JS@@
+</script>
+<script>
+(function(){var l=document.getElementById('log');function update(e){l.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+l.textContent.slice(0,3800);}NOVA.events.history().forEach(update);NOVA.events.on('*',update);document.getElementById('clearlog').onclick=function(){l.textContent='';};})();
+</script>
+</body></html>

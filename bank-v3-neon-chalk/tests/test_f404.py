@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+"""NOVA F4-04 browser and maths QA; no repository mutation."""
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+import json,sys
+R=Path(__file__).resolve().parents[1];HTML=R/'F4/F4-04-multi-step-bar-model.html';SHOTS=R/'shots/F4-04';SHOTS.mkdir(parents=True,exist_ok=True)
+checks=[]
+def ck(name,cond,detail=None):
+ ok=bool(cond);checks.append({'name':name,'passed':ok,'details':detail})
+ if not ok:print('FAIL:',name,str(detail)[:300],flush=True)
+def mode(page,name):page.get_by_role('tab',name=name.capitalize()).click()
+def fields(page,a,b):
+ ins=page.locator('#F4-04 .f404-controls input[type="number"]');assert ins.count()==2
+ ins.nth(0).fill(str(a));ins.nth(0).press('Tab');ins=page.locator('#F4-04 .f404-controls input[type="number"]')
+ ins.nth(1).fill(str(b));ins.nth(1).press('Tab')
+def check(page):page.get_by_role('button',name='Check both steps').click()
+def status(page):return page.locator('#F4-04 .f404-status').inner_text().lower()
+with sync_playwright() as s:
+ browser=s.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox','--disable-dev-shm-usage'])
+ for width in (380,1280):
+  page=browser.new_page(viewport={'width':width,'height':980},reduced_motion='reduce');errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+  page.set_content(HTML.read_text(encoding='utf-8'),wait_until='load',timeout=60000)
+  for m in ('watch','guided','explore','challenge'):
+   mode(page,m);page.wait_for_timeout(90)
+   ck(f'{width} {m}: stage SVG',page.locator('#F4-04 svg.f404-svg').count()==1)
+   ck(f'{width} {m}: one mascot dock',page.locator('#F4-04 .nv-dock').count()==1)
+   ck(f'{width} {m}: three role cards',page.locator('#F4-04 .f404-card-value').count()==3)
+   ck(f'{width} {m}: no horizontal overflow',page.evaluate('document.documentElement.scrollWidth<=innerWidth'),page.evaluate('document.documentElement.scrollWidth'))
+   ck(f'{width} {m}: no placeholder on stage',page.locator('#F4-04 .nv-frac-tbd').count()==0)
+   ck(f'{width} {m}: no JavaScript exception',not errors,errors[:3])
+   try:
+    page.locator('#F4-04').screenshot(path=str(SHOTS/f'F4-04-{width}-{m}.png'),animations='disabled',timeout=25000)
+    ck(f'{width} {m}: screenshot',True)
+   except Exception as e:ck(f'{width} {m}: screenshot',False,str(e)[:200])
+  ck(f'{width} Challenge hides computed values',all(x not in page.locator('#F4-04 svg.f404-svg').text_content() for x in ('£230','£207')))
+  maths=page.evaluate('''()=>{const m=window.F404_MATH,C=window.F404_CONFIG;return {a:m.compute(200,[15,-10]),b:m.compute(80,[-25,-10]),c:m.compute(100,[20,-25]),reverse:m.reverse(90,[20,-25]),expect:C.challenge.map(m.expected),valid:C.challenge.map((c,i)=>m.validate(c,[[230,207],[60,54],[100,120]][i].map(String),true)),noCarry:m.validate(C.challenge[0],['230','207'],false),wrongSecond:m.validate(C.challenge[0],['230','210'],true),wrongFirst:m.validate(C.challenge[0],['215','207'],true)}}''')
+  ck(f'{width} arithmetic: 200 to 230 to 207',maths['a']==[200,230,207],maths['a'])
+  ck(f'{width} arithmetic: successive discounts',maths['b']==[80,60,54],maths['b'])
+  ck(f'{width} arithmetic: +20% then -25%',maths['c']==[100,120,90],maths['c'])
+  ck(f'{width} inverse multipliers',maths['reverse']==[100,120,90],maths['reverse'])
+  ck(f'{width} both answers for 3 challenges',maths['expect']==[[230,207],[60,54],[100,120]],maths['expect'])
+  ck(f'{width} valid challenge solutions',all(x['ok'] for x in maths['valid']))
+  ck(f'{width} missing carry rejected',not maths['noCarry']['ok'])
+  ck(f'{width} combined percent misconception rejected',not maths['wrongSecond']['ok'])
+  ck(f'{width} initial percent misconception rejected',not maths['wrongFirst']['ok'])
+  # All three real Challenge flows
+  fields(page,230,210);check(page)
+  ck(f'{width} combined-rate answer rejected','second percentage' in status(page) or 'combined' in status(page),status(page))
+  fields(page,230,207);check(page)
+  ck(f'{width} arithmetic right but no carry rejected','carry the value' in status(page),status(page))
+  page.get_by_role('button',name='Carry step 1 →').click();ck(f'{width} Carry button marks stage',page.locator('#F4-04 svg.f404-svg').get_attribute('data-carried')=='true')
+  check(page);ck(f'{width} challenge 1 accepted','correct:' in status(page),status(page));ck(f'{width} Next problem appears',page.get_by_role('button',name='Next problem →').count()==1)
+  page.get_by_role('button',name='Next problem →').click()
+  fields(page,60,52);page.get_by_role('button',name='Carry step 1 →').click();check(page)
+  ck(f'{width} wrong second base rejected','second percentage' in status(page) or 'new amount' in status(page),status(page))
+  fields(page,60,54);page.get_by_role('button',name='Carry step 1 →').click();check(page)
+  ck(f'{width} challenge 2 accepted','correct:' in status(page),status(page))
+  page.get_by_role('button',name='Next problem →').click()
+  ck(f'{width} reverse target final is shown', '£90' in page.locator('#F4-04 svg.f404-svg').text_content())
+  fields(page,90,120);page.get_by_role('button',name='Carry step 1 →').click();check(page)
+  ck(f'{width} reverse original rejected','undo' in status(page),status(page))
+  fields(page,100,120);page.get_by_role('button',name='Carry step 1 →').click();check(page)
+  ck(f'{width} reverse task accepted','correct:' in status(page),status(page))
+  page.get_by_role('button',name='Next problem →').click()
+  ck(f'{width} completion card',page.locator('#F4-04 .f404-finish').count()==1)
+  mode(page,'explore')
+  ck(f'{width} presets dropdown',page.locator('#F4-04 select[aria-label="Choose route preset"]').count()==1)
+  fields(page,230,207);page.get_by_role('button',name='Carry step 1 →').click()
+  ck(f'{width} carried intermediate value',page.locator('#F4-04 .f404-chip[data-placed="true"]').count()==1)
+  chip=page.locator('#F4-04 .f404-chip').first;chip.focus();page.keyboard.press('Delete')
+  ck(f'{width} keyboard remove carry',page.locator('#F4-04 svg.f404-svg').get_attribute('data-carried')=='false')
+  page.get_by_role('button',name='Reset').click();ck(f'{width} reset empty fields',all(x=='' for x in page.locator('#F4-04 .f404-field input').evaluate_all('(els)=>els.map(x=>x.value)')))
+  page.locator('#F4-04 select[aria-label="Choose route preset"]').select_option('discount')
+  ck(f'{width} Explore presets can change','25%' in page.locator('#F4-04 svg.f404-svg').text_content())
+  ck(f'{width} no errors after interaction',not errors,errors[:3])
+  page.close()
+ browser.close()
+out={'checks':len(checks),'passed':sum(x['passed'] for x in checks),'failed':sum(not x['passed'] for x in checks),'details':checks}
+(R/'tests/F4-04-BROWSER-RESULTS.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
+print('F4-04 browser + maths:',out['passed'],'/',out['checks'],'FAILED:',out['failed'],flush=True)
+sys.exit(bool(out['failed']))
