@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA F12-01 · Shape family tree</title>
+<style>
+@@CSS@@
+/* ---- F12-01 local styles ---- */
+.nova-spec dd{white-space:pre-line}
+.f12-sv [role=button]{outline:none}.f12-sv [role=button]:focus-visible{outline:2px dashed var(--m-focus);outline-offset:4px}
+.f12-sv[role=application]:focus-visible{outline:2px dashed var(--m-focus);outline-offset:3px;border-radius:12px}
+@media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
+</style>
+</head>
+<body data-topic="geometry">
+<div class="nova-wrap">
+<header id="nova-header" data-run="F12 · 2D shapes, perimeter and area · F12-01" data-title="Shape family tree" data-sub="Which shapes are special cases of others: a family tree of triangles, quadrilaterals and regular polygons."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log">
+<h2 style="font-size:1.1em">Event log (NOVA.events)</h2>
+<div id="log" class="nova-log" role="log" aria-live="off"></div>
+<button class="nova-btn" id="clearlog">Clear log</button>
+</section>
+</div>
+<script>
+@@JS@@
+</script>
+<script>
+/* ===== F12-01 CONFIG: parameters + named presets ===== */
+var NOVA_F12_01_CONFIG={
+  startMode:'watch',
+  preset:'quads',
+  presets:{
+    triangles:{label:'Triangles',rootName:'Triangle',h:380,rx:220,ry:44,sc:.72,nodes:[
+      {k:'equilateral',x:60,y:215,p:['root']},{k:'isosceles',x:170,y:215,p:['root']},{k:'scalene',x:280,y:215,p:['root']},{k:'rightTri',x:390,y:215,p:['root']}]},
+    quads:{label:'Quadrilaterals',rootName:'Quadrilateral',h:380,rx:220,ry:34,sc:.5,nodes:[
+      {k:'trapezium',x:70,y:120,p:['root']},{k:'kite',x:190,y:120,p:['root']},{k:'parallelogram',x:330,y:120,p:['root']},
+      {k:'rectangle',x:255,y:220,p:['parallelogram']},{k:'rhombus',x:395,y:220,p:['parallelogram']},{k:'square',x:325,y:320,p:['rectangle','rhombus']}]},
+    regular:{label:'Regular polygons',rootName:'Regular polygon',h:380,rx:220,ry:44,sc:.72,nodes:[
+      {k:'equilateral',x:60,y:215,p:['root']},{k:'square',x:170,y:215,p:['root']},{k:'pentagon',x:280,y:215,p:['root']},{k:'hexagon',x:390,y:215,p:['root']}]}
+  }
+};
+/* ===== F12-01 ENGINE ===== */
+(function(){
+var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=NOVA_F12_01_CONFIG,P=C.presets,strip=F.strip;
+var LAB={rightTri:'Right-angled',equilateral:'Equilateral',isosceles:'Isosceles',scalene:'Scalene',pentagon:'Pentagon',hexagon:'Hexagon'};
+function nm(k){return LAB[k]||F.SHAPES[k].name;}
+function node(T,k){return T.nodes.filter(function(n){return n.k===k;})[0];}
+function anc(T,k,out){out=out||{};out[k]=1;var nd=node(T,k);if(nd)nd.p.forEach(function(p){if(p==='root')out.root=1;else anc(T,p,out);});return out;}
+function ancNames(T,k){var A=anc(T,k),o=[];Object.keys(A).forEach(function(x){if(x!==k&&x!=='root')o.push(nm(x));});if(A.root)o.push(T.rootName);return o;}
+function draw(stage,pk,o){o=o||{};var T=P[pk],n=o.reveal==null?T.nodes.length:o.reveal,vis=T.nodes.slice(0,n),act=o.active,A=act?anc(T,act):{},
+  sv=S.root(440,Math.min(T.h,Math.max.apply(null,vis.map(function(d){return d.y;}))+50*T.sc*1.25+28),'Shape family tree for '+T.rootName.toLowerCase()+'s: '+vis.map(function(d){return nm(d.k);}).join(', ')+'.');sv.classList.add('f12-sv');
+  var sc=T.sc,hh=50*sc*1.25;function pos(k){if(k==='root')return [T.rx,T.ry+16];var d=node(T,k);return [d.x,d.y+hh+18];}
+  vis.forEach(function(d){d.p.forEach(function(pr){var a=pos(pr),on=A[d.k]&&(pr==='root'?A.root:A[pr]);NOVA.neonLine(sv,a[0],a[1],d.x,d.y-hh-2,{role:on?'focus':'support',width:on?3:2});});});
+  S.pill(sv,T.rx,T.ry,T.rootName,{role:A.root?'focus':'given',size:14});
+  vis.forEach(function(d){var on=d.k===act;F.draw(sv,d.k,d.x,d.y,on?sc*1.25:sc,{role:on?'focus':A[d.k]?'result':'op',marks:on,tag:d.k});NOVA.chalkText(sv,d.x,d.y+hh+14,nm(d.k),{size:T.sc>.6?16:15,role:on?'focus':null});});
+  stage.appendChild(sv);return sv;}
+function chips(stage,T,k){if(!k)return;var p=F.SHAPES[k].p;strip(stage,[['sides',p.sides,'given'],['parallel pairs',p.par,'op'],['right angles',p.ra,'result'],['lines of symmetry',p.sym,'focus']]);var an=ancNames(T,k);if(an.length)strip(stage,[['also a',an.join(' · '),'support']]);}
+var steps=[
+ {name:'Triangles',mood:'neutral',narration:'Every triangle has three sides and its angles add to 180 degrees. We sort triangles by their sides: all equal, two equal, none equal, or one right angle.',prompt:'Which triangle has two equal sides?',st:{pk:'triangles',active:'isosceles'},extra:[['angles add to','180°','op']],target:'isosceles'},
+ {name:'Quadrilaterals',mood:'think',narration:'Four straight sides makes a quadrilateral. The angles add to 360 degrees. Three families branch off: trapezium, kite and parallelogram.',prompt:'How many pairs of parallel sides does a trapezium have?',st:{pk:'quads',reveal:3},extra:[['angles add to','360°','op']]},
+ {name:'Parallelogram family',mood:'neutral',narration:'Two pairs of parallel sides make a parallelogram. Turn its corners into right angles and you get a rectangle. Make all four sides equal and you get a rhombus.',prompt:'What does a rectangle have that a parallelogram does not need?',st:{pk:'quads',reveal:5,active:'parallelogram'},target:'parallelogram'},
+ {name:'Square: both branches',mood:'cheer',narration:'A square sits at the bottom of both branches. It is a rectangle with equal sides and a rhombus with right angles. So every square is a rectangle.',prompt:'Is every square a rectangle?',st:{pk:'quads',reveal:6,active:'square'},target:'square'},
+ {name:'Kite and trapezium',mood:'think',narration:'A kite has two pairs of equal neighbouring sides and no parallel sides. A trapezium has just one pair of parallel sides. Neither joins the parallelogram branch.',prompt:'Which of these has no parallel sides?',st:{pk:'quads',reveal:6,active:'kite'},target:'kite'},
+ {name:'Regular polygons',mood:'cheer',narration:'Regular means all sides equal and all angles equal. The equilateral triangle and the square are regular too. A hexagon has three pairs of parallel sides.',prompt:'What makes a polygon regular?',st:{pk:'regular',active:'hexagon'},target:'hexagon'}];
+function render(i,stage){stage.innerHTML='';var s=steps[i],T=P[s.st.pk];NOVA.cap(stage,'Shape family tree · '+s.name,'step '+(i+1)+'/'+steps.length);draw(stage,s.st.pk,s.st);if(s.st.active)chips(stage,T,s.st.active);if(s.extra)strip(stage,s.extra);NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
+var def={id:'F12-01',title:'Shape family tree',config:C,steps:steps,render:render,
+ alt:'Shape family tree: triangles, quadrilaterals and regular polygons arranged by property, with a square shown as both a rectangle and a rhombus.',
+ staticAlt:'Quadrilateral tree: trapezium, kite and parallelogram; the parallelogram splits into rectangle and rhombus; the square joins both. Triangle tree: equilateral, isosceles, scalene and right-angled. Regular polygons: equilateral triangle, square, pentagon, hexagon.',
+ exploreIntro:'Explore: pick a tree, then tap any shape (or choose it from the list) to see its family line and its properties.',
+ explore:function(panel,stage,api){var pk=C.preset,act=null;
+   function paint(){stage.innerHTML='';var T=P[pk];NOVA.cap(stage,'Explore · '+T.label,act?nm(act):'tap a shape');var sv=draw(stage,pk,{active:act});
+     T.nodes.forEach(function(d){var g=sv.querySelector('[data-maths="'+d.k+'"]');if(!g)return;g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-label',nm(d.k));g.style.cursor='pointer';
+       function pick(){act=d.k;sel.value=d.k;paint();NOVA.events.emit('value',{engine:'F12-01',control:'shape',value:d.k});}
+       g.addEventListener('click',pick);g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick();}});});
+     chips(stage,T,act);if(!act)strip(stage,[['tap','any shape','focus'],['to see','its family line','op']]);
+     NOVA.scene.helperStrip(stage,'explain',act?nm(act):'Pick a shape');}
+   var pre=h('select',{class:'nova-input','aria-label':'Tree'});Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});pre.value=pk;
+   var sel=h('select',{class:'nova-input','aria-label':'Shape'});
+   function fill(){sel.innerHTML='';sel.appendChild(h('option',{value:'',text:'(none)'}));P[pk].nodes.forEach(function(d){sel.appendChild(h('option',{value:d.k,text:nm(d.k)}));});sel.value=act||'';}
+   pre.onchange=function(){pk=pre.value;act=null;fill();paint();NOVA.events.emit('value',{engine:'F12-01',control:'preset',value:pk});};
+   sel.onchange=function(){act=sel.value||null;paint();};
+   panel.appendChild(h('label',{class:'pr-row'},['Tree ',pre]));panel.appendChild(h('label',{class:'pr-row'},['Shape ',sel]));fill();paint();},
+ challenge:function(panel,api,stage){
+   var tasks=[
+    {q:'Which shape is BOTH a rectangle and a rhombus?',build:NOVA.choiceTask(['Square','Kite','Trapezium'],'F12-01'),check:function(x){var ok=x==='Square';return [ok,ok?'Yes: right angles AND four equal sides.':x==='Kite'?'A kite has no parallel sides, so it cannot be a rectangle.':x==='Trapezium'?'A trapezium has only one pair of parallel sides.':'Pick one first.'];},hint:'Look at the bottom of both branches.',solve:function(c){c._G.set('Square');}},
+    {q:'A parallelogram with four equal sides is called a ...',build:NOVA.choiceTask(['Rhombus','Rectangle','Kite'],'F12-01'),check:function(x){var ok=x==='Rhombus';return [ok,ok?'Yes: equal sides turn a parallelogram into a rhombus.':x==='Rectangle'?'A rectangle needs right angles, not equal sides.':x==='Kite'?'A kite has no parallel sides.':'Pick one first.'];},hint:'Follow the parallelogram branch: one side goes to right angles, the other to equal sides.',solve:function(c){c._G.set('Rhombus');}},
+    {q:'True or false: every square is a rectangle.',build:NOVA.choiceTask(['True','False'],'F12-01'),check:function(x){var ok=x==='True';return [ok,ok?'True: a square has four right angles, so it is a special rectangle.':x==='False'?'A square has four right angles and opposite sides equal, so it IS a rectangle.':'Pick one first.'];},hint:'A rectangle needs four right angles and opposite sides equal.',solve:function(c){c._G.set('True');}}];
+   function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['both branches','equal sides','square'][k]);draw(stage,'quads',{active:[null,'parallelogram','square'][k]});NOVA.scene.helperStrip(stage,'think',['Find the shape','Which family?','True or false?'][k]);}
+   NOVA.challengeRun(panel,api,tasks,paintC,C);}
+};
+NOVA.bankMount({id:'F12-01',num:'F12·01',title:'Shape family tree',def:def,linked:['F0-02','F0-11','F0-12','F12-02','F12-03','F11-03','F14-10'],
+ spec:{purpose:'A family tree of 2-D shapes that shows which shapes are special cases of others. Pupils see that a square is a rectangle and a rhombus, that a rhombus is a parallelogram, and how kites and trapezia sit apart. Used for classifying triangles, quadrilaterals and polygons by properties, and for recognising congruent (identical) shapes.',
+  params:'preset (triangles, quads, regular); per-tree nodes with position and parents; active shape; reveal count. Core: NOVA.f12.draw / SHAPES, NOVA.neonShape / neonLine / chalkText / neonTile, equal-side ticks, parallel chevrons and right-angle corners. Year groups: KS3 Years 7–9 (12–15).',
+  presets:'Triangles · Quadrilaterals · Regular polygons',
+  steps:'Triangles → Quadrilaterals → Parallelogram family → Square: both branches → Kite and trapezium → Regular polygons. Each step has a Sir Bob line and a Guided prompt; the helper points to the active shape.',
+  interactions:'Watch: auto-play. Guided: step with prompts. Explore: choose a tree, tap or choose any shape to light its family line; chips show sides, parallel pairs, right angles, symmetry and the names it is also known by. Challenge (3 tasks): which shape is both a rectangle and a rhombus; a parallelogram with equal sides; every square is a rectangle (true or false). Events: value, correct, step, hintUsed.',
+  traps:'A square is NOT a rectangle · a rhombus is just a diamond, not a parallelogram · kite and rhombus mixed up · a trapezium needs two pairs of parallel sides',
+  gcse:'Extension: proofs from properties (angle chase, congruent triangles), diagonal properties, inclusive and exclusive definitions of a trapezium; linked: F12-02 sorter, F12-03 geoboard, F11-03 angle facts'}});
+var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
+document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+
+</script>
+</body>
+</html>

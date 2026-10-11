@@ -536,9 +536,22 @@ details.nv-dev:not([open])>*:not(summary){display:none}
 .nv-neon-plot line[stroke-dasharray],.nv-neon-plot line[style*="dasharray"]{filter:url(#nv-neon);opacity:.9}
 html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 
-/* ---- F0-15 local styles ---- */
+/* ==== v3.5 F12 family styles (shared by every F12 engine) ==== */
 .pr-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
 .pr-task{font:700 1.15rem var(--nova-font-chalk-write);color:#eef9ff;text-shadow:var(--nv-chalk-glow)}
+.f12-strip{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:6px 12px 0}
+.f12-strip .k{font:700 .8rem var(--nova-font-chalk-draw);color:#cfe6ff}
+.f12-strip .nv-ntile{font-size:1.15rem;min-height:40px;padding:4px 14px}
+.f12-peg{cursor:pointer;outline:none}.f12-peg:focus-visible circle.hit{stroke:var(--m-focus);stroke-width:2}
+.nova-stage>svg.nv-svg.f12-sv{display:block;width:100%;max-width:760px;height:auto;margin:4px auto 0}
+html[data-theme=light] .f12-strip .k{color:#10213a}
+.f12-strip .nv-ntile{white-space:normal;word-break:normal;overflow-wrap:normal;hyphens:none;text-align:center;max-width:100%}
+.nv-ncard{word-break:normal;overflow-wrap:normal;hyphens:none}
+.f12-board .nv-ring,.f12-board .nv-neon-shape,.f12-board .nv-neon-cells,.f12-board .nv-neon-tube,.f12-board text,.f12-board g[filter]{pointer-events:none}
+
+/* ---- F0-15 local styles ---- */
+.pr-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.pr-task{font-weight:700}
 .rs-opts{display:flex;flex-wrap:wrap;gap:6px}
 .rs-opts button[aria-pressed="true"]{outline:3px solid var(--m-focus)}
 .nova-spec dd{white-space:pre-line}
@@ -549,24 +562,15 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .tb{border-collapse:separate;border-spacing:4px;width:100%;table-layout:fixed}
 .tb th,.tb td{height:34px;text-align:center;border-radius:8px;font:800 .9rem var(--nova-font-ui);color:var(--v-ink);border:1px solid var(--v-line);background:var(--v-panel2);padding:0}
 .tb th{font-size:.72rem;color:var(--v-muted);width:34px}
-.tb td.blank{border:1.5px dashed var(--m-unknown);color:var(--m-unknown)}
+.tb td.blank{border:1.5px dashed var(--m-unknown);color:var(--m-unknown)}.tb td.blank::before{content:'\25CC';font-size:.75em}
 .tb td.fill{border-color:var(--m-result);color:var(--m-result)}
-.tb td.bad{border-color:var(--m-error);color:var(--m-error)}
+.tb td.bad{border-color:var(--m-error);color:var(--m-error)}.tb td.bad::after{content:' \2716';font-size:.7em}
 .tb td.hl,.tb th.hl{box-shadow:0 0 0 2px var(--m-focus)}
 .tb input{width:100%;height:100%;box-sizing:border-box;background:transparent;border:0;text-align:center;font:800 .9rem var(--nova-font-ui);color:var(--m-unknown);border-radius:8px}
 .tb input:focus{outline:2px solid var(--m-focus)}
 .tb-diff{display:grid;gap:4px;margin-top:2px;height:22px;font:800 .7rem var(--nova-font-ui);color:var(--m-op);text-align:center}
 .tb-note{height:36px;overflow:hidden;margin-top:6px;padding:4px 8px;border-radius:8px;border:1px dashed var(--v-line);font:600 .72rem/1.35 var(--nova-font-ui);color:var(--v-muted)}
 .tb-svg{display:block;width:100%;height:auto}
-.tb th,.tb td{height:40px;border:2px solid color-mix(in srgb,var(--math-cyan) 75%,transparent);background:linear-gradient(180deg,#0f1d3d,#060d20);box-shadow:0 0 8px color-mix(in srgb,var(--math-cyan) 35%,transparent);font-family:var(--nova-font-chalk-write)!important;text-shadow:var(--nv-chalk-glow);font-size:1.25rem;font-weight:700;color:#eef9ff}
-.tb th{font-family:var(--nova-font-chalk-draw)!important;font-size:1.1rem;color:var(--math-cyan);border-color:var(--math-cyan)}
-.tb td.blank{border:2px dashed var(--math-purple);color:var(--math-purple);box-shadow:0 0 10px color-mix(in srgb,var(--math-purple) 50%,transparent)}
-.tb td.fill{border:2px solid var(--math-green);color:var(--math-green);box-shadow:0 0 10px color-mix(in srgb,var(--math-green) 55%,transparent)}
-.tb td.bad{border:2px solid var(--math-red);color:var(--math-red);box-shadow:0 0 10px color-mix(in srgb,var(--math-red) 55%,transparent)}
-.tb td.hl,.tb th.hl{border-color:var(--math-orange);box-shadow:0 0 14px var(--math-orange),inset 0 0 8px color-mix(in srgb,var(--math-orange) 30%,transparent)}
-.tb input{font-family:var(--nova-font-chalk-write)!important;text-shadow:var(--nv-chalk-glow);font-size:1.25rem;font-weight:700;color:#eef9ff}
-.tb-diff{font-family:var(--nova-font-chalk-write)!important;text-shadow:var(--nv-chalk-glow);font-size:1rem;color:var(--math-orange);height:auto}
-.tb-note{height:auto;min-height:36px;border:2px solid color-mix(in srgb,var(--math-orange) 70%,transparent);border-radius:12px;background:#050c1f;box-shadow:0 0 8px color-mix(in srgb,var(--math-orange) 35%,transparent);font-family:var(--nova-font-chalk-write)!important;text-shadow:var(--nv-chalk-glow);font-size:1rem;color:#cfe6ff}
 </style>
 </head>
 <body data-topic="algebra">
@@ -1593,6 +1597,111 @@ NOVA.neonCard=function(children,o){o=o||{};var el=document.createElement('div');
 NOVA.answerChip=function(text,ok){var t=NOVA.neonTile(text,{role:ok===false?'error':'result',cls:'nv-answer'});return t;};
 NOVA.version=(NOVA.version||'')+'+house3.2';
 
+/* ==== v3.5 F12 SHAPE KIT (additive; used by F12 engines) ====
+   Neon Tube + Chalk only. neonShape (closed neon polygon, gradient fill + hatch second cue), neonCells (unit-square grid),
+   rightAngle, eqTick, parTick, dimLine; NOVA.f12 shared helpers (shape library, fit, point-in-polygon, stats, classify). */
+(function(){
+var E=function(t,a,p){return NOVA.svg.el(t,a,p);};
+function rootOf(p){return p.ownerSVGElement||p;}
+/* second cue: role patterns (diagonal / cross / dots) so colour is never the only cue */
+function pat(p,role,kind){var sv=rootOf(p),id='nv-h-'+role+'-'+kind,d=sv.querySelector('defs')||E('defs',{},sv);if(sv.querySelector('#'+id))return id;var c=NOVA.svg.c(role);
+  var pt=E('pattern',{id:id,patternUnits:'userSpaceOnUse',width:9,height:9,patternTransform:kind==='diag'?'rotate(45)':''},d);
+  if(kind==='dots')E('circle',{cx:4.5,cy:4.5,r:1.5,css:'fill:'+c+';opacity:.7'},pt);
+  else{E('line',{x1:0,y1:0,x2:0,y2:9,'stroke-width':1.7,css:'stroke:'+c+';opacity:.6'},pt);if(kind==='cross')E('line',{x1:0,y1:4.5,x2:9,y2:4.5,'stroke-width':1.7,css:'stroke:'+c+';opacity:.6'},pt);}
+  return id;}
+NOVA.hatchId=pat;
+NOVA.neonShape=function(p,pts,o){o=o||{};var role=o.role||'op',d='M'+pts.map(function(q){return q[0]+','+q[1];}).join(' L')+(o.open?'':'Z');
+  var g=E('g',{class:'nv-neon-shape'},p);
+  if(o.fill!==false&&!o.open){E('path',{d:d,css:'fill:url(#nv-fill-'+role+');stroke:none'},g);if(o.hatch)E('path',{d:d,css:'fill:url(#'+pat(p,role,o.hatch)+');stroke:none'},g);}
+  NOVA.neonPath(g,d,{role:role,width:o.width||3,dash:o.dash});return g;};
+/* unit-square grid: cells(c,r)->true to fill. o:{role,hatch,line:'given'} */
+NOVA.neonCells=function(p,x,y,cols,rows,cell,o){o=o||{};var role=o.role||'result',g=E('g',{class:'nv-neon-cells'},p),c=NOVA.svg.c(role);
+  for(var r=0;r<rows;r++)for(var k=0;k<cols;k++){if(o.cells&&o.cells(k,r)){E('rect',{x:x+k*cell,y:y+r*cell,width:cell,height:cell,css:'fill:'+c+';opacity:.3;stroke:none'},g);if(o.hatch)E('rect',{x:x+k*cell,y:y+r*cell,width:cell,height:cell,css:'fill:url(#'+pat(p,role,o.hatch)+');stroke:none'},g);}}
+  for(var i=0;i<=cols;i++)E('line',{x1:x+i*cell,y1:y,x2:x+i*cell,y2:y+rows*cell,'stroke-width':1.1,css:'stroke:var(--m-given);opacity:.5'},g);
+  for(var j=0;j<=rows;j++)E('line',{x1:x,y1:y+j*cell,x2:x+cols*cell,y2:y+j*cell,'stroke-width':1.1,css:'stroke:var(--m-given);opacity:.5'},g);return g;};
+/* right-angle corner at vertex v between arms toward a and b */
+NOVA.rightAngle=function(p,v,a,b,o){o=o||{};var s=o.size||11;function u(q){var dx=q[0]-v[0],dy=q[1]-v[1],l=Math.hypot(dx,dy)||1;return [dx/l*s,dy/l*s];}
+  var A=u(a),B=u(b);return NOVA.neonPath(p,'M'+(v[0]+A[0])+','+(v[1]+A[1])+' L'+(v[0]+A[0]+B[0])+','+(v[1]+A[1]+B[1])+' L'+(v[0]+B[0])+','+(v[1]+B[1]),{role:o.role||'support',width:2});};
+/* equal-length ticks (n=1,2,3) across the midpoint of a side */
+NOVA.eqTick=function(p,x1,y1,x2,y2,n,o){o=o||{};var dx=x2-x1,dy=y2-y1,l=Math.hypot(dx,dy)||1,ux=dx/l,uy=dy/l,nx=-uy,ny=ux,mx=(x1+x2)/2,my=(y1+y2)/2,gap=5;
+  for(var i=0;i<n;i++){var t=(i-(n-1)/2)*gap;NOVA.neonPath(p,'M'+(mx+ux*t+nx*6)+','+(my+uy*t+ny*6)+' L'+(mx+ux*t-nx*6)+','+(my+uy*t-ny*6),{role:o.role||'support',width:2});}};
+/* parallel chevrons (n=1,2) on a side */
+NOVA.parTick=function(p,x1,y1,x2,y2,n,o){o=o||{};var dx=x2-x1,dy=y2-y1,l=Math.hypot(dx,dy)||1,ux=dx/l,uy=dy/l,nx=-uy,ny=ux,at=o.at==null?.5:o.at,mx=x1+dx*at,my=y1+dy*at;
+  for(var i=0;i<n;i++){var t=(i-(n-1)/2)*8,cx=mx+ux*t,cy=my+uy*t;NOVA.neonPath(p,'M'+(cx-ux*4+nx*5)+','+(cy-uy*4+ny*5)+' L'+(cx+ux*3)+','+(cy+uy*3)+' L'+(cx-ux*4-nx*5)+','+(cy-uy*4-ny*5),{role:o.role||'op',width:2});}};
+/* dimension line offset from a side, end ticks and a pill label */
+NOVA.dimLine=function(p,x1,y1,x2,y2,text,o){o=o||{};var off=o.off==null?22:o.off,dx=x2-x1,dy=y2-y1,l=Math.hypot(dx,dy)||1,nx=-dy/l*off,ny=dx/l*off,role=o.role||'op';
+  var a=[x1+nx,y1+ny],b=[x2+nx,y2+ny];NOVA.neonLine(p,a[0],a[1],b[0],b[1],{role:role,width:2.4});
+  NOVA.neonLine(p,x1+nx*.55,y1+ny*.55,x1+nx*1.2,y1+ny*1.2,{role:role,width:1.8});NOVA.neonLine(p,x2+nx*.55,y2+ny*.55,x2+nx*1.2,y2+ny*1.2,{role:role,width:1.8});
+  if(text!=null)NOVA.svg.pill(p,(a[0]+b[0])/2+(o.lx||0),(a[1]+b[1])/2+(o.ly||0),text,{role:role,size:o.size||13});return [a,b];};
+/* ---- shared F12 helpers ---- */
+var F=NOVA.f12={};
+F.fmt=function(v){return NOVA.svg.num(Math.round(v*1e4)/1e4);};
+F.strip=function(stage,items){var d=NOVA.h('div',{class:'f12-strip'});items.forEach(function(it){d.appendChild(NOVA.h('span',{class:'k',text:it[0]}));d.appendChild(NOVA.neonTile(String(it[1]).replace(/-/g,'\u2011').replace(/ /g,'\u00A0\u200B'),{role:it[2]||'result'}));});stage.appendChild(d);return d;};
+F.clone=function(o){return JSON.parse(JSON.stringify(o));};
+F.area=function(P){var a=0;for(var i=0;i<P.length;i++){var q=P[(i+1)%P.length];a+=P[i][0]*q[1]-q[0]*P[i][1];}return a/2;};
+F.perim=function(P){var s=0;for(var i=0;i<P.length;i++){var q=P[(i+1)%P.length];s+=Math.hypot(q[0]-P[i][0],q[1]-P[i][1]);}return s;};
+F.pip=function(pt,P){var c=false;for(var i=0,j=P.length-1;i<P.length;j=i++){if((P[i][1]>pt[1])!==(P[j][1]>pt[1])&&pt[0]<(P[j][0]-P[i][0])*(pt[1]-P[i][1])/(P[j][1]-P[i][1])+P[i][0])c=!c;}return c;};
+/* fit points into W x H with margin m: returns {pts,s,ox,oy} (y not flipped) */
+F.fit=function(P,W,H,m,maxS){var x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;P.forEach(function(q){x0=Math.min(x0,q[0]);y0=Math.min(y0,q[1]);x1=Math.max(x1,q[0]);y1=Math.max(y1,q[1]);});
+  var s=Math.min((W-2*m)/((x1-x0)||1),(H-2*m)/((y1-y0)||1));if(maxS)s=Math.min(s,maxS);var ox=(W-(x1-x0)*s)/2-x0*s,oy=(H-(y1-y0)*s)/2-y0*s;
+  return {pts:P.map(function(q){return [q[0]*s+ox,q[1]*s+oy];}),s:s,ox:ox,oy:oy};};
+/* outward label point for side i of polygon P (screen coords) */
+F.outward=function(P,i,d){var a=P[i],b=P[(i+1)%P.length],mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2,dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,nx=dy/l,ny=-dx/l;
+  if(F.pip([mx+nx*3,my+ny*3],P)){nx=-nx;ny=-ny;}return [mx+nx*d,my+ny*d];};
+function reg(n,r){var a=[];for(var k=0;k<n;k++){var t=-Math.PI/2+k*2*Math.PI/n;a.push([+(r*Math.cos(t)).toFixed(2),+(r*Math.sin(t)).toFixed(2)]);}return a;}
+/* shape library on a 100x100 frame centred on 0,0. eq=equal-side groups, par=parallel side pairs, ra=right-angle vertices.
+   props: sides, eq (0 none,2 some pair(s),9 all), par pairs, ra count, sym lines, rot order */
+F.SHAPES={
+ equilateral:{name:'Equilateral triangle',fam:'tri',pts:[[-45,39],[45,39],[0,-39]],eq:[[0,1,2]],par:[],ra:[],p:{sides:3,allEq:1,par:0,ra:0,sym:3,rot:3}},
+ isosceles:{name:'Isosceles triangle',fam:'tri',pts:[[-35,40],[35,40],[0,-42]],eq:[[1,2]],par:[],ra:[],p:{sides:3,allEq:0,par:0,ra:0,sym:1,rot:1}},
+ scalene:{name:'Scalene triangle',fam:'tri',pts:[[-48,40],[40,40],[-14,-40]],eq:[],par:[],ra:[],p:{sides:3,allEq:0,par:0,ra:0,sym:0,rot:1}},
+ rightTri:{name:'Right-angled triangle',fam:'tri',pts:[[-40,40],[40,40],[-40,-30]],eq:[],par:[],ra:[0],p:{sides:3,allEq:0,par:0,ra:1,sym:0,rot:1}},
+ square:{name:'Square',fam:'quad',pts:[[-38,-38],[38,-38],[38,38],[-38,38]],eq:[[0,1,2,3]],par:[[0,2],[1,3]],ra:[0,1,2,3],p:{sides:4,allEq:1,par:2,ra:4,sym:4,rot:4}},
+ rectangle:{name:'Rectangle',fam:'quad',pts:[[-48,-30],[48,-30],[48,30],[-48,30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[0,1,2,3],p:{sides:4,allEq:0,par:2,ra:4,sym:2,rot:2}},
+ parallelogram:{name:'Parallelogram',fam:'quad',pts:[[-50,30],[26,30],[50,-30],[-26,-30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:0,par:2,ra:0,sym:0,rot:2}},
+ rhombus:{name:'Rhombus',fam:'quad',pts:[[0,-48],[34,0],[0,48],[-34,0]],eq:[[0,1,2,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:1,par:2,ra:0,sym:2,rot:2}},
+ trapezium:{name:'Trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
+ kite:{name:'Kite',fam:'quad',pts:[[0,-50],[32,-8],[0,48],[-32,-8]],eq:[[0,3],[1,2]],par:[],ra:[],p:{sides:4,allEq:0,par:0,ra:0,sym:1,rot:1}},
+ pentagon:{name:'Regular pentagon',fam:'poly',pts:reg(5,48),eq:[[0,1,2,3,4]],par:[],ra:[],p:{sides:5,allEq:1,par:0,ra:0,sym:5,rot:5}},
+ hexagon:{name:'Regular hexagon',fam:'poly',pts:reg(6,48),eq:[[0,1,2,3,4,5]],par:[[0,3],[1,4],[2,5]],ra:[],p:{sides:6,allEq:1,par:3,ra:0,sym:6,rot:6}}};
+F.KEYS=Object.keys(F.SHAPES);
+/* draw a library shape centred at cx,cy at scale sc. o:{role,marks,hatch,label,width} */
+F.draw=function(sv,key,cx,cy,sc,o){o=o||{};var S=F.SHAPES[key],P=S.pts.map(function(q){return [cx+q[0]*sc,cy+q[1]*sc];}),role=o.role||'op',g=NOVA.neonShape(sv,P,{role:role,hatch:o.hatch,width:o.width||(sc<.5?2.2:3)});
+  g.setAttribute('data-maths',o.tag||key);
+  if(o.marks){S.eq.forEach(function(grp,gi){grp.forEach(function(si){var a=P[si],b=P[(si+1)%P.length];NOVA.eqTick(sv,a[0],a[1],b[0],b[1],gi+1);});});
+    var eqs={};S.eq.forEach(function(g){g.forEach(function(si){eqs[si]=1;});});S.par.forEach(function(pr,pi){pr.forEach(function(si){var a=P[si],b=P[(si+1)%P.length];NOVA.parTick(sv,a[0],a[1],b[0],b[1],pi+1,{at:eqs[si]?.27:.5});});});
+    S.ra.forEach(function(vi){var n=P.length;NOVA.rightAngle(sv,P[vi],P[(vi+1)%n],P[(vi+n-1)%n],{size:Math.max(8,12*sc)});});}
+  if(o.label)NOVA.chalkText(sv,cx,cy+(o.ly||56*sc+18),o.label===true?S.name:o.label,{size:o.size||13});
+  return {pts:P};};
+/* classify a polygon on a grid (integer pts): returns a name */
+F.classify=function(P){var n=P.length;if(n<3)return 'Not a shape yet';
+  function d(i,j){return Math.hypot(P[j][0]-P[i][0],P[j][1]-P[i][1]);}
+  function vec(i){var a=P[i],b=P[(i+1)%n];return [b[0]-a[0],b[1]-a[1]];}
+  function par(i,j){var a=vec(i),b=vec(j);return Math.abs(a[0]*b[1]-a[1]*b[0])<1e-9;}
+  function ra(i){var a=vec((i+n-1)%n),b=vec(i);return Math.abs(a[0]*b[0]+a[1]*b[1])<1e-9;}
+  var eq=function(x,y){return Math.abs(x-y)<1e-9;};
+  if(n===3){var a=d(0,1),b=d(1,2),c=d(2,0),r=ra(0)||ra(1)||ra(2);if(r)return 'Right-angled triangle';if(eq(a,b)&&eq(b,c))return 'Equilateral triangle';if(eq(a,b)||eq(b,c)||eq(a,c))return 'Isosceles triangle';return 'Scalene triangle';}
+  if(n===4){var s=[d(0,1),d(1,2),d(2,3),d(3,0)],p1=par(0,2),p2=par(1,3),rr=ra(0)&&ra(1)&&ra(2)&&ra(3),all=eq(s[0],s[1])&&eq(s[1],s[2])&&eq(s[2],s[3]);
+    if(rr&&all)return 'Square';if(rr)return 'Rectangle';if(p1&&p2&&all)return 'Rhombus';if(p1&&p2)return 'Parallelogram';if(p1||p2)return 'Trapezium';
+    if((eq(s[0],s[1])&&eq(s[2],s[3]))||(eq(s[1],s[2])&&eq(s[3],s[0])))return 'Kite';return 'Quadrilateral';}
+  return n+'-sided shape';};
+NOVA.version=(NOVA.version||'')+'+f12kit3.5';
+})();
+
+/* ==== v3.6 F12 run-2 helpers (additive) ==== */
+(function(){var F=NOVA.f12;
+F.map=function(Uni,W,H,m,maxS){var f=F.fit(Uni,W,H,m,maxS);return function(P){return P.map(function(q){return [q[0]*f.s+f.ox,q[1]*f.s+f.oy];});};};
+F.rot=function(P,c,deg){var t=deg*Math.PI/180,co=Math.cos(t),si=Math.sin(t);return P.map(function(q){var x=q[0]-c[0],y=q[1]-c[1];return [c[0]+x*co-y*si,c[1]+x*si+y*co];});};
+F.cent=function(P){var x=0,y=0;P.forEach(function(q){x+=q[0]/P.length;y+=q[1]/P.length;});return [x,y];};
+F.dash=function(p,a,b,role,w){return NOVA.neonPath(p,'M'+a[0]+','+a[1]+' L'+b[0]+','+b[1],{role:role||'unknown',width:w||2,dash:'7 6'});};
+/* perpendicular-height marker: dashed from apex to foot on the base line, dotted base extension when the foot is outside the base, right-angle at foot, pill label */
+F.hmark=function(sv,apex,foot,baseA,baseB,txt,o){o=o||{};var role=o.role||'focus';F.dash(sv,apex,foot,role,2.2);
+  var lo=Math.min(baseA[0],baseB[0]),hi=Math.max(baseA[0],baseB[0]);if(foot[0]<lo-1)F.dash(sv,foot,[lo,foot[1]],'unknown',1.8);if(foot[0]>hi+1)F.dash(sv,[hi,foot[1]],foot,'unknown',1.8);
+  var dir=foot[0]>=(lo+hi)/2?-1:1;NOVA.rightAngle(sv,foot,[foot[0]+dir*10,foot[1]],[foot[0],apex[1]<foot[1]?foot[1]-10:foot[1]+10],{size:10,role:'support'});
+  if(txt)NOVA.svg.pill(sv,foot[0]+(o.dx==null?-26:o.dx),(apex[1]+foot[1])/2,txt,{role:role,size:12});};
+NOVA.version=(NOVA.version||'')+'+f12run2';
+})();
+
 </script>
 <script>
 /* ===== F0-15 CONFIG: parameters + named presets ===== */
@@ -1623,7 +1732,7 @@ function view(stage,o){var p=o.p,f=F(p),w=h('div',{class:'tb-wrap'}),L=h('div'),
   t.appendChild(r1);t.appendChild(r2);L.appendChild(t);
   if(o.diffs){var ys=p.xs.map(f),d=NOVA.table.diffs(ys),dv=h('div',{class:'tb-diff','aria-label':'Differences',style:'grid-template-columns:34px repeat('+p.xs.length+',1fr)','data-maths':'diff'});dv.appendChild(h('span'));dv.appendChild(h('span'));d.forEach(function(x){dv.appendChild(h('span',{text:(x>=0?'+':'')+num(x)}));});L.appendChild(dv);}
   L.appendChild(h('div',{class:'tb-note',text:o.note||''}));
-  if(o.plot!==false){var sv=S.root(300,200,'Graph of the table');sv.setAttribute('class','nv-svg tb-svg');var P=NOVA.neonPlot(sv,{x0:34,y0:10,w:250,h:166,x:[p.xs[0],p.xs[p.xs.length-1]],y:p.y,xStep:p.xs[1]-p.xs[0],yStep:p.ys,xLabel:p.xh,yLabel:p.yh});
+  if(o.plot!==false){var sv=S.root(300,200,'Graph of the table');sv.setAttribute('class','nv-svg tb-svg');var P=NOVA.plot.frame(sv,{x0:34,y0:10,w:250,h:166,x:[p.xs[0],p.xs[p.xs.length-1]],y:p.y,xStep:p.xs[1]-p.xs[0],yStep:p.ys,xLabel:p.xh,yLabel:p.yh});
     if(o.line)P.line(f,{role:'support',dash:'5 4'});var pts=[];p.xs.forEach(function(x,i){var known=!(o.blank&&o.blank.indexOf(i)>=0)||(o.vals&&o.vals[i]!=null);if(!known)return;var y=o.vals&&o.vals[i]!=null?o.vals[i]:f(x);if(y<p.y[0]||y>p.y[1])return;pts.push([x,y,'',o.hl===i?'pt':null,i]);});
     pts.forEach(function(q){var bad=o.bad&&o.bad.indexOf(q[4])>=0;NOVA.plot.marker(sv,P.X(q[0]),P.Y(q[1]),bad?'cross':o.hl===q[4]?'diamond':'circle',o.hl===q[4]?6:4.5,bad?'stroke:var(--m-error);fill:none':'fill:var(--m-'+(o.hl===q[4]?'focus':'given')+');stroke:#06111b;stroke-width:1',{'data-maths':o.hl===q[4]?'pt':null});});R.appendChild(sv);}
   w.appendChild(L);w.appendChild(R);stage.appendChild(w);}

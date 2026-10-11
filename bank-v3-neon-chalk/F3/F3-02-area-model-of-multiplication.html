@@ -547,7 +547,6 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .nv-drop-hl{pointer-events:none;fill:rgba(74,222,128,.10);stroke:#4ade80;stroke-width:3}
 .nv-drop-hl.nv-drop-remove{fill:rgba(248,113,113,.14);stroke:#f87171}
 @media (pointer:coarse){[data-drag]{cursor:default}}
-
 /* F3-01 only: layout styles, never replace core palette or SVG filters. */
 :root{--stage-accent:var(--math-cyan)}
 #F3-02 .nova-stage{min-height:0!important;padding:12px 14px 8px!important;overflow:hidden;background:radial-gradient(ellipse at 53% 30%,rgba(54,125,255,.13),transparent 64%),var(--v-bg)}
@@ -658,6 +657,12 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 /* F0 authoritative helper strip. No F3 custom mascot docking or animation. */
 #F3-02 .nova-stage>.nv-dock{margin-top:auto}
 
+/* F7-05 only: preserve readable two-line double-bracket evidence at desktop and mobile. */
+html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer{display:flex;flex-direction:column;align-items:stretch;gap:7px}
+html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer .f302-maths{font-size:clamp(1.05rem,1.4vw,1.38rem);line-height:1.4;overflow-wrap:anywhere;margin:1px 0 0}
+html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer .nv-ntile{width:max-content;max-width:100%;min-width:0;font-size:clamp(1.1rem,1.65vw,1.50rem);padding:7px 12px;line-height:1.35;white-space:normal;text-align:left}
+html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-aside .nv-ncard{overflow-wrap:anywhere}
+@media(max-width:720px){html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer .f302-maths{font-size:.92rem}html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer .nv-ntile{font-size:1rem;padding:5px 7px}}
 </style></head><body><div class="nova-wrap"><header id="nova-header" data-run="F3 · MULTIPLICATIVE STRUCTURE" data-title="Area Model of Multiplication" data-sub="Split the dimensions. Build the parts. Prove the whole product."></header><main id="gallery"></main></div>
 <script>/* === NOVA FAMILY CORE v1.4 : JS START === (extract this block for later runs) */
 (function(){
@@ -1787,8 +1792,14 @@ const F302_CONFIG={id:'F3-02',startMode:'watch',preset:'Y7-009-whole-decimal-mul
    'Y8-011-double-brackets':{label:'Expanding double brackets',kind:'double',xConst:3,yConst:2},
    'Y9-006-algebraic-equivalence':{label:'Equivalent algebraic expressions',kind:'double',xConst:3,yConst:2},
    'F5-03-area-model-fractions':{label:'F5-03 · Fractions area preset',kind:'fraction-product',a:2,b:3,c:3,d:4},
-   'F7-04-expanding-single-brackets':{label:'F7-04 · Single bracket preset',kind:'single',factor:3,constant:2},
-   'F7-05-expanding-double-brackets':{label:'F7-05 · Double bracket preset',kind:'double',xConst:3,yConst:2},
+   'F7-04-expanding-single-brackets':{label:'F7-04 · Distribute 3 across x + 2',kind:'single',factor:3,constant:2},
+   'F7-04-two-times':{label:'Two lots: 2(x + 3)',kind:'single',factor:2,constant:3},
+   'F7-04-four-times':{label:'Four lots: 4(x + 5)',kind:'single',factor:4,constant:5},
+   'F7-04-five-times':{label:'Five lots: 5(x + 1)',kind:'single',factor:5,constant:1},
+   'F7-05-expanding-double-brackets':{label:'F7-05 · (x + 3)(x + 2)',kind:'double',xConst:3,yConst:2},
+   'F7-05-Y8-011':{label:'Y8 · (x + 2)(x + 4)',kind:'double',xConst:2,yConst:4},
+   'F7-05-Y9-006':{label:'Y9 · (x − 3)(x + 2)',kind:'double',xConst:-3,yConst:2},
+   'F7-05-Y9-008':{label:'Y9 · (x − 2)(x − 4)',kind:'double',xConst:-2,yConst:-4},
    'decimal-tenths':{label:'Decimal tenths',kind:'numeric',x:[2,.3],y:[1,.4]}
   },events:{value:['preset','width','height','splitX','splitY','placedPart','removedPart','targetPart','total','fractionSelection','challengeTask'],types:['step','correct','hintUsed','mode']},
   challenge:{tasks:['whole','decimal','algebra']}
@@ -1801,6 +1812,11 @@ function corePose(p){
  const map={'ruler':'point','point-left':'point','point-right':'point','point-down':'point','show-one':'point','show-two':'point','show-three':'point','count':'point','magnify':'think','idea':'think','compare':'think','high-five':'cheer','celebrate':'cheer','success':'cheer','read-tablet':'think','checking':'think','not-yet':'oops','question':'think','encourage':'cheer'};
  return slots.includes(p)?p:(map[p]||'explain');
 }
+const F704_ENTRY=document.documentElement.dataset.f7Entry==='F7-04'||new URLSearchParams(location.search).get('preset')==='F7-04';
+if(F704_ENTRY){C.preset='F7-04-expanding-single-brackets';C.startMode='watch';window.NOVA_F7_04_PRESET={id:'F7-04',engine:'F3-02',alias:true,lesson:'Y7-031',preset:C.preset};}
+const F705_ENTRY=document.documentElement.dataset.f7Entry==='F7-05'||new URLSearchParams(location.search).get('preset')==='F7-05';
+if(F705_ENTRY){C.preset='F7-05-expanding-double-brackets';C.startMode='watch';window.NOVA_F7_05_PRESET={id:'F7-05',engine:'F3-02',alias:true,lessons:['Y8-011','Y9-006','Y9-008'],preset:C.preset};}
+
 const roles=['given','focus','op','result'];
 const TALK={
  outline:{skin:'pip',pose:'explain',text:'We measure both sides first. Their product is the area inside the rectangle.'},
@@ -1820,7 +1836,11 @@ const f=(n)=>{if(typeof n==='string')return n;const v=Math.round(n*1e6)/1e6;retu
 const frac=(a,b)=>String.raw`\frac{${a}}{${b}}`;
 const gcd=(a,b)=>b?gcd(b,a%b):a;
 function arithmetic(x,y){const parts=[y[0]*x[0],y[0]*x[1],y[1]*x[0],y[1]*x[1]],total=+(parts.reduce((a,b)=>a+b,0)).toFixed(9);return {parts,total,answer:+((x[0]+x[1])*(y[0]+y[1])).toFixed(9)};}
-const math={arithmetic,fractionProduct:(a,b,c,d)=>{if(![a,b,c,d].every(Number.isInteger)||b<=0||d<=0||a<0||c<0||a>b||c>d)throw Error('invalid fractions');const n=a*c,den=b*d,g=gcd(n,den);return {numerator:n,denominator:den,simplified:[n/g,den/g]};},fractionAddition:(den,a,b,op='+')=>{if(![den,a,b].every(Number.isInteger)||den<=0||a<0||b<0||(op==='-'&&b>a))throw Error('invalid parts');const num=op==='-'?a-b:a+b,g=gcd(num,den);return {numerator:num,denominator:den,whole:Math.floor(num/den),remainder:num%den,simplified:[num/g,den/g]};}};
+const signed=(n)=>n<0?' − '+Math.abs(n):' + '+n;
+function fmtAlgebra(x2,x,c){const pieces=[];if(x2!==0)pieces.push((x2===1?'':x2===-1?'-':String(x2))+'x²');if(x!==0)pieces.push((x<0?'-':pieces.length?'+':'')+(Math.abs(x)===1?'':Math.abs(x))+'x');if(c!==0||!pieces.length)pieces.push((c<0?'-':pieces.length?'+':'')+Math.abs(c));return pieces.map((term,i)=>i===0?term:term[0]==='-'?'− '+term.slice(1):'+ '+term.slice(1)).join(' ');}
+function doubleMath(a,b){if(!Number.isInteger(a)||!Number.isInteger(b)||![-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9].includes(a)||![-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9].includes(b))throw Error('Double-bracket constants must be nonzero integers between −9 and 9');return {a,b,expression:'(x'+signed(a)+')(x'+signed(b)+')',parts:['x²',fmtAlgebra(0,a,0),fmtAlgebra(0,b,0),String(a*b)],coefficient:a+b,constant:a*b,expanded:fmtAlgebra(1,a+b,a*b),proof:fmtAlgebra(1,a,0)+' '+(b<0?'− ':'+ ')+Math.abs(b)+'x '+(a*b<0?'− ':'+ ')+Math.abs(a*b)};}
+function parseQuadratic(expr){let t=String(expr||'').toLowerCase().replace(/\s+/g,'').replace(/[−–]/g,'-').replace(/x(?:\^2|\*\*2)/g,'x²');if(!t||!/^[-+]?\d*(?:x²|x)|^[-+]?\d/.test(t))return null;const matches=t.match(/[+-]?(?:\d*x²|\d*x|\d+)/g);if(!matches||matches.join('')!==t)return null;const m={x2:0,x:0,c:0,seen:new Set()};for(const raw of matches){let value=raw,sg=1;if(value[0]==='-'||value[0]==='+'){sg=value[0]==='-'?-1:1;value=value.slice(1);}const kind=value.endsWith('x²')?'x2':value.endsWith('x')?'x':'c';if(m.seen.has(kind))return null;m.seen.add(kind);const coeff=kind==='c'?Number(value):Number(value.replace(kind==='x2'?'x²':'x','')||'1');if(!Number.isFinite(coeff))return null;m[kind]=sg*coeff;}return m;}
+const math={doubleBracket:doubleMath,parseQuadratic,singleBracket:(factor,constant)=>{if(!Number.isInteger(factor)||!Number.isInteger(constant)||factor<1||factor>12||constant<1||constant>12)throw Error('F7-04 requires positive whole coefficients 1–12');return {factor,constant,xCoefficient:factor,constantTerm:factor*constant,expression:factor+'(x + '+constant+')',expanded:factor+'x + '+factor*constant};},arithmetic,fractionProduct:(a,b,c,d)=>{if(![a,b,c,d].every(Number.isInteger)||b<=0||d<=0||a<0||c<0||a>b||c>d)throw Error('invalid fractions');const n=a*c,den=b*d,g=gcd(n,den);return {numerator:n,denominator:den,simplified:[n/g,den/g]};},fractionAddition:(den,a,b,op='+')=>{if(![den,a,b].every(Number.isInteger)||den<=0||a<0||b<0||(op==='-'&&b>a))throw Error('invalid parts');const num=op==='-'?a-b:a+b,g=gcd(num,den);return {numerator:num,denominator:den,whole:Math.floor(num/den),remainder:num%den,simplified:[num/g,den/g]};}};
 math.areaGeometry={overlap:(a,b,c,d)=>{const q=math.fractionProduct(a,b,c,d);return {selected:q.numerator,total:q.denominator,columns:b,rows:d,simplified:q.simplified};}};window.F302_MATH=math;
 function value(key,v){if(!C.events.value.includes(key))throw Error('Unknown F3-02 event key '+key);N.events.emit('value',{engine:id,key,value:v});}
 function svgRoot(alt){return N.svg.root(760,605,alt);}
@@ -1833,7 +1853,7 @@ function kindOf(p){return p.kind||'numeric';}
 function model(p){const kind=kindOf(p);
  if(kind==='numeric'){const x=p.x||[20,3],y=p.y||[10,4],ans=arithmetic(x,y);return {kind,x:x.map(f),y:y.map(f),parts:ans.parts.map(f),total:f(ans.total),head:f(+x[0]+ +x[1])+' × '+f(+y[0]+ +y[1]),proof:ans.parts.map(f).join(' + ')+' = '+f(ans.total),geometry:ans,ratio:[+x[0]/(+x[0]+ +x[1]),+y[0]/(+y[0]+ +y[1])]};}
  if(kind==='single'||kind==='factorise'){let k=+p.factor||3,t=+p.constant||2;return {kind,x:['x',f(t)],y:[f(k),''],parts:[f(k)+'x',f(k*t)],total:f(k)+'x + '+f(k*t),head:kind==='single'?f(k)+'(x + '+f(t)+')':f(k)+'x + '+f(k*t),proof:kind==='single'?f(k)+'x + '+f(k*t):f(k)+'(x + '+f(t)+')',ratio:[.62,1],active:2};}
- if(kind==='double'){let a=+p.xConst||3,b=+p.yConst||2;return {kind,x:['x',f(a)],y:['x',f(b)],parts:['x²',f(a)+'x',f(b)+'x',f(a*b)],total:'x² + '+f(a+b)+'x + '+f(a*b),head:'(x + '+f(a)+')(x + '+f(b)+')',proof:'x² + '+f(a)+'x + '+f(b)+'x + '+f(a*b),ratio:[.59,.58]};}
+ if(kind==='double'){const q=doubleMath(Number(p.xConst),Number(p.yConst));return {kind,x:['x',signed(q.a)],y:['x',signed(q.b)],parts:q.parts,total:q.expanded,head:q.expression,proof:q.proof,ratio:[.59,.58],signed:[false,q.a<0,q.b<0,q.a*q.b<0]};}
  return {kind};}
 function dims(data){const x=158,y=138,w=470,h=322,splitX=x+Math.max(.13,Math.min(.87,data.ratio[0]))*w,splitY=y+(data.active===2?1:Math.max(.13,Math.min(.87,data.ratio[1])))*h;return {x,y,w,h,splitX,splitY,widths:[splitX-x,x+w-splitX],heights:[splitY-y,y+h-splitY]};}
 function areaSvg(p,opt={}){
@@ -1849,6 +1869,7 @@ function areaSvg(p,opt={}){
   if(n>i){const g=E('g',{'data-region':i,class:'f302-region'},partsG);bx(g,x+4,y+4,w-8,h-8,roles[i]);
    if(opt.challenge){let placed=opt.placements?.[i];if(placed!=null)tx(g,centerX,centerY+11,String(placed.v),Math.min(33,Math.max(18,w*.24)),roles[i]);else {tx(g,centerX,centerY+8,'?',30,'unknown');ring(g,centerX,centerY+32,'focus',8);}}
    else if(opt.showLabels!==false)tx(g,centerX,centerY+9,String(parts[i]),Math.min(37,Math.max(27,w*.45)),roles[i]);
+   if(data.signed?.[i]){g.classList.add('f302-negative-tile');for(let k=0;k<3;k++){const line=N.neonLine(g,x+w-64+k*13,y+11,x+w-43+k*13,y+32,{role:'error',width:2});line?.setAttribute('opacity','.32');}}
    if(opt.animate&&!N.reducedMotion())N.motion.arrive(g,0,-14,270+i*100,N.motion.ease.back);
   }
  }
@@ -1884,7 +1905,8 @@ function areaSvg(p,opt={}){
    });
   }
   if(opt.activeCard!=null)regions.filter(r=>r.i<(data.active||4)).forEach(r=>{let g=E('g',{'data-drop-region':r.i,role:'button',tabindex:r.i===opt.focusRegion?'0':'-1','aria-label':'Place selected product in region '+(r.i+1)},s);ring(g,r.cx,r.cy+Math.min(48,r.h*.3),'focus',12);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();opt.onPlace?.(opt.activeCard,r.i);}if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();opt.onFocusRegion?.((r.i+(e.key==='ArrowRight'?1:-1)+(data.active||4))%(data.active||4));}});g.addEventListener('click',()=>opt.onPlace?.(opt.activeCard,r.i));});
- tx(s,390,570,opt.challenge?'Drag a product card into the matching region.':opt.stepName==='total'?'Each region is counted exactly once.':'Each part has its own area.',19,'given');
+ if(F705_ENTRY&&opt.stepName==='partials'&&!opt.challenge){const q=doubleMath(Number(p.xConst),Number(p.yConst));bx(s,214,477,335,42,'result');tx(s,381,505,fmtAlgebra(0,q.coefficient,0)+' from the two x tiles',23,'result');}
+ tx(s,390,570,opt.challenge?'Drag a product card into the matching region.':F705_ENTRY?(data.signed?.some(Boolean)?'Patterned tiles show signed products, not negative lengths.':'Four products make one full algebraic expression.'):opt.stepName==='total'?'Each region is counted exactly once.':'Each part has its own area.',19,'given');
  return s;
 }
 function fractionalSvg(s,p,opt){const kind=p.kind,x=126,y=155,w=508,h=314;
@@ -1911,7 +1933,7 @@ function fractionalSvg(s,p,opt){const kind=p.kind,x=126,y=155,w=508,h=314;
 }
 const pres=C.presets;
 function resultFor(p){const k=p.kind;if(k==='fraction-product'){const q=math.fractionProduct(p.a,p.b,p.c,p.d);return {head:frac(p.a,p.b)+' × '+frac(p.c,p.d),total:frac(q.numerator,q.denominator),proof:frac(q.simplified[0],q.simplified[1])};}if(k==='fraction-add'){const q=math.fractionAddition(p.den,p.a,p.b,p.op||'+');return {head:frac(p.a,p.den)+(p.op==='-'?' − ':' + ')+frac(p.b,p.den),total:frac(q.numerator,p.den),proof:q.whole?(q.remainder?q.whole+' '+frac(q.remainder,p.den):String(q.whole)):frac(q.simplified[0],q.simplified[1])};}const m=model(p);return {head:m.head,total:m.total,proof:m.proof};}
-function scene(stage,p,opt={}){stage.innerHTML='';stage.dataset.kind=p.kind;N.cap(stage,'Area evidence',opt.heading||(p.kind==='fraction-add'?'Rebuild equivalent fractional parts':p.kind==='fraction-product'?'Fractional overlap proves multiplication':p.kind==='double'?'Prove the four algebraic terms':p.kind==='single'||p.kind==='factorise'?'Expand or factorise the rectangle':'Multiply by splitting the rectangle'));
+function scene(stage,p,opt={}){stage.innerHTML='';stage.dataset.kind=p.kind;N.cap(stage,'Area evidence',opt.heading||(p.kind==='fraction-add'?'Rebuild equivalent fractional parts':p.kind==='fraction-product'?'Fractional overlap proves multiplication':p.kind==='double'?'Prove the four algebraic terms':p.kind==='single'||p.kind==='factorise'?F704_ENTRY&&p.kind==='single'?'Multiply every term in the bracket':'Expand or factorise the rectangle':'Multiply by splitting the rectangle'));
  const layout=H('div',{class:'f302-scene'}),svg=areaSvg(p,opt);svg.classList.add('f302-art');if(window.matchMedia('(max-width:720px)').matches)svg.setAttribute('viewBox','91 48 585 535');layout.appendChild(svg);
  const eq=resultFor(p), aside=H('div',{class:'f302-aside'}),ans=N.answerChip(opt.hideTotal?'?':eq.total,true);
  const mathRow=H('span',{class:'f302-maths'});mathRow.appendChild(N.mt.render(eq.head));
@@ -1924,7 +1946,7 @@ function scene(stage,p,opt={}){stage.innerHTML='';stage.dataset.kind=p.kind;N.ca
  if(opt.stepName==='total'&&!N.reducedMotion()&&!opt.hideTotal&&p.kind==='numeric')N.countUp(ans,0,Number(model(p).total),850);
  return svg;
 }
-const steps=[
+const standardSteps=[
  {name:'outline',narration:'A rectangle measuring twenty-three by fourteen has area twenty-three groups of fourteen. We will prove that by splitting the sides.',prompt:'What does the area of the full rectangle represent?',mood:'neutral'},
  {name:'partition',narration:'Split twenty-three into twenty and three. Split fourteen into ten and four. Every part of both original side lengths is still present.',prompt:'Why must each side add back to its original length?',mood:'focus'},
  {name:'part-1',narration:'Twenty times ten makes two hundred in the top-left region. That is the first partial product.',prompt:'Why is this part two hundred?',mood:'focus'},
@@ -1934,33 +1956,135 @@ const steps=[
  {name:'partials',narration:'Add two hundred, thirty, eighty and twelve. Every partial product is area, so the sum is the whole area.',prompt:'How does addition rebuild the whole rectangle?',mood:'focus'},
  {name:'total',narration:'Two hundred plus thirty plus eighty plus twelve is three hundred and twenty-two. So twenty-three times fourteen is three hundred and twenty-two.',prompt:'How do you know no part was missed?',mood:'celebrate'}
 ];
-const defaults={kind:'numeric',x:[20,3],y:[10,4]};
+const F704_STEPS=[
+ {name:'outline',narration:'Three lots of the whole bracket x plus two. The outside three must multiply every part inside, not just x.',prompt:'Which two lengths are inside the bracket?',mood:'neutral'},
+ {name:'partition',narration:'Split the width into one x section and a two-unit section. The rectangle is three units high all the way across.',prompt:'Does the three apply to both widths?',mood:'focus'},
+ {name:'part-1',narration:'The first area is three times x. That makes three x, because x is an unknown length.',prompt:'Why is the left area three x?',mood:'focus'},
+ {name:'part-2',narration:'The second area is three times two, which is six. Both regions belong to the same rectangle.',prompt:'What is three multiplied by two?',mood:'focus'},
+ {name:'partials',narration:'Add the two areas: three x plus six. We cannot combine them because three x and six are unlike terms.',prompt:'Should we combine three x and six?',mood:'think'},
+ {name:'total',narration:'The distributive law is proven: three times open bracket x plus two close bracket equals three x plus six. Multiply everything inside the bracket.',prompt:'How can you check both parts were multiplied?',mood:'celebrate'}
+];
+const F704_TALK=['One factor, two parts!','Split the bracket.','Three times x!','Now three times two!','Add both areas!','You expanded it!'];
+const F705_STEPS=[
+ {name:'outline',narration:'We have two brackets: x plus three and x plus two. The rectangle stands for their product, not just their sum.',prompt:'Why are there two factors?',mood:'neutral'},
+ {name:'partition',narration:'Put x and three across the top. Put x and two down the side. The four intersections each need their own product.',prompt:'How many small products will we make?',mood:'focus'},
+ {name:'part-1',narration:'First: x times x gives x squared. It has its own square region.',prompt:'Why is x times x x squared?',mood:'focus'},
+ {name:'part-2',narration:'Next: three times x gives three x. The top right region accounts for this cross term.',prompt:'Which sides make three x?',mood:'focus'},
+ {name:'part-3',narration:'Then: two times x gives two x. This is another cross term, and we must not miss it.',prompt:'What happens to the second x term?',mood:'think'},
+ {name:'part-4',narration:'Finally: two times three gives six. We have multiplied every term in one bracket by every term in the other.',prompt:'Where does the six come from?',mood:'focus'},
+ {name:'partials',narration:'Both cross terms contain x. Add three x and two x to make five x, but do not combine x squared with x.',prompt:'Which two terms are like terms?',mood:'think'},
+ {name:'total',narration:'So the expanded expression is x squared plus five x plus six. The four regions prove it is equivalent to the original two brackets.',prompt:'How does each region support the final expression?',mood:'celebrate'}
+];
+const F705_TALK=['Two brackets: one product!','Make four regions.','x times x is x²!','Now the first x term.','Find the other x term.','Multiply both numbers.','Collect the two x terms.','All four parts — proved!'];
+const steps=F705_ENTRY?F705_STEPS:F704_ENTRY?F704_STEPS:standardSteps;
+const defaults=(F705_ENTRY||F704_ENTRY)?C.presets[C.preset]:{kind:'numeric',x:[20,3],y:[10,4]};
+function challengeF705(panel,api,stage){
+ const tasks=[{a:2,b:3},{a:4,b:1},{a:-3,b:2},{a:-2,b:-4}];
+ let task=0,failures=0,selected=null,focusRegion=0,placements={},draft='';
+ const feedback=H('p',{class:'f302-instruct',role:'status','aria-live':'polite'});
+ function fail(message){failures++;api.check(false,message,{task,failures});feedback.textContent=message;}
+ function render(){panel.replaceChildren();if(task>=tasks.length){panel.append(H('h3',{text:'Four double-bracket expansions completed'}),H('p',{text:'Each of the four partial products was justified, including negative terms. Well done.'}));scene(stage,{kind:'double',xConst:tasks[3].a,yConst:tasks[3].b},{stepName:'total',peer:'celebrate',helper:'All four products. Brilliant!',hideTotal:false});return;}
+  const {a,b}=tasks[task],p={kind:'double',xConst:a,yConst:b},m=model(p);
+  const choices=[...m.parts,task<2?String(a+b)+'x':String(a*b>0?-Math.abs(a*b):Math.abs(a*b))];
+  const picked=Object.fromEntries(Object.entries(placements).map(([r,j])=>[r,{v:choices[j],i:j}]));
+  const header=H('p',{class:'f302-prompt',text:'Challenge '+(task+1)+' of '+tasks.length+' · Expand '+m.head+'. Place all four products, then collect the like terms.'});
+  const guide=H('p',{class:'f302-instruct',text:'Drag each product to the correct region. Or select it with Enter and choose a region. Return a placed product to the red tray to retry.'});
+  const input=H('input',{type:'text','aria-label':'Expanded double bracket',placeholder:'e.g. x² + 5x + 6',autocomplete:'off',style:'min-width:190px;height:44px;background:#0c2438;border:1px solid #3d6886;border-radius:10px;padding:8px;color:#fff;font:700 1.1rem var(--nova-font-chalk-write)'});
+  input.value=draft;input.addEventListener('input',()=>{draft=input.value;});
+  function place(j,r){if(r<0||r>3)return false;
+   if(j>=4||String(choices[j])!==String(m.parts[r])){fail(r===0?'This is the x by x region: it must be x squared.':r===3?'Multiply the two number terms, paying attention to both signs.':'This cross region is x times one constant. Check the coefficient AND its sign.');return false;}
+   for(const [k,v] of Object.entries(placements))if(v===j)delete placements[k];
+   placements[r]=j;selected=null;focusRegion=0;value('placedPart',{region:r,part:choices[j]});rebuild();return true;
+  }
+  function remove(r){if(Object.hasOwn(placements,r)){value('removedPart',r);delete placements[r];rebuild();}}
+  function redraw(){scene(stage,p,{stepName:'challenge',challenge:true,reveal:4,placements:picked,cardValues:choices,activeCard:selected,focusRegion,hideTotal:true,hideParts:true,peer:'think',helper:'Four products first!',note:a<0||b<0?'Patterned signed tiles represent negative products; they are not negative physical side lengths.':'Four products must be matched before combining the x terms.',onChoose:j=>{selected=j;rebuild();stage.querySelector('[data-drop-region="0"]')?.focus();},onFocusRegion:r=>{focusRegion=r;rebuild();stage.querySelector('[data-drop-region="'+r+'"]')?.focus();},onPlace:place,onRemoveRegion:remove,onRemove:j=>{for(const [r,v] of Object.entries(placements))if(v===j)remove(r);}});}
+  function rebuild(){draft=input.value;render();}
+  const check=btn('Check quadratic',()=>{
+   if(![0,1,2,3].every(i=>Object.hasOwn(placements,i))){fail('All FOUR regions need a correct product before you collect like terms.');return;}
+   const q=math.parseQuadratic(input.value),expect=math.doubleBracket(a,b);
+   if(!q||q.x2!==1||q.x!==expect.coefficient||q.c!==expect.constant){
+    if(!q){fail('Write one simplified quadratic with x squared, one x term and one constant.');return;}
+    if(q.x2!==1){fail('x times x gives one x squared, not x or two x squared.');return;}
+    if(q.x!==expect.coefficient){fail('Add the TWO signed x terms: '+m.parts[1]+' and '+m.parts[2]+'. Do not multiply their coefficients.');return;}
+    fail('Multiply the two number terms, including their signs. The constant is '+expect.constant+'.');return;
+   }
+   api.check(true,'Correct: '+m.head+' = '+expect.expanded+'. Every region is accounted for.',{task});task++;selected=null;focusRegion=0;placements={};draft='';render();
+  },'nova-btn primary');
+  panel.append(header,guide,H('div',{class:'f302-controller'},[input,check,btn('Hint',()=>api.hint('Multiply x by x, x by each constant, then the constants together. Collect the two x terms.'),'nova-btn')]),feedback);redraw();
+ }
+ value('challengeTask',0);render();
+}
+
+function challengeF704(panel,api,stage){
+ const tasks=[
+  {factor:2,constant:3},
+  {factor:3,constant:2},
+  {factor:4,constant:5},
+  {factor:5,constant:1}
+ ];
+ let task=0,failures=0,selected=null,focusRegion=0,placements={};
+ const feedback=H('p',{class:'f302-instruct',role:'status','aria-live':'polite'});
+ function diag(p,i,v){const m=model(p);if(i===0)return 'That is the x area: multiply the outside factor by x, so the answer must contain x.';return 'This is the number area: multiply the outside factor by the constant. Do not add them.';}
+ function incorrect(message){failures++;api.check(false,message,{task,failures});feedback.textContent=message;}
+ function render(){
+  panel.replaceChildren();if(task>=tasks.length){panel.append(H('h3',{text:'Four bracket expansions completed'}),H('p',{text:'You multiplied both bracket terms by the outside factor.'}));scene(stage,{kind:'single',...tasks[3]},{stepName:'total',peer:'celebrate',helper:'Both areas counted — brilliant!',hideTotal:false});return;}
+  const p={kind:'single',...tasks[task]}, m=model(p), choices=[...m.parts,task===0?'x + 3':task===1?'3 + 2':task===2?'4x + 5':'5 + 1'];
+  const picked=Object.fromEntries(Object.entries(placements).map(([r,j])=>[r,{v:choices[j],i:j}]));
+  const header=H('p',{class:'f302-prompt',text:'Challenge '+(task+1)+' of '+tasks.length+' · Expand '+m.head+'. Match the two partial areas and write the simplified expression.'});
+  const guide=H('p',{class:'f302-instruct',text:'Drag a product onto its region or select a card with Enter, then the region. Return a placed product to the red tray to remove it.'});
+  const input=H('input',{type:'text','aria-label':'Expanded single bracket','placeholder':'e.g. 3x + 6',autocomplete:'off',style:'min-width:190px;height:44px;background:#0c2438;border:1px solid #3d6886;border-radius:10px;padding:8px;color:#fff;font:700 1.1rem var(--nova-font-chalk-write)'});
+  input.value=challengeF704.draft||'';
+  input.addEventListener('input',()=>{challengeF704.draft=input.value;});
+  function place(j,r){if(r<0||r>1)return false;
+    if(j>=2||String(choices[j])!==String(m.parts[r])){incorrect(diag(p,r,choices[j]));return false;}
+    for(const [k,v] of Object.entries(placements))if(v===j)delete placements[k];
+    placements[r]=j;selected=null;focusRegion=0;N.events.emit('value',{engine:id,key:'placedPart',value:{region:r,part:choices[j]}});rebuild();return true;
+  }
+  function remove(r){if(Object.hasOwn(placements,r)){N.events.emit('value',{engine:id,key:'removedPart',value:r});delete placements[r];rebuild();}}
+  function redraw(){scene(stage,p,{stepName:'challenge',challenge:true,reveal:2,placements:picked,cardValues:choices,activeCard:selected,focusRegion,hideTotal:true,hideParts:true,peer:'think',helper:'Multiply both parts!',onChoose:j=>{selected=j;rebuild();stage.querySelector('[data-drop-region="0"]')?.focus();},onFocusRegion:r=>{focusRegion=r;rebuild();stage.querySelector('[data-drop-region="'+r+'"]')?.focus();},onPlace:place,onRemoveRegion:remove,onRemove:j=>{for(const [r,v] of Object.entries(placements))if(v===j)remove(r);}});}
+  function rebuild(){const v=input.value;challengeF704.draft=v;render();}
+  const check=btn('Check expansion',()=>{
+    if(!Object.hasOwn(placements,0)||!Object.hasOwn(placements,1)){incorrect('Place BOTH areas. The outside factor multiplies every term in the bracket.');return;}
+    const answer=input.value.trim().replace(/\s+/g,'').replace(/\*/g,'').toLowerCase();
+    const expected=String(m.total).replace(/\s+/g,'').toLowerCase();
+    const wrongOnlyFirst=m.parts[0].toLowerCase()+'+'+String(p.constant);
+    if(answer!==expected){incorrect(answer===wrongOnlyFirst?'You multiplied x but forgot to multiply the constant as well.':answer.includes('x')?'Keep the x part, then add the constant area. Do not combine unlike terms.':'Your expression needs an x term AND the number area.');return;}
+    api.check(true,'Correct: '+m.head+' = '+m.total+'. Both bracket terms were multiplied.',{task});
+    task++;selected=null;focusRegion=0;placements={};challengeF704.draft='';render();
+  },'nova-btn primary');
+  panel.append(header,guide,H('div',{class:'f302-controller'},[input,check,btn('Hint',()=>api.hint('Find factor × x and factor × the number separately.'),'nova-btn')]),feedback);
+  redraw();
+ }
+ challengeF704.draft='';N.events.emit('value',{engine:id,key:'challengeTask',value:0});render();
+}
+
 const def={id,title:'Area model of multiplication',config:C,steps,
  alt:'Glass neon rectangle split into coloured partial-product areas, with chalk side lengths and proof of the distributive law.',
- staticAlt:'23 × 14 = (20 + 3)(10 + 4) = 200 + 30 + 80 + 12 = 322. Every region is part of the original rectangle.',
- render(i,stage){scene(stage,defaults,{stepName:steps[i].name,reveal:i<=1?0:Math.min(4,i-1),showLabels:i>=2,hideTotal:i!==7,hideParts:i<6,animate:true,note:i===0?'Start with the whole rectangle; one area, two side lengths.':i===1?'Partition both dimensions. The side lengths still add to their original values.':'Each part is the product of one horizontal and one vertical section.'});},
- exploreIntro:'Move the split handles, switch between whole numbers, decimals, fractions and algebra, and prove that the area remains consistent.',
- explore(panel,stage,api){let current='Y7-009-whole-decimal-multiplication',p={...pres[current],x:[20,3],y:[10,4]};
+ staticAlt:F705_ENTRY?'(x + 3)(x + 2) = x² + 5x + 6: x², 3x, 2x and 6 are the four products.':F704_ENTRY?'3(x + 2) = 3x + 6. One rectangle has two subareas, 3x and 6.':'23 × 14 = (20 + 3)(10 + 4) = 200 + 30 + 80 + 12 = 322. Every region is part of the original rectangle.',
+ render(i,stage){if(F705_ENTRY){scene(stage,defaults,{stepName:steps[i].name,reveal:i<2?0:Math.min(4,i-1),showLabels:i>=2,hideTotal:i!==7,hideParts:i<6,animate:true,helper:F705_TALK[i],note:'Each region is a product: x², 3x, 2x and 6. Add like x terms only after all four are visible.'});return;}if(F704_ENTRY){scene(stage,defaults,{stepName:steps[i].name,reveal:i<2?0:Math.min(2,i-1),showLabels:i>=2,hideTotal:i!==5,hideParts:i<4,animate:true,helper:F704_TALK[i],note:'Two adjacent areas represent 3 × x and 3 × 2. Together they prove the distributive law.'});return;}
+ scene(stage,defaults,{stepName:steps[i].name,reveal:i<=1?0:Math.min(4,i-1),showLabels:i>=2,hideTotal:i!==7,hideParts:i<6,animate:true,note:i===0?'Start with the whole rectangle; one area, two side lengths.':i===1?'Partition both dimensions. The side lengths still add to their original values.':'Each part is the product of one horizontal and one vertical section.'});},
+ exploreIntro:F705_ENTRY?'Change the constants in both brackets and track all four signed products. The x², x and constant terms update together.':F704_ENTRY?'Change the outside factor and inside constant. The two areas update together, proving both multiplications.':'Move the split handles, switch between whole numbers, decimals, fractions and algebra, and prove that the area remains consistent.',
+ explore(panel,stage,api){let current=F705_ENTRY?'F7-05-expanding-double-brackets':F704_ENTRY?'F7-04-expanding-single-brackets':'Y7-009-whole-decimal-multiplication',p=JSON.parse(JSON.stringify(pres[current]));
   const intro=H('p',{class:'f302-prompt',text:'Choose a mathematical model. Use the gold handles or value controls to transform its parts.'}),bar=H('div',{class:'f302-controller'});
-  const sel=H('select',{'aria-label':'Area model preset'});Object.keys(pres).forEach(k=>sel.add(new Option(pres[k].label,k)));sel.value=current;
+  const sel=H('select',{'aria-label':'Area model preset'});Object.keys(pres).filter(k=>F705_ENTRY?k.startsWith('F7-05')||k==='Y8-011-double-brackets'||k==='Y9-006-algebraic-equivalence':!F704_ENTRY||k==='Y7-031-single-brackets'||k.startsWith('F7-04')).forEach(k=>sel.add(new Option(pres[k].label,k)));sel.value=current;
   const group=H('div',{class:'f302-controller'}),hint=H('p',{class:'f302-instruct'});
   function draw(){group.innerHTML='';const k=p.kind;
     if(k==='numeric'){['x','y'].forEach(axis=>{let parts=p[axis];const labels=axis==='x'?['Width part A','Width part B']:['Height part A','Height part B'];parts.forEach((v,i)=>{const inp=H('input',{type:'number',min:0.1,max:99.9,step:current==='decimal-tenths'?0.1:1,value:String(v),'aria-label':labels[i]});const l=H('label',{},[labels[i],inp]);inp.onchange=()=>{parts[i]=Math.max(.1,Math.min(99.9,Number(inp.value)||.1));value(axis==='x'?'width':'height',parts.slice());draw();};group.appendChild(l);});});}
-    if(k==='single'||k==='factorise'||k==='double'){let names=k==='double'?[['xConst','Top constant'],['yConst','Side constant']]:[['factor','Common factor'],['constant','Added length']];names.forEach(([key,label])=>{const inp=H('input',{type:'number',min:1,max:12,step:1,value:p[key],'aria-label':label});inp.onchange=()=>{p[key]=Math.max(1,Math.min(12,Math.round(+inp.value||1)));value(key==='factor'?'height':'splitX',p[key]);draw();};group.appendChild(H('label',{},[label,inp]));});}
+    if(k==='single'||k==='factorise'||k==='double'){let names=k==='double'?[['xConst','Top constant'],['yConst','Side constant']]:[['factor','Common factor'],['constant','Added length']];names.forEach(([key,label])=>{const inp=H('input',{type:'number',min:k==='double'&&F705_ENTRY?-9:1,max:k==='double'&&F705_ENTRY?9:12,step:1,value:p[key],'aria-label':label});inp.onchange=()=>{let n=Math.round(+inp.value||1);p[key]=k==='double'&&F705_ENTRY?(n===0?1:Math.max(-9,Math.min(9,n))):Math.max(1,Math.min(12,n));value(key==='factor'?'height':'splitX',p[key]);draw();};group.appendChild(H('label',{},[label,inp]));});}
     if(k==='fraction-product'){[['a','Width selected'],['b','Width denominator'],['c','Height selected'],['d','Height denominator']].forEach(([key,label])=>{const inp=H('input',{type:'number',min:key==='b'||key==='d'?1:0,max:12,step:1,value:p[key],'aria-label':label});inp.onchange=()=>{p[key]=Math.max(0,Math.min(12,+inp.value||0));p.b=Math.max(1,p.b);p.d=Math.max(1,p.d);p.a=Math.min(p.a,p.b);p.c=Math.min(p.c,p.d);value('fractionSelection',[p.a,p.b,p.c,p.d]);draw();};group.appendChild(H('label',{},[label,inp]));});}
     if(k==='fraction-add'){const op=H('select',{'aria-label':'Add or subtract fractions'});op.add(new Option('Add equal parts','+'));op.add(new Option('Subtract equal parts','-'));op.value=p.op||'+';op.onchange=()=>{p.op=op.value;if(p.op==='-'&&p.b>p.a)p.b=p.a;value('fractionSelection',[p.a,p.b,p.den,p.op]);draw();};group.appendChild(H('label',{},['Operation',op]));[['a','First numerator'],['b','Second numerator'],['den','Equal denominator']].forEach(([key,label])=>{const inp=H('input',{type:'number',min:key==='den'?1:0,max:12,step:1,value:p[key],'aria-label':label});inp.onchange=()=>{p[key]=Math.max(key==='den'?1:0,Math.min(12,Math.round(+inp.value||0)));if(p.op==='-'&&p.b>p.a)p.b=p.a;value('fractionSelection',[p.a,p.b,p.den]);draw();};group.appendChild(H('label',{},[label,inp]));});}
-    let note=k==='numeric'?'Drag either gold partition handle. The dimensions remain constant; the four areas recalculate.':k==='double'?'Symbolic x is not a measured number. Each region stands for a term; the diagram is schematic, not to scale.':k==='fraction-product'?'The green overlap is the product. Every small square is an equal part of the same whole.':k==='fraction-add'?p.op==='-'?'Remove equal-sized parts; first create a common denominator.':'Combine equal-sized parts; fractions must first have a common denominator.':'The whole area proves expansion or the reverse operation of factorising.';
+    let note=F705_ENTRY?'Negative coefficients are shown by patterned signed tiles; the rectangle is an algebraic product model, not a measured negative length. Each of the four products must be counted.':F704_ENTRY?'Changing either dimension changes the total expression. The diagram proves the outside factor multiplies both the x area and the unit area.':k==='numeric'?'Drag either gold partition handle. The dimensions remain constant; the four areas recalculate.':k==='double'?'Symbolic x is not a measured number. Each region stands for a term; the diagram is schematic, not to scale.':k==='fraction-product'?'The green overlap is the product. Every small square is an equal part of the same whole.':k==='fraction-add'?p.op==='-'?'Remove equal-sized parts; first create a common denominator.':'Combine equal-sized parts; fractions must first have a common denominator.':'The whole area proves expansion or the reverse operation of factorising.';
     hint.textContent=note;
-    scene(stage,p,{stepName:k==='fraction-add'?'fraction-add':k==='fraction-product'?'fraction':'explore',interactive:!k.startsWith('fraction'),note,onPartition:(axis,change)=>{
+    scene(stage,p,{stepName:k==='fraction-add'?'fraction-add':k==='fraction-product'?'fraction':'explore',interactive:!k.startsWith('fraction'),helper:F705_ENTRY?'Four products — check both x terms!':F704_ENTRY?'Change a value — check both products!':undefined,note,onPartition:(axis,change)=>{
       if(k==='numeric'){let a=p[axis],unit=current==='decimal-tenths'?.1:1,total=+a[0]+ +a[1],n=+(+a[0]+change*unit).toFixed(6);if(n>=unit&&total-n>=unit){p[axis]=[n,+(total-n).toFixed(6)];value(axis==='x'?'splitX':'splitY',n);draw();}}
       else if(k==='single'||k==='factorise'){p.constant=Math.max(1,Math.min(12,+p.constant+change));value('splitX',p.constant);draw();}
-      else {const key=axis==='x'?'xConst':'yConst';p[key]=Math.max(1,Math.min(12,+p[key]+change));value(axis==='x'?'splitX':'splitY',p[key]);draw();}
+      else {const key=axis==='x'?'xConst':'yConst';p[key]=F705_ENTRY?Math.max(-9,Math.min(9,+p[key]+change))||1:Math.max(1,Math.min(12,+p[key]+change));value(axis==='x'?'splitX':'splitY',p[key]);draw();}
     }});
   }
   sel.onchange=()=>{current=sel.value;p=JSON.parse(JSON.stringify(pres[current]));value('preset',current);draw();};
   bar.appendChild(H('label',{},['Preset / representation',sel]));panel.append(intro,bar,group,hint);draw();
  },
- challenge(panel,api,stage){let task=0,correct=0,wrong=0,selected=null,focusRegion=0,placements={};
+ challenge(panel,api,stage){if(F705_ENTRY)return challengeF705(panel,api,stage);if(F704_ENTRY)return challengeF704(panel,api,stage);let task=0,correct=0,wrong=0,selected=null,focusRegion=0,placements={};
   const cases=[{label:'23 × 14',p:{kind:'numeric',x:[20,3],y:[10,4]}},{label:'2.3 × 1.4',p:{kind:'numeric',x:[2,.3],y:[1,.4]}},{label:'(x + 3)(x + 2)',p:{kind:'double',xConst:3,yConst:2}}];
   const feedback=H('p',{class:'f302-instruct',role:'status'});
   function fail(msg){wrong++;api.check(false,msg,{task,wrong});feedback.textContent=msg;}
@@ -1989,11 +2113,13 @@ const def={id,title:'Area model of multiplication',config:C,steps,
  },
  onRestore(){}
 };
-N.registry.add({id,title:def.title,topics:['multiplication','area','fractions','distributive law','algebra'],deps:['F0-02','F0-03','F0-04','F0-05','F0-07','F0-08']});
-N.bankMount({id,num:'02',title:'Area model of multiplication · Premium Edition',def,linked:['F3-01','F3-03','F5-03','F7-04','F7-05'],years:'KS3 Year 7–9 with GCSE algebra extensions',spec:{
+window.F704_PRESET_MATH={single:math.singleBracket,validate:(factor,constant,expanded)=>math.singleBracket(factor,constant).expanded.replace(/\s+/g,'')===String(expanded).replace(/\s+/g,'')};
+window.F705_PRESET_MATH={double:math.doubleBracket,parse:math.parseQuadratic,validate:(a,b,expr)=>{const q=math.parseQuadratic(expr),m=math.doubleBracket(a,b);return !!q&&q.x2===1&&q.x===m.coefficient&&q.c===m.constant;}};
+ N.registry.add({id,title:def.title,topics:['multiplication','area','fractions','distributive law','algebra'],deps:['F0-02','F0-03','F0-04','F0-05','F0-07','F0-08']});
+N.bankMount({id,num:'02',title:F705_ENTRY?'Expanding Double Brackets · F3-02 preset':F704_ENTRY?'Expanding Single Brackets · F3-02 preset':'Area model of multiplication · Premium Edition',def,linked:['F3-01','F3-03','F5-03','F7-04','F7-05'],years:'KS3 Year 7–9 with GCSE algebra extensions',spec:{
  purpose:'Prove whole and decimal products by partitioned areas; model fractional overlap and equivalent-part addition; expand and reverse algebraic factorisation.',
  params:'Width and height parts; split X/Y; integer/decimal arithmetic; symbolic x coefficients; numerator/denominator and equal fraction parts.',
- presets:'Eight explicitly identified lesson presets plus F5-03, F7-04 and F7-05 named modes; decimal-tenths demonstration. Ninth lesson not identified in the supplied master.',
+ presets:'The F7-04 single-brackets preset reuses this F3-02 engine, with three differentiated expansion variants and a dedicated four-question challenge. Other F3 presets remain present.',
  steps:'Outline → partition dimensions → four progressively filled area regions → collect partial products → combine for total.',
  interactions:'Drag both partition handles with spring/snap and keyboard arrows. Challenge drag partial product cards into quadrants, regrab/remove, Enter-place and roving keyboard navigation.',
  traps:'Forgetting cross products, adding lengths instead of multiplying, incorrect decimal tenths, mismatched algebra terms, confusing an overlap product with a fraction sum.',

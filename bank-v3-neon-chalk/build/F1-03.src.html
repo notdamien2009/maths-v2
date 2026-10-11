@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA F1-03 · Jump-arc operator</title>
+<style>
+@@CSS@@
+/* ---- F1-03 local styles ---- */
+.pr-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.pr-task{font:700 1.15rem var(--nova-font-chalk-write);color:#eef9ff;text-shadow:var(--nv-chalk-glow)}
+.nl-strip{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:6px 12px 0}
+.nl-strip .k{font:700 .8rem var(--nova-font-chalk-draw);color:#cfe6ff}
+.nl-strip .nv-ntile{font-size:1.2rem;min-height:40px;padding:4px 14px}
+.nova-spec dd{white-space:pre-line}
+.nova-stage>svg.nv-svg{display:block;width:100%;max-width:860px;height:auto;margin:4px auto 0}
+.nova-stage>svg.nv-svg.nv-vert{max-width:400px}
+@media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
+</style>
+</head>
+<body data-topic="number">
+<div class="nova-wrap">
+<header id="nova-header" data-run="F1 · Number line and scale · F1-03" data-title="Jump-arc operator" data-sub="Addition, subtraction and repeated jumps as neon arcs on a number line: count on, count back, cross zero, split into friendly jumps."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log">
+<h2 style="font-size:1.1em">Event log (NOVA.events)</h2>
+<div id="log" class="nova-log" role="log" aria-live="off"></div>
+<button class="nova-btn" id="clearlog">Clear log</button>
+</section>
+</div>
+<script>
+@@JS@@
+</script>
+<script>
+/* ===== F1-03 CONFIG: parameters + named presets ===== */
+var NOVA_F1_03_CONFIG={
+  startMode:'watch',
+  preset:'crossZero',
+  presets:{
+    crossZero: {label:'Cross zero: −3 + 5',min:-6,max:6,labelStep:1,start:-3,jumps:[5]},
+    back:      {label:'Count back: 7 − 9',min:-4,max:8,labelStep:1,start:7,jumps:[-9]},
+    split:     {label:'Friendly jumps: 48 + 27',min:40,max:80,labelStep:5,start:48,jumps:[2,20,5]},
+    repeat:    {label:'Repeated jumps: 4 × 3',min:0,max:14,labelStep:1,start:0,jumps:[3,3,3,3]},
+    negSub:    {label:'Subtract a negative: 4 − (−3)',min:-2,max:9,labelStep:1,start:4,jumps:[3]},
+    decimals:  {label:'Decimals: 2.6 + 0.7',min:2,max:4,labelStep:0.1,start:2.6,jumps:[0.4,0.3]},
+    gcse:      {label:'GCSE: −12 − 15',min:-30,max:0,labelStep:5,start:-12,jumps:[-15]}
+  }
+};
+</script>
+<script>
+/* ===== F1-03 ENGINE ===== */
+(function(){
+var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,C=NOVA_F1_03_CONFIG,P=C.presets;
+function fmt(v){return S.num(Math.round(v*1e9)/1e9);}
+function sg(j){return (j<0?'\u2212':'+')+fmt(Math.abs(j));}
+function clone(o){return JSON.parse(JSON.stringify(o));}
+function strip(stage,items){var d=h('div',{class:'nl-strip'});items.forEach(function(it){d.appendChild(h('span',{class:'k',text:it[0]}));d.appendChild(NOVA.neonTile(String(it[1]).replace(/ /g,'\u00A0'),{role:it[2]||'result'}));});stage.appendChild(d);return d;}
+function end(st,n){var v=st.start;st.jumps.slice(0,n==null?st.jumps.length:n).forEach(function(j){v+=j;});return +v.toFixed(9);}
+function sum(st){return fmt(st.start)+' '+st.jumps.map(function(j){return j<0?'\u2212 '+fmt(-j):'+ '+fmt(j);}).join(' ')+' = '+fmt(end(st));}
+/* jumps drawn as core neon hops: forward arcs above (op), backward arcs above in focus colour, alternating heights so pills never overlap */
+function draw(stage,st,o){o=o||{};var n=o.n==null?st.jumps.length:o.n,sv=S.root(420,170,'Number line '+fmt(st.min)+' to '+fmt(st.max)+'. Start '+fmt(st.start)+(n?', jumps '+st.jumps.slice(0,n).map(sg).join(', ')+', end '+fmt(end(st,n)):'')+'.');
+  var ax=S.axes(sv,{x:30,y:128,w:360,h:0,xmin:st.min,xmax:st.max,ymin:0,ymax:0,ticks:st.labelStep,numberLine:true}),v=st.start;
+  for(var i=0;i<n;i++){var j=st.jumps[i],w=Math.abs(ax.sx(v+j)-ax.sx(v));S.hop(sv,ax.sx(v),ax.sx(v+j),ax.y0-6,{role:j<0?'focus':'op',label:o.noLabels?'':sg(j),height:Math.min(64,w*.42+16)+(i%2?14:0)});v+=j;}
+  var r0=NOVA.neonRing(sv,ax.sx(st.start),ax.y0,{role:'given',r:7,pulse:false});if(r0)r0.setAttribute('data-maths','start');
+  if(n&&o.end!==false){var r1=NOVA.neonRing(sv,ax.sx(v),ax.y0,{role:'result',r:8,pulse:false});if(r1)r1.setAttribute('data-maths','end');}
+  stage.appendChild(sv);return {sv:sv,ax:ax};}
+var steps=[
+ {name:'Start',mood:'neutral',narration:'Every jump sum starts with a ring on the start number. Here we start at minus three.',prompt:'Where do we start?',st:P.crossZero,o:{n:0},chips:[['start','\u22123','given']],target:'start'},
+ {name:'Jump on',mood:'focus',narration:'Adding means jumping right. Minus three add five: jump five to the right, crossing zero, and land on two.',prompt:'Where do we land?',st:P.crossZero,o:{},chips:[['sum','\u22123 + 5 = 2','result']],target:'end'},
+ {name:'Jump back',mood:'think',narration:'Subtracting means jumping left. Seven take away nine: jump nine to the left and land on minus two.',prompt:'Seven take away nine is…?',st:P.back,o:{},chips:[['sum','7 \u2212 9 = \u22122','result']],target:'end'},
+ {name:'Friendly jumps',mood:'focus',narration:'Big jumps can be split. Forty-eight add twenty-seven: two to fifty, then twenty to seventy, then five to seventy-five.',prompt:'Why jump 2 first?',st:P.split,o:{},chips:[['split','2 + 20 + 5 = 27','op'],['sum','48 + 27 = 75','result']]},
+ {name:'Repeated jumps',mood:'think',narration:'Four jumps of three from zero land on twelve. Multiplication is repeated equal jumps.',prompt:'How many jumps of 3 make 12?',st:P.repeat,o:{},chips:[['jumps','4 of 3','op'],['product','4 \u00D7 3 = 12','result']]},
+ {name:'Subtract a negative',mood:'focus',narration:'Taking away minus three is the same as adding three: four take away minus three is seven. Two minus signs make a jump to the right.',prompt:'What is 4 − (−3)?',st:P.negSub,o:{},chips:[['same as','4 + 3','op'],['answer','7','result']]},
+ {name:'Decimals',mood:'cheer',narration:'Jumps work with decimals too. Two point six add point seven: point four to three, then point three more. Three point three.',prompt:'Why jump 0.4 first?',st:P.decimals,o:{},chips:[['split','0.4 + 0.3','op'],['sum','2.6 + 0.7 = 3.3','result']]}];
+function render(i,stage){stage.innerHTML='';var s=steps[i];NOVA.cap(stage,'Jumps · '+s.name,'step '+(i+1)+'/'+steps.length);draw(stage,s.st,s.o);if(s.chips)strip(stage,s.chips);NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
+var def={id:'F1-03',title:'Jump-arc operator',config:C,steps:steps,render:render,
+ alt:'Jump-arc operator: neon arcs on a number line show addition as jumps right, subtraction as jumps left, split friendly jumps and repeated equal jumps.',
+ staticAlt:'−3 + 5 = 2 crossing zero; 7 − 9 = −2; 48 + 27 = 75 as 2 + 20 + 5; 4 × 3 = 12 as four jumps of 3; 4 − (−3) = 7; 2.6 + 0.7 = 3.3 as 0.4 + 0.3.',
+ exploreIntro:'Explore: choose a preset or set the start, jump size and number of jumps. Right is add, left is subtract.',
+ explore:function(panel,stage,api){var st=clone(P[C.preset]),sl,js,nj;
+   function paint(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+st.label,'= '+fmt(end(st)));draw(stage,st,{});strip(stage,[['start',fmt(st.start),'given'],['jumps',st.jumps.map(sg).join(' '),'op'],['lands on',fmt(end(st)),'result']]);NOVA.scene.helperStrip(stage,'explain',sum(st).replace(/ /g,'\u00A0'));NOVA.events.emit('value',{engine:'F1-03',control:'sum',value:sum(st)});}
+   var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});pre.value=C.preset;
+   var box=h('div');function build(){box.innerHTML='';var stp=st.labelStep;
+     sl=U.slider({label:'Start',min:st.min,max:st.max,step:stp,value:st.start,engine:'F1-03',onChange:function(x){st.start=+x;clampJ();paint();}});box.appendChild(sl);
+     var j0=st.jumps[0];js=U.slider({label:'Jump',min:-(st.max-st.min),max:st.max-st.min,step:stp,value:j0,engine:'F1-03',onChange:function(x){var n=st.jumps.length;st.jumps=[];for(var i=0;i<n;i++)st.jumps.push(+x);clampJ();paint();}});box.appendChild(js);
+     nj=U.stepper({label:'Jumps',value:st.jumps.length,min:1,max:6,step:1,engine:'F1-03',onChange:function(x){var j=st.jumps[0];st.jumps=[];for(var i=0;i<x;i++)st.jumps.push(j);clampJ();paint();}});box.appendChild(nj);}
+   function clampJ(){var e=end(st);if(e>st.max||e<st.min){var lo=Math.min(st.start,e),hi=Math.max(st.start,e),sp=st.labelStep*Math.ceil((hi-lo)/st.labelStep/8)||st.labelStep;st.min=Math.floor((lo-sp)/sp)*sp;st.max=Math.ceil((hi+sp)/sp)*sp;st.labelStep=sp;}}
+   pre.onchange=function(){st=clone(P[pre.value]);build();paint();};
+   panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(box);build();paint();C._explore={get:function(){return end(st);}};},
+ challenge:function(panel,api,stage){
+   var tasks=[
+    {q:'Work out −4 + 7 using the jump.',build:NOVA.entryTask('Answer','F1-03'),check:function(x){var ok=x===3;return [ok,ok?'Yes: seven right from −4 lands on 3.':x===-11?'Adding jumps RIGHT, not left.':x===11?'Start at −4, not 4.':'Start at −4 and count 7 to the right.'];},hint:'Jump 4 to reach 0, then 3 more.',solve:function(c){c._A.input.value='3';}},
+    {q:'Which sum do these jumps show?',build:NOVA.choiceTask(['5 \u2212 8 = \u22123','5 + 8 = 13','8 \u2212 5 = 3'],'F1-03'),check:function(x){var ok=x==='5 \u2212 8 = \u22123';return [ok,ok?'Yes: start at 5 and jump 8 to the left.':x?'Look at the start ring and which way the arc goes.':'Pick one first.'];},hint:'A jump to the left is subtraction.',solve:function(c){c._G.set('5 \u2212 8 = \u22123');}},
+    {q:'Five jumps of 4 from 0. Where do you land?',build:NOVA.entryTask('Lands on','F1-03'),check:function(x){var ok=x===20;return [ok,ok?'Yes: 5 × 4 = 20.':x===9?'That adds 5 and 4. Each jump is 4, and there are 5 of them.':'Count in fours: 4, 8, 12, 16, …'];},hint:'Count in fours five times.',solve:function(c){c._A.input.value='20';}}];
+   function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['add','read','repeat'][k]);
+     if(k===0){draw(stage,{min:-6,max:6,labelStep:1,start:-4,jumps:[7]},{noLabels:true,end:false});strip(stage,[['sum','\u22124 + 7 = ?','unknown']]);}
+     else if(k===1){draw(stage,{min:-4,max:7,labelStep:1,start:5,jumps:[-8]},{noLabels:true});strip(stage,[['start','5','given'],['arc','to the left','focus']]);}
+     else{draw(stage,{min:0,max:22,labelStep:2,start:0,jumps:[4,4,4,4,4]},{noLabels:true,end:false});strip(stage,[['jumps','5 of 4','op'],['lands on','?','unknown']]);}
+     NOVA.scene.helperStrip(stage,'think',['\u22124\u00A0+\u00A07','Which sum?','5\u00A0jumps\u00A0of\u00A04'][k]);}
+   NOVA.challengeRun(panel,api,tasks,paintC,C);}
+};
+NOVA.bankMount({id:'F1-03',num:'F1·03',title:'Jump-arc operator',def:def,linked:['F1-01','F1-02','F0-02','F0-03','F0-04','F0-12'],
+ spec:{purpose:'Models addition and subtraction as neon jump arcs on a number line: counting on and back, crossing zero, splitting into friendly jumps, repeated equal jumps for multiplication, and subtracting a negative as a jump to the right.',
+  params:'min, max, labelStep (line at every labelled number), start, jumps[] (signed sizes). Core: NOVA.svg.axes({numberLine}), NOVA.svg.hop (neon arcs + chalk pills), NOVA.neonRing (start and end), neonTile, NOVA.ui.slider / stepper. Year groups: KS3 Years 7–9 (12–15), with GCSE extension.',
+  presets:'Cross zero −3 + 5 · Count back 7 − 9 · Friendly jumps 48 + 27 · Repeated 4 × 3 · Subtract a negative 4 − (−3) · Decimals 2.6 + 0.7 · GCSE −12 − 15',
+  steps:'Start → Jump on → Jump back → Friendly jumps → Repeated jumps → Subtract a negative → Decimals. Each step has a Sir Bob line and a Guided prompt; the helper points to the start and end rings.',
+  interactions:'Watch: auto-play. Guided: step with prompts. Explore: preset, start slider, jump slider (signed), jump-count stepper; the line rescales to fit. Challenge (3 tasks): −4 + 7; identify 5 − 8 from the arcs; five jumps of 4. Events: value, correct, step, hintUsed.',
+  traps:'Jumping left for addition · Starting at 4 instead of −4 · Treating 4 − (−3) as 1 · Adding the jump size to the count (5 + 4 instead of 5 × 4)',
+  gcse:'Extension: directed numbers to −30 and decimal jumps; linked: F1-01 number line, F1-02 zoom, F1-05 rounding'}});
+var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
+document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+</script>
+</body>
+</html>

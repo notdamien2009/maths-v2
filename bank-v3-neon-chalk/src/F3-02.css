@@ -107,3 +107,10 @@
 
 /* F0 authoritative helper strip. No F3 custom mascot docking or animation. */
 #F3-02 .nova-stage>.nv-dock{margin-top:auto}
+
+/* F7-05 only: preserve readable two-line double-bracket evidence at desktop and mobile. */
+html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer{display:flex;flex-direction:column;align-items:stretch;gap:7px}
+html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer .f302-maths{font-size:clamp(1.05rem,1.4vw,1.38rem);line-height:1.4;overflow-wrap:anywhere;margin:1px 0 0}
+html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer .nv-ntile{width:max-content;max-width:100%;min-width:0;font-size:clamp(1.1rem,1.65vw,1.50rem);padding:7px 12px;line-height:1.35;white-space:normal;text-align:left}
+html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-aside .nv-ncard{overflow-wrap:anywhere}
+@media(max-width:720px){html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer .f302-maths{font-size:.92rem}html[data-f7-entry="F7-05"] #F3-02 .nova-stage[data-kind="double"] .f302-answer .nv-ntile{font-size:1rem;padding:5px 7px}}

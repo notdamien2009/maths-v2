@@ -1,0 +1,34 @@
+/* F4-07 family polish. Mathematical colour, fonts and F0 neon primitives remain canonical. */
+#F4-07 .nova-stage{padding:7px 9px 2px!important;min-height:0!important;overflow:hidden}
+#F4-07 .f407-layout{display:grid;grid-template-columns:minmax(0,3.5fr) minmax(212px,1fr);align-items:center;gap:10px;padding:1px 6px}
+#F4-07 .f407-apparatus{min-width:0}
+#F4-07 .f407-svg{display:block;max-width:100%;width:100%;height:auto;user-select:none;overflow:visible}
+#F4-07 .f407-side{display:grid;gap:10px;align-self:center}
+#F4-07 .f407-side .nv-ncard{padding:13px 12px;min-height:96px}
+#F4-07 .f407-card-label{font:900 .74rem/1.3 var(--nova-font-ui);letter-spacing:.06em;color:#a8cfe5;margin:0 0 6px}
+#F4-07 .f407-card-number{font:850 1.42rem/1.25 var(--nova-font-chalk-write);color:#e4f7ff;margin:5px 0}
+#F4-07 .f407-card-note{font:550 .8rem/1.4 var(--nova-font-ui);color:#aac7dd;margin:0}
+#F4-07 .f407-prompt{font:750 1rem/1.5 var(--nova-font-ui);color:#d5f0ff;margin:10px 0}
+#F4-07 .f407-controls,#F4-07 .f407-entry{display:flex;flex-wrap:wrap;gap:9px;align-items:end;margin:10px 0}
+#F4-07 .f407-field{display:flex;flex-direction:column;gap:5px;flex:1 1 128px;min-width:118px;max-width:230px;color:#b7d8eb;font:730 .84rem/1.35 var(--nova-font-ui)}
+#F4-07 .f407-field input,#F4-07 .f407-field select{font:800 1rem/1.25 var(--nova-font-chalk-write);color:#edfcff;background:#0b1d31;border:1px solid #37a8c3;border-radius:11px;padding:10px 12px;max-width:100%;width:100%}
+#F4-07 .f407-status{border:1px solid #426b85;border-left:4px solid #4adce8;padding:11px 13px;border-radius:10px;background:rgba(8,30,51,.73);font:630 .9rem/1.5 var(--nova-font-ui);color:#edfaff}
+#F4-07 .f407-status.bad{border-color:#f67987;border-left-color:#f67987}
+#F4-07 .f407-status.good{border-color:#4fe2a1;border-left-color:#4fe2a1}
+#F4-07 .f407-guide{font:600 .83rem/1.45 var(--nova-font-ui);color:#a7c7da;margin:10px 0}
+#F4-07 .f407-progress{color:#ffd27d;font-weight:900}
+#F4-07 .f407-finish{color:#bdffdf;border:1px solid #369b7c;border-radius:11px;padding:12px}
+#F4-07 .f407-next{display:flex;justify-content:flex-end;margin-top:8px}
+#F4-07 .f407-unit:focus-visible,#F4-07 .f407-source:focus-visible,#F4-07 .f407-valuechip:focus-visible{outline:none;filter:drop-shadow(0 0 8px #fff)}
+@media(max-width:760px){
+ #F4-07 .f407-layout{display:flex;flex-direction:column;gap:4px;padding:0}
+ #F4-07 .f407-apparatus{width:100%}
+ #F4-07 .f407-side{width:100%;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+ #F4-07 .f407-side .nv-ncard{padding:7px 7px;min-height:91px}
+ #F4-07 .f407-card-label{font-size:.59rem;letter-spacing:0}
+ #F4-07 .f407-card-number{font-size:1.02rem}
+ #F4-07 .f407-card-note{font-size:.65rem}
+ #F4-07 .f407-controls{gap:7px}
+ #F4-07 .f407-controls .nova-btn{min-height:39px}
+}
+@media print{#F4-07 .f407-controls,#F4-07 .f407-entry,#F4-07 .f407-guide{display:none!important}}

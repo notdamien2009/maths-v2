@@ -1,0 +1,57 @@
+{
+  "component_id": "F6-06",
+  "title": "Best-Buy Comparer \u2014 Unit Price",
+  "family": "F6",
+  "type": "standalone-engine",
+  "version": "1.0.0-premium-review",
+  "status": "review-candidate-pending-owner-gold-approval",
+  "lesson_mappings": [
+    "Y7-061"
+  ],
+  "presets": [
+    "Y7-061",
+    "Y7-061-cereal",
+    "Y7-061-juice",
+    "Y7-061-soap",
+    "Y7-061-equal"
+  ],
+  "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+  ],
+  "teaching_steps": 6,
+  "standalone_html": "F6/F6-06-best-buy-comparer.html",
+  "build_command": "python build/build-f6-06.py",
+  "exact_core_sha256": {
+    "core/nova-core.css": "4beb90926294cbb54f7e9c13884c425e510defb8d8fd1deeede3dabba9cbde5b",
+    "core/nova-core.js": "1e3a118ed3a38a0875178dc0acdd4e0fb6c07b38b33807f7cf410523756a9e21"
+  },
+  "core_included": false,
+  "qa": {
+    "math": {
+      "passed": 100025,
+      "total": 100025
+    },
+    "browser": {
+      "passed": 100,
+      "total": 100
+    },
+    "stress": {
+      "passed": 44,
+      "total": 44
+    },
+    "layout": {
+      "passed": 32,
+      "total": 32
+    }
+  },
+  "screenshots": 10,
+  "limitations": [
+    "Native touchscreen hardware QA not performed",
+    "Screen-reader device QA not performed",
+    "Full NOVA lesson-shell integration not performed",
+    "Owner GOLD approval pending"
+  ]
+}

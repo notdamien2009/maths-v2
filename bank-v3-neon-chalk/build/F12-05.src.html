@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA F12-05 · Area by counting</title>
+<style>
+@@CSS@@
+/* ---- F12-05 local styles ---- */
+.nova-spec dd{white-space:pre-line}
+.f12-sv [role=button]{outline:none}.f12-sv [role=button]:focus-visible{outline:2px dashed var(--m-focus);outline-offset:4px}
+.f12-sv[role=application]:focus-visible{outline:2px dashed var(--m-focus);outline-offset:3px;border-radius:12px}
+@media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
+</style>
+</head>
+<body data-topic="geometry">
+<div class="nova-wrap">
+<header id="nova-header" data-run="F12 · 2D shapes, perimeter and area · F12-05" data-title="Area by counting" data-sub="Count unit squares, pair half squares and meet the squares on the sides of a right-angled triangle."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log">
+<h2 style="font-size:1.1em">Event log (NOVA.events)</h2>
+<div id="log" class="nova-log" role="log" aria-live="off"></div>
+<button class="nova-btn" id="clearlog">Clear log</button>
+</section>
+</div>
+<script>
+@@JS@@
+</script>
+<script>
+/* ===== F12-05 CONFIG: parameters + named presets ===== */
+var NOVA_F12_05_CONFIG={
+  startMode:'watch',
+  preset:'rect',
+  presets:{
+    rect:{label:'Rectangle',kind:'rect',cols:6,rows:4,params:[['Columns','cols',2,9,1],['Rows','rows',2,7,1]]},
+    tri45:{label:'Right-angled triangle (half squares)',kind:'tri',n:5,params:[['Leg length','n',3,7,1]]},
+    lshape:{label:'L-shape',kind:'L',W:5,H:5,nw:3,nh:3,params:[['Width','W',4,8,1],['Height','H',4,8,1],['Notch width','nw',1,3,1],['Notch height','nh',1,3,1]]},
+    pyth:{label:'Squares on the sides',kind:'pyth',a:3,b:4,params:[['Short side a','a',2,6,1],['Short side b','b',2,6,1]]}
+  }
+};
+/* ===== F12-05 ENGINE ===== */
+(function(){
+var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=NOVA_F12_05_CONFIG,P=C.presets,strip=F.strip,fmt=F.fmt,clone=F.clone,VW=440,VH=280;
+function poly(st){if(st.kind==='rect')return [[0,0],[st.cols,0],[st.cols,st.rows],[0,st.rows]];if(st.kind==='tri')return [[0,0],[0,st.n],[st.n,st.n]];return [[0,0],[st.W,0],[st.W,st.H-st.nh],[st.W-st.nw,st.H-st.nh],[st.W-st.nw,st.H],[0,st.H]];}
+function dims(st){return st.kind==='rect'?[st.cols,st.rows]:st.kind==='tri'?[st.n,st.n]:[st.W,st.H];}
+function classify(st){var Pl=poly(st),d=dims(st),out=[];for(var r=0;r<d[1];r++)for(var c=0;c<d[0];c++){var k=0;for(var i=0;i<6;i++)for(var j=0;j<6;j++)if(F.pip([c+(i+.5)/6,r+(j+.5)/6],Pl))k++;var f=k/36;out.push({c:c,r:r,f:f<.02?0:f>.97?1:(Math.abs(f-.5)<.09?.5:f)});}return out;}
+function counts(st){var cl=classify(st),w=0,hf=0;cl.forEach(function(q){if(q.f===1)w++;else if(q.f===.5)hf++;});return {w:w,h:hf,area:w+hf/2,cl:cl};}
+/* grid shapes: show={whole,half,num} */
+function drawGrid(stage,st,show){var d=dims(st),cs=Math.min(Math.floor(380/d[0]),Math.floor(220/d[1]),46),x0=(VW-d[0]*cs)/2,y0=(VH-d[1]*cs)/2-6,cn=counts(st),
+  sv=S.root(VW,VH,'Grid of unit squares with a '+(st.kind==='tri'?'right-angled triangle':st.kind==='L'?'L-shape':'rectangle')+': '+cn.w+' whole squares'+(cn.h?' and '+cn.h+' half squares':'')+'.');sv.classList.add('f12-sv');
+  NOVA.neonCells(sv,x0,y0,d[0],d[1],cs,{role:'result',hatch:'dots',cells:function(c,r){return show.whole&&cn.cl[r*d[0]+c].f===1;}});
+  var Q=poly(st).map(function(q){return [x0+q[0]*cs,y0+q[1]*cs];});
+  if(show.half&&st.kind==='tri'){cn.cl.forEach(function(q){if(q.f===.5){NOVA.neonShape(sv,[[x0+q.c*cs,y0+q.r*cs],[x0+q.c*cs,y0+(q.r+1)*cs],[x0+(q.c+1)*cs,y0+(q.r+1)*cs]],{role:'focus',hatch:'diag',width:1.6});}});}
+  var g=NOVA.neonShape(sv,Q,{role:'op',fill:false,width:3});g.setAttribute('data-maths','shape');
+  if(show.num&&d[0]*d[1]<=42){var k=0;cn.cl.forEach(function(q){if(q.f===1){k++;NOVA.chalkText(sv,x0+(q.c+.5)*cs,y0+(q.r+.5)*cs+4,String(k),{size:Math.max(10,cs*.34)});}else if(q.f===.5&&show.half)NOVA.chalkText(sv,x0+(q.c+.35)*cs,y0+(q.r+.72)*cs,'\u00bd',{size:Math.max(10,cs*.3),role:'focus'});});}
+  stage.appendChild(sv);return cn;}
+/* Pythagoras squares: right angle at the origin, legs a (along x) and b (up), squares on all three sides */
+function drawPyth(stage,st){var a=st.a,b=st.b,A=[a,0],B=[0,b],v=[-a,b],n=[b,a],
+  sqa=[[0,0],[a,0],[a,-a],[0,-a]],sqb=[[0,0],[0,b],[-b,b],[-b,0]],sqc=[A,B,[B[0]+n[0],B[1]+n[1]],[A[0]+n[0],A[1]+n[1]]],tri=[[0,0],A,B],
+  all=sqa.concat(sqb,sqc),m=F.map(all.map(function(q){return [q[0],-q[1]];}),VW,VH,22,30),T=function(P){return m(P.map(function(q){return [q[0],-q[1]];}));},
+  sv=S.root(VW,VH,'Right-angled triangle with squares on its three sides, areas '+a*a+', '+b*b+' and '+(a*a+b*b)+'.');sv.classList.add('f12-sv');
+  NOVA.neonShape(sv,T(sqa),{role:'given',hatch:'dots',width:2.6});NOVA.neonShape(sv,T(sqb),{role:'op',hatch:'cross',width:2.6});NOVA.neonShape(sv,T(sqc),{role:'result',hatch:'diag',width:2.6});
+  var t=NOVA.neonShape(sv,T(tri),{role:'focus',width:3});t.setAttribute('data-maths','tri');
+  [[sqa,a*a,'given'],[sqb,b*b,'op'],[sqc,a*a+b*b,'result']].forEach(function(s){var c=F.cent(T(s[0]));S.pill(sv,c[0],c[1],String(s[1]),{role:s[2],size:14});});
+  stage.appendChild(sv);return {};}
+/* enclosing square: big square (a+b), four triangles, tilted inner square */
+function drawEnc(stage,st){var a=st.a,b=st.b,Sd=a+b,big=[[0,0],[Sd,0],[Sd,Sd],[0,Sd]],inner=[[a,0],[Sd,a],[b,Sd],[0,b]],
+  tris=[[[0,0],[a,0],[0,b]],[[a,0],[Sd,0],[Sd,a]],[[Sd,a],[Sd,Sd],[b,Sd]],[[b,Sd],[0,Sd],[0,b]]],m=F.map(big.map(function(q){return [q[0],-q[1]];}),VW,VH,26,30),T=function(P){return m(P.map(function(q){return [q[0],-q[1]];}));},
+  sv=S.root(VW,VH,'Big square of side '+Sd+' holding four triangles and a tilted square of area '+(a*a+b*b)+'.');sv.classList.add('f12-sv');
+  NOVA.neonShape(sv,T(big),{role:'unknown',fill:false,width:2,dash:'8 6'});NOVA.neonShape(sv,T(inner),{role:'result',hatch:'diag',width:3});
+  tris.forEach(function(t){var q=NOVA.neonShape(sv,T(t),{role:'op',hatch:'cross',width:2});var c=F.cent(T(t));S.pill(sv,c[0],c[1],fmt(a*b/2),{role:'op',size:11});});
+  var ci=F.cent(T(inner));S.pill(sv,ci[0],ci[1],String(a*a+b*b),{role:'result',size:14});stage.appendChild(sv);return {};}
+function chipsGrid(stage,st,cn,show){var items=[];if(show.whole)items.push(['whole squares',cn.w,'result']);if(show.half&&cn.h)items.push(['half squares',cn.h+' → '+fmt(cn.h/2),'focus']);
+  if(show.total)items.push(['area',fmt(cn.area)+' unit squares','op']);if(st.kind==='rect'&&show.formula)items.push(['rows × columns',st.rows+' × '+st.cols+' = '+st.rows*st.cols,'given']);
+  if(st.kind==='L'&&show.formula)items.push(['box minus notch',st.W+'×'+st.H+' − '+st.nw+'×'+st.nh+' = '+(st.W*st.H-st.nw*st.nh),'given']);if(items.length)strip(stage,items);}
+function chipsPyth(stage,st){strip(stage,[['a²',st.a*st.a,'given'],['b²',st.b*st.b,'op'],['a² + b²',st.a*st.a+' + '+st.b*st.b+' = '+(st.a*st.a+st.b*st.b),'result']]);}
+function paint(stage,st,show){if(st.kind==='pyth'){if(show.enc){drawEnc(stage,st);strip(stage,[['big square','('+st.a+'+'+st.b+')² = '+(st.a+st.b)*(st.a+st.b),'given'],['4 triangles','4 × '+fmt(st.a*st.b/2)+' = '+fmt(2*st.a*st.b),'op'],['tilted square',(st.a+st.b)*(st.a+st.b)+' − '+2*st.a*st.b+' = '+(st.a*st.a+st.b*st.b),'result']]);}else{drawPyth(stage,st);chipsPyth(stage,st);}return;}
+  var cn=drawGrid(stage,st,show);chipsGrid(stage,st,cn,show);}
+var steps=[
+ {name:'Cover with squares',mood:'neutral',narration:'Area is how much flat space is inside a shape. We measure it by covering the shape with unit squares, each worth 1.',prompt:'What is one unit square worth?',st:P.rect,show:{whole:1,num:0}},
+ {name:'Count in rows',mood:'focus',narration:'Six squares in every row and four rows: count them all, or multiply. 4 rows of 6 gives 24 unit squares.',prompt:'How many squares in one row?',st:P.rect,show:{whole:1,num:1,total:1,formula:1},target:'shape'},
+ {name:'Whole squares first',mood:'think',narration:'The slanted edge cuts some squares in half. Count the whole squares first: 4 + 3 + 2 + 1 makes 10.',prompt:'How many whole squares are inside the triangle?',st:P.tri45,show:{whole:1,num:1},target:'shape'},
+ {name:'Pair the halves',mood:'cheer',narration:'Five squares are cut exactly in half. Two halves make one whole, so five halves make 2 and a half. Total area: 10 + 2.5 = 12.5.',prompt:'What are five halves worth?',st:P.tri45,show:{whole:1,half:1,num:1,total:1},target:'shape'},
+ {name:'A compound shape',mood:'think',narration:'The L-shape has no slanted edges, so just count. Or take the big 5 by 5 square, 25, and subtract the missing 3 by 3 corner, 9. Both give 16.',prompt:'Which is quicker, counting or subtracting?',st:P.lshape,show:{whole:1,num:1,total:1,formula:1},target:'shape'},
+ {name:'Squares on the sides',mood:'focus',narration:'Draw a square on each side of a right-angled triangle. The two small squares have areas 9 and 16. The big square on the longest side has area 25, and 9 + 16 = 25.',prompt:'What is 9 + 16?',st:P.pyth,show:{},target:'tri'},
+ {name:'Why 25 works',mood:'cheer',narration:'Fit four copies of the triangle inside a 7 by 7 square. The big square is 49, the four triangles use 4 times 6, which is 24, so the tilted square is 49 minus 24, which is 25.',prompt:'What is 49 minus 24?',st:P.pyth,show:{enc:1}}];
+function render(i,stage){stage.innerHTML='';var s=steps[i];NOVA.cap(stage,'Area by counting · '+s.name,'step '+(i+1)+'/'+steps.length);paint(stage,s.st,s.show);NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
+var def={id:'F12-05',title:'Area by counting',config:C,steps:steps,render:render,
+ alt:'Area by counting: unit squares are counted in rectangles, right-angled triangles with half squares, an L-shape, and Pythagoras squares on the sides of a right-angled triangle.',
+ staticAlt:'6 by 4 rectangle: 24 squares. Right-angled triangle with legs 5: 10 whole squares and 5 half squares, area 12.5. L-shape: 25 minus 9 is 16. Squares on the sides of a 3, 4 right-angled triangle: 9 + 16 = 25.',
+ exploreIntro:'Explore: choose a shape and change its size. Switch the view to see whole squares, half squares or numbered squares. For the square-on-the-sides shape, switch to the enclosing square.',
+ explore:function(panel,stage,api){var key=C.preset,st=clone(P[key]),view='all',box=h('div');
+   function show(){if(st.kind==='pyth')return {enc:view==='enc'};return view==='whole'?{whole:1,num:1,total:1,formula:1}:view==='half'?{half:1,total:1}:{whole:1,half:1,num:1,total:1,formula:1};}
+   function pg(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+P[key].label,st.kind==='pyth'?'a²+b²':'counting');paint(stage,st,show());NOVA.scene.helperStrip(stage,'explain',P[key].label);}
+   function build(){box.innerHTML='';st.params.forEach(function(q){box.appendChild(U.slider({label:q[0],min:q[2],max:q[3],step:q[4],value:st[q[1]],engine:'F12-05',onChange:function(v){st[q[1]]=v;if(st.kind==='L'){st.nw=Math.min(st.nw,st.W-1);st.nh=Math.min(st.nh,st.H-1);}pg();}}));});}
+   var pre=h('select',{class:'nova-input','aria-label':'Shape'});Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});pre.value=key;
+   var vw=h('select',{class:'nova-input','aria-label':'View'});function fillV(){vw.innerHTML='';(st.kind==='pyth'?[['all','Squares on the sides'],['enc','Enclosing square']]:[['all','Whole and half squares'],['whole','Whole squares only'],['half','Half squares only']]).forEach(function(o){vw.appendChild(h('option',{value:o[0],text:o[1]}));});view='all';vw.value='all';}
+   pre.onchange=function(){key=pre.value;st=clone(P[key]);fillV();build();pg();NOVA.events.emit('value',{engine:'F12-05',control:'preset',value:key});};vw.onchange=function(){view=vw.value;pg();NOVA.events.emit('value',{engine:'F12-05',control:'view',value:view});};
+   panel.appendChild(h('label',{class:'pr-row'},['Shape ',pre]));panel.appendChild(box);panel.appendChild(h('label',{class:'pr-row'},['View ',vw]));fillV();build();pg();},
+ challenge:function(panel,api,stage){var stL={kind:'L',W:5,H:4,nw:2,nh:2},stT={kind:'tri',n:5},stP={kind:'pyth',a:6,b:8};
+   var tasks=[
+    {q:'Count the squares inside this L-shape. What is its area?',build:NOVA.entryTask('Area (unit squares)','F12-05'),check:function(x){var ok=x===16;return [ok,ok?'Yes: 5 × 4 = 20, take away the 2 × 2 corner, 4, to leave 16.':x===20?'20 counts the missing corner too. Take away the 2 × 2 notch.':x===18?'Check the notch: it is 2 by 2, which is 4 squares.':'Count the whole squares, or box minus notch.'];},hint:'Box 5 by 4, minus the 2 by 2 corner.',solve:function(c){c._A.input.value='16';}},
+    {q:'A triangle covers 10 whole squares and 5 half squares. What is its area?',build:NOVA.entryTask('Area (unit squares)','F12-05'),check:function(x){var ok=x===12.5;return [ok,ok?'Yes: 10 + 2.5 = 12.5 unit squares.':x===15?'Half squares are worth ½ each: five halves make 2.5, not 5.':x===10?'Do not forget the half squares: they add 2.5.':'Whole squares + half of the number of half squares.'];},hint:'Five halves is 2.5.',solve:function(c){c._A.input.value='12.5';}},
+    {q:'The squares on the two shorter sides have areas 36 and 64. What is the area of the square on the longest side?',build:NOVA.entryTask('Area (unit squares)','F12-05'),check:function(x){var ok=x===100;return [ok,ok?'Yes: 36 + 64 = 100.':x===28?'You subtracted. The big square is the SUM of the two smaller squares.':x===10?'10 is the side length. The question asks for the area: 100.':'Add the two smaller areas.'];},hint:'The two small squares add up to the big one.',solve:function(c){c._A.input.value='100';}}];
+   function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['count','halves','square areas'][k]);if(k===0){var cn=drawGrid(stage,stL,{whole:1,num:1});strip(stage,[['find','the area','focus']]);}else if(k===1){drawGrid(stage,stT,{whole:1,half:1,num:1});strip(stage,[['whole','10','result'],['half squares','5','focus']]);}else{drawPyth(stage,stP);strip(stage,[['a²','36','given'],['b²','64','op'],['c²','?','unknown']]);}NOVA.scene.helperStrip(stage,'think',['Count','Count halves','Add the squares'][k]);}
+   NOVA.challengeRun(panel,api,tasks,paintC,C);}
+};
+NOVA.bankMount({id:'F12-05',num:'F12·05',title:'Area by counting',def:def,linked:['F0-02','F0-11','F12-03','F12-06','F12-07','F12-10','F15-02'],
+ spec:{purpose:'Area as covering: count unit squares in rectangles (rows times columns), pair half squares in a right-angled triangle, count or subtract in compound shapes, and build the picture behind Pythagoras: the squares on the sides of a right-angled triangle, with the enclosing-square proof.',
+  params:'preset (rect, tri, L, pyth) with slider ranges; view (whole, half, all, enclosing square). Whole and half cells come from sampling the shape against the grid. Core: NOVA.neonCells / neonShape / chalkText / neonTile, NOVA.f12.map / cent / pip. Year groups: KS3 Years 7–9 (12–15).',
+  presets:'Rectangle · Right-angled triangle (half squares) · L-shape · Squares on the sides',
+  steps:'Cover with squares → Count in rows → Whole squares first → Pair the halves → A compound shape → Squares on the sides → Why 25 works. Each step has a Sir Bob line and a Guided prompt.',
+  interactions:'Watch: auto-play. Guided: step with prompts. Explore: shape, size sliders, view switch; chips show whole squares, halves, area and the shortcut. Challenge (3 tasks): area of an L-shape by counting; triangle with whole and half squares; area of the square on the longest side. Events: value, correct, step, hintUsed.',
+  traps:'Counting a half square as a whole one · forgetting to halve the half-squares · counting grid lines instead of squares · subtracting instead of adding the two small Pythagoras squares · giving the side length instead of the area of the big square',
+  gcse:'Extension: area by subtraction for compound shapes, Pythagoras proof by rearrangement, estimating area of irregular shapes by counting; linked: F12-07 triangle area, F12-10 compound shapes, F15-02 Pythagoras'}});
+var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
+document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+
+</script>
+</body>
+</html>

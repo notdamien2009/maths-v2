@@ -1,0 +1,56 @@
+{
+  "component_id": "F6-04",
+  "title": "F6-04 Simplifying Ratios",
+  "family": "F6",
+  "type": "standalone-engine",
+  "status": "premium-review-pending-owner-approval",
+  "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+  ],
+  "presets": {
+    "Y7-058": "six to nine",
+    "Y7-058-extend": "twelve to eighteen",
+    "Y8-034-decimals": "1.5 to 2.25",
+    "Y8-034-fractions": "three quarters to one half"
+  },
+  "steps": 6,
+  "files": {
+    "standalone": "F6/F6-04-simplifying-ratios.html",
+    "source_js": "src/F6-04.js",
+    "source_css": "src/F6-04.css",
+    "template": "build/F6-04.src.html",
+    "builder": "build/build-f6-04.py"
+  },
+  "core_reference": {
+    "js_sha256": "1e3a118ed3a38a0875178dc0acdd4e0fb6c07b38b33807f7cf410523756a9e21",
+    "css_sha256": "4beb90926294cbb54f7e9c13884c425e510defb8d8fd1deeede3dabba9cbde5b",
+    "core_files_included": false
+  },
+  "qa": {
+    "math": [
+      25616,
+      25616
+    ],
+    "browser": [
+      75,
+      75
+    ],
+    "fast_drag": [
+      144,
+      144
+    ],
+    "layout": [
+      58,
+      58
+    ],
+    "screenshots": 12
+  },
+  "limitations": [
+    "native touch-device stress not run",
+    "lesson shell integration not tested",
+    "owner GOLD approval pending"
+  ]
+}

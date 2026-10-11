@@ -536,6 +536,19 @@ details.nv-dev:not([open])>*:not(summary){display:none}
 .nv-neon-plot line[stroke-dasharray],.nv-neon-plot line[style*="dasharray"]{filter:url(#nv-neon);opacity:.9}
 html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 
+/* ==== v3.5 F12 family styles (shared by every F12 engine) ==== */
+.pr-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.pr-task{font:700 1.15rem var(--nova-font-chalk-write);color:#eef9ff;text-shadow:var(--nv-chalk-glow)}
+.f12-strip{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:6px 12px 0}
+.f12-strip .k{font:700 .8rem var(--nova-font-chalk-draw);color:#cfe6ff}
+.f12-strip .nv-ntile{font-size:1.15rem;min-height:40px;padding:4px 14px}
+.f12-peg{cursor:pointer;outline:none}.f12-peg:focus-visible circle.hit{stroke:var(--m-focus);stroke-width:2}
+.nova-stage>svg.nv-svg.f12-sv{display:block;width:100%;max-width:760px;height:auto;margin:4px auto 0}
+html[data-theme=light] .f12-strip .k{color:#10213a}
+.f12-strip .nv-ntile{white-space:normal;word-break:normal;overflow-wrap:normal;hyphens:none;text-align:center;max-width:100%}
+.nv-ncard{word-break:normal;overflow-wrap:normal;hyphens:none}
+.f12-board .nv-ring,.f12-board .nv-neon-shape,.f12-board .nv-neon-cells,.f12-board .nv-neon-tube,.f12-board text,.f12-board g[filter]{pointer-events:none}
+
 /* ---- F0-01 local styles (all values come from tokens) ---- */
 .tk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:10px 12px 14px;margin:0;list-style:none}
 @media(min-width:640px){.tk-grid{grid-template-columns:repeat(4,1fr)}}
@@ -544,7 +557,7 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .tk-sw b{font-size:.78rem}.tk-sw code{font-family:var(--nova-font-mono);color:var(--v-muted);font-size:.68rem}
 .tk-sw.on{transform:translateY(-2px);box-shadow:0 0 0 2px var(--m-focus)}
 .tk-fonts{padding:12px 14px;display:grid;gap:10px;color:var(--v-ink)}
-.tk-fonts .dr{font:700 1.5rem var(--nova-font-chalk-draw);color:#f3efe4;filter:url(#nv-chalk)}.tk-fonts .ui{font:800 1.25rem var(--nova-font-ui)}.tk-fonts .mx{font:700 clamp(2rem,7vw,3.2rem)/1.25 var(--nova-font-maths);color:#eaf6ff;text-shadow:0 0 6px rgba(77,232,255,.55),0 0 18px rgba(77,232,255,.3)}.tk-fonts .mx b{color:#ffcc58;font-weight:700;text-shadow:0 0 8px rgba(255,204,88,.6)}.tk-fonts .lb{font:700 1.35rem var(--nova-font-chalk);color:#ff9bd2;text-shadow:0 0 8px rgba(255,120,200,.45)}.tk-fonts .dg{font:700 clamp(1.3rem,5vw,2.3rem) var(--nova-font-chalk);letter-spacing:.32em;white-space:nowrap;color:#7dffb0;text-shadow:0 0 8px rgba(80,255,160,.45)}.tk-fonts>div{padding:10px 12px;margin:6px 0;border:1px solid rgba(77,232,255,.18);border-radius:14px;background:rgba(4,12,34,.45)}.tk-fonts .mo{font:.9rem var(--nova-font-mono);color:var(--v-muted)}
+.tk-fonts .ui{font:800 1.25rem var(--nova-font-ui)}.tk-fonts .mx{font:1.5rem var(--nova-font-maths)}.tk-fonts .mo{font:.9rem var(--nova-font-mono);color:var(--v-muted)}
 .tk-fonts small{display:block;color:var(--v-muted);font:600 .7rem var(--nova-font-ui);letter-spacing:.08em;text-transform:uppercase}
 .tk-eq{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:14px 10px 6px;font:1.6rem var(--nova-font-maths)}
 .tk-tok{position:relative;min-width:40px;padding:4px 8px 10px;border-radius:10px;text-align:center;color:var(--v-ink);background:var(--v-panel);border:2px solid var(--v-line);cursor:pointer}
@@ -577,17 +590,7 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 
 
 /* v3.1 audit: chalk writing + neon tile glow (matches F0-02); Challenge fills the stage */
-html[data-house="neon-chalk"] .tk-eq{font-family:var(--nova-font-chalk);font-weight:700;font-size:2.4rem}
-/* v3.2 house lock: every token demo in neon + chalk, content centred so no empty bands */
-.tk-cvd>.nv-cap+*{margin-top:auto}
-.tk-sw{background:linear-gradient(180deg,#0f1d3d,#060d20)!important;border:1.5px solid color-mix(in srgb,var(--sw,#67b8e5) 70%,transparent);box-shadow:0 0 0 2px #040818,0 0 12px color-mix(in srgb,var(--sw,#4f8cff) 35%,transparent),inset 0 1px #e2f9ff30!important;font-family:var(--nova-font-chalk)}
-.tk-sw b{font:700 1rem var(--nova-font-chalk);color:#eef9ff;text-shadow:var(--nv-chalk-glow)}
-.tk-sw code{font:600 .78rem var(--nova-font-chalk)!important;color:#9cc7e0}
-.tk-sw .chip{height:38px;box-shadow:0 0 14px -2px var(--sw,#4f8cff),inset 0 1px rgba(255,255,255,.4)!important}
-.tk-legend span{font:700 .95rem var(--nova-font-chalk);color:#eef9ff;padding:6px 12px;border-radius:999px;border:1px solid #316bb6;background:linear-gradient(180deg,#0f1d3d,#060d20);box-shadow:0 0 10px #4f8cff33;text-shadow:var(--nv-chalk-glow)}
-.tk-legend svg{filter:drop-shadow(0 0 4px currentColor)}
-.tk-shapes{gap:14px!important}.tk-shapes>span{font-size:1.1rem!important;padding:10px 16px!important}
-.tk-shapes svg{filter:drop-shadow(0 0 5px rgba(120,220,255,.7))}
+html[data-house="neon-chalk"] .tk-eq{font-family:"Segoe Print","Comic Sans MS","Bradley Hand",cursive;font-weight:800}
 html[data-house="neon-chalk"] .tk-tok{color:#eef9ff;text-shadow:0 0 1px #fff,0 0 8px color-mix(in srgb,var(--rc,#67b8e5) 70%,transparent);background:linear-gradient(180deg,#0f1d3d,#060d20);border-color:var(--rc,#316bb6);box-shadow:0 0 0 2px #040818,0 0 14px color-mix(in srgb,var(--rc,#4f8cff) 45%,transparent),inset 0 1px #e2f9ff40}
 html[data-house="neon-chalk"] .tk-tok[data-role]{color:var(--rc)}
 html[data-house="neon-chalk"] .tk-tok .tk-ch{display:inline-block;filter:url(#nv-chalk)}
@@ -1630,6 +1633,111 @@ NOVA.neonCard=function(children,o){o=o||{};var el=document.createElement('div');
 NOVA.answerChip=function(text,ok){var t=NOVA.neonTile(text,{role:ok===false?'error':'result',cls:'nv-answer'});return t;};
 NOVA.version=(NOVA.version||'')+'+house3.2';
 
+/* ==== v3.5 F12 SHAPE KIT (additive; used by F12 engines) ====
+   Neon Tube + Chalk only. neonShape (closed neon polygon, gradient fill + hatch second cue), neonCells (unit-square grid),
+   rightAngle, eqTick, parTick, dimLine; NOVA.f12 shared helpers (shape library, fit, point-in-polygon, stats, classify). */
+(function(){
+var E=function(t,a,p){return NOVA.svg.el(t,a,p);};
+function rootOf(p){return p.ownerSVGElement||p;}
+/* second cue: role patterns (diagonal / cross / dots) so colour is never the only cue */
+function pat(p,role,kind){var sv=rootOf(p),id='nv-h-'+role+'-'+kind,d=sv.querySelector('defs')||E('defs',{},sv);if(sv.querySelector('#'+id))return id;var c=NOVA.svg.c(role);
+  var pt=E('pattern',{id:id,patternUnits:'userSpaceOnUse',width:9,height:9,patternTransform:kind==='diag'?'rotate(45)':''},d);
+  if(kind==='dots')E('circle',{cx:4.5,cy:4.5,r:1.5,css:'fill:'+c+';opacity:.7'},pt);
+  else{E('line',{x1:0,y1:0,x2:0,y2:9,'stroke-width':1.7,css:'stroke:'+c+';opacity:.6'},pt);if(kind==='cross')E('line',{x1:0,y1:4.5,x2:9,y2:4.5,'stroke-width':1.7,css:'stroke:'+c+';opacity:.6'},pt);}
+  return id;}
+NOVA.hatchId=pat;
+NOVA.neonShape=function(p,pts,o){o=o||{};var role=o.role||'op',d='M'+pts.map(function(q){return q[0]+','+q[1];}).join(' L')+(o.open?'':'Z');
+  var g=E('g',{class:'nv-neon-shape'},p);
+  if(o.fill!==false&&!o.open){E('path',{d:d,css:'fill:url(#nv-fill-'+role+');stroke:none'},g);if(o.hatch)E('path',{d:d,css:'fill:url(#'+pat(p,role,o.hatch)+');stroke:none'},g);}
+  NOVA.neonPath(g,d,{role:role,width:o.width||3,dash:o.dash});return g;};
+/* unit-square grid: cells(c,r)->true to fill. o:{role,hatch,line:'given'} */
+NOVA.neonCells=function(p,x,y,cols,rows,cell,o){o=o||{};var role=o.role||'result',g=E('g',{class:'nv-neon-cells'},p),c=NOVA.svg.c(role);
+  for(var r=0;r<rows;r++)for(var k=0;k<cols;k++){if(o.cells&&o.cells(k,r)){E('rect',{x:x+k*cell,y:y+r*cell,width:cell,height:cell,css:'fill:'+c+';opacity:.3;stroke:none'},g);if(o.hatch)E('rect',{x:x+k*cell,y:y+r*cell,width:cell,height:cell,css:'fill:url(#'+pat(p,role,o.hatch)+');stroke:none'},g);}}
+  for(var i=0;i<=cols;i++)E('line',{x1:x+i*cell,y1:y,x2:x+i*cell,y2:y+rows*cell,'stroke-width':1.1,css:'stroke:var(--m-given);opacity:.5'},g);
+  for(var j=0;j<=rows;j++)E('line',{x1:x,y1:y+j*cell,x2:x+cols*cell,y2:y+j*cell,'stroke-width':1.1,css:'stroke:var(--m-given);opacity:.5'},g);return g;};
+/* right-angle corner at vertex v between arms toward a and b */
+NOVA.rightAngle=function(p,v,a,b,o){o=o||{};var s=o.size||11;function u(q){var dx=q[0]-v[0],dy=q[1]-v[1],l=Math.hypot(dx,dy)||1;return [dx/l*s,dy/l*s];}
+  var A=u(a),B=u(b);return NOVA.neonPath(p,'M'+(v[0]+A[0])+','+(v[1]+A[1])+' L'+(v[0]+A[0]+B[0])+','+(v[1]+A[1]+B[1])+' L'+(v[0]+B[0])+','+(v[1]+B[1]),{role:o.role||'support',width:2});};
+/* equal-length ticks (n=1,2,3) across the midpoint of a side */
+NOVA.eqTick=function(p,x1,y1,x2,y2,n,o){o=o||{};var dx=x2-x1,dy=y2-y1,l=Math.hypot(dx,dy)||1,ux=dx/l,uy=dy/l,nx=-uy,ny=ux,mx=(x1+x2)/2,my=(y1+y2)/2,gap=5;
+  for(var i=0;i<n;i++){var t=(i-(n-1)/2)*gap;NOVA.neonPath(p,'M'+(mx+ux*t+nx*6)+','+(my+uy*t+ny*6)+' L'+(mx+ux*t-nx*6)+','+(my+uy*t-ny*6),{role:o.role||'support',width:2});}};
+/* parallel chevrons (n=1,2) on a side */
+NOVA.parTick=function(p,x1,y1,x2,y2,n,o){o=o||{};var dx=x2-x1,dy=y2-y1,l=Math.hypot(dx,dy)||1,ux=dx/l,uy=dy/l,nx=-uy,ny=ux,at=o.at==null?.5:o.at,mx=x1+dx*at,my=y1+dy*at;
+  for(var i=0;i<n;i++){var t=(i-(n-1)/2)*8,cx=mx+ux*t,cy=my+uy*t;NOVA.neonPath(p,'M'+(cx-ux*4+nx*5)+','+(cy-uy*4+ny*5)+' L'+(cx+ux*3)+','+(cy+uy*3)+' L'+(cx-ux*4-nx*5)+','+(cy-uy*4-ny*5),{role:o.role||'op',width:2});}};
+/* dimension line offset from a side, end ticks and a pill label */
+NOVA.dimLine=function(p,x1,y1,x2,y2,text,o){o=o||{};var off=o.off==null?22:o.off,dx=x2-x1,dy=y2-y1,l=Math.hypot(dx,dy)||1,nx=-dy/l*off,ny=dx/l*off,role=o.role||'op';
+  var a=[x1+nx,y1+ny],b=[x2+nx,y2+ny];NOVA.neonLine(p,a[0],a[1],b[0],b[1],{role:role,width:2.4});
+  NOVA.neonLine(p,x1+nx*.55,y1+ny*.55,x1+nx*1.2,y1+ny*1.2,{role:role,width:1.8});NOVA.neonLine(p,x2+nx*.55,y2+ny*.55,x2+nx*1.2,y2+ny*1.2,{role:role,width:1.8});
+  if(text!=null)NOVA.svg.pill(p,(a[0]+b[0])/2+(o.lx||0),(a[1]+b[1])/2+(o.ly||0),text,{role:role,size:o.size||13});return [a,b];};
+/* ---- shared F12 helpers ---- */
+var F=NOVA.f12={};
+F.fmt=function(v){return NOVA.svg.num(Math.round(v*1e4)/1e4);};
+F.strip=function(stage,items){var d=NOVA.h('div',{class:'f12-strip'});items.forEach(function(it){d.appendChild(NOVA.h('span',{class:'k',text:it[0]}));d.appendChild(NOVA.neonTile(String(it[1]).replace(/-/g,'\u2011').replace(/ /g,'\u00A0\u200B'),{role:it[2]||'result'}));});stage.appendChild(d);return d;};
+F.clone=function(o){return JSON.parse(JSON.stringify(o));};
+F.area=function(P){var a=0;for(var i=0;i<P.length;i++){var q=P[(i+1)%P.length];a+=P[i][0]*q[1]-q[0]*P[i][1];}return a/2;};
+F.perim=function(P){var s=0;for(var i=0;i<P.length;i++){var q=P[(i+1)%P.length];s+=Math.hypot(q[0]-P[i][0],q[1]-P[i][1]);}return s;};
+F.pip=function(pt,P){var c=false;for(var i=0,j=P.length-1;i<P.length;j=i++){if((P[i][1]>pt[1])!==(P[j][1]>pt[1])&&pt[0]<(P[j][0]-P[i][0])*(pt[1]-P[i][1])/(P[j][1]-P[i][1])+P[i][0])c=!c;}return c;};
+/* fit points into W x H with margin m: returns {pts,s,ox,oy} (y not flipped) */
+F.fit=function(P,W,H,m,maxS){var x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;P.forEach(function(q){x0=Math.min(x0,q[0]);y0=Math.min(y0,q[1]);x1=Math.max(x1,q[0]);y1=Math.max(y1,q[1]);});
+  var s=Math.min((W-2*m)/((x1-x0)||1),(H-2*m)/((y1-y0)||1));if(maxS)s=Math.min(s,maxS);var ox=(W-(x1-x0)*s)/2-x0*s,oy=(H-(y1-y0)*s)/2-y0*s;
+  return {pts:P.map(function(q){return [q[0]*s+ox,q[1]*s+oy];}),s:s,ox:ox,oy:oy};};
+/* outward label point for side i of polygon P (screen coords) */
+F.outward=function(P,i,d){var a=P[i],b=P[(i+1)%P.length],mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2,dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,nx=dy/l,ny=-dx/l;
+  if(F.pip([mx+nx*3,my+ny*3],P)){nx=-nx;ny=-ny;}return [mx+nx*d,my+ny*d];};
+function reg(n,r){var a=[];for(var k=0;k<n;k++){var t=-Math.PI/2+k*2*Math.PI/n;a.push([+(r*Math.cos(t)).toFixed(2),+(r*Math.sin(t)).toFixed(2)]);}return a;}
+/* shape library on a 100x100 frame centred on 0,0. eq=equal-side groups, par=parallel side pairs, ra=right-angle vertices.
+   props: sides, eq (0 none,2 some pair(s),9 all), par pairs, ra count, sym lines, rot order */
+F.SHAPES={
+ equilateral:{name:'Equilateral triangle',fam:'tri',pts:[[-45,39],[45,39],[0,-39]],eq:[[0,1,2]],par:[],ra:[],p:{sides:3,allEq:1,par:0,ra:0,sym:3,rot:3}},
+ isosceles:{name:'Isosceles triangle',fam:'tri',pts:[[-35,40],[35,40],[0,-42]],eq:[[1,2]],par:[],ra:[],p:{sides:3,allEq:0,par:0,ra:0,sym:1,rot:1}},
+ scalene:{name:'Scalene triangle',fam:'tri',pts:[[-48,40],[40,40],[-14,-40]],eq:[],par:[],ra:[],p:{sides:3,allEq:0,par:0,ra:0,sym:0,rot:1}},
+ rightTri:{name:'Right-angled triangle',fam:'tri',pts:[[-40,40],[40,40],[-40,-30]],eq:[],par:[],ra:[0],p:{sides:3,allEq:0,par:0,ra:1,sym:0,rot:1}},
+ square:{name:'Square',fam:'quad',pts:[[-38,-38],[38,-38],[38,38],[-38,38]],eq:[[0,1,2,3]],par:[[0,2],[1,3]],ra:[0,1,2,3],p:{sides:4,allEq:1,par:2,ra:4,sym:4,rot:4}},
+ rectangle:{name:'Rectangle',fam:'quad',pts:[[-48,-30],[48,-30],[48,30],[-48,30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[0,1,2,3],p:{sides:4,allEq:0,par:2,ra:4,sym:2,rot:2}},
+ parallelogram:{name:'Parallelogram',fam:'quad',pts:[[-50,30],[26,30],[50,-30],[-26,-30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:0,par:2,ra:0,sym:0,rot:2}},
+ rhombus:{name:'Rhombus',fam:'quad',pts:[[0,-48],[34,0],[0,48],[-34,0]],eq:[[0,1,2,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:1,par:2,ra:0,sym:2,rot:2}},
+ trapezium:{name:'Trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
+ kite:{name:'Kite',fam:'quad',pts:[[0,-50],[32,-8],[0,48],[-32,-8]],eq:[[0,3],[1,2]],par:[],ra:[],p:{sides:4,allEq:0,par:0,ra:0,sym:1,rot:1}},
+ pentagon:{name:'Regular pentagon',fam:'poly',pts:reg(5,48),eq:[[0,1,2,3,4]],par:[],ra:[],p:{sides:5,allEq:1,par:0,ra:0,sym:5,rot:5}},
+ hexagon:{name:'Regular hexagon',fam:'poly',pts:reg(6,48),eq:[[0,1,2,3,4,5]],par:[[0,3],[1,4],[2,5]],ra:[],p:{sides:6,allEq:1,par:3,ra:0,sym:6,rot:6}}};
+F.KEYS=Object.keys(F.SHAPES);
+/* draw a library shape centred at cx,cy at scale sc. o:{role,marks,hatch,label,width} */
+F.draw=function(sv,key,cx,cy,sc,o){o=o||{};var S=F.SHAPES[key],P=S.pts.map(function(q){return [cx+q[0]*sc,cy+q[1]*sc];}),role=o.role||'op',g=NOVA.neonShape(sv,P,{role:role,hatch:o.hatch,width:o.width||(sc<.5?2.2:3)});
+  g.setAttribute('data-maths',o.tag||key);
+  if(o.marks){S.eq.forEach(function(grp,gi){grp.forEach(function(si){var a=P[si],b=P[(si+1)%P.length];NOVA.eqTick(sv,a[0],a[1],b[0],b[1],gi+1);});});
+    var eqs={};S.eq.forEach(function(g){g.forEach(function(si){eqs[si]=1;});});S.par.forEach(function(pr,pi){pr.forEach(function(si){var a=P[si],b=P[(si+1)%P.length];NOVA.parTick(sv,a[0],a[1],b[0],b[1],pi+1,{at:eqs[si]?.27:.5});});});
+    S.ra.forEach(function(vi){var n=P.length;NOVA.rightAngle(sv,P[vi],P[(vi+1)%n],P[(vi+n-1)%n],{size:Math.max(8,12*sc)});});}
+  if(o.label)NOVA.chalkText(sv,cx,cy+(o.ly||56*sc+18),o.label===true?S.name:o.label,{size:o.size||13});
+  return {pts:P};};
+/* classify a polygon on a grid (integer pts): returns a name */
+F.classify=function(P){var n=P.length;if(n<3)return 'Not a shape yet';
+  function d(i,j){return Math.hypot(P[j][0]-P[i][0],P[j][1]-P[i][1]);}
+  function vec(i){var a=P[i],b=P[(i+1)%n];return [b[0]-a[0],b[1]-a[1]];}
+  function par(i,j){var a=vec(i),b=vec(j);return Math.abs(a[0]*b[1]-a[1]*b[0])<1e-9;}
+  function ra(i){var a=vec((i+n-1)%n),b=vec(i);return Math.abs(a[0]*b[0]+a[1]*b[1])<1e-9;}
+  var eq=function(x,y){return Math.abs(x-y)<1e-9;};
+  if(n===3){var a=d(0,1),b=d(1,2),c=d(2,0),r=ra(0)||ra(1)||ra(2);if(r)return 'Right-angled triangle';if(eq(a,b)&&eq(b,c))return 'Equilateral triangle';if(eq(a,b)||eq(b,c)||eq(a,c))return 'Isosceles triangle';return 'Scalene triangle';}
+  if(n===4){var s=[d(0,1),d(1,2),d(2,3),d(3,0)],p1=par(0,2),p2=par(1,3),rr=ra(0)&&ra(1)&&ra(2)&&ra(3),all=eq(s[0],s[1])&&eq(s[1],s[2])&&eq(s[2],s[3]);
+    if(rr&&all)return 'Square';if(rr)return 'Rectangle';if(p1&&p2&&all)return 'Rhombus';if(p1&&p2)return 'Parallelogram';if(p1||p2)return 'Trapezium';
+    if((eq(s[0],s[1])&&eq(s[2],s[3]))||(eq(s[1],s[2])&&eq(s[3],s[0])))return 'Kite';return 'Quadrilateral';}
+  return n+'-sided shape';};
+NOVA.version=(NOVA.version||'')+'+f12kit3.5';
+})();
+
+/* ==== v3.6 F12 run-2 helpers (additive) ==== */
+(function(){var F=NOVA.f12;
+F.map=function(Uni,W,H,m,maxS){var f=F.fit(Uni,W,H,m,maxS);return function(P){return P.map(function(q){return [q[0]*f.s+f.ox,q[1]*f.s+f.oy];});};};
+F.rot=function(P,c,deg){var t=deg*Math.PI/180,co=Math.cos(t),si=Math.sin(t);return P.map(function(q){var x=q[0]-c[0],y=q[1]-c[1];return [c[0]+x*co-y*si,c[1]+x*si+y*co];});};
+F.cent=function(P){var x=0,y=0;P.forEach(function(q){x+=q[0]/P.length;y+=q[1]/P.length;});return [x,y];};
+F.dash=function(p,a,b,role,w){return NOVA.neonPath(p,'M'+a[0]+','+a[1]+' L'+b[0]+','+b[1],{role:role||'unknown',width:w||2,dash:'7 6'});};
+/* perpendicular-height marker: dashed from apex to foot on the base line, dotted base extension when the foot is outside the base, right-angle at foot, pill label */
+F.hmark=function(sv,apex,foot,baseA,baseB,txt,o){o=o||{};var role=o.role||'focus';F.dash(sv,apex,foot,role,2.2);
+  var lo=Math.min(baseA[0],baseB[0]),hi=Math.max(baseA[0],baseB[0]);if(foot[0]<lo-1)F.dash(sv,foot,[lo,foot[1]],'unknown',1.8);if(foot[0]>hi+1)F.dash(sv,[hi,foot[1]],foot,'unknown',1.8);
+  var dir=foot[0]>=(lo+hi)/2?-1:1;NOVA.rightAngle(sv,foot,[foot[0]+dir*10,foot[1]],[foot[0],apex[1]<foot[1]?foot[1]-10:foot[1]+10],{size:10,role:'support'});
+  if(txt)NOVA.svg.pill(sv,foot[0]+(o.dx==null?-26:o.dx),(apex[1]+foot[1])/2,txt,{role:role,size:12});};
+NOVA.version=(NOVA.version||'')+'+f12run2';
+})();
+
 NOVA.premium.enable();
 </script>
 <script>
@@ -1645,7 +1753,7 @@ var NOVA_F0_01_CONFIG={
   presets:{
     linear:   {label:'Equation  3x + 5 = 20',expression:[['3','given'],['x','unknown'],['+','op'],['5','given'],['=','op'],['20','given']]},
     solved:   {label:'Solution  x = 5',expression:[['x','unknown'],['=','op'],['5','result']]},
-    fraction: {label:'Fraction of amount  ¾ of 48 = 36 (fraction design TBD)',expression:[['¾','given'],['of','op'],['48','given'],['=','op'],['36','result']]},
+    fraction: {label:'Fraction of amount  ¾ of 48 = 36',expression:[['¾','given'],['of','op'],['48','given'],['=','op'],['36','result']]},
     angles:   {label:'Angles on a line  a + 130° = 180°',expression:[['a','unknown'],['+','op'],['130°','given'],['=','op'],['180°','given']]},
     mistake:  {label:'Spot the error  2³ = 6',expression:[['2³','given'],['=','op'],['6','error'],['→','support'],['8','result']]},
     ratio:    {label:'Ratio  2 : 3 = 10 : n',expression:[['2 : 3','given'],['=','op'],['10','given'],[':','op'],['n','unknown']]},
@@ -1664,7 +1772,7 @@ function glyph(role,size){var c=T.maths[role].hex,s=size||16,P={
   diamond:'<path d="M8 1.5 14.5 8 8 14.5 1.5 8z" fill="'+c+'"/>',
   tick:'<path d="M2.5 8.5 6.5 12.5 13.5 3.5" fill="none" stroke="'+c+'" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>',
   cross:'<path d="M3 3 13 13M13 3 3 13" stroke="'+c+'" stroke-width="2.6" stroke-linecap="round"/>',
-  ring:'<circle cx="8" cy="8" r="5.2" fill="none" stroke="'+c+'" stroke-width="2.6"/><circle cx="8" cy="8" r="1.9" fill="#fff"/>',
+  star:'<path d="M8 1 9.9 5.8 15 6.2 11 9.4 12.3 14.5 8 11.7 3.7 14.5 5 9.4 1 6.2 6.1 5.8z" fill="'+c+'"/>',
   triangle:'<path d="M8 2 14.5 14H1.5z" fill="'+c+'"/>'}[T.maths[role].shape];
   return '<svg class="nv-glyph" viewBox="0 0 16 16" width="'+s+'" height="'+s+'" style="width:'+s+'px;height:'+s+'px;max-width:'+s+'px;display:inline-block;flex:none;margin:0" aria-hidden="true">'+P+'</svg>';}
 /* WCAG contrast */
@@ -1678,7 +1786,7 @@ function eq(stage,expr,opts){opts=opts||{};if(!document.getElementById('nv-chalk
     if(r){b.setAttribute('data-role',r);b.style.setProperty('--rc',T.maths[r].hex);b.style.color=r==='given'?'var(--v-ink)':T.maths[r].hex;b.insertAdjacentHTML('beforeend',glyph(r,16));}
     if(opts.onTok)b.onclick=function(){opts.onTok(i,b);};row.appendChild(b);});stage.appendChild(row);return row;}
 function legend(stage,only){var l=h('div',{class:'tk-legend','aria-label':'Maths colour language key'});(only||ROLES).forEach(function(r){var s=h('span',{});s.innerHTML=glyph(r,14)+T.maths[r].label.split(' /')[0];l.appendChild(s);});stage.appendChild(l);}
-function swatches(stage,list,on){var ul=h('ul',{class:'tk-grid'});list.forEach(function(it){var li=h('li',{class:'tk-sw'+(on===it.key?' on':''),style:'--sw:'+it.hex});var ch=h('div',{class:'chip',style:'background:'+it.hex});if(it.role)ch.innerHTML=glyph(it.role,18).replace(T.maths[it.role].hex,'#04101d');li.appendChild(ch);li.appendChild(h('b',{text:it.name}));li.appendChild(h('code',{text:it.code+' '+it.hex}));if(it.note)li.appendChild(h('span',{text:it.note}));ul.appendChild(li);});stage.appendChild(ul);}
+function swatches(stage,list,on){var ul=h('ul',{class:'tk-grid'});list.forEach(function(it){var li=h('li',{class:'tk-sw'+(on===it.key?' on':'')});var ch=h('div',{class:'chip',style:'background:'+it.hex});if(it.role)ch.innerHTML=glyph(it.role,18).replace(T.maths[it.role].hex,'#04101d');li.appendChild(ch);li.appendChild(h('b',{text:it.name}));li.appendChild(h('code',{text:it.code+' '+it.hex}));if(it.note)li.appendChild(h('span',{text:it.note}));ul.appendChild(li);});stage.appendChild(ul);}
 /* helper on stage: uses NOVA.svg.helper so the switcher, poses and v1.2 anchor apply */
 function helper(stage,pose,text){NOVA.scene.helperStrip(stage,pose,text);}
 function brandList(){var b=T.brand;return [['Page','--shell-page',b.page],['Surface','--shell-surface',b.surface],['Line','--shell-line',b.line],['Text','--shell-text',b.text],['Muted','--shell-muted',b.muted],['Accent','--nova-accent',b.accent],['Canvas','--v-bg',T.canvas.bg],['Panel','--v-panel',T.canvas.panel]].map(function(a){return {name:a[0],code:a[1],hex:a[2],key:a[1]};});}
@@ -1686,18 +1794,18 @@ function roleList(){return ROLES.map(function(r){var m=T.maths[r];return {name:m
 
 var steps=[
  {name:'Surfaces',mood:'neutral',narration:'Every NOVA screen starts from the same dark navy surfaces. These are tokens: named values, set in one place.',prompt:'Find the canvas colour. Why is the maths drawn on a darker panel than the page?'},
- {name:'Fonts',mood:'focus',narration:'Inter is for words and buttons. Chalk writing is for maths and labels, so every number, x and power looks hand-written on the board, glowing in neon.',prompt:'Which font would you use for 3x + 5? Which for a button label?'},
+ {name:'Fonts',mood:'focus',narration:'Inter is for words and buttons. Cambria Math is for maths, so x, fractions and powers always look like maths.',prompt:'Which font would you use for 3x + 5? Which for a button label?'},
  {name:'Colour language',mood:'focus',narration:'Seven maths roles, seven colours. Blue is given, gold is unknown, cyan is an operation, green is the result.',prompt:'Say the role for each colour before you read its label.'},
- {name:'Shapes too',mood:'think',narration:'Colour is never the only clue. Each role also has a shape: square, dashed circle, diamond, tick, cross, glowing ring, triangle.',prompt:'Cover the colours. Can you still tell the roles apart by shape?'},
+ {name:'Shapes too',mood:'think',narration:'Colour is never the only clue. Each role also has a shape: square, dashed circle, diamond, tick, cross, star, triangle.',prompt:'Cover the colours. Can you still tell the roles apart by shape?'},
  {name:'Read an equation',mood:'focus',narration:'Here is 3x + 5 = 20. Given numbers are blue squares, x is the gold unknown, and the signs are cyan operations.',prompt:'Which part is the unknown? How do you know without the colour?'},
  {name:'Colour-blind check',mood:'think',narration:'This is the same equation for someone who sees no colour. The shapes and outlines still carry the meaning.',prompt:'Is anything now impossible to tell apart? That would be a design bug.'},
  {name:'Solved',mood:'cheer',narration:'When we solve it, the answer turns green with a tick: x = 5. Same language, in every lesson.',prompt:'Which role changed when the equation was solved?'}
 ];
 function render(i,stage){stage.innerHTML='';var s=steps[i];C.vision=C._userVision||'none';
   if(i===0){cap(stage,'Brand surfaces','tokens');swatches(stage,brandList(),'--v-bg');}
-  else if(i===1){cap(stage,'Type tokens','fonts');stage.appendChild(h('div',{class:'tk-fonts'},[h('div',{},[h('small',{text:'UI · --nova-font-ui · Inter'}),h('div',{class:'ui',text:'Check answer'})]),h('div',{},[h('small',{text:'Written maths · --nova-font-chalk-write · smooth chalk + neon glow'}),h('div',{class:'mx'},[document.createTextNode('3'),h('b',{text:'x'}),document.createTextNode(' + 5 = 20   ¾   2³   √12')])]),h('div',{},[h('small',{text:'Drawing labels · --nova-font-chalk-draw · scratchy chalk texture'}),h('div',{class:'dr',text:'0  1  2  50°  A  B  C  +3'})]),h('div',{},[h('small',{text:'Digits · chalk'}),h('div',{class:'dg',text:'0123456789'})])]));}
+  else if(i===1){cap(stage,'Type tokens','fonts');stage.appendChild(h('div',{class:'tk-fonts'},[h('div',{},[h('small',{text:'UI · --nova-font-ui · Inter'}),h('div',{class:'ui',text:'Check answer'})]),h('div',{},[h('small',{text:'Maths · --nova-font-maths · Cambria Math'}),h('div',{class:'mx',text:'3x + 5 = 20   ¾   2³   √12'})]),h('div',{},[h('small',{text:'Code · --nova-font-mono'}),h('div',{class:'mo',text:'var(--m-unknown)  #ffcc58'})])]));}
   else if(i===2){cap(stage,'Maths colour language','7 roles');swatches(stage,roleList());}
-  else if(i===3){cap(stage,'Second cue: shape','colour-blind safe');var l=h('div',{class:'tk-legend tk-shapes',style:'padding:16px 10px'});ROLES.forEach(function(r){var s2=h('span',{style:'font-size:.85rem'});s2.innerHTML=glyph(r,26)+'<span>'+T.maths[r].shape+'</span>';l.appendChild(s2);});stage.appendChild(l);}
+  else if(i===3){cap(stage,'Second cue: shape','colour-blind safe');var l=h('div',{class:'tk-legend',style:'padding:16px 10px'});ROLES.forEach(function(r){var s2=h('span',{style:'font-size:.85rem'});s2.innerHTML=glyph(r,26)+'<span>'+T.maths[r].shape+'</span>';l.appendChild(s2);});stage.appendChild(l);}
   else if(i===4){cap(stage,'Equation by role','linear');eq(stage,C.presets.linear.expression);legend(stage,['given','unknown','op']);}
   else if(i===5){cap(stage,'Greyscale preview','vision: none');C.vision='grey';eq(stage,C.presets.linear.expression);legend(stage,['given','unknown','op']);}
   else {cap(stage,'Solved','result');eq(stage,C.presets.solved.expression);legend(stage,['unknown','op','result']);}
@@ -1708,7 +1816,7 @@ var eng;
 function btnRow(api,check,hint){var r=h('div',{class:'tk-row'});r.appendChild(h('button',{class:'nova-btn primary',text:'Check',onclick:check}));r.appendChild(h('button',{class:'nova-btn ghost',text:'Hint',onclick:function(){api.hint(hint);}}));return r;}
 var def={id:'F0-01',title:'Design tokens',config:C,steps:steps,render:render,
  alt:'Design tokens: NOVA surfaces, fonts and seven maths role colours, each with its own shape.',
- staticAlt:'Seven maths roles: given = blue square, unknown = gold dashed circle, operation = cyan diamond, result = green tick, error = red cross with hatch, focus = orange star, support = purple triangle. Fonts: Inter for UI, chalk writing (NOVA Chalk) for maths and labels. Example: 3x + 5 = 20 with 3, 5, 20 given, x unknown, + and = operations; solved x = 5 shown as a green result.',
+ staticAlt:'Seven maths roles: given = blue square, unknown = gold dashed circle, operation = cyan diamond, result = green tick, error = red cross with hatch, focus = orange star, support = purple triangle. Fonts: Inter for UI, Cambria Math for maths. Example: 3x + 5 = 20 with 3, 5, 20 given, x unknown, + and = operations; solved x = 5 shown as a green result.',
  exploreIntro:'Explore: pick a role, switch theme or colour-blind preview, and check the contrast.',
  explore:function(panel,stage,api){
    function draw(){stage.innerHTML='';var r=C.focusRole,m=T.maths[r],cr=contrast(m.hex,canvasHex());cap(stage,'Role: '+r,C.vision==='none'?C.theme:C.vision);
