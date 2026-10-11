@@ -1,3 +1,5 @@
+<!-- HISTORICAL RUN NOTE: The current production authority is 00-master/nova-master.html and HANDOVER-v4.md (11 October 2026). Old statements that a build was not yet on GitHub describe the original ZIP delivery only. Owner review/GOLD status must be rechecked; this file is retained for provenance. -->
+
 # NOVA F6 — Run 06 | Best-Buy Comparer
 
 **Review ZIP (not GOLD)**. Extract this archive in the folder that contains your existing `bank-v3-neon-chalk/` directory. It adds only this component and its verification materials.

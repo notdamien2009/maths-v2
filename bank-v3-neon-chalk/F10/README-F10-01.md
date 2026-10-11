@@ -1,3 +1,5 @@
+<!-- HISTORICAL RUN NOTE: The current production authority is 00-master/nova-master.html and HANDOVER-v4.md (11 October 2026). Old statements that a build was not yet on GitHub describe the original ZIP delivery only. Owner review/GOLD status must be rechecked; this file is retained for provenance. -->
+
 # NOVA Maths · F10-01 Four-quadrant Grid · Premium Edition REVIEW
 
 Status: **BUILT / QA-PASSED / AWAITING OWNER APPROVAL**. No GitHub changes have been made.

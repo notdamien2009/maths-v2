@@ -1,3 +1,5 @@
+<!-- HISTORICAL RUN NOTE: The current production authority is 00-master/nova-master.html and HANDOVER-v4.md (11 October 2026). Old statements that a build was not yet on GitHub describe the original ZIP delivery only. Owner review/GOLD status must be rechecked; this file is retained for provenance. -->
+
 # F2-05 — Abacus / Gattegno Chart — Premium Review (Run 4)
 
 **Status:** Premium Review for owner testing, NOT GOLD. GitHub has not been changed.

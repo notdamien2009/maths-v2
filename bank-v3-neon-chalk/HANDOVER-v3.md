@@ -1,3 +1,5 @@
+<!-- HISTORICAL RUN NOTE: The current production authority is 00-master/nova-master.html and HANDOVER-v4.md (11 October 2026). Old statements that a build was not yet on GitHub describe the original ZIP delivery only. Owner review/GOLD status must be rechecked; this file is retained for provenance. -->
+
 # NOVA Bank v3.x — Handover (10 Oct 2026)
 
 ## Current state

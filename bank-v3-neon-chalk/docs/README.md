@@ -1,30 +1,43 @@
-# NOVA F10 — Run 02 / F10-02 Shape on grid
+# NOVA Maths Bank — Documentation Index
 
-**Status: Premium review candidate. Not GOLD-approved. GitHub untouched.**
+**Current handover:** [`../HANDOVER-v4.md`](../HANDOVER-v4.md)  
+**Editable master:** [`../00-master/nova-master.html`](../00-master/nova-master.html)  
+**Approved fraction rule:** [`../F5/F5-FRACTION-NOTATION-LOCK.md`](../F5/F5-FRACTION-NOTATION-LOCK.md)
 
-Open `F10/F10-02-shape-on-grid.html` in your browser to test. This is an offline, self-contained page with the approved NOVA core embedded into it at build time. Original shared core is NOT duplicated or modified in this ZIP.
+## Important working documents
 
-## Install after owner approval
+| File | Role |
+|---|---|
+| `../00-master/nova-master.html` | **One authoritative visual production master** |
+| `../00-master/nova-master-updated.html` | Redirect to the master; never an independent editable copy |
+| `../00-master/NOVA-MASTER-FOR-OTHER-AI.md` | Generated portable prompt export; SHA-256-linked to the master |
+| `../HANDOVER-v4.md` | Current project state and next-run guidance |
+| `MASTER-GOVERNANCE.md` | How to keep master, export and trackers in sync |
+| `PRODUCTION-SOURCE-MAP.md` | Actual checked-in files vs obsolete historical references |
+| `CORE-INTEGRATION-GATE.md` | Shared-core mismatch, recovery and QA guardrails |
+| `CORE-CONTRACT-AUDIT-2026-10-11.md` | Locally generated API-presence evidence (created by repair installer) |
+| `../assets/helpers/registry.json` | Native in-core Pip/Nova/Izaac slots; not external sprite packs |
+| `../prompts/specs/specs.json` | Generated extraction of the canonical SPEC object |
 
-Copy `build/F10-02.src.html` and `src/F10-02.*` into the same paths in your repository. To rebuild with the current repository core, copy `build/rebuild_F10-02.py` and run from the bank root:
+The `F*-SPEC.md`, `F*-QA-REPORT.md`, `F*-RUN*.md` and JSON results are evidence and run-specific specifications. They are **not** an alternative master; dated results must never be represented as current post-change QA without rerunning the tests.
 
-```bash
-python build/rebuild_F10-02.py
+## After any edit of the canonical master
+
+From the `bank-v3-neon-chalk` directory:
+
+```sh
+node tools/export_master_prompts.js
+python prompts/specs/gen.py
+node tools/export_master_prompts.js --check
+python prompts/specs/gen.py --check
 ```
 
-This creates `F10/F10-02-shape-on-grid.html` and does not push to GitHub. Do not replace existing core files; the component is designed to use your approved local core.
+For a local source/core audit (without changing runtime):
 
-## Modes and lessons
+```sh
+python tools/core_contract_audit.py
+```
 
-- Watch/Guided: seven mathematical teaching stages, original triangle and four transformations.
-- Explore: control translation, reflections, quarter-turn rotations, enlargement/shrinkage and individual source vertices. Pointer drag and keyboard arrows snap to the exact coordinates.
-- Challenge: place all three *image* vertices for three exact mathematical transformations. Feedback targets misconception errors; right-side evidence shows current answers only. Izaac peer mascot.
-- Presets: Y7-038, Y7-052, Y7-053, Y7-054, Y8-053.
+## Status and provenance
 
-## Design inspection
-
-Compare its coordinate studio against the F0-02 SVG Primitives benchmark at 380 and 1280 px. Source controls, framing, background, geometry motif and existing Pip/Nova/Izaac helper art must remain visually cohesive with F0/F1/F2/F3. The new F10-02 studio adds no external fonts, images, or new SVG drawing primitive.
-
-## Known limitation
-
-F10-01 from Run 01 has an inadequate maths-stage background and is separately flagged for an owner-requested correction; do not use the old F10-01 appearance as the benchmark for this component.
+This documentation index reflects the GitHub tree audited on **11 October 2026** plus local-only documentation repair. It does not mean F3/F6/F7/F8/F9/F10 previews are owner-signed GOLD. No GitHub writes are performed by this pack.
