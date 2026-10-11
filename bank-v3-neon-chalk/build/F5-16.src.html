@@ -1,0 +1,139 @@
+<!doctype html><html lang="en" data-theme="dark" data-house="neon-chalk" data-premium="1"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NOVA F5-15 · Premium percentage of an amount</title>
+<style>@@CSS@@
+.rp-svg.nv-svg{display:block;width:100%;max-width:1120px;height:auto;margin:0 auto;touch-action:pan-y}
+.rp-controls{display:flex;gap:9px;justify-content:center;align-items:center;flex-wrap:wrap;margin:10px auto}
+.rp-controls label{font:700 1rem var(--nova-font-chalk-write);color:#e2f6ff}
+.rp-controls .nova-input{min-width:95px;max-width:225px}
+.rp-status{font:700 1.04rem/1.45 var(--nova-font-chalk-write);color:#e5f8ff;text-align:center;margin:10px auto;min-height:27px}
+.rp-peer{display:flex;align-items:center;justify-content:center;gap:10px;font:700 1rem var(--nova-font-chalk-write)}
+.rp-peer img{width:72px;height:85px;object-fit:contain}
+@media(max-width:550px){.rp-controls{gap:6px}.rp-controls label{font-size:.93rem}.rp-peer img{width:63px;height:76px}}
+@media print{.nova-tabs,.nova-tl,.nova-helperbar,.nova-panel{display:none!important}}
+</style></head><body data-topic="number"><div class="nova-wrap">
+<header id="nova-header" data-run="F5 · Premium Edition rebuild · 16" data-title="Reverse Percentages" data-sub="Recover the missing original from a known final amount. Reverse the percentage multiplier, using the same fixed 100% reference."></header>
+<main id="gallery"></main><section class="nova-card nova-logcard" aria-label="NOVA event log"><h2 style="font-size:1.08em">NOVA events</h2><div class="nova-log" id="log" role="log" aria-live="off"></div><button class="nova-btn" id="clearlog">Clear events</button></section></div>
+<script>@@JS@@</script><script>
+(function(){'use strict';
+const N=NOVA,E=N.svg.el,M=N.motion,H=N.h,ID='F5-16';
+const C=window.NOVA_F5_16_CONFIG={startMode:'guided',preset:'increase20',events:['preset','known','knownPercent','dragPercent','keyboard','reset','mode','step'],alias:'F4-06 reverse-percentage preset',presets:{
+ increase20:{label:'£96 after a 20% increase',known:96,pct:120},
+ discount25:{label:'£90 after a 25% discount',known:90,pct:75},
+ rise25:{label:'£150 after a 25% increase',known:150,pct:125},
+ discount50:{label:'£30 after a 50% discount',known:30,pct:50},
+ discount12:{label:'£70 after a 12.5% discount',known:70,pct:87.5},
+ rise150:{label:'£250 after a 150% increase',known:250,pct:250},
+ deepDiscount:{label:'£12 after a 90% discount',known:12,pct:10},
+ unchanged:{label:'£85 with no change',known:85,pct:100}
+}};
+let live=null;
+function emit(key,value){if(!C.events.includes(key))throw Error('Unknown event key '+key);N.events.emit('value',{engine:ID,key,value});}
+function fmt(x){return Number(Number(x).toFixed(6)).toString();}
+function model(known,pct){let k=Number(known),p=Number(pct);if(!Number.isFinite(k)||k<0||k>100000)throw Error('Known amount must be between 0 and 100000.');if(!Number.isFinite(p)||p<10||p>250||Math.abs(p*2-Math.round(p*2))>1e-7)throw Error('Known percentage must be 10% to 250% in half-percent steps.');let multiplier=p/100,original=+(k/multiplier).toFixed(8);return {known:k,pct:p,change:p-100,multiplier,original};}
+function t(g,x,y,content,role='support',size=21,anchor='middle'){return N.chalkText(g,x,y,String(content),{role,size,anchor});}
+function rect(g,x,y,w,h,fill,props={}){return E('rect',Object.assign({x,y,width:Math.max(0,w),height:h,fill},props),g);}
+function defs(s){let d=E('defs',{},s);for(let [id,colors] of [['rp-glass',['#31536c','#0e2e46','#071c30','#19364f']],['rp-gold',['#fff4ba','#eac26d','#ac7938','#6a4623']],['rp-green',['#b8ffe0','#56eab5','#1b966b','#0c4b38']],['rp-ghost',['#1c3d57','#0d2b42','#091c33','#173950']],['rp-extra',['#ffe9ae','#ffc26a','#b97e34','#65451d']]]){let gg=E('linearGradient',{id,x1:'0%',y1:'0%',x2:'0%',y2:'100%'},d);colors.forEach((c,i)=>E('stop',{offset:(i*100/3)+'%','stop-color':c},gg));}}
+function glass(s,x,y,w,h,role='support'){N.neonBox(s,x,y,w,h,{role,r:12});rect(s,x+4,y+4,w-8,h-8,'url(#rp-glass)',{rx:9,stroke:'#52728b','stroke-width':1});rect(s,x+10,y+8,w-20,Math.max(2,h*.14),'#d8f9ff',{rx:4,opacity:.12});}
+function stageDraw(stage,v,o={}){
+ if(live){live.dead=true;live.ac.abort();}let sc={dead:false,ac:new AbortController()};live=sc;
+ const mobile=innerWidth<=670,W=mobile?420:1120,V=mobile?1430:1110,level=o.level??5,hidden=!!o.hidden;
+ stage.textContent='';let s=N.svg.root(W,V,'Reverse percentage comparison. A known final amount and percentage of the original are used to recover the unknown original by dividing by the multiplier.');s.classList.add('rp-svg');defs(s);
+ s.querySelectorAll('filter[filterUnits="userSpaceOnUse"]').forEach(z=>{z.setAttribute('x','-400');z.setAttribute('y','-400');z.setAttribute('width',String(W+800));z.setAttribute('height',String(V+800));});
+ const x=mobile?48:137,bw=mobile?324:844,barH=mobile?48:58,unknownY=mobile?255:228,knownY=mobile?400:370,extraY=mobile?[515,620]:[484,584],percent=v.pct,partWidths=[];
+ t(s,W/2,mobile?37:41,'Start from what is known','support',mobile?23:29);
+ glass(s,mobile?32:112,mobile?59:65,mobile?356:896,mobile?131:98,'given');
+ t(s,W/2,mobile?94:103,'Final amount  ·  £'+fmt(v.known),'given',mobile?24:32);
+ t(s,W/2,mobile?129:139,(mobile?'£'+fmt(v.known)+' = '+fmt(percent)+'% of original':'This final amount is '+fmt(percent)+'% of the original'),'support',mobile?20:24);
+ if(mobile)t(s,W/2,167,percent>100?'Final includes an increase':'The original whole stays fixed','support',18);
+ if(level>=1){
+  t(s,x,unknownY-19,'Original 100% · unknown','focus',mobile?20:26,'start');
+  N.neonBox(s,x,unknownY,bw,barH,{role:'focus',r:9});rect(s,x+4,unknownY+4,bw-8,barH-8,'url(#rp-ghost)',{rx:6,stroke:N.svg.c('focus'),'stroke-width':1.4,'stroke-dasharray':'7 5',opacity:.95});
+  if(level>=4&&!hidden){rect(s,x+4,unknownY+4,bw-8,barH-8,'url(#rp-gold)',{rx:6,opacity:.93});}
+  t(s,x+bw/2,unknownY+barH/2+7,level>=5&&!hidden?'100% recovered':'100% = ?',level>=5&&!hidden?'focus':'support',mobile?21:27);
+ }
+ t(s,x,knownY-20,'Known final · '+fmt(percent)+'%','given',mobile?20:26,'start');
+ // Every band has identical physical length for 100% of the original. No scaling to the final value.
+ const ys=[knownY,...extraY];
+ ys.forEach((yy,i)=>{
+  if(i>0&&(level<2||percent<=i*100))return;
+  N.neonBox(s,x,yy,bw,barH,{role:i===0?'result':'focus',r:9});rect(s,x+4,yy+4,bw-8,barH-8,'url(#rp-ghost)',{rx:6,opacity:.85});
+  let fraction=level<2?0:Math.max(0,Math.min(100,percent-i*100))/100,fill=rect(s,x+4,yy+4,(bw-8)*fraction,barH-8,i===0?'url(#rp-green)':'url(#rp-extra)',{rx:6,opacity:.96,stroke:i===0?N.svg.c('result'):N.svg.c('focus'),'stroke-width':1.3});partWidths.push({el:fill,width:(bw-8)*fraction});
+  if(i>0)t(s,x+bw/2,yy+barH+22,'Extra '+fmt(Math.min(100,percent-i*100))+'% · same 100% length','support',mobile?16:20);
+ });
+ if(level>=2&&percent<100){let start=x+4+(bw-8)*percent/100;rect(s,start,knownY+4,(bw-8)*(100-percent)/100,barH-8,'url(#rp-extra)',{opacity:.45,rx:5,stroke:N.svg.c('focus'),'stroke-width':1.5,'stroke-dasharray':'6 4'});t(s,x+bw/2,knownY+barH+27,'Gold = '+fmt(100-percent)+'% removed from the original','focus',mobile?16:20);}
+ if(level>=2&&percent<=100){
+  const uy=mobile?549:502,ux=mobile?43:250,uw=mobile?334:620,uh=mobile?113:119;
+  glass(s,ux,uy,uw,uh,'op');
+  t(s,W/2,uy+29,'Another method · find 1%', 'support',mobile?21:25);
+  t(s,W/2,uy+65,'1% = £'+fmt(v.known)+' ÷ '+fmt(percent), 'given',mobile?22:27);
+  t(s,W/2,uy+98,level>=5&&!hidden?'1% = £'+fmt(v.known/percent)+' · then × 100':'100% = that one-percent share × 100','focus',mobile?18:22);
+ }
+ if(level>=2)N.svg.arrow(s,x+bw+(mobile?-4:27),knownY+barH/2,x+bw+(mobile?-4:27),unknownY+barH/2,{role:'focus',width:2.8});
+ // Inverse operation is shown as a genuine transformation: known p% scaled by division back to 100%.
+ const proofY=mobile?738:650;
+ if(level>=3){glass(s,mobile?43:236,proofY,mobile?334:648,mobile?98:93,'op');t(s,W/2,proofY+34,(mobile?'Divide, do not subtract':'Work backwards · divide, do not subtract'),'support',mobile?18:25);t(s,W/2,proofY+77,'£'+fmt(v.known)+' ÷ '+fmt(v.multiplier)+(level>=5&&!hidden?' = £'+fmt(v.original):' = ?'),'focus',mobile?25:34);}
+ else {t(s,W/2,proofY+51,'Same whole · exact percentage scale','support',mobile?18:23);}
+ // Adjustable known-percentage slider (not an invented tick-loop).
+ const sy=mobile?918:805,sw=bw,sx=x;
+ t(s,W/2,sy-34,(mobile?'Final is '+fmt(percent)+'% · drag':'Known final is '+fmt(percent)+'% of original · drag'),'support',mobile?19:23);
+ N.neonBox(s,sx,sy,sw,mobile?20:26,{role:'op',r:8});let q=(percent-10)/240;
+ rect(s,sx+4,sy+4,(sw-8)*q,mobile?12:18,'url(#rp-green)',{rx:6});
+ N.numberLine(s,{x:sx,y:sy+36,w:sw,min:10,max:250,major:40,minor:10,labelSize:mobile?15:19});
+ const hx=sx+sw*q,hy=sy+(mobile?10:13),grip=E('g',{'data-known-percent-handle':'',role:'slider',tabindex:o.interactive?0:-1,'aria-label':'Known final percentage of original','aria-valuemin':'10','aria-valuemax':'250','aria-valuenow':fmt(percent),'aria-valuetext':fmt(percent)+' percent'},s);
+ N.neonRing(grip,hx,hy,{role:'focus',r:mobile?14:16,pulse:false});rect(grip,hx-13,hy-16,26,32,'transparent',{'pointer-events':'none'});
+ const resultY=mobile?1042:910;
+ glass(s,mobile?43:117,resultY,mobile?334:425,mobile?122:118,'focus');t(s,mobile?210:330,resultY+34,'Original · 100%','support',mobile?21:25);
+ t(s,mobile?210:330,resultY+91,level>=5&&!hidden?'£'+fmt(v.original):'£ ?',level>=5&&!hidden?'focus':'support',mobile?34:39);
+ const invY=mobile?1195:910;glass(s,mobile?43:577,invY,mobile?334:425,mobile?136:118,'result');t(s,mobile?210:790,invY+35,'Inverse multiplier','support',mobile?22:25);
+ t(s,mobile?210:790,invY+94,level>=3?'÷ '+fmt(v.multiplier):'÷ ?',level>=3?'result':'support',mobile?32:36);
+ if(mobile)t(s,W/2,1402,'Divide by the multiplier to find the original','support',18);else t(s,W/2,1074,'The gold original and green final use the same 100% reference length','support',19);
+ if(o.interactive){let lastX=NaN;
+ function local(e){let pt=s.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;let m=s.getScreenCTM();return m?pt.matrixTransform(m.inverse()):null;}
+ function setP(np,via){let p=Math.max(10,Math.min(250,Math.round(np*2)/2));if(sc.dead||!o.onSet)return false;o.onSet(p,via);return true;}
+ window.addEventListener('pointermove',e=>{if(sc.dead||!N.ui._drag||N.ui._drag.el!==grip)return;let pt=local(e);if(pt)lastX=pt.x;},{signal:sc.ac.signal});
+ grip.addEventListener('keydown',e=>{let p=null,delta=e.shiftKey?.5:5;if(e.key==='ArrowRight'||e.key==='ArrowUp')p=percent+delta;else if(e.key==='ArrowLeft'||e.key==='ArrowDown')p=percent-delta;else if(e.key==='Home')p=10;else if(e.key==='End')p=250;if(p!==null){e.preventDefault();setP(p,'keyboard');let next=stage.querySelector('[data-known-percent-handle]');if(next)next.focus();}},{signal:sc.ac.signal});
+ N.ui.svgDrag(s,grip,{box:{x:hx-18,y:sy-19,w:36,h:58},canStart:()=>!sc.dead,zones:()=>[{id:'percent-track',kind:'drop',x:sx-23,y:sy-42,w:sw+46,h:137}],onDrop:()=>Number.isFinite(lastX)?setP(10+240*(lastX-sx)/sw,'dragPercent'):false});
+ }
+ stage.appendChild(s);
+ if(o.animate&&level>=3){
+  let widths=partWidths.map(a=>a.width);
+  partWidths.forEach((r,i)=>r.el.setAttribute('width',String(i===0?bw-8:0)));
+  M.tween(950,z=>{
+    if(sc.dead)return;
+    partWidths.forEach((r,i)=>{let start=i===0?bw-8:0; r.el.setAttribute('width',String(Math.max(0,start*(1-z)+widths[i]*z)));});
+  },M.ease.inOut,()=>{if(!sc.dead)M.flash(s,x+bw*.5,knownY+barH/2,'focus');});
+ }
+
+ N.scene.helperStrip(stage,o.pose||'ruler',o.caption||'Recover the original with the inverse multiplier.');return sc;
+}
+const steps=[
+{name:'Start from a known final',level:0,pose:'explain',caption:'We know the final amount.',narration:'A final price is ninety-six pounds after a twenty percent increase. We need the original price.'},
+{name:'Make the original unknown',level:1,pose:'question',caption:'What was the original one hundred percent?',narration:'The unknown original is our one hundred percent whole. We must find that original.'},
+{name:'Read the final percentage',level:2,pose:'ruler',caption:'The final is one hundred and twenty percent.',narration:'After the increase, ninety-six pounds represents one hundred and twenty percent of the original.'},
+{name:'Identify the inverse operation',level:3,pose:'idea',caption:'Undo multiplication by dividing.',narration:'The increase used a multiplier of one point two. To reverse it, divide the final amount by one point two.'},
+{name:'Rebuild the original whole',level:4,pose:'point-down',caption:'The hundred percent whole is recovered.',narration:'The gold bar represents the original hundred percent. The known final bar still uses exactly that same scale.'},
+{name:'Calculate and check',level:5,pose:'celebrate',caption:'Ninety-six divided by one point two is eighty.',narration:'Ninety-six divided by one point two is eighty. Check by multiplying eighty by one point two to recover ninety-six.'}
+];
+function guided(i,stage){let z=steps[i];stageDraw(stage,model(96,120),{level:z.level,pose:z.pose,caption:z.caption,animate:i===4});}
+function explore(panel,stage){let pr=C.presets[C.preset],v=model(pr.known,pr.pct),pres=H('select',{class:'nova-input','aria-label':'Choose reverse-percentage example'}),known=H('input',{class:'nova-input',type:'number',min:'0',max:'100000',step:'.01',value:v.known,'aria-label':'Known final amount'}),pct=H('input',{class:'nova-input',type:'number',min:10,max:250,step:.5,value:v.pct,'aria-label':'Known final percentage'}),status=H('p',{class:'rp-status'});
+ Object.keys(C.presets).forEach(k=>pres.appendChild(H('option',{value:k,text:C.presets[k].label})));pres.value=C.preset;
+ function draw(){stageDraw(stage,v,{level:5,interactive:true,pose:v.change<0?'think':'compare',caption:v.change<0?'Discounts mean the original is larger.':'Divide the final amount by the multiplier.',onSet:(p,key)=>{v=model(v.known,p);emit(key,v.pct);sync();}});}
+ function sync(){known.value=v.known;pct.value=v.pct;status.textContent='£'+fmt(v.known)+' ÷ '+fmt(v.multiplier)+' = £'+fmt(v.original)+' · original 100%';draw();}
+ pres.onchange=()=>{C.preset=pres.value;v=model(C.presets[C.preset].known,C.presets[C.preset].pct);emit('preset',C.preset);sync();};
+ known.onchange=()=>{try{v=model(known.value,pct.value);emit('known',v.known);sync();}catch(e){status.textContent=e.message;}};
+ pct.onchange=()=>{try{v=model(known.value,pct.value);emit('knownPercent',v.pct);sync();}catch(e){status.textContent=e.message;}};
+ panel.appendChild(H('div',{class:'rp-controls'},[H('label',{text:'Preset'}),pres,H('label',{text:'Final £'}),known,H('label',{text:'Final %'}),pct]));
+ panel.appendChild(H('div',{class:'rp-controls'},[H('button',{class:'nova-btn',text:'Reset to 120%',onclick:()=>{C.preset='increase20';pres.value=C.preset;v=model(96,120);emit('reset',true);sync();}})]));panel.appendChild(status);
+ C._explore={get:()=>({...v}),set:(known,pct)=>{v=model(known,pct);sync();},handle:()=>stage.querySelector('[data-known-percent-handle]')};sync();}
+function challenge(panel,api,stage){const tasks=[{known:96,pct:120,result:80,q:'A final price is £96 after a 20% increase. What was the original price?',hint:'The final is 120% of the original. Divide 96 by 1.2.'},{known:90,pct:75,result:120,q:'After a 25% discount the price is £90. What was the original price?',hint:'After the discount, £90 is 75%. Divide by 0.75.'},{known:150,pct:125,result:120,q:'After a 25% increase an amount is £150. Find the original.',hint:'A 25% increase means 125%. Divide by 1.25.'}];
+ let i=0,wrong=0,q=H('p',{class:'rp-status'}),input=H('input',{type:'number',step:'.01',class:'nova-input',placeholder:'Original £','aria-label':'Original amount answer'}),check=H('button',{class:'nova-btn primary',text:'Check answer'}),hint=H('button',{class:'nova-btn',text:'Hint'}),status=H('p',{class:'rp-status'}),img=H('img',{alt:'Izaac reading his tablet'}),peertext=H('span',{text:'Izaac is working it out.'});
+ function pose(code,msg){let z=N.helperImg(code,'teen');img.src=z.src;img.alt=z.alt;peertext.textContent=msg;}
+ function load(){let e=tasks[i];wrong=0;q.textContent='Challenge '+(i+1)+' of 3 · '+e.q;input.value='';api.fb.textContent='';status.textContent='The original amount is hidden. Use the inverse multiplier.';pose('read-tablet','Izaac is working it out.');stageDraw(stage,model(e.known,e.pct),{level:5,hidden:true,pose:'question',caption:'Use division to recover the unknown original.'});}
+ check.onclick=()=>{let e=tasks[i],n=Number(input.value),ok=input.value.trim()!==''&&Number.isFinite(n)&&Math.abs(n-e.result)<1e-6;api.check(ok,ok?'Correct: the original is £'+fmt(e.result)+'.':'Not yet. Divide by the multiplier, not the percentage points.');if(ok){pose('victory','That is the original!');status.textContent='Correct. Original £'+fmt(e.result);if(i<tasks.length-1){i++;setTimeout(load,80);}else status.textContent='3 of 3 complete · brilliant inverse reasoning!';}else{wrong++;pose(wrong>=2?'worried':'read-tablet','Try dividing the final by the multiplier.');}};
+ hint.onclick=()=>{api.hint(tasks[i].hint);status.textContent=tasks[i].hint;pose('idea','Here is a clue.');};
+ panel.appendChild(q);panel.appendChild(H('div',{class:'rp-controls'},[H('label',{text:'Original £'}),input,check,hint]));panel.appendChild(status);panel.appendChild(H('div',{class:'rp-peer'},[img,peertext]));C._challenge={task:()=>i,setAnswer:x=>{input.value=x;},check:()=>check.click()};load();}
+const DEF={id:ID,title:'Reverse Percentages · Inverse Multiplier Studio',config:C,steps,render:guided,explore,challenge,alt:'A known final amount shown as a green percentage bar and an unknown gold original at 100 percent. Both share one absolute scale. Dividing the final amount by its percentage multiplier reconstructs the original.'};
+N.bankMount({id:ID,num:'F5·16',title:DEF.title,def:DEF,years:'KS3 Years 7–9',linked:['F4-06','F5-15'],spec:{purpose:'Reverse a percentage increase or decrease using division by a non-zero multiplier and a fixed 100 percent original.',params:'Known final amount; final percentage of original (10%–250%); original recovered exactly.',presets:'20% increase, 25% discount, 25% increase, 50% discount, 12.5% discount, 150% increase.',animation:'Known percentage is measured; inverse multiplier is exposed; reconstructed original gold whole is revealed.',interaction:'Draggable percentage slider, keyboard, exact amount entry, challenge feedback.',misconceptions:'Never subtract the rate from the final; never let the 100% reference rescale; zero multiplier has no recoverable original.',gcse:'Yes · GCSE reverse percentages.',alias:'F5-16 → F4-06 preset when F4-06 master becomes available; no duplicate core primitives.'}});
+const log=document.getElementById('log');function logIt(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,3500);}N.events.history().forEach(logIt);N.events.on('*',logIt);document.getElementById('clearlog').onclick=()=>log.textContent='';
+})();
+
+</script></body></html>

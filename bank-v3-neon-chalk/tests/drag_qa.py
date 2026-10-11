@@ -1,44 +1,48 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 import json
-R=Path(__file__).resolve().parents[1];source=(R/'F3/F3-05-prime-sieve-and-factor-tree.html').read_text()
-allres=[]
+R=Path(__file__).resolve().parents[1];html=(R/'F3/F3-14-multiplication-table-explorer.html').read_text();results=[]
+def mid(box):return box['x']+box['width']/2,box['y']+box['height']/2
+def drag(page,src,dst,fast=False):
+ src.scroll_into_view_if_needed();dst.scroll_into_view_if_needed()
+ a=mid(src.bounding_box());b=mid(dst.bounding_box())
+ page.mouse.move(*a);page.mouse.down()
+ if fast:page.mouse.move(a[0]+115,a[1]-55,steps=1);page.mouse.move(*b,steps=1)
+ else:page.mouse.move(*b,steps=8)
+ page.mouse.up();page.wait_for_timeout(430)
 with sync_playwright() as p:
  b=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  for width in [380,1280]:
-  pg=b.new_page(viewport={'width':width,'height':900},reduced_motion='reduce');err=[];pg.on('pageerror',lambda e:err.append(str(e)))
-  pg.set_content(source,wait_until='domcontentloaded');pg.locator('#F3-05 button').filter(has_text='Explore').first.click()
-  def center(sel):
-   loc=pg.locator('#F3-05 '+sel).first
-   r=loc.bounding_box();return (r['x']+r['width']/2,r['y']+r['height']/2)
-  def drag(src,dest):
-   # Position document so source and target are on-screen at the same time.
-   offsets=[]
-   for selector in (src,dest):
-    bb=pg.locator('#F3-05 '+selector).first.bounding_box();offsets.append((bb['y']+pg.evaluate('scrollY'),bb['height']))
-   bottom=max(y+h for y,h in offsets);pg.evaluate('(v)=>scrollTo(0,v)',max(0,bottom-pg.viewport_size['height']+42));pg.wait_for_timeout(70)
-   s=center(src);t=center(dest);pg.mouse.move(*s);pg.mouse.down();pg.mouse.move(*t,steps=12);pg.mouse.up();pg.wait_for_timeout(550)
-  # first prime must be 2; 5 should bounce harmlessly
-  drag('[data-prime-card="5"]','[data-value="36"]')
-  failDidNotAdvance=pg.locator('#F3-05 [data-value="4"][aria-label*="crossed composite"]').count()==0
-  drag('[data-prime-card="2"]','[data-value="36"]')
-  success=pg.locator('#F3-05 [data-value="4"][aria-label*="crossed composite"]').count()==1
-  # switch to tree 60
-  pg.get_by_label('Curriculum preset').select_option('Y7-015-tree60');pg.wait_for_timeout(80)
-  drag('[data-factor-card="6"]','[data-node]')
-  spl=pg.locator('#F3-05 .f305-svg [data-node]').count()==3
-  # undo by dragged parent to red remove zone
-  nodes=pg.locator('#F3-05 .f305-svg [data-node]');pr=nodes.first
-  rootId=pr.get_attribute('data-node')
-  # Bring the parent and remove tray onto the screen before starting the pointer gesture.
-  bb=pg.locator('#F3-05 [data-node="'+rootId+'"]').bounding_box();svg=pg.locator('#F3-05 .f305-svg');svgbox=svg.bounding_box();pg.evaluate('(v)=>scrollTo(0,v)',max(0,svgbox['y']+pg.evaluate('scrollY')+svgbox['height']-pg.viewport_size['height']+36));pg.wait_for_timeout(70)
-  pg.mouse.move(*center('[data-node="'+rootId+'"]'));pg.mouse.down()
-  # remove coordinate from svg CTM transform
-  pos=pg.evaluate('''() => {const svg=document.querySelector('#F3-05 .f305-svg');const pt=svg.createSVGPoint();pt.x=770;pt.y=953;const p=pt.matrixTransform(svg.getScreenCTM());return {x:p.x,y:p.y}}''')
-  pg.mouse.move(pos['x'],pos['y'],steps=15);pg.mouse.up();pg.wait_for_timeout(650)
-  undone=pg.locator('#F3-05 .f305-svg [data-node]').count()==1
-  active=pg.evaluate('Boolean(NOVA.ui._drag)')
-  allres.append({'width':width,'wrongPrimeRejected':failDidNotAdvance,'correctPrimeApplied':success,'treeCardSplit':spl,'treeUndoDragged':undone,'dragActive':active,'errors':err})
-  pg.close()
+  for motion in ['reduce','no-preference']:
+   page=b.new_page(viewport={'width':width,'height':900},reduced_motion=motion)
+   errors=[];page.on('pageerror',lambda e:errors.append(str(e)));page.set_content(html)
+   page.locator('#F3-14 .nova-tab').filter(has_text='Explore').first.click();page.wait_for_timeout(60)
+   stage=page.locator('#F3-14 svg.f314-svg');handle=stage.locator('[data-handle="crosshair"]');dst=stage.locator('[data-cell="5,6"]');
+   drag(page,handle,dst,True)
+   sel=page.locator('#F3-14 svg.f314-svg').get_attribute('data-selected')
+   assert sel=='5,6',(width,motion,'crosshair drag',sel)
+   results.append({'width':width,'motion':motion,'action':'crosshair fast place','result':sel})
+   # Selected cell roving tabindex and focus arrows
+   focused=page.locator('#F3-14 svg.f314-svg [tabindex="0"]');focused.focus();page.keyboard.press('ArrowDown');sel=page.locator('#F3-14 svg.f314-svg').get_attribute('data-selected');assert sel=='6,6',sel
+   results.append({'width':width,'motion':motion,'action':'keyboard arrow','result':sel})
+   # Escape from active drag must always settle and release.
+   handle=page.locator('#F3-14 svg.f314-svg [data-handle="crosshair"]');handle.scroll_into_view_if_needed();a=mid(handle.bounding_box());page.mouse.move(*a);page.mouse.down();page.mouse.move(a[0]+80,a[1]+10,steps=1);page.keyboard.press('Escape');page.mouse.up();page.wait_for_timeout(440)
+   assert not page.evaluate('!!NOVA.ui._drag')
+   results.append({'width':width,'motion':motion,'action':'Escape cancellation','result':'cleared'})
+   # Challenge product cards: incorrect drop returns, correct fast drop completes proof.
+   page.locator('#F3-14 .nova-tab').filter(has_text='Challenge').first.click();page.wait_for_timeout(80)
+   stage=page.locator('#F3-14 svg.f314-svg');dst=stage.locator('[data-cell="3,4"]');wrong=stage.locator('[data-product-card="12"]');drag(page,wrong,dst,True)
+   assert stage.locator('[data-product-card="12"]').count()==1
+   assert not page.evaluate('!!NOVA.ui._drag')
+   results.append({'width':width,'motion':motion,'action':'wrong card returns','result':'not accepted'})
+   right=stage.locator('[data-product-card="-12"]');drag(page,right,dst,True)
+   page.wait_for_timeout(90)
+   assert stage.locator('[data-placed-card="-12"]').count()==1
+   page.locator('#F3-14 button').filter(has_text='Check proof').first.click();page.wait_for_timeout(1100)
+   assert 'Proof 2 of 4' in page.locator('#F3-14 .nova-panel').inner_text(),(width,motion,'correct drag not accepted',page.locator('#F3-14 .nova-panel').inner_text()[-400:])
+   assert not errors,errors
+   assert not page.evaluate('!!NOVA.ui._drag')
+   results.append({'width':width,'motion':motion,'action':'correct fast card','result':'proof 2'})
+   page.close()
  b.close()
-(R/'tests'/'DRAG-RESULTS.json').write_text(json.dumps(allres,indent=2));print(json.dumps(allres,indent=2))
+(R/'tests/DRAG-RESULTS.json').write_text(json.dumps(results,indent=2));print('DRAG PASS',len(results))

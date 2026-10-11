@@ -1,0 +1,7 @@
+# Append to the existing bank-v3-neon-chalk/build/build.py after earlier F5 records
+src=open('build/F5-18.src.html',encoding='utf-8').read()
+assert '@@CSS@@' in src and '@@JS@@' in src and 'NOVA_F5_18_CONFIG' in src
+assert 'N.ui.svgDrag' in src and 'M.tween' in src and '.nv-frac-tbd' not in src
+built=src.replace('@@CSS@@',css).replace('@@JS@@',js)
+open('F5/F5-18-terminating-recurring-sorter.html','w',encoding='utf-8').write(built)
+print('built F5-18')

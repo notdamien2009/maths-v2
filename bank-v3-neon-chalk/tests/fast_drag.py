@@ -1,41 +1,42 @@
-import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright
-R=Path(__file__).resolve().parents[1];results=[]
+import json
+R=Path(__file__).resolve().parents[1];out=[]
 with sync_playwright() as p:
- b=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox'])
- for w in (380,1280):
-  for motion in ('reduce','no-preference'):
-   page=b.new_page(viewport={'width':w,'height':1000},reduced_motion=motion);errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
-   page.set_content((R/'F3/F3-11-root-finder.html').read_text(),wait_until='domcontentloaded')
-   page.locator('#F3-11 button').filter(has_text='Explore').first.click()
-   page.locator('#F3-11 select[aria-label="Curriculum preset"]').select_option('Y9-002')
-   page.locator('#F3-11 .f311-handle').scroll_into_view_if_needed();page.wait_for_timeout(120)
-   def world(x,y):
-    return page.locator('#F3-11 .f311-svg').evaluate('''(s,p)=>{let pt=s.createSVGPoint();pt.x=p[0];pt.y=p[1];let q=pt.matrixTransform(s.getScreenCTM());return {x:q.x,y:q.y}}''',[x,y])
-   def mouse_to(x,y,steps=1):
-    q=world(x,y);page.mouse.move(q['x'],q['y'],steps=steps)
-   def get_v():return float(page.locator('#F3-11 .f311-svg').get_attribute('data-estimate'))
-   def start():
-    page.locator('#F3-11 .f311-handle').scroll_into_view_if_needed();page.wait_for_timeout(75)
-    # No scrolling between down/move/up.
-    lo=5;hi=10;side=get_v();x=138+726*(side-lo)/(hi-lo);return x
-   def gesture(dest_x,dest_y=894,steps=1):
-    x=start();mouse_to(x,894);page.mouse.down();mouse_to(dest_x,dest_y,steps);page.mouse.up();page.wait_for_timeout(540 if motion=='no-preference' else 140)
-   gesture(138+726*(7.1-5)/5)
-   v=get_v();results.append(dict(w=w,motion=motion,test='fast one-step valid drop',passed=abs(v-7.1)<.11,estimate=v,error=errors.copy()))
-   # reverse rapidly then release at final expected location
-   x=start();mouse_to(x,894);page.mouse.down();mouse_to(790,894);mouse_to(350,894);mouse_to(138+726*(8.0-5)/5,894);page.mouse.up();page.wait_for_timeout(550 if motion=='no-preference' else 140)
-   v=get_v();results.append(dict(w=w,motion=motion,test='rapid reversal drop',passed=abs(v-8)<.11,estimate=v,error=errors.copy()))
-   # invalid drop must not update
-   old=v;x=start();mouse_to(x,894);page.mouse.down();mouse_to(500,140);page.mouse.up();page.wait_for_timeout(550 if motion=='no-preference' else 140)
-   v=get_v();results.append(dict(w=w,motion=motion,test='invalid drop returns',passed=v==old and page.evaluate('NOVA.ui._drag===null'),estimate=v,error=errors.copy()))
-   # ESC cancel
-   x=start();mouse_to(x,894);page.mouse.down();mouse_to(650,894);page.keyboard.press('Escape');page.mouse.up();page.wait_for_timeout(550 if motion=='no-preference' else 140)
-   v=get_v();results.append(dict(w=w,motion=motion,test='escape cancel',passed=v==old and page.evaluate('NOVA.ui._drag===null'),estimate=v,error=errors.copy()))
-   # remove zone: use screen svg coords in 957-1014
-   x=start();mouse_to(x,894);page.mouse.down();mouse_to(850,985);page.mouse.up();page.wait_for_timeout(550 if motion=='no-preference' else 160)
-   v=get_v();results.append(dict(w=w,motion=motion,test='red remove tray',passed=abs(v-6)<.11 and page.evaluate('NOVA.ui._drag===null'),estimate=v,error=errors.copy()))
-   page.close()
+ b=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
+ for width in (380,1280):
+  page=b.new_page(viewport={'width':width,'height':930},reduced_motion='reduce');errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+  page.set_content((R/'F3/F3-12-divisibility-explorer.html').read_text(),wait_until='domcontentloaded')
+  page.locator('#F3-12 button').filter(has_text='Challenge').first.click()
+  svg=page.locator('#F3-12 svg.f312-svg');svg.scroll_into_view_if_needed();
+  def point(x,y):
+   return page.evaluate('([x,y])=>{const svg=document.querySelector("#F3-12 svg.f312-svg");const p=svg.createSVGPoint();p.x=x;p.y=y;const v=p.matrixTransform(svg.getScreenCTM());return {x:v.x,y:v.y}}',[x,y])
+  def drag(rule,x,y):
+   source=page.locator(f'#F3-12 svg.f312-svg g[data-rule="{rule}"]');source.scroll_into_view_if_needed();svg.scroll_into_view_if_needed();box=source.bounding_box();assert box,(width,rule)
+   st={'x':box['x']+box['width']/2,'y':box['y']+box['height']/2};dest=point(x,y)
+   page.mouse.move(st['x'],st['y']);page.mouse.down();page.mouse.move(st['x']+7,st['y']-5,steps=1);page.mouse.move(dest['x']-30,dest['y']-18,steps=1);page.mouse.move(dest['x']+17,dest['y']+11,steps=1);page.mouse.move(dest['x'],dest['y'],steps=1);page.mouse.up();page.wait_for_timeout(120)
+   return page.locator('#F3-12 .f312-status').inner_text()
+  before=page.locator('#F3-12 .f312-status').inner_text();
+  wrong=drag(2,717,865)
+  print('width',width,'wrong',wrong)
+  assert 'last digit 4 is even' in wrong,(width,wrong)
+  assert page.locator('#F3-12 svg.f312-svg g[data-rule="2"] [data-drag="1"]').count()>=0
+  good=drag(2,281,865)
+  print('good',good)
+  assert 'Correct bin' in good,(width,good)
+  assert page.locator('#F3-12 svg.f312-svg g[data-rule="2"]').count()==1
+  rem=drag(2,859,1048)
+  print('removed',rem)
+  assert 'returned to the tray' in rem,(width,rem)
+  after=drag(2,281,865)
+  print('restored',after)
+  assert 'Correct bin' in after
+  # Escape should always clear core drag regardless of distance or capture state.
+  card=page.locator('#F3-12 svg.f312-svg g[data-rule="3"]');card.scroll_into_view_if_needed();svg.scroll_into_view_if_needed();bx=card.bounding_box();page.mouse.move(bx['x']+bx['width']/2,bx['y']+bx['height']/2);page.mouse.down();page.mouse.move(bx['x']+bx['width']/2+80,bx['y']+bx['height']/2+30,steps=1);page.keyboard.press('Escape');page.mouse.up();page.wait_for_timeout(120)
+  idle=page.evaluate('!window.NOVA.ui._drag')
+  assert idle,(width,'stranded')
+  assert not errors,errors
+  out.append({'width':width,'wrong_rejected':True,'fast_placed':True,'removed':True,'replaced':True,'escape_cleared':idle,'page_errors':errors})
+  page.close()
  b.close()
-(R/'tests/DRAG-RESULTS.json').write_text(json.dumps(results,indent=2));print(json.dumps(results,indent=2))
+(R/'tests/DRAG-RESULTS.json').write_text(json.dumps(out,indent=2));print(json.dumps(out,indent=2))

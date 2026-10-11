@@ -1,0 +1,116 @@
+<!doctype html><html lang="en" data-theme="dark" data-house="neon-chalk" data-premium="1"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NOVA F5-17 · Recurring Decimal Explorer · Premium Edition</title>
+<style>@@CSS@@
+ .loop-svg.nv-svg{display:block;width:100%;max-width:1120px;height:auto;margin:0 auto;touch-action:pan-y}
+.loop-controls{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin:12px auto}
+.loop-controls label{font:700 1rem var(--nova-font-chalk-write);color:#ddf5ff}
+.loop-controls .nova-input{min-width:86px;max-width:210px}
+.loop-status{font:700 1.04rem/1.45 var(--nova-font-chalk-write);color:#e5f8ff;text-align:center;margin:10px auto;min-height:28px}
+.loop-peer{display:flex;align-items:center;justify-content:center;gap:10px;font:700 1rem var(--nova-font-chalk-write)}
+.loop-peer img{width:72px;height:84px;object-fit:contain}
+@media(max-width:550px){.loop-controls{gap:7px}.loop-controls label{font-size:.9rem}.loop-controls .nova-input{min-width:76px}}
+@media print{.nova-tabs,.nova-tl,.nova-helperbar,.nova-panel{display:none!important}}
+</style></head><body data-topic="number"><div class="nova-wrap"><header id="nova-header" data-run="F5 · Premium Edition rebuild · 17" data-title="Recurring Decimal Explorer" data-sub="Reveal each decimal digit from its remainder; prove where a recurring cycle begins or division ends."></header><main id="gallery"></main><section class="nova-card nova-logcard" aria-label="NOVA event log"><h2 style="font-size:1.08em">NOVA events</h2><div class="nova-log" id="log" role="log" aria-live="off"></div><button class="nova-btn" id="clearlog">Clear log</button></section></div><script>@@JS@@</script><script>
+(function(){'use strict';
+const N=NOVA,E=N.svg.el,M=N.motion,H=N.h,ID='F5-17';
+const C=window.NOVA_F5_17_CONFIG={startMode:'guided',preset:'seventh',events:['preset','numerator','denominator','digitStep','dragRemainder','keyboard','reset','mode','step','reveal'],presets:{
+ seventh:{label:'1/7 · six-digit loop',n:1,d:7},third:{label:'1/3 · one-digit loop',n:1,d:3},sixth:{label:'1/6 · lead digit then loop',n:1,d:6},eighth:{label:'1/8 · terminating',n:1,d:8},twentyeighth:{label:'1/28 · long cycle',n:1,d:28},elevenths:{label:'2/11 · two-digit cycle',n:2,d:11},whole:{label:'3/3 · exact whole',n:3,d:3},fifth:{label:'3/5 · terminating',n:3,d:5}}};
+let live=null;
+function emit(k,v){if(!C.events.includes(k))throw Error('Missing F5-17 event '+k);N.events.emit('value',{engine:ID,key:k,value:v});}
+function gcd(a,b){while(b){let t=a%b;a=b;b=t;}return a||1;}
+function compute(n,d){n=Number(n);d=Number(d);if(!Number.isInteger(n)||!Number.isInteger(d)||n<0||n>99||d<1||d>30)throw Error('Use a numerator 0–99 and denominator 1–30.');let g=gcd(n,d),nr=n/g,dr=d/g,whole=Math.floor(nr/dr),rem=nr%dr,seen=new Map(),steps=[],repeatAt=-1;
+ while(rem!==0&&steps.length<=32){if(seen.has(rem)){repeatAt=seen.get(rem);break;}seen.set(rem,steps.length);let ten=rem*10,digit=Math.floor(ten/dr),next=ten%dr;steps.push({rem,ten,digit,next});rem=next;}
+ let digits=steps.map(x=>x.digit).join(''),prefix=repeatAt>=0?digits.slice(0,repeatAt):digits,cycle=repeatAt>=0?digits.slice(repeatAt):'',text=String(whole)+(steps.length?'.'+prefix+(cycle?'('+cycle+')':''):'');return {n:nr,d:dr,sourceN:n,sourceD:d,whole,steps,repeatAt,prefix,cycle,recurring:repeatAt>=0,terminating:repeatAt<0,text,terminal:rem===0};}
+function chalk(g,x,y,txt,role='support',sz=22,anchor='middle'){return N.chalkText(g,x,y,String(txt),{role,size:sz,anchor});}
+function rect(g,x,y,w,h,fill,p={}){return E('rect',Object.assign({x,y,width:Math.max(w,0),height:h,fill},p),g);}
+function gradients(svg){let defs=E('defs',{},svg);[['loop-panel',['#275270','#102b48','#09192d','#173451']],['loop-green',['#c9ffe1','#4fe3b0','#148361','#0a4e40']],['loop-gold',['#ffefb1','#f8c462','#b87726','#573619']],['loop-blue',['#c7ecff','#4aafea','#21689b','#0d3d66']]].forEach(([id,colors])=>{let f=E('linearGradient',{id,x1:'0%',y1:'0%',x2:'0%',y2:'100%'},defs);colors.forEach((col,i)=>E('stop',{offset:(i*100/3)+'%','stop-color':col},f));});}
+function frame(s,x,y,w,h,role='op'){N.neonBox(s,x,y,w,h,{role,r:16});rect(s,x+4,y+4,w-8,h-8,'url(#loop-panel)',{rx:13,stroke:'#406684','stroke-width':1});rect(s,x+12,y+11,w-24,Math.max(4,h*.055),'#d2f5ff',{rx:4,opacity:.08});}
+function stack(s,x,y,n,d,role='given',size=28){let group=E('g',{'aria-label':n+' over '+d},s);chalk(group,x,y-size*.42,n,role,size);N.neonLine(group,x-size*.85,y+1,x+size*.85,y+1,{role,width:2.6});chalk(group,x,y+size*.94,d,role,size);return group;}
+function poseFor(v){return v.recurring?'magnify':'compare';}
+function draw(stage,v,o={}){
+ if(live){live.dead=true;live.ac.abort();}let sc={dead:false,ac:new AbortController()};live=sc;
+ let mob=innerWidth<=670,W=mob?420:1120,V=mob?1520:1010,shown=Math.min(Math.max(0,o.shown??v.steps.length),v.steps.length),hide=!!o.hide,interactive=!!o.interactive;
+ stage.textContent='';let s=N.svg.root(W,V,'Recurring decimal explorer: the long-division remainder enters each step, produces one decimal digit and a new remainder. A repeated remainder proves the digit cycle; zero means terminating.');s.classList.add('loop-svg');gradients(s);
+ s.querySelectorAll('filter[filterUnits="userSpaceOnUse"]').forEach(f=>{f.setAttribute('x','-400');f.setAttribute('y','-500');f.setAttribute('width',String(W+800));f.setAttribute('height',String(V+1200));});
+ chalk(s,W/2,mob?38:44,'Remainder Loop Observatory','support',mob?23:31);
+ let fx=mob?39:59,fy=mob?82:83,fw=mob?342:298,fh=mob?139:162;
+ frame(s,fx,fy,fw,fh,'given');chalk(s,fx+fw/2,fy+32,'Exact fraction','support',mob?21:25);stack(s,fx+fw/2,fy+(mob?87:104),v.n,v.d,'given',mob?25:32);
+ let bx=mob?40:387,by=mob?239:83,bw=mob?340:675,bh=mob?151:162;frame(s,bx,by,bw,bh,'op');chalk(s,bx+bw/2,by+32,'Division state','support',mob?22:26);
+ if(!v.steps.length){chalk(s,bx+bw/2,by+90,'Remainder = 0','result',mob?27:35);chalk(s,bx+bw/2,by+128,'Exact whole','support',mob?19:22);}else{
+  let curr=shown===0?v.steps[0].rem:shown<v.steps.length?v.steps[shown].rem:v.steps[v.steps.length-1].next;
+  chalk(s,bx+bw/2,by+89,'Current remainder · '+curr,curr===0?'result':'given',mob?25:30);
+  chalk(s,bx+bw/2,by+126,shown===0?'Multiply by ten to find the first digit':shown===v.steps.length&&v.recurring?'A remainder is about to repeat':curr===0?'Zero · division finishes':'Bring down another zero', 'support',mob?18:22);
+ }
+ let track=mob?{x:38,y:410,w:344,h:525}:{x:61,y:274,w:998,h:407};frame(s,track.x,track.y,track.w,track.h,'given');chalk(s,W/2,track.y+36,mob?'Follow each remainder':'Long division · follow the remainders','support',mob?21:28);
+ let maxPer=mob?3:7,cardW=mob?99:116,cardH=mob?133:145,gap=mob?9:15,firstY=track.y+(mob?76:75),maxVisible=mob?6:7,firstIdx=Math.max(0,shown-maxVisible),visible=v.steps.slice(firstIdx,shown),cards=[];
+ if(!v.steps.length)chalk(s,W/2,track.y+track.h/2,'No decimal places are needed','result',mob?23:33);
+ if(v.steps.length&&shown===0){let n=Math.min(v.steps.length,mob?6:7),placeW=mob?76:107,gapW=mob?14:18,start=track.x+(track.w-(n*placeW+(n-1)*gapW))/2,yy=track.y+(mob?154:122);if(mob&&n>3){n=3;start=track.x+(track.w-(n*placeW+(n-1)*gapW))/2;}for(let i=0;i<n;i++){N.neonBox(s,start+i*(placeW+gapW),yy,placeW,mob?85:100,{role:'support',r:10});chalk(s,start+i*(placeW+gapW)+placeW/2,yy+(mob?53:64),'?', 'support',mob?30:39);}chalk(s,W/2,yy+(mob?142:155),'Reveal a digit to populate each position','support',mob?18:22);}
+ visible.forEach((st,i)=>{
+  let col=i%maxPer,row=Math.floor(i/maxPer),rowCount=Math.min(maxPer,visible.length-row*maxPer),totalW=rowCount*cardW+(rowCount-1)*gap;
+  let xx=track.x+track.w/2-totalW/2+col*(cardW+gap),yy=firstY+row*(cardH+24);if(col>=rowCount)return;
+  let cyc=v.recurring&&i>=v.repeatAt,role=st.next===0?'result':cyc?'focus':'op';frame(s,xx,yy,cardW,cardH,role);cards.push({xx,yy,st});
+  chalk(s,xx+cardW/2,yy+24,'Step '+(firstIdx+i+1),'support',mob?16:20);chalk(s,xx+cardW/2,yy+46,'R '+st.rem,'support',mob?15:18);
+  chalk(s,xx+cardW/2,yy+91,hide?'?':st.digit,hide?'unknown':cyc?'focus':'given',mob?31:38);
+  chalk(s,xx+cardW/2,yy+123,'r → '+(hide?'?':st.next),'support',mob?16:18);
+  if(i>0&&col>0)N.svg.arrow(s,xx-9,yy+cardH/2,xx-1,yy+cardH/2,{role:'given',width:1.6});
+ });
+ if(v.recurring&&shown===v.steps.length&&!hide){let label=v.repeatAt===0?'First remainder returns': 'Remainder from step '+(v.repeatAt+1)+' returns';chalk(s,W/2,track.y+track.h-54,label,'focus',mob?20:26);chalk(s,W/2,track.y+track.h-23,'Same remainder → same digits forever','result',mob?19:24);
+ }else if(v.terminating&&shown===v.steps.length&&!hide)chalk(s,W/2,track.y+track.h-31,'Remainder zero · decimal terminates','result',mob?19:25);
+ else chalk(s,W/2,track.y+track.h-31,'Each new remainder gives one new digit','support',mob?18:24);
+ let proof=mob?{x:38,y:964,w:344,h:201}:{x:61,y:706,w:998,h:131};frame(s,proof.x,proof.y,proof.w,proof.h,'result');chalk(s,W/2,proof.y+40,'Exact decimal', 'support',mob?22:26);
+ let display=hide?'?':shown===v.steps.length?v.text:v.whole+(shown?'.'+v.steps.slice(0,shown).map(x=>x.digit).join(''):v.steps.length?' · ':'');
+ if(mob&&display.length>18){let cut=Math.ceil(display.length/2),left=display.slice(0,cut),right=display.slice(cut);chalk(s,W/2,proof.y+90,left,hide?'unknown':'result',21);chalk(s,W/2,proof.y+126,right,hide?'unknown':'result',21);}else{let font=display.length>(mob?13:20)?(mob?21:34):(mob?32:43);chalk(s,W/2,proof.y+(mob?104:92),display,hide?'unknown':'result',font);}
+ if(mob)chalk(s,W/2,proof.y+166,hide?'Work out the decimal first':shown===v.steps.length?(v.recurring?'Repeat length · '+v.cycle.length+' digits':'Terminating decimal'):'Build one digit at a time','support',19);
+ let ctrl=mob?{x:38,y:1194,w:344,h:211}:{x:61,y:858,w:998,h:107};frame(s,ctrl.x,ctrl.y,ctrl.w,ctrl.h,'op');
+ if(v.steps.length){let x1=ctrl.x+(mob?35:72),x2=ctrl.x+ctrl.w-(mob?36:80),ly=ctrl.y+(mob?112:67),t=(shown/v.steps.length);N.neonLine(s,x1,ly,x2,ly,{role:'given',width:5});N.neonLine(s,x1,ly,x1+(x2-x1)*t,ly,{role:'result',width:7});
+  let cx=x1+(x2-x1)*t,grip=E('g',{'data-digit-handle':'',tabindex:interactive?0:-1,role:'slider','aria-label':'Number of digits revealed','aria-valuemin':'0','aria-valuemax':String(v.steps.length),'aria-valuenow':String(shown)},s);
+  N.neonRing(grip,cx,ly,{role:'focus',r:mob?14:16,pulse:false});rect(grip,cx-15,ly-17,30,34,'transparent',{'pointer-events':'none'});
+  chalk(s,W/2,ctrl.y+40,(mob?'Reveal digit '+shown+' of '+v.steps.length:'Use the remainder slider to reveal '+shown+' of '+v.steps.length+' digits'),'support',mob?21:25);
+  if(mob)chalk(s,W/2,ctrl.y+175,'Drag ring or use keyboard arrows','support',19);
+  if(interactive){let ptX=NaN;const svgPoint=e=>{let p=s.createSVGPoint();p.x=e.clientX;p.y=e.clientY;let mat=s.getScreenCTM();return mat?p.matrixTransform(mat.inverse()):null;};
+   window.addEventListener('pointermove',e=>{if(sc.dead||!N.ui._drag||N.ui._drag.el!==grip)return;let p=svgPoint(e);if(p)ptX=p.x;},{signal:sc.ac.signal});
+   const set=(num,source)=>{if(!sc.dead&&o.onStep)o.onStep(Math.max(0,Math.min(v.steps.length,Math.round(num))),source);};
+   grip.addEventListener('keydown',e=>{let u=null;if(['ArrowRight','ArrowUp'].includes(e.key))u=shown+1;else if(['ArrowLeft','ArrowDown'].includes(e.key))u=shown-1;else if(e.key==='Home')u=0;else if(e.key==='End')u=v.steps.length;else if(e.key==='Enter'||e.key===' ')u=shown+1;if(u!==null){e.preventDefault();set(u,'keyboard');}});
+   N.ui.svgDrag(s,grip,{box:{x:cx-18,y:ly-19,w:36,h:38},canStart:()=>!sc.dead,zones:()=>[{id:'division-rail',kind:'drop',x:x1-28,y:ly-46,w:x2-x1+56,h:92}],onDrop:()=>{if(!Number.isFinite(ptX))return false;set((ptX-x1)/(x2-x1)*v.steps.length,'dragRemainder');return true;}});
+  }
+ }else chalk(s,W/2,ctrl.y+70,'Nothing to divide: the remainder is already zero','result',mob?19:25);
+ if(mob)chalk(s,W/2,1484,'A remainder either becomes zero or repeats','support',19);
+ stage.appendChild(s);
+ if(o.animate&&visible.length){let last=cards[cards.length-1];if(last){M.tween(560,p=>{if(sc.dead)return;let frac=Math.max(.2,Math.min(1,p));s.style.setProperty('--loop-intensity',String(frac));},M.ease.inOut,()=>{if(!sc.dead)M.flash(s,last.xx+cardW/2,last.yy+77,last.st.next===0?'result':'focus',26);});}}
+ N.scene.helperStrip(stage,o.pose||poseFor(v),o.caption||'Track the remainder to find a repeating pattern.');return sc;
+}
+const steps=[
+ {name:'Start with a fraction',shown:0,pose:'explain',caption:'Divide the numerator by the denominator.',narration:'We begin with one seventh. Decimal division will show us each digit.'},
+ {name:'Find the first remainder',shown:0,pose:'question',caption:'The remainder starts at one.',narration:'Seven does not fit into one whole. Start with zero point and use remainder one.'},
+ {name:'Build the first decimal digit',shown:1,pose:'count',caption:'Ten divided by seven gives one remainder three.',narration:'Multiply the remainder one by ten. Seven fits once. The next remainder is three.'},
+ {name:'Continue dividing',shown:3,pose:'point-down',caption:'Each remainder generates one more digit.',narration:'Each remainder is multiplied by ten. Divide again, keep the digit and pass the remainder onward.'},
+ {name:'Discover the loop',shown:6,pose:'magnify',caption:'The original remainder has returned.',narration:'Eventually the same remainder returns. That means the same digits will happen again, in exactly the same order.'},
+ {name:'Generalise the repeating pattern',shown:6,pose:'celebrate',caption:'A repeated remainder proves a recurring decimal.',narration:'If a remainder becomes zero, the decimal ends. If a remainder repeats, its digit pattern continues forever.'}
+];
+function guided(i,stage){let st=steps[i];draw(stage,compute(1,7),{shown:st.shown,animate:i===2||i===4,pose:st.pose,caption:st.caption});}
+function explore(panel,stage){let v=compute(1,7),shown=0,select=H('select',{class:'nova-input','aria-label':'Choose fraction preset'}),numer=H('input',{class:'nova-input',type:'number',min:0,max:99,step:1,value:1,'aria-label':'Numerator'}),denom=H('input',{class:'nova-input',type:'number',min:1,max:30,step:1,value:7,'aria-label':'Denominator'}),stat=H('p',{class:'loop-status',role:'status','aria-live':'polite'});
+ Object.keys(C.presets).forEach(k=>select.appendChild(H('option',{value:k,text:C.presets[k].label})));select.value=C.preset;
+ function render(animate){draw(stage,v,{shown,interactive:true,animate,pose:shown===v.steps.length?'magnify':'count',caption:shown===v.steps.length?(v.recurring?'The remainder has returned. Watch the loop.':'The remainder reached zero.'): 'Reveal the next decimal digit.',onStep:(n,via)=>{shown=n;emit(via==='dragRemainder'?'dragRemainder':via==='keyboard'?'keyboard':'digitStep',n);render(true);}});stat.textContent=(v.sourceN+'/'+v.sourceD)+' · '+shown+' of '+v.steps.length+' digits · '+(shown===v.steps.length?(v.recurring?'Cycle confirmed':'Division completed'):'Next: multiply the remainder by ten');}
+ function apply(n,d){try{v=compute(n,d);shown=0;numer.value=v.sourceN;denom.value=v.sourceD;emit('numerator',v.sourceN);emit('denominator',v.sourceD);render(false);}catch(e){stat.textContent=e.message;}}
+ select.onchange=()=>{C.preset=select.value;let t=C.presets[C.preset];emit('preset',C.preset);apply(t.n,t.d);};numer.onchange=()=>apply(numer.value,denom.value);denom.onchange=()=>apply(numer.value,denom.value);
+ panel.appendChild(H('div',{class:'loop-controls'},[H('label',{text:'Example'}),select,H('label',{text:'Numerator'}),numer,H('label',{text:'Denominator'}),denom]));
+ panel.appendChild(H('div',{class:'loop-controls'},[H('button',{class:'nova-btn primary',text:'Next digit',onclick:()=>{shown=Math.min(v.steps.length,shown+1);emit('digitStep',shown);render(true);}}),H('button',{class:'nova-btn',text:'Previous',onclick:()=>{shown=Math.max(0,shown-1);emit('digitStep',shown);render(false);}}),H('button',{class:'nova-btn',text:'Show cycle / finish',onclick:()=>{shown=v.steps.length;emit('reveal',shown);render(true);}}),H('button',{class:'nova-btn',text:'Reset',onclick:()=>{shown=0;emit('reset',true);render(false);}})]));panel.appendChild(stat);
+ C._explore={get:()=>({...v,shown}),set:(n,d)=>apply(n,d),step:(k)=>{shown=Math.max(0,Math.min(v.steps.length,k));render(false);},handle:()=>stage.querySelector('[data-digit-handle]')};let t=C.presets[C.preset];apply(t.n,t.d);
+}
+function challenge(panel,api,stage){const tasks=[
+ {n:1,d:8,q:'Does one eighth have a terminating or recurring decimal?',answer:'terminating',hint:'Follow the remainders. Does one become zero?'},
+ {n:1,d:6,q:'For one sixth, which single digit repeats?',answer:'6',hint:'Watch for the same remainder. The first decimal digit does not repeat.'},
+ {n:1,d:7,q:'How many digits are in the repeating block for one seventh?',answer:'6',hint:'Count digits until the very first remainder returns.'}];
+ let i=0,wrong=0,q=H('p',{class:'loop-status'}),input=H('input',{class:'nova-input',type:'text',placeholder:'Your answer','aria-label':'Challenge answer'}),check=H('button',{class:'nova-btn primary',text:'Check answer'}),hint=H('button',{class:'nova-btn',text:'Hint'}),stat=H('p',{class:'loop-status'}),peer=H('img',{alt:'Izaac checking his tablet'}),peerText=H('span',{text:'Izaac is calculating.'});
+ function pose(p,msg){let a=N.helperImg(p,'teen');peer.src=a.src;peer.alt=a.alt;peerText.textContent=msg;}
+ function load(){let t=tasks[i];wrong=0;q.textContent='Challenge '+(i+1)+' of 3 · '+t.q;input.value='';api.fb.textContent='';stat.textContent='The repeating answer is hidden. Use the long-division method.';pose('read-tablet','Izaac is working on the same question.');draw(stage,compute(t.n,t.d),{shown:0,hide:true,pose:'question',caption:'Predict the type of decimal before revealing its digits.'});}
+ check.onclick=()=>{let t=tasks[i],value=input.value.trim().toLowerCase().replace(/\s+/g,''),ok=value===t.answer||t.answer==='terminating'&&['terminates','terminate','ends'].includes(value);api.check(ok,ok?'Correct. You identified the remainder behaviour.':'Not quite. Track the remainders before answering.');if(ok){pose(i===2?'victory':'proud','The remainder reasoning is correct.');stat.textContent='Correct.';if(i<2){i++;setTimeout(load,120);}else stat.textContent='3 of 3 complete · excellent remainder reasoning!';}else{wrong++;pose(wrong>=2?'worried':'read-tablet','Try following the remainder sequence.');}};
+ hint.onclick=()=>{api.hint(tasks[i].hint);stat.textContent=tasks[i].hint;pose('idea','Izaac has a clue.');};
+ panel.appendChild(q);panel.appendChild(H('div',{class:'loop-controls'},[input,check,hint]));panel.appendChild(stat);panel.appendChild(H('div',{class:'loop-peer'},[peer,peerText]));
+ C._challenge={task:()=>i,setAnswer:x=>{input.value=x;},check:()=>check.click()};load();
+}
+const DEF={id:ID,title:'Recurring Decimal Explorer · Remainder Loop Observatory',config:C,steps,render:guided,explore,challenge,alt:'A glass long-division observatory with a stacked fraction, individual remainder and decimal digit cards, a draggable digit-step slider, and a proof that a repeated remainder creates a recurring decimal.'};
+N.bankMount({id:ID,num:'F5·17',title:DEF.title,def:DEF,years:'KS3 Years 7–9',linked:['F5-13','F5-18'],spec:{purpose:'Prove recurring and terminating decimals by exact repeated remainders in long division.',params:'Numerator 0–99; denominator 1–30; exact decimal digits and cycle start.',presets:'One seventh, one third, one sixth, one eighth, one twenty-eighth, two elevenths, whole and fifth.',animation:'Digit-by-digit remainder trail, cycle reveal and focused remainder pulse.',interaction:'Draggable digit progress ring, keyboard navigation, fraction presets, numerator/denominator inputs.',misconceptions:'Do not round recurring decimals to claim equality; pre-period digits are not recurring; zero remainder terminates.',gcse:'Recurring-decimal reasoning and rational-number classification.'}});
+let log=document.getElementById('log');function logIt(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,3500);}N.events.history().forEach(logIt);N.events.on('*',logIt);document.getElementById('clearlog').onclick=()=>log.textContent='';
+})();
+
+</script></body></html>

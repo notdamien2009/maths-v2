@@ -51,3 +51,38 @@ assert 'NOVA_F5_15_CONFIG' in src and 'svgDrag' in src and 'M.tween' in src and 
 assert 'N.svg.arrow' in src and '.nv-frac-tbd' not in src
 open('F5/'+slug+'.html','w',encoding='utf-8').write(src.replace('@@CSS@@',css).replace('@@JS@@',js))
 print('built F5-15 with locked v3.6.2 core')
+
+# F5-16 reverse percentage: F4-06 shared-engine preset adapter.
+name='F5-16';slug='F5-16-reverse-percentage-preset'
+src=open('build/F5-16.src.html',encoding='utf-8').read()
+assert '@@CSS@@' in src and '@@JS@@' in src
+assert 'NOVA_F5_16_CONFIG' in src and 'N.ui.svgDrag' in src and 'M.tween' in src
+assert 'N.numberLine' in src and 'N.svg.arrow' in src
+assert '.nv-frac-tbd' not in src and 'function subdiv(' not in src
+built=src.replace('@@CSS@@',css).replace('@@JS@@',js)
+open('F5/'+slug+'.html','w',encoding='utf-8').write(built)
+print('built F5-16 as F4-06 reverse-percentage adapter against NOVA core')
+
+# F5-17: recurring decimal explorer; exact rational remainder loop.
+src=open('build/F5-17.src.html',encoding='utf-8').read()
+assert 'NOVA_F5_17_CONFIG' in src and 'N.ui.svgDrag' in src and 'M.tween' in src
+assert '@@CSS@@' in src and '@@JS@@' in src and '.nv-frac-tbd' not in src
+open('F5/F5-17-recurring-decimal-explorer.html','w',encoding='utf-8').write(src.replace('@@CSS@@',css).replace('@@JS@@',js))
+print('built F5-17 using NOVA v3.6.2 core')
+
+# F5-18: terminating or recurring sorter; reduced-denominator prime factors.
+src=open('build/F5-18.src.html',encoding='utf-8').read()
+assert '@@CSS@@' in src and '@@JS@@' in src
+assert 'NOVA_F5_18_CONFIG' in src and 'N.ui.svgDrag' in src and 'M.tween' in src
+assert '.nv-frac-tbd' not in src
+assert 'N.chalkText' in src and 'N.neonBox' in src
+open('F5/F5-18-terminating-recurring-sorter.html','w',encoding='utf-8').write(src.replace('@@CSS@@',css).replace('@@JS@@',js))
+print('built F5-18 with NOVA v3.6.2 core')
+
+# F5-19 Premium Edition: pizza and chocolate equal-area contexts.
+src=open('build/F5-19.src.html',encoding='utf-8').read()
+assert '@@CSS@@' in src and '@@JS@@' in src
+assert 'NOVA_F5_19_CONFIG' in src and 'N.ui.svgDrag' in src and 'M.tween' in src
+assert '.nv-frac-tbd' not in src and 'N.chalkText' in src
+open('F5/F5-19-pizza-and-chocolate-fraction-contexts.html','w',encoding='utf-8').write(src.replace('@@CSS@@',css).replace('@@JS@@',js))
+print('built F5-19 with locked NOVA core')
