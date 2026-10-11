@@ -1,49 +1,85 @@
-PASS 380 initial engine 
-PASS 380 watch scene and two NOVA.numberLine scales 
-PASS 380 guided scene and two NOVA.numberLine scales 
-PASS 380 explore scene and two NOVA.numberLine scales 
-PASS 380 challenge scene and two NOVA.numberLine scales 
-PASS 380 guided step 1 
-PASS 380 guided step 2 
-PASS 380 guided step 3 
-PASS 380 guided step 4 
-PASS 380 guided step 5 
-PASS 380 guided step 6 
-PASS 380 fraction preset exact state {'n': 3, 'd': 4, 'min': 0, 'max': 2, 'factor': 2}
-PASS 380 shared numberLine scales present {'count': 1, 'ns': 2, 'x': 173.5}
-PASS 380 keyboard right moves one tick {'n': 4, 'd': 4, 'min': 0, 'max': 2, 'factor': 2}
-PASS 380 keyboard Home moves to lower bound {'n': 0, 'd': 4, 'min': 0, 'max': 2, 'factor': 2}
-PASS 380 real svgDrag snaps numerator 3 to 5 {'n': 5, 'd': 4, 'min': 0, 'max': 2, 'factor': 2}
-PASS 380 drag ends with no stranded marker 
-PASS 380 Escape cancels drag 
-PASS 380 incorrect challenge rejected 
-PASS 380 challenge 1 correct 
-PASS 380 challenge 2 correct 
-PASS 380 challenge 3 correct 
-PASS 380 no horizontal overflow 
-PASS 380 no JavaScript page errors []
-PASS 1280 initial engine 
-PASS 1280 watch scene and two NOVA.numberLine scales 
-PASS 1280 guided scene and two NOVA.numberLine scales 
-PASS 1280 explore scene and two NOVA.numberLine scales 
-PASS 1280 challenge scene and two NOVA.numberLine scales 
-PASS 1280 guided step 1 
-PASS 1280 guided step 2 
-PASS 1280 guided step 3 
-PASS 1280 guided step 4 
-PASS 1280 guided step 5 
-PASS 1280 guided step 6 
-PASS 1280 fraction preset exact state {'n': 3, 'd': 4, 'min': 0, 'max': 2, 'factor': 2}
-PASS 1280 shared numberLine scales present {'count': 1, 'ns': 2, 'x': 460.5}
-PASS 1280 keyboard right moves one tick {'n': 4, 'd': 4, 'min': 0, 'max': 2, 'factor': 2}
-PASS 1280 keyboard Home moves to lower bound {'n': 0, 'd': 4, 'min': 0, 'max': 2, 'factor': 2}
-PASS 1280 real svgDrag snaps numerator 3 to 5 {'n': 5, 'd': 4, 'min': 0, 'max': 2, 'factor': 2}
-PASS 1280 drag ends with no stranded marker 
-PASS 1280 Escape cancels drag 
-PASS 1280 incorrect challenge rejected 
-PASS 1280 challenge 1 correct 
-PASS 1280 challenge 2 correct 
-PASS 1280 challenge 3 correct 
-PASS 1280 no horizontal overflow 
-PASS 1280 no JavaScript page errors []
-TOTAL 48 / 48
+PASS 380-regular-watch-prem-stage 
+PASS 380-regular-guided-prem-stage 
+PASS 380-regular-explore-prem-stage 
+PASS 380-regular-challenge-prem-stage 
+PASS 380-regular-A-keyboard 
+PASS 380-regular-B-keyboard 
+PASS 380-regular-five-presets 
+PASS 380-regular-F15-03-preset 
+PASS 380-regular-Y9-040-preset 
+PASS 380-regular-native-drag-snap 
+PASS 380-regular-drag-cancel-recovery 
+PASS 380-regular-challenge-no-answer-leak 
+PASS 380-regular-Izaac-present 
+PASS 380-regular-hint-event 
+PASS 380-regular-wrong-feedback 
+PASS 380-regular-midpoint-half-grid 
+PASS 380-regular-midpoint-graded 
+PASS 380-regular-distance-form 
+PASS 380-regular-integer-distance-graded 
+PASS 380-regular-exact-surd-distance-graded 
+PASS 380-regular-no-js-errors 
+PASS 380-reduced-watch-prem-stage 
+PASS 380-reduced-guided-prem-stage 
+PASS 380-reduced-explore-prem-stage 
+PASS 380-reduced-challenge-prem-stage 
+PASS 380-reduced-A-keyboard 
+PASS 380-reduced-B-keyboard 
+PASS 380-reduced-five-presets 
+PASS 380-reduced-F15-03-preset 
+PASS 380-reduced-Y9-040-preset 
+PASS 380-reduced-native-drag-snap 
+PASS 380-reduced-drag-cancel-recovery 
+PASS 380-reduced-challenge-no-answer-leak 
+PASS 380-reduced-Izaac-present 
+PASS 380-reduced-hint-event 
+PASS 380-reduced-wrong-feedback 
+PASS 380-reduced-midpoint-half-grid 
+PASS 380-reduced-midpoint-graded 
+PASS 380-reduced-distance-form 
+PASS 380-reduced-integer-distance-graded 
+PASS 380-reduced-exact-surd-distance-graded 
+PASS 380-reduced-no-js-errors 
+PASS 1280-regular-watch-prem-stage 
+PASS 1280-regular-guided-prem-stage 
+PASS 1280-regular-explore-prem-stage 
+PASS 1280-regular-challenge-prem-stage 
+PASS 1280-regular-A-keyboard 
+PASS 1280-regular-B-keyboard 
+PASS 1280-regular-five-presets 
+PASS 1280-regular-F15-03-preset 
+PASS 1280-regular-Y9-040-preset 
+PASS 1280-regular-native-drag-snap 
+PASS 1280-regular-drag-cancel-recovery 
+PASS 1280-regular-challenge-no-answer-leak 
+PASS 1280-regular-Izaac-present 
+PASS 1280-regular-hint-event 
+PASS 1280-regular-wrong-feedback 
+PASS 1280-regular-midpoint-half-grid 
+PASS 1280-regular-midpoint-graded 
+PASS 1280-regular-distance-form 
+PASS 1280-regular-integer-distance-graded 
+PASS 1280-regular-exact-surd-distance-graded 
+PASS 1280-regular-no-js-errors 
+PASS 1280-reduced-watch-prem-stage 
+PASS 1280-reduced-guided-prem-stage 
+PASS 1280-reduced-explore-prem-stage 
+PASS 1280-reduced-challenge-prem-stage 
+PASS 1280-reduced-A-keyboard 
+PASS 1280-reduced-B-keyboard 
+PASS 1280-reduced-five-presets 
+PASS 1280-reduced-F15-03-preset 
+PASS 1280-reduced-Y9-040-preset 
+PASS 1280-reduced-native-drag-snap 
+PASS 1280-reduced-drag-cancel-recovery 
+PASS 1280-reduced-challenge-no-answer-leak 
+PASS 1280-reduced-Izaac-present 
+PASS 1280-reduced-hint-event 
+PASS 1280-reduced-wrong-feedback 
+PASS 1280-reduced-midpoint-half-grid 
+PASS 1280-reduced-midpoint-graded 
+PASS 1280-reduced-distance-form 
+PASS 1280-reduced-integer-distance-graded 
+PASS 1280-reduced-exact-surd-distance-graded 
+PASS 1280-reduced-no-js-errors 
+SUMMARY 84 / 84 failed 0

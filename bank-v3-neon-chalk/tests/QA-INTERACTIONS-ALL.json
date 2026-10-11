@@ -1,456 +1,427 @@
 {
-  "source": "Four independent browser runs, latest asymmetric triangle",
-  "total": 112,
-  "passed": 112,
+  "total": 84,
+  "passed": 84,
   "failed": [],
-  "checks": [
+  "results": [
     {
-      "check": "380-regular-watch-stage",
-      "passed": true
+      "test": "380-regular-watch-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '1px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-regular-guided-stage",
-      "passed": true
+      "test": "380-regular-guided-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '1px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-regular-explore-stage",
-      "passed": true
+      "test": "380-regular-explore-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '1px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-regular-explore-triangle-points",
-      "passed": true
+      "test": "380-regular-challenge-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '1px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-regular-challenge-stage",
-      "passed": true
+      "test": "380-regular-A-keyboard",
+      "passed": true,
+      "detail": "('A (\u22123, \u22122)', 'A (\u22123, \u22121)')"
     },
     {
-      "check": "380-regular-challenge-image-handles",
-      "passed": true
+      "test": "380-regular-B-keyboard",
+      "passed": true,
+      "detail": "B (0, 1)"
     },
     {
-      "check": "380-regular-keyboard-move-source",
-      "passed": true
+      "test": "380-regular-five-presets",
+      "passed": true,
+      "detail": "['Y8 \u00b7 Pythagoras: unknown side', 'Y8 \u00b7 Pythagoras problem solving', 'Y9 \u00b7 Equation of a straight line', 'Y9 \u00b7 Coordinate geometry', 'F15-03 \u00b7 Pythagoras on a grid']"
     },
     {
-      "check": "380-regular-rotation-preset",
-      "passed": true
+      "test": "380-regular-F15-03-preset",
+      "passed": true,
+      "detail": "('A (\u22122, \u22123)', 'B (2, 0)')"
     },
     {
-      "check": "380-regular-enlargement-preset",
-      "passed": true
+      "test": "380-regular-Y9-040-preset",
+      "passed": true,
+      "detail": "GIVEN COORDINATE POINTS\nA\n(\u22123, 3)\nB\n(3, \u22121)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\n6\nVertical change\n4\nMATHEMATICAL CONCLUSION\nM = (0, 1)\n\nMidpoint: average the two x values and the two y value"
     },
     {
-      "check": "380-regular-drag-snap-source",
-      "passed": true
+      "test": "380-regular-native-drag-snap",
+      "passed": true,
+      "detail": "A (\u22122, \u22121)"
     },
     {
-      "check": "380-regular-drag-escape-recovery",
-      "passed": true
+      "test": "380-regular-drag-cancel-recovery",
+      "passed": true,
+      "detail": "('A (\u22122, \u22121)', False)"
     },
     {
-      "check": "380-regular-challenge-no-solution-leak",
-      "passed": true
+      "test": "380-regular-challenge-no-answer-leak",
+      "passed": true,
+      "detail": "GIVEN COORDINATE POINTS\nA\n(\u22123, \u22122)\nB\n(1, 2)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\n4\nVertical change\n4\nYOUR GOAL\nM = ( ? , ? )\n\nUse the plotted evidence. The answer is hidden until you check."
     },
     {
-      "check": "380-regular-Izaac-present",
-      "passed": true
+      "test": "380-regular-Izaac-present",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-regular-hint-event",
-      "passed": true
+      "test": "380-regular-hint-event",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-regular-incorrect-feedback",
-      "passed": true
+      "test": "380-regular-wrong-feedback",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-regular-task1-A",
-      "passed": true
+      "test": "380-regular-midpoint-half-grid",
+      "passed": true,
+      "detail": "M (\u22121, 0)"
     },
     {
-      "check": "380-regular-task1-B",
-      "passed": true
+      "test": "380-regular-midpoint-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-regular-task1-C",
-      "passed": true
+      "test": "380-regular-distance-form",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-regular-challenge-1-correct",
-      "passed": true
+      "test": "380-regular-integer-distance-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-regular-task2-A",
-      "passed": true
+      "test": "380-regular-exact-surd-distance-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-regular-task2-B",
-      "passed": true
+      "test": "380-regular-no-js-errors",
+      "passed": true,
+      "detail": "[]"
     },
     {
-      "check": "380-regular-task2-C",
-      "passed": true
+      "test": "380-reduced-watch-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '1px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-regular-challenge-2-correct",
-      "passed": true
+      "test": "380-reduced-guided-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '1px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-regular-task3-A",
-      "passed": true
+      "test": "380-reduced-explore-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '1px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-regular-task3-B",
-      "passed": true
+      "test": "380-reduced-challenge-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '1px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-regular-task3-C",
-      "passed": true
+      "test": "380-reduced-A-keyboard",
+      "passed": true,
+      "detail": "('A (\u22123, \u22122)', 'A (\u22123, \u22121)')"
     },
     {
-      "check": "380-regular-challenge-3-correct",
-      "passed": true
+      "test": "380-reduced-B-keyboard",
+      "passed": true,
+      "detail": "B (0, 1)"
     },
     {
-      "check": "380-regular-no-browser-errors",
-      "passed": true
+      "test": "380-reduced-five-presets",
+      "passed": true,
+      "detail": "['Y8 \u00b7 Pythagoras: unknown side', 'Y8 \u00b7 Pythagoras problem solving', 'Y9 \u00b7 Equation of a straight line', 'Y9 \u00b7 Coordinate geometry', 'F15-03 \u00b7 Pythagoras on a grid']"
     },
     {
-      "check": "380-reduced-watch-stage",
-      "passed": true
+      "test": "380-reduced-F15-03-preset",
+      "passed": true,
+      "detail": "('A (\u22122, \u22123)', 'B (2, 0)')"
     },
     {
-      "check": "380-reduced-guided-stage",
-      "passed": true
+      "test": "380-reduced-Y9-040-preset",
+      "passed": true,
+      "detail": "GIVEN COORDINATE POINTS\nA\n(\u22123, 3)\nB\n(3, \u22121)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\n6\nVertical change\n4\nMATHEMATICAL CONCLUSION\nM = (0, 1)\n\nMidpoint: average the two x values and the two y value"
     },
     {
-      "check": "380-reduced-explore-stage",
-      "passed": true
+      "test": "380-reduced-native-drag-snap",
+      "passed": true,
+      "detail": "A (\u22122, \u22121)"
     },
     {
-      "check": "380-reduced-explore-triangle-points",
-      "passed": true
+      "test": "380-reduced-drag-cancel-recovery",
+      "passed": true,
+      "detail": "('A (\u22122, \u22121)', False)"
     },
     {
-      "check": "380-reduced-challenge-stage",
-      "passed": true
+      "test": "380-reduced-challenge-no-answer-leak",
+      "passed": true,
+      "detail": "GIVEN COORDINATE POINTS\nA\n(\u22123, \u22122)\nB\n(1, 2)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\n4\nVertical change\n4\nYOUR GOAL\nM = ( ? , ? )\n\nUse the plotted evidence. The answer is hidden until you check."
     },
     {
-      "check": "380-reduced-challenge-image-handles",
-      "passed": true
+      "test": "380-reduced-Izaac-present",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-reduced-keyboard-move-source",
-      "passed": true
+      "test": "380-reduced-hint-event",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-reduced-rotation-preset",
-      "passed": true
+      "test": "380-reduced-wrong-feedback",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-reduced-enlargement-preset",
-      "passed": true
+      "test": "380-reduced-midpoint-half-grid",
+      "passed": true,
+      "detail": "M (\u22121, 0)"
     },
     {
-      "check": "380-reduced-drag-snap-source",
-      "passed": true
+      "test": "380-reduced-midpoint-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-reduced-drag-escape-recovery",
-      "passed": true
+      "test": "380-reduced-distance-form",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-reduced-challenge-no-solution-leak",
-      "passed": true
+      "test": "380-reduced-integer-distance-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-reduced-Izaac-present",
-      "passed": true
+      "test": "380-reduced-exact-surd-distance-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-reduced-hint-event",
-      "passed": true
+      "test": "380-reduced-no-js-errors",
+      "passed": true,
+      "detail": "[]"
     },
     {
-      "check": "380-reduced-incorrect-feedback",
-      "passed": true
+      "test": "1280-regular-watch-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '2px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-reduced-task1-A",
-      "passed": true
+      "test": "1280-regular-guided-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '2px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-reduced-task1-B",
-      "passed": true
+      "test": "1280-regular-explore-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '2px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-reduced-task1-C",
-      "passed": true
+      "test": "1280-regular-challenge-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '2px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "380-reduced-challenge-1-correct",
-      "passed": true
+      "test": "1280-regular-A-keyboard",
+      "passed": true,
+      "detail": "('A (\u22123, \u22122)', 'A (\u22123, \u22121)')"
     },
     {
-      "check": "380-reduced-task2-A",
-      "passed": true
+      "test": "1280-regular-B-keyboard",
+      "passed": true,
+      "detail": "B (0, 1)"
     },
     {
-      "check": "380-reduced-task2-B",
-      "passed": true
+      "test": "1280-regular-five-presets",
+      "passed": true,
+      "detail": "['Y8 \u00b7 Pythagoras: unknown side', 'Y8 \u00b7 Pythagoras problem solving', 'Y9 \u00b7 Equation of a straight line', 'Y9 \u00b7 Coordinate geometry', 'F15-03 \u00b7 Pythagoras on a grid']"
     },
     {
-      "check": "380-reduced-task2-C",
-      "passed": true
+      "test": "1280-regular-F15-03-preset",
+      "passed": true,
+      "detail": "('A (\u22122, \u22123)', 'B (2, 0)')"
     },
     {
-      "check": "380-reduced-challenge-2-correct",
-      "passed": true
+      "test": "1280-regular-Y9-040-preset",
+      "passed": true,
+      "detail": "GIVEN COORDINATE POINTS\nA\n(\u22123, 3)\nB\n(3, \u22121)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\n6\nVertical change\n4\nMATHEMATICAL CONCLUSION\nM = (0, 1)\n\nMidpoint: average the two x values and the two y value"
     },
     {
-      "check": "380-reduced-task3-A",
-      "passed": true
+      "test": "1280-regular-native-drag-snap",
+      "passed": true,
+      "detail": "A (\u22122, \u22121)"
     },
     {
-      "check": "380-reduced-task3-B",
-      "passed": true
+      "test": "1280-regular-drag-cancel-recovery",
+      "passed": true,
+      "detail": "('A (\u22122, \u22121)', False)"
     },
     {
-      "check": "380-reduced-task3-C",
-      "passed": true
+      "test": "1280-regular-challenge-no-answer-leak",
+      "passed": true,
+      "detail": "GIVEN COORDINATE POINTS\nA\n(\u22123, \u22122)\nB\n(1, 2)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\n4\nVertical change\n4\nYOUR GOAL\nM = ( ? , ? )\n\nUse the plotted evidence. The answer is hidden until you check."
     },
     {
-      "check": "380-reduced-challenge-3-correct",
-      "passed": true
+      "test": "1280-regular-Izaac-present",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "380-reduced-no-browser-errors",
-      "passed": true
+      "test": "1280-regular-hint-event",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-watch-stage",
-      "passed": true
+      "test": "1280-regular-wrong-feedback",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-guided-stage",
-      "passed": true
+      "test": "1280-regular-midpoint-half-grid",
+      "passed": true,
+      "detail": "M (\u22121, 0)"
     },
     {
-      "check": "1280-regular-explore-stage",
-      "passed": true
+      "test": "1280-regular-midpoint-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-explore-triangle-points",
-      "passed": true
+      "test": "1280-regular-distance-form",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-challenge-stage",
-      "passed": true
+      "test": "1280-regular-integer-distance-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-challenge-image-handles",
-      "passed": true
+      "test": "1280-regular-exact-surd-distance-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-keyboard-move-source",
-      "passed": true
+      "test": "1280-regular-no-js-errors",
+      "passed": true,
+      "detail": "[]"
     },
     {
-      "check": "1280-regular-rotation-preset",
-      "passed": true
+      "test": "1280-reduced-watch-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '2px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "1280-regular-enlargement-preset",
-      "passed": true
+      "test": "1280-reduced-guided-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '2px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "1280-regular-drag-snap-source",
-      "passed": true
+      "test": "1280-reduced-explore-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '2px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "1280-regular-drag-escape-recovery",
-      "passed": true
+      "test": "1280-reduced-challenge-prem-stage",
+      "passed": true,
+      "detail": "{'stage': True, 'svg': True, 'bg': 'radial-gradient(at 22% 22%, rgba(35, 111, 222, 0.22), rgba(0, 0, 0, 0) 55%), linear-gradient(135deg, rgb(12, 36, 68) 0%, rgb(6, 18, 37) 48%, rgb(23, 19, 55) 100%)', 'border': '2px', 'overflow': False, 'axis': True, 'card': 3}"
     },
     {
-      "check": "1280-regular-challenge-no-solution-leak",
-      "passed": true
+      "test": "1280-reduced-A-keyboard",
+      "passed": true,
+      "detail": "('A (\u22123, \u22122)', 'A (\u22123, \u22121)')"
     },
     {
-      "check": "1280-regular-Izaac-present",
-      "passed": true
+      "test": "1280-reduced-B-keyboard",
+      "passed": true,
+      "detail": "B (0, 1)"
     },
     {
-      "check": "1280-regular-hint-event",
-      "passed": true
+      "test": "1280-reduced-five-presets",
+      "passed": true,
+      "detail": "['Y8 \u00b7 Pythagoras: unknown side', 'Y8 \u00b7 Pythagoras problem solving', 'Y9 \u00b7 Equation of a straight line', 'Y9 \u00b7 Coordinate geometry', 'F15-03 \u00b7 Pythagoras on a grid']"
     },
     {
-      "check": "1280-regular-incorrect-feedback",
-      "passed": true
+      "test": "1280-reduced-F15-03-preset",
+      "passed": true,
+      "detail": "('A (\u22122, \u22123)', 'B (2, 0)')"
     },
     {
-      "check": "1280-regular-task1-A",
-      "passed": true
+      "test": "1280-reduced-Y9-040-preset",
+      "passed": true,
+      "detail": "GIVEN COORDINATE POINTS\nA\n(\u22123, 3)\nB\n(3, \u22121)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\n6\nVertical change\n4\nMATHEMATICAL CONCLUSION\nM = (0, 1)\n\nMidpoint: average the two x values and the two y value"
     },
     {
-      "check": "1280-regular-task1-B",
-      "passed": true
+      "test": "1280-reduced-native-drag-snap",
+      "passed": true,
+      "detail": "A (\u22122, \u22121)"
     },
     {
-      "check": "1280-regular-task1-C",
-      "passed": true
+      "test": "1280-reduced-drag-cancel-recovery",
+      "passed": true,
+      "detail": "('A (\u22122, \u22121)', False)"
     },
     {
-      "check": "1280-regular-challenge-1-correct",
-      "passed": true
+      "test": "1280-reduced-challenge-no-answer-leak",
+      "passed": true,
+      "detail": "GIVEN COORDINATE POINTS\nA\n(\u22123, \u22122)\nB\n(1, 2)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\n4\nVertical change\n4\nYOUR GOAL\nM = ( ? , ? )\n\nUse the plotted evidence. The answer is hidden until you check."
     },
     {
-      "check": "1280-regular-task2-A",
-      "passed": true
+      "test": "1280-reduced-Izaac-present",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-task2-B",
-      "passed": true
+      "test": "1280-reduced-hint-event",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-task2-C",
-      "passed": true
+      "test": "1280-reduced-wrong-feedback",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-challenge-2-correct",
-      "passed": true
+      "test": "1280-reduced-midpoint-half-grid",
+      "passed": true,
+      "detail": "M (\u22121, 0)"
     },
     {
-      "check": "1280-regular-task3-A",
-      "passed": true
+      "test": "1280-reduced-midpoint-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-task3-B",
-      "passed": true
+      "test": "1280-reduced-distance-form",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-task3-C",
-      "passed": true
+      "test": "1280-reduced-integer-distance-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-challenge-3-correct",
-      "passed": true
+      "test": "1280-reduced-exact-surd-distance-graded",
+      "passed": true,
+      "detail": ""
     },
     {
-      "check": "1280-regular-no-browser-errors",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-watch-stage",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-guided-stage",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-explore-stage",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-explore-triangle-points",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-challenge-stage",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-challenge-image-handles",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-keyboard-move-source",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-rotation-preset",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-enlargement-preset",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-drag-snap-source",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-drag-escape-recovery",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-challenge-no-solution-leak",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-Izaac-present",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-hint-event",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-incorrect-feedback",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-task1-A",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-task1-B",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-task1-C",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-challenge-1-correct",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-task2-A",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-task2-B",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-task2-C",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-challenge-2-correct",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-task3-A",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-task3-B",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-task3-C",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-challenge-3-correct",
-      "passed": true
-    },
-    {
-      "check": "1280-reduced-no-browser-errors",
-      "passed": true
+      "test": "1280-reduced-no-js-errors",
+      "passed": true,
+      "detail": "[]"
     }
   ]
 }
