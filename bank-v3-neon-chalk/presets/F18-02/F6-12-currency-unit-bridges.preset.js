@@ -1,0 +1,13 @@
+/* NOVA F6-12 is a preset extension for the future F18-02 host, NOT a new production engine.
+ * Rates shown here are illustrative given conversion factors; no real-time FX API is used.
+ */
+(function(global){'use strict';
+const presets=Object.freeze({
+ 'Y8-039':Object.freeze({label:'Y8-039 · Given exchange rate',kind:'currency',context:'A classroom exchange-rate card gives £1 = €1.18. Convert a sterling amount into euros.',units:['GBP','EUR'],factors:[1.18],ops:['×1.18'],start:25,query:40,precision:2,steps:['GBP','EUR'],unitLabel:['Pounds (£)','Euros (€)'],gcse:false,rateNote:'Illustrative rate only · £1 = €1.18',traps:['÷1.18','×0.82','×1.18']}),
+ 'Y8-043':Object.freeze({label:'Y8-043 · Compound units',kind:'compound',context:'Convert kilometres per hour to metres per second. The numerator and denominator each change.',units:['km/h','m/h','m/s'],factors:[1000,1/3600],ops:['×1000','÷3600'],start:72,query:54,precision:3,steps:['km/h','m/h','m/s'],unitLabel:['Kilometres/hour','Metres/hour','Metres/second'],gcse:false,rateNote:'1 km = 1000 m · 1 h = 3600 s',traps:['÷1000','×3600','×1000','÷3600']}),
+ 'Y9-024':Object.freeze({label:'Y9-024 · Mixed compound units',kind:'compound',context:'Convert litres per minute to millilitres per second. Convert the volume unit, then the time unit.',units:['L/min','mL/min','mL/s'],factors:[1000,1/60],ops:['×1000','÷60'],start:1.8,query:2.4,precision:3,steps:['L/min','mL/min','mL/s'],unitLabel:['Litres/minute','Millilitres/minute','Millilitres/second'],gcse:true,rateNote:'1 L = 1000 mL · 1 min = 60 s',traps:['÷1000','×60','×1000','÷60']})
+});
+const preset={id:'F6-12',kind:'preset',family:'F6',name:'Currency and Unit Bridges',parentEngine:'F18-02',parentName:'Unit-conversion bridges',separateEngineForbidden:true,readyForHost:false,presets,steps:[{id:'start-unit',narration:'Read the starting quantity and its unit.'},{id:'cross-bridge',narration:'Apply the first conversion factor in the correct direction.'},{id:'finish-bridge',narration:'If there is another unit change, apply its factor too.'},{id:'result',narration:'Check the new quantity and unit, and reverse to verify.'}],interactions:['factor-pill-to-bridge','red-remove-zone','keyboard-assignment'],requiredModes:['watch','guided','explore','challenge']};
+preset.prepareForHost=function(host){if(!host||host.id!=='F18-02')throw Error('F6-12 requires an actual F18-02 host');return {hostId:'F18-02',registrationId:preset.id,presets,steps:preset.steps,requiredModes:preset.requiredModes,requiredInteractions:preset.interactions,validationStatus:'pending host integration'};};
+global.NOVA_F612_PRESET=preset;
+})(window);

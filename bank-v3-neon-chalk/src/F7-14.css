@@ -1,0 +1,24 @@
+/* F7-14 styles only; F0 is the sole authority for neon/chalk drawing, helper and palette. */
+#F7-14 .nova-stage{min-height:0!important;padding:10px 14px 5px!important;background:radial-gradient(ellipse at 40% 28%,rgba(35,148,255,.085),transparent 66%),var(--v-bg)}
+#F7-14 .f714-layout{display:grid;grid-template-columns:minmax(0,2.5fr) minmax(200px,.72fr);gap:14px;min-width:0;align-items:center}
+#F7-14 .f714-svg{display:block;width:100%;height:auto;max-width:100%;filter:drop-shadow(0 13px 18px #0008);touch-action:none}
+#F7-14 .f714-side{display:grid;gap:13px;min-width:0}
+#F7-14 .f714-side .nv-ncard{padding:14px}
+#F7-14 .f714-side strong{font:800 1.27rem var(--nova-font-chalk-write);color:#ecfbff}
+#F7-14 .f714-side p{margin:8px 0 0;color:#c2dfed;font:.94rem/1.46 var(--nova-font-ui)}
+#F7-14 .f714-proof{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;padding:8px 15px;margin:4px 0 0;border:1px solid #285771;border-radius:13px;background:linear-gradient(120deg,#0e273a,#071827);color:#d3e8f5}
+#F7-14 .f714-proof.revealed{border-color:#2a9d87;background:linear-gradient(125deg,#0b292d,#0d2034)}
+#F7-14 .f714-proof strong{font:800 clamp(1rem,1.8vw,1.38rem) var(--nova-font-chalk-write)}
+#F7-14 .f714-kicker{font:800 .76rem var(--nova-font-ui);letter-spacing:.07em;color:#7dd5e9}
+#F7-14 .f714-toolbar{display:flex;align-items:end;gap:10px;flex-wrap:wrap;margin:14px 0 10px}
+#F7-14 .f714-toolbar label{display:grid;gap:7px;color:#c0e6f4;font:750 .9rem var(--nova-font-ui)}
+#F7-14 .f714-toolbar select{border:1px solid #317892;border-radius:11px;padding:9px 11px;min-height:44px;color:#f2fbff;background:#123248;font:700 1rem var(--nova-font-ui);max-width:min(100%,350px)}
+#F7-14 .f714-task{flex:1 1 100%;font:800 clamp(1.2rem,2vw,1.65rem) var(--nova-font-chalk-write);color:#e7fbff;margin-bottom:3px}
+#F7-14 .f714-direction{color:#b9d9e8;font:.94rem/1.45 var(--nova-font-ui);margin:12px 0 5px}
+#F7-14 .f714-status{min-height:30px;margin:5px 0 12px;color:#b8ffe2;font:650 .98rem/1.45 var(--nova-font-ui)}
+#F7-14 .f714-status.bad{color:#ffbaa9}
+#F7-14 .f714-win{padding:15px;border:1px solid #40dca0;border-radius:14px;background:#10352f;color:#effff8;font:800 1.2rem var(--nova-font-chalk-write)}
+#F7-14 [data-f714-id]{cursor:grab}
+#F7-14 [data-f714-id]:focus-visible,#F7-14 button:focus-visible,#F7-14 select:focus-visible{outline:3px solid #ffe581;outline-offset:3px}
+@media(max-width:760px){#F7-14 .nova-stage{padding:3px!important}#F7-14 .f714-layout{display:block}#F7-14 .f714-side{display:none}#F7-14 .f714-toolbar button{min-height:44px}#F7-14 .f714-proof{padding:6px 8px}}
+@media print{#F7-14 .f714-svg{filter:none}#F7-14 .f714-side,#F7-14 .nova-panel{display:none!important}#F7-14 .f714-proof{color:#000!important;background:#fff!important;border:1px solid #000!important}#F7-14 .f714-proof *{color:#000!important}}

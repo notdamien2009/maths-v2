@@ -36,3 +36,8 @@
 
 /* Legible contrast for the primary check control on the dark NOVA shell. */
 #F4-08 .f408-controls .nova-btn.primary{color:#f5fcff!important;background:linear-gradient(155deg,#126389,#0c3f66)!important;border-color:#2ad5ec!important}
+
+/* F7-11 keeps the canonical F4 drawing and F0 typography. The value chips are interactive F0 neon boxes. */
+#F4-08 .f408-answer-chip{cursor:grab;touch-action:none}
+#F4-08 .f408-answer-chip:focus-visible{filter:drop-shadow(0 0 8px #fff);outline:none}
+#F4-08 .f408-status{overflow-wrap:anywhere}

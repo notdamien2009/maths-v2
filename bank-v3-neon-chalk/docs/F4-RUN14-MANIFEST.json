@@ -1,0 +1,81 @@
+{
+  "name": "NOVA F4 RUN14 CORE COMPATIBILITY STAGING",
+  "status": "REVIEW ONLY \u2014 actual GitHub F12-core browser smoke pending local execution",
+  "githubSourceCommit": "48a7eb7309cb37e6f23efea5204152704f42f03c",
+  "githubModified": false,
+  "coreChanged": false,
+  "existingF4PagesChanged": false,
+  "legacyCoreBrowserChecks": {
+    "passed": 80,
+    "checked": 80,
+    "context": "three independent browser runs; legacy pinned core"
+  },
+  "missingHelperSyntheticChecks": {
+    "passed": 24,
+    "checked": 24,
+    "context": "synthetic fixture; not exact latest GitHub core"
+  },
+  "actualGitHubCoreBrowserChecks": "not performed, must run staged script locally",
+  "independentEngineCandidates": 10,
+  "presetsKeptFrozen": [
+    "F4-05 (F5-11)",
+    "F4-10 (F4-08)"
+  ],
+  "files": [
+    {
+      "path": "bank-v3-neon-chalk/README-F4-RUN14.md",
+      "bytes": 971,
+      "sha256": "41928074640cdb952a52915b0a6bf1364f07f55fde69c8420b06b620b4eb8ddc"
+    },
+    {
+      "path": "bank-v3-neon-chalk/build/build-f4-run14.py",
+      "bytes": 4923,
+      "sha256": "2342ce33de6b815f542b9b25e06a07d1a67cd5adcc353f9760b36b895b207efa"
+    },
+    {
+      "path": "bank-v3-neon-chalk/compat/nova-f4-f2-compat.css",
+      "bytes": 1120,
+      "sha256": "c8a514a2f42de6197e5aab37c6c9d0c34862b004077a75a56a8859d4c4e87034"
+    },
+    {
+      "path": "bank-v3-neon-chalk/compat/nova-f4-f2-compat.js",
+      "bytes": 13153,
+      "sha256": "8466d3ced508c71dc1825bbf07c4e151b92e1a88707a4a5c1c3e96f2ed0ad240"
+    },
+    {
+      "path": "bank-v3-neon-chalk/docs/F4-RUN14-CORE-COMPATIBILITY-AND-REBUILD.md",
+      "bytes": 7815,
+      "sha256": "8aaf0b9281fe5d00b8479066ba2c7dd8d1f32da4644b3cb0eb6c1b1ff490774a"
+    },
+    {
+      "path": "bank-v3-neon-chalk/tests/F4-RUN14-LEGACY-F408.json",
+      "bytes": 2980,
+      "sha256": "dca0feafbe12ba09ca41ff652d4e255f3eb1d72f02af453afbac0fb2dfee7712"
+    },
+    {
+      "path": "bank-v3-neon-chalk/tests/F4-RUN14-LEGACY-FIRST52.log",
+      "bytes": 340,
+      "sha256": "685bcdae8644ac61cb892719a284d8f79ade05542e289022f076938ddbfaf40e"
+    },
+    {
+      "path": "bank-v3-neon-chalk/tests/F4-RUN14-LEGACY-LAST24.json",
+      "bytes": 8570,
+      "sha256": "3e6438f55afa79b98599209f6740b03afc2a5a2c54f7e2fd78b086b55f8691e9"
+    },
+    {
+      "path": "bank-v3-neon-chalk/tests/F4-RUN14-STATIC.json",
+      "bytes": 2410,
+      "sha256": "33d9ccf55ccbebd3f301d89dd1a4b2de5e34f1dab798698099f858b04f293698"
+    },
+    {
+      "path": "bank-v3-neon-chalk/tests/F4-RUN14-SYNTHETIC24.json",
+      "bytes": 6905,
+      "sha256": "4a0e275c6673684956e32ac00a4728edad8ca83a2a506b2c1487acdea3c1468f"
+    },
+    {
+      "path": "bank-v3-neon-chalk/tests/f4-run14-smoke.py",
+      "bytes": 4072,
+      "sha256": "7d9a79e19a0b65078a3612f4039e2e5b1f9d5323acf4661fdf82b44029b23bfd"
+    }
+  ]
+}

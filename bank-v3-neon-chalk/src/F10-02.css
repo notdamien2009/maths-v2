@@ -1,0 +1,75 @@
+/* F10-02 · shape-on-grid · F0 Neon Tube + NOVA Chalk only */
+#F10-02{--topic-accent:var(--math-cyan);--topic-glow:rgba(43,220,243,.24)}
+#F10-02 .purpose,#F10-02 details.nova-spec{display:none}
+#F10-02 .nova-stage{padding:9px!important;min-height:0!important;overflow:hidden}
+#F10-02 .f102-theatre{position:relative;isolation:isolate;overflow:hidden;min-height:420px;padding:8px 11px 14px;border:2px solid #317ab9;border-radius:18px;background:radial-gradient(ellipse at 22% 22%,rgba(35,111,222,.22),transparent 55%),linear-gradient(135deg,#0c2444 0%,#061225 48%,#171337 100%);box-shadow:inset 0 0 0 3px rgba(8,29,66,.9),inset 0 0 38px rgba(36,100,218,.2),0 8px 24px rgba(0,4,21,.27)}
+#F10-02 .f102-theatre::before{content:'';position:absolute;inset:46px 0 0;pointer-events:none;opacity:.11;background-image:var(--topic-motif),radial-gradient(circle,rgba(67,151,247,.09) 1px,transparent 1px);background-size:var(--topic-motif-size),38px 38px;background-position:center;z-index:-1}
+#F10-02 .f102-theatre::after{content:'';pointer-events:none;position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(104,203,255,.18),inset 0 -90px 65px -105px rgba(93,64,228,.28)}
+#F10-02 .f102-topline{min-height:37px;display:flex;align-items:center;justify-content:space-between;gap:9px;position:relative;z-index:1;border:1px solid #387cba;border-radius:10px;padding:5px 12px;background:linear-gradient(180deg,#0c3050,#051629 80%);box-shadow:inset 0 2px 5px rgba(134,224,255,.17),0 0 8px rgba(21,122,225,.28);color:#d2f4ff;font:900 .67rem var(--nova-font-ui);letter-spacing:.06em}
+#F10-02 .f102-topline .f102-tag{border-radius:99px;border:1px solid #1380a0;padding:4px 8px;color:#69eafd;font-size:.62rem}
+#F10-02 .f102-layout{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(225px,.78fr);align-items:center;gap:11px;min-width:0}
+#F10-02 .f102-plane{min-width:0;position:relative;display:flex;align-items:center;flex-direction:column;justify-content:center}
+#F10-02 .f102-svg{display:block;width:100%;max-width:680px!important;height:auto!important;min-width:0;overflow:visible;touch-action:none;filter:drop-shadow(0 10px 13px rgba(0,5,29,.25))}
+#F10-02 .f102-svg .f102-grid{opacity:.72}
+#F10-02 .f102-svg .f102-grid text{display:none}
+#F10-02 .f102-svg .f102-grid *{pointer-events:none}
+#F10-02 .f102-svg .f102-halo{pointer-events:none}
+#F10-02 .f102-point:focus-visible .f102-focus{opacity:1}
+#F10-02 .f102-point{outline:none;touch-action:none}
+#F10-02 .f102-point [data-drag]{cursor:grab}
+#F10-02 .f102-focus{opacity:0;fill:none;stroke:#ffcc58;stroke-width:3;stroke-dasharray:6 4;pointer-events:none}
+#F10-02 .f102-stage-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;padding:3px 3px 11px}
+#F10-02 .f102-stage-pills .nv-ntile{font-size:.82rem}
+#F10-02 .f102-info{display:grid;gap:10px;min-width:0;align-self:stretch;align-content:center}
+#F10-02 .f102-info .nv-ncard{border:1px solid #387bb8;border-radius:13px;padding:12px 12px 14px;background:linear-gradient(135deg,rgba(21,73,125,.5),rgba(6,21,42,.93));box-shadow:inset 0 1px 0 rgba(203,236,255,.09),0 0 13px rgba(18,104,215,.09)}
+#F10-02 .f102-eyebrow{font:900 .63rem var(--nova-font-ui);letter-spacing:.07em;text-transform:uppercase;color:#8ddcf5}
+#F10-02 .f102-proof{font:700 clamp(1.05rem,1.55vw,1.55rem)/1.3 var(--nova-font-chalk-write);color:#e7f4ff;margin:5px 0;filter:drop-shadow(0 0 2px rgba(216,246,255,.2))}
+#F10-02 .f102-proof strong{color:#66efac}
+#F10-02 .f102-meta{font:700 .78rem/1.45 var(--nova-font-ui);color:#b7d4e8}
+#F10-02 .f102-mapping{display:grid;grid-template-columns:1fr;gap:5px;margin-top:6px}
+#F10-02 .f102-mapping div{font:800 .94rem var(--nova-font-chalk-write);color:#af9dff;border-top:1px solid #28496f;padding:3px 0}
+#F10-02 .f102-mapping span{color:#eafaff}
+#F10-02 .f102-takeaway{position:relative;z-index:1;border:1px solid #30709b;border-left:3px solid #2bdcf3;border-radius:9px;background:rgba(3,13,31,.7);font:700 .77rem/1.35 var(--nova-font-ui);color:#d9efff;padding:9px 12px;margin:0 6px 6px}
+#F10-02 .f102-takeaway em{color:#63e7b4;font-style:normal}
+#F10-02 .f102-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#F10-02 .f102-controls label{display:grid;gap:4px;font:800 .72rem var(--nova-font-ui);color:#b9d5e6;min-width:0}
+#F10-02 .f102-controls .nova-input{width:100%;min-width:0}
+#F10-02 .f102-span{grid-column:1/-1}
+#F10-02 .f102-stepper{display:flex;align-items:center;gap:5px;justify-content:space-between;background:var(--v-panel);border:1px solid var(--v-line);border-radius:9px;padding:3px}
+#F10-02 .f102-stepper strong{font:800 1.15rem var(--nova-font-chalk-write);color:#e6faff}
+#F10-02 .f102-stepper button{min-width:38px;min-height:34px}
+#F10-02 .f102-actions{display:flex;flex-wrap:wrap;gap:6px}
+#F10-02 .f102-controls .f102-hint{color:var(--v-muted);font-size:.75rem}
+#F10-02 .f102-controls .f102-vertex-read{font:.78rem var(--nova-font-ui);color:#dcefff}
+#F10-02 .f102-task{font:750 1rem/1.35 var(--nova-font-chalk-write);color:#f0f6ff}
+#F10-02 .nv-dock{height:136px}
+#F10-02 .nv-dockfig{height:128px}
+#F10-02 .nv-dockbub{max-width:min(65%,490px)}
+@media(max-width:760px){
+#F10-02 .nova-stage{padding:5px!important}
+#F10-02 .f102-theatre{padding:5px 5px 8px;border-radius:14px}
+#F10-02 .f102-layout{grid-template-columns:1fr;gap:1px}
+#F10-02 .f102-plane{padding:0}
+#F10-02 .f102-svg{max-width:100%!important}
+#F10-02 .f102-info{grid-template-columns:1fr;gap:6px;padding:0 5px 8px}
+#F10-02 .f102-info .nv-ncard{padding:7px 9px}
+#F10-02 .f102-info .nv-ncard:nth-child(3){display:none}
+#F10-02 .f102-mapping{grid-template-columns:1fr;gap:2px}
+#F10-02 .f102-mapping div{font-size:1rem;padding:2px 0}
+#F10-02 .f102-info .nv-ncard:first-child{display:flex;align-items:center;justify-content:space-between;gap:14px}
+#F10-02 .f102-info .nv-ncard:first-child .f102-proof{margin:0}
+#F10-02 .f102-info .nv-ncard:first-child .f102-meta{max-width:50%}
+#F10-02 .f102-proof{font-size:1.04rem}
+#F10-02 .f102-stage-pills{padding:0 3px 6px}
+#F10-02 .f102-topline{font-size:.59rem;padding:4px 8px}
+#F10-02 .f102-takeaway{font-size:.72rem}
+#F10-02 .nv-dock{height:112px}
+#F10-02 .nv-dockfig{height:110px}
+#F10-02 .nv-dockbub{font-size:.77rem;padding:8px 10px;max-width:68%}
+}
+@media(max-width:390px){#F10-02 .f102-info .nv-ncard{padding:6px}#F10-02 .f102-eyebrow{font-size:.58rem}#F10-02 .f102-theatre{border-width:1px}#F10-02 .f102-controls{grid-template-columns:1fr 1fr;gap:6px}#F10-02 .f102-stage-pills .nv-ntile{font-size:.74rem}}
+@media print{#F10-02 .f102-theatre{background:white;box-shadow:none;border:1px solid black}#F10-02 .f102-info{display:none}#F10-02 .f102-svg{filter:none}#F10-02 .f102-controls{display:none}}
+
+#F10-02 .f102-peer{display:flex;align-items:center;gap:10px;border-top:1px solid rgba(38,143,208,.3);padding:5px 9px 2px;color:#dbedff;font:800 .75rem var(--nova-font-ui)}
+#F10-02 .f102-peer img{height:64px;width:64px;object-fit:contain;filter:drop-shadow(0 5px 8px #01091b)}
+@media(max-width:760px){#F10-02 .f102-peer img{height:54px;width:54px}#F10-02 .f102-peer{font-size:.72rem}}

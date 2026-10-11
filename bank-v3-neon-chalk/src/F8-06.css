@@ -1,0 +1,33 @@
+/* F8-06 visually inherits F0 Neon Tube / Chalk, without private primitives. */
+#F8-06 .f806-svg{display:block;width:100%;max-width:100%;height:auto;overflow:visible;filter:drop-shadow(0 10px 20px rgba(0,8,25,.28))}
+#F8-06 .f806-svg text{paint-order:stroke;stroke:rgba(2,16,35,.18);stroke-width:.6;pointer-events:none}
+#F8-06 .f806-pickable{cursor:grab;touch-action:none;outline:none}
+#F8-06 .f806-pickable:focus-visible{filter:drop-shadow(0 0 9px #ffcf62)!important}
+#F8-06 .f806-explain{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;margin:3px 12px 6px;border:1px solid #2e6586;border-left:3px solid #54dbf8;border-radius:11px;background:linear-gradient(90deg,#0b263a,#091727);color:#e3f8ff;font-size:14px;line-height:1.55}
+#F8-06 .f806-explain strong{flex:0 0 142px;color:#8febff}
+#F8-06 .f806-controls,#F8-06 .f806-buttons{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:13px 0 9px}
+#F8-06 .f806-select,#F8-06 .f806-answer{min-height:43px;padding:10px 12px;background:#0a2139;color:#e8f8ff;border:1px solid #368fc1;border-radius:9px;max-width:100%;font-size:15px}
+#F8-06 .f806-select{flex:1;min-width:210px}
+#F8-06 .f806-answer{margin:9px 10px 5px 0;max-width:235px;font:24px 'NOVA Chalk',cursive}
+#F8-06 .f806-buttons .nova-btn{font:20px 'NOVA Chalk',cursive!important;min-width:74px}
+#F8-06 .f806-feedback{background:linear-gradient(90deg,#0c243a,#0b1929);color:#e0f5ff;border:1px solid #367193;border-left:3px solid #56dff7;border-radius:11px;margin:12px 0;padding:11px 14px;min-height:49px;font-size:14px;line-height:1.5}
+#F8-06 .f806-feedback[data-status='wrong']{border-left-color:#ff993c;color:#ffdec4}
+#F8-06 .f806-feedback[data-status='correct']{border-left-color:#59edb0;color:#dbffe9}
+#F8-06 .f806-head{font-size:14px;color:#81eafb;font-weight:800;margin:14px 0}
+#F8-06 .f806-subhead{margin-top:16px;color:#96e9fa;font-weight:750;font-size:13px;letter-spacing:.03em}
+#F8-06 .f806-formula-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(154px,1fr));gap:9px;margin:8px 0 10px}
+#F8-06 .f806-choice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:11px!important;min-height:89px!important;border:1px solid #2c87bd!important;border-radius:13px!important;background:linear-gradient(160deg,#133555,#091b30)!important;color:#f3fcff!important}
+#F8-06 .f806-choice.selected{border-color:#53eaad!important;box-shadow:inset 0 0 16px #54efa52b,0 0 12px #3aecaa55}
+#F8-06 .f806-choice small{font:800 10px system-ui,sans-serif;color:#8bdae9;letter-spacing:.06em}
+#F8-06 .f806-formula{font:23px 'NOVA Chalk',cursive;display:flex;align-items:center;gap:2px;white-space:nowrap}
+#F8-06 .f806-stack{display:inline-flex;flex-direction:column;align-items:center;line-height:1.12;min-width:42px;font-size:.80em}
+#F8-06 .f806-stack>span:first-child{width:100%;text-align:center;border-bottom:2px solid currentColor;padding:0 5px 2px}
+#F8-06 .f806-stack>span:last-child{padding:1px 4px}
+#F8-06 .f806-number{color:#ffc66c;font:20px 'NOVA Chalk',cursive;letter-spacing:.01em;margin-top:7px}
+#F8-06 .f806-peer{display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:3px 16px;color:#8feaff;font-size:13px;font-weight:700}
+#F8-06 .f806-peer img{object-fit:contain}
+.f806-intro{color:#b8d9e6;line-height:1.5;max-width:950px;font-size:15px}
+@media(max-width:760px){#F8-06 .f806-explain{flex-direction:column;gap:3px;font-size:13px}#F8-06 .f806-explain strong{flex:unset}#F8-06 .f806-select{width:100%;min-width:0}#F8-06 .f806-choice .f806-formula{font-size:20px}#F8-06 .f806-formula-options{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){#F8-06 .f806-formula-options{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#F8-06 *{animation:none!important;transition:none!important}}
+@media print{#F8-06 .f806-svg{filter:none}#F8-06 .f806-explain,#F8-06 .f806-feedback{background:#fff!important;color:#111!important;border-color:#555!important}}

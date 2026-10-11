@@ -1643,7 +1643,7 @@ F.SHAPES={
  rectangle:{name:'Rectangle',fam:'quad',pts:[[-48,-30],[48,-30],[48,30],[-48,30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[0,1,2,3],p:{sides:4,allEq:0,par:2,ra:4,sym:2,rot:2}},
  parallelogram:{name:'Parallelogram',fam:'quad',pts:[[-50,30],[26,30],[50,-30],[-26,-30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:0,par:2,ra:0,sym:0,rot:2}},
  rhombus:{name:'Rhombus',fam:'quad',pts:[[0,-48],[34,0],[0,48],[-34,0]],eq:[[0,1,2,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:1,par:2,ra:0,sym:2,rot:2}},
- trapezium:{name:'Trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
+ trapezium:{name:'Isosceles trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
  kite:{name:'Kite',fam:'quad',pts:[[0,-50],[32,-8],[0,48],[-32,-8]],eq:[[0,3],[1,2]],par:[],ra:[],p:{sides:4,allEq:0,par:0,ra:0,sym:1,rot:1}},
  pentagon:{name:'Regular pentagon',fam:'poly',pts:reg(5,48),eq:[[0,1,2,3,4]],par:[],ra:[],p:{sides:5,allEq:1,par:0,ra:0,sym:5,rot:5}},
  hexagon:{name:'Regular hexagon',fam:'poly',pts:reg(6,48),eq:[[0,1,2,3,4,5]],par:[[0,3],[1,4],[2,5]],ra:[],p:{sides:6,allEq:1,par:3,ra:0,sym:6,rot:6}}};
@@ -1685,6 +1685,14 @@ F.hmark=function(sv,apex,foot,baseA,baseB,txt,o){o=o||{};var role=o.role||'focus
 NOVA.version=(NOVA.version||'')+'+f12run2';
 })();
 
+/* ==== v3.7 F12 phone text boost (additive, F12 diagrams only) ==== */
+(function(){var S=NOVA.svg,pill=S.pill,ct=NOVA.chalkText;
+function boost(p,o){var sv=p&&(p.ownerSVGElement||p);if(!sv||!sv.classList||!sv.classList.contains('f12-sv')||window.innerWidth>640)return o;o=Object.assign({},o||{});o.size=Math.min(19,Math.max(13,Math.round((o.size||12)*1.3)));return o;}
+S.pill=function(p,x,y,t,o){return pill.call(S,p,x,y,t,boost(p,o));};
+NOVA.chalkText=function(p,x,y,t,o){return ct.call(NOVA,p,x,y,t,boost(p,o));};
+NOVA.version=(NOVA.version||'')+'+f12phone';
+})();
+
 </script>
 <script>
 /* ===== F12-08 CONFIG: parameters + named presets ===== */
@@ -1708,7 +1716,7 @@ function draw(stage,st,o){o=o||{};var a=st.a,b=st.b,hh=st.h,x0=st.x0,A=[0,0],B=[
   sv=S.root(VW,VH,'Trapezium with parallel sides '+a+' '+UN+' and '+b+' '+UN+' and height '+hh+' '+UN+'.');sv.classList.add('f12-sv');
   if(st.mode==='double'){if(st.th>=180)NOVA.neonShape(sv,m([A,Dp,Ap,D]),{role:'result',fill:false,width:2,dash:'8 6'});if(st.th>0||o.ghost){var g2=NOVA.neonShape(sv,m(cp),{role:'focus',hatch:'diag',width:3});g2.setAttribute('data-maths','copy');}}
   var g=NOVA.neonShape(sv,m(trap),{role:'op',hatch:(st.mode==='double'&&st.th>0)?null:'cross',width:3});g.setAttribute('data-maths','shape');
-  if(st.mode==='mid'||o.mid){var ml=m([[ (A[0]+D[0])/2,-hh/2],[(B[0]+Cc[0])/2,-hh/2]]);NOVA.neonLine(sv,ml[0][0],ml[0][1],ml[1][0],ml[1][1],{role:'result',width:3});S.pill(sv,ml[0][0]+(ml[1][0]-ml[0][0])*.72,ml[0][1],fmt((a+b)/2)+' '+UN,{role:'result',size:12});}
+  if(st.mode==='mid'||o.mid){var ml=m([[ (A[0]+D[0])/2,-hh/2],[(B[0]+Cc[0])/2,-hh/2]]);NOVA.neonLine(sv,ml[0][0],ml[0][1],ml[1][0],ml[1][1],{role:'result',width:3});S.pill(sv,ml[0][0]+(ml[1][0]-ml[0][0])*.8,ml[0][1],fmt((a+b)/2)+' '+UN,{role:'result',size:12});}
   var Tm=m([D,Cc]),Bm=m([A,B]);NOVA.dimLine(sv,Tm[0][0],Tm[0][1],Tm[1][0],Tm[1][1],fmt(a)+' '+UN,{role:'op',off:-24});NOVA.dimLine(sv,Bm[0][0],Bm[0][1],Bm[1][0],Bm[1][1],fmt(b)+' '+UN,{role:'given',off:26});
   NOVA.parTick(sv,Tm[0][0],Tm[0][1],Tm[1][0],Tm[1][1],1,{role:'support'});NOVA.parTick(sv,Bm[0][0],Bm[0][1],Bm[1][0],Bm[1][1],1,{role:'support'});
   var ft=m([[x0,0]])[0],ap=m([D])[0];F.hmark(sv,ap,ft,Bm[0],Bm[1],fmt(hh)+' '+UN,{role:'focus',dx:x0<b/2?28:-28});

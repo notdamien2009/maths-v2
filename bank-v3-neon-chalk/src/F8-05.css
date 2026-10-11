@@ -1,0 +1,24 @@
+/* NOVA F8-05 Premium Maths — scoped to registered F0 bank engine. */
+#F8-05 .f805-stage{overflow:visible;min-height:unset}
+#F8-05 .f805-svg{display:block;width:100%;height:auto;max-width:100%;overflow:visible;filter:drop-shadow(0 12px 22px #01091a70)}
+#F8-05 .f805-svg text{paint-order:stroke;stroke:#0b203a30;stroke-width:.5;pointer-events:none}
+#F8-05 .f805-pickable{cursor:grab;touch-action:none;outline:none}
+#F8-05 .f805-pickable:focus-visible{filter:drop-shadow(0 0 12px #ffcb66)!important}
+#F8-05 .f805-proof{margin:2px 12px 1px;padding:11px 15px;display:flex;align-items:flex-start;gap:14px;color:#e0f5ff;border:1px solid #2d7195;border-left:3px solid #55dfff;background:linear-gradient(115deg,#0a243a,#091829);border-radius:12px;font-size:14px;line-height:1.5}
+#F8-05 .f805-proof strong{color:#88edff;min-width:135px;letter-spacing:.02em}
+#F8-05 .f805-tools,#F8-05 .f805-ch-row{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0 10px;align-items:center}
+#F8-05 .f805-select,#F8-05 .f805-answer{background:#0c2138;color:#eefbff;border:1px solid #2b93c0;border-radius:10px;padding:11px 12px;max-width:100%;font-size:15px;min-height:43px}
+#F8-05 .f805-answer{font-family:'NOVA Chalk',cursive;font-size:23px;max-width:175px}
+#F8-05 .f805-feedback{min-height:48px;background:#10273c;border:1px solid #286487;border-left:3px solid #50dbf9;padding:11px 14px;margin:9px 0;color:#e5faff;border-radius:10px;line-height:1.45;font-size:14px}
+#F8-05 .f805-feedback[data-status='wrong']{border-left-color:#ff913a;color:#ffdfc0}
+#F8-05 .f805-feedback[data-status='correct']{border-left-color:#53ebb2;color:#d2ffe5}
+#F8-05 .f805-ch-head{font-size:14px;font-weight:850;color:#80eafb;padding-top:9px}
+#F8-05 .f805-peer{display:flex;align-items:center;justify-content:flex-end;gap:9px;padding:0 15px;color:#a2e6ff;font-size:13px;font-weight:800}
+#F8-05 .f805-peer img{object-fit:contain;filter:drop-shadow(0 4px 9px #5feaff44)}
+#F8-05 .f805-intro{font-size:15px;color:#b5daed;line-height:1.5;max-width:920px;margin:14px 0 20px}
+@media(max-width:760px){#F8-05 .f805-proof{flex-direction:column;gap:4px;font-size:13px;padding:10px 12px}#F8-05 .f805-ch-row .nova-btn{font-size:13px}#F8-05 .f805-select{width:100%}}
+@media(prefers-reduced-motion:reduce){#F8-05 *{animation:none!important;transition:none!important}}
+@media print{#F8-05 .f805-svg{filter:none!important}#F8-05 .f805-proof,#F8-05 .f805-feedback{background:white!important;color:#111!important;border-color:#555!important}}
+#F8-05 .f805-choices{display:flex;flex-wrap:wrap;gap:9px;margin:9px 0 12px;align-items:center}
+#F8-05 .f805-choices:before{content:'TAP INSTEAD OF DRAG';font-weight:800;font-size:11px;letter-spacing:.075em;color:#88cddb;margin-right:6px}
+#F8-05 .f805-choices .f805-op-button{min-width:70px;font-family:'NOVA Chalk',cursive!important;font-size:19px}

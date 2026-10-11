@@ -3,14 +3,20 @@ const F408_CONFIG={id:'F4-08',startMode:'watch',preset:'Y7-035',parameters:{minX
  presets:{
   'Y7-034':{label:'Y7 · Expressions from contexts',mode:'expression',n:2,b:4,total:null,context:'Two identical mystery packs and four loose counters. Build the expression.',names:['Mystery packs','Loose counters']},
   'Y7-035':{label:'Y7 · Form and solve equations',mode:'equation',n:3,b:5,total:26,context:'Three identical mystery packs and five loose counters have a total of twenty-six.',names:['Unknown packs','Known counters']},
-  'F4-10':{label:'F4-10 · Bar to equation',mode:'translator',n:2,b:5,total:19,context:'Two identical mystery packs and five loose counters together make nineteen. Match the model to the equation.',names:['Mystery packs','Known counters']}
+  'F4-10':{label:'F4-10 · Bar to equation',mode:'translator',n:2,b:5,total:19,context:'Two identical mystery packs and five loose counters together make nineteen. Match the model to the equation.',names:['Mystery packs','Known counters']},
+  'F7-11':{label:'F7-11 · Bar-model equation',mode:'bar-equation',n:3,b:5,total:26,context:'Three identical mystery packs plus five known counters have a total value of twenty-six. Model the relationship, subtract the known part, and find one mystery pack.',names:['Equal mystery packs','Known counters'],lesson:'Y7-034'}
  },
  challenge:[
   {label:'Form the expression',mode:'expression',n:2,b:4,total:null,context:'Two mystery packs plus four counters. Build the bar and write its algebraic expression.'},
   {label:'Solve using the bar',mode:'equation',n:3,b:5,total:26,context:'Three mystery packs plus five counters make twenty-six. Build, balance and solve.'},
   {label:'Translate and solve',mode:'translator',n:2,b:5,total:19,context:'Two mystery packs plus five counters make nineteen. Build, complete the equation and solve.'}
+ ],f711Challenge:[
+  {label:'A story becomes an equation',mode:'bar-equation',n:2,b:3,total:13,context:'Two identical book bundles plus three separate books contain thirteen books. Find the number in each bundle.'},
+  {label:'Subtract the known amount first',mode:'bar-equation',n:3,b:5,total:26,context:'Three identical mystery packs and five loose tokens have value twenty-six. Find one pack.'},
+  {label:'Avoid dividing the whole too early',mode:'bar-equation',n:4,b:2,total:22,context:'Four identical boxes plus two loose counters contain twenty-two altogether. Find each box.'},
+  {label:'Check by substitution',mode:'bar-equation',n:2,b:7,total:19,context:'Two identical bags plus seven single beads contain nineteen. Find each bag and verify the total.'}
  ],events:{value:['preset','add','remove','balance','divide','expression','remaining','x','term','check','reset'],types:['step','correct','hintUsed','mode']}
-};window.F408_CONFIG=F408_CONFIG;
+};if(document.body?.dataset.f711==='1')F408_CONFIG.preset='F7-11';window.F408_CONFIG=F408_CONFIG;
 (function(){'use strict';
 const N=window.NOVA,H=N.h,E=N.svg.el,C=F408_CONFIG,ID=C.id;
 function solve(o){if(!Number.isInteger(o.n)||o.n<1||o.n>5||!Number.isInteger(o.b)||o.b<0||o.b>12)throw Error('Out-of-range algebra preset');if(o.total==null)return {n:o.n,b:o.b,total:null,remainder:null,x:null};if(!Number.isInteger(o.total)||o.total<=o.b||(o.total-o.b)%o.n!==0)throw Error('Invalid exact equation preset');return {n:o.n,b:o.b,total:o.total,remainder:o.total-o.b,x:(o.total-o.b)/o.n};}
@@ -37,7 +43,7 @@ const GEO={W:1000,H:898,left:131,width:740,wholeY:170,partY:342,barH:112,trayY:6
 function diagram(o,v){const m=solve(o),g=GEO,interactive=!!v.interactive,active=v.step??0,translator=o.mode==='translator',xW=Math.min(212,(g.width-148)/Math.max(o.n,3)),knownW=g.width-o.n*xW,x=g.left,partY=g.partY;
  const svg=N.svg.root(g.W,g.H,'Algebra bar with an upper whole and lower equal x-part boxes plus a known amount. Build identical x-units, subtract knowns from both sides, and translate to an equation.');svg.classList.add('f408-svg');svg.dataset.count=String(v.count??0);svg.dataset.known=String(!!v.known);svg.dataset.balanced=String(!!v.balanced);svg.dataset.divided=String(!!v.divided);svg.dataset.mode=v.task?'challenge':interactive?'explore':'watch';
  const visibleCount=v.won?m.n:interactive?v.count:active>=1?m.n:0,visibleKnown=v.won?true:interactive?v.known:active>=2,showResult=m.x!==null&&((!interactive&&active>=6)||!!v.won);
- chalk(svg,500,65,translator?'FROM BAR TO EQUATION':o.mode==='expression'?'BUILD AN EXPRESSION':'THE WHOLE AND ITS PARTS',49,'given');
+ chalk(svg,500,65,translator?'FROM BAR TO EQUATION':o.mode==='expression'?'BUILD AN EXPRESSION':o.mode==='bar-equation'?'FROM STORY TO EQUATION':'THE WHOLE AND ITS PARTS',49,'given');
  chalk(svg,500,125,v.task?'BUILD THE MODEL · PROVE THE ANSWER':o.mode==='expression'?`${o.n} equal x-parts plus ${o.b} known`:m.total==null?`${o.n}x + ${o.b}`:`${o.n}x + ${o.b} = ${o.total}`,44,'focus');
  // The top is a single full bar. It does not collapse the equation to an unexplained procedure.
  N.neonBox(svg,x,g.wholeY,g.width,103,{role:'given',r:15});chalk(svg,500,g.wholeY+68,m.total==null?'WHOLE = THE EXPRESSION':`WHOLE = ${m.total}`,51,'given');
@@ -93,16 +99,38 @@ function diagram(o,v){const m=solve(o),g=GEO,interactive=!!v.interactive,active=
  }else{
   chalk(svg,500,766,o.mode==='expression'?`${o.n}x + ${o.b}`:showResult?`${o.n} × ${m.x} + ${o.b} = ${o.total}`:active>=5?`${m.remainder} SHARED INTO ${o.n} GROUPS`:'EQUAL x-PARTS · ONE KNOWN PART',45,showResult?'result':'given');
  }
- if(!translator)chalk(svg,500,858,o.mode==='expression'?'COUNT THE EQUAL x PARTS':showResult?'ONE x-PART REVEALED':'A BALANCED EQUATION TELLS THE SAME STORY',40,showResult?'result':'given');
+ if(o.mode==='bar-equation'&&interactive&&!v.won&&divided&&m.x!==null){
+   // Three draggable numerical tokens and a real x-dock; signed/shape cues also remain in the F0 drawing.
+   const values=Array.from(new Set([m.x+o.b,m.x,m.total/o.n].filter(Number.isInteger)));
+   for(let candidate=m.x+1;values.length<3;candidate++)if(!values.includes(candidate))values.push(candidate);
+   const dock={x:739,y:784,w:134,h:70,id:'answer',kind:'drop'};N.neonBox(svg,dock.x,dock.y,dock.w,dock.h,{role:v.chosenX!==''?'result':'focus',r:12});
+   chalk(svg,dock.x+67,dock.y+46,v.chosenX!==''?`x = ${v.chosenX}`:'x = ?',40,v.chosenX!==''?'result':'focus');
+   values.slice(0,3).forEach((number,i)=>{const xx=116+i*195, yy=788,ch=E('g',{class:'f408-answer-chip',tabindex:0,role:'button','aria-label':`Choose x equals ${number}. Drag into the answer dock, or press Enter.`,'data-answer':String(number)},svg);
+     N.neonBox(ch,xx,yy,165,66,{role:'unknown',r:12});chalk(ch,xx+82,yy+44,String(number),45,'unknown');
+     draggable(svg,ch,{box:{x:xx,y:yy,w:165,h:66},zones:()=>[dock],onDrop:zone=>{if(zone!=='answer')return false;Promise.resolve().then(()=>v.onChoose?.(number));return true;}});
+     ch.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();v.onChoose?.(number);}});
+   });
+ }
+ if(!translator&&!(o.mode==='bar-equation'&&interactive&&divided&&!v.won))chalk(svg,500,858,o.mode==='expression'?'COUNT THE EQUAL x PARTS':showResult?'ONE x-PART REVEALED':'A BALANCED EQUATION TELLS THE SAME STORY',40,showResult?'result':'given');
  return svg;
 }
 function present(stage,o,v){stage.innerHTML='';const m=solve(o);
- N.cap(stage,'Algebra Bar',v.task?'CHALLENGE':v.interactive?'CONSTRUCT & PROVE':v.title||'Unknown parts · balanced working');
+ N.cap(stage,o.mode==='bar-equation'?'Bar-model equation':'Algebra Bar',v.task?'CHALLENGE':v.interactive?'CONSTRUCT & PROVE':v.title||'Unknown parts · balanced working');
  const lay=H('div',{class:'f408-layout'}),art=H('div',{class:'f408-art'}),side=H('div',{class:'f408-side'});art.append(diagram(o,v));
  side.append(card('UNKNOWN GROUPS',(!v.task&&!v.interactive)||v.won?`${o.n} equal x`:(v.interactive?`${v.count} built`:'?'),'Every x-box is the same quantity','unknown'));
  side.append(card('KNOWN PART',(!v.task&&!v.interactive)||v.known?`+ ${o.b}`:'Not placed','Adds to the unknown parts','given'));
  side.append(card('TOTAL / PROOF',m.total==null?'Expression only':v.won?`${o.n} × ${m.x} + ${o.b} = ${m.total}`:`${m.total} altogether`,m.total==null?'No equals sign without a total':'Balance both sides before solving',v.won?'result':'op'));
  lay.append(art,side);stage.append(lay);helper(stage,v.pose||'ready');}
+const F711_STEPS=[
+ {name:'Read the story',narration:'Three matching packs, plus five loose counters, have a total of twenty-six. The story gives one whole and several parts.',prompt:'What is known, and which packs are unknown?'},
+ {name:'Show the equal unknowns',narration:'Place three equal x-boxes under the whole. Each x must have the same value.',prompt:'Why are all three x-boxes identical?'},
+ {name:'Add the known counters',narration:'Put the five loose counters at the end of the bar. The pieces must exactly represent the story.',prompt:'Which part is the known addition?'},
+ {name:'Form the equation',narration:'Read the bar as three x plus five equals twenty-six. The parts and the whole say the same thing.',prompt:'How do we write the bar as an equation?'},
+ {name:'Subtract the known part',narration:'Subtract five from both sides, not just the left. Three x is twenty-one.',prompt:'Why must both sides lose five?'},
+ {name:'Share among the equal x parts',narration:'Divide twenty-one equally among the three boxes. Each box represents seven.',prompt:'What do you divide after subtracting five?'},
+ {name:'Reveal one x',narration:'One x-box is seven. The area and equation now agree.',prompt:'How much does one mystery pack contain?'},
+ {name:'Check the story',narration:'Three groups of seven make twenty-one, and five more make twenty-six. Our answer fits the original story.',prompt:'How can substitution prove our answer?'}
+];
 const STEPS=[
  {name:'Notice the whole',narration:'The entire top bar represents twenty six. Underneath, we need to explain how its pieces make that whole.',prompt:'What does the top bar represent?'},
  {name:'Make equal unknown parts',narration:'The first three boxes all represent x. They must be the same size because they stand for equal unknown groups.',prompt:'Why are the three x-boxes equal?'},
@@ -119,12 +147,13 @@ function workshop(panel,stage,task,api){let o=task?{...task}:{...C.presets[C.pre
  function remove(kind){if(won)return;if(kind==='x'){if(!count)return;count--;}else known=false;balanced=false;divided=false;slots=['','',''];emit('remove',{kind,count,known});change('Block returned to the tray.','explore');}
  function balance(){if(o.total==null){change('An expression has no equals sign to balance.','wrong');return;}if(count!==o.n||!known){change('Build the original bar before subtracting known amounts.','wrong');return;}balanced=true;divided=false;emit('balance',{subtract:o.b,from:'both sides'});change(`Subtract ${o.b} from BOTH sides. Now enter the remaining total.`,'balance');}
  function divide(){if(!balanced){change('Subtract knowns on both sides before dividing.','wrong');return;}if(String(remaining).trim()===''||Number(remaining)!==o.total-o.b){change('First enter the correct remainder: the whole minus the known part.','wrong');return;}divided=true;emit('divide',{groups:o.n,remainder:Number(remaining)});change(`Share the remainder equally across ${o.n} x-parts. Enter one x.`,'divide');}
+ function chooseX(value){if(!divided){change('Subtract the known amount, then divide before choosing one x.','wrong');return;}x=String(value);emit('x',value);change('Value placed in the x dock. Check by substituting into the original equation.','placed');}
  function term(i,j){if(!known||count!==o.n){change('Build the original bar before translating its terms.','wrong');return;}slots[j]=terms(o)[i];emit('term',{source:i,slot:j,term:terms(o)[i]});change('An equation term snapped into slot '+(j+1)+'.','placed');}
  function hint(){const t=o.mode==='expression'?`Count the identical x-boxes first, then add the loose ${o.b}.`:`Take ${o.b} away from BOTH sides. Then share the remainder among ${o.n} equal boxes.`;api?.hint(t);change(t,'hint');}
  function check(){const result=checkMath(o,{count,known,balanced,divided,remaining,x,expression,slots});emit('check',{ok:result.ok,kind:result.kind||'proved'});api?.check(result.ok,result.message);if(result.ok){won=true;change(result.message,'success');}else change(result.message,'wrong');return result.ok;}
  function reset(){count=0;known=false;balanced=false;divided=false;remaining='';x='';expression='';slots=['','',''];won=false;emit('reset',true);change('Model cleared. Begin with x and the known part.','ready');}
  function field(label,value,set,kind='number'){let input=H('input',{type:kind,value,step:'any','aria-label':label,'autocomplete':'off'});input.onchange=()=>{set(input.value);emit(kind==='text'?'expression':label==='Remainder'?'remaining':'x',input.value);refreshStage();};input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();input.blur();}});return H('label',{class:'f408-field'},[label,input]);}
- function refreshStage(){present(stage,o,{interactive:!won,task:!!task,count,known,balanced,divided,remaining,slots,won,pose,onAdd:add,onRemove:remove,onTerm:term});}
+ function refreshStage(){present(stage,o,{interactive:!won,task:!!task,count,known,balanced,divided,remaining,slots,chosenX:x,won,pose,onAdd:add,onRemove:remove,onTerm:term,onChoose:chooseX});}
  function redraw(){panel.innerHTML='';refreshStage();
   if(!task){let choice=H('select',{'aria-label':'Choose algebra preset'});Object.entries(C.presets).forEach(([k,p])=>choice.add(new Option(p.label,k)));choice.value=C.preset;choice.onchange=()=>{C.preset=choice.value;o={...C.presets[C.preset]};reset();emit('preset',C.preset);};panel.append(H('label',{class:'f408-field'},['Lesson / component preset',choice]));}
   panel.append(H('p',{class:'f408-prompt',text:o.context}));
@@ -138,25 +167,25 @@ function workshop(panel,stage,task,api){let o=task?{...task}:{...C.presets[C.pre
    if(o.mode==='translator')actions.append(btn('Arrange equation terms',()=>{for(let i=0;i<3;i++)slots[i]=terms(o)[i];emit('term',{keyboard:true,slots});change('Equation terms placed in matching slots.','placed');}));
    actions.append(btn('Check my proof',check,true),btn('Hint',hint));panel.append(actions);
   }else panel.append(H('p',{class:'f408-done',text:o.mode==='expression'?'The algebraic expression matches the physical bar model.':'Model, equation and balanced mathematical proof verified.'}));
-  panel.append(H('p',{class:'f408-guide',text:'Use mouse, touch or keyboard: drag x/known tiles onto the bar; drag placed tiles back to the red RETURN zone, or focus a tile and press Delete. For the F4-10 preset, drag equation terms into their slots or use the labelled keyboard button. Always subtract the known amount from both sides.'}));
+  panel.append(H('p',{class:'f408-guide',text:o.mode==='bar-equation'?'Move x-boxes and the known value into the bar; press Delete or drag a placed object into RETURN. Subtract knowns from both sides, divide the remainder and drag one numerical x value into its dock. Press Enter on a value chip for keyboard selection.':'Use mouse, touch or keyboard: drag x/known tiles onto the bar; drag placed tiles back to the red RETURN zone, or focus a tile and press Delete. For the F4-10 preset, drag equation terms into their slots or use the labelled keyboard button. Always subtract the known amount from both sides.'}));
   panel.append(H('p',{class:'f408-status'+(pose==='wrong'?' bad':pose==='success'?' good':''),role:'status',text:feedback}));
  }
  redraw();return {add,remove,balance,divide,term,check,reset,state:()=>({count,known,balanced,divided,remaining,x,expression,slots,won})};}
-const def={id:ID,title:'Algebra Bar',config:C,steps:STEPS,
+const def={id:ID,title:'Algebra Bar',config:C,steps:C.preset==='F7-11'?F711_STEPS:STEPS,
  alt:'One glass bar gives the whole, with equal x-parts and a separate blue known-value block beneath; balanced subtraction leaves equal unknown parts.',
  staticAlt:'Three identical x-parts plus five equals twenty-six. Subtract five from both sides: 3x = 21. Divide by three: x = 7. Check 3 × 7 + 5 = 26.',
- render(i,stage){let o=C.presets['Y7-035'];present(stage,o,{step:i,count:i>=1?o.n:0,known:i>=2,pose:['start','parts','known','balance','remove','divide','answer','proof'][i],title:STEPS[i].name});},
+ render(i,stage){let o=C.presets[C.preset==='F7-11'?'F7-11':'Y7-035'];const seq=C.preset==='F7-11'?F711_STEPS:STEPS;present(stage,o,{step:i,count:i>=1?o.n:0,known:i>=2,pose:['start','parts','known','balance','remove','divide','answer','proof'][i],title:seq[i].name});},
  exploreIntro:'Build the equal unknown parts, balance both sides and prove the result.',
  explore(panel,stage){workshop(panel,stage,null,null);},
- challenge(panel,api,stage){let idx=0;function next(){panel.innerHTML='';if(idx>=C.challenge.length){present(stage,C.presets['Y7-035'],{count:3,known:true,step:7,won:true,pose:'success',title:'All algebra challenges proved'});panel.append(H('p',{class:'f408-done',text:'All three constructions and proofs are complete: expression, equation and bar-to-equation translation.'}));return;}
- let o={...C.challenge[idx]};if(idx>0){api.fb.textContent='';api.fb.className='nova-fb';api.bob('Build the model, then prove it.',{mood:'think'});}
- panel.append(H('p',{class:'f408-step',text:`Challenge ${idx+1} of ${C.challenge.length} · ${o.label}`}));let block=H('div');panel.append(block);
- const proxy={hint:t=>api.hint(t),check:(ok,msg)=>{api.check(ok,msg,{task:idx+1});if(ok)Promise.resolve().then(()=>block.append(H('div',{class:'f408-next'},[btn(idx+1<C.challenge.length?'Next problem →':'Finish challenges →',()=>{idx++;next();},true)])));}};
+ challenge(panel,api,stage){let idx=0;const tasks=C.preset==='F7-11'?C.f711Challenge:C.challenge;function next(){panel.innerHTML='';if(idx>=tasks.length){const finish=C.preset==='F7-11'?C.presets['F7-11']:C.presets['Y7-035'];present(stage,finish,{count:finish.n,known:true,step:7,won:true,pose:'success',title:'All algebra challenges proved'});panel.append(H('p',{class:'f408-done',text:`All ${tasks.length} algebra-bar challenges proved. Each answer was checked against the original whole.`}));return;}
+ let o={...tasks[idx]};if(idx>0){api.fb.textContent='';api.fb.className='nova-fb';api.bob('Build the model, then prove it.',{mood:'think'});}
+ panel.append(H('p',{class:'f408-step',text:`Challenge ${idx+1} of ${tasks.length} · ${o.label}`}));let block=H('div');panel.append(block);
+ const proxy={hint:t=>api.hint(t),check:(ok,msg)=>{api.check(ok,msg,{task:idx+1});if(ok)Promise.resolve().then(()=>block.append(H('div',{class:'f408-next'},[btn(idx+1<tasks.length?'Next problem →':'Finish challenges →',()=>{idx++;next();},true)])));}};
  workshop(block,stage,o,proxy);
  }next();}
 };
 N.registry.add({id:ID,title:'Algebra Bar',topics:['forming algebraic expressions','solving one-step and two-step equations','bar to equation'],deps:['F0-01','F0-02','F0-08','F0-13','F4-01']});
-N.bankMount({id:ID,num:'08',title:'Algebra Bar · Run 08 Review',def,years:'Year 7–9 expressions, linear equations, GCSE Foundation and Higher.',linked:['F4-01','F4-04','F4-10','F7-01','F7-11'],spec:{purpose:'Represent equal unknown quantities as linked physical bars; prove a balanced equation through subtraction and equal division. F4-10 is an in-engine translator preset.',params:'One–five x-parts; integer known 0–12; whole totals admit exact positive integer x.',presets:'Y7-034 expression 2x+4; Y7-035 3x+5=26; F4-10 preset 2x+5=19 with semantic equation slots.',steps:'Whole → equal x-parts → known term → equation → subtract both sides → divide equally → value of x → substitution check.',interactions:'F2 svgDrag source x/known blocks and red return tray, Delete keyboard equivalent; independent term-chip drag into F4-10 equation slots; inputs with misconception-specific checking.',traps:'Treating 3x as x+3, subtracting on only one side, dividing the original 26 not the remainder 21, missing known term, reversing equation terms.',gcse:'Linear equations with equal groups, balanced operations and substitution checks.'}});
+N.bankMount({id:ID,num:C.preset==='F7-11'?'11':'08',title:C.preset==='F7-11'?'Bar-Model Equation · F7 Run 11 Review':'Algebra Bar · Run 08 Review',def,years:'Year 7–9 expressions, linear equations, GCSE Foundation and Higher.',linked:['F4-01','F4-04','F4-10','F7-01','F7-11'],spec:{purpose:'Represent equal unknown quantities as linked physical bars; prove a balanced equation through subtraction and equal division. F4-10 is an in-engine translator preset. F7-11 is the Year 7 story-to-equation bar preset with real x-answer drag chips.',params:'One–five x-parts; integer known 0–12; whole totals admit exact positive integer x.',presets:'Y7-034 expression 2x+4; Y7-035 3x+5=26; F4-10 preset 2x+5=19 with semantic equation slots.',steps:'Whole → equal x-parts → known term → equation → subtract both sides → divide equally → value of x → substitution check.',interactions:'F2 svgDrag source x/known blocks and red return tray, Delete keyboard equivalent; independent term-chip drag into F4-10 equation slots; inputs with misconception-specific checking.',traps:'Treating 3x as x+3, subtracting on only one side, dividing the original 26 not the remainder 21, missing known term, reversing equation terms.',gcse:'Linear equations with equal groups, balanced operations and substitution checks.'}});
 window.F408_MATH={solve,terms,parseExpression,checkMath};
 const root=document.getElementById(ID),dev=H('details',{class:'nv-dev'});dev.append(H('summary',{text:'Developer: component specification'}));root.querySelectorAll('details.nova-spec,p.purpose').forEach(el=>dev.append(el));root.append(dev);root.querySelectorAll('img').forEach(im=>{if(!im.hasAttribute('alt'))im.alt='NOVA maths helper';});
 })();

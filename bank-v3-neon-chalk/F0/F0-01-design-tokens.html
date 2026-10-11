@@ -1696,7 +1696,7 @@ F.SHAPES={
  rectangle:{name:'Rectangle',fam:'quad',pts:[[-48,-30],[48,-30],[48,30],[-48,30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[0,1,2,3],p:{sides:4,allEq:0,par:2,ra:4,sym:2,rot:2}},
  parallelogram:{name:'Parallelogram',fam:'quad',pts:[[-50,30],[26,30],[50,-30],[-26,-30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:0,par:2,ra:0,sym:0,rot:2}},
  rhombus:{name:'Rhombus',fam:'quad',pts:[[0,-48],[34,0],[0,48],[-34,0]],eq:[[0,1,2,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:1,par:2,ra:0,sym:2,rot:2}},
- trapezium:{name:'Trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
+ trapezium:{name:'Isosceles trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
  kite:{name:'Kite',fam:'quad',pts:[[0,-50],[32,-8],[0,48],[-32,-8]],eq:[[0,3],[1,2]],par:[],ra:[],p:{sides:4,allEq:0,par:0,ra:0,sym:1,rot:1}},
  pentagon:{name:'Regular pentagon',fam:'poly',pts:reg(5,48),eq:[[0,1,2,3,4]],par:[],ra:[],p:{sides:5,allEq:1,par:0,ra:0,sym:5,rot:5}},
  hexagon:{name:'Regular hexagon',fam:'poly',pts:reg(6,48),eq:[[0,1,2,3,4,5]],par:[[0,3],[1,4],[2,5]],ra:[],p:{sides:6,allEq:1,par:3,ra:0,sym:6,rot:6}}};
@@ -1736,6 +1736,14 @@ F.hmark=function(sv,apex,foot,baseA,baseB,txt,o){o=o||{};var role=o.role||'focus
   var dir=foot[0]>=(lo+hi)/2?-1:1;NOVA.rightAngle(sv,foot,[foot[0]+dir*10,foot[1]],[foot[0],apex[1]<foot[1]?foot[1]-10:foot[1]+10],{size:10,role:'support'});
   if(txt)NOVA.svg.pill(sv,foot[0]+(o.dx==null?-26:o.dx),(apex[1]+foot[1])/2,txt,{role:role,size:12});};
 NOVA.version=(NOVA.version||'')+'+f12run2';
+})();
+
+/* ==== v3.7 F12 phone text boost (additive, F12 diagrams only) ==== */
+(function(){var S=NOVA.svg,pill=S.pill,ct=NOVA.chalkText;
+function boost(p,o){var sv=p&&(p.ownerSVGElement||p);if(!sv||!sv.classList||!sv.classList.contains('f12-sv')||window.innerWidth>640)return o;o=Object.assign({},o||{});o.size=Math.min(19,Math.max(13,Math.round((o.size||12)*1.3)));return o;}
+S.pill=function(p,x,y,t,o){return pill.call(S,p,x,y,t,boost(p,o));};
+NOVA.chalkText=function(p,x,y,t,o){return ct.call(NOVA,p,x,y,t,boost(p,o));};
+NOVA.version=(NOVA.version||'')+'+f12phone';
 })();
 
 NOVA.premium.enable();

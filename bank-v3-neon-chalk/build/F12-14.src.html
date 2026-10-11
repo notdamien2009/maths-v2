@@ -31,7 +31,7 @@
 var NOVA_F12_14_CONFIG={
   startMode:'watch',
   preset:'perim',
-  unit:'cm',
+  unit:'m',
   perims:[12,16,20,24,28,32,40],
   areas:[12,16,24,36,48],
   presets:{
@@ -47,7 +47,7 @@ function pairs(A){var o=[];for(var w=1;w*w<=A;w++)if(A%w===0)o.push([A/w,w]);ret
 function rectAt(sv,cx,y,l,w,cell,role,tag){var x=cx-l*cell/2;NOVA.neonCells(sv,x,y,l,w,cell,{role:role,hatch:'dots',cells:function(){return true;}});var g=NOVA.neonShape(sv,[[x,y],[x+l*cell,y],[x+l*cell,y+w*cell],[x,y+w*cell]],{role:role==='result'?'op':role,fill:false,width:3});if(tag)g.setAttribute('data-maths',tag);return [x,y];}
 function bars(sv,vals,labels,cur,y0,hmax,label){var n=vals.length,bw=Math.min(28,330/n-4),gap=(330/n),x0=55,mx=Math.max.apply(null,vals);
   vals.forEach(function(v,i){var bh=hmax*v/mx,x=x0+i*gap+(gap-bw)/2,c=S.c(i===cur?'focus':'given');S.el('rect',{x:x,y:y0-bh,width:bw,height:bh,rx:3,css:'fill:'+c+';fill-opacity:'+(i===cur?.75:.35)+';stroke:'+c+';stroke-width:'+(i===cur?2:1)}, sv);
-    NOVA.chalkText(sv,x+bw/2,y0+14,labels[i],{size:n>8?10:11,role:i===cur?'focus':null});if(i===cur)S.pill(sv,x+bw/2,y0-bh-12,String(v),{role:'focus',size:12});});
+    NOVA.chalkText(sv,x+bw/2,y0+14,labels[i],{size:n>8?11:12,role:i===cur?'focus':null});if(i===cur)S.pill(sv,x+bw/2,y0-bh-12,String(v),{role:'focus',size:12});});
   NOVA.chalkText(sv,x0+14,y0-hmax-6,label,{size:12});}
 function draw(stage,st){var sv=S.root(VW,VH,'Rectangles comparing area and perimeter.'),res={};sv.classList.add('f12-sv');
   if(st.mode==='perim'){var half=st.P/2,l=st.l,w=half-l,cell=Math.floor(Math.min(380/(half-1),120/(st.P/4)));rectAt(sv,220,16,l,w,cell,'op','rect');
@@ -90,14 +90,14 @@ var def={id:'F12-14',title:'Area and perimeter relationship',config:C,steps:step
  challenge:function(panel,api,stage){var A=mk({mode:'perim',P:40,l:10}),B=mk({mode:'area',A:36,i:2}),Cc=mk({mode:'compare',la:8,wa:2,lb:4,wb:4});
    var tasks=[
     {q:'A farmer has 40 m of fence and wants the biggest rectangular field with whole-number sides. What is the largest area?',build:NOVA.entryTask('Area (m²)','F12-14'),check:function(x){var ok=x===100;return [ok,ok?'Yes: a 10 by 10 square has area 100 m².':x===400?'400 is 40 squared. The sides must add up to 20 (half the perimeter).':x<100&&x>0?'That is a field you can make, but not the biggest. Try sides closer to equal.':'Sides add to 20. The most area is when they are equal.'];},hint:'Two lengths and two widths use 40 m, so length + width = 20. Which pair has the biggest product?',solve:function(c){c._A.input.value='100';}},
-    {q:'A rectangle has area 36 cm² and whole-number sides. What is the smallest perimeter it can have?',build:NOVA.entryTask('Perimeter (cm)','F12-14'),check:function(x){var ok=x===24;return [ok,ok?'Yes: the 6 by 6 square has perimeter 24 cm.':x===30?'12 by 3 has perimeter 30. Try something nearer a square.':x===40?'18 by 2 has perimeter 40. Look for a squarer pair that makes 36.':'List the pairs that multiply to 36 and find the smallest perimeter.'];},hint:'The squarest pair of sides for 36 is 6 and 6.',solve:function(c){c._A.input.value='24';}},
+    {q:'A rectangle has area 36 m² and whole-number sides. What is the smallest perimeter it can have?',build:NOVA.entryTask('Perimeter (m)','F12-14'),check:function(x){var ok=x===24;return [ok,ok?'Yes: the 6 by 6 square has perimeter 24 m.':x===30?'12 by 3 has perimeter 30. Try something nearer a square.':x===40?'18 by 2 has perimeter 40. Look for a squarer pair that makes 36.':'List the pairs that multiply to 36 and find the smallest perimeter.'];},hint:'The squarest pair of sides for 36 is 6 and 6.',solve:function(c){c._A.input.value='24';}},
     {q:'Rectangle A is 8 by 2 and rectangle B is 4 by 4. Which statement is true?',build:NOVA.choiceTask(['A: longer perimeter, same area','B: longer perimeter, same area','They have the same perimeter'],'F12-14'),check:function(x){var ok=x==='A: longer perimeter, same area';return [ok,ok?'Yes: A has perimeter 20 and B has 16, and both have area 16.':x==='B: longer perimeter, same area'?'B has perimeter 16, A has 20.':x==='They have the same perimeter'?'A: 2 × (8 + 2) = 20. B: 2 × (4 + 4) = 16.':'Pick one first.'];},hint:'Work out both perimeters and both areas.',solve:function(c){c._G.set('A: longer perimeter, same area');}}];
-   function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['biggest field','shortest fence','compare'][k]);var s=[A,B,Cc][k];var r=draw(stage,s);if(k===0)strip(stage,[['fence','40 m','given'],['find','the biggest area','focus']]);else if(k===1)strip(stage,[['area','36 cm²','result'],['find','the smallest perimeter','focus']]);else strip(stage,[['A','8 × 2','op'],['B','4 × 4','focus']]);NOVA.scene.helperStrip(stage,'think',['Squarest wins','Squarest is shortest','Work both out'][k]);}
+   function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['biggest field','shortest fence','compare'][k]);var s=[A,B,Cc][k];var r=draw(stage,s);if(k===0)strip(stage,[['fence','40 m','given'],['find','the biggest area','focus']]);else if(k===1)strip(stage,[['area','36 m²','result'],['find','the smallest perimeter','focus']]);else strip(stage,[['A','8 × 2','op'],['B','4 × 4','focus']]);NOVA.scene.helperStrip(stage,'think',['Squarest wins','Squarest is shortest','Work both out'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
 NOVA.bankMount({id:'F12-14',num:'F12·14',title:'Area and perimeter relationship',def:def,linked:['F0-02','F0-11','F12-03','F12-04','F12-05','F12-10'],
  spec:{purpose:'Area and perimeter are different measures and do not move together. With the perimeter fixed, area changes with shape and the square holds the most; with the area fixed, the perimeter changes with shape and the square needs the least. A compare mode puts any two rectangles side by side.',
-  params:'preset (perim, area, compare); fixed perimeter list and fixed area list; length slider or shape slider; compare sizes la, wa, lb, wb; unit cm. A bar chart of every whole-number rectangle highlights the current one. Core: NOVA.neonCells / neonShape / chalkText / svg.pill / neonTile. Year groups: KS3 Years 7–9 (12–15).',
+  params:'preset (perim, area, compare); fixed perimeter list and fixed area list; length slider or shape slider; compare sizes la, wa, lb, wb; unit m (fence and field context). A bar chart of every whole-number rectangle highlights the current one. Core: NOVA.neonCells / neonShape / chalkText / svg.pill / neonTile. Year groups: KS3 Years 7–9 (12–15).',
   presets:'Same perimeter, different area · Same area, different perimeter · Compare two rectangles',
   steps:'Same fence, different fields → Slide the rectangle → The square wins → Same area, different perimeter → The square is shortest → Longer round, not bigger. Each step has a Sir Bob line and a Guided prompt.',
   interactions:'Watch: auto-play. Guided: step with prompts. Explore: mode, fixed value and shape slider, or four compare sliders; chips give sides, area and perimeter. Challenge (3 tasks): biggest field from a fence length; smallest perimeter for an area; compare two rectangles. Events: value, correct, step, hintUsed.',

@@ -1,0 +1,24 @@
+/* F6-10 additive skin: all mathematical SVG primitives and strokes remain F0-owned */
+#F6-10 .nova-stage{min-height:0!important;padding:5px 8px 3px!important;overflow:hidden}
+#F6-10 .f610-layout{display:grid;grid-template-columns:minmax(0,3.45fr) minmax(205px,1fr);align-items:center;gap:11px;padding:3px 6px 1px}
+#F6-10 .f610-art{min-width:0}#F6-10 .f610-svg{display:block;width:100%;height:auto;overflow:visible;user-select:none}
+#F6-10 .f610-aside{display:flex;flex-direction:column;gap:8px;min-width:0}
+#F6-10 .f610-aside .nv-ncard{padding:12px;min-height:84px}
+#F6-10 .f610-card-label{font:800 .68rem/1.2 var(--nova-font-ui);letter-spacing:.06em;color:#cbe2ed;margin:0 0 6px}
+#F6-10 .f610-card-number{font:800 clamp(1.15rem,2.2vw,1.9rem)/1.17 var(--nova-font-chalk-write);text-shadow:var(--nv-chalk-glow);margin:0}
+#F6-10 .f610-card-desc{font:500 .76rem/1.36 var(--nova-font-ui);color:var(--v-muted);margin:7px 0 0}
+#F6-10 .f610-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:9px 0 6px}
+#F6-10 .f610-choice{font:750 .8rem var(--nova-font-ui);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#F6-10 select,#F6-10 input{min-height:43px;background:#06192b;border:1.5px solid #418da0;border-radius:9px;color:white;padding:8px;font:700 .9rem var(--nova-font-ui);max-width:100%}
+#F6-10 .f610-feedback{min-height:45px;border-left:3px solid var(--math-cyan);border-radius:0 9px 9px 0;background:rgba(39,226,240,.07);padding:10px 14px;margin:7px 0;font:750 .94rem/1.4 var(--nova-font-chalk-write);color:var(--shell-ink)}
+#F6-10 .f610-feedback.good{border-color:var(--math-green);color:var(--math-green)}#F6-10 .f610-feedback.bad{border-color:#f87171;color:#ffc2c2}
+#F6-10 .f610-info{font:500 .82rem/1.4 var(--nova-font-ui);color:var(--v-muted);margin:8px 0}
+#F6-10 .f610-question{font:800 1rem/1.48 var(--nova-font-chalk-write);margin:9px 0}
+#F6-10 .f610-inputs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#F6-10 .f610-field{display:flex;flex-direction:column;gap:5px;font:800 .72rem var(--nova-font-ui)}
+#F6-10 .f610-progress{font:800 .85rem var(--nova-font-ui);color:var(--math-cyan)}
+#F6-10 .f610-drag{cursor:grab;touch-action:none;outline:none}#F6-10 .f610-drag:focus-visible{filter:drop-shadow(0 0 11px #ffd25c)}
+@media(max-width:1000px){#F6-10 .f610-layout{grid-template-columns:1fr;gap:4px;padding:1px}#F6-10 .f610-aside{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#F6-10 .f610-aside .nv-ncard{padding:8px;min-height:60px}#F6-10 .f610-card-label{font-size:.59rem;letter-spacing:0}#F6-10 .f610-card-number{font-size:1.16rem}#F6-10 .f610-card-desc{font-size:.61rem}#F6-10 .f610-question{font-size:.95rem}}
+@media(max-width:390px){#F6-10 .f610-card-desc{display:none}#F6-10 .f610-aside .nv-ncard{min-height:58px}}
+@media(prefers-reduced-motion:reduce){#F6-10 .f610-svg *{animation:none!important;transition:none!important}}
+@media print{#F6-10 .f610-layout{grid-template-columns:3fr 1fr}#F6-10 .f610-svg{filter:grayscale(1)}#F6-10 .nv-ncard{background:white!important;color:black!important;box-shadow:none!important}}

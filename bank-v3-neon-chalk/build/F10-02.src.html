@@ -1,0 +1,246 @@
+<!doctype html><html lang="en-GB" data-theme="dark" data-premium="1"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NOVA F10-02 · Shape on grid · Premium Edition</title>
+<style>
+@@CSS@@
+/* F10-02 · shape-on-grid · F0 Neon Tube + NOVA Chalk only */
+#F10-02{--topic-accent:var(--math-cyan);--topic-glow:rgba(43,220,243,.24)}
+#F10-02 .purpose,#F10-02 details.nova-spec{display:none}
+#F10-02 .nova-stage{padding:9px!important;min-height:0!important;overflow:hidden}
+#F10-02 .f102-theatre{position:relative;isolation:isolate;overflow:hidden;min-height:420px;padding:8px 11px 14px;border:2px solid #317ab9;border-radius:18px;background:radial-gradient(ellipse at 22% 22%,rgba(35,111,222,.22),transparent 55%),linear-gradient(135deg,#0c2444 0%,#061225 48%,#171337 100%);box-shadow:inset 0 0 0 3px rgba(8,29,66,.9),inset 0 0 38px rgba(36,100,218,.2),0 8px 24px rgba(0,4,21,.27)}
+#F10-02 .f102-theatre::before{content:'';position:absolute;inset:46px 0 0;pointer-events:none;opacity:.11;background-image:var(--topic-motif),radial-gradient(circle,rgba(67,151,247,.09) 1px,transparent 1px);background-size:var(--topic-motif-size),38px 38px;background-position:center;z-index:-1}
+#F10-02 .f102-theatre::after{content:'';pointer-events:none;position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(104,203,255,.18),inset 0 -90px 65px -105px rgba(93,64,228,.28)}
+#F10-02 .f102-topline{min-height:37px;display:flex;align-items:center;justify-content:space-between;gap:9px;position:relative;z-index:1;border:1px solid #387cba;border-radius:10px;padding:5px 12px;background:linear-gradient(180deg,#0c3050,#051629 80%);box-shadow:inset 0 2px 5px rgba(134,224,255,.17),0 0 8px rgba(21,122,225,.28);color:#d2f4ff;font:900 .67rem var(--nova-font-ui);letter-spacing:.06em}
+#F10-02 .f102-topline .f102-tag{border-radius:99px;border:1px solid #1380a0;padding:4px 8px;color:#69eafd;font-size:.62rem}
+#F10-02 .f102-layout{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(225px,.78fr);align-items:center;gap:11px;min-width:0}
+#F10-02 .f102-plane{min-width:0;position:relative;display:flex;align-items:center;flex-direction:column;justify-content:center}
+#F10-02 .f102-svg{display:block;width:100%;max-width:680px!important;height:auto!important;min-width:0;overflow:visible;touch-action:none;filter:drop-shadow(0 10px 13px rgba(0,5,29,.25))}
+#F10-02 .f102-svg .f102-grid{opacity:.72}
+#F10-02 .f102-svg .f102-grid text{display:none}
+#F10-02 .f102-svg .f102-grid *{pointer-events:none}
+#F10-02 .f102-svg .f102-halo{pointer-events:none}
+#F10-02 .f102-point:focus-visible .f102-focus{opacity:1}
+#F10-02 .f102-point{outline:none;touch-action:none}
+#F10-02 .f102-point [data-drag]{cursor:grab}
+#F10-02 .f102-focus{opacity:0;fill:none;stroke:#ffcc58;stroke-width:3;stroke-dasharray:6 4;pointer-events:none}
+#F10-02 .f102-stage-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;padding:3px 3px 11px}
+#F10-02 .f102-stage-pills .nv-ntile{font-size:.82rem}
+#F10-02 .f102-info{display:grid;gap:10px;min-width:0;align-self:stretch;align-content:center}
+#F10-02 .f102-info .nv-ncard{border:1px solid #387bb8;border-radius:13px;padding:12px 12px 14px;background:linear-gradient(135deg,rgba(21,73,125,.5),rgba(6,21,42,.93));box-shadow:inset 0 1px 0 rgba(203,236,255,.09),0 0 13px rgba(18,104,215,.09)}
+#F10-02 .f102-eyebrow{font:900 .63rem var(--nova-font-ui);letter-spacing:.07em;text-transform:uppercase;color:#8ddcf5}
+#F10-02 .f102-proof{font:700 clamp(1.05rem,1.55vw,1.55rem)/1.3 var(--nova-font-chalk-write);color:#e7f4ff;margin:5px 0;filter:drop-shadow(0 0 2px rgba(216,246,255,.2))}
+#F10-02 .f102-proof strong{color:#66efac}
+#F10-02 .f102-meta{font:700 .78rem/1.45 var(--nova-font-ui);color:#b7d4e8}
+#F10-02 .f102-mapping{display:grid;grid-template-columns:1fr;gap:5px;margin-top:6px}
+#F10-02 .f102-mapping div{font:800 .94rem var(--nova-font-chalk-write);color:#af9dff;border-top:1px solid #28496f;padding:3px 0}
+#F10-02 .f102-mapping span{color:#eafaff}
+#F10-02 .f102-takeaway{position:relative;z-index:1;border:1px solid #30709b;border-left:3px solid #2bdcf3;border-radius:9px;background:rgba(3,13,31,.7);font:700 .77rem/1.35 var(--nova-font-ui);color:#d9efff;padding:9px 12px;margin:0 6px 6px}
+#F10-02 .f102-takeaway em{color:#63e7b4;font-style:normal}
+#F10-02 .f102-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#F10-02 .f102-controls label{display:grid;gap:4px;font:800 .72rem var(--nova-font-ui);color:#b9d5e6;min-width:0}
+#F10-02 .f102-controls .nova-input{width:100%;min-width:0}
+#F10-02 .f102-span{grid-column:1/-1}
+#F10-02 .f102-stepper{display:flex;align-items:center;gap:5px;justify-content:space-between;background:var(--v-panel);border:1px solid var(--v-line);border-radius:9px;padding:3px}
+#F10-02 .f102-stepper strong{font:800 1.15rem var(--nova-font-chalk-write);color:#e6faff}
+#F10-02 .f102-stepper button{min-width:38px;min-height:34px}
+#F10-02 .f102-actions{display:flex;flex-wrap:wrap;gap:6px}
+#F10-02 .f102-controls .f102-hint{color:var(--v-muted);font-size:.75rem}
+#F10-02 .f102-controls .f102-vertex-read{font:.78rem var(--nova-font-ui);color:#dcefff}
+#F10-02 .f102-task{font:750 1rem/1.35 var(--nova-font-chalk-write);color:#f0f6ff}
+#F10-02 .nv-dock{height:136px}
+#F10-02 .nv-dockfig{height:128px}
+#F10-02 .nv-dockbub{max-width:min(65%,490px)}
+@media(max-width:760px){
+#F10-02 .nova-stage{padding:5px!important}
+#F10-02 .f102-theatre{padding:5px 5px 8px;border-radius:14px}
+#F10-02 .f102-layout{grid-template-columns:1fr;gap:1px}
+#F10-02 .f102-plane{padding:0}
+#F10-02 .f102-svg{max-width:100%!important}
+#F10-02 .f102-info{grid-template-columns:1fr;gap:6px;padding:0 5px 8px}
+#F10-02 .f102-info .nv-ncard{padding:7px 9px}
+#F10-02 .f102-info .nv-ncard:nth-child(3){display:none}
+#F10-02 .f102-mapping{grid-template-columns:1fr;gap:2px}
+#F10-02 .f102-mapping div{font-size:1rem;padding:2px 0}
+#F10-02 .f102-info .nv-ncard:first-child{display:flex;align-items:center;justify-content:space-between;gap:14px}
+#F10-02 .f102-info .nv-ncard:first-child .f102-proof{margin:0}
+#F10-02 .f102-info .nv-ncard:first-child .f102-meta{max-width:50%}
+#F10-02 .f102-proof{font-size:1.04rem}
+#F10-02 .f102-stage-pills{padding:0 3px 6px}
+#F10-02 .f102-topline{font-size:.59rem;padding:4px 8px}
+#F10-02 .f102-takeaway{font-size:.72rem}
+#F10-02 .nv-dock{height:112px}
+#F10-02 .nv-dockfig{height:110px}
+#F10-02 .nv-dockbub{font-size:.77rem;padding:8px 10px;max-width:68%}
+}
+@media(max-width:390px){#F10-02 .f102-info .nv-ncard{padding:6px}#F10-02 .f102-eyebrow{font-size:.58rem}#F10-02 .f102-theatre{border-width:1px}#F10-02 .f102-controls{grid-template-columns:1fr 1fr;gap:6px}#F10-02 .f102-stage-pills .nv-ntile{font-size:.74rem}}
+@media print{#F10-02 .f102-theatre{background:white;box-shadow:none;border:1px solid black}#F10-02 .f102-info{display:none}#F10-02 .f102-svg{filter:none}#F10-02 .f102-controls{display:none}}
+
+#F10-02 .f102-peer{display:flex;align-items:center;gap:10px;border-top:1px solid rgba(38,143,208,.3);padding:5px 9px 2px;color:#dbedff;font:800 .75rem var(--nova-font-ui)}
+#F10-02 .f102-peer img{height:64px;width:64px;object-fit:contain;filter:drop-shadow(0 5px 8px #01091b)}
+@media(max-width:760px){#F10-02 .f102-peer img{height:54px;width:54px}#F10-02 .f102-peer{font-size:.72rem}}
+
+</style></head><body><div class="nova-wrap"><header id="nova-header" data-run="F10 · COORDINATES AND GRAPHS" data-title="Shape on grid" data-sub="Transform shapes precisely. See, move and prove every coordinate."></header><main id="gallery"></main></div>
+<script>
+@@JS@@
+</script><script>
+/* NOVA F10-02 · Shape on grid. Uses canonical embedded F0/2/3 core only. */
+const F102_CONFIG={
+ id:'F10-02',family:'F10',startMode:'watch',preset:'Y7-052',bounds:[-5,5],step:1,
+ presets:{
+  'Y7-038':{label:'Y7 · Coordinates and shapes',op:'identity',dx:0,dy:0},
+  'Y7-052':{label:'Y7 · Reflection and translation',op:'translate',dx:3,dy:-2},
+  'Y7-053':{label:'Y7 · Rotation',op:'ccw',dx:0,dy:0},
+  'Y7-054':{label:'Y7 · Enlargement',op:'enlarge',dx:0,dy:0},
+  'Y8-053':{label:'Y8 · Reflection and translation',op:'reflect-y',dx:0,dy:0}
+ },
+ events:{value:['preset','operation','translation','vertex','selection','reset','challengeVertex'],types:['step','correct','hintUsed','mode']},
+ challenge:{tasks:['reflection','translation','rotation'],maxAttemptsPerTask:0}
+};
+(function(){'use strict';
+const N=window.NOVA,H=N.h,E=N.svg.el,C=F102_CONFIG,ID=C.id;
+if(N.premium&&N.premium.enable)N.premium.enable();
+const B={W:622,H:536,left:88,top:46,size:436,lo:-5,hi:5};
+const BASE=[{id:'A',x:-2,y:1},{id:'B',x:-1,y:2},{id:'C',x:1,y:1}];
+const S={preset:C.preset,op:'translate',dx:3,dy:-2,vertices:copy(BASE),active:'A',task:0,answers:copy(BASE),wrong:0,complete:0};
+const tasks=[
+ {name:'Reflection',op:'reflect-y',dx:0,dy:0,q:'Reflect triangle ABC in the y-axis. Move A′, B′ and C′ to their correct positions.',hint:'Reflecting in the y-axis changes the sign of x only. y stays the same.'},
+ {name:'Translation',op:'translate',dx:2,dy:-3,q:'Translate ABC two right and three down. Place all three image vertices.',hint:'Add two to every x-coordinate. Subtract three from every y-coordinate.'},
+ {name:'Rotation',op:'ccw',dx:0,dy:0,q:'Rotate ABC 90° anticlockwise about the origin. Place A′, B′ and C′.',hint:'For a 90° anticlockwise turn about the origin, (x, y) becomes (−y, x).'}
+];
+const teaching=[
+ {name:'source',pose:'explain',desc:'Start with the original triangle ABC. Each vertex sits at an exact grid intersection.',prompt:'Where is vertex A?',op:'identity',dest:false},
+ {name:'vertices',pose:'point',desc:'Read every vertex x first, then y. Those coordinates define the triangle exactly.',prompt:'What is the ordered pair for B?',op:'identity',dest:false},
+ {name:'reflect',pose:'think',desc:'Reflect in the y-axis. Each image vertex is the same distance across the mirror line.',prompt:'Which coordinate changes sign?',op:'reflect-y',dest:true},
+ {name:'translate',pose:'point',desc:'Translate every vertex three right and two down. Keep the same shape and orientation.',prompt:'Which coordinate changes when you move down?',op:'translate',dx:3,dy:-2,dest:true},
+ {name:'rotate',pose:'explain',desc:'Turn the entire triangle 90 degrees anticlockwise around the origin.',prompt:'What happens to the point (2, 1)?',op:'ccw',dest:true},
+ {name:'enlarge',pose:'think',desc:'Double each distance from the origin. The new sides are twice as long.',prompt:'Where will A move when the scale factor is two?',op:'enlarge',dest:true},
+ {name:'compare',pose:'cheer',desc:'Check every image vertex. A shape transformation has a rule you can prove.',prompt:'How can coordinates prove a transformation?',op:'reflect-y',dest:true}
+];
+function copy(x){return JSON.parse(JSON.stringify(x));}
+function emit(key,value){if(!C.events.value.includes(key))throw Error('Unknown value event '+key);N.events.emit('value',{engine:ID,key,value});}
+function clamp(n){return Math.max(-5,Math.min(5,Math.round(Number(n)||0)));}
+function fmt(n){return Number.isInteger(n)?String(n):Number(n).toFixed(1).replace(/\.0$/,'');}
+function signed(n){return n<0?'−'+Math.abs(n):fmt(n);}
+function coord(p){return '('+signed(p.x)+', '+signed(p.y)+')';}
+function xpx(n){return B.left+(n-B.lo)*B.size/(B.hi-B.lo);}
+function ypx(n){return B.top+(B.hi-n)*B.size/(B.hi-B.lo);}
+function label(svg,x,y,s,size,role,extra){return N.chalkText(svg,x,y,String(s),Object.assign({size:size||27,role:role||'given'},extra||{}));}
+function opName(op){return {identity:'Same coordinates',translate:'Translation', 'reflect-y':'Reflect in y-axis','reflect-x':'Reflect in x-axis',cw:'Rotate 90° clockwise',ccw:'Rotate 90° anticlockwise',enlarge:'Enlarge ×2',shrink:'Enlarge ×½'}[op]||op;}
+function transform(p,o){const x=p.x,y=p.y;switch(o.op){case 'translate':return {id:p.id,x:x+(o.dx||0),y:y+(o.dy||0)};case 'reflect-y':return {id:p.id,x:-x,y};case 'reflect-x':return {id:p.id,x,y:-y};case 'cw':return {id:p.id,x:y,y:-x};case 'ccw':return {id:p.id,x:-y,y:x};case 'enlarge':return {id:p.id,x:x*2,y:y*2};case 'shrink':return {id:p.id,x:x/2,y:y/2};default:return {...p};}}
+function mapped(base,o){return base.map(p=>transform(p,o));}
+function inside(p){return p.x>=-5&&p.x<=5&&p.y>=-5&&p.y<=5;}
+function polygon(svg,arr,role,opacity,outline){const q=arr.filter(inside);if(q.length!==3)return null;const d=arr.map((p,i)=>(i?'L':'M')+xpx(p.x).toFixed(1)+','+ypx(p.y).toFixed(1)).join(' ')+' Z';const g=N.neonPath(svg,d,{role,width:outline?2.5:4.2,fill:!outline});g.setAttribute('opacity',String(opacity==null?1:opacity));if(outline){g.querySelectorAll('path').forEach(e=>{e.setAttribute('stroke-dasharray','8 7');});}return g;}
+function grid(svg){
+ const P=N.neonPlot(svg,{x0:B.left,y0:B.top,w:B.size,h:B.size,x:[-5,5],y:[-5,5],xStep:1,yStep:1});
+ P.g.classList.add('f102-grid');P.g.querySelectorAll('text').forEach(x=>x.remove());
+ const ax=N.svg.axes(svg,{x:B.left,y:B.top,w:B.size,h:B.size,xmin:-5,xmax:5,ymin:-5,ymax:5,ticks:1});
+ ax.g.classList.add('f102-grid');ax.g.querySelectorAll('text').forEach(x=>x.remove());
+ for(let i=-5;i<=5;i++){if(!i)continue;label(svg,xpx(i),ypx(0)+32,signed(i),26,'support');label(svg,xpx(0)-20,ypx(i)+8,signed(i),26,'support',{anchor:'end'});}
+ label(svg,xpx(0)-16,ypx(0)+59,'0',24,'support',{anchor:'end'});label(svg,B.left+B.size+22,ypx(0)-12,'x',31,'op');label(svg,xpx(0)+17,B.top-12,'y',31,'op');
+ return P;
+}
+function guide(svg,start,end,mode){
+ if(mode==='translate'){
+   N.neonPath(svg,'M'+xpx(start.x)+','+ypx(start.y)+' L'+xpx(end.x)+','+ypx(start.y),{role:'support',width:2,dash:'7 7'});
+   N.neonPath(svg,'M'+xpx(end.x)+','+ypx(start.y)+' L'+xpx(end.x)+','+ypx(end.y),{role:'support',width:2,dash:'7 7'});
+ }else{N.neonPath(svg,'M'+xpx(start.x)+','+ypx(start.y)+' L'+xpx(end.x)+','+ypx(end.y),{role:'support',width:1.8,dash:'5 9'});}
+}
+function vertex(svg,p,role,editable,change,primed){
+ const x=xpx(p.x),y=ypx(p.y),g=E('g',{class:'f102-point',role:editable?'slider':undefined,'aria-label':(primed?p.id+' prime':p.id)+' '+coord(p),'data-testid':(primed?'image-':'source-')+p.id},svg);
+ N.neonRing(g,x,y,{role,r:12,pulse:false});E('circle',{class:'f102-focus',cx:x,cy:y,r:24},g);
+ const align=p.x>=4?'end':'start',dx=p.x>=4?-23:23;
+ label(svg,x+dx,y+(p.y>=4?30:-22),p.id+(primed?'′':''),29,role,{anchor:align});
+ if(editable){
+  g.setAttribute('tabindex','0');g.setAttribute('aria-valuenow',String(p.x));g.setAttribute('aria-valuemin','-5');g.setAttribute('aria-valuemax','5');
+  g.setAttribute('aria-description','Use arrow keys to move by one grid square, or drag to a grid intersection.');
+  g.addEventListener('keydown',ev=>{const dir={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,1],ArrowDown:[0,-1]}[ev.key];if(dir){ev.preventDefault();ev.stopPropagation();change(clamp(p.x+dir[0]),clamp(p.y+dir[1]),'keyboard');queueMicrotask(()=>document.querySelector('#'+ID+' [data-testid="'+(primed?'image-':'source-')+p.id+'"]').focus());}if(ev.key==='Home'){ev.preventDefault();change(0,0,'keyboard');}});
+  N.ui.svgDrag(svg,g,{box:{x:x-18,y:y-18,w:36,h:36},zones:()=>{
+    const out=[],cell=B.size/10;for(let a=-5;a<=5;a++)for(let b=-5;b<=5;b++)out.push({id:a+','+b,kind:'drop',x:xpx(a)-cell/2,y:ypx(b)-cell/2,w:cell,h:cell});return out;
+  },onDrop:id=>{const [a,b]=id.split(',').map(Number);return change(a,b,'pointer')!==false;}});
+ }
+ return g;
+}
+function info(op,base,target,show,challengeFlag){
+ const aside=H('aside',{class:'f102-info','aria-label':'Transformation facts'}),points=base.map((p,i)=>[p,target[i]]),mk=(heading,children,role)=>{
+ const c=N.neonCard([H('div',{class:'f102-eyebrow',text:heading}),...children],{role});aside.appendChild(c);return c;};
+ mk('Transformation', [H('div',{class:'f102-proof',text:opName(op.op)}),H('p',{class:'f102-meta',text:op.op==='translate'?`Move ${Math.abs(op.dx||0)} ${op.dx>=0?'right':'left'}, ${Math.abs(op.dy||0)} ${op.dy>=0?'up':'down'}.`:'Each vertex follows the same exact rule.'})],'op');
+ mk(challengeFlag?'Your current image positions':'Image coordinate evidence',[H('div',{class:'f102-mapping'},points.slice(0,show?3:1).map(([a,b])=>H('div',{},[H('span',{text:a.id+' '+coord(a)}),'  →  '+a.id+'′ '+coord(b)])))],'given');
+ mk('Mathematical check',[H('div',{class:'f102-proof',html:'<strong>Same rule</strong> for every vertex'}),H('p',{class:'f102-meta',text:'Reflect, translate and rotate: matching sides stay equal. Enlargement changes lengths by the scale factor.'})],'support');
+ return aside;
+}
+function scene(stage,o){
+ stage.innerHTML='';const use=Object.assign({op:S.op,dx:S.dx,dy:S.dy,base:S.vertices,showImage:true,showLabels:true,editable:false,challenge:false,active:'A',highlight:false,teaching:false,step:0,pose:'point',caption:'Every vertex follows the transformation rule.'},o||{});
+ const source=copy(use.base),target=use.challenge?copy(S.answers):mapped(source,use),theatre=H('div',{class:'f102-theatre', 'data-topic':'geometry'});
+ theatre.appendChild(H('div',{class:'f102-topline'},[H('span',{text:'F10 · COORDINATE TRANSFORMATION STUDIO'}),H('span',{class:'f102-tag',text:use.challenge?'PLACE THE IMAGE':'NEON · CHALK · PRECISION'})]));
+ const layout=H('div',{class:'f102-layout'}),left=H('div',{class:'f102-plane'}),svg=N.svg.root(B.W,B.H,'Four quadrant coordinate grid showing triangle ABC and its transformation. Source: '+source.map(p=>p.id+' '+coord(p)).join('; '));
+ svg.setAttribute('class','nv-svg f102-svg');svg.removeAttribute('width');svg.removeAttribute('height');if(window.matchMedia&&matchMedia('(max-width:760px)').matches)svg.setAttribute('viewBox','45 20 545 495');svg.setAttribute('data-testid','f102-coordinate-board');
+ // Premium studio shadow and panel belong to the stage: all actual mathematical lines come from F0 core.
+ grid(svg);
+ if(use.showImage&&use.op==='reflect-y')N.neonPath(svg,'M'+xpx(0)+','+ypx(5)+' L'+xpx(0)+','+ypx(-5),{role:'focus',width:3,dash:'8 8'});
+ if(use.showImage&&use.op==='reflect-x')N.neonPath(svg,'M'+xpx(-5)+','+ypx(0)+' L'+xpx(5)+','+ypx(0),{role:'focus',width:3,dash:'8 8'});
+ if(use.showImage&&!use.challenge)source.forEach((p,i)=>guide(svg,p,target[i],use.op));
+ polygon(svg,source,'given',use.challenge?.36:1,false);
+ if(use.showImage)polygon(svg,target,use.challenge?'focus':'result',1,false);
+ source.forEach(p=>vertex(svg,p,'given',use.editable&&!use.challenge,(x,y,how)=>{
+  if(!inside(transform({id:p.id,x,y},use)))return false;S.vertices=S.vertices.map(v=>v.id===p.id?{...v,x,y}:v);emit('vertex',{vertex:p.id,x,y,how});scene(stage,{...use,base:S.vertices});return true;
+ },false));
+ if(use.showImage)target.forEach(p=>vertex(svg,p,use.challenge?'focus':'result',use.challenge,(x,y,how)=>{
+  S.answers=S.answers.map(v=>v.id===p.id?{...v,x,y}:v);emit('challengeVertex',{vertex:p.id,x,y,how,task:S.task});scene(stage,{...use,challenge:true});
+ },true));
+ left.appendChild(svg);
+ const pills=H('div',{class:'f102-stage-pills'},[N.neonTile('ABC → A′B′C′',{role:'given'}),N.neonTile(opName(use.op),{role:'result'})]);left.appendChild(pills);
+ layout.appendChild(left);layout.appendChild(info(use,source,target,use.showImage,use.challenge));theatre.appendChild(layout);
+ theatre.appendChild(H('div',{class:'f102-takeaway',html:use.challenge?'Move all three orange image vertices. <em>Check the coordinates, not just the appearance.</em>':`<em>Maths evidence:</em> ${use.op==='translate'?'add the same horizontal and vertical shift to each point':use.op==='reflect-y'?'change the sign of x; preserve y':use.op==='reflect-x'?'change the sign of y; preserve x':use.op==='cw'?'map (x, y) to (y, −x)':use.op==='ccw'?'map (x, y) to (−y, x)':use.op==='enlarge'?'multiply both coordinates by two':use.op==='shrink'?'halve each coordinate':'read and plot ordered pairs accurately'}.`}));
+ if(use.challenge){const peer=N.helperImg('think','teen');theatre.appendChild(H('div',{class:'f102-peer'},[H('img',{src:peer.src,alt:'Izaac checking the challenge coordinates'}),H('span',{text:'Izaac: place all three image vertices, then check your coordinates.'})]));}
+ stage.appendChild(theatre);N.scene.helperStrip(stage,use.pose||'explain',use.caption);
+ return svg;
+}
+function render(i,stage){const t=teaching[i],show=i>=2;const opts={op:t.op,dx:t.dx||0,dy:t.dy||0,base:BASE,showImage:show,pose:t.pose,caption:t.desc,teaching:true,step:i};const svg=scene(stage,opts);
+ if(!N.reducedMotion()){const rings=svg.querySelectorAll('.nv-ring');if(rings.length)N.motion.flash(svg,xpx(BASE[Math.min(i%3,2)].x),ypx(BASE[Math.min(i%3,2)].y),'focus',24);}
+}
+function field(name,val,delta,on){const outer=H('label',{},[name]),wrap=H('div',{class:'f102-stepper'}),display=H('strong',{text:signed(val)});wrap.append(H('button',{class:'nova-btn ghost',text:'−',onclick:()=>on(val-delta)}),display,H('button',{class:'nova-btn ghost',text:'+',onclick:()=>on(val+delta)}));outer.appendChild(wrap);return outer;}
+function resetToPreset(){const p=C.presets[S.preset];S.op=p.op;S.dx=p.dx;S.dy=p.dy;S.vertices=copy(BASE);S.active='A';}
+function explore(panel,stage){panel.innerHTML='';panel.classList.add('f102-controls');
+ function paint(){scene(stage,{op:S.op,dx:S.dx,dy:S.dy,base:S.vertices,showImage:true,editable:true,pose:'explain',caption:'Drag a source vertex. The transformed image updates from the same rule.'});}
+ function rebuild(){panel.innerHTML='';const pre=H('select',{class:'nova-input','aria-label':'Lesson preset'});Object.entries(C.presets).forEach(([key,p])=>pre.appendChild(H('option',{value:key,text:p.label})));pre.value=S.preset;pre.onchange=()=>{S.preset=pre.value;resetToPreset();emit('preset',pre.value);rebuild();paint();};panel.appendChild(H('label',{class:'f102-span'},['Lesson preset',pre]));
+ const opt=H('select',{class:'nova-input','aria-label':'Transformation rule'});['identity','translate','reflect-y','reflect-x','cw','ccw','enlarge','shrink'].forEach(k=>opt.appendChild(H('option',{value:k,text:opName(k)})));opt.value=S.op;opt.onchange=()=>{S.op=opt.value;emit('operation',S.op);rebuild();paint();};panel.appendChild(H('label',{class:'f102-span'},['Transformation',opt]));
+ if(S.op==='translate'){
+  panel.appendChild(field('Horizontal translation',S.dx,1,v=>{S.dx=Math.max(-3,Math.min(3,v));emit('translation',{x:S.dx,y:S.dy});rebuild();paint();}));
+  panel.appendChild(field('Vertical translation',S.dy,1,v=>{S.dy=Math.max(-3,Math.min(3,v));emit('translation',{x:S.dx,y:S.dy});rebuild();paint();}));
+ }
+ const verts=H('select',{class:'nova-input','aria-label':'Choose source vertex'});S.vertices.forEach(p=>verts.appendChild(H('option',{value:p.id,text:p.id+' '+coord(p)})));verts.value=S.active;verts.onchange=()=>{S.active=verts.value;emit('selection',S.active);rebuild();paint();};panel.appendChild(H('label',{class:'f102-span'},['Choose vertex for keyboard or buttons',verts]));
+ const p=S.vertices.find(v=>v.id===S.active)||S.vertices[0];
+ for(const axis of ['x','y'])panel.appendChild(field(axis==='x'?'x · across':'y · up/down',p[axis],1,v=>{const n=clamp(v);S.vertices=S.vertices.map(a=>a.id===p.id?{...a,[axis]:n}:a);emit('vertex',{vertex:p.id,axis,value:n,how:'button'});rebuild();paint();}));
+ const row=H('div',{class:'f102-actions f102-span'},[H('button',{class:'nova-btn ghost',text:'Reset original triangle',onclick:()=>{S.vertices=copy(BASE);emit('reset','source');rebuild();paint();}}),H('button',{class:'nova-btn ghost',text:'Back to lesson preset',onclick:()=>{resetToPreset();emit('reset',S.preset);rebuild();paint();}})]);panel.appendChild(row);
+ panel.appendChild(H('div',{class:'f102-hint f102-span',text:'Drag the cyan vertices on the grid or focus one and use arrow keys. Every drop snaps to an exact grid intersection.'}));
+ }rebuild();paint();
+}
+function challenge(panel,api,stage){
+ const CTasks=tasks.map((t,i)=>({
+   q:t.q,
+   build:ctl=>{S.task=i;S.answers=copy(BASE);S.wrong=0;ctl.appendChild(H('p',{class:'f102-task',text:'Move A′, B′ and C′ to the exact image coordinates.'}));return ()=>copy(S.answers);},
+   check:arr=>{const want=mapped(BASE,t),faults=want.filter((p,j)=>arr[j].x!==p.x||arr[j].y!==p.y);const ok=!faults.length;const msg=ok?'Correct. Every vertex matches the rule for '+t.name.toLowerCase()+'.':faults.length===1?'Check '+faults[0].id+'′. '+(t.op==='reflect-y'?'Reflect in the y-axis, not the x-axis.':t.op==='translate'?'Both coordinates move by the same translation vector.':'Remember the direction: anticlockwise.'):faults.length+' vertices are not yet at their mathematically correct image positions. '+t.hint;
+   if(!ok)S.wrong++;
+   return [ok,msg];},hint:t.hint,
+   solve:()=>{S.answers=mapped(BASE,t);scene(stage,{...t,base:BASE,showImage:true,challenge:true,pose:'cheer',caption:'Every image vertex follows the same rule.'});}
+ }));
+ N.challengeRun(panel,api,CTasks,i=>{S.task=i;S.answers=copy(BASE);scene(stage,{...tasks[i],base:BASE,showImage:true,challenge:true,pose:'think',caption:'Start with A′. Use the rule, then plot B′ and C′.'});},C);
+}
+const def={id:ID,title:'Shape on grid',config:C,steps:teaching.map(t=>({name:t.name,narration:t.desc,prompt:t.prompt,mood:t.pose})),render,explore,challenge,
+ alt:'Coordinate geometry transformation studio. Drag polygon vertices, calculate their image under translation, reflection, rotation or enlargement.',
+ staticAlt:'Original triangle ABC: A (−2,1), B (−1,2), C (1,1). Reflection in the y-axis maps (x,y) to (−x,y); a 90-degree anticlockwise rotation maps (x,y) to (−y,x).',
+ exploreIntro:'Move triangle vertices and select the transformation. The image always comes from a correct rule.',
+ onRestore:()=>{S.preset='Y7-052';resetToPreset();S.task=0;S.answers=copy(BASE);}
+};
+N.registry.add({id:ID,title:'Shape on grid',family:'F10',topics:['coordinates','reflection','translation','rotation','enlargement'],deps:['F0-02','F0-03','F0-04','F0-14','F10-01']});
+N.bankMount({id:ID,num:'02',title:'Shape on grid · Premium Edition',def,linked:['F0-02','F0-14','F10-01','F10-03'],years:'Years 7–8 transformations; Year 9 coordinate reasoning',spec:{
+ purpose:'Manipulate and transform a triangle on an exact Cartesian grid, proving image coordinates for reflection, translation, 90-degree rotation and enlargement.',
+ params:'Grid −5 to 5; base triangle vertices A, B, C; transformation rule; translation vector; named lesson presets.',
+ presets:'Y7-038 · Y7-052 · Y7-053 · Y7-054 · Y8-053',
+ steps:'Identify ABC → read vertices → reflection in y → translation (+3,−2) → 90° anticlockwise rotation → enlargement ×2 → check correspondence.',
+ interactions:'Four modes. Explore draggable source vertices with snapped positions, keyboard arrows and numeric steppers, rule controls; Challenge three independent drag-to-image tasks with per-vertex exact marking.',
+ traps:'Reflection over the wrong axis, swapping ordered pairs, treating translation as one vertex only, clockwise versus anticlockwise, scaling distances inconsistently.',
+ gcse:'Correct algebraic maps transferable to GCSE enlargement from other centres and coordinate proofs.'}});
+const card=document.getElementById(ID);
+if(card){const extra=H('details',{class:'nv-dev'});extra.appendChild(H('summary',{text:'Developer: component specification'}));card.querySelectorAll('details.nova-spec,p.purpose').forEach(e=>extra.appendChild(e));card.appendChild(extra);const h3=card.querySelector('h3');if(h3)h3.textContent='Interactive shape transformation workshop';const fix=()=>card.querySelectorAll('.face img').forEach(im=>{if(!im.alt)im.alt='Sir Bob, maths tutor';});fix();new MutationObserver(fix).observe(card,{subtree:true,childList:true});}
+})();
+
+</script></body></html>

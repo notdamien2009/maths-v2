@@ -1,0 +1,25 @@
+/* F6-14: original F0 colour, tubes, chalk and glow unchanged */
+#F6-14 .nova-stage{padding:8px 10px 4px!important;min-height:0!important;overflow:visible}
+#F6-14 .f614-layout{display:grid;grid-template-columns:minmax(0,3.5fr) minmax(218px,1fr);gap:12px;align-items:center;padding:5px 6px}
+#F6-14 .f614-art{min-width:0}
+#F6-14 .f614-svg{display:block;width:100%;height:auto;overflow:visible;touch-action:pan-y;user-select:none}
+#F6-14 .f614-dock{max-width:100%;margin-top:4px}
+#F6-14 .f614-side{display:flex;flex-direction:column;gap:9px;min-width:0}
+#F6-14 .f614-side .nv-ncard{min-height:85px;padding:12px}
+#F6-14 .f614-card-head{font:900 .72rem var(--nova-font-ui);letter-spacing:.12em;margin:0}
+#F6-14 .f614-card-value{font:800 clamp(1.28rem,2.5vw,2.1rem)/1.25 var(--nova-font-chalk-write);text-shadow:var(--nv-chalk-glow);margin:2px 0}
+#F6-14 .f614-card-sub{font:500 .75rem/1.3 var(--nova-font-ui);color:var(--v-muted);margin:0}
+#F6-14 .f614-controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:10px 0}
+#F6-14 .f614-field{display:flex;align-items:center;gap:7px;font:800 .85rem var(--nova-font-ui)}
+#F6-14 .f614-field select{border:1.5px solid #3986a6;background:#071629;color:#f1fbff;border-radius:10px;padding:10px;font:800 1rem var(--nova-font-chalk-write);max-width:290px;min-height:44px}
+#F6-14 .f614-tip{color:var(--v-muted);font:500 .86rem/1.4 var(--nova-font-ui)}
+#F6-14 .f614-feedback{padding:10px 13px;margin:8px 0;border-left:3px solid var(--math-cyan);border-radius:0 9px 9px 0;background:rgba(39,226,240,.07);min-height:38px;font:700 1rem/1.4 var(--nova-font-chalk-write)}
+#F6-14 .f614-feedback.good{border-color:var(--math-green);color:var(--math-green)}
+#F6-14 .f614-feedback.bad{border-color:#fa8585;color:#ffd1cf}
+#F6-14 .f614-question{font:800 1.06rem/1.4 var(--nova-font-chalk-write)}
+#F6-14 .f614-progress{font:800 .83rem var(--nova-font-ui);color:var(--math-cyan)}
+#F6-14 .f614-drag{outline:none;cursor:grab;touch-action:none}
+#F6-14 .f614-drag:focus-visible{filter:drop-shadow(0 0 14px #ffd65d)}
+@media(max-width:760px){#F6-14 .f614-layout{grid-template-columns:1fr;gap:1px;padding:0}#F6-14 .f614-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}#F6-14 .f614-side .nv-ncard{padding:8px;min-height:58px}#F6-14 .f614-card-value{font-size:1.17rem}#F6-14 .f614-card-head{font-size:.62rem}#F6-14 .f614-card-sub{font-size:.65rem}#F6-14 .f614-controls{gap:6px}#F6-14 .f614-field{flex-wrap:wrap}#F6-14 .f614-question{font-size:.96rem}#F6-14 .f614-controls button{min-height:42px;padding:8px 11px}}
+@media(prefers-reduced-motion:reduce){#F6-14 svg *{animation:none!important;transition:none!important}}
+@media print{#F6-14 .f614-svg{filter:grayscale(1)!important}#F6-14 .nv-ncard{background:#fff!important;box-shadow:none!important;color:#000!important}}

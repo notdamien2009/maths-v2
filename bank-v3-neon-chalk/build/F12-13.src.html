@@ -90,7 +90,7 @@ var def={id:'F12-13',title:'Arc and sector explorer',config:C,steps:steps,render
    function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['arc length','sector area','sector perimeter'][k]);var s=[A,B,Cc][k];draw(stage,s,{});strip(stage,[['radius',s.r+' cm','given'],['angle',s.a+'°','focus']]);NOVA.scene.helperStrip(stage,'think',['Fraction × circumference','Fraction × area','Don\u2019t forget the radii'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
-NOVA.bankMount({id:'F12-13',num:'F12·13',title:'Arc and sector explorer',def:def,linked:['F0-02','F0-11','F12-11','F12-12','F12-10','F13-10'],
+NOVA.bankMount({id:'F12-13',num:'F12·13',title:'Arc and sector explorer',def:def,linked:['F0-02','F0-11','F12-10','F12-11','F12-12'],
  spec:{purpose:'Arc length and sector area as a fraction of the circle. The angle at the centre over 360 gives the fraction; the arc is that fraction of the circumference and the sector that fraction of the circle area. Sector perimeter adds the two radii. Includes sectors beyond a semicircle.',
   params:'preset (quarter, semi, sixth, three-quarter, custom); radius r; angle a (15 to 345 in steps of 15); unit cm. The sector is drawn symmetric about the upward direction with an arc highlight, an angle marker and a fraction bar. Core: NOVA.neonShape / neonPath / svg.pill / neonTile. Year groups: KS3 Years 7–9 (12–15).',
   presets:'Quarter circle · Semicircle · Sixth of a circle · Three-quarter circle · Choose your own angle',

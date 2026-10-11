@@ -1697,6 +1697,14 @@ const F602_CONFIG={
 window.F602_CONFIG=F602_CONFIG;
 (function(){'use strict';
 const N=window.NOVA,H=N.h,E=N.svg.el,M=N.motion,C=F602_CONFIG,ID=C.id;
+// F6-02 local pointer-release safety net. Does not modify the locked shared F0 core.
+// SVG pointer capture can miss a fast release after a long drag. Let the F0
+// handler process it first; complete only a still-active drag of this engine.
+window.addEventListener?.('pointerup',ev=>{const d=N.ui._drag;
+ if(!d||!(d.el?.classList?.contains('f602-pair')))return;
+ Promise.resolve().then(()=>{if(N.ui._drag===d)d.up(ev);});
+},true);
+
 const ROUND=(v)=>Number(Number(v).toFixed(4));
 function value(p,x){return ROUND(x*p.knownB/p.known);}
 function equal(a,b){return Math.abs(a-b)<=Math.max(1,Math.abs(a),Math.abs(b))*1e-8;}
@@ -1778,7 +1786,11 @@ function makeScene(stage,p,opt={}){
    chalk(moving,markX,G.top-40,fmt(markA,p.unitA),'focus',mob?28:36);
    chalk(moving,markX,G.bottom-40,revealBottom?fmt(markB,p.unitB):'?','result',mob?28:36);
    if(opt.explore){
-    function change(to,kind){if(live.dead)return;opt.onMove?.(limitIndex(p,to),kind);}
+    function change(to,kind){if(live.dead)return;opt.onMove?.(limitIndex(p,to),kind);
+     // Rerender replaces the SVG <g>. Restore the keyboard focus to the
+     // successor marker so a second arrow or Delete works immediately.
+     if(kind==='keyboard')Promise.resolve().then(()=>stage.querySelector('.f602-pair')?.focus({preventScroll:true}));
+    }
     moving.addEventListener('keydown',e=>{
      const k=e.key;if(k==='ArrowRight'||k==='ArrowUp'){e.preventDefault();change(ix+1,'keyboard');}
      else if(k==='ArrowLeft'||k==='ArrowDown'){e.preventDefault();change(ix-1,'keyboard');}

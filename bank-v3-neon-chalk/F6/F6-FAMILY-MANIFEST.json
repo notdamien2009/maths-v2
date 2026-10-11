@@ -1,0 +1,662 @@
+{
+  "family": "NOVA Maths F6",
+  "revision": "Run 16 QA closure (overlays Run 15 gallery)",
+  "date": "2026-10-11",
+  "component_count": 14,
+  "standalone_count": 11,
+  "dependent_presets": {
+    "8": "F10-05",
+    "12": "F18-02",
+    "13": "F14-11"
+  },
+  "component_files_only_in_run15": false,
+  "f603_override": "Run03 layout v1.1 selected",
+  "source_archive_count": 14,
+  "all_source_file_paths_unique": true,
+  "sha256_core_js": "1e3a118ed3a38a0875178dc0acdd4e0fb6c07b38b33807f7cf410523756a9e21",
+  "sha256_core_css": "4beb90926294cbb54f7e9c13884c425e510defb8d8fd1deeede3dabba9cbde5b",
+  "components": [
+    {
+      "id": "F6-01",
+      "title": "Ratio Table",
+      "description": "Linked quantities and multiplicative scale factors",
+      "category": "Ratios",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-01-ratio-table.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-01-ratio-table.html",
+      "source_zip": "NOVA-F6-RUN01-F6-01-RATIO-TABLE-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "f9443321988745517eb29d043655e34556622ee970b0a609ee87429b58f0cd7f",
+      "engine_sha256": "9cbe9d4306d255a55f622a88572d24053d74bcb3bed3da3f3d9f592e89d2a8c2",
+      "tests_recorded": {
+        "math": {
+          "passed": 1039,
+          "total": null,
+          "failures": []
+        },
+        "run16_browser_functional_pointer_keyboard": {
+          "passed": 92,
+          "total": 92,
+          "widths": [
+            380,
+            430,
+            768,
+            1280
+          ],
+          "result_file": "shots/F6-qa-closure/run16-results.json"
+        }
+      },
+      "image_file": "gallery-assets/F6-01.webp",
+      "image_origin": "Run 15 smoke screenshot; not complete browser QA",
+      "review_status": "Owner visual review still pending; not GOLD",
+      "host_integration": "not applicable",
+      "browser_full_QA": "Run 16: rendered + functional + pointer drag + keyboard + responsive passed (380/430/768/1280)",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true,
+      "run16_patch": "NOVA-F6-RUN16-F6-01-02-QA-CLOSURE.zip"
+    },
+    {
+      "id": "F6-02",
+      "title": "Double Number Line",
+      "description": "Aligned proportional quantities and marker movement",
+      "category": "Ratios",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-02-double-number-line.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-02-double-number-line.html",
+      "source_zip": "NOVA-F6-RUN02-F6-02-DOUBLE-NUMBER-LINE-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "ff6d19c9b53f1f833145a36da3a7bdd750990a0505b46364331e8d5fd38265f4",
+      "engine_sha256": "b10c4e976f83e3c66f78220521a5f55d0ec19db36fe92f885d5dfa5f9d38091d",
+      "tests_recorded": {
+        "math": {
+          "passed": 7630,
+          "total": 7630,
+          "failures": []
+        },
+        "run16_browser_functional_pointer_keyboard": {
+          "passed": 104,
+          "total": 104,
+          "widths": [
+            380,
+            430,
+            768,
+            1280
+          ],
+          "result_file": "shots/F6-qa-closure/run16-results.json"
+        }
+      },
+      "image_file": "gallery-assets/F6-02.webp",
+      "image_origin": "Run 15 smoke screenshot; not complete browser QA",
+      "review_status": "Owner visual review still pending; not GOLD",
+      "host_integration": "not applicable",
+      "browser_full_QA": "Run 16: rendered + functional + pointer drag + keyboard + responsive passed (380/430/768/1280)",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true,
+      "run16_patch": "NOVA-F6-RUN16-F6-01-02-QA-CLOSURE.zip"
+    },
+    {
+      "id": "F6-03",
+      "title": "Sharing in a Ratio",
+      "description": "Equal shares, counters and a total brace",
+      "category": "Ratios",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-03-sharing-in-a-ratio.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-03-sharing-in-a-ratio.html",
+      "source_zip": "NOVA-F6-RUN03-F6-03-LAYOUT-FIX-v1.1.zip",
+      "source_zip_sha256": "64705bf53368d51f3e44e460f61f0c4914c48cf5e70928757db80acff845f83f",
+      "engine_sha256": "cb55897264b194a14d3c4f04dd4db27a4d0f1b14a2b8aaa7130d87bafdea2ecf",
+      "tests_recorded": {
+        "browser": {
+          "passed": 68,
+          "total": 68,
+          "failures": []
+        },
+        "layout": {
+          "passed": 32,
+          "total": 32,
+          "failures": []
+        },
+        "math": {
+          "passed": 19884,
+          "total": 19884,
+          "failures": 0
+        },
+        "stress": {
+          "passed": null,
+          "total": 60,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-03.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "not applicable",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-04",
+      "title": "Simplifying Ratios",
+      "description": "Equivalent groups and common factors",
+      "category": "Ratios",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-04-simplifying-ratios.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-04-simplifying-ratios.html",
+      "source_zip": "NOVA-F6-RUN04-F6-04-SIMPLIFYING-RATIOS-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "4e0aab575868d78ecb26421f6c5cd9e030542955abec46a814e018488d2ae613",
+      "engine_sha256": "ee7b70fd8c6ed7ecf58bd05c7bc3ac076d711b17505a34805025ed0bb59c9d90",
+      "tests_recorded": {
+        "browser": {
+          "passed": 75,
+          "total": 75,
+          "failures": []
+        },
+        "layout": {
+          "passed": 58,
+          "total": 58,
+          "failures": []
+        },
+        "math": {
+          "passed": 25616,
+          "total": 25616,
+          "failures": []
+        },
+        "stress": {
+          "passed": 144,
+          "total": 144,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-04.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "not applicable",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-05",
+      "title": "Recipe Scaler",
+      "description": "Ingredients linked to serving multipliers",
+      "category": "Applications",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-05-recipe-scaler.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-05-recipe-scaler.html",
+      "source_zip": "NOVA-F6-RUN05-F6-05-RECIPE-SCALER-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "98e8e180a2b01480c349613f414cce36c9d1b438c655504be3adb70299d418b3",
+      "engine_sha256": "87b82d09b8c2ecd98d4e2cfbfb74474663c20216131320e07bb43b7c5dacdf4a",
+      "tests_recorded": {
+        "browser": {
+          "passed": 67,
+          "total": 67,
+          "failures": []
+        },
+        "layout": {
+          "passed": 26,
+          "total": 26,
+          "failures": []
+        },
+        "math": {
+          "passed": 12760,
+          "total": 12760,
+          "failures": []
+        },
+        "stress": {
+          "passed": 32,
+          "total": 32,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-05.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "not applicable",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-06",
+      "title": "Best-Buy Comparer",
+      "description": "Unit rates reveal genuine value",
+      "category": "Applications",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-06-best-buy-comparer.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-06-best-buy-comparer.html",
+      "source_zip": "NOVA-F6-RUN06-F6-06-BEST-BUY-COMPARER-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "f9109e041baade989f8d94ccc2ee494393516635d48a634435006258ccacf614",
+      "engine_sha256": "df382cd3a2e74e77136afc4b5cb4036c9f142f0eb5f48159759b38dce6b3cdc2",
+      "tests_recorded": {
+        "browser": {
+          "passed": 100,
+          "total": 100,
+          "failures": []
+        },
+        "layout": {
+          "passed": 32,
+          "total": 32,
+          "failures": []
+        },
+        "math": {
+          "passed": 100025,
+          "total": 100025,
+          "failures": []
+        },
+        "stress": {
+          "passed": 44,
+          "total": 44,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-06.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "not applicable",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-07",
+      "title": "Map and Scale Drawing",
+      "description": "Measure, scale and convert map distance",
+      "category": "Applications",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-07-map-and-scale-drawing.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-07-map-and-scale-drawing.html",
+      "source_zip": "NOVA-F6-RUN07-F6-07-MAP-AND-SCALE-DRAWING-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "8cf01cb145ee6094e225d2ac3b45138cf326b3c3b9d395c261019c10f725eec9",
+      "engine_sha256": "edd02d967537c85d4da99889357d6fb8a817e81f374d7a08381ea021b9850747",
+      "tests_recorded": {
+        "math": {
+          "passed": 131320,
+          "total": 131320,
+          "failures": []
+        },
+        "browser": {
+          "passed": 74,
+          "total": 74,
+          "failures": []
+        },
+        "stress": {
+          "passed": 56,
+          "total": 56,
+          "failures": []
+        },
+        "layout": {
+          "passed": 48,
+          "total": 48,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-07.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "not applicable",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-08",
+      "title": "Direct Proportion Graph",
+      "description": "From ratio table to y = kx through the origin",
+      "category": "Graphs",
+      "type": "preset preview",
+      "parent": "F10-05",
+      "engine_file": "F6-08-direct-proportion-GALLERY-PREVIEW.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-08-direct-proportion-GALLERY-PREVIEW.html",
+      "source_zip": "NOVA-F6-RUN08-F6-08-DIRECT-PROPORTION-GRAPH-PRESET-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "947da366b10ae315c914d563cf02197cec51520dbbf773d92a8a50d7e7dd8085",
+      "engine_sha256": "504e2cda77599349827d147b0170d12754ae5548aa3646a3847ed9217f4d296f",
+      "tests_recorded": {
+        "math": {
+          "passed": 120076,
+          "total": 120076,
+          "failures": 0
+        },
+        "browser": {
+          "passed": 98,
+          "total": 98,
+          "failures": []
+        },
+        "stress": {
+          "passed": 20,
+          "total": 20,
+          "failures": []
+        },
+        "layout": {
+          "passed": 59,
+          "total": 59,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-08.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "pending",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-09",
+      "title": "Inverse Proportion Rectangle",
+      "description": "Fixed area links to a reciprocal curve",
+      "category": "Graphs",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-09-inverse-proportion-rectangle.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-09-inverse-proportion-rectangle.html",
+      "source_zip": "NOVA-F6-RUN09-F6-09-INVERSE-PROPORTION-RECTANGLE-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "0a6daace65ad995cb2cbb2f13c982a201d767649f147a4be264fd9912b9d6c9d",
+      "engine_sha256": "af3489c9ace611ead18aead788f01009063aaae407f9aa09ca6854a6f5ababdd",
+      "tests_recorded": {
+        "browser": {
+          "passed": 74,
+          "total": 74,
+          "failures": []
+        },
+        "layout": {
+          "passed": 136,
+          "total": 136,
+          "failures": []
+        },
+        "math": {
+          "passed": 48110,
+          "total": 48110,
+          "failures": []
+        },
+        "stress": {
+          "passed": 44,
+          "total": 44,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-09.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "not applicable",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-10",
+      "title": "Speed–Distance–Time",
+      "description": "Moving journey with distance–time evidence",
+      "category": "Applications",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-10-speed-distance-time.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-10-speed-distance-time.html",
+      "source_zip": "NOVA-F6-RUN10-F6-10-SPEED-DISTANCE-TIME-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "1c501df0c8ef50a9a26efedac852ebf1dcf84f536102eae94e8a6572af1c0cdc",
+      "engine_sha256": "39a34073e2f151003547d5b01cfc870715cae81b4665808e05ceca2b63b05d20",
+      "tests_recorded": {
+        "math": {
+          "passed": 150029,
+          "total": 150029,
+          "failures": []
+        },
+        "browser": {
+          "passed": 84,
+          "total": 84,
+          "failures": []
+        },
+        "stress": {
+          "passed": 42,
+          "total": 42,
+          "failures": []
+        },
+        "layout": {
+          "passed": 68,
+          "total": 68,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-10.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "not applicable",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-11",
+      "title": "Rates-of-Change Tank",
+      "description": "Live fill level linked to gradient and rate",
+      "category": "Graphs",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-11-rates-of-change-tank.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-11-rates-of-change-tank.html",
+      "source_zip": "NOVA-F6-RUN11-F6-11-RATES-OF-CHANGE-TANK-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "0bd5abb6b16b5fed0f5df2819e772f4b38b77427096b3e7806107fad52d98004",
+      "engine_sha256": "069580f8215f3c377b8966dba1429f83ab266d071505223e8003a0ad511d8ef3",
+      "tests_recorded": {
+        "math": {
+          "passed": 180000,
+          "total": 180000,
+          "failures": []
+        },
+        "browser": {
+          "passed": 89,
+          "total": 89,
+          "failures": []
+        },
+        "stress": {
+          "passed": 20,
+          "total": 20,
+          "failures": []
+        },
+        "layout": {
+          "passed": 88,
+          "total": 88,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-11.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "not applicable",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-12",
+      "title": "Currency and Unit Bridges",
+      "description": "Multiple conversion steps and factor cards",
+      "category": "Applications",
+      "type": "preset preview",
+      "parent": "F18-02",
+      "engine_file": "F6-12-currency-unit-bridges-GALLERY-PREVIEW.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-12-currency-unit-bridges-GALLERY-PREVIEW.html",
+      "source_zip": "NOVA-F6-RUN12-F6-12-CURRENCY-AND-UNIT-BRIDGES-PRESET-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "11acf8e2e0c8ee25f4c9884f7f89f039667d6b5f1169ff2d00b98319362d9259",
+      "engine_sha256": "bbae6ae3a887501f0806f82e48760f2a4266db17e39599035dd84dc552fd52c5",
+      "tests_recorded": {
+        "browser": {
+          "passed": 108,
+          "total": 108,
+          "failures": []
+        },
+        "layout": {
+          "passed": 36,
+          "total": 36,
+          "failures": []
+        },
+        "math": {
+          "passed": 18006,
+          "total": "Forward, reverse, compound numerator/denominator, exact known examples.",
+          "failures": 0
+        },
+        "stress": {
+          "passed": 14,
+          "total": null,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-12.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "pending",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-13",
+      "title": "Proportion in Geometry",
+      "description": "Corresponding lengths and shape scale factors",
+      "category": "Graphs",
+      "type": "preset preview",
+      "parent": "F14-11",
+      "engine_file": "F6-13-proportion-in-geometry-GALLERY-PREVIEW.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-13-proportion-in-geometry-GALLERY-PREVIEW.html",
+      "source_zip": "NOVA-F6-RUN13-F6-13-PROPORTION-IN-GEOMETRY-PRESET-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "155a30f7daac3cfdc5eb0fad2183fd796ec7198402c1fc6b403292ec853bf8f1",
+      "engine_sha256": "03bd4967245008f8b1c265b45a74ac274e8f34a2db8a1567e288eceeca9b0532",
+      "tests_recorded": {
+        "math": {
+          "passed": 70007,
+          "total": 70007,
+          "failures": []
+        },
+        "browser": {
+          "passed": 120,
+          "total": 120,
+          "failures": []
+        },
+        "stress": {
+          "passed": 26,
+          "total": 26,
+          "failures": []
+        },
+        "layout": {
+          "passed": 100,
+          "total": 100,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-13.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "pending",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    },
+    {
+      "id": "F6-14",
+      "title": "Ratio and Fraction Translator",
+      "description": "Equal ratio parts become stacked fractions",
+      "category": "Ratios",
+      "type": "standalone engine",
+      "parent": null,
+      "engine_file": "F6-14-ratio-fraction-translator.html",
+      "engine_zip_path": "bank-v3-neon-chalk/F6/F6-14-ratio-fraction-translator.html",
+      "source_zip": "NOVA-F6-RUN14-F6-14-RATIO-FRACTION-TRANSLATOR-PREMIUM-REVIEW.zip",
+      "source_zip_sha256": "c6a07abaa6dfaedbba38ed6c7fe08b82fd482015290abde647b4ae5fd00d524f",
+      "engine_sha256": "83237cbf07c2c96cfbc7384ed4212696b28ccb439649dd8f610f3d27950bed13",
+      "tests_recorded": {
+        "layout": {
+          "passed": 88,
+          "total": 88,
+          "failures": []
+        },
+        "stress": {
+          "passed": 38,
+          "total": 38,
+          "failures": []
+        },
+        "browser": {
+          "passed": 128,
+          "total": 128,
+          "failures": []
+        },
+        "math": {
+          "passed": 62430,
+          "total": 62430,
+          "failures": []
+        }
+      },
+      "image_file": "gallery-assets/F6-14.webp",
+      "image_origin": "run archive screenshot",
+      "review_status": "owner review pending",
+      "host_integration": "not applicable",
+      "browser_full_QA": "run-report recorded",
+      "embeds_identical_F0_core_js": true,
+      "embeds_identical_F0_core_css": true,
+      "contains_no_external_script_src": true,
+      "contains_no_external_stylesheet_link": true
+    }
+  ],
+  "run16_QA": {
+    "focus": [
+      "F6-01",
+      "F6-02"
+    ],
+    "browser_functional_drag_keyboard_responsive": {
+      "passed": 196,
+      "total": 196,
+      "widths_px": [
+        380,
+        430,
+        768,
+        1280
+      ]
+    },
+    "math_F6_01": {
+      "passed": 1039,
+      "total": 1039
+    },
+    "math_F6_02": {
+      "passed": 7630,
+      "total": 7630
+    },
+    "core_js_embedded_unchanged": true,
+    "owner_GOLD_approval": "pending",
+    "native_touchscreen": "pending",
+    "parent_host_integration": [
+      "F10-05",
+      "F18-02",
+      "F14-11"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+/* F9-01: component styling only. Drawing, chalk, controls and mascot art use NOVA core. */
+.f901-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(206px,.40fr);gap:12px;align-items:stretch;max-width:100%;margin:8px 4px 0}
+.f901-svg{width:100%;height:auto;display:block;overflow:visible;align-self:center}
+.f901-side{display:flex;flex-direction:column;gap:11px;justify-content:center;padding:4px 0}
+.f901-card{padding:14px 14px 12px;border:1.5px solid #286a91;border-radius:17px;background:linear-gradient(153deg,rgba(19,43,70,.7),rgba(4,14,32,.78));box-shadow:inset 0 1px 0 #ffffff1a,0 9px 21px #020d1b55}
+.f901-card--gold{border-color:#86672c}
+.f901-eyebrow{font:700 12px var(--nova-font-chalk-draw);color:#84cef1;letter-spacing:.035em;margin-bottom:7px}
+.f901-maths{font:700 clamp(23px,3.3vw,36px)/1.36 var(--nova-font-chalk-write);text-shadow:0 0 9px #24caf655;color:#eafaff}
+.f901-maths--gold{color:#ffdb8c;text-shadow:0 0 11px #f7ad3b88}
+.f901-body{font:700 15px/1.43 var(--nova-font-chalk-write);color:#daecff}
+.f901-table{width:100%;margin-top:5px;border-collapse:separate;border-spacing:4px 5px;table-layout:fixed}
+.f901-table th{font:700 15px var(--nova-font-chalk-draw);color:#84cef1;text-align:center;padding:2px}
+.f901-table td{font:700 21px var(--nova-font-chalk-write);color:#eefaff;text-align:center;background:#0e2940b8;border:1px solid #27597c;border-radius:9px;padding:4px 0;box-shadow:0 4px 12px #00112166}
+.f901-table td.added{border-color:#e5b454;color:#ffcf68;box-shadow:0 0 12px #e5a53b2b}
+.f901-table td.unknown{border-style:dashed;color:#75adcb}
+.f901-table th:first-child,.f901-table td:first-child{width:33%;font-size:15px;color:#94c9e6}
+.f901-trail{display:flex;gap:9px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:5px}
+.f901-trail span{font:700 15px var(--nova-font-chalk-write);color:#a9dffd}
+.f901-trail span em{font-style:normal;color:#ffca64}
+.f901-control{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:12px 0}
+.f901-control button{min-height:43px}
+.f901-control label{font:700 15px var(--nova-font-chalk-write);color:#d5edff}
+.f901-control input[type=number]{max-width:97px;border:2px solid #448ca9;border-radius:11px;background:#102a43;color:white;padding:10px;font:700 19px var(--nova-font-chalk-write)}
+.f901-instruction{font:700 16px/1.4 var(--nova-font-chalk-write);color:#c7e7ff;max-width:680px}
+.f901-taskhead{font:700 21px/1.4 var(--nova-font-chalk-write);color:#ffce75;margin:9px 0}
+.f901-workrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.f901-workrow input{max-width:120px;border:2px solid #4b86a7;border-radius:11px;background:#0a2035;color:#fff;padding:10px;font:700 22px var(--nova-font-chalk-write)}
+.f901-workrow .nova-btn{min-height:44px}
+.f901-status{min-height:30px;font:700 15px var(--nova-font-chalk-write);color:#b5d9eb}
+.f901-note{font:700 14px/1.3 var(--nova-font-chalk-write);color:#9bc7e5}
+.f901-micro{font:700 15px var(--nova-font-chalk-write);color:#b7e9fb}
+.f901-svg text{font-family:var(--nova-font-chalk-draw)}
+.f901-svg .f901-dropbtn{cursor:pointer;outline:none}
+.f901-svg .f901-dropbtn:focus-visible{filter:drop-shadow(0 0 8px #ffcf70)}
+.f901-svg .nv-hit{pointer-events:all}
+@media(max-width:760px){.f901-stage{grid-template-columns:minmax(0,1fr);gap:7px}.f901-side{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:7px}.f901-card{padding:10px}.f901-card--full{grid-column:1/-1}.f901-nova-line{min-height:42px}.f901-nova-line img{height:42px;width:46px}.f901-nova-line span{font-size:13px}.f901-maths{font-size:24px}.f901-svg{max-width:460px;margin:0 auto}.f901-table td{font-size:18px}.f901-stage .f901-side .f901-card--gold{grid-column:1/-1}.f901-control button{font-size:13px}}
+@media(max-width:410px){.f901-stage{margin:4px 0}.f901-side{grid-template-columns:1fr 1fr}.f901-card{padding:8px 9px}.f901-body{font-size:13px}.f901-maths{font-size:22px}.f901-eyebrow{font-size:11px}}
+@media print{.f901-stage{grid-template-columns:1fr 230px}.f901-card{background:white!important;border:1px solid black!important;color:black!important;box-shadow:none}.f901-card *{color:black!important;text-shadow:none!important}.f901-svg{filter:grayscale(1)}.f901-nova-line img{display:none}}
+
+.f901-challenge-evidence{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 6px 3px}.f901-challenge-evidence span{display:grid;place-items:center;min-height:58px;border:1px solid #1d7593;background:linear-gradient(160deg,#0c2a47,#08182e);border-radius:13px;box-shadow:0 5px 14px #0109137a;font:700 18px var(--nova-font-chalk-write);color:#bdf2ff}.f901-challenge-evidence span.f901-next{border-color:#e7aa58;color:#ffc86a}@media(max-width:600px){.f901-challenge-evidence{grid-template-columns:repeat(2,1fr)}.f901-challenge-evidence span{min-height:44px;font-size:15px}}
+
+.f901-predict{min-height:76px;border-color:#376985;background:linear-gradient(120deg,#102d45ad,#092036bd)}.f901-predict .f901-body{color:#bde9fa;font-size:16px}@media(max-width:410px){.f901-predict .f901-body{font-size:15px}}
+
+/* F9-01 v3 family alignment: do not override the F0/F1/F2/F3 shared
+   .nova-stage background, topic motif, shadow, border or noise layers.
+   All scene treatment is inherited from unmodified canonical NOVA CSS. */
+#F9-01 .f901-stage{margin-inline:0}

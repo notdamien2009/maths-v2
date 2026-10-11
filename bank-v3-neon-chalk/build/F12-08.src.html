@@ -48,7 +48,7 @@ function draw(stage,st,o){o=o||{};var a=st.a,b=st.b,hh=st.h,x0=st.x0,A=[0,0],B=[
   sv=S.root(VW,VH,'Trapezium with parallel sides '+a+' '+UN+' and '+b+' '+UN+' and height '+hh+' '+UN+'.');sv.classList.add('f12-sv');
   if(st.mode==='double'){if(st.th>=180)NOVA.neonShape(sv,m([A,Dp,Ap,D]),{role:'result',fill:false,width:2,dash:'8 6'});if(st.th>0||o.ghost){var g2=NOVA.neonShape(sv,m(cp),{role:'focus',hatch:'diag',width:3});g2.setAttribute('data-maths','copy');}}
   var g=NOVA.neonShape(sv,m(trap),{role:'op',hatch:(st.mode==='double'&&st.th>0)?null:'cross',width:3});g.setAttribute('data-maths','shape');
-  if(st.mode==='mid'||o.mid){var ml=m([[ (A[0]+D[0])/2,-hh/2],[(B[0]+Cc[0])/2,-hh/2]]);NOVA.neonLine(sv,ml[0][0],ml[0][1],ml[1][0],ml[1][1],{role:'result',width:3});S.pill(sv,ml[0][0]+(ml[1][0]-ml[0][0])*.72,ml[0][1],fmt((a+b)/2)+' '+UN,{role:'result',size:12});}
+  if(st.mode==='mid'||o.mid){var ml=m([[ (A[0]+D[0])/2,-hh/2],[(B[0]+Cc[0])/2,-hh/2]]);NOVA.neonLine(sv,ml[0][0],ml[0][1],ml[1][0],ml[1][1],{role:'result',width:3});S.pill(sv,ml[0][0]+(ml[1][0]-ml[0][0])*.8,ml[0][1],fmt((a+b)/2)+' '+UN,{role:'result',size:12});}
   var Tm=m([D,Cc]),Bm=m([A,B]);NOVA.dimLine(sv,Tm[0][0],Tm[0][1],Tm[1][0],Tm[1][1],fmt(a)+' '+UN,{role:'op',off:-24});NOVA.dimLine(sv,Bm[0][0],Bm[0][1],Bm[1][0],Bm[1][1],fmt(b)+' '+UN,{role:'given',off:26});
   NOVA.parTick(sv,Tm[0][0],Tm[0][1],Tm[1][0],Tm[1][1],1,{role:'support'});NOVA.parTick(sv,Bm[0][0],Bm[0][1],Bm[1][0],Bm[1][1],1,{role:'support'});
   var ft=m([[x0,0]])[0],ap=m([D])[0];F.hmark(sv,ap,ft,Bm[0],Bm[1],fmt(hh)+' '+UN,{role:'focus',dx:x0<b/2?28:-28});

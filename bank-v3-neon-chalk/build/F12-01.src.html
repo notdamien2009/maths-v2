@@ -44,7 +44,7 @@ var NOVA_F12_01_CONFIG={
 /* ===== F12-01 ENGINE ===== */
 (function(){
 var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=NOVA_F12_01_CONFIG,P=C.presets,strip=F.strip;
-var LAB={rightTri:'Right-angled',equilateral:'Equilateral',isosceles:'Isosceles',scalene:'Scalene',pentagon:'Pentagon',hexagon:'Hexagon'};
+var LAB={trapezium:'Trapezium',rightTri:'Right-angled',equilateral:'Equilateral',isosceles:'Isosceles',scalene:'Scalene',pentagon:'Pentagon',hexagon:'Hexagon'};
 function nm(k){return LAB[k]||F.SHAPES[k].name;}
 function node(T,k){return T.nodes.filter(function(n){return n.k===k;})[0];}
 function anc(T,k,out){out=out||{};out[k]=1;var nd=node(T,k);if(nd)nd.p.forEach(function(p){if(p==='root')out.root=1;else anc(T,p,out);});return out;}
@@ -56,7 +56,7 @@ function draw(stage,pk,o){o=o||{};var T=P[pk],n=o.reveal==null?T.nodes.length:o.
   S.pill(sv,T.rx,T.ry,T.rootName,{role:A.root?'focus':'given',size:14});
   vis.forEach(function(d){var on=d.k===act;F.draw(sv,d.k,d.x,d.y,on?sc*1.25:sc,{role:on?'focus':A[d.k]?'result':'op',marks:on,tag:d.k});NOVA.chalkText(sv,d.x,d.y+hh+14,nm(d.k),{size:T.sc>.6?16:15,role:on?'focus':null});});
   stage.appendChild(sv);return sv;}
-function chips(stage,T,k){if(!k)return;var p=F.SHAPES[k].p;strip(stage,[['sides',p.sides,'given'],['parallel pairs',p.par,'op'],['right angles',p.ra,'result'],['lines of symmetry',p.sym,'focus']]);var an=ancNames(T,k);if(an.length)strip(stage,[['also a',an.join(' · '),'support']]);}
+function chips(stage,T,k){if(!k)return;var p=F.SHAPES[k].p;strip(stage,[['sides',p.sides,'given'],['parallel pairs',p.par,'op'],['right angles',p.ra,'result'],['lines of symmetry',k==='trapezium'?'0 (1 if isosceles)':p.sym,'focus']]);var an=ancNames(T,k);if(an.length)strip(stage,[['also a',an.join(' · '),'support']]);}
 var steps=[
  {name:'Triangles',mood:'neutral',narration:'Every triangle has three sides and its angles add to 180 degrees. We sort triangles by their sides: all equal, two equal, none equal, or one right angle.',prompt:'Which triangle has two equal sides?',st:{pk:'triangles',active:'isosceles'},extra:[['angles add to','180°','op']],target:'isosceles'},
  {name:'Quadrilaterals',mood:'think',narration:'Four straight sides makes a quadrilateral. The angles add to 360 degrees. Three families branch off: trapezium, kite and parallelogram.',prompt:'How many pairs of parallel sides does a trapezium have?',st:{pk:'quads',reveal:3},extra:[['angles add to','360°','op']]},

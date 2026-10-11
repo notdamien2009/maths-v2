@@ -1,0 +1,59 @@
+{
+  "component_id": "F6-09",
+  "title": "Inverse Proportion Rectangle",
+  "family": "F6",
+  "version": "1.0.0-premium-review",
+  "status": "review-candidate-pending-owner-GOLD-approval",
+  "kind": "standalone-engine",
+  "lesson_ids": [
+    "Y8-037",
+    "Y9-013",
+    "Y9-019",
+    "Y9-020"
+  ],
+  "presets": [
+    "Y8-037",
+    "Y9-013",
+    "Y9-019",
+    "Y9-020"
+  ],
+  "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+  ],
+  "teaching_steps": 6,
+  "build_command": "python build/build-f6-09.py",
+  "self_contained_html": "F6/F6-09-inverse-proportion-rectangle.html",
+  "core_sha256": {
+    "core/nova-core.css": "4beb90926294cbb54f7e9c13884c425e510defb8d8fd1deeede3dabba9cbde5b",
+    "core/nova-core.js": "1e3a118ed3a38a0875178dc0acdd4e0fb6c07b38b33807f7cf410523756a9e21"
+  },
+  "shared_core_replacement_in_zip": false,
+  "qa": {
+    "math": {
+      "passed": 48110,
+      "total": 48110
+    },
+    "browser": {
+      "passed": 74,
+      "total": 74
+    },
+    "stress": {
+      "passed": 44,
+      "total": 44
+    },
+    "layout": {
+      "passed": 136,
+      "total": 136
+    }
+  },
+  "genuine_browser_screenshots": 14,
+  "limits": [
+    "Owner GOLD approval outstanding",
+    "Native touchscreen hardware test not performed",
+    "Live lesson shell not integrated",
+    "Screen reader device test not performed"
+  ]
+}

@@ -1643,7 +1643,7 @@ F.SHAPES={
  rectangle:{name:'Rectangle',fam:'quad',pts:[[-48,-30],[48,-30],[48,30],[-48,30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[0,1,2,3],p:{sides:4,allEq:0,par:2,ra:4,sym:2,rot:2}},
  parallelogram:{name:'Parallelogram',fam:'quad',pts:[[-50,30],[26,30],[50,-30],[-26,-30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:0,par:2,ra:0,sym:0,rot:2}},
  rhombus:{name:'Rhombus',fam:'quad',pts:[[0,-48],[34,0],[0,48],[-34,0]],eq:[[0,1,2,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:1,par:2,ra:0,sym:2,rot:2}},
- trapezium:{name:'Trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
+ trapezium:{name:'Isosceles trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
  kite:{name:'Kite',fam:'quad',pts:[[0,-50],[32,-8],[0,48],[-32,-8]],eq:[[0,3],[1,2]],par:[],ra:[],p:{sides:4,allEq:0,par:0,ra:0,sym:1,rot:1}},
  pentagon:{name:'Regular pentagon',fam:'poly',pts:reg(5,48),eq:[[0,1,2,3,4]],par:[],ra:[],p:{sides:5,allEq:1,par:0,ra:0,sym:5,rot:5}},
  hexagon:{name:'Regular hexagon',fam:'poly',pts:reg(6,48),eq:[[0,1,2,3,4,5]],par:[[0,3],[1,4],[2,5]],ra:[],p:{sides:6,allEq:1,par:3,ra:0,sym:6,rot:6}}};
@@ -1685,6 +1685,14 @@ F.hmark=function(sv,apex,foot,baseA,baseB,txt,o){o=o||{};var role=o.role||'focus
 NOVA.version=(NOVA.version||'')+'+f12run2';
 })();
 
+/* ==== v3.7 F12 phone text boost (additive, F12 diagrams only) ==== */
+(function(){var S=NOVA.svg,pill=S.pill,ct=NOVA.chalkText;
+function boost(p,o){var sv=p&&(p.ownerSVGElement||p);if(!sv||!sv.classList||!sv.classList.contains('f12-sv')||window.innerWidth>640)return o;o=Object.assign({},o||{});o.size=Math.min(19,Math.max(13,Math.round((o.size||12)*1.3)));return o;}
+S.pill=function(p,x,y,t,o){return pill.call(S,p,x,y,t,boost(p,o));};
+NOVA.chalkText=function(p,x,y,t,o){return ct.call(NOVA,p,x,y,t,boost(p,o));};
+NOVA.version=(NOVA.version||'')+'+f12phone';
+})();
+
 </script>
 <script>
 /* ===== F12-01 CONFIG: parameters + named presets ===== */
@@ -1704,7 +1712,7 @@ var NOVA_F12_01_CONFIG={
 /* ===== F12-01 ENGINE ===== */
 (function(){
 var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=NOVA_F12_01_CONFIG,P=C.presets,strip=F.strip;
-var LAB={rightTri:'Right-angled',equilateral:'Equilateral',isosceles:'Isosceles',scalene:'Scalene',pentagon:'Pentagon',hexagon:'Hexagon'};
+var LAB={trapezium:'Trapezium',rightTri:'Right-angled',equilateral:'Equilateral',isosceles:'Isosceles',scalene:'Scalene',pentagon:'Pentagon',hexagon:'Hexagon'};
 function nm(k){return LAB[k]||F.SHAPES[k].name;}
 function node(T,k){return T.nodes.filter(function(n){return n.k===k;})[0];}
 function anc(T,k,out){out=out||{};out[k]=1;var nd=node(T,k);if(nd)nd.p.forEach(function(p){if(p==='root')out.root=1;else anc(T,p,out);});return out;}
@@ -1716,7 +1724,7 @@ function draw(stage,pk,o){o=o||{};var T=P[pk],n=o.reveal==null?T.nodes.length:o.
   S.pill(sv,T.rx,T.ry,T.rootName,{role:A.root?'focus':'given',size:14});
   vis.forEach(function(d){var on=d.k===act;F.draw(sv,d.k,d.x,d.y,on?sc*1.25:sc,{role:on?'focus':A[d.k]?'result':'op',marks:on,tag:d.k});NOVA.chalkText(sv,d.x,d.y+hh+14,nm(d.k),{size:T.sc>.6?16:15,role:on?'focus':null});});
   stage.appendChild(sv);return sv;}
-function chips(stage,T,k){if(!k)return;var p=F.SHAPES[k].p;strip(stage,[['sides',p.sides,'given'],['parallel pairs',p.par,'op'],['right angles',p.ra,'result'],['lines of symmetry',p.sym,'focus']]);var an=ancNames(T,k);if(an.length)strip(stage,[['also a',an.join(' · '),'support']]);}
+function chips(stage,T,k){if(!k)return;var p=F.SHAPES[k].p;strip(stage,[['sides',p.sides,'given'],['parallel pairs',p.par,'op'],['right angles',p.ra,'result'],['lines of symmetry',k==='trapezium'?'0 (1 if isosceles)':p.sym,'focus']]);var an=ancNames(T,k);if(an.length)strip(stage,[['also a',an.join(' · '),'support']]);}
 var steps=[
  {name:'Triangles',mood:'neutral',narration:'Every triangle has three sides and its angles add to 180 degrees. We sort triangles by their sides: all equal, two equal, none equal, or one right angle.',prompt:'Which triangle has two equal sides?',st:{pk:'triangles',active:'isosceles'},extra:[['angles add to','180°','op']],target:'isosceles'},
  {name:'Quadrilaterals',mood:'think',narration:'Four straight sides makes a quadrilateral. The angles add to 360 degrees. Three families branch off: trapezium, kite and parallelogram.',prompt:'How many pairs of parallel sides does a trapezium have?',st:{pk:'quads',reveal:3},extra:[['angles add to','360°','op']]},

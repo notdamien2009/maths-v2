@@ -1776,8 +1776,7 @@ function scene(o,v){const m=math(o),interactive=!!v.interactive&&!v.won,step=v.s
    const fs=Math.max(28,Math.min(46,260/Math.max(cells,1)));
    chalk(svg,x+oneWidth/2,G.yDist+69,txt,fs,showRate?'focus':'unknown');
   }}
- const hint=interactive?'Drag the RATE chip onto the first distance box.':'Equal widths prove equal units, not just equal colours.';
- chalk(svg,500,625,interactive?hint:(step>=5?'Total distance = one-unit distance × number of hours':'Match one time box with one distance box.'),37,'given');
+ chalk(svg,500,625,interactive?'Drop the rate in the first box':(step>=5?'Distance = rate × time':'Match each hour to its distance'),37,'given');
  if(interactive){
   // Drop zone for a real one-unit value on the first distance unit.
   const zRate={x:G.x+5,y:G.yDist+3,w:Math.max(130,oneWidth-10),h:G.barH-3,id:'rate',kind:'drop'};

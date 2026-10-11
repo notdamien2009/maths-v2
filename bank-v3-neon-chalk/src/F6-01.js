@@ -15,6 +15,14 @@ const F601_CONFIG={
 };window.F601_CONFIG=F601_CONFIG;
 (function(){'use strict';
 const C=F601_CONFIG,N=window.NOVA,H=N.h,E=N.svg.el,ID=C.id;
+// F6-01 local pointer-release safety net. Does not modify the locked shared F0 core.
+// SVG pointer capture can miss a fast release after a long drag. Let the F0
+// handler process it first; complete only a still-active drag of this engine.
+window.addEventListener?.('pointerup',ev=>{const d=N.ui._drag;
+ if(!d||!(d.el?.closest?.('svg.f601-svg')))return;
+ Promise.resolve().then(()=>{if(N.ui._drag===d)d.up(ev);});
+},true);
+
 let live=null;
 function emit(k,v){if(!C.events.value.includes(k))throw Error('Undeclared F6-01 event '+k);N.events.emit('value',{engine:ID,key:k,value:v});}
 function f(n){if(n===null||n===undefined)return '?';const x=Math.round((+n)*1000)/1000;return String(Object.is(x,-0)?0:x);}

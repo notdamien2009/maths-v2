@@ -84,8 +84,8 @@ function renderGraphic(o,p){const S=dim(),pct=Math.max(0,Math.min(150,Number(p.p
  base=whole(o),amt=selectedAmount(o), major=max===150?25:20,labelSize=S.mobile?32:28,svg=N.svg.root(S.w,S.h,'Percentage bar connecting the 100 percent whole and tenths to an aligned percentage scale and amount scale, with a movable marker and value-placement slot.');
  svg.classList.add('f406-svg');svg.dataset.mode=p.task?'challenge':p.interactive?'explore':'watch';svg.dataset.percent=String(pct);svg.dataset.placed=String(!!p.placed);svg.dataset.won=String(!!p.won);
  const header=p.interactive?'ALIGN THE TWO SCALES':'ONE WHOLE  =  100%';chalk(svg,S.w/2,76,header,S.mobile?49:46,'given');
- chalk(svg,S.w/2,132,p.interactive?(o.kind==='reverse'?'KNOWN: '+money(o.final)+' IS '+displayPercent(o):'PERCENTAGE BAR · '+displayPercent({...o,pct:o.pct})):'BUILD THE PARTS OF THE WHOLE',S.mobile?34:30,'focus');
- chalk(svg,bx+80,S.pctY-38,'PERCENT',S.mobile?35:32,'given');
+ chalk(svg,S.w/2,S.mobile?116:132,p.interactive?(o.kind==='reverse'?'KNOWN: '+money(o.final)+' IS '+displayPercent(o):'PERCENTAGE BAR · '+displayPercent({...o,pct:o.pct})):'BUILD THE PARTS OF THE WHOLE',S.mobile?34:30,'focus');
+ // Percentage axis already uses % on every tick; removing its redundant caption prevents collision with the context header.
  const perc=N.numberLine(svg,{x:bx,y:S.pctY,w:S.barW,min:0,max,major,minor:10,label:v=>`${v}%`,labelSize,arrows:true});
  // Projection: a mathematical correspondence, not a second hand-drawn number line.
  const markerX=perc.s(pct);if((!p.interactive||p.placed||p.won)&&p.step>=4){N.neonLine(svg,markerX,S.pctY+45,markerX,S.amtY-37,{role:'focus',width:2.2,dash:'7 8'});}

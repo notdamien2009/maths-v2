@@ -105,14 +105,14 @@ var def={id:'F12-11',title:'Circumference unrolling',config:C,steps:steps,render
    function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['circumference','work backwards','vocabulary'][k]);draw(stage,[A,B,V][k]);strip(stage,k===0?[['radius','7 cm','given']]:k===1?[['circumference','31.4 cm','result'],['diameter','?','unknown']]:[['find','the word','focus']]);NOVA.scene.helperStrip(stage,'think',['C = 2πr','Divide by π','Name it'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
-NOVA.bankMount({id:'F12-11',num:'F12·11',title:'Circumference unrolling',def:def,linked:['F0-02','F0-11','F12-10','F12-12','F12-13','F13-10'],
+NOVA.bankMount({id:'F12-11',num:'F12·11',title:'Circumference unrolling',def:def,linked:['F0-02','F0-11','F12-10','F12-12','F12-13','F13-08'],
  spec:{purpose:'Where the circumference formula comes from. A circle with a marked point rolls one full turn along a line; the line it covers is the circumference. Laying diameters along it shows the ratio C ÷ d is always the same number, pi. Also covers circle vocabulary, reverse problems, and the unrolled label of a can (curved surface area of a cylinder).',
   params:'preset (roll, lay, vocab, can); radius r; roll progress u (0 to 1 turn); diameters laid (0 to 3.2); can height h; unit cm. The rolled arc and marker use the rolling-circle geometry. Core: NOVA.neonRing / neonPath / neonLine / dimLine, NOVA.f12.dash. Year groups: KS3 Years 7–9 (12–15).',
   presets:'Roll the circle · Lay the diameters · Circle vocabulary · Label of a can',
   steps:'Circle vocabulary → Roll the circle → One full turn → Lay the diameters → The number pi → Use it → Working backwards → The label of a can. Each step has a Sir Bob line and a Guided prompt; the helper points at the marked point.',
   interactions:'Watch: auto-play. Guided: step with prompts. Explore: view, radius, roll slider, diameters-laid slider and can height; chips show radius, diameter, rolled distance, circumference, C ÷ d and curved area. Challenge (3 tasks): circumference from radius; diameter from circumference; name the radius. Events: value, correct, step, hintUsed.',
   traps:'Using π × r as the circumference · confusing circumference with area (π r²) · multiplying instead of dividing by π when working backwards · giving the radius when the diameter is asked for · treating a chord as a diameter',
-  gcse:'Extension: answers in terms of π, arc length and sector perimeter, rolling-wheel problems, perimeter of semicircles; linked: F12-12 circle area, F12-13 arcs and sectors, F13-10 cylinders'}});
+  gcse:'Extension: answers in terms of π, arc length and sector perimeter, rolling-wheel problems, perimeter of semicircles; linked: F12-12 circle area, F12-13 arcs and sectors, F13-08 cylinder unroll'}});
 var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
 document.getElementById('clearlog').onclick=function(){log.textContent='';};
 })();

@@ -1643,7 +1643,7 @@ F.SHAPES={
  rectangle:{name:'Rectangle',fam:'quad',pts:[[-48,-30],[48,-30],[48,30],[-48,30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[0,1,2,3],p:{sides:4,allEq:0,par:2,ra:4,sym:2,rot:2}},
  parallelogram:{name:'Parallelogram',fam:'quad',pts:[[-50,30],[26,30],[50,-30],[-26,-30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:0,par:2,ra:0,sym:0,rot:2}},
  rhombus:{name:'Rhombus',fam:'quad',pts:[[0,-48],[34,0],[0,48],[-34,0]],eq:[[0,1,2,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:1,par:2,ra:0,sym:2,rot:2}},
- trapezium:{name:'Trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
+ trapezium:{name:'Isosceles trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
  kite:{name:'Kite',fam:'quad',pts:[[0,-50],[32,-8],[0,48],[-32,-8]],eq:[[0,3],[1,2]],par:[],ra:[],p:{sides:4,allEq:0,par:0,ra:0,sym:1,rot:1}},
  pentagon:{name:'Regular pentagon',fam:'poly',pts:reg(5,48),eq:[[0,1,2,3,4]],par:[],ra:[],p:{sides:5,allEq:1,par:0,ra:0,sym:5,rot:5}},
  hexagon:{name:'Regular hexagon',fam:'poly',pts:reg(6,48),eq:[[0,1,2,3,4,5]],par:[[0,3],[1,4],[2,5]],ra:[],p:{sides:6,allEq:1,par:3,ra:0,sym:6,rot:6}}};
@@ -1683,6 +1683,14 @@ F.hmark=function(sv,apex,foot,baseA,baseB,txt,o){o=o||{};var role=o.role||'focus
   var dir=foot[0]>=(lo+hi)/2?-1:1;NOVA.rightAngle(sv,foot,[foot[0]+dir*10,foot[1]],[foot[0],apex[1]<foot[1]?foot[1]-10:foot[1]+10],{size:10,role:'support'});
   if(txt)NOVA.svg.pill(sv,foot[0]+(o.dx==null?-26:o.dx),(apex[1]+foot[1])/2,txt,{role:role,size:12});};
 NOVA.version=(NOVA.version||'')+'+f12run2';
+})();
+
+/* ==== v3.7 F12 phone text boost (additive, F12 diagrams only) ==== */
+(function(){var S=NOVA.svg,pill=S.pill,ct=NOVA.chalkText;
+function boost(p,o){var sv=p&&(p.ownerSVGElement||p);if(!sv||!sv.classList||!sv.classList.contains('f12-sv')||window.innerWidth>640)return o;o=Object.assign({},o||{});o.size=Math.min(19,Math.max(13,Math.round((o.size||12)*1.3)));return o;}
+S.pill=function(p,x,y,t,o){return pill.call(S,p,x,y,t,boost(p,o));};
+NOVA.chalkText=function(p,x,y,t,o){return ct.call(NOVA,p,x,y,t,boost(p,o));};
+NOVA.version=(NOVA.version||'')+'+f12phone';
 })();
 
 </script>
@@ -1746,14 +1754,14 @@ var def={id:'F12-12',title:'Circle area unwrap',config:C,steps:steps,render:rend
    function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['area','work backwards','which area'][k]);draw(stage,[A,B,Cc][k],{rad:k===0?{txt:'r = 6 cm'}:k===2?{txt:'d = 10 cm',diam:true}:null});strip(stage,k===1?[['area','78.5 cm²','result'],['radius','?','unknown']]:[['find','the area','focus']]);NOVA.scene.helperStrip(stage,'think',['π r²','Work backwards','Radius first'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
-NOVA.bankMount({id:'F12-12',num:'F12·12',title:'Circle area unwrap',def:def,linked:['F0-02','F0-11','F12-10','F12-11','F12-13','F13-10'],
+NOVA.bankMount({id:'F12-12',num:'F12·12',title:'Circle area unwrap',def:def,linked:['F0-02','F0-11','F12-10','F12-11','F12-13','F13-08','F13-06'],
  spec:{purpose:'Where πr² comes from. A circle is cut into equal slices that are opened out and interlocked into a shape that tends to a rectangle of width half the circumference (π r) and height r, so area = π r × r. Also shows area versus circumference and working backwards from an area.',
   params:'preset (8, 32, 64 slices); radius r; number of slices n (even); open-out progress m (0 circle, 1 interlocked); unit cm. Each slice is a sector rotated and moved from its place in the circle to its place in the interlocked strip (apexes alternate up and down, spaced r sin(180°/n)). Core: NOVA.neonShape / dimLine / neonTile. Year groups: KS3 Years 7–9 (12–15).',
   presets:'8 slices · 32 slices, opened out · 64 slices, opened out',
   steps:'Slice the circle → Open them out → Interlock → More slices → A rectangle → Use it → Area or circumference? Each step has a Sir Bob line and a Guided prompt; the helper points at a slice.',
   interactions:'Watch: auto-play. Guided: step with prompts. Explore: radius, slices and an open-out slider; chips show the width factor (approaching pi) and the area. Challenge (3 tasks): area from radius; radius from area; choose the right area for a circle given its diameter. Events: value, correct, step, hintUsed.',
   traps:'Using diameter instead of radius · doubling instead of squaring the radius · mixing up area with circumference · forgetting units are squared · stopping at r² without multiplying by π · taking the square root too early when working backwards',
-  gcse:'Extension: answers in terms of π, area of sectors and annuli, composite shapes with circles, volume of a cylinder as area × height; linked: F12-11 circumference, F12-13 arcs and sectors, F13-10 cylinders'}});
+  gcse:'Extension: answers in terms of π, area of sectors and annuli, composite shapes with circles, volume of a cylinder as base area × height; linked: F12-11 circumference, F12-13 arcs and sectors, F13-08 cylinder unroll, F13-06 prism volume'}});
 var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
 document.getElementById('clearlog').onclick=function(){log.textContent='';};
 })();

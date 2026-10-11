@@ -1643,7 +1643,7 @@ F.SHAPES={
  rectangle:{name:'Rectangle',fam:'quad',pts:[[-48,-30],[48,-30],[48,30],[-48,30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[0,1,2,3],p:{sides:4,allEq:0,par:2,ra:4,sym:2,rot:2}},
  parallelogram:{name:'Parallelogram',fam:'quad',pts:[[-50,30],[26,30],[50,-30],[-26,-30]],eq:[[0,2],[1,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:0,par:2,ra:0,sym:0,rot:2}},
  rhombus:{name:'Rhombus',fam:'quad',pts:[[0,-48],[34,0],[0,48],[-34,0]],eq:[[0,1,2,3]],par:[[0,2],[1,3]],ra:[],p:{sides:4,allEq:1,par:2,ra:0,sym:2,rot:2}},
- trapezium:{name:'Trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
+ trapezium:{name:'Isosceles trapezium',fam:'quad',pts:[[-48,30],[48,30],[24,-30],[-24,-30]],eq:[[1,3]],par:[[0,2]],ra:[],p:{sides:4,allEq:0,par:1,ra:0,sym:1,rot:1}},
  kite:{name:'Kite',fam:'quad',pts:[[0,-50],[32,-8],[0,48],[-32,-8]],eq:[[0,3],[1,2]],par:[],ra:[],p:{sides:4,allEq:0,par:0,ra:0,sym:1,rot:1}},
  pentagon:{name:'Regular pentagon',fam:'poly',pts:reg(5,48),eq:[[0,1,2,3,4]],par:[],ra:[],p:{sides:5,allEq:1,par:0,ra:0,sym:5,rot:5}},
  hexagon:{name:'Regular hexagon',fam:'poly',pts:reg(6,48),eq:[[0,1,2,3,4,5]],par:[[0,3],[1,4],[2,5]],ra:[],p:{sides:6,allEq:1,par:3,ra:0,sym:6,rot:6}}};
@@ -1683,6 +1683,14 @@ F.hmark=function(sv,apex,foot,baseA,baseB,txt,o){o=o||{};var role=o.role||'focus
   var dir=foot[0]>=(lo+hi)/2?-1:1;NOVA.rightAngle(sv,foot,[foot[0]+dir*10,foot[1]],[foot[0],apex[1]<foot[1]?foot[1]-10:foot[1]+10],{size:10,role:'support'});
   if(txt)NOVA.svg.pill(sv,foot[0]+(o.dx==null?-26:o.dx),(apex[1]+foot[1])/2,txt,{role:role,size:12});};
 NOVA.version=(NOVA.version||'')+'+f12run2';
+})();
+
+/* ==== v3.7 F12 phone text boost (additive, F12 diagrams only) ==== */
+(function(){var S=NOVA.svg,pill=S.pill,ct=NOVA.chalkText;
+function boost(p,o){var sv=p&&(p.ownerSVGElement||p);if(!sv||!sv.classList||!sv.classList.contains('f12-sv')||window.innerWidth>640)return o;o=Object.assign({},o||{});o.size=Math.min(19,Math.max(13,Math.round((o.size||12)*1.3)));return o;}
+S.pill=function(p,x,y,t,o){return pill.call(S,p,x,y,t,boost(p,o));};
+NOVA.chalkText=function(p,x,y,t,o){return ct.call(NOVA,p,x,y,t,boost(p,o));};
+NOVA.version=(NOVA.version||'')+'+f12phone';
 })();
 
 </script>
@@ -1752,14 +1760,14 @@ var def={id:'F12-15',title:'Units of area grid',config:C,steps:steps,render:rend
    function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['cm² to mm²','cm² to m²','how many'][k]);draw(stage,[A,B,Cc][k]);strip(stage,[['find',['mm²','m²','cm² in 1 m²'][k],'focus']]);NOVA.scene.helperStrip(stage,'think',['× 100','÷ 10 000','Square it'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
-NOVA.bankMount({id:'F12-15',num:'F12·15',title:'Units of area grid',def:def,linked:['F0-02','F0-11','F12-05','F12-14','F12-06','F13-05'],
+NOVA.bankMount({id:'F12-15',num:'F12·15',title:'Units of area grid',def:def,linked:['F0-02','F0-11','F12-05','F12-14','F12-06','F13-12','F18-02'],
  spec:{purpose:'Why area units convert by the square of the length factor. A 1-unit square is cut into n by n small squares, so 1 cm² is 100 mm², 1 m² is 10 000 cm² and 1 km² is 1 000 000 m². Multiply to go to a smaller unit, divide to go to a larger one.',
   params:'preset (mm and cm, cm and m, m and km) with length factor n (10, 100, 1000); view (length line, area grid); direction (down or up); number to convert (0.5 to 50). For n of 100 or more the grid shows 100 blocks and zooms into one. Core: NOVA.neonCells / neonShape / dimLine / neonTile, NOVA.f12.dash. Year groups: KS3 Years 7–9 (12–15).',
   presets:'mm² and cm² · cm² and m² · m² and km²',
   steps:'Length first → A square centimetre → Not times 10 → A square metre → Convert down → Convert up → Square kilometres. Each step has a Sir Bob line and a Guided prompt; the helper points at the square.',
   interactions:'Watch: auto-play. Guided: step with prompts. Explore: units, view, direction and a number slider; chips show the length factor, the area factor and the conversion. Challenge (3 tasks): cm² to mm²; cm² to m²; how many cm² in 1 m². Events: value, correct, step, hintUsed.',
   traps:'Using the length factor for area (× 10 instead of × 100) · multiplying when going to a bigger unit · dividing by 100 instead of 10 000 for cm² to m² · counting 100 as the number of cm² in a m²',
-  gcse:'Extension: volume units (cm³ and m³, factor cubed), density and pressure unit conversions, speed units; linked: F12-05 area by counting, F12-14 area and perimeter, F13-05 volume'}});
+  gcse:'Extension: volume units (cm³ and m³, factor cubed), density and pressure unit conversions, speed units; linked: F12-05 area by counting, F12-14 area and perimeter, F13-12 capacity and volume conversion, F18-02 unit-conversion bridges'}});
 var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
 document.getElementById('clearlog').onclick=function(){log.textContent='';};
 })();
