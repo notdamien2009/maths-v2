@@ -1,0 +1,210 @@
+/* NOVA Maths Visual Engine F9-13 — Fractal Generators.
+ * Core-only geometry: NOVA.neonPath, NOVA.neonRing, NOVA.neonBox, NOVA.chalkText;
+ * motion: NOVA.motion; draggable interaction: NOVA.ui.svgDrag.
+ * Sierpinski S(n) = 3^n surviving triangles; Koch K(n) = 4^n segments.
+ * If original Koch length is 9 cm, stage n=2 length is 16 cm.
+ */
+const F913_CONFIG={id:'F9-13',family:'F9',startMode:'watch',maxIteration:4,
+ presets:{'sierpinski-triangle':{label:'Sierpiński · triangle',kind:'sierpinski',factor:3,initial:1,max:4},'koch-curve':{label:'Koch · curve',kind:'koch',factor:4,initial:1,max:4,baseCm:9}},
+ events:{value:['preset','iteration','count','length','placed','challengeTask'],types:['step','correct','hintUsed','mode']},
+ challenge:{types:['sierpinski-count','koch-count','koch-length']}};
+(function(){'use strict';
+const N=window.NOVA,H=N.h,E=N.svg.el,C=F913_CONFIG,ID=C.id;
+const mobile=()=>window.innerWidth<=760,W=()=>mobile()?430:760,HGT=()=>760;
+const PRE=C.presets;
+const STORIES=[
+ {name:'whole-triangle',preset:'sierpinski-triangle',iteration:0,pose:'explain',text:'We begin with one whole triangle. That is iteration zero.',question:'How many triangles can you see before anything changes?',detail:'Iteration 0: one whole triangle'},
+ {name:'split-and-remove',preset:'sierpinski-triangle',iteration:1,pose:'point-right',text:'Keep the three corner triangles. The middle triangle is removed.',question:'Count only the remaining corner triangles.',detail:'Iteration 1: three smaller triangles'},
+ {name:'repeat-the-rule',preset:'sierpinski-triangle',iteration:2,pose:'count',text:'Repeat that same step for every triangle. Each one leaves three new triangles.',question:'How many remain after each of the three triangles is split?',detail:'Iteration 2: nine smaller triangles'},
+ {name:'generalise-the-pattern',preset:'sierpinski-triangle',iteration:3,pose:'idea',text:'One, three, nine, twenty-seven. The number of triangles triples each time.',question:'Explain why the number is three to the power of the iteration.',detail:'Iteration 3: twenty-seven smaller triangles'},
+ {name:'koch-four-for-one',preset:'koch-curve',iteration:1,pose:'point-right',text:'Now watch a different fractal. Each straight section becomes four short sections.',question:'Count the four new sections in place of the original one.',detail:'Koch iteration 1: four segments'},
+ {name:'koch-repeat-length',preset:'koch-curve',iteration:2,pose:'celebrate',text:'Each of the four sections becomes four more. Four times four makes sixteen sections.',question:'If the first line was nine centimetres, explain why iteration two totals sixteen centimetres.',detail:'Koch iteration 2: sixteen segments'}
+];
+const TASKS=[
+ {preset:'sierpinski-triangle',iteration:3,title:'01 · Count the surviving triangles',guide:'After three Sierpiński iterations, how many of the smallest triangles remain?',options:[27,9,81],answer:27,suffix:'triangles',traps:{9:'Nine is iteration two. Repeat the three-for-one rule once more.',81:'Eighty-one is iteration four. You have repeated the rule one step too far.'}},
+ {preset:'koch-curve',iteration:2,title:'02 · Count the Koch sections',guide:'The Koch curve is at iteration two. How many short straight sections does it have?',options:[16,8,12],answer:16,suffix:'segments',traps:{8:'Eight assumes only two new sections per previous section. Each becomes four.',12:'Twelve treats the growth as adding a fixed number. Multiply by four each time.'}},
+ {preset:'koch-curve',iteration:2,title:'03 · Find the total length',guide:'The original Koch line was 9 cm. After two iterations, what is its TOTAL length?',options:[16,9,36],answer:16,suffix:'cm',traps:{9:'The total length is not unchanged: each segment is replaced by four third-length pieces.',36:'Thirty-six multiplies the length by four without accounting for each new piece being one third as long.'}}
+];
+let chosen='sierpinski-triangle',iteration=2,challengeIndex=0,placed=null,selected=null,challengeStage=null,challengeApi=null;
+// F9-13 local pointer-release safeguard: Chrome may report SVG <g> capture without
+// dispatching the final pointerup to the captured <g> when its child is reparented.
+// The core drag object owns the authoritative zone detection, cancellation and snap.
+// This forwards only releases of F9-13 draggables; no shared NOVA core modification.
+window.addEventListener('pointerup',e=>{const d=N.ui._drag;if(d&&d.el&&d.el.hasAttribute('data-f913-drag'))d.up(e);},true);
+// Mouseup fallback is needed when browsers lose a captured SVG <g> pointer release.
+window.addEventListener('mouseup',e=>{const d=N.ui._drag;if(d&&d.el&&d.el.hasAttribute('data-f913-drag'))d.up(e);},true);
+window.addEventListener('pointercancel',()=>{const d=N.ui._drag;if(d&&d.el&&d.el.hasAttribute('data-f913-drag'))N.ui.cancelDrag();},true);
+function emit(k,v){if(!C.events.value.includes(k))throw Error('F9-13 unregistered event '+k);N.events.emit('value',{engine:ID,key:k,value:v});}
+function count(p,n){return Math.pow(p.factor,n);} // n=0 → one piece
+function lengthCm(n,base=9){return base*Math.pow(4/3,n);} // accurate Koch total length
+function btn(s,fn,cl='nova-btn ghost'){return H('button',{class:cl,text:s,onclick:fn});}
+function txt(svg,x,y,s,z=22,role='support',anchor='middle'){return N.chalkText(svg,x,y,String(s),{size:z,role,anchor});}
+function tile(svg,x,y,w,h,s,role='given',sz=20){return N.neonBox(svg,x,y,w,h,{role,r:12,text:s,size:sz});}
+function svgRoot(desc){const q=N.svg.root(W(),HGT(),desc);q.setAttribute('class','nv-svg f913-svg');q.setAttribute('role','img');return q;}
+function clear(stage){stage.replaceChildren();N.cap(stage,'Sequence workshop','Fractal generators');}
+function card(k,v,focus=false){return H('div',{class:'f913-card'+(focus?' f913-card--focus':'')},[H('div',{class:'f913-eyebrow',text:k}),H('div',{class:'f913-maths',text:String(v)})]);}
+function aside(k,v){return H('div',{class:'f913-card f913-card--full'},[H('div',{class:'f913-eyebrow',text:k}),H('div',{class:'f913-body',text:String(v)})]);}
+function mount(stage,svg,cards,pose,speech){stage.appendChild(H('div',{class:'f913-stage'},[svg,H('aside',{class:'f913-side'},cards)]));N.scene.helperStrip(stage,pose,speech);}
+function triPath(a,b,c){return 'M'+a[0].toFixed(2)+','+a[1].toFixed(2)+'L'+b[0].toFixed(2)+','+b[1].toFixed(2)+'L'+c[0].toFixed(2)+','+c[1].toFixed(2)+'Z';}
+function midpoint(a,b){return [(a[0]+b[0])/2,(a[1]+b[1])/2];}
+function splitTriangles(a,b,c,n,out){if(n===0){out.push([a,b,c]);return;}
+ const ab=midpoint(a,b),bc=midpoint(b,c),ca=midpoint(c,a);
+ splitTriangles(a,ab,ca,n-1,out);splitTriangles(ab,b,bc,n-1,out);splitTriangles(ca,bc,c,n-1,out);
+}
+function kochPoints(n){let pts=[[0,0],[1,0]];for(let level=0;level<n;level++){
+ let next=[pts[0]];
+ for(let i=0;i<pts.length-1;i++){
+  const a=pts[i],b=pts[i+1],dx=(b[0]-a[0])/3,dy=(b[1]-a[1])/3;
+  const one=[a[0]+dx,a[1]+dy],three=[a[0]+2*dx,a[1]+2*dy];
+  const peak=[one[0]+dx*.5+dy*Math.sqrt(3)/2, one[1]+dy*.5-dx*Math.sqrt(3)/2];
+  next.push(one,peak,three,b);
+ }
+ pts=next;
+}return pts;}
+function drawFractal(svg,preset,n,opt={}){
+ const sm=mobile(),w=W(),kind=preset.kind;
+ const g=E('g',{class:'f913-fractal','data-fractal':kind,'data-iteration':n},svg);
+ txt(svg,w/2,51,kind==='sierpinski'?'SIERPIŃSKI TRIANGLE':'KOCH CURVE',sm?24:29,'support');
+ txt(svg,w/2,91,opt.title||'Repeat the SAME transformation',sm?17:19,'support');
+ if(kind==='sierpinski'){
+  let edge=sm?352:430,base=sm?445:477,top=base-edge*Math.sqrt(3)/2,
+      a=[w/2,top],b=[(w-edge)/2,base],c=[(w+edge)/2,base],tris=[];
+  splitTriangles(a,b,c,n,tris);
+  let all='';
+  for(let i=0;i<tris.length;i++) all+=triPath(...tris[i]);
+  // One core neonPath call ensures consistent F0 tube glow without creating hundreds of filter instances.
+  N.neonPath(g,all,{role:n===0?'op':'focus',width:n>=3?1.6:n===2?2.3:4,fill:false});
+  // Colour-shadow outline identifies the complete original geometric boundary.
+  if(n>0)N.neonPath(g,triPath(a,b,c),{role:'support',width:1.8});
+  if(n===0)N.neonRing(g,w/2,top,{role:'focus',r:7,pulse:false});
+  g.setAttribute('data-pieces',String(tris.length));
+ }else{
+  let pts=kochPoints(n),x0=sm?37:90,width=sm?356:580,y0=sm?338:325,scale=width;
+  let path=pts.map((p,i)=>(i?'L':'M')+(x0+p[0]*scale).toFixed(2)+','+(y0+p[1]*scale).toFixed(2)).join('');
+  N.neonPath(g,path,{role:'op',width:n>=3?2.8:n>=2?4.0:6.3});
+  N.neonRing(g,x0,y0,{role:'focus',r:7,pulse:false});N.neonRing(g,x0+width,y0,{role:'result',r:7,pulse:false});
+  g.setAttribute('data-pieces',String(pts.length-1));
+  txt(svg,w/2,445,'Every straight segment becomes FOUR smaller ones',sm?16:19,'support');
+ }
+ return g;
+}
+function renderCountRow(svg,preset,n,challenge=false){
+ const w=W(),sm=mobile(),y=sm?543:554,countValues=[0,1,2,3,4];
+ txt(svg,w/2,y-54,'ITERATION  →  '+(challenge?'FIND THE NEXT COUNT':'NUMBER OF PIECES'),sm?18:22,'support');
+ for(let i=0;i<5;i++){
+  let xc=sm?55+i*80:115+i*131,wd=sm?65:100;
+  const unknown=challenge&&i>=2;
+  tile(svg,xc-wd/2,y,wd,59,unknown?'?':String(i), i===n?'focus':'given',sm?21:24);
+  txt(svg,xc,y+91,unknown?'?':String(count(preset,i)),sm?18:21,unknown?'support':'result');
+ }
+}
+function attachIterationDrag(svg,onValue,n){
+ const sm=mobile(),w=W(),y=sm?669:667,x0=sm?59:124,x1=w-x0,step=(x1-x0)/4;
+ N.neonLine(svg,x0,y,x1,y,{role:'support',width:5});
+ for(let i=0;i<5;i++){N.neonRing(svg,x0+i*step,y,{role:i===n?'focus':'support',r:5,pulse:false});txt(svg,x0+i*step,y+44,String(i),sm?17:18,'support');}
+ const cx=x0+n*step,handle=E('g',{'data-iteration-handle':'true','data-f913-drag':'1','role':'slider','aria-label':'Iteration slider','aria-valuemin':'0','aria-valuemax':'4','aria-valuenow':String(n),'tabindex':'0'},svg);
+ N.neonRing(handle,cx,y,{role:'focus',r:15,pulse:false});
+ handle.addEventListener('keydown',e=>{let next=null;if(e.key==='ArrowLeft'||e.key==='ArrowDown')next=Math.max(0,n-1);if(e.key==='ArrowRight'||e.key==='ArrowUp')next=Math.min(4,n+1);if(e.key==='Home')next=0;if(e.key==='End')next=4;if(next!==null){e.preventDefault();onValue(next);}});
+ const zones=()=>Array.from({length:5},(_,i)=>({id:String(i),kind:'drop',x:x0+i*step-step*.47,y:y-39,w:step*.94,h:78}));
+ // Reset tray: also provided as an ordinary keyboard control below the diagram.
+ const reset={id:'reset',kind:'remove',x:sm?21:205,y:729,w:sm?388:350,h:28};
+ N.neonBox(svg,reset.x,reset.y,reset.w,reset.h,{role:'error',text:'Reset iteration',size:sm?13:15,r:10});
+ N.ui.svgDrag(svg,handle,{box:{x:cx-19,y:y-19,w:38,h:38},zones:()=>[...zones(),reset],onDrop:id=>{const v=Number(id);if(!Number.isInteger(v)||v<0||v>4)return false;onValue(v);return true;},onRemove:()=>onValue(0),removeTo:{x:w/2,y:sm?741:716}});
+}
+function sceneDraw(stage,presetName,n,opts={}){
+ clear(stage);const p=PRE[presetName],sm=mobile(),svg=svgRoot('Fractal iteration '+n+' of '+p.label+'. '+count(p,n)+' pieces.');
+ drawFractal(svg,p,n,{title:opts.title});
+ renderCountRow(svg,p,n,false);
+ if(opts.drag)attachIterationDrag(svg,opts.onIteration||((v)=>{chosen=presetName;iteration=v;emit('iteration',v);emit('count',count(p,v));sceneDraw(stage,chosen,iteration,{drag:true,title:'Move the ring to change iterations'});}),n);
+ else N.svg.pill(svg,W()/2,sm?694:668,'Iteration '+n+' · '+count(p,n)+' '+(p.kind==='koch'?'segments':'small triangles'),{role:'focus',size:sm?17:21});
+ const hint=p.kind==='sierpinski'?'The number of surviving little triangles TRIPLES at each iteration.':'The number of straight sections is multiplied by FOUR each iteration.';
+ const cards=[card('FRACTAL',p.kind==='sierpinski'?'Sierpiński triangle':'Koch curve'),card('ITERATION',String(n)),card('PIECES',String(count(p,n)),true),aside('REPEAT THE RULE',hint)];
+ if(opts.step&&p.kind==='koch')cards.push(card('9 CM ORIGINAL → LENGTH',n===1?'12 cm':n===2?'16 cm':'9 cm',true));
+ if(p.kind==='koch')cards.push(aside('LENGTH IS DIFFERENT','The number of pieces grows by four; each new piece is one third the length.'));
+ else cards.push(aside('WHAT CHANGES?','The smallest visible triangles become more numerous and smaller each time.'));
+ const step=opts.step;
+ mount(stage,svg,cards,step?step.pose:(p.kind==='koch'?'point-right':'count'),step?step.text:(p.kind==='koch'?'Four smaller pieces replace each straight one.':'Count only the surviving triangles.'));
+ if(!N.reducedMotion()&&n>0){const g=svg.querySelector('.f913-fractal');g.style.opacity='.15';N.motion.tween(460,v=>{if(g.isConnected)g.style.opacity=String(.15+.85*v);},N.motion.ease.out);}
+}
+function targetBox(){return {id:'answer',kind:'drop',x:W()/2-77,y:505,w:154,h:68};}
+function removeBox(){return {id:'remove',kind:'remove',x:mobile()?37:180,y:mobile()?689:679,w:mobile()?356:400,h:58};}
+function pickValue(v){if(selected!==null)selected=null;selected=v;}
+function changeAnswer(v){placed=v;selected=null;emit('placed',v);drawChallenge(challengeStage,challengeApi);}
+function wrongMessage(t,v){return t.traps[v]||'Look at how the repeated step changes the count.';}
+function checkCandidate(v,api){const t=TASKS[challengeIndex];if(v!==t.answer){api.check(false,wrongMessage(t,v),{task:challengeIndex,answer:v});return false;}changeAnswer(v);return true;}
+function sourceCard(svg,v,i,t,api){
+ const sm=mobile(),w=W(),bw=sm?94:122,bh=49,gap=sm?115:165,xx=w/2-gap+(i*gap)-bw/2,yy=sm?618:610;
+ const g=E('g',{'data-source':String(v),'data-f913-drag':'1',tabindex:0,role:'button','aria-label':'Choose '+v+(t.suffix==='cm'?' centimetres': ' '+t.suffix)},svg);
+ tile(g,xx,yy,bw,bh,String(v)+(t.suffix==='cm'?' cm':''),'given',sm?20:24);
+ g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selected=v;g.setAttribute('aria-pressed','true');}});
+ const tb=targetBox(),rm=removeBox();
+ N.ui.svgDrag(svg,g,{box:{x:xx,y:yy,w:bw,h:bh},zones:()=>[tb,rm],onDrop:id=>id==='answer'?checkCandidate(v,api):false,onRemove:()=>{selected=null;},removeTo:{x:w/2,y:rm.y+rm.h/2}});
+}
+function placedCard(svg,value){const b=targetBox();const g=E('g',{'data-placed':String(value),'data-f913-drag':'1',role:'button',tabindex:0,'aria-label':'Placed '+value+'. Press Delete to remove.'},svg);
+ tile(g,b.x,b.y,b.w,b.h,String(value)+(TASKS[challengeIndex].suffix==='cm'?' cm':''),'result',23);
+ g.addEventListener('keydown',e=>{if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();changeAnswer(null);}});
+ const rm=removeBox();N.ui.svgDrag(svg,g,{box:{x:b.x,y:b.y,w:b.w,h:b.h},zones:()=>[rm],onDrop:()=>false,onRemove:()=>changeAnswer(null),removeTo:{x:W()/2,y:rm.y+rm.h/2}});
+}
+function drawChallenge(stage,api){challengeStage=stage;challengeApi=api;clear(stage);const t=TASKS[challengeIndex],p=PRE[t.preset],sm=mobile(),w=W(),svg=svgRoot(t.guide);
+ drawFractal(svg,p,t.iteration,{title:'Inspect this iteration carefully'});
+ const tgt=targetBox(),rm=removeBox();
+ txt(svg,w/2,468,t.suffix==='cm'?'What is the TOTAL length?':'How many smallest pieces?',sm?20:23,'support');
+ if(placed===null)tile(svg,tgt.x,tgt.y,tgt.w,tgt.h,'Drop here','unknown',sm?20:24);
+ // The keyboard/drop target is BELOW the placed card in SVG paint order.
+ // Otherwise its transparent hit area intercepts re-grabs of a placed answer.
+ E('rect',{x:tgt.x,y:tgt.y,width:tgt.w,height:tgt.h,rx:13,fill:'transparent','data-slot':'answer',role:'button',tabindex:0,'aria-label':'Answer drop target. Enter places the selected number.'},svg)
+ .addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&selected!==null){e.preventDefault();checkCandidate(selected,api);}});
+ if(placed!==null)placedCard(svg,placed);
+ txt(svg,w/2,587,'CHOOSE A NUMBER',sm?18:21,'support');
+ t.options.forEach((v,i)=>{if(v!==placed)sourceCard(svg,v,i,t,api);});
+ const rmDraw=tile(svg,rm.x,rm.y,rm.w,rm.h,'Remove / reset','error',sm?17:19);rmDraw.setAttribute('data-remove-zone','1');
+ const cards=[card('QUESTION',String(challengeIndex+1)+' of 3'),card('ITERATION',t.iteration,true),aside('WHAT TO CHECK',challengeIndex===0?'Three pieces replace every surviving triangle. Count how many repetitions occur.':challengeIndex===1?'Each segment becomes four. Counting sections is not the same as measuring length.':'Each new segment is one third as long, although there are four times as many.')];
+ mount(stage,svg,cards,challengeIndex===2?'think':'point-right',challengeIndex===0?'Look at each layer of the triangle.':challengeIndex===1?'Count the sections, not the corner points.':'Be careful: segment count and total length are different.');
+ stage.appendChild(H('div',{class:'f913-progress'},[H('span',{text:'01 · Triangle'}),H('span',{text:'02 · Segments'}),H('span',{text:'03 · Length'})].map((x,i)=>{if(i===challengeIndex)x.classList.add('f913-progress-active');return x;})));
+}
+const def={id:ID,title:'Fractal generators',config:C,
+ alt:'Sierpiński triangles and Koch curves demonstrate recursive sequences. Surviving triangle count triples; Koch segment count quadruples.',
+ staticAlt:'Sierpiński iteration 0,1,2,3 has 1,3,9,27 surviving triangles. Koch curve iteration 0,1,2 has 1,4,16 segments. Starting at 9 cm, the Koch iteration 2 total length is 16 cm.',
+ steps:STORIES.map((s,i)=>({name:s.name,narration:s.text,prompt:s.question,mood:i===5?'pleased':'focus'})),
+ render(i,stage){const story=STORIES[i];sceneDraw(stage,story.preset,story.iteration,{step:story,title:story.detail});emit('iteration',story.iteration);},
+ exploreIntro:'Change the fractal, then drag the gold ring or adjust the iteration slider to watch repeated multiplication.',
+ explore(panel,stage,api){chosen='sierpinski-triangle';iteration=2;
+ const select=H('div',{class:'f913-presetbar'}),native=H('input',{type:'range',min:0,max:4,value:2,'aria-label':'Fractal iteration from zero to four'}),readout=H('output',{text:'Iteration 2'});
+ const update=(v)=>{iteration=Math.max(0,Math.min(4,Number(v)));native.value=String(iteration);readout.textContent='Iteration '+iteration;emit('iteration',iteration);emit('count',count(PRE[chosen],iteration));sceneDraw(stage,chosen,iteration,{drag:true,title:'Change the iteration to grow the fractal',onIteration:update});};
+ Object.entries(PRE).forEach(([key,p])=>select.appendChild(btn(p.label,()=>{chosen=key;emit('preset',key);update(iteration);},'nova-btn ghost')));
+ native.addEventListener('input',()=>update(native.value));
+ panel.append(H('p',{class:'f913-instruction',text:'Pick the triangle or curve. Drag the gold iteration ring, use arrow keys, or adjust the slider below.'}),select,H('div',{class:'f913-controls'},[H('label',{},['Iteration ',native]),readout,btn('Reset to 0',()=>update(0),'nova-btn ghost'),btn('Next iteration',()=>update(iteration===4?0:iteration+1),'nova-btn primary')]));
+ update(2);
+ },
+ challenge(panel,api,stage){challengeIndex=0;placed=null;selected=null;
+ const heading=H('h3',{class:'f913-taskhead'}),description=H('p',{class:'f913-instruction'}),controls=H('div',{class:'f913-controls'}),status=H('p',{class:'f913-status',role:'status'});
+ function load(){const t=TASKS[challengeIndex];heading.textContent=t.title;description.textContent=t.guide;controls.replaceChildren();api.fb.textContent='';api.fb.className='nova-fb';
+ controls.append(btn('Check answer',()=>{
+  if(placed===null){api.check(false,'Choose a value and place it in the answer slot first.',{task:challengeIndex});return;}
+  if(placed!==t.answer){api.check(false,wrongMessage(t,placed),{task:challengeIndex});return;}
+  api.check(true,challengeIndex===0?'Yes: 3 × 3 × 3 gives 27 surviving triangles.':challengeIndex===1?'Correct: 4 × 4 makes 16 short sections.':'Correct: nine centimetres grows to sixteen centimetres after two Koch iterations.',{task:challengeIndex,score:challengeIndex+1});
+  if(challengeIndex===2){heading.textContent='All three challenges complete';description.textContent='You distinguished triangle count, segment count and Koch length.';controls.replaceChildren(H('p',{class:'f913-maths',text:'3 / 3 · Fractal rules proven'}));N.moment&&N.moment(document.getElementById(ID),'correct',{ms:1100});return;}
+  controls.append(btn('Continue to challenge '+(challengeIndex+2),()=>{challengeIndex++;placed=null;selected=null;emit('challengeTask',challengeIndex);load();},'nova-btn primary'));
+ },'nova-btn primary'),btn('Clear answer',()=>{placed=null;selected=null;drawChallenge(stage,api);},'nova-btn ghost'),btn('Hint',()=>api.hint(challengeIndex===0?'At iteration two there are 9 triangles. Triple that count once more.':challengeIndex===1?'Start with one straight segment, then multiply the number by four twice.':'Nine centimetres becomes twelve after iteration one. Each new length grows by four thirds.'),'nova-btn ghost'));
+ drawChallenge(stage,api);
+ }
+ panel.append(heading,description,controls,status);emit('challengeTask',challengeIndex);load();
+ },
+ onRestore(){chosen='sierpinski-triangle';iteration=2;challengeIndex=0;placed=null;selected=null;}
+};
+N.registry.add({id:ID,title:'Fractal generators',topics:['sequences','fractal','recursive patterns','multiplicative sequences','geometry'],deps:['F0-02','F0-03','F0-04','F0-07','F0-08']});
+N.bankMount({id:ID,num:'13',title:'Fractal generators · Premium Edition',def,linked:['F9-06','F9-07','F9-10'],years:'KS3 Years 7–9 extension and GCSE geometric-sequences bridge',spec:{
+ purpose:'Explore recursive geometric structures, connect iterations to multiplicative sequences and distinguish piece count from total length.',
+ params:'Sierpiński triangle or Koch curve; iteration 0–4; original Koch length defaults to 9 cm; mobile-first stage.',
+ presets:'Sierpiński triangle (×3 surviving pieces) and Koch curve (×4 segments, total length growth by four-thirds).',
+ steps:'Whole triangle → remove middle → repeat → generalise counts → Koch four-for-one → compare Koch counts and length.',
+ interactions:'Watch, Guided, Explore two presets and draggable iteration slider; Challenge three drag-answer tasks with re-grab, removal, keyboard fallback and specific misconception feedback.',
+ traps:'Mixing up removed pieces and survivors, adding rather than multiplying, counting vertices as segments, multiplying length by four while forgetting one-third length.',
+ gcse:'Extension to geometric nth terms, index notation, scale factors, growth and fractal perimeter reasoning.'
+}});
+window.F913_ENGINE=N.engines[ID];
+const c=document.getElementById(ID),details=H('details',{class:'nv-dev'},[H('summary',{text:'Developer: component specification'})]);
+[...c.querySelectorAll('details.nova-spec, p.purpose')].forEach(x=>details.appendChild(x));c.appendChild(details);
+const x=c.querySelector('h3');if(x)x.textContent='Interactive maths workshop';
+const fixAlt=()=>c.querySelectorAll('.face img').forEach(im=>{if(!im.getAttribute('alt'))im.setAttribute('alt','Sir Bob Maximus, maths tutor');});fixAlt();new MutationObserver(fixAlt).observe(c,{childList:true,subtree:true});
+})();

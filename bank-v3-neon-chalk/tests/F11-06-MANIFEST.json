@@ -1,0 +1,41 @@
+{
+  "id": "F11-06",
+  "component": "Polygon Angles Turtle",
+  "status": "PREMIUM REVIEW \u2014 pending owner approval",
+  "baseline": "F11-05 embedded original NOVA F0/F1 core \u2014 extracted byte-for-byte for standalone build",
+  "core_sha256": {
+    "css": "f4a6ad467f3f2efe4cbcc641efc70deceb8af2f3af422cee687e57f4673fde6b",
+    "js": "98c73b52bd54d9f98c2fe4187c28d27ad9cfda6a51e6e258fc752e898d0029af"
+  },
+  "source_sha256": {
+    "css": "cd4bcc1b3e9d6d98514fb710c386fdfd2e508fc5049c2a07ce8c6e6b04b01302",
+    "js": "e9e5dde422bf80f5ddbb27babee0d17e3143b6d3238fc0f9491c7b3e5a804319"
+  },
+  "html_sha256": "ec3cc10cd1e581a95f082d9a50a368d6cf4837a86ba64613ca66a48b49921cda",
+  "qa": {
+    "checks": 120,
+    "passed": 120,
+    "failed": [],
+    "checked_widths": [
+      380,
+      1280
+    ]
+  },
+  "upstream_changed": false,
+  "uses_external_assets": false,
+  "geometry": "Exact vertex-edge atan2 computation; convex exterior sum 360\u00b0, interior sum (n\u22122)\u00d7180\u00b0, turtle returns to first-edge heading",
+  "scenes": [
+    "Y7-044 quadrilateral",
+    "Y8-049 regular polygon",
+    "Y9-026 irregular polygon proof",
+    "triangle",
+    "pentagon",
+    "octagon"
+  ],
+  "notes": [
+    "No GitHub changes",
+    "Existing shared core is not bundled or modified",
+    "No games inside engine; supports F0 game wrapper",
+    "Mobile and desktop screenshots generated from browser tests"
+  ]
+}

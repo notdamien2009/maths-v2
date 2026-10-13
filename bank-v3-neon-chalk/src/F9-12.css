@@ -1,0 +1,27 @@
+/* NOVA F9-12 · Sequence Continuer. The canonical NOVA shell/background, chalk fonts, neon
+   primitives and helper dock are inherited without changing the shared runtime. */
+.f912-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(212px,.40fr);gap:12px;align-items:start;max-width:100%;margin:8px 0 0}
+.f912-svg{width:100%;height:auto;display:block;max-width:100%;overflow:visible}
+.f912-side{display:flex;flex-direction:column;gap:10px;justify-content:center;padding:4px 0}
+.f912-card{padding:14px 14px 12px;border:1.5px solid #286a91;border-radius:17px;background:linear-gradient(153deg,rgba(19,43,70,.72),rgba(4,14,32,.8));box-shadow:inset 0 1px 0 #ffffff1a,0 9px 21px #020d1b55}
+.f912-card--gold{border-color:#93723a}.f912-card--full{grid-column:1/-1}
+.f912-eyebrow{font:700 12px var(--nova-font-chalk-draw);color:#88cdee;letter-spacing:.04em;margin-bottom:7px}
+.f912-maths{font:700 clamp(22px,3vw,35px)/1.3 var(--nova-font-chalk-write);color:#e8f9ff;text-shadow:0 0 11px #24caf655}
+.f912-maths--gold{color:#ffcc7d;text-shadow:0 0 11px #f7b33b88}
+.f912-body{font:700 15px/1.45 var(--nova-font-chalk-write);color:#cceafa}
+.f912-controls,.f912-choices{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:11px 0}
+.f912-controls button,.f912-choices button{min-height:43px}
+.f912-controls label,.f912-controls output{font:700 15px var(--nova-font-chalk-write);color:#c7e9fc}
+.f912-controls input[type=range]{width:min(265px,65vw)}
+.f912-instruction{font:700 16px/1.42 var(--nova-font-chalk-write);color:#d0edfb;max-width:750px}
+.f912-taskhead{font:700 21px/1.4 var(--nova-font-chalk-write);color:#ffce77;margin:9px 0}
+.f912-status{min-height:26px;font:700 15px var(--nova-font-chalk-write);color:#b0def8}
+.f912-svg text{font-family:var(--nova-font-chalk-draw)!important}
+.f912-svg [data-source],.f912-svg [data-slot],.f912-svg [data-placed]{cursor:pointer;outline:none}
+.f912-svg [data-source]:focus-visible,.f912-svg [data-slot]:focus-visible,.f912-svg [data-placed]:focus-visible{filter:drop-shadow(0 0 10px #ffce75)}
+.f912-evidence{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 5px 4px}
+.f912-evidence span{display:grid;place-items:center;min-height:48px;border:1px solid #23799d;border-radius:13px;background:linear-gradient(150deg,#0f2c48,#081a31);box-shadow:0 5px 12px #0109137a;font:700 15px var(--nova-font-chalk-write);color:#c6edff}
+.f912-evidence .f912-focus{border-color:#edb45b;color:#ffce78}
+@media(max-width:760px){.f912-stage{grid-template-columns:1fr;gap:7px}.f912-svg{max-width:490px;margin:0 auto}.f912-side{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:0}.f912-card{padding:10px}.f912-card--gold,.f912-card--full{grid-column:1/-1}.f912-maths{font-size:24px}.f912-body{font-size:14px}}
+@media(max-width:410px){.f912-stage{margin-top:4px}.f912-card{padding:8px 9px}.f912-eyebrow{font-size:11px}.f912-maths{font-size:22px}.f912-controls input[type=range]{width:140px}.f912-evidence span{font-size:13px;min-height:40px}}
+@media print{.f912-stage{grid-template-columns:1fr 220px}.f912-card{background:#fff!important;border:1px solid #000!important;box-shadow:none}.f912-card *{color:#000!important;text-shadow:none!important}.f912-svg{filter:grayscale(1)}}

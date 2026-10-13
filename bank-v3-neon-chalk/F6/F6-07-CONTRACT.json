@@ -1,0 +1,57 @@
+{
+  "component_id": "F6-07",
+  "title": "Map and Scale Drawing",
+  "family": "F6",
+  "version": "1.0.0-premium-review",
+  "status": "review-candidate-pending-owner-GOLD-approval",
+  "type": "standalone-engine",
+  "lessons": [
+    "Y7-064",
+    "Y9-021"
+  ],
+  "presets": [
+    "Y7-064",
+    "Y7-064-library",
+    "Y9-021",
+    "Y9-021-urban"
+  ],
+  "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+  ],
+  "teaching_steps": 6,
+  "standalone_html": "F6/F6-07-map-and-scale-drawing.html",
+  "build_command": "python build/build-f6-07.py",
+  "core_sha256": {
+    "core/nova-core.css": "4beb90926294cbb54f7e9c13884c425e510defb8d8fd1deeede3dabba9cbde5b",
+    "core/nova-core.js": "1e3a118ed3a38a0875178dc0acdd4e0fb6c07b38b33807f7cf410523756a9e21"
+  },
+  "core_replacement_in_zip": false,
+  "qa": {
+    "math": {
+      "passed": 131320,
+      "total": 131320
+    },
+    "browser": {
+      "passed": 74,
+      "total": 74
+    },
+    "stress": {
+      "passed": 56,
+      "total": 56
+    },
+    "layout": {
+      "passed": 48,
+      "total": 48
+    }
+  },
+  "screenshots": 14,
+  "limitations": [
+    "Native device touchscreen QA not performed",
+    "Screen-reader device QA not performed",
+    "Live lesson-shell integration not performed",
+    "Final owner GOLD approval outstanding"
+  ]
+}

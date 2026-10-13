@@ -1,0 +1,24 @@
+#F8-15 .f815-svg{display:block;width:100%;height:auto;max-width:100%;filter:drop-shadow(0 13px 17px #0008);overflow:visible}
+#F8-15 .f815-svg text{font-family:var(--nova-font-chalk-draw)!important;pointer-events:none}
+#F8-15 .f815-svg .f815-row{cursor:pointer;outline:none;touch-action:manipulation}
+#F8-15 .f815-svg .f815-row:focus-visible{filter:drop-shadow(0 0 16px #ffcc58)}
+#F8-15 .f815-svg .f815-drag{cursor:grab;touch-action:none;outline:none}
+#F8-15 .f815-svg .f815-drag:focus-visible{filter:drop-shadow(0 0 15px #ffcc58)}
+#F8-15 .f815-heading{font:850 18px/1.3 Inter,Arial,sans-serif;color:#9eeeff;margin:12px 0 5px}
+#F8-15 .f815-intro-text{font:500 14px/1.55 Inter,Arial,sans-serif;color:#c9e8f8;margin:0 0 12px}
+#F8-15 .f815-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
+#F8-15 .f815-controls select{min-width:210px;flex:1;background:#071d30;color:#fff;border:1px solid #3a8db4;border-radius:12px;padding:10px;font:600 14px Inter,Arial,sans-serif}
+#F8-15 .f815-challenge-label{font:650 14px/1.35 Inter,Arial,sans-serif;color:#8cecff;flex:1;min-width:170px}
+#F8-15 .f815-step-buttons{display:flex;flex-wrap:wrap;gap:7px;padding:7px 0}
+#F8-15 .f815-step-buttons button{flex:1;min-width:104px}
+#F8-15 .f815-fixes{padding:13px 14px;margin:13px 0;background:linear-gradient(125deg,#0b223c,#071728);border:1px solid #4592bd;border-radius:16px}
+#F8-15 .f815-fix-title{font:800 14px Inter,Arial,sans-serif;color:#91f1ff;margin:0 0 10px}
+#F8-15 .f815-fix-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+#F8-15 .f815-fix-button{height:auto;min-height:65px;white-space:normal!important;word-break:normal;font:800 14px/1.4 var(--nova-font-chalk-write),cursive!important}
+#F8-15 .f815-feedback{min-height:46px;padding:11px 13px;border-left:4px solid #2bdcf3;border-radius:10px;background:#0a2036;color:#e7fcff;font:600 14px/1.5 Inter,Arial,sans-serif}
+#F8-15 .f815-feedback[data-state=wrong]{border-color:#ff873d;color:#ffe0c5}#F8-15 .f815-feedback[data-state=correct]{border-color:#4fe2a1;color:#baffdd}
+#F8-15 .f815-progress{font:650 14px/1.5 Inter,Arial,sans-serif;color:#9fe9ff}
+#F8-15 .nova-stage{min-height:0!important}
+@media(max-width:760px){#F8-15 .f815-fix-options{grid-template-columns:1fr}#F8-15 .f815-svg{min-height:0}#F8-15 .f815-step-buttons button{min-width:65px;font-size:12px}#F8-15 .f815-controls select{min-width:100%}}
+@media(prefers-reduced-motion:reduce){#F8-15 *{animation:none!important;transition:none!important}}
+@media print{#F8-15 .f815-svg{filter:none}#F8-15 .f815-fixes{background:white!important;color:black!important;border-color:#555!important}}

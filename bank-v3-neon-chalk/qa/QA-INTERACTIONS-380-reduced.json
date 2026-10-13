@@ -1,165 +1,177 @@
 {
-  "total": 32,
-  "passed": 32,
+  "width": 380,
+  "motion": "reduced",
+  "total": 34,
+  "passed": 34,
   "failed": [],
   "checks": [
     {
-      "test": "380-reduced-watch-premium-bg",
+      "check": "premium-watch",
       "passed": true,
-      "detail": "{'frame': True, 'svg': True, 'bg': 'radial-gradient(at 25% 23%, rgba(37, 113, 217, 0.24), rgba(0, 0, 0, 0) 52%), linear-gradient(145deg, rgb(13, 48, 78) 0%, rgb(7, 28, 50) 38%, rgb"
+      "detail": "{'theatre': True, 'svg': True, 'bg': 'radial-gradient(at 25% 23%, rgba(37, 113, 217, 0.24), rgba(0, 0, 0, 0) 52%), linear-gradient(145deg, rgb(13, 48, 78) 0%, rgb(7, 28, 50) 38%, rgb(5, 19, 34) 100%)'"
     },
     {
-      "test": "380-reduced-guided-premium-bg",
+      "check": "premium-guided",
       "passed": true,
-      "detail": "{'frame': True, 'svg': True, 'bg': 'radial-gradient(at 25% 23%, rgba(37, 113, 217, 0.24), rgba(0, 0, 0, 0) 52%), linear-gradient(145deg, rgb(13, 48, 78) 0%, rgb(7, 28, 50) 38%, rgb"
+      "detail": "{'theatre': True, 'svg': True, 'bg': 'radial-gradient(at 25% 23%, rgba(37, 113, 217, 0.24), rgba(0, 0, 0, 0) 52%), linear-gradient(145deg, rgb(13, 48, 78) 0%, rgb(7, 28, 50) 38%, rgb(5, 19, 34) 100%)'"
     },
     {
-      "test": "380-reduced-explore-premium-bg",
+      "check": "premium-explore",
       "passed": true,
-      "detail": "{'frame': True, 'svg': True, 'bg': 'radial-gradient(at 25% 23%, rgba(37, 113, 217, 0.24), rgba(0, 0, 0, 0) 52%), linear-gradient(145deg, rgb(13, 48, 78) 0%, rgb(7, 28, 50) 38%, rgb"
+      "detail": "{'theatre': True, 'svg': True, 'bg': 'radial-gradient(at 25% 23%, rgba(37, 113, 217, 0.24), rgba(0, 0, 0, 0) 52%), linear-gradient(145deg, rgb(13, 48, 78) 0%, rgb(7, 28, 50) 38%, rgb(5, 19, 34) 100%)'"
     },
     {
-      "test": "380-reduced-challenge-premium-bg",
+      "check": "premium-challenge",
       "passed": true,
-      "detail": "{'frame': True, 'svg': True, 'bg': 'radial-gradient(at 25% 23%, rgba(37, 113, 217, 0.24), rgba(0, 0, 0, 0) 52%), linear-gradient(145deg, rgb(13, 48, 78) 0%, rgb(7, 28, 50) 38%, rgb"
+      "detail": "{'theatre': True, 'svg': True, 'bg': 'radial-gradient(at 25% 23%, rgba(37, 113, 217, 0.24), rgba(0, 0, 0, 0) 52%), linear-gradient(145deg, rgb(13, 48, 78) 0%, rgb(7, 28, 50) 38%, rgb(5, 19, 34) 100%)'"
     },
     {
-      "test": "380-reduced-eleven-presets",
-      "passed": true,
-      "detail": "11"
-    },
-    {
-      "test": "380-reduced-preset-Y7-039",
-      "passed": true,
-      "detail": "[1, 2, '1', '2']"
-    },
-    {
-      "test": "380-reduced-preset-Y7-060",
-      "passed": true,
-      "detail": "[2, 0, '2', '0']"
-    },
-    {
-      "test": "380-reduced-preset-Y8-022",
-      "passed": true,
-      "detail": "[2, 1, '2', '1']"
-    },
-    {
-      "test": "380-reduced-preset-Y8-023",
-      "passed": true,
-      "detail": "[-1, 3, '\u22121', '3']"
-    },
-    {
-      "test": "380-reduced-preset-Y8-024",
-      "passed": true,
-      "detail": "[1.5, -1, '1.5', '\u22121']"
-    },
-    {
-      "test": "380-reduced-preset-Y8-025",
-      "passed": true,
-      "detail": "[2, -2, '2', '\u22122']"
-    },
-    {
-      "test": "380-reduced-preset-Y8-029",
-      "passed": true,
-      "detail": "[-1, 3, '\u22121', '3']"
-    },
-    {
-      "test": "380-reduced-preset-Y8-032",
-      "passed": true,
-      "detail": "[0.5, 1, '0.5', '1']"
-    },
-    {
-      "test": "380-reduced-preset-Y8-035",
-      "passed": true,
-      "detail": "[3, 0, '3', '0']"
-    },
-    {
-      "test": "380-reduced-preset-Y8-036",
-      "passed": true,
-      "detail": "[1.5, 0, '1.5', '0']"
-    },
-    {
-      "test": "380-reduced-preset-Y9-020",
-      "passed": true,
-      "detail": "[0.75, 0, '0.75', '0']"
-    },
-    {
-      "test": "380-reduced-direct-proportion-lock",
-      "passed": true,
-      "detail": "{'c': 0, 'scale': 12, 'stepr': 1.5, 'proportion': True}"
-    },
-    {
-      "test": "380-reduced-proportion-slider-c-zero",
+      "check": "five-lesson-presets",
       "passed": true,
       "detail": ""
     },
     {
-      "test": "380-reduced-gradient-keyboard",
+      "check": "preset-Y8-029",
       "passed": true,
-      "detail": "\u22120.5"
+      "detail": "{'outcome': 'ONE INTERSECTION', 'coordinates': '(2, 3)'}"
     },
     {
-      "test": "380-reduced-intercept-keyboard",
+      "check": "preset-Y8-031",
       "passed": true,
-      "detail": "2.5"
+      "detail": "{'outcome': 'TWO INTERSECTIONS', 'coordinates': '(\u22122, 0)\\n(2, 0)'}"
     },
     {
-      "test": "380-reduced-restore-rule",
+      "check": "preset-Y8-033",
       "passed": true,
-      "detail": ""
+      "detail": "{'outcome': 'ONE INTERSECTION', 'coordinates': '(3, 4)'}"
     },
     {
-      "test": "380-reduced-native-intercept-drag",
+      "check": "preset-Y9-018",
       "passed": true,
-      "detail": "2.5"
+      "detail": "{'outcome': 'TWO INTERSECTIONS', 'coordinates': '(\u22121.56, 0.44)\\n(2.56, 4.56)'}"
     },
     {
-      "test": "380-reduced-cancel-no-strand",
+      "check": "preset-Y9-051",
       "passed": true,
-      "detail": "('2.5', False)"
+      "detail": "{'outcome': 'ONE INTERSECTION', 'coordinates': '(4, 3)'}"
     },
     {
-      "test": "380-reduced-challenge-1-no-coordinate-spoiler",
-      "passed": true,
-      "detail": "('y = \u2212x + c', 'ate graph demonstrating the gradient and vertical intercept of a straight line.\u22124\u2212224\u22128\u22126\u22124\u2212224680xy')"
-    },
-    {
-      "test": "380-reduced-challenge-1-misconception-feedback",
+      "check": "matching-wrong-rejected",
       "passed": true,
       "detail": ""
     },
     {
-      "test": "380-reduced-challenge-1-correct",
+      "check": "matching-correct-accepted",
       "passed": true,
       "detail": ""
     },
     {
-      "test": "380-reduced-challenge-2-handle",
+      "check": "red-return-tray",
       "passed": true,
       "detail": ""
     },
     {
-      "test": "380-reduced-challenge-2-keyboard-gradient",
-      "passed": true,
-      "detail": "-1"
-    },
-    {
-      "test": "380-reduced-challenge-2-correct",
+      "check": "matching-second-card",
       "passed": true,
       "detail": ""
     },
     {
-      "test": "380-reduced-challenge-3-available",
+      "check": "real-pointer-equation-drag",
       "passed": true,
       "detail": ""
     },
     {
-      "test": "380-reduced-challenge-3-correct",
+      "check": "real-pointer-red-tray",
       "passed": true,
       "detail": ""
     },
     {
-      "test": "380-reduced-zero-browser-errors",
+      "check": "parallel-no-solution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "coincident-infinite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "tangent-one",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "quadratic-no-intersection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reading-handle-present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "marker-keyboard-step",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "marker-slider-synced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "native-drag-snap",
+      "passed": true,
+      "detail": "2.25"
+    },
+    {
+      "check": "drag-cancel-regrab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "answer-hidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "wrong-feedback",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "challenge-linear",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "challenge-quadratic-roots",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "challenge-water-levels",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "challenge-estimated-positive-crossing",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "challenge-caution-offered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "challenge-extrapolation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no-js-errors",
       "passed": true,
       "detail": "[]"
     }

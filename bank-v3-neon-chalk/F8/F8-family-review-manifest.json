@@ -1,0 +1,1356 @@
+{
+  "family": "F8",
+  "status": "review-only-not-GOLD",
+  "independent_engines": 15,
+  "preset_presentations": {
+    "F8-02": "F8-03",
+    "F8-04": "F8-03",
+    "F8-13": "F3-10"
+  },
+  "components": {
+    "F8-01": {
+      "run": 1,
+      "archive": "NOVA-F8-RUN01-F8-01-FRESH-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-01-step-by-step-working-animator.html",
+      "file_count": 25,
+      "sha256": "7a3ce569a45cb95e95de117f5f191cd3cbe0ad5a159016c9528f3fb6e5ce4f48",
+      "shot": "shots/F8-01-380-explore.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-01",
+        "title": "Step-by-step Working Animator",
+        "family": "F8",
+        "kind": "engine",
+        "status": "premium-review",
+        "owner_approved": false,
+        "lessons": [
+          "Y7-018",
+          "Y8-011",
+          "Y8-012",
+          "Y8-015"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "core_dependencies": [
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08",
+          "F0-13"
+        ],
+        "related": [
+          "F3-02",
+          "F7-03"
+        ],
+        "sources": [
+          "src/F8-01.js",
+          "src/F8-01.css",
+          "build/F8-01.src.html"
+        ],
+        "rebuild": "python build/build-f8-01.py",
+        "note": "Local rebuild injects exact core already on your computer; this ZIP does not replace shared core files."
+      },
+      "byte_count": 1190607,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-01.js",
+      "css_file": "src/F8-01.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "dc6264208d50548b7cfafeb85d6a177bc8f96c85",
+      "already_in_github_main": true
+    },
+    "F8-03": {
+      "run": 2,
+      "archive": "NOVA-F8-RUN02-F8-03-FUNCTION-MACHINE-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-03-function-machine.html",
+      "file_count": 24,
+      "sha256": "18b9a3317bb2e241aa02849acd507319903c8bb8c31fc5a28c986725ac6566ed",
+      "shot": "shots/F8-03-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-03",
+        "name": "Function Machine",
+        "family": "F8",
+        "classification": "premium-review-candidate",
+        "kind": "engine",
+        "dependent_preset_work": [
+          "F7-12",
+          "F8-02",
+          "F8-04"
+        ],
+        "year_preset_ids": [
+          "Y7-028",
+          "Y7-030",
+          "Y7-033",
+          "Y8-016"
+        ],
+        "modes": [
+          "watch",
+          "guided",
+          "explore",
+          "challenge"
+        ],
+        "no_git_changes": true,
+        "no_core_replacement": true,
+        "requires_original_core_rebuild_for_integration": true
+      },
+      "byte_count": 1192490,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-03.js",
+      "css_file": "src/F8-03.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "025d5582d7631656e0ff0a6ddcf9e5b824adc580",
+      "already_in_github_main": true
+    },
+    "F8-02": {
+      "run": 3,
+      "archive": "NOVA-F8-RUN03-F8-02-INVERSE-FLOWCHART-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-02-inverse-operations-flowchart.html",
+      "file_count": 27,
+      "sha256": "fe701df48f8e6c209627dac71b7db477408b893d05c3a7ede631a49fd3151d56",
+      "shot": "shots/F8-02-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-02",
+        "title": "Inverse-operations flowchart",
+        "classification": "premium-review-candidate",
+        "kind": "presentation-preset",
+        "engine": "F8-03",
+        "source_engine_file": "src/F8-03.js (existing installation, never replaced)",
+        "preset_source": "src/F8-02.preset.js",
+        "entry": "F8/F8-02-inverse-operations-flowchart.html",
+        "lesson_preset_ids": [
+          "Y7-033",
+          "Y8-016"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "dependencies": [
+          "F0 current local core",
+          "F8-03 function-machine engine"
+        ],
+        "shared_registry_engine_id": "F8-03",
+        "no_duplicate_engine": true,
+        "no_core_replacement": true,
+        "no_base_engine_replacement": true,
+        "no_git_changes": true,
+        "approval": "pending owner review"
+      },
+      "byte_count": 1215497,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": null,
+      "css_file": "src/F8-02.css",
+      "js_check": null,
+      "preset_of": "F8-03",
+      "git_blob_sha1": "b8b761ad81389fe2de77880a4e93327359318d4e",
+      "already_in_github_main": true
+    },
+    "F8-04": {
+      "run": 4,
+      "archive": "NOVA-F8-RUN04-F8-04-TWO-WAY-FUNCTION-MACHINE-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-04-two-way-function-machine.html",
+      "file_count": 29,
+      "sha256": "29d871b344bfd7daf7e51841882462914679fefa72d9ab22f30ff936037e1a3d",
+      "shot": "shots/F8-04-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-04",
+        "title": "Two-way Function Machine",
+        "family": "F8",
+        "kind": "preset",
+        "engine": "F8-03",
+        "standalone_engine": false,
+        "entry": "F8/F8-04-two-way-function-machine.html",
+        "source": "src/F8-04.preset.js",
+        "lessons": [
+          "Y8-016"
+        ],
+        "variations": [
+          "Y8-016",
+          "Y8-016-b",
+          "Y8-016-c"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "requires": [
+          "F8-03",
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08"
+        ],
+        "approval_status": "premium-review-candidate-not-gold"
+      },
+      "byte_count": 1217968,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": null,
+      "css_file": "src/F8-04.css",
+      "js_check": null,
+      "preset_of": "F8-03",
+      "git_blob_sha1": "79abde96c037794c981588c647b7c667d70f0038",
+      "already_in_github_main": true
+    },
+    "F8-05": {
+      "run": 5,
+      "archive": "NOVA-F8-RUN05-F8-05-BOTH-SIDES-EQUATION-SOLVER-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-05-both-sides-equation-solver.html",
+      "file_count": 29,
+      "sha256": "f06dd8f85969a23f7371325ab4b65e30e9be2eab22c3547316fd45cf8e2af9cb",
+      "shot": "shots/F8-05-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-05",
+        "title": "Both-sides Equation Solver",
+        "kind": "engine",
+        "engine": "F8-05",
+        "entry": "F8/F8-05-both-sides-equation-solver.html",
+        "family": "F8",
+        "status": "premium-review-owner-signoff-pending",
+        "lessons": [
+          "Y7-033",
+          "Y7-035",
+          "Y8-013",
+          "Y8-014",
+          "Y8-015"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "requires": [
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08",
+          "F7-08",
+          "F8-01"
+        ],
+        "no_core_replacement": true,
+        "notes": "One new independent engine. No file from existing F8 runs or F0 is overwritten except the additive F8 family gallery index."
+      },
+      "byte_count": 1195064,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-05.js",
+      "css_file": "src/F8-05.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "d59b6f848dcac320a005ac36cd23662e903c1d9b",
+      "already_in_github_main": true
+    },
+    "F8-06": {
+      "run": 6,
+      "archive": "NOVA-F8-RUN06-F8-06-REARRANGING-FORMULAE-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-06-rearranging-formulae.html",
+      "file_count": 38,
+      "sha256": "13dd42cf4b91444a75b741cb7b05a74910668703d2eec023d6032eded5486454",
+      "shot": "shots/F8-06-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-06",
+        "title": "Rearranging Formulae",
+        "family": "F8",
+        "kind": "engine",
+        "entry": "F8/F8-06-rearranging-formulae.html",
+        "source": "src/F8-06.js",
+        "lessons": [
+          "Y8-016",
+          "Y9-019"
+        ],
+        "presets": [
+          "Y8-016-L",
+          "Y8-016-G",
+          "Y8-016-A",
+          "Y9-019-D",
+          "Y9-019-R"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "status": "premium-review",
+        "requires": [
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08"
+        ],
+        "approved": false
+      },
+      "byte_count": 1194911,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-06.js",
+      "css_file": "src/F8-06.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "3ffaa72ddf6d7a3fa3250047f6c73b499849442c",
+      "already_in_github_main": true
+    },
+    "F8-07": {
+      "run": 7,
+      "archive": "NOVA-F8-RUN07-F8-07-EXPRESSION-BUILDER-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-07-expression-builder.html",
+      "file_count": 41,
+      "sha256": "39269948ee3923a57c5b5186db941b0899017c33c0ce752fa9c22d656e0f3074",
+      "shot": "shots/F8-07-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-07",
+        "title": "Expression Builder",
+        "kind": "engine",
+        "engine": "F8-07",
+        "status": "premium-review",
+        "entry": "F8/F8-07-expression-builder.html",
+        "lesson_ids": [
+          "Y7-028",
+          "Y7-034",
+          "Y9-007"
+        ],
+        "named_presets": [
+          "Y7-028",
+          "Y7-034-T",
+          "Y7-034-P",
+          "Y9-007-D",
+          "Y9-007-G"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "depends_on": [
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08"
+        ],
+        "owner_gold_approved": false
+      },
+      "byte_count": 1192205,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-07.js",
+      "css_file": "src/F8-07.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "4462cd9771eb8792f60f0fe232acd8a1fcd00180",
+      "already_in_github_main": true
+    },
+    "F8-08": {
+      "run": 8,
+      "archive": "NOVA-F8-RUN08-F8-08-EQUIVALENCE-CHECKER-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-08-equivalence-checker.html",
+      "file_count": 34,
+      "sha256": "fdfee430cef51a5f8fd4dd9b84bc0d4d21b44a31150974eab37957bb48e4a0b0",
+      "shot": "shots/F8-08-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-08",
+        "title": "Equivalence Checker",
+        "kind": "standalone-engine",
+        "engine": "F8-08",
+        "source": "src/F8-08.js",
+        "entry": "F8/F8-08-equivalence-checker.html",
+        "lessons": [
+          "Y7-029",
+          "Y9-006"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "requires": [
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08",
+          "F0-15"
+        ],
+        "replaces_core": false,
+        "status": "premium-review"
+      },
+      "byte_count": 1188586,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-08.js",
+      "css_file": "src/F8-08.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "cdd7534e8e57532a9f775eaada29cb7c2470ae0f",
+      "already_in_github_main": true
+    },
+    "F8-09": {
+      "run": 9,
+      "archive": "NOVA-F8-RUN09-F8-09-SUBSTITUTION-TABLE-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-09-substitution-table.html",
+      "file_count": 36,
+      "sha256": "96bb4b0bf206e14f1282f3aee5041cbbf3d30dad2c7f65345e880ba0bfffd07c",
+      "shot": "shots/F8-09-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-09",
+        "title": "Substitution Table",
+        "family": "F8",
+        "kind": "engine",
+        "review_status": "premium-review-not-gold",
+        "entry": "F8/F8-09-substitution-table.html",
+        "source": [
+          "src/F8-09.js",
+          "src/F8-09.css",
+          "build/F8-09.src.html"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "lesson_presets": [
+          "Y7-028-A",
+          "Y7-030-A",
+          "Y7-039-A",
+          "Y8-030-A",
+          "Y9-007-A"
+        ],
+        "dependencies": [
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08",
+          "F0-15"
+        ],
+        "core_replacement_included": false,
+        "notes": "Compile via build/build-f8-09.py from existing bank F0 core."
+      },
+      "byte_count": 1186769,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-09.js",
+      "css_file": "src/F8-09.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "e01ea465743bfae3dcd551446f291f3346b5d538",
+      "already_in_github_main": true
+    },
+    "F8-10": {
+      "run": 10,
+      "archive": "NOVA-F8-RUN10-F8-10-SIMULTANEOUS-EQUATIONS-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-10-simultaneous-equations.html",
+      "file_count": 39,
+      "sha256": "c87f6e9f7736b7acdcc3f5811db8db4e8e08e9aba4a6c7ab13f405f8913d8183",
+      "shot": "shots/F8-10-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-10",
+        "title": "Simultaneous Equations",
+        "family": "F8",
+        "kind": "engine",
+        "status": "premium-review",
+        "entry": "F8/F8-10-simultaneous-equations.html",
+        "source": "src/F8-10.js",
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "lessons": [
+          "Y8-029",
+          "Y9-009"
+        ],
+        "presets": [
+          "Y8-029-A",
+          "Y8-029-B",
+          "Y8-029-C",
+          "Y9-009-A",
+          "Y9-009-B"
+        ],
+        "dependencies": [
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08",
+          "F0-14",
+          "F7-08",
+          "F8-05"
+        ],
+        "note": "No shared core replacement. Requires owner testing and GOLD signoff."
+      },
+      "byte_count": 1191308,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-10.js",
+      "css_file": "src/F8-10.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "b719abb7418a29cdb3bc441da735423fd9f2b72e",
+      "already_in_github_main": false
+    },
+    "F8-11": {
+      "run": 11,
+      "archive": "NOVA-F8-RUN11-F8-11-INEQUALITY-SOLVER-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-11-inequality-solver.html",
+      "file_count": 41,
+      "sha256": "a402db31cb37b1b4c4f04e74597c8b0bde5d39aedbbe9c70adc58b82a5107130",
+      "shot": "shots/F8-11/F8-11-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-11",
+        "title": "Inequality Solver",
+        "kind": "engine",
+        "family": "F8",
+        "entry": "F8/F8-11-inequality-solver.html",
+        "source": [
+          "src/F8-11.js",
+          "src/F8-11.css"
+        ],
+        "lessons": [
+          "Y8-017",
+          "Y8-018"
+        ],
+        "presets": [
+          "Y8-017-A",
+          "Y8-017-B",
+          "Y8-017-C",
+          "Y8-018-A",
+          "Y8-018-B",
+          "Y8-018-C"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "requires": [
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08",
+          "F1-01",
+          "F1-06",
+          "F8-05"
+        ],
+        "status": "premium-review",
+        "owner_approved": false
+      },
+      "byte_count": 1190555,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-11.js",
+      "css_file": "src/F8-11.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "b569e793561c0d461a8f9ba6424914725a7bd7a1",
+      "already_in_github_main": true
+    },
+    "F8-12": {
+      "run": 12,
+      "archive": "NOVA-F8-RUN12-F8-12-QUADRATIC-SOLVE-ROUTES-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-12-quadratic-solve-routes.html",
+      "file_count": 38,
+      "sha256": "5ac702696ebce64f4a76a026da3ccad612c5cc163cbcf0be3676ab5f1f0fb23e",
+      "shot": "shots/F8-12-380-explore-stage.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-12",
+        "title": "Quadratic Solve Routes",
+        "kind": "engine",
+        "family": "F8",
+        "entry": "F8/F8-12-quadratic-solve-routes.html",
+        "source": "src/F8-12.js",
+        "styles": "src/F8-12.css",
+        "lesson_ids": [
+          "Y8-031",
+          "Y9-011"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "dependencies": [
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08",
+          "F0-14",
+          "F3-02",
+          "F7-04",
+          "F8-10"
+        ],
+        "status": "premium-review",
+        "owner_approved": false
+      },
+      "byte_count": 1187888,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-12.js",
+      "css_file": "src/F8-12.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "003f40e0392b0c317b547659bf9bab683068f1f6",
+      "already_in_github_main": false
+    },
+    "F8-13": {
+      "run": 13,
+      "archive": "NOVA-F8-RUN13-F8-13-INDEX-LAWS-ALGEBRA-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-13-index-laws-in-algebra.html",
+      "file_count": 32,
+      "sha256": "16bf733ce5a120b43e021a28f6d6db22bc16628775b44afcf56295f42210195a",
+      "shot": "shots/F8-13-380-explore-page.png",
+      "source_root": "bank-v3-neon-chalk/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-13",
+        "kind": "preset",
+        "parentEngine": "F3-10",
+        "lesson": "Y8-002",
+        "productionStatus": "premium-review-not-GOLD",
+        "sourceMutation": false,
+        "approvedF0CoreMutation": false,
+        "canonicalIntegrationVerified": false,
+        "currentGitBlobF310": "a35879e84c24356b34e1369ff16a73cd357ee280"
+      },
+      "byte_count": 1182360,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-13.js",
+      "css_file": "src/F8-13.css",
+      "js_check": true,
+      "preset_of": "F3-10",
+      "git_blob_sha1": "6db10cfb622132df82de28377df5047989c3dfe3",
+      "already_in_github_main": false
+    },
+    "F8-14": {
+      "run": 14,
+      "archive": "NOVA-F8-RUN14-F8-14-ALGEBRAIC-FRACTION-SIMPLIFIER-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-14-algebraic-fraction-simplifier.html",
+      "file_count": 33,
+      "sha256": "eec40cdf3d08cbd890e87f134ddd64a86a835192dbffd00380f3c54a5ed3ec84",
+      "shot": "shots/F8-14-380-explore-stage.png",
+      "source_root": "NOVA-F8-RUN14-F8-14-PREMIUM-REVIEW-v1/",
+      "state": "review-candidate",
+      "manifest": {
+        "component": "F8-14",
+        "family": "F8",
+        "title": "Algebraic Fraction Simplifier",
+        "status": "premium-review",
+        "engines": [
+          "F8-14"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "coreBundled": false,
+        "ownerApproved": false,
+        "reviewHTML": "F8/F8-14-algebraic-fraction-simplifier.html",
+        "source": [
+          "src/F8-14.js",
+          "src/F8-14.css"
+        ],
+        "master": "NOVA-MASTER-FOR-OTHER-AI.md · F8-14",
+        "fraction": "traditional stacked NOVA Chalk"
+      },
+      "byte_count": 1188205,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-14.js",
+      "css_file": "src/F8-14.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "a08417fb031d73dbc890a0cbca6555f3fcccd09d",
+      "already_in_github_main": false
+    },
+    "F8-15": {
+      "run": 15,
+      "archive": "NOVA-F8-RUN15-F8-15-MISCONCEPTION-SPOTTER-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-15-misconception-spotter.html",
+      "file_count": 44,
+      "sha256": "e33995c9116fc09165e067253581b92c0486d0ae709b8cb7dd0d2c0381d25d5f",
+      "shot": "shots/F8-15-380-explore-stage.png",
+      "source_root": "NOVA-F8-RUN15-F8-15-MISCONCEPTION-SPOTTER-PREMIUM-REVIEW-v1/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-15",
+        "status": "premium-review-not-GOLD",
+        "core_replacement": false,
+        "github_modified": false,
+        "checks": {
+          "math": {
+            "passed": 77,
+            "total": 77,
+            "file": "tests/F8-15-math-results.json"
+          },
+          "browser": {
+            "passed": 146,
+            "total": 146,
+            "file": "tests/F8-15-browser-results.json"
+          },
+          "stress": {
+            "passed": 18,
+            "total": 18,
+            "file": "tests/F8-15-stress-results.json"
+          },
+          "width": {
+            "passed": 112,
+            "total": 112,
+            "file": "tests/F8-15-width-results.json"
+          }
+        },
+        "total_checks": 353,
+        "screenshot_count": 26,
+        "files": [
+          {
+            "path": "F8/F8-15-misconception-spotter.html",
+            "size": 1185655,
+            "sha256": "e33995c9116fc09165e067253581b92c0486d0ae709b8cb7dd0d2c0381d25d5f"
+          },
+          {
+            "path": "README-F8-15.md",
+            "size": 2215,
+            "sha256": "1818754ea7c87afe62904bf275d8c818c6887e892a94beff78b9eac37aeb6961"
+          },
+          {
+            "path": "build/F8-15.src.html",
+            "size": 631,
+            "sha256": "b5c9be1af42a1da06204b2548da79e2f8cc101cfecb58fcd15f92197e74333bb"
+          },
+          {
+            "path": "build/build-f8-15.py",
+            "size": 1113,
+            "sha256": "c6185e47ebbdcc78777ea594531b5b60215415b4785f73e0ee5c1c9b3ee22101"
+          },
+          {
+            "path": "docs/F8-15-QA-REPORT.md",
+            "size": 3809,
+            "sha256": "7383085877779154f105e0a7ef739108ddff81333336d8579262f2eaaaa57de9"
+          },
+          {
+            "path": "docs/F8-15-SPEC.md",
+            "size": 2997,
+            "sha256": "28ff23795baea1628623bc125c238099aea26519f8940f655194f06d7d046c97"
+          },
+          {
+            "path": "shots/F8-15-1280-challenge-board.png",
+            "size": 328482,
+            "sha256": "c20ccbc98fb4f84a8323cdd005612c557bc55153906e01cc067e36b64b3e721b"
+          },
+          {
+            "path": "shots/F8-15-1280-challenge-complete.png",
+            "size": 308963,
+            "sha256": "cd4e3ffd3d72a665f2bed83e84417759a85a643270c810d1aed7ca3b099041c9"
+          },
+          {
+            "path": "shots/F8-15-1280-challenge-stage.png",
+            "size": 477494,
+            "sha256": "99c2fc68cd684989fb96b1a308e4658978e780f1cda59e92a3f79330cd72dd0d"
+          },
+          {
+            "path": "shots/F8-15-1280-explore-board.png",
+            "size": 328414,
+            "sha256": "3a005b5dfc0c5435b70154e4416177651469a67de235dada13cc30672f2046ef"
+          },
+          {
+            "path": "shots/F8-15-1280-explore-stage.png",
+            "size": 475327,
+            "sha256": "3163628086ae070cbf99fbe937dba154a34f531278991fcc408149a2eac24a73"
+          },
+          {
+            "path": "shots/F8-15-1280-guided-board.png",
+            "size": 331044,
+            "sha256": "0cbad4524fe1dfa4c70aa581a96ba00169db2876b76ad22f8b00b29e359d172f"
+          },
+          {
+            "path": "shots/F8-15-1280-guided-stage.png",
+            "size": 487363,
+            "sha256": "db7a3cd22bede8f9d3f23a7d9ea7703c7626da7236e7b3eb0eaf127645d9bd09"
+          },
+          {
+            "path": "shots/F8-15-1280-pointer-complete.png",
+            "size": 311169,
+            "sha256": "a19e5f2aa922da96cb11c8872de0ad23d667f2f665da462d5a4c33c980b15b49"
+          },
+          {
+            "path": "shots/F8-15-1280-watch-board.png",
+            "size": 330658,
+            "sha256": "d3e2249083daf6807130a1cfeb24987d57fe6ad57cf36750fff2386f6f18ff7e"
+          },
+          {
+            "path": "shots/F8-15-360-challenge-board.png",
+            "size": 133252,
+            "sha256": "83a749d7fd02e3cef1d9d029ea6726a9a600330fda754dd60e345a3aaf23e661"
+          },
+          {
+            "path": "shots/F8-15-360-explore-board.png",
+            "size": 133275,
+            "sha256": "ca530ac5fcd9dca67075b09252ad2b5318e73444d966c503492f4610bd1bc0aa"
+          },
+          {
+            "path": "shots/F8-15-360-guided-board.png",
+            "size": 134652,
+            "sha256": "df1ff8d8464d5191816ad96073598979db29d91f229b2ee7378c23625f72c39f"
+          },
+          {
+            "path": "shots/F8-15-360-watch-board.png",
+            "size": 132782,
+            "sha256": "1d9b5b520ea22feb78f45e5d6db5e45660918153257f1ee0218bfce4210a63a0"
+          },
+          {
+            "path": "shots/F8-15-380-challenge-board.png",
+            "size": 146185,
+            "sha256": "d78752970875b62fcdff1f7a7bede0ab9ac7c3b084b419de2a4a4e48672e3d7b"
+          },
+          {
+            "path": "shots/F8-15-380-challenge-complete.png",
+            "size": 131472,
+            "sha256": "52deee5cc3276ee46b6862cbf83ad2d963db211b10b7803576a94080b738a45b"
+          },
+          {
+            "path": "shots/F8-15-380-challenge-stage.png",
+            "size": 257174,
+            "sha256": "a17dbd1dcf7fff9478011a3488ee70e55c6a7a5397fe56b3e24e515afea98fbe"
+          },
+          {
+            "path": "shots/F8-15-380-explore-board.png",
+            "size": 146220,
+            "sha256": "c034088d799411eb42f3df13e6c7f7a284b05a007a78e48ae6239c661991933f"
+          },
+          {
+            "path": "shots/F8-15-380-explore-stage.png",
+            "size": 252051,
+            "sha256": "28cefddfeb3525b40ad47fea3d9d0a9e028d15656d8ad9f4207ddaaae5f25baa"
+          },
+          {
+            "path": "shots/F8-15-380-guided-board.png",
+            "size": 147189,
+            "sha256": "7ca4d43c4a156d4732058eff246c574b4e37272d6aeac1cab373b32cf563f162"
+          },
+          {
+            "path": "shots/F8-15-380-guided-stage.png",
+            "size": 254931,
+            "sha256": "e3fcedb69550c58c96ee6554b45199773b0d51bafb04851386acf62023d1624e"
+          },
+          {
+            "path": "shots/F8-15-380-pointer-complete.png",
+            "size": 133126,
+            "sha256": "b8e6c7f0838b252450b5c785e6b0d3d04e98ba358ea1115864d29a42ad688b15"
+          },
+          {
+            "path": "shots/F8-15-380-watch-board.png",
+            "size": 145257,
+            "sha256": "08c03a5a644a5e2da116a05a5b30650f4380ea3e9cc653ca2e59d510d38ec868"
+          },
+          {
+            "path": "shots/F8-15-760-challenge-board.png",
+            "size": 488800,
+            "sha256": "4c840518d259c36d0a3f2f6e1e49579f040b495f6dbc2d7246ac04bc7efa89f7"
+          },
+          {
+            "path": "shots/F8-15-760-explore-board.png",
+            "size": 488706,
+            "sha256": "bb647cc1b986917b9760324b78e99c675b1122f3c997a330a654613fc3db19ae"
+          },
+          {
+            "path": "shots/F8-15-760-guided-board.png",
+            "size": 503035,
+            "sha256": "9a61fb293d76e28310cdfdc5a887f3b41059c8d2ee5477c7ce6bce3bb659ae89"
+          },
+          {
+            "path": "shots/F8-15-760-watch-board.png",
+            "size": 502617,
+            "sha256": "77e915c0e4abffbd21ba335aa1d9b0056209efad911a2294fa09e53ad9bd9dc5"
+          },
+          {
+            "path": "src/F8-15.css",
+            "size": 2639,
+            "sha256": "c12703a96e09b935dfc408c075208ee6bdaec032761aee7171d703119aba1572"
+          },
+          {
+            "path": "src/F8-15.js",
+            "size": 20281,
+            "sha256": "ee0286c91f1dcbc4000a6a079f06db6496d33c8b3065346033a965968714c4bf"
+          },
+          {
+            "path": "tests/F8-15-browser-results.json",
+            "size": 14048,
+            "sha256": "eed9ec4eba207da76f1b8d2105aaa5be62e4d555215c327bb3ddf6b34d98a4cb"
+          },
+          {
+            "path": "tests/F8-15-math-results.json",
+            "size": 7600,
+            "sha256": "175c0ba8f450dfc313dc10fa2218f4bd5707a2eaab6533761f23e8a5b12e6bb0"
+          },
+          {
+            "path": "tests/F8-15-stress-results.json",
+            "size": 1690,
+            "sha256": "5cde2202ce95305f6e7358bedaabc4cf2521902e05a560c2ef0c95861685a0cd"
+          },
+          {
+            "path": "tests/F8-15-width-results.json",
+            "size": 10321,
+            "sha256": "46e9306de061cb41d2fb7765cad7a30406174dab0aa68e67af1508533287e4ec"
+          },
+          {
+            "path": "tests/browser_f815.py",
+            "size": 3961,
+            "sha256": "a3d1c8490d4f9f19d1ff62baf81fb0761c02698576aaa9a23232fda8d495e6e0"
+          },
+          {
+            "path": "tests/math_f815.py",
+            "size": 2384,
+            "sha256": "05c4f325a821e9f5cfe6d44eda7a34eb00f87e51c8724ef037976d373f03a9ee"
+          },
+          {
+            "path": "tests/smoke.py",
+            "size": 1258,
+            "sha256": "80df018e9acdf3b0a4abbcff6d26df1d3140834ee963e567cc1aaec7d3322aa7"
+          },
+          {
+            "path": "tests/stress_f815.py",
+            "size": 3288,
+            "sha256": "0f70dd0d1a83c08f2f8bd313420ac58091922093ccdceb3a44927e9d155c4f2b"
+          },
+          {
+            "path": "tests/width_f815.py",
+            "size": 1537,
+            "sha256": "b0480c20467ce9c9f8c784db5ec9be7c1f63853ef3707590c60e0fb2a399eee1"
+          }
+        ]
+      },
+      "byte_count": 1185655,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-15.js",
+      "css_file": "src/F8-15.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "05d229d68b2b3f1c1f7f00d670e97ce8509d4a7e",
+      "already_in_github_main": false
+    },
+    "F8-16": {
+      "run": 16,
+      "archive": "NOVA-F8-RUN16-F8-16-MODELLING-CYCLE-STEPPER-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-16-modelling-cycle-stepper.html",
+      "file_count": 37,
+      "sha256": "17b32be51727531cf64f12abccdc191038678014b345f61299f18a1fbb0c504d",
+      "shot": "shots/F8-16-380-explore-board.png",
+      "source_root": "NOVA-F8-RUN16-F8-16-MODELLING-CYCLE-STEPPER-PREMIUM-REVIEW-v1/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-16",
+        "title": "Modelling Cycle Stepper",
+        "family": "F8",
+        "engine": "F8-16",
+        "kind": "engine",
+        "entry": "F8/F8-16-modelling-cycle-stepper.html",
+        "source": "src/F8-16.js",
+        "stylesheet": "src/F8-16.css",
+        "status": "premium-review",
+        "lessons": [
+          "Y9-007",
+          "Y9-018"
+        ],
+        "presets": [
+          "Y9-007-A",
+          "Y9-007-B",
+          "Y9-007-C",
+          "Y9-018-A",
+          "Y9-018-B",
+          "Y9-018-C"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "dependencies": [
+          "F0-02",
+          "F0-04",
+          "F0-05",
+          "F0-07",
+          "F0-08",
+          "F8-07",
+          "F8-09",
+          "F8-10"
+        ],
+        "uses_canonical_core": true,
+        "replaces_core": false,
+        "authoritative_master": "00-master/NOVA-MASTER-FOR-OTHER-AI.md",
+        "acceptance": "Pending owner's browser and GitHub-main-core tests"
+      },
+      "byte_count": 1189748,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-16.js",
+      "css_file": "src/F8-16.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "64836ea13f3aade22f235a0c0ee6ae63588420f1",
+      "already_in_github_main": false
+    },
+    "F8-17": {
+      "run": 17,
+      "archive": "NOVA-F8-RUN17-F8-17-ALGEBRAIC-PROOF-BUILDER-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-17-algebraic-proof-builder.html",
+      "file_count": 40,
+      "sha256": "e42e6eac8002aa5250f6850f9d2232d7a57ea6b9c5e8115455e3888d82332050",
+      "shot": "shots/F8-17-380-explore-board.png",
+      "source_root": "NOVA-F8-RUN17-F8-17-ALGEBRAIC-PROOF-BUILDER-PREMIUM-REVIEW-v1/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-17",
+        "name": "Algebraic Proof Builder",
+        "family": "F8",
+        "status": "premium-review",
+        "lessonMapping": null,
+        "gcseExtension": true,
+        "presets": [
+          "ODD-SUM",
+          "THREE-CONSEC",
+          "EVEN-SQUARE",
+          "ODD-SQUARE",
+          "MULTIPLE-FIVE",
+          "SQUARE-DIFF"
+        ],
+        "modes": [
+          "Watch",
+          "Guided",
+          "Explore",
+          "Challenge"
+        ],
+        "sourceSha256": "810211e2a03bf4c567868d92a0bb8d7fc91140a3e08760ee28fb67b540b5d0c1",
+        "standaloneSha256": "e42e6eac8002aa5250f6850f9d2232d7a57ea6b9c5e8115455e3888d82332050",
+        "screenshots": 17,
+        "qaResults": {
+          "F8-17-browser-results.json": {
+            "passed": 23,
+            "total": 23
+          },
+          "F8-17-challenge-results.json": {
+            "passed": 20,
+            "total": 20
+          },
+          "F8-17-desktop-results.json": {
+            "passed": 16,
+            "total": 16
+          },
+          "F8-17-math-results.json": {
+            "passed": 1519,
+            "total": 1519
+          },
+          "F8-17-pointer-results.json": {
+            "passed": 10,
+            "total": 10
+          },
+          "F8-17-recovery-results.json": {
+            "passed": 20,
+            "total": 20
+          },
+          "F8-17-width-results.json": {
+            "passed": 64,
+            "total": 64
+          }
+        },
+        "sharedCoreModified": false,
+        "githubModified": false,
+        "localF0RebuildTested": false,
+        "physicalTouchscreenTested": false,
+        "ownerApproved": false
+      },
+      "byte_count": 1187845,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-17.js",
+      "css_file": "src/F8-17.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "686e656007bf2deb147c4c6eff82756514eca34d",
+      "already_in_github_main": false
+    },
+    "F8-18": {
+      "run": 18,
+      "archive": "NOVA-F8-RUN18-F8-18-ITERATION-TRIAL-IMPROVEMENT-PREMIUM-REVIEW-v1.zip",
+      "html": "F8/F8-18-iteration-trial-and-improvement.html",
+      "file_count": 34,
+      "sha256": "1299432ff4290a96643a68dc97d4ee52dcb8e22e6e907ea23d3b7cd6b7240be5",
+      "shot": "shots/F8-18-380-explore-stage.png",
+      "source_root": "NOVA-F8-RUN18-F8-18-ITERATION-TRIAL-IMPROVEMENT-PREMIUM-REVIEW-v1/",
+      "state": "review-candidate",
+      "manifest": {
+        "id": "F8-18",
+        "version": "review-v1",
+        "status": "premium-review-not-gold",
+        "component": "Iteration and Trial-and-Improvement",
+        "primary_html": "F8/F8-18-iteration-trial-and-improvement.html",
+        "uses_canonical_core_on_rebuild": true,
+        "replaces_existing": false,
+        "checks_recorded": 3023,
+        "files": [
+          {
+            "path": "F8/F8-18-iteration-trial-and-improvement.html",
+            "sha256": "1299432ff4290a96643a68dc97d4ee52dcb8e22e6e907ea23d3b7cd6b7240be5",
+            "size": 1185058
+          },
+          {
+            "path": "README-F8-18.md",
+            "sha256": "b3ee253c32fd4d73333f1267350cab5e41b3121402c1b67b6cb207b102bc43a3",
+            "size": 2059
+          },
+          {
+            "path": "build/F8-18.src.html",
+            "sha256": "d7a9118c34aa61f2e1230632ba786d65a222e84565ebd08dcf6569e8a1a6ce7f",
+            "size": 655
+          },
+          {
+            "path": "build/build-f8-18.py",
+            "sha256": "cdc931d8b3c8a9434363a31e1935d5c5c5deeab16a5b72eecd325e176ea78ed2",
+            "size": 1496
+          },
+          {
+            "path": "docs/F8-18-QA-REPORT.md",
+            "sha256": "b9df6322fc956354a9c11feeae75e5a5428a1e60a0200c50065c15381e992f3d",
+            "size": 3261
+          },
+          {
+            "path": "docs/F8-18-SPEC.md",
+            "sha256": "8f0469afa609272af320d37229d638252e63d9ae94e7ec9ee0f50117d3b1d77f",
+            "size": 2243
+          },
+          {
+            "path": "shots/F8-18-1280-explore-stage.png",
+            "sha256": "36983cef52143d4c5dddfaa557d0b71301fb3470fae026b176f1733f08112349",
+            "size": 791520
+          },
+          {
+            "path": "shots/F8-18-360-explore-stage.png",
+            "sha256": "6bc59f630564654fd2423bd0a621ca898d73fd542d86dbacbb99e8d3601e0680",
+            "size": 138559
+          },
+          {
+            "path": "shots/F8-18-380-CUBE-FIVE-completed.png",
+            "sha256": "1705a8bbdcfb9abd206713b7a41e406b8c2e485b1e7e5068e76cf7957cd40d3c",
+            "size": 104364
+          },
+          {
+            "path": "shots/F8-18-380-CUBIC-SUM-completed.png",
+            "sha256": "5d7132dc3f3af630587a0209b017cfa3673fd9fdc69589dd8429785a071e0c1b",
+            "size": 109421
+          },
+          {
+            "path": "shots/F8-18-380-CUBIC-X-completed.png",
+            "sha256": "fadab05bfc01089328af72d9140edd77439c142d4161b0fc0580ebf1c981a91d",
+            "size": 106762
+          },
+          {
+            "path": "shots/F8-18-380-DOUBLE-SQUARE-completed.png",
+            "sha256": "3806e5e41e0d6a2f5943ce044eef8fe67e80308645955bfbfddca43cb63093c6",
+            "size": 107717
+          },
+          {
+            "path": "shots/F8-18-380-SQUARE-FIVE-completed.png",
+            "sha256": "43538860fb8d0d91a3bbd23e9a382574fb9d0697cd218867eda368597a615c0e",
+            "size": 104915
+          },
+          {
+            "path": "shots/F8-18-380-SQUARE-TWO-completed.png",
+            "sha256": "ad095df768169a1d84620a96093b7b3298ec98491c744ae3967596fe05cd993f",
+            "size": 103910
+          },
+          {
+            "path": "shots/F8-18-380-explore-stage.png",
+            "sha256": "4938a6c4e04d3e6affb97ee6a7e6de7be161c27422c3719ae07cc45df7221e3d",
+            "size": 155676
+          },
+          {
+            "path": "shots/F8-18-480-explore-stage.png",
+            "sha256": "029f0608b422388b5b4b10346b285af6407d10e240184ddebaffca476b13f85c",
+            "size": 213185
+          },
+          {
+            "path": "shots/F8-18-760-explore-stage.png",
+            "sha256": "9c56f3af11a66717eeca106bffca8586dbe9ce1e360b65d0808256ec867ab17c",
+            "size": 446853
+          },
+          {
+            "path": "shots/F8-18-900-explore-stage.png",
+            "sha256": "c07d6fd6e99fae3e8acd389ebdd1b3656643ecb4e525bf2d4295df3a3ed89143",
+            "size": 570120
+          },
+          {
+            "path": "src/F8-18.css",
+            "sha256": "9a8b05051c1e6f58fa3b10636006fede8b403c9a3fa34a0efd7d613621c66a50",
+            "size": 2501
+          },
+          {
+            "path": "src/F8-18.js",
+            "sha256": "2d47f5548aded0eeb549e16ddb2691f040ad3b12b0a3a7bf8f9ee706de3e2cbc",
+            "size": 19802
+          },
+          {
+            "path": "tests/F8-18-browser-results.json",
+            "sha256": "5c8ad3e1f5e8e16c61e6881044e5d495243aaa94f29b1ab34da0e7b9148be58e",
+            "size": 529
+          },
+          {
+            "path": "tests/F8-18-challenge-results.json",
+            "sha256": "3a9c3b4b09922f090987ad3f147870da2beb0961cd8f92cc8b176641954c7296",
+            "size": 572
+          },
+          {
+            "path": "tests/F8-18-keyboard-results.json",
+            "sha256": "5d216f969f90e0c9dcf6246d703994880a40081d263a7f0a11a02a4881cc69a8",
+            "size": 37
+          },
+          {
+            "path": "tests/F8-18-math-results.json",
+            "sha256": "f714c75263fdae550f3627ba201fb6502ed37570d6b9ef3c1686d2bdb497a7ae",
+            "size": 1188
+          },
+          {
+            "path": "tests/F8-18-pointer-results.json",
+            "sha256": "010b7106229377d4fe84c887f6379e19440b659f6fb318d522d3ef81232df4ce",
+            "size": 242
+          },
+          {
+            "path": "tests/F8-18-width-results.json",
+            "sha256": "acd3fd7a6ed24edcba5d993a35027e921fd79c6c234d456337e05e20ca717ffc",
+            "size": 1517
+          },
+          {
+            "path": "tests/browser_f818.py",
+            "sha256": "f81ade40b26c401c76b37479576ee441735dcf3ac269eb3a1728d38694fc197c",
+            "size": 2133
+          },
+          {
+            "path": "tests/challenge_f818.py",
+            "sha256": "7490021db750b67340aad15c4a16c601c519cdfbb00cb1ce2f96f13c1d1b860a",
+            "size": 2402
+          },
+          {
+            "path": "tests/keyboard_f818.py",
+            "sha256": "a4fbe71ec1655e7837d37c9794a1726a3ca4af1af4db30856bf2d8bea5afb8d1",
+            "size": 1410
+          },
+          {
+            "path": "tests/math_f818.py",
+            "sha256": "bef5adcc3dcc42f7a1cb685e6b12b4694ddad5c5e98fe2ee28d15999f00729d4",
+            "size": 1558
+          },
+          {
+            "path": "tests/pointer_f818.py",
+            "sha256": "309acedb2ed5dea7a5fb572cf947640471fc227ccaa5f80c97808fde0ab6da74",
+            "size": 2195
+          },
+          {
+            "path": "tests/return_f818.py",
+            "sha256": "afdd60d94aa78033a2b3e4acb0ed456c692ddc6b8001b997af5ee46b06abcfe8",
+            "size": 1055
+          },
+          {
+            "path": "tests/width_f818.py",
+            "sha256": "06106dfaa9301d9a4b47b2bf873d1b6801ec348fda86d7c50a84ee57e1759151",
+            "size": 1649
+          }
+        ]
+      },
+      "byte_count": 1185058,
+      "self_contained": true,
+      "review_core_version_match": "3.0",
+      "js_file": "src/F8-18.js",
+      "css_file": "src/F8-18.css",
+      "js_check": true,
+      "preset_of": null,
+      "git_blob_sha1": "5dce41c7d650752a66c6c1009c6884156f517fc5",
+      "already_in_github_main": false
+    }
+  },
+  "archive_collisions": [
+    {
+      "path": "F8/F8-gallery.html",
+      "first_run": 4,
+      "second_run": 5,
+      "same": false
+    },
+    {
+      "path": "tests/first_render.py",
+      "first_run": 6,
+      "second_run": 7,
+      "same": false
+    }
+  ],
+  "preserved_original_paths": [
+    {
+      "run": 5,
+      "original": "F8/F8-gallery.html",
+      "staged_as": "audit/original-galleries/F8-gallery-from-run05.html"
+    },
+    {
+      "run": 7,
+      "original": "tests/first_render.py",
+      "staged_as": "tests/legacy-first-render-run07.py"
+    }
+  ]
+}

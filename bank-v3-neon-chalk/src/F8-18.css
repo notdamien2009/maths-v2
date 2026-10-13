@@ -1,0 +1,23 @@
+/* F8-18 only: preserve canonical NOVA core, neon tubes, chalk and existing helpers. */
+#F8-18 .nova-stage{min-height:0!important;overflow:visible}
+#F8-18 .f818-svg{display:block;width:100%;max-width:100%;height:auto;overflow:visible;filter:drop-shadow(0 9px 17px #0008)}
+#F8-18 .f818-svg text{font-family:var(--nova-font-chalk-draw)!important;pointer-events:none}
+#F8-18 .f818-guess{touch-action:none;cursor:grab}
+#F8-18 .f818-guess:focus-visible{filter:drop-shadow(0 0 16px #ffd45c)}
+#F8-18 .f818-ui{padding:6px 4px 17px;max-width:1050px;margin:0 auto}
+#F8-18 .f818-heading{color:#d3f6ff;font:800 18px Inter,Arial,sans-serif;margin:6px 0}
+#F8-18 .f818-context{color:#c1dfef;font:500 15px/1.45 Inter,Arial,sans-serif;margin:9px 0 15px}
+#F8-18 .f818-row{display:flex;gap:9px;flex-wrap:wrap;align-items:end;margin:12px 0}
+#F8-18 .f818-row .nova-btn{min-height:44px;flex:1 0 105px}
+#F8-18 .f818-select{flex:2;min-width:180px;min-height:45px;padding:8px 12px;border-radius:13px;background:#0a273e;border:1px solid #258cbb;color:#ebfaff;font:600 14px Inter,Arial,sans-serif}
+#F8-18 .f818-field{flex:1 1 145px;display:flex;flex-direction:column;gap:6px;color:#99eaff;font:750 11px Inter,Arial,sans-serif;letter-spacing:.04em}
+#F8-18 .f818-input{width:100%;min-width:0;padding:10px 13px;height:45px;border:1px solid #3b8da9;border-radius:12px;background:#081b2a;color:white;font:700 18px var(--nova-font-chalk-write),cursive}
+#F8-18 .f818-input:focus-visible{outline:2px solid #42e6ed;outline-offset:2px}
+#F8-18 .f818-status{background:#0a2738;border:1px solid #226280;border-left:4px solid #38cbef;border-radius:13px;padding:11px 14px;color:#e3f7ff;font:600 14px/1.55 Inter,Arial,sans-serif;min-height:48px}
+#F8-18 .f818-status[data-status=bad]{border-left-color:#ff8941;color:#ffe0c7}
+#F8-18 .f818-status[data-status=good]{border-left-color:#51e8a1;color:#cfffe0}
+#F8-18 .f818-proof{font:650 13px/1.5 Inter,Arial,sans-serif;color:#a6deed;margin:12px 0}
+@media(max-width:760px){#F8-18 .f818-row .nova-btn{flex-basis:calc(50% - 9px)}#F8-18 .f818-heading{font-size:16px}#F8-18 .f818-field{flex-basis:calc(50% - 9px)}#F8-18 .f818-select{min-width:100%}}
+@media(max-width:370px){#F8-18 .f818-row .nova-btn{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){#F8-18 *{animation:none!important;transition:none!important}}
+@media print{#F8-18 .f818-svg{filter:none}#F8-18 .f818-row{display:none!important}#F8-18 .f818-status,#F8-18 .f818-proof{color:#111!important;background:#fff!important;border-color:#111}}

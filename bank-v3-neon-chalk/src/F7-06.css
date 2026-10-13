@@ -1,0 +1,24 @@
+/* F7-06 shares the canonical F0 neon tube, maths colours, chalk handwriting and helper dock. */
+#F7-06 .nova-stage{padding:7px 10px 3px!important;min-height:0!important;overflow:visible;background:radial-gradient(ellipse at 50% 24%,rgba(43,220,243,.07),transparent 63%),var(--v-bg)}
+#F7-06 .f706-layout{display:grid;grid-template-columns:minmax(0,2.7fr) minmax(190px,.72fr);gap:13px;align-items:center;min-width:0}
+#F7-06 .f706-svg{display:block;width:100%;height:auto;max-width:100%;touch-action:none;filter:drop-shadow(0 12px 18px #0007)}
+#F7-06 .f706-side{display:grid;gap:12px;min-width:0}
+#F7-06 .f706-side .nv-ncard{padding:13px}
+#F7-06 .f706-side strong{display:block;font:800 1.2rem var(--nova-font-chalk-write);color:#f0faff}
+#F7-06 .f706-side p{font:.93rem/1.45 var(--nova-font-ui);color:#b9d7e8;margin:5px 0 0}
+#F7-06 .f706-proof{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin:6px 0 2px;padding:12px 15px;min-height:56px;border:1px solid #356e90;border-radius:14px;background:linear-gradient(145deg,#112c41,#0a1d30);box-shadow:inset 0 1px #fff1,0 8px 24px #0005}
+#F7-06 .f706-proof.correct{border-color:#46e8a3}
+#F7-06 .f706-proof-label{font:750 .85rem var(--nova-font-ui);color:#b9d7e8}
+#F7-06 .f706-proof-equation{font:800 1.35rem var(--nova-font-chalk-write);color:#f3fffc}
+#F7-06 .f706-controls{display:flex;align-items:end;gap:8px;flex-wrap:wrap;margin:9px 0}
+#F7-06 .f706-controls label{display:grid;gap:5px;color:#d4e9f6;font:750 .87rem var(--nova-font-ui)}
+#F7-06 .f706-controls select,#F7-06 .f706-controls input{border:1px solid #397e9d;background:#112c42;color:#eafbff;border-radius:10px;padding:8px 11px;min-height:44px;font:750 1rem var(--nova-font-ui)}
+#F7-06 .f706-controls input{width:min(290px,85vw);font:800 1.15rem var(--nova-font-chalk-write)}
+#F7-06 .f706-instruction{color:#c6dce8;font:.92rem/1.46 var(--nova-font-ui);margin:7px 0}
+#F7-06 .f706-status{color:#b8ffe1;font:750 .98rem/1.5 var(--nova-font-ui);min-height:26px;margin:7px 0}
+#F7-06 .f706-status.bad{color:#ffc1a6}
+#F7-06 .f706-win{color:#c4ffe6;background:#123a2e;border:1px solid #4fe2a1;border-radius:12px;padding:14px;font:830 1.08rem var(--nova-font-chalk-write)}
+#F7-06 .f706-svg [data-f706-id]{cursor:grab}
+#F7-06 .f706-svg [data-f706-id]:focus-visible,#F7-06 button:focus-visible,#F7-06 select:focus-visible,#F7-06 input:focus-visible{outline:3px solid #ffcc58;outline-offset:3px}
+@media(max-width:760px){#F7-06 .nova-stage{padding:2px!important}#F7-06 .f706-layout{display:block}#F7-06 .f706-side{display:none}#F7-06 .f706-proof{font-size:1.12rem}#F7-06 .f706-proof-equation{font-size:1.17rem}#F7-06 .f706-controls button{min-height:44px}}
+@media print{#F7-06 .f706-svg{filter:none}#F7-06 .f706-side,#F7-06 .nova-panel{display:none!important}#F7-06 .f706-proof{background:white;color:black;border:1px solid black}#F7-06 .f706-proof-equation{color:black}}

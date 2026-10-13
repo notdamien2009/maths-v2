@@ -1,0 +1,24 @@
+/* F9-09: NOVA shared shell, topic motif, drawing primitives, fonts and one helper dock retained. */
+.f909-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(212px,.395fr);gap:12px;align-items:start;max-width:100%;margin:8px 0 0}
+.f909-svg{width:100%;height:auto;min-width:0;max-width:100%;display:block;overflow:visible}
+.f909-side{display:flex;flex-direction:column;gap:11px;justify-content:center;padding:5px 0}
+.f909-card{padding:14px 14px 12px;border:1.5px solid #286a91;border-radius:17px;background:linear-gradient(153deg,rgba(19,43,70,.72),rgba(4,14,32,.8));box-shadow:inset 0 1px 0 #ffffff1a,0 9px 21px #020d1b55}
+.f909-card--gold{border-color:#97743a}.f909-card--full{grid-column:1/-1}
+.f909-eyebrow{font:700 12px var(--nova-font-chalk-draw);color:#86cdef;letter-spacing:.035em;margin-bottom:7px}
+.f909-maths{font:700 clamp(23px,3vw,36px)/1.3 var(--nova-font-chalk-write);color:#e7f8ff;text-shadow:0 0 11px #24caf655}
+.f909-maths--gold{color:#ffce78;text-shadow:0 0 12px #f7ad3b80}
+.f909-body{font:700 15px/1.5 var(--nova-font-chalk-write);color:#cfebfc}
+.f909-taskhead{font:700 21px/1.4 var(--nova-font-chalk-write);color:#ffca71;margin:9px 0}
+.f909-instruction{font:700 16px/1.45 var(--nova-font-chalk-write);color:#d1edfe;max-width:750px}
+.f909-control,.f909-choices{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:11px 0}
+.f909-control label,.f909-control output{font:700 15px var(--nova-font-chalk-write);color:#cce9fc}
+.f909-control input[type=range]{width:min(235px,60vw)}
+.f909-control button,.f909-choices button{min-height:43px}
+.f909-status{min-height:26px;font:700 15px var(--nova-font-chalk-write);color:#a8d8fa}
+.f909-svg text{font-family:var(--nova-font-chalk-draw)!important}
+.f909-svg [data-source],.f909-svg [data-slot],.f909-svg [data-placed]{cursor:pointer;outline:none}
+.f909-svg [data-source]:focus-visible,.f909-svg [data-slot]:focus-visible,.f909-svg [data-placed]:focus-visible{filter:drop-shadow(0 0 8px #ffd06a)}
+.f909-micro{font:700 15px var(--nova-font-chalk-write);color:#b2e6fb}
+@media(max-width:760px){.f909-stage{grid-template-columns:minmax(0,1fr);gap:8px}.f909-svg{max-width:490px;margin:0 auto}.f909-side{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0}.f909-card{padding:10px}.f909-card--gold,.f909-card--full{grid-column:1/-1}.f909-maths{font-size:24px}.f909-body{font-size:14px}}
+@media(max-width:410px){.f909-stage{margin-top:4px}.f909-card{padding:8px 9px}.f909-eyebrow{font-size:11px}.f909-maths{font-size:22px}.f909-control input[type=range]{width:135px}}
+@media print{.f909-stage{grid-template-columns:1fr 220px}.f909-card{background:#fff!important;border:1px solid black!important;box-shadow:none}.f909-card *{color:#000!important;text-shadow:none!important}.f909-svg{filter:grayscale(1)}}

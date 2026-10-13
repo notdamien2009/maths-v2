@@ -1,0 +1,168 @@
+/* F9-10 Pascal's triangle · NOVA premium F0 drawing primitives and F9-01 v3 algebra background. */
+const F910_CONFIG={id:'F9-10',family:'F9',startMode:'watch',presets:{
+ 'KS3-grow':{label:'KS3 · Grow the rows',rows:6,focus:'addition',context:'Each interior cell adds the two directly above.'},
+ 'KS3-row-sums':{label:'KS3 · Powers of two',rows:7,focus:'sums',context:'The sum of row r is two to the power r.'},
+ 'KS3-diagonals':{label:'KS3 · Diagonal patterns',rows:7,focus:'diagonal',context:'The third diagonal contains triangular numbers.'}
+},events:{value:['preset','row','pattern','answer','placed','challengeTask'],types:['step','correct','hintUsed','mode']}};
+(function(){'use strict';
+const N=window.NOVA,H=N.h,E=N.svg.el,C=F910_CONFIG,id=C.id;
+const small=()=>innerWidth<=760,W=()=>small()?430:760;
+const pascal=n=>{let row=[1];for(let r=0;r<n;r++){let a=[1];for(let c=1;c<row.length;c++)a.push(row[c-1]+row[c]);a.push(1);row=a;}return row;};
+const STEPS=[
+ {name:'one-at-the-top',rows:2,pose:'explain',text:'Start with one. Every new row begins and ends with one.',prompt:'What do you notice at the outer edges?'},
+ {name:'two-parents-one-sum',rows:3,focus:[2,1],pose:'point-down',text:'An inside number has two parents. One plus one makes two.',prompt:'Trace the two numbers above the two.'},
+ {name:'build-the-fourth-row',rows:4,focus:[3,1],pose:'count',text:'To make three, add the one and two directly above it. Repeat across the row.',prompt:'Can you explain why both middle entries are three?'},
+ {name:'build-five-rows',rows:5,focus:[4,2],pose:'idea',text:'Three plus three gives six. The new row is one, four, six, four, one.',prompt:'Find the two parent numbers that make six.'},
+ {name:'row-sums-double',rows:6,kind:'sums',pose:'compare',text:'The row totals are one, two, four, eight, sixteen and thirty-two. Each total doubles.',prompt:'Predict the total of the next row.'},
+ {name:'triangles-hidden-in-a-triangle',rows:7,kind:'diagonal',pose:'celebrate',text:'Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal’s triangle.',prompt:'Explain why that diagonal grows by one more each step.'}
+];
+const TASKS=[
+ {row:3,col:1,choices:[2,3,4],heading:'01 · Find the first pair sum',guide:'The row with 1, 2, 1 makes a new interior cell. Add its two parents.'},
+ {row:4,col:2,choices:[3,6,9],heading:'02 · Make the middle of row four',guide:'Find the middle cell. Its two parents are directly above, one left and one right.'},
+ {row:6,col:3,choices:[10,20,30],heading:'03 · Add the two middle parents',guide:'Look at the centre of row six. Both parents are tens: add them.'}
+];
+let chosenPreset='KS3-grow',visibleRows=6,pattern='addition',challengeIndex=0,placedValue=null,kbChoice=null,stageRef=null,statusRef=null;
+function ev(key,value){if(!C.events.value.includes(key))throw Error('Unregistered F9-10 event '+key);N.events.emit('value',{engine:id,key,value});}
+function txt(p,x,y,s,size=19,role='given',anchor='middle'){return N.chalkText(p,x,y,String(s),{size,role,anchor});}
+function box(p,x,y,w,h,s,role='given',size=19){return N.neonBox(p,x,y,w,h,{role,text:s,size,r:13});}
+function btn(s,fn,cls='nova-btn ghost'){return H('button',{class:cls,text:s,onclick:fn});}
+function root(alt,challenge=false){const svg=N.svg.root(W(),challenge?1060:850,alt);svg.setAttribute('class','nv-svg f910-svg');svg.setAttribute('role','img');return svg;}
+function clear(stage){stage.replaceChildren();N.cap(stage,'Sequence workshop','Pascal’s triangle');}
+function card(h,v,gold=false){return H('div',{class:'f910-card'+(gold?' f910-card--gold':'')},[H('div',{class:'f910-eyebrow',text:h}),H('div',{class:'f910-maths'+(gold?' f910-maths--gold':''),text:String(v)})]);}
+function note(h,v){return H('div',{class:'f910-card f910-card--full'},[H('div',{class:'f910-eyebrow',text:h}),H('div',{class:'f910-body',text:String(v)})]);}
+function mount(stage,svg,cards,pose,speech){stage.appendChild(H('div',{class:'f910-stage'},[svg,H('aside',{class:'f910-side'},cards)]));N.scene.helperStrip(stage,pose,speech);}
+// A single glossy hexagon primitive constructed entirely using the existing NOVA neonPath + chalkText helpers.
+function hex(p,x,y,value,role='given',radius=27,empty=false){const verts=[];for(let k=0;k<6;k++){const a=Math.PI/3*k+Math.PI/6;verts.push([(x+radius*Math.cos(a)).toFixed(2),(y+radius*Math.sin(a)).toFixed(2)]);}
+ const d='M'+verts.map(v=>v.join(',')).join(' L')+' Z',g=E('g',{'class':'f910-hex','data-value':value==null?'?':value},p);N.neonPath(g,d,{role:empty?'unknown':role,width:2.6,fill:true});
+ if(value!=null)txt(g,x,y+6,value,value>=10?20:22,role);else txt(g,x,y+6,'?',23,'support');return g;}
+function place(r,c){const w=W(),dx=small()?54:87,dy=small()?85:84,cy0=small()?136:139;return {x:w/2+(c-r/2)*dx,y:cy0+r*dy};}
+function rowTotal(r){return Math.pow(2,r);}
+function tri(svg,rows,{focus=null,pattern='addition',hide=null,animate=false}={}){
+ let start=0;
+ for(let r=0;r<rows;r++){
+  const values=pascal(r);
+  for(let c=0;c<values.length;c++){
+   const {x,y}=place(r,c),isFocus=focus && focus[0]===r&&focus[1]===c,diagonal=pattern==='diagonal'&&c===2,edge=c===0||c===r;
+   const role=diagonal?'focus':isFocus?'result':edge?'support':'given';
+   const missing=hide&&hide[0]===r&&hide[1]===c;
+   const cell=hex(svg,x,y,missing?null:values[c],role,small()?26:34,missing);
+   if(animate && !N.reducedMotion() && r===rows-1){cell.style.opacity='0';N.motion.tween(260+c*75,t=>{if(cell.isConnected)cell.style.opacity=String(t);},N.motion.ease.out);}
+  }
+ }
+ if(focus&&focus[0]>0&&focus[1]>0&&focus[1]<focus[0]){
+  const [r,c]=focus,target=place(r,c),a=place(r-1,c-1),b=place(r-1,c),rad=small()?26:34;
+  for(const origin of [a,b]){
+    N.svg.arrow(svg,origin.x,origin.y+rad*.85,target.x+(origin.x>target.x?8:-8),target.y-rad*.85,{role:'focus',width:2.7,glow:true});
+  }
+ }
+ return rows;
+}
+function showEvidence(svg,rows,pattern){
+ const w=W(),y=small()?746:737;
+ if(pattern==='sums'){
+  txt(svg,w/2,y,'ROW TOTALS DOUBLE',small()?18:23,'support');
+  txt(svg,w/2,y+43,Array.from({length:Math.min(rows,6)},(_,i)=>rowTotal(i)).join('  ·  '),small()?22:28,'result');
+  N.svg.pill(svg,w/2,y+83,'Sum of row r = 2ʳ',{role:'focus',size:small()?17:21});
+ } else if(pattern==='diagonal'){
+  txt(svg,w/2,y,'THIRD DIAGONAL',small()?18:23,'support');
+  txt(svg,w/2,y+43,'1  ·  3  ·  6  ·  10  ·  15',small()?21:26,'result');
+  N.svg.pill(svg,w/2,y+83,'Add 2, then 3, then 4, then 5',{role:'focus',size:small()?16:20});
+ } else {
+  txt(svg,w/2,y,'EACH INSIDE CELL = TWO ABOVE',small()?16:22,'support');
+  N.svg.pill(svg,w/2,y+62,'Edge = 1   ·   Middle = sum',{role:'focus',size:small()?17:20});
+ }
+}
+function renderLearning(i,stage){const s=STEPS[i],w=W();clear(stage);const svg=root('Pascal triangle. Every edge is one and every interior cell is the sum of the two cells directly above.');
+ txt(svg,w/2,45,['START WITH THE EDGES','THE TWO NUMBERS ABOVE','BUILD THE NEXT ROW','THREE PLUS THREE','ROW SUMS DOUBLE','A TRIANGULAR DIAGONAL'][i],small()?20:26,'support');
+ txt(svg,w/2,86,['The outside stays one','One plus one makes two','One plus two makes three','Three plus three makes six','1, 2, 4, 8, 16, 32','1, 3, 6, 10, 15, …'][i],small()?18:23,'support');
+ tri(svg,s.rows,{focus:s.focus||null,pattern:s.kind||'addition',animate:i===3});showEvidence(svg,s.rows,s.kind||'addition');
+ const important=s.focus?pascal(s.focus[0])[s.focus[1]]:s.kind==='sums'?rowTotal(s.rows-1):s.kind==='diagonal'?'1, 3, 6, 10':'1';
+ mount(stage,svg,[card('ROW NUMBER',s.rows-1),card(s.kind==='sums'?'ROW SUM':s.kind==='diagonal'?'DIAGONAL':'FOCUS VALUE',important,true),note('REASON',i<4?'Outside entries are one. Each inside entry is the sum of the two directly above.':s.kind==='sums'?'Every row total is twice the previous row total.':'This diagonal forms the triangular-number sequence.'),note('YOUR TURN',s.prompt)],s.pose,s.text);
+}
+function renderExplore(stage){clear(stage);const p=C.presets[chosenPreset],svg=root('Pascal triangle with adjustable rows and highlighted addition, row-sum or diagonal patterns.');
+ txt(svg,W()/2,45,'DISCOVER THE HIDDEN PATTERNS',small()?21:26,'support');
+ txt(svg,W()/2,86,p.context,small()?16:20,'support');
+ const focus=pattern==='addition'&&visibleRows>=3?[visibleRows-1,Math.max(1,Math.floor((visibleRows-1)/2))]:null;
+ tri(svg,visibleRows,{focus,pattern});showEvidence(svg,visibleRows,pattern);
+ mount(stage,svg,[card('ROWS SHOWN',visibleRows),card('BOTTOM ROW TOTAL',rowTotal(visibleRows-1),true),note('PATTERN',pattern==='addition'?'Look at the pair of cells directly above any interior number.':pattern==='sums'?'Add all entries in the bottom row: the total is a power of two.':'Read the third diagonal, from top-left toward bottom-right.'),note('CHECK IT', 'The bottom row is '+pascal(visibleRows-1).join(' + ')+' = '+rowTotal(visibleRows-1)+'.')],pattern==='diagonal'?'idea':pattern==='sums'?'compare':'point-down',pattern==='diagonal'?'Look at the diagonal sums. New patterns are hiding in the triangle.':pattern==='sums'?'Adding the whole row gives a new power of two.':'Every inside number has two parents. Add them to check it.');
+}
+function task(){return TASKS[challengeIndex];}
+function target(){const t=task(),p=place(t.row,t.col),r=small()?26:34;return {x:p.x-r*.92,y:p.y-r*.88,w:r*1.84,h:r*1.76,id:'cell',kind:'drop'};}
+function tray(){return {x:small()?27:157,y:977,w:small()?376:446,h:54,id:'remove',kind:'remove'};}
+function status(s){if(statusRef)statusRef.textContent=s;}
+function feedback(value){const t=task(),v=pascal(t.row)[t.col],p=pascal(t.row-1),a=p[t.col-1],b=p[t.col];if(value===a||value===b)return 'That is just ONE parent. Add both '+a+' and '+b+'.';if(value===a+b+a)return 'You have counted one parent twice. Use each parent once.';if(value>v)return 'Too many. Only the two cells directly above are added.';return 'Look at the two parents: the new number is their SUM, not their difference.';}
+function change(v,api){const t=task(),expected=pascal(t.row)[t.col];if(v!==expected){status(feedback(v));api.check(false,feedback(v),{task:challengeIndex,answer:v});return false;}placedValue=v;kbChoice=null;ev('answer',v);ev('placed',{slot:'cell',value:v});drawChallenge();return true;}
+function remove(){placedValue=null;kbChoice=null;ev('placed',{slot:'cell',value:null});status('Cell cleared. Choose another number.');drawChallenge();}
+function fastBridge(g){g.addEventListener('pointerdown',e=>{const drag=N.ui._drag;if(!drag||drag.el!==g)return;const pid=e.pointerId;let done=false;
+  const clean=()=>{if(done)return;done=true;window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true);window.removeEventListener('pointercancel',cancel,true);window.removeEventListener('blur',cancel,true);};
+  function move(ev){if(done)return;if(N.ui._drag!==drag){clean();return;}if(ev.pointerId!==pid||g.contains(ev.target))return;g.dispatchEvent(new PointerEvent('pointermove',{bubbles:true,pointerId:pid,clientX:ev.clientX,clientY:ev.clientY,buttons:ev.buttons}));}
+  function up(ev){if(ev.pointerId!==pid)return;if(N.ui._drag===drag&&drag.up)drag.up(ev);clean();}
+  function cancel(){if(N.ui._drag===drag)drag.cancel();clean();}
+  window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true);window.addEventListener('pointercancel',cancel,true);window.addEventListener('blur',cancel,true);
+ });}
+function source(svg,v,x,y){const g=E('g',{'data-source':'value-'+v,tabindex:0,role:'button','aria-label':'Choose number '+v},svg);box(g,x,y,small()?106:150,66,String(v),'given',26);
+ const choose=()=>{kbChoice=v;status('Selected '+v+'. Press Enter on the empty hexagon, or drag your card into it.');};
+ g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose();}});g.addEventListener('click',choose);
+ N.ui.svgDrag(svg,g,{box:{x,y,w:small()?106:150,h:66},zones:()=>[target(),tray()],onDrop:key=>key==='cell'?change(v,apiRef):false,onRemove:()=>status('Card returned to the tray.'),removeTo:{x:W()/2,y:tray().y+20}});fastBridge(g);
+}
+let apiRef=null;
+function drawChallenge(){if(!stageRef)return;const t=task(),w=W();clear(stageRef);const svg=root('Find the missing Pascal triangle entry by adding its two parent numbers.',true),expected=pascal(t.row)[t.col];
+ txt(svg,w/2,44,'FILL THE MISSING HEXAGON',small()?22:27,'support');
+ txt(svg,w/2,86,'Add the TWO numbers directly above the gap',small()?17:20,'support');
+ tri(svg,t.row+1,{focus:[t.row,t.col],hide:[t.row,t.col]});
+ if(placedValue!=null){const p=place(t.row,t.col),rad=small()?26:34,g=E('g',{'data-placed':'cell',tabindex:0,role:'button','aria-label':'Placed '+placedValue+'. Press Delete to remove.'},svg);
+   hex(g,p.x,p.y,placedValue,'result',rad);g.addEventListener('keydown',e=>{if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();remove();}});
+   N.ui.svgDrag(svg,g,{box:target(),zones:()=>[tray()],onDrop:()=>false,onRemove:remove,removeTo:{x:w/2,y:tray().y+23}});fastBridge(g);
+ }else{
+   const z=target(),hit=E('rect',{x:z.x,y:z.y,width:z.w,height:z.h,rx:12,fill:'transparent',tabindex:0,role:'button','aria-label':'Place selected number in the empty hexagon','data-slot':'cell'},svg);
+   const go=()=>{if(kbChoice!=null)change(kbChoice,apiRef);else status('Choose a number card first.');};hit.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});hit.addEventListener('click',go);
+ }
+ txt(svg,w/2,774,'CHOOSE THE SUM',small()?22:26,'support');
+ const start=small()?30:118,gap=small()?20:40;
+ t.choices.forEach((v,i)=>{if(v===placedValue)return;source(svg,v,start+i*((small()?106:150)+gap),797);});
+ const r=tray();box(svg,r.x,r.y,r.w,r.h,'RED REMOVE TRAY','error',small()?18:21);
+ mount(stageRef,svg,[card('BUILD ROW',t.row),card('MISSING ENTRY','?',true),note('LOOK UP ONE ROW','The entry is found by adding the two numbers diagonally above it. Edge ones do not move.'),note('KEYBOARD','Enter on a number card, then Enter on the empty hexagon. Delete on a placed value removes it.')],challengeIndex===2?'think':'point-down','Start with the two parents. Count both, not just one.');
+}
+const def={id,title:'Pascal’s triangle',config:C,
+ alt:'Pascal triangle contains a one on every edge and each inner number is the sum of two parent numbers above. Rows begin 1; 1,1; 1,2,1; 1,3,3,1.',
+ staticAlt:'Pascal rows zero through six: 1; 1 1; 1 2 1; 1 3 3 1; 1 4 6 4 1; 1 5 10 10 5 1; 1 6 15 20 15 6 1. Row sums double and triangular numbers appear in the third diagonal.',
+ steps:STEPS.map((s,i)=>({name:s.name,narration:s.text,prompt:s.prompt,mood:i===5?'pleased':'focus'})),
+ render(i,stage){renderLearning(i,stage);},
+ exploreIntro:'Build more rows, trace parent pairs, add row totals and discover diagonal number patterns.',
+ explore(panel,stage){chosenPreset='KS3-grow';visibleRows=6;pattern='addition';
+  const info=H('p',{class:'f910-instruction',text:'Choose a pattern, change the number of rows, then trace the pairs that create each new number.'}),presets=H('div',{class:'f910-choices'}),range=H('input',{type:'range',min:3,max:7,value:6,'aria-label':'Number of Pascal triangle rows'}),out=H('output',{class:'f910-micro',text:'6 rows'});
+  Object.entries(C.presets).forEach(([key,p])=>presets.appendChild(btn(p.label,()=>{chosenPreset=key;pattern=p.focus;visibleRows=p.rows;range.value=String(visibleRows);out.textContent=visibleRows+' rows';ev('preset',key);ev('pattern',pattern);renderExplore(stage);},'nova-btn ghost')));
+  range.addEventListener('input',()=>{visibleRows=+range.value;out.textContent=visibleRows+' rows';ev('row',visibleRows);renderExplore(stage);});
+  panel.append(info,presets,H('div',{class:'f910-control'},[H('label',{},['Rows ',range]),out,btn('Add a row',()=>{visibleRows=visibleRows===7?3:visibleRows+1;range.value=String(visibleRows);out.textContent=visibleRows+' rows';ev('row',visibleRows);renderExplore(stage);},'nova-btn primary')]));renderExplore(stage);
+ },
+ challenge(panel,api,stage){challengeIndex=0;placedValue=null;kbChoice=null;stageRef=stage;apiRef=api;
+  const heading=H('h3',{class:'f910-taskhead'}),guide=H('p',{class:'f910-instruction'}),controls=H('div',{class:'f910-control'}),statusEl=H('p',{class:'f910-status',role:'status'});statusRef=statusEl;
+  function load(){const t=task();heading.textContent=t.heading;guide.textContent=t.guide;controls.replaceChildren();statusEl.textContent='Drag a number into the empty hexagon, or use Enter.';api.fb.textContent='';api.fb.className='nova-fb';
+   controls.append(btn('Check missing number',()=>{
+    if(placedValue!==pascal(t.row)[t.col]){api.check(false,'Place the missing number by adding both parents first.',{task:challengeIndex});return;}
+    const a=pascal(t.row-1)[t.col-1],b=pascal(t.row-1)[t.col];api.check(true,a+' plus '+b+' makes '+(a+b)+'. Well spotted!',{task:challengeIndex,score:challengeIndex+1});
+    if(challengeIndex===2){heading.textContent='All three Pascal sums completed';guide.textContent='You built each missing entry by adding its two parents.';controls.replaceChildren(H('p',{class:'f910-maths f910-maths--gold',text:'3 / 3 · Triangle mastered'}));N.moment&&N.moment(document.getElementById(id),'correct',{ms:1100});return;}
+    controls.append(btn('Continue to challenge '+(challengeIndex+2),()=>{challengeIndex++;placedValue=null;kbChoice=null;load();},'nova-btn primary'));
+   },'nova-btn primary'),btn('Reset card',()=>{placedValue=null;kbChoice=null;drawChallenge();},'nova-btn ghost'),btn('Hint',()=>api.hint('Look diagonally above the empty cell. Add exactly those two numbers. Remember: outer edges stay one.'),'nova-btn ghost'));
+   ev('challengeTask',{index:challengeIndex});drawChallenge();
+  }
+  panel.append(heading,guide,controls,statusEl);load();
+ },
+ onRestore(){chosenPreset='KS3-grow';visibleRows=6;pattern='addition';challengeIndex=0;placedValue=null;kbChoice=null;stageRef=null;statusRef=null;apiRef=null;}
+};
+N.registry.add({id,title:'Pascal’s triangle',topics:['sequences','Pascal triangle','triangular numbers','binomial patterns','number patterns'],deps:['F0-02','F0-04','F0-07','F0-08']});
+N.bankMount({id,num:'10',title:'Pascal’s triangle · Premium Edition',def,linked:['F9-07','F9-08','F9-09','F9-11'],years:'KS3 Year 8–9 enrichment and GCSE extension',spec:{
+ purpose:'Construct Pascal triangle by summing two parent entries, discover powers-of-two row sums and triangular-number diagonals.',
+ params:'Rows 0–6; border cells one; interior C(r,k)=C(r−1,k−1)+C(r−1,k); row total 2^r.',
+ presets:'KS3 Grow the rows; KS3 Powers of two; KS3 Diagonal patterns (unassigned lesson IDs).',
+ steps:'Start edge ones → add first parents → build row 3 → build row 4 → row sums double → triangular diagonal.',
+ interactions:'Watch, Guided, Explore preset selector and row slider, Challenge 3 drag-to-fill hexagons with keyboard and removal tray.',
+ traps:'Copying only one parent, subtracting, doubling one parent, summing the wrong pair and forgetting edge ones.',
+ gcse:'Extension to binomial coefficients and combinations; linked to F9-07 and F9-08.'
+}});
+window.F910_ENGINE=N.engines[id];
+const component=document.getElementById(id),dev=H('details',{class:'nv-dev'},[H('summary',{text:'Developer: component specification'})]);
+[...component.querySelectorAll('details.nova-spec, p.purpose')].forEach(x=>dev.appendChild(x));component.appendChild(dev);
+const heading=component.querySelector('h3');if(heading)heading.textContent='Interactive maths workshop';
+const ensureAlt=()=>component.querySelectorAll('.face img').forEach(x=>{if(!x.getAttribute('alt'))x.setAttribute('alt','Sir Bob Maximus, maths tutor');});ensureAlt();new MutationObserver(ensureAlt).observe(component,{childList:true,subtree:true});
+})();
