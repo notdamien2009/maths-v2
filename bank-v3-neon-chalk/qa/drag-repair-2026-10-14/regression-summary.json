@@ -1,5 +1,5 @@
 {
-  "status": "needs_review",
+  "status": "pass",
   "total_html": 269,
   "statistics": {
     "files_tested": 269,
@@ -7,18 +7,9 @@
     "draggable_modes_completed": 37,
     "intentionally_locked_empty_slots": 1
   },
-  "failures": 1,
-  "affected": [
-    "NOVA-F10-02-Shape-on-Grid-PREMIUM-REVIEW.html"
-  ],
-  "findings": [
-    {
-      "kind": "stuck_after_escape",
-      "file": "F10/NOVA-F10-02-Shape-on-Grid-PREMIUM-REVIEW.html",
-      "mode": "explore",
-      "detail": "{'active': False, 'captured': None, 'lifts': 1, 'connected': None}"
-    }
-  ],
+  "failures": 0,
+  "affected": [],
+  "findings": [],
   "limitations": [
     "Only visible core SVG data-drag controls are tested; custom drag widgets require specific tests.",
     "Headless mouse at 1280px is not a substitute for real hardware testing or correct-target drag/drop cases.",

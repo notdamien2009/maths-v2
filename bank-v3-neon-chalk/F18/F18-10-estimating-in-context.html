@@ -1682,7 +1682,7 @@ NOVA.ui.svgDrag=function(svg,el,o){o=o||{};var E=NOVA.svg.el,coarse=window.match
   function inZ(z,x,y){return x>=z.x&&x<=z.x+z.w&&y>=z.y&&y<=z.y+z.h;}
   function setT(dx,dy,rot,sc){el.setAttribute('transform','translate('+dx.toFixed(1)+','+dy.toFixed(1)+') rotate('+rot.toFixed(1)+','+cx+','+cy+') translate('+cx+','+cy+') scale('+sc.toFixed(3)+') translate('+(-cx)+','+(-cy)+')');}
   function clearT(){el.removeAttribute('transform');el.classList.remove('nv-drag-lift');el.style.cursor='grab';}
-  el.addEventListener('pointerdown',function(e){if(NOVA.ui._drag||(o.canStart&&!o.canStart())||e.button>0)return;e.preventDefault();e.stopPropagation();
+  el.addEventListener('pointerdown',function(e){if(NOVA.ui._drag||(o.canStart&&!o.canStart())||e.button>0)return;if(el._nvReturn)el._nvReturn();e.preventDefault();e.stopPropagation();
     var st={x0:pt(e).x,y0:pt(e).y,tx:0,ty:0,dx:0,dy:0,rot:0,id:e.pointerId,hl:null,zone:null,moved:false,captured:false,done:false,raf:0,last:null};
     var home=el.parentNode,next=el.nextSibling;svg.appendChild(el);el.classList.add('nv-drag-lift');el.style.cursor='grabbing';var rm=NOVA.reducedMotion();
     /* Fast drag: capture AFTER reparenting (moving a captured SVG element releases capture). */
@@ -1696,7 +1696,16 @@ NOVA.ui.svgDrag=function(svg,el,o){o=o||{};var E=NOVA.svg.el,coarse=window.match
     function finish(){st.done=true;cancelAnimationFrame(st.raf);hl(null);NOVA.ui._drag=null;try{el.releasePointerCapture(st.id);}catch(_){}
       el.removeEventListener('pointermove',st.move);el.removeEventListener('pointerup',st.up);el.removeEventListener('pointercancel',st.cancel);el.removeEventListener('lostpointercapture',st.lost);window.removeEventListener('pointermove',st.move);window.removeEventListener('pointerup',st.up);window.removeEventListener('pointercancel',st.cancelPointer);}
     function goHome(){clearT();if(home&&home.isConnected&&el.parentNode!==home){try{home.insertBefore(el,next&&next.parentNode===home?next:null);}catch(_){home.appendChild(el);}}}
-    function back(){var dx=st.dx,dy=st.dy,r=st.rot;finish();if(!el.isConnected)return;NOVA.motion.tween(380,function(e2){setT(dx*(1-e2),dy*(1-e2),r*(1-e2),1.12-.12*e2);},NOVA.motion.ease.spring,goHome);}
+    function back(){var dx=st.dx,dy=st.dy,r=st.rot;finish();if(!el.isConnected)return;
+      /* Always settle within the return window, even when the browser throttles SVG animation frames.
+         A second pickup completes the first return synchronously before starting its next drag. */
+      var ended=false,tween=null,timer=0;
+      function settle(){if(ended)return;ended=true;clearTimeout(timer);if(tween&&tween.stop)tween.stop();
+        if(el._nvReturn===settle)delete el._nvReturn;goHome();}
+      el._nvReturn=settle;
+      tween=NOVA.motion.tween(220,function(e2){if(!ended)setT(dx*(1-e2),dy*(1-e2),r*(1-e2),1.12-.12*e2);},NOVA.motion.ease.spring,settle);
+      if(!ended)timer=setTimeout(settle,350);
+    }
     st.cancel=function(){if(!st.done)back();};
     st.lost=function(){st.captured=false;if(!st.done&&!el.isConnected)st.cancel();};
     st.cancelPointer=function(ev){if(ev.pointerId===st.id)st.cancel();};
