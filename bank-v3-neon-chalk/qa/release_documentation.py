@@ -12,10 +12,10 @@ banner=("> **CURRENT F0–F18 STATUS (2026-10-14): APPROVED FOR LESSON PRODUCTIO
 "All functional QA and mathematical correctness requirements still apply.\n\n")
 patterns=[
   (re.compile(r'fraction design TBD',re.I),'approved NOVA Chalk stacked fraction notation'),
-  (re.compile(r'Fraction \\(TBD placeholder\\)',re.I),'Fraction (approved NOVA Chalk stacked notation)'),
+  (re.compile(r'Fraction \(TBD placeholder\)',re.I),'Fraction (approved NOVA Chalk stacked notation)'),
   (re.compile(r'visual design not decided yet',re.I),'visual design approved as vertically stacked NOVA Chalk fractions'),
 ]
-review=re.compile(r'(?i)\\b(blocked|blocking|approval gate|release gate|production gate|pending approval|awaiting approval|manual sign.off|hold for approval|not approved|TBD)\\b')
+review=re.compile(r'(?i)\b(blocked|blocking|approval gate|release gate|production gate|pending approval|awaiting approval|manual sign.off|hold for approval|not approved|TBD)\b')
 updated=[];flagged=[];fractions=[]
 for folder in ('docs','prompts','source','build','tests'):
  d=root/folder
