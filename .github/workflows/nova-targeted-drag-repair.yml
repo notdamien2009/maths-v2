@@ -1,0 +1,39 @@
+name: NOVA targeted drag repair propagation
+on:
+  push:
+    branches:
+      - nova/fast-drag-core-repair-20261014
+    paths:
+      - bank-v3-neon-chalk/qa/propagate_drag_core.py
+      - bank-v3-neon-chalk/core/nova-core.js
+      - .github/workflows/nova-targeted-drag-repair.yml
+permissions:
+  contents: write
+jobs:
+  propagate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Patch only matching embedded canonical drag code
+        run: python bank-v3-neon-chalk/qa/propagate_drag_core.py
+      - name: Validate replacement integrity
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          root=Path('bank-v3-neon-chalk')
+          core=(root/'core/nova-core.js').read_text()
+          assert "st.dx=st.tx;st.dy=st.ty;st.rot=0" in core
+          assert "window.addEventListener('pointerup',function(e){if(NOVA.ui._drag)NOVA.ui._drag.up(e);},true)" in core
+          print("Shared drag changes present")
+          PY
+      - name: Commit standalone propagation to repair branch only
+        run: |
+          git config user.name "NOVA Repair Bot"
+          git config user.email "nova-repair-bot@users.noreply.github.com"
+          git add 'bank-v3-neon-chalk/F*'
+          if ! git diff --cached --quiet; then
+            git commit -m "repair: propagate canonical fast-drag fixes to standalone HTML"
+            git push origin HEAD:nova/fast-drag-core-repair-20261014
+          fi
