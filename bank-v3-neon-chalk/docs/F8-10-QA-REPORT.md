@@ -1,3 +1,5 @@
+> **CURRENT F0–F18 STATUS (2026-10-14): APPROVED FOR LESSON PRODUCTION.** Any older component-library sign-off, blocker, release gate or pending-approval statement below is historical and superseded by [00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md](../00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md). All functional QA and mathematical correctness requirements still apply.
+
 # NOVA F8-10 — Run 10 Premium Review QA
 
 **Status:** REVIEW CANDIDATE — NOT GOLD. **No GitHub changes.** Tested in headless system Chromium from in-memory HTML; this environment prevents direct `file://` browser navigation.

@@ -1,3 +1,5 @@
+> **CURRENT F0–F18 STATUS (2026-10-14): APPROVED FOR LESSON PRODUCTION.** Any older component-library sign-off, blocker, release gate or pending-approval statement below is historical and superseded by [00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md](../00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md). All functional QA and mathematical correctness requirements still apply.
+
 # F8-14 · Algebraic Fraction Simplifier — production spec
 
 **Source:** `00-master/NOVA-MASTER-FOR-OTHER-AI.md`, F8-14 exact prompt. **Owner fraction override:** F5 owner-approved `F5-FRACTION-NOTATION-LOCK.md` (stacked numerator/bar/denominator; old TBD is invalid).

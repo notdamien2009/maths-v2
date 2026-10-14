@@ -1,3 +1,5 @@
+> **CURRENT F0–F18 STATUS (2026-10-14): APPROVED FOR LESSON PRODUCTION.** Any older component-library sign-off, blocker, release gate or pending-approval statement below is historical and superseded by [00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md](../00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md). All functional QA and mathematical correctness requirements still apply.
+
 # NOVA F8-14 — Evidence-based Premium REVIEW QA
 
 **Approval:** review only; current-core integration, Windows direct-file opening and physical touchscreen verification are outstanding.

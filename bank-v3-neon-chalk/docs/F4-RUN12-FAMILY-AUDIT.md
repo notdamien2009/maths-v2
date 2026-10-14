@@ -1,3 +1,5 @@
+> **CURRENT F0–F18 STATUS (2026-10-14): APPROVED FOR LESSON PRODUCTION.** Any older component-library sign-off, blocker, release gate or pending-approval statement below is historical and superseded by [00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md](../00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md). All functional QA and mathematical correctness requirements still apply.
+
 # NOVA Maths F4 — Run 12: Family Final Audit
 
 **Audit date:** 11 October 2026  
@@ -49,7 +51,7 @@ The 380px percentage-bar scene is information-dense, especially at higher percen
 ## Passed and protected design rules
 
 - F0 Neon Tube apparatus, NOVA Chalk drawing/writing, existing role colours, neon ring mathematical markers, and mascot staging retained across the review pack.
-- F4-05 uses F5-11's fraction maths; F4-10 stays an integrated F4-08 translator preset. Traditional stacked NOVA Chalk fractions remain the approved notation, despite outdated `fraction design TBD` text elsewhere in older master prompts.
+- F4-05 uses F5-11's fraction maths; F4-10 stays an integrated F4-08 translator preset. Traditional stacked NOVA Chalk fractions remain the approved notation, despite outdated `approved NOVA Chalk stacked fraction notation` text elsewhere in older master prompts.
 - All original run QA reports inspected report zero failures for their stored checks. These are **archived run evidence**, not fresh Run 12 stress passes.
 - Screenshots side by side included: `shots/F4-family/F4-FAMILY-380-WATCH-CONTACT-SHEET.jpg` and `...1280-WATCH-CONTACT-SHEET.jpg`.
 

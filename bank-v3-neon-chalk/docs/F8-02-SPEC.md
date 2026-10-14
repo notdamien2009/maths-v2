@@ -1,3 +1,5 @@
+> **CURRENT F0–F18 STATUS (2026-10-14): APPROVED FOR LESSON PRODUCTION.** Any older component-library sign-off, blocker, release gate or pending-approval statement below is historical and superseded by [00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md](../00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md). All functional QA and mathematical correctness requirements still apply.
+
 # NOVA F8-02 · Inverse-operations Flowchart
 
 **Run 03 — F8-03 presentation preset, not a separately registered engine.** Fresh build from the F8-02 master prompt. No rejected F8 prototype used.

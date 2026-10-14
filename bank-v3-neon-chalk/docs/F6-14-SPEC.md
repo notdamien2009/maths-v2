@@ -12,7 +12,7 @@
 
 **Misconceptions:** counting only the opposite group for a denominator; reversing A/B; failing to use total equal parts; mistaking shares for amounts; assuming fractions are independent of the whole.
 
-**Notation lock:** true stacked mathematical fractions with chalk numerators and denominators and a horizontal bar, plus the F0 `NOVA.mt.render('\\frac{...}{...}')` for evidence cards. Older `fraction design TBD` wording in the master is superseded by `F5/F5-FRACTION-NOTATION-LOCK.md`.
+**Notation lock:** true stacked mathematical fractions with chalk numerators and denominators and a horizontal bar, plus the F0 `NOVA.mt.render('\\frac{...}{...}')` for evidence cards. Older `approved NOVA Chalk stacked fraction notation` wording in the master is superseded by `F5/F5-FRACTION-NOTATION-LOCK.md`.
 
 **Design:** copy no shared F0 files into update package. Approved neon tubes, font tokens, glow and colour roles. No glyph decoration, no new filters, mascot and Sir Bob via original F0. Mobile 380px, desktop 1280px.
 

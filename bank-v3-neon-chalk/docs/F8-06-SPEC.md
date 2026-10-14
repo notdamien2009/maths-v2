@@ -1,3 +1,5 @@
+> **CURRENT F0–F18 STATUS (2026-10-14): APPROVED FOR LESSON PRODUCTION.** Any older component-library sign-off, blocker, release gate or pending-approval statement below is historical and superseded by [00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md](../00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md). All functional QA and mathematical correctness requirements still apply.
+
 # NOVA Maths · F8-06 Rearranging Formulae
 
 **Status: premium review candidate, NOT owner GOLD.** Fresh engine built from F8-06 master run prompt on 11 October 2026. GitHub not modified.

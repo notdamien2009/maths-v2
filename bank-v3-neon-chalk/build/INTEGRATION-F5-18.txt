@@ -1,3 +1,5 @@
+> **CURRENT F0–F18 STATUS (2026-10-14): APPROVED FOR LESSON PRODUCTION.** Any older component-library sign-off, blocker, release gate or pending-approval statement below is historical and superseded by [00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md](../00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md). All functional QA and mathematical correctness requirements still apply.
+
 # Append to the existing bank-v3-neon-chalk/build/build.py after earlier F5 records
 src=open('build/F5-18.src.html',encoding='utf-8').read()
 assert '@@CSS@@' in src and '@@JS@@' in src and 'NOVA_F5_18_CONFIG' in src

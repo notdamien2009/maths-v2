@@ -1,0 +1,26 @@
+name: NOVA F0-F18 production documentation release
+on:
+  push:
+    branches:
+      - nova/f0-f18-production-release-20261014
+    paths:
+      - bank-v3-neon-chalk/qa/release_documentation.py
+      - .github/workflows/nova-production-documentation-release.yml
+permissions:
+  contents: write
+jobs:
+  release-documentation:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Normalize superseded gates in active documentation
+        run: python bank-v3-neon-chalk/qa/release_documentation.py
+      - name: Commit release documentation to release branch
+        run: |
+          git config user.name "NOVA Release Bot"
+          git config user.email "nova-release-bot@users.noreply.github.com"
+          git add bank-v3-neon-chalk/docs bank-v3-neon-chalk/prompts bank-v3-neon-chalk/source bank-v3-neon-chalk/build bank-v3-neon-chalk/tests
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: supersede historical F0-F18 production approval gates"
+            git push origin HEAD:nova/f0-f18-production-release-20261014
+          fi

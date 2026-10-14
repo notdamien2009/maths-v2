@@ -7,7 +7,7 @@ Used in these KS3 lessons:
 - Y7-059 Sharing in a ratio (objective: Divide a quantity in a given ratio.)
 
 WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):
-- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Ratio bar linked to fraction-of-whole bar with TBD fraction placeholders.
+- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Ratio bar linked to fraction-of-whole bar with approved NOVA Chalk stacked fraction notation.
 - Animation steps (named, NOVA.motion only, reduced motion = instant end state): ratio boxes > total > each part as a fraction of whole.
 - Drag interactions (NOVA.ui.svgDrag + zones, F2 v3.6.2 rules: lift on pick-up, green target glow, snap, re-grab, tray = red remove zone, spring back, nothing stranded, keyboard equivalent): drag fraction tags to ratio parts.
 - Correct in Challenge: translation correct. Misconception-specific feedback for each wrong answer.
