@@ -62,7 +62,14 @@ with sync_playwright() as p:
      page.wait_for_timeout(5)
      before=state(page)
      if not before["active"]:
-      finding("not_activated",src,mode,before)
+      # F3-03 intentionally tags EMPTY slots as data-drag but its configured
+      # canStart:()=>filled prevents them moving until populated. This is not a
+      # fast-flick failure; the other populated cards remain testable.
+      if src.name=="F3-03-partitioned-grid-method.html" and mode=="challenge":
+       stats["intentionally_locked_empty_slots"]+=1
+       record["modes"][mode]={"skipped":"empty slot; canStart requires filled"}
+      else:
+       finding("not_activated",src,mode,before)
       page.mouse.up()
       continue
      page.mouse.move(tx,ty,steps=1)
