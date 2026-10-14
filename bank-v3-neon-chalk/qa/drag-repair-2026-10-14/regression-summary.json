@@ -1,0 +1,26 @@
+{
+  "status": "needs_review",
+  "total_html": 269,
+  "statistics": {
+    "files_tested": 269,
+    "draggable_mode_checks": 38,
+    "draggable_modes_completed": 37
+  },
+  "failures": 1,
+  "affected": [
+    "F3-03-partitioned-grid-method.html"
+  ],
+  "findings": [
+    {
+      "kind": "not_activated",
+      "file": "F3/F3-03-partitioned-grid-method.html",
+      "mode": "challenge",
+      "detail": "{'active': False, 'captured': None, 'lifts': 0, 'connected': None}"
+    }
+  ],
+  "limitations": [
+    "Only visible core SVG data-drag controls are tested; custom drag widgets require specific tests.",
+    "Headless mouse at 1280px is not a substitute for real hardware testing or correct-target drag/drop cases.",
+    "No changes made to maths engine code by this test."
+  ]
+}
