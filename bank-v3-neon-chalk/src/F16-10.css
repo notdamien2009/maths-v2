@@ -1,0 +1,20 @@
+/* F16-10 follows the existing F0/F2 Neon Tube + Chalk stage. */
+.nova-stage .f1610-svg{display:block;width:100%;max-width:800px;margin:0 auto 1px;flex:none;overflow:visible;touch-action:pan-y}
+.f1610-svg .nv-neon-tube,.f1610-svg .nv-neon-box,.f1610-svg .nv-plot,.f1610-svg .nv-ring{pointer-events:none}
+.f1610-svg [data-point],.f1610-svg [data-line-end],.f1610-svg [data-source]{pointer-events:all;touch-action:none;cursor:grab}
+.f1610-svg [data-point]:focus-visible,.f1610-svg [data-line-end]:focus-visible,.f1610-svg [data-source]:focus-visible{outline:none;filter:drop-shadow(0 0 11px #ffcc58)}
+.f1610-svg .nv-plot>text{display:none}
+.f1610-svg .nv-plot>line,.f1610-svg .nv-plot>path{pointer-events:none}
+.f1610-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:4px 0 10px}
+.f1610-chips .nv-ntile{font-size:clamp(14px,1.3vw,19px);white-space:normal}
+.f1610-help,.f1610-status{font-size:14px;line-height:1.5;color:var(--v-muted,#a7bed6);margin:10px 0}
+.f1610-status{min-height:23px}.f1610-controls{display:flex;align-items:end;gap:10px;flex-wrap:wrap;margin:10px 0}
+.f1610-controls label{display:flex;flex-direction:column;gap:4px;flex:1 1 155px;min-width:148px;font-size:13px;color:var(--v-muted,#a7bed6)}
+.f1610-controls select,.f1610-controls input{width:100%;min-height:40px}
+.f1610-controls button{min-height:42px}
+@media(max-width:540px){.nova-stage .f1610-svg{max-width:100%}.f1610-chips{gap:5px}.f1610-chips .nv-ntile{font-size:13.5px}.nova-stage .nv-dock{height:110px}.nova-stage .nv-dockfig{height:103px}.nova-stage .nv-dockbub{font-size:13px}}
+@media(min-width:900px){.nova-stage .nv-dock{height:139px}}
+@media print{.f1610-svg *{filter:none!important}.f1610-svg [data-point],.f1610-svg [data-line-end],.f1610-svg [data-source]{pointer-events:none}}
+/* The canonical shell renders a secondary companion beside the narration panel.
+   This engine uses ONE original companion, inside the stage dock only. */
+.nova-bob .nova-side{display:none!important}

@@ -1,0 +1,12 @@
+/* F16-01 additive styling; inherits exact NOVA F0/F2 shared core + chalk fonts. */
+.nova-bob{display:none!important}
+.nova-stage .f16-plot{display:block;width:100%;max-width:750px;height:auto;margin:0 auto;flex:none;touch-action:pan-y;overflow:visible}
+.nova-stage .f16-flow{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:5px 0 0}
+.f16-flow .nv-ntile{min-height:37px;font-size:clamp(14px,1.35vw,19px)}
+.f16-status,.f16-instruction{color:var(--v-muted,#afc8e0);font-size:14px;line-height:1.55}
+.f16-keys{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:12px 0}.f16-keys .nova-input{max-width:205px;min-width:110px}
+.f16-plot [data-card]{cursor:grab;touch-action:none}.f16-plot [data-card]:focus-visible{outline:none;filter:drop-shadow(0 0 8px #ffcc58)}
+.f16-plot .f16-icon{pointer-events:none}
+@media(max-width:540px){.nova-stage .f16-plot{max-width:100%}.nova-stage .nv-dock{height:116px}.nova-stage .nv-dockfig{height:110px}.nova-stage .nv-dockbub{font-size:13px}.f16-keys .nova-input{flex:1 1 140px;max-width:100%}}
+@media(min-width:900px){.nova-stage .f16-plot{max-width:740px}.nova-stage .nv-dock{height:140px}}
+@media print{.f16-plot{max-width:100%!important}.f16-plot [data-card],.f16-keys{display:none!important}}

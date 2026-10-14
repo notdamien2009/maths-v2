@@ -1,0 +1,16 @@
+/* F16-07 component-only decoration — the immutable F0/F2 runtime, chalk and mascot remain unchanged. */
+.nova-bob,.nova-engine .nova-hbub{display:none!important}
+.nova-stage .f167-svg{display:block;width:100%;max-width:770px;margin:0 auto;flex:none;touch-action:pan-y;overflow:visible}
+.f167-svg .nv-neon-tube,.f167-svg .nv-neon-box{pointer-events:none}
+.f167-svg [data-transfer],.f167-svg [data-bundle]{pointer-events:all;touch-action:none;cursor:grab}
+.f167-svg [data-transfer]:focus-visible,.f167-svg [data-bundle]:focus-visible{filter:drop-shadow(0 0 12px #ffcc58)}
+.f167-caps{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:4px auto 11px}
+.f167-caps .nv-ntile{font-size:clamp(14px,1.45vw,20px);white-space:normal}
+.f167-guidance,.f167-status{color:var(--v-muted,#bcd5eb);font-size:14px;line-height:1.55}
+.f167-status{min-height:35px}
+.f167-actions{display:flex;align-items:end;flex-wrap:wrap;gap:9px;margin:10px 0}
+.f167-label{display:flex;flex-direction:column;gap:5px;color:var(--v-muted,#c1d6ec);font-size:13px;min-width:135px;flex:1 1 140px}
+.f167-label select,.f167-label input{width:100%;min-height:42px}
+@media(max-width:540px){.nova-stage .f167-svg{max-width:100%}.nova-stage .nv-dock{height:112px}.nova-stage .nv-dockfig{height:106px}.nova-stage .nv-dockbub{font-size:13px}.f167-actions{gap:7px}.f167-label{min-width:130px;flex:1 1 135px}.f167-actions .nova-btn{flex:1 1 100%;min-width:0}}
+@media(min-width:900px){.nova-stage .nv-dock{height:139px}}
+@media print{.f167-svg *{filter:none!important}.f167-guidance{color:#111}.f167-svg [data-transfer],.f167-svg [data-bundle]{pointer-events:none}}

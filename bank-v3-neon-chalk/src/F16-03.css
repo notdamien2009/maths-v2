@@ -1,0 +1,17 @@
+/* F16-03 additive line-graph teaching scene; original shared NOVA F0/F2 CSS is preserved. */
+.nova-bob,.nova-engine .nova-hbub{display:none!important}
+.nova-stage .f16l-plot{display:block;width:100%;max-width:770px;height:auto;margin:0 auto;flex:none;overflow:visible;touch-action:pan-y}
+.nova-stage .f16l-core-plot text{opacity:0;pointer-events:none}
+.nova-stage .f16l-core-plot path,.nova-stage .f16l-core-plot line{pointer-events:none}
+.nova-stage .f16l-plot [data-point-handle]{cursor:grab;touch-action:none}
+.nova-stage .f16l-plot [data-point-handle]:focus-visible{filter:drop-shadow(0 0 9px #ffcc58)}
+.nova-stage .f16l-plot .nv-neon-tube{pointer-events:none}
+.f16l-values{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:4px 0 8px}
+.f16l-values .nv-ntile{font-size:clamp(14px,1.4vw,20px)}
+.f16l-controls{display:flex;flex-wrap:wrap;gap:9px;align-items:flex-end;margin:10px 0 12px}
+.f16l-label{color:var(--v-muted,#a9c4d9);font-size:13px;display:flex;flex-direction:column;gap:5px;min-width:145px;flex:1 1 168px}
+.f16l-label select,.f16l-label input{width:100%;max-width:100%}
+.f16l-hint,.f16l-status{color:var(--v-muted,#bdd7ef);font-size:14px;line-height:1.5}
+@media(max-width:540px){.nova-stage .f16l-plot{max-width:100%}.nova-stage .nv-dock{height:115px}.nova-stage .nv-dockfig{height:109px}.nova-stage .nv-dockbub{font-size:13px}.f16l-label{min-width:142px;flex:1 1 142px}}
+@media(min-width:900px){.nova-stage .nv-dock{height:138px}}
+@media print{.f16l-plot [data-point-handle],.f16l-controls{display:none!important}.f16l-plot *{filter:none!important}}

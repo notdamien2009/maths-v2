@@ -1,0 +1,18 @@
+/* F16-15 scoped sampling apparatus. Core runtime and art unchanged. */
+.nova-bob,.nova-engine .nova-hbub{display:none!important}
+.nova-stage .f1615-svg{display:block;width:100%;max-width:800px;margin:0 auto;flex:none;touch-action:pan-y;overflow:visible}
+.f1615-svg .nv-neon-tube,.f1615-svg .nv-neon-box,.f1615-svg .nv-numberline,.f1615-svg .nv-neon-plot{pointer-events:none}
+.f1615-svg [data-person-id],.f1615-svg [data-sample-id]{pointer-events:all;touch-action:none;cursor:grab}
+.f1615-svg [data-person-id]:focus-visible,.f1615-svg [data-sample-id]:focus-visible{outline:none;filter:drop-shadow(0 0 11px #ffcc58)}
+.f1615-readouts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:5px auto 8px}
+.f1615-readouts .nv-ntile{font-size:clamp(13px,1.7vw,19px);min-height:37px}
+.f1615-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:10px 0}
+.f1615-controls label{flex:1 1 220px;display:flex;flex-direction:column;gap:5px;color:var(--v-muted,#bbd7ec);font-size:14px}
+.f1615-controls select{width:100%;min-height:44px}
+.f1615-controls .nova-btn{min-height:42px}
+.f1615-help,.f1615-status{font-size:14px;color:var(--v-muted,#bfd4e4);line-height:1.5;margin:9px 0}
+.f1615-choice{display:flex;flex-direction:column;gap:8px}
+.f1615-choice select{min-height:44px;width:100%}
+@media(max-width:540px){.nova-stage .f1615-svg{max-width:100%}.nova-stage .nv-dock{height:111px}.nova-stage .nv-dockfig{height:104px}.nova-stage .nv-dockbub{font-size:13px}.f1615-readouts .nv-ntile{font-size:13px}.f1615-controls button{flex:1 1 130px}}
+@media(min-width:900px){.nova-stage .nv-dock{height:136px}}
+@media print{.f1615-svg *{filter:none!important}.f1615-svg [data-person-id],.f1615-svg [data-sample-id]{pointer-events:none}}

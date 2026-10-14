@@ -1,0 +1,16 @@
+/* Scoped F16-14 scene styling; unmodified pinned NOVA shared runtime */
+.nova-bob,.nova-engine .nova-hbub{display:none!important}
+.nova-stage .f1614-svg{display:block;width:100%;max-width:800px;margin:0 auto;flex:none;touch-action:pan-y;overflow:visible}
+.f1614-svg .nv-neon-tube,.f1614-svg .nv-neon-box,.f1614-svg .nv-neon-plot{pointer-events:none}
+.f1614-svg [data-repair-card]{pointer-events:all;touch-action:none;cursor:grab}
+.f1614-svg [data-repair-card]:focus-visible{outline:none;filter:drop-shadow(0 0 10px #ffcc58)}
+.f1614-svg .nv-neon-plot text{display:none}
+.f1614-readouts{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;align-items:center;margin:3px auto 10px}
+.f1614-readouts .nv-ntile{font-size:clamp(13px,1.6vw,18px);min-height:34px}
+.f1614-controls{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin:10px 0}
+.f1614-controls label,.f1614-choice{display:flex;flex:1 1 210px;flex-direction:column;gap:6px;color:var(--v-muted,#bfd4e4);font-size:13px}
+.f1614-controls select,.f1614-choice select{min-height:43px;width:100%}
+.f1614-help,.f1614-status{color:var(--v-muted,#b5cfe1);font-size:14px;line-height:1.5;margin:9px 0}
+@media(max-width:540px){.nova-stage .f1614-svg{max-width:100%}.nova-stage .nv-dock{height:112px}.nova-stage .nv-dockfig{height:105px}.nova-stage .nv-dockbub{font-size:13px}.f1614-readouts .nv-ntile{font-size:13px}.f1614-controls .nova-btn{flex:1 1 120px}}
+@media(min-width:900px){.nova-stage .nv-dock{height:138px}}
+@media print{.f1614-svg *{filter:none!important}.f1614-svg [data-repair-card]{pointer-events:none}}

@@ -1,0 +1,21 @@
+/* F16-11 additive styling only. Shared NOVA core, fonts, mascot and controls are unchanged. */
+.nova-bob .nova-side{display:none!important}
+.nova-stage .f1611-svg{display:block;width:100%;max-width:800px;margin:0 auto 2px;flex:none;overflow:visible;touch-action:pan-y}
+.f1611-svg [data-count],.f1611-svg [data-option],.f1611-svg [data-placed]{touch-action:none;cursor:grab}
+.f1611-svg [data-count]:focus-visible,.f1611-svg [data-option]:focus-visible,.f1611-svg [data-placed]:focus-visible{outline:none;filter:drop-shadow(0 0 12px #ffcc58)}
+.f1611-svg .nv-neon-tube,.f1611-svg .nv-neon-box,.f1611-svg .nv-ring{pointer-events:none}
+.f1611-chips{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:3px 0 9px}
+.f1611-chips .nv-ntile{font-size:clamp(14px,1.3vw,20px);white-space:normal;min-height:37px}
+.f1611-status,.f1611-help{font-size:14px;line-height:1.55;color:var(--v-muted,#aac3da);margin:9px 0}
+.f1611-controls{display:flex;flex-wrap:wrap;gap:9px;align-items:end;margin:9px 0}
+.f1611-controls label{flex:1 1 142px;min-width:125px;display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--v-muted,#aac3da)}
+.f1611-controls select,.f1611-controls input{width:100%;min-height:42px}
+.f1611-controls button{min-height:42px}
+.f1611-frac-answer{display:flex;gap:15px;align-items:center;flex-wrap:wrap;justify-content:center;padding:9px 4px}
+.f1611-stacked{display:grid;grid-template-rows:auto 4px auto;gap:5px;align-items:center;justify-items:center;width:100px;font-family:var(--nova-font-chalk-write,"NOVA Chalk",cursive)}
+.f1611-stacked input{font-size:23px;width:88px;min-height:42px;text-align:center;border:1px solid #4176a0;border-radius:9px;background:#071c30;color:#e7f9ff;font-family:inherit}
+.f1611-stacked .bar{height:4px;width:100%;background:#49cbf1;box-shadow:0 0 9px #49cbf180;border-radius:8px}
+.f1611-answer-text{font-size:15px;color:var(--v-muted,#aac3da)}
+@media(max-width:540px){.nova-stage .f1611-svg{max-width:100%}.f1611-chips{gap:5px}.f1611-chips .nv-ntile{font-size:13.5px}.nova-stage .nv-dock{height:110px}.nova-stage .nv-dockfig{height:103px}.nova-stage .nv-dockbub{font-size:13px}}
+@media(min-width:900px){.nova-stage .nv-dock{height:139px}}
+@media print{.f1611-svg *{filter:none!important}.f1611-svg [data-count],.f1611-svg [data-option]{pointer-events:none}}
