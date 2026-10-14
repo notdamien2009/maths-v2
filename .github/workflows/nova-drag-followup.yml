@@ -1,0 +1,23 @@
+name: NOVA drag follow-up F3 and F14
+on:
+  push:
+    branches:
+      - nova/fast-drag-core-repair-20261014
+    paths:
+      - bank-v3-neon-chalk/qa/repair_followup.py
+      - .github/workflows/nova-drag-followup.yml
+permissions:
+  contents: read
+jobs:
+  focused:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m pip install --quiet playwright==1.55.0
+          python -m playwright install chromium
+      - run: python -u bank-v3-neon-chalk/qa/repair_followup.py

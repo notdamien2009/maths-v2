@@ -1,0 +1,33 @@
+name: NOVA drag repair full browser validation
+on:
+  push:
+    branches:
+      - nova/fast-drag-core-repair-20261014
+    paths:
+      - bank-v3-neon-chalk/qa/fast_drag_audit.py
+      - .github/workflows/nova-drag-repair-validation.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  drag:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Playwright
+        run: |
+          python -m pip install --quiet playwright==1.55.0
+          python -m playwright install chromium
+      - name: Stress mouse drag in Explore Guided and Challenge
+        run: python -u bank-v3-neon-chalk/qa/fast_drag_audit.py
+      - name: Upload validation findings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-drag-repair-browser-results
+          path: bank-v3-neon-chalk/qa/drag-audit-2026-10-14/
+          if-no-files-found: warn
