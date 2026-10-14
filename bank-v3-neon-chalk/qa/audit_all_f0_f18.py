@@ -5,7 +5,7 @@ from collections import Counter, defaultdict
 from html.parser import HTMLParser
 from pathlib import Path
 from tempfile import TemporaryDirectory
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"qa"/"full-audit-2026-10-14"
 OUT.mkdir(parents=True,exist_ok=True)
 NUM=[17,12,16,15,12,19,14,14,18,13,20,13,15,14,13,14,16,14,12]
