@@ -12,6 +12,8 @@ needles={
  "lost": "    st.lost=function(){if(!st.done)setTimeout(function(){if(!st.done&&st.captured)back();},0);};",
  "listeners": "    el.addEventListener('pointermove',st.move);el.addEventListener('pointerup',st.up);el.addEventListener('pointercancel',st.cancel);el.addEventListener('lostpointercapture',st.lost);\n    if(!st.captured)window.addEventListener('pointermove',st.move);",
  "lag": "var k=rm?1:.38;",
+ "back": "    function back(){var dx=st.dx,dy=st.dy,r=st.rot;finish();if(!el.isConnected)return;NOVA.motion.tween(380,function(e2){setT(dx*(1-e2),dy*(1-e2),r*(1-e2),1.12-.12*e2);},NOVA.motion.ease.spring,goHome);}",
+ "pickup": "  el.addEventListener('pointerdown',function(e){if(NOVA.ui._drag||(o.canStart&&!o.canStart())||e.button>0)return;e.preventDefault();e.stopPropagation();",
 }
 replacements={
  "capture": "    var home=el.parentNode,next=el.nextSibling;svg.appendChild(el);el.classList.add('nv-drag-lift');el.style.cursor='grabbing';var rm=NOVA.reducedMotion();\n    /* Fast drag: capture AFTER reparenting (moving a captured SVG element releases capture). */\n    try{el.setPointerCapture(e.pointerId);st.captured=el.hasPointerCapture?el.hasPointerCapture(e.pointerId):true;}catch(_){st.captured=false;}",
@@ -19,6 +21,8 @@ replacements={
  "lost": "    st.lost=function(){st.captured=false;if(!st.done&&!el.isConnected)st.cancel();};\n    st.cancelPointer=function(ev){if(ev.pointerId===st.id)st.cancel();};",
  "listeners": "    /* Window listeners guarantee fast flicks still move and release outside the SVG piece. */\n    el.addEventListener('lostpointercapture',st.lost);\n    window.addEventListener('pointermove',st.move);window.addEventListener('pointerup',st.up);window.addEventListener('pointercancel',st.cancelPointer);",
  "lag": "var k=rm?1:.82;",
+ "back": "    function back(){var dx=st.dx,dy=st.dy,r=st.rot;finish();if(!el.isConnected)return;\n      /* Always settle within the return window, even when the browser throttles SVG animation frames.\n         A second pickup completes the first return synchronously before starting its next drag. */\n      var ended=false,tween=null,timer=0;\n      function settle(){if(ended)return;ended=true;clearTimeout(timer);if(tween&&tween.stop)tween.stop();\n        if(el._nvReturn===settle)delete el._nvReturn;goHome();}\n      el._nvReturn=settle;\n      tween=NOVA.motion.tween(220,function(e2){if(!ended)setT(dx*(1-e2),dy*(1-e2),r*(1-e2),1.12-.12*e2);},NOVA.motion.ease.spring,settle);\n      if(!ended)timer=setTimeout(settle,350);\n    }",
+ "pickup": "  el.addEventListener('pointerdown',function(e){if(NOVA.ui._drag||(o.canStart&&!o.canStart())||e.button>0)return;if(el._nvReturn)el._nvReturn();e.preventDefault();e.stopPropagation();",
 }
 # Only production artefacts and their rebuild sources, never docs/QA/tests/archive images.
 paths=[]
