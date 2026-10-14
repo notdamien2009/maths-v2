@@ -1,8 +1,6 @@
 name: NOVA Maths F0-F18 Full Audit
 on:
-  push:
-    branches:
-      - nova/full-audit-20261014
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
