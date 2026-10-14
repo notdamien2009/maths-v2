@@ -1,0 +1,41 @@
+name: NOVA Maths 255 Engine Deep Audit
+on:
+  push:
+    branches:
+      - nova/full-audit-20261014
+    paths:
+      - bank-v3-neon-chalk/qa/deep_audit_f0_f18.py
+      - .github/workflows/nova-deep-audit.yml
+permissions:
+  contents: write
+jobs:
+  deep:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Playwright browser
+        run: |
+          python -m pip install --quiet playwright==1.55.0
+          if command -v google-chrome; then echo "CHROME_BIN=$(command -v google-chrome)" >> "$GITHUB_ENV"; else python -m playwright install chromium; fi
+      - name: Inspect every engine and collect screenshots
+        run: python -u bank-v3-neon-chalk/qa/deep_audit_f0_f18.py
+      - name: Save JSON audit findings to audit branch
+        if: always()
+        run: |
+          git config user.name "NOVA Audit Bot"
+          git config user.email "nova-audit-bot@users.noreply.github.com"
+          git add bank-v3-neon-chalk/qa/deep-audit-2026-10-14/*.json
+          if ! git diff --cached --quiet; then
+            git commit -m "audit: record 255 engine deep interaction findings"
+            git push origin HEAD:nova/full-audit-20261014
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nova-deep-audit-visual-evidence
+          path: bank-v3-neon-chalk/qa/deep-audit-2026-10-14/
+          if-no-files-found: warn
