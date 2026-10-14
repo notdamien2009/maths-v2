@@ -46,8 +46,47 @@ for path in sorted(set(paths)):
     if after!=source:
         path.write_text(after,encoding="utf-8")
         changes.append({"file":str(path.relative_to(root)),"parts":result,"bytes_before":len(source),"bytes_after":len(after)})
+# Two already-customised families have their own v3.6.2 pointer fallback.
+# F17 captured twice (once before and again after reparent); F5/F4 installed duplicate
+# window listeners. Normalize BOTH to the same shared implementation, no duplicate callbacks.
+for path in sorted(set(paths)):
+    try:src=path.read_text(encoding="utf-8")
+    except UnicodeError:continue
+    if "NOVA.ui.svgDrag=function(svg,el,o)" not in src:continue
+    dst=src
+    if path.parent.name=="F17" and "capture AFTER reparenting" not in dst:
+        k=dst.index("NOVA.ui.svgDrag=function(svg,el,o)")
+        start=dst.find("    try{el.setPointerCapture(e.pointerId);",k)
+        end=dst.find("    function frame()",start)
+        if start>=0 and end>start and end-start<1500:
+            old=dst[start:end]
+            if "svg.appendChild(el);" in old and "Re-capture on the connected" in old:
+                dst=dst[:start]+replacements["capture"]+"\n"+dst[end:]
+    if path.parent.name in ("F5","F4") and "/* v3.6.2-F5 QA fix:" in dst:
+        a=dst.index("    el.addEventListener('pointermove',st.move);",dst.index("NOVA.ui.svgDrag=function"))
+        b=dst.index("    NOVA.ui._drag={cancel:st.cancel",a)
+        dst=dst[:a]+replacements["listeners"]+"\n"+dst[b:]
+        # Original F5 had two fallback removers; avoid duplicating cleanup.
+        dst=dst.replace("window.removeEventListener('pointercancel',st.cancelPointer);window.removeEventListener('pointerup',st.up);window.removeEventListener('pointercancel',st.cancel);","window.removeEventListener('pointercancel',st.cancelPointer);")
+    if dst!=src:
+        path.write_text(dst,encoding="utf-8")
+        changes.append({"file":str(path.relative_to(root)),"parts":{"family_variant":1},"bytes_before":len(src),"bytes_after":len(dst)})
+# Re-examine AFTER variants instead of emitting false mismatch notices from the first pass.
+unmatched=[]
+for path in sorted(set(paths)):
+    try:src=path.read_text(encoding="utf-8")
+    except UnicodeError:continue
+    if "NOVA.ui.svgDrag=function(svg,el,o)" not in src:continue
+    for key,value in replacements.items():
+        if value not in src:
+            unmatched.append({"file":str(path.relative_to(root)),"part":key})
+
 # Abort if any source with svgDrag has a different, unknown implementation, to avoid silent partial repair.
-report={"changed":len(changes),"files":changes,"unmatched":unmatched,"total_patched":sum(sum(x["parts"].values()) for x in changes)}
+out=root/"qa"/"drag-repair-2026-10-14"
+prior=json.loads((out/"patch-inventory.json").read_text()) if (out/"patch-inventory.json").exists() else {"files":[]}
+by_file={x["file"]:x for x in prior.get("files",[])}
+for entry in changes:by_file[entry["file"]]=entry
+report={"changed":len(by_file),"files":list(by_file.values()),"unmatched":unmatched,"total_patched":sum(sum(x["parts"].values()) for x in by_file.values())}
 out=root/"qa"/"drag-repair-2026-10-14"
 out.mkdir(exist_ok=True)
 (out/"patch-inventory.json").write_text(json.dumps(report,indent=2))
