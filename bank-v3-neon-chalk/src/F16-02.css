@@ -1,0 +1,17 @@
+
+/* F16-02 additive subject scene CSS. Original NOVA F0/F2 and mascot stay unchanged. */
+.nova-bob,.nova-engine .nova-hbub{display:none!important}
+.nova-stage .f16b-plot{display:block;width:100%;max-width:770px;height:auto;margin:0 auto;flex:none;overflow:visible;touch-action:pan-y}
+.nova-stage .f16b-coreplot text{opacity:0;pointer-events:none}
+.nova-stage .f16b-plot [data-bar-handle]{cursor:grab;touch-action:none}
+.nova-stage .f16b-plot [data-bar-handle]:focus-visible{filter:drop-shadow(0 0 9px #ffcc58)}
+.nova-stage .f16b-plot .nv-neon-tube{pointer-events:none}
+.f16b-values{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:3px 0 4px}
+.f16b-values .nv-ntile{font-size:clamp(15px,1.4vw,20px)}
+.f16b-controls{display:flex;flex-wrap:wrap;gap:9px;align-items:flex-end;margin:10px 0 12px}
+.f16b-label{color:var(--v-muted,#a9c4d9);font-size:13px;display:flex;flex-direction:column;gap:5px;min-width:145px;flex:1 1 165px}
+.f16b-label select,.f16b-label input{width:100%;max-width:100%}
+.f16b-instruction,.f16b-status{color:var(--v-muted,#bdd7ef);font-size:14px;line-height:1.5}
+@media(max-width:540px){.nova-stage .f16b-plot{max-width:100%}.nova-stage .nv-dock{height:115px}.nova-stage .nv-dockfig{height:109px}.nova-stage .nv-dockbub{font-size:13px}.f16b-label{min-width:140px;flex:1 1 140px}}
+@media(min-width:900px){.nova-stage .nv-dock{height:138px}}
+@media print{.f16b-plot [data-bar-handle]{display:none}.f16b-controls{display:none}.f16b-plot *{filter:none!important}}

@@ -1,0 +1,16 @@
+/* F16-04 additive statistics artwork on locked NOVA neon/chalk F0/F2 core. */
+.nova-bob,.nova-engine .nova-hbub{display:none!important}
+.nova-stage .f16p-plot{display:block;width:100%;max-width:770px;height:auto;margin:0 auto;flex:none;overflow:visible;touch-action:pan-y}
+.nova-stage .f16p-plot [data-boundary]{cursor:grab;touch-action:none}
+.nova-stage .f16p-plot [data-boundary]:focus-visible{filter:drop-shadow(0 0 11px #ffcc58)}
+.nova-stage .f16p-plot .nv-neon-tube{pointer-events:none}
+.nova-stage .f16p-plot [data-sector]{cursor:pointer}
+.f16p-values{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:4px auto 10px}
+.f16p-values .nv-ntile{font-size:clamp(14px,1.4vw,20px)}
+.f16p-controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:9px;margin:10px 0 12px}
+.f16p-label{color:var(--v-muted,#bdd7ef);font-size:13px;display:flex;flex-direction:column;gap:5px;flex:1 1 150px;min-width:140px}
+.f16p-label select,.f16p-label input{width:100%;max-width:100%}
+.f16p-instructions,.f16p-status{color:var(--v-muted,#bdd7ef);font-size:14px;line-height:1.55}
+@media(max-width:540px){.nova-stage .f16p-plot{max-width:100%}.nova-stage .nv-dock{height:115px}.nova-stage .nv-dockfig{height:109px}.nova-stage .nv-dockbub{font-size:13px}.f16p-label{min-width:140px;flex:1 1 140px}}
+@media(min-width:900px){.nova-stage .nv-dock{height:138px}}
+@media print{.f16p-plot [data-boundary],.f16p-controls{display:none!important}.f16p-plot *{filter:none!important}}

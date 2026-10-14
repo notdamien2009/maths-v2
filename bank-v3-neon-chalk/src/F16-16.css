@@ -1,0 +1,18 @@
+/* F16-16 scoped styles. NOVA core and helper assets remain unchanged. */
+.nova-bob,.nova-engine .nova-hbub{display:none!important}
+.nova-stage .f1616-svg{display:block;width:100%;max-width:800px;margin:0 auto;flex:none;touch-action:pan-y;overflow:visible}
+.f1616-svg .nv-neon-tube,.f1616-svg .nv-neon-box,.f1616-svg .nv-numberline,.f1616-svg .nv-neon-plot{pointer-events:none}
+.f1616-svg [data-card-id],.f1616-svg [data-placed-id]{pointer-events:all;touch-action:none;cursor:grab}
+.f1616-svg [data-card-id]:focus-visible,.f1616-svg [data-placed-id]:focus-visible{outline:none;filter:drop-shadow(0 0 12px #ffcc58)}
+.f1616-readouts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:7px auto 8px}
+.f1616-readouts .nv-ntile{font-size:clamp(13px,1.6vw,20px);min-height:37px}
+.f1616-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:12px 0}
+.f1616-controls label{flex:1 1 220px;min-width:0;max-width:100%;display:flex;flex-direction:column;gap:6px;color:var(--v-muted,#bbd7ec);font-size:14px}
+.f1616-controls select{width:100%;max-width:100%;min-width:0;min-height:44px}
+.f1616-controls .nova-btn{min-height:43px}
+.f1616-help,.f1616-status{font-size:14px;color:var(--v-muted,#bfd4e4);line-height:1.5;margin:9px 0}
+.f1616-choice{display:flex;flex-direction:column;gap:8px}
+.f1616-choice select{min-height:44px;width:100%}
+@media(max-width:540px){.nova-stage .f1616-svg{max-width:100%}.nova-stage .nv-dock{height:112px}.nova-stage .nv-dockfig{height:104px}.nova-stage .nv-dockbub{font-size:13px}.f1616-readouts .nv-ntile{font-size:13px}.f1616-controls button{flex:1 1 130px}}
+@media(min-width:900px){.nova-stage .nv-dock{height:136px}}
+@media print{.f1616-svg *{filter:none!important}.f1616-svg [data-card-id],.f1616-svg [data-placed-id]{pointer-events:none}}
