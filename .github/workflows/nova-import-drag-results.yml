@@ -1,0 +1,47 @@
+name: NOVA Import Drag Audit Results
+on:
+  push:
+    branches:
+      - nova/full-audit-20261014
+    paths:
+      - .github/workflows/nova-import-drag-results.yml
+permissions:
+  contents: write
+  actions: read
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download completed fast drag stress artifact
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/nova-drag-results
+          gh run download 38551111530 --name nova-fast-drag-results --dir /tmp/nova-drag-results
+          mkdir -p bank-v3-neon-chalk/qa/drag-audit-2026-10-14
+          find /tmp/nova-drag-results -type f -name '*.json' -print -exec cp {} bank-v3-neon-chalk/qa/drag-audit-2026-10-14/ \;
+          python3 - <<'PY'
+          import json
+          p='bank-v3-neon-chalk/qa/drag-audit-2026-10-14/summary.json'
+          j=json.load(open(p))
+          print('DRAG_REPORT_LOADED',j['files'],j['mode_candidates_tested'],j['tested_engines'],j['high_findings'],len(j['unique_affected']))
+          for x in j['unique_affected']:print('DRAG_FLAGGED',x)
+          PY
+      - name: Commit preserved reports to audit branch
+        run: |
+          git config user.name "NOVA Audit Bot"
+          git config user.email "nova-audit-bot@users.noreply.github.com"
+          git add bank-v3-neon-chalk/qa/drag-audit-2026-10-14/*.json
+          git diff --cached --quiet && exit 0
+          git commit -m "audit: preserve completed high-speed drag findings"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin nova/full-audit-20261014
+            git rebase origin/nova/full-audit-20261014
+            if git push origin HEAD:nova/full-audit-20261014; then exit 0; fi
+            sleep 2
+          done
+          exit 1
