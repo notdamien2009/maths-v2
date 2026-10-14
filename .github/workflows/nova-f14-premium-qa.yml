@@ -1,0 +1,77 @@
+name: NOVA F14 Premium Targeted QA
+on:
+  push:
+    branches:
+      - nova/f14-new-premium-audit-20261014
+permissions:
+  contents: write
+jobs:
+  f14:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m pip install --quiet playwright==1.55.0
+          if command -v google-chrome; then echo "CHROME_BIN=$(command -v google-chrome)" >> "$GITHUB_ENV"; else python -m playwright install chromium; fi
+      - name: Check canonical new F14-01 in browser, mobile and desktop
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import json, os
+          p=Path('bank-v3-neon-chalk/F14/F14-01-reflection-PREMIUM.html')
+          out=Path('bank-v3-neon-chalk/qa/f14-premium-audit-2026-10-14')
+          out.mkdir(parents=True,exist_ok=True)
+          issues=[]; results=[]
+          with sync_playwright() as pw:
+              b=pw.chromium.launch(headless=True,executable_path=os.getenv('CHROME_BIN','/usr/bin/google-chrome'),args=['--no-sandbox'])
+              for w in [380,1280]:
+                  page=b.new_page(viewport={'width':w,'height':900},reduced_motion='reduce')
+                  errs=[];page.on('pageerror',lambda e:errs.append(str(e)))
+                  page.goto(p.resolve().as_uri(),wait_until='domcontentloaded')
+                  page.wait_for_timeout(80)
+                  r={'width':w,'core':page.evaluate('!!window.NOVA && typeof NOVA.bankMount==="function" && typeof NOVA.events.emit==="function"'), 'modes':{}, 'pageerrors':errs}
+                  if not r['core']:issues.append(f'{w}: shared core not present')
+                  for mode in ['watch','guided','explore','challenge']:
+                      sel=f'.nova-tab[data-m="{mode}"],.nova-tab[data-mode="{mode}"],[role="tab"][data-mode="{mode}"]'
+                      tab=page.locator(sel).first
+                      tab.click(timeout=3000,force=True)
+                      page.wait_for_timeout(50)
+                      r['modes'][mode]=page.evaluate("""mode=>{let tab=document.querySelector('.nova-tab[data-m="'+mode+'"],.nova-tab[data-mode="'+mode+'"],[role="tab"][data-mode="'+mode+'"]');
+                        let stage=document.querySelector('.nova-stage')||document.querySelector('.stage')||document.body;
+                        return {active:tab.classList.contains('active')||tab.getAttribute('aria-selected')==='true',
+                         svgs:stage.querySelectorAll('svg').length,scroll:document.documentElement.scrollWidth,
+                         stageHeight:Math.round(stage.getBoundingClientRect().height)}
+                      }""",mode)
+                      if not r['modes'][mode]['active']:issues.append(f'{w}: {mode} tab inactive')
+                      if r['modes'][mode]['svgs']<1:issues.append(f'{w}: {mode} no SVG')
+                      if r['modes'][mode]['scroll']>w+3:issues.append(f'{w}: {mode} horizontal overflow')
+                  page.locator('.nova-tab[data-m="watch"],[role="tab"][data-mode="watch"]').first.click(timeout=3000,force=True)
+                  page.screenshot(path=str(out/f'f14-premium-{w}.png'),animations='disabled',full_page=False)
+                  if errs:issues.append(f'{w}: page errors '+str(errs[:3]))
+                  results.append(r);page.close()
+              b.close()
+          report={'source_commit':'2a3528823ce4ae2c3a6a49971fad2b269ef874ca','files':['F14-01-reflection-PREMIUM.html'],'results':results,'issues':issues}
+          (out/'report.json').write_text(json.dumps(report,indent=2))
+          print(json.dumps(report,indent=2))
+          if issues:exit(1)
+          PY
+      - name: Save F14 premium report on audit branch only
+        if: always()
+        run: |
+          git config user.name "NOVA Audit Bot"
+          git config user.email "nova-audit-bot@users.noreply.github.com"
+          git add bank-v3-neon-chalk/qa/f14-premium-audit-2026-10-14/report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "audit: F14 premium mobile and desktop checks"
+            git push origin HEAD:nova/f14-new-premium-audit-20261014
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: f14-premium-mobile-desktop
+          path: bank-v3-neon-chalk/qa/f14-premium-audit-2026-10-14/
