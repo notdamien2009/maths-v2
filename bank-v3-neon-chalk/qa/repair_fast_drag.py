@@ -34,14 +34,19 @@ for path in sorted(set(paths)):
     except UnicodeError:continue
     if "NOVA.ui.svgDrag=function(svg,el,o)" not in source:continue
     after=source
+    # v1 repair was run twice on the isolated branch. Deduplicate any identical
+    # pointerup/pointercancel cleanup and make every future run idempotent.
+    pair="window.removeEventListener('pointerup',st.up);window.removeEventListener('pointercancel',st.cancelPointer);"
+    while pair+pair in after:after=after.replace(pair+pair,pair)
     result={}
     for key,old in needles.items():
+        # FINISH old string is a prefix of the patched string: never append twice.
+        if replacements[key] in after:
+            result[key]=0
+            continue
         count=after.count(old)
-        if count>0:
-            after=after.replace(old,replacements[key])
-        else:
-            if replacements[key] not in after:
-                unmatched.append({"file":str(path.relative_to(root)),"part":key})
+        if count>0:after=after.replace(old,replacements[key])
+        else:unmatched.append({"file":str(path.relative_to(root)),"part":key})
         result[key]=count
     if after!=source:
         path.write_text(after,encoding="utf-8")
