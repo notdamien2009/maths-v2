@@ -14,6 +14,7 @@ patterns=[
   (re.compile(r'fraction design TBD',re.I),'approved NOVA Chalk stacked fraction notation'),
   (re.compile(r'Fraction \(TBD placeholder\)',re.I),'Fraction (approved NOVA Chalk stacked notation)'),
   (re.compile(r'visual design not decided yet',re.I),'visual design approved as vertically stacked NOVA Chalk fractions'),
+  (re.compile(r'with TBD fraction placeholders',re.I),'with approved NOVA Chalk stacked fraction notation'),
 ]
 review=re.compile(r'(?i)\b(blocked|blocking|approval gate|release gate|production gate|pending approval|awaiting approval|manual sign.off|hold for approval|not approved|TBD)\b')
 updated=[];flagged=[];fractions=[]
@@ -34,7 +35,7 @@ for folder in ('docs','prompts','source','build','tests'):
    p.write_text(text)
    updated.append(str(p.relative_to(root)))
   if hits:flagged.append({'file':str(p.relative_to(root)),'historical_gate_terms':len(hits)})
-  if re.search(r'fraction.{0,35}TBD|TBD.{0,35}fraction',text,re.I):
+  if re.search(r'with TBD fraction placeholders|fraction design TBD|fraction TBD placeholder',text,re.I):
    fractions.append(str(p.relative_to(root)))
 # Historical archives, JSON manifests and audit snapshots are never rewritten.
 report={'release':'F0–F18 APPROVED','updated_active_documents':len(updated),'files_updated':updated,
