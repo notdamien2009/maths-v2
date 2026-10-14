@@ -32,7 +32,7 @@ with sync_playwright() as pw:
             page.wait_for_timeout(60)
             row["core"]=bool(page.evaluate("!!window.NOVA"))
             for mode in ["watch","guided","explore","challenge"]:
-                tabs=page.locator(f'.nova-tab[data-m="{mode}"], .nova-tab[data-mode="{mode}"]')
+                tabs=page.locator(f'.nova-tab[data-m="{mode}"], .nova-tab[data-mode="{mode}"], [role="tab"][data-mode="{mode}"]')
                 z={"tab_found":tabs.count()>0}
                 if not z["tab_found"]:
                     flag("HIGH",cid,"Mode tab absent: "+mode)
@@ -41,8 +41,8 @@ with sync_playwright() as pw:
                     tabs.first.click(force=True,timeout=2800)
                     page.wait_for_timeout(80)
                     z.update(page.evaluate("""mode=>{
-                     let t=document.querySelector('.nova-tab[data-m="'+mode+'"], .nova-tab[data-mode="'+mode+'"]');
-                     let root=document.querySelector('.nova-stage') || document.querySelector('#gallery') || document.body;
+                     let t=document.querySelector('.nova-tab[data-m="'+mode+'"], .nova-tab[data-mode="'+mode+'"], [role="tab"][data-mode="'+mode+'"]');
+                     let root=document.querySelector('.nova-stage') || document.querySelector('.stage') || document.querySelector('#gallery') || document.body;
                      let rect=root.getBoundingClientRect();
                      return {active:t?.classList.contains('active')||t?.getAttribute('aria-selected')==='true',
                          svgCount:root.querySelectorAll('svg').length,
@@ -51,6 +51,7 @@ with sync_playwright() as pw:
                          buttons:root.querySelectorAll('button').length,
                          textLength:(root.innerText||'').length,
                          debugCode:(root.innerText||'').includes('@@CSS@@')||(root.innerText||'').includes('@@JS@@')}
+                     }
                      """,mode))
                     if not z["active"]:flag("HIGH",cid,"Tab did not become active: "+mode)
                     if z["stageHeight"]<20:flag("HIGH",cid,"Stage collapsed in mode: "+mode)
@@ -84,11 +85,11 @@ with sync_playwright() as pw:
             fam=cid.split("-")[0]
             if cid==next(x[0] for x in files if x[0].startswith(fam+"-")):
                 for mode in ["watch","challenge"]:
-                    page.locator(f'.nova-tab[data-m="{mode}"],.nova-tab[data-mode="{mode}"]').first.click(force=True,timeout=1500)
+                    page.locator(f'.nova-tab[data-m="{mode}"],.nova-tab[data-mode="{mode}"],[role="tab"][data-mode="{mode}"]').first.click(force=True,timeout=1500)
                     page.wait_for_timeout(40)
                     page.screenshot(path=str(SHOT/(fam+"-"+mode+"-380.png")),full_page=False,animations="disabled",timeout=10000)
                 page.set_viewport_size({"width":1280,"height":900})
-                page.locator('.nova-tab[data-m="watch"],.nova-tab[data-mode="watch"]').first.click(force=True,timeout=1500)
+                page.locator('.nova-tab[data-m="watch"],.nova-tab[data-mode="watch"],[role="tab"][data-mode="watch"]').first.click(force=True,timeout=1500)
                 page.wait_for_timeout(50)
                 page.screenshot(path=str(SHOT/(fam+"-watch-1280.png")),full_page=False,animations="disabled",timeout=10000)
             if cid=="F15-10":
