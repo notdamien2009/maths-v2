@@ -4,18 +4,19 @@
   "statistics": {
     "files_tested": 269,
     "draggable_mode_checks": 38,
-    "draggable_modes_completed": 37
+    "draggable_modes_completed": 37,
+    "intentionally_locked_empty_slots": 1
   },
   "failures": 1,
   "affected": [
-    "F3-03-partitioned-grid-method.html"
+    "NOVA-F10-02-Shape-on-Grid-PREMIUM-REVIEW.html"
   ],
   "findings": [
     {
-      "kind": "not_activated",
-      "file": "F3/F3-03-partitioned-grid-method.html",
-      "mode": "challenge",
-      "detail": "{'active': False, 'captured': None, 'lifts': 0, 'connected': None}"
+      "kind": "stuck_after_escape",
+      "file": "F10/NOVA-F10-02-Shape-on-Grid-PREMIUM-REVIEW.html",
+      "mode": "explore",
+      "detail": "{'active': False, 'captured': None, 'lifts': 1, 'connected': None}"
     }
   ],
   "limitations": [
