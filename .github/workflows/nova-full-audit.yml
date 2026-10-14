@@ -1,0 +1,42 @@
+name: NOVA Maths F0-F18 Full Audit
+on:
+  push:
+    branches:
+      - nova/full-audit-20261014
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install browser audit dependency
+        run: |
+          python -m pip install --quiet playwright==1.55.0
+          if command -v google-chrome; then echo "CHROME_BIN=$(command -v google-chrome)" >> "$GITHUB_ENV"; else python -m playwright install chromium; fi
+      - name: Run read-only complete inventory, static and Chromium checks
+        env:
+          AUDIT_BASE_SHA: 45c45a67c0243119445f4a2c0b8f267063718507
+        run: python -u bank-v3-neon-chalk/qa/audit_all_f0_f18.py
+      - name: Save reports to audit branch only
+        if: always()
+        run: |
+          git config user.name "NOVA Audit Bot"
+          git config user.email "nova-audit-bot@users.noreply.github.com"
+          git add bank-v3-neon-chalk/qa/full-audit-2026-10-14/
+          if ! git diff --cached --quiet; then
+            git commit -m "audit: record F0-F18 automated findings from unchanged production files"
+            git push origin HEAD:nova/full-audit-20261014
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nova-f0-f18-audit
+          path: bank-v3-neon-chalk/qa/full-audit-2026-10-14/
+          if-no-files-found: warn
