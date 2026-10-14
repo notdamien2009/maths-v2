@@ -1676,28 +1676,31 @@ NOVA.ui.svgDrag=function(svg,el,o){o=o||{};var E=NOVA.svg.el,coarse=window.match
   function clearT(){el.removeAttribute('transform');el.classList.remove('nv-drag-lift');el.style.cursor='grab';}
   el.addEventListener('pointerdown',function(e){if(NOVA.ui._drag||(o.canStart&&!o.canStart())||e.button>0)return;e.preventDefault();e.stopPropagation();
     var st={x0:pt(e).x,y0:pt(e).y,tx:0,ty:0,dx:0,dy:0,rot:0,id:e.pointerId,hl:null,zone:null,moved:false,captured:false,done:false,raf:0,last:null};
-    try{el.setPointerCapture(e.pointerId);st.captured=el.hasPointerCapture?el.hasPointerCapture(e.pointerId):true;}catch(_){st.captured=false;}
     var home=el.parentNode,next=el.nextSibling;svg.appendChild(el);el.classList.add('nv-drag-lift');el.style.cursor='grabbing';var rm=NOVA.reducedMotion();
-    function frame(){if(st.done)return;var k=rm?1:.38;var vx=st.tx-st.dx;st.dx+=vx*k;st.dy+=(st.ty-st.dy)*k;st.rot+=((rm?0:Math.max(-10,Math.min(10,vx*.5)))-st.rot)*.3;setT(st.dx,st.dy,st.rot,1.12);if(!rm)st.raf=requestAnimationFrame(frame);}
+    /* Fast drag: capture AFTER reparenting (moving a captured SVG element releases capture). */
+    try{el.setPointerCapture(e.pointerId);st.captured=el.hasPointerCapture?el.hasPointerCapture(e.pointerId):true;}catch(_){st.captured=false;}
+    function frame(){if(st.done)return;var k=rm?1:.82;var vx=st.tx-st.dx;st.dx+=vx*k;st.dy+=(st.ty-st.dy)*k;st.rot+=((rm?0:Math.max(-10,Math.min(10,vx*.5)))-st.rot)*.3;setT(st.dx,st.dy,st.rot,1.12);if(!rm)st.raf=requestAnimationFrame(frame);}
     setT(0,0,0,1.12);
     function hl(z){if(st.zone===z)return;st.zone=z;if(st.hl&&st.hl.parentNode)st.hl.parentNode.removeChild(st.hl);st.hl=null;
       if(z){st.hl=E('rect',{class:'nv-drop-hl '+(z.kind==='remove'?'nv-drop-remove':'nv-drop-ok'),x:z.x-3,y:z.y-3,width:z.w+6,height:z.h+6,rx:14,filter:'url(#nv-neon)'},svg);svg.insertBefore(st.hl,el);}}
     st.move=function(ev){if(st.done||ev.pointerId!==st.id)return;var q=pt(ev);st.tx=q.x-st.x0;st.ty=q.y-st.y0;st.moved=st.moved||Math.abs(st.tx)+Math.abs(st.ty)>3;
       if(rm)frame();else if(!st.raf)st.raf=requestAnimationFrame(frame);var zs=o.zones?o.zones():[],z=null;zs.forEach(function(Z){if(inZ(Z,q.x,q.y))z=Z;});hl(z);};
     function finish(){st.done=true;cancelAnimationFrame(st.raf);hl(null);NOVA.ui._drag=null;try{el.releasePointerCapture(st.id);}catch(_){}
-      el.removeEventListener('pointermove',st.move);el.removeEventListener('pointerup',st.up);el.removeEventListener('pointercancel',st.cancel);el.removeEventListener('lostpointercapture',st.lost);window.removeEventListener('pointermove',st.move);}
+      el.removeEventListener('pointermove',st.move);el.removeEventListener('pointerup',st.up);el.removeEventListener('pointercancel',st.cancel);el.removeEventListener('lostpointercapture',st.lost);window.removeEventListener('pointermove',st.move);window.removeEventListener('pointerup',st.up);window.removeEventListener('pointercancel',st.cancelPointer);}
     function goHome(){clearT();if(home&&home.isConnected&&el.parentNode!==home){try{home.insertBefore(el,next&&next.parentNode===home?next:null);}catch(_){home.appendChild(el);}}}
     function back(){var dx=st.dx,dy=st.dy,r=st.rot;finish();if(!el.isConnected)return;NOVA.motion.tween(380,function(e2){setT(dx*(1-e2),dy*(1-e2),r*(1-e2),1.12-.12*e2);},NOVA.motion.ease.spring,goHome);}
     st.cancel=function(){if(!st.done)back();};
-    st.lost=function(){if(!st.done)setTimeout(function(){if(!st.done&&st.captured)back();},0);};
+    st.lost=function(){st.captured=false;if(!st.done&&!el.isConnected)st.cancel();};
+    st.cancelPointer=function(ev){if(ev.pointerId===st.id)st.cancel();};
     st.up=function(ev){if(st.done)return;if(ev&&ev.pointerId!=null&&ev.pointerId!==st.id)return;var q=ev&&ev.clientX!=null?pt(ev):null,z=null;
       if(q){st.tx=q.x-st.x0;st.ty=q.y-st.y0;st.dx=st.tx;st.dy=st.ty;(o.zones?o.zones():[]).forEach(function(Z){if(inZ(Z,q.x,q.y))z=Z;});}
       if(z&&z.kind==='drop'){var dx=st.dx,dy=st.dy;finish();var ok=false;try{ok=!!(o.onDrop&&o.onDrop(z.id));}catch(err){ok=false;}if(!ok){st.dx=dx;st.dy=dy;st.done=false;back();}else if(el.isConnected)goHome();return;}
       if(z&&z.kind==='remove'&&o.onRemove){var sx=st.dx,sy=st.dy,to=o.removeTo||{x:z.x+z.w/2,y:z.y+z.h/2};finish();
         NOVA.motion.tween(300,function(e2){setT(sx+(to.x-cx-sx)*e2,sy+(to.y-cy-sy)*e2,0,1.12-.8*e2);el.style.opacity=String(1-e2);},NOVA.motion.ease.inOut,function(){el.style.opacity='';goHome();o.onRemove();});return;}
       back();};
-    el.addEventListener('pointermove',st.move);el.addEventListener('pointerup',st.up);el.addEventListener('pointercancel',st.cancel);el.addEventListener('lostpointercapture',st.lost);
-    if(!st.captured)window.addEventListener('pointermove',st.move);
+    /* Window listeners guarantee fast flicks still move and release outside the SVG piece. */
+    el.addEventListener('lostpointercapture',st.lost);
+    window.addEventListener('pointermove',st.move);window.addEventListener('pointerup',st.up);window.addEventListener('pointercancel',st.cancelPointer);
     NOVA.ui._drag={cancel:st.cancel,up:st.up,get moved(){return st.moved;},get captured(){return st.captured;},el:el};});
   return el;};
 </script><script>/* NOVA F4-09 Before-and-After Bar · Run 09. Extends the canonical F0/F2 visual engine; NO shared core changes. */
