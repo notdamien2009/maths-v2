@@ -17,11 +17,13 @@ with sync_playwright() as p:
    continue
   page.locator('.nova-tab[data-m="challenge"]').click()
   page.wait_for_timeout(150)
-  pieces=page.locator('svg [data-drag]')
+  pieces=page.locator('svg [data-card][data-drag]')
   count=pieces.count()
   active=False
   for i in range(count):
    e=pieces.nth(i)
+   try:e.scroll_into_view_if_needed(timeout=1500)
+   except Exception:pass
    r=e.bounding_box()
    if not r or r['width']<8 or r['height']<8: continue
    x=r['x']+r['width']/2
