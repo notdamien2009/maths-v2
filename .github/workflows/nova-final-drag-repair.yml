@@ -1,0 +1,57 @@
+name: NOVA Final Fast Drag Repair
+on:
+  push:
+    branches:
+      - nova/drag-repair-final-20261014
+    paths:
+      - .github/workflows/nova-final-drag-repair.yml
+      - bank-v3-neon-chalk/qa/repair_fast_drag.py
+      - bank-v3-neon-chalk/qa/test_fast_drag_repair.py
+permissions:
+  contents: write
+jobs:
+  drag_repair:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install browser
+        run: |
+          python -m pip install --quiet playwright==1.55.0
+          if command -v google-chrome; then echo "CHROME_BIN=$(command -v google-chrome)" >> "$GITHUB_ENV"; else python -m playwright install chromium; fi
+      - name: Repair pointer capture in shared core and standalone builds
+        run: python -u bank-v3-neon-chalk/qa/repair_fast_drag.py
+      - name: Verify patched JS syntax and unchanged maths content
+        run: |
+          node --check bank-v3-neon-chalk/core/nova-core.js
+          git diff --check
+          python - <<'PY'
+          import pathlib
+          r=pathlib.Path('bank-v3-neon-chalk')
+          core=(r/'core/nova-core.js').read_text()
+          assert 'window.addEventListener(\'pointerup\',st.up)' in core
+          assert 'var k=rm?1:.82' in core
+          assert 'capture AFTER reparenting' in core
+          print('core patch invariants checked')
+          PY
+      - name: Browser fast-drag stress (whole library)
+        run: python -u bank-v3-neon-chalk/qa/test_fast_drag_repair.py
+      - name: Commit repaired files and reports to repair branch only
+        if: always()
+        run: |
+          git config user.name "NOVA Repair Bot"
+          git config user.email "nova-repair-bot@users.noreply.github.com"
+          git add bank-v3-neon-chalk/
+          if ! git diff --cached --quiet; then
+            git commit -m "fix: prevent pointer loss and reduce drag lag across NOVA Maths V2"
+            git push origin HEAD:nova/drag-repair-final-20261014
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nova-final-drag-repair-test-results
+          path: bank-v3-neon-chalk/qa/drag-repair-2026-10-14/
+          if-no-files-found: warn
