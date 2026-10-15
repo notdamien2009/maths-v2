@@ -21,3 +21,7 @@ Added versioned native data/configuration/model/table hooks without replacing ap
 Automated integration and sampled parameter checks cover the actual source documents and template. This is not a certification of every possible mathematical configuration, every drag gesture or full WCAG compliance. The existing approved drag implementation, keyboard controls and artwork were preserved. Future lesson records require the supplied structural/browser validator and independent answer-key review; accepting a component does not automatically validate new lesson numbers.
 
 Evidence: `qa/component-validation.json`, `qa/lesson3-interactions.json`, `qa/lesson3-visual-bindings.json`, `qa/assessment-capture-evidence.json`.
+
+## Follow-up wrapper and mascot correction
+
+Lesson Challenge now calls the original F0-12 HUD, question, points and results functions directly via a source-extracted shared module. The original Lives HUD is retained. Multi-value views keep one original mascot dock directly under the stage so the native right-alignment rule applies. All 24 Challenge questions, the Bob/Watch/Guided visual records and desktop/narrow mascot alignment checks pass; see `qa/f0-12-wrapper-and-mascot.json`.

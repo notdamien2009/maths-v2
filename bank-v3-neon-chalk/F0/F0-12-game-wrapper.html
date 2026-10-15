@@ -1824,6 +1824,7 @@ var def={id:'F0-12',title:'Game wrapper',config:C,steps:steps,render:render,
 };
 
 /* Versioned native lesson hook; no artwork replacement. */
+window.NovaGameWrapper={id:"F0-12",hud,qcard,pts,results};
 window.NovaV2Integration.register('F0-12',def,{models:{},tables:{"FR":()=>FR,"Qd":()=>Qd,"DEMO":()=>DEMO,"steps":()=>steps},draws:{"hud":["stage","s","o"],"qcard":["stage","q","ans","state"],"pts":["stage","t","minus"],"results":["stage","r","stars"]},exploreFields:{}});
 NOVA.bankMount({id:'F0-12',num:'12',title:'Game wrapper (rounds, scoring, lives, hints, Bob reactions, results)',def:def,linked:['F0-06','F0-07','F0-08','F0-11','any engine'],
  spec:{purpose:'All game logic lives here, so maths engines stay pure. Wraps any engine or question source with rounds, points, streak bonus, lives, hint cost, Bob and helper reactions, and a results screen with stars. Demo questions: fractions of amounts, negatives, times tables, GCSE percentages.',

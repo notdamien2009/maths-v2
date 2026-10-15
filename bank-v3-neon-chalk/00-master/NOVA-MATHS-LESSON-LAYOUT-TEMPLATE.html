@@ -3317,8 +3317,17 @@ window.NovaLessonSources=JSON.parse(document.getElementById('novaV2Sources').tex
 window.NovaChallengeCSS="\n.gw-hud{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:8px 12px 0}\n.gw-hud div{height:46px;border-radius:10px;border:1px solid var(--v-line);background:var(--v-panel2);display:flex;flex-direction:column;justify-content:center;align-items:center;font:800 1rem var(--nova-font-ui);color:var(--v-ink);overflow:hidden}\n.gw-hud div small{font:800 .58rem var(--nova-font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--v-muted)}\n.gw-hud div.hl{box-shadow:0 0 0 2px var(--m-focus)}\n.gw-lives{letter-spacing:2px}.gw-lives .on{color:var(--m-error)}.gw-lives .off{color:var(--v-muted);opacity:.5}\n.gw-q{margin:8px 12px;height:96px;border-radius:12px;border:1px solid var(--v-line);background:var(--v-panel2);display:grid;grid-template-columns:1fr auto;align-items:center;padding:0 14px;gap:10px;overflow:hidden}\n.gw-q .p{font:800 1.25rem var(--nova-font-ui);color:var(--v-ink)}.gw-q .p small{display:block;font:700 .66rem var(--nova-font-ui);color:var(--v-muted)}\n.gw-q .a{font:800 1.1rem var(--nova-font-mono,monospace);min-width:64px;text-align:center;padding:6px 10px;border-radius:9px;border:1.5px dashed var(--v-line);color:var(--v-muted)}\n.gw-q .a.ok{border:1.5px solid var(--m-result);color:var(--m-result)}.gw-q .a.ok::after{content:' ✓'}\n.gw-q .a.no{border:1.5px solid var(--m-error);color:var(--m-error)}.gw-q .a.no::after{content:' ✖'}\n.gw-pts{margin:0 12px;height:auto;min-height:22px;font:800 .78rem var(--nova-font-ui);color:var(--m-result)}.gw-pts.minus{color:var(--m-error)}\n.gw-res{margin:8px 12px;height:96px;border-radius:12px;border:1px solid var(--m-result);background:linear-gradient(180deg,rgba(80,220,140,.10),transparent);display:flex;align-items:center;justify-content:space-around;text-align:center;font:800 .74rem var(--nova-font-ui);color:var(--v-muted)}\n.gw-res b{display:block;font:800 1.3rem var(--nova-font-ui);color:var(--v-ink)}\n.gw-stars{font-size:1.4rem;letter-spacing:3px}.gw-stars .on{color:var(--math-gold,#ffcc58)}.gw-stars .off{color:var(--v-muted);opacity:.4}\n.f012-game-host{width:100%;padding:4px 0 12px}.f012-game-caption{margin:5px 12px;font:800 .78rem var(--nova-font-ui);text-transform:uppercase;color:var(--v-muted)}.f012-game-controls{padding:8px 12px}.f012-game-host .pr-row{padding:0 12px}.f012-game-host [hidden]{display:none!important}@media(max-width:600px){.gw-q{height:auto;min-height:96px}}";
 window.NovaLessonMarkAnswer=function(value,r){const normal=x=>String(x??'').trim().replaceAll('−','-');const numeric=x=>{const s=normal(x);if(!s)return NaN;const f=s.match(/^([+-]?(?:\d+(?:\.\d*)?|\.\d+))\s*\/\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))$/);if(f)return +f[2]===0?NaN:+f[1]/+f[2];return /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(s)?Number(s):NaN;};const t=r.answerType||'numeric',key=r.privateAnswer;if(['choice','relation','text'].includes(t))return normal(value)!==''&&normal(value)===normal(key);if(['ordered','coordinates'].includes(t)){const list=x=>Array.isArray(x)?x:normal(x).replace(/[()\[\]]/g,'').split(/\s*[,;]\s*/);const a=list(value),b=list(key);return a.length===b.length&&a.every((v,i)=>Number.isFinite(numeric(v))&&Math.abs(numeric(v)-numeric(b[i]))<1e-9);}const a=numeric(value),b=numeric(key);return Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=Number(r.tolerance??1e-9);};
 window.NovaCreateClock=function(w,getTime){if(w.__novaLessonClock){w.__novaLessonClock.cancel();return w.__novaLessonClock;}const n=w.NOVA,m=n.motion,callbacks=new Set(),delays=new Set(),handles=new Set();let resolves=[],generation=0;const idle=()=>{if(!callbacks.size&&!delays.size&&!handles.size)queueMicrotask(()=>{if(!callbacks.size&&!delays.size&&!handles.size)resolves.splice(0).forEach(r=>r());});};function tween(ms,fn,ease,done){let ended=false,start=null;const token=generation,h={stop(){if(ended)return;ended=true;callbacks.delete(tick);handles.delete(h);idle();}};function tick(time){if(ended||token!==generation)return;if(start===null)start=time;const t=!ms||n.reducedMotion()?1:Math.min(1,(time-start)/ms);fn(ease?ease(t):t,t);if(t<1)callbacks.add(tick);else{h.stop();done?.();idle();}}handles.add(h);if(n.reducedMotion()||!ms)tick(getTime());else callbacks.add(tick);return h;}n.tween=(ms,fn,done)=>tween(ms,fn,null,done);if(m){m.raf=fn=>{callbacks.add(fn);return fn;};m.delay=(ms,fn)=>{if(n.reducedMotion()){fn();return{stop(){}};}const t={due:getTime()+(n.reducedMotion()?0:ms),fn};delays.add(t);return{stop(){delays.delete(t);idle();}};};m.tween=(ms,fn,ease,done)=>tween(ms,fn,ease||m.ease?.out,done);}const clock={advance(time){const token=generation;for(const d of[...delays])if(d.due<=time){delays.delete(d);d.fn();if(token!==generation)break;}const q=[...callbacks];callbacks.clear();for(const fn of q){if(token!==generation)break;fn(time);}idle();},idle:()=>callbacks.size||delays.size||handles.size?new Promise(r=>resolves.push(r)):Promise.resolve(),cancel(){generation++;callbacks.clear();delays.clear();for(const h of[...handles])h.stop();handles.clear();resolves.splice(0).forEach(r=>r());},get pending(){return callbacks.size+delays.size+handles.size;}};w.__novaLessonClock=clock;return clock;};
+window.NovaF012WrapperFactory=function(w){const NOVA=w.NOVA,h=NOVA.h;
+function hud(stage,s,o){o=o||{};var hd=h('div',{class:'gw-hud'});var lv=h('span',{class:'gw-lives'});if(s.maxLives){for(var i=0;i<s.maxLives;i++)lv.appendChild(h('span',{class:i<s.lives?'on':'off',text:i<s.lives?'\u2665':'\u2661'}));}else lv.textContent='\u221E';
+  [['Round',Math.min(s.round,s.rounds)+'/'+s.rounds,'round'],['Score',String(s.score),'score'],['Lives',lv,'lives'],['Streak',(s.streak>=2?'\u26A1':'')+s.streak,'streak']].forEach(function(c){hd.appendChild(h('div',{class:o.hl===c[2]?'hl':'','data-maths':o.hl===c[2]?c[2]:null},[h('small',{text:c[0]}),c[1]]));});stage.appendChild(hd);}
+function qcard(stage,q,ans,state){stage.appendChild(h('div',{class:'gw-q'},[h('div',{class:'p'},[h('small',{text:'Question'}),q?q.p:'—']),h('div',{class:'a'+(state?' '+state:''),'data-maths':state?'ans':null,text:ans!=null?String(ans):'?'})]));}
+function pts(stage,t,minus){stage.appendChild(h('div',{class:'gw-pts'+(minus?' minus':''),'aria-live':'polite',text:t||''}));}
+function results(stage,r,stars){var st=h('span',{class:'gw-stars','aria-label':r.stars+' of 3 stars'});for(var i=0;i<3;i++)st.appendChild(h('span',{class:i<r.stars?'on':'off',text:i<r.stars?'\u2605':'\u2606'}));
+  stage.appendChild(h('div',{class:'gw-res','data-maths':'res'},[h('div',{},[h('b',{text:String(r.score)}),'score']),h('div',{},[h('b',{text:r.correct+'/'+r.played}),r.pct+'% correct']),h('div',{},[st,h('div',{text:'stars at '+stars.join(' / ')+'%'})]),h('div',{},[h('b',{text:String(r.best)}),'best streak'])]));}
+
+return {id:"F0-12",hud,qcard,pts,results};};
 window.NovaLessonChallenge=function(w,panel,api,stage,C,records){
- const n=w.NOVA,d=w.document,engineId=records[0].source;function paint(i){w.NovaNative.renderRecord(records[i],stage,false);}
+ const n=w.NOVA,d=w.document,engineId=records[0].source,F0=window.NovaF012WrapperFactory(w);w.NovaGameWrapper=F0;function nativeNode(method,...args){const holder=d.createElement("div");F0[method](holder,...args);return holder.firstElementChild;}function paint(i){w.NovaNative.renderRecord(records[i],stage,false);}
  function buildMission(){return records.map(r=>({q:r.prompt,hint:r.hint,build:function(ctl){
    if(r.answerType==='choice')return n.choiceTask(r.choices,engineId)(ctl);
    n.entryTask('Your answer',engineId)(ctl);return ()=>{const raw=String(ctl._A.input.value).trim();return raw;};
@@ -3330,30 +3339,21 @@ window.NovaLessonChallenge=function(w,panel,api,stage,C,records){
   // The original F0-12 scoring engine controls every value and award.
   const wrap=d.createElement('div');wrap.className='f012-game-host';
   const heading=d.createElement('div');heading.className='f012-game-caption';heading.textContent='Game · '+(C.lessonChallengeTitle||'Concept challenge');
-  const metrics=d.createElement('div');metrics.className='gw-hud';
-  const question=d.createElement('div');question.className='gw-q';
-  const feedback=d.createElement('div');feedback.className='gw-pts';feedback.setAttribute('aria-live','polite');
+  let metrics=nativeNode('hud',game.state());
+  let question=nativeNode('qcard',{p:records[index]?.prompt||''},null,null);
+  const feedback=nativeNode('pts','',false);
   const control=d.createElement('div');control.className='f012-game-controls';
   const actions=d.createElement('div');actions.className='pr-row';
   const check=d.createElement('button');check.className='nova-btn primary';check.textContent='Check answer';
   const hint=d.createElement('button');hint.className='nova-btn ghost';hint.textContent='Hint (−5 points)';
   const next=d.createElement('button');next.className='nova-btn primary';next.textContent='Next round →';next.hidden=true;
   const restart=d.createElement('button');restart.className='nova-btn ghost';restart.textContent='New game';restart.hidden=true;
-  const finish=d.createElement('div');finish.className='gw-res';finish.hidden=true;
+  let finish=nativeNode('results',game.results(),[50,70,90]);finish.hidden=true;
   const chartArea=d.createElement('div');chartArea.className='f012-chart-area';chartArea.style.margin='20px 0';
   actions.append(check,hint,next,restart);wrap.append(heading,metrics,question,chartArea,feedback,control,actions,finish);
   panel.replaceChildren();
   let get=null;
-  function renderStats(){
-    const x=game.state();metrics.replaceChildren();
-    const hearts=d.createElement('span');hearts.className='gw-lives';
-    for(let i=0;i<x.maxLives;i++){const h=d.createElement('span');h.className=i<x.lives?'on':'off';h.textContent=i<x.lives?'♥':'♡';hearts.append(h);}
-    [['Round',Math.min(x.round,x.rounds)+'/'+x.rounds],['Score',String(x.score)],['Retries',String(retries)],['Streak',String(x.streak)]].forEach(([name,value])=>{
-      const cell=d.createElement('div'),lbl=d.createElement('small');lbl.textContent=name;cell.append(lbl);
-      if(typeof value==='string')cell.append(d.createTextNode(value));else cell.append(value);
-      metrics.append(cell);
-    });
-  }
+  function renderStats(){const nextMetrics=nativeNode('hud',game.state());metrics.replaceWith(nextMetrics);metrics=nextMetrics;}
   function placeAtTop(){
     // Keep the original chart between the question and answer controls.
     // Move existing DOM nodes only: preserve the V2 drawing and event handlers.
@@ -3365,9 +3365,7 @@ window.NovaLessonChallenge=function(w,panel,api,stage,C,records){
     if(index>=tasks.length)return end();
     const task=tasks[index];locked=false;next.hidden=true;check.hidden=false;hint.hidden=false;
     feedback.textContent='';feedback.className='gw-pts';
-    question.replaceChildren();
-    const q=d.createElement('div');q.className='p';q.style.fontFamily='var(--nova-font-chalk-write)';const small=d.createElement('small');small.textContent='Question '+(index+1)+' of '+tasks.length;q.append(small,d.createTextNode(task.q));
-    const answer=d.createElement('div');answer.className='a';answer.textContent='?';question.append(q,answer);
+    const nextQuestion=nativeNode('qcard',{p:task.q},null,null);nextQuestion.querySelector('small').textContent='Question '+(index+1)+' of '+tasks.length;question.replaceWith(nextQuestion);question=nextQuestion;
     control.replaceChildren();get=task.build(control);
     paint(index);placeAtTop();renderStats();
   }
@@ -3402,14 +3400,7 @@ window.NovaLessonChallenge=function(w,panel,api,stage,C,records){
   function end(){
     finished=true;check.hidden=true;hint.hidden=true;next.hidden=true;restart.hidden=false;
     const r=game.results(),passed=r.correct===tasks.length;
-    finish.hidden=false;finish.replaceChildren();
-    const score=d.createElement('div');score.innerHTML='<b>'+r.score+'</b>score';
-    const correct=d.createElement('div');correct.innerHTML='<b>'+r.correct+'/'+r.played+'</b>'+r.pct+'% correct';
-    const stars=d.createElement('div'),st=d.createElement('span');st.className='gw-stars';
-    for(let j=0;j<3;j++){const x=d.createElement('span');x.className=j<r.stars?'on':'off';x.textContent=j<r.stars?'★':'☆';st.append(x);}
-    stars.append(st);const label=d.createElement('div');label.textContent='stars at 50 / 70 / 90%';stars.append(label);
-    const streak=d.createElement('div');streak.innerHTML='<b>'+r.best+'</b>best streak';
-    finish.append(score,correct,stars,streak);
+    const nextFinish=nativeNode('results',r,[50,70,90]);finish.replaceWith(nextFinish);finish=nextFinish;finish.hidden=false;
     feedback.textContent=passed?'Challenge complete! Well played.':'Game over — try again to improve your result.';
     renderStats();placeAtTop();
     if(passed){if(!session.celebrated){session.celebrated=true;n.fx.burst(api.stage);showVictory(r);}n.events.emit('value',{engine:engineId,key:'lessonChallengeComplete',value:{rounds:tasks.length,correct:r.correct,score:r.score,stars:r.stars}});}
@@ -3422,6 +3413,7 @@ window.NovaLessonChallenge=function(w,panel,api,stage,C,records){
   check.onclick=()=>{
     if(locked||finished)return;
     const t=tasks[index],result=t.check(get?get():null);
+    const answerCard=question.querySelector('.a');answerCard.textContent=String(get?get():'?');answerCard.className='a '+(result[0]?'ok':'no');
     if(!result[0]){retries++;feedback.textContent='Try again. '+result[1];feedback.className='gw-pts minus';api.check(false,result[1],{});renderStats();return;}locked=true;const x=game.answer(true);
     feedback.textContent=(result[0]?'✓ ':'✕ ')+result[1]+(result[0]?' +'+game.points(true,x.streak)+' points':' −1 life');
     feedback.className='gw-pts'+(result[0]?'':' minus');
@@ -3451,7 +3443,7 @@ window.NovaLessonNativeSetup=function(w,def,C,originalSteps){
  if(kind==='gattegno'){const root=w.NOVA.svg.root;w.NOVA.svg.root=function(width,height,alt){return root.call(this,/^Gattegno chart/.test(alt||'')?640:width,height,alt);};}
  const rows=P.manifest.watch.filter(r=>r.id.startsWith('L'+(ci+1)+'.')&&r.source===src);component.configure(P.componentConfigs?.[P.concepts[ci]?.id]||{});component.configureExplore(P.exploreBindings?.[ci]||{});C.startMode='guided';C.lessonChallengeTitle=P.concepts[ci]?.challengeTitle||'Concept challenge';C.lessonBadgeTitle=P.concepts[ci]?.badgeTitle||'CHALLENGE CHAMPION';if('showWorth'in C)C.showWorth=false;if(kind==='gattegno')C.view='gattegno';
  const presets=P.manifest.explorePresets?.[ci]||[];if(presets.length){if(!C.presets)throw Error(src+': no native presets');for(const[i,p]of presets.entries()){if(typeof p==='object'&&Object.prototype.hasOwnProperty.call(p,'nativeConfig')){C.presets['lesson'+i]=p.nativeConfig;continue;}if(typeof p!=='string')throw Error(src+': preset needs nativeConfig');if(kind==='gattegno'){const a=p.split('.'),g={};[...a[0]].forEach((c,k)=>{if(+c)g[String(a[0].length-k-1)]=+c;});[...(a[1]||'')].forEach((c,k)=>{if(+c)g[String(-k-1)]=+c;});C.presets['lesson'+i]={label:p,view:'gattegno',g};}else if(kind==='numberExpander')C.presets['lesson'+i]={label:p,v:p};else if(kind==='placeValueChart')C.presets['lesson'+i]={label:p,value:p};else throw Error(src+': supply original nativeConfig for preset');}if('preset'in C)C.preset='lesson0';if('defaultPreset'in C)C.defaultPreset='lesson0';}
- function renderRecord(record,stage,animate=true){if(!record)throw Error(src+': missing lesson state');component.clock=w.NovaNative.clock;if(record.views){stage.replaceChildren();const pending=[];for(const data of record.views){const box=w.document.createElement('div');box.className='nova-native-view';stage.append(box);pending.push(renderRecord({...record,views:null,data,nativeData:null},box,false));}stage.querySelectorAll('.nv-dock').forEach((dock,i,a)=>{if(i<a.length-1)dock.remove();});return Promise.all(pending);}const r=clone(record),data=r.data||r.nativeData||{};if(kind==='placeValueChart'){data.o={...(data.o||component.nativeSteps[r.nativeIndex??r.nativeStep??0]?.o||{}),tray:false};r.data=data;}if(!animate){if(data.o){delete data.o.shift;delete data.o.intro;delete data.o.ex;delete data.o.br;}if(data.go){data.go=0;data.e=0;}}const result=component.render(r,stage,animate);if(kind==='gattegno'){const svg=stage.querySelector(':scope > svg.nv-svg');if(svg){const vb=svg.viewBox.baseVal;svg.setAttribute('viewBox','0 0 640 '+vb.height);}}if(kind==='placeValueChart')stage.querySelectorAll('svg > text[y="28"]').forEach(t=>t.style.display='none');if(role!=='learn')stage.querySelectorAll('.nv-cap').forEach(t=>t.style.display='none');return result;}
+ function renderRecord(record,stage,animate=true){if(!record)throw Error(src+': missing lesson state');component.clock=w.NovaNative.clock;if(record.views){stage.replaceChildren();const pending=[];for(const data of record.views){const box=w.document.createElement('div');box.className='nova-native-view';stage.append(box);pending.push(renderRecord({...record,views:null,data,nativeData:null},box,false));}const docks=[...stage.querySelectorAll('.nv-dock')],dock=docks.pop();docks.forEach(d=>d.remove());if(dock)stage.append(dock);return Promise.all(pending);}const r=clone(record),data=r.data||r.nativeData||{};if(kind==='placeValueChart'){data.o={...(data.o||component.nativeSteps[r.nativeIndex??r.nativeStep??0]?.o||{}),tray:false};r.data=data;}if(!animate){if(data.o){delete data.o.shift;delete data.o.intro;delete data.o.ex;delete data.o.br;}if(data.go){data.go=0;data.e=0;}}const result=component.render(r,stage,animate);if(kind==='gattegno'){const svg=stage.querySelector(':scope > svg.nv-svg');if(svg){const vb=svg.viewBox.baseVal;svg.setAttribute('viewBox','0 0 640 '+vb.height);}}if(kind==='placeValueChart')stage.querySelectorAll('svg > text[y="28"]').forEach(t=>t.style.display='none');if(role!=='learn')stage.querySelectorAll('.nv-cap').forEach(t=>t.style.display='none');return result;}
  w.NovaNative={renderRecord,originalSteps,baseRender:component.nativeRender,source:src,role,component,clock:null};if(rows.length){def.steps=rows.map(r=>({name:r.teaching,narration:r.teaching,prompt:r.teaching,dur:r.storedDur||2640}));def.render=(i,stage)=>renderRecord(rows[i]||rows[0],stage,true);}def.alt=P.concepts[ci]?.title||def.alt;def.staticAlt=P.concepts[ci]?.explain||def.staticAlt;def.exploreIntro=P.concepts[ci]?.exploreInstructions||def.exploreIntro;const tasks=P.manifest.challenge.filter(r=>r.id.startsWith('C'+(ci+1)+'.')&&r.source===src);if(tasks.length)def.challenge=(panel,api,stage)=>{component.cancel();return window.NovaLessonChallenge(w,panel,api,stage,C,tasks);};w.NOVA.lockStage=function(stage){stage.style.minHeight='';}; // Hosted Bob/Examples measure their actual planned records; Learn fits its active state.
 w.NOVA.bob.speech=false;w.NOVA.bob.muted=true;
  if(presets.length){const originalExplore=def.explore;def.explore=function(panel,stage,api){const result=originalExplore(panel,stage,api),allowed=new Set(presets.map((_,i)=>'lesson'+i));function filter(){for(const select of panel.querySelectorAll('select')){const options=[...select.options];if(!options.some(o=>allowed.has(o.value)))continue;for(const option of options){option.hidden=!allowed.has(option.value);option.disabled=!allowed.has(option.value);}}}filter();const observer=new w.MutationObserver(filter);observer.observe(panel,{childList:true,subtree:true});api.onCleanup?.(()=>observer.disconnect());return result;};}

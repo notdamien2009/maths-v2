@@ -58,3 +58,9 @@ Native step names are semantic renderer keys and cannot be rewritten as Bob head
 From `bank-v3-neon-chalk/integration`, run `npm install` and `npx playwright install chromium`. Run `node validate-lesson.cjs ../lessons/LESSON.html --browser`. This checks that the shell outside the three JSON insertion blocks is unchanged, original embedded source hashes match the registry, question states carry explicit visual expectations, and each planned record renders the expected values. Supply independent expectations from the written plan rather than generating expectations from the renderer output.
 
 For the bank regression, run `NOVA_SHARD=0 node qa/test-components.cjs`, then shards 1 and 2 (or run them in separate processes). Results are written to the current working directory. Set `NOVA_ONLY_IDS=F2-01,F1-07` for targeted rechecks. The checked-in QA evidence records this release's integration coverage; it does not certify arbitrary future lesson data or every possible parameter combination. New lessons must pass their own visual and mathematical checks. Existing fast-drag implementation and chalk styling are preserved.
+
+## Native F0-12 wrapper and mascot placement
+
+The template embeds `integration/nova-f0-12-game-wrapper.js`, extracted directly from the original F0-12 executable. Call its native `hud`, `qcard`, `pts` and `results` renderers; do not recreate the HUD or substitute a Retries cell for the original Lives display. Lesson questions still supply their own text, typed marking and neutral original visuals. Preserve correct auto-advance, wrong hold and the approved celebration.
+
+For multiple native chart views, retain one original mascot dock and append it directly to the native `.nova-stage` after the chart views. Its original right-alignment and responsive sizing depend on that direct parent. Do not leave the dock nested inside an individual view, move it left, or redraw/resize the mascot.
