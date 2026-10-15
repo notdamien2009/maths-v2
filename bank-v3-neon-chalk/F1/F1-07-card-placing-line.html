@@ -564,6 +564,42 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .nova-stage>svg.nv-svg.nv-vert{max-width:400px}
 @media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="number">
 <div class="nova-wrap">
@@ -1717,13 +1753,15 @@ function clone(o){return JSON.parse(JSON.stringify(o));}
 function strip(stage,items){var d=h('div',{class:'nl-strip'});items.forEach(function(it){d.appendChild(h('span',{class:'k',text:it[0]}));d.appendChild(NOVA.neonTile(String(it[1]).replace(/ /g,'\u00A0'),{role:it[2]||'result'}));});stage.appendChild(d);return d;}
 function bigMarkers(sv){[].forEach.call(sv.querySelectorAll('marker'),function(m){m.setAttribute('markerWidth',8);m.setAttribute('markerHeight',8);});}
 
-var C=NOVA_F1_07_CONFIG,P=C.presets;
+var C=window.NovaV2Integration.configuration(NOVA_F1_07_CONFIG),P=C.presets;
 /* a card: neon box with a chalk value, a neon stem down to its spot on the line; staggered rows so cards never overlap */
 function card(sv,ax,v,row,role,label){var x=ax.sx(v),y=ax.y0-46-row*46,w=Math.max(46,String(label).length*10+20);NOVA.neonLine(sv,x,y+15,x,ax.y0-5,{role:role,width:2,dash:row?'4 4':null});NOVA.neonBox(sv,x-w/2,y-15,w,30,{role:role,r:9});NOVA.chalkText(sv,x,y+6,label,{role:role,size:17,anchor:'middle'});NOVA.neonRing(sv,x,ax.y0,{role:role,r:6,pulse:false});}
-function draw(stage,st,placed,o){o=o||{};var sv=S.root(420,210,'Number line from '+fmt(st.min)+' to '+fmt(st.max)+' with cards '+placed.map(fmt).join(', ')+'.'),ax=S.axes(sv,{x:30,y:178,w:360,h:0,xmin:st.min,xmax:st.max,ymin:0,ymax:0,ticks:st.labelStep,numberLine:true});
+function draw(stage,st,placed,o){
+if(window.NovaLessonComponent?.active){[stage,st,placed,o]=window.NovaLessonComponent.args("draw",arguments);}
+o=o||{};var sv=S.root(420,210,'Number line from '+fmt(st.min)+' to '+fmt(st.max)+' with cards '+placed.map((v,i)=>st.labels?.[i]??fmt(v)).join(', ')+'.'),ax=S.axes(sv,{x:30,y:178,w:360,h:0,xmin:st.min,xmax:st.max,ymin:0,ymax:0,ticks:st.labelStep,numberLine:true});
   var sorted=placed.map(function(v,i){return {v:v,i:i};}).sort(function(a,b){return a.v-b.v;}),lastX=-1e9,row=0,rows={};
   sorted.forEach(function(c){var x=ax.sx(c.v);row=(x-lastX<56)?(row+1)%3:0;lastX=x;rows[c.i]=row;});
-  placed.forEach(function(v,i){card(sv,ax,v,rows[i],i===placed.length-1&&o.hot?'focus':'result',fmt(v));});
+  placed.forEach(function(v,i){card(sv,ax,v,rows[i],i===placed.length-1&&o.hot?'focus':'result',st.labels?.[i]??fmt(v));});
   stage.appendChild(sv);return {sv:sv,ax:ax};}
 function ordered(a){return a.slice().sort(function(x,y){return x-y;});}
 var M=P.mixed,D=P.decimals;
@@ -1739,15 +1777,15 @@ var def={id:'F1-07',title:'Card-placing line',config:C,steps:steps,render:render
  alt:'Card-placing line: neon number cards with stems pointing to their places on a number line, read left to right in order.',
  staticAlt:'Cards −3, 2, −0.5, 4, 0 placed on −5 to 5, in order −3, −0.5, 0, 2, 4; decimals 0.05, 0.3, 0.5, 0.75; estimates 7, 25, 68, 90 on 0 to 100.',
  exploreIntro:'Explore: choose a set of cards. Drag the ring to where you think the next card goes, then press Place. You will see how close you were.',
- explore:function(panel,stage,api){var st=clone(P[C.preset]),placed=[],guess=st.min,err=null;
-   function paint(){stage.innerHTML='';var nx=st.cards[placed.length];NOVA.cap(stage,'Explore · '+st.label,placed.length+'/'+st.cards.length+' placed');var r=draw(stage,st,placed,{hot:true});
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>clone(...a),[P[C.preset]]):(clone(P[C.preset]))),placed=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("placed",()=>([])):([])),guess=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("guess",()=>(st.min)):(st.min)),err=null;
+   window.NovaLessonComponent?.applyExploreModels();function paint(){stage.innerHTML='';var nx=st.cards[placed.length];NOVA.cap(stage,'Explore · '+st.label,placed.length+'/'+st.cards.length+' placed');var r=draw(stage,st,placed,{hot:true});
      if(nx!=null){var span=st.max-st.min;U.dragSnap(r.sv,r.ax,{y:r.ax.y0,value:guess,min:st.min,max:st.max,step:span/100,role:'focus',label:'Place card '+fmt(nx),hideValue:true,engine:'F1-07',onChange:function(x){guess=x;}});}
      strip(stage,[['next card',nx!=null?fmt(nx):'all placed','focus']].concat(err!=null?[['off by',fmt(+err.toFixed(3)),err<=(st.max-st.min)/20?'result':'error']]:[]).concat(nx==null?[['order',ordered(st.cards).map(fmt).join(', '),'result']]:[]));NOVA.scene.helperStrip(stage,'explain',nx!=null?'Place\u00A0'+fmt(nx):'Done');}
-   var pre=h('select',{class:'nova-input','aria-label':'Card set'});Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});pre.value=C.preset;
-   pre.onchange=function(){st=clone(P[pre.value]);placed=[];guess=st.min;err=null;paint();};
-   panel.appendChild(h('label',{class:'pr-row'},['Cards ',pre]));
-   panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn primary',text:'Place',onclick:function(){var nx=st.cards[placed.length];if(nx==null)return;err=Math.abs(guess-nx);placed.push(nx);NOVA.events.emit('value',{engine:'F1-07',control:'place',value:{card:nx,guess:guess,off:err}});paint();}}),h('button',{class:'nova-btn',text:'Start again',onclick:function(){placed=[];err=null;guess=st.min;paint();}})]));
-   paint();C._explore={get:function(){return placed.slice();}};},
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Card set'});window.NovaLessonComponent?.applyExploreModels();Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=C.preset;
+   window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){st=clone(P[pre.value]);placed=[];guess=st.min;err=null;paint();};
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Cards ',pre]));
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn primary',text:'Place',onclick:function(){var nx=st.cards[placed.length];if(nx==null)return;err=Math.abs(guess-nx);placed.push(nx);NOVA.events.emit('value',{engine:'F1-07',control:'place',value:{card:nx,guess:guess,off:err}});paint();}}),h('button',{class:'nova-btn',text:'Start again',onclick:function(){placed=[];err=null;guess=st.min;paint();}})]));
+   window.NovaLessonComponent?.applyExploreModels();paint();window.NovaLessonComponent?.applyExploreModels();C._explore={get:function(){return placed.slice();}};},
  challenge:function(panel,api,stage){var g=0.5;
    var tasks=[
     {q:'Drag the ring to where 0.6 goes, then press Check.',build:function(ctl){return function(){return g;};},check:function(x){var ok=Math.abs(x-0.6)<0.026;return [ok,ok?'Yes: 0.6 is six tenths along.':Math.abs(x-0.06)<0.03?'That is 0.06. 0.6 is six TENTHS.':'Count the tenth lines from 0: six of them.'];},hint:'Each line is one tenth.',solve:function(){g=0.6;paintC(0);}},
@@ -1760,6 +1798,9 @@ var def={id:'F1-07',title:'Card-placing line',config:C,steps:steps,render:render
      NOVA.scene.helperStrip(stage,'think',['0.6','Order','Estimate'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F1-07',def,{models:{},tables:{"steps":()=>steps},draws:{"draw":["stage","st","placed","o"]},exploreFields:{"st":{"kind":"factory","factory":"clone","argCount":1},"placed":{"kind":"value","factory":null,"argCount":null},"guess":{"kind":"value","factory":null,"argCount":null}}});
 NOVA.bankMount({id:'F1-07',num:'F1·07',title:'Card-placing line',def:def,linked:['F1-01','F1-02','F1-05','F0-04','F0-12'],
  spec:{purpose:'Place number cards on a number line to order and estimate: integers, directed numbers, decimals and large numbers. Each card is a neon box with a chalk value and a stem down to its spot; read left to right for the order.',
   params:'min, max, labelStep (a line at every labelled step), cards (list). Cards stack in up to three rows so they never overlap. Core: NOVA.svg.axes({numberLine}), NOVA.neonBox / neonLine / neonRing / chalkText, NOVA.ui.dragSnap, neonTile. Year groups: KS3 Years 7–9 (12–15), with GCSE extension.',

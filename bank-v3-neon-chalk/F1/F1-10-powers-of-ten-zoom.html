@@ -564,6 +564,42 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .nova-stage>svg.nv-svg.nv-vert{max-width:400px}
 @media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="number">
 <div class="nova-wrap">
@@ -1717,7 +1753,7 @@ function clone(o){return JSON.parse(JSON.stringify(o));}
 function strip(stage,items){var d=h('div',{class:'nl-strip'});items.forEach(function(it){d.appendChild(h('span',{class:'k',text:it[0]}));d.appendChild(NOVA.neonTile(String(it[1]).replace(/ /g,'\u00A0'),{role:it[2]||'result'}));});stage.appendChild(d);return d;}
 function bigMarkers(sv){[].forEach.call(sv.querySelectorAll('marker'),function(m){m.setAttribute('markerWidth',8);m.setAttribute('markerHeight',8);});}
 
-var C=NOVA_F1_10_CONFIG,P=C.presets,SUP={'0':'\u2070','1':'\u00B9','2':'\u00B2','3':'\u00B3','4':'\u2074','5':'\u2075','6':'\u2076','7':'\u2077','8':'\u2078','9':'\u2079','-':'\u207B'};
+var C=window.NovaV2Integration.configuration(NOVA_F1_10_CONFIG),P=C.presets,SUP={'0':'\u2070','1':'\u00B9','2':'\u00B2','3':'\u00B3','4':'\u2074','5':'\u2075','6':'\u2076','7':'\u2077','8':'\u2078','9':'\u2079','-':'\u207B'};
 function sup(e){return String(e).split('').map(function(c){return SUP[c];}).join('');}
 function sf(m,e){return fmt(m)+' \u00D7 10'+sup(e);}
 function big(m,e){var d=String(m).replace('.',''),k=(String(m).split('.')[1]||'').length,z=e-k,t=d+new Array(z+1).join('0');return t.replace(/\B(?=(\d{3})+(?!\d))/g,'\u2009');}
@@ -1725,7 +1761,9 @@ function ord(m,e){if(e>=12)return big(m,e);var v=m*Math.pow(10,e);if(e>=0&&e<12)
 /* written power in SVG: chalk "10" with a small raised exponent (tspan) */
 function pow10(sv,x,y,e,o){var t=NOVA.chalkText(sv,x,y,'10',Object.assign({size:15,anchor:'middle'},o||{}));var s=S.el('tspan',{dy:-7,'font-size':10},t);s.textContent=String(e).replace('-','\u2212');return t;}
 /* top: powers-of-ten line (equal steps per power, a neon line at every power); bottom: zoom of one decade, line at every 1 × 10^e; neon funnel joins them */
-function draw(stage,st,o){o=o||{};if(o.zoom==null)o.zoom=!st.other;var sv=S.root(440,(o.zoom||o.neutral)?262:150,sf(st.m,st.e)+' on a powers of ten line.'),x0=34,w=372,yT=70,yB=210;
+function draw(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("draw",arguments);}
+o=o||{};if(o.zoom==null)o.zoom=!st.other;var sv=S.root(440,(o.zoom||o.neutral)?262:150,sf(st.m,st.e)+' on a powers of ten line.'),x0=34,w=372,yT=70,yB=210;
   function sx(e){return x0+(e-st.lo)/(st.hi-st.lo)*w;}
   NOVA.numberLine(sv,{x:x0,y:yT,w:w,min:st.lo,max:st.hi,major:1,label:function(e){return {base:'10',sup:e};}});
   var L=st.e+Math.log10(st.m);
@@ -1751,13 +1789,13 @@ var def={id:'F1-10',title:'Powers-of-ten zoom',config:C,steps:steps,render:rende
  alt:'Powers-of-ten zoom: a neon line with a mark at every power of ten, a number placed between two powers, and a zoomed line from 1 to 10 showing the number in standard form.',
  staticAlt:'320 000 is between 10⁵ and 10⁶, zoom shows 3.2 × 10⁵; 3.2 × 10⁵ is bigger than 8 × 10⁴; 0.0045 = 4.5 × 10⁻³; 6.02 × 10²³.',
  exploreIntro:'Explore: set the number part (1 to 9.9) and the power. Watch where it sits on the powers line and in the zoom.',
- explore:function(panel,stage,api){var st=clone(P[C.preset]);
-   function paint(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+sf(st.m,st.e),ord(st.m,st.e));draw(stage,st,{zoom:true,other:!!st.other});strip(stage,[['standard form',sf(st.m,st.e),'result'],['ordinary',ord(st.m,st.e),'focus']]);NOVA.scene.helperStrip(stage,'explain',sf(st.m,st.e).replace(/ /g,'\u00A0'));NOVA.events.emit('value',{engine:'F1-10',control:'number',value:st.m*Math.pow(10,st.e)});}
-   var pre=h('select',{class:'nova-input','aria-label':'Number'});Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});pre.value=C.preset;
-   var box=h('div');function build(){box.innerHTML='';box.appendChild(U.slider({label:'Number part',min:1,max:9.9,step:0.1,value:st.m,engine:'F1-10',onChange:function(x){st.m=+x;paint();}}));
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>clone(...a),[P[C.preset]]):(clone(P[C.preset])));
+   window.NovaLessonComponent?.applyExploreModels();function paint(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+sf(st.m,st.e),ord(st.m,st.e));draw(stage,st,{zoom:true,other:!!st.other});strip(stage,[['standard form',sf(st.m,st.e),'result'],['ordinary',ord(st.m,st.e),'focus']]);NOVA.scene.helperStrip(stage,'explain',sf(st.m,st.e).replace(/ /g,'\u00A0'));NOVA.events.emit('value',{engine:'F1-10',control:'number',value:st.m*Math.pow(10,st.e)});}
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Number'});window.NovaLessonComponent?.applyExploreModels();Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=C.preset;
+   window.NovaLessonComponent?.applyExploreModels();var box=h('div');window.NovaLessonComponent?.applyExploreModels();function build(){box.innerHTML='';box.appendChild(U.slider({label:'Number part',min:1,max:9.9,step:0.1,value:st.m,engine:'F1-10',onChange:function(x){st.m=+x;paint();}}));
      box.appendChild(U.stepper({label:'Power of ten',min:st.lo,max:st.hi-1,step:1,value:st.e,engine:'F1-10',onChange:function(x){st.e=+x;paint();}}));}
-   pre.onchange=function(){st=clone(P[pre.value]);build();paint();};
-   panel.appendChild(h('label',{class:'pr-row'},['Start ',pre]));panel.appendChild(box);build();paint();C._explore={get:function(){return st;}};},
+   window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){st=clone(P[pre.value]);build();paint();};
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Start ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(box);window.NovaLessonComponent?.applyExploreModels();build();window.NovaLessonComponent?.applyExploreModels();paint();window.NovaLessonComponent?.applyExploreModels();C._explore={get:function(){return st;}};},
  challenge:function(panel,api,stage){
    var tasks=[
     {q:'Write 47 000 in standard form.',build:NOVA.choiceTask(['47 \u00D7 10\u00B3','4.7 \u00D7 10\u2074','4.7 \u00D7 10\u00B3','0.47 \u00D7 10\u2075'],'F1-10'),check:function(x){var ok=x==='4.7 \u00D7 10\u2074';return [ok,ok?'Yes: between 10⁴ and 10⁵, 4.7 lots of 10⁴.':x==='47 \u00D7 10\u00B3'?'Equal value, but the first part must be from 1 up to 10.':x==='4.7 \u00D7 10\u00B3'?'That is 4700. Count the places: 10⁴.':x?'The first part must be at least 1.':'Pick one first.'];},hint:'47 000 is between 10 000 and 100 000.',solve:function(c){c._G.set('4.7 \u00D7 10\u2074');}},
@@ -1770,6 +1808,9 @@ var def={id:'F1-10',title:'Powers-of-ten zoom',config:C,steps:steps,render:rende
      NOVA.scene.helperStrip(stage,'think',['47\u2009000','Compare','0.0008'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F1-10',def,{models:{},tables:{"steps":()=>steps},draws:{"draw":["stage","st","o"]},exploreFields:{"st":{"kind":"factory","factory":"clone","argCount":1}}});
 NOVA.bankMount({id:'F1-10',num:'F1·10',title:'Powers-of-ten zoom',def:def,linked:['F1-02','F1-07','F1-08','F0-05'],
  spec:{purpose:'Standard form on a powers-of-ten line: each mark is ten times the last, a number is placed between two powers, and a zoom of that decade (1 to 10 lots of the lower power) reads off the number part. Compares by power first, then number part; covers negative powers.',
   params:'m (1 to 9.99), e (power), lo/hi (range of powers shown), other (second number to compare). Exponents are drawn small and raised (SVG tspan; Unicode superscripts in chips). Core: neonLine, neonPath (dashed funnel), neonRing, chalkText, pill, neonTile, slider, stepper. Year groups: Y8 (12–13) Y8-003; GCSE extension.',

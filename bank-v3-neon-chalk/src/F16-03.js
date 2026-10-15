@@ -1,13 +1,47 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
 /* F16-03 · Line Graph — teaching-specific scene on the unchanged, audited NOVA shared runtime. */
 (function(){'use strict';
 const H=NOVA.h, S=NOVA.svg, E=S.el, MOT=NOVA.motion, ID='F16-03';
-const CFG=window.NOVA_F16_03_CONFIG={
+const CFG=window.NovaV2Integration.configuration(window.NOVA_F16_03_CONFIG={
  preset:'temperature',events:['value','step','mode','hintUsed','correct'],
  presets:{
   temperature:{label:'Y7-072 · Line graphs and trends',title:'Temperature across the day',unit:'°C',measure:'Temperature (°C)',timeUnit:'hour',times:[8,10,12,14,16,18],values:[6,10,15,14,12,8],max:18,crop:6,step:3,context:'An outdoor sensor recorded the temperature every two hours.',trend:'Temperature climbs until midday, then falls.'},
   misleading:{label:'Y7-071 · Misleading graphs',title:'Daily library visits',unit:'visits',measure:'Number of visits',timeUnit:'day',times:[1,2,3,4,5,6],labels:['Mon','Tue','Wed','Thu','Fri','Sat'],values:[11,12,13,12,14,15],max:18,crop:10,step:3,context:'The library counted visitors at equally spaced daily observations.',trend:'Visits generally rise, with one dip on Thursday.'}
  },_explore:null,_challenge:null
-};
+});
 const STEPS=[
  {name:'Read the source observations',pose:'explain',narration:'We begin with measurements taken at equal time intervals. Each pair records a time and a measured value.',prompt:'Which quantity changes over time?'},
  {name:'Read both axes and the units',pose:'ruler',narration:'Time runs from left to right, with equal spacing. The measured quantity uses equally spaced values on the vertical axis.',prompt:'Which axis carries time, and which carries the measurement?'},
@@ -31,7 +65,9 @@ function layout(){return innerWidth<=540?
 const timeLabel=(d,i)=>d.labels?d.labels[i]:d.times[i]+':00';
 const fmt=(d,v)=>v+' '+d.unit;
 function stepY(d,baseline){return baseline===0?d.step:2;}
-function scene(stage,options){options=options||{};const data=options.data||current(),state=options.state||pointState();const a=layout();stage.innerHTML='';
+function scene(stage,options){
+if(window.NovaLessonComponent?.active){[stage,options]=window.NovaLessonComponent.args("scene",arguments);}
+options=options||{};const data=options.data||current(),state=options.state||pointState();const a=layout();stage.innerHTML='';
  const phase=options.phase===undefined?8:options.phase;
  const baseline=state.baseline||0,drawCount=options.interactive?data.times.length:(phase<=1?0:phase===6||phase>=7?6:phase-1);
  const sv=S.root(a.W,a.H,'Line graph for '+data.title+'. Time horizontal; '+data.measure+' vertical. Source values: '+state.values.join(', ')+'. Graph minimum '+baseline+'.');
@@ -128,25 +164,25 @@ function watch(index,stage){const d=current(),s=pointState();let i=Math.max(0,Ma
   'A graph can zoom into a range without changing its measurements. Check the axis labels.'
  ];scene(stage,{data:d,state:s,phase:i,pose:STEPS[i].pose,speech:narrations[i],animate:i>=2&&i<=6});}
 function choose(field,options){const s=H('select',{class:'nova-input','aria-label':field});for(const [value,text] of options)s.appendChild(H('option',{value:String(value),text}));return s;}
-function explore(panel,stage){exploreState=pointState();const preset=choose('Lesson context',Object.entries(CFG.presets).map(([k,p])=>[k,p.label]));preset.value=CFG.preset;
- const crop=choose('Vertical axis view',[[0,'Full scale · Start at zero'],[current().crop,'Zoom view · Start at '+current().crop]]);
- const pick=choose('Choose a reading',current().times.map((v,i)=>[i,timeLabel(current(),i)]));pick.value='2';
- const value=H('input',{class:'nova-input',type:'number',min:0,max:current().max,step:1,'aria-label':'Set selected measured value'});
- const status=H('p',{class:'f16l-status',role:'status'});
- const meta=H('p',{class:'f16l-hint',text:'Each point belongs to one fixed time. Drag vertically to a whole-number measurement. Use arrow keys or enter an exact value. Cropping the axis is a view change; the observed data stays the same.'});
- function updateControls(){pick.innerHTML='';current().times.forEach((t,i)=>pick.appendChild(H('option',{value:i,text:timeLabel(current(),i)})));pick.value=String(exploreState.selected);value.max=String(current().max);value.min=String(exploreState.baseline);value.value=String(exploreState.values[exploreState.selected]);crop.innerHTML='';[[0,'Full scale · Start at zero'],[current().crop,'Zoom view · Start at '+current().crop]].forEach(([v,text])=>crop.appendChild(H('option',{value:v,text})));crop.value=String(exploreState.baseline);}
- function paint(focus){scene(stage,{data:current(),state:exploreState,phase:8,interactive:true,pose:exploreState.baseline?'think':'ruler',speech:exploreState.baseline?'The axis has been zoomed, but each measurement remains unchanged. Check the displayed minimum.':'Drag a reading straight up or down. Use equal unit spacing and compare the changing slopes.',onUpdate:paint});
+function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();exploreState=pointState();window.NovaLessonComponent?.applyExploreModels();const preset=choose('Lesson context',Object.entries(CFG.presets).map(([k,p])=>[k,p.label]));window.NovaLessonComponent?.applyExploreModels();preset.value=CFG.preset;
+ window.NovaLessonComponent?.applyExploreModels();const crop=choose('Vertical axis view',[[0,'Full scale · Start at zero'],[current().crop,'Zoom view · Start at '+current().crop]]);
+ window.NovaLessonComponent?.applyExploreModels();const pick=choose('Choose a reading',current().times.map((v,i)=>[i,timeLabel(current(),i)]));window.NovaLessonComponent?.applyExploreModels();pick.value='2';
+ window.NovaLessonComponent?.applyExploreModels();const value=H('input',{class:'nova-input',type:'number',min:0,max:current().max,step:1,'aria-label':'Set selected measured value'});
+ window.NovaLessonComponent?.applyExploreModels();const status=H('p',{class:'f16l-status',role:'status'});
+ window.NovaLessonComponent?.applyExploreModels();const meta=H('p',{class:'f16l-hint',text:'Each point belongs to one fixed time. Drag vertically to a whole-number measurement. Use arrow keys or enter an exact value. Cropping the axis is a view change; the observed data stays the same.'});
+ window.NovaLessonComponent?.applyExploreModels();function updateControls(){pick.innerHTML='';current().times.forEach((t,i)=>pick.appendChild(H('option',{value:i,text:timeLabel(current(),i)})));pick.value=String(exploreState.selected);value.max=String(current().max);value.min=String(exploreState.baseline);value.value=String(exploreState.values[exploreState.selected]);crop.innerHTML='';[[0,'Full scale · Start at zero'],[current().crop,'Zoom view · Start at '+current().crop]].forEach(([v,text])=>crop.appendChild(H('option',{value:v,text})));crop.value=String(exploreState.baseline);}
+ window.NovaLessonComponent?.applyExploreModels();function paint(focus){scene(stage,{data:current(),state:exploreState,phase:8,interactive:true,pose:exploreState.baseline?'think':'ruler',speech:exploreState.baseline?'The axis has been zoomed, but each measurement remains unchanged. Check the displayed minimum.':'Drag a reading straight up or down. Use equal unit spacing and compare the changing slopes.',onUpdate:paint});
   const d=current(),ys=exploreState.values,maximum=Math.max(...ys),minimum=Math.min(...ys);
   status.textContent='Readings: '+ys.join(' · ')+'  |  Highest: '+maximum+'  |  Lowest: '+minimum+'  |  Axis minimum: '+exploreState.baseline;
   pick.value=String(exploreState.selected);if(document.activeElement!==value)value.value=String(ys[exploreState.selected]);
   if(focus!==undefined)stage.querySelector('[data-point-handle="'+focus+'"]')?.focus({preventScroll:true});
  }
- preset.onchange=()=>{CFG.preset=preset.value;exploreState=pointState();updateControls();emit('preset',CFG.preset);paint()};
- crop.onchange=()=>{const b=+crop.value;const low=Math.min(...exploreState.values);if(low<b){status.textContent='Some measurements fall below the requested zoom. Restore those values or use the full scale.';crop.value=String(exploreState.baseline);return;}exploreState.baseline=b;emit('baseline',b);updateControls();paint()};
- pick.onchange=()=>{exploreState.selected=+pick.value;paint(exploreState.selected)};
- function setVal(n){n=Number(n);if(!Number.isInteger(n)||n<exploreState.baseline||n>current().max){status.textContent='Choose a whole-number reading between '+exploreState.baseline+' and '+current().max+'.';return;}
+ window.NovaLessonComponent?.applyExploreModels();preset.onchange=()=>{CFG.preset=preset.value;exploreState=pointState();updateControls();emit('preset',CFG.preset);paint()};
+ window.NovaLessonComponent?.applyExploreModels();crop.onchange=()=>{const b=+crop.value;const low=Math.min(...exploreState.values);if(low<b){status.textContent='Some measurements fall below the requested zoom. Restore those values or use the full scale.';crop.value=String(exploreState.baseline);return;}exploreState.baseline=b;emit('baseline',b);updateControls();paint()};
+ window.NovaLessonComponent?.applyExploreModels();pick.onchange=()=>{exploreState.selected=+pick.value;paint(exploreState.selected)};
+ window.NovaLessonComponent?.applyExploreModels();function setVal(n){n=Number(n);if(!Number.isInteger(n)||n<exploreState.baseline||n>current().max){status.textContent='Choose a whole-number reading between '+exploreState.baseline+' and '+current().max+'.';return;}
   const i=exploreState.selected;exploreState.values[i]=n;emit('point:'+i,{time:current().times[i],value:n});paint(i);}
- const controls=H('div',{class:'f16l-controls'},[
+ window.NovaLessonComponent?.applyExploreModels();const controls=H('div',{class:'f16l-controls'},[
   H('label',{class:'f16l-label'},['Lesson context',preset]),H('label',{class:'f16l-label'},['Vertical axis view',crop]),
   H('label',{class:'f16l-label'},['Selected observation',pick]),H('label',{class:'f16l-label'},['Measurement',value]),
   H('button',{class:'nova-btn primary',text:'Set reading',onclick:()=>setVal(value.value)}),
@@ -154,8 +190,8 @@ function explore(panel,stage){exploreState=pointState();const preset=choose('Les
   H('button',{class:'nova-btn',text:'Increase +1',onclick:()=>setVal(exploreState.values[exploreState.selected]+1)}),
   H('button',{class:'nova-btn ghost',text:'Reset graph',onclick:()=>{exploreState=pointState();updateControls();paint()}})
  ]);
- panel.append(meta,controls,status);updateControls();paint();
- CFG._explore={get:()=>({values:exploreState.values.slice(),baseline:exploreState.baseline,selected:exploreState.selected}),setPreset:k=>{preset.value=k;preset.onchange()},setReading:(i,n)=>{exploreState.selected=i;setVal(n)},setCrop:v=>{crop.value=String(v);crop.onchange()}};
+ window.NovaLessonComponent?.applyExploreModels();panel.append(meta,controls,status);window.NovaLessonComponent?.applyExploreModels();updateControls();window.NovaLessonComponent?.applyExploreModels();paint();
+ window.NovaLessonComponent?.applyExploreModels();CFG._explore={get:()=>({values:exploreState.values.slice(),baseline:exploreState.baseline,selected:exploreState.selected}),setPreset:k=>{preset.value=k;preset.onchange()},setReading:(i,n)=>{exploreState.selected=i;setVal(n)},setCrop:v=>{crop.value=String(v);crop.onchange()}};
 }
 function challenge(panel,api,stage){const d=current();challengeState=pointState();const badIdx=2,real=d.values[badIdx];challengeState.values[badIdx]=Math.max(0,real-3);
  let currentIndex=0;const pick=choose('Choose plotted time',d.times.map((t,i)=>[i,timeLabel(d,i)]));pick.value=String(badIdx);
@@ -184,6 +220,9 @@ const DEF={id:ID,title:'Line graph',config:CFG,steps:STEPS,render:watch,
  alt:'Neon continuous line graph with six measured points, evenly spaced time axis and labelled vertical measurement scale.',
  staticAlt:'A line graph plots ordered readings against time and joins observations in order. An axis crop changes visual emphasis, not measured values.',
  exploreIntro:'Drag measured points vertically to the correct values. Compare trends and a clearly labelled zoomed axis.',explore,challenge};
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(ID,DEF,{models:{},tables:{"STEPS":()=>STEPS},draws:{"scene":["stage","options"]},exploreFields:{}});
 NOVA.bankMount({id:ID,num:'F16·03',title:'Line graph',def:DEF,
  years:'Year 7 KS3, with Year 8–9/GCSE trend and critical graph-reading extensions.',
  linked:['F0-02','F0-03','F0-04','F16-02','F16-10','F16-14'],

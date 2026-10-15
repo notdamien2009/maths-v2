@@ -1,3 +1,38 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+
 /* F10-01 Premium Edition | Four-quadrant coordinate grid.
  * Exact current F0 core only: NOVA.svg.axes, NOVA.neonPlot, neonLine/Path/Ring/Box,
  * chalkText, motion, svgDrag, events, NOVA.scene.helperStrip, NOVA.bankMount.
@@ -15,7 +50,7 @@ const F101_CONFIG={
   challenge:{targets:[[-3,2],[4,-2],[-2,-4]],maxAttemptsPerTask:0,gridTolerance:0}
 };
 (function(){'use strict';
-const N=window.NOVA,H=N.h,E=N.svg.el,C=F101_CONFIG,ID=C.id;
+const N=window.NOVA,H=N.h,E=N.svg.el,C=window.NovaV2Integration.configuration(F101_CONFIG),ID=C.id;
 const V={W:508,H:510,x:63,y:64,w:382,h:382,min:-5,max:5};
 const ST={preset:C.preset,selected:'A',points:clone(C.presets[C.preset].points),challengePoint:{x:0,y:0},task:0,step:0,wrongCount:0,correctCount:0,peerPose:'think'};
 const modeSpeech={
@@ -144,6 +179,8 @@ function aside(scene,preset,opts,chosen){
   scene.appendChild(right);
 }
 function renderBoard(stage,spec){
+if(window.NovaLessonComponent?.active){[stage,spec]=window.NovaLessonComponent.args("renderBoard",arguments);}
+
   spec=viewState(spec);stage.innerHTML='';
   const ps=spec.challenge?null:config(),live=spec.challenge?[{id:'T',...ST.challengePoint}]:ST.points.slice(0,spec.show);
   const scene=H('div',{class:'f101-scene'}),board=H('div',{class:'f101-board'});
@@ -188,31 +225,31 @@ function render(i,stage){ST.step=i;const s=steps[i];let active= i<2?'A':i===2?'A
   if(i===6&&!N.reducedMotion()){N.motion.flash(svg,mapX(3),mapY(2),'result',34);}
 }
 function uiBtn(txt,fn,kind){return H('button',{class:'nova-btn '+(kind||''),text:txt,onclick:fn});}
-function tools(panel,stage){panel.innerHTML='';panel.classList.add('f101-controls');
-  const select=H('select',{class:'f101-select','aria-label':'Choose the lesson preset'});
-  Object.entries(C.presets).forEach(([k,p])=>select.appendChild(H('option',{value:k,text:p.label})));
-  select.value=ST.preset;
-  select.onchange=()=>{ST.preset=select.value;ST.points=clone(config().points);ST.selected='A';emit('preset',ST.preset);repaint();};
-  const presetWrap=H('div',{},[H('label',{text:'Choose a lesson view'}),select]);panel.appendChild(presetWrap);
-  const pointSel=H('select',{class:'f101-select','aria-label':'Select a point to move'});
-  ST.points.forEach(p=>pointSel.appendChild(H('option',{value:p.id,text:'Point '+p.id+' · '+ordered(p)})));
-  pointSel.value=ST.selected;pointSel.onchange=()=>{ST.selected=pointSel.value;emit('selected',ST.selected);repaint();};
-  panel.appendChild(H('div',{},[H('label',{text:'Pick a point · drag or use the arrow keys'}),pointSel]));
-  const controls=H('div',{class:'f101-edit'});
-  function setAxis(axis,delta){let q=ST.points.find(p=>p.id===ST.selected);if(!q)return;q[axis]=safe(q[axis]+delta);emit('point',{id:q.id,x:q.x,y:q.y,how:'button'});repaint();}
-  function counter(axis){const c=H('div',{class:'f101-counter'}),lbl=H('label',{text:axis==='x'?'x · across':'y · up/down'}),row=H('div',{}),v=H('b',{text:'0'});
+function tools(panel,stage){window.NovaLessonComponent?.applyExploreModels();panel.innerHTML='';window.NovaLessonComponent?.applyExploreModels();panel.classList.add('f101-controls');
+  window.NovaLessonComponent?.applyExploreModels();const select=H('select',{class:'f101-select','aria-label':'Choose the lesson preset'});
+  window.NovaLessonComponent?.applyExploreModels();Object.entries(C.presets).forEach(([k,p])=>select.appendChild(H('option',{value:k,text:p.label})));
+  window.NovaLessonComponent?.applyExploreModels();select.value=ST.preset;
+  window.NovaLessonComponent?.applyExploreModels();select.onchange=()=>{ST.preset=select.value;ST.points=clone(config().points);ST.selected='A';emit('preset',ST.preset);repaint();};
+  window.NovaLessonComponent?.applyExploreModels();const presetWrap=H('div',{},[H('label',{text:'Choose a lesson view'}),select]);window.NovaLessonComponent?.applyExploreModels();panel.appendChild(presetWrap);
+  window.NovaLessonComponent?.applyExploreModels();const pointSel=H('select',{class:'f101-select','aria-label':'Select a point to move'});
+  window.NovaLessonComponent?.applyExploreModels();ST.points.forEach(p=>pointSel.appendChild(H('option',{value:p.id,text:'Point '+p.id+' · '+ordered(p)})));
+  window.NovaLessonComponent?.applyExploreModels();pointSel.value=ST.selected;window.NovaLessonComponent?.applyExploreModels();pointSel.onchange=()=>{ST.selected=pointSel.value;emit('selected',ST.selected);repaint();};
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(H('div',{},[H('label',{text:'Pick a point · drag or use the arrow keys'}),pointSel]));
+  window.NovaLessonComponent?.applyExploreModels();const controls=H('div',{class:'f101-edit'});
+  window.NovaLessonComponent?.applyExploreModels();function setAxis(axis,delta){let q=ST.points.find(p=>p.id===ST.selected);if(!q)return;q[axis]=safe(q[axis]+delta);emit('point',{id:q.id,x:q.x,y:q.y,how:'button'});repaint();}
+  window.NovaLessonComponent?.applyExploreModels();function counter(axis){const c=H('div',{class:'f101-counter'}),lbl=H('label',{text:axis==='x'?'x · across':'y · up/down'}),row=H('div',{}),v=H('b',{text:'0'});
     row.append(uiBtn('−',()=>setAxis(axis,-1),'ghost'),v,uiBtn('+',()=>setAxis(axis,1),'ghost'));c.append(lbl,row);controls.appendChild(c);return v;}
-  const xval=counter('x'),yval=counter('y');panel.appendChild(controls);
-  const actions=H('div',{class:'f101-toolbar'});
-  const moveOrigin=uiBtn('Back to origin',()=>{const p=ST.points.find(p=>p.id===ST.selected);if(p){p.x=0;p.y=0;emit('point',{id:p.id,x:0,y:0,how:'reset'});repaint();}},'ghost');
-  const reset=uiBtn('Reset example',()=>{ST.points=clone(config().points);emit('reset',ST.preset);repaint();},'ghost');
-  actions.append(moveOrigin,reset);panel.appendChild(actions);
-  const live=H('p',{class:'f101-taskline','aria-live':'polite'});panel.appendChild(live);
-  function repaint(){const q=ST.points.find(p=>p.id===ST.selected)||ST.points[0];if(!q)return;
+  window.NovaLessonComponent?.applyExploreModels();const xval=counter('x'),yval=counter('y');window.NovaLessonComponent?.applyExploreModels();panel.appendChild(controls);
+  window.NovaLessonComponent?.applyExploreModels();const actions=H('div',{class:'f101-toolbar'});
+  window.NovaLessonComponent?.applyExploreModels();const moveOrigin=uiBtn('Back to origin',()=>{const p=ST.points.find(p=>p.id===ST.selected);if(p){p.x=0;p.y=0;emit('point',{id:p.id,x:0,y:0,how:'reset'});repaint();}},'ghost');
+  window.NovaLessonComponent?.applyExploreModels();const reset=uiBtn('Reset example',()=>{ST.points=clone(config().points);emit('reset',ST.preset);repaint();},'ghost');
+  window.NovaLessonComponent?.applyExploreModels();actions.append(moveOrigin,reset);window.NovaLessonComponent?.applyExploreModels();panel.appendChild(actions);
+  window.NovaLessonComponent?.applyExploreModels();const live=H('p',{class:'f101-taskline','aria-live':'polite'});window.NovaLessonComponent?.applyExploreModels();panel.appendChild(live);
+  window.NovaLessonComponent?.applyExploreModels();function repaint(){const q=ST.points.find(p=>p.id===ST.selected)||ST.points[0];if(!q)return;
     pointSel.innerHTML='';ST.points.forEach(p=>pointSel.appendChild(H('option',{value:p.id,text:'Point '+p.id+' · '+ordered(p)})));pointSel.value=ST.selected;
     xval.textContent=num(q.x);yval.textContent=num(q.y);live.textContent='Selected '+q.id+': '+ordered(q)+' · '+quad(q.x,q.y);
     renderBoard(stage,{show:4,showQuadrants:true,read:true,drag:true,active:ST.selected,curve:true});
-  }repaint();
+  }window.NovaLessonComponent?.applyExploreModels();repaint();
 }
 function challenge(panel,api,stage){
   const tasks=challengeTargets.map((t,i)=>({
@@ -241,6 +278,9 @@ const def={
   onRestore:()=>{ST.preset='Y7-038';ST.selected='A';ST.points=clone(C.presets['Y7-038'].points);ST.challengePoint={x:0,y:0};}
 };
 N.registry.add({id:ID,title:'Four-quadrant grid',family:'F10',topics:['coordinates','quadrants','plotting','straight-line graphs'],deps:['F0-01','F0-02','F0-03','F0-04','F0-07','F0-08','F0-11','F0-14']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(ID,def,{models:{"ST":()=>ST},tables:{"steps":()=>steps},draws:{"renderBoard":["stage","spec"]},exploreFields:{}});
 N.bankMount({id:ID,num:'01',title:'Four-quadrant grid · Premium Edition',def,years:'KS3 Years 7–9, with graph plotting extensions',linked:['F0-14','F10-02','F10-04','F10-05'],spec:{
   purpose:'Plot and read ordered pairs in four quadrants with a snap-to-intersection coordinate plane and clear evidence of x-first then y.',
   params:'Range −5 to 5 on both axes; 1-square scale; named lesson presets; four draggable labelled points.',
@@ -278,3 +318,4 @@ window.addEventListener('pointerup',e=>{const d=N.ui._drag;if(d&&d.el&&card&&car
 window.addEventListener('pointercancel',()=>{const d=N.ui._drag;if(d&&d.el&&card&&card.contains(d.el))N.ui.cancelDrag();});
 window.F101_ENGINE=N.engines[ID];
 })();
+

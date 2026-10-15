@@ -1,3 +1,38 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+
 /* NOVA F10-06 Gradient Visual — signed rise/run, dedicated premium geometry studio. */
 const F106_CONFIG={id:'F10-06',family:'F10',defaultPreset:'Y8-022',startMode:'watch',
  presets:{
@@ -13,7 +48,7 @@ const F106_CONFIG={id:'F10-06',family:'F10',defaultPreset:'Y8-022',startMode:'wa
  challenge:{tasks:['read-gradient','drag-for-gradient','read-acceleration','read-speed']}};
 window.F106_CONFIG=F106_CONFIG;
 (function(){'use strict';
- const N=window.NOVA,H=N.h,E=N.svg.el,C=F106_CONFIG,ID=C.id;
+ const N=window.NOVA,H=N.h,E=N.svg.el,C=window.NovaV2Integration.configuration(F106_CONFIG),ID=C.id;
  if(N.premium?.enable)N.premium.enable();
  const BOX={w:640,h:548,left:86,top:61,width:464,height:420};
  const STORIES=[
@@ -83,6 +118,8 @@ window.F106_CONFIG=F106_CONFIG;
  }
  function fraction(num,den){return H('span',{class:'f106-fraction','aria-label':num+' over '+den},[H('span',{text:num}),H('span',{text:den})]);}
  function scene(stage,o={}){
+if(window.NovaLessonComponent?.active){[stage,o]=window.NovaLessonComponent.args("scene",arguments);}
+
   stage.innerHTML='';const options={step:8,editable:false,challenge:false,correct:false,pose:'explain',caption:'Observe the rise and run.',...o},p=preset(),d=domain(p),z=gr(),step=options.challenge?8:options.step;
   const hide=options.challenge&&!options.correct;
   const frame=H('section',{class:'f106-theatre','data-topic':'geometry','data-testid':'f106-premium-theatre','data-correct':String(!!options.correct)});
@@ -122,12 +159,12 @@ window.F106_CONFIG=F106_CONFIG;
   stage.appendChild(frame);N.scene.helperStrip(stage,options.pose,options.caption);return svg;
  }
  function render(i,stage){const t=STEPS[i];const svg=scene(stage,{step:i,pose:t.mood,caption:t.narration});if(i>0&&!N.reducedMotion()){const d=domain(preset()),a=pixel(...S.A,d),b=pixel(...S.B,d);N.motion.flash(svg,...(i<4?a:b),i<4?'focus':'result',20);if(i===5)N.motion.trail(svg,`M${a[0]},${a[1]} L${b[0]},${b[1]}`,'result',490)}}
- function controls(panel,stage){panel.classList.add('f106-controls');const draw=()=>{panel.innerHTML='';const sel=H('select',{class:'nova-input','aria-label':'Lesson preset'});Object.entries(C.presets).forEach(([key,v])=>sel.appendChild(H('option',{value:key,text:v.label})));sel.value=S.preset;sel.onchange=()=>{reset(sel.value);draw();scene(stage,{editable:true,pose:'point',caption:'Move A or B. Explain why the gradient changes.'})};panel.appendChild(H('label',{class:'f106-span'},['Lesson preset',sel]));
+ function controls(panel,stage){window.NovaLessonComponent?.applyExploreModels();panel.classList.add('f106-controls');window.NovaLessonComponent?.applyExploreModels();const draw=()=>{panel.innerHTML='';const sel=H('select',{class:'nova-input','aria-label':'Lesson preset'});Object.entries(C.presets).forEach(([key,v])=>sel.appendChild(H('option',{value:key,text:v.label})));sel.value=S.preset;sel.onchange=()=>{reset(sel.value);draw();scene(stage,{editable:true,pose:'point',caption:'Move A or B. Explain why the gradient changes.'})};panel.appendChild(H('label',{class:'f106-span'},['Lesson preset',sel]));
   const d=domain(preset());const slider=(point,axis)=>{const current=S[point][axis==='x'?0:1];const wrapper=H('label',{}),heading=H('div',{class:'f106-ctl-head'},[H('span',{text:'Point '+point+' · '+axis}),H('span',{class:'f106-slider-value',text:fmt(current)})]);const input=H('input',{type:'range',min:String(axis==='x'?d.xmin:d.ymin),max:String(axis==='x'?d.xmax:d.ymax),step:String(axis==='x'?1:.5),value:String(current),'aria-label':'Point '+point+' '+axis+' value'});input.oninput=()=>{const v=Number(input.value);S[point][axis==='x'?0:1]=v;emit(point==='A'?'pointA':'pointB',{p:[...S[point]],source:'slider'});heading.lastChild.textContent=fmt(v);scene(stage,{editable:true,pose:'point',caption:'Read the signed rise and run. Watch the result update.'})};wrapper.append(heading,input);return wrapper};
   panel.append(slider('A','x'),slider('A','y'),slider('B','x'),slider('B','y'));
   panel.appendChild(H('div',{class:'f106-actions f106-span'},[H('button',{class:'nova-btn ghost',text:'Restore preset',onclick:()=>{const k=S.preset;reset(k);draw();scene(stage,{editable:true,pose:'point',caption:'The original gradient is restored.'})}}),H('button',{class:'nova-btn ghost',text:'Make horizontal',onclick:()=>{S.B[1]=S.A[1];emit('gradient',{value:0});draw();scene(stage,{editable:true,pose:'point',caption:'A horizontal line has rise zero: gradient zero.'})}})]));
   panel.appendChild(H('div',{class:'f106-note f106-span',text:'Drag either luminous point to a grid intersection, or focus it and use arrow keys. Horizontal movement changes x by 1; vertical movement changes y by 0.5. Escape cancels a drag.'}));};
-  window.NOVA_F106_REFRESH=draw;draw();scene(stage,{editable:true,pose:'point',caption:'Drag A or B and predict the signed gradient.'});
+  window.NovaLessonComponent?.applyExploreModels();window.NOVA_F106_REFRESH=draw;window.NovaLessonComponent?.applyExploreModels();draw();window.NovaLessonComponent?.applyExploreModels();scene(stage,{editable:true,pose:'point',caption:'Drag A or B and predict the signed gradient.'});
  }
  function challenge(panel,api,stage){const tasks=TASKS.map((task,i)=>({q:task.q,build:ctl=>{
    S.task=i;S.wrong=0;S.solved=false;S.entry='';reset(task.preset);
@@ -149,7 +186,10 @@ window.F106_CONFIG=F106_CONFIG;
   exploreIntro:'Choose a lesson context. Drag endpoints A and B or use accessible sliders. Compare the horizontal and vertical changes.',
   onRestore:()=>{reset('Y8-022');S.task=0;S.wrong=0;S.solved=false;S.entry='';}};
  N.registry.add({id:ID,title:'Gradient Visual',family:'F10',topics:['gradient','rise run','speed','acceleration','velocity-time','distance-time'],deps:['F0-02','F0-14','F10-05','F10-07','F10-10','F10-11']});
- N.bankMount({id:ID,num:'06',title:'Gradient Visual · Premium Edition',def,linked:['F0-14','F10-05','F10-07','F10-10','F10-11','F15-03'],years:'Y8-022/023/025/026/027/028 and Y9-017',spec:{
+ 
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(ID,def,{models:{"S":()=>S},tables:{"STORIES":()=>STORIES,"TASKS":()=>TASKS},draws:{"scene":["stage","o"]},exploreFields:{}});
+N.bankMount({id:ID,num:'06',title:'Gradient Visual · Premium Edition',def,linked:['F0-14','F10-05','F10-07','F10-10','F10-11','F15-03'],years:'Y8-022/023/025/026/027/028 and Y9-017',spec:{
   purpose:'Measure gradient as signed vertical change over horizontal change and interpret slope as a contextual rate.',
   params:'A and B on half-unit y grid and integer x grid; Cartesian and real-world axes; zero run is undefined.',
   presets:'Y8-022 · Y8-023 · Y8-025 · Y8-026 · Y8-027 · Y8-028 · Y9-017.',
@@ -159,3 +199,4 @@ window.F106_CONFIG=F106_CONFIG;
   gcse:'KS3 contexts only in required presets; signed acceleration forms a bridge to later GCSE graphs.'}});
  const card=document.getElementById(ID);if(card){const h=card.querySelector('h3');if(h)h.textContent='Measure rise and run on a real coordinate diagram';card.querySelectorAll('.face img').forEach(i=>{if(!i.alt)i.alt='NOVA maths teaching mascot'})}
 })();
+

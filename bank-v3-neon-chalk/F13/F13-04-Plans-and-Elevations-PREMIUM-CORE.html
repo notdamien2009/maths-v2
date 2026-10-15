@@ -568,6 +568,42 @@ html[data-theme=light] .f12-strip .k{color:#10213a}
 .nova-stage>.f13-pe-svg{flex:0 0 auto}
 @media(max-width:580px){.f13-pe-help{font-size:.83rem}.f12-strip{gap:5px;padding-left:4px;padding-right:4px}.f12-strip .nv-ntile{padding:3px 9px;font-size:1.05rem}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="geometry">
 <div class="nova-wrap">
@@ -1711,7 +1747,7 @@ NOVA.version=(NOVA.version||'')+'+f12phone';
 /* F13-04 · PLANS + ELEVATIONS · genuine F0/F1/F12 runtime and official helper artwork retained. */
 var NOVA_F13_04_CONFIG={startMode:'watch',preset:'corner',presets:{single:'One cube',row:'Two across',platform:'Four-cube platform',tower:'Two-high tower',corner:'Corner staircase',stairs:'Three-step wall',bridge:'Twin-height bridge',hidden:'Hidden support model'}};
 (function(){'use strict';
-var h=NOVA.h,S=NOVA.svg,F=NOVA.f12,C=NOVA_F13_04_CONFIG,EN='F13-04',N=4;
+var h=NOVA.h,S=NOVA.svg,F=NOVA.f12,C=window.NovaV2Integration.configuration(NOVA_F13_04_CONFIG),EN='F13-04',N=4;
 var PALETTE={cyan:'#2bdcf3',violet:'#a78aff',blue:'#51aaff',green:'#59eeb3',gold:'#ffce79'};
 function blank(){return Array.from({length:N},function(){return Array(N).fill(0);});}
 function put(g,places){places.forEach(function(t){g[t[0]][t[1]]=t[2]||1;});return g;}
@@ -1823,7 +1859,9 @@ function views(root,W,H,st){var props=st.challengeTarget&&st.view==='target'?st.
  var caption=view==='top'?'LOOK DOWN':view==='front'?'LOOK FROM FRONT':'LOOK FROM RIGHT';text(c,x+G.w/2,y+G.h-11,caption,def[2],W<520?11:13);
  if(view==='top'){var area=el(c,'rect',{x:gx,y:gy,width:G.gridSize,height:G.gridSize,fill:'transparent','pointer-events':'all','data-editplan':'1'});}
  });return info;}
-function renderStage(stage,st,caption,pose,interactive){if(stage._f13Cleanup)stage._f13Cleanup();stage.replaceChildren();
+function renderStage(stage,st,caption,pose,interactive){
+if(window.NovaLessonComponent?.active){[stage,st,caption,pose,interactive]=window.NovaLessonComponent.args("renderStage",arguments);}
+if(stage._f13Cleanup)stage._f13Cleanup();stage.replaceChildren();
  NOVA.cap(stage,'PLANS + ELEVATIONS · '+(C.presets[st.preset]||'YOUR CONSTRUCTION'),interactive?'edit from top plan':'view from three sides');
  var mobile=window.innerWidth<=580,W=mobile?420:780,H=mobile?545:615;
  var sv=S.root(W,H,'A three-dimensional model of unit cubes with a top plan, front elevation and right-side elevation.');sv.classList.add('f13-pe-svg');sv.setAttribute('role','group');sv.setAttribute('tabindex','0');sv.style.touchAction='none';stage.appendChild(sv);grad(sv);var fg=sv.querySelector('#iso-left');if(fg){['#ffe7ae','#e9994f','#53301e'].forEach(function(v,i){fg.querySelectorAll('stop')[i].setAttribute('stop-color',v);});}
@@ -1864,31 +1902,31 @@ var STEPS=[
  {name:'Each elevation shows the maximum height',preset:'stairs',reveal:['top','front','side'],focus:[2,2],selectedView:'front',narration:'The staircase rises from one to two to three cubes. In the front elevation those three heights show as three columns, while the side view overlaps them into a single three-high silhouette.',prompt:'Why does the side view show just one tall column?',pose:'point-right'},
  {name:'Hidden cubes need more thinking',preset:'hidden',reveal:['top','front','side'],focus:[1,1],selectedView:'all',narration:'Some cubes can hide behind others. You cannot always reconstruct every hidden cube from plans and elevations alone. Use all three views and make a model that fits each one.',prompt:'Could two different solids have the same three views?',pose:'think'}
 ];
-function watchState(z){var st=state(z.preset);st.focus=z.focus.slice();st.showViews={top:z.reveal.includes('top'),front:z.reveal.includes('front'),side:z.reveal.includes('side')};st.selectedView=z.selectedView;return st;}
+function watchState(z){var st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("watchState.st",(...a)=>state(...a),[z.preset]):(state(z.preset)));st.focus=z.focus.slice();st.showViews={top:z.reveal.includes('top'),front:z.reveal.includes('front'),side:z.reveal.includes('side')};st.selectedView=z.selectedView;return st;}
 var def={id:EN,title:'Plans and elevations',config:C,steps:STEPS,
  alt:'Interactive three-dimensional neon-cube model and three matching orthographic projections: top plan, front elevation, right-side elevation.',
  staticAlt:'In a plan, view from above to see the footprint. From the front, the elevation shows maximum stack height in each width column. From the right, it shows maximum stack height in each depth column. Hidden cubes may not appear.',
  render:function(i,stage){var z=STEPS[i],st=watchState(z);renderStage(stage,st,z.name,z.pose,false);},
  exploreIntro:'Change one cube. Look at which views change and which stay the same.',
- explore:function(panel,stage,api){var st=state('corner');
-  if(api.onCleanup)api.onCleanup(function(){if(stage._f13Cleanup)stage._f13Cleanup();});
-  function paint(){renderStage(stage,st,'Edit the plan or the solid. Compare each viewpoint.','explain',true);}
-  var selector=h('select',{class:'nova-input','aria-label':'Choose a 3D construction'});Object.keys(C.presets).forEach(function(k){selector.appendChild(h('option',{value:k,text:C.presets[k]}));});selector.value='corner';
-  selector.onchange=function(){st.grid=model(selector.value);st.preset=selector.value;st.undo=[];st.redo=[];st.focus=[1,1];paint();NOVA.events.emit('value',{engine:EN,control:'preset',value:st.preset});};
-  panel.appendChild(h('div',{class:'pr-row'},[h('label',{},['3D CONSTRUCTION ',selector])]));
-  var buttons={},tools=h('div',{class:'pr-row','aria-label':'Builder tools'});
-  [['add','＋ Add unit cube'],['remove','− Remove top cube']].forEach(function(v){var b=h('button',{class:'nova-btn'+(st.tool===v[0]?' primary':''),text:v[1],onclick:function(){st.tool=v[0];Object.keys(buttons).forEach(function(k){buttons[k].classList.toggle('primary',k===st.tool);});}});buttons[v[0]]=b;tools.appendChild(b);});panel.appendChild(tools);
-  function undo(){if(!st.undo.length)return;st.redo.push(clone(st.grid));st.grid=st.undo.pop();paint();}
-  function redo(){if(!st.redo.length)return;st.undo.push(clone(st.grid));st.grid=st.redo.pop();paint();}
-  panel.appendChild(h('div',{class:'pr-row'},[
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>state(...a),['corner']):(state('corner')));
+  window.NovaLessonComponent?.applyExploreModels();if(api.onCleanup)api.onCleanup(function(){if(stage._f13Cleanup)stage._f13Cleanup();});
+  window.NovaLessonComponent?.applyExploreModels();function paint(){renderStage(stage,st,'Edit the plan or the solid. Compare each viewpoint.','explain',true);}
+  window.NovaLessonComponent?.applyExploreModels();var selector=h('select',{class:'nova-input','aria-label':'Choose a 3D construction'});window.NovaLessonComponent?.applyExploreModels();Object.keys(C.presets).forEach(function(k){selector.appendChild(h('option',{value:k,text:C.presets[k]}));});window.NovaLessonComponent?.applyExploreModels();selector.value='corner';
+  window.NovaLessonComponent?.applyExploreModels();selector.onchange=function(){st.grid=model(selector.value);st.preset=selector.value;st.undo=[];st.redo=[];st.focus=[1,1];paint();NOVA.events.emit('value',{engine:EN,control:'preset',value:st.preset});};
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row'},[h('label',{},['3D CONSTRUCTION ',selector])]));
+  window.NovaLessonComponent?.applyExploreModels();var buttons={},tools=h('div',{class:'pr-row','aria-label':'Builder tools'});
+  window.NovaLessonComponent?.applyExploreModels();[['add','＋ Add unit cube'],['remove','− Remove top cube']].forEach(function(v){var b=h('button',{class:'nova-btn'+(st.tool===v[0]?' primary':''),text:v[1],onclick:function(){st.tool=v[0];Object.keys(buttons).forEach(function(k){buttons[k].classList.toggle('primary',k===st.tool);});}});buttons[v[0]]=b;tools.appendChild(b);});window.NovaLessonComponent?.applyExploreModels();panel.appendChild(tools);
+  window.NovaLessonComponent?.applyExploreModels();function undo(){if(!st.undo.length)return;st.redo.push(clone(st.grid));st.grid=st.undo.pop();paint();}
+  window.NovaLessonComponent?.applyExploreModels();function redo(){if(!st.redo.length)return;st.undo.push(clone(st.grid));st.grid=st.redo.pop();paint();}
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row'},[
    h('button',{class:'nova-btn ghost',text:'↶ Undo',onclick:undo}),h('button',{class:'nova-btn ghost',text:'↷ Redo',onclick:redo}),
    h('button',{class:'nova-btn ghost',text:'Clear',onclick:function(){st.undo.push(clone(st.grid));st.grid=blank();st.redo=[];st.preset='own';st.focus=[1,1];paint();}}),
    h('button',{class:'nova-btn ghost',text:'Reset model',onclick:function(){st.grid=model(selector.value);st.undo=[];st.redo=[];paint();}})
   ]));
-  var toggles=h('div',{class:'pr-row'});var vals=[['showHeights','Number each stack'],['top','Show top plan'],['front','Show front'],['side','Show right side']];
-  vals.forEach(function(v){var checkbox=h('input',{type:'checkbox','aria-label':v[1]});checkbox.checked=v[0]==='showHeights'?st.showHeights:st.showViews[v[0]];checkbox.onchange=function(){if(v[0]==='showHeights')st.showHeights=checkbox.checked;else st.showViews[v[0]]=checkbox.checked;paint();};toggles.appendChild(h('label',{class:'f13-pe-tog'},[checkbox,' '+v[1]]));});panel.appendChild(toggles);
-  panel.appendChild(h('p',{class:'f13-pe-help',text:'Draw directly on the TOP PLAN tiles or on a cube top. Each tap adds one cube to that column (maximum four). Drag across several tiles to build. Press arrow keys on the focused drawing to move the gold cursor, Enter to add and Delete to remove.'}));
-  paint();C._explore={state:st,preset:function(k){selector.value=k;selector.onchange();},undo:undo,redo:redo,clear:function(){st.grid=blank();paint();},draw:paint};
+  window.NovaLessonComponent?.applyExploreModels();var toggles=h('div',{class:'pr-row'});window.NovaLessonComponent?.applyExploreModels();var vals=[['showHeights','Number each stack'],['top','Show top plan'],['front','Show front'],['side','Show right side']];
+  window.NovaLessonComponent?.applyExploreModels();vals.forEach(function(v){var checkbox=h('input',{type:'checkbox','aria-label':v[1]});checkbox.checked=v[0]==='showHeights'?st.showHeights:st.showViews[v[0]];checkbox.onchange=function(){if(v[0]==='showHeights')st.showHeights=checkbox.checked;else st.showViews[v[0]]=checkbox.checked;paint();};toggles.appendChild(h('label',{class:'f13-pe-tog'},[checkbox,' '+v[1]]));});window.NovaLessonComponent?.applyExploreModels();panel.appendChild(toggles);
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('p',{class:'f13-pe-help',text:'Draw directly on the TOP PLAN tiles or on a cube top. Each tap adds one cube to that column (maximum four). Drag across several tiles to build. Press arrow keys on the focused drawing to move the gold cursor, Enter to add and Delete to remove.'}));
+  window.NovaLessonComponent?.applyExploreModels();paint();window.NovaLessonComponent?.applyExploreModels();C._explore={state:st,preset:function(k){selector.value=k;selector.onchange();},undo:undo,redo:redo,clear:function(){st.grid=blank();paint();},draw:paint};
  },
  challenge:function(panel,api,stage){
   var tasks=[
@@ -1915,6 +1953,9 @@ var def={id:EN,title:'Plans and elevations',config:C,steps:STEPS,
   panel.appendChild(h('p',{class:'f13-pe-help',text:'Keyboard: focus the model, use arrows to move the gold cursor, Enter to add cubes, Delete to remove. The checker compares projections, not just total cube count.'}));
   load(0);C._challenge={state:st,task:function(){return selected;},load:load,targets:tasks,check:function(){return matches(st.grid,tasks[selected].target);},detail:function(){return inspect(st.grid,tasks[selected].target);}};
  }};
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(EN,def,{models:{},tables:{"STEPS":()=>STEPS},draws:{"renderStage":["stage","st","caption","pose","interactive"]},exploreFields:{"st":{"kind":"factory","factory":"state","argCount":1},"watchState.st":{"kind":"factory","factory":"state","argCount":1}}});
 NOVA.bankMount({id:EN,num:'F13·04',title:'Plans and elevations',def:def,linked:['F0-01','F0-02','F0-03','F0-04','F0-05','F12-03','F13-01','F13-02','F13-03'],spec:{
  purpose:'Turn a physical unit-cube solid into accurate top plans and front/right-side orthographic elevations. Use three views to reconstruct a solid (Y8-059).',
  params:'4×4 ground footprint · column heights 0–4 · real 3D model · front/right-side projection masks · top occupancy · live editing and target-view challenge.',

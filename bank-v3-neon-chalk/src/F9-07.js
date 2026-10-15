@@ -1,10 +1,44 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
 /* F9-07 Special Sequences · F0/F1/F2/F9-01 v3 visual family, no shared-shell overrides. */
 const F907_CONFIG={id:'F9-07',family:'F9',startMode:'watch',presets:{
  'Y7-036-sequence-structures':{label:'Y7 · Shapes & patterns',defaultKind:'square',context:'square, triangular, cube and Fibonacci sequence structures'},
  'Y8-020-compare-geometric':{label:'Y8 · Compare rules',defaultKind:'cube',context:'recognise patterns that are not constant-ratio geometric sequences'}
  },events:{value:['preset','pattern','position','count','placed','challengeTask'],types:['step','correct','hintUsed','mode']}};
 (function(){'use strict';
-const N=window.NOVA,H=N.h,E=N.svg.el,C=F907_CONFIG,id=C.id;
+const N=window.NOVA,H=N.h,E=N.svg.el,C=window.NovaV2Integration.configuration(F907_CONFIG),id=C.id;
 const small=()=>window.innerWidth<=760,W=()=>small()?430:760;
 const kindList=['square','triangle','cube','fibonacci'];
 const names={square:'SQUARE NUMBERS',triangle:'TRIANGULAR NUMBERS',cube:'CUBE NUMBERS',fibonacci:'FIBONACCI NUMBERS'};
@@ -30,10 +64,14 @@ function text(p,x,y,t,size=19,role='given',anchor='middle'){return N.chalkText(p
 function box(p,x,y,w,h,t,role='given',size=18){return N.neonBox(p,x,y,w,h,{role,text:t,size,r:13});}
 function btn(t,fn,cls='nova-btn ghost'){return H('button',{class:cls,text:t,onclick:fn});}
 function root(alt,challenge=false){const svg=N.svg.root(W(),challenge?1040:790,alt);svg.classList.add('nv-svg','f907-svg');svg.setAttribute('role','img');return svg;}
-function clear(stage){stage.replaceChildren();N.cap(stage,'Sequence workshop','Special sequences');}
+function clear(stage){
+if(window.NovaLessonComponent?.active){[stage]=window.NovaLessonComponent.args("clear",arguments);}
+stage.replaceChildren();N.cap(stage,'Sequence workshop','Special sequences');}
 function card(title,value,gold=false){return H('div',{class:'f907-card'+(gold?' f907-card--gold':'')},[H('div',{class:'f907-eyebrow',text:title}),H('div',{class:'f907-maths'+(gold?' f907-maths--gold':''),text:String(value)})]);}
 function note(title,value){return H('div',{class:'f907-card f907-card--full'},[H('div',{class:'f907-eyebrow',text:title}),H('div',{class:'f907-body',text:String(value)})]);}
-function mount(stage,svg,cards,pose,say){stage.appendChild(H('div',{class:'f907-stage'},[svg,H('aside',{class:'f907-side'},cards)]));N.scene.helperStrip(stage,pose,say);}
+function mount(stage,svg,cards,pose,say){
+if(window.NovaLessonComponent?.active){[stage,svg,cards,pose,say]=window.NovaLessonComponent.args("mount",arguments);}
+stage.appendChild(H('div',{class:'f907-stage'},[svg,H('aside',{class:'f907-side'},cards)]));N.scene.helperStrip(stage,pose,say);}
 function dot(svg,x,y,role='op',r=6){return N.neonRing(svg,x,y,{role,r,pulse:false});}
 function squareDots(svg,n,cx,cy,size,mini=false){const g=E('g',{'data-pattern':'square'},svg),d=size/Math.max(1,n-1),x0=cx-(n-1)*d/2,y0=cy-(n-1)*d/2;
  for(let row=0;row<n;row++)for(let col=0;col<n;col++)dot(g,x0+col*d,y0+row*d,row===n-1?'focus':'op',mini?3.7:5.5);
@@ -101,7 +139,9 @@ function teach(i,stage){const s=STEPS[Math.min(i,5)],k=s.kind,w=W();clear(stage)
  mount(stage,svg,cards,s.pose,s.text);
  if(!N.reducedMotion()){let dots=[...svg.querySelectorAll('.nv-ring')];dots.forEach((g,j)=>{g.style.opacity='0';N.motion.tween(220+Math.min(j,28)*22,v=>{if(g.isConnected)g.style.opacity=String(v);},N.motion.ease.out);});}
 }
-function explore(stage){clear(stage);const w=W(),svg=root('Explore geometric and Fibonacci dot patterns by switching pattern type and stage.');
+function explore(stage){
+if(window.NovaLessonComponent?.active){[stage]=window.NovaLessonComponent.args("explore",arguments);}
+clear(stage);const w=W(),svg=root('Explore geometric and Fibonacci dot patterns by switching pattern type and stage.');
  text(svg,w/2,45,names[selectedKind],small()?25:29,'support');
  text(svg,w/2,86,'Change the stage · see the new dots appear',small()?16:20,'support');
  const n=Math.max(selectedKind==='fibonacci'?2:1,position);
@@ -166,14 +206,14 @@ const def={id,title:'Special sequences',config:C,
  steps:STEPS.map((s,i)=>({name:s.name,narration:s.text,prompt:s.prompt,mood:i===5?'pleased':'focus'})),
  render(i,stage){teach(i,stage);},
  exploreIntro:'Change between square, triangular, cube and Fibonacci structures. Adjust the position and examine how the dots grow.',
- explore(panel,stage,api){selectedKind='square';presetKey='Y7-036-sequence-structures';position=4;
-   const info=H('p',{class:'f907-instruction',text:'Choose a lesson preset and a sequence family, then use the slider to build more dots.'});
-   const lessons=H('div',{class:'f907-choices'}),families=H('div',{class:'f907-choices'});
-   Object.entries(C.presets).forEach(([key,p])=>lessons.appendChild(btn(p.label,()=>{presetKey=key;selectedKind=p.defaultKind;ev('preset',key);explore(stage);},'nova-btn ghost')));
-   kindList.forEach(k=>families.appendChild(btn(names[k].replace(' NUMBERS','').toLowerCase(),()=>{selectedKind=k;if(selectedKind==='fibonacci'&&position<2)position=2;ev('pattern',k);explore(stage);},'nova-btn ghost')));
-   const range=H('input',{type:'range',min:1,max:4,value:4,'aria-label':'Sequence stage'}),out=H('output',{class:'f907-micro',text:'Stage 4'});
-   range.addEventListener('input',()=>{position=+range.value;if(selectedKind==='fibonacci'&&position<2)position=2;out.textContent='Stage '+position;ev('position',position);explore(stage);});
-   panel.append(info,lessons,families,H('div',{class:'f907-control'},[H('label',{},['Stage ',range]),out,btn('Next stage',()=>{position=position>=4?1:position+1;if(selectedKind==='fibonacci'&&position<2)position=2;range.value=position;out.textContent='Stage '+position;explore(stage);},'nova-btn primary')]));explore(stage);
+ explore(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();selectedKind='square';window.NovaLessonComponent?.applyExploreModels();presetKey='Y7-036-sequence-structures';window.NovaLessonComponent?.applyExploreModels();position=4;
+   window.NovaLessonComponent?.applyExploreModels();const info=H('p',{class:'f907-instruction',text:'Choose a lesson preset and a sequence family, then use the slider to build more dots.'});
+   window.NovaLessonComponent?.applyExploreModels();const lessons=H('div',{class:'f907-choices'}),families=H('div',{class:'f907-choices'});
+   window.NovaLessonComponent?.applyExploreModels();Object.entries(C.presets).forEach(([key,p])=>lessons.appendChild(btn(p.label,()=>{presetKey=key;selectedKind=p.defaultKind;ev('preset',key);explore(stage);},'nova-btn ghost')));
+   window.NovaLessonComponent?.applyExploreModels();kindList.forEach(k=>families.appendChild(btn(names[k].replace(' NUMBERS','').toLowerCase(),()=>{selectedKind=k;if(selectedKind==='fibonacci'&&position<2)position=2;ev('pattern',k);explore(stage);},'nova-btn ghost')));
+   window.NovaLessonComponent?.applyExploreModels();const range=H('input',{type:'range',min:1,max:4,value:4,'aria-label':'Sequence stage'}),out=H('output',{class:'f907-micro',text:'Stage 4'});
+   window.NovaLessonComponent?.applyExploreModels();range.addEventListener('input',()=>{position=+range.value;if(selectedKind==='fibonacci'&&position<2)position=2;out.textContent='Stage '+position;ev('position',position);explore(stage);});
+   window.NovaLessonComponent?.applyExploreModels();panel.append(info,lessons,families,H('div',{class:'f907-control'},[H('label',{},['Stage ',range]),out,btn('Next stage',()=>{position=position>=4?1:position+1;if(selectedKind==='fibonacci'&&position<2)position=2;range.value=position;out.textContent='Stage '+position;explore(stage);},'nova-btn primary')]));window.NovaLessonComponent?.applyExploreModels();explore(stage);
  },
  challenge(panel,api,stage){challengeIndex=0;placed=null;kbChoice=null;stageRef=stage;panelRef=panel;apiRef=api;
    const heading=H('h3',{class:'f907-taskhead'}),guide=H('p',{class:'f907-instruction'}),controls=H('div',{class:'f907-control'}),statusEl=H('p',{class:'f907-status',role:'status'});
@@ -190,6 +230,9 @@ const def={id,title:'Special sequences',config:C,
  onRestore(){selectedKind='square';presetKey='Y7-036-sequence-structures';position=4;challengeIndex=0;placed=null;kbChoice=null;stageRef=null;panelRef=null;apiRef=null;}
 };
 N.registry.add({id,title:'Special sequences',topics:['sequences','square numbers','cube numbers','triangular numbers','Fibonacci numbers'],deps:['F0-02','F0-04','F0-07','F0-08','F0-13']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(id,def,{models:{},tables:{"kindList":()=>kindList,"STEPS":()=>STEPS,"TASKS":()=>TASKS},draws:{"clear":["stage"],"mount":["stage","svg","cards","pose","say"],"explore":["stage"]},exploreFields:{}});
 N.bankMount({id,num:'07',title:'Special sequences · Premium Edition',def,linked:['F9-02','F9-06','F9-08','F9-09'],years:'Year 7 sequences and structure · Year 8 geometric contrast · GCSE extension',spec:{
  purpose:'Recognise square, triangular, cube and Fibonacci sequences from the mathematical structure of dot and array patterns.',
  params:'Square n²; triangular n(n+1)/2; cube n³; Fibonacci F1=F2=1 and each next term equals the sum of the two preceding terms.',

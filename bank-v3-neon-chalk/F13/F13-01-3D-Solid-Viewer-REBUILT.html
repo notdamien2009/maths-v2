@@ -569,6 +569,42 @@ html[data-theme=light] .f12-strip .k{color:#10213a}
 .f13-svg .f13-back{pointer-events:none}
 @media(max-width:580px){.f13-svg{margin-top:8px!important}.f13-teach-note{font-size:.84rem}.f12-strip{gap:5px;padding-left:4px;padding-right:4px}.f12-strip .nv-ntile{padding:3px 9px;font-size:1.05rem}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="geometry">
 <div class="nova-wrap">
@@ -1716,7 +1752,7 @@ var NOVA_F13_01_CONFIG={startMode:'watch',preset:'cube',show:'all',xray:false,
  presets:{cube:'Cube',cuboid:'Cuboid',triPrism:'Triangular prism',pyramid:'Square-based pyramid',cylinder:'Cylinder',cone:'Cone',sphere:'Sphere'}};
 (function(){
 'use strict';
-var h=NOVA.h,S=NOVA.svg,F=NOVA.f12,C=NOVA_F13_01_CONFIG,EN='F13-01';
+var h=NOVA.h,S=NOVA.svg,F=NOVA.f12,C=window.NovaV2Integration.configuration(NOVA_F13_01_CONFIG),EN='F13-01';
 var DATA={
  cube:{name:'Cube',faces:6,edges:12,vertices:8,desc:'Six equal square faces. Every edge has the same length.',phrase:'Each corner joins three edges.',unit:'Each face is a square'},
  cuboid:{name:'Cuboid',faces:6,edges:12,vertices:8,desc:'Six rectangular faces arranged in three matching pairs.',phrase:'Opposite faces match.',unit:'The faces are rectangles'},
@@ -1869,10 +1905,14 @@ function backing(sv,st){var w=st.W,H=st.H,mid=st.cy;
 }
 function label(sv,x,y,text,role,size){return NOVA.chalkText(sv,x,y,text,{size:size||16,role:role||'op',anchor:'middle'});}
 function buttonSvg(sv,x,y,txt,role){return S.pill(sv,x,y,txt,{role:role||'op',size:14});}
-function facts(stage,st){var D=DATA[st.shape],curved=st.shape==='sphere'||st.shape==='cylinder'||st.shape==='cone',faceWord=curved?'surfaces':'faces',items=st.show==='none'?[['SOLID',D.name,'given']]:st.show==='faces'?[[curved?'SURFACES':'FACES',D.faces,'op'],['SOLID',D.name,'given']]:st.show==='edges'?[['EDGES',D.edges,'focus'],['SOLID',D.name,'given']]:st.show==='vertices'?[['VERTICES',D.vertices,'result'],['SOLID',D.name,'given']]:[[faceWord,D.faces,'op'],['edges',D.edges,'focus'],['vertices',D.vertices,'result']];
+function facts(stage,st){
+if(window.NovaLessonComponent?.active){[stage,st]=window.NovaLessonComponent.args("facts",arguments);}
+var D=DATA[st.shape],curved=st.shape==='sphere'||st.shape==='cylinder'||st.shape==='cone',faceWord=curved?'surfaces':'faces',items=st.show==='none'?[['SOLID',D.name,'given']]:st.show==='faces'?[[curved?'SURFACES':'FACES',D.faces,'op'],['SOLID',D.name,'given']]:st.show==='edges'?[['EDGES',D.edges,'focus'],['SOLID',D.name,'given']]:st.show==='vertices'?[['VERTICES',D.vertices,'result'],['SOLID',D.name,'given']]:[[faceWord,D.faces,'op'],['edges',D.edges,'focus'],['vertices',D.vertices,'result']];
  F.strip(stage,items);
 }
-function mainDrawing(stage,st,interact){var small=window.innerWidth<=580,W=small?420:760,H=small?510:465,sc=small?113:116;
+function mainDrawing(stage,st,interact){
+if(window.NovaLessonComponent?.active){[stage,st,interact]=window.NovaLessonComponent.args("mainDrawing",arguments);}
+var small=window.innerWidth<=580,W=small?420:760,H=small?510:465,sc=small?113:116;
  st.W=W;st.H=H;st.cx=W/2;st.cy=small?245:226;st.scale=sc;
  var sv=S.root(W,H,'Interactive '+DATA[st.shape].name+'. '+DATA[st.shape].faces+' faces or surfaces, '+DATA[st.shape].edges+' edges and '+DATA[st.shape].vertices+' vertices. Rotate with pointer or arrow keys.');sv.classList.add('f13-svg');sv.style.maxWidth='810px';sv.setAttribute('tabindex','0');sv.setAttribute('role','group');sv.setAttribute('aria-label','3D solid. Drag to turn. Arrow keys turn left, right, up, down.');sv.style.touchAction='none';hatch(sv);backing(sv,st);
  var geo=E(sv,'g',{class:'f13-geo','data-maths':'solid'});
@@ -1895,20 +1935,22 @@ function mainDrawing(stage,st,interact){var small=window.innerWidth<=580,W=small
  }
  stage.appendChild(sv);return sv;
 }
-function mountStage(stage,st,caption,pose,interactive){stage.innerHTML='';NOVA.cap(stage,'3-D viewer · '+DATA[st.shape].name,interactive?'drag to rotate':'shape explorer');var sv=mainDrawing(stage,st,interactive);facts(stage,st);NOVA.scene.helperStrip(stage,pose||'explain',caption||DATA[st.shape].phrase);return sv;}
+function mountStage(stage,st,caption,pose,interactive){
+if(window.NovaLessonComponent?.active){[stage,st,caption,pose,interactive]=window.NovaLessonComponent.args("mountStage",arguments);}
+stage.innerHTML='';NOVA.cap(stage,'3-D viewer · '+DATA[st.shape].name,interactive?'drag to rotate':'shape explorer');var sv=mainDrawing(stage,st,interactive);facts(stage,st);NOVA.scene.helperStrip(stage,pose||'explain',caption||DATA[st.shape].phrase);return sv;}
 var def={id:EN,title:'3D solid viewer',config:C,steps:STEPS,alt:'Interactive premium 3D viewer. Rotate solids to study faces, edges and vertices.',
  staticAlt:'Cube: 6 faces, 12 edges, 8 vertices. Cuboid: 6, 12, 8. Triangular prism: 5, 9, 6. Square pyramid: 5, 8, 5. Cylinder: 3 surfaces, 2 circular edges, 0 vertices. Cone: 2 surfaces, 1 circular edge, 1 vertex. Sphere: 1 continuous curved surface, 0 edges, 0 vertices.',
  render:function(i,stage){var z=STEPS[i],st={shape:z.solid,yaw:z.yaw,pitch:z.pitch,show:z.show,xray:false};mountStage(stage,st,z.name,i===6?'cheer':'explain',false);},
  exploreIntro:'Rotate the shape with your mouse or finger. Select a different solid, then highlight its faces, edges or vertices.',
- explore:function(panel,stage,api){var st={shape:C.preset,yaw:-.68,pitch:.43,show:C.show||'all',xray:C.xray},sv;
-  function paint(){sv=mountStage(stage,st,DATA[st.shape].phrase,'explain',true);}
-  var pick=h('select',{class:'nova-input','aria-label':'Choose a 3D solid'});Object.keys(DATA).forEach(function(k){pick.appendChild(h('option',{value:k,text:DATA[k].name}));});pick.value=st.shape;
-  pick.onchange=function(){st.shape=pick.value;C.preset=st.shape;paint();NOVA.events.emit('value',{engine:EN,control:'solid',value:st.shape});};
-  panel.appendChild(h('div',{class:'pr-row f13-panel-row'},[h('label',{},['SOLID ',pick])]));
-  var choices=h('div',{class:'pr-row',role:'group','aria-label':'What to highlight'});['all','faces','edges','vertices'].forEach(function(k){var b=h('button',{class:'nova-btn'+(k===st.show?' primary':''),text:k[0].toUpperCase()+k.slice(1),onclick:function(){st.show=k;choices.querySelectorAll('button').forEach(function(v){v.classList.remove('primary');});b.classList.add('primary');paint();}});choices.appendChild(b);});panel.appendChild(choices);
-  panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn ghost',text:'Show hidden edges',onclick:function(){st.xray=!st.xray;this.setAttribute('aria-pressed',String(st.xray));this.textContent=st.xray?'Hide rear edges':'Show hidden edges';paint();},'aria-pressed':'false'}),h('button',{class:'nova-btn ghost',text:'Reset view',onclick:function(){st.yaw=-.68;st.pitch=.43;paint();}})]));
-  panel.appendChild(h('p',{class:'f13-teach-note',text:'Drag the shape to turn it, or focus the drawing and use the arrow keys. For cylinders and cones, curved circular edges count as edges.'}));
-  paint();C._explore={load:function(key){st.shape=key;pick.value=key;paint();},get:function(){return {shape:st.shape,yaw:st.yaw,pitch:st.pitch};}};
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",()=>({shape:C.preset,yaw:-.68,pitch:.43,show:C.show||'all',xray:C.xray})):({shape:C.preset,yaw:-.68,pitch:.43,show:C.show||'all',xray:C.xray})),sv;
+  window.NovaLessonComponent?.applyExploreModels();function paint(){sv=mountStage(stage,st,DATA[st.shape].phrase,'explain',true);}
+  window.NovaLessonComponent?.applyExploreModels();var pick=h('select',{class:'nova-input','aria-label':'Choose a 3D solid'});window.NovaLessonComponent?.applyExploreModels();Object.keys(DATA).forEach(function(k){pick.appendChild(h('option',{value:k,text:DATA[k].name}));});window.NovaLessonComponent?.applyExploreModels();pick.value=st.shape;
+  window.NovaLessonComponent?.applyExploreModels();pick.onchange=function(){st.shape=pick.value;C.preset=st.shape;paint();NOVA.events.emit('value',{engine:EN,control:'solid',value:st.shape});};
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row f13-panel-row'},[h('label',{},['SOLID ',pick])]));
+  window.NovaLessonComponent?.applyExploreModels();var choices=h('div',{class:'pr-row',role:'group','aria-label':'What to highlight'});window.NovaLessonComponent?.applyExploreModels();['all','faces','edges','vertices'].forEach(function(k){var b=h('button',{class:'nova-btn'+(k===st.show?' primary':''),text:k[0].toUpperCase()+k.slice(1),onclick:function(){st.show=k;choices.querySelectorAll('button').forEach(function(v){v.classList.remove('primary');});b.classList.add('primary');paint();}});choices.appendChild(b);});window.NovaLessonComponent?.applyExploreModels();panel.appendChild(choices);
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn ghost',text:'Show hidden edges',onclick:function(){st.xray=!st.xray;this.setAttribute('aria-pressed',String(st.xray));this.textContent=st.xray?'Hide rear edges':'Show hidden edges';paint();},'aria-pressed':'false'}),h('button',{class:'nova-btn ghost',text:'Reset view',onclick:function(){st.yaw=-.68;st.pitch=.43;paint();}})]));
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('p',{class:'f13-teach-note',text:'Drag the shape to turn it, or focus the drawing and use the arrow keys. For cylinders and cones, curved circular edges count as edges.'}));
+  window.NovaLessonComponent?.applyExploreModels();paint();window.NovaLessonComponent?.applyExploreModels();C._explore={load:function(key){st.shape=key;pick.value=key;paint();},get:function(){return {shape:st.shape,yaw:st.yaw,pitch:st.pitch};}};
  },
  challenge:function(panel,api,stage){var tasks=[
    {q:'A cube has six square faces. How many EDGES does it have?',solid:'cube',focus:'edges',list:[{label:'8',value:8},{label:'10',value:10},{label:'12',value:12},{label:'14',value:14}],answer:12,hint:'Count four edges around the top, four around the bottom, and four connecting them.',wrong:function(x){return x===8?'Eight counts the vertices (corners), not the edges.':'Trace the top, bottom and upright edges.';}},
@@ -1919,6 +1961,9 @@ var def={id:EN,title:'3D solid viewer',config:C,steps:STEPS,alt:'Interactive pre
   NOVA.challengeRun(panel,api,mapped,function(k){var t=tasks[k],st={shape:t.solid,yaw:-.68,pitch:.41,show:t.focus,xray:false};mountStage(stage,st,'Look closely; turn the solid and count.','think',true);},C);
  }
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(EN,def,{models:{},tables:{"DATA":()=>DATA,"STEPS":()=>STEPS},draws:{"facts":["stage","st"],"mainDrawing":["stage","st","interact"],"mountStage":["stage","st","caption","pose","interactive"]},exploreFields:{"st":{"kind":"value","factory":null,"argCount":null}}});
 NOVA.bankMount({id:EN,num:'F13·01',title:'3D solid viewer',def:def,linked:['F0-01','F0-02','F0-03','F0-04','F0-05','F1-01','F12-01'],
  spec:{purpose:'Rotatable premium 3D solid with real polyhedral faces and edges for pupils to count faces, edges and vertices. Compare cubes, cuboids, triangular prisms, pyramids, cylinders, cones and spheres.',
  params:'Solid type; yaw and elevation; face / edge / vertex focus; hidden-edge mode. All scene drawing uses the existing NOVA F0 SVG primitives and the geometry palette.',

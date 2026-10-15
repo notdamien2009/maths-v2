@@ -569,7 +569,43 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .nova-stage .fw-aria{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 @media(max-width:480px){.fw-row{gap:6px}.fw-help{font-size:1rem}.fw-equation .nv-ntile{font-size:1rem;padding:4px 10px}}
 @media print{.nova-tabs,.nova-tl,.nova-helperbar,.nova-panel{display:none!important}}
-</style></head>
+</style><script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
+</head>
 <body data-topic="number"><div class="nova-wrap">
 <header id="nova-header" data-run="F5 · Premium Edition rebuild · 01" data-title="Fraction strips & wall" data-sub="Compare equal lengths by building and dragging luminous glass fractions onto a shared measuring rail."></header>
 <main id="gallery"></main>
@@ -1695,7 +1731,7 @@ NOVA.ui.svgDrag=function(svg,el,o){o=o||{};var E=NOVA.svg.el,coarse=window.match
 var NOVA_F5_01_CONFIG={startMode:'guided',preset:'halves',events:['denominator','numerator','railA','railB','allRows','preset','clear'],
   presets:{halves:{label:'Half in different partitions',a:{n:1,d:2},b:{n:2,d:4}},thirds:{label:'Thirds and sixths',a:{n:1,d:3},b:{n:2,d:6}},quarters:{label:'Quarter and eighths',a:{n:1,d:4},b:{n:2,d:8}},unequal:{label:'Not equal: one half and two fifths',a:{n:1,d:2},b:{n:2,d:5}}}};
 (function(){'use strict';
-var C=NOVA_F5_01_CONFIG,S=NOVA.svg,E=S.el,h=NOVA.h,M=NOVA.motion,engine='F5-01';
+var C=window.NovaV2Integration.configuration(NOVA_F5_01_CONFIG),S=NOVA.svg,E=S.el,h=NOVA.h,M=NOVA.motion,engine='F5-01';
 var COL={given:NOVA.svg.c('given'),focus:NOVA.svg.c('focus'),result:NOVA.svg.c('result'),support:NOVA.svg.c('support'),op:NOVA.svg.c('op')};
 var MOBILE_ROWS=[1,2,3,4,6,8],ALL_ROWS=[1,2,3,4,5,6,7,8,9,10,11,12];
 var live=null;
@@ -1720,7 +1756,9 @@ function messageBar(st,a,b,hide){var d=h('div',{class:'fw-equation'});if(a){d.ap
   if(a&&b&&!hide)d.appendChild(NOVA.neonTile(equal(a,b)?'equal length':'different lengths',{role:equal(a,b)?'result':'unknown'}));return d;}
 function clean(){if(live)live.dead=true;live=null;}
 /* Canvas keeps EXACTLY one retained instrument per mode; callbacks on old scenes are dead. */
-function Wall(stage,model,opts){clean();var self=this;live=self;self.dead=false;opts=opts||{};var small=innerWidth<=820,rows=small&&!model.all?MOBILE_ROWS:ALL_ROWS;
+function Wall(stage,model,opts){
+if(window.NovaLessonComponent?.active){[stage,model,opts]=window.NovaLessonComponent.args("Wall",arguments);}
+clean();var self=this;live=self;self.dead=false;opts=opts||{};var small=innerWidth<=820,rows=small&&!model.all?MOBILE_ROWS:ALL_ROWS;
  var W=small?350:1000,X=small?77:163,BW=small?260:770,Y=small?64:72,STEP=small?54:42,RH=small?29:29;
  var railTop=Y+rows.length*STEP+(small?28:21),slotGap=small?83:90,slotW=small?260:770,slotAX=small?X:163,slotBX=small?X:163;
  var HEIGHT=railTop+349,sv=S.root(W,HEIGHT,'Fraction wall showing partitioned equal lengths and two comparison rails.');sv.classList.add('fw-svg');
@@ -1765,7 +1803,9 @@ function Wall(stage,model,opts){clean();var self=this;live=self;self.dead=false;
 
  stage.appendChild(sv);self.svg=sv;self.model=model;
  return self;}
-function startScene(stage,mod,opts){stage.innerHTML='';var step=opts.step||0,pop=opts.pop||'';
+function startScene(stage,mod,opts){
+if(window.NovaLessonComponent?.active){[stage,mod,opts]=window.NovaLessonComponent.args("startScene",arguments);}
+stage.innerHTML='';var step=opts.step||0,pop=opts.pop||'';
  NOVA.cap(stage,'Fraction strips & wall',opts.challenge?'Challenge':opts.interactive?'Explore':'Step '+(step+1)+' of 6');
  var wall=new Wall(stage,mod,opts);
  var note=opts.challenge?'Build or compare the fractions. The green result appears after you check.':
@@ -1784,26 +1824,26 @@ function render(i,stage){var s=STEPS[i],mod={a:copy(s.a),b:copy(s.b),pick:copy(s
   if(i===1){var cells=stage.querySelectorAll('[data-row-den]');cells.forEach(function(g,k){g.style.opacity='.25';M.delay(k*80,function(){if(g.isConnected)M.tween(250,function(e){g.style.opacity=String(.25+e*.75);});});});}
   if(i===4||i===5){var svg=stage.querySelector('.fw-svg');if(svg)M.delay(300,function(){M.flash(svg,innerWidth<=820?207:548,svg.viewBox.baseVal.height-118,'result',22);});}}
 function selectOpts(root,opts){return null;}
-function explore(panel,stage,api){var p=C.presets[C.preset],mod={a:copy(p.a),b:copy(p.b),pick:{n:2,d:4},all:false},current=null;
-  var pr=h('select',{class:'nova-input','aria-label':'Fraction comparison preset'});Object.keys(C.presets).forEach(function(k){pr.appendChild(h('option',{value:k,text:C.presets[k].label}));});pr.value=C.preset;
-  var dsel=h('select',{class:'nova-input','aria-label':'Choose denominator'});ALL_ROWS.forEach(function(d){dsel.appendChild(h('option',{value:d,text:d+' equal parts'}));});
-  var nsel=h('input',{type:'number',class:'nova-input',min:1,max:12,step:1,value:mod.pick.n,'aria-label':'Selected numerator'});
-  var stat=h('div',{class:'fw-status',role:'status','aria-live':'polite'});
-  var all=h('input',{type:'checkbox','aria-label':'Show all wall rows on mobile'});all.checked=false;
-  function labels(){dsel.value=String(mod.pick.d);nsel.max=mod.pick.d;nsel.value=mod.pick.n;
+function explore(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var p=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("p",()=>(C.presets[C.preset])):(C.presets[C.preset])),mod={a:copy(p.a),b:copy(p.b),pick:{n:2,d:4},all:false},current=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("current",()=>(null)):(null));
+  window.NovaLessonComponent?.applyExploreModels();var pr=h('select',{class:'nova-input','aria-label':'Fraction comparison preset'});window.NovaLessonComponent?.applyExploreModels();Object.keys(C.presets).forEach(function(k){pr.appendChild(h('option',{value:k,text:C.presets[k].label}));});window.NovaLessonComponent?.applyExploreModels();pr.value=C.preset;
+  window.NovaLessonComponent?.applyExploreModels();var dsel=h('select',{class:'nova-input','aria-label':'Choose denominator'});window.NovaLessonComponent?.applyExploreModels();ALL_ROWS.forEach(function(d){dsel.appendChild(h('option',{value:d,text:d+' equal parts'}));});
+  window.NovaLessonComponent?.applyExploreModels();var nsel=h('input',{type:'number',class:'nova-input',min:1,max:12,step:1,value:mod.pick.n,'aria-label':'Selected numerator'});
+  window.NovaLessonComponent?.applyExploreModels();var stat=h('div',{class:'fw-status',role:'status','aria-live':'polite'});
+  window.NovaLessonComponent?.applyExploreModels();var all=h('input',{type:'checkbox','aria-label':'Show all wall rows on mobile'});window.NovaLessonComponent?.applyExploreModels();all.checked=false;
+  window.NovaLessonComponent?.applyExploreModels();function labels(){dsel.value=String(mod.pick.d);nsel.max=mod.pick.d;nsel.value=mod.pick.n;
     stat.textContent=mod.a&&mod.b?(equal(mod.a,mod.b)?'Exact match: same proportion of one whole':'Compare the two end points to see the difference'):'Place two fractions to compare.';}
-  function redraw(){labels();current=startScene(stage,mod,{interactive:true,pose:'ruler',caption:equal(mod.a,mod.b)?'Equal end points':'Drag the glowing ring to a rail',onChange:function(){redraw();}});}
-  pr.onchange=function(){C.preset=pr.value;var P=C.presets[C.preset];mod.a=copy(P.a);mod.b=copy(P.b);mod.pick=copy(P.b);send('preset',C.preset);redraw();};
-  dsel.onchange=function(){mod.pick={d:+dsel.value,n:Math.min(mod.pick.n,+dsel.value)};send('denominator',mod.pick.d);redraw();};
-  nsel.onchange=function(){mod.pick.n=Math.max(1,Math.min(mod.pick.d,Math.round(+nsel.value||1)));send('numerator',mod.pick.n);redraw();};
-  all.onchange=function(){mod.all=all.checked;send('allRows',mod.all);redraw();};
-  function button(t,fn){return h('button',{class:'nova-btn',text:t,onclick:fn});}
-  panel.appendChild(h('div',{class:'fw-row'},[h('label',{text:'Try a pair'}),pr]));
-  panel.appendChild(h('div',{class:'fw-row'},[h('label',{text:'Split into'}),dsel,h('label',{text:'Select parts'}),nsel]));
-  panel.appendChild(h('div',{class:'fw-actions'},[button('Place on rail A',function(){mod.a=copy(mod.pick);send('railA',copy(mod.a));redraw();}),button('Place on rail B',function(){mod.b=copy(mod.pick);send('railB',copy(mod.b));redraw();}),button('Clear rails',function(){mod.a=null;mod.b=null;send('clear',true);redraw();})]));
-  panel.appendChild(h('div',{class:'fw-row'},[h('label',{},[all,' Show all wall rows on mobile'])]));panel.appendChild(stat);
-  C._explore={get:function(){return {a:copy(mod.a),b:copy(mod.b),pick:copy(mod.pick)};},set:function(n,d){mod.pick={n:n,d:d};redraw();},place:function(which){mod[which]=copy(mod.pick);redraw();}};
-  redraw();}
+  window.NovaLessonComponent?.applyExploreModels();function redraw(){labels();current=startScene(stage,mod,{interactive:true,pose:'ruler',caption:equal(mod.a,mod.b)?'Equal end points':'Drag the glowing ring to a rail',onChange:function(){redraw();}});}
+  window.NovaLessonComponent?.applyExploreModels();pr.onchange=function(){C.preset=pr.value;var P=C.presets[C.preset];mod.a=copy(P.a);mod.b=copy(P.b);mod.pick=copy(P.b);send('preset',C.preset);redraw();};
+  window.NovaLessonComponent?.applyExploreModels();dsel.onchange=function(){mod.pick={d:+dsel.value,n:Math.min(mod.pick.n,+dsel.value)};send('denominator',mod.pick.d);redraw();};
+  window.NovaLessonComponent?.applyExploreModels();nsel.onchange=function(){mod.pick.n=Math.max(1,Math.min(mod.pick.d,Math.round(+nsel.value||1)));send('numerator',mod.pick.n);redraw();};
+  window.NovaLessonComponent?.applyExploreModels();all.onchange=function(){mod.all=all.checked;send('allRows',mod.all);redraw();};
+  window.NovaLessonComponent?.applyExploreModels();function button(t,fn){return h('button',{class:'nova-btn',text:t,onclick:fn});}
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'fw-row'},[h('label',{text:'Try a pair'}),pr]));
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'fw-row'},[h('label',{text:'Split into'}),dsel,h('label',{text:'Select parts'}),nsel]));
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'fw-actions'},[button('Place on rail A',function(){mod.a=copy(mod.pick);send('railA',copy(mod.a));redraw();}),button('Place on rail B',function(){mod.b=copy(mod.pick);send('railB',copy(mod.b));redraw();}),button('Clear rails',function(){mod.a=null;mod.b=null;send('clear',true);redraw();})]));
+  window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'fw-row'},[h('label',{},[all,' Show all wall rows on mobile'])]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(stat);
+  window.NovaLessonComponent?.applyExploreModels();C._explore={get:function(){return {a:copy(mod.a),b:copy(mod.b),pick:copy(mod.pick)};},set:function(n,d){mod.pick={n:n,d:d};redraw();},place:function(which){mod[which]=copy(mod.pick);redraw();}};
+  window.NovaLessonComponent?.applyExploreModels();redraw();}
 function challenge(panel,api,stage){var step=0,items=[{t:'Make a fraction equivalent to one half using a DIFFERENT number of pieces.',ref:{n:1,d:2},test:function(m){return !!m.b&&m.b.d!==2&&m.b.n*2===m.b.d;},hint:'Build the same length using fourths, sixths or eighths.'},
  {t:'The sample is one third. Build an equal-length fraction using sixths.',ref:{n:1,d:3},test:function(m){return !!m.b&&m.b.d===6&&m.b.n===2;},hint:'How many sixths fit exactly in one third?'},
  {t:'The sample is three quarters. Build the SAME LENGTH with eighths.',ref:{n:3,d:4},test:function(m){return !!m.b&&m.b.d===8&&m.b.n===6;},hint:'Double both numerator and denominator.'}];
@@ -1827,6 +1867,9 @@ var DEF={id:engine,title:'Fraction strips and wall',config:C,steps:STEPS,render:
   staticAlt:'One half, two quarters and three sixths all occupy exactly half a whole strip.',
   exploreIntro:'Explore: click a part to choose a numerator, drag the ring to a rail, or use the keyboard and Place buttons. The two rails use the same unit length.'};
 NOVA.registry.add({id:engine,title:DEF.title,family:'F5',topics:['fractions','equivalence'],deps:['F0-02','F0-04','F0-05','F0-07','F2-03']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(engine,DEF,{models:{},tables:{"MOBILE_ROWS":()=>MOBILE_ROWS,"ALL_ROWS":()=>ALL_ROWS,"STEPS":()=>STEPS},draws:{"Wall":["stage","model","opts"],"startScene":["stage","mod","opts"]},exploreFields:{"p":{"kind":"value","factory":null,"argCount":null},"current":{"kind":"value","factory":null,"argCount":null}}});
 NOVA.bankMount({id:engine,num:'F5·01',title:DEF.title,def:DEF,years:'KS3 Year 7–9',linked:['F5-02','F5-03','F5-05'],
  spec:{purpose:'Premium Neon Tube + Chalk fraction wall with equal-length comparison. User-approved stacked chalk fractions throughout.',params:'denominator: 1–12, numerator: 1–denominator, railA/railB, mobile allRows toggle. Common origin and length preserve area evidence.',presets:'Halves/quarters, thirds/sixths, quarter/eighth, unequal halves/fifths.',steps:'Whole → partition → half → subdivide → equal endpoints → generalise. Sir Bob narrates each teaching step.',interactions:'svgDrag selected-part handle into rails, snap/reject, keyboard row arrows/Enter and panel controls, interactive Watch/Guided/Explore/Challenge.',traps:'Counting all pieces rather than selected pieces; thinking more cuts changes the whole length; comparing denominators instead of lengths.',gcse:'Equivalent fractions, comparison and proof from equal-sized wholes.'}});
 var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,4000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);document.getElementById('clearlog').onclick=function(){log.textContent='';};

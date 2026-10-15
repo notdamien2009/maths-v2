@@ -1,3 +1,37 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
 /* F9-06 Geometric Sequence | inherited NOVA F0/F1/F2/F9-01 v3 visuals, no local shell/mascot overrides. */
 const F906_CONFIG={id:'F9-06',family:'F9',startMode:'watch',preset:'Y8-020-geometric-sequences',presets:{
  'Y8-020-geometric-sequences':{label:'Y8 · Doubling',a:2,r:2,terms:5,rule:'×2',context:'Geometric sequences'},
@@ -5,7 +39,7 @@ const F906_CONFIG={id:'F9-06',family:'F9',startMode:'watch',preset:'Y8-020-geome
  'Y9-014-exponential-growth':{label:'Y9 · Tripling',a:2,r:3,terms:5,rule:'×3',context:'Exponential growth'}
  },events:{value:['preset','position','ratio','term','placed','challengeTask'],types:['step','correct','hintUsed','mode']}};
 (function(){'use strict';
-const N=window.NOVA,C=F906_CONFIG,H=N.h,E=N.svg.el,id=C.id;
+const N=window.NOVA,C=window.NovaV2Integration.configuration(F906_CONFIG),H=N.h,E=N.svg.el,id=C.id;
 const small=()=>window.innerWidth<=760,WIDTH=()=>small()?430:760,term=(p,n)=>p.a*Math.pow(p.r,n-1);
 const steps=[
  {name:'see-the-first-term',pose:'explain',text:'Start with two. That is term one, not the amount we add each time.',prompt:'Read the first value. What could make it grow?'},
@@ -26,10 +60,14 @@ function text(svg,x,y,s,size=20,role='given',anchor='middle'){return N.chalkText
 function box(svg,x,y,w,h,s,role='given',size=20){return N.neonBox(svg,x,y,w,h,{role,text:s,size,r:12});}
 function btn(label,fn,cls='nova-btn ghost'){return H('button',{class:cls,text:label,onclick:fn});}
 function root(alt,challenge=false){let svg=N.svg.root(WIDTH(),challenge?925:795,alt);svg.setAttribute('role','img');svg.setAttribute('class','nv-svg f906-svg');return svg;}
-function clear(stage){stage.replaceChildren();N.cap(stage,'Sequence workshop','Geometric sequence');}
+function clear(stage){
+if(window.NovaLessonComponent?.active){[stage]=window.NovaLessonComponent.args("clear",arguments);}
+stage.replaceChildren();N.cap(stage,'Sequence workshop','Geometric sequence');}
 function card(label,val,gold=false){const math=H('div',{class:'f906-maths'+(gold?' f906-maths--gold':'')});math.appendChild(typeof val==='string'||typeof val==='number'?document.createTextNode(String(val)):val);return H('div',{class:'f906-card'+(gold?' f906-card--gold':'')},[H('div',{class:'f906-eyebrow',text:label}),math]);}
 function note(label,val){return H('div',{class:'f906-card f906-card--full'},[H('div',{class:'f906-eyebrow',text:label}),H('div',{class:'f906-body',text:String(val)})]);}
-function mount(stage,svg,cards,pose,say){stage.appendChild(H('div',{class:'f906-stage'},[svg,H('aside',{class:'f906-side'},cards)]));N.scene.helperStrip(stage,pose,say);}
+function mount(stage,svg,cards,pose,say){
+if(window.NovaLessonComponent?.active){[stage,svg,cards,pose,say]=window.NovaLessonComponent.args("mount",arguments);}
+stage.appendChild(H('div',{class:'f906-stage'},[svg,H('aside',{class:'f906-side'},cards)]));N.scene.helperStrip(stage,pose,say);}
 function coords(){const w=WIDTH(),padding=small()?52:100,gap=(w-padding*2)/4;return Array.from({length:5},(_,i)=>padding+i*gap);}
 /* Main visual: bars have true relative value within the sequence; the core neonBox provides glass edge, fill, glow and highlights. */
 function drawBars(svg,p,count,options={}){
@@ -82,6 +120,8 @@ function teach(idx,stage){
  mount(stage,svg,cards,info.pose,info.text);
 }
 function explore(stage){
+if(window.NovaLessonComponent?.active){[stage]=window.NovaLessonComponent.args("explore",arguments);}
+
  const p=C.presets[presetKey];clear(stage);const svg=root('Explore growing and shrinking geometric sequences with true relative-height neon glass bars.');
  text(svg,WIDTH()/2,45,'COMPARE THE RATIOS',small()?25:30,'support');
  text(svg,WIDTH()/2,84,p.label+' · adjust how many terms are revealed',small()?16:19,'support');
@@ -156,13 +196,13 @@ const def={id,title:'Geometric sequence',config:C,
  steps:steps.map((s,i)=>({name:s.name,narration:s.text,prompt:s.prompt,mood:i===5?'pleased':'focus'})),
  render(i,stage){teach(Math.min(i,5),stage);},
  exploreIntro:'Choose doubling, halving or tripling. Watch how the size changes, but the ratio remains constant.',
- explore(panel,stage,api){presetKey='Y8-020-geometric-sequences';visible=4;
-   const info=H('p',{class:'f906-instruction',text:'Switch between growth and decay. Reveal more bars and predict the next value.'});
-   const choices=H('div',{class:'f906-choices'});
-   for(const [key,p] of Object.entries(C.presets))choices.append(btn(p.label,()=>{presetKey=key;event('preset',key);explore(stage);},'nova-btn ghost'));
-   const range=H('input',{type:'range',min:'2',max:'5',value:'4','aria-label':'Number of visible terms'}),out=H('output',{class:'f906-micro',text:'4 terms'});
-   range.addEventListener('input',()=>{visible=+range.value;out.textContent=visible+' terms';event('position',visible);explore(stage);});
-   panel.append(info,choices,H('div',{class:'f906-control'},[H('label',{},['Reveal terms ',range]),out]));explore(stage);
+ explore(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();presetKey='Y8-020-geometric-sequences';window.NovaLessonComponent?.applyExploreModels();visible=4;
+   window.NovaLessonComponent?.applyExploreModels();const info=H('p',{class:'f906-instruction',text:'Switch between growth and decay. Reveal more bars and predict the next value.'});
+   window.NovaLessonComponent?.applyExploreModels();const choices=H('div',{class:'f906-choices'});
+   window.NovaLessonComponent?.applyExploreModels();for(const [key,p] of Object.entries(C.presets))choices.append(btn(p.label,()=>{presetKey=key;event('preset',key);explore(stage);},'nova-btn ghost'));
+   window.NovaLessonComponent?.applyExploreModels();const range=H('input',{type:'range',min:'2',max:'5',value:'4','aria-label':'Number of visible terms'}),out=H('output',{class:'f906-micro',text:'4 terms'});
+   window.NovaLessonComponent?.applyExploreModels();range.addEventListener('input',()=>{visible=+range.value;out.textContent=visible+' terms';event('position',visible);explore(stage);});
+   window.NovaLessonComponent?.applyExploreModels();panel.append(info,choices,H('div',{class:'f906-control'},[H('label',{},['Reveal terms ',range]),out]));window.NovaLessonComponent?.applyExploreModels();explore(stage);
  },
  challenge(panel,api,stage){challengeIndex=0;placed={};kbChoice=null;stageRef=stage;panelRef=panel;apiRef=api;
    const heading=H('h3',{class:'f906-taskhead'}),guide=H('p',{class:'f906-instruction'}),actions=H('div',{class:'f906-control'}),help=H('p',{class:'f906-status',role:'status'});
@@ -182,6 +222,9 @@ const def={id,title:'Geometric sequence',config:C,
  onRestore(){presetKey='Y8-020-geometric-sequences';visible=5;challengeIndex=0;placed={};kbChoice=null;stageRef=null;panelRef=null;apiRef=null;}
 };
 N.registry.add({id,title:'Geometric sequence',topics:['sequences','geometric sequences','ratio','exponential growth','exponential decay'],deps:['F0-02','F0-04','F0-07','F0-08','F0-13']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(id,def,{models:{},tables:{"steps":()=>steps,"TASKS":()=>TASKS},draws:{"clear":["stage"],"mount":["stage","svg","cards","pose","say"],"explore":["stage"]},exploreFields:{}});
 N.bankMount({id,num:'06',title:'Geometric sequence · Premium Edition',def,linked:['F9-02','F9-04','F9-07','F9-09'],years:'Year 8 geometric sequences · Year 9 exponential contexts · GCSE extension',spec:{
  purpose:'See a constant multiplicative ratio in growing and shrinking geometric sequences using proportional glass bars.',
  params:'Start a; positive ratio r; geometric term T(n)=a×r^(n−1); five terms and three source presets.',

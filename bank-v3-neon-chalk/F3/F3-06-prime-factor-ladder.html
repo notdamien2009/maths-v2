@@ -590,7 +590,43 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 #F3-06 .f306-draw-wrap{min-width:0}
 @media(max-width:720px){#F3-06 .f306-svg{max-height:none;width:100%;}#F3-06 .f306-scene{width:100%}#F3-06 .f306-row{padding:5px 0}#F3-06 .f306-exp-form{padding:4px 0}#F3-06 .f306-svg{filter:drop-shadow(0 6px 8px #0007)}}
 
-</style></head><body><div class="nova-wrap"><header id="nova-header" data-run="F3 · MULTIPLICATIVE STRUCTURE" data-title="Prime Factor Ladder" data-sub="Divide by primes. Reach one. Prove the product."></header><main id="gallery"></main></div><script>/* === NOVA FAMILY CORE v1.4 : JS START === (extract this block for later runs) */
+</style><script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
+</head><body><div class="nova-wrap"><header id="nova-header" data-run="F3 · MULTIPLICATIVE STRUCTURE" data-title="Prime Factor Ladder" data-sub="Divide by primes. Reach one. Prove the product."></header><main id="gallery"></main></div><script>/* === NOVA FAMILY CORE v1.4 : JS START === (extract this block for later runs) */
 (function(){
 'use strict';
 var NOVA = window.NOVA = window.NOVA || {};
@@ -1716,7 +1752,7 @@ const F306_CONFIG={id:'F3-06',startMode:'watch',preset:'Y7-015-60',parameters:{m
  challenge:[{n:60},{n:84},{n:180}]};
 window.F306_CONFIG=F306_CONFIG;
 (function(){'use strict';
-const N=window.NOVA,H=N.h,E=N.svg.el,C=F306_CONFIG,ID=C.id;
+const N=window.NOVA,H=N.h,E=N.svg.el,C=window.NovaV2Integration.configuration(F306_CONFIG),ID=C.id;
 function emit(key,value){if(!C.events.value.includes(key))throw Error('Undeclared F3-06 event '+key);N.events.emit('value',{engine:ID,key,value});}
 function prime(v){if(!Number.isInteger(v)||v<2)return false;for(let i=2;i*i<=v;i++)if(v%i===0)return false;return true;}
 function smallestPrime(n){if(!Number.isInteger(n)||n<2)return null;for(let i=2;i<=n;i++)if(n%i===0)return i;return null;}
@@ -1731,7 +1767,9 @@ function txt(parent,x,y,t,size=40,role='given'){return N.chalkText(parent,x,y,St
 function btn(t,f,main=false){return H('button',{text:t,class:main?'nova-btn primary':'nova-btn',onclick:f});}
 const SPEECH={start:'Start at the top!',first:'Try two first!',second:'Down we go!',third:'Keep dividing!',fourth:'Almost there!',five:'One more!',one:'We reached one!',collect:'Collect the primes!',index:'Spot the powers!',explore:'Pick a prime!',ready:'Your turn!',right:'Nice work!',wrong:'Try another!',hint:'Look closely!',almost:'Finish the proof!',win:'Brilliant work!',undo:'Try again!'};
 const POSE={start:'explain',first:'point',second:'point',third:'point',fourth:'count',five:'count',one:'cheer',collect:'count',index:'think',explore:'point',ready:'think',right:'cheer',wrong:'oops',hint:'think',almost:'think',win:'cheer',undo:'point'};
-function dock(stage,key){N.scene.helperStrip(stage,POSE[key]||'think',SPEECH[key]||'Your turn!');}
+function dock(stage,key){
+if(window.NovaLessonComponent?.active){[stage,key]=window.NovaLessonComponent.args("dock",arguments);}
+N.scene.helperStrip(stage,POSE[key]||'think',SPEECH[key]||'Your turn!');}
 const STEPS=[
  {name:'Begin with sixty',rungs:0,phase:'start',say:'start',narration:'Prime factorisation means writing sixty as a multiplication of prime numbers. We start with sixty at the top of the division ladder.'},
  {name:'Divide by two',rungs:1,phase:'divide',say:'first',narration:'Two is the smallest prime divisor of sixty. Sixty divided by two is thirty. We write two on the left and thirty on the right.'},
@@ -1805,6 +1843,8 @@ function diagram(n,parts,opt={}){
  return svg;
 }
 function assemble(stage,n,parts,opt={}){
+if(window.NovaLessonComponent?.active){[stage,n,parts,opt]=window.NovaLessonComponent.args("assemble",arguments);}
+
  stage.innerHTML='';N.cap(stage,'Prime factor ladder',opt.caption||'Divide by the smallest prime until you reach one');
  const row=H('div',{class:'f306-scene'}),side=H('aside',{class:'f306-side'}),svg=diagram(n,parts,opt),remaining=quotient(n,parts);
  side.append(
@@ -1822,22 +1862,22 @@ const def={id:ID,title:'Prime factor ladder',config:C,steps:STEPS,
  staticAlt:'60 ÷ 2 = 30; 30 ÷ 2 = 15; 15 ÷ 3 = 5; 5 ÷ 5 = 1. So 60 = 2² × 3 × 5.',
  render(i,stage){const s=STEPS[i],parts=factorise(60).slice(0,s.rungs);assemble(stage,60,parts,{phase:s.phase,caption:s.name,say:s.say,animate:i>0});},
  exploreIntro:'Build and check your own prime factor ladders.',
- explore(panel,stage,api){let preset=C.preset,n=C.presets[preset].n,parts=[],say='explore',feedback='Choose the smallest prime factor.',bad=false;
-  const pre=H('select',{'aria-label':'Curriculum preset'}),number=H('input',{type:'number',min:C.parameters.min,max:C.parameters.max,step:1,value:n,'aria-label':'Starting whole number'}),choose=H('select',{'aria-label':'Prime divisor'}),status=H('p',{class:'f306-status',role:'status'});
-  Object.entries(C.presets).forEach(([key,v])=>pre.add(new Option(v.label,key)));
-  function options(){const rem=quotient(n,parts);const a=[...new Set([...C.parameters.primeCandidates,...(prime(rem)?[rem]:[])])].sort((a,b)=>a-b);choose.innerHTML='';a.forEach(p=>choose.add(new Option(String(p),p)));}
-  function report(m,error=false,kind='right'){feedback=m;bad=error;say=error?'wrong':kind;}
-  function add(p){emit('primeDivisor',p);const v=validNext(n,parts,p);if(!v.ok){report(v.why,true);render();return false;}parts.push(p);emit('quotient',v.remainder);emit('rung',parts.length);report(v.remainder===1?'All rungs complete!':'Exact prime division!');render();return true;}
-  function undo(i){if(i<0||i>=parts.length)return false;parts=parts.slice(0,i);emit('undoRung',i);report('Those rungs have been removed.',false,'undo');render();return true;}
-  function render(){panel.innerHTML='';options();pre.value=preset;number.value=n;
+ explore(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();let preset=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("preset",()=>(C.preset)):(C.preset)),n=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("n",()=>(C.presets[preset].n)):(C.presets[preset].n)),parts=[],say='explore',feedback='Choose the smallest prime factor.',bad=false;
+  window.NovaLessonComponent?.applyExploreModels();const pre=H('select',{'aria-label':'Curriculum preset'}),number=H('input',{type:'number',min:C.parameters.min,max:C.parameters.max,step:1,value:n,'aria-label':'Starting whole number'}),choose=H('select',{'aria-label':'Prime divisor'}),status=H('p',{class:'f306-status',role:'status'});
+  window.NovaLessonComponent?.applyExploreModels();Object.entries(C.presets).forEach(([key,v])=>pre.add(new Option(v.label,key)));
+  window.NovaLessonComponent?.applyExploreModels();function options(){const rem=quotient(n,parts);const a=[...new Set([...C.parameters.primeCandidates,...(prime(rem)?[rem]:[])])].sort((a,b)=>a-b);choose.innerHTML='';a.forEach(p=>choose.add(new Option(String(p),p)));}
+  window.NovaLessonComponent?.applyExploreModels();function report(m,error=false,kind='right'){feedback=m;bad=error;say=error?'wrong':kind;}
+  window.NovaLessonComponent?.applyExploreModels();function add(p){emit('primeDivisor',p);const v=validNext(n,parts,p);if(!v.ok){report(v.why,true);render();return false;}parts.push(p);emit('quotient',v.remainder);emit('rung',parts.length);report(v.remainder===1?'All rungs complete!':'Exact prime division!');render();return true;}
+  window.NovaLessonComponent?.applyExploreModels();function undo(i){if(i<0||i>=parts.length)return false;parts=parts.slice(0,i);emit('undoRung',i);report('Those rungs have been removed.',false,'undo');render();return true;}
+  window.NovaLessonComponent?.applyExploreModels();function render(){panel.innerHTML='';options();pre.value=preset;number.value=n;
    assemble(stage,n,parts,{say,caption:'Build the prime division ladder',phase:quotient(n,parts)===1?'index':'divide',add:quotient(n,parts)>1?add:null,undo});
    const bar=H('div',{class:'f306-row'},[H('label',{},['Preset',pre]),H('label',{},['Number',number]),H('label',{},['Prime divisor',choose])]);
    panel.append(H('p',{class:'f306-intro',text:'Divide by a prime. Check the quotient. Keep going to one.'}),bar,H('div',{class:'f306-row'},[
     btn('Add rung',()=>add(+choose.value),true),btn('Undo last',()=>undo(parts.length-1)),btn('Reset',()=>{parts=[];report('Start at the top!',false,'start');render();})]),status);
    status.textContent=feedback;status.classList.toggle('error',bad);
   }
-  pre.onchange=()=>{preset=pre.value;n=C.presets[preset].n;parts=[];emit('preset',preset);emit('target',n);report('Ready for a new ladder.',false,'start');render();};
-  number.onchange=()=>{n=Math.max(C.parameters.min,Math.min(C.parameters.max,Math.floor(+number.value||60)));parts=[];emit('target',n);report('Start dividing!',false,'start');render();};render();},
+  window.NovaLessonComponent?.applyExploreModels();pre.onchange=()=>{preset=pre.value;n=C.presets[preset].n;parts=[];emit('preset',preset);emit('target',n);report('Ready for a new ladder.',false,'start');render();};
+  window.NovaLessonComponent?.applyExploreModels();number.onchange=()=>{n=Math.max(C.parameters.min,Math.min(C.parameters.max,Math.floor(+number.value||60)));parts=[];emit('target',n);report('Start dividing!',false,'start');render();};window.NovaLessonComponent?.applyExploreModels();render();},
  challenge(panel,api,stage){let task=0,parts=[],exps={},wrong=0,won=false,say='ready',feedback='Build a ladder with the smallest prime at every rung.',bad=false;
   const choose=H('select',{'aria-label':'Choose a prime for the next rung'}),status=H('p',{class:'f306-status',role:'status'});
   function cur(){return C.challenge[task].n;}
@@ -1864,6 +1904,9 @@ const def={id:ID,title:'Prime factor ladder',config:C,steps:STEPS,
   emit('challengeTask',task);render();},onRestore(){}
 };
 N.registry.add({id:ID,title:def.title,topics:['prime decomposition','prime ladder','factorisation','index form','HCF and LCM'],deps:['F0-02','F0-03','F0-04','F0-07','F0-08','F3-05']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(ID,def,{models:{},tables:{"STEPS":()=>STEPS},draws:{"dock":["stage","key"],"assemble":["stage","n","parts","opt"]},exploreFields:{"preset":{"kind":"value","factory":null,"argCount":null},"n":{"kind":"value","factory":null,"argCount":null}}});
 N.bankMount({id:ID,num:'06',title:'Prime factor ladder · Premium Review',def,linked:['F3-05','F3-07','F3-10'],years:'Year 7: Y7-015 and Y7-016 · Year 8: Y8-004',spec:{
  purpose:'Construct a descending division ladder where each divisor is prime, each quotient is exact, and the end value is one.',
  params:'Whole numbers 2–420; named curriculum presets; user can set any integer within range.',

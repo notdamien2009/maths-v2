@@ -564,6 +564,42 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .nova-stage>svg.nv-svg.nv-vert{max-width:400px}
 @media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="number">
 <div class="nova-wrap">
@@ -1720,12 +1756,14 @@ function clone(o){return JSON.parse(JSON.stringify(o));}
 function strip(stage,items){var d=h('div',{class:'nl-strip'});items.forEach(function(it){d.appendChild(h('span',{class:'k',text:it[0]}));d.appendChild(NOVA.neonTile(String(it[1]).replace(/ /g,'\u00A0'),{role:it[2]||'result'}));});stage.appendChild(d);return d;}
 function bigMarkers(sv){[].forEach.call(sv.querySelectorAll('marker'),function(m){m.setAttribute('markerWidth',8);m.setAttribute('markerHeight',8);});}
 
-var C=NOVA_F2_10_CONFIG,M=NOVA.motion,SUPS='\u2070\u00B9\u00B2\u00B3\u2074\u2075\u2076\u2077\u2078\u2079';
+var C=window.NovaV2Integration.configuration(NOVA_F2_10_CONFIG),M=NOVA.motion,SUPS='\u2070\u00B9\u00B2\u00B3\u2074\u2075\u2076\u2077\u2078\u2079';
 function sp(n){return String(n).split('').map(function(c){return c==='-'?'\u207B':SUPS[+c];}).join('');}
 function W(par,x,y,t,size,role,anchor){var e=NOVA.chalkText(par,x,y,t,{size:size,anchor:anchor||'middle',role:role});e.style.fontFamily='var(--nova-font-chalk-write)';return e;}
 var LIVE=[];function claim(o){LIVE.forEach(function(x){x.dead=true;});LIVE=[o];}
 /* ---------- square / cube with a draggable corner handle ---------- */
-function Shape(stage,st,o){o=o||{};var self=this,sv;claim(self);var U=st.view==='cube'?17:24,X0=st.view==='cube'?120:70,Y0=st.view==='cube'?250:40;
+function Shape(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("Shape",arguments);}
+o=o||{};var self=this,sv;claim(self);var U=st.view==='cube'?17:24,X0=st.view==='cube'?120:70,Y0=st.view==='cube'?250:40;
   function iso(x,y,z){return {x:X0+(x-z)*U*0.87,y:Y0-y*U+(x+z)*U*0.5};}
   function draw(pop){if(self.dead)return;var old=sv,n=st.kn!=null?Math.round(st.kn):st.n;sv=S.root(600,320,(st.view==='cube'?'Cube ':'Square ')+n+' by '+n+'.');
     if(st.view==='square'){NOVA.neonBox(sv,X0,Y0,n*U,n*U,{role:'#7dd3fc',r:4});for(var i=0;i<n;i++)for(var j=0;j<n;j++){var g=S.el('g',{'data-tile':i+'_'+j},sv);S.el('rect',{x:X0+i*U+1.5,y:Y0+j*U+1.5,width:U-3,height:U-3,rx:3,css:'fill:#60a5fa;opacity:.20'},g);S.el('rect',{x:X0+i*U+1.5,y:Y0+j*U+1.5,width:U-3,height:U-3,rx:3,fill:'none','stroke-width':1.2,css:'stroke:#7dd3fc'},g);}
@@ -1760,7 +1798,9 @@ function Shape(stage,st,o){o=o||{};var self=this,sv;claim(self);var U=st.view===
   self.grow=function(to,done){var go=function(){if(self.dead)return;if(st.n>=to){done&&done();return;}self.setN(st.n+1);M.delay(380,go);};go();};
   self.redraw=draw;draw();}
 /* ---------- index chain (drag factor tiles) and laws ---------- */
-function Chain(stage,st,o){o=o||{};var self=this,sv,busy=false;claim(self);var TW=48,TH=46;
+function Chain(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("Chain",arguments);}
+o=o||{};var self=this,sv,busy=false;claim(self);var TW=48,TH=46;
   function rowXY(n,i,y){var w=n*TW+(n-1)*22;return {x:300-w/2+i*(TW+22),y:y};}
   function tile(par,x,y,b,attrs,role){var g=S.el('g',attrs||{},par);NOVA.neonBox(g,x,y,TW,TH,{role:role||'#60a5fa',r:10});W(g,x+TW/2,y+32,String(b),26);return g;}
   function idx(b,m){return b+sp(m);}
@@ -1799,25 +1839,27 @@ var steps=[
  {name:'Multiply powers',mood:'focus',narration:'2³ × 2²: the two chains join into one chain of 5 twos. Add the indices: 2⁵.',prompt:'Why do the indices add?',st:{view:'law',base:2,a:3,b:2,op:'\u00D7'},comb:1},
  {name:'Divide powers',mood:'think',narration:'3⁵ ÷ 3²: each 3 on the bottom cancels a 3 on top. Three 3s are left: 3³. Subtract the indices.',prompt:'How many 3s cancel?',st:{view:'law',base:3,a:5,b:2,op:'\u00F7'},comb:1},
  {name:'Fractional index',mood:'cheer',narration:'8 to the power one third means the cube root of 8: the edge of a cube with volume 8. The edge is 2.',prompt:'What is ∛8?',st:{view:'cube',n:2,frac:true}}];
-function mk(stage,st,o){return st.view==='square'||st.view==='cube'?new Shape(stage,st,o):new Chain(stage,st,o);}
+function mk(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("mk",arguments);}
+return st.view==='square'||st.view==='cube'?new Shape(stage,st,o):new Chain(stage,st,o);}
 function chipsFor(st){if(st.view==='square')return [['n',String(st.n),'given'],['n\u00B2',String(st.n*st.n),'result']];if(st.view==='cube')return st.frac?[['8^(1/3)','2','result']]:[['n',String(st.n),'given'],['n\u00B3',String(st.n*st.n*st.n),'result']];if(st.view==='chain')return [['factors',String(st.a),'given'],['value',st.a?String(Math.pow(st.base,st.a)):'—','result']];var m=st.op==='\u00D7'?st.a+st.b:st.a-st.b;return [['indices',st.a+' '+(st.op==='\u00D7'?'+':'\u2212')+' '+st.b,'op'],['result',st.base+'^'+m,'result']];}
-function render(i,stage){stage.innerHTML='';var s=steps[i],st=clone(s.st),sp2;if(NOVA.reducedMotion()){if(s.grow)st.n=s.grow;if(s.build)st.a=s.build;if(s.comb)st.done=true;s=Object.assign({},s,{grow:0,build:0,comb:0});}NOVA.cap(stage,'Powers and roots · '+s.name,'step '+(i+1)+'/'+steps.length);
-  var w=mk(stage,st,{onChange:function(){if(sp2&&sp2.parentNode)sp2.parentNode.removeChild(sp2);sp2=strip(stage,chipsFor(st));}});sp2=strip(stage,chipsFor(st));
+function render(i,stage){stage.innerHTML='';var s=steps[i],st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("render.st",(...a)=>clone(...a),[s.st]):(clone(s.st))),sp2;if(NOVA.reducedMotion()){if(s.grow)st.n=s.grow;if(s.build)st.a=s.build;if(s.comb)st.done=true;s=Object.assign({},s,{grow:0,build:0,comb:0});}NOVA.cap(stage,'Powers and roots · '+s.name,'step '+(i+1)+'/'+steps.length);
+  var w=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("render.w",(...a)=>mk(...a),[stage,st,{onChange:function(){if(sp2&&sp2.parentNode)sp2.parentNode.removeChild(sp2);sp2=strip(stage,chipsFor(st));}}]):(mk(stage,st,{onChange:function(){if(sp2&&sp2.parentNode)sp2.parentNode.removeChild(sp2);sp2=strip(stage,chipsFor(st));}})));sp2=strip(stage,chipsFor(st));
   if(s.grow)M.delay(600,function(){if(!w.dead)w.grow(s.grow);});if(s.build)M.delay(600,function(){if(!w.dead)w.build(s.build);});if(s.comb)M.delay(900,function(){if(!w.dead)w.combine(function(){if(sp2.parentNode)sp2.parentNode.removeChild(sp2);sp2=strip(stage,chipsFor(st));});});
   NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
 var def={id:'F2-10',title:'Powers and roots builder',config:C,steps:steps,render:render,
  alt:'Powers and roots builder: a neon tile square and an isometric neon cube grow as you drag the corner (squares, cubes and their roots); factor tiles build index chains (2 × 2 × 2 × 2 = 2⁴); chains join or cancel to show the laws of indices; a cube of volume 8 shows 8^(1/3) = 2.',
  staticAlt:'5² = 25; √49 = 7; 3³ = 27; 2 × 2 × 2 × 2 = 2⁴ = 16; 2³ × 2² = 2⁵; 3⁵ ÷ 3² = 3³; 8^(1/3) = 2.',
  exploreIntro:'Explore: drag the gold corner handle to grow the square or cube (arrow keys work too). Root presets show a dashed target: grow to match it. Index chain: drag the factor tile into the chain zone, or a chain tile back to the tray to remove it (Enter / Delete on the factor tile). Laws: press Combine.',
- explore:function(panel,stage,api){var st=clone(C.presets[C.preset]),w,sp2;
-   function chips(){if(sp2&&sp2.parentNode)sp2.parentNode.removeChild(sp2);sp2=strip(stage,chipsFor(st));}
-   function build(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+({square:'squares and roots',cube:'cubes and roots',chain:'index notation',law:'laws of indices'})[st.view],'live');w=mk(stage,st,{interactive:true,onChange:chips});chips();NOVA.scene.helperStrip(stage,'explain',st.view==='law'?'Combine':'Drag\u00A0it');sync();}
-   var pre=h('select',{class:'nova-input','aria-label':'Example'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});pre.value=C.preset;pre.onchange=function(){st=clone(C.presets[pre.value]);build();};
-   var bs=h('select',{class:'nova-input','aria-label':'Base'});[2,3,4,5,10].forEach(function(b){bs.appendChild(h('option',{value:b,text:'base '+b}));});bs.onchange=function(){if(st.view==='chain'||st.view==='law'){st.base=+bs.value;st.done=false;build();}};
-   var cb=h('button',{class:'nova-btn primary',text:'Combine',onclick:function(){if(w.combine)w.combine(function(){chips();});}}),rb=h('button',{class:'nova-btn ghost',text:'Reset',onclick:function(){st=clone(C.presets[pre.value]);build();}});
-   function sync(){cb.style.display=st.view==='law'?'':'none';bs.style.display=st.view==='chain'||st.view==='law'?'':'none';}
-   panel.appendChild(h('label',{class:'pr-row'},['Example ',pre]));panel.appendChild(h('div',{class:'pr-row'},[bs,cb,rb]));
-   build();C._explore={st:function(){return st;},w:function(){return w;}};},
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>clone(...a),[C.presets[C.preset]]):(clone(C.presets[C.preset]))),w,sp2;
+   window.NovaLessonComponent?.applyExploreModels();function chips(){if(sp2&&sp2.parentNode)sp2.parentNode.removeChild(sp2);sp2=strip(stage,chipsFor(st));}
+   window.NovaLessonComponent?.applyExploreModels();function build(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+({square:'squares and roots',cube:'cubes and roots',chain:'index notation',law:'laws of indices'})[st.view],'live');w=mk(stage,st,{interactive:true,onChange:chips});chips();NOVA.scene.helperStrip(stage,'explain',st.view==='law'?'Combine':'Drag\u00A0it');sync();}
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Example'});window.NovaLessonComponent?.applyExploreModels();Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=C.preset;window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){st=clone(C.presets[pre.value]);build();};
+   window.NovaLessonComponent?.applyExploreModels();var bs=h('select',{class:'nova-input','aria-label':'Base'});window.NovaLessonComponent?.applyExploreModels();[2,3,4,5,10].forEach(function(b){bs.appendChild(h('option',{value:b,text:'base '+b}));});window.NovaLessonComponent?.applyExploreModels();bs.onchange=function(){if(st.view==='chain'||st.view==='law'){st.base=+bs.value;st.done=false;build();}};
+   window.NovaLessonComponent?.applyExploreModels();var cb=h('button',{class:'nova-btn primary',text:'Combine',onclick:function(){if(w.combine)w.combine(function(){chips();});}}),rb=h('button',{class:'nova-btn ghost',text:'Reset',onclick:function(){st=clone(C.presets[pre.value]);build();}});
+   window.NovaLessonComponent?.applyExploreModels();function sync(){cb.style.display=st.view==='law'?'':'none';bs.style.display=st.view==='chain'||st.view==='law'?'':'none';}
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Example ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row'},[bs,cb,rb]));
+   window.NovaLessonComponent?.applyExploreModels();build();window.NovaLessonComponent?.applyExploreModels();C._explore={st:function(){return st;},w:function(){return w;}};},
  challenge:function(panel,api,stage){var cst={view:'square',n:1,target:64};
    var tasks=[
     {q:'Drag the corner to find √64.',build:function(){return function(){return cst.n;};},check:function(x){var ok=x===8;return [ok,ok?'Yes: 8 × 8 = 64, so √64 = 8.':x===32?'Square root is not halving.':'Grow the square until it has 64 tiles.'];},hint:'Which number times itself makes 64?',solve:function(){cst.n=8;paintC(0);}},
@@ -1828,6 +1870,9 @@ var def={id:'F2-10',title:'Powers and roots builder',config:C,steps:steps,render
      strip(stage,[[['\u221A64','3\u2074','5\u2076 \u00F7 5\u00B2'][k],'?','unknown']]);NOVA.scene.helperStrip(stage,'think',['\u221A64','3\u2074','Law'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F2-10',def,{models:{},tables:{"LIVE":()=>LIVE,"steps":()=>steps},draws:{"Shape":["stage","st","o"],"Chain":["stage","st","o"],"mk":["stage","st","o"]},exploreFields:{"st":{"kind":"factory","factory":"clone","argCount":1},"render.st":{"kind":"factory","factory":"clone","argCount":1},"render.w":{"kind":"factory","factory":"mk","argCount":3}}});
 NOVA.bankMount({id:'F2-10',num:'F2·10',title:'Powers and roots builder',def:def,linked:['F2-08','F2-09','F0-16','F0-04'],
  spec:{purpose:'Premium powers and roots: drag the corner of a neon tile square or isometric neon cube to build squares and cubes (roots by matching a dashed target); factor tiles build index chains; chains join (×) or cancel (÷) to show the laws of indices; a volume-8 cube shows 8^(1/3) = 2.',
   params:'view square | cube | chain | law, n, target, base, a, b, op, maxN, maxChain, presets. Core: NOVA.motion (pop, flash, back ease, trail), NOVA.ui.svgDrag drag rules (factor tile → chain zone, chain tile → tray remove), single-drag lock for the corner handle. Keyboard: handle arrows / + −; factor tile Enter / Delete. Year groups: Y7 (11–12): Y7-017; Y8 (12–13): Y8-001, Y8-002; Y9 (13–14): Y9-003.',

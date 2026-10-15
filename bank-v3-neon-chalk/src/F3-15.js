@@ -1,3 +1,37 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
 /* F3-15 · Surd and exact value builder. All maths drawing via unchanged F0 Neon + Chalk core. */
 const F315_CONFIG={id:'F3-15',preset:'Y9-002',startMode:'watch',parameters:{min:2,max:200,integerOnly:true},
  presets:{
@@ -10,7 +44,7 @@ const F315_CONFIG={id:'F3-15',preset:'Y9-002',startMode:'watch',parameters:{min:
  events:{value:['preset','number','factor','card','remove','reset','proof','hint'],types:['step','correct','hintUsed','mode']}};
 window.F315_CONFIG=F315_CONFIG;
 (function(){'use strict';
-const N=window.NOVA,H=N.h,E=N.svg.el,C=F315_CONFIG,ID=C.id;
+const N=window.NOVA,H=N.h,E=N.svg.el,C=window.NovaV2Integration.configuration(F315_CONFIG),ID=C.id;
 const PHRASES={start:'Look carefully!',factor:'Spot the square!',lift:'Lift it out!',root:'Nearly there!',finish:'Brilliant!',explore:'Your turn!',correct:'Nice work!',wrong:'Try again!',hint:'Look for squares!',ready:'Have a go!',remove:'One more try!',win:'You nailed it!'};
 const POSES={start:'magnify',factor:'think',lift:'point',root:'count',finish:'cheer',explore:'magnify',correct:'cheer',wrong:'oops',hint:'think',ready:'think',remove:'point',win:'cheer'};
 const STEPS=[
@@ -95,6 +129,8 @@ function sceneArt(n,options={}){
  return svg;
 }
 function view(stage,n,options={}){
+if(window.NovaLessonComponent?.active){[stage,n,options]=window.NovaLessonComponent.args("view",arguments);}
+
  stage.innerHTML='';N.cap(stage,'Surd and Exact-Value Builder',options.caption||'Find the biggest square factor.');
  const scene=H('div',{class:'f315-scene'}),side=H('aside',{class:'f315-side'}),svg=sceneArt(n,options),s=surd(n);
  const known=options.selectedFactor!==null&&options.selectedFactor!==undefined||(!options.challenge&&!options.interactive&&(options.phase??0)>=1);
@@ -111,12 +147,12 @@ function view(stage,n,options={}){
  formula.append(N.mt.render(expr));stage.append(H('div',{class:'f315-top-proof'},[formula,H('div',{class:'f315-stage-desc',text:options.helper||'A square factor leaves the root; the remaining factor stays inside.'})]));
  N.scene.helperStrip(stage,POSES[options.say||'explore']||'think',PHRASES[options.say||'explore']||'Your turn!');return svg;
 }
-function explore(panel,stage){let n=C.presets[C.preset].n,selected=null,message='Find the largest square factor.',saying='explore',bad=false;
- let preset=H('select',{'aria-label':'Choose surd preset'}),number=H('input',{type:'number',min:2,max:200,step:1,'aria-label':'Area to simplify'});
- Object.entries(C.presets).forEach(([k,v])=>preset.add(new Option(v.label,k)));
- function pick(v){let why=errorFactor(n,v);evt('factor',v);if(why){message=why;bad=true;saying='wrong';render();return false;}selected=v;message=`${n} = ${v} × ${n/v}. Its square root can be taken outside.`;bad=false;saying='correct';render();return true;}
- function reset(){selected=null;message='Find the largest square factor.';saying='explore';bad=false;evt('reset',true);render();}
- function render(){const s=surd(n);view(stage,n,{interactive:true,selectedFactor:selected,onFactor:pick,onRemove:()=>{reset();},say:saying,caption:'Explore square factors',helper:'Choose the largest perfect-square factor.'});
+function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let n=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("n",()=>(C.presets[C.preset].n)):(C.presets[C.preset].n)),selected=null,message=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("message",()=>('Find the largest square factor.')):('Find the largest square factor.')),saying='explore',bad=false;
+ window.NovaLessonComponent?.applyExploreModels();let preset=H('select',{'aria-label':'Choose surd preset'}),number=H('input',{type:'number',min:2,max:200,step:1,'aria-label':'Area to simplify'});
+ window.NovaLessonComponent?.applyExploreModels();Object.entries(C.presets).forEach(([k,v])=>preset.add(new Option(v.label,k)));
+ window.NovaLessonComponent?.applyExploreModels();function pick(v){let why=errorFactor(n,v);evt('factor',v);if(why){message=why;bad=true;saying='wrong';render();return false;}selected=v;message=`${n} = ${v} × ${n/v}. Its square root can be taken outside.`;bad=false;saying='correct';render();return true;}
+ window.NovaLessonComponent?.applyExploreModels();function reset(){selected=null;message='Find the largest square factor.';saying='explore';bad=false;evt('reset',true);render();}
+ window.NovaLessonComponent?.applyExploreModels();function render(){const s=surd(n);view(stage,n,{interactive:true,selectedFactor:selected,onFactor:pick,onRemove:()=>{reset();},say:saying,caption:'Explore square factors',helper:'Choose the largest perfect-square factor.'});
  panel.innerHTML='';preset.value=Object.entries(C.presets).find(([k,v])=>v.n===n)?.[0]||C.preset;number.value=n;
  panel.append(H('div',{class:'f315-form'},[H('label',{},['Preset',preset]),H('label',{},['Area',number]),btn('Find factor',()=>pick(s.square),true),btn('Reset',reset)]));
  panel.append(H('p',{class:'f315-info',text:'Drag a numbered square-factor tile to the glowing factor slot, or use the buttons below. Square factors multiply with the remaining factor; they do not add.'}));
@@ -125,7 +161,7 @@ function explore(panel,stage){let n=C.presets[C.preset].n,selected=null,message=
  panel.append(H('p',{role:'status',class:'f315-status'+(bad?' bad':''),text:message}));
  preset.onchange=()=>{n=C.presets[preset.value].n;evt('preset',preset.value);selected=null;bad=false;message='Find the square factor.';saying='explore';render();};
  number.onchange=()=>{n=Math.max(2,Math.min(200,Math.round(Number(number.value)||72)));evt('number',n);selected=null;bad=false;message='Find the square factor.';render();};
- }render();}
+ }window.NovaLessonComponent?.applyExploreModels();render();}
 function challenge(panel,api,stage){let idx=0,total=0,selected=null,answer=null,said='ready',message='Start by extracting the largest square factor.',wrong=false,timeout=null;
  api.onCleanup(()=>{if(timeout)clearTimeout(timeout);});
  function finish(){panel.innerHTML='';view(stage,72,{phase:4,won:true,say:'win',caption:'Four exact values proved',celebrate:true});panel.append(H('p',{class:'f315-banner',text:'Four exact surd proofs complete! You extracted every square factor and kept the exact values.'}));evt('proof',{complete:true,total});}
@@ -150,6 +186,9 @@ const def={id:ID,title:'Surd and Exact-Value Builder',config:C,steps:STEPS,
  render(i,stage){const n=C.presets[C.preset].n,s=surd(n);view(stage,n,{phase:i,selectedFactor:i>=1?s.square:null,say:STEPS[i].say,caption:STEPS[i].name,celebrate:i===4});},
  exploreIntro:'Find the biggest square factor, then leave the exact root in simplest form.',explore,challenge,onRestore(){}};
 N.registry.add({id:ID,title:def.title,topics:['surds','exact roots','square factors','powers','irrational numbers'],deps:['F0-02','F0-05','F0-03','F0-04','F0-08','F3-09','F3-11']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(ID,def,{models:{},tables:{"STEPS":()=>STEPS},draws:{"view":["stage","n","options"]},exploreFields:{"n":{"kind":"value","factory":null,"argCount":null},"message":{"kind":"value","factory":null,"argCount":null}}});
 N.bankMount({id:ID,num:'15',title:'Surd and Exact-Value Builder · Premium Review',def,linked:['F3-09','F3-10','F3-11'],years:'Year 9 · Powers, roots and exact values',spec:{purpose:'Distinguish exact surd values from decimal approximations and extract the largest square factor.',params:'Area n from 2 to 200; largest square factor and square-free radicand.',presets:'Y9-002: 72, 50, 108, 45 and 64, with editable n in Explore.',steps:'Factorise n → isolate largest square factor → separate roots → take the square root → simplest surd form.',interactions:'Drag factor tiles to the factor slot, drag exact-result cards to the proof slot, remove and retry; all drag actions have keyboard buttons.',traps:'Replacing exact value with decimal; using a non-square divisor; confusing multiplication with subtraction; stopping at a non-simplest equivalent surd.',gcse:'Extends to surd simplification, rationalising, exact geometry and algebra with irrational expressions.'}});
 // F3-local fast movement recovery: reuse unchanged F0 drag transaction, do not invent a new drag mechanism.
 (function(){const host=document.getElementById(ID);let pointer=null;

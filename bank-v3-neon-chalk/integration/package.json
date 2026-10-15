@@ -1,0 +1,12 @@
+{
+  "name": "nova-v2-integration-verification",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test:components": "node qa/test-components.cjs",
+    "test:lesson": "node validate-lesson.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

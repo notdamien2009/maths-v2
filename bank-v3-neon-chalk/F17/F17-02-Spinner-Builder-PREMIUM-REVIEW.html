@@ -595,7 +595,43 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .nova-stage .nv-dock{height:138px}.nova-bob .nova-side{display:none!important}
 @media(max-width:500px){.nova-stage svg.f172-plot{width:100%;max-width:100%}.f172-readouts{gap:5px;padding:4px 5px 8px}.f172-card{flex-direction:column;gap:2px;padding:5px 2px;min-height:63px}.f172-card .lab{font-size:9px;max-width:100%;text-align:center}.f172-card .val{font-size:20px}.f172-frac{font-size:19px}.nova-stage .nv-dock{height:106px}.nova-stage .nv-dockfig{height:98px}.nova-stage .nv-dockbub{font-size:13px}.f172-panel-label select{max-width:100%;margin-left:0}}
 @media print{.f172-card{background:white;border-color:#777;color:#111;box-shadow:none}.f172-frac{color:#111}.f172-frac i{background:#111;box-shadow:none}}
-</style></head><body data-topic="probability"><div class="nova-wrap"><header data-run="F17 · PROBABILITY &amp; SETS · 02" data-sub="Construct equal-sector spinners, assign winning outcomes, run experiments and combine events." data-title="SPINNER BUILDER" id="nova-header"></header><main id="gallery"></main><section aria-label="Event log" class="nova-card nova-logcard"><h2 style="font-size:1.1em">Event log (NOVA.events)</h2><div aria-live="off" class="nova-log" id="log" role="log"></div><button class="nova-btn" id="clearlog">Clear log</button></section></div><script>
+</style><script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
+</head><body data-topic="probability"><div class="nova-wrap"><header data-run="F17 · PROBABILITY &amp; SETS · 02" data-sub="Construct equal-sector spinners, assign winning outcomes, run experiments and combine events." data-title="SPINNER BUILDER" id="nova-header"></header><main id="gallery"></main><section aria-label="Event log" class="nova-card nova-logcard"><h2 style="font-size:1.1em">Event log (NOVA.events)</h2><div aria-live="off" class="nova-log" id="log" role="log"></div><button class="nova-btn" id="clearlog">Clear log</button></section></div><script>
 /* === NOVA FAMILY CORE v1.4 : JS START === (extract this block for later runs) */
 (function(){
 'use strict';
@@ -1714,14 +1750,14 @@ NOVA.ui.svgDrag=function(svg,el,o){o=o||{};var E=NOVA.svg.el,coarse=window.match
 </script><script>/* F17-02 SPINNER BUILDER — bank v3.6.2 NOVA core; one reusable engine, three named lesson presets. */
 (function(){'use strict';
 const h=NOVA.h,S=NOVA.svg,E=S.el,M=NOVA.motion;
-const CFG=window.NOVA_F17_02_CONFIG={
+const CFG=window.NovaV2Integration.configuration(window.NOVA_F17_02_CONFIG={
  startMode:'watch',preset:'y7',events:['value','step','mode','hintUsed','correct'],valueKeys:['preset','favourable','sectors','probability','spinOutcome','trialCount','relativeFrequency','secondaryFavourable','combinedProbability'],
  presets:{
   y7:{label:'Year 7 · Combined events',year:7,context:'TWO INDEPENDENT SPINNERS',primary:{n:4,wins:[0,2],name:'Spinner A'},secondary:{n:3,wins:[1],name:'Spinner B'},goal:'A win AND B win'},
   y8:{label:'Year 8 · Experimental vs theoretical',year:8,context:'EXPERIMENT AND THEORY',primary:{n:6,wins:[0,3],name:'Spinner'},secondary:null,goal:'A winning sector'},
   y9:{label:'Year 9 · Probability models',year:9,context:'EQUALLY LIKELY SECTORS',primary:{n:8,wins:[0,2,5],name:'Spinner'},secondary:null,goal:'A winning sector'}
  }
-};
+});
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)), mobile=()=>window.innerWidth<=500;
 const layout=()=>mobile()?{W:390,H:604,cx:195,cy:207,r:143,smx:280,smy:475,sr:66,px:79,py:464,ry:530,foot:581,small:true}:{W:710,H:493,cx:251,cy:226,r:165,smx:557,smy:238,sr:80,px:558,py:410,ry:421,foot:479,small:false};
 const preset=()=>CFG.presets[CFG.preset]||CFG.presets.y7;
@@ -1786,7 +1822,9 @@ function palette(svg,L,o){const px=L.px,py=L.py;const g=E('g',{'data-palette':'1
  },onRemove:()=>{}});
  return g;
 }
-function present(stage,p,m,o={}){stage.innerHTML='';const L=layout(),isY7=!!p.secondary;
+function present(stage,p,m,o={}){
+if(window.NovaLessonComponent?.active){[stage,p,m,o]=window.NovaLessonComponent.args("present",arguments);}
+stage.innerHTML='';const L=layout(),isY7=!!p.secondary;
  NOVA.cap(stage,'Spinner Builder · '+(o.subtitle||'outcome models'),o.tag||'LIVE');
  const svg=S.root(L.W,L.H,'Two-dimensional premium neon probability spinner with '+m.primary.length+' equally likely sectors and '+count(m.primary)+' winning sectors'+(m.secondary?', plus second independent spinner':'')+'.');svg.classList.add('f172-plot');svg.setAttribute('data-engine-plot','F17-02');
  /* Stage caption above the canvas is the sole title: no second heading above the pointer. */
@@ -1838,7 +1876,7 @@ const steps=[
  {name:'Collect outcomes',pose:'compare',mood:'focus',narration:'Repeated spins give experimental relative frequency. The theoretical probability comes from the sector sizes.',prompt:'Why need not the experimental and theoretical values match after only a few spins?'},
  {name:'Predict a result',pose:'celebrate',mood:'cheer',narration:'For two independent spinners, multiply the chances for both events to happen. Explore the model and test your prediction.',prompt:'How would you find the chance of two independent winning results?'}
 ];
-function drawStep(i,stage){const p=preset();let m=makeState(p);const n=clamp(i,0,steps.length-1),text=[
+function drawStep(i,stage){const p=preset();let m=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("drawStep.m",(...a)=>makeState(...a),[p]):(makeState(p)));const n=clamp(i,0,steps.length-1),text=[
  'The pointer selects one equally likely sector.',
  'Count all sectors before finding a chance.',
  'Green sectors are the favourable outcomes.',
@@ -1908,7 +1946,7 @@ function buildControls(panel,stage,api,p,m,o={}){
  api.onCleanup(()=>{if(spinStop&&spinStop.stop)spinStop.stop();m.spinning=false;NOVA.ui.cancelDrag();});
  repaint();
 }
-function challenge(panel,api,stage){let active=0,phase=null,m=makeState(CFG.presets.y7),lastEventHandler=null;
+function challenge(panel,api,stage){let active=0,phase=null,m=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("challenge.m",(...a)=>makeState(...a),[CFG.presets.y7]):(makeState(CFG.presets.y7))),lastEventHandler=null;
  m.primary=[false,false,false,false];
  const tasks=[
   {q:'Make exactly TWO winning sectors on a FOUR-sector spinner. Drag WIN chips onto the wheel or use the sector controls below.',
@@ -1947,6 +1985,9 @@ const DEF={id:'F17-02',title:'Spinner Builder',config:CFG,steps,render:drawStep,
  exploreIntro:'Build the spinner by placing WIN tokens on sectors. Run trials and compare what happens with the theoretical chance.',
  explore:(panel,stage,api)=>buildControls(panel,stage,api,preset(),model),
  challenge};
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F17-02',DEF,{models:{"model":()=>model},tables:{"dragTestHooks":()=>dragTestHooks,"steps":()=>steps},draws:{"present":["stage","p","m","o"]},exploreFields:{"drawStep.m":{"kind":"factory","factory":"makeState","argCount":1},"challenge.m":{"kind":"factory","factory":"makeState","argCount":1}}});
 NOVA.bankMount({id:'F17-02',num:'F17·02',title:'Spinner Builder',def:DEF,
  years:'KS3 Years 7, 8 and 9; GCSE probability, relative frequency, compound independent events.',linked:['F0-02','F0-03','F0-04','F0-06','F17-01','F17-03','F17-05','F17-07'],
  spec:{purpose:'Construct fair spinners with equal sectors. Change favourable outcomes, simulate independent trials, compare theoretical and experimental probability, and combine two independent spinners.',

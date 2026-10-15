@@ -1,3 +1,37 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
 /* NOVA F9-04 · Sequence on a graph · built on the F0/F3 common drawing and motion API. */
 const F904_CONFIG={id:'F9-04',family:'F9',startMode:'watch',preset:'Y7-037-linear-nth-term',
  presets:{
@@ -6,7 +40,7 @@ const F904_CONFIG={id:'F9-04',family:'F9',startMode:'watch',preset:'Y7-037-linea
  'Y8-021-quadratic-pattern-spotting':{label:'Y8 · n² + 1',year:'Year 8',kind:'quadratic',a:1,b:0,c:1,yMax:30,yStep:5,formula:'n² + 1',objective:'Plot growing first differences and constant second differences.'},
  'Y9-008-quadratic-pattern-structure':{label:'Y9 · n² − n + 2',year:'Year 9',kind:'quadratic',a:1,b:-1,c:2,yMax:25,yStep:5,formula:'n² − n + 2',objective:'Use the second-difference structure to recognise a simple quadratic pattern.'}
  },events:{value:['preset','position','term','placed','challengeTask','rule'],types:['step','correct','hintUsed','mode']}};
-(function(){'use strict';const N=window.NOVA,C=F904_CONFIG,H=N.h,E=N.svg.el,id=C.id;
+(function(){'use strict';const N=window.NOVA,C=window.NovaV2Integration.configuration(F904_CONFIG),H=N.h,E=N.svg.el,id=C.id;
 const small=()=>innerWidth<=760;const wide=()=>small()?430:760;
 const height=(challenge=false)=>small()?(challenge?820:655):(challenge?790:607);
 const preset=(key)=>C.presets[key];
@@ -26,10 +60,14 @@ function mathText(parent,x,y,value,size=18,role='given',anchor='middle'){return 
 function nbox(parent,x,y,w,h,value,role='given',size=18){return N.neonBox(parent,x,y,w,h,{role,text:value,size,r:13});}
 function btn(text,click,cls='nova-btn ghost'){return H('button',{class:cls,text,onclick:click});}
 function svgRoot(alt,challenge=false){const svg=N.svg.root(wide(),height(challenge),alt);svg.setAttribute('class','nv-svg f904-svg');svg.setAttribute('role','img');return svg;}
-function reset(stage){stage.innerHTML='';N.cap(stage,'Sequence workshop','Sequence on a graph');}
+function reset(stage){
+if(window.NovaLessonComponent?.active){[stage]=window.NovaLessonComponent.args("reset",arguments);}
+stage.innerHTML='';N.cap(stage,'Sequence workshop','Sequence on a graph');}
 function card(label,value,gold=false){return H('div',{class:'f904-card'+(gold?' f904-card--gold':'')},[H('div',{class:'f904-eyebrow',text:label}),H('div',{class:'f904-maths'+(gold?' f904-maths--gold':''),text:String(value)})]);}
 function note(label,text){return H('div',{class:'f904-card f904-card--full'},[H('div',{class:'f904-eyebrow',text:label}),H('div',{class:'f904-body',text})]);}
-function wrap(stage,svg,cards,pose,speech){stage.appendChild(H('div',{class:'f904-stage'},[svg,H('aside',{class:'f904-side'},cards)]));N.scene.helperStrip(stage,pose,speech);}
+function wrap(stage,svg,cards,pose,speech){
+if(window.NovaLessonComponent?.active){[stage,svg,cards,pose,speech]=window.NovaLessonComponent.args("wrap",arguments);}
+stage.appendChild(H('div',{class:'f904-stage'},[svg,H('aside',{class:'f904-side'},cards)]));N.scene.helperStrip(stage,pose,speech);}
 function plotScene(svg,p,opt={}){
  const W=wide(),sm=small(),challenge=!!opt.challenge;
  const origin={x:sm?65:99,y:sm?138:125,w:sm?333:550,h:sm?340:340};
@@ -77,7 +115,9 @@ function renderLearning(index,stage){active=index;const s=steps[index],p=preset(
  side.push(note('WHAT TO NOTICE',index===0?'Horizontal position one pairs with vertical term three.':index<3?'The vertical rise is two for each one-step movement to the right.':index===3?'The dashed line is only a visual trend. The actual sequence is the discrete dots.':index===4?'The points fall because each next term is two lower.':'Quadratic first differences grow by two, so the plotted pattern bends upward.'));
  wrap(stage,scene,side,s.pose,s.text);
 }
-function renderExplore(stage){reset(stage);const p=preset(chosen),svg=svgRoot(p.label+' plotted on core graph axes.');plotScene(svg,p,{title:p.label,subtitle:'Change preset or number of terms',visible:reveal,trend:showTrend,showEvidence:showTrend});
+function renderExplore(stage){
+if(window.NovaLessonComponent?.active){[stage]=window.NovaLessonComponent.args("renderExplore",arguments);}
+reset(stage);const p=preset(chosen),svg=svgRoot(p.label+' plotted on core graph axes.');plotScene(svg,p,{title:p.label,subtitle:'Change preset or number of terms',visible:reveal,trend:showTrend,showEvidence:showTrend});
  wrap(stage,svg,[card('FORMULA',p.formula,true),card('FIFTH TERM',String(term(p,5))),note('GRAPH PATTERN',p.kind==='linear'?'A linear nth term has a constant first difference.':'A quadratic nth term has constant second differences.')],p.kind==='quadratic'?'idea':'point-right',p.kind==='quadratic'?'The curved pattern has growing gaps.':'Every sequence term has a position and a value.');
 }
 const tasks=[
@@ -138,14 +178,14 @@ const def={id,title:'Sequence on a graph',config:C,
  steps:steps.map((s,i)=>({name:s.name,narration:s.text,prompt:s.prompt,mood:i===5?'pleased':'focus'})),
  render(index,stage){renderLearning(index,stage);},
  exploreIntro:'Compare a rising linear sequence, a falling linear sequence and two quadratic sequences on the same axes system.',
- explore(panel,stage,api){chosen='Y7-037-linear-nth-term';reveal=5;showTrend=true;
-  const bar=H('div',{class:'f904-control'}),chooser=H('div',{class:'f904-choices'});
-  Object.entries(C.presets).forEach(([key,p])=>chooser.appendChild(btn(p.label,()=>{chosen=key;emit('preset',key);renderExplore(stage);},'nova-btn ghost')));
-  const slide=H('input',{type:'range',min:2,max:5,step:1,value:5,'aria-label':'How many terms are plotted'}),output=H('output',{text:'5 points'});
-  slide.addEventListener('input',()=>{reveal=Number(slide.value);output.textContent=reveal+' points';emit('position',reveal);renderExplore(stage);});
-  const toggle=H('input',{type:'checkbox',checked:true,'aria-label':'Show trend guide'});toggle.addEventListener('change',()=>{showTrend=toggle.checked;renderExplore(stage);});
-  panel.append(H('p',{class:'f904-instruction',text:'Select one of the four lesson presets, reveal points, or hide the dashed trend guide.'}),chooser,bar);
-  bar.append(H('label',{},['Terms ',slide]),output,H('label',{},[toggle,' Show dashed guide']));renderExplore(stage);
+ explore(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();chosen='Y7-037-linear-nth-term';window.NovaLessonComponent?.applyExploreModels();reveal=5;window.NovaLessonComponent?.applyExploreModels();showTrend=true;
+  window.NovaLessonComponent?.applyExploreModels();const bar=H('div',{class:'f904-control'}),chooser=H('div',{class:'f904-choices'});
+  window.NovaLessonComponent?.applyExploreModels();Object.entries(C.presets).forEach(([key,p])=>chooser.appendChild(btn(p.label,()=>{chosen=key;emit('preset',key);renderExplore(stage);},'nova-btn ghost')));
+  window.NovaLessonComponent?.applyExploreModels();const slide=H('input',{type:'range',min:2,max:5,step:1,value:5,'aria-label':'How many terms are plotted'}),output=H('output',{text:'5 points'});
+  window.NovaLessonComponent?.applyExploreModels();slide.addEventListener('input',()=>{reveal=Number(slide.value);output.textContent=reveal+' points';emit('position',reveal);renderExplore(stage);});
+  window.NovaLessonComponent?.applyExploreModels();const toggle=H('input',{type:'checkbox',checked:true,'aria-label':'Show trend guide'});window.NovaLessonComponent?.applyExploreModels();toggle.addEventListener('change',()=>{showTrend=toggle.checked;renderExplore(stage);});
+  window.NovaLessonComponent?.applyExploreModels();panel.append(H('p',{class:'f904-instruction',text:'Select one of the four lesson presets, reveal points, or hide the dashed trend guide.'}),chooser,bar);
+  window.NovaLessonComponent?.applyExploreModels();bar.append(H('label',{},['Terms ',slide]),output,H('label',{},[toggle,' Show dashed guide']));window.NovaLessonComponent?.applyExploreModels();renderExplore(stage);
  },
  challenge(panel,api,stage){challengeTask=0;placed={};keyboardPick=null;challengeStage=stage;challengePanel=panel;challengeApi=api;challengeDone=false;
   const header=H('h3',{class:'f904-taskhead'}),guide=H('p',{class:'f904-instruction'}),controls=H('div',{class:'f904-control'}),status=H('p',{class:'f904-status',role:'status'});
@@ -165,6 +205,9 @@ const def={id,title:'Sequence on a graph',config:C,
  onRestore(){active=0;chosen='Y7-037-linear-nth-term';reveal=5;showTrend=true;challengeTask=0;placed={};keyboardPick=null;challengeStage=null;challengePanel=null;challengeApi=null;}
 };
 N.registry.add({id,title:'Sequence on a graph',topics:['sequences','graphs','nth term','arithmetic sequences','quadratic sequences'],deps:['F0-02','F0-07','F0-14']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(id,def,{models:{},tables:{"steps":()=>steps,"tasks":()=>tasks},draws:{"reset":["stage"],"wrap":["stage","svg","cards","pose","speech"],"renderExplore":["stage"]},exploreFields:{}});
 N.bankMount({id,num:'04',title:'Sequence on a graph · Premium Edition',def,linked:['F9-03','F9-05','F9-08','F9-09'],years:'Year 7–9 linear and quadratic sequence graphs',spec:{
  purpose:'Plot discrete sequence terms as ordered pairs (position, value); connect first differences to straight patterns and second differences to quadratic curves.',
  params:'Position n=1–5; 4 named presets; integer graph locations; compare first and second differences; selectable guide.',

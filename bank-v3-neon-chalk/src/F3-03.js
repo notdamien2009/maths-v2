@@ -1,3 +1,37 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
 /* NOVA F3-03 — partitioned grid; fresh Oct 10 master; mathematically complete interactive studio.
    No author-defined SVG filters, primitives or fonts: all drawings use the canonical F0 house core. */
 const F303_CONFIG={id:'F3-03',startMode:'watch',preset:'Y7-009-whole',
@@ -11,7 +45,7 @@ const F303_CONFIG={id:'F3-03',startMode:'watch',preset:'Y7-009-whole',
  challenge:{tasks:['whole','tenths','decimal-and-whole']}
 };
 (function(){'use strict';
-const N=window.NOVA,H=N.h,E=N.svg.el,C=F303_CONFIG,id=C.id;
+const N=window.NOVA,H=N.h,E=N.svg.el,C=window.NovaV2Integration.configuration(F303_CONFIG),id=C.id;
 function corePose(p){
  // F0 owns the helper art, placement and motion. Only its universal slots are supplied to its dock.
  const slots=['idle','think','cheer','oops','point','explain','walk','leap'];
@@ -108,6 +142,8 @@ function makeArt(p,opt={}){
  return svg;
 }
 function scene(stage,p,opt={}){
+if(window.NovaLessonComponent?.active){[stage,p,opt]=window.NovaLessonComponent.args("scene",arguments);}
+
  stage.innerHTML='';N.cap(stage,'Grid method',opt.heading||'Every row–column pair creates one partial product');
  const grid=H('div',{class:'f303-scene'}),svg=makeArt(p,opt);grid.appendChild(svg);
  const m=math(p),side=H('aside',{class:'f303-aside'});
@@ -135,9 +171,9 @@ const def={id,title:'Partitioned grid method',config:C,steps,
  staticAlt:'23 × 14 = (20 + 3)(10 + 4): 200 + 30 + 80 + 12 = 230 + 92 = 322.',
  render(i,stage){const p=copy(C.presets['Y7-009-whole']);scene(stage,p,{step:i,stepName:steps[i].name,animate:true,heading:i===0?'Split both factors into equal-place parts':i<5?'Multiply the row and column headers':'Add the products: row sums, then total'});},
  exploreIntro:'Choose whole-number or decimal factors. Adjust their partitions and watch every grid product recalculate.',
- explore(panel,stage){let key='Y7-009-whole',p=copy(C.presets[key]);const intro=H('p',{class:'f303-prompt',text:'Choose factors and friendly partitioned parts, then prove all four products.'}),sel=H('select',{'aria-label':'Grid preset'});Object.entries(C.presets).forEach(([k,v])=>sel.add(new Option(v.label,k)));
- const fields=H('div',{class:'f303-inputs'}),bar=H('div',{class:'f303-inputs'}),info=H('p',{class:'f303-info'});
- function render(){fields.innerHTML='';
+ explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let key='Y7-009-whole',p=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("p",(...a)=>copy(...a),[C.presets[key]]):(copy(C.presets[key])));window.NovaLessonComponent?.applyExploreModels();const intro=H('p',{class:'f303-prompt',text:'Choose factors and friendly partitioned parts, then prove all four products.'}),sel=H('select',{'aria-label':'Grid preset'});window.NovaLessonComponent?.applyExploreModels();Object.entries(C.presets).forEach(([k,v])=>sel.add(new Option(v.label,k)));
+ window.NovaLessonComponent?.applyExploreModels();const fields=H('div',{class:'f303-inputs'}),bar=H('div',{class:'f303-inputs'}),info=H('p',{class:'f303-info'});
+ window.NovaLessonComponent?.applyExploreModels();function render(){fields.innerHTML='';
   const allowDecimal=key.includes('decimal');
   [['a','First factor'],['b','Second factor']].forEach(([k,title])=>{const inp=H('input',{type:'number','aria-label':title,min:'0.1',max:'99.9',step:allowDecimal?'0.1':'1',value:p[k]});inp.onchange=()=>{let v=+(+inp.value).toFixed(1);v=Math.max(allowDecimal?.2:2,Math.min(99.9,v));if(!allowDecimal)v=Math.round(v);p[k]=v;
     const big=allowDecimal?Math.floor(v):Math.floor(v/10)*10;const smaller=+(v-big).toFixed(8);p[k==='a'?'partitionA':'partitionB']=[big||Math.floor(v/2),big?smaller:v-Math.floor(v/2)];if(p[k==='a'?'partitionA':'partitionB'].some(n=>n<=0)){p[k==='a'?'partitionA':'partitionB']=[+(v/2).toFixed(5),+(v/2).toFixed(5)];}
@@ -145,7 +181,7 @@ const def={id,title:'Partitioned grid method',config:C,steps,
   [['partitionA','Top left','Top right','partsA'],['partitionB','Side top','Side bottom','partsB']].forEach(([k,l0,l1,ev])=>{const pair=p[k],orig=k==='partitionA'?p.a:p.b;pair.forEach((v,i)=>{const inp=H('input',{type:'number','aria-label':i===0?l0:l1,min:'0.1',max:orig,step:allowDecimal?'0.1':'1',value:fmt(v)});inp.onchange=()=>{const n=Math.max(.1,Math.min(orig-.1,+inp.value||.1)),x=+(i===0?n:orig-n).toFixed(8);p[k]=i===0?[x,+(orig-x).toFixed(8)]:[+(orig-x).toFixed(8),x];event(ev,p[k]);render();};fields.appendChild(H('label',{},[i===0?l0:l1,inp]));});});
   const m=math(p);info.textContent=fmt(m.products[0])+' + '+fmt(m.products[1])+' + '+fmt(m.products[2])+' + '+fmt(m.products[3])+' = '+fmt(m.total)+'; the partitions still give '+fmt(m.A)+' × '+fmt(m.B)+'.';scene(stage,p,{step:7,stepName:'explore',heading:'Adjust any part — the product must remain consistent'});
  }
- sel.onchange=()=>{key=sel.value;p=copy(C.presets[key]);event('preset',key);render();};bar.append(H('label',{},['Preset / lesson range',sel]));panel.append(intro,bar,fields,info);render();
+ window.NovaLessonComponent?.applyExploreModels();sel.onchange=()=>{key=sel.value;p=copy(C.presets[key]);event('preset',key);render();};window.NovaLessonComponent?.applyExploreModels();bar.append(H('label',{},['Preset / lesson range',sel]));window.NovaLessonComponent?.applyExploreModels();panel.append(intro,bar,fields,info);window.NovaLessonComponent?.applyExploreModels();render();
  },
  challenge(panel,api,stage){let task=0,wrong=0,focusSlot=0,chosen=null,placements={},answerText='';
  const cases=[C.presets['Y7-009-whole'],C.presets['Y7-009-decimals'],C.presets['Y7-009-decimal-and-whole']];
@@ -175,6 +211,9 @@ const def={id,title:'Partitioned grid method',config:C,steps,
  },onRestore(){}
 };
 N.registry.add({id,title:def.title,topics:['grid method','multiplication','decimals','place value'],deps:['F0-02','F0-03','F0-04','F0-07','F0-08']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(id,def,{models:{},tables:{"POS":()=>POS,"steps":()=>steps},draws:{"scene":["stage","p","opt"]},exploreFields:{"p":{"kind":"factory","factory":"copy","argCount":1}}});
 N.bankMount({id,num:'03',title:'Partitioned grid method · Premium Review',def,linked:['F3-01','F3-02','F2-03'],years:'KS3 Year 7, with Years 8–9 consolidation',spec:{
  purpose:'Show how splitting both factors makes four smaller multiplications and the row sums reconstruct the product.',
  params:'Whole or decimal factors; two partition parts per factor; four partial products, two row sums and total.',

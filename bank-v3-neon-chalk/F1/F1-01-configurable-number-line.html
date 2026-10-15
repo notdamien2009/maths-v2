@@ -560,6 +560,42 @@ html[data-theme=light] .f12-strip .k{color:#10213a}
 .nova-stage>svg.nv-svg.nv-vert{max-width:400px}
 @media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="number">
 <div class="nova-wrap">
@@ -1719,7 +1755,7 @@ var NOVA_F1_01_CONFIG={
 <script>
 /* ===== F1-01 ENGINE ===== */
 (function(){
-var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,C=NOVA_F1_01_CONFIG,P=C.presets;
+var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,C=window.NovaV2Integration.configuration(NOVA_F1_01_CONFIG),P=C.presets;
 function fmt(v){return S.num(Math.round(v*1e6)/1e6);}
 function fmtU(v,st){return fmt(v)+(st.unit?' '+st.unit:'');}
 function clone(o){return JSON.parse(JSON.stringify(o));}
@@ -1728,7 +1764,9 @@ function hline(sv,st,y,x,w){return S.axes(sv,{x:x||28,y:y,w:w||304,h:0,xmin:st.m
 function mark(sv,ax,v,role,label,hi,tag){var g=NOVA.neonRing(sv,ax.sx(v),ax.y0,{role:role,r:8,pulse:false});if(label)S.pill(sv,ax.sx(v),ax.y0-(hi?52:28),label,{role:role,size:13});if(tag&&g)g.setAttribute('data-maths',tag);return g;}
 function strip(stage,items){var d=h('div',{class:'nl-strip'});items.forEach(function(it){d.appendChild(h('span',{class:'k',text:it[0]}));d.appendChild(NOVA.neonTile(String(it[1]).replace(/ /g,'\u00A0'),{role:it[2]||'result'}));});stage.appendChild(d);return d;}
 /* vertical thermometer (F1-04 preset), drawn from neon core helpers only */
-function vline(stage,st,v,o){o=o||{};var W=260,H=250,sv=S.root(W,H,'Vertical scale '+fmtU(st.min,st)+' to '+fmtU(st.max,st)+', reading '+fmtU(v,st)+'.'),x=90,top=18,bot=200;
+function vline(stage,st,v,o){
+if(window.NovaLessonComponent?.active){[stage,st,v,o]=window.NovaLessonComponent.args("vline",arguments);}
+o=o||{};var W=260,H=250,sv=S.root(W,H,'Vertical scale '+fmtU(st.min,st)+' to '+fmtU(st.max,st)+', reading '+fmtU(v,st)+'.'),x=90,top=18,bot=200;
   function sy(t){return bot-(t-st.min)/(st.max-st.min)*(bot-top);}
   NOVA.neonBox(sv,x-11,top-10,22,bot-top+14,{role:'given',r:11});
   for(var t=st.min;t<=st.max+1e-9;t+=st.labelStep){NOVA.neonLine(sv,x-22,sy(t),x+22,sy(t),{role:'given',width:2});NOVA.chalkText(sv,x-46,sy(t)+6,fmt(t),{size:17});}
@@ -1737,11 +1775,13 @@ function vline(stage,st,v,o){o=o||{};var W=260,H=250,sv=S.root(W,H,'Vertical sca
   var r=NOVA.neonRing(sv,x+30,sy(v),{role:'focus',r:7,pulse:false});if(r)r.setAttribute('data-maths','temp');S.pill(sv,x+66,sy(v)-(o.from!=null?26:22),fmtU(v,st),{role:'focus',size:13});
   sv.classList.add('nv-vert');stage.appendChild(sv);return sv;}
 /* main drawer for one state */
-function draw(stage,st,o){o=o||{};var sv,ax;
+function draw(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("draw",arguments);}
+o=o||{};var sv,ax;
   if(st.kind==='vertical'){vline(stage,st,st.value,o);strip(stage,[['reads',fmtU(st.value,st),'focus']].concat(o.from!=null?[['change',(st.value-o.from>0?'+':'\u2212')+fmt(Math.abs(st.value-o.from)),'op']]:[]));return null;}
   if(st.kind==='compare'){sv=S.root(360,190,'Two number lines comparing '+fmt(st.value)+' and '+fmt(st.value2)+'.');var a1=hline(sv,st,64),a2=hline(sv,st,160);
     mark(sv,a1,st.value,'focus','A = '+fmt(st.value),false,'a');mark(sv,a2,st.value2,'result','B = '+fmt(st.value2),false,'b');
-    stage.appendChild(sv);var sg=st.value<st.value2?'<':st.value>st.value2?'>':'=';strip(stage,[['compare',fmt(st.value)+' '+sg+' '+fmt(st.value2),'result'],['further right is bigger','\u2192','op']]);return {sv:sv,ax:a1};}
+    stage.appendChild(sv);var sg=st.value<st.value2?'<':st.value>st.value2?'>':'=';strip(stage,[['compare',fmt(st.value)+' '+(o.unanswered?'?':sg)+' '+fmt(st.value2),'result'],['further right is bigger','\u2192','op']]);return {sv:sv,ax:a1};}
   sv=S.root(360,130,'Number line '+fmt(st.min)+' to '+fmt(st.max)+'.');ax=hline(sv,st,84);
   if(st.kind==='tbd'){var g=S.el('g',{class:'nv-frac-tbd-g'},sv);NOVA.chalkText(sv,180,30,'fraction design TBD',{size:13});}
   (o.pts||[]).forEach(function(p){mark(sv,ax,p.v,p.role||'focus',p.label,p.hi,p.tag);});
@@ -1761,18 +1801,18 @@ var def={id:'F1-01',title:'Configurable number line',config:C,steps:steps,render
  alt:'Configurable number line: equal steps with a line at every labelled number, points marked with neon rings, negatives, decimals, a two-line comparer and a vertical thermometer.',
  staticAlt:'Number line 0 to 10 with 7 marked; −10 to 10 with −4 and −1; 0 to 1 in tenths with 0.6; comparer −6 < −2; thermometer −5 °C rising 8 to 3 °C; 0 to 10 000 with 6750 between 6000 and 8000.',
  exploreIntro:'Explore: pick a preset, then drag the ring, use the slider or the stepper. The chips show the value and its neighbours.',
- explore:function(panel,stage,api){var st=clone(P[C.preset]),key=C.preset,sl,sp;
-   function paint(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+st.label,fmtU(st.value,st));var r=draw(stage,st,{pts:st.kind==='line'||st.kind==='tbd'?[]:[]});
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>clone(...a),[P[C.preset]]):(clone(P[C.preset]))),key=C.preset,sl,sp;
+   window.NovaLessonComponent?.applyExploreModels();function paint(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+st.label,fmtU(st.value,st));var r=draw(stage,st,{pts:st.kind==='line'||st.kind==='tbd'?[]:[]});
      if(r&&st.kind!=='compare')U.dragSnap(r.sv,r.ax,{y:r.ax.y0,value:st.value,min:st.min,max:st.max,step:st.step,role:'focus',label:'Value marker',engine:'F1-01',onChange:function(x){set(x,'drag');}});
      if(st.kind!=='vertical'&&st.kind!=='compare'){var nb=neighbours(st,st.value);strip(stage,[['value',fmtU(st.value,st),'focus']].concat(nb?[['between',nb[0]+' and '+nb[1],'given']]:[['on a labelled line','yes','result']]));}
      NOVA.scene.helperStrip(stage,'explain',fmtU(st.value,st));}
-   function set(x,src){st.value=+(+x).toFixed(6);if(src!=='slider'&&sl)sl.input.value=st.value;if(sl)sl.querySelector('output').textContent=fmt(st.value);if(src==='drag'){var t=stage.querySelector('.nv-cap .tag');if(t)t.textContent=fmtU(st.value,st);var ch=stage.querySelectorAll('.nl-strip .nv-ntile');if(ch[0])ch[0].textContent=fmtU(st.value,st);var nb=neighbours(st,st.value);if(ch[1])ch[1].textContent=nb?nb[0]+' and '+nb[1]:'yes';}else paint();}
-   var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});pre.value=key;
-   var box=h('div');function build(){box.innerHTML='';sl=U.slider({label:st.kind==='compare'?'A':'Value',min:st.min,max:st.max,step:st.step,value:st.value,engine:'F1-01',onChange:function(x){set(x,'slider');}});box.appendChild(sl);
+   window.NovaLessonComponent?.applyExploreModels();function set(x,src){st.value=+(+x).toFixed(6);if(src!=='slider'&&sl)sl.input.value=st.value;if(sl)sl.querySelector('output').textContent=fmt(st.value);if(src==='drag'){var t=stage.querySelector('.nv-cap .tag');if(t)t.textContent=fmtU(st.value,st);var ch=stage.querySelectorAll('.nl-strip .nv-ntile');if(ch[0])ch[0].textContent=fmtU(st.value,st);var nb=neighbours(st,st.value);if(ch[1])ch[1].textContent=nb?nb[0]+' and '+nb[1]:'yes';}else paint();}
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Preset'});window.NovaLessonComponent?.applyExploreModels();Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=key;
+   window.NovaLessonComponent?.applyExploreModels();var box=h('div');window.NovaLessonComponent?.applyExploreModels();function build(){box.innerHTML='';sl=U.slider({label:st.kind==='compare'?'A':'Value',min:st.min,max:st.max,step:st.step,value:st.value,engine:'F1-01',onChange:function(x){set(x,'slider');}});box.appendChild(sl);
      sp=h('div',{class:'nova-row',role:'group','aria-label':'Stepper'},['Step ',h('button',{class:'nova-btn','aria-label':'Down one step',text:'\u2212',onclick:function(){set(NOVA.clamp(st.value-st.step,st.min,st.max),'stepper');NOVA.events.emit('value',{engine:'F1-01',control:'stepper',value:st.value});}}),h('button',{class:'nova-btn','aria-label':'Up one step',text:'+',onclick:function(){set(NOVA.clamp(st.value+st.step,st.min,st.max),'stepper');NOVA.events.emit('value',{engine:'F1-01',control:'stepper',value:st.value});}})]);box.appendChild(sp);
      if(st.kind==='compare'){box.appendChild(U.slider({label:'B',min:st.min,max:st.max,step:st.step,value:st.value2,engine:'F1-01',onChange:function(x){st.value2=x;paint();}}));}}
-   pre.onchange=function(){key=pre.value;st=clone(P[key]);build();paint();NOVA.events.emit('value',{engine:'F1-01',control:'preset',value:key});};
-   panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(box);build();paint();C._explore={set:function(x){set(x,'api');},get:function(){return st.value;}};},
+   window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){key=pre.value;st=clone(P[key]);build();paint();NOVA.events.emit('value',{engine:'F1-01',control:'preset',value:key});};
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(box);window.NovaLessonComponent?.applyExploreModels();build();window.NovaLessonComponent?.applyExploreModels();paint();window.NovaLessonComponent?.applyExploreModels();C._explore={set:function(x){set(x,'api');},get:function(){return st.value;}};},
  challenge:function(panel,api,stage){var v=0,stN=clone(P.negatives),stT=clone(P.tenths);
    var tasks=[
     {q:'Drag the ring to −3.',build:function(ctl){ctl._v=function(){return v;};return function(){return v;};},check:function(x){var ok=x===-3;return [ok,ok?'Yes: three steps left of zero.':x===3?'That is +3. Negatives are to the LEFT of zero.':'Count three steps left from 0.'];},hint:'Start at 0 and move three lines to the left.',solve:function(){v=-3;paintC(0);}},
@@ -1785,6 +1825,9 @@ var def={id:'F1-01',title:'Configurable number line',config:C,steps:steps,render
      NOVA.scene.helperStrip(stage,'think',['Place \u22123','Read it','Which is greater?'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F1-01',def,{models:{},tables:{"steps":()=>steps},draws:{"vline":["stage","st","v","o"],"draw":["stage","st","o"]},exploreFields:{"st":{"kind":"factory","factory":"clone","argCount":1}}});
 NOVA.bankMount({id:'F1-01',num:'F1·01',title:'Configurable number line',def:def,linked:['F0-02','F0-04','F0-05','F0-11','F0-12','F1-02','F1-03'],
  spec:{purpose:'One configurable number line for locating, ordering and comparing integers, negatives, decimals and large numbers. Equal steps with a straight line at every labelled number; points marked by neon rings. Presets include the vertical thermometer (F1-04) and the two-line comparer (F1-12); fractions on a line (F5-04) are a placeholder until the fraction design is decided.',
   params:'kind (line, vertical, compare, tbd), min, max, step (snap), labelStep (digit lines and labels), value, value2 (comparer), unit. Core: NOVA.svg.axes({numberLine}), NOVA.neonRing / neonLine / neonBox / neonPath / chalkText / neonTile, NOVA.ui.dragSnap / slider. Year groups: KS3 Years 7–9 (12–15), with GCSE extension.',

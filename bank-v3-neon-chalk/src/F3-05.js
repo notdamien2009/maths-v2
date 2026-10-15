@@ -1,3 +1,37 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
 /* NOVA F3-05 — Prime Sieve & Factor Tree.
    Canonical F0 shared core; reusable parameterised maths, not a private engine shell.
    Character captions deliberately brief (F0/F1 reaction pattern); Bob narrates mathematical detail. */
@@ -12,7 +46,7 @@ const F305_CONFIG={id:'F3-05',startMode:'watch',preset:'Y7-014-sieve',parameters
  challenge:[{kind:'sieve',limit:100,find:97},{kind:'tree',n:60},{kind:'tree',n:84}]};
 window.F305_CONFIG=F305_CONFIG;
 (function(){'use strict';
-const N=window.NOVA,E=N.svg.el,H=N.h,C=F305_CONFIG,ID=C.id;
+const N=window.NOVA,E=N.svg.el,H=N.h,C=window.NovaV2Integration.configuration(F305_CONFIG),ID=C.id;
 const role=['op','given','focus','result','support'];
 function emit(key,value){if(!C.events.value.includes(key))throw Error(ID+' undeclared event: '+key);N.events.emit('value',{engine:ID,key,value});}
 function prime(n){if(!Number.isInteger(n)||n<2)return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true;}
@@ -34,7 +68,9 @@ function txt(p,x,y,v,size=38,r='given'){return N.chalkText(p,x,y,String(v),{size
 function btn(s,on,primary=false){return H('button',{text:s,class:primary?'nova-btn primary':'nova-btn',onclick:on});}
 const SAY={welcome:'Find the primes!',two:'Start with two!',twos:'Watch them disappear!',three:'Three next!',threes:'Keep going!',five:'Spot the fives!',seven:'Last sweep!',sieveDone:'Brilliant detective work!',root:'Follow the branches!',split:'Try a factor!',leaves:'Nearly there!',collect:'All prime!',exploreSieve:'What stays standing?',exploreTree:'Choose a split!',challengeSieve:'You can do it!',challengeTree:'Show your proof!',wrong:'Have another go!',hint:'Look closely!',correct:'Nice one!',victory:'Amazing work!'};
 const poses={welcome:'explain',two:'point',twos:'cheer',three:'point',threes:'think',five:'point',seven:'count',sieveDone:'cheer',root:'think',split:'point',leaves:'think',collect:'cheer',exploreSieve:'think',exploreTree:'point',challengeSieve:'think',challengeTree:'think',wrong:'oops',hint:'think',correct:'cheer',victory:'cheer'};
-function dock(stage,key){N.scene.helperStrip(stage,poses[key]||'explain',SAY[key]||'Your turn!');}
+function dock(stage,key){
+if(window.NovaLessonComponent?.active){[stage,key]=window.NovaLessonComponent.args("dock",arguments);}
+N.scene.helperStrip(stage,poses[key]||'explain',SAY[key]||'Your turn!');}
 const STEPS=[
  {name:'Start with one and two',kind:'sieve',num:0,say:'welcome',narration:'A prime is a whole number greater than one with exactly two positive factors. One is not prime. Two is the first prime.'},
  {name:'Circle two',kind:'sieve',num:0,say:'two',narration:'Circle two: it is prime. All other even numbers are multiples of two and will be removed.'},
@@ -131,6 +167,8 @@ function glassTree(root,opt={}){
  return svg;
 }
 function assemble(stage,kind,data,opt={}){
+if(window.NovaLessonComponent?.active){[stage,kind,data,opt]=window.NovaLessonComponent.args("assemble",arguments);}
+
  stage.innerHTML='';N.cap(stage,kind==='sieve'?'Prime sieve':'Factor tree',opt.caption||'Prime numbers have exactly two factors');
  const row=H('div',{class:'f305-scene'}),side=H('aside',{class:'f305-side'}),isSieve=kind==='sieve',art=isSieve?glassSieve(data.limit,data.used||[],opt).svg:glassTree(data.root,opt);
  side.append(
@@ -144,21 +182,21 @@ const def={id:ID,title:'Prime sieve & factor tree',config:C,steps:STEPS,alt:'A p
  render(i,stage){const s=STEPS[i];if(s.kind==='sieve')assemble(stage,'sieve',{limit:100,used:[2,3,5,7].slice(0,s.num)},{say:s.say,caption:s.name,animate:true,solved:i===5});
   else assemble(stage,'tree',{root:prescribedTree(s.level)},{say:s.say,caption:s.name,animate:true});},
  exploreIntro:'Switch between the sieve and factor tree. Every action must prove a mathematical fact.',
- explore(panel,stage,api){let preset=C.preset,view='sieve',limit=100,used=[],root=tree(60),active=root.id,focusCell=1,say='exploreSieve',message='Start with prime two.',bad=false;
-  const choice=H('select',{'aria-label':'Curriculum preset'}),type=H('select',{'aria-label':'Representation'}),num=H('input',{type:'number',min:2,max:144,step:1,value:60,'aria-label':'Target number'}),primeChoice=H('select',{'aria-label':'Prime to sweep'}),nodeChoice=H('select',{'aria-label':'Composite tree node'}),divChoice=H('select',{'aria-label':'Factor divisor'}),status=H('p',{class:'f305-status',role:'status'});
-  Object.entries(C.presets).forEach(([key,o])=>choice.add(new Option(o.label,key)));
-  ['sieve','tree'].forEach(x=>type.add(new Option(x==='sieve'?'Prime sieve':'Factor tree',x)));
-  [2,3,5,7].forEach(x=>primeChoice.add(new Option(String(x),x)));[2,3,4,5,6,7,10].forEach(x=>divChoice.add(new Option(String(x),x)));
-  function feedback(m,error=false,k='wrong'){message=m;bad=error;say=error?k:'correct';status.textContent=message;status.classList.toggle('error',error);}
-  function sweep(p){const need=[2,3,5,7].filter(v=>v*v<=limit);if(used.includes(p))return false;
+ explore(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();let preset=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("preset",()=>(C.preset)):(C.preset)),view='sieve',limit=100,used=[],root=tree(60),active=root.id,focusCell=1,say='exploreSieve',message=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("message",()=>('Start with prime two.')):('Start with prime two.')),bad=false;
+  window.NovaLessonComponent?.applyExploreModels();const choice=H('select',{'aria-label':'Curriculum preset'}),type=H('select',{'aria-label':'Representation'}),num=H('input',{type:'number',min:2,max:144,step:1,value:60,'aria-label':'Target number'}),primeChoice=H('select',{'aria-label':'Prime to sweep'}),nodeChoice=H('select',{'aria-label':'Composite tree node'}),divChoice=H('select',{'aria-label':'Factor divisor'}),status=H('p',{class:'f305-status',role:'status'});
+  window.NovaLessonComponent?.applyExploreModels();Object.entries(C.presets).forEach(([key,o])=>choice.add(new Option(o.label,key)));
+  window.NovaLessonComponent?.applyExploreModels();['sieve','tree'].forEach(x=>type.add(new Option(x==='sieve'?'Prime sieve':'Factor tree',x)));
+  window.NovaLessonComponent?.applyExploreModels();[2,3,5,7].forEach(x=>primeChoice.add(new Option(String(x),x)));window.NovaLessonComponent?.applyExploreModels();[2,3,4,5,6,7,10].forEach(x=>divChoice.add(new Option(String(x),x)));
+  window.NovaLessonComponent?.applyExploreModels();function feedback(m,error=false,k='wrong'){message=m;bad=error;say=error?k:'correct';status.textContent=message;status.classList.toggle('error',error);}
+  window.NovaLessonComponent?.applyExploreModels();function sweep(p){const need=[2,3,5,7].filter(v=>v*v<=limit);if(used.includes(p))return false;
    if(need[used.length]!==p){feedback('Try the next uncrossed prime in order.',true);return false;}
    used.push(p);emit('sievePrime',p);feedback('Multiples crossed. '+sieveState(limit,used).left.length+' numbers remain.');if(used.length===need.length)say='sieveDone';render();return true;}
-  function unsweep(p){if(!used.length||used.at(-1)!==p)return false;used.pop();emit('sieveUndo',p);feedback('Last sweep undone.');render();return true;}
-  function doSplit(id,d){emit('factorDivisor',d);if(!split(root,id,d)){feedback('That factor does not make an exact split. Try another.',true);return false;}
+  window.NovaLessonComponent?.applyExploreModels();function unsweep(p){if(!used.length||used.at(-1)!==p)return false;used.pop();emit('sieveUndo',p);feedback('Last sweep undone.');render();return true;}
+  window.NovaLessonComponent?.applyExploreModels();function doSplit(id,d){emit('factorDivisor',d);if(!split(root,id,d)){feedback('That factor does not make an exact split. Try another.',true);return false;}
    emit('factorSplit',{id,divisor:d});active=composites(root)[0]?.id||root.id;feedback('Exact split!');if(isDone(root))say='collect';render();return true;}
-  function doUndo(id){if(!undo(root,id))return false;active=id;emit('factorUndo',id);feedback('Split removed. Try another way.');render();return true;}
-  function selectCell(v){focusCell=v;emit('sieveCell',v);const s=sieveState(limit,used);if(v===1)feedback('One is neither prime nor composite.',false,'hint');else if(s.crossed.has(v))feedback(v+' is composite; it was crossed out.');else if(prime(v))feedback(v+' is a prime candidate.');else feedback('Keep sieving before deciding.',false,'hint');render();}
-  function render(){panel.innerHTML='';type.value=view;choice.value=preset;num.value=root.v;
+  window.NovaLessonComponent?.applyExploreModels();function doUndo(id){if(!undo(root,id))return false;active=id;emit('factorUndo',id);feedback('Split removed. Try another way.');render();return true;}
+  window.NovaLessonComponent?.applyExploreModels();function selectCell(v){focusCell=v;emit('sieveCell',v);const s=sieveState(limit,used);if(v===1)feedback('One is neither prime nor composite.',false,'hint');else if(s.crossed.has(v))feedback(v+' is composite; it was crossed out.');else if(prime(v))feedback(v+' is a prime candidate.');else feedback('Keep sieving before deciding.',false,'hint');render();}
+  window.NovaLessonComponent?.applyExploreModels();function render(){panel.innerHTML='';type.value=view;choice.value=preset;num.value=root.v;
    const c=H('div',{class:'f305-row'},[H('label',{},['Preset',choice]),H('label',{},['Representation',type])]);
    const q=H('div',{class:'f305-row'}),intro=H('p',{class:'f305-intro',text:view==='sieve'?'Cross multiples in prime order. Leave the chosen prime standing.':'Split composite numbers; finish only when every leaf is prime.'});
    if(view==='sieve'){
@@ -171,10 +209,10 @@ const def={id:ID,title:'Prime sieve & factor tree',config:C,steps:STEPS,alt:'A p
    }
    panel.append(intro,c,q,status);status.textContent=message;status.classList.toggle('error',bad);
   }
-  choice.onchange=()=>{preset=choice.value;const p=C.presets[preset];view=p.view;if(view==='sieve'){limit=p.limit;used=[];}else {root=tree(p.n);active=root.id;}emit('preset',preset);emit('representation',view);say=view==='sieve'?'exploreSieve':'exploreTree';feedback('Ready for your next proof.');render();};
-  type.onchange=()=>{view=type.value;emit('representation',view);say=view==='sieve'?'exploreSieve':'exploreTree';render();};
-  num.onchange=()=>{const n=Math.max(2,Math.min(144,Math.round(+num.value||60)));root=tree(n);active=root.id;emit('targetNumber',n);feedback('Find the prime leaves.');render();};
-  render();},
+  window.NovaLessonComponent?.applyExploreModels();choice.onchange=()=>{preset=choice.value;const p=C.presets[preset];view=p.view;if(view==='sieve'){limit=p.limit;used=[];}else {root=tree(p.n);active=root.id;}emit('preset',preset);emit('representation',view);say=view==='sieve'?'exploreSieve':'exploreTree';feedback('Ready for your next proof.');render();};
+  window.NovaLessonComponent?.applyExploreModels();type.onchange=()=>{view=type.value;emit('representation',view);say=view==='sieve'?'exploreSieve':'exploreTree';render();};
+  window.NovaLessonComponent?.applyExploreModels();num.onchange=()=>{const n=Math.max(2,Math.min(144,Math.round(+num.value||60)));root=tree(n);active=root.id;emit('targetNumber',n);feedback('Find the prime leaves.');render();};
+  window.NovaLessonComponent?.applyExploreModels();render();},
  challenge(panel,api,stage){let task=0,used=[],root=tree(60),active=root.id,focusCell=1,wrong=0,won=false,say='challengeSieve',message='Sweep 2, 3, 5 and 7 in order, then identify a prime.',bad=false;
   const primeSelect=H('select',{'aria-label':'Prime to sweep'}),nodeSelect=H('select',{'aria-label':'Composite leaf'}),divSelect=H('select',{'aria-label':'Divisor'}),pick=H('select',{'aria-label':'Identify prime'}),status=H('p',{class:'f305-status',role:'status'});
   [2,3,5,7].forEach(p=>primeSelect.add(new Option(String(p),p)));[2,3,4,5,6,7,10].forEach(d=>divSelect.add(new Option(String(d),d)));
@@ -203,6 +241,9 @@ const def={id:ID,title:'Prime sieve & factor tree',config:C,steps:STEPS,alt:'A p
   emit('challengeTask',task);render();},onRestore(){}
 };
 N.registry.add({id:ID,title:def.title,topics:['prime numbers','sieve of Eratosthenes','prime factors','factor tree'],deps:['F0-02','F0-03','F0-04','F0-07','F0-08','F3-04']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(ID,def,{models:{},tables:{"role":()=>role,"STEPS":()=>STEPS},draws:{"dock":["stage","key"],"assemble":["stage","kind","data","opt"]},exploreFields:{"preset":{"kind":"value","factory":null,"argCount":null},"message":{"kind":"value","factory":null,"argCount":null}}});
 N.bankMount({id:ID,num:'05',title:'Prime sieve and factor tree · Premium Review',def,linked:['F3-01','F3-04','F3-06','F3-07'],years:'Year 7: Y7-014 and Y7-015 · Year 8: Y8-004',spec:{
  purpose:'Contrast a complete 1–100 prime sieve with proof by prime factor tree.',params:'Sieve limit 30 or 100; composite tree roots 2–144; valid exact factor splits.',presets:'Y7-014 sieve (30/100), Y7-015 factor tree (60/90), Y8-004 factor tree (84).',steps:'Prime 2 → sweep → 3 → 5 → 7 → tree root → composite split → prime leaves → verified product.',interactions:'Drag prime cards to the sieve; drag divisor cards onto composite nodes; drag split nodes to red Undo; grid arrow keys and panel controls.',traps:'One is not prime; the chosen prime must stay; p² crossing rule; composite leaves are not a finished factorisation; prime factors must multiply to original.',gcse:'Prime decomposition and checking by product support HCF/LCM and number-theoretic reasoning.'}});
 // F3 pointer-tracking compatibility guard. The approved F0 SVG drag helper reorders

@@ -564,6 +564,42 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .nova-stage>svg.nv-svg.nv-vert{max-width:400px}
 @media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="number">
 <div class="nova-wrap">
@@ -1718,12 +1754,14 @@ function clone(o){return JSON.parse(JSON.stringify(o));}
 function strip(stage,items){var d=h('div',{class:'nl-strip'});items.forEach(function(it){d.appendChild(h('span',{class:'k',text:it[0]}));d.appendChild(NOVA.neonTile(String(it[1]).replace(/ /g,'\u00A0'),{role:it[2]||'result'}));});stage.appendChild(d);return d;}
 function bigMarkers(sv){[].forEach.call(sv.querySelectorAll('marker'),function(m){m.setAttribute('markerWidth',8);m.setAttribute('markerHeight',8);});}
 
-var C=NOVA_F2_14_CONFIG,M=NOVA.motion,CW=40,GX=16,GY=16,PX=438,MK='#ffcc58';
+var C=window.NovaV2Integration.configuration(NOVA_F2_14_CONFIG),M=NOVA.motion,CW=40,GX=16,GY=16,PX=438,MK='#ffcc58';
 function rc(n){return {r:Math.floor((n-1)/10),c:(n-1)%10};}
 function cxy(n){var q=rc(n);return {x:GX+q.c*CW+CW/2,y:GY+q.r*CW+CW/2};}
 function lab(d){return (d>0?'+':'\u2212')+Math.abs(d);}
 var LIVE=[];
-function Square(stage,st,o){o=o||{};var self=this,sv,busy=false,focus=st.at||1;LIVE.forEach(function(x){x.dead=true;});LIVE=[self];
+function Square(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("Square",arguments);}
+o=o||{};var self=this,sv,busy=false,focus=st.at||1;LIVE.forEach(function(x){x.dead=true;});LIVE=[self];
   function draw(keepFocus){if(self.dead)return;var old=sv;sv=S.root(600,432,'Hundred square'+(st.at&&!o.hideMarker?', marker on '+st.at:'')+(st.mult?', multiples of '+st.mult+' lit':'')+(st.factors?', factors of '+st.at+' lit':'')+'.');
     NOVA.neonBox(sv,GX-6,GY-6,10*CW+12,10*CW+12,{role:'#7dd3fc',r:12});
     var lit=st.lit||{};
@@ -1769,22 +1807,22 @@ var steps=[
  {name:'Pattern of 9',mood:'think',narration:'Multiples of 9 run in a diagonal: each step is +10 −1. The digits always add to 9.',prompt:'What is the next multiple of 9 after 45?',st:{at:0},run:function(w){w.multiples(9);}},
  {name:'Factors',mood:'cheer',narration:'Factors of 24 glow gold: 1, 2, 3, 4, 6, 8, 12, 24. Factors divide 24 exactly; multiples are 24, 48, 72, 96.',prompt:'Is 5 a factor of 24?',st:{at:24},run:function(w){w.factors();}}];
 function chipsFor(st){var c=[['marker',st.at?String(st.at):'\u2014','given']];if(st.mult)c.push(['multiples of',String(st.mult),'result']);if(st.factors)c.push(['factors',Object.keys(st.lit||{}).length+' of '+st.at,'unknown']);return c;}
-function render(i,stage){stage.innerHTML='';var s=steps[i],st=clone(s.st),sp;NOVA.cap(stage,'Hundred square · '+s.name,'step '+(i+1)+'/'+steps.length);
+function render(i,stage){stage.innerHTML='';var s=steps[i],st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("render.st",(...a)=>clone(...a),[s.st]):(clone(s.st))),sp;NOVA.cap(stage,'Hundred square · '+s.name,'step '+(i+1)+'/'+steps.length);
   var w=new Square(stage,st,{noMove:true,noPills:!!(s.st.at===0),onChange:function(){if(sp.parentNode)sp.parentNode.removeChild(sp);sp=strip(stage,chipsFor(st));}});sp=strip(stage,chipsFor(st));
   if(s.run){if(NOVA.reducedMotion())s.run(w);else M.delay(700,function(){if(!w.dead)s.run(w);});}NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
 var def={id:'F2-14',title:'Hundred square explorer',config:C,steps:steps,render:render,
  alt:'Hundred square explorer: a glass neon 10 by 10 grid of chalk numbers 1 to 100 with a gold ring marker; jump pills (+1, −1, +10, −10, +9, +11) dragged onto the square move the marker down by tens then across by ones with glowing trails; multiples light up green in patterns and factors glow gold.',
  staticAlt:'23 + 10 = 33; 33 + 9 = 42; 42 + 11 = 53; multiples of 4 and 9 make column and diagonal patterns; factors of 24 are 1, 2, 3, 4, 6, 8, 12, 24.',
  exploreIntro:'Explore: drag the gold ring to any cell, or drag a jump pill onto the square to move it (tens first, then ones). Keyboard: arrow keys move around the grid, Enter puts the marker there; Tab to a pill and press Enter. Light up multiples or the factors of the marker.',
- explore:function(panel,stage,api){var st,w,sp;
-   function chips(){if(sp&&sp.parentNode)sp.parentNode.removeChild(sp);sp=strip(stage,chipsFor(st));}
-   function build(){stage.innerHTML='';NOVA.cap(stage,'Explore · hundred square','live');w=new Square(stage,st,{onChange:chips,onWrong:function(m){api.check(false,m,{});}});chips();NOVA.scene.helperStrip(stage,'explain','Jump\u00A0around');}
-   function load(k){var P=C.presets[k];st={at:P.at};build();if(P.mult)w.multiples(P.mult);if(P.factors)w.factors();}
-   var pre=h('select',{class:'nova-input','aria-label':'Example'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});pre.value=C.preset;pre.onchange=function(){load(pre.value);};
-   var ms=h('select',{class:'nova-input','aria-label':'Multiples of'});for(var m=2;m<=12;m++)ms.appendChild(h('option',{value:m,text:'multiples of '+m}));ms.value=3;
-   function B(t,f,c){return h('button',{class:'nova-btn'+(c?' '+c:''),text:t,onclick:f});}
-   panel.appendChild(h('label',{class:'pr-row'},['Example ',pre]));panel.appendChild(h('div',{class:'pr-row'},[ms,B('Light multiples',function(){w.multiples(+ms.value);},'primary'),B('Factors of marker',function(){w.factors();}),B('Clear',function(){w.clearLit();},'ghost')]));
-   load(C.preset);C._explore={st:function(){return st;},w:function(){return w;}};},
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st,w,sp;
+   window.NovaLessonComponent?.applyExploreModels();function chips(){if(sp&&sp.parentNode)sp.parentNode.removeChild(sp);sp=strip(stage,chipsFor(st));}
+   window.NovaLessonComponent?.applyExploreModels();function build(){stage.innerHTML='';NOVA.cap(stage,'Explore · hundred square','live');w=new Square(stage,st,{onChange:chips,onWrong:function(m){api.check(false,m,{});}});chips();NOVA.scene.helperStrip(stage,'explain','Jump\u00A0around');}
+   window.NovaLessonComponent?.applyExploreModels();function load(k){var P=C.presets[k];st={at:P.at};build();if(P.mult)w.multiples(P.mult);if(P.factors)w.factors();}
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Example'});window.NovaLessonComponent?.applyExploreModels();Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=C.preset;window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){load(pre.value);};
+   window.NovaLessonComponent?.applyExploreModels();var ms=h('select',{class:'nova-input','aria-label':'Multiples of'});window.NovaLessonComponent?.applyExploreModels();for(var m=2;m<=12;m++)ms.appendChild(h('option',{value:m,text:'multiples of '+m}));window.NovaLessonComponent?.applyExploreModels();ms.value=3;
+   window.NovaLessonComponent?.applyExploreModels();function B(t,f,c){return h('button',{class:'nova-btn'+(c?' '+c:''),text:t,onclick:f});}
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Example ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row'},[ms,B('Light multiples',function(){w.multiples(+ms.value);},'primary'),B('Factors of marker',function(){w.factors();}),B('Clear',function(){w.clearLit();},'ghost')]));
+   window.NovaLessonComponent?.applyExploreModels();load(C.preset);window.NovaLessonComponent?.applyExploreModels();C._explore={st:function(){return st;},w:function(){return w;}};},
  challenge:function(panel,api,stage){var cst={at:37};
    var tasks=[
     {q:'The ring is on 37. Drag it to where 37 + 20 − 1 lands.',build:function(){return function(){return cst.at;};},check:function(x){var ok=x===56;return [ok,ok?'Yes: down two rows to 57, back one to 56.':x===57?'You did +20 but not −1.':x===58?'−1 moves left, not right.':x===37?'Move the ring first.':'+20 is two rows down, then one cell left.'];},hint:'Down 2 rows, left 1 cell.',solve:function(){cst.at=56;paintC(0);}},
@@ -1795,6 +1833,9 @@ var def={id:'F2-14',title:'Hundred square explorer',config:C,steps:steps,render:
      strip(stage,[[['landing','64 \u2212 11','factor'][k],'?','unknown']]);NOVA.scene.helperStrip(stage,'think',['Land','\u221211','Factor'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F2-14',def,{models:{},tables:{"LIVE":()=>LIVE,"steps":()=>steps},draws:{"Square":["stage","st","o"]},exploreFields:{"render.st":{"kind":"factory","factory":"clone","argCount":1}}});
 NOVA.bankMount({id:'F2-14',num:'F2·14',title:'Hundred square explorer',def:def,linked:['F2-13','F2-10','F1-01','F0-15'],
  spec:{purpose:'Premium hundred square: glass neon 10 × 10 grid with a draggable gold ring and draggable jump pills (+1, −1, +10, −10, +9, +11). Jumps move by tens (down rows) then ones (across) with trails and land with a flash. Multiples light up in patterns; factors of the marker glow gold.',
   params:'at (marker), pills, mult, factors, presets. Core: NOVA.ui.svgDrag drag rules (ring → any cell, highlight per cell; pill → square applies the jump and the pill springs home; jumps off the square shake and explain), NOVA.motion (trail, flash, pop, pulse). Roving tabindex grid: arrows / Home / End move focus, Enter sets the marker. Colour-blind safe: multiples green with a corner dot, factors gold with a dot, marker a thick ring. Year groups: Y7 (11–12): Y7-013.',

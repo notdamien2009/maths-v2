@@ -567,6 +567,42 @@ html[data-theme=light] .f12-strip .k{color:#10213a}
 .f13c-answer .nova-input{max-width:145px}
 @media(max-width:580px){.f13c-hint{font-size:.8rem}.f12-strip{gap:4px;padding-left:3px;padding-right:3px}.f12-strip .nv-ntile{padding:3px 7px;font-size:1.05rem}.f13c-answer .nova-input{max-width:123px}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="geometry">
 <div class="nova-wrap">
@@ -1710,8 +1746,8 @@ NOVA.version=(NOVA.version||'')+'+f12phone';
 /* F13-08 CYLINDER UNROLL — premium add-on to unchanged NOVA core. */
 var NOVA_F13_08_CONFIG={startMode:'watch',preset:'classic',presets:{classic:'Standard · radius 2, height 3',slender:'Tall cylinder · radius 1, height 5',wide:'Wide cylinder · radius 3, height 2',balanced:'Equal measures · radius 2, height 2',column:'Column · radius 2, height 5'}};
 (function(){'use strict';
-var h=NOVA.h,S=NOVA.svg,F=NOVA.f12,CFG=NOVA_F13_08_CONFIG,EN='F13-08';
-var C={cyan:'#43ebff',blue:'#619bff',purple:'#bca3ff',orange:'#ffba7d',gold:'#ffdf78',green:'#7af1bb',ink:'#07152f'};
+var h=NOVA.h,S=NOVA.svg,F=NOVA.f12,CFG=window.NovaV2Integration.configuration(NOVA_F13_08_CONFIG),EN='F13-08';
+var C=window.NovaV2Integration.configuration({cyan:'#43ebff',blue:'#619bff',purple:'#bca3ff',orange:'#ffba7d',gold:'#ffdf78',green:'#7af1bb',ink:'#07152f'});
 var PRESETS={classic:[2,3],slender:[1,5],wide:[3,2],balanced:[2,2],column:[2,5]};
 function state(p){var q=PRESETS[p]||PRESETS.classic;return {preset:p||'classic',r:q[0],ht:q[1],unroll:0,rotation:0,visible:'all',seams:true,stage:null,refresh:null,svg:null};}
 function curved(st){return 2*st.r*st.ht;}
@@ -1798,7 +1834,9 @@ function scene(root,st,W,H){root.replaceChildren();var m=mesh(st,W,W<500),t=m.t,
  metricCard(root,x1,yC,ww,140,C.cyan,'CURVED AREA', (2*st.r)+'π × '+st.ht,curved(st)+'π units²','rectangle · 2πrh',mob);
  metricCard(root,x2,yC,ww,140,C.gold,'TOTAL AREA',curved(st)+'π + '+ends(st)+'π',total(st)+'π units²','side + two circles',mob);
 }
-function stageBuild(stage,st,message,pose){if(stage._f13Cleanup)stage._f13Cleanup();stage.replaceChildren();var mob=innerWidth<=580,W=mob?420:780,H=mob?590:590;
+function stageBuild(stage,st,message,pose){
+if(window.NovaLessonComponent?.active){[stage,st,message,pose]=window.NovaLessonComponent.args("stageBuild",arguments);}
+if(stage._f13Cleanup)stage._f13Cleanup();stage.replaceChildren();var mob=innerWidth<=580,W=mob?420:780,H=mob?590:590;
  NOVA.cap(stage,'CYLINDER UNROLL · r '+st.r+' · h '+st.ht,'3 SURFACES');
  var svg=S.root(W,H,'An exact developable cylindrical side surface opens smoothly into a rectangle of width two pi r and height h, with two congruent circular ends and live surface-area calculations.');svg.classList.add('f13c-svg');svg.setAttribute('tabindex','0');svg.setAttribute('role','group');svg.setAttribute('aria-label','Interactive cylinder. Drag horizontally to unroll or close. Use left or right arrow keys to adjust the unroll.');stage.appendChild(svg);addDefs(svg,W);
  var root=el(svg,'g',{'data-cylinder-root':'1'}),raf=0;
@@ -1832,24 +1870,24 @@ var STEPS=[
  {n:'Change the radius',r:3,ht:2,u:100,pose:'think',m:'The width changes when radius changes: two times pi times three is six pi units.',q:'How does changing radius affect BOTH parts of the net?'},
  {n:'Transfer to a tall cylinder',r:1,ht:5,u:100,pose:'point-right',m:'For radius one and height five, curved area is ten pi and both ends total two pi.',q:'Find the new total surface area in terms of pi.'}
 ];
-function stepState(p){var q=state('classic');q.r=p.r;q.ht=p.ht;q.unroll=p.u;return q;}
+function stepState(p){var q=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("stepState.q",(...a)=>state(...a),['classic']):(state('classic')));q.r=p.r;q.ht=p.ht;q.unroll=p.u;return q;}
 var def={id:EN,title:'Cylinder unroll',config:CFG,steps:STEPS.map(function(p){return {name:p.n,narration:p.m,prompt:p.q,dur:1800};}),
  alt:'Neon glass cylinder with a continuous exact-length mathematical unroll into one rectangular curved surface and two congruent circular end faces, with all areas expressed in multiples of pi.',
  staticAlt:'The curved surface of a cylinder opens to a rectangle of width 2πr and height h, area 2πrh. Two circular ends each have area πr², so total surface area is 2πrh + 2πr². Radius 2, height 3 gives 12π + 8π = 20π square units.',
  render:function(i,stage){var p=STEPS[i];stageBuild(stage,stepState(p),p.m,p.pose);},
  exploreIntro:'Drag the cylinder to open it, or use the precise unroll slider. Change radius and height to discover the rectangle’s width and the two matching circular ends.',
- explore:function(panel,stage,api){var st=state('classic');if(api.onCleanup)api.onCleanup(function(){if(stage._f13Cleanup)stage._f13Cleanup();});
- var sel=h('select',{class:'nova-input','aria-label':'Cylinder preset'});Object.keys(CFG.presets).forEach(function(k){sel.appendChild(h('option',{value:k,text:CFG.presets[k]}));});sel.value='classic';row(panel,[h('label',{class:'f13c-lab'},['PRESET ',sel])]);
- var radius=slider('RADIUS',1,4,st.r,function(n){st.r=n;st.preset='custom';st.refresh();}),height=slider('HEIGHT',1,6,st.ht,function(n){st.ht=n;st.preset='custom';st.refresh();}),unroll=slider('UNROLL (%)',0,100,0,function(n){st.unroll=n;st.refresh();});
- row(panel,[radius.node,height.node,unroll.node]);
- function apply(key){var p=PRESETS[key];st.preset=key;st.r=p[0];st.ht=p[1];radius.set(st.r);height.set(st.ht);st.refresh();}
- sel.onchange=function(){apply(sel.value);};
- var focus=h('select',{class:'nova-input','aria-label':'Highlight cylinder surfaces'});[['all','All three surfaces'],['curved','Curved side only'],['ends','Two circles only']].forEach(function(x){focus.appendChild(h('option',{value:x[0],text:x[1]}));});focus.onchange=function(){st.visible=focus.value;st.refresh();};row(panel,[h('label',{class:'f13c-lab'},['HIGHLIGHT ',focus])]);
- var cb=h('input',{type:'checkbox','aria-label':'Show curved material grid'});cb.checked=true;cb.onchange=function(){st.seams=cb.checked;st.refresh();};
- row(panel,[h('label',{class:'f13c-lab'},[cb,' Show curved material grid']),btn('3D Cylinder',function(){st.unroll=0;unroll.set(0);st.refresh();},'ghost'),btn('Unroll net',function(){st.unroll=100;unroll.set(100);st.refresh();},'ghost'),btn('Reset',function(){sel.value='classic';apply('classic');st.unroll=0;unroll.set(0);focus.value='all';st.visible='all';cb.checked=true;st.seams=true;st.refresh();},'ghost')]);
- panel.appendChild(h('p',{class:'f13c-hint',text:'The rectangle comes ONLY from the curved side. Its width is the circumference 2πr. Add the two circles to obtain the total external surface area.'}));
- stageBuild(stage,st,'Unroll the curved side and keep the two round ends. Every surface contributes to the total area.','explain');
- CFG._explore={state:st,preset:function(k){sel.value=k;sel.onchange();},unroll:function(n){unroll.inp.value=n;unroll.inp.oninput();},dimensions:function(r,z){radius.inp.value=r;radius.inp.oninput();height.inp.value=z;height.inp.oninput();},focus:function(k){focus.value=k;focus.onchange();}};
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>state(...a),['classic']):(state('classic')));window.NovaLessonComponent?.applyExploreModels();if(api.onCleanup)api.onCleanup(function(){if(stage._f13Cleanup)stage._f13Cleanup();});
+ window.NovaLessonComponent?.applyExploreModels();var sel=h('select',{class:'nova-input','aria-label':'Cylinder preset'});window.NovaLessonComponent?.applyExploreModels();Object.keys(CFG.presets).forEach(function(k){sel.appendChild(h('option',{value:k,text:CFG.presets[k]}));});window.NovaLessonComponent?.applyExploreModels();sel.value='classic';window.NovaLessonComponent?.applyExploreModels();row(panel,[h('label',{class:'f13c-lab'},['PRESET ',sel])]);
+ window.NovaLessonComponent?.applyExploreModels();var radius=slider('RADIUS',1,4,st.r,function(n){st.r=n;st.preset='custom';st.refresh();}),height=slider('HEIGHT',1,6,st.ht,function(n){st.ht=n;st.preset='custom';st.refresh();}),unroll=slider('UNROLL (%)',0,100,0,function(n){st.unroll=n;st.refresh();});
+ window.NovaLessonComponent?.applyExploreModels();row(panel,[radius.node,height.node,unroll.node]);
+ window.NovaLessonComponent?.applyExploreModels();function apply(key){var p=PRESETS[key];st.preset=key;st.r=p[0];st.ht=p[1];radius.set(st.r);height.set(st.ht);st.refresh();}
+ window.NovaLessonComponent?.applyExploreModels();sel.onchange=function(){apply(sel.value);};
+ window.NovaLessonComponent?.applyExploreModels();var focus=h('select',{class:'nova-input','aria-label':'Highlight cylinder surfaces'});window.NovaLessonComponent?.applyExploreModels();[['all','All three surfaces'],['curved','Curved side only'],['ends','Two circles only']].forEach(function(x){focus.appendChild(h('option',{value:x[0],text:x[1]}));});window.NovaLessonComponent?.applyExploreModels();focus.onchange=function(){st.visible=focus.value;st.refresh();};window.NovaLessonComponent?.applyExploreModels();row(panel,[h('label',{class:'f13c-lab'},['HIGHLIGHT ',focus])]);
+ window.NovaLessonComponent?.applyExploreModels();var cb=h('input',{type:'checkbox','aria-label':'Show curved material grid'});window.NovaLessonComponent?.applyExploreModels();cb.checked=true;window.NovaLessonComponent?.applyExploreModels();cb.onchange=function(){st.seams=cb.checked;st.refresh();};
+ window.NovaLessonComponent?.applyExploreModels();row(panel,[h('label',{class:'f13c-lab'},[cb,' Show curved material grid']),btn('3D Cylinder',function(){st.unroll=0;unroll.set(0);st.refresh();},'ghost'),btn('Unroll net',function(){st.unroll=100;unroll.set(100);st.refresh();},'ghost'),btn('Reset',function(){sel.value='classic';apply('classic');st.unroll=0;unroll.set(0);focus.value='all';st.visible='all';cb.checked=true;st.seams=true;st.refresh();},'ghost')]);
+ window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('p',{class:'f13c-hint',text:'The rectangle comes ONLY from the curved side. Its width is the circumference 2πr. Add the two circles to obtain the total external surface area.'}));
+ window.NovaLessonComponent?.applyExploreModels();stageBuild(stage,st,'Unroll the curved side and keep the two round ends. Every surface contributes to the total area.','explain');
+ window.NovaLessonComponent?.applyExploreModels();CFG._explore={state:st,preset:function(k){sel.value=k;sel.onchange();},unroll:function(n){unroll.inp.value=n;unroll.inp.oninput();},dimensions:function(r,z){radius.inp.value=r;radius.inp.oninput();height.inp.value=z;height.inp.oninput();},focus:function(k){focus.value=k;focus.onchange();}};
  },
  challenge:function(panel,api,stage){var tasks=[
  {r:2,ht:3,a:12,s:20,q:'A cylinder has radius 2 and height 3. Give the coefficient of π for its CURVED area and TOTAL surface area.',hint:'Curved = 2 × radius × height. Total = curved + 2 × radius².'},
@@ -1867,6 +1905,9 @@ var def={id:EN,title:'Cylinder unroll',config:CFG,steps:STEPS.map(function(p){re
  load(0);CFG._challenge={state:st,tasks:tasks,load:load,check:check,task:function(){return k;},inputs:[a,b]};
  }
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(EN,def,{models:{},tables:{"PRESETS":()=>PRESETS,"STEPS":()=>STEPS},draws:{"stageBuild":["stage","st","message","pose"]},exploreFields:{"st":{"kind":"factory","factory":"state","argCount":1},"stepState.q":{"kind":"factory","factory":"state","argCount":1}}});
 NOVA.bankMount({id:EN,num:'F13·08',title:'Cylinder unroll',def:def,linked:['F0-01','F0-02','F0-03','F0-04','F0-05','F12-03','F13-01','F13-02','F13-03','F13-04','F13-05','F13-06','F13-07'],spec:{
  purpose:'Demonstrate the complete net and total surface area of a closed cylinder (KS3 Year 8 / Year 9).',
  params:'Radius 1–4 units, height 1–6. Exact curved area 2πrh, two end circles 2πr², total surface area 2πrh+2πr².',

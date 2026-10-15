@@ -555,6 +555,42 @@ html[data-theme=light] .f12-strip .k{color:#10213a}
 .f12-sv[role=application]:focus-visible{outline:2px dashed var(--m-focus);outline-offset:3px;border-radius:12px}
 @media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="geometry">
 <div class="nova-wrap">
@@ -1717,20 +1753,24 @@ var NOVA_F12_02_CONFIG={
 };
 /* ===== F12-02 ENGINE ===== */
 (function(){
-var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=NOVA_F12_02_CONFIG,PR=C.props,strip=F.strip;
+var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=window.NovaV2Integration.configuration(NOVA_F12_02_CONFIG),PR=C.props,strip=F.strip;
 function has(k,id){var q=PR[id],v=F.SHAPES[k].p[q.key];return v>=q.min&&(q.max==null||v<=q.max);}
 function cap1(s){return s.charAt(0).toUpperCase()+s.slice(1);}
 function names(keys){return (keys.length?keys.map(function(k){return F.SHAPES[k].name;}).join(', '):'none').replace(/-/g,'\u2011');}
 function tip(sv,k){var g=sv.querySelector('[data-maths="'+k+'"]');if(g){var t=S.el('title',{},g);t.textContent=F.SHAPES[k].name;}}
 function cell(sv,keys,x,y,w,hgt,cols,sp,sc,hl,top){var rows=Math.max(1,Math.ceil(keys.length/cols)),y0=y+top+(hgt-top-rows*(sp-2))/2+(sp-2)/2;keys.forEach(function(k,i){var per=(i>=Math.floor(keys.length/cols)*cols)?keys.length-Math.floor(keys.length/cols)*cols:cols,x0=x+(w-per*sp)/2+sp/2,col=i%cols,cx=x0+col*sp,cy=y0+Math.floor(i/cols)*(sp-2);F.draw(sv,k,cx,cy,sc,{role:hl===k?'focus':'op',tag:k});tip(sv,k);if(hl===k)NOVA.neonRing(sv,cx,cy,{role:'focus',r:sc*62,pulse:false});});}
-function drawOne(stage,a,hl){var sv=S.root(440,272,'Shape sorter: shapes that '+PR[a].label+' go in YES, the others in NO.');sv.classList.add('f12-sv');
+function drawOne(stage,a,hl){
+if(window.NovaLessonComponent?.active){[stage,a,hl]=window.NovaLessonComponent.args("drawOne",arguments);}
+var sv=S.root(440,272,'Shape sorter: shapes that '+PR[a].label+' go in YES, the others in NO.');sv.classList.add('f12-sv');
   var yes=F.KEYS.filter(function(k){return has(k,a);}),no=F.KEYS.filter(function(k){return !has(k,a);});
   NOVA.chalkText(sv,220,22,cap1(PR[a].label)+'?',{size:16});
   NOVA.neonBox(sv,10,44,205,208,{role:'result',r:12});NOVA.neonBox(sv,225,44,205,208,{role:'given',r:12});
   S.pill(sv,112,44,'YES · '+yes.length,{role:'result',size:13});S.pill(sv,327,44,'NO · '+no.length,{role:'given',size:13});
   cell(sv,yes,10,44,205,208,3,62,.4,hl,22);cell(sv,no,225,44,205,208,3,62,.4,hl,22);
   stage.appendChild(sv);var r=h('div',{class:'f12-strip'});r.appendChild(NOVA.neonCard(['YES: '+names(yes)],{role:'result'}));r.appendChild(NOVA.neonCard(['NO: '+names(no)],{role:'given'}));stage.appendChild(r);return {yes:yes,no:no};}
-function drawCar(stage,a,b,hl){var sv=S.root(440,334,'Carroll diagram sorting shapes by two properties.');sv.classList.add('f12-sv');
+function drawCar(stage,a,b,hl){
+if(window.NovaLessonComponent?.active){[stage,a,b,hl]=window.NovaLessonComponent.args("drawCar",arguments);}
+var sv=S.root(440,334,'Carroll diagram sorting shapes by two properties.');sv.classList.add('f12-sv');
   var X=[58,250],Y=[48,186],W=182,H=130,res={};
   [0,1].forEach(function(ci){S.pill(sv,X[ci]+W/2,24,ci?'no':'yes',{role:'focus',size:13});});[0,1].forEach(function(ri){S.pill(sv,28,Y[ri]+H/2,ri?'no':'yes',{role:'op',size:13});});
   [0,1].forEach(function(ci){[0,1].forEach(function(ri){var keys=F.KEYS.filter(function(k){return has(k,a)===(ci===0)&&has(k,b)===(ri===0);}),both=ci===0&&ri===0,role=!keys.length?'unknown':both?'result':'given';res[ci+''+ri]=keys;
@@ -1745,24 +1785,26 @@ var steps=[
  {name:'Two properties at once',narration:'A Carroll diagram asks two questions. Columns are parallel sides, rows are equal sides. The top left box holds shapes that pass both tests.',prompt:'Which shapes have parallel sides AND equal sides?',st:{kind:'carroll',a:'par2',b:'eq'},target:'rhombus'},
  {name:'An empty box',narration:'Some boxes stay empty. No shape has two pairs of parallel sides and exactly one line of symmetry. An empty box is an answer too.',prompt:'Can you name a shape for the empty box?',st:{kind:'carroll',a:'par2',b:'sym1'}},
  {name:'Triangles and right angles',narration:'Triangles against right angles: only the right-angled triangle is in the top left box. Squares and rectangles have right angles but are not triangles.',prompt:'Which triangle has a right angle?',st:{kind:'carroll',a:'tri',b:'ra'},target:'rightTri'}];
-function paint(stage,st,hl){return st.kind==='one'?drawOne(stage,st.a,hl):drawCar(stage,st.a,st.b,hl);}
+function paint(stage,st,hl){
+if(window.NovaLessonComponent?.active){[stage,st,hl]=window.NovaLessonComponent.args("paint",arguments);}
+return st.kind==='one'?drawOne(stage,st.a,hl):drawCar(stage,st.a,st.b,hl);}
 function render(i,stage){stage.innerHTML='';var s=steps[i];NOVA.cap(stage,'Property sorter · '+s.name,'step '+(i+1)+'/'+steps.length);paint(stage,s.st,null);NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
 var def={id:'F12-02',title:'Property sorter',config:C,steps:steps,render:render,
  alt:'Property sorter: twelve 2-D shapes sorted into YES and NO boxes for one property, or into a Carroll diagram for two properties.',
  staticAlt:'Right angle: rectangle, square and right-angled triangle in YES. Carroll diagram of parallel sides against equal sides with square, rhombus and regular hexagon in the both box, and an empty box for two pairs of parallel sides with exactly one line of symmetry.',
  exploreIntro:'Explore: choose one or two properties and watch the twelve shapes sort themselves. Pick a shape to ring it and find where it lands.',
- explore:function(panel,stage,api){var kind=C.preset,a=C.presets.one.a,b=C.presets.carroll.b,hl='';
-   function pg(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+(kind==='one'?'one property':'two properties'),hl?F.SHAPES[hl].name:'all shapes');paint(stage,{kind:kind,a:a,b:b},hl||null);
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var kind=C.preset,a=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("a",()=>(C.presets.one.a)):(C.presets.one.a)),b=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("b",()=>(C.presets.carroll.b)):(C.presets.carroll.b)),hl='';
+   window.NovaLessonComponent?.applyExploreModels();function pg(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+(kind==='one'?'one property':'two properties'),hl?F.SHAPES[hl].name:'all shapes');paint(stage,{kind:kind,a:a,b:b},hl||null);
      if(hl){var p=F.SHAPES[hl].p;strip(stage,[['sides',p.sides,'given'],['parallel pairs',p.par,'op'],['right angles',p.ra,'result'],['symmetry lines',p.sym,'focus']]);}
      NOVA.scene.helperStrip(stage,'explain',kind==='one'?'Yes or no?':'Two questions');}
-   function sel(label,cur,withNone,onc){var s=h('select',{class:'nova-input','aria-label':label});if(withNone)s.appendChild(h('option',{value:'',text:'(none)'}));Object.keys(PR).forEach(function(k){s.appendChild(h('option',{value:k,text:cap1(PR[k].label)}));});s.value=cur;s.onchange=function(){onc(s.value);NOVA.events.emit('value',{engine:'F12-02',control:label,value:s.value});pg();};return s;}
-   var mode=h('select',{class:'nova-input','aria-label':'Sort type'});Object.keys(C.presets).forEach(function(k){mode.appendChild(h('option',{value:k,text:C.presets[k].label}));});mode.value=kind;
-   var A=sel('Property A',a,false,function(v){a=v;}),B=sel('Property B',b,false,function(v){b=v;});
-   var shp=h('select',{class:'nova-input','aria-label':'Ring a shape'});shp.appendChild(h('option',{value:'',text:'(none)'}));F.KEYS.forEach(function(k){shp.appendChild(h('option',{value:k,text:F.SHAPES[k].name}));});shp.onchange=function(){hl=shp.value;pg();};
-   var rowB=h('label',{class:'pr-row'},['Property B (down) ',B]);
-   function vis(){rowB.style.display=kind==='carroll'?'':'none';}
-   mode.onchange=function(){kind=mode.value;vis();pg();NOVA.events.emit('value',{engine:'F12-02',control:'sort type',value:kind});};
-   panel.appendChild(h('label',{class:'pr-row'},['Sort ',mode]));panel.appendChild(h('label',{class:'pr-row'},['Property A (across) ',A]));panel.appendChild(rowB);panel.appendChild(h('label',{class:'pr-row'},['Ring a shape ',shp]));vis();pg();},
+   window.NovaLessonComponent?.applyExploreModels();function sel(label,cur,withNone,onc){var s=h('select',{class:'nova-input','aria-label':label});if(withNone)s.appendChild(h('option',{value:'',text:'(none)'}));Object.keys(PR).forEach(function(k){s.appendChild(h('option',{value:k,text:cap1(PR[k].label)}));});s.value=cur;s.onchange=function(){onc(s.value);NOVA.events.emit('value',{engine:'F12-02',control:label,value:s.value});pg();};return s;}
+   window.NovaLessonComponent?.applyExploreModels();var mode=h('select',{class:'nova-input','aria-label':'Sort type'});window.NovaLessonComponent?.applyExploreModels();Object.keys(C.presets).forEach(function(k){mode.appendChild(h('option',{value:k,text:C.presets[k].label}));});window.NovaLessonComponent?.applyExploreModels();mode.value=kind;
+   window.NovaLessonComponent?.applyExploreModels();var A=sel('Property A',a,false,function(v){a=v;}),B=sel('Property B',b,false,function(v){b=v;});
+   window.NovaLessonComponent?.applyExploreModels();var shp=h('select',{class:'nova-input','aria-label':'Ring a shape'});window.NovaLessonComponent?.applyExploreModels();shp.appendChild(h('option',{value:'',text:'(none)'}));window.NovaLessonComponent?.applyExploreModels();F.KEYS.forEach(function(k){shp.appendChild(h('option',{value:k,text:F.SHAPES[k].name}));});window.NovaLessonComponent?.applyExploreModels();shp.onchange=function(){hl=shp.value;pg();};
+   window.NovaLessonComponent?.applyExploreModels();var rowB=h('label',{class:'pr-row'},['Property B (down) ',B]);
+   window.NovaLessonComponent?.applyExploreModels();function vis(){rowB.style.display=kind==='carroll'?'':'none';}
+   window.NovaLessonComponent?.applyExploreModels();mode.onchange=function(){kind=mode.value;vis();pg();NOVA.events.emit('value',{engine:'F12-02',control:'sort type',value:kind});};
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Sort ',mode]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Property A (across) ',A]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(rowB);window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Ring a shape ',shp]));window.NovaLessonComponent?.applyExploreModels();vis();window.NovaLessonComponent?.applyExploreModels();pg();},
  challenge:function(panel,api,stage){
    var nRa=F.KEYS.filter(function(k){return has(k,'ra');}).length,nS1=F.KEYS.filter(function(k){return has(k,'sym1');}).length;
    var tasks=[
@@ -1772,6 +1814,9 @@ var def={id:'F12-02',title:'Property sorter',config:C,steps:steps,render:render,
    function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['count','identify','count'][k]);paint(stage,[{kind:'one',a:'ra'},{kind:'carroll',a:'par2',b:'ra'},{kind:'one',a:'sym1'}][k],null);NOVA.scene.helperStrip(stage,'think',['Count them','Which shape?','Count them'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F12-02',def,{models:{},tables:{"steps":()=>steps},draws:{"drawOne":["stage","a","hl"],"drawCar":["stage","a","b","hl"],"paint":["stage","st","hl"]},exploreFields:{"a":{"kind":"value","factory":null,"argCount":null},"b":{"kind":"value","factory":null,"argCount":null}}});
 NOVA.bankMount({id:'F12-02',num:'F12·02',title:'Property sorter',def:def,linked:['F0-02','F0-11','F0-12','F12-01','F12-03','F11-03'],
  spec:{purpose:'Sort the twelve standard 2-D shapes by properties: sides, parallel sides, right angles, equal sides and symmetry. One property gives a YES / NO sort; two properties give a Carroll diagram, including empty boxes. Pupils meet the idea that a shape can belong to several groups at once.',
   params:'preset (one, carroll), property A and B from a data table (key, min, max), ring-a-shape highlight. Shape data comes from NOVA.f12.SHAPES. Core: NOVA.neonBox / neonShape / neonCard / chalkText. Year groups: KS3 Years 7–9 (12–15).',

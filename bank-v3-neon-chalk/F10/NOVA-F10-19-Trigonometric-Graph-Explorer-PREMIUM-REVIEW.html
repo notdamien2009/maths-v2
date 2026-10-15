@@ -718,7 +718,43 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 @media(max-width:390px){#F10-19 .f119-stat-val{font-size:.88rem}#F10-19 .f119-circle{width:min(62%,160px)}#F10-19 .f119-controls{grid-template-columns:1fr}}
 @media print{#F10-19 .f119-unit{filter:none}#F10-19 .f119-controls{display:none}}
 
-</style></head><body><div class="nova-wrap"><header data-run="F10 · COORDINATES AND GRAPHS" data-sub="Turn an angle. Follow the curve. Explain the wave." data-title="Trigonometric Graph Explorer" id="nova-header"></header><main id="gallery"></main></div><script>
+</style><script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
+</head><body><div class="nova-wrap"><header data-run="F10 · COORDINATES AND GRAPHS" data-sub="Turn an angle. Follow the curve. Explain the wave." data-title="Trigonometric Graph Explorer" id="nova-header"></header><main id="gallery"></main></div><script>
 
 /* === NOVA FAMILY CORE v1.4 : JS START === (extract this block for later runs) */
 (function(){
@@ -1851,7 +1887,7 @@ const F119_CONFIG=Object.freeze({
  },events:{value:['preset','angle','amplitude','frequency','phase','shift','reset','point','challengeValue'],types:['mode','step','correct','hintUsed']}
 });
 (function(){'use strict';
-const N=window.NOVA,H=N.h,E=N.svg.el,C=F119_CONFIG,ID=C.id;
+const N=window.NOVA,H=N.h,E=N.svg.el,C=window.NovaV2Integration.configuration(F119_CONFIG),ID=C.id;
 N.premium?.enable?.();
 const S={preset:C.defaultPreset,type:'sin',A:1,B:1,P:0,D:0,angle:60,correct:false,mode:'watch'};
 const rad=d=>d*Math.PI/180,clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),fmt=v=>{let n=Math.round(v*1000)/1000;return String(Object.is(n,-0)?0:n).replaceAll('-','−')},nearest=(v,a)=>Math.round(v/a)*a;
@@ -1919,7 +1955,9 @@ function unitCircle(){const svg=N.svg.root(250,240,'Unit circle: the horizontal 
  chalk(svg,cx,236,'unit radius = 1','support',21,'middle');return svg}
 function ruleString(){let typ=S.type==='both'?'sin x and cos x':S.type,coeff=S.A===1?'':fmt(S.A)+' ',angle=(S.B===1?'':fmt(S.B))+'x'+(S.P?' − '+fmt(S.B*S.P)+'°':''),shift=S.D?(S.D>0?' + '+fmt(S.D):' − '+fmt(-S.D)):'';return S.type==='both'?'y = sin x and y = cos x':'y = '+coeff+typ+'('+angle+')'+shift}
 function stat(header,val,note,role){return H('div',{class:'f119-stat',...(role?{'data-role':role}:{})},[H('div',{class:'f119-stat-label',text:header}),H('div',{class:'f119-stat-val',text:val}),H('div',{class:'f119-stat-note',text:note})])}
-function scene(stage,opt={}){const q={phase:9,editable:false,challenge:false,correct:false,pose:'explain',caption:'The unit circle and graph follow the same angle.',...opt};stage.replaceChildren();
+function scene(stage,opt={}){
+if(window.NovaLessonComponent?.active){[stage,opt]=window.NovaLessonComponent.args("scene",arguments);}
+const q={phase:9,editable:false,challenge:false,correct:false,pose:'explain',caption:'The unit circle and graph follow the same angle.',...opt};stage.replaceChildren();
  const theatre=H('section',{class:'f119-theatre','data-testid':'f119-theatre'});
  theatre.append(H('div',{class:'f119-topline'},[H('span',{text:'F10 · TRIGONOMETRIC GRAPH STUDIO'}),H('span',{class:'f119-brand',text:'NOVA · NEON CHALK'})]));
  const layout=H('div',{class:'f119-layout'}),plane=H('div',{class:'f119-plane'});
@@ -1959,8 +1997,8 @@ const STORY=[
 const STEPS=STORY.map(([name,mood,narration,,,prompt])=>({name,mood,narration,prompt}));
 function render(i,stage){let row=STORY[i];setPreset(row[3],false);S.angle=row[5];scene(stage,{phase:row[4],pose:row[1],caption:row[2]})}
 let refreshExplore=null;
-function explore(panel,stage){S.mode='explore';panel.classList.add('f119-controls');
- function redraw(){panel.replaceChildren();let pre=H('select',{class:'nova-input',id:'f119-select','data-testid':'f119-preset','aria-label':'Choose graph preset'});
+function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();S.mode='explore';window.NovaLessonComponent?.applyExploreModels();panel.classList.add('f119-controls');
+ window.NovaLessonComponent?.applyExploreModels();function redraw(){panel.replaceChildren();let pre=H('select',{class:'nova-input',id:'f119-select','data-testid':'f119-preset','aria-label':'Choose graph preset'});
  for(let [id,p] of Object.entries(C.presets))pre.append(H('option',{value:id,text:p.label}));pre.value=S.preset;pre.onchange=()=>{setPreset(pre.value);redraw()};
  panel.append(H('label',{class:'f119-wide f119-control-label'},[H('strong',{text:'CHOOSE A TRIGONOMETRIC GRAPH'}),pre]));
  function slider(name,k,min,max,step,suffix=''){const val=H('strong',{text:fmt(S[k])+suffix}),r=H('input',{type:'range',min:String(min),max:String(max),step:String(step),value:String(S[k]),'aria-label':name,'data-testid':'f119-'+k});r.oninput=()=>{S[k]=Number(r.value);emit(k,{value:S[k],source:'slider'});redraw()};return H('label',{class:'f119-control-label'},[H('span',{class:'f119-control-head'},[H('span',{text:name}),val]),r])}
@@ -1972,7 +2010,7 @@ function explore(panel,stage){S.mode='explore';panel.classList.add('f119-control
  panel.append(H('p',{class:'f119-help f119-wide',text:'Drag or keyboard-focus the graph marker to change the angle. The unit circle moves with the graph. At a tangent asymptote, the output is undefined.'}));
  const k=S.type==='both'?'sin':S.type,v=valueAt(S.angle,k);
  scene(stage,{phase:15,editable:true,pose:'point',caption:v===null?'At this angle tangent is undefined. Do not join the two sides.':'At '+fmt(S.angle)+' degrees the '+k+' value is '+fmt(v)+'. Watch the point and unit circle move together.'})}
- refreshExplore=redraw;redraw()}
+ window.NovaLessonComponent?.applyExploreModels();refreshExplore=redraw;window.NovaLessonComponent?.applyExploreModels();redraw()}
 const TASKS=[
  {pre:'GCSE-SINE',ang:0,answer:'0',q:'Read sin 0°. What is the output?',hint:'The sine graph starts on the horizontal axis.',wrong:'Sine starts at zero, not one.'},
  {pre:'GCSE-SINE',ang:90,answer:'1',q:'What is sin 90°?',hint:'Read the first peak at a quarter-turn.',wrong:'Sine reaches positive one at ninety degrees.'},
@@ -1997,6 +2035,9 @@ const def={id:ID,title:'Trigonometric Graph Explorer (sin, cos, tan)',config:C,s
  staticAlt:'At zero degrees sine = 0 and cosine = 1. At ninety degrees sine = 1 and cosine = 0, so tangent is undefined. Sine and cosine period 360°; tangent period 180°. Sine and cosine range from minus one to one.',
  exploreIntro:'Select sine, cosine, tangent or a transformation preset. Turn the unit-circle angle and change amplitude, frequency, phase or shift. The graph and point update together.',onRestore:()=>setPreset(C.defaultPreset)};
 N.registry.add({id:ID,title:'Trigonometric Graph Explorer',family:'F10',topics:['sine graph','cosine graph','tangent graph','unit circle','amplitude','period','phase shift','asymptote'],deps:['F0-02','F0-14','F10-18']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(ID,def,{models:{"S":()=>S},tables:{"STORY":()=>STORY,"TASKS":()=>TASKS},draws:{"scene":["stage","opt"]},exploreFields:{}});
 N.bankMount({id:ID,num:'19',title:'Trigonometric Graph Explorer · Premium Edition',def,linked:['F0-14','F10-18'],years:'GCSE EXTENSION · sin, cos, tan',spec:{purpose:'Link the unit circle to sine, cosine and tangent graphs; explain values, periods, shifts and tangent asymptotes.',params:'Angle (0–360°), graph type, amplitude A, frequency B, phase P and vertical shift D.',presets:'Seven GCSE graph configurations: sine, cosine, tangent, comparison, amplitude, period and phase.',steps:'16 narrated teaching stages plus Explore and 13 marked Challenge questions.',interactions:'Four modes; rotating unit circle, graph angle handle, keyboard adjustment, slider edits, step narration, reset, assessments.',traps:'Sine and cosine start at different heights; tangent is undefined at quarter-turns and curves must not cross its asymptotes; period is not amplitude.',gcse:'This entire component is a clearly labelled GCSE extension; it has no KS3 lesson mapping in the F10 master.'}});
 window.addEventListener('load',()=>document.querySelectorAll('#F10-19 img').forEach(img=>{if(!img.alt)img.alt='NOVA maths tutor mascot'}),{once:true});
 })();

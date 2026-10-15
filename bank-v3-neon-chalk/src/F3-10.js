@@ -1,3 +1,37 @@
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
 /* F3-10 Index Law Animator — approved NOVA F0 core only. */
 const F310_CONFIG={id:'F3-10',preset:'Y8-002-MULTIPLY',startMode:'watch',parameters:{bases:[2,3,4,5],maxExpandedFactors:8},
  presets:{
@@ -13,7 +47,7 @@ const F310_CONFIG={id:'F3-10',preset:'Y8-002-MULTIPLY',startMode:'watch',paramet
   {kind:'fraction',base:27,m:2,n:3,answer:9,rule:'root-then-power'}],
  events:{value:['preset','base','firstPower','secondPower','law','join','cancel','group','fractionStep','undo','reset','answer','proof'],types:['step','correct','hintUsed','mode']}};
 window.F310_CONFIG=F310_CONFIG;
-(function(){'use strict';const N=window.NOVA,H=N.h,E=N.svg.el,C=F310_CONFIG,ID=C.id;
+(function(){'use strict';const N=window.NOVA,H=N.h,E=N.svg.el,C=window.NovaV2Integration.configuration(F310_CONFIG),ID=C.id;
 const STEPS=[
  {name:'Expand the first power',say:'expand',narration:'An index counts repeated factors of the same base. Two cubed means two multiplied by two multiplied by two. Expand each power so every factor can be seen.'},
  {name:'Join the factor strips',say:'join',narration:'Both powers share the base two. Join the three factors to the two factors. This gives five factors of two without changing the multiplication.'},
@@ -103,7 +137,9 @@ function draw(s,opt={}){
  }
  return svg;
 }
-function present(stage,s,opt={}){stage.innerHTML='';N.cap(stage,'Index Law Animator',opt.caption||'Expand. Rearrange. Recount. Compress.');const holder=H('div',{class:'f310-scene'}),side=H('aside',{class:'f310-side'}),svg=draw(s,opt),m=maths(s);
+function present(stage,s,opt={}){
+if(window.NovaLessonComponent?.active){[stage,s,opt]=window.NovaLessonComponent.args("present",arguments);}
+stage.innerHTML='';N.cap(stage,'Index Law Animator',opt.caption||'Expand. Rearrange. Recount. Compress.');const holder=H('div',{class:'f310-scene'}),side=H('aside',{class:'f310-side'}),svg=draw(s,opt),m=maths(s);
  const card=(label,val,desc,role)=>N.neonCard([H('div',{class:'f310-title',text:label}),H('p',{class:'f310-value',text:val}),H('p',{class:'f310-desc',text:desc})],{role});
  side.append(card('MATHEMATICAL LAW',m.law,s.kind==='multiply'?'Same base: collect all factors.':s.kind==='divide'?'Same base: cancel matching factors.':s.kind==='power'?'Repeat groups of equal factors.':'Roots and powers undo each other.','op'),card('EXPANDED FORM',s.kind==='fraction'?`${s.base} → ${m.root} → ${m.val}`:`${s.m} ${s.kind==='divide'?'minus':s.kind==='power'?'groups of':'plus'} ${s.n}`, 'Count the factors rather than guessing a rule.','focus'),card('TARGET',opt.hideAnswer?'Prove the rule':s.kind==='fraction'?String(m.val):`${s.base}^${m.exp}`,'Match the visual evidence to the expression.','result'));
  holder.append(svg,side);stage.append(holder);
@@ -114,7 +150,9 @@ function need(s){return s.kind==='multiply'?1:s.kind==='divide'?s.n:s.kind==='po
 function actionName(s){return s.kind==='multiply'?'join':s.kind==='divide'?'cancel':s.kind==='power'?'group':'fractionStep';}
 function actionLabel(s){return s.kind==='multiply'?'Join strips':s.kind==='divide'?'Cancel pair':s.kind==='power'?'Add group':'Next operation';}
 function explain(s){return s.kind==='multiply'?`Join ${s.m} and ${s.n} factors of the same base.`:s.kind==='divide'?`Cancel each of the ${s.n} denominator factors with one numerator factor.`:s.kind==='power'?`Repeat ${s.m} base factors in each of ${s.n} groups.`:`Take the cube root first, then raise it to the power ${s.m}.`;}
-function live(stage,panel,s0,challenge=false,api=null){let s={...s0},progress=0,feedback=explain(s),wrong=false,speech='ready',guess='',done=false;let presetKey=C.preset;
+function live(stage,panel,s0,challenge=false,api=null){
+if(window.NovaLessonComponent?.active){[stage,panel,s0,challenge,api]=window.NovaLessonComponent.args("live",arguments);}
+let s={...s0},progress=0,feedback=explain(s),wrong=false,speech='ready',guess='',done=false;let presetKey=C.preset;
  const preset=H('select',{'aria-label':'Index law preset'}),baseInput=H('select',{'aria-label':'Base'}),mInput=H('input',{type:'number',min:1,max:5,value:s.m,'aria-label':'First index'}),nInput=H('input',{type:'number',min:1,max:5,value:s.n,'aria-label':'Second index'}),ans=H('input',{type:'number','aria-label':'Resulting index or numerical value'}),status=H('p',{class:'f310-status',role:'status'});
  Object.entries(C.presets).forEach(([k,v])=>preset.add(new Option(v.label,k)));[2,3,4,5].forEach(v=>baseInput.add(new Option(String(v),String(v))));
  function message(text,k='right',bad=false){feedback=text;wrong=bad;speech=bad?'wrong':k;}
@@ -144,7 +182,7 @@ let def={id:ID,title:'Index Law Animator',config:C,steps:STEPS,
  staticAlt:'When multiplying the same-base powers, add their indices. When dividing, subtract the indices. A power of a power multiplies the indices. For a fractional index, apply the denominator root, then the numerator power.',
  render(i,stage){let s={...C.presets['Y8-002-MULTIPLY']};present(stage,s,{step:i,caption:STEPS[i].name,say:STEPS[i].say,animate:i>0});},
  exploreIntro:'Explore each index law by moving factor strips, cancelling pairs, repeating groups and applying roots.',
- explore(panel,stage){live(stage,panel,C.presets[C.preset]||C.presets['Y8-002-MULTIPLY']);},
+ explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();live(stage,panel,C.presets[C.preset]||C.presets['Y8-002-MULTIPLY']);},
  challenge(panel,api,stage){let ix=0,liveUI=null,finished=false,body=H('div');function round(){panel.innerHTML='';if(finished){present(stage,C.challenge.at(-1),{progress:need(C.challenge.at(-1)),say:'win',full:true});panel.append(H('div',{class:'f310-win',text:'Four index laws proved. Excellent mathematical reasoning!'}));return;}
   const task=C.challenge[ix];panel.append(H('p',{class:'f310-help',text:`Proof ${ix+1} of 4. ${explain(task)} Complete the structural action before checking the index or value.`}),body);
   const roundApi={hint:api.hint.bind(api),check(ok,msg){api.check(ok,msg,{task:ix,kind:task.kind});if(ok){ix++;if(ix===C.challenge.length)finished=true;Promise.resolve().then(round);}}};
@@ -152,6 +190,9 @@ let def={id:ID,title:'Index Law Animator',config:C,steps:STEPS,
  }round();}, onRestore(){}
 };
 N.registry.add({id:ID,title:def.title,topics:['indices','powers','index laws','algebra','fractional indices'],deps:['F0-02','F0-03','F0-04','F0-07','F0-08','F3-09']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(ID,def,{models:{},tables:{"STEPS":()=>STEPS},draws:{"present":["stage","s","opt"],"live":["stage","panel","s0","challenge","api"]},exploreFields:{}});
 N.bankMount({id:ID,num:'10',title:'Index Law Animator · Premium Review',def,linked:['F3-09','F3-11','F8-13'],years:'Year 8 / Year 9 · Indices and roots',spec:{
  purpose:'Prove powers of the same base by expanding neon factor strips; demonstrate addition, subtraction, multiplication of indices, and fractional indices as roots and powers.',
  params:'Base 2–5 or algebraic a; first and second indices 1–5 with eight-factor visual cap; single validated fractional-index preset.',

@@ -836,7 +836,43 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 }
 #F10-04 .f104-theatre{min-height:0!important}
 
-</style></head><body><div class="nova-wrap"><header id="nova-header" data-run="F10 · COORDINATES AND GRAPHS" data-title="Table-to-Graph Plotter" data-sub="From a rule, to a table, to a mathematically correct graph."></header><main id="gallery"></main></div>
+</style><script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
+</head><body><div class="nova-wrap"><header id="nova-header" data-run="F10 · COORDINATES AND GRAPHS" data-title="Table-to-Graph Plotter" data-sub="From a rule, to a table, to a mathematically correct graph."></header><main id="gallery"></main></div>
 <script>
 /* === NOVA FAMILY CORE v1.4 : JS START === (extract this block for later runs) */
 (function(){
@@ -1967,7 +2003,7 @@ const F104_CONFIG={id:'F10-04',family:'F10',startMode:'watch',preset:'Y7-039',bo
  challenge:{tasks:['generate-value','plot-point','quadratic-value'],maxAttemptsPerTask:0}
 };
 (function(){'use strict';
-const N=window.NOVA,H=N.h,E=N.svg.el,C=F104_CONFIG,ID=C.id;
+const N=window.NOVA,H=N.h,E=N.svg.el,C=window.NovaV2Integration.configuration(F104_CONFIG),ID=C.id;
 if(N.premium&&N.premium.enable)N.premium.enable();
 const B={w:640,h:552,left:91,top:52,size:442,min:-5,max:5},sx=x=>B.left+(x+5)*B.size/10,sy=y=>B.top+(5-y)*B.size/10;
 const STEPS=[
@@ -2054,6 +2090,8 @@ function info(p,{view='all',visible=4,selected=0,challenge=false,correct=false,u
  return aside;
 }
 function scene(stage,options){
+if(window.NovaLessonComponent?.active){[stage,options]=window.NovaLessonComponent.args("scene",arguments);}
+
  stage.innerHTML='';const o=Object.assign({preset:state.preset,mode:'all',visible:4,selected:state.selected,pose:'explain',caption:'Table values become coordinate points.',editable:false,challenge:false,task:0,correct:false},options||{});
  const p={...C.presets[o.preset],rows:C.presets[o.preset].xs.map((x,i)=>({x,y:(o.editable&&o.preset===state.preset&&Object.prototype.hasOwnProperty.call(state.values,i))?state.values[i]:C.presets[o.preset].ys[i],i}))};
  const theatre=H('div',{class:'f104-theatre','data-topic':'geometry','data-correct':String(!!o.correct)});
@@ -2086,15 +2124,15 @@ function scene(stage,options){
 }
 function render(i,stage){const t=STEPS[i],svg=scene(stage,{mode:t.view,visible:t.row,selected:t.row<0?0:t.row,pose:t.pose,caption:t.caption});if(!N.reducedMotion()&&i>1){const p=current(),r=p.rows[Math.max(0,t.row)];N.motion.flash(svg,sx(r.x),sy(r.y),'focus',19);if(i===5&&p.kind==='linear'){const r0=p.rows[0],r4=p.rows[4];N.motion.trail(svg,`M${sx(r0.x)},${sy(r0.y)} L${sx(r4.x)},${sy(r4.y)}`,'result',500);}}}
 function stepper(label,n,cb){const v=H('label',{},[label]);const box=H('div',{class:'f104-stepper'});box.append(H('button',{class:'nova-btn ghost',text:'−',onclick:()=>cb(n-1)}),H('strong',{text:fmt(n)}),H('button',{class:'nova-btn ghost',text:'+',onclick:()=>cb(n+1)}));v.appendChild(box);return v;}
-function explore(panel,stage){panel.innerHTML='';panel.classList.add('f104-controls');window.NOVA_F104_REDRAW=()=>scene(stage,{preset:state.preset,mode:state.show,visible:4,selected:state.selected,pose:'point',caption:'Select a table row, then move its graph point. Compare your plotted y with the rule.',editable:true});
- function rebuild(){panel.innerHTML='';
+function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();panel.innerHTML='';window.NovaLessonComponent?.applyExploreModels();panel.classList.add('f104-controls');window.NovaLessonComponent?.applyExploreModels();window.NOVA_F104_REDRAW=()=>scene(stage,{preset:state.preset,mode:state.show,visible:4,selected:state.selected,pose:'point',caption:'Select a table row, then move its graph point. Compare your plotted y with the rule.',editable:true});
+ window.NovaLessonComponent?.applyExploreModels();function rebuild(){panel.innerHTML='';
   const sel=H('select',{class:'nova-input','aria-label':'Lesson preset'});Object.entries(C.presets).forEach(([id,p])=>sel.appendChild(H('option',{value:id,text:p.label})));sel.value=state.preset;sel.onchange=()=>{state.preset=sel.value;state.values={};state.selected=0;emit('preset',state.preset);rebuild();window.NOVA_F104_REDRAW();};panel.appendChild(H('label',{class:'f104-span'},['Lesson preset',sel]));
   const view=H('select',{class:'nova-input','aria-label':'Graph representation'});[['line','Graph line or smooth curve'],['points','Table points only'],['focus','Highlight chosen row']].forEach(([k,s])=>view.appendChild(H('option',{value:k,text:s})));view.value=state.show;view.onchange=()=>{state.show=view.value;emit('view',state.show);window.NOVA_F104_REDRAW();};panel.appendChild(H('label',{class:'f104-span'},['Graph presentation',view]));
   const row=H('select',{class:'nova-input','aria-label':'Select table row'});current().rows.forEach((r,i)=>row.appendChild(H('option',{value:i,text:'Row '+(i+1)+' · x = '+fmt(r.x)})));row.value=String(state.selected);row.onchange=()=>{state.selected=Number(row.value);emit('row',state.selected);rebuild();window.NOVA_F104_REDRAW();};panel.appendChild(H('label',{class:'f104-span'},['Selected table row',row]));
   const r=current().rows[state.selected];panel.appendChild(stepper('Adjust plotted y',r.y,n=>{if(n<-5||n>5)return;state.values[state.selected]=n;emit('point',{i:state.selected,x:r.x,y:n,how:'stepper'});rebuild();window.NOVA_F104_REDRAW();}));
   panel.appendChild(H('div',{class:'f104-actions f104-span'},[H('button',{class:'nova-btn ghost',text:'Restore exact rule',onclick:()=>{state.values={};emit('reset',state.preset);rebuild();window.NOVA_F104_REDRAW();}}),H('button',{class:'nova-btn ghost',text:'Next row →',onclick:()=>{state.selected=(state.selected+1)%5;emit('row',state.selected);rebuild();window.NOVA_F104_REDRAW();}})]));
   panel.appendChild(H('div',{class:'f104-hint f104-span',text:'Drag any point vertically to test a possible y-value; x is fixed by the table input. Keyboard: focus a point and use ↑/↓. Restore returns to mathematically correct values.'}));
- }rebuild();window.NOVA_F104_REDRAW();}
+ }window.NovaLessonComponent?.applyExploreModels();rebuild();window.NovaLessonComponent?.applyExploreModels();window.NOVA_F104_REDRAW();}
 function challenge(panel,api,stage){
  const tasks=Q.map((q,index)=>({q:q.question,build:ctl=>{
    state.task=index;state.wrong=0;state.solved=false;state.entry='';state.guess={x:0,y:0};
@@ -2118,6 +2156,9 @@ const def={id:ID,title:'Table-to-graph plotter',config:C,steps:STEPS.map(x=>({na
  onRestore:()=>{state.preset='Y7-039';state.values={};state.selected=0;state.show='line';state.task=0;state.guess={x:0,y:0};}
 };
 N.registry.add({id:ID,title:'Table-to-graph plotter',family:'F10',topics:['tables','coordinates','linear graphs','gradient','real-life graphs','quadratics'],deps:['F0-02','F0-14','F10-01','F10-03']});
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register(ID,def,{models:{"state":()=>state},tables:{"STEPS":()=>STEPS,"Q":()=>Q},draws:{"scene":["stage","options"]},exploreFields:{}});
 N.bankMount({id:ID,num:'04',title:'Table-to-graph plotter · Premium Edition',def,linked:['F0-14','F10-01','F10-03','F10-05','F10-12'],years:'Y7 tables and trends; Y8 gradient, straight lines and quadratics',spec:{
  purpose:'Calculate values from rules; pair inputs and outputs; plot coordinates; distinguish straight-line, connected measurement and smooth quadratic graphs.',
  params:'Five x/y rows per dataset; x and y in −5…5; data kinds linear, trend, quadratic; editable plotted y positions and controlled progression.',

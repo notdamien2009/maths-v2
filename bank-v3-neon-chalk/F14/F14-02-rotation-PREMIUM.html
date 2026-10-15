@@ -571,7 +571,43 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 @media(max-width:500px){.nova-stage .f14-plot{max-width:100%;width:100%;} .f14-readouts .nv-ntile{font-size:14px;min-height:35px;padding:4px 7px}.nova-stage .f14-readouts{gap:5px}.nova-stage .nv-dock{height:104px}.nova-stage .nv-dockfig{height:98px}.nova-stage .nv-dockbub{font-size:13px}}
 @media(min-width:900px){.nova-stage .f14-plot{max-width:780px}.nova-stage .nv-dock{height:136px}}
 @media print{.f14-plot{max-width:100%!important}.f14-readouts{color:#000}.f14-plot .nv-neon-tube{filter:none}}
-</style></head><body data-topic="geometry"><div class="nova-wrap"><header id="nova-header" data-run="F14 · TRANSFORMATIONS · 02" data-title="Rotation" data-sub="Rotate shapes about a chosen centre on a coordinate grid. Turn by precise angles, follow the circular paths and place the image accurately."></header><main id="gallery"></main><section class="nova-card nova-logcard" aria-label="Event log"><h2 style="font-size:1.1em">Event log (NOVA.events)</h2><div id="log" class="nova-log" role="log" aria-live="off"></div><button id="clearlog" class="nova-btn">Clear log</button></section></div><script>
+</style><script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
+</head><body data-topic="geometry"><div class="nova-wrap"><header id="nova-header" data-run="F14 · TRANSFORMATIONS · 02" data-title="Rotation" data-sub="Rotate shapes about a chosen centre on a coordinate grid. Turn by precise angles, follow the circular paths and place the image accurately."></header><main id="gallery"></main><section class="nova-card nova-logcard" aria-label="Event log"><h2 style="font-size:1.1em">Event log (NOVA.events)</h2><div id="log" class="nova-log" role="log" aria-live="off"></div><button id="clearlog" class="nova-btn">Clear log</button></section></div><script>
 /* === NOVA FAMILY CORE v1.4 : JS START === (extract this block for later runs) */
 (function(){
 'use strict';
@@ -1690,7 +1726,7 @@ NOVA.ui.svgDrag=function(svg,el,o){o=o||{};var E=NOVA.svg.el,coarse=window.match
 </script><script>/* ===== F14-02 ROTATION: NOVA F0/F2 premium core + shared stage and dock ===== */
 (function(){'use strict';
 var h=NOVA.h,S=NOVA.svg,E=S.el,M=NOVA.motion;
-var CONFIG=window.NOVA_F14_02_CONFIG={
+var CONFIG=window.NovaV2Integration.configuration(window.NOVA_F14_02_CONFIG={
  startMode:'watch',preset:'y7',events:['value','step','mode','hintUsed','correct'],
  presets:{
   y7:{label:'Year 7 · 90° anticlockwise about (0, 0)',angle:90,centre:[0,0],shape:[[1,1],[3,1],[2,3]]},
@@ -1698,7 +1734,7 @@ var CONFIG=window.NOVA_F14_02_CONFIG={
   half:{label:'Half-turn · 180° about the origin',angle:180,centre:[0,0],shape:[[1,1],[3,1],[2,3]]},
   gcse:{label:'Extension · 270° anticlockwise about (−1, 1)',angle:270,centre:[-1,1],shape:[[0,2],[2,2],[1,4]]}
  }
-};
+});
 var SIZE={desktop:{W:670,H:475,ox:335,oy:240,sp:34,minx:-6,maxx:6,miny:-5,maxy:5},mobile:{W:390,H:485,ox:195,oy:243,sp:27,minx:-6,maxx:6,miny:-5,maxy:5}};
 function P(){return window.innerWidth<=500?SIZE.mobile:SIZE.desktop;}
 function clone(v){return JSON.parse(JSON.stringify(v));}
@@ -1715,7 +1751,9 @@ function poly(pr,pts){return 'M'+pts.map(function(p){var xy=coord(pr,p);return x
 function txt(p,x,y,str,role,size,anchor){return NOVA.chalkText(p,x,y,str,{role:role,size:size||19,anchor:anchor||'middle'});}
 function vertexLabels(sv,pr,pts,role,prime){var cx=pts.reduce(function(t,p){return t+p[0];},0)/pts.length,cy=pts.reduce(function(t,p){return t+p[1];},0)/pts.length;pts.forEach(function(p,i){var xy=coord(pr,p),dx=p[0]-cx,dy=p[1]-cy,len=Math.hypot(dx,dy)||1,dist=pr===SIZE.mobile?22:23;txt(sv,xy[0]+dx/len*dist,xy[1]-dy/len*dist,'ABC'[i]+(prime?'′':''),role,pr===SIZE.mobile?20:19);});}
 function emit(k,v){NOVA.events.emit('value',{engine:'F14-02',key:k,control:k,value:v});}
-function tiles(stage,arr){var box=h('div',{class:'f14-readouts'});arr.forEach(function(a){box.appendChild(NOVA.neonTile(a.label+': '+a.value,{role:a.role}));});stage.appendChild(box);}
+function tiles(stage,arr){
+if(window.NovaLessonComponent?.active){[stage,arr]=window.NovaLessonComponent.args("tiles",arguments);}
+var box=h('div',{class:'f14-readouts'});arr.forEach(function(a){box.appendChild(NOVA.neonTile(a.label+': '+a.value,{role:a.role}));});stage.appendChild(box);}
 function rangeZones(pr){var z=[];for(var x=pr.minx;x<=pr.maxx;x++)for(var y=pr.miny;y<=pr.maxy;y++){var p=coord(pr,[x,y]);z.push({x:p[0]-pr.sp*.52,y:p[1]-pr.sp*.52,w:pr.sp*1.04,h:pr.sp*1.04,id:'cell:'+x+','+y,kind:'drop'});}return z;}
 function pointerOf(sv,e){var pt=sv.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;return pt.matrixTransform(sv.getScreenCTM().inverse());}
 function track(sv,pr,c,a,pt,drawArc){var cc=coord(pr,c),aa=coord(pr,pt),bb=coord(pr,rot(pt,c,a));
@@ -1729,7 +1767,9 @@ function track(sv,pr,c,a,pt,drawArc){var cc=coord(pr,c),aa=coord(pr,pt),bb=coord
  NOVA.neonPath(sv,'M'+sx.toFixed(2)+','+sy.toFixed(2)+' A'+radius.toFixed(2)+','+radius.toFixed(2)+' 0 '+large+' '+sweep+' '+ex.toFixed(2)+','+ey.toFixed(2),{role:'unknown',width:3.2});
 }
 
-function plot(stage,st,o){o=o||{};var pr=P(),left=pr.ox+pr.minx*pr.sp,top=pr.oy-pr.maxy*pr.sp,w=(pr.maxx-pr.minx)*pr.sp,height=(pr.maxy-pr.miny)*pr.sp;
+function plot(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("plot",arguments);}
+o=o||{};var pr=P(),left=pr.ox+pr.minx*pr.sp,top=pr.oy-pr.maxy*pr.sp,w=(pr.maxx-pr.minx)*pr.sp,height=(pr.maxy-pr.miny)*pr.sp;
  var sv=S.root(pr.W,pr.H,'Coordinate rotation diagram with an original blue triangle, gold centre of rotation, rotation arc and green image.');sv.classList.add('f14-plot');
  S.grid(E('g',{'aria-hidden':'true'},sv),left,top,w,height,pr.sp);S.axes(sv,{x:left,y:top,w:w,h:height,xmin:pr.minx,xmax:pr.maxx,ymin:pr.miny,ymax:pr.maxy,ticks:1});
  var small=pr===SIZE.mobile;
@@ -1758,7 +1798,9 @@ function plot(stage,st,o){o=o||{};var pr=P(),left=pr.ox+pr.minx*pr.sp,top=pr.oy-
  }
  stage.appendChild(sv);return sv;
 }
-function scene(stage,st,o){o=o||{};stage.innerHTML='';NOVA.cap(stage,(o.cap||'Rotation')+' · '+(o.subtitle||angleText(st.angle)),o.tag||'live');var sv=plot(stage,st,o);
+function scene(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("scene",arguments);}
+o=o||{};stage.innerHTML='';NOVA.cap(stage,(o.cap||'Rotation')+' · '+(o.subtitle||angleText(st.angle)),o.tag||'live');var sv=plot(stage,st,o);
  if(o.readout!==false){var q=rot(st.shape[0],st.centre,st.angle);q=[q[0]+st.imgOff[0],q[1]+st.imgOff[1]];tiles(stage,[{label:'turn',value:shortAngle(st.angle),role:'unknown'},{label:'centre',value:pair(st.centre),role:'given'},{label:'A′',value:o.showImage===false?'?':pair(q),role:o.showImage===false?'unknown':'result'}]);}
  NOVA.scene.helperStrip(stage,o.pose||'explain',o.say||'Turn the shape around the gold point without changing its size.');return sv;}
 var steps=[
@@ -1779,20 +1821,20 @@ var def={id:'F14-02',title:'Rotation',config:CONFIG,steps:steps,render:renderAt,
  alt:'Interactive rotation on a NOVA neon coordinate grid. Blue given triangle, green rotated image, a fixed gold centre, curved angle guides and coordinate labels.',
  staticAlt:'90 degrees anticlockwise about (0, 0) maps (1, 1) to (−1, 1), (3, 1) to (−1, 3), and (2, 3) to (−3, 2). A rotation preserves distances from its centre, side lengths and angles.',
  exploreIntro:'Choose an angle and centre, drag the gold centre and green image or use arrow keys, and watch the shape rotate without changing size.',
- explore:function(panel,stage,api){var st=stateOf(CONFIG.presets[CONFIG.preset]);var preset=h('select',{class:'nova-input','aria-label':'Choose rotation lesson preset'});
- Object.keys(CONFIG.presets).forEach(function(k){preset.appendChild(h('option',{value:k,text:CONFIG.presets[k].label}));});preset.value=CONFIG.preset;
- var ang=h('select',{class:'nova-input','aria-label':'Rotation angle and direction'});
- [[90,'90° anticlockwise'],[-90,'90° clockwise'],[180,'180° half-turn'],[270,'270° anticlockwise']].forEach(function(item){ang.appendChild(h('option',{value:item[0],text:item[1]}));});ang.value=String(st.angle);
- var msg=h('div',{class:'f14-status'}),rows=h('div',{class:'pr-row'}),guides=true;
- function repaint(focus){draw();if(focus){var x=stage.querySelector('[data-maths="'+(focus==='centre'?'centre':'image-drag')+'"]');if(x)x.focus({preventScroll:true});}}
- function draw(){scene(stage,st,{cap:'Explore',subtitle:'rotation',tag:'DRAG + TURN',showImage:true,guide:guides,allGuides:guides,dragImage:true,dragCentre:true,pose:'point-down',say:st.imgOff.every(function(x){return x===0;})?'A turn keeps every vertex the same distance from O.':'Is the green image still a precise rotation?',update:repaint});var ok=st.imgOff.every(function(x){return x===0;});msg.className='f14-status '+(ok?'okay':'');msg.textContent=ok?'The green image is exactly rotated.':'Image offset: '+st.imgOff[0]+' horizontally, '+st.imgOff[1]+' vertically. Restore it to a correct rotation.';}
- preset.onchange=function(){CONFIG.preset=preset.value;st=stateOf(CONFIG.presets[CONFIG.preset]);ang.value=String(st.angle);emit('preset',CONFIG.preset);draw();};ang.onchange=function(){st.angle=Number(ang.value);st.imgOff=[0,0];emit('angle',st.angle);draw();};
- var guideInput=h('input',{type:'checkbox'});guideInput.checked=true;guideInput.onchange=function(){guides=guideInput.checked;draw();};
- panel.appendChild(h('label',{class:'pr-row'},['Lesson preset ',preset]));panel.appendChild(h('label',{class:'pr-row'},['Turn ',ang]));panel.appendChild(h('label',{class:'pr-row'},[guideInput,' Show circular paths and rays']));
- function button(s,fn){return h('button',{class:'nova-btn',text:s,onclick:fn});}
- [['← image',[-1,0]],['image →',[1,0]],['image ↑',[0,1]],['image ↓',[0,-1]]].forEach(function(a){rows.appendChild(button(a[0],function(){st.imgOff=[clamp(st.imgOff[0]+a[1][0],-5,5),clamp(st.imgOff[1]+a[1][1],-5,5)];emit('imageOffset',clone(st.imgOff));draw();}));});panel.appendChild(rows);
- panel.appendChild(h('div',{class:'pr-row'},[button('Snap to rotation',function(){st.imgOff=[0,0];emit('imageOffset',[0,0]);draw();}),button('Centre ←',function(){st.centre[0]=clamp(st.centre[0]-1,-2,2);st.imgOff=[0,0];emit('centre',clone(st.centre));draw();}),button('Centre →',function(){st.centre[0]=clamp(st.centre[0]+1,-2,2);st.imgOff=[0,0];emit('centre',clone(st.centre));draw();}),button('Centre ↑',function(){st.centre[1]=clamp(st.centre[1]+1,-2,2);st.imgOff=[0,0];emit('centre',clone(st.centre));draw();}),button('Centre ↓',function(){st.centre[1]=clamp(st.centre[1]-1,-2,2);st.imgOff=[0,0];emit('centre',clone(st.centre));draw();})]));panel.appendChild(msg);
- draw();CONFIG._explore={state:function(){return st;},paint:draw,select:function(k){preset.value=k;preset.onchange();},angle:function(a){ang.value=String(a);ang.onchange();}};
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st=stateOf(CONFIG.presets[CONFIG.preset]);window.NovaLessonComponent?.applyExploreModels();var preset=h('select',{class:'nova-input','aria-label':'Choose rotation lesson preset'});
+ window.NovaLessonComponent?.applyExploreModels();Object.keys(CONFIG.presets).forEach(function(k){preset.appendChild(h('option',{value:k,text:CONFIG.presets[k].label}));});window.NovaLessonComponent?.applyExploreModels();preset.value=CONFIG.preset;
+ window.NovaLessonComponent?.applyExploreModels();var ang=h('select',{class:'nova-input','aria-label':'Rotation angle and direction'});
+ window.NovaLessonComponent?.applyExploreModels();[[90,'90° anticlockwise'],[-90,'90° clockwise'],[180,'180° half-turn'],[270,'270° anticlockwise']].forEach(function(item){ang.appendChild(h('option',{value:item[0],text:item[1]}));});window.NovaLessonComponent?.applyExploreModels();ang.value=String(st.angle);
+ window.NovaLessonComponent?.applyExploreModels();var msg=h('div',{class:'f14-status'}),rows=h('div',{class:'pr-row'}),guides=true;
+ window.NovaLessonComponent?.applyExploreModels();function repaint(focus){draw();if(focus){var x=stage.querySelector('[data-maths="'+(focus==='centre'?'centre':'image-drag')+'"]');if(x)x.focus({preventScroll:true});}}
+ window.NovaLessonComponent?.applyExploreModels();function draw(){scene(stage,st,{cap:'Explore',subtitle:'rotation',tag:'DRAG + TURN',showImage:true,guide:guides,allGuides:guides,dragImage:true,dragCentre:true,pose:'point-down',say:st.imgOff.every(function(x){return x===0;})?'A turn keeps every vertex the same distance from O.':'Is the green image still a precise rotation?',update:repaint});var ok=st.imgOff.every(function(x){return x===0;});msg.className='f14-status '+(ok?'okay':'');msg.textContent=ok?'The green image is exactly rotated.':'Image offset: '+st.imgOff[0]+' horizontally, '+st.imgOff[1]+' vertically. Restore it to a correct rotation.';}
+ window.NovaLessonComponent?.applyExploreModels();preset.onchange=function(){CONFIG.preset=preset.value;st=stateOf(CONFIG.presets[CONFIG.preset]);ang.value=String(st.angle);emit('preset',CONFIG.preset);draw();};window.NovaLessonComponent?.applyExploreModels();ang.onchange=function(){st.angle=Number(ang.value);st.imgOff=[0,0];emit('angle',st.angle);draw();};
+ window.NovaLessonComponent?.applyExploreModels();var guideInput=h('input',{type:'checkbox'});window.NovaLessonComponent?.applyExploreModels();guideInput.checked=true;window.NovaLessonComponent?.applyExploreModels();guideInput.onchange=function(){guides=guideInput.checked;draw();};
+ window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Lesson preset ',preset]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Turn ',ang]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},[guideInput,' Show circular paths and rays']));
+ window.NovaLessonComponent?.applyExploreModels();function button(s,fn){return h('button',{class:'nova-btn',text:s,onclick:fn});}
+ window.NovaLessonComponent?.applyExploreModels();[['← image',[-1,0]],['image →',[1,0]],['image ↑',[0,1]],['image ↓',[0,-1]]].forEach(function(a){rows.appendChild(button(a[0],function(){st.imgOff=[clamp(st.imgOff[0]+a[1][0],-5,5),clamp(st.imgOff[1]+a[1][1],-5,5)];emit('imageOffset',clone(st.imgOff));draw();}));});window.NovaLessonComponent?.applyExploreModels();panel.appendChild(rows);
+ window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row'},[button('Snap to rotation',function(){st.imgOff=[0,0];emit('imageOffset',[0,0]);draw();}),button('Centre ←',function(){st.centre[0]=clamp(st.centre[0]-1,-2,2);st.imgOff=[0,0];emit('centre',clone(st.centre));draw();}),button('Centre →',function(){st.centre[0]=clamp(st.centre[0]+1,-2,2);st.imgOff=[0,0];emit('centre',clone(st.centre));draw();}),button('Centre ↑',function(){st.centre[1]=clamp(st.centre[1]+1,-2,2);st.imgOff=[0,0];emit('centre',clone(st.centre));draw();}),button('Centre ↓',function(){st.centre[1]=clamp(st.centre[1]-1,-2,2);st.imgOff=[0,0];emit('centre',clone(st.centre));draw();})]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(msg);
+ window.NovaLessonComponent?.applyExploreModels();draw();window.NovaLessonComponent?.applyExploreModels();CONFIG._explore={state:function(){return st;},paint:draw,select:function(k){preset.value=k;preset.onchange();},angle:function(a){ang.value=String(a);ang.onchange();}};
  },
  challenge:function(panel,api,stage){var challengeState=stateOf(CONFIG.presets.y7);challengeState.imgOff=[-2,1];
  var tasks=[
@@ -1804,6 +1846,9 @@ var def={id:'F14-02',title:'Rotation',config:CONFIG,steps:steps,render:renderAt,
  NOVA.challengeRun(panel,api,tasks,drawTask,CONFIG);
  }
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F14-02',def,{models:{},tables:{"steps":()=>steps},draws:{"tiles":["stage","arr"],"plot":["stage","st","o"],"scene":["stage","st","o"]},exploreFields:{}});
 NOVA.bankMount({id:'F14-02',num:'F14·02',title:'Rotation',def:def,years:'Year 7 and Year 8; GCSE Foundation and Higher extensions.',linked:['F0-02','F0-03','F0-04','F14-01','F14-03','F14-08'],
  spec:{purpose:'Premium neon-and-chalk coordinate rotation engine with a draggable centre, exact vertex rotation, angle arcs and a draggable rotated image. Keeps shape size, side lengths, angles and centre-to-vertex distance constant.',
  params:'Integer centre (cx, cy); 90° anticlockwise / 90° clockwise / 180° half-turn / 270° anticlockwise; polygon vertices; draggable image offset; optional circular guides.',

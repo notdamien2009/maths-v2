@@ -564,6 +564,42 @@ html[data-theme=light] .nv-neon-plot text{fill:#10213a!important}
 .nova-stage>svg.nv-svg.nv-vert{max-width:400px}
 @media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="number">
 <div class="nova-wrap">
@@ -1722,7 +1758,7 @@ function clone(o){return JSON.parse(JSON.stringify(o));}
 function strip(stage,items){var d=h('div',{class:'nl-strip'});items.forEach(function(it){d.appendChild(h('span',{class:'k',text:it[0]}));d.appendChild(NOVA.neonTile(String(it[1]).replace(/ /g,'\u00A0'),{role:it[2]||'result'}));});stage.appendChild(d);return d;}
 function bigMarkers(sv){[].forEach.call(sv.querySelectorAll('marker'),function(m){m.setAttribute('markerWidth',8);m.setAttribute('markerHeight',8);});}
 
-var C=NOVA_F2_05_CONFIG,M=NOVA.motion,PC=NOVA.placeColour,RD=C.rods,RW=C.rows;
+var C=window.NovaV2Integration.configuration(NOVA_F2_05_CONFIG),M=NOVA.motion,PC=NOVA.placeColour,RD=C.rods,RW=C.rows;
 var X0=40,CW=104,TOP=40,BOT=262,BH=14,BG=17;function rx(p){return X0+(2-p)*CW+CW/2;}function by(i){return BOT-12-i*BG;}
 function get(c,p){return c[p]||0;}
 function totalA(c){return +RD.reduce(function(a,p){return a+get(c,p)*Math.pow(10,p);},0).toFixed(2);}
@@ -1730,7 +1766,9 @@ function totalG(g){return +RW.reduce(function(a,p){return a+get(g,p)*Math.pow(10
 function tv(p,d){return fmt(+(d*Math.pow(10,p)).toFixed(3));}
 var LIVE=[];function claim(o){LIVE.forEach(function(x){x.dead=true;});LIVE=[o];}
 /* ---------- ABACUS ---------- */
-function Abacus(stage,st,o){o=o||{};var self=this,sv,busy=false;claim(self);
+function Abacus(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("Abacus",arguments);}
+o=o||{};var self=this,sv,busy=false;claim(self);
   function bead(par,x,y,p,attrs){var g=S.el('g',attrs||{},par),col=PC(p);S.el('rect',{x:x-21,y:y-BH/2,width:42,height:BH,rx:7,css:'fill:'+col+';opacity:.28'},g);S.el('rect',{x:x-17,y:y-BH/2+2,width:20,height:3,rx:1.5,css:'fill:#fff;opacity:.35'},g);
     S.el('rect',{x:x-21,y:y-BH/2,width:42,height:BH,rx:7,fill:'none','stroke-width':1.8,filter:'url(#nv-neon)',css:'stroke:'+col},g);return g;}
   function zones(own){return RD.filter(function(q){return q!==own&&get(st.c,q)<11;}).map(function(q){return {x:rx(q)-42,y:TOP,w:84,h:BOT-TOP+10,id:q,kind:'drop'};});}
@@ -1769,7 +1807,9 @@ function Abacus(stage,st,o){o=o||{};var self=this,sv,busy=false;claim(self);
   self.redraw=draw;draw();}
 /* ---------- GATTEGNO CHART ---------- */
 var GX=96,GW=54,GG=4,GY=34,GH=30,GR=36;function tx(d){return GX+(d-1)*(GW+GG);}function ty(p){return GY+RW.indexOf(p)*GR;}
-function Gattegno(stage,st,o){o=o||{};var self=this,sv,cur={p:0,d:1};claim(self);var BY=GY+RW.length*GR+16;
+function Gattegno(stage,st,o){
+if(window.NovaLessonComponent?.active){[stage,st,o]=window.NovaLessonComponent.args("Gattegno",arguments);}
+o=o||{};var self=this,sv,cur={p:0,d:1};claim(self);var BY=GY+RW.length*GR+16;
   function draw(){if(self.dead)return;var old=sv;sv=S.root(600,BY+70,'Gattegno chart: '+(sum()||'nothing chosen')+'.');
     var gg=S.el('g',{'data-gat':1,tabindex:o.interactive?0:-1,role:o.interactive?'grid':null,'aria-label':'Gattegno chart. Arrows move, Enter picks a tile.'},sv);
     RW.forEach(function(p){var col=PC(p);NOVA.chalkText(gg,GX-12,ty(p)+20,NOVA.place[p].name,{size:12,anchor:'end',role:col});
@@ -1804,7 +1844,9 @@ var steps=[
  {name:'Gattegno chart',mood:'think',narration:'On the Gattegno chart each row is a place. Pick 300, 40 and 5: they combine to make 345.',prompt:'Which tile gives the 4 in 345?',v:'gattegno',g:{'2':3,'1':4,'0':5}},
  {name:'Zeros are gaps',mood:'focus',narration:'3040.5 needs only three tiles: 3000, 40 and 0.5. Rows with no tile become zeros.',prompt:'Why is there no tile in the hundreds row?',v:'gattegno',g:{'3':3,'1':4,'-1':5,'-2':0},x:{'-3':7}},
  {name:'× 10 moves up a row',mood:'cheer',narration:'0.6 + 0.03 is 0.63. Times 10: every tile glides up one row, giving 6 + 0.3 = 6.3.',prompt:'Where does 0.03 go?',v:'gattegno',g:{'-1':6,'-2':3},o:{shift:1}}];
-function viewChips(stage,v,st){return strip(stage,v==='abacus'?chipsA(st.c):chipsG(st.g));}
+function viewChips(stage,v,st){
+if(window.NovaLessonComponent?.active){[stage,v,st]=window.NovaLessonComponent.args("viewChips",arguments);}
+return strip(stage,v==='abacus'?chipsA(st.c):chipsG(st.g));}
 function render(i,stage){stage.innerHTML='';var s=steps[i],st={c:clone(s.c||{}),g:clone(s.g||{})},sp;if(s.x)st.g['-2']=0;NOVA.cap(stage,(s.v==='abacus'?'Abacus':'Gattegno chart')+' · '+s.name,'step '+(i+1)+'/'+steps.length);
   if(i===3){st.g={'3':3,'1':4,'-1':5};}
   var oc=function(){if(sp&&sp.parentNode)sp.parentNode.removeChild(sp);sp=viewChips(stage,s.v,st);};
@@ -1815,19 +1857,19 @@ var def={id:'F2-05',title:'Abacus / Gattegno chart',config:C,steps:steps,render:
  alt:'Abacus and Gattegno chart. Abacus: neon rods in place colours with glass beads; ten beads on a rod squeeze into one that flies to the next rod. Gattegno chart: rows of tiles (1000s to hundredths) in place colours; tapping tiles builds a number live in a chalk bar, and × 10 glides every tile up a row.',
  staticAlt:'Abacus 243; 199 + 1 exchanging to 200; Gattegno 300 + 40 + 5 = 345; 3040.5 from 3000 + 40 + 0.5; 0.63 × 10 = 6.3.',
  exploreIntro:'Explore: Abacus: drag a bead from the tray onto a rod, drag a rod\'s top bead to another rod, or back onto the tray to remove. Ten beads exchange automatically. Keyboard: focus a rod, + − E B, arrows. Gattegno: tap or drag tiles into the bar (one per row); tap again to remove; × 10 / ÷ 10 glide rows. Keyboard: arrows + Enter, Delete clears a row.',
- explore:function(panel,stage,api){var P0=C.presets[C.preset],view=P0.view,st={c:clone(P0.c||{}),g:clone(P0.g||{})},w,sp;
-   function chips(){if(sp&&sp.parentNode)sp.parentNode.removeChild(sp);sp=viewChips(stage,view,st);}
-   function build(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+(view==='abacus'?'abacus':'Gattegno chart'),'live');w=view==='abacus'?new Abacus(stage,st,{interactive:true,onChange:chips}):new Gattegno(stage,st,{interactive:true,onChange:chips});stage.appendChild(NOVA.placeKey(view==='abacus'?RD:RW));chips();NOVA.scene.helperStrip(stage,'explain',view==='abacus'?'Drag\u00A0beads':'Tap\u00A0tiles');sync();}
-   var pre=h('select',{class:'nova-input','aria-label':'Start'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});pre.value=C.preset;
-   pre.onchange=function(){var P=C.presets[pre.value];view=P.view;st={c:clone(P.c||{}),g:clone(P.g||{})};build();if(P.op)M.delay(500,function(){if(!w.dead)w.shift(P.op);});};
-   var vb=h('div',{class:'pr-row'}),ab=h('button',{class:'nova-btn',text:'Abacus',onclick:function(){view='abacus';build();}}),gb=h('button',{class:'nova-btn',text:'Gattegno',onclick:function(){view='gattegno';build();}});vb.appendChild(ab);vb.appendChild(gb);
-   var ar=h('div',{class:'pr-row'}),ax=h('input',{type:'checkbox'});ax.checked=C.autoExchange;ax.onchange=function(){C.autoExchange=ax.checked;};
-   [['Exchange ones',0],['Exchange tenths',-1],['Exchange hundredths',-2]].forEach(function(a){ar.appendChild(h('button',{class:'nova-btn',text:a[0],onclick:function(){w.exchange&&w.exchange(a[1]);}}));});
-   var gr=h('div',{class:'pr-row'});[['\u00D7 10',1],['\u00F7 10',-1]].forEach(function(a){gr.appendChild(h('button',{class:'nova-btn',text:a[0],onclick:function(){if(w.shift)w.shift(a[1],function(ok){if(ok===false)api.check(false,'That would move a tile off the chart.',{});});}}));});gr.appendChild(h('button',{class:'nova-btn ghost',text:'Clear',onclick:function(){if(view==='abacus')st.c={};else st.g={};build();}}));
-   var axl=h('label',{class:'pr-row'},[ax,' auto-exchange at 10']);
-   function sync(){ab.classList.toggle('primary',view==='abacus');gb.classList.toggle('primary',view!=='abacus');ar.style.display=axl.style.display=view==='abacus'?'':'none';gr.querySelectorAll('button')[0].style.display=gr.querySelectorAll('button')[1].style.display=view==='abacus'?'none':'';}
-   panel.appendChild(h('label',{class:'pr-row'},['Start ',pre]));panel.appendChild(vb);panel.appendChild(ar);panel.appendChild(axl);panel.appendChild(gr);
-   build();C._explore={get:function(){return view==='abacus'?totalA(st.c):totalG(st.g);},state:function(){return st;},view:function(){return view;},w:function(){return w;}};},
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var P0=C.presets[C.preset],view=P0.view,st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",()=>({c:clone(P0.c||{}),g:clone(P0.g||{})})):({c:clone(P0.c||{}),g:clone(P0.g||{})})),w,sp;
+   window.NovaLessonComponent?.applyExploreModels();function chips(){if(sp&&sp.parentNode)sp.parentNode.removeChild(sp);sp=viewChips(stage,view,st);}
+   window.NovaLessonComponent?.applyExploreModels();function build(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+(view==='abacus'?'abacus':'Gattegno chart'),'live');w=view==='abacus'?new Abacus(stage,st,{interactive:true,onChange:chips}):new Gattegno(stage,st,{interactive:true,onChange:chips});stage.appendChild(NOVA.placeKey(view==='abacus'?RD:RW));chips();NOVA.scene.helperStrip(stage,'explain',view==='abacus'?'Drag\u00A0beads':'Tap\u00A0tiles');sync();}
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Start'});window.NovaLessonComponent?.applyExploreModels();Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=C.preset;
+   window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){var P=C.presets[pre.value];view=P.view;st={c:clone(P.c||{}),g:clone(P.g||{})};build();if(P.op)M.delay(500,function(){if(!w.dead)w.shift(P.op);});};
+   window.NovaLessonComponent?.applyExploreModels();var vb=h('div',{class:'pr-row'}),ab=h('button',{class:'nova-btn',text:'Abacus',onclick:function(){view='abacus';build();}}),gb=h('button',{class:'nova-btn',text:'Gattegno',onclick:function(){view='gattegno';build();}});window.NovaLessonComponent?.applyExploreModels();vb.appendChild(ab);window.NovaLessonComponent?.applyExploreModels();vb.appendChild(gb);
+   window.NovaLessonComponent?.applyExploreModels();var ar=h('div',{class:'pr-row'}),ax=h('input',{type:'checkbox'});window.NovaLessonComponent?.applyExploreModels();ax.checked=C.autoExchange;window.NovaLessonComponent?.applyExploreModels();ax.onchange=function(){C.autoExchange=ax.checked;};
+   window.NovaLessonComponent?.applyExploreModels();[['Exchange ones',0],['Exchange tenths',-1],['Exchange hundredths',-2]].forEach(function(a){ar.appendChild(h('button',{class:'nova-btn',text:a[0],onclick:function(){w.exchange&&w.exchange(a[1]);}}));});
+   window.NovaLessonComponent?.applyExploreModels();var gr=h('div',{class:'pr-row'});window.NovaLessonComponent?.applyExploreModels();[['\u00D7 10',1],['\u00F7 10',-1]].forEach(function(a){gr.appendChild(h('button',{class:'nova-btn',text:a[0],onclick:function(){if(w.shift)w.shift(a[1],function(ok){if(ok===false)api.check(false,'That would move a tile off the chart.',{});});}}));});window.NovaLessonComponent?.applyExploreModels();gr.appendChild(h('button',{class:'nova-btn ghost',text:'Clear',onclick:function(){if(view==='abacus')st.c={};else st.g={};build();}}));
+   window.NovaLessonComponent?.applyExploreModels();var axl=h('label',{class:'pr-row'},[ax,' auto-exchange at 10']);
+   window.NovaLessonComponent?.applyExploreModels();function sync(){ab.classList.toggle('primary',view==='abacus');gb.classList.toggle('primary',view!=='abacus');ar.style.display=axl.style.display=view==='abacus'?'':'none';gr.querySelectorAll('button')[0].style.display=gr.querySelectorAll('button')[1].style.display=view==='abacus'?'none':'';}
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Start ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(vb);window.NovaLessonComponent?.applyExploreModels();panel.appendChild(ar);window.NovaLessonComponent?.applyExploreModels();panel.appendChild(axl);window.NovaLessonComponent?.applyExploreModels();panel.appendChild(gr);
+   window.NovaLessonComponent?.applyExploreModels();build();window.NovaLessonComponent?.applyExploreModels();C._explore={get:function(){return view==='abacus'?totalA(st.c):totalG(st.g);},state:function(){return st;},view:function(){return view;},w:function(){return w;}};},
  challenge:function(panel,api,stage){var cst={g:{}};
    var tasks=[
     {q:'Build 2.07 on the Gattegno chart.',build:function(){return function(){return {v:totalG(cst.g)};};},check:function(x){var ok=x.v===2.07;return [ok,ok?'Yes: 2 + 0.07. No tile in the tenths row.':x.v===2.7?'That is 2.7. The 7 must come from the hundredths row.':'One tile from the ones row and one from the hundredths row.'];},hint:'2.07 = 2 + 0.07.',solve:function(){cst.g={'0':2,'-2':7};paintC(0);}},
@@ -1838,6 +1880,9 @@ var def={id:'F2-05',title:'Abacus / Gattegno chart',config:C,steps:steps,render:
      strip(stage,[[['build','number','× 10'][k],k===0?'2.07':'?','unknown']]);NOVA.scene.helperStrip(stage,'think',['2.07','Read','\u00D7\u00A010'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F2-05',def,{models:{},tables:{"LIVE":()=>LIVE,"steps":()=>steps},draws:{"Abacus":["stage","st","o"],"Gattegno":["stage","st","o"],"viewChips":["stage","v","st"]},exploreFields:{"st":{"kind":"value","factory":null,"argCount":null}}});
 NOVA.bankMount({id:'F2-05',num:'F2·05',title:'Abacus / Gattegno chart',def:def,linked:['F2-01','F2-02','F2-03','F2-08','F0-04'],
  spec:{purpose:'Two premium place-value models. Abacus: glass beads on neon rods (place colours); drag beads on/off/between rods with spring snap; ten beads auto-exchange into one bead on the next rod. Gattegno chart: tiles 1–9 per place row; tap or drag tiles to build a number that combines live (300 + 40 + 5 = 345); × / ÷ 10 glides every tile one row.',
   params:'view abacus | gattegno, rods, rows, autoExchange, presets. Core: NOVA.place, NOVA.motion, NOVA.ui.svgDrag drag rules (one outcome per drop, glowing targets, tray remove, never stranded). Keyboard: abacus rods + − E B, arrows; Gattegno arrows + Enter, Delete. Year groups: Y7 (11–12): Y7-001, Y7-002, Y7-003.',

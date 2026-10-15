@@ -555,6 +555,42 @@ html[data-theme=light] .f12-strip .k{color:#10213a}
 .f12-sv[role=application]:focus-visible{outline:2px dashed var(--m-focus);outline-offset:3px;border-radius:12px}
 @media print{.nova-tl,.nova-tabs,.nova-helperbar,.nova-panel{display:none!important}}
 </style>
+<script data-nova-lesson-api="1.0.0">
+/* NOVA V2 native lesson API 1.0.0. Original renderers, artwork and core are authoritative. */
+(function(w){'use strict';
+const copy=x=>clone(x,new WeakMap());
+function clone(x,seen){if(x===null||typeof x!=='object'||x.nodeType)return x;if(seen.has(x))return seen.get(x);let out;if(x instanceof Set){out=new Set();seen.set(x,out);for(const v of x)out.add(clone(v,seen));return out;}if(x instanceof Map){out=new Map();seen.set(x,out);for(const[k,v]of x)out.set(clone(k,seen),clone(v,seen));return out;}if(x instanceof Date)return new Date(x);if(ArrayBuffer.isView(x))return x.slice?x.slice():x;if(x instanceof ArrayBuffer)return x.slice(0);out=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));seen.set(x,out);for(const[k,v]of Object.entries(x))out[k]=clone(v,seen);return out;}
+
+function hydrate(original,value){if(typeof original==='function'&&value!==original)throw Error('Native functions cannot be replaced by lesson data');if(original instanceof Set){if(!(value instanceof Set)&&!Array.isArray(value))throw Error('A native set expects an array of values');return new Set([...value].map(copy));}if(original instanceof Map){if(!(value instanceof Map)&&!Array.isArray(value))throw Error('A native map expects entries');return new Map([...value]);}if(Array.isArray(value))return value.map((v,i)=>hydrate(Array.isArray(original)?original[i]:undefined,v));if(value&&typeof value==='object'&&!value.nodeType){const out=original&&typeof original==='object'?copy(original):{};for(const[k,v]of Object.entries(value)){if(!['__proto__','prototype','constructor'].includes(k))out[k]=hydrate(original?.[k],v);else throw Error('Unsafe state key');}return out;}return copy(value);}
+const safe=k=>!['__proto__','prototype','constructor'].includes(k);
+function patch(t,v,path='state',extra=false){if(!v||typeof v!=='object'||Array.isArray(v))throw Error(path+' must be an object');for(const[k,x]of Object.entries(v)){if(!safe(k)||(!extra&&!(k in t)))throw Error('Unsupported '+path+'.'+k);const descriptor=Object.getOwnPropertyDescriptor(t,k);if(descriptor?.get&&!descriptor.set){if(extra)continue;throw Error('Read-only '+path+'.'+k);}if(x&&typeof x==='object'&&!Array.isArray(x)&&!(x instanceof Set)&&!(x instanceof Map)&&t[k]&&typeof t[k]==='object'&&!Array.isArray(t[k])&&!(t[k] instanceof Set)&&!(t[k] instanceof Map))patch(t[k],x,path+'.'+k,extra);else t[k]=hydrate(t[k],x);}return t;}
+const registry={};w.NovaV2Integration={version:'1.0.0',mutable:copy,configuration:x=>Object.isFrozen(x)||!Object.isExtensible(x)?{...x}:x,registry,register(id,def,scope){
+ const steps=def.steps,draw=def.render,explore=def.explore,config=def.config||{},models=scope.models||{},tables=scope.tables||{},draws=scope.draws||{};let active=null,clock=null,disposed=false,pendingRestore=null,exploring=false,exploreBinding={};const exploreInitials={};const scenes={},events=[];
+ const getModels=()=>Object.fromEntries(Object.entries(models).map(([k,get])=>[k,copy(get())]).filter(([,v])=>v&&typeof v==='object'&&!Array.isArray(v)));
+ function applyModels(){for(const[k,v]of Object.entries(active?.models||{})){if(!models[k])throw Error(id+': unsupported model '+k);patch(models[k](),v,'models.'+k);}}
+ function args(name,a){a=Array.from(a);if(!scenes[name])scenes[name]={parameters:draws[name],sample:a.map((v,i)=>i===0&&v?.nodeType?'[native stage]':copy(v))};applyModels();if(active?.scene&&(!active.scene.function||active.scene.function===name))for(const[k,v]of Object.entries(active.scene.arguments||{})){const i=draws[name]?.indexOf(k);if(i==null||i<1)throw Error(id+': unsupported scene argument '+k);a[i]=hydrate(a[i],v);}return a;}
+ function validate(r){let errors=[],i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{};if(!Number.isInteger(i)||i<0||i>=steps.length)errors.push('Invalid native index '+i);if(!d||typeof d!=='object'||Array.isArray(d))errors.push('Native data must be an object');else for(const k of Object.keys(d))if(!safe(k)||!(k in(steps[i]||{})))errors.push('Unsupported native field '+k);if(d?.name!==undefined&&d.name!==steps[i]?.name)errors.push('Native step names are renderer keys; use the lesson title for teaching text');for(const k of Object.keys(r.models||{}))if(!models[k])errors.push('Unsupported model '+k);for(const k of Object.keys(r.tables||{}))if(!tables[k])errors.push('Unsupported table '+k);if(r.scene){const f=r.scene.function;if(!draws[f])errors.push('Declare a supported scene function');else for(const k of Object.keys(r.scene.arguments||{}))if(draws[f].indexOf(k)<1)errors.push('Unsupported scene argument '+k);}if(r.config&&Object.keys(r.config).some(k=>k.startsWith('_')))errors.push('Private runtime fields are not lesson configuration');
+if(id==='F2-01'&&d.v!==undefined&&d.v!==''&&(!/^\d{1,4}(?:\.\d{0,3})?$/.test(String(d.v))))errors.push('This chart supports non-negative values up to thousands and thousandths');
+if(id==='F1-07'&&d.st){const st=d.st;if(st.min!==undefined&&st.max!==undefined&&!(st.min<st.max))errors.push('Card-line minimum must be below maximum');if(st.labelStep!==undefined&&!(st.labelStep>0))errors.push('Card-line steps must be positive');if(st.cards&&(!Array.isArray(st.cards)||st.cards.some(x=>!Number.isFinite(Number(x)))))errors.push('Cards must contain numerical values');if(st.labels&&(!Array.isArray(st.labels)||st.labels.length!==st.cards?.length||st.labels.some((x,i)=>String(x).trim()===''||Number(x)!==Number(st.cards[i]))))errors.push('Card labels must represent their actual numerical positions');}
+if(r.parameters){if(id!=='F3-04'||Object.keys(r.parameters).some(k=>k!=='n')||!Number.isInteger(r.parameters.n)||r.parameters.n<2||r.parameters.n>36)errors.push('Unsupported mathematical parameters');}return{valid:!errors.length,errors};}
+ function configure(v){if(v&&Object.keys(v).length)patch(config,v,'config');}
+ function configureExplore(binding={}){for(const k of Object.keys(binding.variables||{}))if(!(k in(scope.exploreFields||{})))throw Error(id+': unsupported Explore variable '+k);for(const k of Object.keys(binding.tables||{}))if(!tables[k])throw Error(id+': unsupported Explore table '+k);for(const k of Object.keys(binding.models||{}))if(!models[k])throw Error(id+': unsupported Explore model '+k);exploreBinding=copy(binding);}
+ function applyExploreModels(){if(exploring)for(const[k,v]of Object.entries(exploreBinding.models||{}))patch(models[k](),v,'explore.models.'+k);}
+ function exploreInit(name,factory,args){const binding=exploring?exploreBinding.variables?.[name]:null;if(binding?.factoryArgs&&!args)throw Error(id+': '+name+' is not a native state factory');const value=args?factory(...(binding?.factoryArgs||args)):factory();if(!(name in exploreInitials))exploreInitials[name]=copy(value);applyExploreModels();return binding&&Object.prototype.hasOwnProperty.call(binding,'value')?hydrate(value,binding.value):value;}
+ function runExplore(args){api.cancel();exploring=true;try{for(const[k,v]of Object.entries(exploreBinding.tables||{})){const table=tables[k]();if(Array.isArray(table)){if(!Array.isArray(v))throw Error(k+' expects an array');table.splice(0,table.length,...copy(v));}else patch(table,v,'explore.tables.'+k,true);}applyExploreModels();return explore?.apply(def,args);}finally{exploring=false;}}
+ function render(r,stage,animate=true){if(disposed)throw Error(id+': disposed');const check=validate(r);if(!check.valid)throw Error(id+': '+check.errors.join('; '));api.cancel();let i=r.nativeIndex??r.nativeStep??0,d=r.data??r.nativeData??{},saved=copy(steps[i]),oldSteps=def.steps,oldModels=getModels(),oldTables={},oldConfig={},rm=w.NOVA.reducedMotion;active=r;let restored=false;const restore=()=>{if(restored)return;restored=true;steps[i]=saved;patch(config,oldConfig,'config restore',true);for(const[k,v]of Object.entries(oldTables)){let t=tables[k]();if(Array.isArray(t))t.splice(0,t.length,...v);else patch(t,v,'restore',true);}for(const[k,v]of Object.entries(oldModels))patch(models[k](),v,'restore',true);};pendingRestore=restore;
+ try{for(const k of Object.keys(r.config||{}))if(k in config)oldConfig[k]=copy(config[k]);configure(r.config);for(const[k,v]of Object.entries(r.tables||{})){const t=tables[k]();oldTables[k]=copy(t);if(Array.isArray(t)){if(!Array.isArray(v))throw Error(k+' expects array');t.splice(0,t.length,...copy(v));}else patch(t,v,'tables.'+k);}
+ steps[i]={...saved,...copy(d)};def.steps=steps;applyModels();if(!animate)w.NOVA.reducedMotion=()=>true;draw.call(def,i,stage);
+ const text=stage.textContent;for(const value of r.assertions?.contains||[])if(!text.includes(String(value)))throw Error(id+': visual missing '+value);for(const value of r.assertions?.excludes||[])if(text.includes(String(value)))throw Error(id+': visual unexpectedly reveals '+value);
+ events.push({index:i,text,at:Date.now()});if(events.length>16)events.shift();
+ }catch(error){restore();pendingRestore=null;active=null;throw error;}finally{def.steps=oldSteps;w.NOVA.reducedMotion=rm;}if(!animate){restore();pendingRestore=null;}
+ return(clock?.idle()||Promise.resolve()).finally(()=>{if(pendingRestore===restore){restore();pendingRestore=null;}if(active===r)active=null;});}
+ const api={id,version:'1.0.0',nativeSteps:steps,nativeRender:draw,config,args,applyModels,validate,configure,configureExplore,applyExploreModels,exploreInit,render,models:getModels,scenes,events,get active(){return active;},get clock(){return clock;},set clock(v){clock=v;},describe(){return{id,version:this.version,stepCount:steps.length,steps:copy(steps),config:copy(config),models:getModels(),tables:Object.fromEntries(Object.entries(tables).map(([k,get])=>[k,copy(get())])),draws,exploreFields:scope.exploreFields||{},exploreInitials:copy(exploreInitials)};},cancel(){clock?.cancel();const restore=pendingRestore;pendingRestore=null;restore?.();active=null;w.NOVA.ui?.cancelDrag?.();},dispose(){api.cancel();disposed=true;},explore(...a){return runExplore(a);}};
+ def.explore=function(...a){return runExplore(a);};const onRestore=def.onRestore;def.onRestore=function(...a){api.cancel();return onRestore?.apply(def,a);};registry[id]=api;def.lesson=api;w.NovaLessonComponent=api;if(w.parent!==w&&typeof w.parent.NovaLessonNativeSetup==='function')w.parent.NovaLessonNativeSetup(w,def,config,steps);return api;
+}};
+})(window);
+
+</script>
 </head>
 <body data-topic="geometry">
 <div class="nova-wrap">
@@ -1708,13 +1744,15 @@ var NOVA_F12_05_CONFIG={
 };
 /* ===== F12-05 ENGINE ===== */
 (function(){
-var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=NOVA_F12_05_CONFIG,P=C.presets,strip=F.strip,fmt=F.fmt,clone=F.clone,VW=440,VH=280;
+var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=window.NovaV2Integration.configuration(NOVA_F12_05_CONFIG),P=C.presets,strip=F.strip,fmt=F.fmt,clone=F.clone,VW=440,VH=280;
 function poly(st){if(st.kind==='rect')return [[0,0],[st.cols,0],[st.cols,st.rows],[0,st.rows]];if(st.kind==='tri')return [[0,0],[0,st.n],[st.n,st.n]];return [[0,0],[st.W,0],[st.W,st.H-st.nh],[st.W-st.nw,st.H-st.nh],[st.W-st.nw,st.H],[0,st.H]];}
 function dims(st){return st.kind==='rect'?[st.cols,st.rows]:st.kind==='tri'?[st.n,st.n]:[st.W,st.H];}
 function classify(st){var Pl=poly(st),d=dims(st),out=[];for(var r=0;r<d[1];r++)for(var c=0;c<d[0];c++){var k=0;for(var i=0;i<6;i++)for(var j=0;j<6;j++)if(F.pip([c+(i+.5)/6,r+(j+.5)/6],Pl))k++;var f=k/36;out.push({c:c,r:r,f:f<.02?0:f>.97?1:(Math.abs(f-.5)<.09?.5:f)});}return out;}
 function counts(st){var cl=classify(st),w=0,hf=0;cl.forEach(function(q){if(q.f===1)w++;else if(q.f===.5)hf++;});return {w:w,h:hf,area:w+hf/2,cl:cl};}
 /* grid shapes: show={whole,half,num} */
-function drawGrid(stage,st,show){var d=dims(st),cs=Math.min(Math.floor(380/d[0]),Math.floor(220/d[1]),46),x0=(VW-d[0]*cs)/2,y0=(VH-d[1]*cs)/2-6,cn=counts(st),
+function drawGrid(stage,st,show){
+if(window.NovaLessonComponent?.active){[stage,st,show]=window.NovaLessonComponent.args("drawGrid",arguments);}
+var d=dims(st),cs=Math.min(Math.floor(380/d[0]),Math.floor(220/d[1]),46),x0=(VW-d[0]*cs)/2,y0=(VH-d[1]*cs)/2-6,cn=counts(st),
   sv=S.root(VW,VH,'Grid of unit squares with a '+(st.kind==='tri'?'right-angled triangle':st.kind==='L'?'L-shape':'rectangle')+': '+cn.w+' whole squares'+(cn.h?' and '+cn.h+' half squares':'')+'.');sv.classList.add('f12-sv');
   NOVA.neonCells(sv,x0,y0,d[0],d[1],cs,{role:'result',hatch:'dots',cells:function(c,r){return show.whole&&cn.cl[r*d[0]+c].f===1;}});
   var Q=poly(st).map(function(q){return [x0+q[0]*cs,y0+q[1]*cs];});
@@ -1723,7 +1761,9 @@ function drawGrid(stage,st,show){var d=dims(st),cs=Math.min(Math.floor(380/d[0])
   if(show.num&&d[0]*d[1]<=42){var k=0;cn.cl.forEach(function(q){if(q.f===1){k++;NOVA.chalkText(sv,x0+(q.c+.5)*cs,y0+(q.r+.5)*cs+4,String(k),{size:Math.max(10,cs*.34)});}else if(q.f===.5&&show.half)NOVA.chalkText(sv,x0+(q.c+.35)*cs,y0+(q.r+.72)*cs,'\u00bd',{size:Math.max(10,cs*.3),role:'focus'});});}
   stage.appendChild(sv);return cn;}
 /* Pythagoras squares: right angle at the origin, legs a (along x) and b (up), squares on all three sides */
-function drawPyth(stage,st){var a=st.a,b=st.b,A=[a,0],B=[0,b],v=[-a,b],n=[b,a],
+function drawPyth(stage,st){
+if(window.NovaLessonComponent?.active){[stage,st]=window.NovaLessonComponent.args("drawPyth",arguments);}
+var a=st.a,b=st.b,A=[a,0],B=[0,b],v=[-a,b],n=[b,a],
   sqa=[[0,0],[a,0],[a,-a],[0,-a]],sqb=[[0,0],[0,b],[-b,b],[-b,0]],sqc=[A,B,[B[0]+n[0],B[1]+n[1]],[A[0]+n[0],A[1]+n[1]]],tri=[[0,0],A,B],
   all=sqa.concat(sqb,sqc),m=F.map(all.map(function(q){return [q[0],-q[1]];}),VW,VH,22,30),T=function(P){return m(P.map(function(q){return [q[0],-q[1]];}));},
   sv=S.root(VW,VH,'Right-angled triangle with squares on its three sides, areas '+a*a+', '+b*b+' and '+(a*a+b*b)+'.');sv.classList.add('f12-sv');
@@ -1732,17 +1772,25 @@ function drawPyth(stage,st){var a=st.a,b=st.b,A=[a,0],B=[0,b],v=[-a,b],n=[b,a],
   [[sqa,a*a,'given'],[sqb,b*b,'op'],[sqc,a*a+b*b,'result']].forEach(function(s){var c=F.cent(T(s[0]));S.pill(sv,c[0],c[1],String(s[1]),{role:s[2],size:14});});
   stage.appendChild(sv);return {};}
 /* enclosing square: big square (a+b), four triangles, tilted inner square */
-function drawEnc(stage,st){var a=st.a,b=st.b,Sd=a+b,big=[[0,0],[Sd,0],[Sd,Sd],[0,Sd]],inner=[[a,0],[Sd,a],[b,Sd],[0,b]],
+function drawEnc(stage,st){
+if(window.NovaLessonComponent?.active){[stage,st]=window.NovaLessonComponent.args("drawEnc",arguments);}
+var a=st.a,b=st.b,Sd=a+b,big=[[0,0],[Sd,0],[Sd,Sd],[0,Sd]],inner=[[a,0],[Sd,a],[b,Sd],[0,b]],
   tris=[[[0,0],[a,0],[0,b]],[[a,0],[Sd,0],[Sd,a]],[[Sd,a],[Sd,Sd],[b,Sd]],[[b,Sd],[0,Sd],[0,b]]],m=F.map(big.map(function(q){return [q[0],-q[1]];}),VW,VH,26,30),T=function(P){return m(P.map(function(q){return [q[0],-q[1]];}));},
   sv=S.root(VW,VH,'Big square of side '+Sd+' holding four triangles and a tilted square of area '+(a*a+b*b)+'.');sv.classList.add('f12-sv');
   NOVA.neonShape(sv,T(big),{role:'unknown',fill:false,width:2,dash:'8 6'});NOVA.neonShape(sv,T(inner),{role:'result',hatch:'diag',width:3});
   tris.forEach(function(t){var q=NOVA.neonShape(sv,T(t),{role:'op',hatch:'cross',width:2});var c=F.cent(T(t));S.pill(sv,c[0],c[1],fmt(a*b/2),{role:'op',size:11});});
   var ci=F.cent(T(inner));S.pill(sv,ci[0],ci[1],String(a*a+b*b),{role:'result',size:14});stage.appendChild(sv);return {};}
-function chipsGrid(stage,st,cn,show){var items=[];if(show.whole)items.push(['whole squares',cn.w,'result']);if(show.half&&cn.h)items.push(['half squares',cn.h+' → '+fmt(cn.h/2),'focus']);
+function chipsGrid(stage,st,cn,show){
+if(window.NovaLessonComponent?.active){[stage,st,cn,show]=window.NovaLessonComponent.args("chipsGrid",arguments);}
+var items=[];if(show.whole)items.push(['whole squares',cn.w,'result']);if(show.half&&cn.h)items.push(['half squares',cn.h+' → '+fmt(cn.h/2),'focus']);
   if(show.total)items.push(['area',fmt(cn.area)+' unit squares','op']);if(st.kind==='rect'&&show.formula)items.push(['rows × columns',st.rows+' × '+st.cols+' = '+st.rows*st.cols,'given']);
   if(st.kind==='L'&&show.formula)items.push(['box minus notch',st.W+'×'+st.H+' − '+st.nw+'×'+st.nh+' = '+(st.W*st.H-st.nw*st.nh),'given']);if(items.length)strip(stage,items);}
-function chipsPyth(stage,st){strip(stage,[['a²',st.a*st.a,'given'],['b²',st.b*st.b,'op'],['a² + b²',st.a*st.a+' + '+st.b*st.b+' = '+(st.a*st.a+st.b*st.b),'result']]);}
-function paint(stage,st,show){if(st.kind==='pyth'){if(show.enc){drawEnc(stage,st);strip(stage,[['big square','('+st.a+'+'+st.b+')² = '+(st.a+st.b)*(st.a+st.b),'given'],['4 triangles','4 × '+fmt(st.a*st.b/2)+' = '+fmt(2*st.a*st.b),'op'],['tilted square',(st.a+st.b)*(st.a+st.b)+' − '+2*st.a*st.b+' = '+(st.a*st.a+st.b*st.b),'result']]);}else{drawPyth(stage,st);chipsPyth(stage,st);}return;}
+function chipsPyth(stage,st){
+if(window.NovaLessonComponent?.active){[stage,st]=window.NovaLessonComponent.args("chipsPyth",arguments);}
+strip(stage,[['a²',st.a*st.a,'given'],['b²',st.b*st.b,'op'],['a² + b²',st.a*st.a+' + '+st.b*st.b+' = '+(st.a*st.a+st.b*st.b),'result']]);}
+function paint(stage,st,show){
+if(window.NovaLessonComponent?.active){[stage,st,show]=window.NovaLessonComponent.args("paint",arguments);}
+if(st.kind==='pyth'){if(show.enc){drawEnc(stage,st);strip(stage,[['big square','('+st.a+'+'+st.b+')² = '+(st.a+st.b)*(st.a+st.b),'given'],['4 triangles','4 × '+fmt(st.a*st.b/2)+' = '+fmt(2*st.a*st.b),'op'],['tilted square',(st.a+st.b)*(st.a+st.b)+' − '+2*st.a*st.b+' = '+(st.a*st.a+st.b*st.b),'result']]);}else{drawPyth(stage,st);chipsPyth(stage,st);}return;}
   var cn=drawGrid(stage,st,show);chipsGrid(stage,st,cn,show);}
 var steps=[
  {name:'Cover with squares',mood:'neutral',narration:'Area is how much flat space is inside a shape. We measure it by covering the shape with unit squares, each worth 1.',prompt:'What is one unit square worth?',st:P.rect,show:{whole:1,num:0}},
@@ -1757,14 +1805,14 @@ var def={id:'F12-05',title:'Area by counting',config:C,steps:steps,render:render
  alt:'Area by counting: unit squares are counted in rectangles, right-angled triangles with half squares, an L-shape, and Pythagoras squares on the sides of a right-angled triangle.',
  staticAlt:'6 by 4 rectangle: 24 squares. Right-angled triangle with legs 5: 10 whole squares and 5 half squares, area 12.5. L-shape: 25 minus 9 is 16. Squares on the sides of a 3, 4 right-angled triangle: 9 + 16 = 25.',
  exploreIntro:'Explore: choose a shape and change its size. Switch the view to see whole squares, half squares or numbered squares. For the square-on-the-sides shape, switch to the enclosing square.',
- explore:function(panel,stage,api){var key=C.preset,st=clone(P[key]),view='all',box=h('div');
-   function show(){if(st.kind==='pyth')return {enc:view==='enc'};return view==='whole'?{whole:1,num:1,total:1,formula:1}:view==='half'?{half:1,total:1}:{whole:1,half:1,num:1,total:1,formula:1};}
-   function pg(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+P[key].label,st.kind==='pyth'?'a²+b²':'counting');paint(stage,st,show());NOVA.scene.helperStrip(stage,'explain',P[key].label);}
-   function build(){box.innerHTML='';st.params.forEach(function(q){box.appendChild(U.slider({label:q[0],min:q[2],max:q[3],step:q[4],value:st[q[1]],engine:'F12-05',onChange:function(v){st[q[1]]=v;if(st.kind==='L'){st.nw=Math.min(st.nw,st.W-1);st.nh=Math.min(st.nh,st.H-1);}pg();}}));});}
-   var pre=h('select',{class:'nova-input','aria-label':'Shape'});Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});pre.value=key;
-   var vw=h('select',{class:'nova-input','aria-label':'View'});function fillV(){vw.innerHTML='';(st.kind==='pyth'?[['all','Squares on the sides'],['enc','Enclosing square']]:[['all','Whole and half squares'],['whole','Whole squares only'],['half','Half squares only']]).forEach(function(o){vw.appendChild(h('option',{value:o[0],text:o[1]}));});view='all';vw.value='all';}
-   pre.onchange=function(){key=pre.value;st=clone(P[key]);fillV();build();pg();NOVA.events.emit('value',{engine:'F12-05',control:'preset',value:key});};vw.onchange=function(){view=vw.value;pg();NOVA.events.emit('value',{engine:'F12-05',control:'view',value:view});};
-   panel.appendChild(h('label',{class:'pr-row'},['Shape ',pre]));panel.appendChild(box);panel.appendChild(h('label',{class:'pr-row'},['View ',vw]));fillV();build();pg();},
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var key=C.preset,st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>clone(...a),[P[key]]):(clone(P[key]))),view='all',box=h('div');
+   window.NovaLessonComponent?.applyExploreModels();function show(){if(st.kind==='pyth')return {enc:view==='enc'};return view==='whole'?{whole:1,num:1,total:1,formula:1}:view==='half'?{half:1,total:1}:{whole:1,half:1,num:1,total:1,formula:1};}
+   window.NovaLessonComponent?.applyExploreModels();function pg(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+P[key].label,st.kind==='pyth'?'a²+b²':'counting');paint(stage,st,show());NOVA.scene.helperStrip(stage,'explain',P[key].label);}
+   window.NovaLessonComponent?.applyExploreModels();function build(){box.innerHTML='';st.params.forEach(function(q){box.appendChild(U.slider({label:q[0],min:q[2],max:q[3],step:q[4],value:st[q[1]],engine:'F12-05',onChange:function(v){st[q[1]]=v;if(st.kind==='L'){st.nw=Math.min(st.nw,st.W-1);st.nh=Math.min(st.nh,st.H-1);}pg();}}));});}
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Shape'});window.NovaLessonComponent?.applyExploreModels();Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=key;
+   window.NovaLessonComponent?.applyExploreModels();var vw=h('select',{class:'nova-input','aria-label':'View'});window.NovaLessonComponent?.applyExploreModels();function fillV(){vw.innerHTML='';(st.kind==='pyth'?[['all','Squares on the sides'],['enc','Enclosing square']]:[['all','Whole and half squares'],['whole','Whole squares only'],['half','Half squares only']]).forEach(function(o){vw.appendChild(h('option',{value:o[0],text:o[1]}));});view='all';vw.value='all';}
+   window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){key=pre.value;st=clone(P[key]);fillV();build();pg();NOVA.events.emit('value',{engine:'F12-05',control:'preset',value:key});};window.NovaLessonComponent?.applyExploreModels();vw.onchange=function(){view=vw.value;pg();NOVA.events.emit('value',{engine:'F12-05',control:'view',value:view});};
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Shape ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(box);window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['View ',vw]));window.NovaLessonComponent?.applyExploreModels();fillV();window.NovaLessonComponent?.applyExploreModels();build();window.NovaLessonComponent?.applyExploreModels();pg();},
  challenge:function(panel,api,stage){var stL={kind:'L',W:5,H:4,nw:2,nh:2},stT={kind:'tri',n:5},stP={kind:'pyth',a:6,b:8};
    var tasks=[
     {q:'Count the squares inside this L-shape. What is its area?',build:NOVA.entryTask('Area (unit squares)','F12-05'),check:function(x){var ok=x===16;return [ok,ok?'Yes: 5 × 4 = 20, take away the 2 × 2 corner, 4, to leave 16.':x===20?'20 counts the missing corner too. Take away the 2 × 2 notch.':x===18?'Check the notch: it is 2 by 2, which is 4 squares.':'Count the whole squares, or box minus notch.'];},hint:'Box 5 by 4, minus the 2 by 2 corner.',solve:function(c){c._A.input.value='16';}},
@@ -1773,6 +1821,9 @@ var def={id:'F12-05',title:'Area by counting',config:C,steps:steps,render:render
    function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['count','halves','square areas'][k]);if(k===0){var cn=drawGrid(stage,stL,{whole:1,num:1});strip(stage,[['find','the area','focus']]);}else if(k===1){drawGrid(stage,stT,{whole:1,half:1,num:1});strip(stage,[['whole','10','result'],['half squares','5','focus']]);}else{drawPyth(stage,stP);strip(stage,[['a²','36','given'],['b²','64','op'],['c²','?','unknown']]);}NOVA.scene.helperStrip(stage,'think',['Count','Count halves','Add the squares'][k]);}
    NOVA.challengeRun(panel,api,tasks,paintC,C);}
 };
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F12-05',def,{models:{},tables:{"steps":()=>steps},draws:{"drawGrid":["stage","st","show"],"drawPyth":["stage","st"],"drawEnc":["stage","st"],"chipsGrid":["stage","st","cn","show"],"chipsPyth":["stage","st"],"paint":["stage","st","show"]},exploreFields:{"st":{"kind":"factory","factory":"clone","argCount":1}}});
 NOVA.bankMount({id:'F12-05',num:'F12·05',title:'Area by counting',def:def,linked:['F0-02','F0-11','F12-03','F12-06','F12-07','F12-10','F15-02'],
  spec:{purpose:'Area as covering: count unit squares in rectangles (rows times columns), pair half squares in a right-angled triangle, count or subtract in compound shapes, and build the picture behind Pythagoras: the squares on the sides of a right-angled triangle, with the enclosing-square proof.',
   params:'preset (rect, tri, L, pyth) with slider ranges; view (whole, half, all, enclosing square). Whole and half cells come from sampling the shape against the grid. Core: NOVA.neonCells / neonShape / chalkText / neonTile, NOVA.f12.map / cent / pip. Year groups: KS3 Years 7–9 (12–15).',

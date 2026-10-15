@@ -1,3 +1,7 @@
+# Lesson integration v1
+
+Read `../integration/LESSON-INTEGRATION-CONTRACT.md` and `../integration/component-adapters.json` before production. Use the native hooks already embedded in canonical executable HTML, the actual runtime engine IDs and the approved template. Supply supported mathematical data and teaching text; do not recreate drawings or add per-lesson source hooks. Verify each lesson record and unanswered question through this template.
+
 # NOVA KS3 Maths: Master Run Prompts (portable copy for other AIs)
 
 Generated 2026-10-10 from 00-master/nova-master.html. Each component prompt is self-contained: paste ONE prompt per build run. Do not invent anything the prompt does not say; if a helper is missing, propose a core addition first.
