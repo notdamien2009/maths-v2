@@ -71,7 +71,7 @@ def expected_lock(master, zip_path, lesson):
     row=master['ls'][lesson]
     return {'contractVersion':'35.3','lessonId':lesson,'masterSha256':master['hash'],
             'sourceArchiveSha256':sha(pathlib.Path(zip_path).read_bytes()),
-            'title':row[1],'objective':row[3],'scope':row[4],'namedActivity':row[5],
+            'title':row[1],'objective':row[3],'scope':row[4],
             'requiredIds':ids,'componentSources':entries}
 
 def eq_json(a,b):return json.dumps(a,sort_keys=True,ensure_ascii=False)==json.dumps(b,sort_keys=True,ensure_ascii=False)
@@ -93,13 +93,9 @@ def path_check(path, base):
 def verify_coverage(lock, path, evidence_root):
     j=readj(path); required=lock['requiredIds']
     if j.get('lessonId')!=lock['lessonId'] or j.get('requiredIds')!=required:fail('Coverage manifest lessonId/requiredIds mismatch')
-    if j.get('namedActivity')!=lock['namedActivity']:fail('Named master activity absent or rewritten')
+    if 'namedActivity' in j or 'namedActivityExecution' in j:
+        fail('Retired standalone game fields may not appear in component coverage')
     base=pathlib.Path(evidence_root) if evidence_root else pathlib.Path(path).parent
-    named=j.get('namedActivityExecution',{})
-    if not named.get('tested') or not named.get('interactionSummary') or not named.get('nativeSourceIds'):
-        fail('Named activity not proven working, not mere text')
-    if not set(named['nativeSourceIds']).issubset(set(required)):fail('Named activity uses unmapped substitute')
-    path_check(named.get('evidenceFile'),base)
     f0=j.get('canonicalF012',{})
     original=lock['componentSources'].get('F0-12',{})
     if 'F0-12' in required:
@@ -112,7 +108,7 @@ def verify_coverage(lock, path, evidence_root):
     rows=j.get('modeAssignments',[])
     if not rows:fail('No actual component-mode coverage')
     used=set();seen_concepts=set();shown_modes=set()
-    allowed_modes={'Bob','Watch','Explore','Challenge','Guided','Start','Practice','Exit','Activity'}
+    allowed_modes={'Bob','Watch','Explore','Challenge','Guided','Start','Practice','Exit'}
     for r in rows:
         mid=r.get('mappedId');
         if mid not in required:fail(f'Unmapped component {mid} in {r}')
@@ -184,7 +180,7 @@ def main():
         master=parse_master(args.master)
         if args.command=='lock':
             obj=expected_lock(master,args.source_zip,args.lesson);pathlib.Path(args.out).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-            print('PASS: exact mapping '+ ' / '.join(obj['requiredIds'])+'; named activity: '+obj['namedActivity']);return 0
+            print('PASS: exact mapping '+ ' / '.join(obj['requiredIds'])+'; canonical F0-12 Challenge only');return 0
         if args.command=='verify':
             locked=check_lock(master,args.source_zip,readj(args.lock))
             print('PASS: immutable master MAP/AL/source lock')
