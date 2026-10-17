@@ -1,0 +1,214 @@
+<!doctype html><html lang="en" data-theme="dark" data-house="neon-chalk" data-premium="1">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NOVA F5-03 / F5-08 · Shared precision area engine</title>
+<style>@@CSS@@
+@media print{.nova-tabs,.nova-tl,.nova-helperbar,.nova-panel{display:none!important}}
+/* F5-03 Premium precision instrument. Original bank colours and chalk tokens. */
+.am-actions{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:10px 0;font:700 1.03rem var(--nova-font-chalk-write)}
+.am-counter{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;color:#c6e4f8}
+.am-state,.am-note{font:700 1.02rem/1.5 var(--nova-font-chalk-write);text-align:center;color:#cfeafb;margin:7px auto;padding:5px 12px}
+.am-peer{display:flex;align-items:center;justify-content:center;gap:10px;font:700 1.05rem var(--nova-font-chalk-write);color:#cfeafb}
+.am-peer img{width:91px;height:105px;object-fit:contain}
+.nova-stage>.nv-svg.am-svg{width:100%;max-width:1110px;height:auto;display:block;margin:4px auto;touch-action:pan-y}
+.am-handle:focus-visible{outline:none;filter:drop-shadow(0 0 8px #d6ffed)}
+@media(max-width:520px){.am-peer img{width:70px;height:82px}.am-actions{gap:7px}.am-actions .nova-btn{min-width:36px}}
+</style></head><body data-topic="number"><div class="nova-wrap">
+<header id="nova-header" data-run="F5 · Premium Edition · 08 · F5-03 shared" data-title="Multiply fractions · Area overlap lab" data-sub="KS3 lesson presets: Year 7 multiplication and Year 8 mixed-number multiplication."></header>
+<main id="gallery"></main>
+<section class="nova-card nova-logcard" aria-label="Event log"><h2 style="font-size:1.1em">NOVA events</h2><div id="log" class="nova-log" role="log" aria-live="off"></div><button class="nova-btn" id="clearlog">Clear log</button></section></div>
+<script>@@JS@@</script><script>
+var NOVA_F5_03_CONFIG={
+ startMode:'guided',preset:(new URLSearchParams(location.search)).get('preset')||'y7-023',
+ events:['preset','columns','rows','columnDenominator','rowDenominator','proof','dragColumn','dragRow','product','lesson'],
+ presets:{
+ 'y7-023':{label:'Y7-023 · Multiply fractions',lesson:'Y7-023',a:2,b:3,c:3,d:4},
+ 'y7-unit':{label:'Y7 · One half of two thirds',lesson:'Y7-023',a:1,b:2,c:2,d:3},
+ 'y7-fifths':{label:'Y7 · Three fifths of two thirds',lesson:'Y7-023',a:3,b:5,c:2,d:3},
+ 'y7-quarter':{label:'Y7 · Three quarters of two fifths',lesson:'Y7-023',a:3,b:4,c:2,d:5},
+ 'y8-006':{label:'Y8-006 · Mixed-number multiplication',lesson:'Y8-006',a:5,b:4,c:3,d:2,domainA:5,domainC:3,mixed:true},
+ 'y8-extended':{label:'Y8 · Two and a quarter × one and a half',lesson:'Y8-006',a:9,b:4,c:3,d:2,domainA:9,domainC:3,mixed:true},
+ 'y8-improper':{label:'Y8 · Five thirds × three quarters',lesson:'Y8-006',a:5,b:3,c:3,d:4,domainA:5,domainC:3,mixed:true},
+ 'gcse-extension':{label:'GCSE extension · Improper area model',lesson:'GCSE',a:7,b:4,c:5,d:3,domainA:7,domainC:5,mixed:true},
+ 'zero':{label:'Zero times three quarters',lesson:'Y7-023',a:0,b:3,c:3,d:4},
+ 'whole':{label:'One whole times three fifths',lesson:'Y7-023',a:3,b:3,c:3,d:5}
+ }
+};
+if(!Object.prototype.hasOwnProperty.call(NOVA_F5_03_CONFIG.presets,NOVA_F5_03_CONFIG.preset))NOVA_F5_03_CONFIG.preset='y7-023';
+(function(){'use strict';
+var N=NOVA,S=N.svg,E=S.el,H=N.h,M=N.motion,C=NOVA_F5_03_CONFIG,ID='F5-03',live=null;
+function send(key,v){if(C.events.indexOf(key)<0)throw Error('unregistered key: '+key);N.events.emit('value',{engine:ID,key:key,value:v});}
+function label(p,x,y,t,role,size,anchor){return N.chalkText(p,x,y,String(t),{role:role||'support',size:size||20,anchor:anchor||'middle'});}
+function rect(p,x,y,w,h,fill,extra){return E('rect',Object.assign({x:x,y:y,width:w,height:h,fill:fill},extra||{}),p);}
+function shade(role){return S.c(role);}
+function stack(p,x,y,n,d,role,size){size=size||24;var gg=E('g',{'aria-label':n+' over '+d},p);if(d===1){label(gg,x,y+5,n,role,size);return gg;}label(gg,x,y-size*.37,n,role,size);N.neonLine(gg,x-size*.63,y+1,x+size*.63,y+1,{role:role,width:1.9});label(gg,x,y+size*.91,d,role,size);return gg;}
+function fractionText(n,d){return '\\frac{'+n+'}{'+d+'}';}
+function optsOf(k){var p=C.presets[k]||C.presets['y7-023'];return {a:p.a,b:p.b,c:p.c,d:p.d,domainA:p.domainA||p.a,domainC:p.domainC||p.c,lesson:p.lesson,mixed:!!p.mixed};}
+function spanCols(o){return Math.max(o.b,Math.ceil(Math.max(o.a,o.domainA||0)/o.b)*o.b);}
+function spanRows(o){return Math.max(o.d,Math.ceil(Math.max(o.c,o.domainC||0)/o.d)*o.d);}
+function mixedText(n,d){var g=gcd(n,d),a=n/g,b=d/g,k=Math.floor(a/b),r=a%b;if(!k)return a+' part'+(a===1?'':'s')+' out of '+b;if(!r)return k+' whole'+(k>1?'s':'');return k+' whole'+(k>1?'s':'')+' and '+r+' of '+b+' parts';}
+function shapeMath(n,d){return '\\frac{'+n+'}{'+d+'}';}
+function gcd(a,b){return b?gcd(b,a%b):a||1;}
+function setGradients(s){var defs=E('defs',{},s);function lg(id,cols){var g=E('linearGradient',{id:id,x1:'0%',x2:'15%',y1:'0%',y2:'100%'},defs);cols.forEach(function(item){E('stop',{offset:item[0],'stop-color':item[1], 'stop-opacity':item[2]??1},g);});}
+ lg('am-metal',[['0%','#98b4ce'],['18%','#3e617e'],['49%','#06162b'],['84%','#385c78'],['100%','#83a7c4']]);
+ lg('am-face',[['0%','#1b3350'],['32%','#0c203b'],['100%','#071326']]);
+ lg('am-amber',[['0%','#ffe5a0',.82],['55%',shade('focus'),.73],['100%','#916029',.64]]);
+ lg('am-cyan',[['0%','#b6f8ff',.86],['52%',shade('op'),.72],['100%','#15527d',.65]]);
+ lg('am-green',[['0%','#ceffe5',.98],['42%',shade('result'),.94],['100%','#0e7861',.90]]);
+ var pt=E('pattern',{id:'am-dots',width:13,height:13,patternUnits:'userSpaceOnUse'},defs);E('circle',{cx:2,cy:2,r:0.7,fill:'#d0eafd',opacity:.2},pt);
+}
+function deviceFrame(s,x,y,w,h){rect(s,x-21,y-20,w+42,h+40,'url(#am-metal)',{rx:18,stroke:'#aacbe0','stroke-width':1.8,'stroke-opacity':.55});rect(s,x-13,y-12,w+26,h+24,'#040f22',{rx:13,stroke:'#46718c','stroke-width':2});rect(s,x-6,y-5,w+12,h+10,'url(#am-face)',{rx:6,stroke:'#608ba8','stroke-width':1.1});for(var i=0;i<4;i++){var xx=i%2?x+w+13:x-13,yy=i<2?y-12:y+h+12;E('circle',{cx:xx,cy:yy,r:3,fill:'#b2cde0',stroke:'#17334a','stroke-width':1.3},s);} }
+function grid(s,box,o,phase,opts,animate){var B=spanCols(o),D=spanRows(o),A=o.a,X=o.c,cw=box.w/B,rh=box.h/D,wOn=phase!=='empty'&&phase!=='height',hOn=phase!=='empty'&&phase!=='width',both=wOn&&hOn;
+ N.neonBox(s,box.x,box.y,box.w,box.h,{role:'support',r:4});
+ var areas=E('g',{class:'am-cells'},s),hit=E('g',{},s),over=[];
+ for(var j=0;j<D;j++)for(var i=0;i<B;i++){
+  var qx=box.x+i*cw,qy=box.y+j*rh,selectedW=i<A&&wOn,selectedH=j<X&&hOn,mix=selectedW&&selectedH;
+  var base=mix?'url(#am-green)':selectedW?'url(#am-amber)':selectedH?'url(#am-cyan)':'url(#am-face)';
+  var t=rect(areas,qx+1.4,qy+1.4,cw-2.8,rh-2.8,base,{rx:2,'data-cell':i+','+j,'data-overlap':mix?'1':'0'});
+  if(mix)over.push(t);
+  if(mix)rect(areas,qx+3,qy+3,cw-6,Math.max(4,rh*.22),'#e5fff5',{rx:1,opacity:.15,'pointer-events':'none'});
+  if(opts.interactive){var h=rect(hit,qx+2,qy+2,cw-4,rh-4,'transparent',{'data-select':i+1+','+(j+1),tabindex:0,role:'button','aria-label':'Select '+(i+1)+' columns and '+(j+1)+' rows',style:'cursor:crosshair'});
+   (function(col,row,el){el.addEventListener('click',function(){opts.pick(col,row);});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();opts.pick(col,row);}});})(i+1,j+1,h);
+  }
+ }
+ for(var i=1;i<B;i++)N.neonLine(s,box.x+i*cw,box.y,box.x+i*cw,box.y+box.h,{role:i%o.b===0?'focus':'support',width:i%o.b===0?3.1:1.35});
+ for(var j=1;j<D;j++)N.neonLine(s,box.x,box.y+j*rh,box.x+box.w,box.y+j*rh,{role:j%o.d===0?'op':'support',width:j%o.d===0?3.1:1.35});
+ rect(s,box.x,box.y,box.w,box.h,'url(#am-dots)',{opacity:.27,'pointer-events':'none'});
+ // A physically measured width and height fraction. The lengths must be set by a/b and c/d.
+ var measureTop=box.y-46,measureLeft=box.x-45;
+ rect(s,box.x,measureTop,box.w,12,'#0b2136',{rx:4,stroke:'#6283a5','stroke-width':1});
+ rect(s,box.x,measureTop,box.w*A/B,12,'url(#am-amber)',{rx:3,opacity:wOn?1:.1,'pointer-events':'none'});
+ rect(s,measureLeft,box.y,12,box.h,'#0b2136',{rx:4,stroke:'#6283a5','stroke-width':1});
+ rect(s,measureLeft,box.y,12,box.h*X/D,'url(#am-cyan)',{rx:3,opacity:hOn?1:.1,'pointer-events':'none'});
+ for(var k=1;k<B;k++)N.neonLine(s,box.x+box.w*k/B,measureTop,box.x+box.w*k/B,measureTop+12,{role:'support',width:1});
+ for(var k=1;k<D;k++)N.neonLine(s,measureLeft,box.y+box.h*k/D,measureLeft+12,box.y+box.h*k/D,{role:'support',width:1});
+ /* Width and height labels live in the adjacent stacked-fraction readouts,
+    leaving the physical measuring rails uncluttered at 380px. */
+ if(animate&&both&&over.length){over.forEach(function(el,i){el.style.opacity='0';M.delay(i*115,function(){if(live&&live.dead)return;if(el.isConnected){M.tween(290,function(t){if(el.isConnected)el.style.opacity=String(t);},M.ease.inOut);M.flash(s,+el.getAttribute('x')+(+el.getAttribute('width'))/2,+el.getAttribute('y')+(+el.getAttribute('height'))/2,'result',24);}});});}
+ return over;
+}
+function grip(s,box,o,kind,dead,change){var col=kind==='columns',steps=col?spanCols(o):spanRows(o),current=col?o.a:o.c,x=col?box.x+box.w*current/steps:box.x-59,y=col?box.y-40:box.y+box.h*current/steps;
+ var g=E('g',{class:'am-handle',tabindex:0,role:'slider','aria-valuemin':0,'aria-valuemax':steps,'aria-valuenow':current,'aria-label':col?'Selected columns':'Selected rows'},s);
+ N.neonBox(g,x-18,y-18,36,36,{role:col?'focus':'op',r:9});N.neonRing(g,x,y,{role:col?'focus':'op',r:6,pulse:false});
+ function apply(n){if(dead())return;change(kind,n,'keyboard');}
+ g.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'||e.key==='ArrowUp'?1:e.key==='ArrowLeft'||e.key==='ArrowDown'?-1:0;if(d){e.preventDefault();apply(Math.max(0,Math.min(steps,current+d)));}else if(e.key==='Home'){e.preventDefault();apply(0);}else if(e.key==='End'){e.preventDefault();apply(steps);}});
+ var zs=[];for(var i=0;i<=steps;i++){if(col){var zw=Math.min(46,box.w/steps*.86);zs.push({id:'columns:'+i,kind:'drop',x:box.x+box.w*i/steps-zw/2,y:box.y-64,w:zw,h:48});}else{var zh=Math.min(46,box.h/steps*.86);zs.push({id:'rows:'+i,kind:'drop',x:box.x-78,y:box.y+box.h*i/steps-zh/2,w:62,h:zh});}}
+ N.ui.svgDrag(s,g,{box:{x:x-18,y:y-18,w:36,h:36},canStart:function(){return !dead();},zones:function(){return zs;},onDrop:function(id){var value=+id.split(':')[1];change(kind,value,'drag');return true;}});
+ return g;
+}
+function proof(s,x,y,w,o){var n=o.a*o.c,d=o.b*o.d,G=gcd(n,d),q=n/G,den=d/G,whole=Math.floor(q/den),rem=q%den;
+ N.neonBox(s,x,y,w,104,{role:'result',r:14});
+ label(s,x+w/2,y+24,whole?'Every full unit square is one whole':'The shaded proportion stays unchanged','support',19);
+ if(!whole){var start=x+20,by=y+40,bw=w-40,unit=bw/den;
+ for(var i=0;i<den;i++)rect(s,start+i*unit+1.5,by,Math.max(2,unit-3),28,i<q?'url(#am-green)':'#17334e',{rx:2,stroke:'#4d7897','stroke-width':1.1});
+ stack(s,x+w/2,y+89,q,den,'result',17);return;}
+ var pieces=whole+(rem?1:0),gap=8,left=x+18,bw=(w-36-gap*(pieces-1))/pieces,by=y+42;
+ for(var k=0;k<pieces;k++){N.neonBox(s,left+k*(bw+gap),by,bw,30,{role:'result',r:5});var fill=k<whole?1:rem/den;
+ if(fill>0)rect(s,left+k*(bw+gap)+2,by+2,(bw-4)*fill,26,'url(#am-green)',{rx:3,opacity:.92});
+ label(s,left+k*(bw+gap)+bw/2,by+50,k<whole?'1 whole':rem+' of '+den+' parts','result',19);}
+ label(s,x+w/2,y+101,'Product: '+mixedText(n,d),'support',16);
+}
+function renderScene(stage,o,opts){opts=opts||{};if(live)live.dead=true;var scene={dead:false};live=scene;
+ stage.innerHTML='';N.cap(stage,'F5-08 · '+(opts.step||'Multiply fractions'),'PREMIUM');var small=window.innerWidth<=670,W=small?420:1100,Ht=small?880:714;
+ var svg=S.root(W,Ht,'One fixed-area rectangle. Amber columns and cyan rows are fractions of the same whole, and their green intersection is their product.');svg.classList.add('am-svg');setGradients(svg);
+ var box=small?{x:81,y:249,w:284,h:290}:{x:319,y:181,w:494,h:319};
+ var phase=opts.phase||'count',over=o.a*o.c,total=o.b*o.d,hide=!!opts.hideResult;
+ if(small){label(svg,210,44,'Fraction of a fraction · fixed unit squares','support',21);N.neonBox(svg,33,76,165,104,{role:'focus',r:12});N.neonBox(svg,222,76,165,104,{role:'op',r:12});label(svg,116,102,'Across the width','focus',17);label(svg,303,102,'Down the height','op',17);stack(svg,116,143,o.a,o.b,'focus',24);stack(svg,303,143,o.c,o.d,'op',24);}
+ else {label(svg,565,53,'Fraction of a fraction · calibrated unit squares','support',25);N.neonBox(svg,26,221,202,111,{role:'focus',r:13});N.neonBox(svg,26,351,202,111,{role:'op',r:13});label(svg,127,251,'Across the width','focus',20);stack(svg,127,299,o.a,o.b,'focus',26);label(svg,127,383,'Down the height','op',20);stack(svg,127,434,o.c,o.d,'op',26);}
+ deviceFrame(svg,box.x,box.y,box.w,box.h);
+ var intersection=grid(svg,box,o,phase,opts,opts.animate);
+ if(opts.interactive){grip(svg,box,o,'columns',function(){return scene.dead;},opts.select);grip(svg,box,o,'rows',function(){return scene.dead;},opts.select);}
+ var xx=small?39:843,yy=small?569:230,rw=small?342:225,rh=small?142:185;
+ N.neonBox(svg,xx,yy,rw,rh,{role:'result',r:14});label(svg,xx+rw/2,yy+30,hide?'Find the intersection':'Common area','result',small?20:22);
+ if(hide){label(svg,xx+rw/2,yy+85,'Count the green cells','support',small?19:19);}
+ else if(phase==='empty'){label(svg,xx+rw/2,yy+77,'Each whole = '+total+' cells','support',20);}
+ else if(phase==='width'||phase==='height'){label(svg,xx+rw/2,yy+78,'One layer at a time','support',20);}
+ else{
+   var amt=opts.animate?0:over,counter=label(svg,xx+rw/2,yy+75,amt+' green cells','result',small?20:21);
+   if(opts.animate)M.delay(140,function(){if(scene.dead)return;N.countUp(counter,0,over,500,function(v){return Math.round(v)+' green cells';});});
+   var G=gcd(over,total);stack(svg,xx+rw/2,yy+(small?114:128),over,total,'result',small?21:24);
+   if(!small)label(svg,xx+rw/2,yy+164,total+' cells per whole','support',18);
+ }
+ if(!hide&&phase!=='empty'&&phase!=='width'&&phase!=='height'){
+  var G=gcd(over,total),a=over/G,d=total/G;
+  var proofY=small?730:557,pw=small?342:718,px=small?39:191;
+  if(opts.proof)proof(svg,px,proofY,pw,o);
+  else {N.neonBox(svg,px,proofY,pw,100,{role:'result',r:13});label(svg,px+pw/2,proofY+31,'Same product, simplified','support',21);stack(svg,px+pw/2,proofY+76,a,d,'result',21);}
+ }
+ if(!small){label(svg,551,686,'Amber × cyan = green area, measured in unit squares','support',19);}else{label(svg,210,861,'Drag the handles or use arrow keys','support',19);}
+ stage.appendChild(svg);stage.appendChild(H('div',{class:'am-note',text:opts.note||(phase==='empty'?'Start with equal parts of one unit square. Each unit square has '+total+' cells.':phase==='width'?'Watch the amber width. It selects columns before the second factor is applied.':phase==='height'?'Watch the cyan height. It selects rows before both directions are combined.':'Each unit square contains '+total+' equal cells. The green overlap has '+over+' cells. A result above one uses multiple unit squares.')}));
+ N.scene.helperStrip(stage,opts.pose||'compare',opts.caption||'See where the layers meet');return scene;
+}
+function lessonSteps(p){var n=p.a*p.c,d=p.b*p.d,wide=p.a>p.b||p.c>p.d,multi=wide?' multiple unit squares':' one unit square';return [
+ {name:'Partition the unit area',a:p.a,b:p.b,c:p.c,d:p.d,domainA:p.domainA,domainC:p.domainC,phase:'empty',pose:'explain',caption:'Begin with the unit area',narration:'Each whole square is one unit. Divide each unit across into '+p.b+' equal parts and down into '+p.d+' equal parts. We need'+multi+'.',prompt:'How many equal cells are in each whole square?'},
+ {name:'Measure the first factor',a:p.a,b:p.b,c:p.c,d:p.d,domainA:p.domainA,domainC:p.domainC,phase:'width',pose:'show-two',caption:'Measure the amber width',narration:'The first factor is '+p.a+' over '+p.b+'. Measure '+p.a+' columns of width, with '+p.b+' equal columns in one whole.',prompt:'Which fraction does the amber width represent?'},
+ {name:'Measure the second factor',a:p.a,b:p.b,c:p.c,d:p.d,domainA:p.domainA,domainC:p.domainC,phase:'height',pose:'point-down',caption:'Measure the cyan height',narration:'The second factor is '+p.c+' over '+p.d+'. Measure '+p.c+' rows of height, with '+p.d+' equal rows in one whole.',prompt:'Which fraction does the cyan height represent?'},
+ {name:'Intersect the two areas',a:p.a,b:p.b,c:p.c,d:p.d,domainA:p.domainA,domainC:p.domainC,phase:'both',pose:'compare',caption:'Only the shared area is green',narration:'Bring the two selections together. Amber goes across and cyan goes down. The green overlap is their product. Every unit square keeps the same scale.',prompt:'Why do we count only green cells?'},
+ {name:'Count the exact product',a:p.a,b:p.b,c:p.c,d:p.d,domainA:p.domainA,domainC:p.domainC,phase:'count',animate:true,pose:'count',caption:n+' green cells',narration:'There are '+n+' green cells. Each unit square has '+d+' equal cells. The result is '+n+' over '+d+'.',prompt:'What does the denominator count?'},
+ {name:'Regroup and simplify',a:p.a,b:p.b,c:p.c,d:p.d,domainA:p.domainA,domainC:p.domainC,phase:'count',proof:true,pose:'idea',caption:'Regroup the exact product',narration:'Now simplify the exact fraction. '+n+' over '+d+' is '+mixedText(n,d)+'. A whole unit square remains exactly one whole.',prompt:'How many complete wholes and fractional parts do you see?'}];}
+var steps=lessonSteps(optsOf(C.preset));
+function guided(i,stage){var t=steps[i];renderScene(stage,t,{step:t.name,phase:t.phase,animate:!!t.animate,proof:!!t.proof,pose:t.pose,caption:t.caption});}
+function explore(panel,stage,api){var o=optsOf(C.preset),pr=false,info=H('div',{class:'am-state',role:'status','aria-live':'polite'}),pick=H('select',{class:'nova-input','aria-label':'Choose area model preset'});
+ Object.keys(C.presets).forEach(function(k){pick.appendChild(H('option',{value:k,text:C.presets[k].label}));});pick.value=C.preset;
+ function redraw(){info.textContent=o.a+' width parts × '+o.c+' height parts = '+(o.a*o.c)+' green cells, with '+(o.b*o.d)+' per unit square. Exact product '+mixedText(o.a*o.c,o.b*o.d)+'.';
+ renderScene(stage,o,{step:'Explore · dual-layer area',phase:'count',interactive:true,proof:pr,pose:'compare',caption:'Move the edge handles',select:select,pick:function(a,c){o.a=a;o.c=c;send('columns',a);send('rows',c);redraw();}});}
+ function select(which,val,source){if(which==='columns'){o.a=Math.max(0,Math.min(spanCols(o),val));send(source==='drag'?'dragColumn':'columns',o.a);}else if(which==='rows'){o.c=Math.max(0,Math.min(spanRows(o),val));send(source==='drag'?'dragRow':'rows',o.c);}redraw();if(source==='keyboard'){var focused=stage.querySelector('[role="slider"][aria-label="Selected '+(which==='columns'?'columns':'rows')+'"]');if(focused)focused.focus();}}
+ function controls(){var actions=H('div',{class:'am-actions'});['columns','rows'].forEach(function(type){var group=H('div',{class:'am-counter',role:'group','aria-label':'Change selected '+type}),minus=H('button',{class:'nova-btn',text:'−','aria-label':'Subtract selected '+type}),plus=H('button',{class:'nova-btn',text:'+','aria-label':'Add selected '+type});minus.onclick=function(){select(type,(type==='columns'?o.a:o.c)-1,'button');};plus.onclick=function(){select(type,(type==='columns'?o.a:o.c)+1,'button');};group.appendChild(H('span',{text:type==='columns'?'Width columns':'Height rows'}));group.appendChild(minus);group.appendChild(plus);actions.appendChild(group);});return actions;}
+ pick.onchange=function(){C.preset=pick.value;o=optsOf(C.preset);send('preset',C.preset);redraw();};
+ var proofButton=H('button',{class:'nova-btn ghost',text:'Show area equivalence',onclick:function(){pr=!pr;send('proof',pr);proofButton.textContent=pr?'Show normal result':'Show area equivalence';redraw();}});
+ var denC=H('select',{class:'nova-input','aria-label':'Number of equal columns'}),denR=H('select',{class:'nova-input','aria-label':'Number of equal rows'});
+ [1,2,3,4,5,6,7,8].forEach(function(d){denC.appendChild(H('option',{value:d,text:d+' columns'}));denR.appendChild(H('option',{value:d,text:d+' rows'}));});denC.value=o.b;denR.value=o.d;
+ denC.onchange=function(){o.b=+denC.value;o.a=Math.min(o.a,spanCols(o));o.domainA=Math.max(o.domainA||0,o.a);send('columnDenominator',o.b);redraw();};denR.onchange=function(){o.d=+denR.value;o.c=Math.min(o.c,spanRows(o));o.domainC=Math.max(o.domainC||0,o.c);send('rowDenominator',o.d);redraw();};
+ pick.addEventListener('change',function(){denC.value=o.b;denR.value=o.d;});
+ panel.appendChild(H('div',{class:'am-actions'},[H('label',{text:'Example'}),pick,H('label',{text:'Equal partitions'}),denC,denR]));panel.appendChild(controls());panel.appendChild(H('div',{class:'am-actions'},[proofButton]));panel.appendChild(info);
+ panel.appendChild(H('p',{class:'am-note',text:'Drag the amber handle along the top ruler and the cyan handle along the side ruler, or use arrow keys when a handle is focused. Each snaps to an exact partition boundary.'}));
+ C._explore={get:function(){return Object.assign({},o);},set:function(a,b,c,d){o={a:a,b:b,c:c,d:d,domainA:Math.max(a,b),domainC:Math.max(c,d)};denC.value=b;denR.value=d;redraw();},select:select};redraw();}
+function challenge(panel,api,stage){
+ var y8=C.presets[C.preset].lesson==='Y8-006'||C.presets[C.preset].lesson==='GCSE';
+ var tasks=y8?[
+ {a:5,b:4,c:3,d:2,domainA:5,domainC:3,q:'One and one quarter multiplied by one and one half',hint:'Convert to improper fractions: five quarters and three halves.'},
+ {a:9,b:4,c:3,d:2,domainA:9,domainC:3,q:'Two and one quarter multiplied by one and one half',hint:'Nine quarters multiplied by three halves gives a result above three wholes.'},
+ {a:5,b:3,c:3,d:4,domainA:5,domainC:3,q:'One and two thirds multiplied by three quarters',hint:'Five thirds multiplied by three quarters. Count the overlap using twelve cells per unit square.'}
+ ]:[
+ {a:2,b:3,c:3,d:4,q:'Two thirds multiplied by three quarters',hint:'Two amber columns overlap three cyan rows. Each whole contains twelve equal cells.'},
+ {a:1,b:2,c:2,d:3,q:'One half of two thirds',hint:'One amber column overlaps two cyan rows. Each whole contains six cells.'},
+ {a:3,b:5,c:2,d:3,q:'Three fifths multiplied by two thirds',hint:'Three across times two down. Count fifteen cells per whole.'}
+ ];
+ var ix=0,wrong=0,o=optsOf(C.preset),task=H('p',{class:'pr-task'}),message=H('div',{class:'am-state',role:'status','aria-live':'polite'}),peer=H('img',{src:N.helperImg('read-tablet','teen').src,alt:N.helperImg('read-tablet','teen').alt}),peerWords=H('span',{text:'Izaac is watching the area model.'});
+ var num=H('input',{class:'nova-input',type:'number',step:'1','aria-label':'Product numerator',placeholder:'Numerator'}),den=H('input',{class:'nova-input',type:'number',step:'1',min:'1','aria-label':'Product denominator',placeholder:'Denominator'});
+ num.style.width='115px';den.style.width='125px';num.style.fontFamily='var(--nova-font-chalk-write)';den.style.fontFamily='var(--nova-font-chalk-write)';
+ function peerPose(k,msg){var x=N.helperImg(k,'teen');peer.src=x.src;peer.alt=x.alt;peerWords.textContent=msg;}
+ function change(kind,n,by){if(kind==='columns')o.a=n;else o.c=n;redraw();if(by==='keyboard'){var h=stage.querySelector('[role="slider"][aria-label="Selected '+kind+'"]');if(h)h.focus();}}
+ function redraw(){renderScene(stage,o,{step:'Challenge · build and calculate',phase:'both',interactive:true,hideResult:true,pose:'think',caption:'Predict and check the product',select:change,pick:function(a,c){o.a=a;o.c=c;redraw();},note:'Adjust the two measured selections. Write an exact fraction for the product, then check. The answer stays hidden until feedback.'});}
+ function load(){var t=tasks[ix];o={a:0,b:t.b,c:0,d:t.d,domainA:t.domainA||t.a,domainC:t.domainC||t.c};wrong=0;task.textContent='Challenge '+(ix+1)+' of 3 · '+t.q;num.value='';den.value='';message.textContent='Build both factors with the handles and enter the exact product as numerator and denominator.';peerPose('read-tablet','Izaac is comparing your two measurements.');api.fb.textContent='';redraw();}
+ function feedback(t,n,d){if(!Number.isInteger(n)||!Number.isInteger(d)||d<=0)return 'Write a numerator and a positive denominator using whole numbers.';
+  if(n*t.b*t.d===(t.a*t.d+t.c*t.b)*d)return 'You added the fractions. Multiplication counts the cells common to both selections.';
+  if(n*t.b*t.d===(t.a*t.c)*d)return 'Your product is correct. Check that the amber width and cyan height match both factors.';
+  if(n*t.b*t.d===(t.a*t.c*t.b*t.d)*d)return 'You have counted green cells without dividing by the number of cells in one whole.';
+  if(o.a!==t.a)return 'The amber width needs '+t.a+' selected parts, not '+o.a+'.';
+  if(o.c!==t.c)return 'The cyan height needs '+t.c+' selected parts, not '+o.c+'.';
+  if(t.a>t.b||t.c>t.d)return 'Convert the mixed number to an improper fraction first, then multiply numerators and denominators.';
+  return 'Count the overlap, then divide by the cells in one whole. Check numerator and denominator separately.';}
+ var check=H('button',{class:'nova-btn primary',text:'Check exact product',onclick:function(){var t=tasks[ix],n=num.value.trim()===''?NaN:Number(num.value),d=den.value.trim()===''?NaN:Number(den.value),mathOK=Number.isInteger(n)&&Number.isInteger(d)&&d>0&&n*t.b*t.d===t.a*t.c*d,visualOK=o.a===t.a&&o.c===t.c,ok=mathOK&&visualOK;
+  api.check(ok,ok?'Correct: your shaded model and exact product agree.':feedback(t,n,d),{task:ix,lesson:C.presets[C.preset].lesson});
+  if(ok){send('product',{n:n,d:d});peerPose(ix===2?'victory':'proud','Your model and product agree.');message.textContent='Correct! '+mixedText(t.a*t.c,t.b*t.d)+' from '+t.a*t.c+' green cells and '+t.b*t.d+' cells per whole.';var chip=N.answerChip('Correct · '+mixedText(t.a*t.c,t.b*t.d),true);message.appendChild(chip);N.motion.tween(300,function(t){chip.style.transform='scale('+(1+0.12*Math.sin(Math.PI*t)).toFixed(3)+')';},N.motion.ease.out,function(){chip.style.transform='';});var targetSVG=stage.querySelector('svg');if(targetSVG)N.neonRing(targetSVG,window.innerWidth<=670?210:955,window.innerWidth<=670?650:320,{role:'result',r:16,pulse:true});if(ix<2){var timer=setTimeout(function(){ix++;load();},1400);api.onCleanup(function(){clearTimeout(timer);});}}
+  else{wrong++;peerPose(wrong>=2?'worried':'read-tablet','Look at the two factors and the unit area.');message.textContent=feedback(t,n,d);}}
+ });
+ var hint=H('button',{class:'nova-btn ghost',text:'Hint',onclick:function(){api.hint(tasks[ix].hint);peerPose('idea','Izaac has an idea.');message.textContent=tasks[ix].hint;}});
+ var buttons=H('div',{class:'am-actions'});[['columns','Amber width'],['rows','Cyan height']].forEach(function(it){var lower=H('button',{class:'nova-btn',text:'−','aria-label':'Subtract '+it[1]}),higher=H('button',{class:'nova-btn',text:'+','aria-label':'Add '+it[1]});lower.onclick=function(){change(it[0],Math.max(0,(it[0]==='columns'?o.a:o.c)-1),'button');};higher.onclick=function(){change(it[0],Math.min(it[0]==='columns'?spanCols(o):spanRows(o),(it[0]==='columns'?o.a:o.c)+1),'button');};buttons.appendChild(H('span',{text:it[1]}));buttons.appendChild(lower);buttons.appendChild(higher);});
+ var answer=H('div',{class:'am-actions'},[H('label',{text:'Exact fraction answer'}),num,H('span',{text:'over'}),den]);
+ panel.appendChild(task);panel.appendChild(buttons);panel.appendChild(answer);panel.appendChild(H('div',{class:'am-actions'},[check,hint]));panel.appendChild(message);panel.appendChild(H('div',{class:'am-peer'},[peer,peerWords]));
+ C._challenge={task:function(){return ix;},set:function(a,c){o.a=a;o.c=c;redraw();},answer:function(n,d){num.value=n;den.value=d;},get:function(){return Object.assign({},o);}};load();}
+var DEF={id:ID,title:'Multiply fractions · F5-03 precision area engine',config:C,steps:steps,render:guided,explore:explore,challenge:challenge,
+ alt:'Identically scaled unit squares subdivided into columns and rows. Amber marks the first factor across, cyan marks the second factor down, and green marks the intersecting product. Extend over multiple unit squares when a factor exceeds one. Each handle is keyboard accessible.',
+ staticAlt:'Exact multiplication area model for '+C.presets[C.preset].label+': '+(optsOf(C.preset).a*optsOf(C.preset).c)+' overlapping cells, with '+(optsOf(C.preset).b*optsOf(C.preset).d)+' cells representing one whole. Equivalent result '+mixedText(optsOf(C.preset).a*optsOf(C.preset).c,optsOf(C.preset).b*optsOf(C.preset).d)+'.',
+ exploreIntro:'Try changing the width and height fractions. Move a handle along each ruler. The intersection gives the fraction of the whole selected in both directions.'};
+N.registry.add({id:ID,title:DEF.title,family:'F5',topics:['area model','fraction multiplication','F5-08','Y7-023','Y8-006'],deps:['F0-02','F0-03','F0-04','F0-05','F2-03']});
+N.bankMount({id:ID,num:'F5·08 · F5·03 shared',title:DEF.title,def:DEF,years:'KS3 Years 7–9',linked:['F5-01','F5-02','F5-03','F5-09'],
+ spec:{purpose:'Two precise independently shaded fractions of one fixed rectangular whole, with a green intersection proving multiplication. F5-08 reuses this engine as a multiplication preset.',params:'a/b × c/d, a and c including improper numerators, denominators 1–8, exact unit-square cells, draggable handles, exact answers.',presets:'Y7-023: unit/non-unit fractions. Y8-006: five quarters × three halves; nine quarters × three halves; five thirds × three quarters. GCSE extension optional.',steps:'Partition unit squares → amber width → cyan height → overlap → exact cell counting → mixed-number regrouping.',interactions:'Watch, Guided, Explore and Challenge; row and column edge-handle drag, keyboard increments, exact snap boundaries, answer hiding and assessment feedback.',traps:'Addition instead of multiplication; counting total selected cells without the unit denominator; incorrectly converting mixed numbers; using one layer instead of intersection.',gcse:'KS3 & GCSE fraction multiplication, representations, exact equivalence and area reasoning.'}});
+var lessonChooser=H('div',{class:'am-actions'}),lessonSelect=H('select',{class:'nova-input','aria-label':'Select lesson preset for all four modes'});
+ Object.keys(C.presets).forEach(function(k){lessonSelect.appendChild(H('option',{value:k,text:C.presets[k].label}));});lessonSelect.value=C.preset;
+ lessonSelect.onchange=function(){var u=new URL(location.href);u.searchParams.set('preset',lessonSelect.value);location.href=u.toString();};
+ lessonChooser.appendChild(H('label',{text:'Lesson preset · Watch / Guided / Explore / Challenge'}));lessonChooser.appendChild(lessonSelect);
+ var gallery=document.getElementById('gallery');gallery.parentElement.insertBefore(lessonChooser,gallery);
+ var log=document.getElementById('log'),appendLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,4000);};N.events.history().forEach(appendLog);N.events.on('*',appendLog);document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+</script></body></html>
