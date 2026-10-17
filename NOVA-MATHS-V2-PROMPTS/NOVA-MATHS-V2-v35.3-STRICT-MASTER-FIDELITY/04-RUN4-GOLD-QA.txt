@@ -1,0 +1,32 @@
+NOVA MATHS V2 v37.0 — RUN 4: FULL BROWSER QA + REPAIR
+
+ASSIGNMENT: [SAME LESSON CODE]
+Read shared contract, Runs 1–3 output and current actual review HTML. Inspect actual source and template. This run must test, identify, FIX lesson-local defects, RETEST and deliver truthful evidence. Do not automatically begin next lesson.
+
+A. PROVENANCE + STRUCTURE GATE
+- New v36.5 seven-stage layout, order Start / Learn / Explore / Examples / Challenge / Practice / Exit; correct 4+3 nav with Challenge lower; no Explore or Challenge inside Learn; no extra named game.
+- Shared original library unchanged; local adapters trace to real F0–F18 sources. F0-12 matches original shared controller and mounts ONCE, not one per concept.
+- Start 5, only S1/S2 static aids, MCQ S2/S3; Board 5 concepts × 4–6 beats, exact 700px desktop presentation area; Learn 5 Watch; Explore 5 operable concept experiences; ≤5 Examples; ONE Challenge 10 standard + 5 optional Stretch; Practice 15 (5/5/5) aids ONLY P1/P2/P6/P11; Exit 5 (2/2/1), zero aids.
+- Verify lesson-local count/tier/progress contract patches do not bypass other canonical QA. No `TBD`, placeholder, stale data, style drift, white panel or dead controls.
+
+B. MATH + VISUAL GATE — EVERY APPLICABLE ITEM
+For each diagnostic S1–S5, Challenge 15, Practice P1–P15 and Exit X1–X5 independently recompute solution and inspect actual marking. For all six static visual aid slots, and all visual-backed Challenge questions, compare ACTUAL RENDERED FIRST FRAME against current public numbers/columns/operators/units/scale and answer-hidden rules. A correct drawing on some later slideshow frame DOES NOT COUNT. Capture at first view, after 2s and 5s idle, after a wrong answer (must hold), and after a right answer (must show next question's own values). Verify all five concepts' teaching Watch scenes and all Guided steps use correct maths. No visual cropped/covered, no operator/text collision or inappropriate placeholder.
+
+C. BOB, TTS + CONTROLS GATE
+At actual 100% zoom check Board desktop 700px area (page scrolling allowed, no zoom-out necessary), all board frames and sidebar/controls not overlapping. Check at 1280px or wider and mobile ~390px; navigate 4+3 buttons. Cross each C1→C2, C2→C3, C3→C4 and C4→C5 boundary by Next while autoplay ON and OFF; ON stays ON with new TTS, OFF stays OFF. Forward/back skip Learn Watch when playing vs paused; correct step narration and artwork. Play/Pause/Stop/Replay, no old speech after skipping/section changes; precise spoken math and sign/decimal pronunciation. Examples speak in sync. Challenge asks/speaks safely without revealing answer. Keyword vocabulary pills toggle definitions without pausing Bob. If actual audio is unavailable, label TTS **NOT VERIFIED** rather than passed.
+
+D. EXPLORE + F0-12 GAME
+For each concept, manipulate values/components from keyboard and pointer where supported, show mathematically accurate state change and meaningful feedback, reset works. Challenge: confirm exactly one wrapper and central HUD, every question's native source loads with correct public value and HOLD until answer, correct advances automatically, wrong retains, streak/lives/hints work, randomized rounds preserve five-concept standard coverage, optional stretch enters as specified, completion badge/confetti, replay/reset, no bleed to Watch. No answer visible early. Test multiple random seeds/MCQ shuffles; correct-answer positions must vary and remain right after shuffle.
+
+E. ASSESSMENT/PERSISTENCE
+Start and Practice question types/rubrics, MCQ answer indices, numerical and written questions, wrong/correct feedback, marking, save/reload, hand-in/website events and keyboard access. Check all 15 Practice and 5 Exit display in correct tiers; no misplaced visual. Check progress totals reflect new 15 Practice and optional Stretch policy; don't leave stale 30-item counters. Correct mathematics checked separately from UI marks.
+
+F. REPAIR AND RETEST
+When a test fails, inspect root cause and repair in derived lesson HTML/content/adapters only. Do not modify original source archive or silently weaken QA. Re-run affected tests and regression subset (counts, layout, TTS and Challenge). Provide PASS / FAIL / NOT VERIFIED for EACH category, affected question IDs, screenshots/log excerpts or reproducible steps. If any hard failure remains, final status **REVIEW / NOT GOLD**. Do not call a structural script or a compile test sufficient browser evidence. Never invent a pass.
+
+DELIVER EXACTLY:
+- `[LESSON]-FINAL.html` completed lesson, or clearly named REVIEW if it did not meet gates.
+- `[LESSON]-R4-QA-REPORT.md` matrix of checks and fixes, mathematical audits, screenshot/device test notes and honest status.
+- `[LESSON]-R4-EVIDENCE.json` machine-readable per-item outcomes, rendered native state/question pairs, template and original-source provenance, F0-12 instance verification, known untested areas.
+
+Keep all lessons separate. Never Git push. A GOLD sign-off means the above was actually verified, not merely expected.
