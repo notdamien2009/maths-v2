@@ -1,0 +1,90 @@
+{
+  "version": "v37.3",
+  "dated": "2026-10-17",
+  "stages": [
+    "Start",
+    "Learn",
+    "Explore",
+    "Examples",
+    "Challenge",
+    "Practice",
+    "Exit"
+  ],
+  "board": {
+    "concepts": 5,
+    "beatsEachMin": 4,
+    "beatsEachMax": 6,
+    "desktopPx": 700
+  },
+  "learn": {
+    "watchComponents": 5,
+    "play": "native only",
+    "tts": "shared Bob voice; Ryan en-GB preferred"
+  },
+  "explore": {
+    "conceptTaskCoverage": 5,
+    "stationCount": "unique source apparatus only; no forced duplicates",
+    "layout": "full-width stacked"
+  },
+  "examples": {
+    "max": 5,
+    "nativeGuided": true
+  },
+  "challenge": {
+    "source": "unmodified original F0-12.html",
+    "instances": 1,
+    "autostartOnPageEntry": true,
+    "extraPlayButton": false,
+    "core": 10,
+    "optionalStretch": 5,
+    "container": "#novaLessonGame",
+    "surface": "#071929",
+    "nativeControllerIframeFullWidth": true,
+    "nativeComponentSameSurface": true,
+    "originalControllerRequired": true,
+    "uniqueCompletedScore": true
+  },
+  "start": {
+    "questions": 5,
+    "images": [
+      "S1",
+      "S2"
+    ],
+    "mcq": [
+      "S2",
+      "S3"
+    ]
+  },
+  "practice": {
+    "questions": 15,
+    "tierSplit": [
+      5,
+      5,
+      5
+    ],
+    "images": [
+      "P1",
+      "P2",
+      "P6",
+      "P11"
+    ]
+  },
+  "exit": {
+    "questions": 5,
+    "tierSplit": [
+      2,
+      2,
+      1
+    ],
+    "images": []
+  },
+  "assessmentProgressTotal": 25,
+  "tone": "NOVA neon+chalk",
+  "doNotModify": [
+    "original F0-F18 library",
+    "locked curriculum",
+    "shared original F0-12",
+    "user GitHub"
+  ],
+  "gold": "full browser/audio/visual evidence only"
+}
