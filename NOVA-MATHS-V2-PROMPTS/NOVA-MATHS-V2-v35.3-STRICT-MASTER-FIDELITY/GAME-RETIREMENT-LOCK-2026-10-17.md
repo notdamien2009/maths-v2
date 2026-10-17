@@ -13,7 +13,7 @@ The original list of 202 lessons carried historical one-off game ideas. All of t
 **Source consistency**
 
 - Edited master: `master/nova-master-LOCKED.html` and `NOVA-production/00-master/nova-master-updated.html` (byte-identical).
-- New master SHA-256: `b3f836867f9986df1ba69b947ab2633ab1f107196db75bc78d90fa7ac992405b`
+- New master SHA-256: `4057fef67c337325c682e9c0cb61514ba6ce32f6075c9179a36c00d259d06e86`
 - All 202 `LS` game-idea slots are empty for backward compatibility; 202 mapped lesson objectives, `MAP` and `AL` are intact.
 - `master/master-curriculum-map-LOCKED.json` has no `namedActivity` field; it retains all component mappings and aliases.
 - The `tools/verify_master_fidelity.py` gate now checks the real component/alias/F0-12 coverage and rejects obsolete `namedActivity` / `namedActivityExecution` evidence fields, without requiring a standalone game.
