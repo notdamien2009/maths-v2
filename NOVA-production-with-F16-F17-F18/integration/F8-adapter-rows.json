@@ -1,0 +1,2111 @@
+[
+  {
+    "id": "F8-01",
+    "path": "F8/F8-01-step-by-step-working-animator.html",
+    "api": "1.0.0",
+    "models": [
+      "state"
+    ],
+    "tables": [
+      "presets",
+      "pose",
+      "STEPS"
+    ],
+    "draws": {
+      "surface": [
+        "stage"
+      ],
+      "renderStage": [
+        "stage",
+        "opts"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "e81e8121367514c81d13105eb92cd24df261e0e8e63799e7b4bdc4d916610331",
+    "sha256": "7be312bb92bac559c83a5ebec655ca4e6d53599ac1994b8f4720726d2722a300",
+    "engineId": "F8-01",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "prompt",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 6,
+      "data": {
+        "name": "Finish and check",
+        "mood": "happy",
+        "prompt": "How can you verify every line?",
+        "narration": "Only subtraction remains. The value stays equal at every step. Check the conclusion against the starting expression."
+      },
+      "scene": {
+        "function": "renderStage",
+        "arguments": {
+          "opts": {
+            "phase": 1,
+            "mode": "guided",
+            "preset": "Y7-018"
+          }
+        }
+      }
+    },
+    "previous_sha256": "b69bfb52d59a90eea81d0132905ca2dca1fb950326c3ad673693e5c43910ed76",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-02",
+    "path": "F8/F8-02-inverse-operations-flowchart.html",
+    "api": "1.0.0",
+    "models": [
+      "active",
+      "F802_ACTIVE"
+    ],
+    "tables": [
+      "operations",
+      "lessons",
+      "STEPS",
+      "F802_PRESETS",
+      "F802_STEPS"
+    ],
+    "draws": {},
+    "exploreFields": {},
+    "original_sha256": "a78f6225263bde6d98e0a07a2472591e436de8745525b1f6ae8e0d019d089fee",
+    "sha256": "ef9c6855bc5b2d4442c777658d57d371067c37aadd03bdf8a92540755793553a",
+    "engineId": "F8-03",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 5,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 4,
+      "data": {
+        "name": "Verify using the forward rule",
+        "prompt": "Does the recovered input reproduce the output?",
+        "narration": "Prove it: six multiplied by two, then plus three, gives fifteen."
+      },
+      "tables": {
+        "operations": {
+          "m3": {
+            "label": "\u00d7 3",
+            "name": "multiply by three",
+            "type": "mul",
+            "n": 3
+          },
+          "a2": {
+            "label": "+ 2",
+            "name": "add two",
+            "type": "add",
+            "n": 2
+          },
+          "m2": {
+            "label": "\u00d7 3",
+            "name": "multiply by two",
+            "type": "mul",
+            "n": 2
+          },
+          "a5": {
+            "label": "+ 5",
+            "name": "add five",
+            "type": "add",
+            "n": 5
+          },
+          "a3": {
+            "label": "+ 3",
+            "name": "add three",
+            "type": "add",
+            "n": 3
+          },
+          "m5": {
+            "label": "\u00d7 5",
+            "name": "multiply by five",
+            "type": "mul",
+            "n": 5
+          },
+          "s4": {
+            "label": "\u2212 4",
+            "name": "subtract four",
+            "type": "sub",
+            "n": 4
+          },
+          "s3": {
+            "label": "\u2212 3",
+            "name": "subtract three",
+            "type": "sub",
+            "n": 3
+          },
+          "d2": {
+            "label": "\u00f7 2",
+            "name": "divide by two",
+            "type": "div",
+            "n": 2
+          },
+          "a4": {
+            "label": "+ 4",
+            "name": "add four",
+            "type": "add",
+            "n": 4
+          },
+          "d5": {
+            "label": "\u00f7 5",
+            "name": "divide by five",
+            "type": "div",
+            "n": 5
+          },
+          "s2": {
+            "label": "\u2212 2",
+            "name": "subtract two",
+            "type": "sub",
+            "n": 2
+          },
+          "m4": {
+            "label": "\u00d7 4",
+            "name": "multiply by four",
+            "type": "mul",
+            "n": 4
+          }
+        }
+      }
+    },
+    "previous_sha256": "b282f6516343a1104744da122ab3731953d7c7b89b10c56984dcfaaf26bafbac",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-03",
+    "path": "F8/F8-03-function-machine.html",
+    "api": "1.0.0",
+    "models": [
+      "active"
+    ],
+    "tables": [
+      "operations",
+      "lessons",
+      "STEPS"
+    ],
+    "draws": {},
+    "exploreFields": {},
+    "original_sha256": "102a8adca4f3d1724dbd0a9236d010c1392b1ce5da07478e9a6828dce536081e",
+    "sha256": "0af7a2f29b9f0f12a69feacad34e7264a52301c80299b823c652c4f2f1862a47",
+    "engineId": "F8-03",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 4,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 3,
+      "data": {
+        "name": "Build the value table",
+        "prompt": "Does the rule work for every input?",
+        "narration": "Match every input with the output. The same rule works for every row."
+      },
+      "tables": {
+        "operations": {
+          "m3": {
+            "label": "\u00d7 4",
+            "name": "multiply by three",
+            "type": "mul",
+            "n": 3
+          },
+          "a2": {
+            "label": "+ 2",
+            "name": "add two",
+            "type": "add",
+            "n": 2
+          },
+          "m2": {
+            "label": "\u00d7 2",
+            "name": "multiply by two",
+            "type": "mul",
+            "n": 2
+          },
+          "a5": {
+            "label": "+ 5",
+            "name": "add five",
+            "type": "add",
+            "n": 5
+          },
+          "a3": {
+            "label": "+ 3",
+            "name": "add three",
+            "type": "add",
+            "n": 3
+          },
+          "m5": {
+            "label": "\u00d7 5",
+            "name": "multiply by five",
+            "type": "mul",
+            "n": 5
+          },
+          "s4": {
+            "label": "\u2212 4",
+            "name": "subtract four",
+            "type": "sub",
+            "n": 4
+          },
+          "s3": {
+            "label": "\u2212 3",
+            "name": "subtract three",
+            "type": "sub",
+            "n": 3
+          },
+          "d2": {
+            "label": "\u00f7 2",
+            "name": "divide by two",
+            "type": "div",
+            "n": 2
+          },
+          "a4": {
+            "label": "+ 4",
+            "name": "add four",
+            "type": "add",
+            "n": 4
+          },
+          "d5": {
+            "label": "\u00f7 5",
+            "name": "divide by five",
+            "type": "div",
+            "n": 5
+          },
+          "s2": {
+            "label": "\u2212 2",
+            "name": "subtract two",
+            "type": "sub",
+            "n": 2
+          },
+          "m4": {
+            "label": "\u00d7 4",
+            "name": "multiply by four",
+            "type": "mul",
+            "n": 4
+          }
+        }
+      }
+    },
+    "previous_sha256": "c5754907fb722200ed0ca8c1cc68bdf0855876d52d5915fd4ee652e45f067dfb",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-04",
+    "path": "F8/F8-04-two-way-function-machine.html",
+    "api": "1.0.0",
+    "models": [
+      "active"
+    ],
+    "tables": [
+      "operations",
+      "lessons",
+      "STEPS",
+      "F804_PRESETS",
+      "F804_STEPS"
+    ],
+    "draws": {},
+    "exploreFields": {},
+    "original_sha256": "91d678c40ffb98e8f2fe83d57b52817abf472d921a86d2b0b8e02bec976af2df",
+    "sha256": "f848f495c304a0b6dc598f61f3e89fb729ece973e14dd75ec811b3c1b4d38b81",
+    "engineId": "F8-03",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Undo machine one",
+        "prompt": "Do both routes agree?",
+        "narration": "Our return value equals the original x. Both machines agree."
+      },
+      "tables": {
+        "operations": {
+          "m3": {
+            "label": "\u00d7 3",
+            "name": "multiply by three",
+            "type": "mul",
+            "n": 3
+          },
+          "a2": {
+            "label": "+ 2",
+            "name": "add two",
+            "type": "add",
+            "n": 2
+          },
+          "m2": {
+            "label": "\u00d7 2",
+            "name": "multiply by two",
+            "type": "mul",
+            "n": 2
+          },
+          "a5": {
+            "label": "+ 5",
+            "name": "add five",
+            "type": "add",
+            "n": 5
+          },
+          "a3": {
+            "label": "+ 3",
+            "name": "add three",
+            "type": "add",
+            "n": 3
+          },
+          "m5": {
+            "label": "\u00d7 6",
+            "name": "multiply by five",
+            "type": "mul",
+            "n": 5
+          },
+          "s4": {
+            "label": "\u2212 4",
+            "name": "subtract four",
+            "type": "sub",
+            "n": 4
+          },
+          "s3": {
+            "label": "\u2212 3",
+            "name": "subtract three",
+            "type": "sub",
+            "n": 3
+          },
+          "d2": {
+            "label": "\u00f7 2",
+            "name": "divide by two",
+            "type": "div",
+            "n": 2
+          },
+          "a4": {
+            "label": "+ 4",
+            "name": "add four",
+            "type": "add",
+            "n": 4
+          },
+          "d5": {
+            "label": "\u00f7 5",
+            "name": "divide by five",
+            "type": "div",
+            "n": 5
+          },
+          "s2": {
+            "label": "\u2212 2",
+            "name": "subtract two",
+            "type": "sub",
+            "n": 2
+          },
+          "m4": {
+            "label": "\u00d7 4",
+            "name": "multiply by four",
+            "type": "mul",
+            "n": 4
+          }
+        }
+      }
+    },
+    "previous_sha256": "0a5ed50321f97510cf55a1e8fa3cc6a64b3834f59aa2b1bad1e7e4ce4cfdaf35",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-05",
+    "path": "F8/F8-05-both-sides-equation-solver.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "opts"
+      ]
+    },
+    "exploreFields": {
+      "preset": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "430d33255c3fad6bf06cf438b4166d86b788adec917beb6b45b26f1482314660",
+    "sha256": "124a8375daa65f0b8b5c46da607b2e419c624d04ac2ec7a28a036e70a4f06060",
+    "engineId": "F8-05",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Substitute to verify",
+        "prompt": "How can we prove the solution?",
+        "narration": "Replace x with five to check the original equality."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "opts": {
+            "preset": "Y7-033",
+            "mode": "guided",
+            "phase": 1,
+            "progress": 0
+          }
+        }
+      }
+    },
+    "previous_sha256": "d9357fe0908762af3ad5849637859f73796cb22475b0fbc7c71057fd2230479f",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-06",
+    "path": "F8/F8-06-rearranging-formulae.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "21d58e3b4cb77d5dbd961c0bdb2a7042bf8ec752cf0863602bf014306b27fc3c",
+    "sha256": "a5b7dfdf634c6a8899d1903b1b72642de984fbe7a4dba790f822695b246e20cf",
+    "engineId": "F8-06",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ],
+      [
+        "name",
+        "prompt",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Substitute to verify",
+        "prompt": "Does the new formula reproduce the original?",
+        "narration": "Check the formula with a real perimeter and width."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "o": {
+            "preset": "Y8-016-L",
+            "mode": "guided",
+            "phase": 1,
+            "progress": 0
+          }
+        }
+      }
+    },
+    "previous_sha256": "21097a7fc0b8778c7cee5647d4afaea4af2ceb3306619d261cbc50fe1ec5dcf6",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-07",
+    "path": "F8/F8-07-expression-builder.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "PRESETS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "makeState",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "22d61ced68a9f532ec283088bb44c0dadb6df7d49eb1b651f824b7fb04308b70",
+    "sha256": "bfe5c84dc60fa5e55b9908c0f1bce4a2a973ed1f866b98af5e9ebeb760b6065e",
+    "engineId": "F8-07",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Prove by substitution",
+        "caption": "Prove by substitution",
+        "narration": "Test n equals two: ten plus three equals thirteen."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "o": {
+            "mode": "guided",
+            "preset": "Y7-028",
+            "step": 1
+          }
+        }
+      }
+    },
+    "previous_sha256": "1c038e371eeb062d10fad851e9225631c70d5c226f79e4c8f2fa6e0bfa1d4e0b",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-08",
+    "path": "F8/F8-08-equivalence-checker.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "PRESETS",
+      "VALUES"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "makeState",
+        "argCount": 0
+      }
+    },
+    "original_sha256": "11306de1e4d6e2ba2bbed2546d46346291b17fc87f5b28eb5ade684ab281fe4e",
+    "sha256": "77f5e870745bd91c69e8ada3eae7e047528cb8c54e9a59bd5ce1e5830f49618e",
+    "engineId": "F8-08",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Prove or disprove",
+        "caption": "Prove or disprove",
+        "narration": "Collect the like terms: both forms are five x for every value."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "o": {
+            "preset": "Y7-029-A",
+            "mode": "guided",
+            "step": 1
+          }
+        }
+      }
+    },
+    "previous_sha256": "9e16d2f59fcb38de72d4abc0717beefbd1a1a1e5826849e62a6762cd303ef55f",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-09",
+    "path": "F8/F8-09-substitution-table.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "input",
+      "STAGE_NAMES"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "factory",
+        "factory": "makeState",
+        "argCount": 0
+      }
+    },
+    "original_sha256": "8262f891cc8ff594b1b11ae4a3e696ee4a6f0471d183dd46fd17a4c8264682c4",
+    "sha256": "96c86fd8ac384b9cea78d723960e9245d7c2042e3e2abb6b03c18d842e875702",
+    "engineId": "F8-09",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "caption",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 6,
+      "data": {
+        "name": "Connect the ordered pairs",
+        "caption": "Connect the ordered pairs",
+        "narration": "These columns give matching ordered pairs."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "o": {
+            "mode": "guided",
+            "preset": "Y7-028-A",
+            "step": 1
+          }
+        }
+      }
+    },
+    "previous_sha256": "89399d5ebcfb35e2884e6cdc2ca48bafb7c0be23e4369be84be1fee79de38fe3",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-10",
+    "path": "F8/F8-10-simultaneous-equations.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STAGES"
+    ],
+    "draws": {
+      "safePose": [
+        "stage",
+        "pose",
+        "message"
+      ],
+      "draw": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "interactive.s": {
+        "kind": "factory",
+        "factory": "makeState",
+        "argCount": 0
+      }
+    },
+    "original_sha256": "0d8b7ba1de9205a9dcbe571f85c2ab52de1481cd95c947545db8595d0d707f2e",
+    "sha256": "b8ce1b0f5712cfd3c4c8af5e2c033a882a444e5da041bd2253e84d23b63c9556",
+    "engineId": "F8-10",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 6,
+      "data": {
+        "name": "Verify in both equations",
+        "caption": "Verify in both equations",
+        "narration": "Check the ordered pair in BOTH original equations.",
+        "prompt": "Explain the mathematical evidence at this stage."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "opt": {
+            "mode": "guided",
+            "preset": "Y8-029-A",
+            "step": 1
+          }
+        }
+      }
+    },
+    "previous_sha256": "e20d7c0a59e517142c2c0368c8af43a3ec0fb6ba3b6b2fbb3e7f03291aa8a4a9",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-11",
+    "path": "F8/F8-11-inequality-solver.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "BEATS"
+    ],
+    "draws": {
+      "mascot": [
+        "stage",
+        "pose",
+        "caption"
+      ],
+      "drawing": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "interactive.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      }
+    },
+    "original_sha256": "6fad50d752dde2930b1059c68f16798cf7602858f2595f7a4df6bbda44763de6",
+    "sha256": "a80a4ad0f7a94beb32ec3350ad11e60e9bf84bcb2bd507c09e018ec475c243b0",
+    "engineId": "F8-11",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 6,
+      "data": {
+        "name": "Check the solution set",
+        "caption": "Check the solution set",
+        "narration": "Try other values; every shaded number must satisfy the original inequality.",
+        "prompt": "Connect the operation to the solution set."
+      },
+      "scene": {
+        "function": "drawing",
+        "arguments": {
+          "o": {
+            "mode": "guided",
+            "preset": "Y8-017-A",
+            "step": 1
+          }
+        }
+      }
+    },
+    "previous_sha256": "6fdef203c2e5eeccbf12d03bc5022c5e603e6d97d1299409afc79c172074013d",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-12",
+    "path": "F8/F8-12-quadratic-solve-routes.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "interactive.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      }
+    },
+    "original_sha256": "531988104c32183498d70f2ccc74e81f23bbbf4cfdbfaacf5e5cd93a40d57a2e",
+    "sha256": "7c8707dcbeee474bb8145768b4416814e1fb819efcb9459bfea06caed49fb087",
+    "engineId": "F8-12",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 6,
+      "data": {
+        "name": "Verify both solutions",
+        "caption": "Verify both solutions",
+        "narration": "Substitute both roots to prove the answer.",
+        "prompt": "Explain the mathematical reason for the next step."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "o": {
+            "mode": "guided",
+            "preset": "Y8-031-A",
+            "step": 1
+          }
+        }
+      }
+    },
+    "previous_sha256": "46cd67a870c6dea87673f309714374127ee3a8e841c080ea330e6381a71b1fb3",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-13",
+    "path": "F8/F8-13-index-laws-in-algebra.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "p",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "interactive.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      }
+    },
+    "original_sha256": "c00c6e28b5536d27cf765eb03d452c7ac6759f2098c8b2d69fbc41af3d8b10d9",
+    "sha256": "6691d8bceb7c285db5a7661e30fb29386874ad35c87b1a329dfb2fbc6ce261d5",
+    "engineId": "F8-13",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "caption"
+      ],
+      [
+        "name",
+        "narration",
+        "caption"
+      ],
+      [
+        "name",
+        "narration",
+        "caption"
+      ],
+      [
+        "name",
+        "narration",
+        "caption"
+      ],
+      [
+        "name",
+        "narration",
+        "caption"
+      ],
+      [
+        "name",
+        "narration",
+        "caption"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Write the resulting index",
+        "narration": "Keep the base a; the new index is 5.",
+        "caption": "Write the resulting index"
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "p": {
+            "lesson": "Y8-002",
+            "label": "Multiply \u00b7 a\u00b3 \u00d7 a\u00b2",
+            "kind": "multiply",
+            "base": "a",
+            "m": 4,
+            "n": 2
+          }
+        }
+      }
+    },
+    "previous_sha256": "df68105067af40c2644a95e089671fb56ee1bda755aa7d5a3b4418cb99bfe00a",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-14",
+    "path": "F8/F8-14-algebraic-fraction-simplifier.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEP"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "p",
+        "s",
+        "opt"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "a95d4a06d33d3908142a3a6fcb4cfdc571631e93497d86ceb550c1d770a29c33",
+    "sha256": "daa074ab3ffd2ff4233b42aa471ab733125a73d192e4778b82faf831c56994a3",
+    "engineId": "F8-14",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Retain original restrictions",
+        "caption": "Retain original restrictions",
+        "narration": "The original denominator was nine x, so x must not equal zero.",
+        "prompt": "Explain why the next cancellation is valid."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "p": {
+            "label": "Common factor \u00b7 6x over 9x",
+            "lesson": "Algebra bridge",
+            "top": "6x",
+            "bottom": "9x",
+            "n": [
+              "3",
+              "3",
+              "x"
+            ],
+            "d": [
+              "3",
+              "3",
+              "x"
+            ],
+            "answer": "2/3",
+            "accepted": [
+              "2/3"
+            ],
+            "exclude": 0,
+            "expr": "6x / 9x",
+            "context": "Split the coefficients into factors. The common x cannot be zero.",
+            "bob": [
+              "These are fractions of two algebraic products, not separate loose terms.",
+              "Rewrite six x and nine x as products of factors.",
+              "Find a factor on both sides of the fraction bar.",
+              "Cancel equal factors as one complete pair at a time.",
+              "Only two over three remains after the common factors cancel.",
+              "The original denominator was nine x, so x must not equal zero."
+            ],
+            "trap": "Cancelling the whole denominator instead of the common factors makes an invalid answer."
+          }
+        }
+      }
+    },
+    "previous_sha256": "acfccbabbad528eeff26dd37a12b449a1f48ee1eed399c9eb8749b256b331730",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-15",
+    "path": "F8/F8-15-misconception-spotter.html",
+    "api": "1.0.0",
+    "models": [
+      "state"
+    ],
+    "tables": [
+      "CHOICE_ORDER",
+      "BEATS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "p",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "a966bfb704ef5723067b52211647444a69ed53892d223682d841f2849ae0285a",
+    "sha256": "b87ce60a617ef11effa58bebdd6e5e637298625f5fbdb7029366eb2bca005527",
+    "engineId": "F8-15",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "caption",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Check the reasoning",
+        "caption": "Check the reasoning",
+        "narration": "The product is positive fifteen; a sign pattern proves why.",
+        "prompt": "Can you identify the incorrect reasoning?"
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "p": {
+            "label": "Negative \u00d7 negative",
+            "lesson": "Y7-012",
+            "context": "A multiplication of two negative numbers",
+            "wrong": 3,
+            "lines": [
+              "Start: \u22123 \u00d7 (\u22125)",
+              "Magnitudes: 3 \u00d7 5 = 15",
+              "Sign: negative \u00d7 negative = negative",
+              "Check sign before giving the product"
+            ],
+            "correct": "Sign: negative \u00d7 negative = positive",
+            "fixes": [
+              "Sign: negative \u00d7 negative = positive",
+              "Sign: negative \u00d7 negative = zero",
+              "Sign: negative \u00d7 negative = negative"
+            ],
+            "tip": "The product of two negative numbers is positive. The magnitude stays fifteen.",
+            "bob": [
+              "Read the calculation before judging the signs.",
+              "The magnitude is three times five, which is fifteen.",
+              "Inspect the sign rule used in the next line.",
+              "The author claims that two negatives produce a negative result. That is the mistake.",
+              "Replace that line: two negative factors produce a positive result.",
+              "The product is positive fifteen; a sign pattern proves why."
+            ]
+          }
+        }
+      }
+    },
+    "previous_sha256": "ec0c24a8dd2a8e769f81ee94f96733e7811376576ef44bf0a5468e967b05bdd6",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-16",
+    "path": "F8/F8-16-modelling-cycle-stepper.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STAGES",
+      "TRAY_ORDER",
+      "BEATS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "p",
+        "s",
+        "opt"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "11ab59ad95e4e6c22894bf7aedf4960b25aea0a3e78dcead5f9650ec199784ae",
+    "sha256": "a38224b944ecc319d5fc66d1d79ceb2ac113c0edcff3a684cb7171b7d49c26d5",
+    "engineId": "F8-16",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 4,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 3,
+      "data": {
+        "name": "Check and refine the result",
+        "narration": "Check the units and whether the fare makes sense.",
+        "prompt": "Explain why this stage is useful before going to the next."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "p": {
+            "label": "Taxi fare formula",
+            "lesson": "Y9-007",
+            "short": "Taxi journey",
+            "context": "A taxi charges \u00a33 plus \u00a32.50 per mile. What is the cost for 6 miles?",
+            "variable": "m",
+            "input": 7,
+            "unit": "\u00a3",
+            "result": 18,
+            "kind": "evaluate",
+            "models": [
+              {
+                "formula": "C = 3 + 2.5m",
+                "type": "linear",
+                "a": 2.5,
+                "b": 3
+              },
+              {
+                "formula": "C = 3m + 2.5",
+                "type": "linear",
+                "a": 3,
+                "b": 2.5
+              },
+              {
+                "formula": "C = 3 + 2.5 + m",
+                "type": "linear",
+                "a": 1,
+                "b": 5.5
+              }
+            ],
+            "correct": 0,
+            "detail": [
+              "Fixed charge plus a rate per mile",
+              "Start with the fixed three pounds",
+              "Multiply six miles by two pounds fifty",
+              "The total is a sensible fare for six miles"
+            ],
+            "assumption": "The price is calculated without waiting-time charges.",
+            "trap": "The fixed charge is paid once, not once per mile.",
+            "bob": [
+              "Identify the fixed charge and the cost per mile.",
+              "Write a rule for the fare, using m for miles.",
+              "Substitute six miles, multiply first, then add the fixed fee.",
+              "Check the units and whether the fare makes sense."
+            ]
+          }
+        }
+      }
+    },
+    "previous_sha256": "047b59b75a0278a052cbb9c97e72dc62f8ca3f65c282a26cdb7e0e0d242e0553",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-17",
+    "path": "F8/F8-17-algebraic-proof-builder.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "BEATS",
+      "TEST_VALUES",
+      "POSES",
+      "SAY"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "p",
+        "s",
+        "opt"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "dcc3174b50561bb5fd894cb53d51cf96042169674545600fdb693a9ea7c3deb7",
+    "sha256": "24b5dcf7c4f1a44ed3875dbb20e9732411f3e43f9fb851851753bbec5dc3b1de",
+    "engineId": "F8-17",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Review the whole proof",
+        "narration": "The answer is two multiplied by an integer. That proves it is even.",
+        "prompt": "Explain why this line follows from the previous line."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "opt": {
+            "mode": "guided",
+            "step": 1
+          }
+        }
+      }
+    },
+    "previous_sha256": "ac3b8e5395c69b340d174005fa0d37f8037c8c92779ee4bf28d816f2d4bdd794",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F8-18",
+    "path": "F8/F8-18-iteration-trial-and-improvement.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "CASES",
+      "BEATS",
+      "SAY",
+      "POSES"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "p",
+        "s",
+        "opt"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "f44a72f47b2e8df842acdda140d84951ac76acfb1374b9d50f12cff72be68a40",
+    "sha256": "fba25def4ad05e80b4c91128e9d1bdacb231d9910c03f9bca38f6145cc93028c",
+    "engineId": "F8-18",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "say",
+        "narration"
+      ],
+      [
+        "name",
+        "say",
+        "narration"
+      ],
+      [
+        "name",
+        "say",
+        "narration"
+      ],
+      [
+        "name",
+        "say",
+        "narration"
+      ],
+      [
+        "name",
+        "say",
+        "narration"
+      ],
+      [
+        "name",
+        "say",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "State the accuracy",
+        "say": "cheer",
+        "narration": "Continue until both limits round to the same answer to the requested decimal places."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "p": {
+            "label": "Square root of two",
+            "short": "x\u00b2 = 2",
+            "formula": "f(x) = x\u00b2 \u2212 2",
+            "context": "Find the positive solution to x\u00b2 = 2.",
+            "lo": 1,
+            "hi": 2,
+            "dp": 4,
+            "level": "GCSE extension",
+            "trap": "Squaring a negative is possible, but here we are finding the positive solution."
+          }
+        }
+      }
+    },
+    "previous_sha256": "5b8096be11e2a11e480352a2268dc53ffb2355bc4a1351d1c847aeffbfb144da",
+    "f8Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f8-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f8-runtime.js"
+      ]
+    }
+  }
+]

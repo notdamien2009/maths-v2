@@ -1,0 +1,2053 @@
+[
+ {
+  "id": "F13-01",
+  "path": "F13/F13-01-3D-Solid-Viewer-REBUILT.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "DATA",
+   "STEPS"
+  ],
+  "draws": {
+   "facts": [
+    "stage",
+    "st"
+   ],
+   "mainDrawing": [
+    "stage",
+    "st",
+    "interact"
+   ],
+   "mountStage": [
+    "stage",
+    "st",
+    "caption",
+    "pose",
+    "interactive"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   }
+  },
+  "original_sha256": "cf71240b72b9c1cf0ca7de656bf27e1f9ef0f2a9a5de652c8378a5052514c9e2",
+  "sha256": "d520e79ad9bf572c187c93179ed6ccffd902ac5e535d2173217df4e2ffa6b878",
+  "engineId": "F13-01",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "solid",
+    "yaw",
+    "pitch",
+    "show",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "solid",
+    "yaw",
+    "pitch",
+    "show",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "solid",
+    "yaw",
+    "pitch",
+    "show",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "solid",
+    "yaw",
+    "pitch",
+    "show",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "solid",
+    "yaw",
+    "pitch",
+    "show",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "solid",
+    "yaw",
+    "pitch",
+    "show",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "solid",
+    "yaw",
+    "pitch",
+    "show",
+    "narration",
+    "prompt"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 7,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 6,
+   "data": {
+    "name": "Check your counting",
+    "solid": "pyramid",
+    "yaw": 0.35,
+    "pitch": 0.46,
+    "show": "all",
+    "narration": "This pyramid has a square base and four triangular sides. It has five faces, eight edges and five vertices. Now explore the other solids.",
+    "prompt": "Does the point at the top count as a vertex?"
+   }
+  },
+  "previous_sha256": "5d62668ddb25eeb4adca5b1185a6f579727a8a8986d6f4c8c3c7819aa5f65264",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-02",
+  "path": "F13/F13-02-Net-Folder-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "INFO",
+   "STEPS",
+   "palette"
+  ],
+  "draws": {
+   "counts": [
+    "stage",
+    "st"
+   ],
+   "scene": [
+    "stage",
+    "st",
+    "caption",
+    "pose",
+    "interact"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "factory",
+    "factory": "makeState",
+    "argCount": 3
+   }
+  },
+  "original_sha256": "4c6896a123c4b14cc4cdc9b3757121a9854bb4438dd8c0e36392b99d36ac50d3",
+  "sha256": "70a4da476ac3816d42c13af6366f0a01f5d5011434059251198e44f6056a9314",
+  "engineId": "F13-02",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "shape",
+    "fold",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "shape",
+    "fold",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "shape",
+    "fold",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "shape",
+    "fold",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "shape",
+    "fold",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "shape",
+    "fold",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "shape",
+    "fold",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "shape",
+    "fold",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 8,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 7,
+   "data": {
+    "name": "Build a pyramid",
+    "shape": "pyramid",
+    "fold": 2,
+    "focus": "all",
+    "pose": "celebrate",
+    "narration": "Four triangles fold towards a single point above the square base, making a pyramid.",
+    "prompt": "Why does this solid have five faces?"
+   }
+  },
+  "previous_sha256": "fdb4f3ecaad975da3e24a7a884ca309b81e05a9620db96a0ba9eba41b5169437",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-03",
+  "path": "F13/F13-03-Isometric-Drawing-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "visual": [
+    "stage",
+    "st",
+    "caption",
+    "pose",
+    "interactive"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   },
+   "watchState.st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "2ba4c2ea144a97b76b31f5b957df01f21a436846c04c4bfe8ea2cda4189bc250",
+  "sha256": "f63114d1db30b4212deb9a5bff37f01e3e51f50dd1e295c2b8a0be08f53bbe02",
+  "engineId": "F13-03",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "preset",
+    "focus",
+    "showDots",
+    "showAxes",
+    "wire",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "focus",
+    "showDots",
+    "showAxes",
+    "wire",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "focus",
+    "showDots",
+    "showAxes",
+    "wire",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "focus",
+    "showDots",
+    "showAxes",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "focus",
+    "showDots",
+    "showAxes",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "focus",
+    "showDots",
+    "showAxes",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "focus",
+    "showDots",
+    "showAxes",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "focus",
+    "showDots",
+    "showAxes",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "focus",
+    "showDots",
+    "showAxes",
+    "narration",
+    "prompt",
+    "pose"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 9,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 8,
+   "data": {
+    "name": "Count the hidden cubes",
+    "preset": "hidden",
+    "focus": [
+     2,
+     1
+    ],
+    "showDots": true,
+    "showAxes": false,
+    "narration": "Some cubes are behind or beneath other cubes. Remember their full columns before you count the total.",
+    "prompt": "What is the total number of cubes?",
+    "pose": "think"
+   }
+  },
+  "previous_sha256": "c4a854cfda77fa79cd2c160ae9c2b7c20cb8b9455529ca6bed06dfd2301c9d70",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-04",
+  "path": "F13/F13-04-Plans-and-Elevations-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "renderStage": [
+    "stage",
+    "st",
+    "caption",
+    "pose",
+    "interactive"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   },
+   "watchState.st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "47face86c773e06b447965d3e5d2b95523c579914115b791a349c946ceef1577",
+  "sha256": "51cba920821c0f2554fd4f464409eb852a05d4a3b636c6953a2b5ecc45b973b7",
+  "engineId": "F13-04",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "preset",
+    "reveal",
+    "focus",
+    "selectedView",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "reveal",
+    "focus",
+    "selectedView",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "reveal",
+    "focus",
+    "selectedView",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "reveal",
+    "focus",
+    "selectedView",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "reveal",
+    "focus",
+    "selectedView",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "reveal",
+    "focus",
+    "selectedView",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "reveal",
+    "focus",
+    "selectedView",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "reveal",
+    "focus",
+    "selectedView",
+    "narration",
+    "prompt",
+    "pose"
+   ],
+   [
+    "name",
+    "preset",
+    "reveal",
+    "focus",
+    "selectedView",
+    "narration",
+    "prompt",
+    "pose"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 9,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 8,
+   "data": {
+    "name": "Hidden cubes need more thinking",
+    "preset": "hidden",
+    "reveal": [
+     "top",
+     "front",
+     "side"
+    ],
+    "focus": [
+     2,
+     1
+    ],
+    "selectedView": "all",
+    "narration": "Some cubes can hide behind others. You cannot always reconstruct every hidden cube from plans and elevations alone. Use all three views and make a model that fits each one.",
+    "prompt": "Could two different solids have the same three views?",
+    "pose": "think"
+   }
+  },
+  "previous_sha256": "265e0c703f8d9d2a4d3f6ee31477529fa91721b2605a282fe63f0c2a51166dd8",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-05",
+  "path": "F13/F13-05-Cube-Stacking-Volume-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "renderStage": [
+    "stage",
+    "st",
+    "message",
+    "pose",
+    "interactive"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   },
+   "state.g": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   },
+   "watchState.st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "ac81daa724e888acea74133887916f7a1e754d8a39c5d5a86ed422f82c2c07c6",
+  "sha256": "eb1ecd2f4ea1a384351e9c636587810bcb3accd093cc4fdb506bfe19ac92bc46",
+  "engineId": "F13-05",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "preset",
+    "layer",
+    "reveal",
+    "focus",
+    "pose",
+    "narration",
+    "prompt"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 10,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 9,
+   "data": {
+    "name": "Volume is space, not surface",
+    "preset": "mixed",
+    "layer": 2,
+    "reveal": 4,
+    "focus": [
+     2,
+     1
+    ],
+    "pose": "explain",
+    "narration": "Count the solid unit cubes, including hidden cubes inside the stack. Volume measures the space filled, not the number of visible faces or surface squares.",
+    "prompt": "What should you count when a cube is hidden?"
+   }
+  },
+  "previous_sha256": "8e749445d80ae361b7a3670f320b30fb2047ab1f272a9b6b03795608f7a56f78",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-06",
+  "path": "F13/F13-06-Prism-Volume-Slicer-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "SHAPES",
+   "STEPS"
+  ],
+  "draws": {
+   "renderStage": [
+    "stage",
+    "st",
+    "message",
+    "pose"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   },
+   "stepState.st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "94fa194334c4290a752e89846d120b81fe66c6ce59cf4741a1ac12256bf73ed7",
+  "sha256": "bc6df834d9350dd43186689f4d539e820d1a2f09fe3cabc3af103ee99e2d039d",
+  "engineId": "F13-06",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 11,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 10,
+   "data": {
+    "name": "The universal rule",
+    "narration": "Every prism follows the same rule: volume equals cross-sectional area multiplied by perpendicular length.",
+    "prompt": "Which measurement must you calculate first?",
+    "dur": 1800
+   },
+   "scene": {
+    "function": "renderStage",
+    "arguments": {
+     "st": {
+      "shape": "rectangle",
+      "length": 6,
+      "cut": 0.05,
+      "showSlabs": true,
+      "showFace": true,
+      "showLabels": true,
+      "ghost": false,
+      "azimuth": 0,
+      "activeDrag": null,
+      "stage": null,
+      "sv": null,
+      "refresh": null,
+      "step": 0
+     }
+    }
+   }
+  },
+  "previous_sha256": "0c2d39e25be31e7bf5dc08eefde46044dfc0a709f77256168d2d6b2ad5f6fc5c",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-07",
+  "path": "F13/F13-07-Cuboid-Volume-and-Surface-Area-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "PRESETS",
+   "FACES",
+   "STEPS"
+  ],
+  "draws": {
+   "renderStage": [
+    "stage",
+    "st",
+    "message",
+    "pose"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "45c3105e3bbd8fc11e6ea148ac47c8de77ebaa42622412ea311dad85b487a3f7",
+  "sha256": "5fbc9fce44e21087c50581edfaee6637d9e7b495b331d9ca0db7c1d1b4f4e796",
+  "engineId": "F13-07",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 12,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 11,
+   "data": {
+    "name": "Transfer to another cuboid",
+    "narration": "The same formulas work when the dimensions change. Here the volume is thirty cubic units and the surface area is sixty-two square units.",
+    "prompt": "Which calculation gives the surface area of this new cuboid?",
+    "dur": 1800
+   },
+   "scene": {
+    "function": "renderStage",
+    "arguments": {
+     "st": {
+      "preset": "classic",
+      "l": 5,
+      "w": 3,
+      "ht": 2,
+      "unfold": 0,
+      "group": "all",
+      "grid": true,
+      "labels": true,
+      "angle": 0,
+      "stage": null,
+      "sv": null,
+      "refresh": null
+     }
+    }
+   }
+  },
+  "previous_sha256": "6d5d4f2cc3aee02af4deed1f162cd58ecfefc67ec533ff836585923765fbb05b",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-08",
+  "path": "F13/F13-08-Cylinder-Unroll-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "PRESETS",
+   "STEPS"
+  ],
+  "draws": {
+   "stageBuild": [
+    "stage",
+    "st",
+    "message",
+    "pose"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   },
+   "stepState.q": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "812a59ab4f2b60130a7b8e6bdeb6263ca9d0958e171e5db3ce7fd1930208163a",
+  "sha256": "c139a3fb0165689be2fa46dac2749ef3f4f6683cfa4f3e635b4feb1bd5352ca6",
+  "engineId": "F13-08",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 12,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 11,
+   "data": {
+    "name": "Transfer to a tall cylinder",
+    "narration": "For radius one and height five, curved area is ten pi and both ends total two pi.",
+    "prompt": "Find the new total surface area in terms of pi.",
+    "dur": 1800
+   },
+   "scene": {
+    "function": "stageBuild",
+    "arguments": {
+     "st": {
+      "preset": "classic",
+      "r": 3,
+      "ht": 3,
+      "unroll": 0,
+      "rotation": 0,
+      "visible": "all",
+      "seams": true,
+      "stage": null,
+      "refresh": null,
+      "svg": null
+     }
+    }
+   }
+  },
+  "previous_sha256": "dde53d5b7e990c88c36c2da8be07a020019daa320aabd30591d866530c95c824",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-09",
+  "path": "F13/F13-09-Pyramid-and-Cone-Fill-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "PRESETS",
+   "STEPS"
+  ],
+  "draws": {
+   "makeStage": [
+    "stage",
+    "st",
+    "message",
+    "pose",
+    "allowDrag"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "e16370cd6a57dd847b343b84cee35f4ae2f4228dd2ef4e83f5a5b6ce3bd60c59",
+  "sha256": "205369df469384b4ecfb3d720fb107c5de537417a6e964ca5baae172a6752f24",
+  "engineId": "F13-09",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 12,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 11,
+   "data": {
+    "name": "Use the general rule",
+    "narration": "This works whenever the two solids have equal base areas and equal perpendicular heights. A pyramid or cone takes one third.",
+    "prompt": "What stays the same when we change the dimensions?",
+    "dur": 1800
+   },
+   "scene": {
+    "function": "makeStage",
+    "arguments": {
+     "st": {
+      "preset": "cone",
+      "kind": "cone",
+      "base": 4,
+      "ht": 4,
+      "pours": 0,
+      "phase": 0,
+      "flow": false,
+      "showMeasure": true,
+      "showLabels": true,
+      "refresh": null,
+      "cleanup": null,
+      "anim": 0,
+      "svg": null
+     }
+    }
+   }
+  },
+  "previous_sha256": "81f9798127386973589e76a46ae261aa363e025fa64769a99608f7a9788f0317",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-10",
+  "path": "F13/F13-10-Sphere-Volume-and-Surface-Area-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "PRESETS",
+   "STEPS"
+  ],
+  "draws": {
+   "makeStage": [
+    "stage",
+    "s",
+    "msg",
+    "pose",
+    "interactive"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "c16cec12489a9374a9a1bc6cfa471c900fc23558d459b8a9f01197edf1cd2761",
+  "sha256": "d7fecc2ba50d95b966963faf35f9d03929c3e66b6257f6ad1c4828da2fecc63b",
+  "engineId": "F13-10",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 12,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 11,
+   "data": {
+    "name": "A sphere of radius two",
+    "narration": "Change the radius to two. Surface area becomes sixteen pi square units, while volume is thirty-two pi over three cubic units.",
+    "prompt": "What stays the same about the formulas when the radius changes?",
+    "dur": 1900
+   },
+   "scene": {
+    "function": "makeStage",
+    "arguments": {
+     "s": {
+      "preset": "r3",
+      "r": 4,
+      "view": "globe",
+      "yaw": 0.48,
+      "pitch": -0.14,
+      "cut": 0,
+      "showHidden": false,
+      "spin": false,
+      "anim": 0,
+      "refresh": null,
+      "cleanup": null
+     }
+    }
+   }
+  },
+  "previous_sha256": "a51c0094377112379c2f8c422c231b52b7b7ef4e2f5f859e08fd8a1237c8878a",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-11",
+  "path": "F13/F13-11-Cross-Sections-Explorer-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "META",
+   "STEPS"
+  ],
+  "draws": {
+   "makeStage": [
+    "stage",
+    "s",
+    "msg",
+    "pose",
+    "interactive"
+   ]
+  },
+  "exploreFields": {
+   "s": {
+    "kind": "factory",
+    "factory": "makeState",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "04c4bb9e064c76d4cd60a81a224079ecdf15f6f2c5c50c74c98cd6ec8388f0bf",
+  "sha256": "682178d5edd7c4fdfffbe6240d2c6d0e5923c63ae179392f13f58de778744bcd",
+  "engineId": "F13-11",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 12,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 11,
+   "data": {
+    "name": "Move off centre",
+    "narration": "Move away from the centre and the sphere section gets smaller. At a distance of one point eight units, its section area is five point seven six pi square units.",
+    "prompt": "Can a sphere section shrink while the sphere stays unchanged?",
+    "dur": 1900
+   },
+   "scene": {
+    "function": "makeStage",
+    "arguments": {
+     "s": {
+      "shape": "cube",
+      "orient": "horizontal",
+      "pos": 1,
+      "yaw": 0.74,
+      "pitch": 0.57,
+      "geometry": null,
+      "refresh": null
+     }
+    }
+   }
+  },
+  "previous_sha256": "ad2033cd2280f842c2c28cf4b908c1f92d4e4c9d43bfdb87e57c3db27f849569",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-12",
+  "path": "F13/F13-12-Capacity-and-Volume-Conversion-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "PRESETS",
+   "STEPS"
+  ],
+  "draws": {
+   "makeStage": [
+    "stage",
+    "s",
+    "spoken",
+    "pose",
+    "interactive"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "fed378bfc25e21b74e4e5308e54ac3a414b8b504f3313617707161d5b96682f0",
+  "sha256": "e337f302a8a5cff47ee0026b36bc85fa32d2176d87fd9198a62ba0b970c42d6b",
+  "engineId": "F13-12",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 12,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 11,
+   "data": {
+    "name": "Convert with confidence",
+    "narration": "Remember: one cubic centimetre equals one millilitre, one thousand cubic centimetres equal one litre, and one cubic metre equals one thousand litres.",
+    "prompt": "Which conversion will help you in a question about water?",
+    "dur": 2000
+   },
+   "scene": {
+    "function": "makeStage",
+    "arguments": {
+     "s": {
+      "preset": "quarter",
+      "mode": "litre",
+      "fill": 1.25,
+      "yaw": 0,
+      "refresh": null,
+      "anim": 0,
+      "cleanup": null,
+      "svg": null
+     }
+    }
+   }
+  },
+  "previous_sha256": "5ff7caaa4c9d5b067286ce7cb43447e7a0f492052a13614c7027229430c95558",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-13",
+  "path": "F13/F13-13-Surface-Area-Unfolder-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "colors",
+   "DATA",
+   "STEPS"
+  ],
+  "draws": {
+   "makeStage": [
+    "stage",
+    "s",
+    "message",
+    "pose",
+    "allow"
+   ]
+  },
+  "exploreFields": {
+   "s": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 1
+   },
+   "folds.fs": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   },
+   "illustration.fs": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "7e4e13aa1a14b479a4a77caee5b88081b1ef31494b41848bcd2a46117900ebfe",
+  "sha256": "cce3ed3c9e257e0ab0f2bedcf9194f905b5aaf6d58c7f5b9bab937fb07377834",
+  "engineId": "F13-13",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 12,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 11,
+   "data": {
+    "name": "Add all four triangles",
+    "narration": "The base covers sixteen squares. Each triangle covers six. Four triangles add twenty-four, so total area is forty square units.",
+    "prompt": "Why is the answer forty square units?",
+    "dur": 1950
+   },
+   "scene": {
+    "function": "makeStage",
+    "arguments": {
+     "s": {
+      "preset": "cuboid",
+      "fold": 2,
+      "selected": "",
+      "included": [],
+      "showAreas": true,
+      "yaw": -0.64,
+      "pitch": 0.68,
+      "sv": null,
+      "refresh": null,
+      "raf": 0,
+      "animation": 0,
+      "finished": false
+     }
+    }
+   }
+  },
+  "previous_sha256": "917d0effca79ea8b2e276eeffb8799771c96b2a5a74899bbac0369c4ed12472e",
+  "f13Production": "2026-10-17"
+ },
+ {
+  "id": "F13-14",
+  "path": "F13/F13-14-Solid-Enlargement-PREMIUM-CORE.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "DATA",
+   "STEPS"
+  ],
+  "draws": {
+   "makeStage": [
+    "stage",
+    "s",
+    "msg",
+    "pose"
+   ]
+  },
+  "exploreFields": {
+   "s": {
+    "kind": "factory",
+    "factory": "state",
+    "argCount": 2
+   }
+  },
+  "original_sha256": "700f813431457e1e9f3ad0072eec795430c1f8ba8f18da479e4719d998c05a6b",
+  "sha256": "9e14c0be6ee3263bc698049222eba68fe42f012770d747daf8a190d797ee8b78",
+  "engineId": "F13-14",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "dur"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 12,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 11,
+   "data": {
+    "name": "One, square, cube",
+    "narration": "Remember these three linked rules. Length times k. Surface area times k squared. Volume times k cubed. One and a half cubed is three point three seven five.",
+    "prompt": "Which power of k belongs to the amount of space inside?",
+    "dur": 2050
+   },
+   "scene": {
+    "function": "makeStage",
+    "arguments": {
+     "s": {
+      "preset": "cube",
+      "k": 2,
+      "focus": "length",
+      "yaw": 0,
+      "hold": false,
+      "masked": false,
+      "scene": null,
+      "stats": null,
+      "raf": 0,
+      "onChange": null
+     }
+    }
+   }
+  },
+  "previous_sha256": "50b5af5e51a528b3654163135e2892c737631f6b00ce3ff06fa5c0196df39892",
+  "f13Production": "2026-10-17"
+ }
+]

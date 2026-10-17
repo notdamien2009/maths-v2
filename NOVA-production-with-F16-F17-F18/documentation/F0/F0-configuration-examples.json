@@ -1,0 +1,1342 @@
+{
+  "F0-01": [
+    {
+      "nativeIndex": 4,
+      "scene": {
+        "function": "eq",
+        "arguments": {
+          "expr": [
+            [
+              "2",
+              "given"
+            ],
+            [
+              "x",
+              "unknown"
+            ],
+            [
+              "+",
+              "op"
+            ],
+            [
+              "3",
+              "given"
+            ],
+            [
+              "=",
+              "op"
+            ],
+            [
+              "17",
+              "given"
+            ]
+          ]
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Solve 2x + 3 = 17.",
+      "privateAnswer": 7,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 4,
+      "scene": {
+        "function": "eq",
+        "arguments": {
+          "expr": [
+            [
+              "3",
+              "given"
+            ],
+            [
+              "x",
+              "unknown"
+            ],
+            [
+              "+",
+              "op"
+            ],
+            [
+              "4",
+              "given"
+            ],
+            [
+              "=",
+              "op"
+            ],
+            [
+              "25",
+              "given"
+            ]
+          ]
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Solve 3x + 4 = 25.",
+      "privateAnswer": 7,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-02": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "scene",
+        "arguments": {
+          "upto": 1,
+          "frac": 1,
+          "st": {
+            "startMode": "watch",
+            "line": {
+              "min": -5,
+              "max": 20,
+              "step": 5
+            },
+            "hop": {
+              "start": 2,
+              "size": 3
+            },
+            "brace": true,
+            "angle": 50,
+            "side": 6,
+            "unit": "cm",
+            "grid": 20,
+            "presets": {
+              "addition": {
+                "label": "Addition on a number line  2 + 3",
+                "line": {
+                  "min": -4,
+                  "max": 8,
+                  "step": 1
+                },
+                "hop": {
+                  "start": 2,
+                  "size": 3
+                },
+                "angle": 50
+              },
+              "negatives": {
+                "label": "Negatives  1 + (\u22125)",
+                "line": {
+                  "min": -6,
+                  "max": 6,
+                  "step": 1
+                },
+                "hop": {
+                  "start": 1,
+                  "size": -5
+                },
+                "angle": 50
+              },
+              "decimals": {
+                "label": "Decimals  0.2 + 0.5",
+                "line": {
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.1
+                },
+                "hop": {
+                  "start": 0.2,
+                  "size": 0.5
+                },
+                "angle": 50
+              },
+              "right": {
+                "label": "Right angle  90\u00b0",
+                "angle": 90
+              },
+              "obtuse": {
+                "label": "Obtuse angle  130\u00b0",
+                "angle": 130
+              },
+              "reflex": {
+                "label": "GCSE: reflex angle  250\u00b0",
+                "angle": 250
+              },
+              "perimeter": {
+                "label": "Lengths  base 8 cm",
+                "side": 8,
+                "unit": "cm"
+              }
+            },
+            "_challenge": {
+              "entry": {}
+            }
+          }
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Start at 2. Add 3. Where will the hop land?",
+      "privateAnswer": 5,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "scene",
+        "arguments": {
+          "upto": 1,
+          "frac": 1,
+          "st": {
+            "startMode": "watch",
+            "line": {
+              "min": -5,
+              "max": 20,
+              "step": 5
+            },
+            "hop": {
+              "start": 3,
+              "size": 4
+            },
+            "brace": true,
+            "angle": 50,
+            "side": 6,
+            "unit": "cm",
+            "grid": 20,
+            "presets": {
+              "addition": {
+                "label": "Addition on a number line  2 + 3",
+                "line": {
+                  "min": -4,
+                  "max": 8,
+                  "step": 1
+                },
+                "hop": {
+                  "start": 2,
+                  "size": 3
+                },
+                "angle": 50
+              },
+              "negatives": {
+                "label": "Negatives  1 + (\u22125)",
+                "line": {
+                  "min": -6,
+                  "max": 6,
+                  "step": 1
+                },
+                "hop": {
+                  "start": 1,
+                  "size": -5
+                },
+                "angle": 50
+              },
+              "decimals": {
+                "label": "Decimals  0.2 + 0.5",
+                "line": {
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.1
+                },
+                "hop": {
+                  "start": 0.2,
+                  "size": 0.5
+                },
+                "angle": 50
+              },
+              "right": {
+                "label": "Right angle  90\u00b0",
+                "angle": 90
+              },
+              "obtuse": {
+                "label": "Obtuse angle  130\u00b0",
+                "angle": 130
+              },
+              "reflex": {
+                "label": "GCSE: reflex angle  250\u00b0",
+                "angle": 250
+              },
+              "perimeter": {
+                "label": "Lengths  base 8 cm",
+                "side": 8,
+                "unit": "cm"
+              }
+            },
+            "_challenge": {
+              "entry": {}
+            }
+          }
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Start at 3. Add 4. Where will the hop land?",
+      "privateAnswer": 7,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-03": [
+    {
+      "nativeIndex": 0,
+      "config": {
+        "start": 2,
+        "jumps": 3,
+        "size": 3
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Start at 2, then make three jumps of 3. Where will you finish?",
+      "privateAnswer": 11,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "config": {
+        "start": 3,
+        "jumps": 3,
+        "size": 4
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Start at 3, then make three jumps of 4. Where will you finish?",
+      "privateAnswer": 15,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-04": [
+    {
+      "nativeIndex": 0,
+      "data": {
+        "apparatus": {
+          "title": "Compare the two markers",
+          "scale": {
+            "min": 0,
+            "max": 15,
+            "labelStep": 5
+          },
+          "points": [
+            {
+              "v": 2,
+              "role": "given",
+              "label": "2"
+            },
+            {
+              "v": 5,
+              "role": "given",
+              "label": "5"
+            }
+          ],
+          "items": [],
+          "cue": "Find the difference."
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "How far is it from 2 to 5?",
+      "privateAnswer": 3,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "data": {
+        "apparatus": {
+          "title": "Compare the two markers",
+          "scale": {
+            "min": 0,
+            "max": 15,
+            "labelStep": 5
+          },
+          "points": [
+            {
+              "v": 3,
+              "role": "given",
+              "label": "3"
+            },
+            {
+              "v": 7,
+              "role": "given",
+              "label": "7"
+            }
+          ],
+          "items": [],
+          "cue": "Find the difference."
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "How far is it from 3 to 7?",
+      "privateAnswer": 4,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-05": [
+    {
+      "nativeIndex": 0,
+      "data": {
+        "lines": [
+          "2\\times3=\\r{unknown}{?}"
+        ],
+        "note": "Multiply the given numbers."
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Calculate 2 times 3.",
+      "privateAnswer": 6,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "data": {
+        "lines": [
+          "3\\times4=\\r{unknown}{?}"
+        ],
+        "note": "Multiply the given numbers."
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Calculate 3 times 4.",
+      "privateAnswer": 12,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-06": [
+    {
+      "nativeIndex": 0,
+      "data": {
+        "variant": {
+          "seed": "F0-LESSON-0",
+          "template": "times",
+          "count": 1,
+          "noRepeat": true,
+          "avoidTrivial": true,
+          "showAnswers": false,
+          "questions": [
+            {
+              "q": "2\\times3=\\r{unknown}{?}",
+              "a": 6
+            }
+          ]
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Calculate 2 times 3.",
+      "privateAnswer": 6,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "data": {
+        "variant": {
+          "seed": "F0-LESSON-1",
+          "template": "times",
+          "count": 1,
+          "noRepeat": true,
+          "avoidTrivial": true,
+          "showAnswers": false,
+          "questions": [
+            {
+              "q": "3\\times4=\\r{unknown}{?}",
+              "a": 12
+            }
+          ]
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Calculate 3 times 4.",
+      "privateAnswer": 12,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-07": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "panelBox",
+        "arguments": {
+          "parts": 5,
+          "shaded": 2,
+          "events": [],
+          "state": {
+            "parts": 5,
+            "shaded": 2,
+            "step": 0,
+            "hints": 0
+          },
+          "sum": null,
+          "target": null
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "What fraction of the 5 parts is shaded?",
+      "privateAnswer": "2/5",
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "panelBox",
+        "arguments": {
+          "parts": 6,
+          "shaded": 3,
+          "events": [],
+          "state": {
+            "parts": 6,
+            "shaded": 3,
+            "step": 0,
+            "hints": 0
+          },
+          "sum": null,
+          "target": null
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "What fraction of the 6 parts is shaded?",
+      "privateAnswer": "3/6",
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-08": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "board",
+        "arguments": {
+          "o": {
+            "n": 23,
+            "u": 10,
+            "key": "bounds",
+            "fill": true,
+            "upto": 0,
+            "tone": "warm",
+            "len": "full",
+            "tx": null
+          }
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Round 23 to the nearest ten.",
+      "privateAnswer": 20,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "board",
+        "arguments": {
+          "o": {
+            "n": 33,
+            "u": 10,
+            "key": "bounds",
+            "fill": true,
+            "upto": 0,
+            "tone": "warm",
+            "len": "full",
+            "tx": null
+          }
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Round 33 to the nearest ten.",
+      "privateAnswer": 30,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-09": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "board",
+        "arguments": {
+          "m": {
+            "label": "Y7 Fractions of amounts",
+            "lesson": "Y7-FR-03",
+            "title": "Lesson 0 manifest",
+            "objectives": {
+              "O1": "Find a unit fraction of an amount",
+              "O2": "Find a non-unit fraction of an amount"
+            },
+            "steps": [
+              {
+                "component": "F0-05",
+                "mode": "watch",
+                "objective": "O1",
+                "note": "Show 3/4 of 24"
+              },
+              {
+                "component": "F0-13",
+                "mode": "guided",
+                "objective": "O1",
+                "note": "Worked example: 1/4 of 24"
+              }
+            ]
+          },
+          "o": {
+            "m": {
+              "label": "Y7 Fractions of amounts",
+              "lesson": "Y7-FR-03",
+              "title": "Lesson 0 manifest",
+              "objectives": {
+                "O1": "Find a unit fraction of an amount",
+                "O2": "Find a non-unit fraction of an amount"
+              },
+              "steps": [
+                {
+                  "component": "F0-05",
+                  "mode": "watch",
+                  "objective": "O1",
+                  "note": "Show 3/4 of 24"
+                },
+                {
+                  "component": "F0-13",
+                  "mode": "guided",
+                  "objective": "O1",
+                  "note": "Worked example: 1/4 of 24"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "How many teaching steps are listed in this lesson manifest?",
+      "privateAnswer": 2,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "board",
+        "arguments": {
+          "m": {
+            "label": "Y7 Fractions of amounts",
+            "lesson": "Y7-FR-03",
+            "title": "Lesson 1 manifest",
+            "objectives": {
+              "O1": "Find a unit fraction of an amount",
+              "O2": "Find a non-unit fraction of an amount"
+            },
+            "steps": [
+              {
+                "component": "F0-05",
+                "mode": "watch",
+                "objective": "O1",
+                "note": "Show 3/4 of 24"
+              },
+              {
+                "component": "F0-13",
+                "mode": "guided",
+                "objective": "O1",
+                "note": "Worked example: 1/4 of 24"
+              },
+              {
+                "component": "F0-04",
+                "mode": "explore",
+                "objective": "O2",
+                "note": "Entry: 3/4 of 24"
+              }
+            ]
+          },
+          "o": {
+            "m": {
+              "label": "Y7 Fractions of amounts",
+              "lesson": "Y7-FR-03",
+              "title": "Lesson 1 manifest",
+              "objectives": {
+                "O1": "Find a unit fraction of an amount",
+                "O2": "Find a non-unit fraction of an amount"
+              },
+              "steps": [
+                {
+                  "component": "F0-05",
+                  "mode": "watch",
+                  "objective": "O1",
+                  "note": "Show 3/4 of 24"
+                },
+                {
+                  "component": "F0-13",
+                  "mode": "guided",
+                  "objective": "O1",
+                  "note": "Worked example: 1/4 of 24"
+                },
+                {
+                  "component": "F0-04",
+                  "mode": "explore",
+                  "objective": "O2",
+                  "note": "Entry: 3/4 of 24"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "How many teaching steps are listed in this lesson manifest?",
+      "privateAnswer": 3,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-10": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "shell",
+        "arguments": {
+          "o": {
+            "topic": "geometry",
+            "kind": "all",
+            "query": "",
+            "layer": "geometry",
+            "status": false
+          }
+        }
+      },
+      "answerType": "text",
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Which topic filter is selected in this gallery?",
+      "privateAnswer": "geometry",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "shell",
+        "arguments": {
+          "o": {
+            "topic": "number",
+            "kind": "all",
+            "query": "",
+            "layer": "number",
+            "status": false
+          }
+        }
+      },
+      "answerType": "text",
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Which topic filter is selected in this gallery?",
+      "privateAnswer": "number",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-11": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "card",
+        "arguments": {
+          "o": {
+            "q": {
+              "id": "q0",
+              "type": "numeric",
+              "prompt": "Find 1/2 of 22.",
+              "answer": 11,
+              "marks": 1,
+              "objective": "O1"
+            },
+            "concealAnswers": true,
+            "resp": null,
+            "marked": false
+          }
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Find 1/2 of 22.",
+      "privateAnswer": 11,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "card",
+        "arguments": {
+          "o": {
+            "q": {
+              "id": "q1",
+              "type": "numeric",
+              "prompt": "Find 1/3 of 33.",
+              "answer": 11,
+              "marks": 1,
+              "objective": "O1"
+            },
+            "concealAnswers": true,
+            "resp": null,
+            "marked": false
+          }
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Find 1/3 of 33.",
+      "privateAnswer": 11,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-12": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "qcard",
+        "arguments": {
+          "q": {
+            "p": "2 \u00d7 3",
+            "a": 6
+          },
+          "ans": null,
+          "state": null
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Calculate 2 times 3.",
+      "privateAnswer": 6,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "qcard",
+        "arguments": {
+          "q": {
+            "p": "3 \u00d7 4",
+            "a": 12
+          },
+          "ans": null,
+          "state": null
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Calculate 3 times 4.",
+      "privateAnswer": 12,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-13": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "view",
+        "arguments": {
+          "ex": {
+            "label": "Solve 3x + 5 = 20",
+            "iDo": {
+              "q": "Solve 3x + 5 = 20",
+              "lines": [
+                [
+                  "3x + 5 = 20",
+                  "Write the equation."
+                ],
+                [
+                  "3x = 15",
+                  "Subtract 5 from both sides."
+                ],
+                [
+                  "x = 5",
+                  "Divide both sides by 3."
+                ],
+                [
+                  "Check: 3 \u00d7 5 + 5 = 20 \u2713",
+                  "Substitute back to check."
+                ]
+              ]
+            },
+            "weDo": {
+              "q": "Solve 4x \u2212 3 = 17",
+              "lines": [
+                [
+                  "4x \u2212 3 = 17",
+                  "Write the equation."
+                ],
+                [
+                  "4x = {20}",
+                  "Add 3 to both sides."
+                ],
+                [
+                  "x = {5}",
+                  "Divide both sides by 4."
+                ],
+                [
+                  "Check: 4 \u00d7 5 \u2212 3 = 17 \u2713",
+                  "Substitute back."
+                ]
+              ]
+            },
+            "youDo": {
+              "q": "Solve 2x + 3 = 21",
+              "answer": 9,
+              "lines": [
+                [
+                  "Solve 2x + 3 = 21",
+                  ""
+                ],
+                [
+                  "x = ?",
+                  ""
+                ]
+              ]
+            }
+          },
+          "o": {
+            "phase": "youDo",
+            "upto": 0
+          }
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Solve 2x + 3 = 21",
+      "privateAnswer": 9,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "view",
+        "arguments": {
+          "ex": {
+            "label": "Solve 3x + 5 = 20",
+            "iDo": {
+              "q": "Solve 3x + 5 = 20",
+              "lines": [
+                [
+                  "3x + 5 = 20",
+                  "Write the equation."
+                ],
+                [
+                  "3x = 15",
+                  "Subtract 5 from both sides."
+                ],
+                [
+                  "x = 5",
+                  "Divide both sides by 3."
+                ],
+                [
+                  "Check: 3 \u00d7 5 + 5 = 20 \u2713",
+                  "Substitute back to check."
+                ]
+              ]
+            },
+            "weDo": {
+              "q": "Solve 4x \u2212 3 = 17",
+              "lines": [
+                [
+                  "4x \u2212 3 = 17",
+                  "Write the equation."
+                ],
+                [
+                  "4x = {20}",
+                  "Add 3 to both sides."
+                ],
+                [
+                  "x = {5}",
+                  "Divide both sides by 4."
+                ],
+                [
+                  "Check: 4 \u00d7 5 \u2212 3 = 17 \u2713",
+                  "Substitute back."
+                ]
+              ]
+            },
+            "youDo": {
+              "q": "Solve 3x + 4 = 31",
+              "answer": 9,
+              "lines": [
+                [
+                  "Solve 3x + 4 = 31",
+                  ""
+                ],
+                [
+                  "x = ?",
+                  ""
+                ]
+              ]
+            }
+          },
+          "o": {
+            "phase": "youDo",
+            "upto": 0
+          }
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Solve 3x + 4 = 31",
+      "privateAnswer": 9,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-14": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "chart",
+        "arguments": {
+          "o": {
+            "type": "line",
+            "m": 2,
+            "c": 3,
+            "x": [
+              0,
+              5
+            ],
+            "y": [
+              0,
+              60
+            ],
+            "xStep": 1,
+            "yStep": 10,
+            "showLine": false,
+            "pts": [],
+            "info": [
+              {
+                "t": "y = 2x + 3"
+              }
+            ]
+          }
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "For y = 2x + 3, find y when x = 3.",
+      "privateAnswer": 9,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "chart",
+        "arguments": {
+          "o": {
+            "type": "line",
+            "m": 3,
+            "c": 4,
+            "x": [
+              0,
+              5
+            ],
+            "y": [
+              0,
+              60
+            ],
+            "xStep": 1,
+            "yStep": 10,
+            "showLine": false,
+            "pts": [],
+            "info": [
+              {
+                "t": "y = 3x + 4"
+              }
+            ]
+          }
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "For y = 3x + 4, find y when x = 3.",
+      "privateAnswer": 13,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-15": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "view",
+        "arguments": {
+          "o": {
+            "p": {
+              "label": "y = 2x + 3",
+              "xh": "x",
+              "yh": "y",
+              "xs": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "f": "2x+3",
+              "m": 2,
+              "c": 3,
+              "y": [
+                0,
+                60
+              ],
+              "ys": 10
+            },
+            "blank": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "plot": false,
+            "note": "Rule: y = 2x + 3"
+          }
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Complete y when x = 2 using y = 2x + 3.",
+      "privateAnswer": 7,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "view",
+        "arguments": {
+          "o": {
+            "p": {
+              "label": "y = 3x + 4",
+              "xh": "x",
+              "yh": "y",
+              "xs": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "f": "3x+4",
+              "m": 3,
+              "c": 4,
+              "y": [
+                0,
+                60
+              ],
+              "ys": 10
+            },
+            "blank": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "plot": false,
+            "note": "Rule: y = 3x + 4"
+          }
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Complete y when x = 2 using y = 3x + 4.",
+      "privateAnswer": 10,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-16": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "canvas",
+        "arguments": {
+          "o": {
+            "pts": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            "upto": 1,
+            "coords": 1,
+            "cols": 10,
+            "rows": 8
+          }
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Find the horizontal length AB in grid units.",
+      "privateAnswer": 2,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "canvas",
+        "arguments": {
+          "o": {
+            "pts": [
+              [
+                1,
+                1
+              ],
+              [
+                4,
+                1
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            "upto": 1,
+            "coords": 1,
+            "cols": 10,
+            "rows": 8
+          }
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Find the horizontal length AB in grid units.",
+      "privateAnswer": 3,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ],
+  "F0-17": [
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "sheet",
+        "arguments": {
+          "o": {
+            "figure": {
+              "parts": 5,
+              "shaded": 2,
+              "amount": 30,
+              "reveal": false
+            },
+            "side": []
+          }
+        }
+      },
+      "id": "C1.Q1",
+      "source": "SRC",
+      "prompt": "Find two fifths of 30.",
+      "privateAnswer": 12,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    },
+    {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "sheet",
+        "arguments": {
+          "o": {
+            "figure": {
+              "parts": 5,
+              "shaded": 2,
+              "amount": 35,
+              "reveal": false
+            },
+            "side": []
+          }
+        }
+      },
+      "id": "C1.Q2",
+      "source": "SRC",
+      "prompt": "Find two fifths of 35.",
+      "privateAnswer": 14,
+      "answerType": "numeric",
+      "hint": "Use the given values and the original apparatus.",
+      "wrongFeedback": "Check the given values.",
+      "correctFeedback": "Correct."
+    }
+  ]
+}

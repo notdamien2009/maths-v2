@@ -1,0 +1,821 @@
+[
+  {
+    "id": "F8-16",
+    "presetOf": null,
+    "path": "F8/F8-16-modelling-cycle-stepper.html",
+    "sourceSha256": "a38224b944ecc319d5fc66d1d79ceb2ac113c0edcff3a684cb7171b7d49c26d5",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1140,
+            460
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "1 2 3 4",
+          "before": "1 2 3 4"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "EXPLORE: RECTANGLE FENCING A rectangular garden is 8 m long and 5 m wide. How much fencing surrounds it? Taxi fare formula Rectangle fencing Event ticket booking Two travel costs Water depth graph Meeting point model Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1",
+          "after": "EXPLORE: RECTANGLE FENCING A rectangular garden is 8 m long and 5 m wide. How much fencing surrounds it? Taxi fare formula Rectangle fencing Event ticket booking Two travel costs Water depth graph Meeting point model Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1",
+          "bi": [
+            "Y9-007-B",
+            "0",
+            "1",
+            "2",
+            "7"
+          ],
+          "ai": [
+            "Y9-007-B",
+            "0",
+            "1",
+            "2",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "1 2 3 4",
+            8
+          ],
+          "narrow": [
+            "1 2 3 4",
+            8
+          ],
+          "back": [
+            "1 2 3 4",
+            8
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1140,
+            460
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "1 2 3 4",
+          "before": "1 2 3 4"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "INVESTIGATION 1 OF 6: TAXI FARE FORMULA A taxi charges £3 plus £2.50 per mile. What is the cost for 6 miles? Use the four modelling stages to solve each problem. Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1 Place in 2 Place in 3 Place in 4 Choose the mathematic",
+          "after": "INVESTIGATION 1 OF 6: TAXI FARE FORMULA A taxi charges £3 plus £2.50 per mile. What is the cost for 6 miles? Use the four modelling stages to solve each problem. Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1 Place in 2 Place in 3 Place in 4 Choose the mathematic",
+          "bi": [
+            "0",
+            "1",
+            "2",
+            "7"
+          ],
+          "ai": [
+            "0",
+            "1",
+            "2",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "1 2 3 4",
+            8
+          ],
+          "narrow": [
+            "1 2 3 4",
+            8
+          ],
+          "back": [
+            "1 2 3 4",
+            8
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of: Y9-007-A, Y9-007-B, Y9-007-C, Y9-018-A, Y9-018-B, Y9-018-C"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1140,
+            "median": 28.55,
+            "p10": 23.03,
+            "count": 26,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 460,
+            "median": 13.46,
+            "p10": 11.22,
+            "count": 26,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 460,
+            "median": 13.46,
+            "p10": 11.22,
+            "count": 26,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 13.46,
+          "p10": 11.22,
+          "count": 26,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 13.46,
+          "p10": 11.22,
+          "count": 26,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 13.46,
+          "p10": 11.22,
+          "count": 26,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 13.46,
+          "p10": 11.22,
+          "count": 26,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 13.46,
+          "p10": 11.22,
+          "count": 26,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE\nTAXI JOURNEY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\n1\nPLACE A CARD\nSTAGE 2\n2\nPLACE A CARD\n",
+          "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE\nGARDEN BOUNDARY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\n1\nPLACE A CARD\nSTAGE 2\n2\nPLACE A CA"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "TAXI"
+          ],
+          "text": "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE\nTAXI JOURNEY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\n1\nPLACE A CARD\nSTAGE 2\n2\nPLACE A CARD\nSTAGE 3\n3\nPLACE A CARD\nSTAGE 4\n4\nPLACE A CARD\nMATHEMATICAL EVIDENCE\nUse the model to justify your next step\nSOLVE\nCHECK\nUNDERSTAND\nMODEL\nOrder the stages!"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 18,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "GARDEN"
+          ],
+          "text": "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE\nGARDEN BOUNDARY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\n1\nPLACE A CARD\nSTAGE 2\n2\nPLACE A CARD\nSTAGE 3\n3\nPLACE A CARD\nSTAGE 4\n4\nPLACE A CARD\nMATHEMATICAL EVIDENCE\nUse the model to justify your next step\nSOLVE\nCHECK\nUNDERSTAND\nMODEL\nOrder the stages!"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 26,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE\nTAXI JOURNEY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\n1\nPLACE A CARD\nSTAGE 2\n2\nPLACE A CARD\nSTAGE 3\n3\nPLACE A CARD\nSTAGE 4\n4\nPLACE A CARD\nMATHEMATICAL E"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE",
+          "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE",
+          "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE",
+          "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE",
+          "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE",
+          "MODELLING CYCLE\nPUT THE FOUR STAGES IN ORDER\nBUILD THE CYCLE"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "BUILD THE CYCLE\nTAXI JOURNEY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\n1\nPLACE A CARD\nSTAGE 2\n",
+          "FROM SITUATION TO SOLUTION\nTAXI JOURNEY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\nUNDERSTAND\nF",
+          "FROM SITUATION TO SOLUTION\nTAXI JOURNEY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\nUNDERSTAND\nF",
+          "FROM SITUATION TO SOLUTION\nTAXI JOURNEY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\nUNDERSTAND\nF"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "BUILD THE CYCLE\nTAXI JOURNEY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\n1\nPLACE A CARD\nSTAGE 2\n2\nPLACE A CARD\nSTAGE 3\n3\nPLACE A CARD\nSTAGE 4\n4\nPLACE A CARD\nMATHEMATICAL EVIDENCE\nChoose the matching rule below\nSOLVE\n"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "BUILD THE CYCLE\nGARDEN BOUNDARY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\n1\nPLACE A CARD\nSTAGE",
+          "FROM SITUATION TO SOLUTION\nGARDEN BOUNDARY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\nUNDERSTAN",
+          "FROM SITUATION TO SOLUTION\nGARDEN BOUNDARY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\nUNDERSTAN",
+          "FROM SITUATION TO SOLUTION\nGARDEN BOUNDARY\n1\n2\n3\n4\nMODEL\nCYCLE\nSTAGE 1\nUNDERSTAN"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "EXPLORE: TAXI FARE FORMULA A taxi charges £3 plus £2.50 per mile. What is the cost for 6 miles? Taxi fare formula Rectangle fencing Event ticket booking Two travel costs Water depth graph Meeting point model Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1 Place in 2 Place in 3 Place in 4 Choose the mathematical model C = 3 + 2.5m C = 3m + 2.5 C = 3 + 2.5 + m Result £ Check modelling Place the four stage cards in their mathematical order. Check that the answer fits the situation and its units. The result stays hidden until your model is checked. 0 of 4 stages positioned",
+          "inputs": [
+            "Y9-007-A",
+            "0",
+            "1",
+            "2",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4",
+          "buttons": 8,
+          "vb": 1140,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "EXPLORE: RECTANGLE FENCING A rectangular garden is 8 m long and 5 m wide. How much fencing surrounds it? Taxi fare formula Rectangle fencing Event ticket booking Two travel costs Water depth graph Meeting point model Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1 Place in 2 Place in 3 Place in 4 Choose the mathematical model P = l × w P = 2l + 2w P = l + w Result m Check modelling Place the four stage cards in their mathematical order. Check that the answer fits the situation and its units. The result stays hidden until your model is checked. 0 of 4 stages positioned",
+          "inputs": [
+            "Y9-007-B",
+            "0",
+            "1",
+            "2",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4",
+          "buttons": 8,
+          "vb": 1140,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "EXPLORE: RECTANGLE FENCING A rectangular garden is 8 m long and 5 m wide. How much fencing surrounds it? Taxi fare formula Rectangle fencing Event ticket booking Two travel costs Water depth graph Meeting point model Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1 Place in 2 Place in 3 Place in 4 Choose the mathematical model P = l × w P = 2l + 2w P = l + w Result m Check modelling Place the four stage cards in their mathematical order. Check that the answer fits the situation and its units. The result stays hidden until your model is checked. 0 of 4 stages positioned",
+          "inputs": [
+            "Y9-007-B",
+            "0",
+            "1",
+            "2",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4",
+          "buttons": 8,
+          "vb": 460,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "INVESTIGATION 1 OF 6: TAXI FARE FORMULA A taxi charges £3 plus £2.50 per mile. What is the cost for 6 miles? Use the four modelling stages to solve each problem. Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1 Place in 2 Place in 3 Place in 4 Choose the mathematical model C = 3 + 2.5m C = 3m + 2.5 C = 3 + 2.5 + m Result £ Check modelling Place the four stage cards in their mathematical order. Check that the answer fits the situation and its units. The result stays hidden until your model is checked. 0 of 4 stages positioned Next modelling task",
+          "inputs": [
+            "0",
+            "1",
+            "2",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4",
+          "buttons": 8,
+          "vb": 1140,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "INVESTIGATION 1 OF 6: TAXI FARE FORMULA A taxi charges £3 plus £2.50 per mile. What is the cost for 6 miles? Use the four modelling stages to solve each problem. Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1 Place in 2 Place in 3 Place in 4 Choose the mathematical model C = 3 + 2.5m C = 3m + 2.5 C = 3 + 2.5 + m Result £ Check modelling Place the four stage cards in their mathematical order. Check that the answer fits the situation and its units. The result stays hidden until your model is checked. 0 of 4 stages positioned Next modelling task",
+          "inputs": [
+            "0",
+            "1",
+            "2",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4",
+          "buttons": 8,
+          "vb": 1140,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "INVESTIGATION 1 OF 6: TAXI FARE FORMULA A taxi charges £3 plus £2.50 per mile. What is the cost for 6 miles? Use the four modelling stages to solve each problem. Undo Reset Hint Select Understand Select Model Select Solve Select Check Place in 1 Place in 2 Place in 3 Place in 4 Choose the mathematical model C = 3 + 2.5m C = 3m + 2.5 C = 3 + 2.5 + m Result £ Check modelling Place the four stage cards in their mathematical order. Check that the answer fits the situation and its units. The result stays hidden until your model is checked. 0 of 4 stages positioned Next modelling task",
+          "inputs": [
+            "0",
+            "1",
+            "2",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4",
+          "buttons": 8,
+          "vb": 460,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1140,
+        "median": 28.55,
+        "p10": 23.03,
+        "count": 26,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 460,
+        "median": 13.46,
+        "p10": 11.22,
+        "count": 26,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 460,
+        "median": 13.46,
+        "p10": 11.22,
+        "count": 26,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

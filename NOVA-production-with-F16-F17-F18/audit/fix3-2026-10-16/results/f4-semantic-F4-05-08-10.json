@@ -1,0 +1,1917 @@
+[
+  {
+    "id": "F4-05",
+    "presetOf": null,
+    "path": "F4/F4-05-fraction-of-amount-bar.html",
+    "sourceSha256": "5672c13e0bee755db974bf0f75cbc6b1542f2efedc2f25091c7180a0c3518433",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "amount must be an integer 0–48"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of the whole\n3\n4\nOriginal whole amount\n24\nSelected amount\n?\nTHE WHOLE\n24 in the wh",
+          "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of the whole\n2\n3\nOriginal whole amount\n18\nSelected amount\n?\nTHE WHOLE\n18 in the wh"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "24"
+          ],
+          "text": "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of the whole\n3\n4\nOriginal whole amount\n24\nSelected amount\n?\nTHE WHOLE\n24 in the whole\nONE EQUAL PART\nDrag the value chip to reveal\n?\nSELECT PARTS\nRETURN\nSelected part\nGive it a go!"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 18,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "1"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "18"
+          ],
+          "text": "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of the whole\n2\n3\nOriginal whole amount\n18\nSelected amount\n?\nTHE WHOLE\n18 in the whole\nONE EQUAL PART\nDrag the value chip to reveal\n?\nSELECT PARTS\nRETURN\nSelected part\nGive it a go!"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 12,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "1"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of the whole\n3\n4\nOriginal whole amount\n24\nSelected amount\n?\nTHE WHOLE\n24 in the whole\nONE EQUAL PART\nDrag the value chip to reveal\n?\nSELECT PA"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of",
+          "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of",
+          "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of",
+          "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of",
+          "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of",
+          "F4-05 · FRACTION BAR\nPREMIUM\nWHOLE → EQUAL PARTS\nFraction of"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "WHOLE → EQUAL PARTS\nFraction of the whole\n3\n4\nOriginal whole amount\n24\nSelected ",
+          "WHOLE → EQUAL PARTS\nFraction of the whole\n3\n4\nOriginal whole amount\n24\nSelected ",
+          "WHOLE → EQUAL PARTS\nFraction of the whole\n3\n4\nOriginal whole amount\n24\nSelected ",
+          "WHOLE → EQUAL PARTS\nFraction of the whole\n3\n4\nOriginal whole amount\n24\nSelected "
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "WHOLE → EQUAL PARTS\nFraction of the whole\n3\n4\nOriginal whole amount\n24\nSelected amount\n?\nTHE WHOLE\n24 in the whole\nONE EQUAL PART\nReady to divide\nTAKE 3 OF 4\nSELECT PARTS\nRETURN\nSelected part\nSpot the"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "WHOLE → EQUAL PARTS\nFraction of the whole\n2\n3\nOriginal whole amount\n18\nSelected ",
+          "WHOLE → EQUAL PARTS\nFraction of the whole\n2\n3\nOriginal whole amount\n18\nSelected ",
+          "WHOLE → EQUAL PARTS\nFraction of the whole\n2\n3\nOriginal whole amount\n18\nSelected ",
+          "WHOLE → EQUAL PARTS\nFraction of the whole\n2\n3\nOriginal whole amount\n18\nSelected "
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  },
+  {
+    "id": "F4-08",
+    "presetOf": null,
+    "path": "F4/F4-08-algebra-bar.html",
+    "sourceSha256": "ed82148f9214853a217d2a896b59a0e764bda9b238771101f974ddc770d99676",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "number of x-parts must be an integer 1–5",
+          "Total must give an exact positive whole-number x"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\n?\n?\n?\n?\nWhat pieces make the whole?\nSAM",
+          "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\n?\n?\n?\nWhat pieces make the whole?\nSAME "
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "26"
+          ],
+          "text": "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\n?\n?\n?\n?\nWhat pieces make the whole?\nSAME CHANGE ON BOTH SIDES\nEQUAL x-PARTS · ONE KNOWN PART\nA BALANCED EQUATION TELLS THE SAME STORY\n\nUNKNOWN GROUPS\n\n3 equal x\n\nEvery x-box is the same quantity\n\nKNO"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 7,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "watch"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "13"
+          ],
+          "text": "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\n?\n?\n?\nWhat pieces make the whole?\nSAME CHANGE ON BOTH SIDES\nEQUAL x-PARTS · ONE KNOWN PART\nA BALANCED EQUATION TELLS THE SAME STORY\n\nUNKNOWN GROUPS\n\n2 equal x\n\nEvery x-box is the same quantity\n\nKNOWN"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 6,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "watch"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\n?\n?\n?\n?\nWhat pieces make the whole?\nSAME CHANGE ON BOTH SIDES\nEQUAL x-PARTS · ONE KNOWN PART\nA BALA"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n3x + 5 ",
+          "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n2x + 1 ",
+          "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n4x + 2 ",
+          "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n2x + 7 ",
+          "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n5x + 3 ",
+          "ALGEBRA BAR\nNOTICE THE WHOLE\nTHE WHOLE AND ITS PARTS\n3x + 4 "
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "THE WHOLE AND ITS PARTS\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\n?\n?\n?\n?\n",
+          "THE WHOLE AND ITS PARTS\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ ",
+          "THE WHOLE AND ITS PARTS\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ ",
+          "THE WHOLE AND ITS PARTS\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\n7\n7\n7\n+ "
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "THE WHOLE AND ITS PARTS\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\n?\n?\n?\n?\nWhat pieces make the whole?\nSAME CHANGE ON BOTH SIDES\nEQUAL x-PARTS · ONE KNOWN PART\nA BALANCED EQUATION TELLS THE SAME "
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "THE WHOLE AND ITS PARTS\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\n?\n?\n?\nWh",
+          "THE WHOLE AND ITS PARTS\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\n",
+          "THE WHOLE AND ITS PARTS\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\n",
+          "THE WHOLE AND ITS PARTS\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\n6\n6\n+ 1\n"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  },
+  {
+    "id": "F4-10",
+    "presetOf": "F4-08",
+    "path": "F4/F4-08-algebra-bar.html",
+    "sourceSha256": "ed82148f9214853a217d2a896b59a0e764bda9b238771101f974ddc770d99676",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "number of x-parts must be an integer 1–5",
+          "Total must give an exact positive whole-number x"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\nx-PARTS · K",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\nx-PARTS · KNO"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "26"
+          ],
+          "text": "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\nx-PARTS · KNOWN PART · WHOLE\nSAME CHANGE ON BOTH SIDES\nx-TERM\n+ KNOWN\n= WHOLE\n\nUNKNOWN GROUPS\n\n3 equal x\n\nEvery x-box is the same quantity\n\nKNOWN PART\n\n+ 5\n\nAdds to the un"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "3x+5=26",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "watch x 0 x 1 x 2 known"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "13"
+          ],
+          "text": "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\nx-PARTS · KNOWN PART · WHOLE\nSAME CHANGE ON BOTH SIDES\nx-TERM\n+ KNOWN\n= WHOLE\n\nUNKNOWN GROUPS\n\n2 equal x\n\nEvery x-box is the same quantity\n\nKNOWN PART\n\n+ 1\n\nAdds to the unkn"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "2x+1=13",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "watch x 0 x 1 known"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\nx-PARTS · KNOWN PART · WHOLE\nSAME CHANGE ON BOTH SIDES\nx-TERM\n+ KNOWN\n="
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE ",
+          "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE ",
+          "FROM BAR TO EQUATION\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\n3",
+          "FROM BAR TO EQUATION\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\n3"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\nx-PARTS · KNOWN PART · WHOLE\nSAME CHANGE ON BOTH SIDES\nx-TERM\n+ KNOWN\n= WHOLE\n\nUNKNOWN GROUPS\n\n3"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 13\nSAME WHOLE ",
+          "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 13\nSAME WHOLE ",
+          "FROM BAR TO EQUATION\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\n2 ×",
+          "FROM BAR TO EQUATION\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\n2 ×"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  },
+  {
+    "id": "F4-10",
+    "presetOf": "F4-08",
+    "path": "F4/F4-08-algebra-bar.html",
+    "sourceSha256": "ed82148f9214853a217d2a896b59a0e764bda9b238771101f974ddc770d99676",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "number of x-parts must be an integer 1–5",
+          "Total must give an exact positive whole-number x"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\nx-PARTS · K",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\nx-PARTS · KNO"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "26"
+          ],
+          "text": "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\nx-PARTS · KNOWN PART · WHOLE\nSAME CHANGE ON BOTH SIDES\nx-TERM\n+ KNOWN\n= WHOLE\n\nUNKNOWN GROUPS\n\n3 equal x\n\nEvery x-box is the same quantity\n\nKNOWN PART\n\n+ 5\n\nAdds to the un"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "3x+5=26",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "watch x 0 x 1 x 2 known"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "13"
+          ],
+          "text": "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\nx-PARTS · KNOWN PART · WHOLE\nSAME CHANGE ON BOTH SIDES\nx-TERM\n+ KNOWN\n= WHOLE\n\nUNKNOWN GROUPS\n\n2 equal x\n\nEvery x-box is the same quantity\n\nKNOWN PART\n\n+ 1\n\nAdds to the unkn"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "2x+1=13",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "watch x 0 x 1 known"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\nx-PARTS · KNOWN PART · WHOLE\nSAME CHANGE ON BOTH SIDES\nx-TERM\n+ KNOWN\n="
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR",
+          "ALGEBRA BAR\nREAD THE BAR\nFROM BAR TO EQUATION\nMATCH EACH PAR"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE ",
+          "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE ",
+          "FROM BAR TO EQUATION\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\n3",
+          "FROM BAR TO EQUATION\n3x + 5 = 26\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\n3"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 26\nSAME WHOLE · PARTS BELOW\nx\nx\nx\n+ 5\nx-PARTS · KNOWN PART · WHOLE\nSAME CHANGE ON BOTH SIDES\nx-TERM\n+ KNOWN\n= WHOLE\n\nUNKNOWN GROUPS\n\n3"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 13\nSAME WHOLE ",
+          "FROM BAR TO EQUATION\nMATCH EACH PART OF THE BAR TO A TERM\nWHOLE = 13\nSAME WHOLE ",
+          "FROM BAR TO EQUATION\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\n2 ×",
+          "FROM BAR TO EQUATION\n2x + 1 = 13\nWHOLE = 13\nSAME WHOLE · PARTS BELOW\nx\nx\n+ 1\n2 ×"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

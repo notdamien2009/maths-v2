@@ -1,0 +1,4544 @@
+[
+  {
+    "id": "F15-01",
+    "path": "F15/F15-01-pythagoras-squares-on-sides-PREMIUM-REVIEW.html",
+    "errors": [],
+    "engineId": "F15-01",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 10,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 9,
+        "kind": "scene",
+        "key": "board",
+        "path": [
+          "1",
+          "a"
+        ],
+        "from": 3,
+        "to": 4,
+        "beforeText": "Pythagoras · squares-on-sidesSTEP 10 / 10Three neon glass squares built exactly outwards on the sides of a right triangle. Side a is 3, side b is 4 and side c is 5.a = 3b = 4ca² = 9b² = 16c² = 25a² = 9b² = 16c² = 25The square on the longest side always equals the other two areas together.The square on the longest side always equals the other two areas together. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Pythagoras · squares-on-sidesSTEP 10 / 10Three neon glass squares built exactly outwards on the sides of a right triangle. Side a is 4, side b is 4 and side c is 5.657.a = 4b = 4ca² = 16b² = 16c² = 32a² = 16b² = 16c² = 32The square on the longest side always equals the other two areas together.The square on the longest side always equals the other two areas together. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 9,
+          "data": {
+            "name": "Generalise Pythagoras",
+            "pose": "celebrate",
+            "mood": "neutral",
+            "narration": "For every right angled triangle, the squares on the two shorter sides have the same total area as the square on the longest side. That is Pythagoras theorem.",
+            "prompt": "Would this area relationship hold for a triangle with no right angle?"
+          },
+          "scene": {
+            "function": "board",
+            "arguments": {
+              "st": {
+                "label": "Y8-044 · Squares from areas",
+                "a": 4,
+                "b": 4,
+                "minA": 2,
+                "maxA": 7,
+                "minB": 2,
+                "maxB": 7
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-01",
+        "version": "1.0.0",
+        "stepCount": 10,
+        "steps": [
+          {
+            "name": "Start with the right angle",
+            "pose": "explain",
+            "mood": "neutral",
+            "narration": "This triangle has one right angle. The two sides meeting there are the shorter legs. The longest side lies opposite that angle.",
+            "prompt": "Where is the right angle? Which side is opposite it?"
+          },
+          {
+            "name": "Square on the first leg",
+            "pose": "point-down",
+            "mood": "focus",
+            "narration": "Construct a square on side a. Every edge of this square has length a. Its area is a squared.",
+            "prompt": "Why is the square area a multiplied by a?"
+          },
+          {
+            "name": "Square on the second leg",
+            "pose": "count",
+            "mood": "focus",
+            "narration": "Build another square on side b. Its area is b squared. The two smaller squares have different areas.",
+            "prompt": "Which square has the greater area? Why?"
+          },
+          {
+            "name": "Square on the hypotenuse",
+            "pose": "point-right",
+            "mood": "focus",
+            "narration": "The longest side is c, opposite the right angle. A square with side c has an area of c squared.",
+            "prompt": "Why is the green square tilted? Does tilting change its area?"
+          },
+          {
+            "name": "Count the small squares",
+            "pose": "count",
+            "mood": "focus",
+            "narration": "Count the unit squares on both shorter sides. A side of length a makes a times a square units; the other gives b times b.",
+            "prompt": "How many unit squares cover each smaller square?"
+          },
+          {
+            "name": "Compare the total area",
+            "pose": "compare",
+            "mood": "focus",
+            "narration": "Add the two shorter side square areas. You will get precisely the same area as the tilted square on the hypotenuse.",
+            "prompt": "What area is covered by both smaller squares together?"
+          },
+          {
+            "name": "One enclosing square",
+            "pose": "ruler",
+            "mood": "focus",
+            "narration": "Here is a bigger square of side a plus b. Four identical right triangles leave a central square whose area is c squared.",
+            "prompt": "What is the side length of the middle tilted square?"
+          },
+          {
+            "name": "Rearrange the same pieces",
+            "pose": "point-down",
+            "mood": "focus",
+            "narration": "Move the same four triangles to new positions inside an equally sized square. The uncovered spaces are now an a squared square and a b squared square.",
+            "prompt": "Has the total area of the outer square changed?"
+          },
+          {
+            "name": "The remaining areas must match",
+            "pose": "compare",
+            "mood": "focus",
+            "narration": "Both large squares have the same area, and the four triangles in each have the same total area. So what remains must match: a squared plus b squared equals c squared.",
+            "prompt": "Why are we allowed to compare the uncovered areas?"
+          },
+          {
+            "name": "Generalise Pythagoras",
+            "pose": "celebrate",
+            "mood": "neutral",
+            "narration": "For every right angled triangle, the squares on the two shorter sides have the same total area as the square on the longest side. That is Pythagoras theorem.",
+            "prompt": "Would this area relationship hold for a triangle with no right angle?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "y8areas",
+          "events": [
+            "value",
+            "step",
+            "mode",
+            "hintUsed",
+            "correct"
+          ],
+          "presets": {
+            "y8areas": {
+              "label": "Y8-044 · Squares from areas",
+              "a": 3,
+              "b": 4,
+              "minA": 2,
+              "maxA": 7,
+              "minB": 2,
+              "maxB": 7
+            },
+            "y8lengths": {
+              "label": "Y8-045 · Missing side",
+              "a": 5,
+              "b": 12,
+              "minA": 3,
+              "maxA": 8,
+              "minB": 8,
+              "maxB": 15
+            },
+            "y9mastery": {
+              "label": "Y9-030 · Mastery",
+              "a": 8,
+              "b": 15,
+              "minA": 5,
+              "maxA": 10,
+              "minB": 10,
+              "maxB": 18
+            }
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Start with the right angle",
+              "pose": "explain",
+              "mood": "neutral",
+              "narration": "This triangle has one right angle. The two sides meeting there are the shorter legs. The longest side lies opposite that angle.",
+              "prompt": "Where is the right angle? Which side is opposite it?"
+            },
+            {
+              "name": "Square on the first leg",
+              "pose": "point-down",
+              "mood": "focus",
+              "narration": "Construct a square on side a. Every edge of this square has length a. Its area is a squared.",
+              "prompt": "Why is the square area a multiplied by a?"
+            },
+            {
+              "name": "Square on the second leg",
+              "pose": "count",
+              "mood": "focus",
+              "narration": "Build another square on side b. Its area is b squared. The two smaller squares have different areas.",
+              "prompt": "Which square has the greater area? Why?"
+            },
+            {
+              "name": "Square on the hypotenuse",
+              "pose": "point-right",
+              "mood": "focus",
+              "narration": "The longest side is c, opposite the right angle. A square with side c has an area of c squared.",
+              "prompt": "Why is the green square tilted? Does tilting change its area?"
+            },
+            {
+              "name": "Count the small squares",
+              "pose": "count",
+              "mood": "focus",
+              "narration": "Count the unit squares on both shorter sides. A side of length a makes a times a square units; the other gives b times b.",
+              "prompt": "How many unit squares cover each smaller square?"
+            },
+            {
+              "name": "Compare the total area",
+              "pose": "compare",
+              "mood": "focus",
+              "narration": "Add the two shorter side square areas. You will get precisely the same area as the tilted square on the hypotenuse.",
+              "prompt": "What area is covered by both smaller squares together?"
+            },
+            {
+              "name": "One enclosing square",
+              "pose": "ruler",
+              "mood": "focus",
+              "narration": "Here is a bigger square of side a plus b. Four identical right triangles leave a central square whose area is c squared.",
+              "prompt": "What is the side length of the middle tilted square?"
+            },
+            {
+              "name": "Rearrange the same pieces",
+              "pose": "point-down",
+              "mood": "focus",
+              "narration": "Move the same four triangles to new positions inside an equally sized square. The uncovered spaces are now an a squared square and a b squared square.",
+              "prompt": "Has the total area of the outer square changed?"
+            },
+            {
+              "name": "The remaining areas must match",
+              "pose": "compare",
+              "mood": "focus",
+              "narration": "Both large squares have the same area, and the four triangles in each have the same total area. So what remains must match: a squared plus b squared equals c squared.",
+              "prompt": "Why are we allowed to compare the uncovered areas?"
+            },
+            {
+              "name": "Generalise Pythagoras",
+              "pose": "celebrate",
+              "mood": "neutral",
+              "narration": "For every right angled triangle, the squares on the two shorter sides have the same total area as the square on the longest side. That is Pythagoras theorem.",
+              "prompt": "Would this area relationship hold for a triangle with no right angle?"
+            }
+          ]
+        },
+        "draws": {
+          "board": [
+            "stage",
+            "st",
+            "o"
+          ],
+          "proof": [
+            "stage",
+            "st",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "preset": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "board": {
+          "parameters": [
+            "stage",
+            "st",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y8-044 · Squares from areas",
+              "a": 3,
+              "b": 4,
+              "minA": 2,
+              "maxA": 7,
+              "minB": 2,
+              "maxB": 7
+            },
+            {
+              "level": 0,
+              "tag": "STEP 1 / 10",
+              "grid": false,
+              "readout": false,
+              "pose": "explain",
+              "animate": true,
+              "say": "First find the right angle. The longest side faces it."
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-02",
+    "path": "F15/F15-02-Pythagoras-Finder.html",
+    "errors": [],
+    "engineId": "F15-02",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 12,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 11,
+        "kind": "scene",
+        "key": "board",
+        "path": [
+          "1",
+          "a"
+        ],
+        "from": 5,
+        "to": 6,
+        "beforeText": "Pythagoras Finder · Transfer the methodTEACHING STATE 12 / 12Right triangle: perpendicular shorter sides a and b and longest side c. The unknown side is c. A missing hypotenuse comes from adding square areas; a missing leg comes from subtracting square areas.a = 5b = 12c = ?Opposite the 90° angle = ca² = 25b² = 144c² = ?THE AREA WORKING25 + 144 = 169c = √169 = 1325 + 144 = 169c = √169 = 13 cmNow try changing which side is unknown in Explore.Now try changing which side is unknown in Explore. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Pythagoras Finder · Transfer the methodTEACHING STATE 12 / 12Right triangle: perpendicular shorter sides a and b and longest side c. The unknown side is c. A missing hypotenuse comes from adding square areas; a missing leg comes from subtracting square areas.a = 6b = 12c = ?Opposite the 90° angle = ca² = 36b² = 144c² = ?THE AREA WORKING36 + 144 = 180c = √180 = 1336 + 144 = 180c = √180 = 13 cmNow try changing which side is unknown in Explore.Now try changing which side is unknown in Explore. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 11,
+          "data": {
+            "name": "Transfer the method",
+            "pose": "celebrate",
+            "narration": "Name the hypotenuse, square the known lengths, add or subtract the areas, then square root. That method works for many right triangle problems.",
+            "prompt": "What changes when the unknown is a shorter side?"
+          },
+          "scene": {
+            "function": "board",
+            "arguments": {
+              "st": {
+                "label": "Y8-045 · Find the longest side",
+                "a": 6,
+                "b": 12,
+                "unknown": "c",
+                "scene": "geometry",
+                "dp": 0,
+                "unit": "cm",
+                "minA": 3,
+                "maxA": 8,
+                "minB": 8,
+                "maxB": 15,
+                "c": 13
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-02",
+        "version": "1.0.0",
+        "stepCount": 12,
+        "steps": [
+          {
+            "name": "Locate the right angle",
+            "pose": "explain",
+            "narration": "Start with the marked right angle. This rule only applies to right angled triangles.",
+            "prompt": "Where do the two shorter sides meet?"
+          },
+          {
+            "name": "Identify the hypotenuse",
+            "pose": "point-right",
+            "narration": "The hypotenuse always sits opposite the right angle. It is the longest side, even if the triangle is tilted.",
+            "prompt": "Which labelled side faces the right angle?"
+          },
+          {
+            "name": "Read the known lengths",
+            "pose": "ruler",
+            "narration": "Mark the sides that are given. Keep the missing side as a question mark rather than guessing it.",
+            "prompt": "Are we finding the longest side or one of the two shorter sides?"
+          },
+          {
+            "name": "Build square areas",
+            "pose": "count",
+            "narration": "Square a length to find the area of the square built on that side. We work with areas before lengths.",
+            "prompt": "Which square areas can you calculate from the given lengths?"
+          },
+          {
+            "name": "Choose addition or subtraction",
+            "pose": "compare",
+            "narration": "If the longest side is missing, add the two smaller square areas. If a shorter side is missing, subtract its partner square area from the largest area.",
+            "prompt": "Which calculation makes the missing square area?"
+          },
+          {
+            "name": "Square the known values",
+            "pose": "count",
+            "narration": "Multiply each known side length by itself. Do not add plain side lengths together.",
+            "prompt": "Which numbers are square areas and which are lengths?"
+          },
+          {
+            "name": "Calculate the missing area",
+            "pose": "point-down",
+            "narration": "Apply the area equation to calculate the missing square area. This is not yet the side length.",
+            "prompt": "What operation gives the missing square area?"
+          },
+          {
+            "name": "Isolate the missing square",
+            "pose": "idea",
+            "narration": "Put the unknown squared on its own. Check that the area is positive and smaller than the largest square area when finding a shorter side.",
+            "prompt": "What does the squared symbol tell us about this value?"
+          },
+          {
+            "name": "Take the positive square root",
+            "pose": "ruler",
+            "narration": "A side length is the positive square root of its square area. Always give a length, not an area.",
+            "prompt": "Why do we take a positive square root?"
+          },
+          {
+            "name": "Check the full relationship",
+            "pose": "checking",
+            "narration": "Check the answer by squaring all three side lengths. The two smaller areas must add to the largest.",
+            "prompt": "Does the answer satisfy the original theorem?"
+          },
+          {
+            "name": "Apply to a real situation",
+            "pose": "point-down",
+            "narration": "The same right triangle might be a ladder, a ramp, or a diagonal across a space. Identify the right angle first.",
+            "prompt": "Where are the perpendicular sides in the real scene?"
+          },
+          {
+            "name": "Transfer the method",
+            "pose": "celebrate",
+            "narration": "Name the hypotenuse, square the known lengths, add or subtract the areas, then square root. That method works for many right triangle problems.",
+            "prompt": "What changes when the unknown is a shorter side?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "y8hyp",
+          "events": [
+            "value",
+            "step",
+            "mode",
+            "hintUsed",
+            "correct"
+          ],
+          "presets": {
+            "y8areas": {
+              "label": "Y8-044 · Compare square areas",
+              "a": 3,
+              "b": 4,
+              "unknown": "c",
+              "scene": "geometry",
+              "dp": 0,
+              "unit": "cm",
+              "minA": 2,
+              "maxA": 7,
+              "minB": 2,
+              "maxB": 7
+            },
+            "y8hyp": {
+              "label": "Y8-045 · Find the longest side",
+              "a": 5,
+              "b": 12,
+              "unknown": "c",
+              "scene": "geometry",
+              "dp": 0,
+              "unit": "cm",
+              "minA": 3,
+              "maxA": 8,
+              "minB": 8,
+              "maxB": 15
+            },
+            "y8leg": {
+              "label": "Y8-045 · Find a shorter side",
+              "a": 5,
+              "b": 12,
+              "unknown": "a",
+              "scene": "geometry",
+              "dp": 0,
+              "unit": "cm",
+              "minA": 3,
+              "maxA": 8,
+              "minB": 8,
+              "maxB": 15
+            },
+            "y8context": {
+              "label": "F15-04 · Ladder against wall",
+              "a": 6,
+              "b": 8,
+              "unknown": "c",
+              "scene": "ladder",
+              "dp": 0,
+              "unit": "m",
+              "minA": 3,
+              "maxA": 9,
+              "minB": 6,
+              "maxB": 11
+            },
+            "y8ramp": {
+              "label": "F15-04 · Access ramp",
+              "a": 5,
+              "b": 12,
+              "unknown": "b",
+              "scene": "ramp",
+              "dp": 0,
+              "unit": "m",
+              "minA": 3,
+              "maxA": 8,
+              "minB": 8,
+              "maxB": 15
+            },
+            "y9mastery": {
+              "label": "Y9-030 · Longer problem",
+              "a": 8,
+              "b": 15,
+              "unknown": "b",
+              "scene": "geometry",
+              "dp": 0,
+              "unit": "cm",
+              "minA": 5,
+              "maxA": 11,
+              "minB": 10,
+              "maxB": 18
+            },
+            "y9decimal": {
+              "label": "Y9-030 · Decimal values",
+              "a": 7.2,
+              "b": 9.6,
+              "unknown": "a",
+              "scene": "geometry",
+              "dp": 1,
+              "unit": "cm",
+              "minA": 5,
+              "maxA": 9,
+              "minB": 8,
+              "maxB": 12
+            },
+            "gcse": {
+              "label": "GCSE extension · Surd / rounding",
+              "a": 7,
+              "b": 9,
+              "unknown": "c",
+              "scene": "geometry",
+              "dp": 1,
+              "unit": "cm",
+              "minA": 5,
+              "maxA": 10,
+              "minB": 7,
+              "maxB": 13
+            }
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Locate the right angle",
+              "pose": "explain",
+              "narration": "Start with the marked right angle. This rule only applies to right angled triangles.",
+              "prompt": "Where do the two shorter sides meet?"
+            },
+            {
+              "name": "Identify the hypotenuse",
+              "pose": "point-right",
+              "narration": "The hypotenuse always sits opposite the right angle. It is the longest side, even if the triangle is tilted.",
+              "prompt": "Which labelled side faces the right angle?"
+            },
+            {
+              "name": "Read the known lengths",
+              "pose": "ruler",
+              "narration": "Mark the sides that are given. Keep the missing side as a question mark rather than guessing it.",
+              "prompt": "Are we finding the longest side or one of the two shorter sides?"
+            },
+            {
+              "name": "Build square areas",
+              "pose": "count",
+              "narration": "Square a length to find the area of the square built on that side. We work with areas before lengths.",
+              "prompt": "Which square areas can you calculate from the given lengths?"
+            },
+            {
+              "name": "Choose addition or subtraction",
+              "pose": "compare",
+              "narration": "If the longest side is missing, add the two smaller square areas. If a shorter side is missing, subtract its partner square area from the largest area.",
+              "prompt": "Which calculation makes the missing square area?"
+            },
+            {
+              "name": "Square the known values",
+              "pose": "count",
+              "narration": "Multiply each known side length by itself. Do not add plain side lengths together.",
+              "prompt": "Which numbers are square areas and which are lengths?"
+            },
+            {
+              "name": "Calculate the missing area",
+              "pose": "point-down",
+              "narration": "Apply the area equation to calculate the missing square area. This is not yet the side length.",
+              "prompt": "What operation gives the missing square area?"
+            },
+            {
+              "name": "Isolate the missing square",
+              "pose": "idea",
+              "narration": "Put the unknown squared on its own. Check that the area is positive and smaller than the largest square area when finding a shorter side.",
+              "prompt": "What does the squared symbol tell us about this value?"
+            },
+            {
+              "name": "Take the positive square root",
+              "pose": "ruler",
+              "narration": "A side length is the positive square root of its square area. Always give a length, not an area.",
+              "prompt": "Why do we take a positive square root?"
+            },
+            {
+              "name": "Check the full relationship",
+              "pose": "checking",
+              "narration": "Check the answer by squaring all three side lengths. The two smaller areas must add to the largest.",
+              "prompt": "Does the answer satisfy the original theorem?"
+            },
+            {
+              "name": "Apply to a real situation",
+              "pose": "point-down",
+              "narration": "The same right triangle might be a ladder, a ramp, or a diagonal across a space. Identify the right angle first.",
+              "prompt": "Where are the perpendicular sides in the real scene?"
+            },
+            {
+              "name": "Transfer the method",
+              "pose": "celebrate",
+              "narration": "Name the hypotenuse, square the known lengths, add or subtract the areas, then square root. That method works for many right triangle problems.",
+              "prompt": "What changes when the unknown is a shorter side?"
+            }
+          ]
+        },
+        "draws": {
+          "board": [
+            "stage",
+            "st",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "preset": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "board": {
+          "parameters": [
+            "stage",
+            "st",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y8-045 · Find the longest side",
+              "a": 5,
+              "b": 12,
+              "unknown": "c",
+              "scene": "geometry",
+              "dp": 0,
+              "unit": "cm",
+              "minA": 3,
+              "maxA": 8,
+              "minB": 8,
+              "maxB": 15,
+              "c": 13
+            },
+            {
+              "level": 0,
+              "tag": "TEACHING STATE 1 / 12",
+              "cap": "Pythagoras Finder · Locate the right angle",
+              "work": false,
+              "readout": false,
+              "pose": "explain",
+              "say": "Look for the square corner before choosing a formula.",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-06",
+    "path": "F15/F15-06-Trig-Ratio-Builder.html",
+    "errors": [],
+    "engineId": "F15-06",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 12,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 11,
+        "kind": "scene",
+        "key": "scene",
+        "path": [
+          "1",
+          "a"
+        ],
+        "from": 4,
+        "to": 5,
+        "beforeText": "NOVA right triangle with a highlighted reference angle theta, opposite, adjacent, and hypotenuse; exact sine cosine and tangent ratios.θ 36.9°OppAdjHypTrig ratios · relative to θsin θOppHyp= 0.600cos θAdjHyp= 0.800tan θOppAdj= 0.750×2 sides6.0 : 10.0Same angle · same ratios · even when the sides scale.With a new reference angle, rename opposite and adjacent before you calculate.With a new reference angle, rename opposite and adjacent before you calculate. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "NOVA right triangle with a highlighted reference angle theta, opposite, adjacent, and hypotenuse; exact sine cosine and tangent ratios.θ 31.0°OppAdjHypTrig ratios · relative to θsin θOppHyp= 0.514cos θAdjHyp= 0.857tan θOppAdj= 0.600×2 sides6.0 : 11.7Same angle · same ratios · even when the sides scale.With a new reference angle, rename opposite and adjacent before you calculate.With a new reference angle, rename opposite and adjacent before you calculate. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 11,
+          "data": {
+            "name": "Transfer the rule",
+            "pose": "celebrate",
+            "narration": "Label opposite, adjacent and hypotenuse afresh for each new reference angle, then choose sine, cosine or tangent.",
+            "prompt": "What must you relabel when the reference angle changes?"
+          },
+          "scene": {
+            "function": "scene",
+            "arguments": {
+              "st": {
+                "label": "Y9-031 · 3–4–5 side ratios",
+                "a": 5,
+                "o": 3,
+                "unit": "cm",
+                "minA": 3,
+                "maxA": 6,
+                "minO": 2,
+                "maxO": 5,
+                "target": "sin",
+                "kind": "ratio"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-06",
+        "version": "1.0.0",
+        "stepCount": 12,
+        "steps": [
+          {
+            "name": "Find the square corner",
+            "pose": "explain",
+            "narration": "Trigonometric ratios start with a right angled triangle. Locate the marked square corner first.",
+            "prompt": "Where are the perpendicular sides?"
+          },
+          {
+            "name": "Choose a reference angle",
+            "pose": "point-down",
+            "narration": "The orange angle is our reference angle theta. The side names depend on this chosen angle.",
+            "prompt": "Which acute angle are we using?"
+          },
+          {
+            "name": "Meet the hypotenuse",
+            "pose": "ruler",
+            "narration": "The hypotenuse is the longest side opposite the right angle. It never changes its role.",
+            "prompt": "Which side runs across the square corner?"
+          },
+          {
+            "name": "Name the opposite side",
+            "pose": "point-left",
+            "narration": "The opposite side sits across from the orange angle. It never touches that angle.",
+            "prompt": "Which side does not touch the orange angle?"
+          },
+          {
+            "name": "Name the adjacent side",
+            "pose": "compare",
+            "narration": "The adjacent side touches the orange angle, but it is not the hypotenuse.",
+            "prompt": "Which shorter side forms the orange angle?"
+          },
+          {
+            "name": "Build the sine ratio",
+            "pose": "show-one",
+            "narration": "Sine of theta is opposite divided by hypotenuse. The length numbers form a ratio, not an addition.",
+            "prompt": "Which length belongs on top of the sine fraction?"
+          },
+          {
+            "name": "Build the cosine ratio",
+            "pose": "show-two",
+            "narration": "Cosine of theta is adjacent divided by hypotenuse. The hypotenuse stays on the bottom.",
+            "prompt": "What changes from sine to cosine?"
+          },
+          {
+            "name": "Build the tangent ratio",
+            "pose": "show-three",
+            "narration": "Tangent of theta is opposite divided by adjacent. The hypotenuse is not used here.",
+            "prompt": "Why is the hypotenuse absent from tangent?"
+          },
+          {
+            "name": "Compare similar triangles",
+            "pose": "magnify",
+            "narration": "Doubling every side changes the lengths, but not the angle or its ratios. The divisions give the same result.",
+            "prompt": "Why do similar right triangles keep identical trig ratios?"
+          },
+          {
+            "name": "Use a ratio to find a side",
+            "pose": "idea",
+            "narration": "Choose the ratio containing your known side and unknown side. Rearrange the equation before calculating.",
+            "prompt": "Do you need to multiply or divide to isolate the missing side?"
+          },
+          {
+            "name": "Check using side and angle",
+            "pose": "checking",
+            "narration": "Check that sine and cosine lie between zero and one for acute angles, and the hypotenuse remains longest.",
+            "prompt": "Is the result sensible for this triangle?"
+          },
+          {
+            "name": "Transfer the rule",
+            "pose": "celebrate",
+            "narration": "Label opposite, adjacent and hypotenuse afresh for each new reference angle, then choose sine, cosine or tangent.",
+            "prompt": "What must you relabel when the reference angle changes?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "y9ratios",
+          "events": [
+            "value",
+            "step",
+            "mode",
+            "hintUsed",
+            "correct"
+          ],
+          "presets": {
+            "y9ratios": {
+              "label": "Y9-031 · 3–4–5 side ratios",
+              "a": 4,
+              "o": 3,
+              "unit": "cm",
+              "minA": 3,
+              "maxA": 6,
+              "minO": 2,
+              "maxO": 5,
+              "target": "sin",
+              "kind": "ratio"
+            },
+            "y9similar": {
+              "label": "Y9-031 · Similar triangles ×2",
+              "a": 8,
+              "o": 6,
+              "unit": "cm",
+              "minA": 6,
+              "maxA": 10,
+              "minO": 4,
+              "maxO": 8,
+              "target": "cos",
+              "kind": "similar"
+            },
+            "y9angles": {
+              "label": "Y9-031 · Change the angle",
+              "a": 6,
+              "o": 6,
+              "unit": "cm",
+              "minA": 5,
+              "maxA": 8,
+              "minO": 4,
+              "maxO": 8,
+              "target": "tan",
+              "kind": "ratio"
+            },
+            "y9sine": {
+              "label": "Y9-032 · Sine finds opposite",
+              "a": 10.392304845413264,
+              "o": 6,
+              "unit": "cm",
+              "minA": 6,
+              "maxA": 12,
+              "minO": 4,
+              "maxO": 9,
+              "target": "sin",
+              "kind": "solve",
+              "unknown": "o"
+            },
+            "y9cosine": {
+              "label": "Y9-032 · Cosine finds adjacent",
+              "a": 5,
+              "o": 8.660254037844386,
+              "unit": "cm",
+              "minA": 3,
+              "maxA": 9,
+              "minO": 5,
+              "maxO": 12,
+              "target": "cos",
+              "kind": "solve",
+              "unknown": "a"
+            },
+            "y9tangent": {
+              "label": "Y9-032 · Tangent finds opposite",
+              "a": 8,
+              "o": 5.601660305677678,
+              "unit": "m",
+              "minA": 6,
+              "maxA": 12,
+              "minO": 3,
+              "maxO": 11,
+              "target": "tan",
+              "kind": "solve",
+              "unknown": "o"
+            },
+            "gcse": {
+              "label": "GCSE · Find hypotenuse with sine",
+              "a": 8.86597868081248,
+              "o": 9.507598121049217,
+              "unit": "cm",
+              "minA": 6,
+              "maxA": 11,
+              "minO": 6,
+              "maxO": 12,
+              "target": "sin",
+              "kind": "solve",
+              "unknown": "h"
+            }
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Find the square corner",
+              "pose": "explain",
+              "narration": "Trigonometric ratios start with a right angled triangle. Locate the marked square corner first.",
+              "prompt": "Where are the perpendicular sides?"
+            },
+            {
+              "name": "Choose a reference angle",
+              "pose": "point-down",
+              "narration": "The orange angle is our reference angle theta. The side names depend on this chosen angle.",
+              "prompt": "Which acute angle are we using?"
+            },
+            {
+              "name": "Meet the hypotenuse",
+              "pose": "ruler",
+              "narration": "The hypotenuse is the longest side opposite the right angle. It never changes its role.",
+              "prompt": "Which side runs across the square corner?"
+            },
+            {
+              "name": "Name the opposite side",
+              "pose": "point-left",
+              "narration": "The opposite side sits across from the orange angle. It never touches that angle.",
+              "prompt": "Which side does not touch the orange angle?"
+            },
+            {
+              "name": "Name the adjacent side",
+              "pose": "compare",
+              "narration": "The adjacent side touches the orange angle, but it is not the hypotenuse.",
+              "prompt": "Which shorter side forms the orange angle?"
+            },
+            {
+              "name": "Build the sine ratio",
+              "pose": "show-one",
+              "narration": "Sine of theta is opposite divided by hypotenuse. The length numbers form a ratio, not an addition.",
+              "prompt": "Which length belongs on top of the sine fraction?"
+            },
+            {
+              "name": "Build the cosine ratio",
+              "pose": "show-two",
+              "narration": "Cosine of theta is adjacent divided by hypotenuse. The hypotenuse stays on the bottom.",
+              "prompt": "What changes from sine to cosine?"
+            },
+            {
+              "name": "Build the tangent ratio",
+              "pose": "show-three",
+              "narration": "Tangent of theta is opposite divided by adjacent. The hypotenuse is not used here.",
+              "prompt": "Why is the hypotenuse absent from tangent?"
+            },
+            {
+              "name": "Compare similar triangles",
+              "pose": "magnify",
+              "narration": "Doubling every side changes the lengths, but not the angle or its ratios. The divisions give the same result.",
+              "prompt": "Why do similar right triangles keep identical trig ratios?"
+            },
+            {
+              "name": "Use a ratio to find a side",
+              "pose": "idea",
+              "narration": "Choose the ratio containing your known side and unknown side. Rearrange the equation before calculating.",
+              "prompt": "Do you need to multiply or divide to isolate the missing side?"
+            },
+            {
+              "name": "Check using side and angle",
+              "pose": "checking",
+              "narration": "Check that sine and cosine lie between zero and one for acute angles, and the hypotenuse remains longest.",
+              "prompt": "Is the result sensible for this triangle?"
+            },
+            {
+              "name": "Transfer the rule",
+              "pose": "celebrate",
+              "narration": "Label opposite, adjacent and hypotenuse afresh for each new reference angle, then choose sine, cosine or tangent.",
+              "prompt": "What must you relabel when the reference angle changes?"
+            }
+          ]
+        },
+        "draws": {
+          "scene": [
+            "stage",
+            "st",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "current": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          },
+          "st": {
+            "kind": "factory",
+            "factory": "copy",
+            "argCount": 1
+          },
+          "stepRender.st": {
+            "kind": "factory",
+            "factory": "copy",
+            "argCount": 1
+          }
+        },
+        "exploreInitials": {
+          "stepRender.st": {
+            "label": "Y9-031 · 3–4–5 side ratios",
+            "a": 4,
+            "o": 3,
+            "unit": "cm",
+            "minA": 3,
+            "maxA": 6,
+            "minO": 2,
+            "maxO": 5,
+            "target": "sin",
+            "kind": "ratio"
+          }
+        },
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "scene": {
+          "parameters": [
+            "stage",
+            "st",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y9-031 · 3–4–5 side ratios",
+              "a": 4,
+              "o": 3,
+              "unit": "cm",
+              "minA": 3,
+              "maxA": 6,
+              "minO": 2,
+              "maxO": 5,
+              "target": "sin",
+              "kind": "ratio"
+            },
+            {
+              "step": 0,
+              "pose": "explain",
+              "say": "This square corner confirms our right angled triangle.",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-07",
+    "path": "F15/F15-07-Angle-Slider-and-Ratio-Table.html",
+    "errors": [],
+    "engineId": "F15-07",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 14,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 13,
+        "kind": "scene",
+        "key": "graph",
+        "path": [
+          "1",
+          "theta"
+        ],
+        "from": 35,
+        "to": 36,
+        "beforeText": "Neon right-angled triangle at 35 degrees. Opposite 5.74 adjacent 8.19 hypotenuse 10.00; sine 0.574 cosine 0.819 tangent 0.700. Live table for acute angles 15 to 75 degrees.θ 35°Adj 8.2Opp 5.7Hyp 10.0Changing θ changes the ratiosRight angle stays 90°15°30°45°60°75°Drag the angle markerLive trig ratio tableθsin θcos θtan θ15°0.2590.9660.26830°0.5000.8660.57735°0.5740.8190.70045°0.7070.7071.00060°0.8660.5001.73275°0.9660.2593.732tan θ =OppAdj= 0.700The entire family of similar triangles preserves each ratio at the same angle.Work in degrees, match the sides to theta, divide in the right order, then use the inverse function to recover the angle.Work in degrees, match the sides to theta, divide in the right order, then use the inverse function to recover the angle. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Neon right-angled triangle at 36 degrees. Opposite 5.88 adjacent 8.09 hypotenuse 10.00; sine 0.588 cosine 0.809 tangent 0.727. Live table for acute angles 15 to 75 degrees.θ 36°Adj 8.1Opp 5.9Hyp 10.0Changing θ changes the ratiosRight angle stays 90°15°30°45°60°75°Drag the angle markerLive trig ratio tableθsin θcos θtan θ15°0.2590.9660.26830°0.5000.8660.57736°0.5880.8090.72745°0.7070.7071.00060°0.8660.5001.73275°0.9660.2593.732sin θ =OppHyp= 0.588The entire family of similar triangles preserves each ratio at the same angle.Work in degrees, match the sides to theta, divide in the right order, then use the inverse function to recover the angle.Work in degrees, match the sides to theta, divide in the right order, then use the inverse function to recover the angle. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 13,
+          "data": {
+            "name": "Check and transfer",
+            "pose": "celebrate",
+            "narration": "Work in degrees, match the sides to theta, divide in the right order, then use the inverse function to recover the angle.",
+            "prompt": "Does your angle agree with how tall or wide the triangle looks?"
+          },
+          "scene": {
+            "function": "graph",
+            "arguments": {
+              "st": {
+                "label": "Y9-031 · Explore angle ratios",
+                "theta": 36,
+                "c": 10,
+                "min": 15,
+                "max": 75,
+                "unit": "cm",
+                "kind": "angle",
+                "ratio": "sin"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-07",
+        "version": "1.0.0",
+        "stepCount": 14,
+        "steps": [
+          {
+            "name": "The right-angle landmark",
+            "pose": "explain",
+            "narration": "Pythagoras and trigonometry start with a right angled triangle. The little square marks the fixed ninety degree corner.",
+            "prompt": "Find the square corner before doing any ratio."
+          },
+          {
+            "name": "Choose our angle",
+            "pose": "point-down",
+            "narration": "Theta is the orange angle between the blue base and green hypotenuse. Changing theta will change the triangle.",
+            "prompt": "Which corner is theta?"
+          },
+          {
+            "name": "Adjacent touches theta",
+            "pose": "ruler",
+            "narration": "The adjacent side is the shorter blue side next to theta. The hypotenuse also touches theta, but it is a separate role.",
+            "prompt": "Which shorter side touches theta?"
+          },
+          {
+            "name": "Opposite faces theta",
+            "pose": "point-left",
+            "narration": "The purple opposite side lies across from theta. It does not touch the orange angle.",
+            "prompt": "Which side faces the chosen angle?"
+          },
+          {
+            "name": "Hypotenuse never changes role",
+            "pose": "compare",
+            "narration": "The long green side faces the right angle. We will keep its length fixed while we change theta.",
+            "prompt": "How can both shorter sides change while the longest stays fixed?"
+          },
+          {
+            "name": "Sweep the acute angle",
+            "pose": "magnify",
+            "narration": "As the angle grows, the triangle gets taller and less wide. The fixed green hypotenuse anchors the sweep.",
+            "prompt": "Which leg gets longer when theta increases?"
+          },
+          {
+            "name": "Sine comes from opposite",
+            "pose": "show-one",
+            "narration": "Sine theta equals opposite divided by hypotenuse. With a fixed hypotenuse, sine increases as theta grows.",
+            "prompt": "What happens to sine when opposite becomes longer?"
+          },
+          {
+            "name": "Cosine comes from adjacent",
+            "pose": "show-two",
+            "narration": "Cosine theta equals adjacent divided by hypotenuse. With a fixed hypotenuse, cosine decreases as theta grows.",
+            "prompt": "What happens to cosine as the base shrinks?"
+          },
+          {
+            "name": "Tangent compares two legs",
+            "pose": "show-three",
+            "narration": "Tangent theta equals opposite divided by adjacent. As one grows and the other shrinks, tangent rises rapidly.",
+            "prompt": "Why does tangent change faster at larger angles?"
+          },
+          {
+            "name": "Read the ratio table",
+            "pose": "count",
+            "narration": "Each row is one angle. Read its sine, cosine and tangent in the same row. All the values come from actual triangle ratios.",
+            "prompt": "Which table column gets smaller as the angle increases?"
+          },
+          {
+            "name": "Spot the pattern",
+            "pose": "idea",
+            "narration": "Sine rises and cosine falls as the acute angle increases. At forty five degrees they are equal.",
+            "prompt": "What makes sine and cosine equal at forty five degrees?"
+          },
+          {
+            "name": "Scale does not change ratios",
+            "pose": "magnify",
+            "narration": "If every side becomes twice as long, the angle and all three side ratios stay exactly the same.",
+            "prompt": "Why does doubling both numbers in a fraction keep the ratio?"
+          },
+          {
+            "name": "Reverse the ratio",
+            "pose": "think",
+            "narration": "Inverse sine, inverse cosine and inverse tangent find the angle from a known ratio. First choose the correct pair of sides.",
+            "prompt": "If opposite and hypotenuse are known, which inverse ratio finds theta?"
+          },
+          {
+            "name": "Check and transfer",
+            "pose": "celebrate",
+            "narration": "Work in degrees, match the sides to theta, divide in the right order, then use the inverse function to recover the angle.",
+            "prompt": "Does your angle agree with how tall or wide the triangle looks?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "y9ratios",
+          "events": [
+            "value",
+            "step",
+            "mode",
+            "hintUsed",
+            "correct",
+            "theta",
+            "ratio",
+            "preset",
+            "label"
+          ],
+          "presets": {
+            "y9ratios": {
+              "label": "Y9-031 · Explore angle ratios",
+              "theta": 35,
+              "c": 10,
+              "min": 15,
+              "max": 75,
+              "unit": "cm",
+              "kind": "angle"
+            },
+            "y9compare": {
+              "label": "Y9-031 · Compare 30° and 60°",
+              "theta": 30,
+              "c": 12,
+              "min": 15,
+              "max": 75,
+              "unit": "cm",
+              "kind": "compare"
+            },
+            "y9scale": {
+              "label": "Y9-031 · Similar triangles (×2)",
+              "theta": 45,
+              "c": 8,
+              "min": 15,
+              "max": 75,
+              "unit": "cm",
+              "kind": "similar"
+            },
+            "y9invsin": {
+              "label": "Y9-033 · Inverse sine",
+              "theta": 30,
+              "c": 10,
+              "min": 15,
+              "max": 75,
+              "unit": "cm",
+              "kind": "inverse",
+              "ratio": "sin"
+            },
+            "y9invcos": {
+              "label": "Y9-033 · Inverse cosine",
+              "theta": 60,
+              "c": 10,
+              "min": 15,
+              "max": 75,
+              "unit": "cm",
+              "kind": "inverse",
+              "ratio": "cos"
+            },
+            "y9invtan": {
+              "label": "Y9-033 · Inverse tangent",
+              "theta": 45,
+              "c": 10,
+              "min": 15,
+              "max": 75,
+              "unit": "cm",
+              "kind": "inverse",
+              "ratio": "tan"
+            },
+            "gcse": {
+              "label": "GCSE · Non-special angle",
+              "theta": 37,
+              "c": 14,
+              "min": 15,
+              "max": 75,
+              "unit": "m",
+              "kind": "inverse",
+              "ratio": "tan"
+            }
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "The right-angle landmark",
+              "pose": "explain",
+              "narration": "Pythagoras and trigonometry start with a right angled triangle. The little square marks the fixed ninety degree corner.",
+              "prompt": "Find the square corner before doing any ratio."
+            },
+            {
+              "name": "Choose our angle",
+              "pose": "point-down",
+              "narration": "Theta is the orange angle between the blue base and green hypotenuse. Changing theta will change the triangle.",
+              "prompt": "Which corner is theta?"
+            },
+            {
+              "name": "Adjacent touches theta",
+              "pose": "ruler",
+              "narration": "The adjacent side is the shorter blue side next to theta. The hypotenuse also touches theta, but it is a separate role.",
+              "prompt": "Which shorter side touches theta?"
+            },
+            {
+              "name": "Opposite faces theta",
+              "pose": "point-left",
+              "narration": "The purple opposite side lies across from theta. It does not touch the orange angle.",
+              "prompt": "Which side faces the chosen angle?"
+            },
+            {
+              "name": "Hypotenuse never changes role",
+              "pose": "compare",
+              "narration": "The long green side faces the right angle. We will keep its length fixed while we change theta.",
+              "prompt": "How can both shorter sides change while the longest stays fixed?"
+            },
+            {
+              "name": "Sweep the acute angle",
+              "pose": "magnify",
+              "narration": "As the angle grows, the triangle gets taller and less wide. The fixed green hypotenuse anchors the sweep.",
+              "prompt": "Which leg gets longer when theta increases?"
+            },
+            {
+              "name": "Sine comes from opposite",
+              "pose": "show-one",
+              "narration": "Sine theta equals opposite divided by hypotenuse. With a fixed hypotenuse, sine increases as theta grows.",
+              "prompt": "What happens to sine when opposite becomes longer?"
+            },
+            {
+              "name": "Cosine comes from adjacent",
+              "pose": "show-two",
+              "narration": "Cosine theta equals adjacent divided by hypotenuse. With a fixed hypotenuse, cosine decreases as theta grows.",
+              "prompt": "What happens to cosine as the base shrinks?"
+            },
+            {
+              "name": "Tangent compares two legs",
+              "pose": "show-three",
+              "narration": "Tangent theta equals opposite divided by adjacent. As one grows and the other shrinks, tangent rises rapidly.",
+              "prompt": "Why does tangent change faster at larger angles?"
+            },
+            {
+              "name": "Read the ratio table",
+              "pose": "count",
+              "narration": "Each row is one angle. Read its sine, cosine and tangent in the same row. All the values come from actual triangle ratios.",
+              "prompt": "Which table column gets smaller as the angle increases?"
+            },
+            {
+              "name": "Spot the pattern",
+              "pose": "idea",
+              "narration": "Sine rises and cosine falls as the acute angle increases. At forty five degrees they are equal.",
+              "prompt": "What makes sine and cosine equal at forty five degrees?"
+            },
+            {
+              "name": "Scale does not change ratios",
+              "pose": "magnify",
+              "narration": "If every side becomes twice as long, the angle and all three side ratios stay exactly the same.",
+              "prompt": "Why does doubling both numbers in a fraction keep the ratio?"
+            },
+            {
+              "name": "Reverse the ratio",
+              "pose": "think",
+              "narration": "Inverse sine, inverse cosine and inverse tangent find the angle from a known ratio. First choose the correct pair of sides.",
+              "prompt": "If opposite and hypotenuse are known, which inverse ratio finds theta?"
+            },
+            {
+              "name": "Check and transfer",
+              "pose": "celebrate",
+              "narration": "Work in degrees, match the sides to theta, divide in the right order, then use the inverse function to recover the angle.",
+              "prompt": "Does your angle agree with how tall or wide the triangle looks?"
+            }
+          ]
+        },
+        "draws": {
+          "graph": [
+            "stage",
+            "st",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "st": {
+            "kind": "factory",
+            "factory": "copy",
+            "argCount": 1
+          },
+          "stepRender.st": {
+            "kind": "factory",
+            "factory": "copy",
+            "argCount": 1
+          }
+        },
+        "exploreInitials": {
+          "stepRender.st": {
+            "label": "Y9-031 · Explore angle ratios",
+            "theta": 35,
+            "c": 10,
+            "min": 15,
+            "max": 75,
+            "unit": "cm",
+            "kind": "angle"
+          }
+        },
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "graph": {
+          "parameters": [
+            "stage",
+            "st",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y9-031 · Explore angle ratios",
+              "theta": 35,
+              "c": 10,
+              "min": 15,
+              "max": 75,
+              "unit": "cm",
+              "kind": "angle",
+              "ratio": "sin"
+            },
+            {
+              "step": 0,
+              "say": "Pythagoras and trigonometry start with a right angled triangle. The little square marks the fixed ninety degree corner.",
+              "pose": "explain",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-08",
+    "path": "F15/F15-08-Unit-Circle-Explorer.html",
+    "errors": [],
+    "engineId": "F15-08",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 17,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 16,
+        "kind": "scene",
+        "key": "scene",
+        "path": [
+          "1",
+          "theta"
+        ],
+        "from": 30,
+        "to": 31,
+        "beforeText": "Unit circle at 210 degrees. P equals cosine -0.866 and sine -0.500. Quadrant 3. Tangent 0.577.xyOIIIIIIIV210°Pcos θ-0.866signed horizontal coordinate xsin θ-0.500signed vertical coordinate ytan θ0.577sin θ ÷ cos θP = ( cos θ, sin θ )cos² θ + sin² θ = 1The unit radius gives cos² θ + sin² θ = 1 in every quadrant.Try moving the point. Before looking at the values, predict the signs from the quadrant.Try moving the point. Before looking at the values, predict the signs from the quadrant. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Unit circle at 31 degrees. P equals cosine 0.857 and sine 0.515. Quadrant 1. Tangent 0.601.xyOIIIIIIIV31°Pcos θ0.857signed horizontal coordinate xsin θ0.515signed vertical coordinate ytan θ0.601sin θ ÷ cos θP = ( cos θ, sin θ )cos² θ + sin² θ = 1The unit radius gives cos² θ + sin² θ = 1 in every quadrant.Try moving the point. Before looking at the values, predict the signs from the quadrant.Try moving the point. Before looking at the values, predict the signs from the quadrant. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 16,
+          "data": {
+            "name": "Move and predict",
+            "pose": "question",
+            "theta": 210,
+            "say": "Try moving the point. Before looking at the values, predict the signs from the quadrant."
+          },
+          "scene": {
+            "function": "scene",
+            "arguments": {
+              "st": {
+                "theta": 31,
+                "placed": {}
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-08",
+        "version": "1.0.0",
+        "stepCount": 17,
+        "steps": [
+          {
+            "name": "A circle of radius one",
+            "pose": "explain",
+            "theta": 30,
+            "say": "This is a circle centred at the origin. Every point on the circumference is exactly one unit from the centre."
+          },
+          {
+            "name": "Angles start on positive x",
+            "pose": "point-right",
+            "theta": 0,
+            "say": "Zero degrees starts on the positive horizontal axis. We measure positive angles anticlockwise."
+          },
+          {
+            "name": "Turn through thirty degrees",
+            "pose": "ruler",
+            "theta": 30,
+            "say": "Rotate the radius anticlockwise by thirty degrees. Its length stays exactly one."
+          },
+          {
+            "name": "Drop the vertical projection",
+            "pose": "point-down",
+            "theta": 30,
+            "say": "Drop a perpendicular from the point to the horizontal axis. The foot completes a right angled triangle."
+          },
+          {
+            "name": "Horizontal coordinate is cosine",
+            "pose": "show-one",
+            "theta": 30,
+            "say": "Cosine is the signed horizontal coordinate. In quadrant one it is positive."
+          },
+          {
+            "name": "Vertical coordinate is sine",
+            "pose": "show-two",
+            "theta": 30,
+            "say": "Sine is the signed vertical coordinate. Here it is also positive."
+          },
+          {
+            "name": "Read the ordered pair",
+            "pose": "count",
+            "theta": 30,
+            "say": "The point has coordinates cosine theta, then sine theta. Horizontal comes first, vertical second."
+          },
+          {
+            "name": "Pythagoras still holds",
+            "pose": "idea",
+            "theta": 30,
+            "say": "The legs form a right triangle with hypotenuse one. Cosine squared plus sine squared equals one."
+          },
+          {
+            "name": "Ninety-degree landmark",
+            "pose": "point-left",
+            "theta": 90,
+            "say": "At ninety degrees cosine is zero and sine is one. The point sits at the very top."
+          },
+          {
+            "name": "Quadrant two: negative x",
+            "pose": "compare",
+            "theta": 135,
+            "say": "Beyond ninety degrees the horizontal coordinate turns negative while the vertical coordinate stays positive."
+          },
+          {
+            "name": "One hundred eighty degrees",
+            "pose": "show-one",
+            "theta": 180,
+            "say": "At one hundred eighty degrees, the point is negative one, zero."
+          },
+          {
+            "name": "Quadrant three: both negative",
+            "pose": "think",
+            "theta": 225,
+            "say": "In quadrant three both coordinates are negative. Cosine and sine keep their signed meanings."
+          },
+          {
+            "name": "Two hundred seventy degrees",
+            "pose": "point-down",
+            "theta": 270,
+            "say": "At two hundred seventy degrees cosine is zero and sine is negative one."
+          },
+          {
+            "name": "Quadrant four: positive x",
+            "pose": "magnify",
+            "theta": 315,
+            "say": "In quadrant four cosine is positive and sine negative. The horizontal and vertical projections tell the signs."
+          },
+          {
+            "name": "Full turn to three sixty",
+            "pose": "celebrate",
+            "theta": 360,
+            "say": "After three hundred sixty degrees the point returns to one, zero. One full revolution is complete."
+          },
+          {
+            "name": "Tangent and undefined points",
+            "pose": "explain",
+            "theta": 90,
+            "say": "Tangent equals sine divided by cosine. At ninety and two hundred seventy degrees cosine is zero, so tangent is undefined."
+          },
+          {
+            "name": "Move and predict",
+            "pose": "question",
+            "theta": 210,
+            "say": "Try moving the point. Before looking at the values, predict the signs from the quadrant."
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "quadrants",
+          "events": [
+            "value",
+            "step",
+            "mode",
+            "hintUsed",
+            "correct",
+            "theta",
+            "label",
+            "preset"
+          ],
+          "presets": {
+            "quadrants": {
+              "label": "All four quadrants",
+              "theta": 45,
+              "min": 0,
+              "max": 360,
+              "kind": "explorer"
+            },
+            "y9first": {
+              "label": "Link to Year 9 trig · 30°",
+              "theta": 30,
+              "min": 0,
+              "max": 360,
+              "kind": "trig"
+            },
+            "axes": {
+              "label": "Axis landmarks · 90°",
+              "theta": 90,
+              "min": 0,
+              "max": 360,
+              "kind": "axes"
+            },
+            "second": {
+              "label": "Quadrant II · 120°",
+              "theta": 120,
+              "min": 0,
+              "max": 360,
+              "kind": "signs"
+            },
+            "third": {
+              "label": "Quadrant III · 225°",
+              "theta": 225,
+              "min": 0,
+              "max": 360,
+              "kind": "signs"
+            },
+            "fourth": {
+              "label": "Quadrant IV · 315°",
+              "theta": 315,
+              "min": 0,
+              "max": 360,
+              "kind": "signs"
+            },
+            "gcse": {
+              "label": "GCSE extension · 210°",
+              "theta": 210,
+              "min": 0,
+              "max": 360,
+              "kind": "extension"
+            }
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "A circle of radius one",
+              "pose": "explain",
+              "theta": 30,
+              "say": "This is a circle centred at the origin. Every point on the circumference is exactly one unit from the centre."
+            },
+            {
+              "name": "Angles start on positive x",
+              "pose": "point-right",
+              "theta": 0,
+              "say": "Zero degrees starts on the positive horizontal axis. We measure positive angles anticlockwise."
+            },
+            {
+              "name": "Turn through thirty degrees",
+              "pose": "ruler",
+              "theta": 30,
+              "say": "Rotate the radius anticlockwise by thirty degrees. Its length stays exactly one."
+            },
+            {
+              "name": "Drop the vertical projection",
+              "pose": "point-down",
+              "theta": 30,
+              "say": "Drop a perpendicular from the point to the horizontal axis. The foot completes a right angled triangle."
+            },
+            {
+              "name": "Horizontal coordinate is cosine",
+              "pose": "show-one",
+              "theta": 30,
+              "say": "Cosine is the signed horizontal coordinate. In quadrant one it is positive."
+            },
+            {
+              "name": "Vertical coordinate is sine",
+              "pose": "show-two",
+              "theta": 30,
+              "say": "Sine is the signed vertical coordinate. Here it is also positive."
+            },
+            {
+              "name": "Read the ordered pair",
+              "pose": "count",
+              "theta": 30,
+              "say": "The point has coordinates cosine theta, then sine theta. Horizontal comes first, vertical second."
+            },
+            {
+              "name": "Pythagoras still holds",
+              "pose": "idea",
+              "theta": 30,
+              "say": "The legs form a right triangle with hypotenuse one. Cosine squared plus sine squared equals one."
+            },
+            {
+              "name": "Ninety-degree landmark",
+              "pose": "point-left",
+              "theta": 90,
+              "say": "At ninety degrees cosine is zero and sine is one. The point sits at the very top."
+            },
+            {
+              "name": "Quadrant two: negative x",
+              "pose": "compare",
+              "theta": 135,
+              "say": "Beyond ninety degrees the horizontal coordinate turns negative while the vertical coordinate stays positive."
+            },
+            {
+              "name": "One hundred eighty degrees",
+              "pose": "show-one",
+              "theta": 180,
+              "say": "At one hundred eighty degrees, the point is negative one, zero."
+            },
+            {
+              "name": "Quadrant three: both negative",
+              "pose": "think",
+              "theta": 225,
+              "say": "In quadrant three both coordinates are negative. Cosine and sine keep their signed meanings."
+            },
+            {
+              "name": "Two hundred seventy degrees",
+              "pose": "point-down",
+              "theta": 270,
+              "say": "At two hundred seventy degrees cosine is zero and sine is negative one."
+            },
+            {
+              "name": "Quadrant four: positive x",
+              "pose": "magnify",
+              "theta": 315,
+              "say": "In quadrant four cosine is positive and sine negative. The horizontal and vertical projections tell the signs."
+            },
+            {
+              "name": "Full turn to three sixty",
+              "pose": "celebrate",
+              "theta": 360,
+              "say": "After three hundred sixty degrees the point returns to one, zero. One full revolution is complete."
+            },
+            {
+              "name": "Tangent and undefined points",
+              "pose": "explain",
+              "theta": 90,
+              "say": "Tangent equals sine divided by cosine. At ninety and two hundred seventy degrees cosine is zero, so tangent is undefined."
+            },
+            {
+              "name": "Move and predict",
+              "pose": "question",
+              "theta": 210,
+              "say": "Try moving the point. Before looking at the values, predict the signs from the quadrant."
+            }
+          ]
+        },
+        "draws": {
+          "scene": [
+            "stage",
+            "st",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "st": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "scene": {
+          "parameters": [
+            "stage",
+            "st",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "theta": 30,
+              "placed": {}
+            },
+            {
+              "step": 0,
+              "pose": "explain",
+              "say": "This is a circle centred at the origin. Every point on the circumference is exactly one unit from the centre.",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-09",
+    "path": "F15/F15-09-Trig-Solver.html",
+    "errors": [],
+    "engineId": "F15-09",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 14,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 13,
+        "kind": "scene",
+        "key": "draw",
+        "path": [
+          "1",
+          "theta"
+        ],
+        "from": 30,
+        "to": 31,
+        "beforeText": "Premium neon right-angle triangle trig solver. Given angle and side find a missing length. Chosen ratio sin.θ 30.0°Find the missing side10.39Adj6.0 cmOpp12.00 cmHypSide findersin θ =OppositeHypotenuseKnown: 12.00 cmOpposite = sin θ × 12.00Answer: 6.0 cmOn the next triangle: label the sides, select the correct fraction, rearrange, calculate and check.On the next triangle: label the sides, select the correct fraction, rearrange, calculate and check. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Premium neon right-angle triangle trig solver. Given angle and side find a missing length. Chosen ratio sin.θ 31.0°Find the missing side10.29Adj6.2 cmOpp12.00 cmHypSide findersin θ =OppositeHypotenuseKnown: 12.00 cmOpposite = sin θ × 12.00Answer: 6.2 cmOn the next triangle: label the sides, select the correct fraction, rearrange, calculate and check.On the next triangle: label the sides, select the correct fraction, rearrange, calculate and check. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 13,
+          "data": {
+            "name": "Transfer to the next problem",
+            "pose": "celebrate",
+            "prompt": "Identify, choose, rearrange, calculate, check."
+          },
+          "scene": {
+            "function": "draw",
+            "arguments": {
+              "st": {
+                "label": "Y9 · Sine finds opposite",
+                "mode": "side",
+                "theta": 31,
+                "known": "h",
+                "given": 12,
+                "unknown": "o",
+                "unit": "cm",
+                "dp": 1
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-09",
+        "version": "1.0.0",
+        "stepCount": 14,
+        "steps": [
+          {
+            "name": "Find the square corner",
+            "pose": "explain",
+            "prompt": "Locate the ninety-degree corner before calculating."
+          },
+          {
+            "name": "Choose the reference angle",
+            "pose": "point-down",
+            "prompt": "Which acute angle are we working relative to?"
+          },
+          {
+            "name": "Opposite, adjacent, hypotenuse",
+            "pose": "ruler",
+            "prompt": "Which two side roles are relevant to this question?"
+          },
+          {
+            "name": "Identify the givens",
+            "pose": "magnify",
+            "prompt": "What is known, and what does the question ask you to find?"
+          },
+          {
+            "name": "Select the matching side pair",
+            "pose": "compare",
+            "prompt": "Is the known–unknown pair O–H, A–H or O–A?"
+          },
+          {
+            "name": "Choose sine, cosine or tangent",
+            "pose": "idea",
+            "prompt": "SOH, CAH or TOA: which one uses these sides?"
+          },
+          {
+            "name": "Build the proper fraction",
+            "pose": "show-one",
+            "prompt": "Keep the numerator and denominator in the correct order."
+          },
+          {
+            "name": "Substitute the known numbers",
+            "pose": "show-two",
+            "prompt": "Replace the side symbols with the given values."
+          },
+          {
+            "name": "Rearrange carefully",
+            "pose": "think",
+            "prompt": "Does the unknown need multiplying, dividing or inverse trig?"
+          },
+          {
+            "name": "Evaluate with degree mode",
+            "pose": "count",
+            "prompt": "Keep the calculator in degrees and full precision."
+          },
+          {
+            "name": "Round only at the end",
+            "pose": "show-three",
+            "prompt": "Write the answer with the required accuracy and unit."
+          },
+          {
+            "name": "Check the result",
+            "pose": "checking",
+            "prompt": "Substitute back into the ratio. Does it agree?"
+          },
+          {
+            "name": "A changed triangle",
+            "pose": "magnify",
+            "prompt": "How would a new angle change the length calculation?"
+          },
+          {
+            "name": "Transfer to the next problem",
+            "pose": "celebrate",
+            "prompt": "Identify, choose, rearrange, calculate, check."
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "sinOpp",
+          "events": [
+            "value",
+            "step",
+            "mode",
+            "hintUsed",
+            "correct",
+            "theta",
+            "preset",
+            "label",
+            "ratio"
+          ],
+          "presets": {
+            "sinOpp": {
+              "label": "Y9 · Sine finds opposite",
+              "mode": "side",
+              "theta": 30,
+              "known": "h",
+              "given": 12,
+              "unknown": "o",
+              "unit": "cm",
+              "dp": 1
+            },
+            "cosAdj": {
+              "label": "Y9 · Cosine finds adjacent",
+              "mode": "side",
+              "theta": 60,
+              "known": "h",
+              "given": 14,
+              "unknown": "a",
+              "unit": "cm",
+              "dp": 1
+            },
+            "tanOpp": {
+              "label": "Y9 · Tangent finds opposite",
+              "mode": "side",
+              "theta": 35,
+              "known": "a",
+              "given": 8,
+              "unknown": "o",
+              "unit": "m",
+              "dp": 1
+            },
+            "sinHyp": {
+              "label": "Y9 · Sine finds hypotenuse",
+              "mode": "side",
+              "theta": 40,
+              "known": "o",
+              "given": 7,
+              "unknown": "h",
+              "unit": "cm",
+              "dp": 1
+            },
+            "cosHyp": {
+              "label": "Y9 · Cosine finds hypotenuse",
+              "mode": "side",
+              "theta": 55,
+              "known": "a",
+              "given": 6,
+              "unknown": "h",
+              "unit": "m",
+              "dp": 1
+            },
+            "tanAdj": {
+              "label": "Y9 · Tangent finds adjacent",
+              "mode": "side",
+              "theta": 38,
+              "known": "o",
+              "given": 9,
+              "unknown": "a",
+              "unit": "cm",
+              "dp": 1
+            },
+            "inverseSin": {
+              "label": "Y9 · Inverse sine finds angle",
+              "mode": "angle",
+              "a": 8,
+              "o": 6,
+              "known": "o",
+              "second": "h",
+              "unit": "cm",
+              "dp": 1
+            },
+            "inverseCos": {
+              "label": "Y9 · Inverse cosine finds angle",
+              "mode": "angle",
+              "a": 8,
+              "o": 10.246950765959598,
+              "known": "a",
+              "second": "h",
+              "unit": "cm",
+              "dp": 1
+            },
+            "inverseTan": {
+              "label": "Y9 · Inverse tangent finds angle",
+              "mode": "angle",
+              "a": 9,
+              "o": 7,
+              "known": "o",
+              "second": "a",
+              "unit": "m",
+              "dp": 1
+            },
+            "gcse": {
+              "label": "GCSE · Divide to find hypotenuse",
+              "mode": "side",
+              "theta": 47,
+              "known": "a",
+              "given": 9,
+              "unknown": "h",
+              "unit": "cm",
+              "dp": 2
+            }
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Find the square corner",
+              "pose": "explain",
+              "prompt": "Locate the ninety-degree corner before calculating."
+            },
+            {
+              "name": "Choose the reference angle",
+              "pose": "point-down",
+              "prompt": "Which acute angle are we working relative to?"
+            },
+            {
+              "name": "Opposite, adjacent, hypotenuse",
+              "pose": "ruler",
+              "prompt": "Which two side roles are relevant to this question?"
+            },
+            {
+              "name": "Identify the givens",
+              "pose": "magnify",
+              "prompt": "What is known, and what does the question ask you to find?"
+            },
+            {
+              "name": "Select the matching side pair",
+              "pose": "compare",
+              "prompt": "Is the known–unknown pair O–H, A–H or O–A?"
+            },
+            {
+              "name": "Choose sine, cosine or tangent",
+              "pose": "idea",
+              "prompt": "SOH, CAH or TOA: which one uses these sides?"
+            },
+            {
+              "name": "Build the proper fraction",
+              "pose": "show-one",
+              "prompt": "Keep the numerator and denominator in the correct order."
+            },
+            {
+              "name": "Substitute the known numbers",
+              "pose": "show-two",
+              "prompt": "Replace the side symbols with the given values."
+            },
+            {
+              "name": "Rearrange carefully",
+              "pose": "think",
+              "prompt": "Does the unknown need multiplying, dividing or inverse trig?"
+            },
+            {
+              "name": "Evaluate with degree mode",
+              "pose": "count",
+              "prompt": "Keep the calculator in degrees and full precision."
+            },
+            {
+              "name": "Round only at the end",
+              "pose": "show-three",
+              "prompt": "Write the answer with the required accuracy and unit."
+            },
+            {
+              "name": "Check the result",
+              "pose": "checking",
+              "prompt": "Substitute back into the ratio. Does it agree?"
+            },
+            {
+              "name": "A changed triangle",
+              "pose": "magnify",
+              "prompt": "How would a new angle change the length calculation?"
+            },
+            {
+              "name": "Transfer to the next problem",
+              "pose": "celebrate",
+              "prompt": "Identify, choose, rearrange, calculate, check."
+            }
+          ]
+        },
+        "draws": {
+          "draw": [
+            "stage",
+            "st",
+            "opt"
+          ]
+        },
+        "exploreFields": {
+          "st": {
+            "kind": "factory",
+            "factory": "clone",
+            "argCount": 1
+          },
+          "stepRender.st": {
+            "kind": "factory",
+            "factory": "clone",
+            "argCount": 1
+          }
+        },
+        "exploreInitials": {
+          "stepRender.st": {
+            "label": "Y9 · Sine finds opposite",
+            "mode": "side",
+            "theta": 30,
+            "known": "h",
+            "given": 12,
+            "unknown": "o",
+            "unit": "cm",
+            "dp": 1
+          }
+        },
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "draw": {
+          "parameters": [
+            "stage",
+            "st",
+            "opt"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y9 · Sine finds opposite",
+              "mode": "side",
+              "theta": 30,
+              "known": "h",
+              "given": 12,
+              "unknown": "o",
+              "unit": "cm",
+              "dp": 1
+            },
+            {
+              "step": 0,
+              "pose": "explain",
+              "say": "First find the right angle. The green side facing it is the hypotenuse.",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-11",
+    "path": "F15/F15-11-Circle-Parts-Diagram.html",
+    "errors": [],
+    "engineId": "F15-11",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 16,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 15,
+        "kind": "scene",
+        "key": "draw",
+        "path": [
+          "1",
+          "radius"
+        ],
+        "from": 5,
+        "to": 6,
+        "beforeText": "Premium neon circle with geometric radius, diameter, chord, arc, sector, segment, tangent, secant and circumference.Or = 5 cmd = 10 cm90°d = 2r  ·  10 cmC = 2πr  =  31.4 cmEvery circle: C ÷ d = πDrag the points to change the chord, arc and tangent. The formulas for diameter and circumference stay correct.Drag the points to change the chord, arc and tangent. The formulas for diameter and circumference stay correct. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Premium neon circle with geometric radius, diameter, chord, arc, sector, segment, tangent, secant and circumference.Or = 6 cmd = 12 cm90°d = 2r  ·  12 cmC = 2πr  =  37.7 cmEvery circle: C ÷ d = πDrag the points to change the chord, arc and tangent. The formulas for diameter and circumference stay correct.Drag the points to change the chord, arc and tangent. The formulas for diameter and circumference stay correct. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 15,
+          "data": {
+            "name": "Change the circle and compare",
+            "pose": "celebrate",
+            "prompt": "These names and relationships work for circles of every size."
+          },
+          "scene": {
+            "function": "draw",
+            "arguments": {
+              "st": {
+                "label": "Year 8 · Circle vocabulary",
+                "radius": 6,
+                "theta": 30,
+                "delta": 115,
+                "emphasis": "all"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-11",
+        "version": "1.0.0",
+        "stepCount": 16,
+        "steps": [
+          {
+            "name": "Meet a circle",
+            "pose": "explain",
+            "prompt": "What stays the same distance from the centre?"
+          },
+          {
+            "name": "Mark the centre",
+            "pose": "point-down",
+            "prompt": "A centre is a single fixed point."
+          },
+          {
+            "name": "Stretch out a radius",
+            "pose": "ruler",
+            "prompt": "A radius runs from the centre to the curve."
+          },
+          {
+            "name": "Two radii make a diameter",
+            "pose": "show-two",
+            "prompt": "The diameter runs across the centre, not just any two edge points."
+          },
+          {
+            "name": "Trace the circumference",
+            "pose": "count",
+            "prompt": "The circumference is the entire distance around the circle."
+          },
+          {
+            "name": "Connect two points: chord",
+            "pose": "point-right",
+            "prompt": "Both ends of a chord lie on the circumference."
+          },
+          {
+            "name": "Follow an arc",
+            "pose": "magnify",
+            "prompt": "An arc follows a part of the circular boundary."
+          },
+          {
+            "name": "Enclose a sector",
+            "pose": "idea",
+            "prompt": "Two radii and the arc make a sector."
+          },
+          {
+            "name": "Identify a segment",
+            "pose": "compare",
+            "prompt": "A chord and its arc enclose a segment. That is not a sector."
+          },
+          {
+            "name": "One-point contact: tangent",
+            "pose": "ruler",
+            "prompt": "A tangent touches at exactly one point and is perpendicular to the radius there."
+          },
+          {
+            "name": "Cut through: secant",
+            "pose": "point-left",
+            "prompt": "A secant crosses the circle in two distinct places."
+          },
+          {
+            "name": "Diameter relates to radius",
+            "pose": "show-two",
+            "prompt": "Every diameter is twice a radius."
+          },
+          {
+            "name": "Circumference comes from pi",
+            "pose": "count",
+            "prompt": "Circumference divided by diameter is always pi."
+          },
+          {
+            "name": "Find circumference from radius",
+            "pose": "show-one",
+            "prompt": "Use C equals two times pi times radius."
+          },
+          {
+            "name": "Reverse the calculation",
+            "pose": "think",
+            "prompt": "Given circumference, divide by two pi to find the radius."
+          },
+          {
+            "name": "Change the circle and compare",
+            "pose": "celebrate",
+            "prompt": "These names and relationships work for circles of every size."
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "year8",
+          "events": [
+            "value",
+            "step",
+            "mode",
+            "hintUsed",
+            "correct",
+            "preset",
+            "radius",
+            "point",
+            "label"
+          ],
+          "presets": {
+            "year8": {
+              "label": "Year 8 · Circle vocabulary",
+              "radius": 5,
+              "theta": 30,
+              "delta": 115,
+              "emphasis": "all"
+            },
+            "y8circ": {
+              "label": "Year 8 · Circumference from radius",
+              "radius": 4,
+              "theta": 25,
+              "delta": 110,
+              "emphasis": "circumference"
+            },
+            "y8diam": {
+              "label": "Year 8 · Diameter and radius",
+              "radius": 6,
+              "theta": 35,
+              "delta": 105,
+              "emphasis": "diameter"
+            },
+            "y9parts": {
+              "label": "Year 9 · Chord, sector, segment",
+              "radius": 5,
+              "theta": 48,
+              "delta": 100,
+              "emphasis": "sector"
+            },
+            "y9tangent": {
+              "label": "Year 9 · Tangent perpendicular",
+              "radius": 7,
+              "theta": 18,
+              "delta": 110,
+              "emphasis": "tangent"
+            },
+            "y9reverse": {
+              "label": "Year 9 · Reverse circumference",
+              "radius": 8,
+              "theta": 35,
+              "delta": 115,
+              "emphasis": "circumference"
+            },
+            "extension": {
+              "label": "GCSE · Arc and sector extension",
+              "radius": 6,
+              "theta": 10,
+              "delta": 90,
+              "emphasis": "sector"
+            }
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Meet a circle",
+              "pose": "explain",
+              "prompt": "What stays the same distance from the centre?"
+            },
+            {
+              "name": "Mark the centre",
+              "pose": "point-down",
+              "prompt": "A centre is a single fixed point."
+            },
+            {
+              "name": "Stretch out a radius",
+              "pose": "ruler",
+              "prompt": "A radius runs from the centre to the curve."
+            },
+            {
+              "name": "Two radii make a diameter",
+              "pose": "show-two",
+              "prompt": "The diameter runs across the centre, not just any two edge points."
+            },
+            {
+              "name": "Trace the circumference",
+              "pose": "count",
+              "prompt": "The circumference is the entire distance around the circle."
+            },
+            {
+              "name": "Connect two points: chord",
+              "pose": "point-right",
+              "prompt": "Both ends of a chord lie on the circumference."
+            },
+            {
+              "name": "Follow an arc",
+              "pose": "magnify",
+              "prompt": "An arc follows a part of the circular boundary."
+            },
+            {
+              "name": "Enclose a sector",
+              "pose": "idea",
+              "prompt": "Two radii and the arc make a sector."
+            },
+            {
+              "name": "Identify a segment",
+              "pose": "compare",
+              "prompt": "A chord and its arc enclose a segment. That is not a sector."
+            },
+            {
+              "name": "One-point contact: tangent",
+              "pose": "ruler",
+              "prompt": "A tangent touches at exactly one point and is perpendicular to the radius there."
+            },
+            {
+              "name": "Cut through: secant",
+              "pose": "point-left",
+              "prompt": "A secant crosses the circle in two distinct places."
+            },
+            {
+              "name": "Diameter relates to radius",
+              "pose": "show-two",
+              "prompt": "Every diameter is twice a radius."
+            },
+            {
+              "name": "Circumference comes from pi",
+              "pose": "count",
+              "prompt": "Circumference divided by diameter is always pi."
+            },
+            {
+              "name": "Find circumference from radius",
+              "pose": "show-one",
+              "prompt": "Use C equals two times pi times radius."
+            },
+            {
+              "name": "Reverse the calculation",
+              "pose": "think",
+              "prompt": "Given circumference, divide by two pi to find the radius."
+            },
+            {
+              "name": "Change the circle and compare",
+              "pose": "celebrate",
+              "prompt": "These names and relationships work for circles of every size."
+            }
+          ]
+        },
+        "draws": {
+          "draw": [
+            "stage",
+            "st",
+            "op"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "draw": {
+          "parameters": [
+            "stage",
+            "st",
+            "op"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Year 8 · Circle vocabulary",
+              "radius": 5,
+              "theta": 30,
+              "delta": 115,
+              "emphasis": "all"
+            },
+            {
+              "step": 0,
+              "pose": "explain",
+              "say": "A circle contains all points the same distance from its centre. We will build the important parts, one at a time.",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-12",
+    "path": "F15/F15-12-Circle-Theorems-Explorer.html",
+    "errors": [],
+    "engineId": "F15-12",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 16,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 15,
+        "kind": "table",
+        "key": "PRESETS",
+        "path": [
+          "alternate",
+          "arc"
+        ],
+        "from": 130,
+        "to": 131,
+        "beforeText": "NOVA circle theorems: geometrically correct neon circle, moving circumferential points, chord angles and tangent constructions.65°65°PABTangent-chord = opposite angleTwo matching angles: 65°All these results depend on the geometry of the circle, not on a single picture. Drag a point and test them.All these results depend on the geometry of the circle, not on a single picture. Drag a point and test them. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "NOVA circle theorems: geometrically correct neon circle, moving circumferential points, chord angles and tangent constructions.66°66°PABTangent-chord = opposite angleTwo matching angles: 66°All these results depend on the geometry of the circle, not on a single picture. Drag a point and test them.All these results depend on the geometry of the circle, not on a single picture. Drag a point and test them. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 15,
+          "data": {
+            "name": "All six theorem families",
+            "pose": "celebrate",
+            "prompt": "Drag the points to test the relationships yourself."
+          },
+          "tables": {
+            "PRESETS": {
+              "centre": {
+                "label": "Centre and circumference",
+                "kind": "centre",
+                "arc": 130,
+                "p": 72
+              },
+              "segment": {
+                "label": "Angles in the same segment",
+                "kind": "segment",
+                "arc": 130,
+                "p": 65
+              },
+              "semicircle": {
+                "label": "Angle in a semicircle",
+                "kind": "semicircle",
+                "arc": 180,
+                "p": 80
+              },
+              "cyclic": {
+                "label": "Cyclic quadrilateral",
+                "kind": "cyclic",
+                "arc": 130,
+                "p": 130
+              },
+              "tangent": {
+                "label": "Tangent meets radius",
+                "kind": "tangent",
+                "arc": 130,
+                "p": 35
+              },
+              "alternate": {
+                "label": "Alternate segment theorem",
+                "kind": "alternate",
+                "arc": 131,
+                "p": 72
+              },
+              "gcse": {
+                "label": "GCSE combined reasoning",
+                "kind": "centre",
+                "arc": 116,
+                "p": 110
+              }
+            }
+          }
+        }
+      },
+      "failures": [
+        "Error: F15-12: F15-12 draw needs a known theorem, arc 30°–180° and point position 25–155"
+      ],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-12",
+        "version": "1.0.0",
+        "stepCount": 16,
+        "steps": [
+          {
+            "name": "The circle and its centre",
+            "pose": "explain",
+            "prompt": "Start with one fixed centre and a circumference."
+          },
+          {
+            "name": "Make two radii",
+            "pose": "point-down",
+            "prompt": "The radii meet at a central angle."
+          },
+          {
+            "name": "Measure at the centre",
+            "pose": "ruler",
+            "prompt": "Measure the smaller central angle between the same endpoints."
+          },
+          {
+            "name": "Join endpoints to the edge",
+            "pose": "point-right",
+            "prompt": "What angle does the point on the major arc see?"
+          },
+          {
+            "name": "The centre is double",
+            "pose": "show-two",
+            "prompt": "A central angle is twice the angle at the circumference standing on the same arc."
+          },
+          {
+            "name": "Move along the same segment",
+            "pose": "magnify",
+            "prompt": "Two points on the same arc see the same chord under an equal angle."
+          },
+          {
+            "name": "Equal angles in one segment",
+            "pose": "compare",
+            "prompt": "Moving the vertex on one arc preserves the inscribed angle."
+          },
+          {
+            "name": "Draw a diameter",
+            "pose": "ruler",
+            "prompt": "Endpoints opposite each other subtend 180 degrees at the centre."
+          },
+          {
+            "name": "The semicircle angle",
+            "pose": "idea",
+            "prompt": "Half of a straight angle is a right angle."
+          },
+          {
+            "name": "Connect four circle points",
+            "pose": "show-three",
+            "prompt": "Each vertex lies on the circle."
+          },
+          {
+            "name": "Opposite angles add to 180°",
+            "pose": "compare",
+            "prompt": "One inscribed angle sees the arc excluded by the opposite angle."
+          },
+          {
+            "name": "Touch the circle with a tangent",
+            "pose": "ruler",
+            "prompt": "A tangent is perpendicular to the radius at contact."
+          },
+          {
+            "name": "Verify a right angle",
+            "pose": "show-one",
+            "prompt": "The contact angle is exactly ninety degrees."
+          },
+          {
+            "name": "Add a chord beside a tangent",
+            "pose": "point-left",
+            "prompt": "The tangent-chord angle equals the alternate-segment angle."
+          },
+          {
+            "name": "Match the alternate angle",
+            "pose": "idea",
+            "prompt": "Both angles intercept the same arc."
+          },
+          {
+            "name": "All six theorem families",
+            "pose": "celebrate",
+            "prompt": "Drag the points to test the relationships yourself."
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "centre",
+          "presets": {
+            "centre": {
+              "label": "Centre and circumference",
+              "kind": "centre",
+              "arc": 130,
+              "p": 72
+            },
+            "segment": {
+              "label": "Angles in the same segment",
+              "kind": "segment",
+              "arc": 130,
+              "p": 65
+            },
+            "semicircle": {
+              "label": "Angle in a semicircle",
+              "kind": "semicircle",
+              "arc": 180,
+              "p": 80
+            },
+            "cyclic": {
+              "label": "Cyclic quadrilateral",
+              "kind": "cyclic",
+              "arc": 130,
+              "p": 130
+            },
+            "tangent": {
+              "label": "Tangent meets radius",
+              "kind": "tangent",
+              "arc": 130,
+              "p": 35
+            },
+            "alternate": {
+              "label": "Alternate segment theorem",
+              "kind": "alternate",
+              "arc": 130,
+              "p": 72
+            },
+            "gcse": {
+              "label": "GCSE combined reasoning",
+              "kind": "centre",
+              "arc": 116,
+              "p": 110
+            }
+          },
+          "events": [
+            "value",
+            "step",
+            "correct",
+            "hintUsed",
+            "mode",
+            "preset",
+            "point",
+            "label"
+          ],
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "PRESETS": {
+            "centre": {
+              "label": "Centre and circumference",
+              "kind": "centre",
+              "arc": 130,
+              "p": 72
+            },
+            "segment": {
+              "label": "Angles in the same segment",
+              "kind": "segment",
+              "arc": 130,
+              "p": 65
+            },
+            "semicircle": {
+              "label": "Angle in a semicircle",
+              "kind": "semicircle",
+              "arc": 180,
+              "p": 80
+            },
+            "cyclic": {
+              "label": "Cyclic quadrilateral",
+              "kind": "cyclic",
+              "arc": 130,
+              "p": 130
+            },
+            "tangent": {
+              "label": "Tangent meets radius",
+              "kind": "tangent",
+              "arc": 130,
+              "p": 35
+            },
+            "alternate": {
+              "label": "Alternate segment theorem",
+              "kind": "alternate",
+              "arc": 130,
+              "p": 72
+            },
+            "gcse": {
+              "label": "GCSE combined reasoning",
+              "kind": "centre",
+              "arc": 116,
+              "p": 110
+            }
+          },
+          "STEPS": [
+            {
+              "name": "The circle and its centre",
+              "pose": "explain",
+              "prompt": "Start with one fixed centre and a circumference."
+            },
+            {
+              "name": "Make two radii",
+              "pose": "point-down",
+              "prompt": "The radii meet at a central angle."
+            },
+            {
+              "name": "Measure at the centre",
+              "pose": "ruler",
+              "prompt": "Measure the smaller central angle between the same endpoints."
+            },
+            {
+              "name": "Join endpoints to the edge",
+              "pose": "point-right",
+              "prompt": "What angle does the point on the major arc see?"
+            },
+            {
+              "name": "The centre is double",
+              "pose": "show-two",
+              "prompt": "A central angle is twice the angle at the circumference standing on the same arc."
+            },
+            {
+              "name": "Move along the same segment",
+              "pose": "magnify",
+              "prompt": "Two points on the same arc see the same chord under an equal angle."
+            },
+            {
+              "name": "Equal angles in one segment",
+              "pose": "compare",
+              "prompt": "Moving the vertex on one arc preserves the inscribed angle."
+            },
+            {
+              "name": "Draw a diameter",
+              "pose": "ruler",
+              "prompt": "Endpoints opposite each other subtend 180 degrees at the centre."
+            },
+            {
+              "name": "The semicircle angle",
+              "pose": "idea",
+              "prompt": "Half of a straight angle is a right angle."
+            },
+            {
+              "name": "Connect four circle points",
+              "pose": "show-three",
+              "prompt": "Each vertex lies on the circle."
+            },
+            {
+              "name": "Opposite angles add to 180°",
+              "pose": "compare",
+              "prompt": "One inscribed angle sees the arc excluded by the opposite angle."
+            },
+            {
+              "name": "Touch the circle with a tangent",
+              "pose": "ruler",
+              "prompt": "A tangent is perpendicular to the radius at contact."
+            },
+            {
+              "name": "Verify a right angle",
+              "pose": "show-one",
+              "prompt": "The contact angle is exactly ninety degrees."
+            },
+            {
+              "name": "Add a chord beside a tangent",
+              "pose": "point-left",
+              "prompt": "The tangent-chord angle equals the alternate-segment angle."
+            },
+            {
+              "name": "Match the alternate angle",
+              "pose": "idea",
+              "prompt": "Both angles intercept the same arc."
+            },
+            {
+              "name": "All six theorem families",
+              "pose": "celebrate",
+              "prompt": "Drag the points to test the relationships yourself."
+            }
+          ]
+        },
+        "draws": {
+          "draw": [
+            "stage",
+            "st",
+            "opt"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "draw": {
+          "parameters": [
+            "stage",
+            "st",
+            "opt"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Centre and circumference",
+              "kind": "centre",
+              "arc": 130,
+              "p": 72
+            },
+            {
+              "timeline": true,
+              "step": 0,
+              "pose": "explain",
+              "say": "This is a circle: every point on its boundary has the same distance from the centre.",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-13",
+    "path": "F15/F15-13-Sine-and-Cosine-Rule.html",
+    "errors": [],
+    "engineId": "F15-13",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 16,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 15,
+        "kind": "scene",
+        "key": "draw",
+        "path": [
+          "1",
+          "b"
+        ],
+        "from": 10,
+        "to": 11,
+        "beforeText": "Non-right triangle ABC. Opposite side pairs a–A, b–B and c–C; sine and cosine rules are calculated from exact triangle geometry.ABCa = 7.3b = 10c = 10.3A 42°B 67°C 71°Sine ruleasin Absin Bcsin CMatch each opposite pairThen rearrangea = 7.27 cmLook for an opposite side-angle pair for sine rule, or two sides with an included angle for cosine rule.Look for an opposite side-angle pair for sine rule, or two sides with an included angle for cosine rule. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Non-right triangle ABC. Opposite side pairs a–A, b–B and c–C; sine and cosine rules are calculated from exact triangle geometry.ABCa = 8b = 11c = 11.3A 42°B 67°C 71°Sine ruleasin Absin Bcsin CMatch each opposite pairThen rearrangea = 8 cmLook for an opposite side-angle pair for sine rule, or two sides with an included angle for cosine rule.Look for an opposite side-angle pair for sine rule, or two sides with an included angle for cosine rule. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 15,
+          "data": {
+            "name": "Choose the correct rule",
+            "pose": "celebrate",
+            "say": "Look for an opposite side-angle pair for sine rule, or two sides with an included angle for cosine rule.",
+            "rule": "sine"
+          },
+          "scene": {
+            "function": "draw",
+            "arguments": {
+              "st": {
+                "label": "Sine rule · two angles",
+                "method": "sine",
+                "b": 11,
+                "A": 42,
+                "B": 67,
+                "find": "a",
+                "unit": "cm"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-13",
+        "version": "1.0.0",
+        "stepCount": 16,
+        "steps": [
+          {
+            "name": "A triangle without a right angle",
+            "pose": "explain",
+            "say": "This triangle is not right angled. We need a different tool from ordinary SOH CAH TOA.",
+            "rule": "sine"
+          },
+          {
+            "name": "Match sides to opposite angles",
+            "pose": "point-down",
+            "say": "Lowercase a is opposite capital A, b opposite B, and c opposite C.",
+            "rule": "sine"
+          },
+          {
+            "name": "Know two angles",
+            "pose": "count",
+            "say": "If two angles are known, the third follows from one hundred and eighty degrees.",
+            "rule": "sine"
+          },
+          {
+            "name": "Make perpendicular heights",
+            "pose": "ruler",
+            "say": "A height splits the triangle into two right triangles so the opposite side can be linked to sine.",
+            "rule": "sine"
+          },
+          {
+            "name": "Build the sine rule",
+            "pose": "idea",
+            "say": "The ratio of a side to the sine of its opposite angle is constant across all three pairs.",
+            "rule": "sine"
+          },
+          {
+            "name": "Choose a known pair",
+            "pose": "point-left",
+            "say": "Choose the matching side and angle that are both known, before rearranging.",
+            "rule": "sine"
+          },
+          {
+            "name": "Find an unknown side",
+            "pose": "show-one",
+            "say": "Multiply by the sine of the unknown opposite angle. Round only at the final answer.",
+            "rule": "sine"
+          },
+          {
+            "name": "Verify the sine rule",
+            "pose": "compare",
+            "say": "Both matching side-to-sine ratios agree, apart from small display rounding.",
+            "rule": "sine"
+          },
+          {
+            "name": "Switch to the cosine rule",
+            "pose": "explain",
+            "say": "When two sides and the included angle are known, the cosine rule finds the opposite side.",
+            "rule": "cosine"
+          },
+          {
+            "name": "Recognise the included angle",
+            "pose": "point-down",
+            "say": "Included means the angle lies between the two known sides.",
+            "rule": "cosine"
+          },
+          {
+            "name": "Compare with Pythagoras",
+            "pose": "magnify",
+            "say": "The cosine rule is Pythagoras with a correction for the included angle.",
+            "rule": "cosine"
+          },
+          {
+            "name": "Square the known sides",
+            "pose": "count",
+            "say": "Square the two sides first, and then subtract twice their product times the cosine.",
+            "rule": "cosine"
+          },
+          {
+            "name": "Square root to get a length",
+            "pose": "show-one",
+            "say": "After finding the squared length, take the positive square root.",
+            "rule": "cosine"
+          },
+          {
+            "name": "Rearrange to find an angle",
+            "pose": "ruler",
+            "say": "With all three sides known, rearrange and use inverse cosine for the angle.",
+            "rule": "cosine"
+          },
+          {
+            "name": "The obtuse-angle check",
+            "pose": "think",
+            "say": "The cosine of an obtuse angle is negative, so the opposite side grows longer.",
+            "rule": "cosine"
+          },
+          {
+            "name": "Choose the correct rule",
+            "pose": "celebrate",
+            "say": "Look for an opposite side-angle pair for sine rule, or two sides with an included angle for cosine rule.",
+            "rule": "sine"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "sine-aas",
+          "presets": {
+            "sine-aas": {
+              "label": "Sine rule · two angles",
+              "method": "sine",
+              "b": 10,
+              "A": 42,
+              "B": 67,
+              "find": "a",
+              "unit": "cm"
+            },
+            "sine-second": {
+              "label": "Sine rule · second triangle",
+              "method": "sine",
+              "b": 12,
+              "A": 35,
+              "B": 74,
+              "find": "c",
+              "unit": "cm"
+            },
+            "sine-angle": {
+              "label": "Sine rule · find an angle",
+              "method": "sine",
+              "b": 8,
+              "A": 53,
+              "B": 32.169359407197355,
+              "find": "B",
+              "unit": "cm"
+            },
+            "cosine-sas": {
+              "label": "Cosine rule · two sides + angle",
+              "method": "cosine",
+              "b": 11,
+              "c": 8,
+              "A": 58,
+              "find": "a",
+              "unit": "cm"
+            },
+            "cosine-sss": {
+              "label": "Cosine rule · three sides",
+              "method": "cosine",
+              "a": 8,
+              "b": 10,
+              "c": 12,
+              "find": "A",
+              "unit": "cm"
+            },
+            "cosine-obtuse": {
+              "label": "Cosine rule · obtuse angle",
+              "method": "cosine",
+              "b": 9,
+              "c": 7,
+              "A": 117,
+              "find": "a",
+              "unit": "cm"
+            },
+            "cosine-angle": {
+              "label": "Cosine rule · angle reasoning",
+              "method": "cosine",
+              "a": 13,
+              "b": 12,
+              "c": 9,
+              "find": "A",
+              "unit": "cm"
+            },
+            "gcse-ambiguous": {
+              "label": "GCSE · two possible triangles",
+              "method": "sine",
+              "a": 10,
+              "b": 12,
+              "A": 35,
+              "find": "B",
+              "ambiguous": true,
+              "unit": "cm"
+            }
+          },
+          "events": [
+            "value",
+            "step",
+            "correct",
+            "hintUsed",
+            "mode",
+            "preset",
+            "point",
+            "label",
+            "branch"
+          ],
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "PRESETS": {
+            "sine-aas": {
+              "label": "Sine rule · two angles",
+              "method": "sine",
+              "b": 10,
+              "A": 42,
+              "B": 67,
+              "find": "a",
+              "unit": "cm"
+            },
+            "sine-second": {
+              "label": "Sine rule · second triangle",
+              "method": "sine",
+              "b": 12,
+              "A": 35,
+              "B": 74,
+              "find": "c",
+              "unit": "cm"
+            },
+            "sine-angle": {
+              "label": "Sine rule · find an angle",
+              "method": "sine",
+              "b": 8,
+              "A": 53,
+              "B": 32.169359407197355,
+              "find": "B",
+              "unit": "cm"
+            },
+            "cosine-sas": {
+              "label": "Cosine rule · two sides + angle",
+              "method": "cosine",
+              "b": 11,
+              "c": 8,
+              "A": 58,
+              "find": "a",
+              "unit": "cm"
+            },
+            "cosine-sss": {
+              "label": "Cosine rule · three sides",
+              "method": "cosine",
+              "a": 8,
+              "b": 10,
+              "c": 12,
+              "find": "A",
+              "unit": "cm"
+            },
+            "cosine-obtuse": {
+              "label": "Cosine rule · obtuse angle",
+              "method": "cosine",
+              "b": 9,
+              "c": 7,
+              "A": 117,
+              "find": "a",
+              "unit": "cm"
+            },
+            "cosine-angle": {
+              "label": "Cosine rule · angle reasoning",
+              "method": "cosine",
+              "a": 13,
+              "b": 12,
+              "c": 9,
+              "find": "A",
+              "unit": "cm"
+            },
+            "gcse-ambiguous": {
+              "label": "GCSE · two possible triangles",
+              "method": "sine",
+              "a": 10,
+              "b": 12,
+              "A": 35,
+              "find": "B",
+              "ambiguous": true,
+              "unit": "cm"
+            }
+          },
+          "STEPS": [
+            {
+              "name": "A triangle without a right angle",
+              "pose": "explain",
+              "say": "This triangle is not right angled. We need a different tool from ordinary SOH CAH TOA.",
+              "rule": "sine"
+            },
+            {
+              "name": "Match sides to opposite angles",
+              "pose": "point-down",
+              "say": "Lowercase a is opposite capital A, b opposite B, and c opposite C.",
+              "rule": "sine"
+            },
+            {
+              "name": "Know two angles",
+              "pose": "count",
+              "say": "If two angles are known, the third follows from one hundred and eighty degrees.",
+              "rule": "sine"
+            },
+            {
+              "name": "Make perpendicular heights",
+              "pose": "ruler",
+              "say": "A height splits the triangle into two right triangles so the opposite side can be linked to sine.",
+              "rule": "sine"
+            },
+            {
+              "name": "Build the sine rule",
+              "pose": "idea",
+              "say": "The ratio of a side to the sine of its opposite angle is constant across all three pairs.",
+              "rule": "sine"
+            },
+            {
+              "name": "Choose a known pair",
+              "pose": "point-left",
+              "say": "Choose the matching side and angle that are both known, before rearranging.",
+              "rule": "sine"
+            },
+            {
+              "name": "Find an unknown side",
+              "pose": "show-one",
+              "say": "Multiply by the sine of the unknown opposite angle. Round only at the final answer.",
+              "rule": "sine"
+            },
+            {
+              "name": "Verify the sine rule",
+              "pose": "compare",
+              "say": "Both matching side-to-sine ratios agree, apart from small display rounding.",
+              "rule": "sine"
+            },
+            {
+              "name": "Switch to the cosine rule",
+              "pose": "explain",
+              "say": "When two sides and the included angle are known, the cosine rule finds the opposite side.",
+              "rule": "cosine"
+            },
+            {
+              "name": "Recognise the included angle",
+              "pose": "point-down",
+              "say": "Included means the angle lies between the two known sides.",
+              "rule": "cosine"
+            },
+            {
+              "name": "Compare with Pythagoras",
+              "pose": "magnify",
+              "say": "The cosine rule is Pythagoras with a correction for the included angle.",
+              "rule": "cosine"
+            },
+            {
+              "name": "Square the known sides",
+              "pose": "count",
+              "say": "Square the two sides first, and then subtract twice their product times the cosine.",
+              "rule": "cosine"
+            },
+            {
+              "name": "Square root to get a length",
+              "pose": "show-one",
+              "say": "After finding the squared length, take the positive square root.",
+              "rule": "cosine"
+            },
+            {
+              "name": "Rearrange to find an angle",
+              "pose": "ruler",
+              "say": "With all three sides known, rearrange and use inverse cosine for the angle.",
+              "rule": "cosine"
+            },
+            {
+              "name": "The obtuse-angle check",
+              "pose": "think",
+              "say": "The cosine of an obtuse angle is negative, so the opposite side grows longer.",
+              "rule": "cosine"
+            },
+            {
+              "name": "Choose the correct rule",
+              "pose": "celebrate",
+              "say": "Look for an opposite side-angle pair for sine rule, or two sides with an included angle for cosine rule.",
+              "rule": "sine"
+            }
+          ]
+        },
+        "draws": {
+          "draw": [
+            "stage",
+            "st",
+            "opt"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "draw": {
+          "parameters": [
+            "stage",
+            "st",
+            "opt"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Sine rule · two angles",
+              "method": "sine",
+              "b": 10,
+              "A": 42,
+              "B": 67,
+              "find": "a",
+              "unit": "cm"
+            },
+            {
+              "step": 0,
+              "kind": "sine",
+              "pose": "explain",
+              "say": "This triangle is not right angled. We need a different tool from ordinary SOH CAH TOA.",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-14",
+    "path": "F15/F15-14-3D-Pythagoras-and-Trigonometry.html",
+    "errors": [],
+    "engineId": "F15-14",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 18,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 17,
+        "kind": "scene",
+        "key": "draw",
+        "path": [
+          "1",
+          "L"
+        ],
+        "from": 4,
+        "to": 5,
+        "beforeText": "A translucent cuboid with length, width and height, its floor diagonal, its space diagonal, and the elevation angle.L = 4 cmW = 3 cmH = 5 cm45°Angle of elevationtan θ = height ÷ floor diagonalElevation = 45°Two right triangles · one cuboidFirst solve the floor, then the space, and finally any elevation angle.First solve the floor, then the space, and finally any elevation angle. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "A translucent cuboid with length, width and height, its floor diagonal, its space diagonal, and the elevation angle.L = 5 cmW = 3 cmH = 5 cm40.6°Angle of elevationtan θ = height ÷ floor diagonalElevation = 40.6°Two right triangles · one cuboidFirst solve the floor, then the space, and finally any elevation angle.First solve the floor, then the space, and finally any elevation angle. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 17,
+          "data": {
+            "name": "Choose the appropriate triangle",
+            "pose": "celebrate",
+            "say": "First solve the floor, then the space, and finally any elevation angle."
+          },
+          "scene": {
+            "function": "draw",
+            "arguments": {
+              "p": {
+                "label": "Starter · 3–4–5 base",
+                "L": 5,
+                "W": 3,
+                "H": 5,
+                "zoom": 1.55,
+                "ranges": {
+                  "L": [
+                    3,
+                    6
+                  ],
+                  "W": [
+                    2,
+                    4
+                  ],
+                  "H": [
+                    3,
+                    6
+                  ]
+                },
+                "focus": "both",
+                "unit": "cm"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-14",
+        "version": "1.0.0",
+        "stepCount": 18,
+        "steps": [
+          {
+            "name": "A three-dimensional journey",
+            "pose": "explain",
+            "say": "A cuboid has length, width and height. The longest route inside joins opposite corners."
+          },
+          {
+            "name": "Measure three perpendicular edges",
+            "pose": "ruler",
+            "say": "Length, width and height are perpendicular dimensions. Start with the flat base."
+          },
+          {
+            "name": "Find the rectangle on the floor",
+            "pose": "point-down",
+            "say": "The floor is a rectangle with its length and width at right angles."
+          },
+          {
+            "name": "Draw its base diagonal",
+            "pose": "point-left",
+            "say": "Join two opposite floor corners. This is the hypotenuse of our first right triangle."
+          },
+          {
+            "name": "Square the floor lengths",
+            "pose": "count",
+            "say": "Square the length and the width. Their sum is the square of the base diagonal."
+          },
+          {
+            "name": "Take the first square root",
+            "pose": "show-one",
+            "say": "Square root the area sum to reveal the exact base diagonal."
+          },
+          {
+            "name": "Rise vertically from the far corner",
+            "pose": "point-down",
+            "say": "The height is perpendicular to the entire floor, including its diagonal."
+          },
+          {
+            "name": "See a second right triangle",
+            "pose": "magnify",
+            "say": "The base diagonal and vertical height make the shorter sides of a second right triangle."
+          },
+          {
+            "name": "Join the opposite cuboid corners",
+            "pose": "point-right",
+            "say": "Now draw the space diagonal, the straight line through the box."
+          },
+          {
+            "name": "Pythagoras for the space diagonal",
+            "pose": "idea",
+            "say": "The space diagonal squared is the base diagonal squared plus the height squared."
+          },
+          {
+            "name": "Combine both triangles",
+            "pose": "compare",
+            "say": "Substitute the floor calculation and obtain length squared plus width squared plus height squared."
+          },
+          {
+            "name": "Find the space distance",
+            "pose": "celebrate",
+            "say": "Square root the three squared edges. Keep precision until the final calculation."
+          },
+          {
+            "name": "Identify the elevation angle",
+            "pose": "ruler",
+            "say": "The angle of elevation is between the floor diagonal and the space diagonal."
+          },
+          {
+            "name": "Opposite and adjacent",
+            "pose": "point-down",
+            "say": "Height is opposite the elevation angle, and the floor diagonal is adjacent."
+          },
+          {
+            "name": "Build the tangent relationship",
+            "pose": "show-two",
+            "say": "Tangent of the elevation angle equals height divided by the floor diagonal."
+          },
+          {
+            "name": "Invert tangent to find the angle",
+            "pose": "idea",
+            "say": "Inverse tangent gives the angle, in degrees, from those two lengths."
+          },
+          {
+            "name": "Rearrange to find a missing height",
+            "pose": "think",
+            "say": "If the space diagonal is given, subtract the floor diagonal squared and take a square root."
+          },
+          {
+            "name": "Choose the appropriate triangle",
+            "pose": "celebrate",
+            "say": "First solve the floor, then the space, and finally any elevation angle."
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "cuboid-345",
+          "presets": {
+            "cuboid-345": {
+              "label": "Starter · 3–4–5 base",
+              "L": 4,
+              "W": 3,
+              "H": 5,
+              "zoom": 1.55,
+              "ranges": {
+                "L": [
+                  3,
+                  6
+                ],
+                "W": [
+                  2,
+                  4
+                ],
+                "H": [
+                  3,
+                  6
+                ]
+              },
+              "focus": "both",
+              "unit": "cm"
+            },
+            "space-862": {
+              "label": "Space diagonal · 8 × 6 × 2",
+              "L": 8,
+              "W": 6,
+              "H": 2,
+              "zoom": 1.07,
+              "ranges": {
+                "L": [
+                  6,
+                  10
+                ],
+                "W": [
+                  4,
+                  8
+                ],
+                "H": [
+                  2,
+                  4
+                ]
+              },
+              "focus": "space",
+              "unit": "cm"
+            },
+            "base-869": {
+              "label": "Base Pythagoras · 8 × 6 × 9",
+              "L": 8,
+              "W": 6,
+              "H": 9,
+              "zoom": 0.91,
+              "ranges": {
+                "L": [
+                  6,
+                  10
+                ],
+                "W": [
+                  4,
+                  8
+                ],
+                "H": [
+                  7,
+                  9
+                ]
+              },
+              "focus": "base",
+              "unit": "cm"
+            },
+            "gcse-angle": {
+              "label": "GCSE · Angle of elevation",
+              "L": 9,
+              "W": 4,
+              "H": 6,
+              "zoom": 1,
+              "ranges": {
+                "L": [
+                  7,
+                  10
+                ],
+                "W": [
+                  3,
+                  6
+                ],
+                "H": [
+                  4,
+                  8
+                ]
+              },
+              "focus": "angle",
+              "unit": "cm"
+            },
+            "gcse-short": {
+              "label": "GCSE · Missing height",
+              "L": 6,
+              "W": 8,
+              "H": 5,
+              "zoom": 1.08,
+              "ranges": {
+                "L": [
+                  4,
+                  8
+                ],
+                "W": [
+                  6,
+                  8
+                ],
+                "H": [
+                  3,
+                  7
+                ]
+              },
+              "focus": "reverse",
+              "unit": "cm"
+            },
+            "gcse-room": {
+              "label": "GCSE · Room corner to corner",
+              "L": 10,
+              "W": 7,
+              "H": 4,
+              "zoom": 0.97,
+              "ranges": {
+                "L": [
+                  8,
+                  11
+                ],
+                "W": [
+                  5,
+                  8
+                ],
+                "H": [
+                  3,
+                  6
+                ]
+              },
+              "focus": "space",
+              "unit": "m"
+            },
+            "gcse-cube": {
+              "label": "GCSE · Cube diagonals",
+              "L": 6,
+              "W": 6,
+              "H": 6,
+              "zoom": 1.03,
+              "ranges": {
+                "L": [
+                  4,
+                  8
+                ],
+                "W": [
+                  4,
+                  8
+                ],
+                "H": [
+                  4,
+                  8
+                ]
+              },
+              "focus": "both",
+              "unit": "cm"
+            },
+            "extension": {
+              "label": "Extension · Vertical angle",
+              "L": 7,
+              "W": 5,
+              "H": 8,
+              "zoom": 0.99,
+              "ranges": {
+                "L": [
+                  5,
+                  8
+                ],
+                "W": [
+                  4,
+                  6
+                ],
+                "H": [
+                  6,
+                  9
+                ]
+              },
+              "focus": "vertical",
+              "unit": "cm"
+            }
+          },
+          "events": [
+            "value",
+            "step",
+            "correct",
+            "hintUsed",
+            "mode",
+            "preset",
+            "dimension",
+            "label"
+          ],
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "PRESETS": {
+            "cuboid-345": {
+              "label": "Starter · 3–4–5 base",
+              "L": 4,
+              "W": 3,
+              "H": 5,
+              "zoom": 1.55,
+              "ranges": {
+                "L": [
+                  3,
+                  6
+                ],
+                "W": [
+                  2,
+                  4
+                ],
+                "H": [
+                  3,
+                  6
+                ]
+              },
+              "focus": "both",
+              "unit": "cm"
+            },
+            "space-862": {
+              "label": "Space diagonal · 8 × 6 × 2",
+              "L": 8,
+              "W": 6,
+              "H": 2,
+              "zoom": 1.07,
+              "ranges": {
+                "L": [
+                  6,
+                  10
+                ],
+                "W": [
+                  4,
+                  8
+                ],
+                "H": [
+                  2,
+                  4
+                ]
+              },
+              "focus": "space",
+              "unit": "cm"
+            },
+            "base-869": {
+              "label": "Base Pythagoras · 8 × 6 × 9",
+              "L": 8,
+              "W": 6,
+              "H": 9,
+              "zoom": 0.91,
+              "ranges": {
+                "L": [
+                  6,
+                  10
+                ],
+                "W": [
+                  4,
+                  8
+                ],
+                "H": [
+                  7,
+                  9
+                ]
+              },
+              "focus": "base",
+              "unit": "cm"
+            },
+            "gcse-angle": {
+              "label": "GCSE · Angle of elevation",
+              "L": 9,
+              "W": 4,
+              "H": 6,
+              "zoom": 1,
+              "ranges": {
+                "L": [
+                  7,
+                  10
+                ],
+                "W": [
+                  3,
+                  6
+                ],
+                "H": [
+                  4,
+                  8
+                ]
+              },
+              "focus": "angle",
+              "unit": "cm"
+            },
+            "gcse-short": {
+              "label": "GCSE · Missing height",
+              "L": 6,
+              "W": 8,
+              "H": 5,
+              "zoom": 1.08,
+              "ranges": {
+                "L": [
+                  4,
+                  8
+                ],
+                "W": [
+                  6,
+                  8
+                ],
+                "H": [
+                  3,
+                  7
+                ]
+              },
+              "focus": "reverse",
+              "unit": "cm"
+            },
+            "gcse-room": {
+              "label": "GCSE · Room corner to corner",
+              "L": 10,
+              "W": 7,
+              "H": 4,
+              "zoom": 0.97,
+              "ranges": {
+                "L": [
+                  8,
+                  11
+                ],
+                "W": [
+                  5,
+                  8
+                ],
+                "H": [
+                  3,
+                  6
+                ]
+              },
+              "focus": "space",
+              "unit": "m"
+            },
+            "gcse-cube": {
+              "label": "GCSE · Cube diagonals",
+              "L": 6,
+              "W": 6,
+              "H": 6,
+              "zoom": 1.03,
+              "ranges": {
+                "L": [
+                  4,
+                  8
+                ],
+                "W": [
+                  4,
+                  8
+                ],
+                "H": [
+                  4,
+                  8
+                ]
+              },
+              "focus": "both",
+              "unit": "cm"
+            },
+            "extension": {
+              "label": "Extension · Vertical angle",
+              "L": 7,
+              "W": 5,
+              "H": 8,
+              "zoom": 0.99,
+              "ranges": {
+                "L": [
+                  5,
+                  8
+                ],
+                "W": [
+                  4,
+                  6
+                ],
+                "H": [
+                  6,
+                  9
+                ]
+              },
+              "focus": "vertical",
+              "unit": "cm"
+            }
+          },
+          "STEPS": [
+            {
+              "name": "A three-dimensional journey",
+              "pose": "explain",
+              "say": "A cuboid has length, width and height. The longest route inside joins opposite corners."
+            },
+            {
+              "name": "Measure three perpendicular edges",
+              "pose": "ruler",
+              "say": "Length, width and height are perpendicular dimensions. Start with the flat base."
+            },
+            {
+              "name": "Find the rectangle on the floor",
+              "pose": "point-down",
+              "say": "The floor is a rectangle with its length and width at right angles."
+            },
+            {
+              "name": "Draw its base diagonal",
+              "pose": "point-left",
+              "say": "Join two opposite floor corners. This is the hypotenuse of our first right triangle."
+            },
+            {
+              "name": "Square the floor lengths",
+              "pose": "count",
+              "say": "Square the length and the width. Their sum is the square of the base diagonal."
+            },
+            {
+              "name": "Take the first square root",
+              "pose": "show-one",
+              "say": "Square root the area sum to reveal the exact base diagonal."
+            },
+            {
+              "name": "Rise vertically from the far corner",
+              "pose": "point-down",
+              "say": "The height is perpendicular to the entire floor, including its diagonal."
+            },
+            {
+              "name": "See a second right triangle",
+              "pose": "magnify",
+              "say": "The base diagonal and vertical height make the shorter sides of a second right triangle."
+            },
+            {
+              "name": "Join the opposite cuboid corners",
+              "pose": "point-right",
+              "say": "Now draw the space diagonal, the straight line through the box."
+            },
+            {
+              "name": "Pythagoras for the space diagonal",
+              "pose": "idea",
+              "say": "The space diagonal squared is the base diagonal squared plus the height squared."
+            },
+            {
+              "name": "Combine both triangles",
+              "pose": "compare",
+              "say": "Substitute the floor calculation and obtain length squared plus width squared plus height squared."
+            },
+            {
+              "name": "Find the space distance",
+              "pose": "celebrate",
+              "say": "Square root the three squared edges. Keep precision until the final calculation."
+            },
+            {
+              "name": "Identify the elevation angle",
+              "pose": "ruler",
+              "say": "The angle of elevation is between the floor diagonal and the space diagonal."
+            },
+            {
+              "name": "Opposite and adjacent",
+              "pose": "point-down",
+              "say": "Height is opposite the elevation angle, and the floor diagonal is adjacent."
+            },
+            {
+              "name": "Build the tangent relationship",
+              "pose": "show-two",
+              "say": "Tangent of the elevation angle equals height divided by the floor diagonal."
+            },
+            {
+              "name": "Invert tangent to find the angle",
+              "pose": "idea",
+              "say": "Inverse tangent gives the angle, in degrees, from those two lengths."
+            },
+            {
+              "name": "Rearrange to find a missing height",
+              "pose": "think",
+              "say": "If the space diagonal is given, subtract the floor diagonal squared and take a square root."
+            },
+            {
+              "name": "Choose the appropriate triangle",
+              "pose": "celebrate",
+              "say": "First solve the floor, then the space, and finally any elevation angle."
+            }
+          ]
+        },
+        "draws": {
+          "draw": [
+            "stage",
+            "p",
+            "opt"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "draw": {
+          "parameters": [
+            "stage",
+            "p",
+            "opt"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Starter · 3–4–5 base",
+              "L": 4,
+              "W": 3,
+              "H": 5,
+              "zoom": 1.55,
+              "ranges": {
+                "L": [
+                  3,
+                  6
+                ],
+                "W": [
+                  2,
+                  4
+                ],
+                "H": [
+                  3,
+                  6
+                ]
+              },
+              "focus": "both",
+              "unit": "cm"
+            },
+            {
+              "step": 0,
+              "mode": "watch",
+              "pose": "explain",
+              "say": "A cuboid has length, width and height. The longest route inside joins opposite corners.",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F15-10",
+    "path": "F15/NOVA-F15-10-Special-Triangle-Values.html",
+    "errors": [],
+    "engineId": "F15-10",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 12,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 11,
+        "kind": "scene",
+        "key": "draw",
+        "path": [
+          "1",
+          "scale"
+        ],
+        "from": 1,
+        "to": 2,
+        "beforeText": "Neon mathematical proof of the 30 degree special triangle. Sides and exact values can be explored.30° · 60° · 90°30°90°√312AdjacentOppositeHypotenuse2² = 1² + (√3)²sin 30° =12cos 30° =√32tan 30° =√33Change the size: all three side lengths scale together, but their ratios do not change. That is the link to similar triangles.Change the size: all three side lengths scale together, but their ratios do not change. That is the link to similar triangles. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Neon mathematical proof of the 30 degree special triangle. Sides and exact values can be explored.30° · 60° · 90°30°90°2√324AdjacentOppositeHypotenuseAll sides scale × 2 · ratios stay fixedsin 30° =12cos 30° =√32tan 30° =√33Change the size: all three side lengths scale together, but their ratios do not change. That is the link to similar triangles.Change the size: all three side lengths scale together, but their ratios do not change. That is the link to similar triangles. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 11,
+          "data": {
+            "name": "Compare and generalise",
+            "pose": "celebrate",
+            "prompt": "Side ratios stay the same even if the triangle changes size."
+          },
+          "scene": {
+            "function": "draw",
+            "arguments": {
+              "st": {
+                "label": "30° · Split an equilateral triangle",
+                "family": "3060",
+                "angle": 30,
+                "scale": 2
+              }
+            }
+          }
+        }
+      },
+      "failures": [
+        "Error: F15-10: F15-10 draw needs family 3060 (30°/60°) or 4545 (45°) and scale 0–10"
+      ],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F15-10",
+        "version": "1.0.0",
+        "stepCount": 12,
+        "steps": [
+          {
+            "name": "Spot the special shape",
+            "pose": "explain",
+            "prompt": "What familiar shape could give us this right triangle?"
+          },
+          {
+            "name": "Build from a square or equilateral triangle",
+            "pose": "magnify",
+            "prompt": "Look for the parent shape: square or equilateral triangle."
+          },
+          {
+            "name": "Make the accurate diagonal or altitude",
+            "pose": "ruler",
+            "prompt": "Split the parent shape with a precisely placed line."
+          },
+          {
+            "name": "Confirm the right angle",
+            "pose": "point-down",
+            "prompt": "Find the 90-degree angle made by the split."
+          },
+          {
+            "name": "Compare side lengths",
+            "pose": "compare",
+            "prompt": "Which sides are equal, and which side is longest?"
+          },
+          {
+            "name": "Derive the missing root",
+            "pose": "idea",
+            "prompt": "Use Pythagoras to find the exact length containing a square root."
+          },
+          {
+            "name": "Choose the reference angle",
+            "pose": "point-left",
+            "prompt": "30°, 60°, or 45° — angle choice determines opposite and adjacent."
+          },
+          {
+            "name": "Name opposite, adjacent and hypotenuse",
+            "pose": "show-three",
+            "prompt": "Opposite faces the chosen angle. Hypotenuse faces the right angle."
+          },
+          {
+            "name": "Write sine as an exact fraction",
+            "pose": "show-one",
+            "prompt": "Opposite divided by hypotenuse. Keep the surd exact."
+          },
+          {
+            "name": "Write cosine as an exact fraction",
+            "pose": "show-two",
+            "prompt": "Adjacent divided by hypotenuse. Do not swap side roles."
+          },
+          {
+            "name": "Write tangent as an exact fraction",
+            "pose": "count",
+            "prompt": "Opposite divided by adjacent, with a rationalised form when appropriate."
+          },
+          {
+            "name": "Compare and generalise",
+            "pose": "celebrate",
+            "prompt": "Side ratios stay the same even if the triangle changes size."
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "equilateral",
+          "events": [
+            "value",
+            "step",
+            "mode",
+            "hintUsed",
+            "correct",
+            "preset",
+            "label",
+            "scale",
+            "reference"
+          ],
+          "presets": {
+            "equilateral": {
+              "label": "30° · Split an equilateral triangle",
+              "family": "3060",
+              "angle": 30,
+              "scale": 1
+            },
+            "angle60": {
+              "label": "60° · The other acute angle",
+              "family": "3060",
+              "angle": 60,
+              "scale": 1
+            },
+            "square": {
+              "label": "45° · Diagonal of a square",
+              "family": "4545",
+              "angle": 45,
+              "scale": 1
+            },
+            "scaled30": {
+              "label": "Year 9 · Scaled 30° sides",
+              "family": "3060",
+              "angle": 30,
+              "scale": 1.2
+            },
+            "scaled45": {
+              "label": "Year 9 · Scaled 45° sides",
+              "family": "4545",
+              "angle": 45,
+              "scale": 1.15
+            },
+            "gcse30": {
+              "label": "GCSE · Exact 30° ratios",
+              "family": "3060",
+              "angle": 30,
+              "scale": 1
+            },
+            "gcse60": {
+              "label": "GCSE · Exact 60° ratios",
+              "family": "3060",
+              "angle": 60,
+              "scale": 1
+            }
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Spot the special shape",
+              "pose": "explain",
+              "prompt": "What familiar shape could give us this right triangle?"
+            },
+            {
+              "name": "Build from a square or equilateral triangle",
+              "pose": "magnify",
+              "prompt": "Look for the parent shape: square or equilateral triangle."
+            },
+            {
+              "name": "Make the accurate diagonal or altitude",
+              "pose": "ruler",
+              "prompt": "Split the parent shape with a precisely placed line."
+            },
+            {
+              "name": "Confirm the right angle",
+              "pose": "point-down",
+              "prompt": "Find the 90-degree angle made by the split."
+            },
+            {
+              "name": "Compare side lengths",
+              "pose": "compare",
+              "prompt": "Which sides are equal, and which side is longest?"
+            },
+            {
+              "name": "Derive the missing root",
+              "pose": "idea",
+              "prompt": "Use Pythagoras to find the exact length containing a square root."
+            },
+            {
+              "name": "Choose the reference angle",
+              "pose": "point-left",
+              "prompt": "30°, 60°, or 45° — angle choice determines opposite and adjacent."
+            },
+            {
+              "name": "Name opposite, adjacent and hypotenuse",
+              "pose": "show-three",
+              "prompt": "Opposite faces the chosen angle. Hypotenuse faces the right angle."
+            },
+            {
+              "name": "Write sine as an exact fraction",
+              "pose": "show-one",
+              "prompt": "Opposite divided by hypotenuse. Keep the surd exact."
+            },
+            {
+              "name": "Write cosine as an exact fraction",
+              "pose": "show-two",
+              "prompt": "Adjacent divided by hypotenuse. Do not swap side roles."
+            },
+            {
+              "name": "Write tangent as an exact fraction",
+              "pose": "count",
+              "prompt": "Opposite divided by adjacent, with a rationalised form when appropriate."
+            },
+            {
+              "name": "Compare and generalise",
+              "pose": "celebrate",
+              "prompt": "Side ratios stay the same even if the triangle changes size."
+            }
+          ]
+        },
+        "draws": {
+          "draw": [
+            "stage",
+            "st",
+            "opt"
+          ]
+        },
+        "exploreFields": {
+          "st": {
+            "kind": "factory",
+            "factory": "clone",
+            "argCount": 1
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "draw": {
+          "parameters": [
+            "stage",
+            "st",
+            "opt"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "30° · Split an equilateral triangle",
+              "family": "3060",
+              "angle": 30,
+              "scale": 1
+            },
+            {
+              "step": 0,
+              "pose": "explain",
+              "say": "Our right triangle will come from an equilateral triangle, where each whole side has length two.",
+              "animate": true
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  }
+]

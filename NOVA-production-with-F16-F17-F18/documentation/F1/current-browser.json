@@ -1,0 +1,5519 @@
+[
+  {
+    "id": "F1-01",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-01",
+      "version": "1.0.0",
+      "stepCount": 7,
+      "steps": [
+        {
+          "name": "Build the line",
+          "mood": "neutral",
+          "narration": "A number line is a ruler for numbers: equal gaps, every whole number gets its own line, and it keeps going both ways.",
+          "prompt": "Are the gaps between the numbers equal?",
+          "st": {
+            "label": "Integers 0 to 10",
+            "kind": "line",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "labelStep": 1,
+            "value": 7
+          },
+          "o": {
+            "pts": []
+          },
+          "chips": [
+            [
+              "from",
+              "0",
+              "given"
+            ],
+            [
+              "to",
+              "10",
+              "given"
+            ],
+            [
+              "gap",
+              "1",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Place a point",
+          "mood": "focus",
+          "narration": "Seven is seven equal steps from zero. The ring marks exactly where it sits.",
+          "prompt": "How many steps from 0 to 7?",
+          "st": {
+            "label": "Integers 0 to 10",
+            "kind": "line",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "labelStep": 1,
+            "value": 7
+          },
+          "o": {
+            "pts": [
+              {
+                "v": 7,
+                "role": "focus",
+                "label": "7",
+                "tag": "pt"
+              }
+            ],
+            "hop": [
+              0,
+              7
+            ]
+          },
+          "chips": [
+            [
+              "value",
+              "7",
+              "focus"
+            ],
+            [
+              "between",
+              "6 and 8",
+              "given"
+            ]
+          ],
+          "target": "pt"
+        },
+        {
+          "name": "Negatives",
+          "mood": "think",
+          "narration": "To the left of zero the numbers are negative. Minus four is four steps left of zero, so it is smaller than minus one.",
+          "prompt": "Which is smaller: −4 or −1?",
+          "st": {
+            "label": "Directed numbers −10 to 10",
+            "kind": "line",
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "labelStep": 2,
+            "value": -4
+          },
+          "o": {
+            "pts": [
+              {
+                "v": -4,
+                "role": "focus",
+                "label": "−4",
+                "tag": "pt"
+              },
+              {
+                "v": -1,
+                "role": "result",
+                "label": "−1",
+                "hi": true
+              }
+            ]
+          },
+          "chips": [
+            [
+              "order",
+              "−4 < −1",
+              "result"
+            ]
+          ],
+          "target": "pt"
+        },
+        {
+          "name": "Decimals",
+          "mood": "think",
+          "narration": "Zoom into 0 to 1 and split it into ten equal parts. Each line is one tenth, so the ring is at 0.6.",
+          "prompt": "How many tenths is 0.6?",
+          "st": {
+            "label": "Decimals: tenths 0 to 1",
+            "kind": "line",
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "labelStep": 0.1,
+            "value": 0.6
+          },
+          "o": {
+            "pts": [
+              {
+                "v": 0.6,
+                "role": "focus",
+                "label": "0.6",
+                "tag": "pt"
+              }
+            ]
+          },
+          "chips": [
+            [
+              "value",
+              "0.6",
+              "focus"
+            ],
+            [
+              "tenths",
+              "6",
+              "op"
+            ]
+          ],
+          "target": "pt"
+        },
+        {
+          "name": "Compare",
+          "mood": "focus",
+          "narration": "Two lines, one scale. Minus six is further left than minus two, so minus six is less than minus two.",
+          "prompt": "Is −6 bigger or smaller than −2?",
+          "st": {
+            "label": "Comparer: two values (F1-12)",
+            "kind": "compare",
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "labelStep": 2,
+            "value": -6,
+            "value2": -2
+          },
+          "o": {},
+          "chips": null
+        },
+        {
+          "name": "Thermometer",
+          "mood": "think",
+          "narration": "Stand the line up and it becomes a thermometer. From minus five degrees, a rise of eight takes us to three degrees.",
+          "prompt": "What is −5 °C plus 8 degrees?",
+          "st": {
+            "label": "Thermometer −20 °C to 40 °C (F1-04)",
+            "kind": "vertical",
+            "min": -20,
+            "max": 40,
+            "step": 1,
+            "labelStep": 10,
+            "value": 3,
+            "unit": "°C"
+          },
+          "o": {
+            "from": -5
+          },
+          "chips": null
+        },
+        {
+          "name": "Big numbers",
+          "mood": "cheer",
+          "narration": "The same line works for thousands. Each line is two thousand, so this point is six thousand seven hundred and fifty.",
+          "prompt": "Is 6750 nearer 6000 or 8000?",
+          "st": {
+            "label": "GCSE: thousands 0 to 10 000",
+            "kind": "line",
+            "min": 0,
+            "max": 10000,
+            "step": 250,
+            "labelStep": 2000,
+            "value": 6750
+          },
+          "o": {
+            "pts": [
+              {
+                "v": 6750,
+                "role": "focus",
+                "label": "6750",
+                "tag": "pt"
+              }
+            ]
+          },
+          "chips": [
+            [
+              "between",
+              "6000 and 8000",
+              "given"
+            ],
+            [
+              "nearer",
+              "6000",
+              "result"
+            ]
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "integers",
+        "presets": {
+          "integers": {
+            "label": "Integers 0 to 10",
+            "kind": "line",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "labelStep": 1,
+            "value": 7
+          },
+          "negatives": {
+            "label": "Directed numbers −10 to 10",
+            "kind": "line",
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "labelStep": 2,
+            "value": -4
+          },
+          "tenths": {
+            "label": "Decimals: tenths 0 to 1",
+            "kind": "line",
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "labelStep": 0.1,
+            "value": 0.6
+          },
+          "hundredths": {
+            "label": "Decimals: hundredths 2.3 to 2.4",
+            "kind": "line",
+            "min": 2.3,
+            "max": 2.4,
+            "step": 0.01,
+            "labelStep": 0.02,
+            "value": 2.37
+          },
+          "thousands": {
+            "label": "GCSE: thousands 0 to 10 000",
+            "kind": "line",
+            "min": 0,
+            "max": 10000,
+            "step": 250,
+            "labelStep": 2000,
+            "value": 6750
+          },
+          "thermometer": {
+            "label": "Thermometer −20 °C to 40 °C (F1-04)",
+            "kind": "vertical",
+            "min": -20,
+            "max": 40,
+            "step": 1,
+            "labelStep": 10,
+            "value": -5,
+            "unit": "°C"
+          },
+          "comparer": {
+            "label": "Comparer: two values (F1-12)",
+            "kind": "compare",
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "labelStep": 2,
+            "value": -6,
+            "value2": -2
+          },
+          "fractions": {
+            "label": "Fractions on a line · NOVA stacked notation",
+            "kind": "line",
+            "notation": "fraction",
+            "n": 3,
+            "d": 4,
+            "min": 0,
+            "max": 2,
+            "step": 0.25,
+            "labelStep": 1,
+            "value": 0.75
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "Build the line",
+            "mood": "neutral",
+            "narration": "A number line is a ruler for numbers: equal gaps, every whole number gets its own line, and it keeps going both ways.",
+            "prompt": "Are the gaps between the numbers equal?",
+            "st": {
+              "label": "Integers 0 to 10",
+              "kind": "line",
+              "min": 0,
+              "max": 10,
+              "step": 1,
+              "labelStep": 1,
+              "value": 7
+            },
+            "o": {
+              "pts": []
+            },
+            "chips": [
+              [
+                "from",
+                "0",
+                "given"
+              ],
+              [
+                "to",
+                "10",
+                "given"
+              ],
+              [
+                "gap",
+                "1",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Place a point",
+            "mood": "focus",
+            "narration": "Seven is seven equal steps from zero. The ring marks exactly where it sits.",
+            "prompt": "How many steps from 0 to 7?",
+            "st": {
+              "label": "Integers 0 to 10",
+              "kind": "line",
+              "min": 0,
+              "max": 10,
+              "step": 1,
+              "labelStep": 1,
+              "value": 7
+            },
+            "o": {
+              "pts": [
+                {
+                  "v": 7,
+                  "role": "focus",
+                  "label": "7",
+                  "tag": "pt"
+                }
+              ],
+              "hop": [
+                0,
+                7
+              ]
+            },
+            "chips": [
+              [
+                "value",
+                "7",
+                "focus"
+              ],
+              [
+                "between",
+                "6 and 8",
+                "given"
+              ]
+            ],
+            "target": "pt"
+          },
+          {
+            "name": "Negatives",
+            "mood": "think",
+            "narration": "To the left of zero the numbers are negative. Minus four is four steps left of zero, so it is smaller than minus one.",
+            "prompt": "Which is smaller: −4 or −1?",
+            "st": {
+              "label": "Directed numbers −10 to 10",
+              "kind": "line",
+              "min": -10,
+              "max": 10,
+              "step": 1,
+              "labelStep": 2,
+              "value": -4
+            },
+            "o": {
+              "pts": [
+                {
+                  "v": -4,
+                  "role": "focus",
+                  "label": "−4",
+                  "tag": "pt"
+                },
+                {
+                  "v": -1,
+                  "role": "result",
+                  "label": "−1",
+                  "hi": true
+                }
+              ]
+            },
+            "chips": [
+              [
+                "order",
+                "−4 < −1",
+                "result"
+              ]
+            ],
+            "target": "pt"
+          },
+          {
+            "name": "Decimals",
+            "mood": "think",
+            "narration": "Zoom into 0 to 1 and split it into ten equal parts. Each line is one tenth, so the ring is at 0.6.",
+            "prompt": "How many tenths is 0.6?",
+            "st": {
+              "label": "Decimals: tenths 0 to 1",
+              "kind": "line",
+              "min": 0,
+              "max": 1,
+              "step": 0.1,
+              "labelStep": 0.1,
+              "value": 0.6
+            },
+            "o": {
+              "pts": [
+                {
+                  "v": 0.6,
+                  "role": "focus",
+                  "label": "0.6",
+                  "tag": "pt"
+                }
+              ]
+            },
+            "chips": [
+              [
+                "value",
+                "0.6",
+                "focus"
+              ],
+              [
+                "tenths",
+                "6",
+                "op"
+              ]
+            ],
+            "target": "pt"
+          },
+          {
+            "name": "Compare",
+            "mood": "focus",
+            "narration": "Two lines, one scale. Minus six is further left than minus two, so minus six is less than minus two.",
+            "prompt": "Is −6 bigger or smaller than −2?",
+            "st": {
+              "label": "Comparer: two values (F1-12)",
+              "kind": "compare",
+              "min": -10,
+              "max": 10,
+              "step": 1,
+              "labelStep": 2,
+              "value": -6,
+              "value2": -2
+            },
+            "o": {},
+            "chips": null
+          },
+          {
+            "name": "Thermometer",
+            "mood": "think",
+            "narration": "Stand the line up and it becomes a thermometer. From minus five degrees, a rise of eight takes us to three degrees.",
+            "prompt": "What is −5 °C plus 8 degrees?",
+            "st": {
+              "label": "Thermometer −20 °C to 40 °C (F1-04)",
+              "kind": "vertical",
+              "min": -20,
+              "max": 40,
+              "step": 1,
+              "labelStep": 10,
+              "value": 3,
+              "unit": "°C"
+            },
+            "o": {
+              "from": -5
+            },
+            "chips": null
+          },
+          {
+            "name": "Big numbers",
+            "mood": "cheer",
+            "narration": "The same line works for thousands. Each line is two thousand, so this point is six thousand seven hundred and fifty.",
+            "prompt": "Is 6750 nearer 6000 or 8000?",
+            "st": {
+              "label": "GCSE: thousands 0 to 10 000",
+              "kind": "line",
+              "min": 0,
+              "max": 10000,
+              "step": 250,
+              "labelStep": 2000,
+              "value": 6750
+            },
+            "o": {
+              "pts": [
+                {
+                  "v": 6750,
+                  "role": "focus",
+                  "label": "6750",
+                  "tag": "pt"
+                }
+              ]
+            },
+            "chips": [
+              [
+                "between",
+                "6000 and 8000",
+                "given"
+              ],
+              [
+                "nearer",
+                "6000",
+                "result"
+              ]
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "vline": [
+          "stage",
+          "st",
+          "v",
+          "o"
+        ],
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "Integers 0 to 10",
+          "kind": "line",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "labelStep": 1,
+          "value": 7
+        }
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Number line · Build the linestep 1/7Number line 0 to 10.012345678910from0to10gap1Build the lineBuild the line (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Number line · Place a pointstep 2/7Number line 0 to 10.0123456789107+7value7between6 and 8Place a pointPlace a point (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Number line · Negativesstep 3/7Number line −10 to 10.−10−8−6−4−20246810−4−1order−4 < −1NegativesNegatives (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Number line · Decimalsstep 4/7Number line 0 to 1.00.10.20.30.40.50.60.70.80.910.6value0.6tenths6DecimalsDecimals (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Number line · Comparestep 5/7Two number lines comparing −6 and −2.−10−8−6−4−20246810−10−8−6−4−20246810A = −6B = −2compare−6 < −2further right is bigger→CompareCompare (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Number line · Thermometerstep 6/7Vertical scale −20 °C to 40 °C, reading 3 °C.−20−10010203040+8 °C3 °Creads3 °Cchange+8ThermometerThermometer (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 6,
+        "text": "Number line · Big numbersstep 7/7Number line 0 to 10000.02000400060008000100006750between6000 and 8000nearer6000Big numbersBig numbers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · Integers 0 to 107Number line 0 to 10.0123456789107value7on a labelled lineyes77 (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Preset",
+        "type": "select-one",
+        "value": "integers"
+      },
+      {
+        "label": "Value",
+        "type": "range",
+        "min": "0",
+        "max": "10",
+        "value": "7"
+      },
+      {
+        "label": "Down one step",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Up one step",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "integers",
+      "presets": {
+        "integers": {
+          "label": "Integers 0 to 10",
+          "kind": "line",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "labelStep": 1,
+          "value": 7
+        },
+        "negatives": {
+          "label": "Directed numbers −10 to 10",
+          "kind": "line",
+          "min": -10,
+          "max": 10,
+          "step": 1,
+          "labelStep": 2,
+          "value": -4
+        },
+        "tenths": {
+          "label": "Decimals: tenths 0 to 1",
+          "kind": "line",
+          "min": 0,
+          "max": 1,
+          "step": 0.1,
+          "labelStep": 0.1,
+          "value": 0.6
+        },
+        "hundredths": {
+          "label": "Decimals: hundredths 2.3 to 2.4",
+          "kind": "line",
+          "min": 2.3,
+          "max": 2.4,
+          "step": 0.01,
+          "labelStep": 0.02,
+          "value": 2.37
+        },
+        "thousands": {
+          "label": "GCSE: thousands 0 to 10 000",
+          "kind": "line",
+          "min": 0,
+          "max": 10000,
+          "step": 250,
+          "labelStep": 2000,
+          "value": 6750
+        },
+        "thermometer": {
+          "label": "Thermometer −20 °C to 40 °C (F1-04)",
+          "kind": "vertical",
+          "min": -20,
+          "max": 40,
+          "step": 1,
+          "labelStep": 10,
+          "value": -5,
+          "unit": "°C"
+        },
+        "comparer": {
+          "label": "Comparer: two values (F1-12)",
+          "kind": "compare",
+          "min": -10,
+          "max": 10,
+          "step": 1,
+          "labelStep": 2,
+          "value": -6,
+          "value2": -2
+        },
+        "fractions": {
+          "label": "Fractions on a line · NOVA stacked notation",
+          "kind": "line",
+          "notation": "fraction",
+          "n": 3,
+          "d": 4,
+          "min": 0,
+          "max": 2,
+          "step": 0.25,
+          "labelStep": 1,
+          "value": 0.75
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F1-02",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-02",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "Whole numbers",
+          "mood": "neutral",
+          "narration": "Here is 0 to 10. Our number, 3.47, is somewhere between 3 and 4, but at this zoom we cannot see exactly where.",
+          "prompt": "Which two whole numbers is 3.47 between?",
+          "v": 3.47,
+          "L": 0,
+          "o": {
+            "label": "?"
+          },
+          "chips": [
+            [
+              "between",
+              "3 and 4",
+              "given"
+            ]
+          ]
+        },
+        {
+          "name": "Zoom to tenths",
+          "mood": "think",
+          "narration": "Zoom into the gap from 3 to 4 and split it into ten equal parts. Each line is now one tenth. 3.47 sits between 3.4 and 3.5.",
+          "prompt": "How many tenths are between 3 and 4?",
+          "v": 3.47,
+          "L": 1,
+          "o": {
+            "label": "?"
+          },
+          "chips": [
+            [
+              "each gap",
+              "0.1",
+              "op"
+            ],
+            [
+              "between",
+              "3.4 and 3.5",
+              "given"
+            ]
+          ]
+        },
+        {
+          "name": "Zoom to hundredths",
+          "mood": "focus",
+          "narration": "Zoom again: 3.4 to 3.5 splits into ten hundredths. Now we can see it exactly: 3.47.",
+          "prompt": "Count the hundredths from 3.4.",
+          "v": 3.47,
+          "L": 2,
+          "o": {},
+          "chips": [
+            [
+              "each gap",
+              "0.01",
+              "op"
+            ],
+            [
+              "value",
+              "3.47",
+              "focus"
+            ]
+          ],
+          "target": "pt"
+        },
+        {
+          "name": "Times ten",
+          "mood": "think",
+          "narration": "Every zoom makes the gap ten times smaller: ones, then tenths, then hundredths. That is place value on a line.",
+          "prompt": "What is one tenth of 0.1?",
+          "v": 3.47,
+          "L": 2,
+          "o": {},
+          "chips": [
+            [
+              "1",
+              "÷ 10 = 0.1",
+              "op"
+            ],
+            [
+              "0.1",
+              "÷ 10 = 0.01",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Negatives",
+          "mood": "focus",
+          "narration": "Zoom works below zero too. Minus 0.35 is between minus 0.4 and minus 0.3, exactly halfway.",
+          "prompt": "Is −0.35 nearer −0.4 or −0.3?",
+          "st": {
+            "label": "Negatives: −1 to 0 (−0.35)",
+            "min": -5,
+            "max": 5,
+            "step": 1,
+            "value": -0.35,
+            "levels": 2
+          },
+          "v": -0.35,
+          "L": 2,
+          "o": {},
+          "chips": [
+            [
+              "between",
+              "−0.4 and −0.3",
+              "given"
+            ],
+            [
+              "halfway",
+              "yes",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Thousandths",
+          "mood": "cheer",
+          "narration": "Start at 0 to 1 in tenths and zoom twice: 0.125 is one hundred and twenty-five thousandths.",
+          "prompt": "How many thousandths is 0.125?",
+          "st": {
+            "label": "GCSE: thousandths (0.125)",
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "value": 0.125,
+            "levels": 2
+          },
+          "v": 0.125,
+          "L": 2,
+          "o": {},
+          "chips": [
+            [
+              "each gap",
+              "0.001",
+              "op"
+            ],
+            [
+              "value",
+              "0.125",
+              "focus"
+            ]
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "decimals",
+        "presets": {
+          "decimals": {
+            "label": "Ones → tenths → hundredths (3.47)",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "value": 3.47,
+            "levels": 2
+          },
+          "tenths": {
+            "label": "Ones → tenths (2.6)",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "value": 2.6,
+            "levels": 1
+          },
+          "negative": {
+            "label": "Negatives: −1 to 0 (−0.35)",
+            "min": -5,
+            "max": 5,
+            "step": 1,
+            "value": -0.35,
+            "levels": 2
+          },
+          "thousandths": {
+            "label": "GCSE: thousandths (0.125)",
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "value": 0.125,
+            "levels": 2
+          },
+          "big": {
+            "label": "Big numbers: 0 to 1000 (470)",
+            "min": 0,
+            "max": 1000,
+            "step": 100,
+            "value": 470,
+            "levels": 1
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "Whole numbers",
+            "mood": "neutral",
+            "narration": "Here is 0 to 10. Our number, 3.47, is somewhere between 3 and 4, but at this zoom we cannot see exactly where.",
+            "prompt": "Which two whole numbers is 3.47 between?",
+            "v": 3.47,
+            "L": 0,
+            "o": {
+              "label": "?"
+            },
+            "chips": [
+              [
+                "between",
+                "3 and 4",
+                "given"
+              ]
+            ]
+          },
+          {
+            "name": "Zoom to tenths",
+            "mood": "think",
+            "narration": "Zoom into the gap from 3 to 4 and split it into ten equal parts. Each line is now one tenth. 3.47 sits between 3.4 and 3.5.",
+            "prompt": "How many tenths are between 3 and 4?",
+            "v": 3.47,
+            "L": 1,
+            "o": {
+              "label": "?"
+            },
+            "chips": [
+              [
+                "each gap",
+                "0.1",
+                "op"
+              ],
+              [
+                "between",
+                "3.4 and 3.5",
+                "given"
+              ]
+            ]
+          },
+          {
+            "name": "Zoom to hundredths",
+            "mood": "focus",
+            "narration": "Zoom again: 3.4 to 3.5 splits into ten hundredths. Now we can see it exactly: 3.47.",
+            "prompt": "Count the hundredths from 3.4.",
+            "v": 3.47,
+            "L": 2,
+            "o": {},
+            "chips": [
+              [
+                "each gap",
+                "0.01",
+                "op"
+              ],
+              [
+                "value",
+                "3.47",
+                "focus"
+              ]
+            ],
+            "target": "pt"
+          },
+          {
+            "name": "Times ten",
+            "mood": "think",
+            "narration": "Every zoom makes the gap ten times smaller: ones, then tenths, then hundredths. That is place value on a line.",
+            "prompt": "What is one tenth of 0.1?",
+            "v": 3.47,
+            "L": 2,
+            "o": {},
+            "chips": [
+              [
+                "1",
+                "÷ 10 = 0.1",
+                "op"
+              ],
+              [
+                "0.1",
+                "÷ 10 = 0.01",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Negatives",
+            "mood": "focus",
+            "narration": "Zoom works below zero too. Minus 0.35 is between minus 0.4 and minus 0.3, exactly halfway.",
+            "prompt": "Is −0.35 nearer −0.4 or −0.3?",
+            "st": {
+              "label": "Negatives: −1 to 0 (−0.35)",
+              "min": -5,
+              "max": 5,
+              "step": 1,
+              "value": -0.35,
+              "levels": 2
+            },
+            "v": -0.35,
+            "L": 2,
+            "o": {},
+            "chips": [
+              [
+                "between",
+                "−0.4 and −0.3",
+                "given"
+              ],
+              [
+                "halfway",
+                "yes",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Thousandths",
+            "mood": "cheer",
+            "narration": "Start at 0 to 1 in tenths and zoom twice: 0.125 is one hundred and twenty-five thousandths.",
+            "prompt": "How many thousandths is 0.125?",
+            "st": {
+              "label": "GCSE: thousandths (0.125)",
+              "min": 0,
+              "max": 1,
+              "step": 0.1,
+              "value": 0.125,
+              "levels": 2
+            },
+            "v": 0.125,
+            "L": 2,
+            "o": {},
+            "chips": [
+              [
+                "each gap",
+                "0.001",
+                "op"
+              ],
+              [
+                "value",
+                "0.125",
+                "focus"
+              ]
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "zoomDraw": [
+          "stage",
+          "st",
+          "v",
+          "levels",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        },
+        "v": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "Ones → tenths → hundredths (3.47)",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "value": 3.47,
+          "levels": 2
+        },
+        "v": 3.47
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Zoom · Whole numbersstep 1/6Zoomable number line: 0 to 10.012345678910?between3 and 4Whole numbersWhole numbers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Zoom · Zoom to tenthsstep 2/6Zoomable number line: 0 to 10, then 3 to 4.012345678910zoom ×1033.13.23.33.43.53.63.73.83.94?each gap0.1between3.4 and 3.5Zoom to tenthsZoom to tenths (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Zoom · Zoom to hundredthsstep 3/6Zoomable number line: 0 to 10, then 3 to 4, then 3.4 to 3.5. Value 3.47.012345678910zoom ×1033.13.23.33.43.53.63.73.83.94zoom ×103.43.413.423.433.443.453.463.473.483.493.53.47each gap0.01value3.47Zoom to hundredthsZoom to hundredths (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Zoom · Times tenstep 4/6Zoomable number line: 0 to 10, then 3 to 4, then 3.4 to 3.5. Value 3.47.012345678910zoom ×1033.13.23.33.43.53.63.73.83.94zoom ×103.43.413.423.433.443.453.463.473.483.493.53.471÷ 10 = 0.10.1÷ 10 = 0.01Times tenTimes ten (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Zoom · Negativesstep 5/6Zoomable number line: −5 to 5, then −1 to 0, then −0.4 to −0.3. Value −0.35.−5−4−3−2−1012345zoom ×10−1−0.9−0.8−0.7−0.6−0.5−0.4−0.3−0.2−0.10zoom ×10−0.4−0.39−0.38−0.37−0.36−0.35−0.34−0.33−0.32−0.31−0.3−0.35between−0.4 and −0.3halfwayyesNegativesNegatives (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Zoom · Thousandthsstep 6/6Zoomable number line: 0 to 1, then 0.1 to 0.2, then 0.12 to 0.13. Value 0.125.00.10.20.30.40.50.60.70.80.91zoom ×100.10.110.120.130.140.150.160.170.180.190.2zoom ×100.120.1210.1220.1230.1240.1250.1260.1270.1280.1290.130.125each gap0.001value0.125ThousandthsThousandths (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · Ones → tenths → hundredths (3.47)zoom 2Zoomable number line: 0 to 10, then 3 to 4, then 3.4 to 3.5. Value 3.47.012345678910zoom ×1033.13.23.33.43.53.63.73.83.94zoom ×103.43.413.423.433.443.453.463.473.483.493.53.47value3.47between3.4 and 3.5each gap0.01zoom 2zoom 2 (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Preset",
+        "type": "select-one",
+        "value": "decimals"
+      },
+      {
+        "label": "Value",
+        "type": "range",
+        "min": "0",
+        "max": "9.99",
+        "value": "3.47"
+      },
+      {
+        "label": "Decrease Zoom",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Increase Zoom",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "decimals",
+      "presets": {
+        "decimals": {
+          "label": "Ones → tenths → hundredths (3.47)",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "value": 3.47,
+          "levels": 2
+        },
+        "tenths": {
+          "label": "Ones → tenths (2.6)",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "value": 2.6,
+          "levels": 1
+        },
+        "negative": {
+          "label": "Negatives: −1 to 0 (−0.35)",
+          "min": -5,
+          "max": 5,
+          "step": 1,
+          "value": -0.35,
+          "levels": 2
+        },
+        "thousandths": {
+          "label": "GCSE: thousandths (0.125)",
+          "min": 0,
+          "max": 1,
+          "step": 0.1,
+          "value": 0.125,
+          "levels": 2
+        },
+        "big": {
+          "label": "Big numbers: 0 to 1000 (470)",
+          "min": 0,
+          "max": 1000,
+          "step": 100,
+          "value": 470,
+          "levels": 1
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F1-03",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-03",
+      "version": "1.0.0",
+      "stepCount": 7,
+      "steps": [
+        {
+          "name": "Start",
+          "mood": "neutral",
+          "narration": "Every jump sum starts with a ring on the start number. Here we start at minus three.",
+          "prompt": "Where do we start?",
+          "st": {
+            "label": "Cross zero: −3 + 5",
+            "min": -6,
+            "max": 6,
+            "labelStep": 1,
+            "start": -3,
+            "jumps": [
+              5
+            ]
+          },
+          "o": {
+            "n": 0
+          },
+          "chips": [
+            [
+              "start",
+              "−3",
+              "given"
+            ]
+          ],
+          "target": "start"
+        },
+        {
+          "name": "Jump on",
+          "mood": "focus",
+          "narration": "Adding means jumping right. Minus three add five: jump five to the right, crossing zero, and land on two.",
+          "prompt": "Where do we land?",
+          "st": {
+            "label": "Cross zero: −3 + 5",
+            "min": -6,
+            "max": 6,
+            "labelStep": 1,
+            "start": -3,
+            "jumps": [
+              5
+            ]
+          },
+          "o": {},
+          "chips": [
+            [
+              "sum",
+              "−3 + 5 = 2",
+              "result"
+            ]
+          ],
+          "target": "end"
+        },
+        {
+          "name": "Jump back",
+          "mood": "think",
+          "narration": "Subtracting means jumping left. Seven take away nine: jump nine to the left and land on minus two.",
+          "prompt": "Seven take away nine is…?",
+          "st": {
+            "label": "Count back: 7 − 9",
+            "min": -4,
+            "max": 8,
+            "labelStep": 1,
+            "start": 7,
+            "jumps": [
+              -9
+            ]
+          },
+          "o": {},
+          "chips": [
+            [
+              "sum",
+              "7 − 9 = −2",
+              "result"
+            ]
+          ],
+          "target": "end"
+        },
+        {
+          "name": "Friendly jumps",
+          "mood": "focus",
+          "narration": "Big jumps can be split. Forty-eight add twenty-seven: two to fifty, then twenty to seventy, then five to seventy-five.",
+          "prompt": "Why jump 2 first?",
+          "st": {
+            "label": "Friendly jumps: 48 + 27",
+            "min": 40,
+            "max": 80,
+            "labelStep": 5,
+            "start": 48,
+            "jumps": [
+              2,
+              20,
+              5
+            ]
+          },
+          "o": {},
+          "chips": [
+            [
+              "split",
+              "2 + 20 + 5 = 27",
+              "op"
+            ],
+            [
+              "sum",
+              "48 + 27 = 75",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Repeated jumps",
+          "mood": "think",
+          "narration": "Four jumps of three from zero land on twelve. Multiplication is repeated equal jumps.",
+          "prompt": "How many jumps of 3 make 12?",
+          "st": {
+            "label": "Repeated jumps: 4 × 3",
+            "min": 0,
+            "max": 14,
+            "labelStep": 1,
+            "start": 0,
+            "jumps": [
+              3,
+              3,
+              3,
+              3
+            ]
+          },
+          "o": {},
+          "chips": [
+            [
+              "jumps",
+              "4 of 3",
+              "op"
+            ],
+            [
+              "product",
+              "4 × 3 = 12",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Subtract a negative",
+          "mood": "focus",
+          "narration": "Taking away minus three is the same as adding three: four take away minus three is seven. Two minus signs make a jump to the right.",
+          "prompt": "What is 4 − (−3)?",
+          "st": {
+            "label": "Subtract a negative: 4 − (−3)",
+            "min": -2,
+            "max": 9,
+            "labelStep": 1,
+            "start": 4,
+            "jumps": [
+              3
+            ]
+          },
+          "o": {},
+          "chips": [
+            [
+              "same as",
+              "4 + 3",
+              "op"
+            ],
+            [
+              "answer",
+              "7",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Decimals",
+          "mood": "cheer",
+          "narration": "Jumps work with decimals too. Two point six add point seven: point four to three, then point three more. Three point three.",
+          "prompt": "Why jump 0.4 first?",
+          "st": {
+            "label": "Decimals: 2.6 + 0.7",
+            "min": 2,
+            "max": 4,
+            "labelStep": 0.1,
+            "start": 2.6,
+            "jumps": [
+              0.4,
+              0.3
+            ]
+          },
+          "o": {},
+          "chips": [
+            [
+              "split",
+              "0.4 + 0.3",
+              "op"
+            ],
+            [
+              "sum",
+              "2.6 + 0.7 = 3.3",
+              "result"
+            ]
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "crossZero",
+        "presets": {
+          "crossZero": {
+            "label": "Cross zero: −3 + 5",
+            "min": -6,
+            "max": 6,
+            "labelStep": 1,
+            "start": -3,
+            "jumps": [
+              5
+            ]
+          },
+          "back": {
+            "label": "Count back: 7 − 9",
+            "min": -4,
+            "max": 8,
+            "labelStep": 1,
+            "start": 7,
+            "jumps": [
+              -9
+            ]
+          },
+          "split": {
+            "label": "Friendly jumps: 48 + 27",
+            "min": 40,
+            "max": 80,
+            "labelStep": 5,
+            "start": 48,
+            "jumps": [
+              2,
+              20,
+              5
+            ]
+          },
+          "repeat": {
+            "label": "Repeated jumps: 4 × 3",
+            "min": 0,
+            "max": 14,
+            "labelStep": 1,
+            "start": 0,
+            "jumps": [
+              3,
+              3,
+              3,
+              3
+            ]
+          },
+          "negSub": {
+            "label": "Subtract a negative: 4 − (−3)",
+            "min": -2,
+            "max": 9,
+            "labelStep": 1,
+            "start": 4,
+            "jumps": [
+              3
+            ]
+          },
+          "decimals": {
+            "label": "Decimals: 2.6 + 0.7",
+            "min": 2,
+            "max": 4,
+            "labelStep": 0.1,
+            "start": 2.6,
+            "jumps": [
+              0.4,
+              0.3
+            ]
+          },
+          "gcse": {
+            "label": "GCSE: −12 − 15",
+            "min": -30,
+            "max": 0,
+            "labelStep": 5,
+            "start": -12,
+            "jumps": [
+              -15
+            ]
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "Start",
+            "mood": "neutral",
+            "narration": "Every jump sum starts with a ring on the start number. Here we start at minus three.",
+            "prompt": "Where do we start?",
+            "st": {
+              "label": "Cross zero: −3 + 5",
+              "min": -6,
+              "max": 6,
+              "labelStep": 1,
+              "start": -3,
+              "jumps": [
+                5
+              ]
+            },
+            "o": {
+              "n": 0
+            },
+            "chips": [
+              [
+                "start",
+                "−3",
+                "given"
+              ]
+            ],
+            "target": "start"
+          },
+          {
+            "name": "Jump on",
+            "mood": "focus",
+            "narration": "Adding means jumping right. Minus three add five: jump five to the right, crossing zero, and land on two.",
+            "prompt": "Where do we land?",
+            "st": {
+              "label": "Cross zero: −3 + 5",
+              "min": -6,
+              "max": 6,
+              "labelStep": 1,
+              "start": -3,
+              "jumps": [
+                5
+              ]
+            },
+            "o": {},
+            "chips": [
+              [
+                "sum",
+                "−3 + 5 = 2",
+                "result"
+              ]
+            ],
+            "target": "end"
+          },
+          {
+            "name": "Jump back",
+            "mood": "think",
+            "narration": "Subtracting means jumping left. Seven take away nine: jump nine to the left and land on minus two.",
+            "prompt": "Seven take away nine is…?",
+            "st": {
+              "label": "Count back: 7 − 9",
+              "min": -4,
+              "max": 8,
+              "labelStep": 1,
+              "start": 7,
+              "jumps": [
+                -9
+              ]
+            },
+            "o": {},
+            "chips": [
+              [
+                "sum",
+                "7 − 9 = −2",
+                "result"
+              ]
+            ],
+            "target": "end"
+          },
+          {
+            "name": "Friendly jumps",
+            "mood": "focus",
+            "narration": "Big jumps can be split. Forty-eight add twenty-seven: two to fifty, then twenty to seventy, then five to seventy-five.",
+            "prompt": "Why jump 2 first?",
+            "st": {
+              "label": "Friendly jumps: 48 + 27",
+              "min": 40,
+              "max": 80,
+              "labelStep": 5,
+              "start": 48,
+              "jumps": [
+                2,
+                20,
+                5
+              ]
+            },
+            "o": {},
+            "chips": [
+              [
+                "split",
+                "2 + 20 + 5 = 27",
+                "op"
+              ],
+              [
+                "sum",
+                "48 + 27 = 75",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Repeated jumps",
+            "mood": "think",
+            "narration": "Four jumps of three from zero land on twelve. Multiplication is repeated equal jumps.",
+            "prompt": "How many jumps of 3 make 12?",
+            "st": {
+              "label": "Repeated jumps: 4 × 3",
+              "min": 0,
+              "max": 14,
+              "labelStep": 1,
+              "start": 0,
+              "jumps": [
+                3,
+                3,
+                3,
+                3
+              ]
+            },
+            "o": {},
+            "chips": [
+              [
+                "jumps",
+                "4 of 3",
+                "op"
+              ],
+              [
+                "product",
+                "4 × 3 = 12",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Subtract a negative",
+            "mood": "focus",
+            "narration": "Taking away minus three is the same as adding three: four take away minus three is seven. Two minus signs make a jump to the right.",
+            "prompt": "What is 4 − (−3)?",
+            "st": {
+              "label": "Subtract a negative: 4 − (−3)",
+              "min": -2,
+              "max": 9,
+              "labelStep": 1,
+              "start": 4,
+              "jumps": [
+                3
+              ]
+            },
+            "o": {},
+            "chips": [
+              [
+                "same as",
+                "4 + 3",
+                "op"
+              ],
+              [
+                "answer",
+                "7",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Decimals",
+            "mood": "cheer",
+            "narration": "Jumps work with decimals too. Two point six add point seven: point four to three, then point three more. Three point three.",
+            "prompt": "Why jump 0.4 first?",
+            "st": {
+              "label": "Decimals: 2.6 + 0.7",
+              "min": 2,
+              "max": 4,
+              "labelStep": 0.1,
+              "start": 2.6,
+              "jumps": [
+                0.4,
+                0.3
+              ]
+            },
+            "o": {},
+            "chips": [
+              [
+                "split",
+                "0.4 + 0.3",
+                "op"
+              ],
+              [
+                "sum",
+                "2.6 + 0.7 = 3.3",
+                "result"
+              ]
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "Cross zero: −3 + 5",
+          "min": -6,
+          "max": 6,
+          "labelStep": 1,
+          "start": -3,
+          "jumps": [
+            5
+          ]
+        }
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Jumps · Startstep 1/7Number line −6 to 6. Start −3.−6−5−4−3−2−10123456start−3StartStart (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Jumps · Jump onstep 2/7Number line −6 to 6. Start −3, jumps +5, end 2.−6−5−4−3−2−10123456+5sum−3 + 5 = 2Jump onJump on (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Jumps · Jump backstep 3/7Number line −4 to 8. Start 7, jumps −9, end −2.−4−3−2−1012345678−9sum7 − 9 = −2Jump backJump back (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Jumps · Friendly jumpsstep 4/7Number line 40 to 80. Start 48, jumps +2, +20, +5, end 75.404550556065707580+2+20+5split2 + 20 + 5 = 27sum48 + 27 = 75Friendly jumpsFriendly jumps (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Jumps · Repeated jumpsstep 5/7Number line 0 to 14. Start 0, jumps +3, +3, +3, +3, end 12.01234567891011121314+3+3+3+3jumps4 of 3product4 × 3 = 12Repeated jumpsRepeated jumps (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Jumps · Subtract a negativestep 6/7Number line −2 to 9. Start 4, jumps +3, end 7.−2−10123456789+3same as4 + 3answer7Subtract a negativeSubtract a negative (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 6,
+        "text": "Jumps · Decimalsstep 7/7Number line 2 to 4. Start 2.6, jumps +0.4, +0.3, end 3.3.22.12.22.32.42.52.62.72.82.933.13.23.33.43.53.63.73.83.94+0.4+0.3split0.4 + 0.3sum2.6 + 0.7 = 3.3DecimalsDecimals (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · Cross zero: −3 + 5= 2Number line −6 to 6. Start −3, jumps +5, end 2.−6−5−4−3−2−10123456+5start−3jumps+5lands on2−3 + 5 = 2−3 + 5 = 2 (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Preset",
+        "type": "select-one",
+        "value": "crossZero"
+      },
+      {
+        "label": "Start",
+        "type": "range",
+        "min": "-6",
+        "max": "6",
+        "value": "-3"
+      },
+      {
+        "label": "Jump",
+        "type": "range",
+        "min": "-12",
+        "max": "12",
+        "value": "5"
+      },
+      {
+        "label": "Decrease Jumps",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Increase Jumps",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "crossZero",
+      "presets": {
+        "crossZero": {
+          "label": "Cross zero: −3 + 5",
+          "min": -6,
+          "max": 6,
+          "labelStep": 1,
+          "start": -3,
+          "jumps": [
+            5
+          ]
+        },
+        "back": {
+          "label": "Count back: 7 − 9",
+          "min": -4,
+          "max": 8,
+          "labelStep": 1,
+          "start": 7,
+          "jumps": [
+            -9
+          ]
+        },
+        "split": {
+          "label": "Friendly jumps: 48 + 27",
+          "min": 40,
+          "max": 80,
+          "labelStep": 5,
+          "start": 48,
+          "jumps": [
+            2,
+            20,
+            5
+          ]
+        },
+        "repeat": {
+          "label": "Repeated jumps: 4 × 3",
+          "min": 0,
+          "max": 14,
+          "labelStep": 1,
+          "start": 0,
+          "jumps": [
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        "negSub": {
+          "label": "Subtract a negative: 4 − (−3)",
+          "min": -2,
+          "max": 9,
+          "labelStep": 1,
+          "start": 4,
+          "jumps": [
+            3
+          ]
+        },
+        "decimals": {
+          "label": "Decimals: 2.6 + 0.7",
+          "min": 2,
+          "max": 4,
+          "labelStep": 0.1,
+          "start": 2.6,
+          "jumps": [
+            0.4,
+            0.3
+          ]
+        },
+        "gcse": {
+          "label": "GCSE: −12 − 15",
+          "min": -30,
+          "max": 0,
+          "labelStep": 5,
+          "start": -12,
+          "jumps": [
+            -15
+          ]
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F1-05",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-05",
+      "version": "1.0.0",
+      "stepCount": 7,
+      "steps": [
+        {
+          "name": "Landmarks",
+          "mood": "neutral",
+          "narration": "To round 37 to the nearest ten, find the tens either side: 30 and 40. They are the landmarks at the bottom of the hill.",
+          "prompt": "Which tens is 37 between?",
+          "v": 37,
+          "p": 10,
+          "o": {
+            "arrow": false
+          },
+          "chips": [
+            [
+              "between",
+              "30 and 40",
+              "given"
+            ]
+          ]
+        },
+        {
+          "name": "Halfway hill",
+          "mood": "think",
+          "narration": "The top of the hill is halfway, 35. A ball on the hill always rolls down to the nearer landmark.",
+          "prompt": "What is halfway between 30 and 40?",
+          "v": 37,
+          "p": 10,
+          "o": {
+            "arrow": false
+          },
+          "chips": [
+            [
+              "half way",
+              "35",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Roll",
+          "mood": "focus",
+          "narration": "37 is past the top, on the 40 side, so the ball rolls to 40. 37 rounded to the nearest ten is 40.",
+          "prompt": "Which way does 37 roll?",
+          "v": 37,
+          "p": 10,
+          "o": {},
+          "chips": [
+            [
+              "37",
+              "≈ 40",
+              "result"
+            ]
+          ],
+          "target": "ball"
+        },
+        {
+          "name": "Exactly halfway",
+          "mood": "think",
+          "narration": "What about 35, right on the top? The rule is: halfway rounds up. So 35 rounds to 40.",
+          "prompt": "Where does 35 go?",
+          "v": 35,
+          "p": 10,
+          "o": {},
+          "chips": [
+            [
+              "rule",
+              "halfway rounds up",
+              "op"
+            ],
+            [
+              "35",
+              "≈ 40",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Decimals",
+          "mood": "focus",
+          "narration": "To one decimal place, the landmarks are tenths. 4.63 is between 4.6 and 4.7; halfway is 4.65, so it rolls back to 4.6.",
+          "prompt": "Is 4.63 past 4.65?",
+          "v": 4.63,
+          "p": 0.1,
+          "o": {},
+          "chips": [
+            [
+              "between",
+              "4.6 and 4.7",
+              "given"
+            ],
+            [
+              "4.63",
+              "≈ 4.6",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Hundreds",
+          "mood": "think",
+          "narration": "6748 to the nearest hundred: the landmarks are 6700 and 6800, halfway is 6750. 6748 is just short of the top, so it rolls to 6700.",
+          "prompt": "Is 6748 more or less than 6750?",
+          "v": 6748,
+          "p": 100,
+          "o": {},
+          "chips": [
+            [
+              "half way",
+              "6750",
+              "op"
+            ],
+            [
+              "6748",
+              "≈ 6700",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Negatives",
+          "mood": "cheer",
+          "narration": "Negatives work the same way. Minus 23 is between minus 30 and minus 20, nearer minus 20, so it rounds to minus 20.",
+          "prompt": "Which ten is −23 nearer?",
+          "v": -23,
+          "p": 10,
+          "o": {},
+          "chips": [
+            [
+              "−23",
+              "≈ −20",
+              "result"
+            ]
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "tens",
+        "presets": {
+          "tens": {
+            "label": "Nearest 10 (37)",
+            "place": 10,
+            "value": 37
+          },
+          "ones": {
+            "label": "Nearest whole (6.4)",
+            "place": 1,
+            "value": 6.4
+          },
+          "tenths": {
+            "label": "1 decimal place (4.63)",
+            "place": 0.1,
+            "value": 4.63
+          },
+          "hundreds": {
+            "label": "Nearest 100 (6748)",
+            "place": 100,
+            "value": 6748
+          },
+          "negative": {
+            "label": "Negatives: nearest 10 (−23)",
+            "place": 10,
+            "value": -23
+          },
+          "gcse": {
+            "label": "GCSE: 2 decimal places (0.4372)",
+            "place": 0.01,
+            "value": 0.4372
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "Landmarks",
+            "mood": "neutral",
+            "narration": "To round 37 to the nearest ten, find the tens either side: 30 and 40. They are the landmarks at the bottom of the hill.",
+            "prompt": "Which tens is 37 between?",
+            "v": 37,
+            "p": 10,
+            "o": {
+              "arrow": false
+            },
+            "chips": [
+              [
+                "between",
+                "30 and 40",
+                "given"
+              ]
+            ]
+          },
+          {
+            "name": "Halfway hill",
+            "mood": "think",
+            "narration": "The top of the hill is halfway, 35. A ball on the hill always rolls down to the nearer landmark.",
+            "prompt": "What is halfway between 30 and 40?",
+            "v": 37,
+            "p": 10,
+            "o": {
+              "arrow": false
+            },
+            "chips": [
+              [
+                "half way",
+                "35",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Roll",
+            "mood": "focus",
+            "narration": "37 is past the top, on the 40 side, so the ball rolls to 40. 37 rounded to the nearest ten is 40.",
+            "prompt": "Which way does 37 roll?",
+            "v": 37,
+            "p": 10,
+            "o": {},
+            "chips": [
+              [
+                "37",
+                "≈ 40",
+                "result"
+              ]
+            ],
+            "target": "ball"
+          },
+          {
+            "name": "Exactly halfway",
+            "mood": "think",
+            "narration": "What about 35, right on the top? The rule is: halfway rounds up. So 35 rounds to 40.",
+            "prompt": "Where does 35 go?",
+            "v": 35,
+            "p": 10,
+            "o": {},
+            "chips": [
+              [
+                "rule",
+                "halfway rounds up",
+                "op"
+              ],
+              [
+                "35",
+                "≈ 40",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Decimals",
+            "mood": "focus",
+            "narration": "To one decimal place, the landmarks are tenths. 4.63 is between 4.6 and 4.7; halfway is 4.65, so it rolls back to 4.6.",
+            "prompt": "Is 4.63 past 4.65?",
+            "v": 4.63,
+            "p": 0.1,
+            "o": {},
+            "chips": [
+              [
+                "between",
+                "4.6 and 4.7",
+                "given"
+              ],
+              [
+                "4.63",
+                "≈ 4.6",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Hundreds",
+            "mood": "think",
+            "narration": "6748 to the nearest hundred: the landmarks are 6700 and 6800, halfway is 6750. 6748 is just short of the top, so it rolls to 6700.",
+            "prompt": "Is 6748 more or less than 6750?",
+            "v": 6748,
+            "p": 100,
+            "o": {},
+            "chips": [
+              [
+                "half way",
+                "6750",
+                "op"
+              ],
+              [
+                "6748",
+                "≈ 6700",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Negatives",
+            "mood": "cheer",
+            "narration": "Negatives work the same way. Minus 23 is between minus 30 and minus 20, nearer minus 20, so it rounds to minus 20.",
+            "prompt": "Which ten is −23 nearer?",
+            "v": -23,
+            "p": 10,
+            "o": {},
+            "chips": [
+              [
+                "−23",
+                "≈ −20",
+                "result"
+              ]
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "draw": [
+          "stage",
+          "v",
+          "p",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "Nearest 10 (37)",
+          "place": 10,
+          "value": 37
+        }
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Rounding · Landmarksstep 1/7Rounding 37 to the nearest 10: between 30 and 40, rounds to 40.3031323334353637383940half way 3537between30 and 40LandmarksLandmarks (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Rounding · Halfway hillstep 2/7Rounding 37 to the nearest 10: between 30 and 40, rounds to 40.3031323334353637383940half way 3537half way35Halfway hillHalfway hill (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Rounding · Rollstep 3/7Rounding 37 to the nearest 10: between 30 and 40, rounds to 40.3031323334353637383940half way 353737≈ 40RollRoll (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Rounding · Exactly halfwaystep 4/7Rounding 35 to the nearest 10: between 30 and 40, rounds to 40.3031323334353637383940half way 3535rulehalfway rounds up35≈ 40Exactly halfwayExactly halfway (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Rounding · Decimalsstep 5/7Rounding 4.63 to the nearest 0.1: between 4.6 and 4.7, rounds to 4.6.4.64.614.624.634.644.654.664.674.684.694.7half way 4.654.63between4.6 and 4.74.63≈ 4.6DecimalsDecimals (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Rounding · Hundredsstep 6/7Rounding 6748 to the nearest 100: between 6700 and 6800, rounds to 6700.67006710672067306740675067606770678067906800half way 67506748half way67506748≈ 6700HundredsHundreds (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 6,
+        "text": "Rounding · Negativesstep 7/7Rounding −23 to the nearest 10: between −30 and −20, rounds to −20.−30−29−28−27−26−25−24−23−22−21−20half way −25−23−23≈ −20NegativesNegatives (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · nearest 1037 ≈ 40Rounding 37 to the nearest 10: between 30 and 40, rounds to 40.3031323334353637383940half way 3537between30 and 40half way35rounds to4037 ≈ 4037 ≈ 40 (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Round to",
+        "type": "select-one",
+        "value": "tens"
+      },
+      {
+        "label": "Number",
+        "type": "range",
+        "min": "10",
+        "max": "60",
+        "value": "37"
+      },
+      {
+        "label": "Roll",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "tens",
+      "presets": {
+        "tens": {
+          "label": "Nearest 10 (37)",
+          "place": 10,
+          "value": 37
+        },
+        "ones": {
+          "label": "Nearest whole (6.4)",
+          "place": 1,
+          "value": 6.4
+        },
+        "tenths": {
+          "label": "1 decimal place (4.63)",
+          "place": 0.1,
+          "value": 4.63
+        },
+        "hundreds": {
+          "label": "Nearest 100 (6748)",
+          "place": 100,
+          "value": 6748
+        },
+        "negative": {
+          "label": "Negatives: nearest 10 (−23)",
+          "place": 10,
+          "value": -23
+        },
+        "gcse": {
+          "label": "GCSE: 2 decimal places (0.4372)",
+          "place": 0.01,
+          "value": 0.4372
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F1-06",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-06",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "Greater than",
+          "mood": "neutral",
+          "narration": "x is greater than 2 means every number to the right of 2. The open ring says 2 itself is not included.",
+          "prompt": "Is 2 a solution of x > 2?",
+          "st": {
+            "label": "x > 2",
+            "min": -5,
+            "max": 5,
+            "op": ">",
+            "a": 2
+          },
+          "target": "end",
+          "chips": null
+        },
+        {
+          "name": "Or equal to",
+          "mood": "think",
+          "narration": "Add a line under the sign and 2 joins in: x is greater than or equal to 2. The ring is filled in.",
+          "prompt": "What changed from the last line?",
+          "st": {
+            "label": "x ≥ 2",
+            "min": -5,
+            "max": 5,
+            "op": ">=",
+            "a": 2
+          },
+          "chips": null
+        },
+        {
+          "name": "Less than",
+          "mood": "focus",
+          "narration": "x is less than minus 1 points left: minus 2, minus 3 and every number in between, but not minus 1 itself.",
+          "prompt": "Is −1.5 a solution?",
+          "st": {
+            "label": "x < −1",
+            "min": -5,
+            "max": 5,
+            "op": "<",
+            "a": -1
+          },
+          "chips": null
+        },
+        {
+          "name": "Between",
+          "mood": "focus",
+          "narration": "Two signs make a segment. Minus 2 is less than x, and x is at most 3: open at minus 2, filled at 3.",
+          "prompt": "Which end is included?",
+          "st": {
+            "label": "−2 < x ≤ 3",
+            "min": -5,
+            "max": 5,
+            "op": "between",
+            "a": -2,
+            "b": 3,
+            "incA": false,
+            "incB": true
+          },
+          "chips": null
+        },
+        {
+          "name": "Integer solutions",
+          "mood": "think",
+          "narration": "If x must be a whole number, list the integers on the segment: minus 1, 0, 1, 2 and 3. Five integers.",
+          "prompt": "Why is −2 not in the list?",
+          "st": {
+            "label": "−2 < x ≤ 3",
+            "min": -5,
+            "max": 5,
+            "op": "between",
+            "a": -2,
+            "b": 3,
+            "incA": false,
+            "incB": true
+          },
+          "o": {
+            "ints": true
+          },
+          "chips": [
+            [
+              "integers",
+              "−1, 0, 1, 2, 3",
+              "focus"
+            ],
+            [
+              "count",
+              "5",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Decimals",
+          "mood": "cheer",
+          "narration": "Solutions are not only whole numbers. x is at least 1.5, so 1.5, 1.8 and 2.75 all work.",
+          "prompt": "Is 1.49 a solution of x ≥ 1.5?",
+          "st": {
+            "label": "x ≥ 1.5 (decimals)",
+            "min": 0,
+            "max": 3,
+            "op": ">=",
+            "a": 1.5,
+            "labelStep": 0.5
+          },
+          "chips": null
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "gt",
+        "presets": {
+          "gt": {
+            "label": "x > 2",
+            "min": -5,
+            "max": 5,
+            "op": ">",
+            "a": 2
+          },
+          "ge": {
+            "label": "x ≥ 2",
+            "min": -5,
+            "max": 5,
+            "op": ">=",
+            "a": 2
+          },
+          "lt": {
+            "label": "x < −1",
+            "min": -5,
+            "max": 5,
+            "op": "<",
+            "a": -1
+          },
+          "le": {
+            "label": "x ≤ 3",
+            "min": -5,
+            "max": 5,
+            "op": "<=",
+            "a": 3
+          },
+          "between": {
+            "label": "−2 < x ≤ 3",
+            "min": -5,
+            "max": 5,
+            "op": "between",
+            "a": -2,
+            "b": 3,
+            "incA": false,
+            "incB": true
+          },
+          "decimal": {
+            "label": "x ≥ 1.5 (decimals)",
+            "min": 0,
+            "max": 3,
+            "op": ">=",
+            "a": 1.5,
+            "labelStep": 0.5
+          },
+          "gcse": {
+            "label": "GCSE: −3 ≤ x < 4, integers",
+            "min": -5,
+            "max": 5,
+            "op": "between",
+            "a": -3,
+            "b": 4,
+            "incA": true,
+            "incB": false,
+            "ints": true
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "Greater than",
+            "mood": "neutral",
+            "narration": "x is greater than 2 means every number to the right of 2. The open ring says 2 itself is not included.",
+            "prompt": "Is 2 a solution of x > 2?",
+            "st": {
+              "label": "x > 2",
+              "min": -5,
+              "max": 5,
+              "op": ">",
+              "a": 2
+            },
+            "target": "end",
+            "chips": null
+          },
+          {
+            "name": "Or equal to",
+            "mood": "think",
+            "narration": "Add a line under the sign and 2 joins in: x is greater than or equal to 2. The ring is filled in.",
+            "prompt": "What changed from the last line?",
+            "st": {
+              "label": "x ≥ 2",
+              "min": -5,
+              "max": 5,
+              "op": ">=",
+              "a": 2
+            },
+            "chips": null
+          },
+          {
+            "name": "Less than",
+            "mood": "focus",
+            "narration": "x is less than minus 1 points left: minus 2, minus 3 and every number in between, but not minus 1 itself.",
+            "prompt": "Is −1.5 a solution?",
+            "st": {
+              "label": "x < −1",
+              "min": -5,
+              "max": 5,
+              "op": "<",
+              "a": -1
+            },
+            "chips": null
+          },
+          {
+            "name": "Between",
+            "mood": "focus",
+            "narration": "Two signs make a segment. Minus 2 is less than x, and x is at most 3: open at minus 2, filled at 3.",
+            "prompt": "Which end is included?",
+            "st": {
+              "label": "−2 < x ≤ 3",
+              "min": -5,
+              "max": 5,
+              "op": "between",
+              "a": -2,
+              "b": 3,
+              "incA": false,
+              "incB": true
+            },
+            "chips": null
+          },
+          {
+            "name": "Integer solutions",
+            "mood": "think",
+            "narration": "If x must be a whole number, list the integers on the segment: minus 1, 0, 1, 2 and 3. Five integers.",
+            "prompt": "Why is −2 not in the list?",
+            "st": {
+              "label": "−2 < x ≤ 3",
+              "min": -5,
+              "max": 5,
+              "op": "between",
+              "a": -2,
+              "b": 3,
+              "incA": false,
+              "incB": true
+            },
+            "o": {
+              "ints": true
+            },
+            "chips": [
+              [
+                "integers",
+                "−1, 0, 1, 2, 3",
+                "focus"
+              ],
+              [
+                "count",
+                "5",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Decimals",
+            "mood": "cheer",
+            "narration": "Solutions are not only whole numbers. x is at least 1.5, so 1.5, 1.8 and 2.75 all work.",
+            "prompt": "Is 1.49 a solution of x ≥ 1.5?",
+            "st": {
+              "label": "x ≥ 1.5 (decimals)",
+              "min": 0,
+              "max": 3,
+              "op": ">=",
+              "a": 1.5,
+              "labelStep": 0.5
+            },
+            "chips": null
+          }
+        ]
+      },
+      "draws": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "t": true,
+        "showI": true,
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "x > 2",
+          "min": -5,
+          "max": 5,
+          "op": ">",
+          "a": 2
+        },
+        "t": 0,
+        "showI": false
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Inequality · Greater thanstep 1/6Number line showing x > 2.−5−4−3−2−1012345inequalityx > 2endopen = not includedx > 2x > 2 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Inequality · Or equal tostep 2/6Number line showing x ≥ 2.−5−4−3−2−1012345inequalityx ≥ 2endfilled = includedx ≥ 2x ≥ 2 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Inequality · Less thanstep 3/6Number line showing x < −1.−5−4−3−2−1012345inequalityx < −1endopen = not includedx < −1x < −1 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Inequality · Betweenstep 4/6Number line showing −2 < x ≤ 3.−5−4−3−2−1012345inequality−2 < x ≤ 3endopen and filled−2 < x ≤ 3−2 < x ≤ 3 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Inequality · Integer solutionsstep 5/6Number line showing −2 < x ≤ 3.−5−4−3−2−1012345integers−1, 0, 1, 2, 3count5−2 < x ≤ 3−2 < x ≤ 3 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Inequality · Decimalsstep 6/6Number line showing x ≥ 1.5.00.511.522.53inequalityx ≥ 1.5endfilled = includedx ≥ 1.5x ≥ 1.5 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · x > 2not a solutionNumber line showing x > 2.−5−4−3−2−1012345inequalityx > 2test x0does not worknox = 0x = 0 (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Inequality",
+        "type": "select-one",
+        "value": "gt"
+      },
+      {
+        "label": "Boundary",
+        "type": "range",
+        "min": "-5",
+        "max": "5",
+        "value": "2"
+      },
+      {
+        "label": "Test x",
+        "type": "range",
+        "min": "-5",
+        "max": "5",
+        "value": "0"
+      },
+      {
+        "label": "Show integers",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "gt",
+      "presets": {
+        "gt": {
+          "label": "x > 2",
+          "min": -5,
+          "max": 5,
+          "op": ">",
+          "a": 2
+        },
+        "ge": {
+          "label": "x ≥ 2",
+          "min": -5,
+          "max": 5,
+          "op": ">=",
+          "a": 2
+        },
+        "lt": {
+          "label": "x < −1",
+          "min": -5,
+          "max": 5,
+          "op": "<",
+          "a": -1
+        },
+        "le": {
+          "label": "x ≤ 3",
+          "min": -5,
+          "max": 5,
+          "op": "<=",
+          "a": 3
+        },
+        "between": {
+          "label": "−2 < x ≤ 3",
+          "min": -5,
+          "max": 5,
+          "op": "between",
+          "a": -2,
+          "b": 3,
+          "incA": false,
+          "incB": true
+        },
+        "decimal": {
+          "label": "x ≥ 1.5 (decimals)",
+          "min": 0,
+          "max": 3,
+          "op": ">=",
+          "a": 1.5,
+          "labelStep": 0.5
+        },
+        "gcse": {
+          "label": "GCSE: −3 ≤ x < 4, integers",
+          "min": -5,
+          "max": 5,
+          "op": "between",
+          "a": -3,
+          "b": 4,
+          "incA": true,
+          "incB": false,
+          "ints": true
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F1-07",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-07",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "The line",
+          "mood": "neutral",
+          "narration": "Here is a line from minus 5 to 5 with a line at every whole number. Each card goes where its number lives.",
+          "prompt": "Where is zero?",
+          "st": {
+            "label": "Directed numbers",
+            "min": -5,
+            "max": 5,
+            "labelStep": 1,
+            "cards": [
+              -3,
+              2,
+              -0.5,
+              4,
+              0
+            ]
+          },
+          "n": 0,
+          "chips": [
+            [
+              "cards",
+              "−3, 2, −0.5, 4, 0",
+              "given"
+            ]
+          ]
+        },
+        {
+          "name": "First card",
+          "mood": "focus",
+          "narration": "Minus 3 is three steps left of zero. Place the card, and its stem points to the spot.",
+          "prompt": "Count from zero to −3.",
+          "st": {
+            "label": "Directed numbers",
+            "min": -5,
+            "max": 5,
+            "labelStep": 1,
+            "cards": [
+              -3,
+              2,
+              -0.5,
+              4,
+              0
+            ]
+          },
+          "n": 1,
+          "chips": null
+        },
+        {
+          "name": "More cards",
+          "mood": "think",
+          "narration": "2 goes right of zero, and minus 0.5 sits halfway between minus 1 and 0.",
+          "prompt": "Why is −0.5 between −1 and 0?",
+          "st": {
+            "label": "Directed numbers",
+            "min": -5,
+            "max": 5,
+            "labelStep": 1,
+            "cards": [
+              -3,
+              2,
+              -0.5,
+              4,
+              0
+            ]
+          },
+          "n": 3,
+          "chips": null
+        },
+        {
+          "name": "All placed",
+          "mood": "focus",
+          "narration": "Now 4 and 0. Read the cards from left to right and they are in order, smallest first.",
+          "prompt": "Which card is smallest?",
+          "st": {
+            "label": "Directed numbers",
+            "min": -5,
+            "max": 5,
+            "labelStep": 1,
+            "cards": [
+              -3,
+              2,
+              -0.5,
+              4,
+              0
+            ]
+          },
+          "n": 5,
+          "chips": [
+            [
+              "order",
+              "−3, −0.5, 0, 2, 4",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Decimals",
+          "mood": "think",
+          "narration": "With decimals, look at the tenths. 0.05 is less than 0.3 even though it has more digits.",
+          "prompt": "Is 0.05 bigger or smaller than 0.3?",
+          "st": {
+            "label": "Decimals 0 to 1",
+            "min": 0,
+            "max": 1,
+            "labelStep": 0.1,
+            "cards": [
+              0.3,
+              0.75,
+              0.05,
+              0.5
+            ]
+          },
+          "n": 4,
+          "chips": [
+            [
+              "order",
+              "0.05, 0.3, 0.5, 0.75",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Estimate",
+          "mood": "cheer",
+          "narration": "With only tens marked, estimate. 68 is just before 70; 7 is close to 0.",
+          "prompt": "Where would 45 go?",
+          "st": {
+            "label": "Estimate 0 to 100",
+            "min": 0,
+            "max": 100,
+            "labelStep": 10,
+            "cards": [
+              25,
+              68,
+              90,
+              7
+            ]
+          },
+          "n": 4,
+          "chips": [
+            [
+              "order",
+              "7, 25, 68, 90",
+              "result"
+            ]
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "mixed",
+        "presets": {
+          "mixed": {
+            "label": "Directed numbers",
+            "min": -5,
+            "max": 5,
+            "labelStep": 1,
+            "cards": [
+              -3,
+              2,
+              -0.5,
+              4,
+              0
+            ]
+          },
+          "decimals": {
+            "label": "Decimals 0 to 1",
+            "min": 0,
+            "max": 1,
+            "labelStep": 0.1,
+            "cards": [
+              0.3,
+              0.75,
+              0.05,
+              0.5
+            ]
+          },
+          "hundred": {
+            "label": "Estimate 0 to 100",
+            "min": 0,
+            "max": 100,
+            "labelStep": 10,
+            "cards": [
+              25,
+              68,
+              90,
+              7
+            ]
+          },
+          "big": {
+            "label": "Thousands",
+            "min": 0,
+            "max": 10000,
+            "labelStep": 1000,
+            "cards": [
+              2500,
+              7100,
+              500,
+              9900
+            ]
+          },
+          "tricky": {
+            "label": "Tricky decimals",
+            "min": 0,
+            "max": 1,
+            "labelStep": 0.1,
+            "cards": [
+              0.4,
+              0.25,
+              0.125,
+              0.6
+            ]
+          },
+          "gcse": {
+            "label": "GCSE: negatives and decimals",
+            "min": -2,
+            "max": 2,
+            "labelStep": 0.5,
+            "cards": [
+              -1.25,
+              0.8,
+              -0.3,
+              1.5
+            ]
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "The line",
+            "mood": "neutral",
+            "narration": "Here is a line from minus 5 to 5 with a line at every whole number. Each card goes where its number lives.",
+            "prompt": "Where is zero?",
+            "st": {
+              "label": "Directed numbers",
+              "min": -5,
+              "max": 5,
+              "labelStep": 1,
+              "cards": [
+                -3,
+                2,
+                -0.5,
+                4,
+                0
+              ]
+            },
+            "n": 0,
+            "chips": [
+              [
+                "cards",
+                "−3, 2, −0.5, 4, 0",
+                "given"
+              ]
+            ]
+          },
+          {
+            "name": "First card",
+            "mood": "focus",
+            "narration": "Minus 3 is three steps left of zero. Place the card, and its stem points to the spot.",
+            "prompt": "Count from zero to −3.",
+            "st": {
+              "label": "Directed numbers",
+              "min": -5,
+              "max": 5,
+              "labelStep": 1,
+              "cards": [
+                -3,
+                2,
+                -0.5,
+                4,
+                0
+              ]
+            },
+            "n": 1,
+            "chips": null
+          },
+          {
+            "name": "More cards",
+            "mood": "think",
+            "narration": "2 goes right of zero, and minus 0.5 sits halfway between minus 1 and 0.",
+            "prompt": "Why is −0.5 between −1 and 0?",
+            "st": {
+              "label": "Directed numbers",
+              "min": -5,
+              "max": 5,
+              "labelStep": 1,
+              "cards": [
+                -3,
+                2,
+                -0.5,
+                4,
+                0
+              ]
+            },
+            "n": 3,
+            "chips": null
+          },
+          {
+            "name": "All placed",
+            "mood": "focus",
+            "narration": "Now 4 and 0. Read the cards from left to right and they are in order, smallest first.",
+            "prompt": "Which card is smallest?",
+            "st": {
+              "label": "Directed numbers",
+              "min": -5,
+              "max": 5,
+              "labelStep": 1,
+              "cards": [
+                -3,
+                2,
+                -0.5,
+                4,
+                0
+              ]
+            },
+            "n": 5,
+            "chips": [
+              [
+                "order",
+                "−3, −0.5, 0, 2, 4",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Decimals",
+            "mood": "think",
+            "narration": "With decimals, look at the tenths. 0.05 is less than 0.3 even though it has more digits.",
+            "prompt": "Is 0.05 bigger or smaller than 0.3?",
+            "st": {
+              "label": "Decimals 0 to 1",
+              "min": 0,
+              "max": 1,
+              "labelStep": 0.1,
+              "cards": [
+                0.3,
+                0.75,
+                0.05,
+                0.5
+              ]
+            },
+            "n": 4,
+            "chips": [
+              [
+                "order",
+                "0.05, 0.3, 0.5, 0.75",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Estimate",
+            "mood": "cheer",
+            "narration": "With only tens marked, estimate. 68 is just before 70; 7 is close to 0.",
+            "prompt": "Where would 45 go?",
+            "st": {
+              "label": "Estimate 0 to 100",
+              "min": 0,
+              "max": 100,
+              "labelStep": 10,
+              "cards": [
+                25,
+                68,
+                90,
+                7
+              ]
+            },
+            "n": 4,
+            "chips": [
+              [
+                "order",
+                "7, 25, 68, 90",
+                "result"
+              ]
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "draw": [
+          "stage",
+          "st",
+          "placed",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        },
+        "placed": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "guess": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "Directed numbers",
+          "min": -5,
+          "max": 5,
+          "labelStep": 1,
+          "cards": [
+            -3,
+            2,
+            -0.5,
+            4,
+            0
+          ]
+        },
+        "placed": [],
+        "guess": -5
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Cards · The linestep 1/6Number line from −5 to 5 with cards .−5−4−3−2−1012345cards−3, 2, −0.5, 4, 0The lineThe line (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Cards · First cardstep 2/6Number line from −5 to 5 with cards −3.−5−4−3−2−1012345−3placed−3next2First cardFirst card (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Cards · More cardsstep 3/6Number line from −5 to 5 with cards −3, 2, −0.5.−5−4−3−2−1012345−32−0.5placed−3, 2, −0.5next4More cardsMore cards (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Cards · All placedstep 4/6Number line from −5 to 5 with cards −3, 2, −0.5, 4, 0.−5−4−3−2−1012345−32−0.540order−3, −0.5, 0, 2, 4All placedAll placed (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Cards · Decimalsstep 5/6Number line from 0 to 1 with cards 0.3, 0.75, 0.05, 0.5.00.10.20.30.40.50.60.70.80.910.30.750.050.5order0.05, 0.3, 0.5, 0.75DecimalsDecimals (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Cards · Estimatestep 6/6Number line from 0 to 100 with cards 25, 68, 90, 7.01020304050607080901002568907order7, 25, 68, 90EstimateEstimate (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · Directed numbers0/5 placedNumber line from −5 to 5 with cards .−5−4−3−2−1012345next card−3Place −3Place −3 (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Card set",
+        "type": "select-one",
+        "value": "mixed"
+      },
+      {
+        "label": "Place",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Start again",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "mixed",
+      "presets": {
+        "mixed": {
+          "label": "Directed numbers",
+          "min": -5,
+          "max": 5,
+          "labelStep": 1,
+          "cards": [
+            -3,
+            2,
+            -0.5,
+            4,
+            0
+          ]
+        },
+        "decimals": {
+          "label": "Decimals 0 to 1",
+          "min": 0,
+          "max": 1,
+          "labelStep": 0.1,
+          "cards": [
+            0.3,
+            0.75,
+            0.05,
+            0.5
+          ]
+        },
+        "hundred": {
+          "label": "Estimate 0 to 100",
+          "min": 0,
+          "max": 100,
+          "labelStep": 10,
+          "cards": [
+            25,
+            68,
+            90,
+            7
+          ]
+        },
+        "big": {
+          "label": "Thousands",
+          "min": 0,
+          "max": 10000,
+          "labelStep": 1000,
+          "cards": [
+            2500,
+            7100,
+            500,
+            9900
+          ]
+        },
+        "tricky": {
+          "label": "Tricky decimals",
+          "min": 0,
+          "max": 1,
+          "labelStep": 0.1,
+          "cards": [
+            0.4,
+            0.25,
+            0.125,
+            0.6
+          ]
+        },
+        "gcse": {
+          "label": "GCSE: negatives and decimals",
+          "min": -2,
+          "max": 2,
+          "labelStep": 0.5,
+          "cards": [
+            -1.25,
+            0.8,
+            -0.3,
+            1.5
+          ]
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F1-08",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-08",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "The question",
+          "mood": "neutral",
+          "narration": "Estimate 49 times 21. We do not need the exact answer, just a sensible size.",
+          "prompt": "Is the answer nearer 100, 1000 or 10000?",
+          "st": {
+            "label": "49 × 21",
+            "a": 49,
+            "b": 21,
+            "op": "×"
+          },
+          "o": {
+            "est": false
+          },
+          "chips": [
+            [
+              "estimate",
+              "49 × 21",
+              "given"
+            ]
+          ]
+        },
+        {
+          "name": "Round each",
+          "mood": "think",
+          "narration": "Round each number to one significant figure: 49 is about 50 and 21 is about 20.",
+          "prompt": "Round 49 and 21 to 1 significant figure.",
+          "st": {
+            "label": "49 × 21",
+            "a": 49,
+            "b": 21,
+            "op": "×"
+          },
+          "o": {
+            "est": false
+          },
+          "chips": [
+            [
+              "49",
+              "≈ 50",
+              "op"
+            ],
+            [
+              "21",
+              "≈ 20",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Estimate",
+          "mood": "focus",
+          "narration": "50 times 20 is 1000. The estimate ring goes at 1000 on the line.",
+          "prompt": "What is 50 × 20?",
+          "st": {
+            "label": "49 × 21",
+            "a": 49,
+            "b": 21,
+            "op": "×"
+          },
+          "o": {},
+          "chips": [
+            [
+              "estimate",
+              "50 × 20 = 1000",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Check",
+          "mood": "cheer",
+          "narration": "The exact answer is 1029. The bracket shows the estimate was very close, so the answer is sensible.",
+          "prompt": "How far was the estimate from 1029?",
+          "st": {
+            "label": "49 × 21",
+            "a": 49,
+            "b": 21,
+            "op": "×"
+          },
+          "o": {
+            "exact": true
+          },
+          "chips": [
+            [
+              "exact",
+              "1029",
+              "focus"
+            ],
+            [
+              "estimate",
+              "1000",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Decimals",
+          "mood": "think",
+          "narration": "3.87 times 19.6: round to 4 times 20, which is 80. The exact answer is 75.852.",
+          "prompt": "Round 3.87 and 19.6 first.",
+          "st": {
+            "label": "3.87 × 19.6",
+            "a": 3.87,
+            "b": 19.6,
+            "op": "×"
+          },
+          "o": {
+            "exact": true
+          },
+          "chips": [
+            [
+              "estimate",
+              "4 × 20 = 80",
+              "op"
+            ],
+            [
+              "exact",
+              "75.852",
+              "focus"
+            ]
+          ]
+        },
+        {
+          "name": "Square roots",
+          "mood": "focus",
+          "narration": "Square root of 50 is not a whole number. 49 is 7 squared and 64 is 8 squared, so root 50 is just over 7. It is irrational: the decimal never ends.",
+          "prompt": "Which two whole numbers is √50 between?",
+          "st": {
+            "label": "√50 (irrational)",
+            "root": 50
+          },
+          "o": {
+            "exact": true
+          },
+          "chips": [
+            [
+              "√50",
+              "between 7 and 8",
+              "op"
+            ],
+            [
+              "≈",
+              "7.071",
+              "focus"
+            ]
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "whole",
+        "presets": {
+          "whole": {
+            "label": "49 × 21",
+            "a": 49,
+            "b": 21,
+            "op": "×"
+          },
+          "decimal": {
+            "label": "3.87 × 19.6",
+            "a": 3.87,
+            "b": 19.6,
+            "op": "×"
+          },
+          "divide": {
+            "label": "612 ÷ 29",
+            "a": 612,
+            "b": 29,
+            "op": "÷"
+          },
+          "big": {
+            "label": "382 × 47",
+            "a": 382,
+            "b": 47,
+            "op": "×"
+          },
+          "small": {
+            "label": "GCSE: 0.0487 × 612",
+            "a": 0.0487,
+            "b": 612,
+            "op": "×"
+          },
+          "root": {
+            "label": "√50 (irrational)",
+            "root": 50
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "The question",
+            "mood": "neutral",
+            "narration": "Estimate 49 times 21. We do not need the exact answer, just a sensible size.",
+            "prompt": "Is the answer nearer 100, 1000 or 10000?",
+            "st": {
+              "label": "49 × 21",
+              "a": 49,
+              "b": 21,
+              "op": "×"
+            },
+            "o": {
+              "est": false
+            },
+            "chips": [
+              [
+                "estimate",
+                "49 × 21",
+                "given"
+              ]
+            ]
+          },
+          {
+            "name": "Round each",
+            "mood": "think",
+            "narration": "Round each number to one significant figure: 49 is about 50 and 21 is about 20.",
+            "prompt": "Round 49 and 21 to 1 significant figure.",
+            "st": {
+              "label": "49 × 21",
+              "a": 49,
+              "b": 21,
+              "op": "×"
+            },
+            "o": {
+              "est": false
+            },
+            "chips": [
+              [
+                "49",
+                "≈ 50",
+                "op"
+              ],
+              [
+                "21",
+                "≈ 20",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Estimate",
+            "mood": "focus",
+            "narration": "50 times 20 is 1000. The estimate ring goes at 1000 on the line.",
+            "prompt": "What is 50 × 20?",
+            "st": {
+              "label": "49 × 21",
+              "a": 49,
+              "b": 21,
+              "op": "×"
+            },
+            "o": {},
+            "chips": [
+              [
+                "estimate",
+                "50 × 20 = 1000",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Check",
+            "mood": "cheer",
+            "narration": "The exact answer is 1029. The bracket shows the estimate was very close, so the answer is sensible.",
+            "prompt": "How far was the estimate from 1029?",
+            "st": {
+              "label": "49 × 21",
+              "a": 49,
+              "b": 21,
+              "op": "×"
+            },
+            "o": {
+              "exact": true
+            },
+            "chips": [
+              [
+                "exact",
+                "1029",
+                "focus"
+              ],
+              [
+                "estimate",
+                "1000",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Decimals",
+            "mood": "think",
+            "narration": "3.87 times 19.6: round to 4 times 20, which is 80. The exact answer is 75.852.",
+            "prompt": "Round 3.87 and 19.6 first.",
+            "st": {
+              "label": "3.87 × 19.6",
+              "a": 3.87,
+              "b": 19.6,
+              "op": "×"
+            },
+            "o": {
+              "exact": true
+            },
+            "chips": [
+              [
+                "estimate",
+                "4 × 20 = 80",
+                "op"
+              ],
+              [
+                "exact",
+                "75.852",
+                "focus"
+              ]
+            ]
+          },
+          {
+            "name": "Square roots",
+            "mood": "focus",
+            "narration": "Square root of 50 is not a whole number. 49 is 7 squared and 64 is 8 squared, so root 50 is just over 7. It is irrational: the decimal never ends.",
+            "prompt": "Which two whole numbers is √50 between?",
+            "st": {
+              "label": "√50 (irrational)",
+              "root": 50
+            },
+            "o": {
+              "exact": true
+            },
+            "chips": [
+              [
+                "√50",
+                "between 7 and 8",
+                "op"
+              ],
+              [
+                "≈",
+                "7.071",
+                "focus"
+              ]
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "49 × 21",
+          "a": 49,
+          "b": 21,
+          "op": "×"
+        }
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Estimate · The questionstep 1/6Estimate of 49 × 21 on a number line.0200400600800100012001400160018002000estimate49 × 21The questionThe question (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Estimate · Round eachstep 2/6Estimate of 49 × 21 on a number line.020040060080010001200140016001800200049≈ 5021≈ 20Round eachRound each (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Estimate · Estimatestep 3/6Estimate of 49 × 21 on a number line.0200400600800100012001400160018002000≈ 1000estimate50 × 20 = 1000EstimateEstimate (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Estimate · Checkstep 4/6Estimate of 49 × 21 on a number line.0200400600800100012001400160018002000≈ 1000= 1029off by 29exact1029estimate1000CheckCheck (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Estimate · Decimalsstep 5/6Estimate of 3.87 × 19.6 on a number line.020406080100120140160180200≈ 80= 75.852off by 4.15estimate4 × 20 = 80exact75.852DecimalsDecimals (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Estimate · Square rootsstep 6/6Estimate of √50 on a number line.6789√49 = 7√64 = 8= 7.071√50between 7 and 8≈7.071Square rootsSquare roots (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · 49 × 21estimateEstimate of 49 × 21 on a number line.0200400600800100012001400160018002000≈ 1000estimate50 × 20 = 1000≈ 1000≈ 1000 (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Calculation",
+        "type": "select-one",
+        "value": "whole"
+      },
+      {
+        "label": "First number",
+        "type": "range",
+        "min": "0.1",
+        "max": "99",
+        "value": "49"
+      },
+      {
+        "label": "Second number",
+        "type": "range",
+        "min": "0.1",
+        "max": "99",
+        "value": "21"
+      },
+      {
+        "label": "Show exact",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "whole",
+      "presets": {
+        "whole": {
+          "label": "49 × 21",
+          "a": 49,
+          "b": 21,
+          "op": "×"
+        },
+        "decimal": {
+          "label": "3.87 × 19.6",
+          "a": 3.87,
+          "b": 19.6,
+          "op": "×"
+        },
+        "divide": {
+          "label": "612 ÷ 29",
+          "a": 612,
+          "b": 29,
+          "op": "÷"
+        },
+        "big": {
+          "label": "382 × 47",
+          "a": 382,
+          "b": 47,
+          "op": "×"
+        },
+        "small": {
+          "label": "GCSE: 0.0487 × 612",
+          "a": 0.0487,
+          "b": 612,
+          "op": "×"
+        },
+        "root": {
+          "label": "√50 (irrational)",
+          "root": 50
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F1-09",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-09",
+      "version": "1.0.0",
+      "stepCount": 7,
+      "steps": [
+        {
+          "name": "Big marks",
+          "mood": "neutral",
+          "narration": "This scale has numbers every 20 kilograms. Before reading it, find out what each small mark is worth.",
+          "prompt": "How many gaps between 0 and 20?",
+          "st": {
+            "label": "Scale in 4s (kg)",
+            "kind": "h",
+            "min": 0,
+            "max": 100,
+            "major": 20,
+            "div": 5,
+            "value": 68,
+            "unit": "kg"
+          },
+          "o": {
+            "pointer": false
+          },
+          "chips": [
+            [
+              "labels every",
+              "20 kg",
+              "given"
+            ],
+            [
+              "gaps",
+              "5",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Each division",
+          "mood": "think",
+          "narration": "20 split into 5 gaps: 20 divided by 5 is 4. Each small division is 4 kilograms.",
+          "prompt": "What is 20 ÷ 5?",
+          "st": {
+            "label": "Scale in 4s (kg)",
+            "kind": "h",
+            "min": 0,
+            "max": 100,
+            "major": 20,
+            "div": 5,
+            "value": 68,
+            "unit": "kg"
+          },
+          "o": {
+            "pointer": false,
+            "brace": true
+          },
+          "chips": [
+            [
+              "20 ÷ 5",
+              "4 kg",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Read",
+          "mood": "focus",
+          "narration": "The pointer is two divisions past 60. 60 plus 4 plus 4 is 68 kilograms.",
+          "prompt": "Count on from 60 in 4s.",
+          "st": {
+            "label": "Scale in 4s (kg)",
+            "kind": "h",
+            "min": 0,
+            "max": 100,
+            "major": 20,
+            "div": 5,
+            "value": 68,
+            "unit": "kg"
+          },
+          "o": {},
+          "chips": [
+            [
+              "60 + 4 + 4",
+              "68 kg",
+              "result"
+            ]
+          ],
+          "target": "pointer"
+        },
+        {
+          "name": "Jug",
+          "mood": "think",
+          "narration": "The jug is labelled every 100 millilitres with 5 gaps, so each is 20. The water is two marks above 300: 340 millilitres.",
+          "prompt": "What is each mark on the jug worth?",
+          "st": {
+            "label": "Measuring jug (ml)",
+            "kind": "v",
+            "min": 0,
+            "max": 500,
+            "major": 100,
+            "div": 5,
+            "value": 340,
+            "unit": "ml"
+          },
+          "o": {},
+          "chips": [
+            [
+              "100 ÷ 5",
+              "20 ml",
+              "op"
+            ],
+            [
+              "level",
+              "340 ml",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Dial",
+          "mood": "focus",
+          "narration": "A round dial works the same way. Labels go up in 2s with 4 gaps, so each mark is 0.5 kilograms. The needle is one mark past 6: 6.5 kilograms.",
+          "prompt": "What is each mark on the dial worth?",
+          "st": {
+            "label": "Round dial (kg)",
+            "kind": "dial",
+            "min": 0,
+            "max": 10,
+            "major": 2,
+            "div": 4,
+            "value": 6.5,
+            "unit": "kg"
+          },
+          "o": {},
+          "chips": [
+            [
+              "2 ÷ 4",
+              "0.5 kg",
+              "op"
+            ],
+            [
+              "needle",
+              "6.5 kg",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Negative scale",
+          "mood": "focus",
+          "narration": "Thermometers go below zero. Each mark is 2 degrees, and the level is three marks below zero: minus 6.",
+          "prompt": "Is the level above or below 0?",
+          "st": {
+            "label": "Thermometer in 2s (°C)",
+            "kind": "v",
+            "min": -20,
+            "max": 40,
+            "major": 10,
+            "div": 5,
+            "value": -6,
+            "unit": "°C"
+          },
+          "o": {},
+          "chips": [
+            [
+              "10 ÷ 5",
+              "2 °C",
+              "op"
+            ],
+            [
+              "level",
+              "−6 °C",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Error interval",
+          "mood": "cheer",
+          "narration": "A length of 7.3 centimetres to one decimal place could be anything from 7.25 up to, but not including, 7.35.",
+          "prompt": "Why is 7.35 not included?",
+          "st": {
+            "label": "GCSE: error interval 7.3 cm (1 dp)",
+            "kind": "bounds",
+            "value": 7.3,
+            "dp": 1,
+            "unit": "cm"
+          },
+          "o": {},
+          "chips": [
+            [
+              "interval",
+              "7.25 ≤ L < 7.35",
+              "result"
+            ]
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "scale",
+        "presets": {
+          "scale": {
+            "label": "Scale in 4s (kg)",
+            "kind": "h",
+            "min": 0,
+            "max": 100,
+            "major": 20,
+            "div": 5,
+            "value": 68,
+            "unit": "kg"
+          },
+          "ruler": {
+            "label": "Ruler in mm (cm)",
+            "kind": "h",
+            "min": 0,
+            "max": 10,
+            "major": 1,
+            "div": 10,
+            "value": 7.3,
+            "unit": "cm"
+          },
+          "jug": {
+            "label": "Measuring jug (ml)",
+            "kind": "v",
+            "min": 0,
+            "max": 500,
+            "major": 100,
+            "div": 5,
+            "value": 340,
+            "unit": "ml"
+          },
+          "temp": {
+            "label": "Thermometer in 2s (°C)",
+            "kind": "v",
+            "min": -20,
+            "max": 40,
+            "major": 10,
+            "div": 5,
+            "value": -6,
+            "unit": "°C"
+          },
+          "dial": {
+            "label": "Round dial (kg)",
+            "kind": "dial",
+            "min": 0,
+            "max": 10,
+            "major": 2,
+            "div": 4,
+            "value": 6.5,
+            "unit": "kg"
+          },
+          "halves": {
+            "label": "Scale in 0.5s (l)",
+            "kind": "h",
+            "min": 0,
+            "max": 5,
+            "major": 1,
+            "div": 2,
+            "value": 3.5,
+            "unit": "l"
+          },
+          "bounds": {
+            "label": "GCSE: error interval 7.3 cm (1 dp)",
+            "kind": "bounds",
+            "value": 7.3,
+            "dp": 1,
+            "unit": "cm"
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "Big marks",
+            "mood": "neutral",
+            "narration": "This scale has numbers every 20 kilograms. Before reading it, find out what each small mark is worth.",
+            "prompt": "How many gaps between 0 and 20?",
+            "st": {
+              "label": "Scale in 4s (kg)",
+              "kind": "h",
+              "min": 0,
+              "max": 100,
+              "major": 20,
+              "div": 5,
+              "value": 68,
+              "unit": "kg"
+            },
+            "o": {
+              "pointer": false
+            },
+            "chips": [
+              [
+                "labels every",
+                "20 kg",
+                "given"
+              ],
+              [
+                "gaps",
+                "5",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Each division",
+            "mood": "think",
+            "narration": "20 split into 5 gaps: 20 divided by 5 is 4. Each small division is 4 kilograms.",
+            "prompt": "What is 20 ÷ 5?",
+            "st": {
+              "label": "Scale in 4s (kg)",
+              "kind": "h",
+              "min": 0,
+              "max": 100,
+              "major": 20,
+              "div": 5,
+              "value": 68,
+              "unit": "kg"
+            },
+            "o": {
+              "pointer": false,
+              "brace": true
+            },
+            "chips": [
+              [
+                "20 ÷ 5",
+                "4 kg",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Read",
+            "mood": "focus",
+            "narration": "The pointer is two divisions past 60. 60 plus 4 plus 4 is 68 kilograms.",
+            "prompt": "Count on from 60 in 4s.",
+            "st": {
+              "label": "Scale in 4s (kg)",
+              "kind": "h",
+              "min": 0,
+              "max": 100,
+              "major": 20,
+              "div": 5,
+              "value": 68,
+              "unit": "kg"
+            },
+            "o": {},
+            "chips": [
+              [
+                "60 + 4 + 4",
+                "68 kg",
+                "result"
+              ]
+            ],
+            "target": "pointer"
+          },
+          {
+            "name": "Jug",
+            "mood": "think",
+            "narration": "The jug is labelled every 100 millilitres with 5 gaps, so each is 20. The water is two marks above 300: 340 millilitres.",
+            "prompt": "What is each mark on the jug worth?",
+            "st": {
+              "label": "Measuring jug (ml)",
+              "kind": "v",
+              "min": 0,
+              "max": 500,
+              "major": 100,
+              "div": 5,
+              "value": 340,
+              "unit": "ml"
+            },
+            "o": {},
+            "chips": [
+              [
+                "100 ÷ 5",
+                "20 ml",
+                "op"
+              ],
+              [
+                "level",
+                "340 ml",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Dial",
+            "mood": "focus",
+            "narration": "A round dial works the same way. Labels go up in 2s with 4 gaps, so each mark is 0.5 kilograms. The needle is one mark past 6: 6.5 kilograms.",
+            "prompt": "What is each mark on the dial worth?",
+            "st": {
+              "label": "Round dial (kg)",
+              "kind": "dial",
+              "min": 0,
+              "max": 10,
+              "major": 2,
+              "div": 4,
+              "value": 6.5,
+              "unit": "kg"
+            },
+            "o": {},
+            "chips": [
+              [
+                "2 ÷ 4",
+                "0.5 kg",
+                "op"
+              ],
+              [
+                "needle",
+                "6.5 kg",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Negative scale",
+            "mood": "focus",
+            "narration": "Thermometers go below zero. Each mark is 2 degrees, and the level is three marks below zero: minus 6.",
+            "prompt": "Is the level above or below 0?",
+            "st": {
+              "label": "Thermometer in 2s (°C)",
+              "kind": "v",
+              "min": -20,
+              "max": 40,
+              "major": 10,
+              "div": 5,
+              "value": -6,
+              "unit": "°C"
+            },
+            "o": {},
+            "chips": [
+              [
+                "10 ÷ 5",
+                "2 °C",
+                "op"
+              ],
+              [
+                "level",
+                "−6 °C",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Error interval",
+            "mood": "cheer",
+            "narration": "A length of 7.3 centimetres to one decimal place could be anything from 7.25 up to, but not including, 7.35.",
+            "prompt": "Why is 7.35 not included?",
+            "st": {
+              "label": "GCSE: error interval 7.3 cm (1 dp)",
+              "kind": "bounds",
+              "value": 7.3,
+              "dp": 1,
+              "unit": "cm"
+            },
+            "o": {},
+            "chips": [
+              [
+                "interval",
+                "7.25 ≤ L < 7.35",
+                "result"
+              ]
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "Scale in 4s (kg)",
+          "kind": "h",
+          "min": 0,
+          "max": 100,
+          "major": 20,
+          "div": 5,
+          "value": 68,
+          "unit": "kg"
+        }
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Scale · Big marksstep 1/7Scale reading 68 kg.020406080100kglabels every20 kggaps5Big marksBig marks (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Scale · Each divisionstep 2/7Scale reading 68 kg.020406080100kg4 kg20 ÷ 54 kgEach divisionEach division (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Scale · Readstep 3/7Scale reading 68 kg.020406080100kg60 + 4 + 468 kgReadRead (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Scale · Jugstep 4/7Scale reading 340 ml.0100200300400500ml100 ÷ 520 mllevel340 mlJugJug (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Scale · Dialstep 5/7Scale reading 6.5 kg.0246810kg2 ÷ 40.5 kgneedle6.5 kgDialDial (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Scale · Negative scalestep 6/7Scale reading −6 °C.−20−10010203040°C10 ÷ 52 °Clevel−6 °CNegative scaleNegative scale (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 6,
+        "text": "Scale · Error intervalstep 7/7Scale reading 7.3 cm.7.27.257.37.357.4measured 7.3 cminterval7.25 ≤ L < 7.35Error intervalError interval (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · Scale in 4s (kg)68 kgScale reading 68 kg.020406080100kg4 kgeach division4 kgreading68 kg68 kg68 kg (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Scale",
+        "type": "select-one",
+        "value": "scale"
+      },
+      {
+        "label": "Reading",
+        "type": "range",
+        "min": "0",
+        "max": "100",
+        "value": "68"
+      },
+      {
+        "label": "Decrease Gaps between labels",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Increase Gaps between labels",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "scale",
+      "presets": {
+        "scale": {
+          "label": "Scale in 4s (kg)",
+          "kind": "h",
+          "min": 0,
+          "max": 100,
+          "major": 20,
+          "div": 5,
+          "value": 68,
+          "unit": "kg"
+        },
+        "ruler": {
+          "label": "Ruler in mm (cm)",
+          "kind": "h",
+          "min": 0,
+          "max": 10,
+          "major": 1,
+          "div": 10,
+          "value": 7.3,
+          "unit": "cm"
+        },
+        "jug": {
+          "label": "Measuring jug (ml)",
+          "kind": "v",
+          "min": 0,
+          "max": 500,
+          "major": 100,
+          "div": 5,
+          "value": 340,
+          "unit": "ml"
+        },
+        "temp": {
+          "label": "Thermometer in 2s (°C)",
+          "kind": "v",
+          "min": -20,
+          "max": 40,
+          "major": 10,
+          "div": 5,
+          "value": -6,
+          "unit": "°C"
+        },
+        "dial": {
+          "label": "Round dial (kg)",
+          "kind": "dial",
+          "min": 0,
+          "max": 10,
+          "major": 2,
+          "div": 4,
+          "value": 6.5,
+          "unit": "kg"
+        },
+        "halves": {
+          "label": "Scale in 0.5s (l)",
+          "kind": "h",
+          "min": 0,
+          "max": 5,
+          "major": 1,
+          "div": 2,
+          "value": 3.5,
+          "unit": "l"
+        },
+        "bounds": {
+          "label": "GCSE: error interval 7.3 cm (1 dp)",
+          "kind": "bounds",
+          "value": 7.3,
+          "dp": 1,
+          "unit": "cm"
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F1-10",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-10",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "Powers line",
+          "mood": "neutral",
+          "narration": "Each mark on this line is ten times the one before: 1, 10, 100, 1000 and so on. The small raised number is the power of ten.",
+          "prompt": "What is 10 to the power 3?",
+          "st": {
+            "label": "Large: 320 000",
+            "m": 3.2,
+            "e": 5,
+            "lo": 0,
+            "hi": 9
+          },
+          "o": {
+            "place": false,
+            "zoom": true
+          },
+          "chips": [
+            [
+              "10³",
+              "1000",
+              "given"
+            ],
+            [
+              "10⁵",
+              "100 000",
+              "given"
+            ]
+          ]
+        },
+        {
+          "name": "Between powers",
+          "mood": "think",
+          "narration": "320 thousand is more than 100 thousand but less than a million, so it sits between 10 to the 5 and 10 to the 6.",
+          "prompt": "Which two powers is 320 000 between?",
+          "st": {
+            "label": "Large: 320 000",
+            "m": 3.2,
+            "e": 5,
+            "lo": 0,
+            "hi": 9
+          },
+          "o": {
+            "plain": true,
+            "zoom": false
+          },
+          "chips": [
+            [
+              "320 000",
+              "between 10⁵ and 10⁶",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Zoom in",
+          "mood": "focus",
+          "narration": "Zoom into that gap. It is split into 1 to 10 lots of 10 to the 5. 320 thousand is 3.2 lots, so it is 3.2 times 10 to the 5.",
+          "prompt": "How many lots of 100 000 make 320 000?",
+          "st": {
+            "label": "Large: 320 000",
+            "m": 3.2,
+            "e": 5,
+            "lo": 0,
+            "hi": 9
+          },
+          "o": {
+            "zoom": true
+          },
+          "chips": [
+            [
+              "standard form",
+              "3.2 × 10⁵",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Compare",
+          "mood": "think",
+          "narration": "To compare, look at the power first. 3.2 times 10 to the 5 is bigger than 8 times 10 to the 4, even though 8 is bigger than 3.2.",
+          "prompt": "Which number is further right?",
+          "st": {
+            "label": "Compare 3.2 × 10⁵ and 8 × 10⁴",
+            "m": 3.2,
+            "e": 5,
+            "lo": 0,
+            "hi": 9,
+            "other": {
+              "m": 8,
+              "e": 4
+            }
+          },
+          "o": {
+            "other": true,
+            "zoom": false
+          },
+          "chips": [
+            [
+              "bigger",
+              "3.2 × 10⁵",
+              "focus"
+            ],
+            [
+              "smaller",
+              "8 × 10⁴",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "Small numbers",
+          "mood": "focus",
+          "narration": "Small numbers use negative powers. 0.0045 is between 10 to the minus 3 and 10 to the minus 2: it is 4.5 times 10 to the minus 3.",
+          "prompt": "Is 0.0045 bigger or smaller than 0.001?",
+          "st": {
+            "label": "Small: 0.0045",
+            "m": 4.5,
+            "e": -3,
+            "lo": -6,
+            "hi": 2
+          },
+          "o": {
+            "zoom": true
+          },
+          "chips": [
+            [
+              "0.0045",
+              "4.5 × 10⁻³",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Huge",
+          "mood": "cheer",
+          "narration": "Standard form handles enormous numbers too. 6.02 times 10 to the 23 is just past the 10 to the 23 mark.",
+          "prompt": "How many zeros would 10²³ have?",
+          "st": {
+            "label": "GCSE: 6.02 × 10²³ (huge)",
+            "m": 6.02,
+            "e": 23,
+            "lo": 18,
+            "hi": 27
+          },
+          "o": {
+            "zoom": true
+          },
+          "chips": [
+            [
+              "10²³",
+              "1 then 23 zeros",
+              "given"
+            ],
+            [
+              "ordinary",
+              "602 000 000 000 000 000 000 000",
+              "focus"
+            ]
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "large",
+        "presets": {
+          "large": {
+            "label": "Large: 320 000",
+            "m": 3.2,
+            "e": 5,
+            "lo": 0,
+            "hi": 9
+          },
+          "million": {
+            "label": "Millions: 7 500 000",
+            "m": 7.5,
+            "e": 6,
+            "lo": 0,
+            "hi": 9
+          },
+          "small": {
+            "label": "Small: 0.0045",
+            "m": 4.5,
+            "e": -3,
+            "lo": -6,
+            "hi": 2
+          },
+          "tiny": {
+            "label": "Tiny: 0.000 08",
+            "m": 8,
+            "e": -5,
+            "lo": -6,
+            "hi": 2
+          },
+          "compare": {
+            "label": "Compare 3.2 × 10⁵ and 8 × 10⁴",
+            "m": 3.2,
+            "e": 5,
+            "lo": 0,
+            "hi": 9,
+            "other": {
+              "m": 8,
+              "e": 4
+            }
+          },
+          "gcse": {
+            "label": "GCSE: 6.02 × 10²³ (huge)",
+            "m": 6.02,
+            "e": 23,
+            "lo": 18,
+            "hi": 27
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "Powers line",
+            "mood": "neutral",
+            "narration": "Each mark on this line is ten times the one before: 1, 10, 100, 1000 and so on. The small raised number is the power of ten.",
+            "prompt": "What is 10 to the power 3?",
+            "st": {
+              "label": "Large: 320 000",
+              "m": 3.2,
+              "e": 5,
+              "lo": 0,
+              "hi": 9
+            },
+            "o": {
+              "place": false,
+              "zoom": true
+            },
+            "chips": [
+              [
+                "10³",
+                "1000",
+                "given"
+              ],
+              [
+                "10⁵",
+                "100 000",
+                "given"
+              ]
+            ]
+          },
+          {
+            "name": "Between powers",
+            "mood": "think",
+            "narration": "320 thousand is more than 100 thousand but less than a million, so it sits between 10 to the 5 and 10 to the 6.",
+            "prompt": "Which two powers is 320 000 between?",
+            "st": {
+              "label": "Large: 320 000",
+              "m": 3.2,
+              "e": 5,
+              "lo": 0,
+              "hi": 9
+            },
+            "o": {
+              "plain": true,
+              "zoom": false
+            },
+            "chips": [
+              [
+                "320 000",
+                "between 10⁵ and 10⁶",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Zoom in",
+            "mood": "focus",
+            "narration": "Zoom into that gap. It is split into 1 to 10 lots of 10 to the 5. 320 thousand is 3.2 lots, so it is 3.2 times 10 to the 5.",
+            "prompt": "How many lots of 100 000 make 320 000?",
+            "st": {
+              "label": "Large: 320 000",
+              "m": 3.2,
+              "e": 5,
+              "lo": 0,
+              "hi": 9
+            },
+            "o": {
+              "zoom": true
+            },
+            "chips": [
+              [
+                "standard form",
+                "3.2 × 10⁵",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Compare",
+            "mood": "think",
+            "narration": "To compare, look at the power first. 3.2 times 10 to the 5 is bigger than 8 times 10 to the 4, even though 8 is bigger than 3.2.",
+            "prompt": "Which number is further right?",
+            "st": {
+              "label": "Compare 3.2 × 10⁵ and 8 × 10⁴",
+              "m": 3.2,
+              "e": 5,
+              "lo": 0,
+              "hi": 9,
+              "other": {
+                "m": 8,
+                "e": 4
+              }
+            },
+            "o": {
+              "other": true,
+              "zoom": false
+            },
+            "chips": [
+              [
+                "bigger",
+                "3.2 × 10⁵",
+                "focus"
+              ],
+              [
+                "smaller",
+                "8 × 10⁴",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "Small numbers",
+            "mood": "focus",
+            "narration": "Small numbers use negative powers. 0.0045 is between 10 to the minus 3 and 10 to the minus 2: it is 4.5 times 10 to the minus 3.",
+            "prompt": "Is 0.0045 bigger or smaller than 0.001?",
+            "st": {
+              "label": "Small: 0.0045",
+              "m": 4.5,
+              "e": -3,
+              "lo": -6,
+              "hi": 2
+            },
+            "o": {
+              "zoom": true
+            },
+            "chips": [
+              [
+                "0.0045",
+                "4.5 × 10⁻³",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Huge",
+            "mood": "cheer",
+            "narration": "Standard form handles enormous numbers too. 6.02 times 10 to the 23 is just past the 10 to the 23 mark.",
+            "prompt": "How many zeros would 10²³ have?",
+            "st": {
+              "label": "GCSE: 6.02 × 10²³ (huge)",
+              "m": 6.02,
+              "e": 23,
+              "lo": 18,
+              "hi": 27
+            },
+            "o": {
+              "zoom": true
+            },
+            "chips": [
+              [
+                "10²³",
+                "1 then 23 zeros",
+                "given"
+              ],
+              [
+                "ordinary",
+                "602 000 000 000 000 000 000 000",
+                "focus"
+              ]
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "Large: 320 000",
+          "m": 3.2,
+          "e": 5,
+          "lo": 0,
+          "hi": 9
+        }
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Powers of ten · Powers linestep 1/63.2 × 10⁵ on a powers of ten line.1001011021031041051061071081091234567891010³100010⁵100 000Powers linePowers line (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Powers of ten · Between powersstep 2/63.2 × 10⁵ on a powers of ten line.100101102103104105106107108109320 000320 000between 10⁵ and 10⁶Between powersBetween powers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Powers of ten · Zoom instep 3/63.2 × 10⁵ on a powers of ten line.1001011021031041051061071081093.2 × 10⁵123456789103.2zoom: × 10⁵standard form3.2 × 10⁵Zoom inZoom in (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Powers of ten · Comparestep 4/63.2 × 10⁵ on a powers of ten line.1001011021031041051061071081093.2 × 10⁵8 × 10⁴bigger3.2 × 10⁵smaller8 × 10⁴CompareCompare (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Powers of ten · Small numbersstep 5/64.5 × 10⁻³ on a powers of ten line.10−610−510−410−310−210−11001011024.5 × 10⁻³123456789104.5zoom: × 10⁻³0.00454.5 × 10⁻³Small numbersSmall numbers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Powers of ten · Hugestep 6/66.02 × 10²³ on a powers of ten line.10181019102010211022102310241025102610276.02 × 10²³123456789106.02zoom: × 10²³10²³1 then 23 zerosordinary602 000 000 000 000 000 000 000HugeHuge (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · 3.2 × 10⁵320 0003.2 × 10⁵ on a powers of ten line.1001011021031041051061071081093.2 × 10⁵123456789103.2zoom: × 10⁵standard form3.2 × 10⁵ordinary320 0003.2 × 10⁵3.2 × 10⁵ (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Number",
+        "type": "select-one",
+        "value": "large"
+      },
+      {
+        "label": "Number part",
+        "type": "range",
+        "min": "1",
+        "max": "9.9",
+        "value": "3.2"
+      },
+      {
+        "label": "Decrease Power of ten",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Increase Power of ten",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "large",
+      "presets": {
+        "large": {
+          "label": "Large: 320 000",
+          "m": 3.2,
+          "e": 5,
+          "lo": 0,
+          "hi": 9
+        },
+        "million": {
+          "label": "Millions: 7 500 000",
+          "m": 7.5,
+          "e": 6,
+          "lo": 0,
+          "hi": 9
+        },
+        "small": {
+          "label": "Small: 0.0045",
+          "m": 4.5,
+          "e": -3,
+          "lo": -6,
+          "hi": 2
+        },
+        "tiny": {
+          "label": "Tiny: 0.000 08",
+          "m": 8,
+          "e": -5,
+          "lo": -6,
+          "hi": 2
+        },
+        "compare": {
+          "label": "Compare 3.2 × 10⁵ and 8 × 10⁴",
+          "m": 3.2,
+          "e": 5,
+          "lo": 0,
+          "hi": 9,
+          "other": {
+            "m": 8,
+            "e": 4
+          }
+        },
+        "gcse": {
+          "label": "GCSE: 6.02 × 10²³ (huge)",
+          "m": 6.02,
+          "e": 23,
+          "lo": 18,
+          "hi": 27
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F1-11",
+    "errors": [],
+    "descriptor": {
+      "id": "F1-11",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "Measured",
+          "mood": "neutral",
+          "narration": "A length is 7.3 centimetres to one decimal place. The real length was rounded, so it might not be exactly 7.3.",
+          "prompt": "Could the real length be 7.28 cm?",
+          "st": {
+            "label": "7.3 cm to 1 dp",
+            "v": 7.3,
+            "u": 0.1,
+            "unit": "cm",
+            "acc": "to 1 decimal place"
+          },
+          "o": {
+            "seg": false
+          },
+          "chips": [
+            [
+              "7.3 cm",
+              "to 1 dp",
+              "given"
+            ]
+          ]
+        },
+        {
+          "name": "Halfway marks",
+          "mood": "think",
+          "narration": "Anything from halfway down to halfway up rounds to 7.3. Halfway to 7.2 is 7.25, and halfway to 7.4 is 7.35.",
+          "prompt": "What is halfway between 7.3 and 7.4?",
+          "st": {
+            "label": "7.3 cm to 1 dp",
+            "v": 7.3,
+            "u": 0.1,
+            "unit": "cm",
+            "acc": "to 1 decimal place"
+          },
+          "o": {
+            "seg": false,
+            "half": true
+          },
+          "chips": [
+            [
+              "half down",
+              "7.25",
+              "op"
+            ],
+            [
+              "half up",
+              "7.35",
+              "op"
+            ]
+          ]
+        },
+        {
+          "name": "The interval",
+          "mood": "focus",
+          "narration": "7.25 rounds up to 7.3, so it is included: filled end. 7.35 would round to 7.4, so it is not included: open end.",
+          "prompt": "Why is the right-hand end open?",
+          "st": {
+            "label": "7.3 cm to 1 dp",
+            "v": 7.3,
+            "u": 0.1,
+            "unit": "cm",
+            "acc": "to 1 decimal place"
+          },
+          "o": {
+            "half": true
+          },
+          "chips": [
+            [
+              "error interval",
+              "7.25 ≤ L < 7.35",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Nearest 10",
+          "mood": "think",
+          "narration": "340 people to the nearest 10: halfway down is 335 and halfway up is 345. So 335 is at most the number, which is less than 345.",
+          "prompt": "What are the halfway marks for 340?",
+          "st": {
+            "label": "340 people to the nearest 10",
+            "v": 340,
+            "u": 10,
+            "unit": "",
+            "acc": "to the nearest 10"
+          },
+          "o": {
+            "half": true
+          },
+          "chips": [
+            [
+              "error interval",
+              "335 ≤ n < 345",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Truncated",
+          "mood": "focus",
+          "narration": "Truncating chops off digits instead of rounding. 4.7 truncated could be anything from 4.7 up to, but not including, 4.8.",
+          "prompt": "Could 4.79 truncate to 4.7?",
+          "st": {
+            "label": "4.7 s truncated to 1 dp",
+            "v": 4.7,
+            "u": 0.1,
+            "unit": "s",
+            "acc": "truncated to 1 dp",
+            "trunc": true
+          },
+          "o": {
+            "meas": "truncated"
+          },
+          "chips": [
+            [
+              "error interval",
+              "4.7 ≤ t < 4.8",
+              "result"
+            ]
+          ]
+        },
+        {
+          "name": "Bounds in a calculation",
+          "mood": "cheer",
+          "narration": "A square has side 5 centimetres to the nearest centimetre, so the side is from 4.5 up to 5.5. The perimeter is from 4 times 4.5 equals 18, up to 4 times 5.5 equals 22.",
+          "prompt": "What is the upper bound of the perimeter?",
+          "st": {
+            "label": "GCSE: square of side 5 cm (perimeter bounds)",
+            "v": 5,
+            "u": 1,
+            "unit": "cm",
+            "acc": "to the nearest cm",
+            "calc": "perimeter",
+            "k": 4
+          },
+          "o": {
+            "half": true
+          },
+          "chips": [
+            [
+              "side",
+              "4.5 ≤ s < 5.5",
+              "result"
+            ],
+            [
+              "perimeter",
+              "18 ≤ P < 22",
+              "focus"
+            ]
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "dp1",
+        "presets": {
+          "dp1": {
+            "label": "7.3 cm to 1 dp",
+            "v": 7.3,
+            "u": 0.1,
+            "unit": "cm",
+            "acc": "to 1 decimal place"
+          },
+          "ten": {
+            "label": "340 people to the nearest 10",
+            "v": 340,
+            "u": 10,
+            "unit": "",
+            "acc": "to the nearest 10"
+          },
+          "whole": {
+            "label": "5 cm to the nearest cm",
+            "v": 5,
+            "u": 1,
+            "unit": "cm",
+            "acc": "to the nearest cm"
+          },
+          "dp2": {
+            "label": "2.46 kg to 2 dp",
+            "v": 2.46,
+            "u": 0.01,
+            "unit": "kg",
+            "acc": "to 2 decimal places"
+          },
+          "trunc": {
+            "label": "4.7 s truncated to 1 dp",
+            "v": 4.7,
+            "u": 0.1,
+            "unit": "s",
+            "acc": "truncated to 1 dp",
+            "trunc": true
+          },
+          "gcse": {
+            "label": "GCSE: square of side 5 cm (perimeter bounds)",
+            "v": 5,
+            "u": 1,
+            "unit": "cm",
+            "acc": "to the nearest cm",
+            "calc": "perimeter",
+            "k": 4
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "steps": [
+          {
+            "name": "Measured",
+            "mood": "neutral",
+            "narration": "A length is 7.3 centimetres to one decimal place. The real length was rounded, so it might not be exactly 7.3.",
+            "prompt": "Could the real length be 7.28 cm?",
+            "st": {
+              "label": "7.3 cm to 1 dp",
+              "v": 7.3,
+              "u": 0.1,
+              "unit": "cm",
+              "acc": "to 1 decimal place"
+            },
+            "o": {
+              "seg": false
+            },
+            "chips": [
+              [
+                "7.3 cm",
+                "to 1 dp",
+                "given"
+              ]
+            ]
+          },
+          {
+            "name": "Halfway marks",
+            "mood": "think",
+            "narration": "Anything from halfway down to halfway up rounds to 7.3. Halfway to 7.2 is 7.25, and halfway to 7.4 is 7.35.",
+            "prompt": "What is halfway between 7.3 and 7.4?",
+            "st": {
+              "label": "7.3 cm to 1 dp",
+              "v": 7.3,
+              "u": 0.1,
+              "unit": "cm",
+              "acc": "to 1 decimal place"
+            },
+            "o": {
+              "seg": false,
+              "half": true
+            },
+            "chips": [
+              [
+                "half down",
+                "7.25",
+                "op"
+              ],
+              [
+                "half up",
+                "7.35",
+                "op"
+              ]
+            ]
+          },
+          {
+            "name": "The interval",
+            "mood": "focus",
+            "narration": "7.25 rounds up to 7.3, so it is included: filled end. 7.35 would round to 7.4, so it is not included: open end.",
+            "prompt": "Why is the right-hand end open?",
+            "st": {
+              "label": "7.3 cm to 1 dp",
+              "v": 7.3,
+              "u": 0.1,
+              "unit": "cm",
+              "acc": "to 1 decimal place"
+            },
+            "o": {
+              "half": true
+            },
+            "chips": [
+              [
+                "error interval",
+                "7.25 ≤ L < 7.35",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Nearest 10",
+            "mood": "think",
+            "narration": "340 people to the nearest 10: halfway down is 335 and halfway up is 345. So 335 is at most the number, which is less than 345.",
+            "prompt": "What are the halfway marks for 340?",
+            "st": {
+              "label": "340 people to the nearest 10",
+              "v": 340,
+              "u": 10,
+              "unit": "",
+              "acc": "to the nearest 10"
+            },
+            "o": {
+              "half": true
+            },
+            "chips": [
+              [
+                "error interval",
+                "335 ≤ n < 345",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Truncated",
+            "mood": "focus",
+            "narration": "Truncating chops off digits instead of rounding. 4.7 truncated could be anything from 4.7 up to, but not including, 4.8.",
+            "prompt": "Could 4.79 truncate to 4.7?",
+            "st": {
+              "label": "4.7 s truncated to 1 dp",
+              "v": 4.7,
+              "u": 0.1,
+              "unit": "s",
+              "acc": "truncated to 1 dp",
+              "trunc": true
+            },
+            "o": {
+              "meas": "truncated"
+            },
+            "chips": [
+              [
+                "error interval",
+                "4.7 ≤ t < 4.8",
+                "result"
+              ]
+            ]
+          },
+          {
+            "name": "Bounds in a calculation",
+            "mood": "cheer",
+            "narration": "A square has side 5 centimetres to the nearest centimetre, so the side is from 4.5 up to 5.5. The perimeter is from 4 times 4.5 equals 18, up to 4 times 5.5 equals 22.",
+            "prompt": "What is the upper bound of the perimeter?",
+            "st": {
+              "label": "GCSE: square of side 5 cm (perimeter bounds)",
+              "v": 5,
+              "u": 1,
+              "unit": "cm",
+              "acc": "to the nearest cm",
+              "calc": "perimeter",
+              "k": 4
+            },
+            "o": {
+              "half": true
+            },
+            "chips": [
+              [
+                "side",
+                "4.5 ≤ s < 5.5",
+                "result"
+              ],
+              [
+                "perimeter",
+                "18 ≤ P < 22",
+                "focus"
+              ]
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "label": "7.3 cm to 1 dp",
+          "v": 7.3,
+          "u": 0.1,
+          "unit": "cm",
+          "acc": "to 1 decimal place"
+        }
+      },
+      "exploreControls": {
+        "rules": {},
+        "matched": []
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Error interval · Measuredstep 1/6Measured 7.3 cm.7.27.257.37.357.4measured 7.3 cm7.3 cmto 1 dpMeasuredMeasured (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Error interval · Halfway marksstep 2/6Measured 7.3 cm.7.27.257.37.357.4measured 7.3 cmhalf down7.25half up7.35Halfway marksHalfway marks (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Error interval · The intervalstep 3/6Error interval 7.25 ≤ x < 7.35.7.27.257.37.357.4measured 7.3 cm7.257.35error interval7.25 ≤ L < 7.35The intervalThe interval (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Error interval · Nearest 10step 4/6Error interval 335 ≤ x < 345.330335340345350measured 340335345error interval335 ≤ n < 345Nearest 10Nearest 10 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Error interval · Truncatedstep 5/6Error interval 4.7 ≤ x < 4.8.4.64.654.74.754.84.85truncated 4.7 s4.74.8error interval4.7 ≤ t < 4.8TruncatedTruncated (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Error interval · Bounds in a calculationstep 6/6Error interval 4.5 ≤ x < 5.5.44.555.56measured 5 cm4.55.5side4.5 ≤ s < 5.5perimeter18 ≤ P < 22Bounds in a calculationBounds in a calculation (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · to 1 decimal place7.25 ≤ x < 7.35Error interval 7.25 ≤ x < 7.35.7.27.257.37.357.4measured 7.3 cm7.257.35lower bound7.25upper bound7.357.25 ≤ x < 7.357.25 ≤ x < 7.35 (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Accuracy",
+        "type": "select-one",
+        "value": "dp1"
+      },
+      {
+        "label": "Measured value",
+        "type": "range",
+        "min": "5.3",
+        "max": "9.3",
+        "value": "7.3"
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "dp1",
+      "presets": {
+        "dp1": {
+          "label": "7.3 cm to 1 dp",
+          "v": 7.3,
+          "u": 0.1,
+          "unit": "cm",
+          "acc": "to 1 decimal place"
+        },
+        "ten": {
+          "label": "340 people to the nearest 10",
+          "v": 340,
+          "u": 10,
+          "unit": "",
+          "acc": "to the nearest 10"
+        },
+        "whole": {
+          "label": "5 cm to the nearest cm",
+          "v": 5,
+          "u": 1,
+          "unit": "cm",
+          "acc": "to the nearest cm"
+        },
+        "dp2": {
+          "label": "2.46 kg to 2 dp",
+          "v": 2.46,
+          "u": 0.01,
+          "unit": "kg",
+          "acc": "to 2 decimal places"
+        },
+        "trunc": {
+          "label": "4.7 s truncated to 1 dp",
+          "v": 4.7,
+          "u": 0.1,
+          "unit": "s",
+          "acc": "truncated to 1 dp",
+          "trunc": true
+        },
+        "gcse": {
+          "label": "GCSE: square of side 5 cm (perimeter bounds)",
+          "v": 5,
+          "u": 1,
+          "unit": "cm",
+          "acc": "to the nearest cm",
+          "calc": "perimeter",
+          "k": 4
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  }
+]

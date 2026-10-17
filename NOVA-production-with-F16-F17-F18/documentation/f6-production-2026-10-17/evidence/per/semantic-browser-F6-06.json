@@ -1,0 +1,798 @@
+[
+  {
+    "id": "F6-06",
+    "presetOf": null,
+    "path": "F6/F6-06-best-buy-comparer.html",
+    "sourceSha256": "80b17aeede631b387dc9a616017dbeb84684d115c37729f5be1e960f679f8106",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1120,
+            480
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "06 1.80 100 2.40 32.00 36.00 500 6 750",
+          "before": "06 100 2.20 3.00 400 50.00 55.00 6 600"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Product comparison Y7-061 · Pasta packs Y7-061 · Cereal boxes Y7-061 · Juice cartons Y7-061 · Hand soap Y7-061 · Equal value Check choice Equal value Hint Remove marker Reset Drag the glowing ring onto a product. Keyboard: focus it and press A, B or E (equal). Press Delete to remove a placed ring. R",
+          "after": "Product comparison Y7-061 · Pasta packs Y7-061 · Cereal boxes Y7-061 · Juice cartons Y7-061 · Hand soap Y7-061 · Equal value Check choice Equal value Hint Remove marker Reset Drag the glowing ring onto a product. Keyboard: focus it and press A, B or E (equal). Press Delete to remove a placed ring. R",
+          "bi": [
+            "Y7-061-cereal"
+          ],
+          "ai": [
+            "Y7-061-cereal"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "06 100 2.20 3.00 400 50.00 55.00 6 600",
+            1
+          ],
+          "narrow": [
+            "06 100 2.20 3.00 400 50.00 55.00 6 600",
+            1
+          ],
+          "back": [
+            "06 100 2.20 3.00 400 50.00 55.00 6 600",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1120,
+            480
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "06 1.80 100 2.40 500 6 750",
+          "before": "06 1.80 100 2.40 500 6 750"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Comparison 1 of 5 · Two pasta packs. Which buys more food for each pound? Calculate unit prices in pence. PACK A · pence per 100 g PACK B · pence per 100 g BEST BUY Choose one… Pack A Pack B Equal value Check best buy Hint Next comparison Comparisons solved: 0 / 5",
+          "after": "Comparison 1 of 5 · Two pasta packs. Which buys more food for each pound? Calculate unit prices in pence. PACK A · pence per 100 g PACK B · pence per 100 g BEST BUY Choose one… Pack A Pack B Equal value Check best buy Hint Next comparison Comparisons solved: 0 / 5",
+          "bi": [
+            "7",
+            "7",
+            "A"
+          ],
+          "ai": [
+            "7",
+            "7",
+            "A"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "06 1.80 100 2.40 500 6 750",
+            0
+          ],
+          "narrow": [
+            "06 1.80 100 2.40 500 6 750",
+            0
+          ],
+          "back": [
+            "06 1.80 100 2.40 500 6 750",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "lesson.state.compareAmount must be greater than zero"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1120,
+            "median": 21.86,
+            "p10": 18.64,
+            "count": 14,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11.9,
+            "p10": 11,
+            "count": 14,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11.9,
+            "p10": 11,
+            "count": 14,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.9,
+          "p10": 11,
+          "count": 14,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.9,
+          "p10": 11,
+          "count": 14,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.9,
+          "p10": 11,
+          "count": 14,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.9,
+          "p10": 11,
+          "count": 14,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.9,
+          "p10": 11,
+          "count": 14,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST PER 100 G\nPACK A\n£2.10\n700 g\nPACK B\n£2.60\n1000 g\nUNIT PRICE · PENCE PER 100 G\nPA",
+          "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST PER 100 G\nPACK A\n£1.50\n500 g\nPACK B\n£3.30\n1000 g\nUNIT PRICE · PENCE PER 100 G\nPA"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "700",
+            "1000"
+          ],
+          "text": "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST PER 100 G\nPACK A\n£2.10\n700 g\nPACK B\n£2.60\n1000 g\nUNIT PRICE · PENCE PER 100 G\nPACK A\n? p\nPACK B\n? p\nWORK OUT BOTH UNIT PRICES FIRST\n\nFAIR COMPARISON\n\n100 g\n\nBoth bars use the very same quantity.\n\nPACK A · PER 100 g\n\n? p\n\n£2.10 for 700 g\n\nPA"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 30,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "500",
+            "1000"
+          ],
+          "text": "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST PER 100 G\nPACK A\n£1.50\n500 g\nPACK B\n£3.30\n1000 g\nUNIT PRICE · PENCE PER 100 G\nPACK A\n? p\nPACK B\n? p\nWORK OUT BOTH UNIT PRICES FIRST\n\nFAIR COMPARISON\n\n100 g\n\nBoth bars use the very same quantity.\n\nPACK A · PER 100 g\n\n? p\n\n£1.50 for 500 g\n\nPA"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 30,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST PER 100 G\nPACK A\n£2.10\n700 g\nPACK B\n£2.60\n1000 g\nUNIT PRICE · PENCE PER 100 G\nPACK A\n? p\nPACK B\n? p\nWORK OUT BOTH UNIT PRICES FIRST\n\nFAIR CO"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST ",
+          "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST ",
+          "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST ",
+          "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST ",
+          "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST ",
+          "F6-06\nPASTA PACKS\nWHICH IS THE BEST VALUE?\nCOMPARE THE COST "
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "TWO PACKS · ONE FAIR COMPARISON\nCOMPARE THE COST PER 100 G\nPACK A\n£2.10\n700 g\nPA",
+          "TWO PACKS · ONE FAIR COMPARISON\nCOMPARE THE COST PER 100 G\nPACK A\n£2.10\n700 g\nPA",
+          "TWO PACKS · ONE FAIR COMPARISON\nCOMPARE THE COST PER 100 G\nPACK A\n£2.10\n700 g\nPA",
+          "TWO PACKS · ONE FAIR COMPARISON\nCOMPARE THE COST PER 100 G\nPACK A\n£2.10\n700 g\nPA"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "TWO PACKS · ONE FAIR COMPARISON\nCOMPARE THE COST PER 100 G\nPACK A\n£2.10\n700 g\nPACK B\n£2.60\n1000 g\nUNIT PRICE · PENCE PER 100 G\nPACK A\n? p\nPACK B\n? p\nDIVIDE PRICE BY QUANTITY\n\nFAIR COMPARISON\n\n100 g\n\nB"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "TWO PACKS · ONE FAIR COMPARISON\nCOMPARE THE COST PER 100 G\nPACK A\n£1.50\n500 g\nPA",
+          "TWO PACKS · ONE FAIR COMPARISON\nCOMPARE THE COST PER 100 G\nPACK A\n£1.50\n500 g\nPA",
+          "TWO PACKS · ONE FAIR COMPARISON\nCOMPARE THE COST PER 100 G\nPACK A\n£1.50\n500 g\nPA",
+          "TWO PACKS · ONE FAIR COMPARISON\nCOMPARE THE COST PER 100 G\nPACK A\n£1.50\n500 g\nPA"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Product comparison Y7-061 · Pasta packs Y7-061 · Cereal boxes Y7-061 · Juice cartons Y7-061 · Hand soap Y7-061 · Equal value Check choice Equal value Hint Remove marker Reset Drag the glowing ring onto a product. Keyboard: focus it and press A, B or E (equal). Press Delete to remove a placed ring. Red RETURN zone removes it too. Drag the best-buy ring to Pack A or Pack B. Work out unit prices first.",
+          "inputs": [
+            "Y7-061"
+          ],
+          "stageInputs": [],
+          "nums": "06 1.80 100 2.40 32.00 36.00 500 6 750",
+          "buttons": 1,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Product comparison Y7-061 · Pasta packs Y7-061 · Cereal boxes Y7-061 · Juice cartons Y7-061 · Hand soap Y7-061 · Equal value Check choice Equal value Hint Remove marker Reset Drag the glowing ring onto a product. Keyboard: focus it and press A, B or E (equal). Press Delete to remove a placed ring. Red RETURN zone removes it too. Compare breakfast cereal prices per 100 grams.",
+          "inputs": [
+            "Y7-061-cereal"
+          ],
+          "stageInputs": [],
+          "nums": "06 100 2.20 3.00 400 50.00 55.00 6 600",
+          "buttons": 1,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Product comparison Y7-061 · Pasta packs Y7-061 · Cereal boxes Y7-061 · Juice cartons Y7-061 · Hand soap Y7-061 · Equal value Check choice Equal value Hint Remove marker Reset Drag the glowing ring onto a product. Keyboard: focus it and press A, B or E (equal). Press Delete to remove a placed ring. Red RETURN zone removes it too. Compare breakfast cereal prices per 100 grams.",
+          "inputs": [
+            "Y7-061-cereal"
+          ],
+          "stageInputs": [],
+          "nums": "06 100 2.20 3.00 400 50.00 55.00 6 600",
+          "buttons": 1,
+          "vb": 480,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Comparison 1 of 5 · Two pasta packs. Which buys more food for each pound? Calculate unit prices in pence. PACK A · pence per 100 g PACK B · pence per 100 g BEST BUY Choose one… Pack A Pack B Equal value Check best buy Hint Next comparison Comparisons solved: 0 / 5",
+          "inputs": [
+            "",
+            "",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "06 1.80 100 2.40 500 6 750",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Comparison 1 of 5 · Two pasta packs. Which buys more food for each pound? Calculate unit prices in pence. PACK A · pence per 100 g PACK B · pence per 100 g BEST BUY Choose one… Pack A Pack B Equal value Check best buy Hint Next comparison Comparisons solved: 0 / 5",
+          "inputs": [
+            "7",
+            "7",
+            "A"
+          ],
+          "stageInputs": [],
+          "nums": "06 1.80 100 2.40 500 6 750",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Comparison 1 of 5 · Two pasta packs. Which buys more food for each pound? Calculate unit prices in pence. PACK A · pence per 100 g PACK B · pence per 100 g BEST BUY Choose one… Pack A Pack B Equal value Check best buy Hint Next comparison Comparisons solved: 0 / 5",
+          "inputs": [
+            "7",
+            "7",
+            "A"
+          ],
+          "stageInputs": [],
+          "nums": "06 1.80 100 2.40 500 6 750",
+          "buttons": 0,
+          "vb": 480,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1120,
+        "median": 21.86,
+        "p10": 18.64,
+        "count": 14,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11.9,
+        "p10": 11,
+        "count": 14,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11.9,
+        "p10": 11,
+        "count": 14,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

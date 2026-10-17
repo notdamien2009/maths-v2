@@ -1,0 +1,4193 @@
+{
+ "family": "F5",
+ "revision": "2026-10-16",
+ "status": "PASS WITH LIMITATIONS",
+ "componentCount": 18,
+ "note": "Eighteen F5 engines present in the source pack (F5-01..F5-07, F5-09..F5-19) (F5-08 absent from the supplied folder; not invented). F4-05 is a preset of F5-11.",
+ "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+ "templateSha256": "740c125af623ab5fb5896b3e9655a6d10b093ffcda53127a6eb67eb80eef26ec",
+ "components": [
+  {
+   "id": "F5-01",
+   "name": "Fraction strips & wall",
+   "path": "F5/F5-01-fraction-strips-and-wall.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "8f5e0ba5738b24d62c85b5e12ae0d60e2609261b1a2c18f0be69c8e498fa9c10",
+   "originalSha256": "0979ee903de1028e0249891fd03d88e2a7732ceeb688d7de99ccad1733964cbc",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "a",
+     "b",
+     "pick"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "a",
+     "b",
+     "pick"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "a",
+     "b",
+     "pick"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "a",
+     "b",
+     "pick"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "a",
+     "b",
+     "pick"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "a",
+     "b",
+     "pick"
+    ]
+   ],
+   "draws": {
+    "Wall": [
+     "stage",
+     "model",
+     "opts"
+    ],
+    "startScene": [
+     "stage",
+     "mod",
+     "opts"
+    ]
+   },
+   "tables": [
+    "MOBILE_ROWS",
+    "ALL_ROWS",
+    "STEPS"
+   ],
+   "exploreFields": {
+    "p": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    },
+    "current": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "halves": {
+     "label": "Half in different partitions",
+     "a": {
+      "n": 1,
+      "d": 2
+     },
+     "b": {
+      "n": 2,
+      "d": 4
+     }
+    },
+    "thirds": {
+     "label": "Thirds and sixths",
+     "a": {
+      "n": 1,
+      "d": 3
+     },
+     "b": {
+      "n": 2,
+      "d": 6
+     }
+    },
+    "quarters": {
+     "label": "Quarter and eighths",
+     "a": {
+      "n": 1,
+      "d": 4
+     },
+     "b": {
+      "n": 2,
+      "d": 8
+     }
+    },
+    "unequal": {
+     "label": "Not equal: one half and two fifths",
+     "a": {
+      "n": 1,
+      "d": 2
+     },
+     "b": {
+      "n": 2,
+      "d": 5
+     }
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "a": {
+      "n": 1,
+      "d": 2
+     },
+     "b": {
+      "n": 2,
+      "d": 4
+     }
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 2,
+    "data": {
+     "a": {
+      "n": 1,
+      "d": 2
+     },
+     "b": null,
+     "pick": {
+      "n": 1,
+      "d": 2
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Rail A shows 1/2. How many twelfths make exactly the same length?",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-02",
+   "name": "Fraction circles \u00b7 Precision sector workshop",
+   "path": "F5/F5-02-fraction-circles.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "d8e445b132d4b9dad8ab85bfd5d459bc91114ace1b97528fc8cb3e58a4ecae3a",
+   "originalSha256": "19c803cdfbcb6fdb0478c5f2b580bab14f4f9f7adbb0bfb001f88166de2d8559",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "n",
+     "d",
+     "caption",
+     "hint"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "n",
+     "d",
+     "caption",
+     "explode"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "n",
+     "d",
+     "caption",
+     "explode"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "n",
+     "d",
+     "caption",
+     "animate"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "n",
+     "d",
+     "caption",
+     "animate"
+    ],
+    [
+     "name",
+     "mood",
+     "pose",
+     "narration",
+     "prompt",
+     "n",
+     "d",
+     "factor",
+     "caption",
+     "animate"
+    ]
+   ],
+   "draws": {
+    "renderScene": [
+     "stage",
+     "state",
+     "opt"
+    ]
+   },
+   "tables": [
+    "teaching"
+   ],
+   "exploreFields": {},
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "quarters": {
+     "label": "A quarter",
+     "d": 4,
+     "n": 1
+    },
+    "halves": {
+     "label": "A half",
+     "d": 2,
+     "n": 1
+    },
+    "thirds": {
+     "label": "Two thirds",
+     "d": 3,
+     "n": 2
+    },
+    "eighths": {
+     "label": "Three eighths",
+     "d": 8,
+     "n": 3
+    },
+    "empty": {
+     "label": "Empty circle",
+     "d": 4,
+     "n": 0
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "d": 4,
+     "n": 1
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 1,
+    "data": {
+     "n": 1,
+     "d": 4,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "1 of 4 equal sectors are shaded. How many more sectors complete the whole circle?",
+    "privateAnswer": 3,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-03",
+   "name": "Fractions \u00b7 Premium precision area engine",
+   "path": "F5/F5-03-area-model-fractions.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "fe7f2142e79c7ac2c98fc110f2460887a7f87fa5a38c1d4979ffde60f0f8ed56",
+   "originalSha256": "0793f83e542daa963058204b651b2022c889244468e124090d0cc9f989eb4545",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "a",
+     "b",
+     "c",
+     "d",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "a",
+     "b",
+     "c",
+     "d",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "a",
+     "b",
+     "c",
+     "d",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "a",
+     "b",
+     "c",
+     "d",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "a",
+     "b",
+     "c",
+     "d",
+     "phase",
+     "animate",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "a",
+     "b",
+     "c",
+     "d",
+     "phase",
+     "proof",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "renderScene": [
+     "stage",
+     "o",
+     "opts"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {},
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "multiply": {
+     "label": "Fraction multiplication model",
+     "a": 2,
+     "b": 3,
+     "c": 3,
+     "d": 4
+    },
+    "product": {
+     "label": "Two thirds of three quarters",
+     "a": 2,
+     "b": 3,
+     "c": 3,
+     "d": 4
+    },
+    "thirds": {
+     "label": "One half of two thirds",
+     "a": 1,
+     "b": 2,
+     "c": 2,
+     "d": 3
+    },
+    "fifths": {
+     "label": "Three fifths of two thirds",
+     "a": 3,
+     "b": 5,
+     "c": 2,
+     "d": 3
+    },
+    "quarter": {
+     "label": "Three quarters of two fifths",
+     "a": 3,
+     "b": 4,
+     "c": 2,
+     "d": 5
+    },
+    "zero": {
+     "label": "Zero of three quarters",
+     "a": 0,
+     "b": 3,
+     "c": 3,
+     "d": 4
+    },
+    "whole": {
+     "label": "Whole of three fifths",
+     "a": 3,
+     "b": 5,
+     "c": 1,
+     "d": 1
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "a": 2,
+     "b": 3,
+     "c": 3,
+     "d": 4
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 3,
+    "data": {
+     "a": 2,
+     "b": 3,
+     "c": 3,
+     "d": 4,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "2/3 of the columns and 3/4 of the rows are selected. How many cells are in both selections?",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-04",
+   "name": "Fractions on a Number Line",
+   "path": "F5/F5-04-fractions-number-line-preset.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "662b74341ce9aa916d7f35eb7468d16e7f5aab7fafb9ae325a37b076e136b61f",
+   "originalSha256": "1827eccb33a0576a44c474097b61fa39af72f9e9f005785ec4832f0cc9238c17",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "o",
+     "phase",
+     "mood",
+     "pose",
+     "helper",
+     "prompt",
+     "narration"
+    ],
+    [
+     "name",
+     "o",
+     "phase",
+     "mood",
+     "pose",
+     "helper",
+     "prompt",
+     "narration"
+    ],
+    [
+     "name",
+     "o",
+     "phase",
+     "mood",
+     "pose",
+     "helper",
+     "prompt",
+     "narration"
+    ],
+    [
+     "name",
+     "o",
+     "phase",
+     "animate",
+     "mood",
+     "pose",
+     "helper",
+     "prompt",
+     "narration"
+    ],
+    [
+     "name",
+     "o",
+     "phase",
+     "mood",
+     "pose",
+     "helper",
+     "prompt",
+     "narration"
+    ],
+    [
+     "name",
+     "o",
+     "phase",
+     "mood",
+     "pose",
+     "helper",
+     "prompt",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "state",
+     "opt"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {},
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "quarters": {
+     "label": "Three quarters",
+     "n": 3,
+     "d": 4,
+     "min": 0,
+     "max": 2,
+     "factor": 2
+    },
+    "halves": {
+     "label": "One half",
+     "n": 1,
+     "d": 2,
+     "min": 0,
+     "max": 2,
+     "factor": 2
+    },
+    "thirds": {
+     "label": "Two thirds",
+     "n": 2,
+     "d": 3,
+     "min": 0,
+     "max": 2,
+     "factor": 3
+    },
+    "improper": {
+     "label": "Five thirds (beyond one)",
+     "n": 5,
+     "d": 3,
+     "min": 0,
+     "max": 2,
+     "factor": 2
+    },
+    "negative": {
+     "label": "Minus two thirds",
+     "n": -2,
+     "d": 3,
+     "min": -1,
+     "max": 1,
+     "factor": 2
+    },
+    "eighths": {
+     "label": "Seven eighths",
+     "n": 7,
+     "d": 8,
+     "min": 0,
+     "max": 2,
+     "factor": 2
+    },
+    "aboveTwo": {
+     "label": "Seven thirds (above two)",
+     "n": 7,
+     "d": 3,
+     "min": 0,
+     "max": 3,
+     "factor": 2
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "n": 3,
+     "d": 4,
+     "min": 0,
+     "max": 2,
+     "factor": 2
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 2,
+    "data": {
+     "o": {
+      "n": 3,
+      "d": 4,
+      "min": 0,
+      "max": 2,
+      "factor": 2
+     },
+     "helper": "Question 1: count the equal steps from zero."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The ring marks 3/4. Write it with denominator 8. Enter the numerator.",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-05",
+   "name": "Equivalent fractions \u00b7 Precision Splitter",
+   "path": "F5/F5-05-equivalent-fraction-multiplier.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "2e3021603219a86406cea1e09fcff23fb5348037f01cd4741e518a3c52c57670",
+   "originalSha256": "f43ed8bee059468521587a456242d536deb39e39e87dfd845a5620afeefd8f2b",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "n",
+     "d",
+     "k",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "k",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "k",
+     "phase",
+     "animate",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "k",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "k",
+     "phase",
+     "animate",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "k",
+     "phase",
+     "animate",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "renderScene": [
+     "stage",
+     "o",
+     "opt"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "o": {
+     "kind": "factory",
+     "factory": "initial",
+     "argCount": 1
+    },
+    "challenge.o": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 3
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "quarters": {
+     "label": "Three quarters",
+     "n": 3,
+     "d": 4,
+     "k": 2
+    },
+    "half": {
+     "label": "One half",
+     "n": 1,
+     "d": 2,
+     "k": 2
+    },
+    "thirds": {
+     "label": "Two thirds",
+     "n": 2,
+     "d": 3,
+     "k": 3
+    },
+    "fifths": {
+     "label": "Three fifths",
+     "n": 3,
+     "d": 5,
+     "k": 2
+    },
+    "sixths": {
+     "label": "Five sixths",
+     "n": 5,
+     "d": 6,
+     "k": 3
+    },
+    "zero": {
+     "label": "Zero of a whole",
+     "n": 0,
+     "d": 4,
+     "k": 2
+    },
+    "whole": {
+     "label": "One whole",
+     "n": 4,
+     "d": 4,
+     "k": 3
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "n": 3,
+     "d": 4,
+     "k": 2
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 1,
+    "data": {
+     "n": 1,
+     "d": 2,
+     "k": 3,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Multiply the numerator and denominator of 1/2 by 3. Enter the new numerator.",
+    "privateAnswer": 3,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-06",
+   "name": "Fraction Simplifier \u00b7 Magnetic Group Forge",
+   "path": "F5/F5-06-fraction-simplifier.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "db6c39e0315ba53c10c1afe5492cae898246989b783dd81026c9cb5492fc55c9",
+   "originalSha256": "08c79c2cf11234dc8d11944d87eb7cb8b49cee7a8dffd6a229761dc0724450ee",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "n",
+     "d",
+     "g",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "g",
+     "phase",
+     "animate",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "g",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "g",
+     "phase",
+     "animate",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "g",
+     "phase",
+     "animate",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "g",
+     "phase",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "render": [
+     "stage",
+     "o",
+     "opt"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "guided.o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 3
+    },
+    "challenge.o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 3
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "sixEighths": {
+     "label": "Six eighths",
+     "n": 6,
+     "d": 8,
+     "g": 2
+    },
+    "sixTwelfths": {
+     "label": "Six twelfths",
+     "n": 6,
+     "d": 12,
+     "g": 6
+    },
+    "twelveEighteenths": {
+     "label": "Twelve eighteenths",
+     "n": 12,
+     "d": 18,
+     "g": 6
+    },
+    "eighteenTwentyfourths": {
+     "label": "Eighteen twenty-fourths",
+     "n": 18,
+     "d": 24,
+     "g": 6
+    },
+    "nineTwelfths": {
+     "label": "Nine twelfths",
+     "n": 9,
+     "d": 12,
+     "g": 3
+    },
+    "alreadySimple": {
+     "label": "Five sevenths \u00b7 simplest",
+     "n": 5,
+     "d": 7,
+     "g": 1
+    },
+    "zero": {
+     "label": "Zero tenths",
+     "n": 0,
+     "d": 10,
+     "g": 10
+    },
+    "whole": {
+     "label": "Eight eighths",
+     "n": 8,
+     "d": 8,
+     "g": 8
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "n": 6,
+     "d": 8,
+     "g": 2
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {
+     "n": 6,
+     "d": 8,
+     "g": 1,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Simplify 6/8 fully. Enter the numerator of the simplest form.",
+    "privateAnswer": 3,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-07",
+   "name": "Add & Subtract Fractions \u00b7 Equal-Unit Workshop",
+   "path": "F5/F5-07-add-and-subtract-fractions.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "902cd6ba65d98a86b11ea7e93ad094e4707eb3fefd1ba1579fd1b2a305b83de5",
+   "originalSha256": "459454333af306f0afcc2289ca6b2e257c6df2dd1add0d4cf186488181f5901b",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "op",
+     "ready",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "op",
+     "ready",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "op",
+     "ready",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "op",
+     "ready",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "op",
+     "ready",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "op",
+     "ready",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "render": [
+     "stage",
+     "o",
+     "opt"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "guided.o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 6
+    },
+    "challenge.o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 5
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "halfThird": {
+     "label": "1/2 + 1/3",
+     "op": "add",
+     "a": 1,
+     "b": 2,
+     "c": 1,
+     "d": 3
+    },
+    "quarters": {
+     "label": "1/4 + 2/4",
+     "op": "add",
+     "a": 1,
+     "b": 4,
+     "c": 2,
+     "d": 4
+    },
+    "improper": {
+     "label": "3/4 + 2/3",
+     "op": "add",
+     "a": 3,
+     "b": 4,
+     "c": 2,
+     "d": 3
+    },
+    "fifths": {
+     "label": "2/5 + 1/10",
+     "op": "add",
+     "a": 2,
+     "b": 5,
+     "c": 1,
+     "d": 10
+    },
+    "subtract": {
+     "label": "3/4 \u2212 1/2",
+     "op": "subtract",
+     "a": 3,
+     "b": 4,
+     "c": 1,
+     "d": 2
+    },
+    "subtractSame": {
+     "label": "5/6 \u2212 1/3",
+     "op": "subtract",
+     "a": 5,
+     "b": 6,
+     "c": 1,
+     "d": 3
+    },
+    "zero": {
+     "label": "0/3 + 2/3",
+     "op": "add",
+     "a": 0,
+     "b": 3,
+     "c": 2,
+     "d": 3
+    },
+    "whole": {
+     "label": "1/2 + 1/2",
+     "op": "add",
+     "a": 1,
+     "b": 2,
+     "c": 1,
+     "d": 2
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "op": "add",
+     "a": 1,
+     "b": 2,
+     "c": 1,
+     "d": 3
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 1,
+    "data": {
+     "a": 1,
+     "b": 2,
+     "c": 1,
+     "d": 3,
+     "op": "add",
+     "ready": true,
+     "show": 0,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "1/2 + 1/3 written in 6ths. Enter the numerator of the total.",
+    "privateAnswer": 5,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-09",
+   "name": "Divide Fractions \u00b7 Precision Grouping Lab",
+   "path": "F5/F5-09-divide-fractions.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "450fe0c0d875d3c959d77b3615fee9b7756e36c453fed9113bbeb210bb5edb6b",
+   "originalSha256": "0f55bfc7dcbba1d7659abe21a135c4b6f40377fc97e02bb2daeb1894ee0f96d5",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ],
+    [
+     "title",
+     "a",
+     "b",
+     "c",
+     "d",
+     "show",
+     "pose",
+     "caption",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "o",
+     "opt"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "guided.o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 4
+    },
+    "challenge.o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 4
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "halfQuarter": {
+     "label": "1/2 \u00f7 1/4",
+     "a": 1,
+     "b": 2,
+     "c": 1,
+     "d": 4
+    },
+    "threeFourEight": {
+     "label": "3/4 \u00f7 1/8",
+     "a": 3,
+     "b": 4,
+     "c": 1,
+     "d": 8
+    },
+    "twoThirdsQuarter": {
+     "label": "2/3 \u00f7 1/4",
+     "a": 2,
+     "b": 3,
+     "c": 1,
+     "d": 4
+    },
+    "partial": {
+     "label": "1/2 \u00f7 3/4",
+     "a": 1,
+     "b": 2,
+     "c": 3,
+     "d": 4
+    },
+    "oneThirdHalf": {
+     "label": "1/3 \u00f7 1/2",
+     "a": 1,
+     "b": 3,
+     "c": 1,
+     "d": 2
+    },
+    "threeQuarterHalf": {
+     "label": "3/4 \u00f7 1/2",
+     "a": 3,
+     "b": 4,
+     "c": 1,
+     "d": 2
+    },
+    "fiveSixThird": {
+     "label": "5/6 \u00f7 1/3",
+     "a": 5,
+     "b": 6,
+     "c": 1,
+     "d": 3
+    },
+    "improper": {
+     "label": "5/4 \u00f7 1/2",
+     "a": 5,
+     "b": 4,
+     "c": 1,
+     "d": 2
+    },
+    "oneTwoThirds": {
+     "label": "1 \u00f7 2/3",
+     "a": 1,
+     "b": 1,
+     "c": 2,
+     "d": 3
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "a": 1,
+     "b": 2,
+     "c": 1,
+     "d": 4
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {
+     "a": 1,
+     "b": 2,
+     "c": 1,
+     "d": 4,
+     "show": 0,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "How many groups of 1/4 fit exactly into 1/2?",
+    "privateAnswer": 2,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-10",
+   "name": "Mixed &amp; Improper Fractions \u00b7 Whole-Builder Forge",
+   "path": "F5/F5-10-mixed-improper-converter.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "f451533d52ea4b9c514728c35feb25a5c30ef8864a09c9a537a6465476e9147b",
+   "originalSha256": "fefc8e73f6e34dfc4eedba47fa53adfbb8135a696fc4729ad7f80dc3f782131b",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "n",
+     "d",
+     "sgn",
+     "p",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "sgn",
+     "p",
+     "animate",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "sgn",
+     "p",
+     "animate",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "sgn",
+     "p",
+     "animate",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "sgn",
+     "p",
+     "animate",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "d",
+     "sgn",
+     "p",
+     "animate",
+     "pose",
+     "caption",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "render": [
+     "stage",
+     "o",
+     "opt"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "challenge.o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 4
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "sevenThirds": {
+     "label": "Seven thirds \u2192 2 wholes + 1 third",
+     "n": 7,
+     "d": 3,
+     "sgn": 1
+    },
+    "elevenFourths": {
+     "label": "Eleven quarters \u2192 2 wholes + 3 quarters",
+     "n": 11,
+     "d": 4,
+     "sgn": 1
+    },
+    "fiveHalves": {
+     "label": "Five halves \u2192 2 wholes + 1 half",
+     "n": 5,
+     "d": 2,
+     "sgn": 1
+    },
+    "nineThirds": {
+     "label": "Nine thirds \u2192 3 wholes",
+     "n": 9,
+     "d": 3,
+     "sgn": 1
+    },
+    "twoFifths": {
+     "label": "Two fifths \u2192 0 wholes + 2 fifths",
+     "n": 2,
+     "d": 5,
+     "sgn": 1
+    },
+    "zero": {
+     "label": "Zero sixths",
+     "n": 0,
+     "d": 6,
+     "sgn": 1
+    },
+    "negative": {
+     "label": "Negative seven thirds \u2192 \u22122 and 1 third",
+     "n": 7,
+     "d": 3,
+     "sgn": -1
+    },
+    "thirteenFourths": {
+     "label": "Thirteen quarters \u2192 3 wholes + 1 quarter",
+     "n": 13,
+     "d": 4,
+     "sgn": 1
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "n": 7,
+     "d": 3,
+     "sgn": 1
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {
+     "n": 7,
+     "d": 3,
+     "sgn": 1,
+     "p": 0,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Write 7/3 as a mixed number. How many whole ones are there?",
+    "privateAnswer": 2,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-11",
+   "name": "Fraction of an Amount \u00b7 Equal-Share Studio",
+   "path": "F5/F5-11-fraction-of-an-amount.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "01cb2b370fb2c4487fa333cf0258455fff91d9e7c901e747b5422a49d7c54bbe",
+   "originalSha256": "cba85cd314856278fe7e82e22147a0e9c578a192ba52587f74f044a128c1461b",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "stage",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "stage",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "stage",
+     "animate",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "stage",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "stage",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "stage",
+     "animate",
+     "pose",
+     "caption",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "render": [
+     "stage",
+     "o",
+     "opt"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "challenge.o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 4
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "threeQuarter24": {
+     "label": "3/4 of 24 \u2192 18",
+     "n": 3,
+     "d": 4,
+     "a": 24
+    },
+    "twoThird18": {
+     "label": "2/3 of 18 \u2192 12",
+     "n": 2,
+     "d": 3,
+     "a": 18
+    },
+    "fiveSixth30": {
+     "label": "5/6 of 30 \u2192 25",
+     "n": 5,
+     "d": 6,
+     "a": 30
+    },
+    "twoThird10": {
+     "label": "2/3 of 10 \u2192 6 2/3",
+     "n": 2,
+     "d": 3,
+     "a": 10
+    },
+    "halfSeven": {
+     "label": "1/2 of 7 \u2192 3 1/2",
+     "n": 1,
+     "d": 2,
+     "a": 7
+    },
+    "zeroFifth": {
+     "label": "0/5 of 20 \u2192 0",
+     "n": 0,
+     "d": 5,
+     "a": 20
+    },
+    "wholeFifth": {
+     "label": "5/5 of 20 \u2192 20",
+     "n": 5,
+     "d": 5,
+     "a": 20
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "n": 3,
+     "d": 4,
+     "a": 24
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {
+     "a": 24,
+     "n": 3,
+     "d": 4,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Find 3/4 of 24.",
+    "privateAnswer": 18,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 63,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 144,
+     "total": 144,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-12",
+   "name": "Hundred-Square Percentage Studio",
+   "path": "F5/F5-12-hundred-square-percentage-grid.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "1bce57bfe16f5f3410feedfd78bae5fe148f5e6329a58ff4eaee94e7741732b6",
+   "originalSha256": "ea369953c29747ae881afbfeafa1292ad61b7e717ad702d02e0c48d15191c9da",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "n",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "pose",
+     "caption",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "selected",
+     "opt"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "selected": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    },
+    "guided.state": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "thirtySeven": {
+     "label": "37% \u00b7 explore shaded area",
+     "count": 37
+    },
+    "quarter": {
+     "label": "25% \u00b7 one quarter",
+     "count": 25
+    },
+    "half": {
+     "label": "50% \u00b7 one half",
+     "count": 50
+    },
+    "seventyFive": {
+     "label": "75% \u00b7 three quarters",
+     "count": 75
+    },
+    "zero": {
+     "label": "0% \u00b7 empty",
+     "count": 0
+    },
+    "whole": {
+     "label": "100% \u00b7 full grid",
+     "count": 100
+    },
+    "thirteen": {
+     "label": "13% \u00b7 thirteen hundredths",
+     "count": 13
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "count": 37
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 3,
+    "data": {
+     "n": 37,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "37 of the 100 cells are shaded. What percentage is NOT shaded?",
+    "privateAnswer": 63,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 66,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 147,
+     "total": 147,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-13",
+   "name": "FDP Conversion Machine",
+   "path": "F5/F5-13-fdp-conversion-machine.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "d9a9bfb2dfed53f093bd330f8fa6cfc36f35a6509f52f298297ddcd2c4ec1dde",
+   "originalSha256": "f58e32f55560b6c6dee1ff32ce02840d5e8d70dad03bfdc6e4d7bc98aa6ab022",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "state",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "state",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "state",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "state",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "state",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "state",
+     "pose",
+     "caption",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "render": [
+     "stage",
+     "v",
+     "o"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {},
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "third": {
+     "label": "One third \u00b7 recurring",
+     "input": "1/3"
+    },
+    "twoFifths": {
+     "label": "Two fifths \u00b7 terminating",
+     "input": "2/5"
+    },
+    "oneSixth": {
+     "label": "One sixth \u00b7 mixed decimal pattern",
+     "input": "1/6"
+    },
+    "sevenEighths": {
+     "label": "Seven eighths \u00b7 terminating",
+     "input": "7/8"
+    },
+    "elevenTwelfths": {
+     "label": "Eleven twelfths \u00b7 recurring",
+     "input": "11/12"
+    },
+    "oneAndQuarter": {
+     "label": "One and one quarter",
+     "input": "5/4"
+    },
+    "negative": {
+     "label": "Negative three eighths",
+     "input": "-3/8"
+    },
+    "percent": {
+     "label": "Twelve and a half percent",
+     "input": "12.5%"
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "input": "1/3"
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {
+     "input": "2/5",
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Convert 2/5 to a decimal.",
+    "privateAnswer": "0.4",
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 66,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 147,
+     "total": 147,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-14",
+   "name": "Percentage of an Amount",
+   "path": "F5/F5-14-percentage-of-an-amount.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "e1c828091cde087586495ce29630cb7bd56c7abeae07716f2fbacf82a4dd258b",
+   "originalSha256": "ae0c57c809e4f51e70f42c04ef3547602b7ffa548c1d5d280ffc1ca13801d52e",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "v",
+     "o"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 2
+    },
+    "guided.o": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 2
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "quarter": {
+     "label": "25% of 80",
+     "amount": 80,
+     "percent": 25
+    },
+    "eighth": {
+     "label": "12.5% of 64",
+     "amount": 64,
+     "percent": 12.5
+    },
+    "thirtyFive": {
+     "label": "35% of 240",
+     "amount": 240,
+     "percent": 35
+    },
+    "overWhole": {
+     "label": "150% of 60",
+     "amount": 60,
+     "percent": 150
+    },
+    "zero": {
+     "label": "0% of 180",
+     "amount": 180,
+     "percent": 0
+    },
+    "double": {
+     "label": "200% of 75",
+     "amount": 75,
+     "percent": 200
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "amount": 80,
+     "percent": 25
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 1,
+    "data": {
+     "amount": 80,
+     "percent": 25,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Find 25% of 80.",
+    "privateAnswer": 20,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 66,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 147,
+     "total": 147,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-15",
+   "name": "Percentage Change & Multipliers",
+   "path": "F5/F5-15-percentage-change-and-multipliers.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "25f22ad40f38990e623596ed8ac33c4e60b455b15c0a803fc7f2fc27e362936a",
+   "originalSha256": "fa9c958f165a7f626d16d3140960d5853a1ee530128294f1a94a506265b0c402",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "stageDraw": [
+     "stage",
+     "v",
+     "o"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "v": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 2
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "up20": {
+     "label": "Increase 20% \u00b7 80",
+     "original": 80,
+     "change": 20
+    },
+    "down25": {
+     "label": "Decrease 25% \u00b7 120",
+     "original": 120,
+     "change": -25
+    },
+    "up150": {
+     "label": "Increase 150% \u00b7 60",
+     "original": 60,
+     "change": 150
+    },
+    "down100": {
+     "label": "Decrease 100% \u00b7 75",
+     "original": 75,
+     "change": -100
+    },
+    "up12": {
+     "label": "Increase 12.5% \u00b7 64",
+     "original": 64,
+     "change": 12.5
+    },
+    "same": {
+     "label": "No change \u00b7 90",
+     "original": 90,
+     "change": 0
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "original": 80,
+     "change": 20
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 1,
+    "data": {
+     "original": 80,
+     "change": 20,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "80 is increased by 20%. What is the new amount?",
+    "privateAnswer": 96,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 66,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 147,
+     "total": 147,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-16",
+   "name": "Reverse Percentages",
+   "path": "F5/F5-16-reverse-percentage-preset.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "15053676b53d33a2190e99cfea57d7bd56fc3b16a93e0e86cd6060397efae48a",
+   "originalSha256": "fddceeb38cd08ef87866e8679f2902df80c0c0a63391e5fd3386a54d091d6879",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "level",
+     "pose",
+     "caption",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "stageDraw": [
+     "stage",
+     "v",
+     "o"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {
+    "v": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 2
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "alias",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "increase20": {
+     "label": "\u00a396 after a 20% increase",
+     "known": 96,
+     "pct": 120
+    },
+    "discount25": {
+     "label": "\u00a390 after a 25% discount",
+     "known": 90,
+     "pct": 75
+    },
+    "rise25": {
+     "label": "\u00a3150 after a 25% increase",
+     "known": 150,
+     "pct": 125
+    },
+    "discount50": {
+     "label": "\u00a330 after a 50% discount",
+     "known": 30,
+     "pct": 50
+    },
+    "discount12": {
+     "label": "\u00a370 after a 12.5% discount",
+     "known": 70,
+     "pct": 87.5
+    },
+    "rise150": {
+     "label": "\u00a3250 after a 150% increase",
+     "known": 250,
+     "pct": 250
+    },
+    "deepDiscount": {
+     "label": "\u00a312 after a 90% discount",
+     "known": 12,
+     "pct": 10
+    },
+    "unchanged": {
+     "label": "\u00a385 with no change",
+     "known": 85,
+     "pct": 100
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "known": 96,
+     "pct": 120
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {
+     "known": 96,
+     "pct": 120,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "After the change, the amount is 96, which is 120% of the original. Find the original amount.",
+    "privateAnswer": 80,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 66,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 147,
+     "total": 147,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-17",
+   "name": "Recurring Decimal Explorer",
+   "path": "F5/F5-17-recurring-decimal-explorer.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "9dc11f76250cf5f398c5a23c7259b0bc81fabb4aa783387c89771f2b1ffab5fa",
+   "originalSha256": "d41a6c8b8581b5f3c872866f12c77855c3ebf0f30b94c798009d970cd45ee610",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "shown",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "shown",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "shown",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "shown",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "shown",
+     "pose",
+     "caption",
+     "narration"
+    ],
+    [
+     "name",
+     "shown",
+     "pose",
+     "caption",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "v",
+     "o"
+    ]
+   },
+   "tables": [
+    "steps"
+   ],
+   "exploreFields": {},
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "seventh": {
+     "label": "1/7 \u00b7 six-digit loop",
+     "n": 1,
+     "d": 7
+    },
+    "third": {
+     "label": "1/3 \u00b7 one-digit loop",
+     "n": 1,
+     "d": 3
+    },
+    "sixth": {
+     "label": "1/6 \u00b7 lead digit then loop",
+     "n": 1,
+     "d": 6
+    },
+    "eighth": {
+     "label": "1/8 \u00b7 terminating",
+     "n": 1,
+     "d": 8
+    },
+    "twentyeighth": {
+     "label": "1/28 \u00b7 long cycle",
+     "n": 1,
+     "d": 28
+    },
+    "elevenths": {
+     "label": "2/11 \u00b7 two-digit cycle",
+     "n": 2,
+     "d": 11
+    },
+    "whole": {
+     "label": "3/3 \u00b7 exact whole",
+     "n": 3,
+     "d": 3
+    },
+    "fifth": {
+     "label": "3/5 \u00b7 terminating",
+     "n": 3,
+     "d": 5
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "n": 1,
+     "d": 7
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {
+     "n": 1,
+     "d": 7,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Divide 1 by 7. What is the first digit after the decimal point?",
+    "privateAnswer": 1,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-18",
+   "name": "Decimal Sorting Studio",
+   "path": "F5/F5-18-terminating-recurring-sorter.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "74100284462438ccb235e3225a6130749cd82de425939f7305fd6fe7321cd244",
+   "originalSha256": "dda6cc02fe8445631ab531129719a24b2877c42b1ced2e1944f5396c24457843",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "caption",
+     "pose",
+     "narration",
+     "proofStep",
+     "items"
+    ],
+    [
+     "name",
+     "caption",
+     "pose",
+     "narration",
+     "proofStep",
+     "items"
+    ],
+    [
+     "name",
+     "caption",
+     "pose",
+     "narration",
+     "proofStep",
+     "items"
+    ],
+    [
+     "name",
+     "caption",
+     "pose",
+     "narration",
+     "proofStep",
+     "items",
+     "sort"
+    ],
+    [
+     "name",
+     "caption",
+     "pose",
+     "narration",
+     "proofStep",
+     "items"
+    ],
+    [
+     "name",
+     "caption",
+     "pose",
+     "narration",
+     "proofStep",
+     "items"
+    ]
+   ],
+   "draws": {
+    "scene": [
+     "stage",
+     "mode",
+     "st",
+     "opts"
+    ]
+   },
+   "tables": [
+    "guidedSteps"
+   ],
+   "exploreFields": {
+    "state": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    },
+    "chosen": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "deckA": {
+     "label": "Starter \u00b7 hidden factors",
+     "items": [
+      [
+       3,
+       12
+      ],
+      [
+       1,
+       6
+      ],
+      [
+       6,
+       15
+      ],
+      [
+       2,
+       11
+      ]
+     ]
+    },
+    "deckB": {
+     "label": "Investigate \u00b7 deeper factors",
+     "items": [
+      [
+       5,
+       30
+      ],
+      [
+       7,
+       40
+      ],
+      [
+       14,
+       35
+      ],
+      [
+       3,
+       14
+      ]
+     ]
+    },
+    "deckC": {
+     "label": "Challenge \u00b7 denominators to check",
+     "items": [
+      [
+       11,
+       64
+      ],
+      [
+       7,
+       30
+      ],
+      [
+       2,
+       125
+      ],
+      [
+       21,
+       77
+      ]
+     ]
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "items": [
+      [
+       3,
+       12
+      ],
+      [
+       1,
+       6
+      ],
+      [
+       6,
+       15
+      ],
+      [
+       2,
+       11
+      ]
+     ]
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {
+     "items": [
+      [
+       6,
+       15
+      ]
+     ],
+     "proofStep": 0,
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Simplify 6/15 fully. Enter the denominator of the simplest form.",
+    "privateAnswer": 5,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  },
+  {
+   "id": "F5-19",
+   "name": "Pizza & Chocolate Fraction Workshop",
+   "path": "F5/F5-19-pizza-and-chocolate-fraction-contexts.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "5198412ecbdea3e7092d63ebcd0ba4b98071e769cf8b1c699d91def2caa811e7",
+   "originalSha256": "fbaa3a09bdb52a8f7bc83a5b530f8a3f6dce7902b06b8a9c0ae91c1aff27be70",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "caption",
+     "narration",
+     "preset",
+     "selected"
+    ],
+    [
+     "name",
+     "pose",
+     "caption",
+     "narration",
+     "preset",
+     "selected"
+    ],
+    [
+     "name",
+     "pose",
+     "caption",
+     "narration",
+     "preset",
+     "selected"
+    ],
+    [
+     "name",
+     "pose",
+     "caption",
+     "narration",
+     "preset",
+     "selected"
+    ],
+    [
+     "name",
+     "pose",
+     "caption",
+     "narration",
+     "preset",
+     "selected"
+    ],
+    [
+     "name",
+     "pose",
+     "caption",
+     "narration",
+     "preset",
+     "selected"
+    ]
+   ],
+   "draws": {
+    "scene": [
+     "stage",
+     "mode",
+     "state",
+     "opts"
+    ]
+   },
+   "tables": [
+    "guidedSteps"
+   ],
+   "exploreFields": {
+    "chosen": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "pizzaEight": {
+     "label": "Pizza \u00b7 8 equal slices",
+     "kind": "pizza",
+     "parts": 8,
+     "target": 3
+    },
+    "pizzaSix": {
+     "label": "Pizza \u00b7 6 equal slices",
+     "kind": "pizza",
+     "parts": 6,
+     "target": 4
+    },
+    "pizzaFour": {
+     "label": "Pizza \u00b7 4 equal slices",
+     "kind": "pizza",
+     "parts": 4,
+     "target": 2
+    },
+    "chocolateTwelve": {
+     "label": "Chocolate \u00b7 12 squares",
+     "kind": "chocolate",
+     "parts": 12,
+     "target": 9
+    },
+    "chocolateEight": {
+     "label": "Chocolate \u00b7 8 squares",
+     "kind": "chocolate",
+     "parts": 8,
+     "target": 5
+    },
+    "chocolateSix": {
+     "label": "Chocolate \u00b7 6 squares",
+     "kind": "chocolate",
+     "parts": 6,
+     "target": 2
+    },
+    "lesson": {
+     "label": "Lesson values",
+     "kind": "pizza",
+     "parts": 8,
+     "target": 3
+    }
+   },
+   "lessonPreset": "record.config {presets:{lesson:{...native preset fields}},preset:\"lesson\"} (F5 runtime reserved slot)",
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode"
+   ],
+   "challengeQuestionExample": {
+    "nativeIndex": 1,
+    "data": {
+     "preset": "pizzaEight",
+     "selected": [],
+     "caption": "Question 1: use the apparatus to work it out."
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The whole has 8 equal pieces. How many pieces make 3/4 of it?",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation (neon filters userSpaceOnUse, no glyph/star leaks)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 fraction notation (stacked NOVA Chalk, no inline slash in drawings, no TBD)",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography + no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 mascot pack + responsive containment (390/1024/1440)",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Template integration (F0-12 challenge, Guided, Bob, multi-view, Explore)",
+     "pass": true,
+     "checks": 60,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f5Production": {
+     "passed": 141,
+     "total": 141,
+     "error": null
+    },
+    "bankRegression": true
+   },
+   "limitations": [
+    "Concealment for small-integer answers is verified by result-role readout checks, not by absence of the digit (scale labels can legitimately contain it).",
+    "Narration with decimal numerals containing digit 4 stays caption-only (speech policy).",
+    "Real speech output not executed; automated a11y only."
+   ]
+  }
+ ]
+}

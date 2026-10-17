@@ -1,0 +1,110 @@
+{
+  "id": "F6-08",
+  "path": "F6/F6-08-direct-proportion-GALLERY-PREVIEW.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+    "STEPS"
+  ],
+  "draws": {
+    "draw": [
+      "stage",
+      "p",
+      "o"
+    ]
+  },
+  "exploreFields": {},
+  "original_sha256": "766ace632a5eecfba92b1f92b83c532dc4713c6d93c924f6eae8e7ff75f61003",
+  "sha256": "766ace632a5eecfba92b1f92b83c532dc4713c6d93c924f6eae8e7ff75f61003",
+  "engineId": "F6-08",
+  "nativeFieldsByStep": [
+    [
+      "name",
+      "pose",
+      "caption",
+      "narration",
+      "prompt"
+    ],
+    [
+      "name",
+      "pose",
+      "caption",
+      "narration",
+      "prompt"
+    ],
+    [
+      "name",
+      "pose",
+      "caption",
+      "narration",
+      "prompt"
+    ]
+  ],
+  "verification": {
+    "nativeModes": true,
+    "nativeSteps": 3,
+    "templateLearn": true,
+    "templateExplore": true,
+    "templateChallengeWrongHold": true,
+    "templateChallengeCorrectAdvance": true,
+    "templateExamples": true,
+    "templateBob": true,
+    "numberOrPropertyChange": true,
+    "utilityDemo": false,
+    "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+    "component": "F10/NOVA-F10-05-y-mx-plus-c-Explorer-PREMIUM-REVIEW.html",
+    "nativeIndex": 0,
+    "data": {
+      "lesson": {
+        "state": {
+          "preset": "Y7-060"
+        },
+        "phase": 5
+      }
+    },
+    "note": "replaces the old preview binding (its config showed slope 3 for Y7-060; the F6-08 file and F10-05 both use slope/m = 2)"
+  },
+  "previous_sha256": "ff433e81b4eb10c1fcb1d5c5058e8a206064d012d383d304575c3d6bb0c27bcb",
+  "presetOnly": true,
+  "hostEngine": "F10-05",
+  "status": "hosted by F10-05; F10-05 Challenge rounds 1-4 are the four F6-08 presets and pass the F10 suite; F6-08 host test 22/22",
+  "kind": "preset",
+  "host": "F10/NOVA-F10-05-y-mx-plus-c-Explorer-PREMIUM-REVIEW.html",
+  "hostSha256": "59280dfd4398110cc29a29ea82b8d8502030cf8d9319a9970bcf53839961ee98",
+  "lessonMountable": true,
+  "lessonMount": {
+    "component": "F10/NOVA-F10-05-y-mx-plus-c-Explorer-PREMIUM-REVIEW.html",
+    "record": {
+      "nativeIndex": 0,
+      "data": {
+        "lesson": {
+          "state": {
+            "preset": "Y7-060"
+          },
+          "phase": 5
+        }
+      }
+    },
+    "presets": [
+      "Y7-060",
+      "Y8-035",
+      "Y8-036",
+      "Y9-020"
+    ]
+  },
+  "challengeReady": true,
+  "hostTest": {
+    "file": "integration/qa/test-f6-08-host.cjs",
+    "result": "22/22",
+    "evidence": "documentation/f10-production-2026-10-17/evidence/f6-08-host.json"
+  },
+  "f10Production": {
+    "date": "2026-10-17",
+    "evidence": [
+      "documentation/f10-production-2026-10-17/evidence/per/semantic-browser-F10-05.json",
+      "documentation/f10-production-2026-10-17/evidence/f6-08-host.json"
+    ]
+  }
+}

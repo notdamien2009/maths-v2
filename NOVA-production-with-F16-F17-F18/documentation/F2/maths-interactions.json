@@ -1,0 +1,675 @@
+{
+  "results": [
+    {
+      "name": "F2-01 ×10 preserves place values",
+      "pass": true,
+      "detail": {
+        "c": {
+          "0": 0,
+          "1": 4,
+          "2": null,
+          "3": null,
+          "-1": 7,
+          "-2": null,
+          "-3": null
+        },
+        "ph": {}
+      }
+    },
+    {
+      "name": "F2-01 decimal focus keeps true column identities",
+      "pass": true,
+      "detail": {
+        "c": {
+          "0": 0,
+          "1": null,
+          "2": null,
+          "3": null,
+          "-1": 5,
+          "-2": 0,
+          "-3": 7
+        },
+        "ph": {}
+      }
+    },
+    {
+      "name": "F2-01 rejects overflow digit strings",
+      "pass": true
+    },
+    {
+      "name": "F2-02 regroup conserves 1.3",
+      "pass": true,
+      "detail": {
+        "c": {
+          "0": 1,
+          "-1": 3
+        }
+      }
+    },
+    {
+      "name": "F2-02 one breaks into ten tenths",
+      "pass": true,
+      "detail": {
+        "c": {
+          "0": 0,
+          "-1": 10
+        }
+      }
+    },
+    {
+      "name": "F2-02 title conceals computed answer",
+      "pass": true,
+      "detail": "Place-value counters. Read the columns."
+    },
+    {
+      "name": "F2-03 whole exchange conserves value",
+      "pass": true,
+      "detail": {
+        "sc": "whole",
+        "c": {
+          "f": 0,
+          "r": 1,
+          "u": 0
+        }
+      }
+    },
+    {
+      "name": "F2-03 decimal exchange conserves value",
+      "pass": true,
+      "detail": {
+        "sc": "decimal",
+        "c": {
+          "f": 0,
+          "r": 1,
+          "u": 0
+        }
+      }
+    },
+    {
+      "name": "F2-03 rejects too many flats",
+      "pass": true
+    },
+    {
+      "name": "F2-05 Gattegno decimal shift",
+      "pass": true,
+      "detail": {
+        "g": {
+          "0": 3,
+          "-1": 5
+        }
+      }
+    },
+    {
+      "name": "F2-05 focused rows retain tenths/hundredths",
+      "pass": true
+    },
+    {
+      "name": "F2-05 ten beads exchange",
+      "pass": true,
+      "detail": {
+        "c": {
+          "0": 0,
+          "1": 1
+        }
+      }
+    },
+    {
+      "name": "F2-06 4000-1",
+      "pass": true,
+      "detail": {
+        "a": {
+          "c": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 4
+          },
+          "hi": 3,
+          "lo": 0
+        },
+        "b": {
+          "c": {
+            "0": 1
+          },
+          "hi": 0,
+          "lo": 0
+        },
+        "lo": 0,
+        "hi": 3,
+        "ihi": 3,
+        "pad": {},
+        "top": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 4
+        },
+        "bot": {
+          "0": 1,
+          "1": null,
+          "2": null,
+          "3": null
+        },
+        "ev": [
+          {
+            "p": 0,
+            "kind": "sub",
+            "x": 10,
+            "y": 1,
+            "bs": [
+              {
+                "from": 3,
+                "was": 4,
+                "now": 3
+              },
+              {
+                "from": 2,
+                "was": 0,
+                "now": 9
+              },
+              {
+                "from": 1,
+                "was": 0,
+                "now": 9
+              }
+            ],
+            "d": 9
+          },
+          {
+            "p": 1,
+            "kind": "sub",
+            "x": 9,
+            "y": 0,
+            "bs": [],
+            "d": 9
+          },
+          {
+            "p": 2,
+            "kind": "sub",
+            "x": 9,
+            "y": 0,
+            "bs": [],
+            "d": 9
+          },
+          {
+            "p": 3,
+            "kind": "sub",
+            "x": 3,
+            "y": 0,
+            "bs": [],
+            "d": 3
+          }
+        ],
+        "ans": {
+          "0": 9,
+          "1": 9,
+          "2": 9,
+          "3": 3
+        },
+        "res": 3999,
+        "op": "-",
+        "A": "4000",
+        "B": "1"
+      }
+    },
+    {
+      "name": "F2-06 2.35+1.7",
+      "pass": true,
+      "detail": {
+        "a": {
+          "c": {
+            "0": 2,
+            "-1": 3,
+            "-2": 5
+          },
+          "hi": 0,
+          "lo": -2
+        },
+        "b": {
+          "c": {
+            "0": 1,
+            "-1": 7
+          },
+          "hi": 0,
+          "lo": -1
+        },
+        "lo": -2,
+        "hi": 0,
+        "ihi": 0,
+        "pad": {
+          "b-2": 1
+        },
+        "top": {
+          "0": 2,
+          "-1": 3,
+          "-2": 5
+        },
+        "bot": {
+          "0": 1,
+          "-1": 7,
+          "-2": 0
+        },
+        "ev": [
+          {
+            "p": -2,
+            "kind": "add",
+            "x": 5,
+            "y": 0,
+            "cin": 0,
+            "s": 5,
+            "d": 5,
+            "cout": 0
+          },
+          {
+            "p": -1,
+            "kind": "add",
+            "x": 3,
+            "y": 7,
+            "cin": 0,
+            "s": 10,
+            "d": 0,
+            "cout": 1
+          },
+          {
+            "p": 0,
+            "kind": "add",
+            "x": 2,
+            "y": 1,
+            "cin": 1,
+            "s": 4,
+            "d": 4,
+            "cout": 0
+          }
+        ],
+        "ans": {
+          "0": 4,
+          "-2": 5,
+          "-1": 0
+        },
+        "res": 4.05,
+        "op": "+",
+        "A": "2.35",
+        "B": "1.7"
+      }
+    },
+    {
+      "name": "F2-06 100.01-.01",
+      "pass": true,
+      "detail": {
+        "a": {
+          "c": {
+            "0": 0,
+            "1": 0,
+            "2": 1,
+            "-1": 0,
+            "-2": 1
+          },
+          "hi": 2,
+          "lo": -2
+        },
+        "b": {
+          "c": {
+            "0": 0,
+            "-1": 0,
+            "-2": 1
+          },
+          "hi": 0,
+          "lo": -2
+        },
+        "lo": -2,
+        "hi": 2,
+        "ihi": 2,
+        "pad": {},
+        "top": {
+          "0": 0,
+          "1": 0,
+          "2": 1,
+          "-1": 0,
+          "-2": 1
+        },
+        "bot": {
+          "0": 0,
+          "1": null,
+          "2": null,
+          "-1": 0,
+          "-2": 1
+        },
+        "ev": [
+          {
+            "p": -2,
+            "kind": "sub",
+            "x": 1,
+            "y": 1,
+            "bs": [],
+            "d": 0
+          },
+          {
+            "p": -1,
+            "kind": "sub",
+            "x": 0,
+            "y": 0,
+            "bs": [],
+            "d": 0
+          },
+          {
+            "p": 0,
+            "kind": "sub",
+            "x": 0,
+            "y": 0,
+            "bs": [],
+            "d": 0
+          },
+          {
+            "p": 1,
+            "kind": "sub",
+            "x": 0,
+            "y": 0,
+            "bs": [],
+            "d": 0
+          },
+          {
+            "p": 2,
+            "kind": "sub",
+            "x": 1,
+            "y": 0,
+            "bs": [],
+            "d": 1
+          }
+        ],
+        "ans": {
+          "0": 0,
+          "1": 0,
+          "2": 1,
+          "-2": 0,
+          "-1": 0
+        },
+        "res": 100,
+        "op": "-",
+        "A": "100.01",
+        "B": "0.01"
+      }
+    },
+    {
+      "name": "F2-06 rejects negative result",
+      "pass": true
+    },
+    {
+      "name": "F2-06 rejects thousands overflow",
+      "pass": true
+    },
+    {
+      "name": "F2-07 2.3×1.4",
+      "pass": true,
+      "detail": {
+        "kind": "grid",
+        "a": "2.3",
+        "b": "1.4",
+        "result": 3.22
+      }
+    },
+    {
+      "name": "F2-07 0×37",
+      "pass": true,
+      "detail": {
+        "kind": "grid",
+        "a": "0",
+        "b": "37",
+        "result": 0
+      }
+    },
+    {
+      "name": "F2-07 7÷4",
+      "pass": true,
+      "detail": {
+        "kind": "div",
+        "a": "7",
+        "b": "4",
+        "result": 1.75
+      }
+    },
+    {
+      "name": "F2-07 12.6÷3",
+      "pass": true,
+      "detail": {
+        "kind": "div",
+        "a": "12.6",
+        "b": "3",
+        "result": 4.2
+      }
+    },
+    {
+      "name": "F2-07 rejects quotient beyond native thousandths",
+      "pass": true
+    },
+    {
+      "name": "F2-07 rejects nonterminating division",
+      "pass": true
+    },
+    {
+      "name": "F2-08 decimal expansion respects zero places",
+      "pass": true,
+      "detail": "F2-08 · lesson apparatusLesson3050.07 expanded as 3000 + 50 + 0.07.3000500.07++Use the given mathematical values.Use the given mathematical values. (Nova the cat, welcome)Nova the cat, welcome"
+    },
+    {
+      "name": "F2-08 zero is finite",
+      "pass": true,
+      "detail": "F2-08 · lesson apparatusLesson0 expanded as 0.Use the given mathematical values.Use the given mathematical values. (Nova the cat, welcome)Nova the cat, welcome"
+    },
+    {
+      "name": "F2-08 rejects fourth decimal",
+      "pass": true
+    },
+    {
+      "name": "F2-09 exponent change retains significand",
+      "pass": true,
+      "detail": {
+        "m": "6.02",
+        "n": -2
+      }
+    },
+    {
+      "name": "F2-09 rejects nonstandard mantissa",
+      "pass": true
+    },
+    {
+      "name": "F2-09 rejects significant digits leaving strip",
+      "pass": true
+    },
+    {
+      "name": "F2-10 correct cube-root equality and stacked index",
+      "pass": true,
+      "detail": "F2-10 · lesson apparatusLessonCube 3 by 3.3∛27 = 32713= 3edge = 33³ = 27Use the given mathematical values.Use the given mathematical values. (Nova the cat, welcome)Nova the cat, welcome"
+    },
+    {
+      "name": "F2-10 editable square growth",
+      "pass": true,
+      "detail": {
+        "view": "square",
+        "n": 5
+      }
+    },
+    {
+      "name": "F2-10 rejects negative cancellation index",
+      "pass": true
+    },
+    {
+      "name": "F2-11 2+3*(4+5)",
+      "pass": true,
+      "detail": {
+        "id": 231,
+        "_d": 0,
+        "_x": 300,
+        "_y": 110,
+        "_fresh": true,
+        "v": 29,
+        "was": "+"
+      }
+    },
+    {
+      "name": "F2-11 8/4*2",
+      "pass": true,
+      "detail": {
+        "id": 288,
+        "_d": 0,
+        "_x": 300,
+        "_y": 110,
+        "_fresh": true,
+        "v": 4,
+        "was": "×"
+      }
+    },
+    {
+      "name": "F2-11 2^3^2",
+      "pass": true,
+      "detail": {
+        "id": 345,
+        "_d": 0,
+        "_x": 300,
+        "_y": 110,
+        "_fresh": true,
+        "v": 512,
+        "was": "^"
+      }
+    },
+    {
+      "name": "F2-11 (2+3)*4^2",
+      "pass": true,
+      "detail": {
+        "id": 406,
+        "_d": 0,
+        "_x": 300,
+        "_y": 110,
+        "_fresh": true,
+        "v": 80,
+        "was": "×"
+      }
+    },
+    {
+      "name": "F2-11 rejects division by zero",
+      "pass": true
+    },
+    {
+      "name": "F2-12 cancelling pairs retains signed difference",
+      "pass": true,
+      "detail": {
+        "pos": 2,
+        "neg": 0
+      }
+    },
+    {
+      "name": "F2-12 title conceals signed result",
+      "pass": true,
+      "detail": "Counters: 3 positive, 5 negative."
+    },
+    {
+      "name": "F2-12 lesson givens stay read-only",
+      "pass": true
+    },
+    {
+      "name": "F2-13 two frames reveal 0.7 partner",
+      "pass": true,
+      "detail": "F2-13 · lesson apparatusLessonTen frame with 13 counters; bond 1.3 and 0.7 make 2.each counter = 0.12whole1.30.7partpartner1.3 + 0.7 = 2Use the given mathematical values.Use the given mathematical values. (Nova the cat, welcome)Nova the cat, welcome"
+    },
+    {
+      "name": "F2-13 unanswered title hides partner",
+      "pass": true,
+      "detail": "Ten frame with 4 counters; bond 4 and an unknown partner make 10."
+    },
+    {
+      "name": "F2-14 downward row adds ten",
+      "pass": true,
+      "detail": {
+        "at": 47,
+        "mpos": null
+      }
+    },
+    {
+      "name": "F2-14 refuses out-of-grid jump",
+      "pass": true,
+      "detail": {
+        "at": 99
+      }
+    },
+    {
+      "name": "F2-15 binary carry seven to eight",
+      "pass": true,
+      "detail": {
+        "base": 2,
+        "d": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "hl": null,
+        "shown": null
+      }
+    },
+    {
+      "name": "F2-15 base-five editable digits",
+      "pass": true,
+      "detail": {
+        "base": 5,
+        "d": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "shown": null
+      }
+    },
+    {
+      "name": "F2-15 rejects invalid base digit",
+      "pass": true
+    },
+    {
+      "name": "F2-16 exact cards classify in smallest set",
+      "pass": true,
+      "detail": {
+        "tray": [],
+        "placed": {
+          "N": [
+            "√4"
+          ],
+          "Z": [
+            "-7",
+            "0"
+          ],
+          "Q": [
+            "√0.04",
+            "3/4",
+            "0.(142857)"
+          ],
+          "I": [
+            "√2"
+          ]
+        },
+        "glow": null
+      }
+    },
+    {
+      "name": "F2-16 fraction card uses approved stacked notation",
+      "pass": true,
+      "detail": "F2-16 · lesson apparatusLessonNumber sets: natural inside integers inside rationals; rationals and irrationals make the reals.ℝ real numbersℚ rationalℤ integersℕ naturalirrational34Use the given mathematical values.Use the given mathematical values. (Nova the cat, welcome)Nova the cat, welcome"
+    },
+    {
+      "name": "F2-16 rejects zero denominator",
+      "pass": true
+    },
+    {
+      "name": "F2-16 rejects ambiguous decimal ellipsis",
+      "pass": true
+    },
+    {
+      "name": "No maths runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

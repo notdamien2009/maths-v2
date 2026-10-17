@@ -1,0 +1,2228 @@
+[
+  {
+    "id": "F17-01",
+    "path": "F17/F17-01-Probability-Scale-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "model"
+    ],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "readout": [
+        "stage",
+        "p",
+        "opts"
+      ],
+      "scene": [
+        "stage",
+        "p",
+        "opts"
+      ]
+    },
+    "exploreFields": {
+      "drawStep.q": {
+        "kind": "factory",
+        "factory": "model",
+        "argCount": 1
+      },
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "value": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "showComplement": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "82241983658e47e126d1f38e400a6c6c1496d6142faf94b7f3f607c5685e409e",
+    "sha256": "cecbfe5f26828cffaa61336e673b3e9be26abc7fe949972da844014eea6d6687",
+    "engineId": "F17-01",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 173,
+        "checks": 173,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "cecbfe5f26828cffaa61336e673b3e9be26abc7fe949972da844014eea6d6687"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Justify your probability",
+        "pose": "celebrate",
+        "mood": "cheer",
+        "narration": "The rule is favourable outcomes divided by all equally likely outcomes. Now try the model with eight tickets.",
+        "prompt": "State the probability, its complement, and the reason for your answers."
+      },
+      "config": {
+        "startMode": "guided",
+        "preset": "y7",
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "mode",
+          "hintUsed"
+        ],
+        "presets": {
+          "y7": {
+            "label": "Year 7 · Probability and complements",
+            "year": 7,
+            "context": "TEN EQUALLY LIKELY COUNTERS",
+            "total": 11,
+            "good": 3,
+            "kind": "green",
+            "favourable": "green counter",
+            "other": "blue counter",
+            "minor": 0.1,
+            "unit": 0.1
+          },
+          "y9": {
+            "label": "Year 9 · Theoretical probability models",
+            "year": 9,
+            "context": "EIGHT EQUALLY LIKELY TICKETS",
+            "total": 8,
+            "good": 5,
+            "kind": "winning",
+            "favourable": "winning ticket",
+            "other": "other ticket",
+            "minor": 0.125,
+            "unit": 0.125
+          }
+        }
+      }
+    },
+    "previous_sha256": "7125a8c26c9eefb4827743d942f03fb80b3f7e58ae66ab0796107a2c4a6c9099",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-02",
+    "path": "F17/F17-02-Spinner-Builder-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "model"
+    ],
+    "tables": [
+      "dragTestHooks",
+      "steps"
+    ],
+    "draws": {
+      "present": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "drawStep.m": {
+        "kind": "factory",
+        "factory": "makeState",
+        "argCount": 1
+      },
+      "challenge.m": {
+        "kind": "factory",
+        "factory": "makeState",
+        "argCount": 1
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "3901952640f82570239aec4500eabd1f4ecf6d6bfa69d6d07e4b6f0f64f60055",
+    "sha256": "8f9b954f56de863b088134f14f0fdb7b3aea906d125cb80356fac6c9e13150ff",
+    "engineId": "F17-02",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 171,
+        "checks": 171,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "8f9b954f56de863b088134f14f0fdb7b3aea906d125cb80356fac6c9e13150ff"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Predict a result",
+        "pose": "celebrate",
+        "mood": "cheer",
+        "narration": "For two independent spinners, multiply the chances for both events to happen. Explore the model and test your prediction.",
+        "prompt": "How would you find the chance of two independent winning results?"
+      },
+      "models": {
+        "model": {
+          "primary": [
+            true,
+            false,
+            true,
+            false
+          ],
+          "secondary": [
+            false,
+            true,
+            false
+          ],
+          "history": [],
+          "last": null,
+          "spinning": false,
+          "angle": 1,
+          "angleB": 0
+        }
+      }
+    },
+    "previous_sha256": "dbbbcb90ac43a81d2f7afe95d3aff3e155c9258358610fd9d8b49c499412aeae",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-03",
+    "path": "F17/F17-03-Dice-and-Coin-Simulators-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "present": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "m": {
+        "kind": "factory",
+        "factory": "makeModel",
+        "argCount": 1
+      },
+      "drawStep.m": {
+        "kind": "factory",
+        "factory": "makeModel",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "c50ae9902a55c6359e7f0d16c773fa4a6eda83abbc4ea58da5e103d7b3301844",
+    "sha256": "9731178b7c6a7e292bebc49571219795ede743ccca265e18e485144b874aac11",
+    "engineId": "F17-03",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "9731178b7c6a7e292bebc49571219795ede743ccca265e18e485144b874aac11"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "scene": {
+        "function": "present",
+        "arguments": {
+          "m": {
+            "last": {
+              "out": {
+                "a": 6,
+                "b": 2,
+                "c": "T"
+              },
+              "win": false
+            }
+          }
+        }
+      }
+    },
+    "previous_sha256": "071c2fa6bcc77647eadd9a4e8b0544af8bbc896fe993d6b116adc94b838025f1",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-04",
+    "path": "F17/F17-04-Relative-Frequency-Convergence-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "CHOICES",
+      "steps"
+    ],
+    "draws": {
+      "plotDraw": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "8b07614483291cef92c028497302dbb45a1571a92e80a331d11a047ba71472d3",
+    "sha256": "6920541c95b99f08907fe037a0e99a659c96d60dc4e6d58551d4a32d1d5108e2",
+    "engineId": "F17-04",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "6920541c95b99f08907fe037a0e99a659c96d60dc4e6d58551d4a32d1d5108e2"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Compare and generalise",
+        "pose": "celebrate",
+        "mood": "cheer",
+        "narration": "Use the theoretical chance to predict, and relative frequency to evaluate the evidence. The two values have different jobs.",
+        "prompt": "Which is a long-run model, and which comes from collected data?"
+      },
+      "config": {
+        "startMode": "guided",
+        "preset": "y7",
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "mode",
+          "hintUsed"
+        ],
+        "valueKeys": [
+          "preset",
+          "experiment",
+          "trials",
+          "successes",
+          "relativeFrequency",
+          "theoreticalProbability",
+          "prediction",
+          "predictionCorrect",
+          "lastOutcome",
+          "reset"
+        ],
+        "presets": {
+          "y7": {
+            "label": "Y7-076 · Coin toss convergence",
+            "year": 7,
+            "kind": "coin",
+            "pNum": 2,
+            "pDen": 2,
+            "space": 2,
+            "event": "Heads",
+            "description": "A fair coin, heads",
+            "seed": "coinY7"
+          },
+          "y8": {
+            "label": "Y8-073 · Experimental vs theory",
+            "year": 8,
+            "kind": "die",
+            "pNum": 2,
+            "pDen": 6,
+            "space": 6,
+            "event": "Roll 5 or 6",
+            "description": "Two winning faces on a fair six-sided die",
+            "seed": "dieY8"
+          },
+          "y9model": {
+            "label": "Y9-042 · Theoretical probability model",
+            "year": 9,
+            "kind": "eight",
+            "pNum": 3,
+            "pDen": 8,
+            "space": 8,
+            "event": "Choose 1, 2 or 3",
+            "description": "Three equal likely outcomes among eight",
+            "seed": "modelY9"
+          },
+          "y9relative": {
+            "label": "Y9-046 · Two-dice convergence",
+            "year": 9,
+            "kind": "pair",
+            "pNum": 6,
+            "pDen": 36,
+            "space": 36,
+            "event": "Sum = 7",
+            "description": "Six ordered pairs from thirty-six dice pairs",
+            "seed": "pairY9"
+          }
+        }
+      }
+    },
+    "previous_sha256": "71bb31348ac545429bb664672e0dda49d555ed556660dd31e6bdd7246f64125e",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-05",
+    "path": "F17/F17-05-Sample-Space-Grid-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "renderStage": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "d96fa89307ab9b5f1aa09571c3a32b13df315891f3c7868dbb99c6d9edcb0ef1",
+    "sha256": "b6c40cd73a231ba64ccea67ceb9ef7ff13d3f893f1269b95007d704b0120cf55",
+    "engineId": "F17-05",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 166,
+        "checks": 166,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "b6c40cd73a231ba64ccea67ceb9ef7ff13d3f893f1269b95007d704b0120cf55"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Find the exact probability",
+        "pose": "celebrate",
+        "narration": "For equally likely outcomes, probability equals the favourable count divided by the full sample space count. Simplify your answer.",
+        "prompt": "Why is it important to include every possible outcome?"
+      },
+      "scene": {
+        "function": "renderStage",
+        "arguments": {
+          "o": {
+            "title": "Original representation",
+            "tag": "STEP 1/6",
+            "hideAnswer": true,
+            "revealCount": 1,
+            "showWin": false,
+            "pose": "explain",
+            "flash": false,
+            "say": "Use one axis for each event. Every intersection will be an ordered outcome."
+          }
+        }
+      }
+    },
+    "previous_sha256": "78ef5bbe07447f76a36b912d8ef90a09f3ac3d43d875552604fe58132d5abbf3",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-06",
+    "path": "F17/F17-06-Systematic-Listing-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "state"
+    ],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "render": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      },
+      "renderStep.m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      }
+    },
+    "original_sha256": "8709f04826b54babfb6b877c26e365957b0a059a03b5ff7dad170d19d3468e1c",
+    "sha256": "998dfac21aab3f6da3f32c520af8bea8c8503aa9e14f4eb4e9bc6415268baf87",
+    "engineId": "F17-06",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 166,
+        "checks": 166,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "998dfac21aab3f6da3f32c520af8bea8c8503aa9e14f4eb4e9bc6415268baf87"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Write the probability",
+        "pose": "celebrate",
+        "narration": "Divide the favourable number by all equally likely outcomes. Then simplify the fraction, keeping the full systematic list as your evidence.",
+        "prompt": "How does your list prove you have not missed an outcome?"
+      },
+      "scene": {
+        "function": "render",
+        "arguments": {
+          "o": {
+            "title": "Original representation",
+            "tag": "STEP 1/6",
+            "hideAnswer": true,
+            "revealCount": 1,
+            "showWinning": false,
+            "pose": "explain",
+            "flash": false,
+            "say": "Two events make a branching list. Show one family of outcomes for every first result."
+          }
+        }
+      }
+    },
+    "previous_sha256": "0fc5799f31468dd430102d9b1d8f6e6f7f1c56b637e9529670e3d6e797864d92",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-07",
+    "path": "F17/F17-07-Tree-Diagram-Builder-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "state"
+    ],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "render": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      },
+      "renderStep.m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      }
+    },
+    "original_sha256": "e9f5bf7a80dd5efa0752914910c12718dd0042b386464c3d304a5c02e1e63a6b",
+    "sha256": "dc995f609531f686c498ebe737c10939ade834be1e5d0be48bf7660a96f15976",
+    "engineId": "F17-07",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "dc995f609531f686c498ebe737c10939ade834be1e5d0be48bf7660a96f15976"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Check the whole model",
+        "pose": "celebrate",
+        "narration": "All endpoint probabilities must add to one. Compare your event probability with the full probability model.",
+        "prompt": "How can you check the completed tree is a valid model?"
+      },
+      "config": {
+        "startMode": "guided",
+        "preset": "y7",
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "mode",
+          "hintUsed"
+        ],
+        "valueKeys": [
+          "preset",
+          "path",
+          "markedCount",
+          "pathProbability",
+          "eventProbability",
+          "totalProbability",
+          "complete",
+          "reset",
+          "firstProbability",
+          "secondProbability"
+        ],
+        "presets": {
+          "y7": {
+            "label": "Y7-075 · Two fair coins",
+            "year": 7,
+            "first": [
+              "H",
+              "T"
+            ],
+            "second": [
+              "H",
+              "T"
+            ],
+            "a": [
+              2,
+              1
+            ],
+            "b": [
+              1,
+              1
+            ],
+            "event": "Exactly one head",
+            "kind": "ONE HEAD",
+            "context": "Coin 1 then coin 2"
+          },
+          "y8": {
+            "label": "Y8-071 · Two biased spins",
+            "year": 8,
+            "first": [
+              "R",
+              "B"
+            ],
+            "second": [
+              "R",
+              "B"
+            ],
+            "a": [
+              2,
+              3
+            ],
+            "b": [
+              2,
+              3
+            ],
+            "event": "Red, then red",
+            "kind": "R THEN R",
+            "context": "Independent spins"
+          },
+          "y9spaces": {
+            "label": "Y9-043 · Parity and colour",
+            "year": 9,
+            "first": [
+              "E",
+              "O"
+            ],
+            "second": [
+              "R",
+              "B",
+              "G"
+            ],
+            "a": [
+              1,
+              1
+            ],
+            "b": [
+              1,
+              1,
+              1
+            ],
+            "event": "Even, then Blue",
+            "kind": "EVEN AND BLUE",
+            "context": "Die parity then spinner"
+          },
+          "y9ind": {
+            "label": "Y9-045 · Independent A and B",
+            "year": 9,
+            "first": [
+              "A",
+              "¬A"
+            ],
+            "second": [
+              "B",
+              "¬B"
+            ],
+            "a": [
+              7,
+              3
+            ],
+            "b": [
+              2,
+              3
+            ],
+            "event": "A, then B",
+            "kind": "A AND B",
+            "context": "Independent events"
+          }
+        }
+      }
+    },
+    "previous_sha256": "24ef66cf062f51c3937e0391932de55d05e298ead00d4c85257a05efe05943a8",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-08",
+    "path": "F17/F17-08-Venn-Diagram-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "render": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "e94bcceeff740a79e45433035d074224d8457daa575203137724611428eb7cc9",
+    "sha256": "8a4838063a9c5f2d8ef57966b6b472d94baff44d9e7acf02bb4c4c5cf79e1453",
+    "engineId": "F17-08",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 166,
+        "checks": 166,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "8a4838063a9c5f2d8ef57966b6b472d94baff44d9e7acf02bb4c4c5cf79e1453"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 3,
+      "data": {
+        "name": "Complete the four regions",
+        "pose": "count",
+        "narration": "Sort the B only and neither outcomes next. Every member of the universe must appear once in exactly one region.",
+        "prompt": "What remains outside both circles?"
+      },
+      "config": {
+        "preset": "survey",
+        "startMode": "guided",
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "hintUsed",
+          "mode"
+        ],
+        "valueKeys": [
+          "preset",
+          "outcome",
+          "region",
+          "placedCount",
+          "correctCount",
+          "eventProbability",
+          "focusRegion",
+          "complete",
+          "reset"
+        ],
+        "presets": {
+          "survey": {
+            "label": "Y8-067 · Sports survey",
+            "year": 8,
+            "universe": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "A": [
+              1,
+              3,
+              4,
+              5,
+              7
+            ],
+            "B": [
+              2,
+              3,
+              5,
+              6,
+              8,
+              11
+            ],
+            "a": "Football",
+            "b": "Basketball",
+            "context": "12 pupils surveyed · A football · B basketball",
+            "focus": "union"
+          },
+          "notation": {
+            "label": "Y8-072 · Even and multiples of 3",
+            "year": 8,
+            "universe": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "A": [
+              2,
+              4,
+              6,
+              8,
+              10,
+              12
+            ],
+            "B": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "a": "Even",
+            "b": "×3",
+            "context": "Numbers 1 to 12 · A even · B multiples of three",
+            "focus": "intersection"
+          },
+          "prime": {
+            "label": "Y9-044 · Prime and even",
+            "year": 9,
+            "universe": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "A": [
+              2,
+              3,
+              5,
+              7,
+              11
+            ],
+            "B": [
+              2,
+              4,
+              6,
+              8,
+              10,
+              12
+            ],
+            "a": "Prime",
+            "b": "Even",
+            "context": "Numbers 1 to 12 · A prime · B even",
+            "focus": "union"
+          }
+        }
+      }
+    },
+    "previous_sha256": "6661c9a08cef33c17f3aea618e2e7eacb60ad751e26218e1977084e25e26ec68",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-09",
+    "path": "F17/F17-09-Frequency-Tree-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "model"
+    ],
+    "tables": [
+      "DATA",
+      "steps"
+    ],
+    "draws": {
+      "render": [
+        "stage",
+        "p",
+        "m",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "tally.t": {
+        "kind": "factory",
+        "factory": "model",
+        "argCount": 1
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "bd9c207c24c6525e08a55a1532c90efd76caf8f71b9a2993f1df433f5ae7e527",
+    "sha256": "758d33d5234c35880fdc92fb78261b29f8b4a62b45df768b234dc98245198661",
+    "engineId": "F17-09",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "758d33d5234c35880fdc92fb78261b29f8b4a62b45df768b234dc98245198661"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Find the exact probability",
+        "pose": "celebrate",
+        "narration": "The probability is the favourable frequency divided by the total number. Do not divide by one subgroup unless a conditional probability is asked.",
+        "prompt": "Why is the denominator the whole population here?"
+      },
+      "scene": {
+        "function": "render",
+        "arguments": {
+          "p": {
+            "label": "Y8-068 · School lunches",
+            "year": 8,
+            "a": "Hot",
+            "na": "Cold",
+            "b": "Vegetarian",
+            "nb": "Other",
+            "context": "60 lunches · Hot / Cold · Vegetarian / Other",
+            "counts": [
+              13,
+              24,
+              18,
+              6
+            ],
+            "focus": "vegetarian"
+          }
+        }
+      }
+    },
+    "previous_sha256": "74bd5d5a06c493d537d1a84c0dea8db06bc6a327dddcc733ecb68fcd449c7edb",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-10",
+    "path": "F17/F17-10-Complement-and-AND-OR-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "presets",
+      "REGIONS",
+      "steps"
+    ],
+    "draws": {
+      "picture": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "8706a34222fbbfb08a7ef677394a07724dafa8d518b1239637cf37c83fd1ee36",
+    "sha256": "67b07b4c9c27b71722250e0fc87d59f35c87d017b38ad2e12b8971d8ace2b410",
+    "engineId": "F17-10",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "67b07b4c9c27b71722250e0fc87d59f35c87d017b38ad2e12b8971d8ace2b410"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Define the whole sample space",
+        "pose": "explain",
+        "narration": "Begin with all the possible outcomes. The outer universe rectangle contains every one of them.",
+        "prompt": "What is our denominator?"
+      },
+      "config": {
+        "preset": "y8venn",
+        "startMode": "guided",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "correct",
+          "hintUsed"
+        ],
+        "valueKeys": [
+          "preset",
+          "operator",
+          "region",
+          "marked",
+          "favourable",
+          "probability",
+          "complete",
+          "reset",
+          "independent"
+        ],
+        "presets": {
+          "y7complement": {
+            "label": "Y7-073 · Complements",
+            "a": "Rain",
+            "b": "Wind",
+            "context": "20 weather days · A rain · B wind",
+            "counts": [
+              4,
+              3,
+              5,
+              8
+            ],
+            "focus": "notA"
+          },
+          "y7table": {
+            "label": "Y7-077 · Two-way tables",
+            "a": "Bus",
+            "b": "Late",
+            "context": "40 journeys · A bus · B late",
+            "counts": [
+              12,
+              10,
+              8,
+              10
+            ],
+            "focus": "or"
+          },
+          "y8frequency": {
+            "label": "Y8-068 · Frequency trees",
+            "a": "Hot",
+            "b": "Vegetarian",
+            "context": "60 lunches · A hot · B vegetarian",
+            "counts": [
+              18,
+              12,
+              11,
+              20
+            ],
+            "focus": "notA"
+          },
+          "y8sample": {
+            "label": "Y8-070 · Combined events",
+            "a": "Even",
+            "b": "Greater 3",
+            "context": "12 equally likely outcomes · A even · B greater than 3",
+            "counts": [
+              4,
+              2,
+              3,
+              3
+            ],
+            "focus": "and"
+          },
+          "y8independent": {
+            "label": "Y8-071 · Independent events",
+            "a": "Red",
+            "b": "Head",
+            "context": "25 equally likely paired trials · A red · B heads",
+            "counts": [
+              9,
+              6,
+              4,
+              6
+            ],
+            "focus": "and"
+          },
+          "y8venn": {
+            "label": "Y8-072 · Set notation",
+            "a": "Even",
+            "b": "Multiple 3",
+            "context": "16 set outcomes · A even · B multiple of 3",
+            "counts": [
+              4,
+              2,
+              6,
+              4
+            ],
+            "focus": "or"
+          },
+          "y9sets": {
+            "label": "Y9-044 · Union / intersection",
+            "a": "Prime",
+            "b": "Even",
+            "context": "20 outcomes · A prime · B even",
+            "counts": [
+              5,
+              3,
+              7,
+              5
+            ],
+            "focus": "or"
+          },
+          "y9independent": {
+            "label": "Y9-045 · Independent events",
+            "a": "Red",
+            "b": "Heads",
+            "context": "100 equally likely pairs · A red · B heads",
+            "counts": [
+              18,
+              12,
+              28,
+              42
+            ],
+            "focus": "and"
+          }
+        },
+        "operators": {
+          "and": {
+            "name": "A AND B",
+            "mark": [
+              "both"
+            ],
+            "reason": "Only the overlap satisfies BOTH properties."
+          },
+          "or": {
+            "name": "A OR B",
+            "mark": [
+              "a",
+              "both",
+              "b"
+            ],
+            "reason": "OR includes A only, the overlap and B only. Count the overlap once."
+          },
+          "notA": {
+            "name": "NOT A",
+            "mark": [
+              "b",
+              "none"
+            ],
+            "reason": "NOT A includes everything outside A, including B only and neither."
+          },
+          "notB": {
+            "name": "NOT B",
+            "mark": [
+              "a",
+              "none"
+            ],
+            "reason": "NOT B includes everything outside B."
+          },
+          "neither": {
+            "name": "NEITHER",
+            "mark": [
+              "none"
+            ],
+            "reason": "Neither means NOT A AND NOT B: outside both circles."
+          },
+          "a": {
+            "name": "A",
+            "mark": [
+              "a",
+              "both"
+            ],
+            "reason": "A includes its own crescent AND the overlap."
+          },
+          "b": {
+            "name": "B",
+            "mark": [
+              "both",
+              "b"
+            ],
+            "reason": "B includes its own crescent AND the overlap."
+          },
+          "xor": {
+            "name": "A OR B, NOT BOTH",
+            "mark": [
+              "a",
+              "b"
+            ],
+            "reason": "Exactly one event: the two crescents, excluding the intersection."
+          },
+          "notAorB": {
+            "name": "NOT A OR B",
+            "mark": [
+              "both",
+              "b",
+              "none"
+            ],
+            "reason": "NOT A OR B leaves out only A-only."
+          }
+        }
+      }
+    },
+    "previous_sha256": "34437f19820794a71575911f56de310886b49e362ddf2500387afac1e66c4c9d",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-11",
+    "path": "F17/F17-11-Bag-and-Counter-Experiments-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "PRESETS",
+      "TYPES",
+      "steps"
+    ],
+    "draws": {
+      "drawScene": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "2ea190af2497f59cb1cd3b1ad4975b401fe1289890642ed74de54d4d34c667e6",
+    "sha256": "6bef854ca61a84c945bed27f0449a440077b48639faaf6435aeb86edf68618f6",
+    "engineId": "F17-11",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "6bef854ca61a84c945bed27f0449a440077b48639faaf6435aeb86edf68618f6"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Compare results and explain",
+        "pose": "celebrate",
+        "narration": "Relative frequency is successful trials divided by all trials. Many trials often give a closer estimate, but the results can still fluctuate.",
+        "prompt": "How could you improve the reliability of your estimate?"
+      },
+      "scene": {
+        "function": "drawScene",
+        "arguments": {
+          "o": {
+            "step": 1,
+            "title": "Original representation",
+            "tag": "TEACHING STEP 1 / 6",
+            "pose": "explain",
+            "subtitle": "Observe the bag and its composition.",
+            "say": "Inspect the original representation.",
+            "flash": false
+          }
+        }
+      }
+    },
+    "previous_sha256": "197fbdbe5559c12cfd76615744815629944394b038a81125d96598346785096b",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-12",
+    "path": "F17/F17-12-Expected-Outcomes-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "PRESETS",
+      "steps"
+    ],
+    "draws": {
+      "drawScene": [
+        "stage",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "m": {
+        "kind": "factory",
+        "factory": "makeModel",
+        "argCount": 1
+      },
+      "renderStep.m": {
+        "kind": "factory",
+        "factory": "makeModel",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "06d31b8c1da737616c78f4550b0f40eacf2824065b048e821d29c1b76ed44853",
+    "sha256": "3fd026017bbffb5e466b215555fed5a7f0e15fa0b606a7c950a43c097b3435cd",
+    "engineId": "F17-12",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 170,
+        "checks": 170,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "3fd026017bbffb5e466b215555fed5a7f0e15fa0b606a7c950a43c097b3435cd"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Explain expected versus observed",
+        "pose": "celebrate",
+        "narration": "The expected count is a theoretical average. A random experiment varies, and the expected count does not need to be a whole number.",
+        "prompt": "Is an expected count a promised outcome?"
+      },
+      "scene": {
+        "function": "drawScene",
+        "arguments": {
+          "m": {
+            "a": [
+              4,
+              5
+            ],
+            "b": [
+              2,
+              5
+            ],
+            "planned": 100,
+            "actual": 0,
+            "success": 0,
+            "atA": 0,
+            "atB": 0,
+            "predicted": null,
+            "seed": 17212026,
+            "last": "—",
+            "selected": 0,
+            "flash": false
+          }
+        }
+      }
+    },
+    "previous_sha256": "397b8b6d9737938a089730f39a9fcfcba132c88fa7a78c82d4697214623dc899",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-13",
+    "path": "F17/F17-13-Fair-Game-Tester-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "PRESETS",
+      "steps"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "m": {
+        "kind": "factory",
+        "factory": "initial",
+        "argCount": 0
+      },
+      "showStep.m": {
+        "kind": "factory",
+        "factory": "initial",
+        "argCount": 0
+      }
+    },
+    "original_sha256": "a13e5b551b23e912cfaadb500e989d61f3a63936312ee91f1c501787bd9bd7e3",
+    "sha256": "cd3d8087d2deffedff22f8ea559df93c7273f0b12261038f04578a9c8dca6ef0",
+    "engineId": "F17-13",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 170,
+        "checks": 170,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "cd3d8087d2deffedff22f8ea559df93c7273f0b12261038f04578a9c8dca6ef0"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Make the game unfair, then rebalance",
+        "pose": "celebrate",
+        "narration": "Changing the number of winning faces or the prize changes expected value. To make the game fair, balance probability times gross prize with the entry cost.",
+        "prompt": "How can you make an unfair game fair?"
+      },
+      "scene": {
+        "function": "scene",
+        "arguments": {
+          "m": {
+            "win": [
+              0
+            ],
+            "prize": 4,
+            "stake": 1,
+            "tries": 0,
+            "success": 0,
+            "earned": 0,
+            "seed": 170713,
+            "chosen": 0,
+            "flash": false,
+            "last": "—"
+          }
+        }
+      }
+    },
+    "previous_sha256": "7cd4ca8a4c7960eb24a964cea409a512d15ac0ebc363985a18c4c3f1769bff5a",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F17-14",
+    "path": "F17/F17-14-Combinations-and-Arrangements-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "state"
+    ],
+    "tables": [
+      "PRESETS",
+      "steps"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "showStep.m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "1a507833ff45644223756e26e4ed908727ecf0f831c32a69d5921cbb170aa16c",
+    "sha256": "84b4bb35dda143cae623331ad2ed021fcfa7508c84bdf71f44084503c045af78",
+    "engineId": "F17-14",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 167,
+        "checks": 167,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "84b4bb35dda143cae623331ad2ed021fcfa7508c84bdf71f44084503c045af78"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Calculate the probability",
+        "pose": "celebrate",
+        "narration": "Count the favourable selections. Divide by the total number of equally likely distinct outcomes.",
+        "prompt": "Which outcomes satisfy the target event?"
+      },
+      "scene": {
+        "function": "scene",
+        "arguments": {
+          "p": {
+            "label": "Three tiles · ordered",
+            "items": [
+              "A",
+              "B",
+              "C"
+            ],
+            "k": 4,
+            "ordered": true,
+            "context": "Place 3 distinct tiles in 3 ordered positions.",
+            "event": "A in the first slot",
+            "lesson": "Foundations · arrangements"
+          }
+        }
+      }
+    },
+    "previous_sha256": "068c574624f340ba71d250af5e75131b64774c47e52105d410d6483878302ead",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  }
+]

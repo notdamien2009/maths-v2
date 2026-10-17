@@ -1,0 +1,2568 @@
+[
+  {
+    "id": "F0-01",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Choose a maths role",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "given",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "unknown",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "op",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "result",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "error",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "undefinedfocus",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "support",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Expression preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "linear",
+        "options": [
+          {
+            "value": "linear",
+            "label": "Equation  3x + 5 = 20"
+          },
+          {
+            "value": "solved",
+            "label": "Solution  x = 5"
+          },
+          {
+            "value": "fraction",
+            "label": "Fraction of amount  ¾ of 48 = 36"
+          },
+          {
+            "value": "angles",
+            "label": "Angles on a line  a + 130° = 180°"
+          },
+          {
+            "value": "mistake",
+            "label": "Spot the error  2³ = 6"
+          },
+          {
+            "value": "ratio",
+            "label": "Ratio  2 : 3 = 10 : n"
+          },
+          {
+            "value": "stdform",
+            "label": "GCSE: standard form  4.5 × 10⁴"
+          }
+        ]
+      },
+      {
+        "label": "Colour-blind preview",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "none",
+        "options": [
+          {
+            "value": "none",
+            "label": "Normal vision"
+          },
+          {
+            "value": "protan",
+            "label": "Protanopia"
+          },
+          {
+            "value": "deutan",
+            "label": "Deuteranopia"
+          },
+          {
+            "value": "tritan",
+            "label": "Tritanopia"
+          },
+          {
+            "value": "grey",
+            "label": "Greyscale"
+          }
+        ]
+      },
+      {
+        "label": "Toggle light / dark",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"01 Design tokens (NOVA colours, fonts, maths colour language)\":\n  - heading \"01 Design tokens (NOVA colours, fonts, maths colour language)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: standard form and surd presets use the same roles, ready for GCSE Foundation and Higher engines\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-02, F0-03, F0-05, F0-07, F0-08, F0-12, F0-17.\n  - heading \"Live demo · F0-01\" [level=3]\n  - tablist \"Design tokens modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Solved result\n  - list \"Expression coloured by maths role\":\n    - listitem \"x, Unknown / variable, shape circle\": x\n    - listitem \"=, Operation / relation, shape diamond\": =\n    - listitem \"5, Result / answer, shape tick\": \"5\"\n  - text: Unknown Operation Result Solved\n  - img \"Solved (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch When we solve it, the answer turns green with a tick: x = 5. Same language, in every lesson.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Solved\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-02",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "addition",
+        "options": [
+          {
+            "value": "addition",
+            "label": "Addition on a number line  2 + 3"
+          },
+          {
+            "value": "negatives",
+            "label": "Negatives  1 + (−5)"
+          },
+          {
+            "value": "decimals",
+            "label": "Decimals  0.2 + 0.5"
+          },
+          {
+            "value": "right",
+            "label": "Right angle  90°"
+          },
+          {
+            "value": "obtuse",
+            "label": "Obtuse angle  130°"
+          },
+          {
+            "value": "reflex",
+            "label": "GCSE: reflex angle  250°"
+          },
+          {
+            "value": "perimeter",
+            "label": "Lengths  base 8 cm"
+          }
+        ]
+      },
+      {
+        "label": "Start",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-4",
+        "max": "8",
+        "step": "1",
+        "value": "2"
+      },
+      {
+        "label": "Hop",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-12",
+        "max": "12",
+        "step": "1",
+        "value": "3"
+      },
+      {
+        "label": "Angle",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0",
+        "max": "360",
+        "step": "1",
+        "value": "50"
+      },
+      {
+        "label": "Grid",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0",
+        "max": "40",
+        "step": "10",
+        "value": "20"
+      }
+    ],
+    "reducedMotion": true,
+    "labels": "- region \"02 SVG primitives (arrows, braces, arcs, grids, axes, labels)\":\n  - heading \"02 SVG primitives (arrows, braces, arcs, grids, axes, labels)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: reflex angles, decimal number lines and dimension lines feed GCSE bearings, scale drawing and plotting\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-01, F0-03, F0-04, F0-14, F0-16, F0-17.\n  - heading \"Live demo · F0-02\" [level=3]\n  - tablist \"SVG primitives modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Primitive · Together step 7/7\n  - img \"Number line from −4 to 8 with a hop arrow from 2 of 3 landing on 5, braced length 3. Triangle ABC with angle A = 50°, AB = 6 cm, AB and AC marked equal.\": −4 −3 −2 −1 0 1 2 3 4 5 6 7 8 +3 3 50° A B C 6 cm\n  - text: Together\n  - img \"Together (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Grid, axes, arrows, braces, arcs and labels. Every NOVA diagram is built from these six pieces.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Together\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-03",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "times",
+        "options": [
+          {
+            "value": "times",
+            "label": "Repeated addition  3 × 4"
+          },
+          {
+            "value": "fives",
+            "label": "Counting in 5s  4 × 5"
+          },
+          {
+            "value": "countdown",
+            "label": "Counting back  20 − 3 × 6"
+          },
+          {
+            "value": "negative",
+            "label": "Into negatives  4 − 3 × 3"
+          },
+          {
+            "value": "decimal",
+            "label": "Decimal steps  4 × 0.5"
+          },
+          {
+            "value": "sequence",
+            "label": "GCSE: linear sequence 3, 7, 11, 15 (4n − 1)"
+          }
+        ]
+      },
+      {
+        "label": "Jumps",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "1",
+        "max": "8",
+        "step": "1",
+        "value": "3"
+      },
+      {
+        "label": "Size",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-6",
+        "max": "6",
+        "step": "1",
+        "value": "4"
+      },
+      {
+        "label": "Speed",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0.25",
+        "max": "4",
+        "step": "0.25",
+        "value": "1"
+      },
+      {
+        "label": "Frame",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0",
+        "max": "4",
+        "step": "0.01",
+        "value": "0"
+      },
+      {
+        "label": "Play",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Pause",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"03 Animation timeline (play/pause/step/scrub, reduced motion)\":\n  - heading \"03 Animation timeline (play/pause/step/scrub, reduced motion)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: the sequence preset links jumps to the nth term (4n − 1)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-02, F0-04, F0-07, F0-08, F0-13, F0-17.\n  - heading \"Live demo · F0-03\" [level=3]\n  - tablist \"Animation timeline modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Timeline · Total p = 4.00\n  - list \"Named steps\":\n    - listitem:\n      - button \"Start\"\n    - listitem:\n      - button \"Jump 1\"\n    - listitem:\n      - button \"Jump 2\"\n    - listitem:\n      - button \"Jump 3\"\n    - listitem:\n      - button \"Total\"\n  - img \"Number line −1 to 13. Start 0, 3 of 3 jumps of 4 done, helper at 12.\": −1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 +4 +4 +4 3 × 4\n  - text: 0 + 4 + 4 + 4 = 12 3 × 4 = 12\n  - img \"3 × 4 = 12 (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch 3 jumps of 4 from 0 lands on 12. Count jumps, not tick marks.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Total\n    - slider \"Scrub through steps\": \"4\""
+  },
+  {
+    "id": "F0-04",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 26,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Value marker",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "-1",
+        "max": "2",
+        "step": null
+      },
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "quarters",
+        "options": [
+          {
+            "value": "quarters",
+            "label": "Quarters on 0 to 2"
+          },
+          {
+            "value": "tenths",
+            "label": "Tenths on 0 to 1"
+          },
+          {
+            "value": "integers",
+            "label": "Integers −10 to 10"
+          },
+          {
+            "value": "negatives",
+            "label": "Halves −3 to 3"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: thousands, step 250"
+          }
+        ]
+      },
+      {
+        "label": "Slider",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-1",
+        "max": "2",
+        "step": "0.25",
+        "value": "0.75"
+      },
+      {
+        "label": "Stepper",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease by one step",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase by one step",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Type a value",
+        "tag": "input",
+        "role": null,
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Set",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Sort these by value",
+        "tag": "ol",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Move 0.3 up",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Move 0.3 down",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Move 1/3 up",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Move 1/3 down",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Move -0.5 up",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Move -0.5 down",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Move 0.25 up",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Move 0.25 down",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Match fractions to decimals",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "1/2",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "1/4",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "3/5",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "1/5",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "0.5",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "0.25",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "0.6",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "0.2",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "0.35",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"04 Interaction kit (drag-snap, slider, stepper, sort, match, entry)\":\n  - heading \"04 Interaction kit (drag-snap, slider, stepper, sort, match, entry)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: the GCSE preset (thousands, step 250) supports estimation and bounds\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-03, F0-05, F0-07, F0-11, F0-12, F0-16.\n  - heading \"Live demo · F0-04\" [level=3]\n  - tablist \"Interaction kit modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Kit · All linked step 7/7\n  - 'img \"Number line 0 to 2. Points: 0.75 at 0.75.\"': 0 0.5 1 1.5 2 0.75\n  - text: ◆ Drag 0.75 ═ Slider 0.75 ± Stepper 0.75 ✎ Entry 3/4 One value\n  - img \"One value (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Every control reads and writes the same value and emits a value event. Engines just choose which ones to show.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · All linked\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-05",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "fraction",
+        "options": [
+          {
+            "value": "fraction",
+            "label": "Fractions  3/4 + 1/4"
+          },
+          {
+            "value": "mixed",
+            "label": "Mixed number  2 1/3 = 7/3"
+          },
+          {
+            "value": "power",
+            "label": "Powers  2^3 = 8"
+          },
+          {
+            "value": "algebra",
+            "label": "Algebra  (x^2)^3 = x^6"
+          },
+          {
+            "value": "root",
+            "label": "Roots  √49, ∛27"
+          },
+          {
+            "value": "surd",
+            "label": "Surds  √12 = 2√3"
+          },
+          {
+            "value": "sform",
+            "label": "Standard form  32 000"
+          },
+          {
+            "value": "small",
+            "label": "GCSE: small numbers  0.00056"
+          },
+          {
+            "value": "rational",
+            "label": "GCSE: rationalise  1/√2"
+          }
+        ]
+      },
+      {
+        "label": "Maths markup",
+        "tag": "textarea",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "\\frac{3}{4}+\\frac{1}{4}=1"
+      },
+      {
+        "label": "Size",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0.6",
+        "max": "2",
+        "step": "0.1",
+        "value": "1"
+      },
+      {
+        "label": "Number to standard form",
+        "tag": "input",
+        "role": null,
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "45000"
+      },
+      {
+        "label": "Simplify √",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease Simplify √",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase Simplify √",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"05 Maths text renderer (fractions, powers, roots, surds, standard form)\":\n  - heading \"05 Maths text renderer (fractions, powers, roots, surds, standard form)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: negative powers and small numbers, rationalising denominators, cube roots, algebraic powers\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-01, F0-02, F0-04, F0-11, F0-13, F0-17.\n  - heading \"Live demo · F0-05\" [level=3]\n  - tablist \"Maths text renderer modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Maths text · All together step 7/7\n  - math \"(x squared) cubed equals x to the power 6\":\n    - text: ( x\n    - superscript: \"2\"\n    - text: )\n    - superscript: \"3\"\n    - text: = x\n    - superscript: \"6\"\n  - math \"1 over square root of 2 equals square root of 2 over 2\": 1 2 = 2 2\n  - text: \"Read aloud: (x squared) cubed equals x to the power 6; 1 over square root of 2 equals square root of 2 over 2\"\n  - code: \"(x^{2})^{3}=x^{6} \\\\frac{1}{\\\\sqrt{2}}=\\\\frac{\\\\sqrt{2}}{2}\"\n  - text: All together\n  - img \"All together (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch One markup for every engine: it looks right, and a screen reader says it right.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · All together\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-06",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Seed",
+        "tag": "input",
+        "role": null,
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "MATHS7"
+      },
+      {
+        "label": "⚄ New seed",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Template",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "times",
+        "options": [
+          {
+            "value": "times",
+            "label": "Times tables  a × b (2 to 12)"
+          },
+          {
+            "value": "equation",
+            "label": "One-step and two-step equations  ax + b = c"
+          },
+          {
+            "value": "fraction",
+            "label": "Simplify fractions"
+          },
+          {
+            "value": "percent",
+            "label": "Percent of an amount"
+          },
+          {
+            "value": "negative",
+            "label": "Directed numbers  a − b"
+          },
+          {
+            "value": "sform",
+            "label": "GCSE: write in standard form"
+          }
+        ]
+      },
+      {
+        "label": "Questions",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease Questions",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase Questions",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Question to re-roll",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "0",
+        "options": [
+          {
+            "value": "0",
+            "label": "Q1"
+          },
+          {
+            "value": "1",
+            "label": "Q2"
+          },
+          {
+            "value": "2",
+            "label": "Q3"
+          },
+          {
+            "value": "3",
+            "label": "Q4"
+          },
+          {
+            "value": "4",
+            "label": "Q5"
+          },
+          {
+            "value": "5",
+            "label": "Q6"
+          }
+        ]
+      },
+      {
+        "label": "Re-roll",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"06 Seeded randomiser for variants\":\n  - heading \"06 Seeded randomiser for variants\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: standard form and equation templates feed GCSE practice\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-04, F0-05, F0-07, F0-11, F0-12, F0-13.\n  - heading \"Live demo · F0-06\" [level=3]\n  - tablist \"Seeded randomiser modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Randomiser · All set step 7/7\n  - heading \"Times\" [level=4]\n  - text: ■ seed MATHS7 Q1\n  - math \"2 times 7 equals ?\": 2 × 7 = ?\n  - text: ✓14 Q2\n  - math \"7 times 7 equals ?\": 7 × 7 = ?\n  - text: ✓49 Q3\n  - math \"8 times 6 equals ?\": 8 × 6 = ?\n  - text: ✓48 Q4\n  - math \"3 times 4 equals ?\": 3 × 4 = ?\n  - text: ✓12 Q5\n  - math \"5 times 6 equals ?\": 5 × 6 = ?\n  - text: ✓30 Q6\n  - math \"7 times 4 equals ?\": 7 × 4 = ?\n  - text: ✓28\n  - heading \"Standard form\" [level=4]\n  - text: ■ seed MATHS7 Q1\n  - math \"12\"\n  - text: ✓\n  - math \"1.2 times 10 to the power 1\":\n    - text: 1.2×10\n    - superscript: \"1\"\n  - text: Q2\n  - math \"5.7\"\n  - text: ✓\n  - math \"5.7 times 10 to the power 0\":\n    - text: 5.7×10\n    - superscript: \"0\"\n  - text: Q3\n  - math \"6.5\"\n  - text: ✓\n  - math \"6.5 times 10 to the power 0\":\n    - text: 6.5×10\n    - superscript: \"0\"\n  - text: Q4\n  - math \"0.021\"\n  - text: ✓\n  - math \"2.1 times 10 to the power minus 2\":\n    - text: 2.1×10\n    - superscript: −2\n  - text: Q5\n  - math \"3.6\"\n  - text: ✓\n  - math \"3.6 times 10 to the power 0\":\n    - text: 3.6×10\n    - superscript: \"0\"\n  - text: Q6\n  - math \"0.052\"\n  - text: ✓\n  - math \"5.2 times 10 to the power minus 2\":\n    - text: 5.2×10\n    - superscript: −2\n  - text: All set\n  - img \"All set (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Seed, template and rules: that is all an engine needs to make endless fair variants it can always recreate.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · All set\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-07",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "quarters",
+        "options": [
+          {
+            "value": "quarters",
+            "label": "Quarters  target 3/4"
+          },
+          {
+            "value": "thirds",
+            "label": "Sixths  target 2/3"
+          },
+          {
+            "value": "fifths",
+            "label": "Tenths  target 2/5"
+          },
+          {
+            "value": "halves",
+            "label": "Eighths  target 1/2"
+          },
+          {
+            "value": "percent",
+            "label": "GCSE: twentieths  target 35%"
+          }
+        ]
+      },
+      {
+        "label": "Parts",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease Parts",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase Parts",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Shade parts",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Shade 0 parts",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Shade 1 parts",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Shade 2 parts",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Shade 3 parts",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Shade 4 parts",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "↶ Undo",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "↷ Redo",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Check",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Hint",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"07 State and events API (value, correct, step)\":\n  - heading \"07 State and events API (value, correct, step)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: percent targets (35% of 20)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-03, F0-04, F0-06, F0-08, F0-11, F0-12.\n  - heading \"Live demo · F0-07\" [level=3]\n  - tablist \"State and events API modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Events · All signals step 8/8\n  - 'heading \"Maths: shaded fraction\" [level=4]'\n  - img \"Bar split into 4 equal parts, 3 shaded.\": 3 of 4 parts\n  - math \"3 over 4\": 3 4\n  - heading \"Event stream\" [level=4]\n  - list \"Latest events, newest first\":\n    - listitem: \"✓correct correct: true · target 3/4\"\n    - listitem: ▲step step 2 · Check\n    - listitem: \"◌hintUsed hint #1\"\n    - listitem: ◆value shaded = 3\n    - listitem: —\n    - listitem: —\n  - text: \"state {\\\"parts\\\":4,\\\"shaded\\\":3,\\\"step\\\":2,\\\"hints\\\":1} attempts 2 correct 1 hints 1 first try no All signals\"\n  - img \"All signals (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch value, correct, step and hintUsed: four signals every engine speaks, so any lesson, game or report can plug in.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 8 of 8 · All signals\n    - slider \"Scrub through steps\": \"7\""
+  },
+  {
+    "id": "F0-08",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 25,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "tens",
+        "options": [
+          {
+            "value": "tens",
+            "label": "47 to the nearest 10"
+          },
+          {
+            "value": "halfway",
+            "label": "65 to the nearest 10 (halfway)"
+          },
+          {
+            "value": "hundreds",
+            "label": "1,349 to the nearest 100"
+          },
+          {
+            "value": "tenths",
+            "label": "3.46 to 1 decimal place"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: 0.0752 to the nearest 0.01"
+          }
+        ]
+      },
+      {
+        "label": "Number",
+        "tag": "input",
+        "role": null,
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "47"
+      },
+      {
+        "label": "Round to",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "1000",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "100",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "10",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "1",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "0.1",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "0.01",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Line",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "bounds",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "halfway",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "compare",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "result",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Tone",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "warm",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "brisk",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Length",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "short",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "full",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Say line",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "♪ Voice",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"08 Bob narration hooks\":\n  - heading \"08 Bob narration hooks\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: decimal units (0.01) and bounds\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-03, F0-05, F0-07, F0-11, F0-12, F0-13.\n  - heading \"Live demo · F0-08\" [level=3]\n  - tablist \"Bob narration hooks modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Narration · Hooks step 7/7\n  - 'heading \"Maths: round 47 to the nearest 10\" [level=4]'\n  - img \"Number line from 40 to 50 with 47 marked.\": 40 50 45 47\n  - heading \"Transcript\" [level=4]\n  - list \"Transcript, newest first\":\n    - listitem: So 47 rounds to 50 to the nearest 10. Nicely done.\n    - listitem: \"47 above 45: nearer 50.\"\n    - listitem: Halfway between them is 45. That is the deciding line.\n  - heading \"Script · result\" [level=4]\n  - text: warm brisk short full ◌n rounds to ◌r . ◆47 rounds to ✓50 . Hooks\n  - img \"Hooks (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Other parts can listen to the narration hook: captions, a voice, or a teacher log. Bob speaks once, everyone hears.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Hooks\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-09",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Lesson",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "fractions",
+        "options": [
+          {
+            "value": "fractions",
+            "label": "Y7 Fractions of amounts"
+          },
+          {
+            "value": "graphs",
+            "label": "Y8 Plotting straight lines"
+          },
+          {
+            "value": "angles",
+            "label": "Y7 Angles on a line"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: Standard form"
+          }
+        ]
+      },
+      {
+        "label": "Step",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease Step",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase Step",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Component",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "F0-05",
+        "options": [
+          {
+            "value": "F0-01",
+            "label": "F0-01 · Design tokens"
+          },
+          {
+            "value": "F0-02",
+            "label": "F0-02 · SVG primitives"
+          },
+          {
+            "value": "F0-03",
+            "label": "F0-03 · Animation timeline"
+          },
+          {
+            "value": "F0-04",
+            "label": "F0-04 · Interaction kit"
+          },
+          {
+            "value": "F0-05",
+            "label": "F0-05 · Maths text renderer"
+          },
+          {
+            "value": "F0-06",
+            "label": "F0-06 · Seeded randomiser"
+          },
+          {
+            "value": "F0-07",
+            "label": "F0-07 · State and events API"
+          },
+          {
+            "value": "F0-08",
+            "label": "F0-08 · Bob narration hooks"
+          },
+          {
+            "value": "F0-09",
+            "label": "F0-09 · Registry and lesson manifest"
+          },
+          {
+            "value": "F0-10",
+            "label": "F0-10 · Gallery page shell"
+          },
+          {
+            "value": "F0-11",
+            "label": "F0-11 · Assessment engine"
+          },
+          {
+            "value": "F0-12",
+            "label": "F0-12 · Game wrapper"
+          },
+          {
+            "value": "F0-13",
+            "label": "F0-13 · Worked-example stepper"
+          },
+          {
+            "value": "F0-14",
+            "label": "F0-14 · Axes and plotting"
+          },
+          {
+            "value": "F0-15",
+            "label": "F0-15 · Interactive table"
+          },
+          {
+            "value": "F0-16",
+            "label": "F0-16 · Geometry canvas"
+          },
+          {
+            "value": "F0-17",
+            "label": "F0-17 · Static and print renderer"
+          },
+          {
+            "value": "F0-99",
+            "label": "F0-99 (unregistered)"
+          }
+        ]
+      },
+      {
+        "label": "Mode",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "watch",
+        "options": [
+          {
+            "value": "watch",
+            "label": "watch"
+          },
+          {
+            "value": "guided",
+            "label": "guided"
+          },
+          {
+            "value": "explore",
+            "label": "explore"
+          },
+          {
+            "value": "challenge",
+            "label": "challenge"
+          },
+          {
+            "value": "play",
+            "label": "play"
+          }
+        ]
+      },
+      {
+        "label": "Objective",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "O1",
+        "options": [
+          {
+            "value": "O1",
+            "label": "O1"
+          },
+          {
+            "value": "O2",
+            "label": "O2"
+          },
+          {
+            "value": "",
+            "label": "(none)"
+          }
+        ]
+      },
+      {
+        "label": "Validate",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"09 Registry and lesson manifest\":\n  - heading \"09 Registry and lesson manifest\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: the GCSE standard form lesson\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-03, F0-07, F0-10, F0-11, F0-12, F0-13, F0-17.\n  - heading \"Live demo · F0-09\" [level=3]\n  - tablist \"Registry and lesson manifest modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Registry · Objectives step 7/7\n  - heading \"Manifest · Y7-FR-03 · Fractions of amounts\" [level=4]\n  - list \"Lesson steps\":\n    - listitem: 1 F0-05 · Maths text renderer watch · Show 3/4 of 24 O1\n    - listitem: \"2 F0-13 · Worked-example stepper guided · Worked example: 1/4 of 24 O1\"\n    - listitem: \"3 F0-04 · Interaction kit explore · Entry: 3/4 of 24 O2\"\n    - listitem: \"4 F0-11 · Assessment engine challenge · Quiz: 5 questions O2\"\n    - listitem: 5 F0-12 · Game wrapper challenge · Game round O2\n  - heading \"Objectives map to steps\" [level=4]\n  - text: \"△F0-01 ◆F0-05 △F0-03 △F0-07 △F0-08 ◆F0-13 ◆F0-04 ◆F0-11 ◆F0-12 O1: steps 1, 2 O2: steps 3, 4, 5 Objectives\"\n  - img \"Objectives (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Each objective links to its steps, so a report can say how pupils did on O1 and O2 separately.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Objectives\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-10",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "all",
+        "options": [
+          {
+            "value": "all",
+            "label": "Whole foundation family"
+          },
+          {
+            "value": "geometry",
+            "label": "Geometry tools"
+          },
+          {
+            "value": "algebra",
+            "label": "Algebra tools"
+          },
+          {
+            "value": "apis",
+            "label": "Shared APIs only"
+          },
+          {
+            "value": "stats",
+            "label": "GCSE: statistics and plotting"
+          }
+        ]
+      },
+      {
+        "label": "Search",
+        "tag": "input",
+        "role": null,
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Topic",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "all",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "number",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "algebra",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "geometry",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "ratio",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "statistics",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "probability",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Kind",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "all",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "api",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "primitive",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "engine",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "shell",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Style layer",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "number",
+        "options": [
+          {
+            "value": "number",
+            "label": "number"
+          },
+          {
+            "value": "algebra",
+            "label": "algebra"
+          },
+          {
+            "value": "geometry",
+            "label": "geometry"
+          },
+          {
+            "value": "ratio",
+            "label": "ratio"
+          },
+          {
+            "value": "statistics",
+            "label": "statistics"
+          },
+          {
+            "value": "probability",
+            "label": "probability"
+          }
+        ]
+      },
+      {
+        "label": "Print view",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"10 Gallery page shell\":\n  - heading \"10 Gallery page shell\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: the GCSE statistics preset\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-01, F0-09, F0-17, all F0 engines.\n  - heading \"Live demo · F0-10\" [level=3]\n  - tablist \"Gallery page shell modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Gallery · Print step 7/7 NOVA · F0 gallery ⌕ search all number algebra geometry ratio F0-01 · api Design tokens ✓built F0-02 · primitive SVG primitives ✓built F0-03 · api Animation timeline ✓built F0-04 · api Interaction kit ✓built F0-05 · primitive Maths text renderer ✓built +12 more Print\n  - img \"Print (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch For print the shell drops its glow and turns into a clean light catalogue a teacher can hand out.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Print\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-11",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 25,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Question set",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "fractions",
+        "options": [
+          {
+            "value": "fractions",
+            "label": "Y7 Fractions of amounts"
+          },
+          {
+            "value": "integers",
+            "label": "Y7 Negative numbers"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: Standard form"
+          }
+        ]
+      },
+      {
+        "label": "Answer",
+        "tag": "input",
+        "role": null,
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "◀ Prev",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Mark",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Next ▶",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Results",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"11 Assessment engine (question types, marking, mark scheme, results by objective)\":\n  - heading \"11 Assessment engine (question types, marking, mark scheme, results by objective)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: M1 / A1 / B1 mark schemes and the GCSE standard form set\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-04, F0-05, F0-07, F0-09, F0-12, F0-13, F0-17.\n  - heading \"Live demo · F0-11\" [level=3]\n  - tablist \"Assessment engine modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Assessment · Report step 7/7\n  - heading \"Question · multi · 2 marks · O2\" [level=4]\n  - text: \"Q5 · options: 1/2 of 24 / 1/3 of 36 / 2/5 of 25 / 3/4 of 16 Select all that equal 12. Answer 1/2 of 24, 1/3 of 36 ✖ Method seen, but the answer is not right. (1/2)\"\n  - heading \"Results by objective\" [level=4]\n  - text: Total 4/7\n  - 'img \"Results by objective: O1 100%, O2 40%\"': O1 2/2 · 100% △ O2 2/5 · 40% ▽\n  - text: Report\n  - img \"Report (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Marks, method credit, misconception notes and objective scores: everything a teacher needs, with no scores turned into games here.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Report\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-12",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Game",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "quick",
+        "options": [
+          {
+            "value": "quick",
+            "label": "Quick fire: 5 rounds, 3 lives"
+          },
+          {
+            "value": "marathon",
+            "label": "Marathon: 10 rounds, 3 lives"
+          },
+          {
+            "value": "practice",
+            "label": "Practice: no lives"
+          },
+          {
+            "value": "tables",
+            "label": "Times tables sprint"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: percentages of amounts"
+          }
+        ]
+      },
+      {
+        "label": "Answer",
+        "tag": "input",
+        "role": null,
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Go",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Hint (−5)",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "New game",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"12 Game wrapper (rounds, scoring, lives, hints, Bob reactions, results)\":\n  - heading \"12 Game wrapper (rounds, scoring, lives, hints, Bob reactions, results)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: the GCSE percentages preset\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-06, F0-07, F0-08, F0-11, any engine.\n  - heading \"Live demo · F0-12\" [level=3]\n  - tablist \"Game wrapper modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Game · Results step 7/7 Round 5/5 Score 45 Lives ♥♥♡ Streak ⚡2 45 score 4/5 80% correct ★★☆ stars at 50 / 70 / 90% 2 best streak Results\n  - img \"Results (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch At the end: score, percentage, stars and best streak. Four out of five is 80 percent: two stars.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Results\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-13",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 25,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "linear",
+        "options": [
+          {
+            "value": "linear",
+            "label": "Solve 3x + 5 = 20"
+          },
+          {
+            "value": "fraction",
+            "label": "Find 3/5 of 40"
+          },
+          {
+            "value": "percent",
+            "label": "Increase 80 by 15%"
+          },
+          {
+            "value": "angles",
+            "label": "Angles on a straight line"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: Expand (x + 3)(x + 4)"
+          }
+        ]
+      },
+      {
+        "label": "Phase",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "I do",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "We do",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "You do",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "◀ Line",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Line ▶",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Blank / answer",
+        "tag": "input",
+        "role": null,
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Check",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Hint",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"13 Worked-example stepper (I do, we do, you do)\":\n  - heading \"13 Worked-example stepper (I do, we do, you do)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: expanding double brackets\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-03, F0-05, F0-08, F0-11, F0-12.\n  - heading \"Live demo · F0-13\" [level=3]\n  - tablist \"Worked-example stepper modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Worked example · Check step 7/7\n  - list \"Phases\":\n    - listitem: ✓ I do · watch\n    - listitem: ✓ We do · together\n    - listitem: You do · solo\n  - text: Solve 2x + 7 = 19\n  - list \"Working\":\n    - listitem: 1 2x + 7 = 19\n    - listitem: 2 2x = ?\n    - listitem: 3 x = ?\n    - listitem\n  - heading \"Why\" [level=4]\n  - text: Your turn. Your turn. Your turn. You do\n  - img \"You do (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Subtract 7, then divide by 2: x = 6. I do, we do, you do: support fades as confidence grows.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Check\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-14",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Chart",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "line",
+        "options": [
+          {
+            "value": "line",
+            "label": "Straight line y = 2x + 1"
+          },
+          {
+            "value": "negative",
+            "label": "Negative gradient y = −x + 4"
+          },
+          {
+            "value": "scatter",
+            "label": "Scatter: height vs arm span (cm)"
+          },
+          {
+            "value": "bars",
+            "label": "Bar chart: favourite fruit"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: quadratic y = x² − 2x − 3"
+          }
+        ]
+      },
+      {
+        "label": "Gradient m",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-3",
+        "max": "3",
+        "step": "0.5",
+        "value": "2"
+      },
+      {
+        "label": "Intercept c",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-2",
+        "max": "6",
+        "step": "1",
+        "value": "1"
+      },
+      {
+        "label": "Clear points",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Check last point",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"14 Axes and plotting primitive (Cartesian, scatter, bars)\":\n  - heading \"14 Axes and plotting primitive (Cartesian, scatter, bars)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: quadratic curves, roots and turning points\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-02, F0-04, F0-11, F0-13, F0-15.\n  - heading \"Live demo · F0-14\" [level=3]\n  - tablist \"Axes and plotting primitive modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Plotting · Read a value step 7/7\n  - img \"Chart\": −1 1 2 3 4 5 −2 2 4 6 8 10 12 x y\n  - text: Read x = 3 up to the line y = 2 × 3 + 1 = 7 y = 2x + 1 Read a value\n  - img \"Read a value (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch To read a value, go up from x = 3 to the line, then across: y = 7.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Read a value\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-15",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 25,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Table",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "linear",
+        "options": [
+          {
+            "value": "linear",
+            "label": "Table of values y = 3x − 2"
+          },
+          {
+            "value": "linear2",
+            "label": "Table of values y = −2x + 5"
+          },
+          {
+            "value": "ratio",
+            "label": "Ratio table: eggs per cake (3 : 2)"
+          },
+          {
+            "value": "convert",
+            "label": "Conversion: miles to km (× 1.6)"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: y = x² − 1"
+          }
+        ]
+      },
+      {
+        "label": "Clear",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Hint",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"15 Interactive table primitive (fill, link to graph, highlight)\":\n  - heading \"15 Interactive table primitive (fill, link to graph, highlight)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: quadratic tables (non-constant differences)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-04, F0-11, F0-13, F0-14.\n  - heading \"Live demo · F0-15\" [level=3]\n  - tablist \"Interactive table primitive modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Table · Complete step 7/7\n  - table \"Table of values for Table of values y = 3x − 2\":\n    - row \"x −1 0 1 2 3\":\n      - rowheader \"x\"\n      - cell \"−1\"\n      - cell \"0\"\n      - cell \"1\"\n      - cell \"2\"\n      - cell \"3\"\n    - row \"y −5 −2 1 4 7\":\n      - rowheader \"y\"\n      - cell \"−5\"\n      - cell \"−2\"\n      - cell \"1\"\n      - cell \"4\"\n      - cell \"7\"\n  - text: \"+3 +3 +3 +3 Complete: y = 3x − 2\"\n  - img \"Graph of the table\": −1 1 2 3 −6 −4 −2 2 4 6 8 10 x y\n  - text: Complete\n  - img \"Complete (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Complete table, steady differences, points on a line: the table and the graph tell the same story.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Complete\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-16",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Point A at (1, 1)",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "0",
+        "max": "10",
+        "step": null,
+        "selectorHint": "[data-k=\"0\"]"
+      },
+      {
+        "label": "Point B at (8, 1)",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "0",
+        "max": "10",
+        "step": null,
+        "selectorHint": "[data-k=\"1\"]"
+      },
+      {
+        "label": "Point C at (3, 6)",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "0",
+        "max": "10",
+        "step": null,
+        "selectorHint": "[data-k=\"2\"]"
+      },
+      {
+        "label": "Shape",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "scalene",
+        "options": [
+          {
+            "value": "scalene",
+            "label": "Scalene triangle"
+          },
+          {
+            "value": "right",
+            "label": "Right-angled triangle (3, 4, 5)"
+          },
+          {
+            "value": "isosceles",
+            "label": "Isosceles triangle"
+          },
+          {
+            "value": "line",
+            "label": "Angles on a straight line"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: Pythagoras (6, 8, 10)"
+          }
+        ]
+      },
+      {
+        "label": "Check: is there a right angle?",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"16 Geometry canvas primitive (snap grid, points, lines, angles, measure)\":\n  - heading \"16 Geometry canvas primitive (snap grid, points, lines, angles, measure)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: Pythagoras 6, 8, 10 and coordinate lengths\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-02, F0-04, F0-11, F0-14.\n  - heading \"Live demo · F0-16\" [level=3]\n  - tablist \"Geometry canvas primitive modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Geometry · Straight line step 7/7\n  - img \"Geometry canvas\": 135° 45° B C\n  - text: angle 1 = 135° angle 2 = 45° Sum = 180° Straight line\n  - img \"Straight line (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Angles on a straight line also add to 180 degrees. Drag the points in Explore to test it.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Straight line\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F0-17",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 25,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Topic",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "fractions",
+        "options": [
+          {
+            "value": "fractions",
+            "label": "Fractions of amounts (8 questions)"
+          },
+          {
+            "value": "negatives",
+            "label": "Negative numbers (10 questions)"
+          },
+          {
+            "value": "rounding",
+            "label": "Rounding to the nearest 10 (12)"
+          },
+          {
+            "value": "equations",
+            "label": "Solve ax + b = c (8)"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: percentage change (8)"
+          }
+        ]
+      },
+      {
+        "label": "Questions",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease Questions",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase Questions",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Seed",
+        "tag": "input",
+        "role": null,
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "SHEET-A"
+      },
+      {
+        "label": "Include answer key",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Preview answers",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Download worksheet",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Print",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"17 Static and print renderer (fallback image and worksheet export)\":\n  - heading \"17 Static and print renderer (fallback image and worksheet export)\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: GCSE percentage change sheets\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-01, F0-06, F0-09, F0-10, F0-11, all engines.\n  - heading \"Live demo · F0-17\" [level=3]\n  - tablist \"Static and print renderer modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Static and print · Export step 7/7\n  - heading \"Fractions of amounts\" [level=5]\n  - paragraph: \"Name: ________ Seed: SHEET-A · 8 questions\"\n  - list:\n    - listitem: 1. 2/3 of 15\n    - listitem: 2. 3/4 of 32\n    - listitem: 3. 2/4 of 36\n    - listitem: 4. 1/2 of 12\n    - listitem: 5. 1/2 of 12\n    - listitem: 6. 1/2 of 14\n    - listitem: 7. 1/8 of 64\n    - listitem: 8. 1/8 of 40\n  - text: \"Print: opens the browser print dialog Download: a standalone HTML sheet Works offline, no login Export\"\n  - img \"Export (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Print it straight away or download a standalone sheet. No internet needed once it is saved.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Export\n    - slider \"Scrub through steps\": \"6\""
+  }
+]

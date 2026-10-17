@@ -1,0 +1,3694 @@
+{
+  "family": "F2",
+  "revision": "2026-10-16",
+  "productionReady": true,
+  "status": "PASS WITH LIMITATIONS",
+  "componentCount": 15,
+  "note": "F2-04 is not a separate file; decimal blocks are provided by F2-03.",
+  "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+  "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+  "sharedRestrictions": "Original neon/chalk apparatus retained. Production approval is already settled by the 14 October master release; no stale fraction/TBD approval gate applies. Ready within each declared native numerical domain. Decimal numerals containing digit 4 remain caption-only under the existing pronunciation safeguard. Automated accessibility is not human screen-reader or all-device certification. Future lesson questions still need their own maths/content/layout review. Existing exported lessons embed source snapshots and must be regenerated.",
+  "components": [
+    {
+      "id": "F2-01",
+      "name": "Place value chart slider",
+      "path": "F2/F2-01-place-value-chart-slider.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "50070da7f69793ba9c24c1d347a86f2b51f46f90bbd80f7d9811463f3546c68e",
+      "nativeSteps": 6,
+      "nativeDraws": {
+        "Chart": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "o",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "places",
+        "showWorth",
+        "presets",
+        "visiblePlaces"
+      ],
+      "presets": {
+        "lesson": {
+          "label": "3040.507 (placeholder zeros)",
+          "value": "3040.507"
+        },
+        "x10": {
+          "label": "23.6 then × 10",
+          "value": "23.6",
+          "op": 1
+        },
+        "x100": {
+          "label": "4.7 then × 100",
+          "value": "4.7",
+          "op": 2
+        },
+        "d10": {
+          "label": "508 then ÷ 10",
+          "value": "508",
+          "op": -1
+        },
+        "d100": {
+          "label": "61.5 then ÷ 100",
+          "value": "61.5",
+          "op": -2
+        },
+        "x1000": {
+          "label": "0.042 then × 1000",
+          "value": "0.042",
+          "op": 3
+        },
+        "blank": {
+          "label": "Empty chart (build your own)",
+          "value": ""
+        }
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "lesson",
+          "options": [
+            {
+              "value": "lesson",
+              "label": "3040.507 (placeholder zeros)"
+            },
+            {
+              "value": "x10",
+              "label": "23.6 then × 10"
+            },
+            {
+              "value": "x100",
+              "label": "4.7 then × 100"
+            },
+            {
+              "value": "d10",
+              "label": "508 then ÷ 10"
+            },
+            {
+              "value": "d100",
+              "label": "61.5 then ÷ 100"
+            },
+            {
+              "value": "x1000",
+              "label": "0.042 then × 1000"
+            },
+            {
+              "value": "blank",
+              "label": "Empty chart (build your own)"
+            }
+          ]
+        },
+        {
+          "label": "× 1000",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "× 100",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "× 10",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 10",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 100",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 1000",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Clear chart",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "shift"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Nonnegative chart, thousands to thousandths, at most 4 whole digits and 3 decimal digits; integer shifts ±1–3 remain inside the native columns.",
+      "changes": "Native lesson values and shift actions; centred visiblePlaces focusing preserves the original place identities; answer-worth concealment.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-02",
+      "name": "Counters on place value grid",
+      "path": "F2/F2-02-counters-on-place-value-grid.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "c214530d7f0e0dcd0a28a79c014378316b4710dcc053ca841bbd21703a3cff72",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "Grid": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "c",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "c",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "c",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "c",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "c",
+          "o",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "places",
+        "autoExchange",
+        "presets",
+        "visiblePlaces"
+      ],
+      "presets": {
+        "whole": {
+          "label": "243",
+          "c": {
+            "0": 3,
+            "1": 4,
+            "2": 2
+          }
+        },
+        "dec": {
+          "label": "1.36",
+          "c": {
+            "0": 1,
+            "-1": 3,
+            "-2": 6
+          }
+        },
+        "over": {
+          "label": "1.36 + 0.48 (14 hundredths)",
+          "c": {
+            "0": 1,
+            "-1": 7,
+            "-2": 14
+          }
+        },
+        "borrow": {
+          "label": "3.2 (break a one to subtract)",
+          "c": {
+            "0": 3,
+            "-1": 2
+          }
+        },
+        "nine": {
+          "label": "99 (add one more!)",
+          "c": {
+            "0": 9,
+            "1": 9
+          }
+        },
+        "empty": {
+          "label": "Empty grid",
+          "c": {}
+        }
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Start",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "whole",
+          "options": [
+            {
+              "value": "whole",
+              "label": "243"
+            },
+            {
+              "value": "dec",
+              "label": "1.36"
+            },
+            {
+              "value": "over",
+              "label": "1.36 + 0.48 (14 hundredths)"
+            },
+            {
+              "value": "borrow",
+              "label": "3.2 (break a one to subtract)"
+            },
+            {
+              "value": "nine",
+              "label": "99 (add one more!)"
+            },
+            {
+              "value": "empty",
+              "label": "Empty grid"
+            }
+          ]
+        },
+        {
+          "label": "Column",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "0",
+          "options": [
+            {
+              "value": "2",
+              "label": "Hundreds"
+            },
+            {
+              "value": "1",
+              "label": "Tens"
+            },
+            {
+              "value": "0",
+              "label": "Ones"
+            },
+            {
+              "value": "-1",
+              "label": "Tenths"
+            },
+            {
+              "value": "-2",
+              "label": "Hundredths"
+            }
+          ]
+        },
+        {
+          "label": "+ counter",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "− counter",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Exchange 10 → 1",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Break 1 → 10",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "exchange",
+        "breakOne"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Hundreds to hundredths; 0–20 counters per column. Exchanges preserve weighted total; focus never relabels a column.",
+      "changes": "Native exact count maps and exchange/break actions; centred column focus; computed answer removed from accessible question title.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-03",
+      "name": "Base ten blocks",
+      "path": "F2/F2-03-base-ten-blocks.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "26a942ff990c660bec57581da2c6c515f2fecd1cc73846bdb19306420b32cf3d",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "Mat": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "scale",
+        "autoExchange",
+        "presets"
+      ],
+      "presets": {
+        "n235": {
+          "label": "235",
+          "scale": "whole",
+          "c": {
+            "f": 2,
+            "r": 3,
+            "u": 5
+          }
+        },
+        "u12": {
+          "label": "12 units (make a ten)",
+          "scale": "whole",
+          "c": {
+            "f": 1,
+            "r": 4,
+            "u": 12
+          }
+        },
+        "r13": {
+          "label": "13 rods (make a hundred)",
+          "scale": "whole",
+          "c": {
+            "f": 1,
+            "r": 13,
+            "u": 2
+          }
+        },
+        "sub": {
+          "label": "204 (break to subtract)",
+          "scale": "whole",
+          "c": {
+            "f": 2,
+            "r": 0,
+            "u": 4
+          }
+        },
+        "dec": {
+          "label": "Decimal 1.36 (F2-04: flat = 1)",
+          "scale": "decimal",
+          "c": {
+            "f": 1,
+            "r": 3,
+            "u": 6
+          }
+        },
+        "empty": {
+          "label": "Empty mat",
+          "scale": "whole",
+          "c": {
+            "f": 0,
+            "r": 0,
+            "u": 0
+          }
+        }
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Start",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "n235",
+          "options": [
+            {
+              "value": "n235",
+              "label": "235"
+            },
+            {
+              "value": "u12",
+              "label": "12 units (make a ten)"
+            },
+            {
+              "value": "r13",
+              "label": "13 rods (make a hundred)"
+            },
+            {
+              "value": "sub",
+              "label": "204 (break to subtract)"
+            },
+            {
+              "value": "dec",
+              "label": "Decimal 1.36 (F2-04: flat = 1)"
+            },
+            {
+              "value": "empty",
+              "label": "Empty mat"
+            }
+          ]
+        },
+        {
+          "label": "Block",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "u",
+          "options": [
+            {
+              "value": "u",
+              "label": "units"
+            },
+            {
+              "value": "r",
+              "label": "rods"
+            },
+            {
+              "value": "f",
+              "label": "flats"
+            }
+          ]
+        },
+        {
+          "label": "+ block",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "− block",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Exchange 10 → 1",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Break 1 → 10",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Scale: flat = 100",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Scale: flat = 1",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "exchange",
+        "breakOne"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Whole or decimal scale; flats 0–9, rods 0–26, units 0–20. Decimal flat = 1, rod = 0.1, unit = 0.01.",
+      "changes": "Native scale/count state and exchange/break actions; question title hides computed total; bounds match drawn block capacity.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-05",
+      "name": "Abacus gattegno chart",
+      "path": "F2/F2-05-abacus-gattegno-chart.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "da03930ab948e1ada94ab1b863cdde3296f9d43ea3a8941550f984ed6b81c9b7",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "Abacus": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "Gattegno": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "viewChips": [
+          "stage",
+          "v",
+          "st"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "c",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "c",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "g",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "g",
+          "x",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "g",
+          "o",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "view",
+        "preset",
+        "autoExchange",
+        "rods",
+        "rows",
+        "presets",
+        "visiblePlaces"
+      ],
+      "presets": {
+        "n243": {
+          "label": "Abacus 243",
+          "view": "abacus",
+          "c": {
+            "0": 3,
+            "1": 4,
+            "2": 2
+          }
+        },
+        "n9": {
+          "label": "Abacus 199 (add one!)",
+          "view": "abacus",
+          "c": {
+            "0": 9,
+            "1": 9,
+            "2": 1
+          }
+        },
+        "dec": {
+          "label": "Abacus 1.36",
+          "view": "abacus",
+          "c": {
+            "0": 1,
+            "-1": 3,
+            "-2": 6
+          }
+        },
+        "g345": {
+          "label": "Gattegno 345",
+          "view": "gattegno",
+          "g": {
+            "0": 5,
+            "1": 4,
+            "2": 3
+          }
+        },
+        "g3040": {
+          "label": "Gattegno 3040.5 (zeros = no tile)",
+          "view": "gattegno",
+          "g": {
+            "1": 4,
+            "3": 3,
+            "-1": 5
+          }
+        },
+        "gdec": {
+          "label": "Gattegno 0.63 then × 10",
+          "view": "gattegno",
+          "g": {
+            "-1": 6,
+            "-2": 3
+          },
+          "op": 1
+        },
+        "empty": {
+          "label": "Empty (build your own)",
+          "view": "gattegno",
+          "g": {}
+        }
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Start",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "n243",
+          "options": [
+            {
+              "value": "n243",
+              "label": "Abacus 243"
+            },
+            {
+              "value": "n9",
+              "label": "Abacus 199 (add one!)"
+            },
+            {
+              "value": "dec",
+              "label": "Abacus 1.36"
+            },
+            {
+              "value": "g345",
+              "label": "Gattegno 345"
+            },
+            {
+              "value": "g3040",
+              "label": "Gattegno 3040.5 (zeros = no tile)"
+            },
+            {
+              "value": "gdec",
+              "label": "Gattegno 0.63 then × 10"
+            },
+            {
+              "value": "empty",
+              "label": "Empty (build your own)"
+            }
+          ]
+        },
+        {
+          "label": "Abacus",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Gattegno",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Exchange ones",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Exchange tenths",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Exchange hundredths",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "× 10",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 10",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Clear",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "exchange",
+        "breakOne",
+        "shift"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Abacus hundreds to hundredths, 0–11 beads per rod; Gattegno thousands to hundredths, one digit 0–9 per row. Shifts stay inside native rows.",
+      "changes": "Native abacus/Gattegno state and movement; row/rod focus, hidden-answer titles and lesson-aware reset; Gattegno viewport widened to include the existing rightmost tiles.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-06",
+      "name": "Column add and subtract animator",
+      "path": "F2/F2-06-column-add-and-subtract-animator.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "a1c20da0ccb7342156f9af5a1a1fdb7a102366547cf909f8003d77d100415115",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "Sheet": [
+          "stage",
+          "pl",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "pl",
+          "ff",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "pl",
+          "ff",
+          "go",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "pl",
+          "ff",
+          "go",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "pl",
+          "ff",
+          "go",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "pl",
+          "ff",
+          "all",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "places",
+        "speed",
+        "presets"
+      ],
+      "presets": {
+        "add1": {
+          "label": "456 + 278 (two carries)",
+          "a": "456",
+          "b": "278",
+          "op": "+"
+        },
+        "add2": {
+          "label": "3.6 + 2.75 (align, placeholder 0)",
+          "a": "3.6",
+          "b": "2.75",
+          "op": "+"
+        },
+        "add3": {
+          "label": "999 + 1 (carry chain)",
+          "a": "999",
+          "b": "1",
+          "op": "+"
+        },
+        "sub1": {
+          "label": "742 − 358 (exchanges)",
+          "a": "742",
+          "b": "358",
+          "op": "-"
+        },
+        "sub2": {
+          "label": "5.2 − 1.75 (align, exchange)",
+          "a": "5.2",
+          "b": "1.75",
+          "op": "-"
+        },
+        "sub3": {
+          "label": "4000 − 1 (exchange across zeros)",
+          "a": "4000",
+          "b": "1",
+          "op": "-"
+        },
+        "dec": {
+          "label": "12.5 + 7.86",
+          "a": "12.5",
+          "b": "7.86",
+          "op": "+"
+        }
+      },
+      "exploreFields": {
+        "a": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "b": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "plan.T": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "add1",
+          "options": [
+            {
+              "value": "add1",
+              "label": "456 + 278 (two carries)"
+            },
+            {
+              "value": "add2",
+              "label": "3.6 + 2.75 (align, placeholder 0)"
+            },
+            {
+              "value": "add3",
+              "label": "999 + 1 (carry chain)"
+            },
+            {
+              "value": "sub1",
+              "label": "742 − 358 (exchanges)"
+            },
+            {
+              "value": "sub2",
+              "label": "5.2 − 1.75 (align, exchange)"
+            },
+            {
+              "value": "sub3",
+              "label": "4000 − 1 (exchange across zeros)"
+            },
+            {
+              "value": "dec",
+              "label": "12.5 + 7.86"
+            }
+          ]
+        },
+        {
+          "label": "Top number",
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "456"
+        },
+        {
+          "label": "Operation",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "+",
+          "options": [
+            {
+              "value": "+",
+              "label": "+"
+            },
+            {
+              "value": "-",
+              "label": "−"
+            }
+          ]
+        },
+        {
+          "label": "Bottom number",
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "278"
+        },
+        {
+          "label": "Play",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Next column",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Your turn",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Check my answer",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "next",
+        "play",
+        "align",
+        "ff"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Nonnegative operands through 9999.99; + or −. Subtraction requires a ≥ b; addition must remain below 10000. Native carry/borrow plans are rebuilt.",
+      "changes": "Rebuild column plans from editable operands/op; native stage fast-forward/play; addition overflow refused.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-07",
+      "name": "Multiplication and division layouts",
+      "path": "F2/F2-07-multiplication-and-division-layouts.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "67a860cc5612d5afc0932f790ff1108b45c6d2560bc3b97ee7acc13b08ba488f",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "Grid": [
+          "stage",
+          "A",
+          "B",
+          "o"
+        ],
+        "Div": [
+          "stage",
+          "pl",
+          "o"
+        ],
+        "mount": [
+          "stage",
+          "k",
+          "a",
+          "b",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "kind",
+          "a",
+          "b",
+          "ff",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "kind",
+          "a",
+          "b",
+          "ff",
+          "play",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "kind",
+          "a",
+          "b",
+          "ff",
+          "go",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "kind",
+          "a",
+          "b",
+          "play",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "kind",
+          "a",
+          "b",
+          "play",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "maxDp",
+        "presets"
+      ],
+      "presets": {
+        "g1": {
+          "label": "Grid 23 × 14",
+          "kind": "grid",
+          "a": "23",
+          "b": "14"
+        },
+        "g2": {
+          "label": "Grid 135 × 4",
+          "kind": "grid",
+          "a": "135",
+          "b": "4"
+        },
+        "g3": {
+          "label": "Grid 2.3 × 1.4",
+          "kind": "grid",
+          "a": "2.3",
+          "b": "1.4"
+        },
+        "g4": {
+          "label": "Grid 46 × 0.3",
+          "kind": "grid",
+          "a": "46",
+          "b": "0.3"
+        },
+        "d1": {
+          "label": "Short division 756 ÷ 3",
+          "kind": "div",
+          "a": "756",
+          "b": "3"
+        },
+        "d2": {
+          "label": "Short division 832 ÷ 4 (zero in quotient)",
+          "kind": "div",
+          "a": "832",
+          "b": "4"
+        },
+        "d3": {
+          "label": "Short division 7 ÷ 4 (decimal remainder)",
+          "kind": "div",
+          "a": "7",
+          "b": "4"
+        },
+        "d4": {
+          "label": "Short division 9.36 ÷ 3",
+          "kind": "div",
+          "a": "9.36",
+          "b": "3"
+        }
+      },
+      "exploreFields": {
+        "k": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "a": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "b": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "g1",
+          "options": [
+            {
+              "value": "g1",
+              "label": "Grid 23 × 14"
+            },
+            {
+              "value": "g2",
+              "label": "Grid 135 × 4"
+            },
+            {
+              "value": "g3",
+              "label": "Grid 2.3 × 1.4"
+            },
+            {
+              "value": "g4",
+              "label": "Grid 46 × 0.3"
+            },
+            {
+              "value": "d1",
+              "label": "Short division 756 ÷ 3"
+            },
+            {
+              "value": "d2",
+              "label": "Short division 832 ÷ 4 (zero in quotient)"
+            },
+            {
+              "value": "d3",
+              "label": "Short division 7 ÷ 4 (decimal remainder)"
+            },
+            {
+              "value": "d4",
+              "label": "Short division 9.36 ÷ 3"
+            }
+          ]
+        },
+        {
+          "label": "Layout",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "grid",
+          "options": [
+            {
+              "value": "grid",
+              "label": "Grid ×"
+            },
+            {
+              "value": "div",
+              "label": "Short ÷"
+            }
+          ]
+        },
+        {
+          "label": "First number",
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "23"
+        },
+        {
+          "label": "Second number",
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "14"
+        },
+        {
+          "label": "Play",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Next step",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Your turn (÷)",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Check my answer",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "next",
+        "play",
+        "ff"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Nonnegative operands through 4 whole digits and 2 decimal digits. Grid: no more than 4 nonzero parts per operand. Division: single digit 1–9 and terminating quotient within thousandths; recurring/longer quotients are rejected by lesson records and edited Explore operands.",
+      "changes": "Native multiplication/division records; zero grid widths repaired; division readout now follows actual quotient digits; unsupported edited calculations rejected; read-only keyboard changes blocked.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-08",
+      "name": "Number expander",
+      "path": "F2/F2-08-number-expander.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "3e43c2989c7662b82be8b080fd20c097b4ba60e0937b931af4a161527274f070",
+      "nativeSteps": 6,
+      "nativeDraws": {
+        "Expander": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "Builder": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "e",
+          "o",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "e",
+          "go",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "e",
+          "form",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "e",
+          "form",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "e",
+          "form",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "e",
+          "form",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "form",
+        "presets"
+      ],
+      "presets": {
+        "n1": {
+          "label": "3040.507",
+          "v": "3040.507"
+        },
+        "n2": {
+          "label": "5062.08",
+          "v": "5062.08"
+        },
+        "n3": {
+          "label": "724",
+          "v": "724"
+        },
+        "n4": {
+          "label": "0.306",
+          "v": "0.306"
+        },
+        "n5": {
+          "label": "9000.009",
+          "v": "9000.009"
+        },
+        "n6": {
+          "label": "18.25",
+          "v": "18.25"
+        }
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Expand the number",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "0",
+          "max": "100",
+          "step": null
+        },
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "n1",
+          "options": [
+            {
+              "value": "n1",
+              "label": "3040.507"
+            },
+            {
+              "value": "n2",
+              "label": "5062.08"
+            },
+            {
+              "value": "n3",
+              "label": "724"
+            },
+            {
+              "value": "n4",
+              "label": "0.306"
+            },
+            {
+              "value": "n5",
+              "label": "9000.009"
+            },
+            {
+              "value": "n6",
+              "label": "18.25"
+            }
+          ]
+        },
+        {
+          "label": "Number",
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "3040.507"
+        },
+        {
+          "label": "Form",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "add",
+          "options": [
+            {
+              "value": "add",
+              "label": "parts added"
+            },
+            {
+              "value": "mult",
+              "label": "digit × place"
+            },
+            {
+              "value": "pow",
+              "label": "powers of ten"
+            },
+            {
+              "value": "words",
+              "label": "words"
+            }
+          ]
+        },
+        {
+          "label": "Expand",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Compress",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Build from parts",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "to"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Nonnegative thousands to thousandths; 4 whole digits and 3 decimal digits. Expansion 0–1; add/mult/pow/words forms. Zero remains visible.",
+      "changes": "Exact custom expansion data; zero expansion retained; stable stage pointer capture and touch-action prevent touch cancellation on SVG redraw.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-09",
+      "name": "Standard form scaler",
+      "path": "F2/F2-09-standard-form-scaler.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "c222e7380365159315cb0cb37da602eec7fdd72d0201917881e5a9e55cd2628d",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "Scaler": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "conv",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "conv",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "go",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "minPow",
+        "maxPow",
+        "presets"
+      ],
+      "presets": {
+        "big": {
+          "label": "3.07 × 10⁴ = 30 700",
+          "m": "3.07",
+          "n": 4
+        },
+        "conv": {
+          "label": "Convert 45 000 (point hops)",
+          "m": "4.5",
+          "n": 4,
+          "convert": true
+        },
+        "small": {
+          "label": "Convert 0.00062 (point hops right)",
+          "m": "6.2",
+          "n": -4,
+          "convert": true
+        },
+        "earth": {
+          "label": "Earth–Sun ≈ 1.5 × 10⁸ km (scaled to 10⁶ strip: 1.5 × 10⁶)",
+          "m": "1.5",
+          "n": 6
+        },
+        "cell": {
+          "label": "Cell ≈ 2 × 10⁻⁶ m",
+          "m": "2",
+          "n": -6
+        },
+        "cmp": {
+          "label": "Compare 3.2 × 10⁵ and 9.1 × 10⁴",
+          "m": "3.2",
+          "n": 5,
+          "cmp": {
+            "m": "9.1",
+            "n": 4
+          }
+        }
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Power of ten",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "-6",
+          "max": "6",
+          "step": null
+        },
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "big",
+          "options": [
+            {
+              "value": "big",
+              "label": "3.07 × 10⁴ = 30 700"
+            },
+            {
+              "value": "conv",
+              "label": "Convert 45 000 (point hops)"
+            },
+            {
+              "value": "small",
+              "label": "Convert 0.00062 (point hops right)"
+            },
+            {
+              "value": "earth",
+              "label": "Earth–Sun ≈ 1.5 × 10⁸ km (scaled to 10⁶ strip: 1.5 × 10⁶)"
+            },
+            {
+              "value": "cell",
+              "label": "Cell ≈ 2 × 10⁻⁶ m"
+            },
+            {
+              "value": "cmp",
+              "label": "Compare 3.2 × 10⁵ and 9.1 × 10⁴"
+            }
+          ]
+        },
+        {
+          "label": "Number from 1 to under 10",
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "3.07"
+        },
+        {
+          "label": "× 10",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 10",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Convert (hops)",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Compare off",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "setN",
+        "convert"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Positive standard form, 1 ≤ mantissa < 10 with at most 3 decimal digits; exponent −6…6. All significant digits must fit the native −6…6 strip.",
+      "changes": "Actual custom comparison values replace fixed comparison chips; custom mantissa/exponent actions; stable pointer capture and native-strip bounds.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-10",
+      "name": "Powers and roots builder",
+      "path": "F2/F2-10-powers-and-roots-builder.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "d53604319b10ecee71a26b6678e18c7d1260f43079f989aaf86eba9bfa1e5dfa",
+      "nativeSteps": 7,
+      "nativeDraws": {
+        "Shape": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "Chain": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "mk": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "grow",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "grow",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "build",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "comb",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "comb",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "maxN",
+        "maxChain",
+        "presets"
+      ],
+      "presets": {
+        "sq": {
+          "label": "Square 7² (drag the corner)",
+          "view": "square",
+          "n": 7
+        },
+        "root": {
+          "label": "Square root: find √49",
+          "view": "square",
+          "n": 1,
+          "target": 49
+        },
+        "cube": {
+          "label": "Cube 3³",
+          "view": "cube",
+          "n": 3
+        },
+        "croot": {
+          "label": "Cube root: find ∛64",
+          "view": "cube",
+          "n": 1,
+          "target": 64
+        },
+        "chain": {
+          "label": "Index notation: build 2⁴",
+          "view": "chain",
+          "base": 2,
+          "a": 0
+        },
+        "mul": {
+          "label": "Law: 2³ × 2²",
+          "view": "law",
+          "base": 2,
+          "a": 3,
+          "b": 2,
+          "op": "×"
+        },
+        "div": {
+          "label": "Law: 3⁵ ÷ 3²",
+          "view": "law",
+          "base": 3,
+          "a": 5,
+          "b": 2,
+          "op": "÷"
+        },
+        "frac": {
+          "label": "Fractional index 8^(1/3)",
+          "view": "cube",
+          "n": 2,
+          "frac": true
+        }
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        },
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        },
+        "render.w": {
+          "kind": "factory",
+          "factory": "mk",
+          "argCount": 3
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Side length",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "1",
+          "max": "10",
+          "step": null
+        },
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "sq",
+          "options": [
+            {
+              "value": "sq",
+              "label": "Square 7² (drag the corner)"
+            },
+            {
+              "value": "root",
+              "label": "Square root: find √49"
+            },
+            {
+              "value": "cube",
+              "label": "Cube 3³"
+            },
+            {
+              "value": "croot",
+              "label": "Cube root: find ∛64"
+            },
+            {
+              "value": "chain",
+              "label": "Index notation: build 2⁴"
+            },
+            {
+              "value": "mul",
+              "label": "Law: 2³ × 2²"
+            },
+            {
+              "value": "div",
+              "label": "Law: 3⁵ ÷ 3²"
+            },
+            {
+              "value": "frac",
+              "label": "Fractional index 8^(1/3)"
+            }
+          ]
+        },
+        {
+          "label": "Base",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "2",
+          "options": [
+            {
+              "value": "2",
+              "label": "base 2"
+            },
+            {
+              "value": "3",
+              "label": "base 3"
+            },
+            {
+              "value": "4",
+              "label": "base 4"
+            },
+            {
+              "value": "5",
+              "label": "base 5"
+            },
+            {
+              "value": "10",
+              "label": "base 10"
+            }
+          ]
+        },
+        {
+          "label": "Combine",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "grow",
+        "build",
+        "combine"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Square/cube integer side 1–10; chain base 1–10, up to 8 factors. Law division requires a ≥ b; bounded combined chains.",
+      "changes": "Fractional-index readout now uses correct dynamic cube-root equality and raised stacked chalk/neon 1/3. Native growth/laws configurable; stable pointer capture.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-11",
+      "name": "Bidmas collapsing tree",
+      "path": "F2/F2-11-bidmas-collapsing-tree.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "83a1c10e5642c41f006d1a5858f4dc9aab89e4b3b2a93ccd2083727cd69cdf52",
+      "nativeSteps": 6,
+      "nativeDraws": {
+        "Tree": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "e",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "e",
+          "auto",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "e",
+          "auto",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "e",
+          "auto",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "e",
+          "auto",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "e",
+          "auto",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "presets"
+      ],
+      "presets": {
+        "p1": {
+          "label": "3 + 4 × 2",
+          "e": "3+4×2"
+        },
+        "p2": {
+          "label": "(3 + 4) × 2",
+          "e": "(3+4)×2"
+        },
+        "p3": {
+          "label": "20 − 6 ÷ 2 + 1",
+          "e": "20−6÷2+1"
+        },
+        "p4": {
+          "label": "2 + 3² × 4",
+          "e": "2+3^2×4"
+        },
+        "p5": {
+          "label": "12 ÷ 3 × 2 (left to right)",
+          "e": "12÷3×2"
+        },
+        "p6": {
+          "label": "(8 − 2)² ÷ (5 − 2)",
+          "e": "(8−2)^2÷(5−2)"
+        },
+        "p7": {
+          "label": "10 − 2 × (1 + 3) + 6",
+          "e": "10−2×(1+3)+6"
+        }
+      },
+      "exploreFields": {
+        "expression": true,
+        "strict": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "p1",
+          "options": [
+            {
+              "value": "p1",
+              "label": "3 + 4 × 2"
+            },
+            {
+              "value": "p2",
+              "label": "(3 + 4) × 2"
+            },
+            {
+              "value": "p3",
+              "label": "20 − 6 ÷ 2 + 1"
+            },
+            {
+              "value": "p4",
+              "label": "2 + 3² × 4"
+            },
+            {
+              "value": "p5",
+              "label": "12 ÷ 3 × 2 (left to right)"
+            },
+            {
+              "value": "p6",
+              "label": "(8 − 2)² ÷ (5 − 2)"
+            },
+            {
+              "value": "p7",
+              "label": "10 − 2 × (1 + 3) + 6"
+            }
+          ]
+        },
+        {
+          "label": "Expression",
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "3+4×2"
+        },
+        {
+          "label": "Next step",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Auto",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Strict order: on",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "auto"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Nonnegative number literals with + − × ÷ ^ and brackets; negative intermediate results allowed. At most 15 nodes, depth 5, expression length 120, finite intermediates within ±1 billion. Rounded nonexact readouts use ≈. Unary minus and algebraic symbols are unsupported.",
+      "changes": "Custom validated expressions; native collapse order honours bracket depth before powers and left-to-right peers; editable initial Explore expression; rounded results visibly approximate.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-12",
+      "name": "Negative place value",
+      "path": "F2/F2-12-negative-place-value.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "c77b3e5d635bc6d79cb80ab53aaca0f3c84c3d0a1b8647e6ffaaaa32ef3c1ad2",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "Mat": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "maxEach",
+        "lineMin",
+        "lineMax",
+        "autoCancel",
+        "presets"
+      ],
+      "presets": {
+        "add": {
+          "label": "4 + (−6): cross zero",
+          "pos": 4,
+          "neg": 0,
+          "addNeg": 6
+        },
+        "zp": {
+          "label": "Zero pairs: 3 + (−3)",
+          "pos": 3,
+          "neg": 3
+        },
+        "sub": {
+          "label": "2 − 5: add zero pairs, then take away",
+          "pos": 2,
+          "neg": 0
+        },
+        "nn": {
+          "label": "−3 − (−4)",
+          "pos": 0,
+          "neg": 3
+        },
+        "temp": {
+          "label": "Temperature −2 °C rises 7",
+          "pos": 0,
+          "neg": 2
+        },
+        "free": {
+          "label": "Empty mat",
+          "pos": 0,
+          "neg": 0
+        }
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "add",
+          "options": [
+            {
+              "value": "add",
+              "label": "4 + (−6): cross zero"
+            },
+            {
+              "value": "zp",
+              "label": "Zero pairs: 3 + (−3)"
+            },
+            {
+              "value": "sub",
+              "label": "2 − 5: add zero pairs, then take away"
+            },
+            {
+              "value": "nn",
+              "label": "−3 − (−4)"
+            },
+            {
+              "value": "temp",
+              "label": "Temperature −2 °C rises 7"
+            },
+            {
+              "value": "free",
+              "label": "Empty mat"
+            }
+          ]
+        },
+        {
+          "label": "+ counter",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "− counter",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Zero pair",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Cancel pairs",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Auto-cancel: off",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Clear",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "addPair",
+        "cancel"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "0–10 positive and negative counters, net value −10…10. Zero-pair cancellation preserves the signed total.",
+      "changes": "Independent lesson-bound signed counters/reset; native pair/cancel actions; computed value removed from unanswered accessible title; lesson read-only controls.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-13",
+      "name": "Number bonds and ten frames",
+      "path": "F2/F2-13-number-bonds-and-ten-frames.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "43810f9ace929011d9a234f05f4d6eae0f7601fbb094b862e70c17a4f25d2d2e",
+      "nativeSteps": 6,
+      "nativeDraws": {
+        "Bond": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "presets"
+      ],
+      "presets": {
+        "b10": {
+          "label": "Bonds to 10: 7 + ?",
+          "frames": 1,
+          "unit": 1,
+          "a": 7
+        },
+        "b20": {
+          "label": "Bonds to 20: 13 + ?",
+          "frames": 2,
+          "unit": 1,
+          "a": 13
+        },
+        "dec": {
+          "label": "Bonds to 1: 0.6 + ?",
+          "frames": 1,
+          "unit": 0.1,
+          "a": 6
+        },
+        "hun": {
+          "label": "Bonds to 100: 70 + ?",
+          "frames": 1,
+          "unit": 10,
+          "a": 7
+        },
+        "emp": {
+          "label": "Empty frame (bonds to 10)",
+          "frames": 1,
+          "unit": 1,
+          "a": 0
+        }
+      },
+      "exploreFields": {
+        "st": true,
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "b10",
+          "options": [
+            {
+              "value": "b10",
+              "label": "Bonds to 10: 7 + ?"
+            },
+            {
+              "value": "b20",
+              "label": "Bonds to 20: 13 + ?"
+            },
+            {
+              "value": "dec",
+              "label": "Bonds to 1: 0.6 + ?"
+            },
+            {
+              "value": "hun",
+              "label": "Bonds to 100: 70 + ?"
+            },
+            {
+              "value": "emp",
+              "label": "Empty frame (bonds to 10)"
+            }
+          ]
+        },
+        {
+          "label": "Show partner",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Clear",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "fill",
+        "reveal"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "One or two ten frames; 0.1, 1 or 10 per counter. Filled cells are 0…10×frames. Partner stays unknown until reveal.",
+      "changes": "Exact independent frame/unit/fill states and reset; native fill/reveal; accessible title conceals unknown partner.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-14",
+      "name": "Hundred square explorer",
+      "path": "F2/F2-14-hundred-square-explorer.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "8f33813d290136f06f16e90af459769096b83ed40d52d705ad582b1e3d8e5500",
+      "nativeSteps": 7,
+      "nativeDraws": {
+        "Square": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "pills",
+        "presets"
+      ],
+      "presets": {
+        "jump": {
+          "label": "Jumps from 23",
+          "at": 23
+        },
+        "m4": {
+          "label": "Multiples of 4",
+          "at": 24,
+          "mult": 4
+        },
+        "m9": {
+          "label": "Multiples of 9 (diagonal)",
+          "at": 45,
+          "mult": 9
+        },
+        "f24": {
+          "label": "Factors of 24",
+          "at": 24,
+          "factors": true
+        },
+        "f36": {
+          "label": "Factors of 36",
+          "at": 36,
+          "factors": true
+        },
+        "m6": {
+          "label": "Multiples of 6",
+          "at": 6,
+          "mult": 6
+        }
+      },
+      "exploreFields": {
+        "st": true,
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "jump",
+          "options": [
+            {
+              "value": "jump",
+              "label": "Jumps from 23"
+            },
+            {
+              "value": "m4",
+              "label": "Multiples of 4"
+            },
+            {
+              "value": "m9",
+              "label": "Multiples of 9 (diagonal)"
+            },
+            {
+              "value": "f24",
+              "label": "Factors of 24"
+            },
+            {
+              "value": "f36",
+              "label": "Factors of 36"
+            },
+            {
+              "value": "m6",
+              "label": "Multiples of 6"
+            }
+          ]
+        },
+        {
+          "label": "Multiples of",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "3",
+          "options": [
+            {
+              "value": "2",
+              "label": "multiples of 2"
+            },
+            {
+              "value": "3",
+              "label": "multiples of 3"
+            },
+            {
+              "value": "4",
+              "label": "multiples of 4"
+            },
+            {
+              "value": "5",
+              "label": "multiples of 5"
+            },
+            {
+              "value": "6",
+              "label": "multiples of 6"
+            },
+            {
+              "value": "7",
+              "label": "multiples of 7"
+            },
+            {
+              "value": "8",
+              "label": "multiples of 8"
+            },
+            {
+              "value": "9",
+              "label": "multiples of 9"
+            },
+            {
+              "value": "10",
+              "label": "multiples of 10"
+            },
+            {
+              "value": "11",
+              "label": "multiples of 11"
+            },
+            {
+              "value": "12",
+              "label": "multiples of 12"
+            }
+          ]
+        },
+        {
+          "label": "Light multiples",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Factors of marker",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Clear",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "jump",
+        "multiples",
+        "factors",
+        "setAt"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Cells 1–100; marker 0 means no marker. Out-of-grid jumps are refused. Multiples/factors and native jump pills retained.",
+      "changes": "Exact independent marker states and reset; jump/multiples/factor actions; grid cells now have proper grid/row parents.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-15",
+      "name": "Binary and other bases",
+      "path": "F2/F2-15-binary-and-other-bases.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "ebdb927e0a25d0dfa1ebc2410e7d77f703227ef8778e05371f527ce14a397f24",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "Chart": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "bases",
+        "presets"
+      ],
+      "presets": {
+        "b2": {
+          "label": "Binary 1011",
+          "base": 2,
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "b173": {
+          "label": "Binary 173",
+          "base": 2,
+          "d": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "b5": {
+          "label": "Base 5: 3 2 4",
+          "base": 5,
+          "d": [
+            0,
+            3,
+            2,
+            4
+          ]
+        },
+        "b8": {
+          "label": "Base 8 (octal): 7 1",
+          "base": 8,
+          "d": [
+            0,
+            0,
+            7,
+            1
+          ]
+        },
+        "b10": {
+          "label": "Base 10: 2 0 7",
+          "base": 10,
+          "d": [
+            0,
+            2,
+            0,
+            7
+          ]
+        },
+        "carry": {
+          "label": "Binary carry: 0111 + 1",
+          "base": 2,
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "exploreFields": {
+        "st": true,
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "b2",
+          "options": [
+            {
+              "value": "b2",
+              "label": "Binary 1011"
+            },
+            {
+              "value": "b173",
+              "label": "Binary 173"
+            },
+            {
+              "value": "b5",
+              "label": "Base 5: 3 2 4"
+            },
+            {
+              "value": "b8",
+              "label": "Base 8 (octal): 7 1"
+            },
+            {
+              "value": "b10",
+              "label": "Base 10: 2 0 7"
+            },
+            {
+              "value": "carry",
+              "label": "Binary carry: 0111 + 1"
+            }
+          ]
+        },
+        {
+          "label": "Base",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "2",
+          "options": [
+            {
+              "value": "2",
+              "label": "base 2"
+            },
+            {
+              "value": "3",
+              "label": "base 3"
+            },
+            {
+              "value": "5",
+              "label": "base 5"
+            },
+            {
+              "value": "8",
+              "label": "base 8"
+            },
+            {
+              "value": "10",
+              "label": "base 10"
+            }
+          ]
+        },
+        {
+          "label": "Denary number to show",
+          "tag": "input",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Show in this base",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Clear",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "add",
+        "fillTo"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Bases 2,3,5,8,10; 8 binary places or 4 other-base places. Digits 0…base−1; denary input must be an integer within capacity.",
+      "changes": "Exact independent base/digit states and reset; native carry/fill actions; fractional/blank denary input refused; read-only keyboard guard.",
+      "evidence": "audit/f2-production-2026-10-16"
+    },
+    {
+      "id": "F2-16",
+      "name": "Number set classifier",
+      "path": "F2/F2-16-number-set-classifier.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "a24fcc47bc3e4e244b620f91ec5a7ce7a0ee87ab0584d113797727cbd9a32591",
+      "nativeSteps": 6,
+      "nativeDraws": {
+        "Sets": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "pre",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "pre",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "pre",
+          "lesson"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "pre",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "startMode",
+        "preset",
+        "naturalStartsAt",
+        "presets"
+      ],
+      "presets": {
+        "mix": {
+          "label": "Mixed set",
+          "cards": [
+            "7",
+            "−3",
+            "0.75",
+            "√2",
+            "π",
+            "0",
+            "√9",
+            "0.333…"
+          ]
+        },
+        "roots": {
+          "label": "Square roots",
+          "cards": [
+            "√4",
+            "√5",
+            "√16",
+            "√0.25",
+            "√10",
+            "√1"
+          ]
+        },
+        "dec": {
+          "label": "Decimals",
+          "cards": [
+            "0.5",
+            "−2.5",
+            "0.1010010001…",
+            "3.0",
+            "0.666…",
+            "√2"
+          ]
+        },
+        "neg": {
+          "label": "Negatives",
+          "cards": [
+            "−1",
+            "−0.2",
+            "−√3",
+            "−49",
+            "−π"
+          ]
+        }
+      },
+      "exploreFields": {
+        "st": true,
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Card set",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "mix",
+          "options": [
+            {
+              "value": "mix",
+              "label": "Mixed set"
+            },
+            {
+              "value": "roots",
+              "label": "Square roots"
+            },
+            {
+              "value": "dec",
+              "label": "Decimals"
+            },
+            {
+              "value": "neg",
+              "label": "Negatives"
+            }
+          ]
+        },
+        {
+          "label": "Redraw rings",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonActions": [
+        "drop",
+        "drawRings",
+        "glow"
+      ],
+      "previewRule": "animated:true plays actions; static render previews start state. Explicit state/upto describes a selected working stage.",
+      "numericDomain": "Exact integers, finite decimals, p/q, nonnegative square roots with optional leading minus, ±π, explicitly recurring decimal cards, and the original defined nonrepeating example. Ambiguous ellipses and zero denominators rejected. Up to 12 cards; regional tray capacity still needs lesson layout review.",
+      "changes": "General exact numerical classification replaces fixed-card-only fallback; exact rational-root handling; stacked fraction cards; independent initial trays/reset; ambiguous ellipses rejected.",
+      "evidence": "audit/f2-production-2026-10-16"
+    }
+  ]
+}

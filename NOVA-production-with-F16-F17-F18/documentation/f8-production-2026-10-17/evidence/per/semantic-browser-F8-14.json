@@ -1,0 +1,808 @@
+[
+  {
+    "id": "F8-14",
+    "presetOf": null,
+    "path": "F8/F8-14-algebraic-fraction-simplifier.html",
+    "sourceSha256": "daa074ab3ffd2ff4233b42aa471ab733125a73d192e4778b82faf831c56994a3",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1120,
+            460
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "14 6 8 9",
+          "before": "14 4 6 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Common factor · 6x over 9x Two variables · 4xy over 6x Factorise first · x² + 3x Difference of squares Quadratic factorisation Mixed factor and coefficient Factorise Undo Reset Hint Explore · Two variables · 4xy over 6x A factor y remains in the numerator. Simplified answer Excluded value x ≠ Check ",
+          "after": "Common factor · 6x over 9x Two variables · 4xy over 6x Factorise first · x² + 3x Difference of squares Quadratic factorisation Mixed factor and coefficient Factorise Undo Reset Hint Explore · Two variables · 4xy over 6x A factor y remains in the numerator. Simplified answer Excluded value x ≠ Check ",
+          "bi": [
+            "Y8-BRIDGE-B",
+            "7",
+            "7"
+          ],
+          "ai": [
+            "Y8-BRIDGE-B",
+            "7",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "14 4 6 8",
+            0
+          ],
+          "narrow": [
+            "14 4 6 8",
+            0
+          ],
+          "back": [
+            "14 4 6 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1120,
+            460
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "14 6 8 9",
+          "before": "14 4 6 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Factorise Undo Reset Hint Challenge 1 of 6 · Two variables · 4xy over 6x Factorise, cancel every common factor, then give both the simplified result and excluded value. Simplified answer Excluded value x ≠ Check simplification Factorise first, then drag common factor cards onto their exact matches. ",
+          "after": "Factorise Undo Reset Hint Challenge 1 of 6 · Two variables · 4xy over 6x Factorise, cancel every common factor, then give both the simplified result and excluded value. Simplified answer Excluded value x ≠ Check simplification Factorise first, then drag common factor cards onto their exact matches. ",
+          "bi": [
+            "Y8-BRIDGE-B",
+            "7",
+            "7"
+          ],
+          "ai": [
+            "Y8-BRIDGE-B",
+            "7",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "14 4 6 8",
+            0
+          ],
+          "narrow": [
+            "14 4 6 8",
+            0
+          ],
+          "back": [
+            "14 4 6 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of: Y8-BRIDGE-A, Y8-BRIDGE-B, Y9-FACTOR-C, Y9-FACTOR-D, Y9-FACTOR-E, Y9-FACTOR-F"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1120,
+            "median": 20.63,
+            "p10": 18.75,
+            "count": 18,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 460,
+            "median": 11,
+            "p10": 11,
+            "count": 11,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 460,
+            "median": 11,
+            "p10": 11,
+            "count": 11,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\n6x\n9x\nOnly factors may cancel\nTHE CANCELLATION LAW\nMatch a whole factor\nabove AND below th",
+          "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\n4xy\n6x\nOnly factors may cancel\nTHE CANCELLATION LAW\nMatch a whole factor\nabove AND below t"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "6x",
+            "9x"
+          ],
+          "text": "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\n6x\n9x\nOnly factors may cancel\nTHE CANCELLATION LAW\nMatch a whole factor\nabove AND below the bar\nTHE ORIGINAL DOMAIN\nKeep excluded values\nThe denominator cannot be zero\nFACTOR WORKSHOP\nFACTORISE NUMERATOR\nReveal the factor products\nKeep the denominato"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "2/3",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "4xy",
+            "6x"
+          ],
+          "text": "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\n4xy\n6x\nOnly factors may cancel\nTHE CANCELLATION LAW\nMatch a whole factor\nabove AND below the bar\nTHE ORIGINAL DOMAIN\nKeep excluded values\nThe denominator cannot be zero\nFACTOR WORKSHOP\nFACTORISE NUMERATOR\nReveal the factor products\nKeep the denominat"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "2y/3",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\n6x\n9x\nOnly factors may cancel\nTHE CANCELLATION LAW\nMatch a whole factor\nabove AND below the bar\nTHE ORIGINAL DOMAIN\nKeep excluded values\nThe denominat"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\n6x\n9x\nOnly",
+          "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\n4xy\n6x\nOnl",
+          "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\nx² + 3x\nx\n",
+          "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\nx² − 9\nx −",
+          "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\nx² + 5x + ",
+          "F8-14\nFACTOR · MATCH · CANCEL\nORIGINAL EXPRESSION\nx² − 4x\n2x"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "ORIGINAL EXPRESSION\n6x\n9x\nFACTOR WORKSHOP\nFACTORISE NUMERATOR\nReveal the factor ",
+          "ORIGINAL EXPRESSION\n6x\n9x\nFACTOR WORKSHOP\nNUMERATOR FACTORS\n2\n3\nx\n3\n3\nx\n2 matchi",
+          "ORIGINAL EXPRESSION\n6x\n9x\nFACTOR WORKSHOP\nNUMERATOR FACTORS\n2\n3\nx\n3\n3\nx\n2 matchi",
+          "ORIGINAL EXPRESSION\n6x\n9x\nFACTOR WORKSHOP\nNUMERATOR FACTORS\n2\n3\nx\n3\n3\nx\n2 matchi"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "ORIGINAL EXPRESSION\n6x\n9x\nFACTOR WORKSHOP\nFACTORISE NUMERATOR\nReveal the factor products\nKeep the denominator in mind\nLook for products, not added terms.\nRETURN / REMOVE ZONE\nDrag matching pairs\nMATCH"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "ORIGINAL EXPRESSION\n4xy\n6x\nFACTOR WORKSHOP\nFACTORISE NUMERATOR\nReveal the factor",
+          "ORIGINAL EXPRESSION\n4xy\n6x\nFACTOR WORKSHOP\nNUMERATOR FACTORS\n2\n2\nx\ny\n2\n3\nx\n2 mat",
+          "ORIGINAL EXPRESSION\n4xy\n6x\nFACTOR WORKSHOP\nNUMERATOR FACTORS\n2\n2\nx\ny\n2\n3\nx\n2 mat",
+          "ORIGINAL EXPRESSION\n4xy\n6x\nFACTOR WORKSHOP\nNUMERATOR FACTORS\n2\n2\nx\ny\n2\n3\nx\n2 mat"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Common factor · 6x over 9x Two variables · 4xy over 6x Factorise first · x² + 3x Difference of squares Quadratic factorisation Mixed factor and coefficient Factorise Undo Reset Hint Explore · Common factor · 6x over 9x Split the coefficients into factors. The common x cannot be zero. Simplified answer Excluded value x ≠ Check simplification Factorise first, then drag common factor cards onto their exact matches.",
+          "inputs": [
+            "Y8-BRIDGE-A",
+            "",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "14 6 8 9",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Common factor · 6x over 9x Two variables · 4xy over 6x Factorise first · x² + 3x Difference of squares Quadratic factorisation Mixed factor and coefficient Factorise Undo Reset Hint Explore · Two variables · 4xy over 6x A factor y remains in the numerator. Simplified answer Excluded value x ≠ Check simplification Factorise first, then drag common factor cards onto their exact matches.",
+          "inputs": [
+            "Y8-BRIDGE-B",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "14 4 6 8",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Common factor · 6x over 9x Two variables · 4xy over 6x Factorise first · x² + 3x Difference of squares Quadratic factorisation Mixed factor and coefficient Factorise Undo Reset Hint Explore · Two variables · 4xy over 6x A factor y remains in the numerator. Simplified answer Excluded value x ≠ Check simplification Factorise first, then drag common factor cards onto their exact matches.",
+          "inputs": [
+            "Y8-BRIDGE-B",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "14 4 6 8",
+          "buttons": 0,
+          "vb": 460,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Factorise Undo Reset Hint Challenge 1 of 6 · Common factor · 6x over 9x Factorise, cancel every common factor, then give both the simplified result and excluded value. Simplified answer Excluded value x ≠ Check simplification Factorise first, then drag common factor cards onto their exact matches. Next fraction",
+          "inputs": [
+            "Y8-BRIDGE-A",
+            "",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "14 6 8 9",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Factorise Undo Reset Hint Challenge 1 of 6 · Two variables · 4xy over 6x Factorise, cancel every common factor, then give both the simplified result and excluded value. Simplified answer Excluded value x ≠ Check simplification Factorise first, then drag common factor cards onto their exact matches. Next fraction",
+          "inputs": [
+            "Y8-BRIDGE-B",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "14 4 6 8",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Factorise Undo Reset Hint Challenge 1 of 6 · Two variables · 4xy over 6x Factorise, cancel every common factor, then give both the simplified result and excluded value. Simplified answer Excluded value x ≠ Check simplification Factorise first, then drag common factor cards onto their exact matches. Next fraction",
+          "inputs": [
+            "Y8-BRIDGE-B",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "14 4 6 8",
+          "buttons": 0,
+          "vb": 460,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1120,
+        "median": 20.63,
+        "p10": 18.75,
+        "count": 18,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 460,
+        "median": 11,
+        "p10": 11,
+        "count": 11,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 460,
+        "median": 11,
+        "p10": 11,
+        "count": 11,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

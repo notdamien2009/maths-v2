@@ -1,0 +1,266 @@
+{
+  "F16-15": [
+    [
+      "const groupOf=id=>id<30?0:id<48?1:2;",
+      "const groupOf=id=>{const c=preset().counts;return id<c[0]?0:id<c[0]+c[1]?1:2;};"
+    ],
+    [
+      "convenience:Array.from({length:SIZE},(_,i)=>48+i)",
+      "get convenience(){const c=preset().counts;return Array.from({length:SIZE},(_,i)=>c[0]+c[1]+i)}"
+    ],
+    [
+      "let start=c===0?0:c===1?30:48;",
+      "let start=preset().counts.slice(0,c).reduce((a,b)=>a+b,0);"
+    ],
+    [
+      "box(svg,x,y,legendW,81,ROLES[i],14);say(svg,x+legendW/2,y+35,g,ROLES[i],l.m?23:27);say(svg,x+legendW/2,y+68,`${q.counts[i]} / 60`,'given',l.m?22:27);",
+      "box(svg,x,y,legendW,81,ROLES[i],14);say(svg,x+legendW/2,y+27,g,ROLES[i],l.m?23:27);const f=E('g',{'aria-label':q.counts[i]+' over 60',role:'math'},svg);say(f,x+legendW/2,y+49,q.counts[i],'given',l.m?18:22);line(f,x+legendW/2-22,y+57,x+legendW/2+22,y+57,'given',2.5);say(f,x+legendW/2,y+76,60,'given',l.m?22:27);"
+    ],
+    [
+      "'Six, four and two pupils preserve the population proportions approximately.'",
+      "'The computed quotas approximate the population proportions while keeping twelve pupils.'"
+    ],
+    [
+      "let picked=[],method='manual',seed=",
+      "let init=window.NovaLessonComponent.exploreInit(\"state\",()=>({selected:[],method:'manual'})),picked=init.selected,method=init.method,seed="
+    ]
+  ],
+  "F17-12": [
+    [
+      "fractionSVG(svg,box.x+box.w/2,box.y+84,prob,'result',sm?25:30);",
+      "const given=E('g',{'data-nova-given':'true'},svg);fractionSVG(given,box.x+box.w/2,box.y+84,prob,'result',sm?25:30);"
+    ],
+    [
+      "const choose=(options,label)=>",
+      "if(!choicesA.some(f=>f[0]*m.a[1]===m.a[0]*f[1]))choicesA.unshift(m.a.slice());if(!choicesB.some(f=>f[0]*m.b[1]===m.b[0]*f[1]))choicesB.unshift(m.b.slice());const choose=(options,label)=>"
+    ]
+  ],
+  "F18-11": [
+    [
+      "function nt(pa,x,y,t,role,z){return",
+      "function nt(pa,x,y,t,role,z){if(innerWidth<=590&&String(t).length<=14)z=Math.max(z||19,19);return"
+    ],
+    [
+      "labelSize:16,arrows:false",
+      "labelSize:innerWidth<=590?19:16,arrows:false"
+    ]
+  ],
+  "F16-02": [
+    [
+      "xStep:1,yStep:1,categories:true",
+      "xStep:1,yStep:Math.max(1,Math.ceil((data.max-bl)/12)),categories:true"
+    ],
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();ex=state();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();ex=window.NovaLessonComponent.exploreInit(\"state\",()=>(state()));"
+    ]
+  ],
+  "F16-01": [
+    [
+      "explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();activeMode='explore';window.NovaLessonComponent?.applyExploreModels();exploreState=emptyState();",
+      "explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();activeMode='explore';window.NovaLessonComponent?.applyExploreModels();exploreState=window.NovaLessonComponent.exploreInit(\"state\",()=>(emptyState()));"
+    ]
+  ],
+  "F16-03": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();exploreState=pointState();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();exploreState=window.NovaLessonComponent.exploreInit(\"state\",()=>(pointState()));"
+    ]
+  ],
+  "F16-04": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();exploration=stateFrom();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();exploration=window.NovaLessonComponent.exploreInit(\"state\",()=>(stateFrom()));"
+    ],
+    [
+      "txt=(!showCount?'collecting...':`${s.counts[i]}  ·  ${percent(s.counts[i],t).toFixed(0)}%  ·  ${ang(s.counts[i],t).toFixed(0)}°`)",
+      "txt=(!showCount?'collecting...':window.NovaLessonComponent?.active?.concealAnswers?`${s.counts[i]}  ·  ?%  ·  ?°`:`${s.counts[i]}  ·  ${percent(s.counts[i],t).toFixed(0)}%  ·  ${ang(s.counts[i],t).toFixed(0)}°`)"
+    ],
+    [
+      "Math.round(percent(s.counts[i],t))+'%'",
+      "window.NovaLessonComponent?.active?.concealAnswers?'?':Math.round(percent(s.counts[i],t))+'%'"
+    ]
+  ],
+  "F16-05": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let d=preset();window.NovaLessonComponent?.applyExploreModels();exploreState=fresh(d);",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let d=preset();window.NovaLessonComponent?.applyExploreModels();exploreState=window.NovaLessonComponent.exploreInit(\"state\",()=>(fresh(d)));"
+    ]
+  ],
+  "F16-06": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();ex=fresh();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();ex=window.NovaLessonComponent.exploreInit(\"state\",()=>(fresh()));"
+    ]
+  ],
+  "F16-07": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();ex=fresh();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();ex=window.NovaLessonComponent.exploreInit(\"state\",()=>(fresh()));"
+    ]
+  ],
+  "F16-08": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let data=fresh();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let data=window.NovaLessonComponent.exploreInit(\"state\",()=>(fresh()));"
+    ]
+  ],
+  "F16-09": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let st=fresh(),pr=p();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let st=window.NovaLessonComponent.exploreInit(\"state\",()=>(fresh())),pr=p();"
+    ]
+  ],
+  "F16-10": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let st=fresh();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let st=window.NovaLessonComponent.exploreInit(\"state\",()=>(fresh()));"
+    ]
+  ],
+  "F16-11": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let st=fresh();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let st=window.NovaLessonComponent.exploreInit(\"state\",()=>(fresh()));"
+    ]
+  ],
+  "F16-12": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let st=fresh();",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let st=window.NovaLessonComponent.exploreInit(\"state\",()=>(fresh()));"
+    ]
+  ],
+  "F16-13": [
+    [
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let state=fresh(),lesson=",
+      "function explore(panel,stage){window.NovaLessonComponent?.applyExploreModels();let state=window.NovaLessonComponent.exploreInit(\"state\",()=>(fresh())),lesson="
+    ],
+    [
+      "txt(svg,x+(w-5)/2,y+39,v,'focus',l.mobile?25:28);",
+      "const given=E('g',{'data-nova-given':'true'},svg);txt(given,x+(w-5)/2,y+39,v,'focus',l.mobile?25:28);"
+    ]
+  ],
+  "F16-16": [
+    [
+      "let records=Array(p().data.length).fill(false),question=0,audience=0;",
+      "let init=window.NovaLessonComponent.exploreInit(\"state\",()=>({records:Array(p().data.length).fill(false),question:0,audience:0})),records=init.records,question=init.question,audience=init.audience;"
+    ],
+    [
+      "lesson.value=CFG.preset;",
+      "lesson.value=CFG.preset;questionSel.value=String(question);audienceSel.value=String(audience);"
+    ]
+  ],
+  "F17-01": [
+    [
+      "let p=params(),val=.5,showComplement=false;",
+      "let p=window.NovaLessonComponent.exploreInit(\"p\",()=>(params())),val=window.NovaLessonComponent.exploreInit(\"value\",()=>(.5)),showComplement=window.NovaLessonComponent.exploreInit(\"showComplement\",()=>(false));"
+    ]
+  ],
+  "F17-02": [
+    [
+      "explore:(panel,stage,api)=>buildControls(panel,stage,api,preset(),model)",
+      "explore:(panel,stage,api)=>{model=window.NovaLessonComponent.exploreInit(\"m\",()=>(makeState(preset())));return buildControls(panel,stage,api,preset(),model)}"
+    ]
+  ],
+  "F17-04": [
+    [
+      "let p=preset(),m=createModel(p),animation=null;",
+      "let p=window.NovaLessonComponent.exploreInit(\"p\",()=>(preset())),m=window.NovaLessonComponent.exploreInit(\"m\",()=>(createModel(p))),animation=null;"
+    ],
+    [
+      "const graph=NOVA.plot.frame(svg,",
+      "const graph=NOVA.neonPlot(svg,"
+    ]
+  ],
+  "F17-05": [
+    [
+      "let p=preset(),m=newModel();",
+      "let p=window.NovaLessonComponent.exploreInit(\"p\",()=>(preset())),m=window.NovaLessonComponent.exploreInit(\"m\",()=>(newModel()));"
+    ],
+    [
+      "function setPreset(k){NOVA.ui.cancelDrag();CFG.preset=k;p=preset();m=newModel();",
+      "function setPreset(k,initial=false){NOVA.ui.cancelDrag();CFG.preset=k;if(!initial){p=preset();m=newModel();}"
+    ],
+    [
+      "pres.onchange=()=>setPreset(pres.value);window.NovaLessonComponent?.applyExploreModels();setPreset(CFG.preset);",
+      "pres.onchange=()=>setPreset(pres.value);window.NovaLessonComponent?.applyExploreModels();setPreset(CFG.preset,true);"
+    ]
+  ],
+  "F17-08": [
+    [
+      "m=empty(),status=",
+      "m=window.NovaLessonComponent.exploreInit(\"m\",()=>(empty())),status="
+    ],
+    [
+      "function change(k){NOVA.ui.cancelDrag();CFG.preset=k;p=sets[k];m=empty();m.focus=p.focus;",
+      "function change(k,initial=false){NOVA.ui.cancelDrag();CFG.preset=k;if(!initial){p=sets[k];m=empty();m.focus=p.focus;}"
+    ],
+    [
+      "change(CFG.preset);window.NovaLessonComponent?.applyExploreModels();api.onCleanup",
+      "change(CFG.preset,true);window.NovaLessonComponent?.applyExploreModels();api.onCleanup"
+    ]
+  ],
+  "F17-09": [
+    [
+      "m=newState(),status=",
+      "m=window.NovaLessonComponent.exploreInit(\"m\",()=>(newState())),status="
+    ]
+  ],
+  "F17-10": [
+    [
+      "function explore(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();let p=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit(\"p\",()=>(presets[CFG.preset])):(presets[CFG.preset])),m=newState(p);",
+      "function explore(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();let p=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit(\"p\",()=>(presets[CFG.preset])):(presets[CFG.preset])),m=window.NovaLessonComponent.exploreInit(\"m\",()=>(newState(p)));"
+    ],
+    [
+      "function setPreset(id){NOVA.ui.cancelDrag();CFG.preset=id;p=presets[id];m=newState(p);",
+      "function setPreset(id,initial=false){NOVA.ui.cancelDrag();CFG.preset=id;if(!initial){p=presets[id];m=newState(p);}"
+    ],
+    [
+      "setPreset(CFG.preset);window.NovaLessonComponent?.applyExploreModels();setInd();",
+      "setPreset(CFG.preset,true);window.NovaLessonComponent?.applyExploreModels();setInd();"
+    ]
+  ],
+  "F17-11": [
+    [
+      "m=newModel(p),busy=false;",
+      "m=window.NovaLessonComponent.exploreInit(\"m\",()=>(newModel(p))),busy=false;"
+    ],
+    [
+      "function setPreset(id){if(!PRESETS[id])return false;NOVA.ui.cancelDrag();CFG.preset=id;p=PRESETS[id];m=newModel(p);",
+      "function setPreset(id,initial=false){if(!PRESETS[id])return false;NOVA.ui.cancelDrag();CFG.preset=id;if(!initial){p=PRESETS[id];m=newModel(p);}"
+    ],
+    [
+      "setPreset(CFG.preset);window.NovaLessonComponent?.applyExploreModels();api.onCleanup",
+      "setPreset(CFG.preset,true);window.NovaLessonComponent?.applyExploreModels();api.onCleanup"
+    ]
+  ],
+  "F17-13": [
+    [
+      "window.NovaLessonComponent?.applyExploreModels();prize.value='3';",
+      "window.NovaLessonComponent?.applyExploreModels();if(![...prize.options].some(o=>+o.value===m.prize))prize.append(h('option',{value:String(m.prize),text:'£'+m.prize+' gross prize'}));prize.value=String(m.prize);"
+    ]
+  ],
+  "F17-07": [
+    [
+      "function change(v){NOVA.ui.cancelDrag();CFG.preset=v;p={...CFG.presets[v],a:[...CFG.presets[v].a],b:[...CFG.presets[v].b]};m=state();",
+      "function change(v,initial=false){NOVA.ui.cancelDrag();CFG.preset=v;if(!initial){p={...CFG.presets[v],a:[...CFG.presets[v].a],b:[...CFG.presets[v].b]};m=state();}"
+    ],
+    [
+      "change(CFG.preset);window.NovaLessonComponent?.applyExploreModels();showAdjust();",
+      "change(CFG.preset,true);window.NovaLessonComponent?.applyExploreModels();showAdjust();"
+    ]
+  ],
+  "F18-08": [
+    [
+      "nb(chip,x-78,yy-25,156,54,'op',12);nt(chip,x,yy-3,",
+      "nb(chip,x-78,yy-35,156,74,'op',12);nt(chip,x,yy-8,"
+    ],
+    [
+      "nt(chip,x,yy+16,(s.key===",
+      "nt(chip,x,yy+24,(s.key==="
+    ],
+    [
+      "nt(chip,x,yy+24,(s.key===",
+      "nt(chip,x,yy+24,' '+(s.key==="
+    ]
+  ]
+}

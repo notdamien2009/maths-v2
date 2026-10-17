@@ -1,0 +1,825 @@
+[
+  {
+    "id": "F10-13",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-13-Cubic-Reciprocal-Exponential-PREMIUM-REVIEW.html",
+    "sourceSha256": "f7858b6475f3d3d0d1e65f4c95ff66468bb293136a67fafe62af9e44b7595403",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            650,
+            654
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 12 14 16 2 3 4 5 6 7 8",
+          "before": "0 10 2 3 4 6 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "SELECT CURVE / LESSON Y8-037 · Inverse proportion tables Y9-013 · Reciprocal in context Y9-014 · Exponential growth Y9-019 · Inverse proportion algebra Extension · Exponential decay Extension · Cubic graph CONSTANT PRODUCT · k 6 READ AN INPUT VALUE · x −2 Drag the teal point on its curve, use arrow ",
+          "after": "SELECT CURVE / LESSON Y8-037 · Inverse proportion tables Y9-013 · Reciprocal in context Y9-014 · Exponential growth Y9-019 · Inverse proportion algebra Extension · Exponential decay Extension · Cubic graph CONSTANT PRODUCT · k 6 READ AN INPUT VALUE · x −2 Drag the teal point on its curve, use arrow ",
+          "bi": [
+            "Y9-013",
+            "6",
+            "-2"
+          ],
+          "ai": [
+            "Y9-013",
+            "6",
+            "-2"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 10 2 3 4 6 8",
+            1
+          ],
+          "narrow": [
+            "0 10 2 4 6 8",
+            1
+          ],
+          "back": [
+            "0 10 2 3 4 6 8",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            650,
+            654
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 12 14 16 2 3 4 5 6 7 8",
+          "before": "0 1 10 12 14 16 2 3 4 5 6 7 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Twelve jobs are shared between 3 people. How many jobs does each person do? YOUR ANSWER CheckHint",
+          "after": "Twelve jobs are shared between 3 people. How many jobs does each person do? YOUR ANSWER CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 12 14 16 2 3 4 5 6 7 8",
+            0
+          ],
+          "narrow": [
+            "0 1 10 12 14 16 2 3 4 5 6 7 8",
+            0
+          ],
+          "back": [
+            "0 1 10 12 14 16 2 3 4 5 6 7 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y8-037, Y9-013, Y9-014, Y9-019, EXT-DECAY, EXT-CUBIC"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y8-037",
+            "k": "x"
+          },
+          "errors": [
+            "state.k must be a number"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 650,
+            "median": 32.29,
+            "p10": 31.22,
+            "count": 19,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 654,
+            "median": 11.66,
+            "p10": 11.66,
+            "count": 19,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 654,
+            "median": 11.66,
+            "p10": 11.66,
+            "count": 19,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 654,
+          "median": 11.66,
+          "p10": 11.66,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 654,
+          "median": 11.66,
+          "p10": 11.66,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 654,
+          "median": 11.66,
+          "p10": 11.66,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 654,
+          "median": 11.66,
+          "p10": 11.66,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 654,
+          "median": 11.66,
+          "p10": 11.66,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\n14\n16\nINPUT · x\nOUTPUT · y\nCUBIC\nRECIPROCAL\nEXPO",
+          "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n−4\n−3\n−2\n−1\n0\n1\n2\n3\n4\n5\n4\n8\n12\n16\nINPUT · x\nOUTPUT · y\nCUBIC\nRECIPROCAL\nEXPONENT"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "y = 12 ÷ x"
+          ],
+          "text": "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\n14\n16\nINPUT · x\nOUTPUT · y\nCUBIC\nRECIPROCAL\nEXPONENTIAL\nCURVE RULE\ny = 12 ÷ x\nCONSTANT PRODUCT\nExplore the curve\nREADING POINT\nRead the x/y point\nKEY MATHEMATICAL FEATURE\nFind the key feature\nWHY THIS GRAPH M"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 1.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "y = 2ˣ"
+          ],
+          "text": "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n−4\n−3\n−2\n−1\n0\n1\n2\n3\n4\n5\n4\n8\n12\n16\nINPUT · x\nOUTPUT · y\nCUBIC\nRECIPROCAL\nEXPONENTIAL\nCURVE RULE\ny = 2ˣ\nMULTIPLICATIVE GROWTH\nExplore the curve\nREADING POINT\nRead the x/y point\nKEY MATHEMATICAL FEATURE\nFind the key feature\nWHY THIS GRAPH MATT"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 64,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\n14\n16\nINPUT · x\nOUTPUT · y\nCUBIC\nRECIPROCAL\nEXPONENTIAL\nCURVE RULE\ny = 12 ÷ x\nCONSTANT PRODUCT\nExplore the c"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n",
+            "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n",
+            "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n",
+            "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n",
+            "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n",
+            "F10 · CURVE FAMILY STUDIO\nCHALLENGE · REASON FROM THE GRAPH\n"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · CURVE FAMILY STUDIOCHALLENGE · REASON FROM THE GRAPH\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4",
+          "F10 · CURVE FAMILY STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\n14\n16",
+          "F10 · CURVE FAMILY STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\n14\n16",
+          "F10 · CURVE FAMILY STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\n14\n16"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · CURVE FAMILY STUDIOCHALLENGE · REASON FROM THE GRAPH\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\n14\n16\nINPUT · x\nOUTPUT · y\nCUBICRECIPROCALEXPONENTIAL\nCURVE RULE\ny = 12 ÷ x\nCONSTANT PRODUCT\nExplore the curv"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · CURVE FAMILY STUDIOCHALLENGE · REASON FROM THE GRAPH\n−4\n−3\n−2\n−1\n0\n1\n2\n3\n4",
+          "F10 · CURVE FAMILY STUDIONOVA · NEON CHALK\n−4\n−3\n−2\n−1\n0\n1\n2\n3\n4\n5\n4\n8\n12\n16\nINP",
+          "F10 · CURVE FAMILY STUDIONOVA · NEON CHALK\n−4\n−3\n−2\n−1\n0\n1\n2\n3\n4\n5\n4\n8\n12\n16\nINP",
+          "F10 · CURVE FAMILY STUDIONOVA · NEON CHALK\n−4\n−3\n−2\n−1\n0\n1\n2\n3\n4\n5\n4\n8\n12\n16\nINP"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Drag reading point along the curve/",
+          "active": "",
+          "panel": "SELECT CURVE / LESSON Y8-037 · Inverse proportion tables Y9-013 · Reciprocal in context Y9-014 · Exponential growth Y9-019 · Inverse proportion algebra Extension · Exponential decay Extension · Cubic graph CONSTANT PRODUCT · k 12 READ AN INPUT VALUE · x 2 Drag the teal point on its curve, use arrow keys, or adjust the sliders. The reciprocal is never defined at x = 0. MATCH THE CURVE FAMILY TO ITS RULE RECIPROCAL EXPONENTIAL CUBIC Constant x × y Same multiplier for each x-step Sign changes; passes through origin ↶ RED RETURN TRAY · REMOVE / RETRY Choose or drag a graph family to its description.",
+          "inputs": [
+            "Y8-037",
+            "12",
+            "2"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 14 16 2 3 4 5 6 7 8",
+          "buttons": 1,
+          "vb": 650,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Drag reading point along the curve/",
+          "active": "",
+          "panel": "SELECT CURVE / LESSON Y8-037 · Inverse proportion tables Y9-013 · Reciprocal in context Y9-014 · Exponential growth Y9-019 · Inverse proportion algebra Extension · Exponential decay Extension · Cubic graph CONSTANT PRODUCT · k 6 READ AN INPUT VALUE · x −2 Drag the teal point on its curve, use arrow keys, or adjust the sliders. The reciprocal is never defined at x = 0. MATCH THE CURVE FAMILY TO ITS RULE RECIPROCAL EXPONENTIAL CUBIC Constant x × y Same multiplier for each x-step Sign changes; passes through origin ↶ RED RETURN TRAY · REMOVE / RETRY Choose or drag a graph family to its description.",
+          "inputs": [
+            "Y9-013",
+            "6",
+            "-2"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 3 4 6 8",
+          "buttons": 1,
+          "vb": 650,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Drag reading point along the curve/",
+          "active": "",
+          "panel": "SELECT CURVE / LESSON Y8-037 · Inverse proportion tables Y9-013 · Reciprocal in context Y9-014 · Exponential growth Y9-019 · Inverse proportion algebra Extension · Exponential decay Extension · Cubic graph CONSTANT PRODUCT · k 6 READ AN INPUT VALUE · x −2 Drag the teal point on its curve, use arrow keys, or adjust the sliders. The reciprocal is never defined at x = 0. MATCH THE CURVE FAMILY TO ITS RULE RECIPROCAL EXPONENTIAL CUBIC Constant x × y Same multiplier for each x-step Sign changes; passes through origin ↶ RED RETURN TRAY · REMOVE / RETRY Choose or drag a graph family to its description.",
+          "inputs": [
+            "Y9-013",
+            "6",
+            "-2"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 4 6 8",
+          "buttons": 1,
+          "vb": 654,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "Twelve jobs are shared between 3 people. How many jobs does each person do? YOUR ANSWER CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 14 16 2 3 4 5 6 7 8",
+          "buttons": 0,
+          "vb": 650,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "Twelve jobs are shared between 3 people. How many jobs does each person do? YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 14 16 2 3 4 5 6 7 8",
+          "buttons": 0,
+          "vb": 650,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "Twelve jobs are shared between 3 people. How many jobs does each person do? YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 14 16 2 3 4 5 6 7 8",
+          "buttons": 0,
+          "vb": 654,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 650,
+        "median": 32.29,
+        "p10": 31.22,
+        "count": 19,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 654,
+        "median": 11.66,
+        "p10": 11.66,
+        "count": 19,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 654,
+        "median": 11.66,
+        "p10": 11.66,
+        "count": 19,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": false
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

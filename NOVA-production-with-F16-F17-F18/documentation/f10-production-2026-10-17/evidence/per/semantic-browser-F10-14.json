@@ -1,0 +1,830 @@
+[
+  {
+    "id": "F10-14",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-14-Graph-Transformer-PREMIUM-REVIEW.html",
+    "sourceSha256": "6075349855ff3b011cb251bca8f28f5fa102db69a6801c2659a296a375c4fb82",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            666,
+            670
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.27 1 10 2 3 3.73 4 6 8",
+          "before": "0 10 2 3 4 6 8 9"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "SELECT QUADRATIC / LESSON Y9-011 · Quadratic features Practice · horizontal translation Practice · vertical translation Practice · no real roots GCSE extension · reflection GCSE extension · vertical stretch HORIZONTAL · h 3 VERTICAL · k 0 CURVE MULTIPLIER · a 1 Drag the teal turning point, use its a",
+          "after": "SELECT QUADRATIC / LESSON Y9-011 · Quadratic features Practice · horizontal translation Practice · vertical translation Practice · no real roots GCSE extension · reflection GCSE extension · vertical stretch HORIZONTAL · h 3 VERTICAL · k 0 CURVE MULTIPLIER · a 1 Drag the teal turning point, use its a",
+          "bi": [
+            "SHIFT-RIGHT",
+            "3",
+            "0",
+            "1"
+          ],
+          "ai": [
+            "SHIFT-RIGHT",
+            "3",
+            "0",
+            "1"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 10 2 3 4 6 8 9",
+            1
+          ],
+          "narrow": [
+            "0 10 2 3 4 6 8",
+            1
+          ],
+          "back": [
+            "0 10 2 3 4 6 8 9",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            666,
+            670
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 10 2 3 4 6 8",
+          "before": "0 10 2 3 4 6 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "For y = (x − 2)² − 3, what is the x-coordinate of the turning point? YOUR ANSWER CheckHint",
+          "after": "For y = (x − 2)² − 3, what is the x-coordinate of the turning point? YOUR ANSWER CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 10 2 3 4 6 8",
+            0
+          ],
+          "narrow": [
+            "0 10 2 4 6 8",
+            0
+          ],
+          "back": [
+            "0 10 2 3 4 6 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y9-011, SHIFT-RIGHT, SHIFT-UP, ROOT-LESS, EXT-REFLECT, EXT-STRETCH"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y9-011",
+            "a": 0
+          },
+          "errors": [
+            "a must be non-zero, from −2 to 2 in halves"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 666,
+            "median": 28.48,
+            "p10": 28.48,
+            "count": 16,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 670,
+            "median": 14.44,
+            "p10": 14.44,
+            "count": 16,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 670,
+            "median": 14.44,
+            "p10": 14.44,
+            "count": 16,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 670,
+          "median": 14.44,
+          "p10": 14.44,
+          "count": 16,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 670,
+          "median": 14.44,
+          "p10": 14.44,
+          "count": 16,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 670,
+          "median": 14.44,
+          "p10": 14.44,
+          "count": 16,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 670,
+          "median": 14.44,
+          "p10": 14.44,
+          "count": 16,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 670,
+          "median": 14.44,
+          "p10": 14.44,
+          "count": 16,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nINPUT · x\nOUTPUT · y\nGHOST y = x²\nTRANSFORMED\nEQU",
+          "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nINPUT · x\nOUTPUT · y\nGHOST y = x²\nTRANSFORMED\nEQU"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "EQUATION"
+          ],
+          "text": "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nINPUT · x\nOUTPUT · y\nGHOST y = x²\nTRANSFORMED\nEQUATION\ny = (x − 2)² − 3\nTURNING POINT\nDecide from the graph\nSYMMETRY\nFind the symmetry line\nREAL ROOTS\nInspect the x-axis\nY-INTERCEPT\nRead y when x = 0\n\nUse the "
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "2, -3",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "EQUATION"
+          ],
+          "text": "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nINPUT · x\nOUTPUT · y\nGHOST y = x²\nTRANSFORMED\nEQUATION\ny = (x − 3)² + 0\nTURNING POINT\nDecide from the graph\nSYMMETRY\nFind the symmetry line\nREAL ROOTS\nInspect the x-axis\nY-INTERCEPT\nRead y when x = 0\n\nUse the "
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 16,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nINPUT · x\nOUTPUT · y\nGHOST y = x²\nTRANSFORMED\nEQUATION\ny = (x − 2)² − 3\nTURNING POINT\nDecide from the graph\nS"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n",
+            "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n",
+            "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n",
+            "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n",
+            "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n",
+            "F10 · TRANSFORMATION STUDIO\nCHALLENGE · FIND THE FEATURE\n−6\n"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · TRANSFORMATION STUDIOCHALLENGE · FIND THE FEATURE\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2",
+          "F10 · TRANSFORMATION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nI",
+          "F10 · TRANSFORMATION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nI",
+          "F10 · TRANSFORMATION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nI"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · TRANSFORMATION STUDIOCHALLENGE · FIND THE FEATURE\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nINPUT · x\nOUTPUT · y\nGHOST y = x²TRANSFORMED\nEQUATION\ny = (x − 2)² − 3\nTURNING POINT\nDecide from the graph\nSYM"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · TRANSFORMATION STUDIOCHALLENGE · FIND THE FEATURE\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2",
+          "F10 · TRANSFORMATION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nI",
+          "F10 · TRANSFORMATION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nI",
+          "F10 · TRANSFORMATION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n0\n2\n4\n6\n−4\n−2\n2\n4\n6\n8\n10\nI"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Move quadratic turning point on the grid/vertex 2, −3",
+          "active": "",
+          "panel": "SELECT QUADRATIC / LESSON Y9-011 · Quadratic features Practice · horizontal translation Practice · vertical translation Practice · no real roots GCSE extension · reflection GCSE extension · vertical stretch HORIZONTAL · h 2 VERTICAL · k −3 CURVE MULTIPLIER · a 1 Drag the teal turning point, use its arrow keys, or move the sliders. The purple dashed ghost never moves. You may combine transformations. MATCH THE GRAPH CHANGE TO ITS EFFECT RIGHT 3 UP 3 REFLECT STRETCH × 2 Minimum moves to x = 3 Minimum moves to y = 3 Opens downwards Parabola becomes narrower ↶ RED RETURN TRAY · REMOVE / RETRY Match each transformation to its effect.",
+          "inputs": [
+            "Y9-011",
+            "2",
+            "-3",
+            "1"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.27 1 10 2 3 3.73 4 6 8",
+          "buttons": 1,
+          "vb": 666,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Move quadratic turning point on the grid/vertex 3, 0",
+          "active": "",
+          "panel": "SELECT QUADRATIC / LESSON Y9-011 · Quadratic features Practice · horizontal translation Practice · vertical translation Practice · no real roots GCSE extension · reflection GCSE extension · vertical stretch HORIZONTAL · h 3 VERTICAL · k 0 CURVE MULTIPLIER · a 1 Drag the teal turning point, use its arrow keys, or move the sliders. The purple dashed ghost never moves. You may combine transformations. MATCH THE GRAPH CHANGE TO ITS EFFECT RIGHT 3 UP 3 REFLECT STRETCH × 2 Minimum moves to x = 3 Minimum moves to y = 3 Opens downwards Parabola becomes narrower ↶ RED RETURN TRAY · REMOVE / RETRY Match each transformation to its effect.",
+          "inputs": [
+            "SHIFT-RIGHT",
+            "3",
+            "0",
+            "1"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 3 4 6 8 9",
+          "buttons": 1,
+          "vb": 666,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Move quadratic turning point on the grid/vertex 3, 0",
+          "active": "",
+          "panel": "SELECT QUADRATIC / LESSON Y9-011 · Quadratic features Practice · horizontal translation Practice · vertical translation Practice · no real roots GCSE extension · reflection GCSE extension · vertical stretch HORIZONTAL · h 3 VERTICAL · k 0 CURVE MULTIPLIER · a 1 Drag the teal turning point, use its arrow keys, or move the sliders. The purple dashed ghost never moves. You may combine transformations. MATCH THE GRAPH CHANGE TO ITS EFFECT RIGHT 3 UP 3 REFLECT STRETCH × 2 Minimum moves to x = 3 Minimum moves to y = 3 Opens downwards Parabola becomes narrower ↶ RED RETURN TRAY · REMOVE / RETRY Match each transformation to its effect.",
+          "inputs": [
+            "SHIFT-RIGHT",
+            "3",
+            "0",
+            "1"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 3 4 6 8",
+          "buttons": 1,
+          "vb": 670,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "For y = (x − 2)² − 3, what is the x-coordinate of the turning point? YOUR ANSWER CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 3 4 6 8",
+          "buttons": 0,
+          "vb": 666,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "For y = (x − 2)² − 3, what is the x-coordinate of the turning point? YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 3 4 6 8",
+          "buttons": 0,
+          "vb": 666,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "For y = (x − 2)² − 3, what is the x-coordinate of the turning point? YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 4 6 8",
+          "buttons": 0,
+          "vb": 670,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 666,
+        "median": 28.48,
+        "p10": 28.48,
+        "count": 16,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 670,
+        "median": 14.44,
+        "p10": 14.44,
+        "count": 16,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 670,
+        "median": 14.44,
+        "p10": 14.44,
+        "count": 16,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": false
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

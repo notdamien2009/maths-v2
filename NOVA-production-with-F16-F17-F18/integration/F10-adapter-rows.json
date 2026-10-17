@@ -1,0 +1,3978 @@
+[
+  {
+    "id": "F10-16",
+    "path": "F10/F10-16-circle-on-a-grid.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "47ff4c1e7957b6f2e2cf971ac0f74bf2f72c19df152a1d92d05518dda323d989",
+    "sha256": "3fa49248ad130ab4d73157064b29fcf8bb5e9cccf2f9971716d587243f4b30ed",
+    "engineId": "F10-16",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 13,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Start with the grid",
+        "mood": "explain",
+        "narration": "The x coordinate goes across and the y coordinate goes up or down. Read both axes before placing a point.",
+        "prompt": "What does the first coordinate tell you?"
+      },
+      "config": {
+        "id": "F10-16",
+        "family": "F10",
+        "startMode": "guided",
+        "defaultPreset": "Y9-040",
+        "presets": {
+          "Y9-040": {
+            "label": "Y9-040 · Coordinate geometry",
+            "centre": [
+              2,
+              -1
+            ],
+            "radius": 3,
+            "context": "Use coordinates and symmetry to describe this circle.",
+            "level": "Year 9 · CORE"
+          },
+          "Y9-040-SYMMETRY": {
+            "label": "Y9-040 · Four equal radii",
+            "centre": [
+              -2,
+              1
+            ],
+            "radius": 2,
+            "context": "Every marked point has the same distance from the centre.",
+            "level": "Year 9 · CORE"
+          },
+          "Y9-040-DIAMETER": {
+            "label": "Y9-040 · Diameter and radius",
+            "centre": [
+              0,
+              0
+            ],
+            "radius": 4,
+            "context": "A diameter crosses the centre and measures twice the radius.",
+            "level": "Year 9 · CORE"
+          },
+          "Y9-040-PYTH": {
+            "label": "Y9-040 · Coordinate distance",
+            "centre": [
+              0,
+              0
+            ],
+            "radius": 5,
+            "context": "A 3–4–5 right triangle reaches a point on the circle.",
+            "level": "Year 9 · CORE"
+          },
+          "GCSE-ORIGIN": {
+            "label": "GCSE EXT · x² + y² = r²",
+            "centre": [
+              0,
+              0
+            ],
+            "radius": 4,
+            "context": "Every point satisfies x² + y² = 16.",
+            "level": "GCSE · EXTENSION"
+          },
+          "GCSE-SHIFT": {
+            "label": "GCSE EXT · Translated circle",
+            "centre": [
+              -2,
+              -1
+            ],
+            "radius": 3,
+            "context": "For a centre away from the origin, subtract its coordinates before squaring.",
+            "level": "GCSE · EXTENSION"
+          }
+        },
+        "events": {
+          "value": [
+            "preset",
+            "radius",
+            "centre",
+            "card",
+            "answer",
+            "reset"
+          ],
+          "types": [
+            "mode",
+            "step",
+            "correct",
+            "hintUsed"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "135e74c2f39861cec9b453cb5c761eac3588370e53666463d8e0c8a17fcb9bc7",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-17",
+    "path": "F10/F10-17-graph-matching-sorter.html",
+    "api": "1.0.0",
+    "models": [
+      "state"
+    ],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "cf881405f54835d57ad528ab3796ff9ba5c167d595084f204203a6683be735b8",
+    "sha256": "34f4198322efef9ce5b0cbd9353b3bab3c916899366aefbbee370ec68a9d747b",
+    "engineId": "F10-17",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 15,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Read the signatures",
+        "mood": "explain",
+        "narration": "Three graphs can share the same axes but have different rules. Look at the shape, the gradient and where each meets the y axis.",
+        "prompt": "Which graph crosses the y-axis above zero?"
+      },
+      "config": {
+        "id": "F10-17",
+        "family": "F10",
+        "startMode": "guided",
+        "defaultPreset": "Y8-023",
+        "presets": {
+          "Y8-023": {
+            "label": "Y8-023 · y-intercept and y = mx + c",
+            "x": [
+              -2,
+              4
+            ],
+            "y": [
+              -4,
+              8
+            ],
+            "concept": "Read the y-intercept where x = 0.",
+            "context": "Three straight lines; each has its own gradient and intercept.",
+            "graphs": [
+              {
+                "id": "A",
+                "kind": "linear",
+                "m": 2,
+                "c": 1,
+                "colour": "focus"
+              },
+              {
+                "id": "B",
+                "kind": "linear",
+                "m": 2,
+                "c": 0,
+                "colour": "result"
+              },
+              {
+                "id": "C",
+                "kind": "linear",
+                "m": -1,
+                "c": 2,
+                "colour": "op"
+              }
+            ],
+            "cards": [
+              {
+                "id": "c1",
+                "text": "y = 2x + 1",
+                "target": "A",
+                "hint": "Look for a rise of two, crossing y at one."
+              },
+              {
+                "id": "c2",
+                "text": "y = 2x",
+                "target": "B",
+                "hint": "Direct proportional lines go through the origin."
+              },
+              {
+                "id": "c3",
+                "text": "y = −x + 2",
+                "target": "C",
+                "hint": "Negative gradient: it falls as x rises."
+              }
+            ]
+          },
+          "Y8-032": {
+            "label": "Y8-032 · Linear and quadratic",
+            "x": [
+              -3,
+              3
+            ],
+            "y": [
+              -4,
+              8
+            ],
+            "concept": "A straight graph has a constant gradient; a quadratic bends.",
+            "context": "Look for a straight line, an upward U-shape and a downward arch.",
+            "graphs": [
+              {
+                "id": "A",
+                "kind": "quadratic",
+                "a": 1,
+                "h": 0,
+                "k": -1,
+                "colour": "focus"
+              },
+              {
+                "id": "B",
+                "kind": "linear",
+                "m": 1,
+                "c": 1,
+                "colour": "result"
+              },
+              {
+                "id": "C",
+                "kind": "quadratic",
+                "a": -1,
+                "h": 0,
+                "k": 5,
+                "colour": "op"
+              }
+            ],
+            "cards": [
+              {
+                "id": "c1",
+                "text": "y = x² − 1",
+                "target": "A",
+                "hint": "Positive x-squared makes the curve open upwards."
+              },
+              {
+                "id": "c2",
+                "text": "y = x + 1",
+                "target": "B",
+                "hint": "Each equal horizontal move adds one vertically."
+              },
+              {
+                "id": "c3",
+                "text": "y = 5 − x²",
+                "target": "C",
+                "hint": "Negative x-squared makes the arch open downwards."
+              }
+            ]
+          },
+          "Y8-033": {
+            "label": "Y8-033 · Graphical problem solving",
+            "x": [
+              -1,
+              5
+            ],
+            "y": [
+              -3,
+              7
+            ],
+            "concept": "Identify rises, falls and points where a graph meets the axes.",
+            "context": "Choose the graph from its key feature, not simply its colour.",
+            "graphs": [
+              {
+                "id": "A",
+                "kind": "linear",
+                "m": 1,
+                "c": 1,
+                "colour": "focus"
+              },
+              {
+                "id": "B",
+                "kind": "linear",
+                "m": -1,
+                "c": 5,
+                "colour": "op"
+              },
+              {
+                "id": "C",
+                "kind": "quadratic",
+                "a": 1,
+                "h": 2,
+                "k": -1,
+                "colour": "result"
+              }
+            ],
+            "cards": [
+              {
+                "id": "c1",
+                "text": "Increases by 1 each step",
+                "target": "A",
+                "hint": "Follow it from left to right: this line climbs steadily."
+              },
+              {
+                "id": "c2",
+                "text": "Decreases by 1 each step",
+                "target": "B",
+                "hint": "Follow it from left to right: this line falls steadily."
+              },
+              {
+                "id": "c3",
+                "text": "Two x-axis crossings",
+                "target": "C",
+                "hint": "This curved graph meets y = 0 at x = 1 and x = 3."
+              }
+            ]
+          },
+          "Y9-012": {
+            "label": "Y9-012 · Linear vs quadratic models",
+            "x": [
+              0,
+              6
+            ],
+            "y": [
+              -2,
+              12
+            ],
+            "concept": "The context tells you whether the rate stays constant.",
+            "context": "Fare, fixed entry cost, and a ball rising then falling.",
+            "graphs": [
+              {
+                "id": "A",
+                "kind": "linear",
+                "m": 2,
+                "c": 3,
+                "colour": "result"
+              },
+              {
+                "id": "B",
+                "kind": "quadratic",
+                "a": -1,
+                "h": 3,
+                "k": 9,
+                "colour": "focus"
+              },
+              {
+                "id": "C",
+                "kind": "linear",
+                "m": 0,
+                "c": 4,
+                "colour": "op"
+              }
+            ],
+            "cards": [
+              {
+                "id": "c1",
+                "text": "Taxi: £3 then £2 per mile",
+                "target": "A",
+                "hint": "There is a starting fare and a constant amount per mile."
+              },
+              {
+                "id": "c2",
+                "text": "Ball goes up, then down",
+                "target": "B",
+                "hint": "The turning point is a peak rather than a constant rate."
+              },
+              {
+                "id": "c3",
+                "text": "Fixed £4 entry fee",
+                "target": "C",
+                "hint": "The amount does not change with x."
+              }
+            ]
+          },
+          "Y9-015": {
+            "label": "Y9-015 · Piecewise graphs",
+            "x": [
+              -4,
+              4
+            ],
+            "y": [
+              -2,
+              7
+            ],
+            "concept": "Read each segment and notice what happens at the join.",
+            "context": "One continuous rule change, one jump, and one ordinary straight line.",
+            "graphs": [
+              {
+                "id": "A",
+                "kind": "piece-plateau",
+                "colour": "focus"
+              },
+              {
+                "id": "B",
+                "kind": "piece-jump",
+                "colour": "op"
+              },
+              {
+                "id": "C",
+                "kind": "linear",
+                "m": 0.5,
+                "c": 2,
+                "colour": "result"
+              }
+            ],
+            "cards": [
+              {
+                "id": "c1",
+                "text": "Rises, then stays at y = 3",
+                "target": "A",
+                "hint": "The line climbs to (1,3) then becomes horizontal."
+              },
+              {
+                "id": "c2",
+                "text": "Graph jumps at x = 0",
+                "target": "B",
+                "hint": "Look for a gap between the two pieces at the join."
+              },
+              {
+                "id": "c3",
+                "text": "One straight line throughout",
+                "target": "C",
+                "hint": "There is no change of rule or jump."
+              }
+            ]
+          },
+          "Y9-020": {
+            "label": "Y9-020 · Direct and inverse proportion",
+            "x": [
+              0,
+              6
+            ],
+            "y": [
+              0,
+              9
+            ],
+            "concept": "Direct proportion passes through (0,0); inverse has constant product.",
+            "context": "Three very different signatures: through the origin, a reciprocal curve and a shifted line.",
+            "graphs": [
+              {
+                "id": "A",
+                "kind": "linear",
+                "m": 2,
+                "c": 0,
+                "colour": "result"
+              },
+              {
+                "id": "B",
+                "kind": "inverse",
+                "k": 8,
+                "colour": "focus"
+              },
+              {
+                "id": "C",
+                "kind": "linear",
+                "m": 1,
+                "c": 2,
+                "colour": "op"
+              }
+            ],
+            "cards": [
+              {
+                "id": "c1",
+                "text": "Direct: y = 2x",
+                "target": "A",
+                "hint": "The straight line passes exactly through the origin."
+              },
+              {
+                "id": "c2",
+                "text": "Inverse: xy = 8",
+                "target": "B",
+                "hint": "As x doubles, y halves; x × y stays eight."
+              },
+              {
+                "id": "c3",
+                "text": "Not direct: y = x + 2",
+                "target": "C",
+                "hint": "This line is straight, but it misses the origin."
+              }
+            ]
+          }
+        },
+        "events": {
+          "value": [
+            "preset",
+            "match",
+            "unmatch",
+            "selection",
+            "readPoint",
+            "answer",
+            "reset"
+          ],
+          "types": [
+            "step",
+            "mode",
+            "correct",
+            "hintUsed"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "8a3ab9c7dbbca96ccdf9df6a83c744c866e68d2faaa1ff0186f33f64b99c1037",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-20",
+    "path": "F10/F10-20-Tangent-and-Area-under-Curve-Estimator.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {},
+    "exploreFields": {},
+    "original_sha256": "91eb3a7a5f45880a3c01fff40377f19061b93b70925b9d0198eefa0c19e14160",
+    "sha256": "3fa35dffba2f81ffe5d27cc691e8cb5f08d648cb3df25c79038851720f23689d",
+    "engineId": "F10-20",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 18,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 1,
+      "data": {
+        "name": "Draw the curve",
+        "mood": "point",
+        "narration": "First trace the changing curve across the coordinate grid.",
+        "prompt": "Is this a straight line?"
+      },
+      "models": {
+        "S": {
+          "preset": "GCSE-QUADRATIC",
+          "kind": "quadratic",
+          "x": 3,
+          "a": 1,
+          "b": 4,
+          "n": 4,
+          "mode": "explore",
+          "correct": false
+        }
+      }
+    },
+    "previous_sha256": "bc3094f55a338c17180f8310a0f0b58bd784095b02a1583ea1096c8f8fc36fdf",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-01",
+    "path": "F10/NOVA-F10-01-Four-Quadrant-Grid-Premium-Preview.html",
+    "api": "1.0.0",
+    "models": [
+      "ST"
+    ],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "renderBoard": [
+        "stage",
+        "spec"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "64ceb24817551b16cff5e92bc6236c3ba4e6db052d3a1988dba6b6e5d377997d",
+    "sha256": "f2bbe8ebf3743b39c0534a837987d40480a5bc35c01b7f95261c5f849d87b3f3",
+    "engineId": "F10-01",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "axes",
+        "narration": "The horizontal axis is x and the vertical axis is y. They cross at the origin: zero, zero.",
+        "prompt": "Which axis runs left to right?",
+        "mood": "neutral"
+      },
+      "config": {
+        "id": "F10-01",
+        "family": "F10",
+        "startMode": "guided",
+        "preset": "Y7-038",
+        "bounds": {
+          "min": -5,
+          "max": 5,
+          "step": 1
+        },
+        "selected": "A",
+        "presets": {
+          "Y7-038": {
+            "label": "Y7 · Coordinates and shapes",
+            "range": 5,
+            "kind": "points",
+            "points": [
+              {
+                "id": "A",
+                "x": 3,
+                "y": 2
+              },
+              {
+                "id": "B",
+                "x": -4,
+                "y": 3
+              },
+              {
+                "id": "C",
+                "x": -2,
+                "y": -3
+              },
+              {
+                "id": "D",
+                "x": 4,
+                "y": -2
+              }
+            ]
+          },
+          "Y8-024": {
+            "label": "Y8 · Plotting straight lines",
+            "range": 5,
+            "kind": "line",
+            "formula": {
+              "m": 1,
+              "c": 1
+            },
+            "points": [
+              {
+                "id": "A",
+                "x": -3,
+                "y": -2
+              },
+              {
+                "id": "B",
+                "x": -1,
+                "y": 0
+              },
+              {
+                "id": "C",
+                "x": 1,
+                "y": 2
+              },
+              {
+                "id": "D",
+                "x": 3,
+                "y": 4
+              }
+            ]
+          },
+          "Y8-066": {
+            "label": "Y8 · Scatter graph and trend",
+            "range": 5,
+            "kind": "scatter",
+            "points": [
+              {
+                "id": "A",
+                "x": -4,
+                "y": -3
+              },
+              {
+                "id": "B",
+                "x": -2,
+                "y": -1
+              },
+              {
+                "id": "C",
+                "x": 1,
+                "y": 1
+              },
+              {
+                "id": "D",
+                "x": 3,
+                "y": 4
+              }
+            ],
+            "additional": [
+              [
+                -3,
+                -2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "formula": {
+              "m": 0.8,
+              "c": 0.5
+            }
+          },
+          "Y9-009": {
+            "label": "Y9 · Coordinates and algebra",
+            "range": 5,
+            "kind": "line",
+            "formula": {
+              "m": -1,
+              "c": 2
+            },
+            "points": [
+              {
+                "id": "A",
+                "x": -2,
+                "y": 4
+              },
+              {
+                "id": "B",
+                "x": 0,
+                "y": 3
+              },
+              {
+                "id": "C",
+                "x": 2,
+                "y": 0
+              },
+              {
+                "id": "D",
+                "x": 4,
+                "y": -2
+              }
+            ]
+          }
+        },
+        "events": {
+          "value": [
+            "point",
+            "selected",
+            "preset",
+            "quadrant",
+            "coordinates",
+            "pointCount",
+            "challengePoint",
+            "reset"
+          ],
+          "types": [
+            "step",
+            "correct",
+            "hintUsed",
+            "mode"
+          ]
+        },
+        "challenge": {
+          "targets": [
+            [
+              -3,
+              2
+            ],
+            [
+              4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ]
+          ],
+          "maxAttemptsPerTask": 0,
+          "gridTolerance": 0
+        }
+      }
+    },
+    "previous_sha256": "33539146434325ba8a122ddfbe8ff7a12273a9d0a8023cbc40f625b47e04e3ac",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-02",
+    "path": "F10/NOVA-F10-02-Shape-on-Grid-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "BASE",
+      "tasks",
+      "teaching"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "scene.source": {
+        "kind": "factory",
+        "factory": "copy",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "5aa7bf38111f04df9eb4dceec8c463e1039897a79986348a59e351d421ba4e1e",
+    "sha256": "982022825196e2218ba6ec75a68bbc22ec6fad471ff934d5cd65c62a32396d17",
+    "engineId": "F10-02",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "source",
+        "narration": "Start with the original triangle ABC. Each vertex sits at an exact grid intersection.",
+        "prompt": "Where is vertex A?",
+        "mood": "explain"
+      },
+      "scene": {
+        "function": "scene",
+        "arguments": {
+          "o": {
+            "op": "identity",
+            "dx": 0,
+            "dy": 0,
+            "base": [
+              {
+                "id": "A",
+                "x": -1,
+                "y": 1
+              },
+              {
+                "id": "B",
+                "x": -1,
+                "y": 2
+              },
+              {
+                "id": "C",
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "showImage": false,
+            "pose": "explain",
+            "caption": "Start with the original triangle ABC. Each vertex sits at an exact grid intersection.",
+            "teaching": true,
+            "step": 0
+          }
+        }
+      }
+    },
+    "previous_sha256": "15d529533fab055ddd90f82044162d842d30aa8afe67c30db94cdef73f639694",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-03",
+    "path": "F10/NOVA-F10-03-Midpoint-and-Distance-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "T",
+      "Q"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "ba561f4f92f635b42964cfa6f5e466c5ba3b1bf57398fe7fcb7ff1790e1445eb",
+    "sha256": "d1ffcb896430a0e49992585825ba82aee7f9bfdfe5427f48a2f718319650e8b9",
+    "engineId": "F10-03",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 8,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "plot-A",
+        "narration": "Start with point A. Read across first, then up or down.",
+        "prompt": "Which is the x-coordinate of A?",
+        "mood": "explain"
+      },
+      "scene": {
+        "function": "scene",
+        "arguments": {
+          "o": {
+            "a": {
+              "x": -2,
+              "y": -2
+            },
+            "b": {
+              "x": 1,
+              "y": 1
+            },
+            "view": "points",
+            "pose": "explain",
+            "caption": "Start with point A. Read across first, then up or down.",
+            "teaching": true,
+            "step": 0
+          }
+        }
+      }
+    },
+    "previous_sha256": "a34f509089d13256374f23b52e86037dc080b90d8ffebe8b6edb543044ca7893",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-04",
+    "path": "F10/NOVA-F10-04-Table-to-Graph-Plotter-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "state"
+    ],
+    "tables": [
+      "STEPS",
+      "Q"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "options"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "4f278ae8d3ec76f4c6372952b18f17a7f02f4d72435200246a260cd107fe99cf",
+    "sha256": "57e70783545c54783a47de42764bcfbd797ecf53048124ad5774e76f72cc7207",
+    "engineId": "F10-04",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 8,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Read the rule",
+        "narration": "The rule tells us how to calculate each y-value. Start with the table.",
+        "prompt": "What does each row in the table show?",
+        "mood": "explain"
+      },
+      "config": {
+        "id": "F10-04",
+        "family": "F10",
+        "startMode": "guided",
+        "preset": "Y7-039",
+        "bounds": [
+          -5,
+          5
+        ],
+        "presets": {
+          "Y7-039": {
+            "label": "Y7 · Tables and straight-line graphs",
+            "rule": "y = x + 2",
+            "context": "Build a coordinate pair from each table row",
+            "kind": "linear",
+            "xs": [
+              -2,
+              -2,
+              -1,
+              0,
+              1
+            ],
+            "ys": [
+              -1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "xAxis": "x",
+            "yAxis": "y"
+          },
+          "Y7-072": {
+            "label": "Y7 · Line graphs and trends",
+            "rule": "Recorded values",
+            "context": "A changing quantity: join consecutive measurements",
+            "kind": "trend",
+            "xs": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "ys": [
+              1,
+              3,
+              2,
+              4,
+              5
+            ],
+            "xAxis": "Time",
+            "yAxis": "Value"
+          },
+          "Y8-022": {
+            "label": "Y8 · Straight-line gradient",
+            "rule": "y = 2x + 1",
+            "context": "Each step to the right increases y by two",
+            "kind": "linear",
+            "xs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "ys": [
+              -3,
+              -1,
+              1,
+              3,
+              5
+            ],
+            "xAxis": "x",
+            "yAxis": "y"
+          },
+          "Y8-024": {
+            "label": "Y8 · Plotting straight lines",
+            "rule": "y = −x + 1",
+            "context": "A line with negative gradient",
+            "kind": "linear",
+            "xs": [
+              -3,
+              -1,
+              0,
+              2,
+              4
+            ],
+            "ys": [
+              4,
+              2,
+              1,
+              -1,
+              -3
+            ],
+            "xAxis": "x",
+            "yAxis": "y"
+          },
+          "Y8-030": {
+            "label": "Y8 · Quadratic tables and graphs",
+            "rule": "y = x² − 3",
+            "context": "Plot pairs then trace a smooth parabola",
+            "kind": "quadratic",
+            "xs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "ys": [
+              1,
+              -2,
+              -3,
+              -2,
+              1
+            ],
+            "xAxis": "x",
+            "yAxis": "y"
+          }
+        },
+        "events": {
+          "value": [
+            "preset",
+            "row",
+            "point",
+            "reset",
+            "rule",
+            "view",
+            "challengeValue"
+          ],
+          "types": [
+            "mode",
+            "step",
+            "correct",
+            "hintUsed"
+          ]
+        },
+        "challenge": {
+          "tasks": [
+            "generate-value",
+            "plot-point",
+            "quadratic-value"
+          ],
+          "maxAttemptsPerTask": 0
+        }
+      }
+    },
+    "previous_sha256": "07f860ac7a0610a4a1e29cba64bbd34a45f19318958f0c8061c6ad324fb4b120",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-05",
+    "path": "F10/NOVA-F10-05-y-mx-plus-c-Explorer-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STEPS",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "opts"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "44ef93afebe33c795a8bc4969c2faab428508cda8e160a551297a5dc65bfa376",
+    "sha256": "59280dfd4398110cc29a29ea82b8d8502030cf8d9319a9970bcf53839961ee98",
+    "engineId": "F10-05",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 8,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Meet the axes",
+        "narration": "A line is a set of matching x and y values.",
+        "prompt": "Which axis shows the input x?",
+        "mood": "explain"
+      },
+      "models": {
+        "S": {
+          "preset": "Y8-023",
+          "m": 0,
+          "c": 3,
+          "show": "all",
+          "wrong": 0,
+          "task": 0,
+          "entry": "",
+          "solved": false
+        }
+      }
+    },
+    "previous_sha256": "6a374acc785a26eadb6832dfa4350afa225cddbfd206a662ce8f03a271281674",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-06",
+    "path": "F10/NOVA-F10-06-Gradient-Visual-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORIES",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "888e66197559d914c5584a1fd96de610a1c36e51d804c1aa6b748666aac12c7c",
+    "sha256": "352e2a02d8de276cbe3393d975e0b8422519af92d02911136e5ee994d0086bf9",
+    "engineId": "F10-06",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 9,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "The coordinate studio",
+        "narration": "Begin with a horizontal x-axis and a vertical y-axis. The scale matters.",
+        "prompt": "What is measured along each axis?",
+        "mood": "explain",
+        "view": 0
+      },
+      "models": {
+        "S": {
+          "preset": "Y8-022",
+          "A": [
+            -2,
+            -2
+          ],
+          "B": [
+            1,
+            4
+          ],
+          "task": 0,
+          "wrong": 0,
+          "solved": false,
+          "entry": ""
+        }
+      }
+    },
+    "previous_sha256": "c2abb4807f5b4756b862cd325c8a1de062b05116ac193393671f798eaeb934b8",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-07",
+    "path": "F10/NOVA-F10-07-Parallel-and-Perpendicular-Lines-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORIES",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "args"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "de05baf6ade88b639c8f84b7a5d1701ff89db2c7a400c139047307620114c1b8",
+    "sha256": "8050eb4001981237e0ed0a45af3ad6e23bf87aa6a9c2b149b835818e90b85e38",
+    "engineId": "F10-07",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 10,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "A coordinate studio",
+        "narration": "Two straight lines share a coordinate grid. We can test their relationship using gradient.",
+        "prompt": "Which direction does the x-axis measure?",
+        "mood": "explain",
+        "view": 0
+      },
+      "config": {
+        "id": "F10-07",
+        "family": "F10",
+        "defaultPreset": "Y8-025",
+        "startMode": "guided",
+        "presets": {
+          "Y8-025": {
+            "label": "Y8-025 · Parallel lines and gradient",
+            "m": 3,
+            "c": -1,
+            "c2": 2,
+            "context": "Matching steepness · rise 2, run 1",
+            "year": 8
+          },
+          "Y9-010": {
+            "label": "Y9-010 · Straight-line equations",
+            "m": -2,
+            "c": 1,
+            "c2": -1,
+            "context": "From equations to right-angle proofs",
+            "year": 9
+          },
+          "Y9-040": {
+            "label": "Y9-040 · Coordinate geometry",
+            "m": 0.5,
+            "c": -1,
+            "c2": 2,
+            "context": "Fractional gradient · reciprocal reasoning",
+            "year": 9
+          }
+        },
+        "events": {
+          "value": [
+            "preset",
+            "gradient2",
+            "intercept2",
+            "relation",
+            "answer",
+            "reset",
+            "edge"
+          ],
+          "types": [
+            "mode",
+            "step",
+            "correct",
+            "hintUsed"
+          ]
+        },
+        "challenge": {
+          "tasks": [
+            "parallel-slope",
+            "perpendicular-slope",
+            "drag-parallel",
+            "drag-perpendicular",
+            "horizontal-vertical"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "d7bbedbbc0b6e5a386f2df93da69e4e0051a6162ed1fe2bff3960f442ad1de5f",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-08",
+    "path": "F10/NOVA-F10-08-Graph-Intersections-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORIES",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "options"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "4f3e49aa66c38ff07d48abb1eb5f022c97d71310e059b6480f19868eade72595",
+    "sha256": "9abfe46b177a55ba85842196e972d29d3aa8d7efc54b37203565797f640a9f58",
+    "engineId": "F10-08",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood",
+        "view"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 10,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "The shared coordinate plane",
+        "narration": "Two relationships share the same axes. The intersection is where both give the same output.",
+        "prompt": "What do the two graphs share?",
+        "mood": "explain",
+        "view": 0
+      },
+      "models": {
+        "S": {
+          "preset": "Y8-029",
+          "shift": 1,
+          "candidate": 1.5,
+          "variant": "normal",
+          "task": 0,
+          "solved": false,
+          "wrong": 0,
+          "entry": [
+            "",
+            ""
+          ],
+          "marker": true,
+          "card": {
+            "A": null,
+            "B": null
+          },
+          "selected": null
+        }
+      }
+    },
+    "previous_sha256": "b90ad445491cc13f4f1b636c10998d411d77bf42853307826b3428c500b60578",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-09",
+    "path": "F10/NOVA-F10-09-Real-Life-Graph-Interpreter-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "cc2db98e1ba52c03c5c7d1190e99976811548f36cd5c02af30a21f1adbf8409d",
+    "sha256": "55da5dd7818ea5ed1cead51ca5c852a5faeeda87b3e0f817fac2a7e43e516d09",
+    "engineId": "F10-09",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 12,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Start with meaningful axes",
+        "narration": "Read both axis labels and units. Horizontal is the input; vertical is the measured quantity.",
+        "prompt": "Can you say what one square means?",
+        "mood": "explain"
+      },
+      "models": {
+        "S": {
+          "preset": "Y8-026",
+          "x": 3.5,
+          "interval": [
+            2,
+            5
+          ],
+          "task": 0,
+          "wrong": 0,
+          "solved": false,
+          "entry": "",
+          "card": {
+            "flat": false,
+            "curve": false,
+            "growth": false
+          },
+          "selected": null
+        }
+      }
+    },
+    "previous_sha256": "bf0f47192021658a5b0e78089ae92e282b62b570e7e944732e27a2a577c5b22c",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-10",
+    "path": "F10/NOVA-F10-10-Distance-Time-Graph-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "adb902ada1169fd02014a8b10c260c4864e16f5940a468a9d71b2e1e25036289",
+    "sha256": "30477d5b04a35526b77b5247f80a5cfc7f38cc67df45a0d3617da9cb4c4247f7",
+    "engineId": "F10-10",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 12,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Two labelled axes",
+        "narration": "Time goes along the bottom. Distance FROM HOME goes up the side.",
+        "prompt": "Which quantity is measured in kilometres?",
+        "mood": "explain"
+      },
+      "models": {
+        "S": {
+          "preset": "Y8-026",
+          "t": 4,
+          "seg": 0,
+          "task": 0,
+          "wrong": 0,
+          "solved": false,
+          "selected": null,
+          "matches": {
+            "away": false,
+            "rest": false,
+            "return": false
+          }
+        }
+      }
+    },
+    "previous_sha256": "38eba1edc4da8992be3af98f149accd8a1b5e92a7b5d6e9c3b51511129a7445d",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-11",
+    "path": "F10/NOVA-F10-11-Speed-Time-Graph-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "14985caf91e1db18f3ccf5674624e0b0cf7169812be2952240f0f2f1e94ce9fc",
+    "sha256": "48127b9fca767d1c62a21168c39f458855d0d8370e1710333df50c856d0931dd",
+    "engineId": "F10-11",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "prompt",
+        "mood"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 12,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Read the axes",
+        "narration": "Time is along the horizontal axis in seconds. Velocity is vertical in metres per second.",
+        "prompt": "What do the units on these axes mean?",
+        "mood": "explain"
+      },
+      "config": {
+        "id": "F10-11",
+        "family": "F10",
+        "defaultPreset": "Y8-027",
+        "startMode": "guided",
+        "presets": {
+          "Y8-027": {
+            "label": "Y8 · Velocity–time",
+            "title": "Accelerate · cruise · brake",
+            "desc": "A vehicle speeds up, cruises, slows to rest and remains still.",
+            "pts": [
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                6
+              ],
+              [
+                4,
+                6
+              ],
+              [
+                6,
+                0
+              ],
+              [
+                8,
+                0
+              ]
+            ],
+            "yMin": 0,
+            "yMax": 10,
+            "context": "Velocity and speed in m/s",
+            "note": "Above-zero area measures distance. A horizontal line above zero shows a steady speed; a horizontal line on zero shows rest."
+          },
+          "Y9-017": {
+            "label": "Y9 · Direction and displacement",
+            "title": "Move forward · reverse direction",
+            "desc": "A vehicle moves forward, slows to zero and then travels in the opposite direction.",
+            "pts": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                6
+              ],
+              [
+                4,
+                6
+              ],
+              [
+                5,
+                0
+              ],
+              [
+                7,
+                -4
+              ],
+              [
+                8,
+                -4
+              ]
+            ],
+            "yMin": -6,
+            "yMax": 10,
+            "context": "Signed velocity in m/s",
+            "note": "Positive area gives forward displacement. Below-zero shaded area gives backwards displacement; subtract its magnitude for net displacement, add magnitudes for distance."
+          }
+        },
+        "events": {
+          "value": [
+            "preset",
+            "time",
+            "segment",
+            "card",
+            "answer",
+            "reset",
+            "area"
+          ],
+          "types": [
+            "mode",
+            "step",
+            "correct",
+            "hintUsed"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "d9d603cef7086bed51d9213c24d0e85bc86cdd00583026ff7cdca7a32a2ea330",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-12",
+    "path": "F10/NOVA-F10-12-Quadratic-Grapher-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "6619157c1d334045e6c55e6dbd15a2adeddcea189699cf5d641f57db44f7fa87",
+    "sha256": "b5cf1b1e31189c86871c410b4697d37827aa35a16e42001ff85cf1bc2abff838",
+    "engineId": "F10-12",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ],
+      [
+        "name",
+        "narration",
+        "mood"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 13,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Meet a parabola",
+        "narration": "A quadratic makes a curved graph. Unlike a straight line, its steepness changes.",
+        "mood": "explain"
+      },
+      "models": {
+        "S": {
+          "preset": "Y8-021",
+          "a": 2,
+          "h": 0,
+          "k": 0,
+          "x": -2,
+          "solved": false,
+          "wrong": 0,
+          "selected": null,
+          "matches": {},
+          "task": 0
+        }
+      }
+    },
+    "previous_sha256": "bbb6e18edd4c88adaf57d3858ba2460d7eca8bb91535b1dfeb24e90e753bd3f8",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-13",
+    "path": "F10/NOVA-F10-13-Cubic-Reciprocal-Exponential-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "98691feae45d185ad768ca8900d5ea862b91bc4215d219f49effecfbf3ccbf38",
+    "sha256": "f7858b6475f3d3d0d1e65f4c95ff66468bb293136a67fafe62af9e44b7595403",
+    "engineId": "F10-13",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 13,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Three curve families",
+        "mood": "explain",
+        "narration": "A cubic, a reciprocal and an exponential all curve differently. Read the axes and the rule first."
+      },
+      "models": {
+        "S": {
+          "preset": "Y8-037",
+          "k": 13,
+          "b": 2,
+          "a": 0.25,
+          "x": 2,
+          "wrong": 0,
+          "solved": false,
+          "selected": null,
+          "matches": {},
+          "task": 0
+        }
+      }
+    },
+    "previous_sha256": "db2003f3826c605d46f2c458dacbb82736903807de3584c9feb1a2ae43ff10f9",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-14",
+    "path": "F10/NOVA-F10-14-Graph-Transformer-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "XR",
+      "YR",
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "options"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "29584a6c8ba107fe9564fe87c51e95071c2f40e2c9ba3933d67d04b48b552881",
+    "sha256": "6075349855ff3b011cb251bca8f28f5fa102db69a6801c2659a296a375c4fb82",
+    "engineId": "F10-14",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 14,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Two parabolas, one comparison",
+        "mood": "explain",
+        "narration": "The blue ghost is y equals x squared. The brighter curve begins in a different position. What changed?"
+      },
+      "models": {
+        "S": {
+          "preset": "Y9-011",
+          "h": 3,
+          "k": -3,
+          "a": 1,
+          "selected": null,
+          "matches": {},
+          "task": 0,
+          "wrong": 0,
+          "solved": false
+        }
+      }
+    },
+    "previous_sha256": "483c35e3f22c6677e89a501456f65d2df56abaca6c4e1b184b0bffbad640cd22",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-15",
+    "path": "F10/NOVA-F10-15-Inequality-Region-Shader-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "XS",
+      "YS",
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "settings"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "22b574b8680bf90af86904b25a601acfe717d1ee8bcb9ae53dc0fc981000b6b0",
+    "sha256": "2f7a5d53b2be48db83af4e567752209454c4c266a5ce1dd5c0911bc89cc82d98",
+    "engineId": "F10-15",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ],
+      [
+        "name",
+        "mood",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 14,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Read the axes",
+        "mood": "explain",
+        "narration": "Read x across the grid, and y vertically. We will first look for x values greater than two."
+      },
+      "models": {
+        "S": {
+          "preset": "Y8-017",
+          "type": "x",
+          "a": 3,
+          "op": ">",
+          "m": 0,
+          "b": 0,
+          "op2": "<",
+          "point": [
+            3,
+            1
+          ],
+          "selected": "",
+          "matched": {},
+          "wrong": 0,
+          "solved": false
+        }
+      }
+    },
+    "previous_sha256": "8554de502aac624a17e65ea82a6d79d5fef0c471ab93682f27277acf4fac1cc0",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-18",
+    "path": "F10/NOVA-F10-18-Piecewise-and-Non-standard-Graph-Builder-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "6efdbe47e1e91172dd71ee2391c0bfac365515f6d61fef671c602acf72d16ef9",
+    "sha256": "cbd8a3911fabce45399ce7febf2b2f841413e7639f2059047e505263ed2ecaa2",
+    "engineId": "F10-18",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 15,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Read the axes",
+        "mood": "explain",
+        "narration": "Each graph starts with a horizontal input and a vertical output. Read across first, then up.",
+        "prompt": "Where do we read the input?"
+      },
+      "config": {
+        "id": "F10-18",
+        "family": "F10",
+        "startMode": "guided",
+        "defaultPreset": "Y9-015",
+        "bounds": {
+          "x": [
+            0,
+            8
+          ],
+          "y": [
+            0,
+            8
+          ],
+          "grid": 1
+        },
+        "presets": {
+          "Y9-015": {
+            "label": "Y9-015 · Rise / flat / fall",
+            "context": "A cyclist travels, rests, then returns towards the starting point.",
+            "kind": "continuous",
+            "nodes": [
+              [
+                "A",
+                0,
+                1,
+                1
+              ],
+              [
+                "B",
+                3,
+                5,
+                1
+              ],
+              [
+                "C",
+                5,
+                5,
+                1
+              ],
+              [
+                "D",
+                8,
+                2,
+                1
+              ]
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ]
+            ]
+          },
+          "Y9-015-JOURNEY": {
+            "label": "Y9-015 · Journey graph",
+            "context": "The distance rises during travel, stays fixed while resting, and then reduces on the return.",
+            "kind": "continuous",
+            "nodes": [
+              [
+                "A",
+                0,
+                0,
+                1
+              ],
+              [
+                "B",
+                2,
+                6,
+                1
+              ],
+              [
+                "C",
+                5,
+                6,
+                1
+              ],
+              [
+                "D",
+                8,
+                0,
+                1
+              ]
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ]
+            ]
+          },
+          "Y9-015-CHARGE": {
+            "label": "Y9-015 · Changing charges",
+            "context": "A starting charge, a rising price, a period without extra cost, and a later increase.",
+            "kind": "continuous",
+            "nodes": [
+              [
+                "A",
+                1,
+                2,
+                1
+              ],
+              [
+                "B",
+                3,
+                5,
+                1
+              ],
+              [
+                "C",
+                5,
+                5,
+                1
+              ],
+              [
+                "D",
+                8,
+                8,
+                1
+              ]
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ]
+            ]
+          },
+          "Y9-015-V": {
+            "label": "Y9-015 · V-shaped rule",
+            "context": "The quantity falls to a turning point then rises: one graph, two straight-line rules.",
+            "kind": "continuous",
+            "nodes": [
+              [
+                "A",
+                0,
+                7,
+                1
+              ],
+              [
+                "B",
+                4,
+                1,
+                1
+              ],
+              [
+                "C",
+                8,
+                7,
+                1
+              ]
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ]
+            ]
+          },
+          "Y9-015-STEP": {
+            "label": "Y9-015 · Step change",
+            "context": "A value stays at two up to a change, then jumps to five. The filled endpoint determines the exact value at the join.",
+            "kind": "jump",
+            "nodes": [
+              [
+                "A",
+                0,
+                2,
+                1
+              ],
+              [
+                "B",
+                3,
+                2,
+                0
+              ],
+              [
+                "C",
+                3,
+                5,
+                1
+              ],
+              [
+                "D",
+                8,
+                5,
+                1
+              ]
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "C",
+                "D"
+              ]
+            ]
+          },
+          "Y9-015-JUMP": {
+            "label": "Y9-015 · Two-rule jump",
+            "context": "Before the change the value is increasing; at the change it switches to a lower starting value.",
+            "kind": "jump",
+            "nodes": [
+              [
+                "A",
+                0,
+                1,
+                1
+              ],
+              [
+                "B",
+                4,
+                5,
+                0
+              ],
+              [
+                "C",
+                4,
+                2,
+                1
+              ],
+              [
+                "D",
+                8,
+                6,
+                1
+              ]
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "C",
+                "D"
+              ]
+            ]
+          },
+          "GCSE-OPEN": {
+            "label": "GCSE EXT · Open and closed limits",
+            "context": "A line can approach one value without including its endpoint. The filled dot is the actual value at the boundary.",
+            "kind": "jump",
+            "nodes": [
+              [
+                "A",
+                0,
+                2,
+                1
+              ],
+              [
+                "B",
+                4,
+                6,
+                0
+              ],
+              [
+                "C",
+                4,
+                3,
+                1
+              ],
+              [
+                "D",
+                8,
+                7,
+                1
+              ]
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "C",
+                "D"
+              ]
+            ]
+          }
+        },
+        "events": {
+          "value": [
+            "preset",
+            "node",
+            "readX",
+            "card",
+            "reset",
+            "challengeValue"
+          ],
+          "types": [
+            "step",
+            "mode",
+            "correct",
+            "hintUsed"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "2e4f4bcfc005e38495e8ff0c7a256481af5a4f572a0f383ac8bec97155fe9e4a",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F10-19",
+    "path": "F10/NOVA-F10-19-Trigonometric-Graph-Explorer-PREMIUM-REVIEW.html",
+    "api": "1.0.0",
+    "models": [
+      "S"
+    ],
+    "tables": [
+      "STORY",
+      "TASKS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "b191040bfc2af4be4388e194ef1d122f85198379201ed16de3616064daf60f4d",
+    "sha256": "f42217777c5e9ec213847992f9843138dfb380a1f8d365362f9be6e6f5b6a660",
+    "engineId": "F10-19",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 16,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 0,
+      "data": {
+        "name": "Meet the angle",
+        "mood": "explain",
+        "narration": "Graphs of sine, cosine and tangent use angle on the horizontal axis. The output is read vertically.",
+        "prompt": 0
+      },
+      "models": {
+        "S": {
+          "preset": "GCSE-SINE",
+          "type": "sin",
+          "A": 2,
+          "B": 1,
+          "P": 0,
+          "D": 0,
+          "angle": 60,
+          "correct": false,
+          "mode": "explore"
+        }
+      }
+    },
+    "previous_sha256": "20ac8be4cea52036cbbbc654a7c9424d9bf24aa61109172a80853a21bda4cd27",
+    "f10Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f10-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f10-runtime.js"
+      ]
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "F0-04 mobile touch drag updates mathematical state",
+    "pass": true,
+    "detail": {
+      "before": 0.75,
+      "after": 1.5,
+      "gestureMs": 1044,
+      "sampleUpdateMs": [
+        15,
+        18,
+        23,
+        18
+      ]
+    }
+  },
+  {
+    "name": "F0-04 cancellation ends drag",
+    "pass": true
+  },
+  {
+    "name": "F0-04 native mobile frame fits",
+    "pass": true,
+    "detail": {
+      "scroll": 390,
+      "client": 390
+    }
+  },
+  {
+    "name": "F0-16 mobile touch drag updates mathematical state",
+    "pass": true,
+    "detail": {
+      "before": "[[1,1],[8,1],[3,6]]",
+      "after": "[[3,2],[8,1],[3,6]]",
+      "gestureMs": 841,
+      "sampleUpdateMs": [
+        18,
+        18,
+        19,
+        20
+      ]
+    }
+  },
+  {
+    "name": "F0-16 cancellation ends drag",
+    "pass": true
+  },
+  {
+    "name": "F0-16 native mobile frame fits",
+    "pass": true,
+    "detail": {
+      "scroll": 390,
+      "client": 390
+    }
+  }
+]

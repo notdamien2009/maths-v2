@@ -1,0 +1,6384 @@
+[
+  {
+    "id": "F2-01",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-01",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "Build the number",
+          "mood": "neutral",
+          "narration": "Each card is a place. Drop digits in to build 3040.507: 3 thousands, 4 tens, 5 tenths and 7 thousandths.",
+          "prompt": "Which card does the 4 go in?",
+          "v": "3040.507",
+          "o": {
+            "intro": true
+          }
+        },
+        {
+          "name": "Worth",
+          "mood": "think",
+          "narration": "The worth line shows what each digit is really worth. The 3 is worth 3000, but the 7 is only worth 0.007.",
+          "prompt": "What is the 5 worth?",
+          "v": "3040.507",
+          "o": {
+            "hl": -1
+          }
+        },
+        {
+          "name": "Placeholder zeros",
+          "mood": "focus",
+          "narration": "The zeros in hundreds, ones and hundredths hold the places open. Without them the 3 would slide down to a smaller place.",
+          "prompt": "Why do we need the 0 in the hundreds?",
+          "v": "3040.507",
+          "o": {
+            "goldZeros": true,
+            "hl": 0
+          }
+        },
+        {
+          "name": "Multiply by 10",
+          "mood": "think",
+          "narration": "23.6 times 10: every digit glides one card to the left. The decimal point stays still. 23.6 becomes 236.",
+          "prompt": "Where does the 6 go?",
+          "v": "23.6",
+          "o": {
+            "shift": 1
+          }
+        },
+        {
+          "name": "Placeholder drops in",
+          "mood": "focus",
+          "narration": "4.7 times 100: the digits glide two cards left to make 470. The ones card is now empty, so a gold zero drops in to hold the place.",
+          "prompt": "Why does a zero appear?",
+          "v": "4.7",
+          "o": {
+            "shift": 2
+          }
+        },
+        {
+          "name": "Divide by 100",
+          "mood": "cheer",
+          "narration": "61.5 divided by 100: two cards to the right. A zero drops into the ones card: 0.615.",
+          "prompt": "What goes in the ones card?",
+          "v": "61.5",
+          "o": {
+            "shift": -2
+          }
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "lesson",
+        "places": [
+          3,
+          2,
+          1,
+          0,
+          -1,
+          -2,
+          -3
+        ],
+        "showWorth": true,
+        "presets": {
+          "lesson": {
+            "label": "3040.507 (placeholder zeros)",
+            "value": "3040.507"
+          },
+          "x10": {
+            "label": "23.6 then × 10",
+            "value": "23.6",
+            "op": 1
+          },
+          "x100": {
+            "label": "4.7 then × 100",
+            "value": "4.7",
+            "op": 2
+          },
+          "d10": {
+            "label": "508 then ÷ 10",
+            "value": "508",
+            "op": -1
+          },
+          "d100": {
+            "label": "61.5 then ÷ 100",
+            "value": "61.5",
+            "op": -2
+          },
+          "x1000": {
+            "label": "0.042 then × 1000",
+            "value": "0.042",
+            "op": 3
+          },
+          "blank": {
+            "label": "Empty chart (build your own)",
+            "value": ""
+          }
+        },
+        "_explore": {
+          "state": {
+            "c": {
+              "0": 0,
+              "1": 4,
+              "2": 0,
+              "3": 3,
+              "-1": 5,
+              "-2": 0,
+              "-3": 7
+            },
+            "ph": {}
+          }
+        },
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Build the number",
+            "mood": "neutral",
+            "narration": "Each card is a place. Drop digits in to build 3040.507: 3 thousands, 4 tens, 5 tenths and 7 thousandths.",
+            "prompt": "Which card does the 4 go in?",
+            "v": "3040.507",
+            "o": {
+              "intro": true
+            }
+          },
+          {
+            "name": "Worth",
+            "mood": "think",
+            "narration": "The worth line shows what each digit is really worth. The 3 is worth 3000, but the 7 is only worth 0.007.",
+            "prompt": "What is the 5 worth?",
+            "v": "3040.507",
+            "o": {
+              "hl": -1
+            }
+          },
+          {
+            "name": "Placeholder zeros",
+            "mood": "focus",
+            "narration": "The zeros in hundreds, ones and hundredths hold the places open. Without them the 3 would slide down to a smaller place.",
+            "prompt": "Why do we need the 0 in the hundreds?",
+            "v": "3040.507",
+            "o": {
+              "goldZeros": true,
+              "hl": 0
+            }
+          },
+          {
+            "name": "Multiply by 10",
+            "mood": "think",
+            "narration": "23.6 times 10: every digit glides one card to the left. The decimal point stays still. 23.6 becomes 236.",
+            "prompt": "Where does the 6 go?",
+            "v": "23.6",
+            "o": {
+              "shift": 1
+            }
+          },
+          {
+            "name": "Placeholder drops in",
+            "mood": "focus",
+            "narration": "4.7 times 100: the digits glide two cards left to make 470. The ones card is now empty, so a gold zero drops in to hold the place.",
+            "prompt": "Why does a zero appear?",
+            "v": "4.7",
+            "o": {
+              "shift": 2
+            }
+          },
+          {
+            "name": "Divide by 100",
+            "mood": "cheer",
+            "narration": "61.5 divided by 100: two cards to the right. A zero drops into the ones card: 0.615.",
+            "prompt": "What goes in the ones card?",
+            "v": "61.5",
+            "o": {
+              "shift": -2
+            }
+          }
+        ]
+      },
+      "draws": {
+        "Chart": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "c": {
+            "0": 0,
+            "1": 4,
+            "2": 0,
+            "3": 3,
+            "-1": 5,
+            "-2": 0,
+            "-3": 7
+          }
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Place value · Build the numberstep 1/6Place value chart showing 3040.507.3040.507Thousands3worth 3000Hundreds0worth 0Tens4worth 40Ones0worth 0Tenths5worth 0.5Hundredths0worth 0Thousandths7worth 0.007digit tray0123456789Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507value3040.507Build the numberBuild the number (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Place value · Worthstep 2/6Place value chart showing 3040.507.3040.507Thousands3worth 3000Hundreds0worth 0Tens4worth 40Ones0worth 0Tenths5worth 0.5Hundredths0worth 0Thousandths7worth 0.007digit tray0123456789Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507value3040.507WorthWorth (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Place value · Placeholder zerosstep 3/6Place value chart showing 3040.507.3040.507Thousands3worth 3000Hundreds0worth 0Tens4worth 40Ones0worth 0Tenths5worth 0.5Hundredths0worth 0Thousandths7worth 0.007digit tray0123456789Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507value3040.507Placeholder zerosPlaceholder zeros (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Place value · Multiply by 10step 4/6Place value chart showing 23.6.23.6ThousandsHundredsTens2worth 20Ones3worth 3Tenths6worth 0.6HundredthsThousandthsdigit tray0123456789Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsstart23.6operation× 10result…Multiply by 10Multiply by 10 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Place value · Placeholder drops instep 5/6Place value chart showing 4.7.4.7ThousandsHundredsTensOnes4worth 4Tenths7worth 0.7HundredthsThousandthsdigit tray0123456789Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsstart4.7operation× 100result…Placeholder drops inPlaceholder drops in (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Place value · Divide by 100step 6/6Place value chart showing 61.5.61.5ThousandsHundredsTens6worth 60Ones1worth 1Tenths5worth 0.5HundredthsThousandthsdigit tray0123456789Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsstart61.5operation÷ 100result…Divide by 100Divide by 100 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · place value chartlivePlace value chart showing 3040.507.3040.507Thousands3worth 3000Hundreds0worth 0Tens4worth 40Ones0worth 0Tenths5worth 0.5Hundredths0worth 0Thousandths7worth 0.007drag a digit onto a card (or focus a card and type)0123456789Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507value3040.507Drag or typeDrag or type (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "lesson"
+      },
+      {
+        "label": "× 1000",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "× 100",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "× 10",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "÷ 10",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "÷ 100",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "÷ 1000",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Clear chart",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": " worth lines",
+        "type": "checkbox",
+        "min": "",
+        "max": "",
+        "value": "on"
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "lesson",
+      "places": [
+        3,
+        2,
+        1,
+        0,
+        -1,
+        -2,
+        -3
+      ],
+      "showWorth": true,
+      "presets": {
+        "lesson": {
+          "label": "3040.507 (placeholder zeros)",
+          "value": "3040.507"
+        },
+        "x10": {
+          "label": "23.6 then × 10",
+          "value": "23.6",
+          "op": 1
+        },
+        "x100": {
+          "label": "4.7 then × 100",
+          "value": "4.7",
+          "op": 2
+        },
+        "d10": {
+          "label": "508 then ÷ 10",
+          "value": "508",
+          "op": -1
+        },
+        "d100": {
+          "label": "61.5 then ÷ 100",
+          "value": "61.5",
+          "op": -2
+        },
+        "x1000": {
+          "label": "0.042 then × 1000",
+          "value": "0.042",
+          "op": 3
+        },
+        "blank": {
+          "label": "Empty chart (build your own)",
+          "value": ""
+        }
+      },
+      "_explore": {
+        "state": {
+          "c": {
+            "0": 0,
+            "1": 4,
+            "2": 0,
+            "3": 3,
+            "-1": 5,
+            "-2": 0,
+            "-3": 7
+          },
+          "ph": {}
+        }
+      },
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-02",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-02",
+      "version": "1.0.0",
+      "stepCount": 5,
+      "steps": [
+        {
+          "name": "Counters",
+          "mood": "neutral",
+          "narration": "Each counter is worth its column. 2 hundreds, 4 tens and 3 ones make 243.",
+          "prompt": "How many tens are there?",
+          "c": {
+            "0": 3,
+            "1": 4,
+            "2": 2
+          },
+          "o": {}
+        },
+        {
+          "name": "Decimal columns",
+          "mood": "think",
+          "narration": "Right of the decimal point, counters are worth 0.1 and 0.01. 1 one, 3 tenths and 6 hundredths make 1.36.",
+          "prompt": "What is a counter in the tenths column worth?",
+          "c": {
+            "0": 1,
+            "-1": 3,
+            "-2": 6
+          },
+          "o": {}
+        },
+        {
+          "name": "Too many!",
+          "mood": "focus",
+          "narration": "Add 0.48: 4 more tenths and 8 more hundredths. The hundredths column now has 14 counters. It glows: time to exchange!",
+          "prompt": "How many hundredths are there?",
+          "c": {
+            "0": 1,
+            "-1": 7,
+            "-2": 14
+          },
+          "o": {}
+        },
+        {
+          "name": "Exchange",
+          "mood": "think",
+          "narration": "Ten hundredths gather, merge with a flash into one tenth, and fly to the tenths column. 1.36 plus 0.48 is 1.84.",
+          "prompt": "What do 10 hundredths make?",
+          "c": {
+            "0": 1,
+            "-1": 7,
+            "-2": 14
+          },
+          "o": {
+            "exchange": -2
+          }
+        },
+        {
+          "name": "Break one",
+          "mood": "cheer",
+          "narration": "To take 1.5 from 3.2, break one of the ones into 10 tenths. They fan out: 2 ones and 12 tenths, still 3.2.",
+          "prompt": "Is the value the same after breaking?",
+          "c": {
+            "0": 3,
+            "-1": 2
+          },
+          "o": {
+            "breakOne": 0
+          }
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "whole",
+        "places": [
+          2,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "autoExchange": false,
+        "presets": {
+          "whole": {
+            "label": "243",
+            "c": {
+              "0": 3,
+              "1": 4,
+              "2": 2
+            }
+          },
+          "dec": {
+            "label": "1.36",
+            "c": {
+              "0": 1,
+              "-1": 3,
+              "-2": 6
+            }
+          },
+          "over": {
+            "label": "1.36 + 0.48 (14 hundredths)",
+            "c": {
+              "0": 1,
+              "-1": 7,
+              "-2": 14
+            }
+          },
+          "borrow": {
+            "label": "3.2 (break a one to subtract)",
+            "c": {
+              "0": 3,
+              "-1": 2
+            }
+          },
+          "nine": {
+            "label": "99 (add one more!)",
+            "c": {
+              "0": 9,
+              "1": 9
+            }
+          },
+          "empty": {
+            "label": "Empty grid",
+            "c": {}
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Counters",
+            "mood": "neutral",
+            "narration": "Each counter is worth its column. 2 hundreds, 4 tens and 3 ones make 243.",
+            "prompt": "How many tens are there?",
+            "c": {
+              "0": 3,
+              "1": 4,
+              "2": 2
+            },
+            "o": {}
+          },
+          {
+            "name": "Decimal columns",
+            "mood": "think",
+            "narration": "Right of the decimal point, counters are worth 0.1 and 0.01. 1 one, 3 tenths and 6 hundredths make 1.36.",
+            "prompt": "What is a counter in the tenths column worth?",
+            "c": {
+              "0": 1,
+              "-1": 3,
+              "-2": 6
+            },
+            "o": {}
+          },
+          {
+            "name": "Too many!",
+            "mood": "focus",
+            "narration": "Add 0.48: 4 more tenths and 8 more hundredths. The hundredths column now has 14 counters. It glows: time to exchange!",
+            "prompt": "How many hundredths are there?",
+            "c": {
+              "0": 1,
+              "-1": 7,
+              "-2": 14
+            },
+            "o": {}
+          },
+          {
+            "name": "Exchange",
+            "mood": "think",
+            "narration": "Ten hundredths gather, merge with a flash into one tenth, and fly to the tenths column. 1.36 plus 0.48 is 1.84.",
+            "prompt": "What do 10 hundredths make?",
+            "c": {
+              "0": 1,
+              "-1": 7,
+              "-2": 14
+            },
+            "o": {
+              "exchange": -2
+            }
+          },
+          {
+            "name": "Break one",
+            "mood": "cheer",
+            "narration": "To take 1.5 from 3.2, break one of the ones into 10 tenths. They fan out: 2 ones and 12 tenths, still 3.2.",
+            "prompt": "Is the value the same after breaking?",
+            "c": {
+              "0": 3,
+              "-1": 2
+            },
+            "o": {
+              "breakOne": 0
+            }
+          }
+        ]
+      },
+      "draws": {
+        "Grid": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "c": {
+            "0": 3,
+            "1": 4,
+            "2": 2
+          }
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Counters · Countersstep 1/5Place value counters showing 243.Hundreds1002Tens104Ones13Tenths0.1Hundredths0.01H = HundredsT = TensO = Onest = Tenthsh = HundredthsH2T4O3value243CountersCounters (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Counters · Decimal columnsstep 2/5Place value counters showing 1.36.Hundreds100Tens10Ones11Tenths0.13Hundredths0.016H = HundredsT = TensO = Onest = Tenthsh = HundredthsO1t3h6value1.36Decimal columnsDecimal columns (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Counters · Too many!step 3/5Place value counters showing 1.84.Hundreds100Tens10Ones11Tenths0.17Hundredths0.0114Exchange!H = HundredsT = TensO = Onest = Tenthsh = HundredthsO1t7h14value1.84Too many!Too many! (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Counters · Exchangestep 4/5Place value counters showing 1.84.Hundreds100Tens10Ones11Tenths0.17Hundredths0.0114Exchange!H = HundredsT = TensO = Onest = Tenthsh = HundredthsO1t7h14value1.84ExchangeExchange (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Counters · Break onestep 5/5Place value counters showing 3.2.Hundreds100Tens10Ones13Tenths0.12Hundredths0.01H = HundredsT = TensO = Onest = Tenthsh = HundredthsO3t2value3.2Break oneBreak one (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · counterslivePlace value counters showing 243.Hundreds1002Tens104Ones13Tenths0.1Hundredths0.01drag a counterH = HundredsT = TensO = Onest = Tenthsh = HundredthsH2T4O3value243Drag countersDrag counters (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Start",
+        "type": "select-one",
+        "value": "whole"
+      },
+      {
+        "label": "Column",
+        "type": "select-one",
+        "value": "0"
+      },
+      {
+        "label": "+ counter",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "− counter",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Exchange 10 → 1",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Break 1 → 10",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": " auto-exchange when a column reaches 10",
+        "type": "checkbox",
+        "min": "",
+        "max": "",
+        "value": "on"
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "whole",
+      "places": [
+        2,
+        1,
+        0,
+        -1,
+        -2
+      ],
+      "autoExchange": false,
+      "presets": {
+        "whole": {
+          "label": "243",
+          "c": {
+            "0": 3,
+            "1": 4,
+            "2": 2
+          }
+        },
+        "dec": {
+          "label": "1.36",
+          "c": {
+            "0": 1,
+            "-1": 3,
+            "-2": 6
+          }
+        },
+        "over": {
+          "label": "1.36 + 0.48 (14 hundredths)",
+          "c": {
+            "0": 1,
+            "-1": 7,
+            "-2": 14
+          }
+        },
+        "borrow": {
+          "label": "3.2 (break a one to subtract)",
+          "c": {
+            "0": 3,
+            "-1": 2
+          }
+        },
+        "nine": {
+          "label": "99 (add one more!)",
+          "c": {
+            "0": 9,
+            "1": 9
+          }
+        },
+        "empty": {
+          "label": "Empty grid",
+          "c": {}
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-03",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-03",
+      "version": "1.0.0",
+      "stepCount": 5,
+      "steps": [
+        {
+          "name": "Blocks",
+          "mood": "neutral",
+          "narration": "A unit is 1, a rod is 10 units, a flat is 100. 2 flats, 3 rods and 5 units make 235.",
+          "prompt": "How many units make a rod?",
+          "st": {
+            "sc": "whole",
+            "c": {
+              "f": 2,
+              "r": 3,
+              "u": 5
+            }
+          },
+          "o": {}
+        },
+        {
+          "name": "Build a ten",
+          "mood": "focus",
+          "narration": "There are 12 units: too many! Ten units slide together and snap into one rod, then the rod joins the tens.",
+          "prompt": "How many units are left over?",
+          "st": {
+            "sc": "whole",
+            "c": {
+              "f": 1,
+              "r": 4,
+              "u": 12
+            }
+          },
+          "o": {
+            "ex": "u"
+          }
+        },
+        {
+          "name": "Fuse a hundred",
+          "mood": "think",
+          "narration": "13 rods: ten rods slide side by side and fuse into a flat. 1 hundred becomes 2 hundreds.",
+          "prompt": "How many rods make a flat?",
+          "st": {
+            "sc": "whole",
+            "c": {
+              "f": 1,
+              "r": 13,
+              "u": 2
+            }
+          },
+          "o": {
+            "ex": "r"
+          }
+        },
+        {
+          "name": "Break to subtract",
+          "mood": "think",
+          "narration": "204 has no tens. Break a flat: it splits into 10 rods. Now 1 flat, 10 rods and 4 units: still 204.",
+          "prompt": "Is the value still 204?",
+          "st": {
+            "sc": "whole",
+            "c": {
+              "f": 2,
+              "r": 0,
+              "u": 4
+            }
+          },
+          "o": {
+            "br": "f"
+          }
+        },
+        {
+          "name": "Decimal blocks",
+          "mood": "cheer",
+          "narration": "Change what the flat is worth. If a flat is 1, a rod is 0.1 and a unit is 0.01. This shows 1.36.",
+          "prompt": "What is a rod worth now?",
+          "st": {
+            "sc": "decimal",
+            "c": {
+              "f": 1,
+              "r": 3,
+              "u": 6
+            }
+          },
+          "o": {}
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "n235",
+        "scale": "whole",
+        "autoExchange": false,
+        "presets": {
+          "n235": {
+            "label": "235",
+            "scale": "whole",
+            "c": {
+              "f": 2,
+              "r": 3,
+              "u": 5
+            }
+          },
+          "u12": {
+            "label": "12 units (make a ten)",
+            "scale": "whole",
+            "c": {
+              "f": 1,
+              "r": 4,
+              "u": 12
+            }
+          },
+          "r13": {
+            "label": "13 rods (make a hundred)",
+            "scale": "whole",
+            "c": {
+              "f": 1,
+              "r": 13,
+              "u": 2
+            }
+          },
+          "sub": {
+            "label": "204 (break to subtract)",
+            "scale": "whole",
+            "c": {
+              "f": 2,
+              "r": 0,
+              "u": 4
+            }
+          },
+          "dec": {
+            "label": "Decimal 1.36 (F2-04: flat = 1)",
+            "scale": "decimal",
+            "c": {
+              "f": 1,
+              "r": 3,
+              "u": 6
+            }
+          },
+          "empty": {
+            "label": "Empty mat",
+            "scale": "whole",
+            "c": {
+              "f": 0,
+              "r": 0,
+              "u": 0
+            }
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "T": [
+          "f",
+          "r",
+          "u"
+        ],
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Blocks",
+            "mood": "neutral",
+            "narration": "A unit is 1, a rod is 10 units, a flat is 100. 2 flats, 3 rods and 5 units make 235.",
+            "prompt": "How many units make a rod?",
+            "st": {
+              "sc": "whole",
+              "c": {
+                "f": 2,
+                "r": 3,
+                "u": 5
+              }
+            },
+            "o": {}
+          },
+          {
+            "name": "Build a ten",
+            "mood": "focus",
+            "narration": "There are 12 units: too many! Ten units slide together and snap into one rod, then the rod joins the tens.",
+            "prompt": "How many units are left over?",
+            "st": {
+              "sc": "whole",
+              "c": {
+                "f": 1,
+                "r": 4,
+                "u": 12
+              }
+            },
+            "o": {
+              "ex": "u"
+            }
+          },
+          {
+            "name": "Fuse a hundred",
+            "mood": "think",
+            "narration": "13 rods: ten rods slide side by side and fuse into a flat. 1 hundred becomes 2 hundreds.",
+            "prompt": "How many rods make a flat?",
+            "st": {
+              "sc": "whole",
+              "c": {
+                "f": 1,
+                "r": 13,
+                "u": 2
+              }
+            },
+            "o": {
+              "ex": "r"
+            }
+          },
+          {
+            "name": "Break to subtract",
+            "mood": "think",
+            "narration": "204 has no tens. Break a flat: it splits into 10 rods. Now 1 flat, 10 rods and 4 units: still 204.",
+            "prompt": "Is the value still 204?",
+            "st": {
+              "sc": "whole",
+              "c": {
+                "f": 2,
+                "r": 0,
+                "u": 4
+              }
+            },
+            "o": {
+              "br": "f"
+            }
+          },
+          {
+            "name": "Decimal blocks",
+            "mood": "cheer",
+            "narration": "Change what the flat is worth. If a flat is 1, a rod is 0.1 and a unit is 0.01. This shows 1.36.",
+            "prompt": "What is a rod worth now?",
+            "st": {
+              "sc": "decimal",
+              "c": {
+                "f": 1,
+                "r": 3,
+                "u": 6
+              }
+            },
+            "o": {}
+          }
+        ]
+      },
+      "draws": {
+        "Mat": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "render.st": {
+          "sc": "whole",
+          "c": {
+            "f": 2,
+            "r": 3,
+            "u": 5
+          }
+        },
+        "st": {
+          "sc": "whole",
+          "c": {
+            "f": 2,
+            "r": 3,
+            "u": 5
+          }
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Base-ten blocks · Blocksstep 1/5Base-ten blocks showing 235.Hundreds2flat = 100Tens3rod = 10Ones5unit = 1flats2rods3units5value235BlocksBlocks (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Base-ten blocks · Build a tenstep 2/5Base-ten blocks showing 152.Hundreds1flat = 100Tens4rod = 10Ones12unit = 1Exchange!flats1rods4units12value152Build a tenBuild a ten (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Base-ten blocks · Fuse a hundredstep 3/5Base-ten blocks showing 232.Hundreds1flat = 100Tens13rod = 10Exchange!Ones2unit = 1flats1rods13units2value232Fuse a hundredFuse a hundred (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Base-ten blocks · Break to subtractstep 4/5Base-ten blocks showing 204.Hundreds2flat = 100Tens0rod = 10Ones4unit = 1flats2rods0units4value204Break to subtractBreak to subtract (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Base-ten blocks · Decimal blocksstep 5/5Base-ten blocks showing 1.36.Ones1flat = 1Tenths3rod = 0.1Hundredths6unit = 0.01flats1rods3units6value1.36Decimal blocksDecimal blocks (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · base-ten blocksliveBase-ten blocks showing 235.Hundreds2flat = 100Tens3rod = 10Ones5unit = 1drag a block onto the matflats2rods3units5value235Build and exchangeBuild and exchange (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Start",
+        "type": "select-one",
+        "value": "n235"
+      },
+      {
+        "label": "Block",
+        "type": "select-one",
+        "value": "u"
+      },
+      {
+        "label": "+ block",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "− block",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Exchange 10 → 1",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Break 1 → 10",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Scale: flat = 100",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Scale: flat = 1",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": " auto-exchange at 10",
+        "type": "checkbox",
+        "min": "",
+        "max": "",
+        "value": "on"
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "n235",
+      "scale": "whole",
+      "autoExchange": false,
+      "presets": {
+        "n235": {
+          "label": "235",
+          "scale": "whole",
+          "c": {
+            "f": 2,
+            "r": 3,
+            "u": 5
+          }
+        },
+        "u12": {
+          "label": "12 units (make a ten)",
+          "scale": "whole",
+          "c": {
+            "f": 1,
+            "r": 4,
+            "u": 12
+          }
+        },
+        "r13": {
+          "label": "13 rods (make a hundred)",
+          "scale": "whole",
+          "c": {
+            "f": 1,
+            "r": 13,
+            "u": 2
+          }
+        },
+        "sub": {
+          "label": "204 (break to subtract)",
+          "scale": "whole",
+          "c": {
+            "f": 2,
+            "r": 0,
+            "u": 4
+          }
+        },
+        "dec": {
+          "label": "Decimal 1.36 (F2-04: flat = 1)",
+          "scale": "decimal",
+          "c": {
+            "f": 1,
+            "r": 3,
+            "u": 6
+          }
+        },
+        "empty": {
+          "label": "Empty mat",
+          "scale": "whole",
+          "c": {
+            "f": 0,
+            "r": 0,
+            "u": 0
+          }
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-05",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-05",
+      "version": "1.0.0",
+      "stepCount": 5,
+      "steps": [
+        {
+          "name": "Abacus",
+          "mood": "neutral",
+          "narration": "Each rod is a place. 2 beads on hundreds, 4 on tens and 3 on ones: 243.",
+          "prompt": "How many beads are on the tens rod?",
+          "v": "abacus",
+          "c": {
+            "0": 3,
+            "1": 4,
+            "2": 2
+          }
+        },
+        {
+          "name": "Ten beads exchange",
+          "mood": "focus",
+          "narration": "Add one more to 199: the ones rod reaches ten. Ten beads squeeze into one and it flies to the tens rod. Then the tens reach ten too: 200.",
+          "prompt": "What happens when a rod gets ten beads?",
+          "v": "abacus",
+          "c": {
+            "0": 10,
+            "1": 9,
+            "2": 1
+          },
+          "o": {
+            "ex": 0
+          }
+        },
+        {
+          "name": "Gattegno chart",
+          "mood": "think",
+          "narration": "On the Gattegno chart each row is a place. Pick 300, 40 and 5: they combine to make 345.",
+          "prompt": "Which tile gives the 4 in 345?",
+          "v": "gattegno",
+          "g": {
+            "0": 5,
+            "1": 4,
+            "2": 3
+          }
+        },
+        {
+          "name": "Zeros are gaps",
+          "mood": "focus",
+          "narration": "3040.5 needs only three tiles: 3000, 40 and 0.5. Rows with no tile become zeros.",
+          "prompt": "Why is there no tile in the hundreds row?",
+          "v": "gattegno",
+          "g": {
+            "1": 4,
+            "3": 3,
+            "-1": 5,
+            "-2": 0
+          },
+          "x": {
+            "-3": 7
+          }
+        },
+        {
+          "name": "× 10 moves up a row",
+          "mood": "cheer",
+          "narration": "0.6 + 0.03 is 0.63. Times 10: every tile glides up one row, giving 6 + 0.3 = 6.3.",
+          "prompt": "Where does 0.03 go?",
+          "v": "gattegno",
+          "g": {
+            "-1": 6,
+            "-2": 3
+          },
+          "o": {
+            "shift": 1
+          }
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "view": "abacus",
+        "preset": "n243",
+        "autoExchange": true,
+        "rods": [
+          2,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "rows": [
+          3,
+          2,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "presets": {
+          "n243": {
+            "label": "Abacus 243",
+            "view": "abacus",
+            "c": {
+              "0": 3,
+              "1": 4,
+              "2": 2
+            }
+          },
+          "n9": {
+            "label": "Abacus 199 (add one!)",
+            "view": "abacus",
+            "c": {
+              "0": 9,
+              "1": 9,
+              "2": 1
+            }
+          },
+          "dec": {
+            "label": "Abacus 1.36",
+            "view": "abacus",
+            "c": {
+              "0": 1,
+              "-1": 3,
+              "-2": 6
+            }
+          },
+          "g345": {
+            "label": "Gattegno 345",
+            "view": "gattegno",
+            "g": {
+              "0": 5,
+              "1": 4,
+              "2": 3
+            }
+          },
+          "g3040": {
+            "label": "Gattegno 3040.5 (zeros = no tile)",
+            "view": "gattegno",
+            "g": {
+              "1": 4,
+              "3": 3,
+              "-1": 5
+            }
+          },
+          "gdec": {
+            "label": "Gattegno 0.63 then × 10",
+            "view": "gattegno",
+            "g": {
+              "-1": 6,
+              "-2": 3
+            },
+            "op": 1
+          },
+          "empty": {
+            "label": "Empty (build your own)",
+            "view": "gattegno",
+            "g": {}
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Abacus",
+            "mood": "neutral",
+            "narration": "Each rod is a place. 2 beads on hundreds, 4 on tens and 3 on ones: 243.",
+            "prompt": "How many beads are on the tens rod?",
+            "v": "abacus",
+            "c": {
+              "0": 3,
+              "1": 4,
+              "2": 2
+            }
+          },
+          {
+            "name": "Ten beads exchange",
+            "mood": "focus",
+            "narration": "Add one more to 199: the ones rod reaches ten. Ten beads squeeze into one and it flies to the tens rod. Then the tens reach ten too: 200.",
+            "prompt": "What happens when a rod gets ten beads?",
+            "v": "abacus",
+            "c": {
+              "0": 10,
+              "1": 9,
+              "2": 1
+            },
+            "o": {
+              "ex": 0
+            }
+          },
+          {
+            "name": "Gattegno chart",
+            "mood": "think",
+            "narration": "On the Gattegno chart each row is a place. Pick 300, 40 and 5: they combine to make 345.",
+            "prompt": "Which tile gives the 4 in 345?",
+            "v": "gattegno",
+            "g": {
+              "0": 5,
+              "1": 4,
+              "2": 3
+            }
+          },
+          {
+            "name": "Zeros are gaps",
+            "mood": "focus",
+            "narration": "3040.5 needs only three tiles: 3000, 40 and 0.5. Rows with no tile become zeros.",
+            "prompt": "Why is there no tile in the hundreds row?",
+            "v": "gattegno",
+            "g": {
+              "1": 4,
+              "3": 3,
+              "-1": 5,
+              "-2": 0
+            },
+            "x": {
+              "-3": 7
+            }
+          },
+          {
+            "name": "× 10 moves up a row",
+            "mood": "cheer",
+            "narration": "0.6 + 0.03 is 0.63. Times 10: every tile glides up one row, giving 6 + 0.3 = 6.3.",
+            "prompt": "Where does 0.03 go?",
+            "v": "gattegno",
+            "g": {
+              "-1": 6,
+              "-2": 3
+            },
+            "o": {
+              "shift": 1
+            }
+          }
+        ]
+      },
+      "draws": {
+        "Abacus": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "Gattegno": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "viewChips": [
+          "stage",
+          "v",
+          "st"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "c": {
+            "0": 3,
+            "1": 4,
+            "2": 2
+          },
+          "g": {}
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Abacus · Abacusstep 1/5Abacus showing 243.Hundreds2Tens4Ones3Tenths0Hundredths0H = HundredsT = TensO = Onest = Tenthsh = HundredthsH2T4O3value243AbacusAbacus (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Abacus · Ten beads exchangestep 2/5Abacus showing 200.Hundreds1Tens9Ones10Tenths0Hundredths0H = HundredsT = TensO = Onest = Tenthsh = HundredthsH1T9O10value200Ten beads exchangeTen beads exchange (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Gattegno chart · Gattegno chartstep 3/5Gattegno chart: 345.Thousands100020003000400050006000700080009000Hundreds100200300400500600700800900Tens102030405060708090Ones123456789Tenths0.10.20.30.40.50.60.70.80.9Hundredths0.010.020.030.040.050.060.070.080.09300 + 40 + 5  =  345Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsnumber345Gattegno chartGattegno chart (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Gattegno chart · Zeros are gapsstep 4/5Gattegno chart: 3040.5.Thousands100020003000400050006000700080009000Hundreds100200300400500600700800900Tens102030405060708090Ones123456789Tenths0.10.20.30.40.50.60.70.80.9Hundredths0.010.020.030.040.050.060.070.080.093000 + 40 + 0.5  =  3040.5Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsnumber3040.5Zeros are gapsZeros are gaps (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Gattegno chart · × 10 moves up a rowstep 5/5Gattegno chart: 0.63.Thousands100020003000400050006000700080009000Hundreds100200300400500600700800900Tens102030405060708090Ones123456789Tenths0.10.20.30.40.50.60.70.80.9Hundredths0.010.020.030.040.050.060.070.080.090.6 + 0.03  =  0.63Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsnumber0.63× 10 moves up a row× 10 moves up a row (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · abacusliveAbacus showing 243.Hundreds2Tens4Ones3Tenths0Hundredths0drag a beadH = HundredsT = TensO = Onest = Tenthsh = HundredthsH2T4O3value243Drag beadsDrag beads (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Start",
+        "type": "select-one",
+        "value": "n243"
+      },
+      {
+        "label": "Abacus",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Gattegno",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Exchange ones",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Exchange tenths",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Exchange hundredths",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": " auto-exchange at 10",
+        "type": "checkbox",
+        "min": "",
+        "max": "",
+        "value": "on"
+      },
+      {
+        "label": "× 10",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "÷ 10",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "view": "abacus",
+      "preset": "n243",
+      "autoExchange": true,
+      "rods": [
+        2,
+        1,
+        0,
+        -1,
+        -2
+      ],
+      "rows": [
+        3,
+        2,
+        1,
+        0,
+        -1,
+        -2
+      ],
+      "presets": {
+        "n243": {
+          "label": "Abacus 243",
+          "view": "abacus",
+          "c": {
+            "0": 3,
+            "1": 4,
+            "2": 2
+          }
+        },
+        "n9": {
+          "label": "Abacus 199 (add one!)",
+          "view": "abacus",
+          "c": {
+            "0": 9,
+            "1": 9,
+            "2": 1
+          }
+        },
+        "dec": {
+          "label": "Abacus 1.36",
+          "view": "abacus",
+          "c": {
+            "0": 1,
+            "-1": 3,
+            "-2": 6
+          }
+        },
+        "g345": {
+          "label": "Gattegno 345",
+          "view": "gattegno",
+          "g": {
+            "0": 5,
+            "1": 4,
+            "2": 3
+          }
+        },
+        "g3040": {
+          "label": "Gattegno 3040.5 (zeros = no tile)",
+          "view": "gattegno",
+          "g": {
+            "1": 4,
+            "3": 3,
+            "-1": 5
+          }
+        },
+        "gdec": {
+          "label": "Gattegno 0.63 then × 10",
+          "view": "gattegno",
+          "g": {
+            "-1": 6,
+            "-2": 3
+          },
+          "op": 1
+        },
+        "empty": {
+          "label": "Empty (build your own)",
+          "view": "gattegno",
+          "g": {}
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-06",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-06",
+      "version": "1.0.0",
+      "stepCount": 5,
+      "steps": [
+        {
+          "name": "Line up the places",
+          "mood": "neutral",
+          "narration": "Write 456 and 278 with hundreds under hundreds, tens under tens, ones under ones. Each column is one place.",
+          "prompt": "Which digits go in the tens column?",
+          "pl": {
+            "a": {
+              "c": {
+                "0": 6,
+                "1": 5,
+                "2": 4
+              },
+              "hi": 2,
+              "lo": 0
+            },
+            "b": {
+              "c": {
+                "0": 8,
+                "1": 7,
+                "2": 2
+              },
+              "hi": 2,
+              "lo": 0
+            },
+            "lo": 0,
+            "hi": 2,
+            "ihi": 2,
+            "pad": {},
+            "top": {
+              "0": 6,
+              "1": 5,
+              "2": 4
+            },
+            "bot": {
+              "0": 8,
+              "1": 7,
+              "2": 2
+            },
+            "ev": [
+              {
+                "p": 0,
+                "kind": "add",
+                "x": 6,
+                "y": 8,
+                "cin": 0,
+                "s": 14,
+                "d": 4,
+                "cout": 1
+              },
+              {
+                "p": 1,
+                "kind": "add",
+                "x": 5,
+                "y": 7,
+                "cin": 1,
+                "s": 13,
+                "d": 3,
+                "cout": 1
+              },
+              {
+                "p": 2,
+                "kind": "add",
+                "x": 4,
+                "y": 2,
+                "cin": 1,
+                "s": 7,
+                "d": 7,
+                "cout": 0
+              }
+            ],
+            "ans": {
+              "0": 4,
+              "1": 3,
+              "2": 7
+            },
+            "res": 734,
+            "op": "+",
+            "A": "456",
+            "B": "278"
+          },
+          "ff": 0
+        },
+        {
+          "name": "Ones: carry a ten",
+          "mood": "focus",
+          "narration": "6 + 8 = 14. Write 4 in the ones. The 10 ones become 1 ten: it flies up to the tens column.",
+          "prompt": "Why does the 1 move to the tens?",
+          "pl": {
+            "a": {
+              "c": {
+                "0": 6,
+                "1": 5,
+                "2": 4
+              },
+              "hi": 2,
+              "lo": 0
+            },
+            "b": {
+              "c": {
+                "0": 8,
+                "1": 7,
+                "2": 2
+              },
+              "hi": 2,
+              "lo": 0
+            },
+            "lo": 0,
+            "hi": 2,
+            "ihi": 2,
+            "pad": {},
+            "top": {
+              "0": 6,
+              "1": 5,
+              "2": 4
+            },
+            "bot": {
+              "0": 8,
+              "1": 7,
+              "2": 2
+            },
+            "ev": [
+              {
+                "p": 0,
+                "kind": "add",
+                "x": 6,
+                "y": 8,
+                "cin": 0,
+                "s": 14,
+                "d": 4,
+                "cout": 1
+              },
+              {
+                "p": 1,
+                "kind": "add",
+                "x": 5,
+                "y": 7,
+                "cin": 1,
+                "s": 13,
+                "d": 3,
+                "cout": 1
+              },
+              {
+                "p": 2,
+                "kind": "add",
+                "x": 4,
+                "y": 2,
+                "cin": 1,
+                "s": 7,
+                "d": 7,
+                "cout": 0
+              }
+            ],
+            "ans": {
+              "0": 4,
+              "1": 3,
+              "2": 7
+            },
+            "res": 734,
+            "op": "+",
+            "A": "456",
+            "B": "278"
+          },
+          "ff": 0,
+          "go": 1
+        },
+        {
+          "name": "Tens",
+          "mood": "think",
+          "narration": "5 + 7 + the carried 1 = 13 tens. Write 3, carry 1 hundred.",
+          "prompt": "What is 5 + 7 + 1?",
+          "pl": {
+            "a": {
+              "c": {
+                "0": 6,
+                "1": 5,
+                "2": 4
+              },
+              "hi": 2,
+              "lo": 0
+            },
+            "b": {
+              "c": {
+                "0": 8,
+                "1": 7,
+                "2": 2
+              },
+              "hi": 2,
+              "lo": 0
+            },
+            "lo": 0,
+            "hi": 2,
+            "ihi": 2,
+            "pad": {},
+            "top": {
+              "0": 6,
+              "1": 5,
+              "2": 4
+            },
+            "bot": {
+              "0": 8,
+              "1": 7,
+              "2": 2
+            },
+            "ev": [
+              {
+                "p": 0,
+                "kind": "add",
+                "x": 6,
+                "y": 8,
+                "cin": 0,
+                "s": 14,
+                "d": 4,
+                "cout": 1
+              },
+              {
+                "p": 1,
+                "kind": "add",
+                "x": 5,
+                "y": 7,
+                "cin": 1,
+                "s": 13,
+                "d": 3,
+                "cout": 1
+              },
+              {
+                "p": 2,
+                "kind": "add",
+                "x": 4,
+                "y": 2,
+                "cin": 1,
+                "s": 7,
+                "d": 7,
+                "cout": 0
+              }
+            ],
+            "ans": {
+              "0": 4,
+              "1": 3,
+              "2": 7
+            },
+            "res": 734,
+            "op": "+",
+            "A": "456",
+            "B": "278"
+          },
+          "ff": 1,
+          "go": 1
+        },
+        {
+          "name": "Hundreds",
+          "mood": "cheer",
+          "narration": "4 + 2 + 1 = 7 hundreds. 456 + 278 = 734.",
+          "prompt": "Check: is 734 sensible?",
+          "pl": {
+            "a": {
+              "c": {
+                "0": 6,
+                "1": 5,
+                "2": 4
+              },
+              "hi": 2,
+              "lo": 0
+            },
+            "b": {
+              "c": {
+                "0": 8,
+                "1": 7,
+                "2": 2
+              },
+              "hi": 2,
+              "lo": 0
+            },
+            "lo": 0,
+            "hi": 2,
+            "ihi": 2,
+            "pad": {},
+            "top": {
+              "0": 6,
+              "1": 5,
+              "2": 4
+            },
+            "bot": {
+              "0": 8,
+              "1": 7,
+              "2": 2
+            },
+            "ev": [
+              {
+                "p": 0,
+                "kind": "add",
+                "x": 6,
+                "y": 8,
+                "cin": 0,
+                "s": 14,
+                "d": 4,
+                "cout": 1
+              },
+              {
+                "p": 1,
+                "kind": "add",
+                "x": 5,
+                "y": 7,
+                "cin": 1,
+                "s": 13,
+                "d": 3,
+                "cout": 1
+              },
+              {
+                "p": 2,
+                "kind": "add",
+                "x": 4,
+                "y": 2,
+                "cin": 1,
+                "s": 7,
+                "d": 7,
+                "cout": 0
+              }
+            ],
+            "ans": {
+              "0": 4,
+              "1": 3,
+              "2": 7
+            },
+            "res": 734,
+            "op": "+",
+            "A": "456",
+            "B": "278"
+          },
+          "ff": 2,
+          "go": 1
+        },
+        {
+          "name": "Decimals: align and exchange",
+          "mood": "focus",
+          "narration": "5.2 − 1.75: line up the decimal points and drop in a placeholder 0, so 5.20. Then exchange: a tenth becomes 10 hundredths, a one becomes 10 tenths. Answer 3.45.",
+          "prompt": "Why do we write 5.2 as 5.20?",
+          "pl": {
+            "a": {
+              "c": {
+                "0": 5,
+                "-1": 2
+              },
+              "hi": 0,
+              "lo": -1
+            },
+            "b": {
+              "c": {
+                "0": 1,
+                "-1": 7,
+                "-2": 5
+              },
+              "hi": 0,
+              "lo": -2
+            },
+            "lo": -2,
+            "hi": 0,
+            "ihi": 0,
+            "pad": {
+              "a-2": 1
+            },
+            "top": {
+              "0": 5,
+              "-1": 2,
+              "-2": 0
+            },
+            "bot": {
+              "0": 1,
+              "-1": 7,
+              "-2": 5
+            },
+            "ev": [
+              {
+                "p": -2,
+                "kind": "sub",
+                "x": 10,
+                "y": 5,
+                "bs": [
+                  {
+                    "from": -1,
+                    "was": 2,
+                    "now": 1
+                  }
+                ],
+                "d": 5
+              },
+              {
+                "p": -1,
+                "kind": "sub",
+                "x": 11,
+                "y": 7,
+                "bs": [
+                  {
+                    "from": 0,
+                    "was": 5,
+                    "now": 4
+                  }
+                ],
+                "d": 4
+              },
+              {
+                "p": 0,
+                "kind": "sub",
+                "x": 4,
+                "y": 1,
+                "bs": [],
+                "d": 3
+              }
+            ],
+            "ans": {
+              "0": 3,
+              "-2": 5,
+              "-1": 4
+            },
+            "res": 3.45,
+            "op": "-",
+            "A": "5.2",
+            "B": "1.75"
+          },
+          "ff": 0,
+          "all": 1
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "add1",
+        "places": [
+          3,
+          2,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "speed": 1,
+        "presets": {
+          "add1": {
+            "label": "456 + 278 (two carries)",
+            "a": "456",
+            "b": "278",
+            "op": "+"
+          },
+          "add2": {
+            "label": "3.6 + 2.75 (align, placeholder 0)",
+            "a": "3.6",
+            "b": "2.75",
+            "op": "+"
+          },
+          "add3": {
+            "label": "999 + 1 (carry chain)",
+            "a": "999",
+            "b": "1",
+            "op": "+"
+          },
+          "sub1": {
+            "label": "742 − 358 (exchanges)",
+            "a": "742",
+            "b": "358",
+            "op": "-"
+          },
+          "sub2": {
+            "label": "5.2 − 1.75 (align, exchange)",
+            "a": "5.2",
+            "b": "1.75",
+            "op": "-"
+          },
+          "sub3": {
+            "label": "4000 − 1 (exchange across zeros)",
+            "a": "4000",
+            "b": "1",
+            "op": "-"
+          },
+          "dec": {
+            "label": "12.5 + 7.86",
+            "a": "12.5",
+            "b": "7.86",
+            "op": "+"
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {
+            "state": {
+              "k": 0,
+              "ans": {},
+              "car": {},
+              "bor": {},
+              "T": {
+                "0": 6,
+                "1": 5,
+                "2": 4
+              },
+              "hl": null,
+              "padShown": true,
+              "mine": {},
+              "mc": {},
+              "mark": null
+            }
+          }
+        ],
+        "steps": [
+          {
+            "name": "Line up the places",
+            "mood": "neutral",
+            "narration": "Write 456 and 278 with hundreds under hundreds, tens under tens, ones under ones. Each column is one place.",
+            "prompt": "Which digits go in the tens column?",
+            "pl": {
+              "a": {
+                "c": {
+                  "0": 6,
+                  "1": 5,
+                  "2": 4
+                },
+                "hi": 2,
+                "lo": 0
+              },
+              "b": {
+                "c": {
+                  "0": 8,
+                  "1": 7,
+                  "2": 2
+                },
+                "hi": 2,
+                "lo": 0
+              },
+              "lo": 0,
+              "hi": 2,
+              "ihi": 2,
+              "pad": {},
+              "top": {
+                "0": 6,
+                "1": 5,
+                "2": 4
+              },
+              "bot": {
+                "0": 8,
+                "1": 7,
+                "2": 2
+              },
+              "ev": [
+                {
+                  "p": 0,
+                  "kind": "add",
+                  "x": 6,
+                  "y": 8,
+                  "cin": 0,
+                  "s": 14,
+                  "d": 4,
+                  "cout": 1
+                },
+                {
+                  "p": 1,
+                  "kind": "add",
+                  "x": 5,
+                  "y": 7,
+                  "cin": 1,
+                  "s": 13,
+                  "d": 3,
+                  "cout": 1
+                },
+                {
+                  "p": 2,
+                  "kind": "add",
+                  "x": 4,
+                  "y": 2,
+                  "cin": 1,
+                  "s": 7,
+                  "d": 7,
+                  "cout": 0
+                }
+              ],
+              "ans": {
+                "0": 4,
+                "1": 3,
+                "2": 7
+              },
+              "res": 734,
+              "op": "+",
+              "A": "456",
+              "B": "278"
+            },
+            "ff": 0
+          },
+          {
+            "name": "Ones: carry a ten",
+            "mood": "focus",
+            "narration": "6 + 8 = 14. Write 4 in the ones. The 10 ones become 1 ten: it flies up to the tens column.",
+            "prompt": "Why does the 1 move to the tens?",
+            "pl": {
+              "a": {
+                "c": {
+                  "0": 6,
+                  "1": 5,
+                  "2": 4
+                },
+                "hi": 2,
+                "lo": 0
+              },
+              "b": {
+                "c": {
+                  "0": 8,
+                  "1": 7,
+                  "2": 2
+                },
+                "hi": 2,
+                "lo": 0
+              },
+              "lo": 0,
+              "hi": 2,
+              "ihi": 2,
+              "pad": {},
+              "top": {
+                "0": 6,
+                "1": 5,
+                "2": 4
+              },
+              "bot": {
+                "0": 8,
+                "1": 7,
+                "2": 2
+              },
+              "ev": [
+                {
+                  "p": 0,
+                  "kind": "add",
+                  "x": 6,
+                  "y": 8,
+                  "cin": 0,
+                  "s": 14,
+                  "d": 4,
+                  "cout": 1
+                },
+                {
+                  "p": 1,
+                  "kind": "add",
+                  "x": 5,
+                  "y": 7,
+                  "cin": 1,
+                  "s": 13,
+                  "d": 3,
+                  "cout": 1
+                },
+                {
+                  "p": 2,
+                  "kind": "add",
+                  "x": 4,
+                  "y": 2,
+                  "cin": 1,
+                  "s": 7,
+                  "d": 7,
+                  "cout": 0
+                }
+              ],
+              "ans": {
+                "0": 4,
+                "1": 3,
+                "2": 7
+              },
+              "res": 734,
+              "op": "+",
+              "A": "456",
+              "B": "278"
+            },
+            "ff": 0,
+            "go": 1
+          },
+          {
+            "name": "Tens",
+            "mood": "think",
+            "narration": "5 + 7 + the carried 1 = 13 tens. Write 3, carry 1 hundred.",
+            "prompt": "What is 5 + 7 + 1?",
+            "pl": {
+              "a": {
+                "c": {
+                  "0": 6,
+                  "1": 5,
+                  "2": 4
+                },
+                "hi": 2,
+                "lo": 0
+              },
+              "b": {
+                "c": {
+                  "0": 8,
+                  "1": 7,
+                  "2": 2
+                },
+                "hi": 2,
+                "lo": 0
+              },
+              "lo": 0,
+              "hi": 2,
+              "ihi": 2,
+              "pad": {},
+              "top": {
+                "0": 6,
+                "1": 5,
+                "2": 4
+              },
+              "bot": {
+                "0": 8,
+                "1": 7,
+                "2": 2
+              },
+              "ev": [
+                {
+                  "p": 0,
+                  "kind": "add",
+                  "x": 6,
+                  "y": 8,
+                  "cin": 0,
+                  "s": 14,
+                  "d": 4,
+                  "cout": 1
+                },
+                {
+                  "p": 1,
+                  "kind": "add",
+                  "x": 5,
+                  "y": 7,
+                  "cin": 1,
+                  "s": 13,
+                  "d": 3,
+                  "cout": 1
+                },
+                {
+                  "p": 2,
+                  "kind": "add",
+                  "x": 4,
+                  "y": 2,
+                  "cin": 1,
+                  "s": 7,
+                  "d": 7,
+                  "cout": 0
+                }
+              ],
+              "ans": {
+                "0": 4,
+                "1": 3,
+                "2": 7
+              },
+              "res": 734,
+              "op": "+",
+              "A": "456",
+              "B": "278"
+            },
+            "ff": 1,
+            "go": 1
+          },
+          {
+            "name": "Hundreds",
+            "mood": "cheer",
+            "narration": "4 + 2 + 1 = 7 hundreds. 456 + 278 = 734.",
+            "prompt": "Check: is 734 sensible?",
+            "pl": {
+              "a": {
+                "c": {
+                  "0": 6,
+                  "1": 5,
+                  "2": 4
+                },
+                "hi": 2,
+                "lo": 0
+              },
+              "b": {
+                "c": {
+                  "0": 8,
+                  "1": 7,
+                  "2": 2
+                },
+                "hi": 2,
+                "lo": 0
+              },
+              "lo": 0,
+              "hi": 2,
+              "ihi": 2,
+              "pad": {},
+              "top": {
+                "0": 6,
+                "1": 5,
+                "2": 4
+              },
+              "bot": {
+                "0": 8,
+                "1": 7,
+                "2": 2
+              },
+              "ev": [
+                {
+                  "p": 0,
+                  "kind": "add",
+                  "x": 6,
+                  "y": 8,
+                  "cin": 0,
+                  "s": 14,
+                  "d": 4,
+                  "cout": 1
+                },
+                {
+                  "p": 1,
+                  "kind": "add",
+                  "x": 5,
+                  "y": 7,
+                  "cin": 1,
+                  "s": 13,
+                  "d": 3,
+                  "cout": 1
+                },
+                {
+                  "p": 2,
+                  "kind": "add",
+                  "x": 4,
+                  "y": 2,
+                  "cin": 1,
+                  "s": 7,
+                  "d": 7,
+                  "cout": 0
+                }
+              ],
+              "ans": {
+                "0": 4,
+                "1": 3,
+                "2": 7
+              },
+              "res": 734,
+              "op": "+",
+              "A": "456",
+              "B": "278"
+            },
+            "ff": 2,
+            "go": 1
+          },
+          {
+            "name": "Decimals: align and exchange",
+            "mood": "focus",
+            "narration": "5.2 − 1.75: line up the decimal points and drop in a placeholder 0, so 5.20. Then exchange: a tenth becomes 10 hundredths, a one becomes 10 tenths. Answer 3.45.",
+            "prompt": "Why do we write 5.2 as 5.20?",
+            "pl": {
+              "a": {
+                "c": {
+                  "0": 5,
+                  "-1": 2
+                },
+                "hi": 0,
+                "lo": -1
+              },
+              "b": {
+                "c": {
+                  "0": 1,
+                  "-1": 7,
+                  "-2": 5
+                },
+                "hi": 0,
+                "lo": -2
+              },
+              "lo": -2,
+              "hi": 0,
+              "ihi": 0,
+              "pad": {
+                "a-2": 1
+              },
+              "top": {
+                "0": 5,
+                "-1": 2,
+                "-2": 0
+              },
+              "bot": {
+                "0": 1,
+                "-1": 7,
+                "-2": 5
+              },
+              "ev": [
+                {
+                  "p": -2,
+                  "kind": "sub",
+                  "x": 10,
+                  "y": 5,
+                  "bs": [
+                    {
+                      "from": -1,
+                      "was": 2,
+                      "now": 1
+                    }
+                  ],
+                  "d": 5
+                },
+                {
+                  "p": -1,
+                  "kind": "sub",
+                  "x": 11,
+                  "y": 7,
+                  "bs": [
+                    {
+                      "from": 0,
+                      "was": 5,
+                      "now": 4
+                    }
+                  ],
+                  "d": 4
+                },
+                {
+                  "p": 0,
+                  "kind": "sub",
+                  "x": 4,
+                  "y": 1,
+                  "bs": [],
+                  "d": 3
+                }
+              ],
+              "ans": {
+                "0": 3,
+                "-2": 5,
+                "-1": 4
+              },
+              "res": 3.45,
+              "op": "-",
+              "A": "5.2",
+              "B": "1.75"
+            },
+            "ff": 0,
+            "all": 1
+          }
+        ]
+      },
+      "draws": {
+        "Sheet": [
+          "stage",
+          "pl",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "a": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "b": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "plan.T": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "a": "456",
+        "b": "278",
+        "plan.T": {
+          "0": 6,
+          "1": 5,
+          "2": 4
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Column method · Line up the placesstep 1/5456 + 278 in columns.HTO+425768calculation456 + 278answer…Line up the placesLine up the places (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Column method · Ones: carry a tenstep 2/5456 + 278 in columns.HTO+425768calculation456 + 278answer…Ones: carry a tenOnes: carry a ten (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Column method · Tensstep 3/5456 + 278 in columns.HTO+42576814calculation456 + 278answer…TensTens (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Column method · Hundredsstep 4/5456 + 278 in columns.HTO+4257681143calculation456 + 278answer734HundredsHundreds (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Column method · Decimals: align and exchangestep 5/55.2 − 1.75 in columns.Oth−512705calculation5.2 − 1.75answer…Decimals: align and exchangeDecimals: align and exchange (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · column additionlive456 + 278 in columns.HTO+425768calculation456 + 278answer…Play itPlay it (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "add1"
+      },
+      {
+        "label": "Top number",
+        "type": "text",
+        "min": "",
+        "max": "",
+        "value": "456"
+      },
+      {
+        "label": "Operation",
+        "type": "select-one",
+        "value": "+"
+      },
+      {
+        "label": "Bottom number",
+        "type": "text",
+        "min": "",
+        "max": "",
+        "value": "278"
+      },
+      {
+        "label": "Play",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Next column",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Your turn",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Check my answer",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "add1",
+      "places": [
+        3,
+        2,
+        1,
+        0,
+        -1,
+        -2
+      ],
+      "speed": 1,
+      "presets": {
+        "add1": {
+          "label": "456 + 278 (two carries)",
+          "a": "456",
+          "b": "278",
+          "op": "+"
+        },
+        "add2": {
+          "label": "3.6 + 2.75 (align, placeholder 0)",
+          "a": "3.6",
+          "b": "2.75",
+          "op": "+"
+        },
+        "add3": {
+          "label": "999 + 1 (carry chain)",
+          "a": "999",
+          "b": "1",
+          "op": "+"
+        },
+        "sub1": {
+          "label": "742 − 358 (exchanges)",
+          "a": "742",
+          "b": "358",
+          "op": "-"
+        },
+        "sub2": {
+          "label": "5.2 − 1.75 (align, exchange)",
+          "a": "5.2",
+          "b": "1.75",
+          "op": "-"
+        },
+        "sub3": {
+          "label": "4000 − 1 (exchange across zeros)",
+          "a": "4000",
+          "b": "1",
+          "op": "-"
+        },
+        "dec": {
+          "label": "12.5 + 7.86",
+          "a": "12.5",
+          "b": "7.86",
+          "op": "+"
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-07",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-07",
+      "version": "1.0.0",
+      "stepCount": 5,
+      "steps": [
+        {
+          "name": "Partition",
+          "mood": "neutral",
+          "narration": "23 × 14: split each number by place value. 23 is 20 + 3, 14 is 10 + 4. The grid has a cell for each pair.",
+          "prompt": "What are the parts of 14?",
+          "kind": "grid",
+          "a": "23",
+          "b": "14",
+          "ff": 0
+        },
+        {
+          "name": "Fill the grid",
+          "mood": "think",
+          "narration": "Multiply each pair: 20 × 10 = 200, 3 × 10 = 30, 20 × 4 = 80, 3 × 4 = 12.",
+          "prompt": "What is 20 × 4?",
+          "kind": "grid",
+          "a": "23",
+          "b": "14",
+          "ff": 0,
+          "play": 1
+        },
+        {
+          "name": "Add the parts",
+          "mood": "cheer",
+          "narration": "Add the four parts: 200 + 30 + 80 + 12 = 322. So 23 × 14 = 322.",
+          "prompt": "Why do we add the parts?",
+          "kind": "grid",
+          "a": "23",
+          "b": "14",
+          "ff": 4,
+          "go": 1
+        },
+        {
+          "name": "Short division",
+          "mood": "focus",
+          "narration": "756 ÷ 3: 7 ÷ 3 = 2 remainder 1. The 1 hundred becomes 10 tens and flies across: 15 tens ÷ 3 = 5. Then 6 ÷ 3 = 2. Answer 252.",
+          "prompt": "What does the remainder 1 become?",
+          "kind": "div",
+          "a": "756",
+          "b": "3",
+          "play": 1
+        },
+        {
+          "name": "Decimal remainder",
+          "mood": "cheer",
+          "narration": "7 ÷ 4 = 1 remainder 3. Put in a decimal point and placeholder zeros: 30 tenths ÷ 4 = 7 r 2, 20 hundredths ÷ 4 = 5. 7 ÷ 4 = 1.75.",
+          "prompt": "Why can we write 7 as 7.00?",
+          "kind": "div",
+          "a": "7",
+          "b": "4",
+          "play": 1
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "g1",
+        "maxDp": 3,
+        "presets": {
+          "g1": {
+            "label": "Grid 23 × 14",
+            "kind": "grid",
+            "a": "23",
+            "b": "14"
+          },
+          "g2": {
+            "label": "Grid 135 × 4",
+            "kind": "grid",
+            "a": "135",
+            "b": "4"
+          },
+          "g3": {
+            "label": "Grid 2.3 × 1.4",
+            "kind": "grid",
+            "a": "2.3",
+            "b": "1.4"
+          },
+          "g4": {
+            "label": "Grid 46 × 0.3",
+            "kind": "grid",
+            "a": "46",
+            "b": "0.3"
+          },
+          "d1": {
+            "label": "Short division 756 ÷ 3",
+            "kind": "div",
+            "a": "756",
+            "b": "3"
+          },
+          "d2": {
+            "label": "Short division 832 ÷ 4 (zero in quotient)",
+            "kind": "div",
+            "a": "832",
+            "b": "4"
+          },
+          "d3": {
+            "label": "Short division 7 ÷ 4 (decimal remainder)",
+            "kind": "div",
+            "a": "7",
+            "b": "4"
+          },
+          "d4": {
+            "label": "Short division 9.36 ÷ 3",
+            "kind": "div",
+            "a": "9.36",
+            "b": "3"
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {
+            "cells": [
+              {
+                "i": 0,
+                "j": 0,
+                "v": 200,
+                "a": {
+                  "v": 20,
+                  "p": 1
+                },
+                "b": {
+                  "v": 10,
+                  "p": 1
+                }
+              },
+              {
+                "i": 1,
+                "j": 0,
+                "v": 30,
+                "a": {
+                  "v": 3,
+                  "p": 0
+                },
+                "b": {
+                  "v": 10,
+                  "p": 1
+                }
+              },
+              {
+                "i": 0,
+                "j": 1,
+                "v": 80,
+                "a": {
+                  "v": 20,
+                  "p": 1
+                },
+                "b": {
+                  "v": 4,
+                  "p": 0
+                }
+              },
+              {
+                "i": 1,
+                "j": 1,
+                "v": 12,
+                "a": {
+                  "v": 3,
+                  "p": 0
+                },
+                "b": {
+                  "v": 4,
+                  "p": 0
+                }
+              }
+            ],
+            "total": 322
+          }
+        ],
+        "steps": [
+          {
+            "name": "Partition",
+            "mood": "neutral",
+            "narration": "23 × 14: split each number by place value. 23 is 20 + 3, 14 is 10 + 4. The grid has a cell for each pair.",
+            "prompt": "What are the parts of 14?",
+            "kind": "grid",
+            "a": "23",
+            "b": "14",
+            "ff": 0
+          },
+          {
+            "name": "Fill the grid",
+            "mood": "think",
+            "narration": "Multiply each pair: 20 × 10 = 200, 3 × 10 = 30, 20 × 4 = 80, 3 × 4 = 12.",
+            "prompt": "What is 20 × 4?",
+            "kind": "grid",
+            "a": "23",
+            "b": "14",
+            "ff": 0,
+            "play": 1
+          },
+          {
+            "name": "Add the parts",
+            "mood": "cheer",
+            "narration": "Add the four parts: 200 + 30 + 80 + 12 = 322. So 23 × 14 = 322.",
+            "prompt": "Why do we add the parts?",
+            "kind": "grid",
+            "a": "23",
+            "b": "14",
+            "ff": 4,
+            "go": 1
+          },
+          {
+            "name": "Short division",
+            "mood": "focus",
+            "narration": "756 ÷ 3: 7 ÷ 3 = 2 remainder 1. The 1 hundred becomes 10 tens and flies across: 15 tens ÷ 3 = 5. Then 6 ÷ 3 = 2. Answer 252.",
+            "prompt": "What does the remainder 1 become?",
+            "kind": "div",
+            "a": "756",
+            "b": "3",
+            "play": 1
+          },
+          {
+            "name": "Decimal remainder",
+            "mood": "cheer",
+            "narration": "7 ÷ 4 = 1 remainder 3. Put in a decimal point and placeholder zeros: 30 tenths ÷ 4 = 7 r 2, 20 hundredths ÷ 4 = 5. 7 ÷ 4 = 1.75.",
+            "prompt": "Why can we write 7 as 7.00?",
+            "kind": "div",
+            "a": "7",
+            "b": "4",
+            "play": 1
+          }
+        ]
+      },
+      "draws": {
+        "Grid": [
+          "stage",
+          "A",
+          "B",
+          "o"
+        ],
+        "Div": [
+          "stage",
+          "pl",
+          "o"
+        ],
+        "mount": [
+          "stage",
+          "k",
+          "a",
+          "b",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "k": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "a": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "b": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreInitials": {
+        "k": "grid",
+        "a": "23",
+        "b": "14"
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Grid method · Partitionstep 1/5Grid method: 23 × 14.×203104calculation23 × 14answer…PartitionPartition (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Grid method · Fill the gridstep 2/5Grid method: 23 × 14.×203104calculation23 × 14answer…Fill the gridFill the grid (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Grid method · Add the partsstep 3/5Grid method: 23 × 14.×203104200308012200 + 30 + 80 + 12  =  322calculation23 × 14answer…Add the partsAdd the parts (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Short division · Short divisionstep 4/5756 divided by 3.HTO3756calculation756 ÷ 3answer…Short divisionShort division (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Short division · Decimal remainderstep 5/57 divided by 4.O47calculation7 ÷ 4answer…Decimal remainderDecimal remainder (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · grid methodliveGrid method: 23 × 14.×203104calculation23 × 14answer…Play itPlay it (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "g1"
+      },
+      {
+        "label": "Layout",
+        "type": "select-one",
+        "value": "grid"
+      },
+      {
+        "label": "First number",
+        "type": "text",
+        "min": "",
+        "max": "",
+        "value": "23"
+      },
+      {
+        "label": "Second number",
+        "type": "text",
+        "min": "",
+        "max": "",
+        "value": "14"
+      },
+      {
+        "label": "Play",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Next step",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Your turn (÷)",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Check my answer",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "g1",
+      "maxDp": 3,
+      "presets": {
+        "g1": {
+          "label": "Grid 23 × 14",
+          "kind": "grid",
+          "a": "23",
+          "b": "14"
+        },
+        "g2": {
+          "label": "Grid 135 × 4",
+          "kind": "grid",
+          "a": "135",
+          "b": "4"
+        },
+        "g3": {
+          "label": "Grid 2.3 × 1.4",
+          "kind": "grid",
+          "a": "2.3",
+          "b": "1.4"
+        },
+        "g4": {
+          "label": "Grid 46 × 0.3",
+          "kind": "grid",
+          "a": "46",
+          "b": "0.3"
+        },
+        "d1": {
+          "label": "Short division 756 ÷ 3",
+          "kind": "div",
+          "a": "756",
+          "b": "3"
+        },
+        "d2": {
+          "label": "Short division 832 ÷ 4 (zero in quotient)",
+          "kind": "div",
+          "a": "832",
+          "b": "4"
+        },
+        "d3": {
+          "label": "Short division 7 ÷ 4 (decimal remainder)",
+          "kind": "div",
+          "a": "7",
+          "b": "4"
+        },
+        "d4": {
+          "label": "Short division 9.36 ÷ 3",
+          "kind": "div",
+          "a": "9.36",
+          "b": "3"
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-08",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-08",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "The number",
+          "mood": "neutral",
+          "narration": "3040.507 written in place cards. Each digit sits in its own place.",
+          "prompt": "Which places hold zeros?",
+          "v": "3040.507",
+          "e": 0,
+          "o": {
+            "goldZeros": true
+          }
+        },
+        {
+          "name": "Expand it",
+          "mood": "focus",
+          "narration": "Pull the number apart: each non-zero digit becomes its own part. The zeros drop away and gold zeros appear inside each part to hold its size.",
+          "prompt": "Why is the 3 now written 3000?",
+          "v": "3040.507",
+          "e": 0,
+          "go": 1
+        },
+        {
+          "name": "Add the parts",
+          "mood": "think",
+          "narration": "3040.507 = 3000 + 40 + 0.5 + 0.007. Add the parts and you get the number back.",
+          "prompt": "What is 3000 + 40?",
+          "v": "3040.507",
+          "e": 1,
+          "form": "add"
+        },
+        {
+          "name": "Digit × place",
+          "mood": "think",
+          "narration": "Each part is a digit times its place value: 3 × 1000 + 4 × 10 + 5 × 0.1 + 7 × 0.001.",
+          "prompt": "What is 5 × 0.1?",
+          "v": "3040.507",
+          "e": 1,
+          "form": "mult"
+        },
+        {
+          "name": "Powers of ten",
+          "mood": "focus",
+          "narration": "The places are powers of ten: 3 × 10³ + 4 × 10¹ + 5 × 10⁻¹ + 7 × 10⁻³.",
+          "prompt": "Which power of ten is the tenths place?",
+          "v": "3040.507",
+          "e": 1,
+          "form": "pow"
+        },
+        {
+          "name": "In words",
+          "mood": "cheer",
+          "narration": "Say it in places: 3 thousands, 4 tens, 5 tenths, 7 thousandths.",
+          "prompt": "How many tenths?",
+          "v": "3040.507",
+          "e": 1,
+          "form": "words"
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "n1",
+        "form": "add",
+        "presets": {
+          "n1": {
+            "label": "3040.507",
+            "v": "3040.507"
+          },
+          "n2": {
+            "label": "5062.08",
+            "v": "5062.08"
+          },
+          "n3": {
+            "label": "724",
+            "v": "724"
+          },
+          "n4": {
+            "label": "0.306",
+            "v": "0.306"
+          },
+          "n5": {
+            "label": "9000.009",
+            "v": "9000.009"
+          },
+          "n6": {
+            "label": "18.25",
+            "v": "18.25"
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "The number",
+            "mood": "neutral",
+            "narration": "3040.507 written in place cards. Each digit sits in its own place.",
+            "prompt": "Which places hold zeros?",
+            "v": "3040.507",
+            "e": 0,
+            "o": {
+              "goldZeros": true
+            }
+          },
+          {
+            "name": "Expand it",
+            "mood": "focus",
+            "narration": "Pull the number apart: each non-zero digit becomes its own part. The zeros drop away and gold zeros appear inside each part to hold its size.",
+            "prompt": "Why is the 3 now written 3000?",
+            "v": "3040.507",
+            "e": 0,
+            "go": 1
+          },
+          {
+            "name": "Add the parts",
+            "mood": "think",
+            "narration": "3040.507 = 3000 + 40 + 0.5 + 0.007. Add the parts and you get the number back.",
+            "prompt": "What is 3000 + 40?",
+            "v": "3040.507",
+            "e": 1,
+            "form": "add"
+          },
+          {
+            "name": "Digit × place",
+            "mood": "think",
+            "narration": "Each part is a digit times its place value: 3 × 1000 + 4 × 10 + 5 × 0.1 + 7 × 0.001.",
+            "prompt": "What is 5 × 0.1?",
+            "v": "3040.507",
+            "e": 1,
+            "form": "mult"
+          },
+          {
+            "name": "Powers of ten",
+            "mood": "focus",
+            "narration": "The places are powers of ten: 3 × 10³ + 4 × 10¹ + 5 × 10⁻¹ + 7 × 10⁻³.",
+            "prompt": "Which power of ten is the tenths place?",
+            "v": "3040.507",
+            "e": 1,
+            "form": "pow"
+          },
+          {
+            "name": "In words",
+            "mood": "cheer",
+            "narration": "Say it in places: 3 thousands, 4 tens, 5 tenths, 7 thousandths.",
+            "prompt": "How many tenths?",
+            "v": "3040.507",
+            "e": 1,
+            "form": "words"
+          }
+        ]
+      },
+      "draws": {
+        "Expander": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "Builder": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreInitials": {
+        "st": {
+          "v": "3040.507",
+          "e": 0,
+          "form": "add"
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Number expander · The numberstep 1/63040.507 expanded compactly.3Th0H4T0O5t0h7thTh = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507expanded…The numberThe number (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Number expander · Expand itstep 2/63040.507 expanded compactly.3Th0H4T0O5t0h7thTh = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507expanded…Expand itExpand it (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Number expander · Add the partsstep 3/63040.507 expanded as 3000 + 40 + 0.5 + 0.007.3000400.50.007+++Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507expanded3000 + 40 + 0.5 + 0.007Add the partsAdd the parts (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Number expander · Digit × placestep 4/63040.507 expanded as 3000 + 40 + 0.5 + 0.007.3000400.50.007+++3 × 1000 + 4 × 10 + 5 × 0.1 + 7 × 0.001Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507expanded3000 + 40 + 0.5 + 0.007Digit × placeDigit × place (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Number expander · Powers of tenstep 5/63040.507 expanded as 3000 + 40 + 0.5 + 0.007.3000400.50.007+++3 × 103 + 4 × 101 + 5 × 10−1 + 7 × 10−3Th = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507expanded3000 + 40 + 0.5 + 0.007Powers of tenPowers of ten (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Number expander · In wordsstep 6/63040.507 expanded as 3000 + 40 + 0.5 + 0.007.3000400.50.007+++3 thousands, 4 tens, 5 tenths, 7 thousandthsTh = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = Thousandthsnumber3040.507expanded3000 + 40 + 0.5 + 0.007In wordsIn words (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · number expanderlive3040.507 expanded compactly.3Th0H4T0O5t0h7thcompactexpandedTh = ThousandsH = HundredsT = TensO = Onest = Tenthsh = Hundredthsth = ThousandthsStretch itStretch it (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "n1"
+      },
+      {
+        "label": "Number",
+        "type": "text",
+        "min": "",
+        "max": "",
+        "value": "3040.507"
+      },
+      {
+        "label": "Form",
+        "type": "select-one",
+        "value": "add"
+      },
+      {
+        "label": "Expand",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Compress",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Build from parts",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "n1",
+      "form": "add",
+      "presets": {
+        "n1": {
+          "label": "3040.507",
+          "v": "3040.507"
+        },
+        "n2": {
+          "label": "5062.08",
+          "v": "5062.08"
+        },
+        "n3": {
+          "label": "724",
+          "v": "724"
+        },
+        "n4": {
+          "label": "0.306",
+          "v": "0.306"
+        },
+        "n5": {
+          "label": "9000.009",
+          "v": "9000.009"
+        },
+        "n6": {
+          "label": "18.25",
+          "v": "18.25"
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-09",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-09",
+      "version": "1.0.0",
+      "stepCount": 5,
+      "steps": [
+        {
+          "name": "Big numbers",
+          "mood": "neutral",
+          "narration": "30 700 in standard form is 3.07 × 10⁴: a number from 1 to under 10, times a power of ten. The gold digit sits in the 10⁴ place.",
+          "prompt": "Which place is the 3 in?",
+          "st": {
+            "m": "3.07",
+            "n": 4
+          }
+        },
+        {
+          "name": "Count the hops",
+          "mood": "focus",
+          "narration": "45 000: hop the decimal point left until only one non-zero digit is in front of it. Four hops, so 45 000 = 4.5 × 10⁴.",
+          "prompt": "How many hops?",
+          "st": {
+            "m": "4.5",
+            "n": 4
+          },
+          "conv": 1
+        },
+        {
+          "name": "Small numbers",
+          "mood": "think",
+          "narration": "0.00062: now the point hops right, four times. Hopping right gives a negative power: 6.2 × 10⁻⁴.",
+          "prompt": "Why is the power negative?",
+          "st": {
+            "m": "6.2",
+            "n": -4
+          },
+          "conv": 1
+        },
+        {
+          "name": "Scale the power",
+          "mood": "think",
+          "narration": "Slide the power from 4 to 6 on the number line: every digit glides two places left. 3.07 × 10⁶ = 3 070 000.",
+          "prompt": "What does +2 on the power do?",
+          "st": {
+            "m": "3.07",
+            "n": 4
+          },
+          "go": 6
+        },
+        {
+          "name": "Compare",
+          "mood": "cheer",
+          "narration": "Compare 3.2 × 10⁵ (A) and 9.1 × 10⁴ (B): check the powers first. 10⁵ is bigger, so A is bigger, even though 9.1 > 3.2.",
+          "prompt": "Which power is bigger?",
+          "st": {
+            "m": "3.2",
+            "n": 5,
+            "cmp": {
+              "m": "9.1",
+              "n": 4
+            }
+          }
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "big",
+        "minPow": -6,
+        "maxPow": 6,
+        "presets": {
+          "big": {
+            "label": "3.07 × 10⁴ = 30 700",
+            "m": "3.07",
+            "n": 4
+          },
+          "conv": {
+            "label": "Convert 45 000 (point hops)",
+            "m": "4.5",
+            "n": 4,
+            "convert": true
+          },
+          "small": {
+            "label": "Convert 0.00062 (point hops right)",
+            "m": "6.2",
+            "n": -4,
+            "convert": true
+          },
+          "earth": {
+            "label": "Earth–Sun ≈ 1.5 × 10⁸ km (scaled to 10⁶ strip: 1.5 × 10⁶)",
+            "m": "1.5",
+            "n": 6
+          },
+          "cell": {
+            "label": "Cell ≈ 2 × 10⁻⁶ m",
+            "m": "2",
+            "n": -6
+          },
+          "cmp": {
+            "label": "Compare 3.2 × 10⁵ and 9.1 × 10⁴",
+            "m": "3.2",
+            "n": 5,
+            "cmp": {
+              "m": "9.1",
+              "n": 4
+            }
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Big numbers",
+            "mood": "neutral",
+            "narration": "30 700 in standard form is 3.07 × 10⁴: a number from 1 to under 10, times a power of ten. The gold digit sits in the 10⁴ place.",
+            "prompt": "Which place is the 3 in?",
+            "st": {
+              "m": "3.07",
+              "n": 4
+            }
+          },
+          {
+            "name": "Count the hops",
+            "mood": "focus",
+            "narration": "45 000: hop the decimal point left until only one non-zero digit is in front of it. Four hops, so 45 000 = 4.5 × 10⁴.",
+            "prompt": "How many hops?",
+            "st": {
+              "m": "4.5",
+              "n": 4
+            },
+            "conv": 1
+          },
+          {
+            "name": "Small numbers",
+            "mood": "think",
+            "narration": "0.00062: now the point hops right, four times. Hopping right gives a negative power: 6.2 × 10⁻⁴.",
+            "prompt": "Why is the power negative?",
+            "st": {
+              "m": "6.2",
+              "n": -4
+            },
+            "conv": 1
+          },
+          {
+            "name": "Scale the power",
+            "mood": "think",
+            "narration": "Slide the power from 4 to 6 on the number line: every digit glides two places left. 3.07 × 10⁶ = 3 070 000.",
+            "prompt": "What does +2 on the power do?",
+            "st": {
+              "m": "3.07",
+              "n": 4
+            },
+            "go": 6
+          },
+          {
+            "name": "Compare",
+            "mood": "cheer",
+            "narration": "Compare 3.2 × 10⁵ (A) and 9.1 × 10⁴ (B): check the powers first. 10⁵ is bigger, so A is bigger, even though 9.1 > 3.2.",
+            "prompt": "Which power is bigger?",
+            "st": {
+              "m": "3.2",
+              "n": 5,
+              "cmp": {
+                "m": "9.1",
+                "n": 4
+              }
+            }
+          }
+        ]
+      },
+      "draws": {
+        "Scaler": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "render.st": {
+          "m": "3.07",
+          "n": 4
+        },
+        "st": {
+          "m": "3.07",
+          "n": 4,
+          "cmp": null
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Standard form · Big numbersstep 1/5Standard form: 3.07 times 10 to the 4.106 105 104 103 102 101 100 10−1 10−2 10−3 10−4 10−5 10−6 007033.07 × 104   =  30 70010−610−510−410−310−210−1100101102103104105106power of tennstandard form3.07 × 104ordinary30 700Big numbersBig numbers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Standard form · Count the hopsstep 2/5Standard form: 4.5 times 10 to the 4.106 105 104 103 102 101 100 10−1 10−2 10−3 10−4 10−5 10−6 0005445 00010−610−510−410−310−210−1100101102103104105106power of tennstandard form4.5 × 104ordinary45 000Count the hopsCount the hops (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Standard form · Small numbersstep 3/5Standard form: 6.2 times 10 to the -4.106 105 104 103 102 101 100 10−1 10−2 10−3 10−4 10−5 10−6 0620000.0006210−610−510−410−310−210−1100101102103104105106power of tennstandard form6.2 × 10−4ordinary0.00062Small numbersSmall numbers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Standard form · Scale the powerstep 4/5Standard form: 3.07 times 10 to the 4.106 105 104 103 102 101 100 10−1 10−2 10−3 10−4 10−5 10−6 007033.07 × 104   =  30 70010−610−510−410−310−210−1100101102103104105106power of tennstandard form3.07 × 104ordinary30 700Scale the powerScale the power (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Standard form · Comparestep 5/5Standard form: 3.2 times 10 to the 5.106 105 104 103 102 101 100 10−1 10−2 10−3 10−4 10−5 10−6 0000233.2 × 105   =  320 00010−610−510−410−310−210−1100101102103104105106power of tenBAA320 000B91 000biggerACompareCompare (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · standard formliveStandard form: 3.07 times 10 to the 4.106 105 104 103 102 101 100 10−1 10−2 10−3 10−4 10−5 10−6 007033.07 × 104   =  30 70010−610−510−410−310−210−1100101102103104105106power of tennstandard form3.07 × 104ordinary30 700Slide the powerSlide the power (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "big"
+      },
+      {
+        "label": "Number from 1 to under 10",
+        "type": "text",
+        "min": "",
+        "max": "",
+        "value": "3.07"
+      },
+      {
+        "label": "× 10",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "÷ 10",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Convert (hops)",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Compare off",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "big",
+      "minPow": -6,
+      "maxPow": 6,
+      "presets": {
+        "big": {
+          "label": "3.07 × 10⁴ = 30 700",
+          "m": "3.07",
+          "n": 4
+        },
+        "conv": {
+          "label": "Convert 45 000 (point hops)",
+          "m": "4.5",
+          "n": 4,
+          "convert": true
+        },
+        "small": {
+          "label": "Convert 0.00062 (point hops right)",
+          "m": "6.2",
+          "n": -4,
+          "convert": true
+        },
+        "earth": {
+          "label": "Earth–Sun ≈ 1.5 × 10⁸ km (scaled to 10⁶ strip: 1.5 × 10⁶)",
+          "m": "1.5",
+          "n": 6
+        },
+        "cell": {
+          "label": "Cell ≈ 2 × 10⁻⁶ m",
+          "m": "2",
+          "n": -6
+        },
+        "cmp": {
+          "label": "Compare 3.2 × 10⁵ and 9.1 × 10⁴",
+          "m": "3.2",
+          "n": 5,
+          "cmp": {
+            "m": "9.1",
+            "n": 4
+          }
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-10",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-10",
+      "version": "1.0.0",
+      "stepCount": 7,
+      "steps": [
+        {
+          "name": "Square numbers",
+          "mood": "neutral",
+          "narration": "Drag the corner to grow a square. A 5 by 5 square has 25 tiles: 5² = 25.",
+          "prompt": "How many tiles in a 5 by 5 square?",
+          "st": {
+            "view": "square",
+            "n": 1
+          },
+          "grow": 5
+        },
+        {
+          "name": "Square root",
+          "mood": "focus",
+          "narration": "The square root undoes squaring. Which square has 49 tiles? Grow it until it matches: 7 × 7 = 49, so √49 = 7.",
+          "prompt": "What is √49?",
+          "st": {
+            "view": "square",
+            "n": 1,
+            "target": 49
+          },
+          "grow": 7
+        },
+        {
+          "name": "Cube numbers",
+          "mood": "think",
+          "narration": "A cube 3 by 3 by 3 is built from 27 small cubes: 3³ = 27.",
+          "prompt": "How many small cubes?",
+          "st": {
+            "view": "cube",
+            "n": 3
+          }
+        },
+        {
+          "name": "Index notation",
+          "mood": "think",
+          "narration": "Repeated multiplication: 2 × 2 × 2 × 2. Four factors of 2 is written 2⁴, which is 16.",
+          "prompt": "What does the small 4 count?",
+          "st": {
+            "view": "chain",
+            "base": 2,
+            "a": 0
+          },
+          "build": 4
+        },
+        {
+          "name": "Multiply powers",
+          "mood": "focus",
+          "narration": "2³ × 2²: the two chains join into one chain of 5 twos. Add the indices: 2⁵.",
+          "prompt": "Why do the indices add?",
+          "st": {
+            "view": "law",
+            "base": 2,
+            "a": 3,
+            "b": 2,
+            "op": "×"
+          },
+          "comb": 1
+        },
+        {
+          "name": "Divide powers",
+          "mood": "think",
+          "narration": "3⁵ ÷ 3²: each 3 on the bottom cancels a 3 on top. Three 3s are left: 3³. Subtract the indices.",
+          "prompt": "How many 3s cancel?",
+          "st": {
+            "view": "law",
+            "base": 3,
+            "a": 5,
+            "b": 2,
+            "op": "÷"
+          },
+          "comb": 1
+        },
+        {
+          "name": "Fractional index",
+          "mood": "cheer",
+          "narration": "8 to the power one third means the cube root of 8: the edge of a cube with volume 8. The edge is 2.",
+          "prompt": "What is ∛8?",
+          "st": {
+            "view": "cube",
+            "n": 2,
+            "frac": true
+          }
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "sq",
+        "maxN": 10,
+        "maxChain": 8,
+        "presets": {
+          "sq": {
+            "label": "Square 7² (drag the corner)",
+            "view": "square",
+            "n": 7
+          },
+          "root": {
+            "label": "Square root: find √49",
+            "view": "square",
+            "n": 1,
+            "target": 49
+          },
+          "cube": {
+            "label": "Cube 3³",
+            "view": "cube",
+            "n": 3
+          },
+          "croot": {
+            "label": "Cube root: find ∛64",
+            "view": "cube",
+            "n": 1,
+            "target": 64
+          },
+          "chain": {
+            "label": "Index notation: build 2⁴",
+            "view": "chain",
+            "base": 2,
+            "a": 0
+          },
+          "mul": {
+            "label": "Law: 2³ × 2²",
+            "view": "law",
+            "base": 2,
+            "a": 3,
+            "b": 2,
+            "op": "×"
+          },
+          "div": {
+            "label": "Law: 3⁵ ÷ 3²",
+            "view": "law",
+            "base": 3,
+            "a": 5,
+            "b": 2,
+            "op": "÷"
+          },
+          "frac": {
+            "label": "Fractional index 8^(1/3)",
+            "view": "cube",
+            "n": 2,
+            "frac": true
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Square numbers",
+            "mood": "neutral",
+            "narration": "Drag the corner to grow a square. A 5 by 5 square has 25 tiles: 5² = 25.",
+            "prompt": "How many tiles in a 5 by 5 square?",
+            "st": {
+              "view": "square",
+              "n": 1
+            },
+            "grow": 5
+          },
+          {
+            "name": "Square root",
+            "mood": "focus",
+            "narration": "The square root undoes squaring. Which square has 49 tiles? Grow it until it matches: 7 × 7 = 49, so √49 = 7.",
+            "prompt": "What is √49?",
+            "st": {
+              "view": "square",
+              "n": 1,
+              "target": 49
+            },
+            "grow": 7
+          },
+          {
+            "name": "Cube numbers",
+            "mood": "think",
+            "narration": "A cube 3 by 3 by 3 is built from 27 small cubes: 3³ = 27.",
+            "prompt": "How many small cubes?",
+            "st": {
+              "view": "cube",
+              "n": 3
+            }
+          },
+          {
+            "name": "Index notation",
+            "mood": "think",
+            "narration": "Repeated multiplication: 2 × 2 × 2 × 2. Four factors of 2 is written 2⁴, which is 16.",
+            "prompt": "What does the small 4 count?",
+            "st": {
+              "view": "chain",
+              "base": 2,
+              "a": 0
+            },
+            "build": 4
+          },
+          {
+            "name": "Multiply powers",
+            "mood": "focus",
+            "narration": "2³ × 2²: the two chains join into one chain of 5 twos. Add the indices: 2⁵.",
+            "prompt": "Why do the indices add?",
+            "st": {
+              "view": "law",
+              "base": 2,
+              "a": 3,
+              "b": 2,
+              "op": "×"
+            },
+            "comb": 1
+          },
+          {
+            "name": "Divide powers",
+            "mood": "think",
+            "narration": "3⁵ ÷ 3²: each 3 on the bottom cancels a 3 on top. Three 3s are left: 3³. Subtract the indices.",
+            "prompt": "How many 3s cancel?",
+            "st": {
+              "view": "law",
+              "base": 3,
+              "a": 5,
+              "b": 2,
+              "op": "÷"
+            },
+            "comb": 1
+          },
+          {
+            "name": "Fractional index",
+            "mood": "cheer",
+            "narration": "8 to the power one third means the cube root of 8: the edge of a cube with volume 8. The edge is 2.",
+            "prompt": "What is ∛8?",
+            "st": {
+              "view": "cube",
+              "n": 2,
+              "frac": true
+            }
+          }
+        ]
+      },
+      "draws": {
+        "Shape": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "Chain": [
+          "stage",
+          "st",
+          "o"
+        ],
+        "mk": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        },
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        },
+        "render.w": {
+          "kind": "factory",
+          "factory": "mk",
+          "argCount": 3
+        }
+      },
+      "exploreInitials": {
+        "render.st": {
+          "view": "square",
+          "n": 1
+        },
+        "render.w": {},
+        "st": {
+          "label": "Square 7² (drag the corner)",
+          "view": "square",
+          "n": 7
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Powers and roots · Square numbersstep 1/7Square 1 by 1.111² = 11 × 1n1n²1Square numbersSquare numbers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Powers and roots · Square rootstep 2/7Square 1 by 1.111² = 11 × 1√49 = ?n1n²1Square rootSquare root (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Powers and roots · Cube numbersstep 3/7Cube 3 by 3.33³ = 273 × 3 × 3n3n³27Cube numbersCube numbers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Powers and roots · Index notationstep 4/7Index chain.drag factor tiles herefactor tray (drag back here to remove)2factors0value—Index notationIndex notation (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Powers and roots · Multiply powersstep 5/7Index chain.2³2²×222222³ × 2² = ?indices3 + 2result25Multiply powersMultiply powers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Powers and roots · Divide powersstep 6/7Index chain.3⁵3²÷33333333⁵ ÷ 3² = ?indices5 − 2result33Divide powersDivide powers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 6,
+        "text": "Powers and roots · Fractional indexstep 7/7Cube 2 by 2.28¹⁄³ = ∛8edge = 22³ = 88^(1/3)2Fractional indexFractional index (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · squares and rootsliveSquare 7 by 7.777² = 497 × 7n7n²49Drag itDrag it (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "sq"
+      },
+      {
+        "label": "Base",
+        "type": "select-one",
+        "value": "2"
+      },
+      {
+        "label": "Combine",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "sq",
+      "maxN": 10,
+      "maxChain": 8,
+      "presets": {
+        "sq": {
+          "label": "Square 7² (drag the corner)",
+          "view": "square",
+          "n": 7
+        },
+        "root": {
+          "label": "Square root: find √49",
+          "view": "square",
+          "n": 1,
+          "target": 49
+        },
+        "cube": {
+          "label": "Cube 3³",
+          "view": "cube",
+          "n": 3
+        },
+        "croot": {
+          "label": "Cube root: find ∛64",
+          "view": "cube",
+          "n": 1,
+          "target": 64
+        },
+        "chain": {
+          "label": "Index notation: build 2⁴",
+          "view": "chain",
+          "base": 2,
+          "a": 0
+        },
+        "mul": {
+          "label": "Law: 2³ × 2²",
+          "view": "law",
+          "base": 2,
+          "a": 3,
+          "b": 2,
+          "op": "×"
+        },
+        "div": {
+          "label": "Law: 3⁵ ÷ 3²",
+          "view": "law",
+          "base": 3,
+          "a": 5,
+          "b": 2,
+          "op": "÷"
+        },
+        "frac": {
+          "label": "Fractional index 8^(1/3)",
+          "view": "cube",
+          "n": 2,
+          "frac": true
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-11",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-11",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "The tree",
+          "mood": "neutral",
+          "narration": "3 + 4 × 2 as a tree. The operation lowest in the tree is done first. × sits below +, so 4 × 2 comes first.",
+          "prompt": "Which operation is lowest?",
+          "e": "3+4×2"
+        },
+        {
+          "name": "Collapse",
+          "mood": "focus",
+          "narration": "The branches 4 and 2 slide up into ×, which becomes 8. Then 3 and 8 collapse into + to give 11.",
+          "prompt": "What is 4 × 2?",
+          "e": "3+4×2",
+          "auto": 1
+        },
+        {
+          "name": "Brackets first",
+          "mood": "think",
+          "narration": "(3 + 4) × 2: the brackets push + down the tree, so it is worked out first. 7 × 2 = 14.",
+          "prompt": "Why is the answer different?",
+          "e": "(3+4)×2",
+          "auto": 1
+        },
+        {
+          "name": "Powers",
+          "mood": "think",
+          "narration": "2 + 3² × 4: the power is lowest of all, then ×, then +. 3² = 9, 9 × 4 = 36, 2 + 36 = 38.",
+          "prompt": "What is 3²?",
+          "e": "2+3^2×4",
+          "auto": 1
+        },
+        {
+          "name": "Left to right",
+          "mood": "focus",
+          "narration": "12 ÷ 3 × 2: ÷ and × have equal priority, so work left to right. 12 ÷ 3 = 4, then 4 × 2 = 8 (not 12 ÷ 6).",
+          "prompt": "Which goes first?",
+          "e": "12÷3×2",
+          "auto": 1
+        },
+        {
+          "name": "Put it together",
+          "mood": "cheer",
+          "narration": "10 − 2 × (1 + 3) + 6: brackets 4, then 2 × 4 = 8, then left to right: 10 − 8 = 2, 2 + 6 = 8.",
+          "prompt": "What is the answer?",
+          "e": "10−2×(1+3)+6",
+          "auto": 1
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "p1",
+        "presets": {
+          "p1": {
+            "label": "3 + 4 × 2",
+            "e": "3+4×2"
+          },
+          "p2": {
+            "label": "(3 + 4) × 2",
+            "e": "(3+4)×2"
+          },
+          "p3": {
+            "label": "20 − 6 ÷ 2 + 1",
+            "e": "20−6÷2+1"
+          },
+          "p4": {
+            "label": "2 + 3² × 4",
+            "e": "2+3^2×4"
+          },
+          "p5": {
+            "label": "12 ÷ 3 × 2 (left to right)",
+            "e": "12÷3×2"
+          },
+          "p6": {
+            "label": "(8 − 2)² ÷ (5 − 2)",
+            "e": "(8−2)^2÷(5−2)"
+          },
+          "p7": {
+            "label": "10 − 2 × (1 + 3) + 6",
+            "e": "10−2×(1+3)+6"
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "The tree",
+            "mood": "neutral",
+            "narration": "3 + 4 × 2 as a tree. The operation lowest in the tree is done first. × sits below +, so 4 × 2 comes first.",
+            "prompt": "Which operation is lowest?",
+            "e": "3+4×2"
+          },
+          {
+            "name": "Collapse",
+            "mood": "focus",
+            "narration": "The branches 4 and 2 slide up into ×, which becomes 8. Then 3 and 8 collapse into + to give 11.",
+            "prompt": "What is 4 × 2?",
+            "e": "3+4×2",
+            "auto": 1
+          },
+          {
+            "name": "Brackets first",
+            "mood": "think",
+            "narration": "(3 + 4) × 2: the brackets push + down the tree, so it is worked out first. 7 × 2 = 14.",
+            "prompt": "Why is the answer different?",
+            "e": "(3+4)×2",
+            "auto": 1
+          },
+          {
+            "name": "Powers",
+            "mood": "think",
+            "narration": "2 + 3² × 4: the power is lowest of all, then ×, then +. 3² = 9, 9 × 4 = 36, 2 + 36 = 38.",
+            "prompt": "What is 3²?",
+            "e": "2+3^2×4",
+            "auto": 1
+          },
+          {
+            "name": "Left to right",
+            "mood": "focus",
+            "narration": "12 ÷ 3 × 2: ÷ and × have equal priority, so work left to right. 12 ÷ 3 = 4, then 4 × 2 = 8 (not 12 ÷ 6).",
+            "prompt": "Which goes first?",
+            "e": "12÷3×2",
+            "auto": 1
+          },
+          {
+            "name": "Put it together",
+            "mood": "cheer",
+            "narration": "10 − 2 × (1 + 3) + 6: brackets 4, then 2 × 4 = 8, then left to right: 10 − 8 = 2, 2 + 6 = 8.",
+            "prompt": "What is the answer?",
+            "e": "10−2×(1+3)+6",
+            "auto": 1
+          }
+        ]
+      },
+      "draws": {
+        "Tree": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "strict": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreInitials": {
+        "strict": true
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "BIDMAS tree · The treestep 1/6Expression tree.3 + 4 × 23+4×2nextmultiplyvalue…The treeThe tree (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "BIDMAS tree · Collapsestep 2/6Expression tree.3 + 4 × 23+4×2nextmultiplyvalue…CollapseCollapse (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "BIDMAS tree · Brackets firststep 3/6Expression tree.(3 + 4) × 2( )3+4×2nextaddvalue…Brackets firstBrackets first (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "BIDMAS tree · Powersstep 4/6Expression tree.2 + 32  × 42+3xⁿ2×4nextpowervalue…PowersPowers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "BIDMAS tree · Left to rightstep 5/6Expression tree.12 ÷ 3 × 212÷3×2nextdividevalue…Left to rightLeft to right (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "BIDMAS tree · Put it togetherstep 6/6Expression tree.10 − 2 × (1 + 3) + 6( )10−2×1+3+6nextaddvalue…Put it togetherPut it together (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · BIDMAS treeliveExpression tree.3 + 4 × 23+4×2nextmultiplysteps0value…Tap a ringTap a ring (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "p1"
+      },
+      {
+        "label": "Expression",
+        "type": "text",
+        "min": "",
+        "max": "",
+        "value": "3+4×2"
+      },
+      {
+        "label": "Next step",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Auto",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Strict order: on",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "p1",
+      "presets": {
+        "p1": {
+          "label": "3 + 4 × 2",
+          "e": "3+4×2"
+        },
+        "p2": {
+          "label": "(3 + 4) × 2",
+          "e": "(3+4)×2"
+        },
+        "p3": {
+          "label": "20 − 6 ÷ 2 + 1",
+          "e": "20−6÷2+1"
+        },
+        "p4": {
+          "label": "2 + 3² × 4",
+          "e": "2+3^2×4"
+        },
+        "p5": {
+          "label": "12 ÷ 3 × 2 (left to right)",
+          "e": "12÷3×2"
+        },
+        "p6": {
+          "label": "(8 − 2)² ÷ (5 − 2)",
+          "e": "(8−2)^2÷(5−2)"
+        },
+        "p7": {
+          "label": "10 − 2 × (1 + 3) + 6",
+          "e": "10−2×(1+3)+6"
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-12",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-12",
+      "version": "1.0.0",
+      "stepCount": 5,
+      "steps": [
+        {
+          "name": "Place",
+          "mood": "neutral",
+          "narration": "Each + counter is worth +1, each − counter is worth −1. Four + counters make 4: the marker sits at 4.",
+          "prompt": "What are four + counters worth?",
+          "st": {
+            "pos": 4,
+            "neg": 0
+          }
+        },
+        {
+          "name": "Add negatives",
+          "mood": "focus",
+          "narration": "4 + (−6): drop six − counters onto the mat. Pairs of + and − are zero pairs.",
+          "prompt": "How many zero pairs?",
+          "st": {
+            "pos": 4,
+            "neg": 0
+          }
+        },
+        {
+          "name": "Cross zero",
+          "mood": "think",
+          "narration": "Cancel the zero pairs: four pairs vanish, two − counters are left. The marker has crossed zero to −2.",
+          "prompt": "Why is the answer negative?",
+          "st": {
+            "pos": 4,
+            "neg": 6
+          }
+        },
+        {
+          "name": "Make room",
+          "mood": "think",
+          "narration": "2 − 5: there are only two + counters to take away. Add three zero pairs (worth 0), then take away five +. Three − are left: −3.",
+          "prompt": "Do zero pairs change the value?",
+          "st": {
+            "pos": 2,
+            "neg": 0
+          }
+        },
+        {
+          "name": "Value reading",
+          "mood": "cheer",
+          "narration": "−3 − (−4): take away four − counters. Add one zero pair first, then take four − away: 1 is left.",
+          "prompt": "What is −3 − (−4)?",
+          "st": {
+            "pos": 0,
+            "neg": 3
+          }
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "add",
+        "maxEach": 10,
+        "lineMin": -10,
+        "lineMax": 10,
+        "autoCancel": false,
+        "presets": {
+          "add": {
+            "label": "4 + (−6): cross zero",
+            "pos": 4,
+            "neg": 0,
+            "addNeg": 6
+          },
+          "zp": {
+            "label": "Zero pairs: 3 + (−3)",
+            "pos": 3,
+            "neg": 3
+          },
+          "sub": {
+            "label": "2 − 5: add zero pairs, then take away",
+            "pos": 2,
+            "neg": 0
+          },
+          "nn": {
+            "label": "−3 − (−4)",
+            "pos": 0,
+            "neg": 3
+          },
+          "temp": {
+            "label": "Temperature −2 °C rises 7",
+            "pos": 0,
+            "neg": 2
+          },
+          "free": {
+            "label": "Empty mat",
+            "pos": 0,
+            "neg": 0
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Place",
+            "mood": "neutral",
+            "narration": "Each + counter is worth +1, each − counter is worth −1. Four + counters make 4: the marker sits at 4.",
+            "prompt": "What are four + counters worth?",
+            "st": {
+              "pos": 4,
+              "neg": 0
+            }
+          },
+          {
+            "name": "Add negatives",
+            "mood": "focus",
+            "narration": "4 + (−6): drop six − counters onto the mat. Pairs of + and − are zero pairs.",
+            "prompt": "How many zero pairs?",
+            "st": {
+              "pos": 4,
+              "neg": 0
+            }
+          },
+          {
+            "name": "Cross zero",
+            "mood": "think",
+            "narration": "Cancel the zero pairs: four pairs vanish, two − counters are left. The marker has crossed zero to −2.",
+            "prompt": "Why is the answer negative?",
+            "st": {
+              "pos": 4,
+              "neg": 6
+            }
+          },
+          {
+            "name": "Make room",
+            "mood": "think",
+            "narration": "2 − 5: there are only two + counters to take away. Add three zero pairs (worth 0), then take away five +. Three − are left: −3.",
+            "prompt": "Do zero pairs change the value?",
+            "st": {
+              "pos": 2,
+              "neg": 0
+            }
+          },
+          {
+            "name": "Value reading",
+            "mood": "cheer",
+            "narration": "−3 − (−4): take away four − counters. Add one zero pair first, then take four − away: 1 is left.",
+            "prompt": "What is −3 − (−4)?",
+            "st": {
+              "pos": 0,
+              "neg": 3
+            }
+          }
+        ]
+      },
+      "draws": {
+        "Mat": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "render.st": {
+          "pos": 4,
+          "neg": 0
+        },
+        "st": null
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Negative numbers · Placestep 1/5Counters: 4 positive, 0 negative. Value 4.positive (+1 each)negative (−1 each)++++traydrag back here to remove+−−10−9−8−7−6−5−4−3−2−10123456789104+ counters4− counters0value4PlacePlace (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Negative numbers · Add negativesstep 2/5Counters: 4 positive, 0 negative. Value 4.positive (+1 each)negative (−1 each)++++traydrag back here to remove+−−10−9−8−7−6−5−4−3−2−10123456789104+ counters4− counters0value4Add negativesAdd negatives (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Negative numbers · Cross zerostep 3/5Counters: 4 positive, 6 negative. Value −2.positive (+1 each)negative (−1 each)++++−−−−−−4 zero pairstraydrag back here to remove+−−10−9−8−7−6−5−4−3−2−1012345678910−2+ counters4− counters6value−2Cross zeroCross zero (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Negative numbers · Make roomstep 4/5Counters: 2 positive, 0 negative. Value 2.positive (+1 each)negative (−1 each)++traydrag back here to remove+−−10−9−8−7−6−5−4−3−2−10123456789102+ counters2− counters0value2Make roomMake room (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Negative numbers · Value readingstep 5/5Counters: 0 positive, 3 negative. Value −3.positive (+1 each)negative (−1 each)−−−traydrag back here to remove+−−10−9−8−7−6−5−4−3−2−1012345678910−3+ counters0− counters3value−3Value readingValue reading (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · counters and zero pairsliveCounters: 4 positive, 0 negative. Value 4.positive (+1 each)negative (−1 each)++++traydrag back here to remove+−−10−9−8−7−6−5−4−3−2−10123456789104+ counters4− counters0value4Zero pairsZero pairs (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "add"
+      },
+      {
+        "label": "+ counter",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "− counter",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Zero pair",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Cancel pairs",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Auto-cancel: off",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "add",
+      "maxEach": 10,
+      "lineMin": -10,
+      "lineMax": 10,
+      "autoCancel": false,
+      "presets": {
+        "add": {
+          "label": "4 + (−6): cross zero",
+          "pos": 4,
+          "neg": 0,
+          "addNeg": 6
+        },
+        "zp": {
+          "label": "Zero pairs: 3 + (−3)",
+          "pos": 3,
+          "neg": 3
+        },
+        "sub": {
+          "label": "2 − 5: add zero pairs, then take away",
+          "pos": 2,
+          "neg": 0
+        },
+        "nn": {
+          "label": "−3 − (−4)",
+          "pos": 0,
+          "neg": 3
+        },
+        "temp": {
+          "label": "Temperature −2 °C rises 7",
+          "pos": 0,
+          "neg": 2
+        },
+        "free": {
+          "label": "Empty mat",
+          "pos": 0,
+          "neg": 0
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-13",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-13",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "Fill the frame",
+          "mood": "neutral",
+          "narration": "A ten frame holds 10. Drop in 7 counters, one per cell, five in each row.",
+          "prompt": "How many cells are full?",
+          "st": {
+            "frames": 1,
+            "unit": 1,
+            "a": 0
+          }
+        },
+        {
+          "name": "Split into a bond",
+          "mood": "focus",
+          "narration": "The whole is 10. The 7 counters are one part. The other part is the empty cells.",
+          "prompt": "How many cells are empty?",
+          "st": {
+            "frames": 1,
+            "unit": 1,
+            "a": 7
+          }
+        },
+        {
+          "name": "Partner glows",
+          "mood": "think",
+          "narration": "The three empty cells glow: 3 is the partner of 7. 7 + 3 = 10.",
+          "prompt": "What is 10 − 7?",
+          "st": {
+            "frames": 1,
+            "unit": 1,
+            "a": 7
+          }
+        },
+        {
+          "name": "Bonds to 20",
+          "mood": "think",
+          "narration": "Two frames make 20. 13 counters leave 7 empty cells: 13 + 7 = 20.",
+          "prompt": "What is the partner of 13?",
+          "st": {
+            "frames": 2,
+            "unit": 1,
+            "a": 13
+          }
+        },
+        {
+          "name": "Bonds to 1",
+          "mood": "focus",
+          "narration": "Now each counter is 0.1. Six counters make 0.6; four tenths are empty, so 0.6 + 0.4 = 1.",
+          "prompt": "What is the partner of 0.6?",
+          "st": {
+            "frames": 1,
+            "unit": 0.1,
+            "a": 6
+          }
+        },
+        {
+          "name": "Bonds to 100",
+          "mood": "cheer",
+          "narration": "Each counter is 10. Seven make 70; three empty cells are 30: 70 + 30 = 100. Same pattern as 7 + 3 = 10.",
+          "prompt": "What is the partner of 70?",
+          "st": {
+            "frames": 1,
+            "unit": 10,
+            "a": 7
+          }
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "b10",
+        "presets": {
+          "b10": {
+            "label": "Bonds to 10: 7 + ?",
+            "frames": 1,
+            "unit": 1,
+            "a": 7
+          },
+          "b20": {
+            "label": "Bonds to 20: 13 + ?",
+            "frames": 2,
+            "unit": 1,
+            "a": 13
+          },
+          "dec": {
+            "label": "Bonds to 1: 0.6 + ?",
+            "frames": 1,
+            "unit": 0.1,
+            "a": 6
+          },
+          "hun": {
+            "label": "Bonds to 100: 70 + ?",
+            "frames": 1,
+            "unit": 10,
+            "a": 7
+          },
+          "emp": {
+            "label": "Empty frame (bonds to 10)",
+            "frames": 1,
+            "unit": 1,
+            "a": 0
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Fill the frame",
+            "mood": "neutral",
+            "narration": "A ten frame holds 10. Drop in 7 counters, one per cell, five in each row.",
+            "prompt": "How many cells are full?",
+            "st": {
+              "frames": 1,
+              "unit": 1,
+              "a": 0
+            }
+          },
+          {
+            "name": "Split into a bond",
+            "mood": "focus",
+            "narration": "The whole is 10. The 7 counters are one part. The other part is the empty cells.",
+            "prompt": "How many cells are empty?",
+            "st": {
+              "frames": 1,
+              "unit": 1,
+              "a": 7
+            }
+          },
+          {
+            "name": "Partner glows",
+            "mood": "think",
+            "narration": "The three empty cells glow: 3 is the partner of 7. 7 + 3 = 10.",
+            "prompt": "What is 10 − 7?",
+            "st": {
+              "frames": 1,
+              "unit": 1,
+              "a": 7
+            }
+          },
+          {
+            "name": "Bonds to 20",
+            "mood": "think",
+            "narration": "Two frames make 20. 13 counters leave 7 empty cells: 13 + 7 = 20.",
+            "prompt": "What is the partner of 13?",
+            "st": {
+              "frames": 2,
+              "unit": 1,
+              "a": 13
+            }
+          },
+          {
+            "name": "Bonds to 1",
+            "mood": "focus",
+            "narration": "Now each counter is 0.1. Six counters make 0.6; four tenths are empty, so 0.6 + 0.4 = 1.",
+            "prompt": "What is the partner of 0.6?",
+            "st": {
+              "frames": 1,
+              "unit": 0.1,
+              "a": 6
+            }
+          },
+          {
+            "name": "Bonds to 100",
+            "mood": "cheer",
+            "narration": "Each counter is 10. Seven make 70; three empty cells are 30: 70 + 30 = 100. Same pattern as 7 + 3 = 10.",
+            "prompt": "What is the partner of 70?",
+            "st": {
+              "frames": 1,
+              "unit": 10,
+              "a": 7
+            }
+          }
+        ]
+      },
+      "draws": {
+        "Bond": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "render.st": {
+          "frames": 1,
+          "unit": 1,
+          "a": 0
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Number bonds · Fill the framestep 1/6Ten frame with 0 counters; bond 0 and 10 make 10.each counter = 110whole0?partpartnerpart0partner?whole10Fill the frameFill the frame (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Number bonds · Split into a bondstep 2/6Ten frame with 7 counters; bond 7 and 3 make 10.each counter = 110whole7?partpartnerpart7partner?whole10Split into a bondSplit into a bond (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Number bonds · Partner glowsstep 3/6Ten frame with 7 counters; bond 7 and 3 make 10.each counter = 110whole7?partpartnerpart7partner?whole10Partner glowsPartner glows (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Number bonds · Bonds to 20step 4/6Ten frame with 13 counters; bond 13 and 7 make 20.each counter = 120whole13?partpartnerpart13partner?whole20Bonds to 20Bonds to 20 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Number bonds · Bonds to 1step 5/6Ten frame with 6 counters; bond 0.6 and 0.4 make 1.each counter = 0.11whole0.6?partpartnerpart0.6partner?whole1Bonds to 1Bonds to 1 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Number bonds · Bonds to 100step 6/6Ten frame with 7 counters; bond 70 and 30 make 100.each counter = 10100whole70?partpartnerpart70partner?whole100Bonds to 100Bonds to 100 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · ten frames and bondsliveTen frame with 7 counters; bond 7 and 3 make 10.each counter = 110whole7?partpartner234730part7partner?whole10Find the partnerFind the partner (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "b10"
+      },
+      {
+        "label": "Show partner",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "b10",
+      "presets": {
+        "b10": {
+          "label": "Bonds to 10: 7 + ?",
+          "frames": 1,
+          "unit": 1,
+          "a": 7
+        },
+        "b20": {
+          "label": "Bonds to 20: 13 + ?",
+          "frames": 2,
+          "unit": 1,
+          "a": 13
+        },
+        "dec": {
+          "label": "Bonds to 1: 0.6 + ?",
+          "frames": 1,
+          "unit": 0.1,
+          "a": 6
+        },
+        "hun": {
+          "label": "Bonds to 100: 70 + ?",
+          "frames": 1,
+          "unit": 10,
+          "a": 7
+        },
+        "emp": {
+          "label": "Empty frame (bonds to 10)",
+          "frames": 1,
+          "unit": 1,
+          "a": 0
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-14",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-14",
+      "version": "1.0.0",
+      "stepCount": 7,
+      "steps": [
+        {
+          "name": "The square",
+          "mood": "neutral",
+          "narration": "The hundred square: each row is a ten. Moving right adds 1; moving down a row adds 10. The marker is on 23.",
+          "prompt": "What is below 23?",
+          "st": {
+            "at": 23
+          }
+        },
+        {
+          "name": "Move by tens",
+          "mood": "focus",
+          "narration": "+10: the marker drops one row, straight down. 23 + 10 = 33. The ones digit stays the same.",
+          "prompt": "Why does the ones digit stay 3?",
+          "st": {
+            "at": 23
+          }
+        },
+        {
+          "name": "Tens and ones",
+          "mood": "think",
+          "narration": "+9 is +10 then −1: down one row, back one cell. 33 + 9 = 42.",
+          "prompt": "What is 33 + 9?",
+          "st": {
+            "at": 33
+          }
+        },
+        {
+          "name": "Land",
+          "mood": "think",
+          "narration": "+11 is +10 then +1: down and right. 42 + 11 = 53.",
+          "prompt": "What is 42 + 11?",
+          "st": {
+            "at": 42
+          }
+        },
+        {
+          "name": "Multiples",
+          "mood": "focus",
+          "narration": "Multiples of 4 light up: 4, 8, 12, … They make columns that shift: every multiple of 4 is even.",
+          "prompt": "Is 100 a multiple of 4?",
+          "st": {
+            "at": 0
+          }
+        },
+        {
+          "name": "Pattern of 9",
+          "mood": "think",
+          "narration": "Multiples of 9 run in a diagonal: each step is +10 −1. The digits always add to 9.",
+          "prompt": "What is the next multiple of 9 after 45?",
+          "st": {
+            "at": 0
+          }
+        },
+        {
+          "name": "Factors",
+          "mood": "cheer",
+          "narration": "Factors of 24 glow gold: 1, 2, 3, 4, 6, 8, 12, 24. Factors divide 24 exactly; multiples are 24, 48, 72, 96.",
+          "prompt": "Is 5 a factor of 24?",
+          "st": {
+            "at": 24
+          }
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "jump",
+        "pills": [
+          1,
+          -1,
+          10,
+          -10,
+          9,
+          11
+        ],
+        "presets": {
+          "jump": {
+            "label": "Jumps from 23",
+            "at": 23
+          },
+          "m4": {
+            "label": "Multiples of 4",
+            "at": 24,
+            "mult": 4
+          },
+          "m9": {
+            "label": "Multiples of 9 (diagonal)",
+            "at": 45,
+            "mult": 9
+          },
+          "f24": {
+            "label": "Factors of 24",
+            "at": 24,
+            "factors": true
+          },
+          "f36": {
+            "label": "Factors of 36",
+            "at": 36,
+            "factors": true
+          },
+          "m6": {
+            "label": "Multiples of 6",
+            "at": 6,
+            "mult": 6
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "The square",
+            "mood": "neutral",
+            "narration": "The hundred square: each row is a ten. Moving right adds 1; moving down a row adds 10. The marker is on 23.",
+            "prompt": "What is below 23?",
+            "st": {
+              "at": 23
+            }
+          },
+          {
+            "name": "Move by tens",
+            "mood": "focus",
+            "narration": "+10: the marker drops one row, straight down. 23 + 10 = 33. The ones digit stays the same.",
+            "prompt": "Why does the ones digit stay 3?",
+            "st": {
+              "at": 23
+            }
+          },
+          {
+            "name": "Tens and ones",
+            "mood": "think",
+            "narration": "+9 is +10 then −1: down one row, back one cell. 33 + 9 = 42.",
+            "prompt": "What is 33 + 9?",
+            "st": {
+              "at": 33
+            }
+          },
+          {
+            "name": "Land",
+            "mood": "think",
+            "narration": "+11 is +10 then +1: down and right. 42 + 11 = 53.",
+            "prompt": "What is 42 + 11?",
+            "st": {
+              "at": 42
+            }
+          },
+          {
+            "name": "Multiples",
+            "mood": "focus",
+            "narration": "Multiples of 4 light up: 4, 8, 12, … They make columns that shift: every multiple of 4 is even.",
+            "prompt": "Is 100 a multiple of 4?",
+            "st": {
+              "at": 0
+            }
+          },
+          {
+            "name": "Pattern of 9",
+            "mood": "think",
+            "narration": "Multiples of 9 run in a diagonal: each step is +10 −1. The digits always add to 9.",
+            "prompt": "What is the next multiple of 9 after 45?",
+            "st": {
+              "at": 0
+            }
+          },
+          {
+            "name": "Factors",
+            "mood": "cheer",
+            "narration": "Factors of 24 glow gold: 1, 2, 3, 4, 6, 8, 12, 24. Factors divide 24 exactly; multiples are 24, 48, 72, 96.",
+            "prompt": "Is 5 a factor of 24?",
+            "st": {
+              "at": 24
+            }
+          }
+        ]
+      },
+      "draws": {
+        "Square": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "render.st": {
+          "at": 23
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Hundred square · The squarestep 1/7Hundred square, marker on 23.123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100jump pillsdrag onto the square+1−1+10−10+9+11marker23The squareThe square (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Hundred square · Move by tensstep 2/7Hundred square, marker on 23.123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100jump pillsdrag onto the square+1−1+10−10+9+11marker23Move by tensMove by tens (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Hundred square · Tens and onesstep 3/7Hundred square, marker on 33.123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100jump pillsdrag onto the square+1−1+10−10+9+11marker33Tens and onesTens and ones (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Hundred square · Landstep 4/7Hundred square, marker on 42.123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100jump pillsdrag onto the square+1−1+10−10+9+11marker42LandLand (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Hundred square · Multiplesstep 5/7Hundred square.123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100marker—MultiplesMultiples (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Hundred square · Pattern of 9step 6/7Hundred square.123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100marker—Pattern of 9Pattern of 9 (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 6,
+        "text": "Hundred square · Factorsstep 7/7Hundred square, marker on 24.123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100jump pillsdrag onto the square+1−1+10−10+9+11marker24FactorsFactors (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · hundred squareliveHundred square, marker on 23.123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100jump pillsdrag onto the square+1−1+10−10+9+11marker23Jump aroundJump around (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "jump"
+      },
+      {
+        "label": "Multiples of",
+        "type": "select-one",
+        "value": "3"
+      },
+      {
+        "label": "Light multiples",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Factors of marker",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "jump",
+      "pills": [
+        1,
+        -1,
+        10,
+        -10,
+        9,
+        11
+      ],
+      "presets": {
+        "jump": {
+          "label": "Jumps from 23",
+          "at": 23
+        },
+        "m4": {
+          "label": "Multiples of 4",
+          "at": 24,
+          "mult": 4
+        },
+        "m9": {
+          "label": "Multiples of 9 (diagonal)",
+          "at": 45,
+          "mult": 9
+        },
+        "f24": {
+          "label": "Factors of 24",
+          "at": 24,
+          "factors": true
+        },
+        "f36": {
+          "label": "Factors of 36",
+          "at": 36,
+          "factors": true
+        },
+        "m6": {
+          "label": "Multiples of 6",
+          "at": 6,
+          "mult": 6
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-15",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-15",
+      "version": "1.0.0",
+      "stepCount": 5,
+      "steps": [
+        {
+          "name": "Choose base",
+          "mood": "neutral",
+          "narration": "In base 10 the places are powers of 10: 1000, 100, 10, 1, and each place holds 0 to 9. 207 is 2 hundreds, 0 tens, 7 ones.",
+          "prompt": "What is the biggest digit in base 10?",
+          "st": {
+            "base": 10,
+            "d": [
+              0,
+              2,
+              0,
+              7
+            ]
+          }
+        },
+        {
+          "name": "Fill places",
+          "mood": "focus",
+          "narration": "Base 2 (binary): the places are powers of 2: 128, 64, 32, 16, 8, 4, 2, 1. Each place is just on or off. Light 8, 2 and 1.",
+          "prompt": "Which places are on?",
+          "st": {
+            "base": 2,
+            "d": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "name": "Convert to denary",
+          "mood": "think",
+          "narration": "Add the place values that are on: 8 + 2 + 1 = 11. So 1011 in binary is 11 in denary.",
+          "prompt": "What is 1011 in denary?",
+          "st": {
+            "base": 2,
+            "d": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "name": "Carry",
+          "mood": "focus",
+          "narration": "0111 + 1: the ones place is full, so it carries. Each full place empties and passes 1 along: 1000, which is 8.",
+          "prompt": "Why does 0111 + 1 make 1000?",
+          "st": {
+            "base": 2,
+            "d": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "name": "Other bases",
+          "mood": "cheer",
+          "narration": "Base 5: places 125, 25, 5, 1 and digits 0 to 4. 324 in base 5 is 3 × 25 + 2 × 5 + 4 = 89.",
+          "prompt": "Why is there no digit 5 in base 5?",
+          "st": {
+            "base": 5,
+            "d": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "b2",
+        "bases": [
+          2,
+          3,
+          5,
+          8,
+          10
+        ],
+        "presets": {
+          "b2": {
+            "label": "Binary 1011",
+            "base": 2,
+            "d": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1
+            ]
+          },
+          "b173": {
+            "label": "Binary 173",
+            "base": 2,
+            "d": [
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1
+            ]
+          },
+          "b5": {
+            "label": "Base 5: 3 2 4",
+            "base": 5,
+            "d": [
+              0,
+              3,
+              2,
+              4
+            ]
+          },
+          "b8": {
+            "label": "Base 8 (octal): 7 1",
+            "base": 8,
+            "d": [
+              0,
+              0,
+              7,
+              1
+            ]
+          },
+          "b10": {
+            "label": "Base 10: 2 0 7",
+            "base": 10,
+            "d": [
+              0,
+              2,
+              0,
+              7
+            ]
+          },
+          "carry": {
+            "label": "Binary carry: 0111 + 1",
+            "base": 2,
+            "d": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Choose base",
+            "mood": "neutral",
+            "narration": "In base 10 the places are powers of 10: 1000, 100, 10, 1, and each place holds 0 to 9. 207 is 2 hundreds, 0 tens, 7 ones.",
+            "prompt": "What is the biggest digit in base 10?",
+            "st": {
+              "base": 10,
+              "d": [
+                0,
+                2,
+                0,
+                7
+              ]
+            }
+          },
+          {
+            "name": "Fill places",
+            "mood": "focus",
+            "narration": "Base 2 (binary): the places are powers of 2: 128, 64, 32, 16, 8, 4, 2, 1. Each place is just on or off. Light 8, 2 and 1.",
+            "prompt": "Which places are on?",
+            "st": {
+              "base": 2,
+              "d": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "name": "Convert to denary",
+            "mood": "think",
+            "narration": "Add the place values that are on: 8 + 2 + 1 = 11. So 1011 in binary is 11 in denary.",
+            "prompt": "What is 1011 in denary?",
+            "st": {
+              "base": 2,
+              "d": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "name": "Carry",
+            "mood": "focus",
+            "narration": "0111 + 1: the ones place is full, so it carries. Each full place empties and passes 1 along: 1000, which is 8.",
+            "prompt": "Why does 0111 + 1 make 1000?",
+            "st": {
+              "base": 2,
+              "d": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "name": "Other bases",
+            "mood": "cheer",
+            "narration": "Base 5: places 125, 25, 5, 1 and digits 0 to 4. 324 in base 5 is 3 × 25 + 2 × 5 + 4 = 89.",
+            "prompt": "Why is there no digit 5 in base 5?",
+            "st": {
+              "base": 5,
+              "d": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      "draws": {
+        "Chart": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "render.st": {
+          "base": 10,
+          "d": [
+            0,
+            2,
+            0,
+            7
+          ]
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Bases · Choose basestep 1/5Base 10 place chart, digits 0 2 0 7, worth 207.103100001021002101100100172×100 + 7×1  =  207base10digits207denary207Choose baseChoose base (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Bases · Fill placesstep 2/5Base 2 place chart, digits 0 0 0 0 0 0 0 0, worth 0.27128026640253202416023802240212020100  =  0base2digits0denary0Fill placesFill places (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Bases · Convert to denarystep 3/5Base 2 place chart, digits 0 0 0 0 1 0 1 1, worth 11.27128026640253202416023812240212120118 + 2 + 1  =  11base2digits1011denary11Convert to denaryConvert to denary (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Bases · Carrystep 4/5Base 2 place chart, digits 0 0 0 0 0 1 1 1, worth 7.27128026640253202416023802241212120114 + 2 + 1  =  7base2digits111denary7CarryCarry (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Bases · Other basesstep 5/5Base 5 place chart, digits 0 0 0 0, worth 0.53125052250515050100  =  0base5digits0denary0Other basesOther bases (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · base 2liveBase 2 place chart, digits 0 0 0 0 1 0 1 1, worth 11.27128026640253202416023812240212120118 + 2 + 1  =  11traymax 1 in a place · drag back here to removebase2digits1011denary11Light bulbsLight bulbs (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Example",
+        "type": "select-one",
+        "value": "b2"
+      },
+      {
+        "label": "Base",
+        "type": "select-one",
+        "value": "2"
+      },
+      {
+        "label": "Denary number to show",
+        "type": "text",
+        "min": "",
+        "max": "",
+        "value": ""
+      },
+      {
+        "label": "Show in this base",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "b2",
+      "bases": [
+        2,
+        3,
+        5,
+        8,
+        10
+      ],
+      "presets": {
+        "b2": {
+          "label": "Binary 1011",
+          "base": 2,
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "b173": {
+          "label": "Binary 173",
+          "base": 2,
+          "d": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "b5": {
+          "label": "Base 5: 3 2 4",
+          "base": 5,
+          "d": [
+            0,
+            3,
+            2,
+            4
+          ]
+        },
+        "b8": {
+          "label": "Base 8 (octal): 7 1",
+          "base": 8,
+          "d": [
+            0,
+            0,
+            7,
+            1
+          ]
+        },
+        "b10": {
+          "label": "Base 10: 2 0 7",
+          "base": 10,
+          "d": [
+            0,
+            2,
+            0,
+            7
+          ]
+        },
+        "carry": {
+          "label": "Binary carry: 0111 + 1",
+          "base": 2,
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  },
+  {
+    "id": "F2-16",
+    "errors": [],
+    "descriptor": {
+      "id": "F2-16",
+      "version": "1.0.0",
+      "stepCount": 6,
+      "steps": [
+        {
+          "name": "Rings draw",
+          "mood": "neutral",
+          "narration": "The real numbers hold everything. Inside: rational numbers, then integers, then natural numbers. Irrational numbers sit in the reals but outside the rationals.",
+          "prompt": "Which set is the smallest?",
+          "st": {
+            "tray": [],
+            "placed": {
+              "N": [],
+              "Z": [],
+              "Q": [],
+              "I": []
+            }
+          }
+        },
+        {
+          "name": "Natural numbers",
+          "mood": "focus",
+          "narration": "7 is a counting number. √9 = 3, so it is natural too. They go in the smallest ring, ℕ.",
+          "prompt": "Why is √9 natural?",
+          "st": {
+            "tray": [
+              "7",
+              "√9"
+            ],
+            "placed": {
+              "N": [],
+              "Z": [],
+              "Q": [],
+              "I": []
+            }
+          }
+        },
+        {
+          "name": "Integers",
+          "mood": "think",
+          "narration": "−3 and 0 are whole numbers but not counting numbers, so their smallest set is ℤ.",
+          "prompt": "Is −3 a natural number?",
+          "st": {
+            "tray": [
+              "−3",
+              "0"
+            ],
+            "placed": {
+              "N": [],
+              "Z": [],
+              "Q": [],
+              "I": []
+            }
+          },
+          "pre": [
+            "7",
+            "√9"
+          ]
+        },
+        {
+          "name": "Rationals",
+          "mood": "think",
+          "narration": "0.75 and 0.333… can be written as fractions of integers (three quarters, one third), so they are rational but not integers.",
+          "prompt": "Why is 0.333… rational?",
+          "st": {
+            "tray": [
+              "0.75",
+              "0.333…"
+            ],
+            "placed": {
+              "N": [],
+              "Z": [],
+              "Q": [],
+              "I": []
+            }
+          },
+          "pre": [
+            "7",
+            "√9",
+            "−3",
+            "0"
+          ]
+        },
+        {
+          "name": "Irrationals glow",
+          "mood": "focus",
+          "narration": "√2 and π never end and never repeat. They cannot be written as a fraction: they are irrational.",
+          "prompt": "Why is √2 irrational?",
+          "st": {
+            "tray": [
+              "√2",
+              "π"
+            ],
+            "placed": {
+              "N": [],
+              "Z": [],
+              "Q": [],
+              "I": []
+            }
+          },
+          "pre": [
+            "7",
+            "√9",
+            "−3",
+            "0",
+            "0.75",
+            "0.333…"
+          ]
+        },
+        {
+          "name": "All real",
+          "mood": "cheer",
+          "narration": "Every card sits inside ℝ. Each number goes in the smallest set it fits; it also belongs to every set around it.",
+          "prompt": "Is 7 a rational number?",
+          "st": {
+            "tray": [],
+            "placed": {
+              "N": [],
+              "Z": [],
+              "Q": [],
+              "I": []
+            }
+          },
+          "pre": [
+            "7",
+            "√9",
+            "−3",
+            "0",
+            "0.75",
+            "0.333…",
+            "√2",
+            "π"
+          ]
+        }
+      ],
+      "config": {
+        "startMode": "watch",
+        "preset": "mix",
+        "naturalStartsAt": 1,
+        "presets": {
+          "mix": {
+            "label": "Mixed set",
+            "cards": [
+              "7",
+              "−3",
+              "0.75",
+              "√2",
+              "π",
+              "0",
+              "√9",
+              "0.333…"
+            ]
+          },
+          "roots": {
+            "label": "Square roots",
+            "cards": [
+              "√4",
+              "√5",
+              "√16",
+              "√0.25",
+              "√10",
+              "√1"
+            ]
+          },
+          "dec": {
+            "label": "Decimals",
+            "cards": [
+              "0.5",
+              "−2.5",
+              "0.1010010001…",
+              "3.0",
+              "0.666…",
+              "1.414…"
+            ]
+          },
+          "neg": {
+            "label": "Negatives",
+            "cards": [
+              "−1",
+              "−0.2",
+              "−√3",
+              "−49",
+              "−π"
+            ]
+          }
+        },
+        "_explore": {},
+        "_challenge": {}
+      },
+      "models": {},
+      "tables": {
+        "SETS": {
+          "R": {
+            "x": 20,
+            "y": 14,
+            "w": 560,
+            "h": 306,
+            "col": "#7dd3fc",
+            "name": "ℝ real numbers"
+          },
+          "Q": {
+            "x": 34,
+            "y": 46,
+            "w": 372,
+            "h": 262,
+            "col": "#60a5fa",
+            "name": "ℚ rational"
+          },
+          "Z": {
+            "x": 48,
+            "y": 82,
+            "w": 262,
+            "h": 214,
+            "col": "#2dd4bf",
+            "name": "ℤ integers"
+          },
+          "N": {
+            "x": 62,
+            "y": 118,
+            "w": 150,
+            "h": 166,
+            "col": "#4ade80",
+            "name": "ℕ natural"
+          },
+          "I": {
+            "x": 420,
+            "y": 46,
+            "w": 148,
+            "h": 262,
+            "col": "#c084fc",
+            "name": "irrational"
+          }
+        },
+        "INFO": {
+          "0": [
+            "Z",
+            "0 is an integer; here ℕ starts at 1"
+          ],
+          "7": [
+            "N"
+          ],
+          "−3": [
+            "Z"
+          ],
+          "0.75": [
+            "Q",
+            "3/4 (fraction TBD)"
+          ],
+          "√2": [
+            "I"
+          ],
+          "π": [
+            "I"
+          ],
+          "√9": [
+            "N",
+            "√9 = 3"
+          ],
+          "0.333…": [
+            "Q",
+            "recurring: one third"
+          ],
+          "√4": [
+            "N",
+            "√4 = 2"
+          ],
+          "√5": [
+            "I"
+          ],
+          "√16": [
+            "N",
+            "√16 = 4"
+          ],
+          "√0.25": [
+            "Q",
+            "√0.25 = 0.5"
+          ],
+          "√10": [
+            "I"
+          ],
+          "√1": [
+            "N",
+            "√1 = 1"
+          ],
+          "0.5": [
+            "Q"
+          ],
+          "−2.5": [
+            "Q"
+          ],
+          "0.1010010001…": [
+            "I",
+            "never repeats"
+          ],
+          "3.0": [
+            "N",
+            "3.0 = 3"
+          ],
+          "0.666…": [
+            "Q",
+            "recurring"
+          ],
+          "1.414…": [
+            "I",
+            "that is √2"
+          ],
+          "−1": [
+            "Z"
+          ],
+          "−0.2": [
+            "Q"
+          ],
+          "−√3": [
+            "I"
+          ],
+          "−49": [
+            "Z"
+          ],
+          "−π": [
+            "I"
+          ],
+          "√25": [
+            "N"
+          ],
+          "√7": [
+            "I"
+          ],
+          "−8": [
+            "Z"
+          ],
+          "−6": [
+            "Z"
+          ]
+        },
+        "ORDER": [
+          "N",
+          "Z",
+          "Q",
+          "I"
+        ],
+        "LIVE": [
+          {}
+        ],
+        "steps": [
+          {
+            "name": "Rings draw",
+            "mood": "neutral",
+            "narration": "The real numbers hold everything. Inside: rational numbers, then integers, then natural numbers. Irrational numbers sit in the reals but outside the rationals.",
+            "prompt": "Which set is the smallest?",
+            "st": {
+              "tray": [],
+              "placed": {
+                "N": [],
+                "Z": [],
+                "Q": [],
+                "I": []
+              }
+            }
+          },
+          {
+            "name": "Natural numbers",
+            "mood": "focus",
+            "narration": "7 is a counting number. √9 = 3, so it is natural too. They go in the smallest ring, ℕ.",
+            "prompt": "Why is √9 natural?",
+            "st": {
+              "tray": [
+                "7",
+                "√9"
+              ],
+              "placed": {
+                "N": [],
+                "Z": [],
+                "Q": [],
+                "I": []
+              }
+            }
+          },
+          {
+            "name": "Integers",
+            "mood": "think",
+            "narration": "−3 and 0 are whole numbers but not counting numbers, so their smallest set is ℤ.",
+            "prompt": "Is −3 a natural number?",
+            "st": {
+              "tray": [
+                "−3",
+                "0"
+              ],
+              "placed": {
+                "N": [],
+                "Z": [],
+                "Q": [],
+                "I": []
+              }
+            },
+            "pre": [
+              "7",
+              "√9"
+            ]
+          },
+          {
+            "name": "Rationals",
+            "mood": "think",
+            "narration": "0.75 and 0.333… can be written as fractions of integers (three quarters, one third), so they are rational but not integers.",
+            "prompt": "Why is 0.333… rational?",
+            "st": {
+              "tray": [
+                "0.75",
+                "0.333…"
+              ],
+              "placed": {
+                "N": [],
+                "Z": [],
+                "Q": [],
+                "I": []
+              }
+            },
+            "pre": [
+              "7",
+              "√9",
+              "−3",
+              "0"
+            ]
+          },
+          {
+            "name": "Irrationals glow",
+            "mood": "focus",
+            "narration": "√2 and π never end and never repeat. They cannot be written as a fraction: they are irrational.",
+            "prompt": "Why is √2 irrational?",
+            "st": {
+              "tray": [
+                "√2",
+                "π"
+              ],
+              "placed": {
+                "N": [],
+                "Z": [],
+                "Q": [],
+                "I": []
+              }
+            },
+            "pre": [
+              "7",
+              "√9",
+              "−3",
+              "0",
+              "0.75",
+              "0.333…"
+            ]
+          },
+          {
+            "name": "All real",
+            "mood": "cheer",
+            "narration": "Every card sits inside ℝ. Each number goes in the smallest set it fits; it also belongs to every set around it.",
+            "prompt": "Is 7 a rational number?",
+            "st": {
+              "tray": [],
+              "placed": {
+                "N": [],
+                "Z": [],
+                "Q": [],
+                "I": []
+              }
+            },
+            "pre": [
+              "7",
+              "√9",
+              "−3",
+              "0",
+              "0.75",
+              "0.333…",
+              "√2",
+              "π"
+            ]
+          }
+        ]
+      },
+      "draws": {
+        "Sets": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "render.st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "exploreInitials": {
+        "render.st": {
+          "tray": [],
+          "placed": {
+            "N": [],
+            "Z": [],
+            "Q": [],
+            "I": []
+          }
+        }
+      }
+    },
+    "baseline": [
+      {
+        "i": 0,
+        "text": "Number sets · Rings drawstep 1/6Number sets: natural inside integers inside rationals; rationals and irrationals make the reals.ℝ real numbersℚ rationalℤ integersℕ naturalirrationalall sorted: drag a card back here to try againℕ0ℤ0ℚ0irrational0Rings drawRings draw (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 1,
+        "text": "Number sets · Natural numbersstep 2/6Number sets: natural inside integers inside rationals; rationals and irrationals make the reals.ℝ real numbersℚ rationalℤ integersℕ naturalirrational7√9ℕ0ℤ0ℚ0irrational0Natural numbersNatural numbers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 2,
+        "text": "Number sets · Integersstep 3/6Number sets: natural inside integers inside rationals; rationals and irrationals make the reals.ℝ real numbersℚ rationalℤ integersℕ naturalirrational7√9−30ℕ2ℤ0ℚ0irrational0IntegersIntegers (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 3,
+        "text": "Number sets · Rationalsstep 4/6Number sets: natural inside integers inside rationals; rationals and irrationals make the reals.ℝ real numbersℚ rationalℤ integersℕ naturalirrational7√9−300.750.333…ℕ2ℤ2ℚ0irrational0RationalsRationals (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 4,
+        "text": "Number sets · Irrationals glowstep 5/6Number sets: natural inside integers inside rationals; rationals and irrationals make the reals.ℝ real numbersℚ rationalℤ integersℕ naturalirrational7√9−300.750.333…√2πℕ2ℤ2ℚ2irrational0Irrationals glowIrrationals glow (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      },
+      {
+        "i": 5,
+        "text": "Number sets · All realstep 6/6Number sets: natural inside integers inside rationals; rationals and irrationals make the reals.ℝ real numbersℚ rationalℤ integersℕ naturalirrational7√9−300.750.333…√2πall sorted: drag a card back here to try againℕ2ℤ2ℚ2irrational2All realAll real (Nova the cat, welcome)Nova the cat, welcome",
+        "svg": 2
+      }
+    ],
+    "exploreText": "Explore · sort the numbersliveNumber sets: natural inside integers inside rationals; rationals and irrationals make the reals.ℝ real numbersℚ rationalℤ integersℕ naturalirrational7−30.75√2π0√90.333…ℕ0ℤ0ℚ0irrational0Smallest setSmallest set (Nova the cat, welcome)Nova the cat, welcome",
+    "controls": [
+      {
+        "label": "Card set",
+        "type": "select-one",
+        "value": "mix"
+      },
+      {
+        "label": "Redraw rings",
+        "type": "submit",
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "type": "submit",
+        "value": ""
+      }
+    ],
+    "config": {
+      "startMode": "watch",
+      "preset": "mix",
+      "naturalStartsAt": 1,
+      "presets": {
+        "mix": {
+          "label": "Mixed set",
+          "cards": [
+            "7",
+            "−3",
+            "0.75",
+            "√2",
+            "π",
+            "0",
+            "√9",
+            "0.333…"
+          ]
+        },
+        "roots": {
+          "label": "Square roots",
+          "cards": [
+            "√4",
+            "√5",
+            "√16",
+            "√0.25",
+            "√10",
+            "√1"
+          ]
+        },
+        "dec": {
+          "label": "Decimals",
+          "cards": [
+            "0.5",
+            "−2.5",
+            "0.1010010001…",
+            "3.0",
+            "0.666…",
+            "1.414…"
+          ]
+        },
+        "neg": {
+          "label": "Negatives",
+          "cards": [
+            "−1",
+            "−0.2",
+            "−√3",
+            "−49",
+            "−π"
+          ]
+        }
+      },
+      "_explore": {},
+      "_challenge": {}
+    }
+  }
+]

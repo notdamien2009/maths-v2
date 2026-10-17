@@ -1,0 +1,468 @@
+[
+  {
+    "id": "F17-01",
+    "path": "F17/F17-01-Probability-Scale-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "cecbfe5f26828cffaa61336e673b3e9be26abc7fe949972da844014eea6d6687",
+    "challengeReady": true,
+    "draws": {
+      "readout": [
+        "stage",
+        "p",
+        "opts"
+      ],
+      "scene": [
+        "stage",
+        "p",
+        "opts"
+      ]
+    },
+    "exploreFields": {
+      "drawStep.q": {
+        "kind": "factory",
+        "factory": "model",
+        "argCount": 1
+      },
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "value": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "showComplement": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 173,
+    "questionExamples": 6,
+    "limits": "Two to twenty equally likely outcomes; favourable count within the total; marker 0–1."
+  },
+  {
+    "id": "F17-02",
+    "path": "F17/F17-02-Spinner-Builder-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "8f9b954f56de863b088134f14f0fdb7b3aea906d125cb80356fac6c9e13150ff",
+    "challengeReady": true,
+    "draws": {
+      "present": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "drawStep.m": {
+        "kind": "factory",
+        "factory": "makeState",
+        "argCount": 1
+      },
+      "challenge.m": {
+        "kind": "factory",
+        "factory": "makeState",
+        "argCount": 1
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 171,
+    "questionExamples": 6,
+    "limits": "Native sector-count controls offer 3,4,5,6,8,10; boolean model and winning indices must agree with sector count."
+  },
+  {
+    "id": "F17-03",
+    "path": "F17/F17-03-Dice-and-Coin-Simulators-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "9731178b7c6a7e292bebc49571219795ede743ccca265e18e485144b874aac11",
+    "challengeReady": true,
+    "draws": {
+      "present": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "m": {
+        "kind": "factory",
+        "factory": "makeModel",
+        "argCount": 1
+      },
+      "drawStep.m": {
+        "kind": "factory",
+        "factory": "makeModel",
+        "argCount": 1
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Native fair coin, die, die/coin and two-dice apparatus. Match event descriptions to native predicates."
+  },
+  {
+    "id": "F17-04",
+    "path": "F17/F17-04-Relative-Frequency-Convergence-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "6920541c95b99f08907fe037a0e99a659c96d60dc4e6d58551d4a32d1d5108e2",
+    "challengeReady": true,
+    "draws": {
+      "plotDraw": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Theoretical rate must match the native simulator: coin 1/2, die 2/6, eight-sector 3/8, pair 6/36."
+  },
+  {
+    "id": "F17-05",
+    "path": "F17/F17-05-Sample-Space-Grid-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "b6c40cd73a231ba64ccea67ceb9ef7ff13d3f893f1269b95007d704b0120cf55",
+    "challengeReady": true,
+    "draws": {
+      "renderStage": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 166,
+    "questionExamples": 6,
+    "limits": "One to six unique row and column labels. Retain a native event predicate appropriate to those labels; JSON cannot replace functions."
+  },
+  {
+    "id": "F17-06",
+    "path": "F17/F17-06-Systematic-Listing-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "998dfac21aab3f6da3f32c520af8bea8c8503aa9e14f4eb4e9bc6415268baf87",
+    "challengeReady": true,
+    "draws": {
+      "render": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      },
+      "renderStep.m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 166,
+    "questionExamples": 6,
+    "limits": "One to six unique first and second outcomes; native event predicate must match the lesson."
+  },
+  {
+    "id": "F17-07",
+    "path": "F17/F17-07-Tree-Diagram-Builder-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "dc995f609531f686c498ebe737c10939ade834be1e5d0be48bf7660a96f15976",
+    "challengeReady": true,
+    "draws": {
+      "render": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      },
+      "renderStep.m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Nonnegative integer branch weights with positive totals and lengths matching outcome lists; independent two-stage tree."
+  },
+  {
+    "id": "F17-08",
+    "path": "F17/F17-08-Venn-Diagram-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "8a4838063a9c5f2d8ef57966b6b472d94baff44d9e7acf02bb4c4c5cf79e1453",
+    "challengeReady": true,
+    "draws": {
+      "render": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 166,
+    "questionExamples": 6,
+    "limits": "Exactly twelve unique integer universe labels 0–99; A/B must be subsets."
+  },
+  {
+    "id": "F17-09",
+    "path": "F17/F17-09-Frequency-Tree-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "758d33d5234c35880fdc92fb78261b29f8b4a62b45df768b234dc98245198661",
+    "challengeReady": true,
+    "draws": {
+      "render": [
+        "stage",
+        "p",
+        "m",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "tally.t": {
+        "kind": "factory",
+        "factory": "model",
+        "argCount": 1
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Four nonnegative terminal frequencies, each at most 200 and positive total."
+  },
+  {
+    "id": "F17-10",
+    "path": "F17/F17-10-Complement-and-AND-OR-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "67b07b4c9c27b71722250e0fc87d59f35c87d017b38ad2e12b8971d8ace2b410",
+    "challengeReady": true,
+    "draws": {
+      "picture": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Four disjoint region frequencies and a supported AND/OR/complement operator."
+  },
+  {
+    "id": "F17-11",
+    "path": "F17/F17-11-Bag-and-Counter-Experiments-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "6bef854ca61a84c945bed27f0449a440077b48639faaf6435aeb86edf68618f6",
+    "challengeReady": true,
+    "draws": {
+      "drawScene": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Red 0–5, blue 0–4, gold 0–3; positive total; one/two draws and explicit replacement rule."
+  },
+  {
+    "id": "F17-12",
+    "path": "F17/F17-12-Expected-Outcomes-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "3fd026017bbffb5e466b215555fed5a7f0e15fa0b606a7c950a43c097b3435cd",
+    "challengeReady": true,
+    "draws": {
+      "drawScene": [
+        "stage",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "m": {
+        "kind": "factory",
+        "factory": "makeModel",
+        "argCount": 1
+      },
+      "renderStep.m": {
+        "kind": "factory",
+        "factory": "makeModel",
+        "argCount": 1
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 170,
+    "questionExamples": 6,
+    "limits": "Valid event fractions, denominators positive; planned trials 1–10000; success ≤ actual ≤ planned."
+  },
+  {
+    "id": "F17-13",
+    "path": "F17/F17-13-Fair-Game-Tester-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "cd3d8087d2deffedff22f8ea559df93c7273f0b12261038f04578a9c8dca6ef0",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "m": {
+        "kind": "factory",
+        "factory": "initial",
+        "argCount": 0
+      },
+      "showStep.m": {
+        "kind": "factory",
+        "factory": "initial",
+        "argCount": 0
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 170,
+    "questionExamples": 6,
+    "limits": "Six faces; selected winning faces and gross prize determine expected net gain. Explore controls assume a £1 stake; keep this in Explore bindings. Other stakes require matching scene teaching."
+  },
+  {
+    "id": "F17-14",
+    "path": "F17/F17-14-Combinations-and-Arrangements-PREMIUM-REVIEW.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "84b4bb35dda143cae623331ad2ed021fcfa7508c84bdf71f44084503c045af78",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "p",
+        "m",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "p": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "showStep.m": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 167,
+    "questionExamples": 6,
+    "limits": "Two to five distinct items, choose two or three; distinguish ordered arrangements from combinations."
+  }
+]

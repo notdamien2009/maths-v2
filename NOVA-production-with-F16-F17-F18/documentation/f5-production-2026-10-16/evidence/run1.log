@@ -1,0 +1,64 @@
+F5-01 start
+F5-01 host
+F5-01 visual
+F5-01 visual done
+F5-01 129/129
+F5-02 start
+F5-02 host
+F5-02 visual
+F5-02 visual done
+F5-02 129/129
+F5-03 start
+F5-03 host
+F5-03 visual
+F5-03 visual done
+F5-03 129/129
+F5-04 start
+F5-04 host
+F5-04 visual
+F5-04 visual done
+F5-04 129/129
+F5-05 start
+F5-05 host
+F5-05 visual
+F5-05 visual done
+F5-05 129/129
+F5-06 start
+F5-06 host
+F5-06 visual
+F5-06 visual done
+F5-06 129/129
+F5-07 start
+F5-07 host
+F5-07 visual
+F5-07 FAIL question 4 rendered mathematics [ { value: '3', found: false }, { value: '6', found: true } ]
+F5-07 FAIL question 5 rendered mathematics [ { value: '4', found: false }, { value: '6', found: false } ]
+F5-07 visual done
+F5-07 127/129
+F5-09 start
+F5-09 host
+F5-09 visual
+F5-09 visual done
+F5-09 129/129
+F5-10 start
+F5-10 host
+F5-10 visual
+F5-10 ERROR Error: frame.evaluate: RangeError: Use 0–4 wholes, denominator 2–12 and a valid number of pieces.
+    at model (about:srcdoc:1796:212)
+    at Object.guided (about:srcdoc:1892:54)
+    at Object.render (about:srcdoc:630:190)
+    at api.render (about:srcdoc:665:47)
+    at Object.renderRecord (http://127.0.0.1:34673/host/F5-10:2789:1652)
+    at eval (e
+F5-10 96/96
+F5-11 start
+F5-11 host
+F5-11 ERROR Error: page.waitForFunction: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /usr/bin/google-chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-dete
+F5-11 96/96
+browser.newPage: Target page, context or browser has been closed
+    at /workspace/codex-f5/work/integration/qa/test-f5-production.cjs:34:299 {
+  log: []
+}

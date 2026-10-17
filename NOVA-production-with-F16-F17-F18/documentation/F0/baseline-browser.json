@@ -1,0 +1,5859 @@
+[
+  {
+    "id": "F0-01",
+    "path": "F0/F0-01-design-tokens.html",
+    "errors": [],
+    "foundation": {
+      "id": "F0-01",
+      "version": "1.0.0",
+      "kind": "foundation-reference",
+      "mathComponent": false
+    }
+  },
+  {
+    "id": "F0-02",
+    "path": "F0/F0-02-svg-primitives-PREMIUM.html",
+    "errors": [],
+    "foundation": {
+      "id": "F0-02",
+      "version": "1.0.0",
+      "kind": "foundation-reference",
+      "mathComponent": false
+    }
+  },
+  {
+    "id": "F0-03",
+    "path": "F0/F0-03-animation-timeline.html",
+    "errors": [],
+    "foundation": {
+      "id": "F0-03",
+      "version": "1.0.0",
+      "kind": "foundation-reference",
+      "mathComponent": false
+    }
+  },
+  {
+    "id": "F0-04",
+    "path": "F0/F0-04-interaction-kit.html",
+    "errors": [],
+    "foundation": {
+      "id": "F0-04",
+      "version": "1.0.0",
+      "kind": "foundation-reference",
+      "mathComponent": false
+    }
+  },
+  {
+    "id": "F0-05",
+    "path": "F0/F0-05-maths-text.html",
+    "errors": [],
+    "foundation": {
+      "id": "F0-05",
+      "version": "1.0.0",
+      "kind": "foundation-reference",
+      "mathComponent": false
+    }
+  },
+  {
+    "id": "F0-06",
+    "path": "F0/F0-06-seeded-randomiser.html",
+    "errors": [],
+    "foundation": {
+      "id": "F0-06",
+      "version": "1.0.0",
+      "kind": "foundation-reference",
+      "mathComponent": false
+    }
+  },
+  {
+    "id": "F0-07",
+    "path": "F0/F0-07-state-events.html",
+    "errors": [],
+    "foundation": {
+      "id": "F0-07",
+      "version": "1.0.0",
+      "kind": "foundation-reference",
+      "mathComponent": false
+    }
+  },
+  {
+    "id": "F0-08",
+    "path": "F0/F0-08-narration-hooks.html",
+    "errors": [],
+    "foundation": {
+      "id": "F0-08",
+      "version": "1.0.0",
+      "kind": "foundation-reference",
+      "mathComponent": false
+    }
+  },
+  {
+    "id": "F0-09",
+    "path": "F0/F0-09-registry-manifest.html",
+    "errors": [],
+    "engineId": "F0-09",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": false,
+      "proof": null,
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F0-09",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "Registry",
+            "mood": "neutral",
+            "narration": "Every engine registers itself: an id, a title, what kind it is, its topics and what it depends on. Seventeen foundation parts so far.",
+            "prompt": "How many components are registered?"
+          },
+          {
+            "name": "Lookup",
+            "mood": "think",
+            "narration": "Lessons can look parts up by topic. Ask for \"number\" and you get the maths text renderer and the worked example stepper.",
+            "prompt": "Which engine shows worked examples?"
+          },
+          {
+            "name": "Manifest",
+            "mood": "think",
+            "narration": "A lesson manifest is a list of steps. Each step names a component, a mode and a learning objective: here, fractions of amounts.",
+            "prompt": "Which step is the quiz?"
+          },
+          {
+            "name": "Validate",
+            "mood": "focus",
+            "narration": "Validation catches mistakes before pupils see them: F0-99 is not a real component, and \"play\" is not a mode.",
+            "prompt": "What is wrong with step 4?",
+            "target": "bad"
+          },
+          {
+            "name": "Fix",
+            "mood": "cheer",
+            "narration": "Point step 4 at F0-11 and use challenge mode. Now the manifest is valid.",
+            "prompt": "Which modes are allowed?"
+          },
+          {
+            "name": "Load order",
+            "mood": "focus",
+            "narration": "The registry works out the load order: shared parts like design tokens and events come before the engines that need them.",
+            "prompt": "Why does F0-01 load first?",
+            "target": "order"
+          },
+          {
+            "name": "Objectives",
+            "mood": "cheer",
+            "narration": "Each objective links to its steps, so a report can say how pupils did on O1 and O2 separately.",
+            "prompt": "Which steps cover O2?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "fractions",
+          "presets": {
+            "fractions": {
+              "label": "Y7 Fractions of amounts",
+              "lesson": "Y7-FR-03",
+              "title": "Fractions of amounts",
+              "objectives": {
+                "O1": "Find a unit fraction of an amount",
+                "O2": "Find a non-unit fraction of an amount"
+              },
+              "steps": [
+                {
+                  "component": "F0-05",
+                  "mode": "watch",
+                  "objective": "O1",
+                  "note": "Show 3/4 of 24"
+                },
+                {
+                  "component": "F0-13",
+                  "mode": "guided",
+                  "objective": "O1",
+                  "note": "Worked example: 1/4 of 24"
+                },
+                {
+                  "component": "F0-04",
+                  "mode": "explore",
+                  "objective": "O2",
+                  "note": "Entry: 3/4 of 24"
+                },
+                {
+                  "component": "F0-11",
+                  "mode": "challenge",
+                  "objective": "O2",
+                  "note": "Quiz: 5 questions"
+                },
+                {
+                  "component": "F0-12",
+                  "mode": "challenge",
+                  "objective": "O2",
+                  "note": "Game round"
+                }
+              ]
+            },
+            "graphs": {
+              "label": "Y8 Plotting straight lines",
+              "lesson": "Y8-AL-07",
+              "title": "Plotting y = mx + c",
+              "objectives": {
+                "O1": "Complete a table of values",
+                "O2": "Plot points and draw the line"
+              },
+              "steps": [
+                {
+                  "component": "F0-15",
+                  "mode": "watch",
+                  "objective": "O1",
+                  "note": "Table for y = 2x + 1"
+                },
+                {
+                  "component": "F0-14",
+                  "mode": "guided",
+                  "objective": "O2",
+                  "note": "Plot the points"
+                },
+                {
+                  "component": "F0-15",
+                  "mode": "explore",
+                  "objective": "O1",
+                  "note": "Change m and c"
+                },
+                {
+                  "component": "F0-11",
+                  "mode": "challenge",
+                  "objective": "O2",
+                  "note": "Quiz"
+                }
+              ]
+            },
+            "angles": {
+              "label": "Y7 Angles on a line",
+              "lesson": "Y7-GE-02",
+              "title": "Angles on a straight line",
+              "objectives": {
+                "O1": "Angles on a line add to 180°"
+              },
+              "steps": [
+                {
+                  "component": "F0-16",
+                  "mode": "watch",
+                  "objective": "O1",
+                  "note": "Measure two angles"
+                },
+                {
+                  "component": "F0-13",
+                  "mode": "guided",
+                  "objective": "O1",
+                  "note": "Find the missing angle"
+                },
+                {
+                  "component": "F0-11",
+                  "mode": "challenge",
+                  "objective": "O1",
+                  "note": "Quiz"
+                }
+              ]
+            },
+            "gcse": {
+              "label": "GCSE: Standard form",
+              "lesson": "G-NU-12",
+              "title": "Standard form calculations",
+              "objectives": {
+                "O1": "Write numbers in standard form",
+                "O2": "Multiply in standard form"
+              },
+              "steps": [
+                {
+                  "component": "F0-05",
+                  "mode": "watch",
+                  "objective": "O1",
+                  "note": "3.2 × 10⁴"
+                },
+                {
+                  "component": "F0-06",
+                  "mode": "explore",
+                  "objective": "O1",
+                  "note": "Seeded practice"
+                },
+                {
+                  "component": "F0-13",
+                  "mode": "guided",
+                  "objective": "O2",
+                  "note": "(2 × 10³)(4 × 10⁵)"
+                },
+                {
+                  "component": "F0-11",
+                  "mode": "challenge",
+                  "objective": "O2",
+                  "note": "Exam-style"
+                }
+              ]
+            }
+          },
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "DEMO": [
+            {
+              "m": {
+                "label": "Y7 Fractions of amounts",
+                "lesson": "Y7-FR-03",
+                "title": "Fractions of amounts",
+                "objectives": {
+                  "O1": "Find a unit fraction of an amount",
+                  "O2": "Find a non-unit fraction of an amount"
+                },
+                "steps": [
+                  {
+                    "component": "F0-05",
+                    "mode": "watch",
+                    "objective": "O1",
+                    "note": "Show 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-13",
+                    "mode": "guided",
+                    "objective": "O1",
+                    "note": "Worked example: 1/4 of 24"
+                  },
+                  {
+                    "component": "F0-04",
+                    "mode": "explore",
+                    "objective": "O2",
+                    "note": "Entry: 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-11",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Quiz: 5 questions"
+                  },
+                  {
+                    "component": "F0-12",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Game round"
+                  }
+                ]
+              },
+              "list": [
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-01",
+                  "title": "Design tokens"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "geometry",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-02",
+                  "title": "SVG primitives"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-03",
+                  "title": "Animation timeline"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01",
+                    "F0-07"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-04",
+                  "title": "Interaction kit"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "number",
+                    "algebra",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-05",
+                  "title": "Maths text renderer"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-06",
+                  "title": "Seeded randomiser"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-07",
+                  "title": "State and events API"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-07"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-08",
+                  "title": "Bob narration hooks"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-09",
+                  "title": "Registry and lesson manifest"
+                },
+                {
+                  "family": "F0",
+                  "kind": "shell",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01",
+                    "F0-09"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-10",
+                  "title": "Gallery page shell"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-04",
+                    "F0-05",
+                    "F0-07"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-11",
+                  "title": "Assessment engine"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-07",
+                    "F0-08",
+                    "F0-11"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-12",
+                  "title": "Game wrapper"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "number",
+                    "algebra",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-03",
+                    "F0-05",
+                    "F0-08"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-13",
+                  "title": "Worked-example stepper"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "algebra",
+                    "statistics"
+                  ],
+                  "deps": [
+                    "F0-02"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-14",
+                  "title": "Axes and plotting"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "algebra",
+                    "statistics",
+                    "ratio"
+                  ],
+                  "deps": [
+                    "F0-04",
+                    "F0-14"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-15",
+                  "title": "Interactive table"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "geometry"
+                  ],
+                  "deps": [
+                    "F0-02",
+                    "F0-04"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-16",
+                  "title": "Geometry canvas"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-17",
+                  "title": "Static and print renderer"
+                }
+              ],
+              "right": "Registry · 17 components"
+            },
+            {
+              "m": {
+                "label": "Y7 Fractions of amounts",
+                "lesson": "Y7-FR-03",
+                "title": "Fractions of amounts",
+                "objectives": {
+                  "O1": "Find a unit fraction of an amount",
+                  "O2": "Find a non-unit fraction of an amount"
+                },
+                "steps": [
+                  {
+                    "component": "F0-05",
+                    "mode": "watch",
+                    "objective": "O1",
+                    "note": "Show 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-13",
+                    "mode": "guided",
+                    "objective": "O1",
+                    "note": "Worked example: 1/4 of 24"
+                  },
+                  {
+                    "component": "F0-04",
+                    "mode": "explore",
+                    "objective": "O2",
+                    "note": "Entry: 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-11",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Quiz: 5 questions"
+                  },
+                  {
+                    "component": "F0-12",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Game round"
+                  }
+                ]
+              },
+              "list": [
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "number",
+                    "algebra",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-05",
+                  "title": "Maths text renderer"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "number",
+                    "algebra",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-03",
+                    "F0-05",
+                    "F0-08"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-13",
+                  "title": "Worked-example stepper"
+                }
+              ],
+              "listUse": [
+                "F0-05",
+                "F0-13"
+              ],
+              "right": "Lookup: topic \"number\"",
+              "hl": 0
+            },
+            {
+              "m": {
+                "label": "Y7 Fractions of amounts",
+                "lesson": "Y7-FR-03",
+                "title": "Fractions of amounts",
+                "objectives": {
+                  "O1": "Find a unit fraction of an amount",
+                  "O2": "Find a non-unit fraction of an amount"
+                },
+                "steps": [
+                  {
+                    "component": "F0-05",
+                    "mode": "watch",
+                    "objective": "O1",
+                    "note": "Show 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-13",
+                    "mode": "guided",
+                    "objective": "O1",
+                    "note": "Worked example: 1/4 of 24"
+                  },
+                  {
+                    "component": "F0-04",
+                    "mode": "explore",
+                    "objective": "O2",
+                    "note": "Entry: 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-11",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Quiz: 5 questions"
+                  },
+                  {
+                    "component": "F0-12",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Game round"
+                  }
+                ]
+              },
+              "upto": 5,
+              "right": "Steps reference components",
+              "list": [
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-01",
+                  "title": "Design tokens"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "geometry",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-02",
+                  "title": "SVG primitives"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-03",
+                  "title": "Animation timeline"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01",
+                    "F0-07"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-04",
+                  "title": "Interaction kit"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "number",
+                    "algebra",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-05",
+                  "title": "Maths text renderer"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-06",
+                  "title": "Seeded randomiser"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-07",
+                  "title": "State and events API"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-07"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-08",
+                  "title": "Bob narration hooks"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-09",
+                  "title": "Registry and lesson manifest"
+                },
+                {
+                  "family": "F0",
+                  "kind": "shell",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01",
+                    "F0-09"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-10",
+                  "title": "Gallery page shell"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-04",
+                    "F0-05",
+                    "F0-07"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-11",
+                  "title": "Assessment engine"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-07",
+                    "F0-08",
+                    "F0-11"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-12",
+                  "title": "Game wrapper"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "number",
+                    "algebra",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-03",
+                    "F0-05",
+                    "F0-08"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-13",
+                  "title": "Worked-example stepper"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "algebra",
+                    "statistics"
+                  ],
+                  "deps": [
+                    "F0-02"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-14",
+                  "title": "Axes and plotting"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "algebra",
+                    "statistics",
+                    "ratio"
+                  ],
+                  "deps": [
+                    "F0-04",
+                    "F0-14"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-15",
+                  "title": "Interactive table"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "geometry"
+                  ],
+                  "deps": [
+                    "F0-02",
+                    "F0-04"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-16",
+                  "title": "Geometry canvas"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-17",
+                  "title": "Static and print renderer"
+                }
+              ],
+              "listUse": [
+                "F0-05",
+                "F0-13",
+                "F0-04",
+                "F0-11",
+                "F0-12"
+              ]
+            },
+            {
+              "m": {
+                "label": "Y7 Fractions of amounts",
+                "lesson": "Y7-FR-03",
+                "title": "Fractions of amounts",
+                "objectives": {
+                  "O1": "Find a unit fraction of an amount",
+                  "O2": "Find a non-unit fraction of an amount"
+                },
+                "steps": [
+                  {
+                    "component": "F0-05",
+                    "mode": "watch",
+                    "objective": "O1",
+                    "note": "Show 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-13",
+                    "mode": "guided",
+                    "objective": "O1",
+                    "note": "Worked example: 1/4 of 24"
+                  },
+                  {
+                    "component": "F0-04",
+                    "mode": "explore",
+                    "objective": "O2",
+                    "note": "Entry: 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-99",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Quiz: 5 questions"
+                  },
+                  {
+                    "component": "F0-12",
+                    "mode": "play",
+                    "objective": "O2",
+                    "note": "Game round"
+                  }
+                ]
+              },
+              "validate": 1,
+              "right": "Validate",
+              "target": "bad"
+            },
+            {
+              "m": {
+                "label": "Y7 Fractions of amounts",
+                "lesson": "Y7-FR-03",
+                "title": "Fractions of amounts",
+                "objectives": {
+                  "O1": "Find a unit fraction of an amount",
+                  "O2": "Find a non-unit fraction of an amount"
+                },
+                "steps": [
+                  {
+                    "component": "F0-05",
+                    "mode": "watch",
+                    "objective": "O1",
+                    "note": "Show 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-13",
+                    "mode": "guided",
+                    "objective": "O1",
+                    "note": "Worked example: 1/4 of 24"
+                  },
+                  {
+                    "component": "F0-04",
+                    "mode": "explore",
+                    "objective": "O2",
+                    "note": "Entry: 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-11",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Quiz: 5 questions"
+                  },
+                  {
+                    "component": "F0-12",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Game round"
+                  }
+                ]
+              },
+              "validate": 1,
+              "right": "Validate after fixing"
+            },
+            {
+              "m": {
+                "label": "Y7 Fractions of amounts",
+                "lesson": "Y7-FR-03",
+                "title": "Fractions of amounts",
+                "objectives": {
+                  "O1": "Find a unit fraction of an amount",
+                  "O2": "Find a non-unit fraction of an amount"
+                },
+                "steps": [
+                  {
+                    "component": "F0-05",
+                    "mode": "watch",
+                    "objective": "O1",
+                    "note": "Show 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-13",
+                    "mode": "guided",
+                    "objective": "O1",
+                    "note": "Worked example: 1/4 of 24"
+                  },
+                  {
+                    "component": "F0-04",
+                    "mode": "explore",
+                    "objective": "O2",
+                    "note": "Entry: 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-11",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Quiz: 5 questions"
+                  },
+                  {
+                    "component": "F0-12",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Game round"
+                  }
+                ]
+              },
+              "order": 1,
+              "validate": 1,
+              "target": "order"
+            },
+            {
+              "m": {
+                "label": "Y7 Fractions of amounts",
+                "lesson": "Y7-FR-03",
+                "title": "Fractions of amounts",
+                "objectives": {
+                  "O1": "Find a unit fraction of an amount",
+                  "O2": "Find a non-unit fraction of an amount"
+                },
+                "steps": [
+                  {
+                    "component": "F0-05",
+                    "mode": "watch",
+                    "objective": "O1",
+                    "note": "Show 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-13",
+                    "mode": "guided",
+                    "objective": "O1",
+                    "note": "Worked example: 1/4 of 24"
+                  },
+                  {
+                    "component": "F0-04",
+                    "mode": "explore",
+                    "objective": "O2",
+                    "note": "Entry: 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-11",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Quiz: 5 questions"
+                  },
+                  {
+                    "component": "F0-12",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Game round"
+                  }
+                ]
+              },
+              "order": 1,
+              "obj": 1,
+              "right": "Objectives map to steps"
+            }
+          ],
+          "steps": [
+            {
+              "name": "Registry",
+              "mood": "neutral",
+              "narration": "Every engine registers itself: an id, a title, what kind it is, its topics and what it depends on. Seventeen foundation parts so far.",
+              "prompt": "How many components are registered?"
+            },
+            {
+              "name": "Lookup",
+              "mood": "think",
+              "narration": "Lessons can look parts up by topic. Ask for \"number\" and you get the maths text renderer and the worked example stepper.",
+              "prompt": "Which engine shows worked examples?"
+            },
+            {
+              "name": "Manifest",
+              "mood": "think",
+              "narration": "A lesson manifest is a list of steps. Each step names a component, a mode and a learning objective: here, fractions of amounts.",
+              "prompt": "Which step is the quiz?"
+            },
+            {
+              "name": "Validate",
+              "mood": "focus",
+              "narration": "Validation catches mistakes before pupils see them: F0-99 is not a real component, and \"play\" is not a mode.",
+              "prompt": "What is wrong with step 4?",
+              "target": "bad"
+            },
+            {
+              "name": "Fix",
+              "mood": "cheer",
+              "narration": "Point step 4 at F0-11 and use challenge mode. Now the manifest is valid.",
+              "prompt": "Which modes are allowed?"
+            },
+            {
+              "name": "Load order",
+              "mood": "focus",
+              "narration": "The registry works out the load order: shared parts like design tokens and events come before the engines that need them.",
+              "prompt": "Why does F0-01 load first?",
+              "target": "order"
+            },
+            {
+              "name": "Objectives",
+              "mood": "cheer",
+              "narration": "Each objective links to its steps, so a report can say how pupils did on O1 and O2 separately.",
+              "prompt": "Which steps cover O2?"
+            }
+          ]
+        },
+        "draws": {
+          "board": [
+            "stage",
+            "m",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "m": {
+            "kind": "factory",
+            "factory": "clone",
+            "argCount": 1
+          }
+        },
+        "exploreInitials": {}
+      },
+      "scenes": {
+        "board": {
+          "parameters": [
+            "stage",
+            "m",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y7 Fractions of amounts",
+              "lesson": "Y7-FR-03",
+              "title": "Fractions of amounts",
+              "objectives": {
+                "O1": "Find a unit fraction of an amount",
+                "O2": "Find a non-unit fraction of an amount"
+              },
+              "steps": [
+                {
+                  "component": "F0-05",
+                  "mode": "watch",
+                  "objective": "O1",
+                  "note": "Show 3/4 of 24"
+                },
+                {
+                  "component": "F0-13",
+                  "mode": "guided",
+                  "objective": "O1",
+                  "note": "Worked example: 1/4 of 24"
+                },
+                {
+                  "component": "F0-04",
+                  "mode": "explore",
+                  "objective": "O2",
+                  "note": "Entry: 3/4 of 24"
+                },
+                {
+                  "component": "F0-11",
+                  "mode": "challenge",
+                  "objective": "O2",
+                  "note": "Quiz: 5 questions"
+                },
+                {
+                  "component": "F0-12",
+                  "mode": "challenge",
+                  "objective": "O2",
+                  "note": "Game round"
+                }
+              ]
+            },
+            {
+              "m": {
+                "label": "Y7 Fractions of amounts",
+                "lesson": "Y7-FR-03",
+                "title": "Fractions of amounts",
+                "objectives": {
+                  "O1": "Find a unit fraction of an amount",
+                  "O2": "Find a non-unit fraction of an amount"
+                },
+                "steps": [
+                  {
+                    "component": "F0-05",
+                    "mode": "watch",
+                    "objective": "O1",
+                    "note": "Show 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-13",
+                    "mode": "guided",
+                    "objective": "O1",
+                    "note": "Worked example: 1/4 of 24"
+                  },
+                  {
+                    "component": "F0-04",
+                    "mode": "explore",
+                    "objective": "O2",
+                    "note": "Entry: 3/4 of 24"
+                  },
+                  {
+                    "component": "F0-11",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Quiz: 5 questions"
+                  },
+                  {
+                    "component": "F0-12",
+                    "mode": "challenge",
+                    "objective": "O2",
+                    "note": "Game round"
+                  }
+                ]
+              },
+              "list": [
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-01",
+                  "title": "Design tokens"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "geometry",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-02",
+                  "title": "SVG primitives"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-03",
+                  "title": "Animation timeline"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01",
+                    "F0-07"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-04",
+                  "title": "Interaction kit"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "number",
+                    "algebra",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-05",
+                  "title": "Maths text renderer"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-06",
+                  "title": "Seeded randomiser"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-07",
+                  "title": "State and events API"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-07"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-08",
+                  "title": "Bob narration hooks"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-09",
+                  "title": "Registry and lesson manifest"
+                },
+                {
+                  "family": "F0",
+                  "kind": "shell",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01",
+                    "F0-09"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-10",
+                  "title": "Gallery page shell"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-04",
+                    "F0-05",
+                    "F0-07"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-11",
+                  "title": "Assessment engine"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-07",
+                    "F0-08",
+                    "F0-11"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-12",
+                  "title": "Game wrapper"
+                },
+                {
+                  "family": "F0",
+                  "kind": "engine",
+                  "topics": [
+                    "number",
+                    "algebra",
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-03",
+                    "F0-05",
+                    "F0-08"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-13",
+                  "title": "Worked-example stepper"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "algebra",
+                    "statistics"
+                  ],
+                  "deps": [
+                    "F0-02"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-14",
+                  "title": "Axes and plotting"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "algebra",
+                    "statistics",
+                    "ratio"
+                  ],
+                  "deps": [
+                    "F0-04",
+                    "F0-14"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-15",
+                  "title": "Interactive table"
+                },
+                {
+                  "family": "F0",
+                  "kind": "primitive",
+                  "topics": [
+                    "geometry"
+                  ],
+                  "deps": [
+                    "F0-02",
+                    "F0-04"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-16",
+                  "title": "Geometry canvas"
+                },
+                {
+                  "family": "F0",
+                  "kind": "api",
+                  "topics": [
+                    "all"
+                  ],
+                  "deps": [
+                    "F0-01"
+                  ],
+                  "events": [
+                    "value",
+                    "correct",
+                    "step",
+                    "hintUsed"
+                  ],
+                  "id": "F0-17",
+                  "title": "Static and print renderer"
+                }
+              ],
+              "right": "Registry · 17 components"
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F0-10",
+    "path": "F0/F0-10-gallery-shell.html",
+    "errors": [],
+    "engineId": "F0-10",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": false,
+      "proof": null,
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F0-10",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "Shell",
+            "mood": "neutral",
+            "narration": "The gallery shell is the frame every bank page sits in: a header, filters, a search box and a grid of engine tiles.",
+            "prompt": "What three parts does the shell have?"
+          },
+          {
+            "name": "From the registry",
+            "mood": "think",
+            "narration": "Tiles come straight from the registry, so a new engine appears in the gallery as soon as it registers. No hand-made lists.",
+            "prompt": "Where does the tile list come from?"
+          },
+          {
+            "name": "Filter",
+            "mood": "think",
+            "narration": "Topic chips filter the grid. Choose geometry and only the SVG primitives and the geometry canvas stay.",
+            "prompt": "How many geometry tools are there?",
+            "target": "hl"
+          },
+          {
+            "name": "Search",
+            "mood": "focus",
+            "narration": "Search matches ids and titles: type \"plot\" and you get the axes and plotting primitive, F0-14.",
+            "prompt": "Which id matches \"plot\"?",
+            "target": "q"
+          },
+          {
+            "name": "Topic layer",
+            "mood": "think",
+            "narration": "Switch the style layer to algebra and the accents turn gold. Same shell, different topic mood, no extra code.",
+            "prompt": "Which colour marks algebra?"
+          },
+          {
+            "name": "Status",
+            "mood": "focus",
+            "narration": "Badges show what is built (tick) and what is planned (dotted circle): shape as well as colour, so it works for everyone.",
+            "prompt": "How is \"planned\" shown without colour?",
+            "target": "hl"
+          },
+          {
+            "name": "Print",
+            "mood": "cheer",
+            "narration": "For print the shell drops its glow and turns into a clean light catalogue a teacher can hand out.",
+            "prompt": "What changes in print?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "topic": "all",
+          "kind": "all",
+          "query": "",
+          "layer": "number",
+          "built": [
+            "F0-01",
+            "F0-02",
+            "F0-03",
+            "F0-04",
+            "F0-05",
+            "F0-06",
+            "F0-07",
+            "F0-08",
+            "F0-09",
+            "F0-10"
+          ],
+          "presets": {
+            "all": {
+              "label": "Whole foundation family",
+              "topic": "all",
+              "kind": "all",
+              "query": "",
+              "layer": "number"
+            },
+            "geometry": {
+              "label": "Geometry tools",
+              "topic": "geometry",
+              "kind": "all",
+              "query": "",
+              "layer": "geometry"
+            },
+            "algebra": {
+              "label": "Algebra tools",
+              "topic": "algebra",
+              "kind": "all",
+              "query": "",
+              "layer": "algebra"
+            },
+            "apis": {
+              "label": "Shared APIs only",
+              "topic": "all",
+              "kind": "api",
+              "query": "",
+              "layer": "ratio"
+            },
+            "stats": {
+              "label": "GCSE: statistics and plotting",
+              "topic": "statistics",
+              "kind": "all",
+              "query": "",
+              "layer": "statistics"
+            }
+          },
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "DEMO": [
+            {
+              "topic": "all",
+              "kind": "all",
+              "layer": "number",
+              "status": false
+            },
+            {
+              "topic": "all",
+              "kind": "all",
+              "layer": "number",
+              "status": false,
+              "hl": "F0-01"
+            },
+            {
+              "topic": "geometry",
+              "kind": "all",
+              "layer": "number",
+              "status": false,
+              "hl": "F0-16"
+            },
+            {
+              "topic": "all",
+              "kind": "all",
+              "query": "plot",
+              "layer": "number",
+              "status": false,
+              "hl": "F0-14"
+            },
+            {
+              "topic": "algebra",
+              "kind": "all",
+              "layer": "algebra",
+              "status": false
+            },
+            {
+              "topic": "all",
+              "kind": "all",
+              "layer": "number",
+              "hl": "F0-10"
+            },
+            {
+              "topic": "all",
+              "kind": "all",
+              "layer": "number",
+              "print": true
+            }
+          ],
+          "steps": [
+            {
+              "name": "Shell",
+              "mood": "neutral",
+              "narration": "The gallery shell is the frame every bank page sits in: a header, filters, a search box and a grid of engine tiles.",
+              "prompt": "What three parts does the shell have?"
+            },
+            {
+              "name": "From the registry",
+              "mood": "think",
+              "narration": "Tiles come straight from the registry, so a new engine appears in the gallery as soon as it registers. No hand-made lists.",
+              "prompt": "Where does the tile list come from?"
+            },
+            {
+              "name": "Filter",
+              "mood": "think",
+              "narration": "Topic chips filter the grid. Choose geometry and only the SVG primitives and the geometry canvas stay.",
+              "prompt": "How many geometry tools are there?",
+              "target": "hl"
+            },
+            {
+              "name": "Search",
+              "mood": "focus",
+              "narration": "Search matches ids and titles: type \"plot\" and you get the axes and plotting primitive, F0-14.",
+              "prompt": "Which id matches \"plot\"?",
+              "target": "q"
+            },
+            {
+              "name": "Topic layer",
+              "mood": "think",
+              "narration": "Switch the style layer to algebra and the accents turn gold. Same shell, different topic mood, no extra code.",
+              "prompt": "Which colour marks algebra?"
+            },
+            {
+              "name": "Status",
+              "mood": "focus",
+              "narration": "Badges show what is built (tick) and what is planned (dotted circle): shape as well as colour, so it works for everyone.",
+              "prompt": "How is \"planned\" shown without colour?",
+              "target": "hl"
+            },
+            {
+              "name": "Print",
+              "mood": "cheer",
+              "narration": "For print the shell drops its glow and turns into a clean light catalogue a teacher can hand out.",
+              "prompt": "What changes in print?"
+            }
+          ]
+        },
+        "draws": {
+          "shell": [
+            "stage",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "st": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {}
+      },
+      "scenes": {
+        "shell": {
+          "parameters": [
+            "stage",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "topic": "all",
+              "kind": "all",
+              "layer": "number",
+              "status": false
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F0-11",
+    "path": "F0/F0-11-assessment.html",
+    "errors": [],
+    "engineId": "F0-11",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": false,
+      "proof": null,
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F0-11",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "Question types",
+            "mood": "neutral",
+            "narration": "One engine, four question types: numeric, multiple choice, select-all and put-in-order. Every question carries its marks and objective.",
+            "prompt": "What type is \"Find 1/4 of 24\"?"
+          },
+          {
+            "name": "Mark",
+            "mood": "cheer",
+            "narration": "A quarter of 24 is 6. The marker compares the answer and awards the mark.",
+            "prompt": "How many marks for 6?",
+            "target": "resp"
+          },
+          {
+            "name": "Equivalent answers",
+            "mood": "think",
+            "narration": "3/4, 0.75 and .75 are the same number, so all of them score. Pupils are not punished for a different form.",
+            "prompt": "Name another way to write 0.75."
+          },
+          {
+            "name": "Method marks",
+            "mood": "think",
+            "narration": "Three quarters of 24 is worth 2 marks. This pupil found 24 ÷ 4 = 6 but slipped: 6 × 3 is 18, not 16. M1 for the method, no A1.",
+            "prompt": "Why does the pupil get 1 mark?"
+          },
+          {
+            "name": "Misconceptions",
+            "mood": "focus",
+            "narration": "An answer of 6 for three quarters is a known trap: it is only one quarter. The feedback names the slip, not just \"wrong\".",
+            "prompt": "What did the pupil forget?",
+            "target": "trap"
+          },
+          {
+            "name": "By objective",
+            "mood": "focus",
+            "narration": "Results group by objective. O1 is strong; O2, non-unit fractions, needs more work. The striped bar marks the gap.",
+            "prompt": "Which objective needs work?",
+            "target": "bars"
+          },
+          {
+            "name": "Report",
+            "mood": "cheer",
+            "narration": "Marks, method credit, misconception notes and objective scores: everything a teacher needs, with no scores turned into games here.",
+            "prompt": "What would you reteach first?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "fractions",
+          "tolerance": 0.001,
+          "presets": {
+            "fractions": {
+              "label": "Y7 Fractions of amounts",
+              "objectives": {
+                "O1": "Unit fractions of amounts",
+                "O2": "Non-unit fractions of amounts"
+              },
+              "qs": [
+                {
+                  "id": "q1",
+                  "type": "numeric",
+                  "prompt": "Find 1/4 of 24.",
+                  "answer": 6,
+                  "marks": 1,
+                  "objective": "O1",
+                  "traps": {
+                    "20": "That subtracts 4. A quarter means share into 4 equal parts.",
+                    "96": "That is 24 × 4. A quarter means divide by 4."
+                  }
+                },
+                {
+                  "id": "q2",
+                  "type": "numeric",
+                  "prompt": "Find 3/4 of 24.",
+                  "answer": 18,
+                  "marks": 2,
+                  "objective": "O2",
+                  "scheme": [
+                    {
+                      "code": "M1",
+                      "text": "24 ÷ 4 = 6 seen"
+                    },
+                    {
+                      "code": "A1",
+                      "text": "18 cao"
+                    }
+                  ],
+                  "traps": {
+                    "6": "That is one quarter. Three quarters is 3 lots of 6.",
+                    "8": "That is a third of 24. The denominator is 4."
+                  }
+                },
+                {
+                  "id": "q3",
+                  "type": "numeric",
+                  "prompt": "Write 3/4 as a decimal.",
+                  "answer": 0.75,
+                  "accept": [
+                    "3/4",
+                    ".75"
+                  ],
+                  "marks": 1,
+                  "objective": "O1",
+                  "traps": {
+                    "0.34": "3/4 is not 0.34. Divide 3 by 4.",
+                    "3.4": "3/4 means 3 ÷ 4."
+                  }
+                },
+                {
+                  "id": "q4",
+                  "type": "mcq",
+                  "prompt": "Which is bigger: 2/3 of 30 or 3/4 of 24?",
+                  "options": [
+                    "2/3 of 30",
+                    "3/4 of 24",
+                    "They are equal"
+                  ],
+                  "answer": "2/3 of 30",
+                  "marks": 1,
+                  "objective": "O2",
+                  "traps": {
+                    "3/4 of 24": "3/4 of 24 = 18 but 2/3 of 30 = 20."
+                  }
+                },
+                {
+                  "id": "q5",
+                  "type": "multi",
+                  "prompt": "Select all that equal 12.",
+                  "options": [
+                    "1/2 of 24",
+                    "1/3 of 36",
+                    "2/5 of 25",
+                    "3/4 of 16"
+                  ],
+                  "answer": [
+                    "1/2 of 24",
+                    "1/3 of 36",
+                    "3/4 of 16"
+                  ],
+                  "marks": 2,
+                  "objective": "O2",
+                  "scheme": [
+                    {
+                      "code": "B1",
+                      "text": "at least two correct, none wrong"
+                    },
+                    {
+                      "code": "A1",
+                      "text": "all three"
+                    }
+                  ]
+                }
+              ]
+            },
+            "integers": {
+              "label": "Y7 Negative numbers",
+              "objectives": {
+                "O1": "Add and subtract negatives",
+                "O2": "Multiply negatives"
+              },
+              "qs": [
+                {
+                  "id": "n1",
+                  "type": "numeric",
+                  "prompt": "−3 + 8",
+                  "answer": 5,
+                  "marks": 1,
+                  "objective": "O1",
+                  "traps": {
+                    "11": "Signs matter: −3 + 8 is 5.",
+                    "-11": "Start at −3 and move 8 to the right."
+                  }
+                },
+                {
+                  "id": "n2",
+                  "type": "numeric",
+                  "prompt": "4 − (−6)",
+                  "answer": 10,
+                  "marks": 1,
+                  "objective": "O1",
+                  "traps": {
+                    "-2": "Subtracting a negative is adding: 4 + 6."
+                  }
+                },
+                {
+                  "id": "n3",
+                  "type": "numeric",
+                  "prompt": "−5 × −3",
+                  "answer": 15,
+                  "marks": 1,
+                  "objective": "O2",
+                  "traps": {
+                    "-15": "Negative × negative is positive."
+                  }
+                },
+                {
+                  "id": "n4",
+                  "type": "order",
+                  "prompt": "Order from smallest: 2, −7, 0, −1",
+                  "answer": [
+                    "-7",
+                    "-1",
+                    "0",
+                    "2"
+                  ],
+                  "marks": 1,
+                  "objective": "O1"
+                },
+                {
+                  "id": "n5",
+                  "type": "mcq",
+                  "prompt": "Which is true?",
+                  "options": [
+                    "−8 > −3",
+                    "−8 < −3",
+                    "−8 = −3"
+                  ],
+                  "answer": "−8 < −3",
+                  "marks": 1,
+                  "objective": "O1",
+                  "traps": {
+                    "−8 > −3": "−8 is further left on the number line, so it is smaller."
+                  }
+                }
+              ]
+            },
+            "gcse": {
+              "label": "GCSE: Standard form",
+              "objectives": {
+                "O1": "Convert",
+                "O2": "Calculate"
+              },
+              "qs": [
+                {
+                  "id": "s1",
+                  "type": "numeric",
+                  "prompt": "Write 45 000 in standard form. Give the power of 10.",
+                  "answer": 4,
+                  "marks": 1,
+                  "objective": "O1",
+                  "traps": {
+                    "3": "4.5 × 10³ is 4 500."
+                  }
+                },
+                {
+                  "id": "s2",
+                  "type": "numeric",
+                  "prompt": "(2 × 10³) × (4 × 10⁵) = 8 × 10ⁿ. Find n.",
+                  "answer": 8,
+                  "marks": 2,
+                  "objective": "O2",
+                  "scheme": [
+                    {
+                      "code": "M1",
+                      "text": "adds the powers"
+                    },
+                    {
+                      "code": "A1",
+                      "text": "n = 8"
+                    }
+                  ],
+                  "traps": {
+                    "15": "Multiply the numbers but ADD the powers."
+                  }
+                },
+                {
+                  "id": "s3",
+                  "type": "numeric",
+                  "prompt": "Write 0.003 as a × 10ⁿ. Find n.",
+                  "answer": -3,
+                  "marks": 1,
+                  "objective": "O1",
+                  "traps": {
+                    "3": "Small numbers have negative powers."
+                  }
+                }
+              ]
+            }
+          },
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "RESP": [
+            6,
+            {
+              "answer": 16,
+              "work": "24 ÷ 4 = 6, 6 × 3 = 16"
+            },
+            "3/4",
+            [
+              "3/4 of 24"
+            ],
+            {
+              "answer": [
+                "1/2 of 24",
+                "1/3 of 36"
+              ]
+            }
+          ],
+          "DEMO": [
+            {
+              "q": {
+                "id": "q1",
+                "type": "numeric",
+                "prompt": "Find 1/4 of 24.",
+                "answer": 6,
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "20": "That subtracts 4. A quarter means share into 4 equal parts.",
+                  "96": "That is 24 × 4. A quarter means divide by 4."
+                }
+              }
+            },
+            {
+              "q": {
+                "id": "q1",
+                "type": "numeric",
+                "prompt": "Find 1/4 of 24.",
+                "answer": 6,
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "20": "That subtracts 4. A quarter means share into 4 equal parts.",
+                  "96": "That is 24 × 4. A quarter means divide by 4."
+                }
+              },
+              "resp": 6,
+              "marked": 1,
+              "target": "resp"
+            },
+            {
+              "q": {
+                "id": "q3",
+                "type": "numeric",
+                "prompt": "Write 3/4 as a decimal.",
+                "answer": 0.75,
+                "accept": [
+                  "3/4",
+                  ".75"
+                ],
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "0.34": "3/4 is not 0.34. Divide 3 by 4.",
+                  "3.4": "3/4 means 3 ÷ 4."
+                }
+              },
+              "resp": "3/4",
+              "marked": 1
+            },
+            {
+              "q": {
+                "id": "q2",
+                "type": "numeric",
+                "prompt": "Find 3/4 of 24.",
+                "answer": 18,
+                "marks": 2,
+                "objective": "O2",
+                "scheme": [
+                  {
+                    "code": "M1",
+                    "text": "24 ÷ 4 = 6 seen"
+                  },
+                  {
+                    "code": "A1",
+                    "text": "18 cao"
+                  }
+                ],
+                "traps": {
+                  "6": "That is one quarter. Three quarters is 3 lots of 6.",
+                  "8": "That is a third of 24. The denominator is 4."
+                }
+              },
+              "resp": {
+                "answer": 16,
+                "work": "24 ÷ 4 = 6, 6 × 3 = 16"
+              },
+              "marked": 1
+            },
+            {
+              "q": {
+                "id": "q2",
+                "type": "numeric",
+                "prompt": "Find 3/4 of 24.",
+                "answer": 18,
+                "marks": 2,
+                "objective": "O2",
+                "scheme": [
+                  {
+                    "code": "M1",
+                    "text": "24 ÷ 4 = 6 seen"
+                  },
+                  {
+                    "code": "A1",
+                    "text": "18 cao"
+                  }
+                ],
+                "traps": {
+                  "6": "That is one quarter. Three quarters is 3 lots of 6.",
+                  "8": "That is a third of 24. The denominator is 4."
+                }
+              },
+              "resp": {
+                "answer": 6,
+                "work": "24 ÷ 4 = 6"
+              },
+              "marked": 1,
+              "target": "trap"
+            },
+            {
+              "q": {
+                "id": "q5",
+                "type": "multi",
+                "prompt": "Select all that equal 12.",
+                "options": [
+                  "1/2 of 24",
+                  "1/3 of 36",
+                  "2/5 of 25",
+                  "3/4 of 16"
+                ],
+                "answer": [
+                  "1/2 of 24",
+                  "1/3 of 36",
+                  "3/4 of 16"
+                ],
+                "marks": 2,
+                "objective": "O2",
+                "scheme": [
+                  {
+                    "code": "B1",
+                    "text": "at least two correct, none wrong"
+                  },
+                  {
+                    "code": "A1",
+                    "text": "all three"
+                  }
+                ]
+              },
+              "resp": {
+                "answer": [
+                  "1/2 of 24",
+                  "1/3 of 36"
+                ]
+              },
+              "marked": 1,
+              "res": {
+                "total": 4,
+                "max": 7,
+                "byObjective": {
+                  "O1": {
+                    "got": 2,
+                    "max": 2,
+                    "pct": 100
+                  },
+                  "O2": {
+                    "got": 2,
+                    "max": 5,
+                    "pct": 40
+                  }
+                }
+              },
+              "objs": {
+                "O1": "Unit fractions of amounts",
+                "O2": "Non-unit fractions of amounts"
+              },
+              "target": "bars"
+            },
+            {
+              "q": {
+                "id": "q5",
+                "type": "multi",
+                "prompt": "Select all that equal 12.",
+                "options": [
+                  "1/2 of 24",
+                  "1/3 of 36",
+                  "2/5 of 25",
+                  "3/4 of 16"
+                ],
+                "answer": [
+                  "1/2 of 24",
+                  "1/3 of 36",
+                  "3/4 of 16"
+                ],
+                "marks": 2,
+                "objective": "O2",
+                "scheme": [
+                  {
+                    "code": "B1",
+                    "text": "at least two correct, none wrong"
+                  },
+                  {
+                    "code": "A1",
+                    "text": "all three"
+                  }
+                ]
+              },
+              "resp": {
+                "answer": [
+                  "1/2 of 24",
+                  "1/3 of 36"
+                ]
+              },
+              "marked": 1,
+              "res": {
+                "total": 4,
+                "max": 7,
+                "byObjective": {
+                  "O1": {
+                    "got": 2,
+                    "max": 2,
+                    "pct": 100
+                  },
+                  "O2": {
+                    "got": 2,
+                    "max": 5,
+                    "pct": 40
+                  }
+                }
+              },
+              "objs": {
+                "O1": "Unit fractions of amounts",
+                "O2": "Non-unit fractions of amounts"
+              }
+            }
+          ],
+          "steps": [
+            {
+              "name": "Question types",
+              "mood": "neutral",
+              "narration": "One engine, four question types: numeric, multiple choice, select-all and put-in-order. Every question carries its marks and objective.",
+              "prompt": "What type is \"Find 1/4 of 24\"?"
+            },
+            {
+              "name": "Mark",
+              "mood": "cheer",
+              "narration": "A quarter of 24 is 6. The marker compares the answer and awards the mark.",
+              "prompt": "How many marks for 6?",
+              "target": "resp"
+            },
+            {
+              "name": "Equivalent answers",
+              "mood": "think",
+              "narration": "3/4, 0.75 and .75 are the same number, so all of them score. Pupils are not punished for a different form.",
+              "prompt": "Name another way to write 0.75."
+            },
+            {
+              "name": "Method marks",
+              "mood": "think",
+              "narration": "Three quarters of 24 is worth 2 marks. This pupil found 24 ÷ 4 = 6 but slipped: 6 × 3 is 18, not 16. M1 for the method, no A1.",
+              "prompt": "Why does the pupil get 1 mark?"
+            },
+            {
+              "name": "Misconceptions",
+              "mood": "focus",
+              "narration": "An answer of 6 for three quarters is a known trap: it is only one quarter. The feedback names the slip, not just \"wrong\".",
+              "prompt": "What did the pupil forget?",
+              "target": "trap"
+            },
+            {
+              "name": "By objective",
+              "mood": "focus",
+              "narration": "Results group by objective. O1 is strong; O2, non-unit fractions, needs more work. The striped bar marks the gap.",
+              "prompt": "Which objective needs work?",
+              "target": "bars"
+            },
+            {
+              "name": "Report",
+              "mood": "cheer",
+              "narration": "Marks, method credit, misconception notes and objective scores: everything a teacher needs, with no scores turned into games here.",
+              "prompt": "What would you reteach first?"
+            }
+          ]
+        },
+        "draws": {
+          "card": [
+            "stage",
+            "o"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {}
+      },
+      "scenes": {
+        "card": {
+          "parameters": [
+            "stage",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "n": "Q1",
+              "q": {
+                "id": "q1",
+                "type": "numeric",
+                "prompt": "Find 1/4 of 24.",
+                "answer": 6,
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "20": "That subtracts 4. A quarter means share into 4 equal parts.",
+                  "96": "That is 24 × 4. A quarter means divide by 4."
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F0-12",
+    "path": "F0/F0-12-game-wrapper.html",
+    "errors": [],
+    "engineId": "F0-12",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": false,
+      "proof": null,
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F0-12",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "Wrap",
+            "mood": "neutral",
+            "narration": "The game wrapper sits around any engine. Engines just say right or wrong; the wrapper adds rounds, score, lives and hints.",
+            "prompt": "Who keeps the score: the engine or the wrapper?"
+          },
+          {
+            "name": "Score",
+            "mood": "cheer",
+            "narration": "3/4 of 24 is 18. Correct: plus 10 points.",
+            "prompt": "How many points for a correct answer?",
+            "target": "score"
+          },
+          {
+            "name": "Streak",
+            "mood": "cheer",
+            "narration": "2/5 of 30 is 12. Two in a row starts a streak, worth a 5 point bonus.",
+            "prompt": "What is the score now?"
+          },
+          {
+            "name": "Lives",
+            "mood": "oops",
+            "narration": "1/3 of 27 is 9, not 8. No points, the streak resets and one life is lost.",
+            "prompt": "How many lives are left?",
+            "target": "lives"
+          },
+          {
+            "name": "Hints",
+            "mood": "think",
+            "narration": "A hint costs 5 points. Helpful, never free, never a punishment that ends the game.",
+            "prompt": "What does a hint cost?"
+          },
+          {
+            "name": "Reactions",
+            "mood": "cheer",
+            "narration": "5/8 of 40 is 25. Bob and the helper react to every answer, with poses that change for right and wrong.",
+            "prompt": "Which pose shows for a right answer?"
+          },
+          {
+            "name": "Results",
+            "mood": "cheer",
+            "narration": "At the end: score, percentage, stars and best streak. Four out of five is 80 percent: two stars.",
+            "prompt": "How many stars for 80%?",
+            "target": "res"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "rounds": 5,
+          "lives": 3,
+          "base": 10,
+          "streakBonus": 5,
+          "hintCost": 5,
+          "stars": [
+            50,
+            70,
+            90
+          ],
+          "seed": "GAME12",
+          "presets": {
+            "quick": {
+              "label": "Quick fire: 5 rounds, 3 lives",
+              "rounds": 5,
+              "lives": 3,
+              "kind": "fraction"
+            },
+            "marathon": {
+              "label": "Marathon: 10 rounds, 3 lives",
+              "rounds": 10,
+              "lives": 3,
+              "kind": "fraction"
+            },
+            "practice": {
+              "label": "Practice: no lives",
+              "rounds": 8,
+              "lives": 0,
+              "kind": "negative"
+            },
+            "tables": {
+              "label": "Times tables sprint",
+              "rounds": 10,
+              "lives": 2,
+              "kind": "times"
+            },
+            "gcse": {
+              "label": "GCSE: percentages of amounts",
+              "rounds": 6,
+              "lives": 3,
+              "kind": "percent"
+            }
+          },
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "FR": [],
+          "Qd": [
+            {
+              "p": "3/4 of 24",
+              "a": 18
+            },
+            {
+              "p": "2/5 of 30",
+              "a": 12
+            },
+            {
+              "p": "1/3 of 27",
+              "a": 9
+            },
+            {
+              "p": "5/8 of 40",
+              "a": 25
+            },
+            {
+              "p": "3/4 of 24",
+              "a": 18
+            }
+          ],
+          "DEMO": [
+            {
+              "s": {
+                "round": 1,
+                "score": 0,
+                "lives": 3,
+                "streak": 0,
+                "best": 0,
+                "correct": 0,
+                "hints": 0,
+                "over": false,
+                "log": [
+                  {
+                    "round": 1,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 2,
+                    "ok": true,
+                    "points": 15
+                  },
+                  {
+                    "round": 3,
+                    "ok": false,
+                    "points": 0
+                  },
+                  {
+                    "round": 4,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 5,
+                    "ok": true,
+                    "points": 15
+                  }
+                ],
+                "rounds": 5,
+                "maxLives": 3
+              },
+              "q": {
+                "p": "3/4 of 24",
+                "a": 18
+              }
+            },
+            {
+              "s": {
+                "round": 2,
+                "score": 10,
+                "lives": 3,
+                "streak": 1,
+                "best": 1,
+                "correct": 1,
+                "hints": 0,
+                "over": false,
+                "log": [
+                  {
+                    "round": 1,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 2,
+                    "ok": true,
+                    "points": 15
+                  },
+                  {
+                    "round": 3,
+                    "ok": false,
+                    "points": 0
+                  },
+                  {
+                    "round": 4,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 5,
+                    "ok": true,
+                    "points": 15
+                  }
+                ],
+                "rounds": 5,
+                "maxLives": 3
+              },
+              "q": {
+                "p": "3/4 of 24",
+                "a": 18
+              },
+              "ans": 18,
+              "st": "ok",
+              "pts": "+10 (correct)",
+              "hl": "score",
+              "target": "score"
+            },
+            {
+              "s": {
+                "round": 3,
+                "score": 25,
+                "lives": 3,
+                "streak": 2,
+                "best": 2,
+                "correct": 2,
+                "hints": 0,
+                "over": false,
+                "log": [
+                  {
+                    "round": 1,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 2,
+                    "ok": true,
+                    "points": 15
+                  },
+                  {
+                    "round": 3,
+                    "ok": false,
+                    "points": 0
+                  },
+                  {
+                    "round": 4,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 5,
+                    "ok": true,
+                    "points": 15
+                  }
+                ],
+                "rounds": 5,
+                "maxLives": 3
+              },
+              "q": {
+                "p": "2/5 of 30",
+                "a": 12
+              },
+              "ans": 12,
+              "st": "ok",
+              "pts": "+10 +5 streak bonus",
+              "hl": "streak"
+            },
+            {
+              "s": {
+                "round": 4,
+                "score": 25,
+                "lives": 2,
+                "streak": 0,
+                "best": 2,
+                "correct": 2,
+                "hints": 0,
+                "over": false,
+                "log": [
+                  {
+                    "round": 1,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 2,
+                    "ok": true,
+                    "points": 15
+                  },
+                  {
+                    "round": 3,
+                    "ok": false,
+                    "points": 0
+                  },
+                  {
+                    "round": 4,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 5,
+                    "ok": true,
+                    "points": 15
+                  }
+                ],
+                "rounds": 5,
+                "maxLives": 3
+              },
+              "q": {
+                "p": "1/3 of 27",
+                "a": 9
+              },
+              "ans": 8,
+              "st": "no",
+              "pts": "No points, lose a life",
+              "minus": 1,
+              "hl": "lives",
+              "target": "lives"
+            },
+            {
+              "s": {
+                "round": 4,
+                "score": 20,
+                "lives": 2,
+                "streak": 0,
+                "best": 2,
+                "correct": 2,
+                "hints": 1,
+                "over": false,
+                "log": [
+                  {
+                    "round": 1,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 2,
+                    "ok": true,
+                    "points": 15
+                  },
+                  {
+                    "round": 3,
+                    "ok": false,
+                    "points": 0
+                  },
+                  {
+                    "round": 4,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 5,
+                    "ok": true,
+                    "points": 15
+                  }
+                ],
+                "rounds": 5,
+                "maxLives": 3
+              },
+              "q": {
+                "p": "5/8 of 40",
+                "a": 25
+              },
+              "pts": "Hint: −5 points",
+              "minus": 1,
+              "hl": "score"
+            },
+            {
+              "s": {
+                "round": 6,
+                "score": 45,
+                "lives": 2,
+                "streak": 2,
+                "best": 2,
+                "correct": 4,
+                "hints": 1,
+                "over": true,
+                "log": [
+                  {
+                    "round": 1,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 2,
+                    "ok": true,
+                    "points": 15
+                  },
+                  {
+                    "round": 3,
+                    "ok": false,
+                    "points": 0
+                  },
+                  {
+                    "round": 4,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 5,
+                    "ok": true,
+                    "points": 15
+                  }
+                ],
+                "rounds": 5,
+                "maxLives": 3
+              },
+              "q": {
+                "p": "5/8 of 40",
+                "a": 25
+              },
+              "ans": 25,
+              "st": "ok",
+              "pts": "Bob reacts: celebrate"
+            },
+            {
+              "s": {
+                "round": 6,
+                "score": 45,
+                "lives": 2,
+                "streak": 2,
+                "best": 2,
+                "correct": 4,
+                "hints": 1,
+                "over": true,
+                "log": [
+                  {
+                    "round": 1,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 2,
+                    "ok": true,
+                    "points": 15
+                  },
+                  {
+                    "round": 3,
+                    "ok": false,
+                    "points": 0
+                  },
+                  {
+                    "round": 4,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 5,
+                    "ok": true,
+                    "points": 15
+                  }
+                ],
+                "rounds": 5,
+                "maxLives": 3
+              },
+              "res": {
+                "score": 45,
+                "correct": 4,
+                "played": 5,
+                "pct": 80,
+                "stars": 2,
+                "best": 2,
+                "hints": 1,
+                "livesLeft": 2
+              },
+              "target": "res"
+            }
+          ],
+          "steps": [
+            {
+              "name": "Wrap",
+              "mood": "neutral",
+              "narration": "The game wrapper sits around any engine. Engines just say right or wrong; the wrapper adds rounds, score, lives and hints.",
+              "prompt": "Who keeps the score: the engine or the wrapper?"
+            },
+            {
+              "name": "Score",
+              "mood": "cheer",
+              "narration": "3/4 of 24 is 18. Correct: plus 10 points.",
+              "prompt": "How many points for a correct answer?",
+              "target": "score"
+            },
+            {
+              "name": "Streak",
+              "mood": "cheer",
+              "narration": "2/5 of 30 is 12. Two in a row starts a streak, worth a 5 point bonus.",
+              "prompt": "What is the score now?"
+            },
+            {
+              "name": "Lives",
+              "mood": "oops",
+              "narration": "1/3 of 27 is 9, not 8. No points, the streak resets and one life is lost.",
+              "prompt": "How many lives are left?",
+              "target": "lives"
+            },
+            {
+              "name": "Hints",
+              "mood": "think",
+              "narration": "A hint costs 5 points. Helpful, never free, never a punishment that ends the game.",
+              "prompt": "What does a hint cost?"
+            },
+            {
+              "name": "Reactions",
+              "mood": "cheer",
+              "narration": "5/8 of 40 is 25. Bob and the helper react to every answer, with poses that change for right and wrong.",
+              "prompt": "Which pose shows for a right answer?"
+            },
+            {
+              "name": "Results",
+              "mood": "cheer",
+              "narration": "At the end: score, percentage, stars and best streak. Four out of five is 80 percent: two stars.",
+              "prompt": "How many stars for 80%?",
+              "target": "res"
+            }
+          ]
+        },
+        "draws": {
+          "hud": [
+            "stage",
+            "s",
+            "o"
+          ],
+          "qcard": [
+            "stage",
+            "q",
+            "ans",
+            "state"
+          ],
+          "pts": [
+            "stage",
+            "t",
+            "minus"
+          ],
+          "results": [
+            "stage",
+            "r",
+            "stars"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {}
+      },
+      "scenes": {
+        "hud": {
+          "parameters": [
+            "stage",
+            "s",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "round": 1,
+              "score": 0,
+              "lives": 3,
+              "streak": 0,
+              "best": 0,
+              "correct": 0,
+              "hints": 0,
+              "over": false,
+              "log": [
+                {
+                  "round": 1,
+                  "ok": true,
+                  "points": 10
+                },
+                {
+                  "round": 2,
+                  "ok": true,
+                  "points": 15
+                },
+                {
+                  "round": 3,
+                  "ok": false,
+                  "points": 0
+                },
+                {
+                  "round": 4,
+                  "ok": true,
+                  "points": 10
+                },
+                {
+                  "round": 5,
+                  "ok": true,
+                  "points": 15
+                }
+              ],
+              "rounds": 5,
+              "maxLives": 3
+            },
+            {
+              "s": {
+                "round": 1,
+                "score": 0,
+                "lives": 3,
+                "streak": 0,
+                "best": 0,
+                "correct": 0,
+                "hints": 0,
+                "over": false,
+                "log": [
+                  {
+                    "round": 1,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 2,
+                    "ok": true,
+                    "points": 15
+                  },
+                  {
+                    "round": 3,
+                    "ok": false,
+                    "points": 0
+                  },
+                  {
+                    "round": 4,
+                    "ok": true,
+                    "points": 10
+                  },
+                  {
+                    "round": 5,
+                    "ok": true,
+                    "points": 15
+                  }
+                ],
+                "rounds": 5,
+                "maxLives": 3
+              },
+              "q": {
+                "p": "3/4 of 24",
+                "a": 18
+              }
+            }
+          ]
+        },
+        "qcard": {
+          "parameters": [
+            "stage",
+            "q",
+            "ans",
+            "state"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "p": "3/4 of 24",
+              "a": 18
+            },
+            null,
+            null
+          ]
+        },
+        "pts": {
+          "parameters": [
+            "stage",
+            "t",
+            "minus"
+          ],
+          "sample": [
+            "[native stage]",
+            null,
+            null
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F0-13",
+    "path": "F0/F0-13-worked-example.html",
+    "errors": [],
+    "engineId": "F0-13",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": false,
+      "proof": null,
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F0-13",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "I do: set up",
+            "mood": "neutral",
+            "narration": "I do: I solve one while you watch. First, write the equation: 3x + 5 = 20.",
+            "prompt": "What is the unknown?"
+          },
+          {
+            "name": "I do: undo +5",
+            "mood": "think",
+            "narration": "Subtract 5 from both sides to undo the plus 5. That leaves 3x = 15. Each line has its reason beside it.",
+            "prompt": "Why subtract 5?",
+            "target": "line"
+          },
+          {
+            "name": "I do: undo ×3",
+            "mood": "cheer",
+            "narration": "Divide both sides by 3: x = 5. Then check by substituting back. 3 times 5 plus 5 is 20.",
+            "prompt": "How do we check?"
+          },
+          {
+            "name": "We do: blanks",
+            "mood": "think",
+            "narration": "We do: a similar one together. 4x − 3 = 17. Add 3 to both sides. What goes in the blank?",
+            "prompt": "4x = ?",
+            "target": "blank0"
+          },
+          {
+            "name": "We do: fade",
+            "mood": "think",
+            "narration": "4x = 20. Now the reasons start to fade: you supply the why. Divide by 4 to get x.",
+            "prompt": "x = ?"
+          },
+          {
+            "name": "You do",
+            "mood": "focus",
+            "narration": "You do: 2x + 7 = 19 on your own. No reasons, no blanks filled. Same steps as before.",
+            "prompt": "Solve 2x + 7 = 19."
+          },
+          {
+            "name": "Check",
+            "mood": "cheer",
+            "narration": "Subtract 7, then divide by 2: x = 6. I do, we do, you do: support fades as confidence grows.",
+            "prompt": "What is x?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "linear",
+          "fade": true,
+          "presets": {
+            "linear": {
+              "label": "Solve 3x + 5 = 20",
+              "iDo": {
+                "q": "Solve 3x + 5 = 20",
+                "lines": [
+                  [
+                    "3x + 5 = 20",
+                    "Write the equation."
+                  ],
+                  [
+                    "3x = 15",
+                    "Subtract 5 from both sides."
+                  ],
+                  [
+                    "x = 5",
+                    "Divide both sides by 3."
+                  ],
+                  [
+                    "Check: 3 × 5 + 5 = 20 ✓",
+                    "Substitute back to check."
+                  ]
+                ]
+              },
+              "weDo": {
+                "q": "Solve 4x − 3 = 17",
+                "lines": [
+                  [
+                    "4x − 3 = 17",
+                    "Write the equation."
+                  ],
+                  [
+                    "4x = {20}",
+                    "Add 3 to both sides."
+                  ],
+                  [
+                    "x = {5}",
+                    "Divide both sides by 4."
+                  ],
+                  [
+                    "Check: 4 × 5 − 3 = 17 ✓",
+                    "Substitute back."
+                  ]
+                ]
+              },
+              "youDo": {
+                "q": "Solve 2x + 7 = 19",
+                "answer": 6,
+                "lines": [
+                  [
+                    "2x + 7 = 19",
+                    ""
+                  ],
+                  [
+                    "2x = ?",
+                    ""
+                  ],
+                  [
+                    "x = ?",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              }
+            },
+            "fraction": {
+              "label": "Find 3/5 of 40",
+              "iDo": {
+                "q": "Find 3/5 of 40",
+                "lines": [
+                  [
+                    "40 ÷ 5 = 8",
+                    "Find one fifth: divide by the denominator."
+                  ],
+                  [
+                    "8 × 3 = 24",
+                    "Three fifths: multiply by the numerator."
+                  ],
+                  [
+                    "3/5 of 40 = 24",
+                    "Write the answer."
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              },
+              "weDo": {
+                "q": "Find 2/7 of 56",
+                "lines": [
+                  [
+                    "56 ÷ 7 = {8}",
+                    "One seventh."
+                  ],
+                  [
+                    "8 × 2 = {16}",
+                    "Two sevenths."
+                  ],
+                  [
+                    "2/7 of 56 = 16",
+                    "Answer."
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              },
+              "youDo": {
+                "q": "Find 3/4 of 36",
+                "answer": 27,
+                "lines": [
+                  [
+                    "36 ÷ 4 = ?",
+                    ""
+                  ],
+                  [
+                    "? × 3 = ?",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              }
+            },
+            "percent": {
+              "label": "Increase 80 by 15%",
+              "iDo": {
+                "q": "Increase 80 by 15%",
+                "lines": [
+                  [
+                    "10% of 80 = 8",
+                    "Find 10% first."
+                  ],
+                  [
+                    "5% of 80 = 4",
+                    "Half of 10%."
+                  ],
+                  [
+                    "15% = 8 + 4 = 12",
+                    "Add to get 15%."
+                  ],
+                  [
+                    "80 + 12 = 92",
+                    "Add the increase."
+                  ]
+                ]
+              },
+              "weDo": {
+                "q": "Increase 60 by 15%",
+                "lines": [
+                  [
+                    "10% of 60 = {6}",
+                    "Find 10%."
+                  ],
+                  [
+                    "5% of 60 = {3}",
+                    "Half of 10%."
+                  ],
+                  [
+                    "15% = 9",
+                    "Add."
+                  ],
+                  [
+                    "60 + 9 = {69}",
+                    "Add the increase."
+                  ]
+                ]
+              },
+              "youDo": {
+                "q": "Increase 40 by 15%",
+                "answer": 46,
+                "lines": [
+                  [
+                    "10% of 40 = ?",
+                    ""
+                  ],
+                  [
+                    "5% of 40 = ?",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              }
+            },
+            "angles": {
+              "label": "Angles on a straight line",
+              "iDo": {
+                "q": "Find x: x and 130° lie on a straight line",
+                "lines": [
+                  [
+                    "x + 130 = 180",
+                    "Angles on a straight line add to 180°."
+                  ],
+                  [
+                    "x = 180 − 130",
+                    "Subtract 130."
+                  ],
+                  [
+                    "x = 50°",
+                    "Answer with units."
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              },
+              "weDo": {
+                "q": "Find y: y and 72° lie on a straight line",
+                "lines": [
+                  [
+                    "y + 72 = {180}",
+                    "Angles on a line."
+                  ],
+                  [
+                    "y = {108}°",
+                    "Subtract 72."
+                  ],
+                  [
+                    "",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              },
+              "youDo": {
+                "q": "Find z: z and 35° lie on a straight line",
+                "answer": 145,
+                "lines": [
+                  [
+                    "z + 35 = ?",
+                    ""
+                  ],
+                  [
+                    "z = ?",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              }
+            },
+            "gcse": {
+              "label": "GCSE: Expand (x + 3)(x + 4)",
+              "iDo": {
+                "q": "Expand (x + 3)(x + 4)",
+                "lines": [
+                  [
+                    "x × x = x²",
+                    "First terms."
+                  ],
+                  [
+                    "x × 4 + 3 × x = 7x",
+                    "Outer and inner terms."
+                  ],
+                  [
+                    "3 × 4 = 12",
+                    "Last terms."
+                  ],
+                  [
+                    "x² + 7x + 12",
+                    "Collect."
+                  ]
+                ]
+              },
+              "weDo": {
+                "q": "Expand (x + 2)(x + 5)",
+                "lines": [
+                  [
+                    "x × x = x²",
+                    "First."
+                  ],
+                  [
+                    "5x + 2x = {7}x",
+                    "Outer and inner."
+                  ],
+                  [
+                    "2 × 5 = {10}",
+                    "Last."
+                  ],
+                  [
+                    "x² + 7x + 10",
+                    "Collect."
+                  ]
+                ]
+              },
+              "youDo": {
+                "q": "(x + 1)(x + 6) = x² + bx + 6. Find b.",
+                "answer": 7,
+                "lines": [
+                  [
+                    "x × x = x²",
+                    ""
+                  ],
+                  [
+                    "6x + 1x = ?",
+                    ""
+                  ],
+                  [
+                    "1 × 6 = 6",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              }
+            }
+          },
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "PH": [
+            "iDo",
+            "weDo",
+            "youDo"
+          ],
+          "DEMO": [
+            {
+              "phase": "iDo",
+              "upto": 0
+            },
+            {
+              "phase": "iDo",
+              "upto": 1,
+              "target": "line"
+            },
+            {
+              "phase": "iDo",
+              "upto": 3
+            },
+            {
+              "phase": "weDo",
+              "upto": 1,
+              "target": "blank0"
+            },
+            {
+              "phase": "weDo",
+              "upto": 2,
+              "filled": {
+                "1": [
+                  1
+                ]
+              }
+            },
+            {
+              "phase": "youDo",
+              "upto": 3
+            },
+            {
+              "phase": "youDo",
+              "upto": 3
+            }
+          ],
+          "steps": [
+            {
+              "name": "I do: set up",
+              "mood": "neutral",
+              "narration": "I do: I solve one while you watch. First, write the equation: 3x + 5 = 20.",
+              "prompt": "What is the unknown?"
+            },
+            {
+              "name": "I do: undo +5",
+              "mood": "think",
+              "narration": "Subtract 5 from both sides to undo the plus 5. That leaves 3x = 15. Each line has its reason beside it.",
+              "prompt": "Why subtract 5?",
+              "target": "line"
+            },
+            {
+              "name": "I do: undo ×3",
+              "mood": "cheer",
+              "narration": "Divide both sides by 3: x = 5. Then check by substituting back. 3 times 5 plus 5 is 20.",
+              "prompt": "How do we check?"
+            },
+            {
+              "name": "We do: blanks",
+              "mood": "think",
+              "narration": "We do: a similar one together. 4x − 3 = 17. Add 3 to both sides. What goes in the blank?",
+              "prompt": "4x = ?",
+              "target": "blank0"
+            },
+            {
+              "name": "We do: fade",
+              "mood": "think",
+              "narration": "4x = 20. Now the reasons start to fade: you supply the why. Divide by 4 to get x.",
+              "prompt": "x = ?"
+            },
+            {
+              "name": "You do",
+              "mood": "focus",
+              "narration": "You do: 2x + 7 = 19 on your own. No reasons, no blanks filled. Same steps as before.",
+              "prompt": "Solve 2x + 7 = 19."
+            },
+            {
+              "name": "Check",
+              "mood": "cheer",
+              "narration": "Subtract 7, then divide by 2: x = 6. I do, we do, you do: support fades as confidence grows.",
+              "prompt": "What is x?"
+            }
+          ]
+        },
+        "draws": {
+          "view": [
+            "stage",
+            "ex",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "phase": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {}
+      },
+      "scenes": {
+        "view": {
+          "parameters": [
+            "stage",
+            "ex",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Solve 3x + 5 = 20",
+              "iDo": {
+                "q": "Solve 3x + 5 = 20",
+                "lines": [
+                  [
+                    "3x + 5 = 20",
+                    "Write the equation."
+                  ],
+                  [
+                    "3x = 15",
+                    "Subtract 5 from both sides."
+                  ],
+                  [
+                    "x = 5",
+                    "Divide both sides by 3."
+                  ],
+                  [
+                    "Check: 3 × 5 + 5 = 20 ✓",
+                    "Substitute back to check."
+                  ]
+                ]
+              },
+              "weDo": {
+                "q": "Solve 4x − 3 = 17",
+                "lines": [
+                  [
+                    "4x − 3 = 17",
+                    "Write the equation."
+                  ],
+                  [
+                    "4x = {20}",
+                    "Add 3 to both sides."
+                  ],
+                  [
+                    "x = {5}",
+                    "Divide both sides by 4."
+                  ],
+                  [
+                    "Check: 4 × 5 − 3 = 17 ✓",
+                    "Substitute back."
+                  ]
+                ]
+              },
+              "youDo": {
+                "q": "Solve 2x + 7 = 19",
+                "answer": 6,
+                "lines": [
+                  [
+                    "2x + 7 = 19",
+                    ""
+                  ],
+                  [
+                    "2x = ?",
+                    ""
+                  ],
+                  [
+                    "x = ?",
+                    ""
+                  ],
+                  [
+                    "",
+                    ""
+                  ]
+                ]
+              }
+            },
+            {
+              "phase": "iDo",
+              "upto": 0
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F0-14",
+    "path": "F0/F0-14-axes-plotting.html",
+    "errors": [],
+    "engineId": "F0-14",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": false,
+      "proof": null,
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F0-14",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "Axes",
+            "mood": "neutral",
+            "narration": "Every chart starts with axes and a scale. x goes across from −1 to 5; y goes up in steps of 2.",
+            "prompt": "What is the y step?"
+          },
+          {
+            "name": "Plot points",
+            "mood": "think",
+            "narration": "For y = 2x + 1: when x is 0, y is 1; x is 1, y is 3; x is 2, y is 5. Coordinates are (across, up).",
+            "prompt": "Where does (2, 5) go?"
+          },
+          {
+            "name": "Line",
+            "mood": "think",
+            "narration": "The points line up, so join them with a straight line: y = 2x + 1.",
+            "prompt": "Why is it straight?"
+          },
+          {
+            "name": "Gradient and intercept",
+            "mood": "focus",
+            "narration": "Up 2 for every 1 across: the gradient is 2. The line crosses the y axis at 1: the intercept.",
+            "prompt": "What is the gradient?",
+            "target": "tri"
+          },
+          {
+            "name": "Scatter",
+            "mood": "think",
+            "narration": "Scatter graphs show pairs of data. Taller pupils tend to have longer arm spans: positive correlation.",
+            "prompt": "What kind of correlation?"
+          },
+          {
+            "name": "Bars",
+            "mood": "focus",
+            "narration": "Bar charts compare categories on one scale. Grape is the most popular, with 9 votes. Patterns tell the bars apart without colour.",
+            "prompt": "Which fruit is the mode?",
+            "target": "bar"
+          },
+          {
+            "name": "Read a value",
+            "mood": "cheer",
+            "narration": "To read a value, go up from x = 3 to the line, then across: y = 7.",
+            "prompt": "What is y when x = 3?",
+            "target": "read"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "type": "line",
+          "m": 2,
+          "c": 1,
+          "x": [
+            -1,
+            5
+          ],
+          "y": [
+            -2,
+            12
+          ],
+          "xStep": 1,
+          "yStep": 2,
+          "presets": {
+            "line": {
+              "label": "Straight line y = 2x + 1",
+              "type": "line",
+              "m": 2,
+              "c": 1,
+              "x": [
+                -1,
+                5
+              ],
+              "y": [
+                -2,
+                12
+              ],
+              "xStep": 1,
+              "yStep": 2
+            },
+            "negative": {
+              "label": "Negative gradient y = −x + 4",
+              "type": "line",
+              "m": -1,
+              "c": 4,
+              "x": [
+                -2,
+                6
+              ],
+              "y": [
+                -3,
+                7
+              ],
+              "xStep": 1,
+              "yStep": 1
+            },
+            "scatter": {
+              "label": "Scatter: height vs arm span (cm)",
+              "type": "scatter",
+              "x": [
+                140,
+                180
+              ],
+              "y": [
+                140,
+                180
+              ],
+              "xStep": 10,
+              "yStep": 10,
+              "data": [
+                [
+                  145,
+                  143
+                ],
+                [
+                  150,
+                  152
+                ],
+                [
+                  152,
+                  150
+                ],
+                [
+                  158,
+                  160
+                ],
+                [
+                  160,
+                  157
+                ],
+                [
+                  165,
+                  166
+                ],
+                [
+                  168,
+                  170
+                ],
+                [
+                  172,
+                  171
+                ],
+                [
+                  175,
+                  178
+                ]
+              ]
+            },
+            "bars": {
+              "label": "Bar chart: favourite fruit",
+              "type": "bar",
+              "y": [
+                0,
+                12
+              ],
+              "yStep": 2,
+              "data": [
+                [
+                  "Apple",
+                  7
+                ],
+                [
+                  "Banana",
+                  4
+                ],
+                [
+                  "Grape",
+                  9
+                ],
+                [
+                  "Kiwi",
+                  3
+                ]
+              ]
+            },
+            "gcse": {
+              "label": "GCSE: quadratic y = x² − 2x − 3",
+              "type": "curve",
+              "x": [
+                -2,
+                4
+              ],
+              "y": [
+                -5,
+                6
+              ],
+              "xStep": 1,
+              "yStep": 1
+            }
+          },
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "DEMO": [
+            {
+              "type": "line",
+              "m": 2,
+              "c": 1,
+              "x": [
+                -1,
+                5
+              ],
+              "y": [
+                -2,
+                12
+              ],
+              "xStep": 1,
+              "yStep": 2,
+              "showLine": false,
+              "info": [
+                {
+                  "t": "x from −1 to 5, step 1"
+                },
+                {
+                  "t": "y from −2 to 12, step 2"
+                },
+                {
+                  "t": "Axes cross at (0, 0)"
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "m": 2,
+              "c": 1,
+              "x": [
+                -1,
+                5
+              ],
+              "y": [
+                -2,
+                12
+              ],
+              "xStep": 1,
+              "yStep": 2,
+              "showLine": false,
+              "pts": [
+                0,
+                1,
+                2
+              ],
+              "info": [
+                {
+                  "t": "x = 0 → y = 1"
+                },
+                {
+                  "t": "x = 1 → y = 3"
+                },
+                {
+                  "t": "x = 2 → y = 5",
+                  "hl": 1
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "m": 2,
+              "c": 1,
+              "x": [
+                -1,
+                5
+              ],
+              "y": [
+                -2,
+                12
+              ],
+              "xStep": 1,
+              "yStep": 2,
+              "pts": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "info": [
+                {
+                  "t": "y = 2x + 1",
+                  "hl": 1
+                },
+                {
+                  "t": "Points line up: a straight line"
+                },
+                {
+                  "t": "(across, up): x first"
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "m": 2,
+              "c": 1,
+              "x": [
+                -1,
+                5
+              ],
+              "y": [
+                -2,
+                12
+              ],
+              "xStep": 1,
+              "yStep": 2,
+              "tri": [
+                1,
+                2
+              ],
+              "cMark": true,
+              "info": [
+                {
+                  "t": "Gradient m = 2 (up 2 per 1 across)",
+                  "hl": 1
+                },
+                {
+                  "t": "Intercept c = 1 at (0, 1)"
+                },
+                {
+                  "t": "y = 2x + 1"
+                }
+              ],
+              "target": "tri"
+            },
+            {
+              "label": "Scatter: height vs arm span (cm)",
+              "type": "scatter",
+              "x": [
+                140,
+                180
+              ],
+              "y": [
+                140,
+                180
+              ],
+              "xStep": 10,
+              "yStep": 10,
+              "data": [
+                [
+                  145,
+                  143
+                ],
+                [
+                  150,
+                  152
+                ],
+                [
+                  152,
+                  150
+                ],
+                [
+                  158,
+                  160
+                ],
+                [
+                  160,
+                  157
+                ],
+                [
+                  165,
+                  166
+                ],
+                [
+                  168,
+                  170
+                ],
+                [
+                  172,
+                  171
+                ],
+                [
+                  175,
+                  178
+                ]
+              ],
+              "trend": true,
+              "info": [
+                {
+                  "t": "Each point = one pupil"
+                },
+                {
+                  "t": "Positive correlation",
+                  "hl": 1
+                },
+                {
+                  "t": "Trend line: span ≈ height"
+                }
+              ]
+            },
+            {
+              "label": "Bar chart: favourite fruit",
+              "type": "bar",
+              "y": [
+                0,
+                12
+              ],
+              "yStep": 2,
+              "data": [
+                [
+                  "Apple",
+                  7
+                ],
+                [
+                  "Banana",
+                  4
+                ],
+                [
+                  "Grape",
+                  9
+                ],
+                [
+                  "Kiwi",
+                  3
+                ]
+              ],
+              "hl": 2,
+              "info": [
+                {
+                  "t": "Grape is the mode (9)",
+                  "hl": 1
+                },
+                {
+                  "t": "Total 23 pupils"
+                },
+                {
+                  "t": "Bars share one scale"
+                }
+              ],
+              "target": "bar"
+            },
+            {
+              "type": "line",
+              "m": 2,
+              "c": 1,
+              "x": [
+                -1,
+                5
+              ],
+              "y": [
+                -2,
+                12
+              ],
+              "xStep": 1,
+              "yStep": 2,
+              "read": 3,
+              "info": [
+                {
+                  "t": "Read x = 3 up to the line"
+                },
+                {
+                  "t": "y = 2 × 3 + 1 = 7",
+                  "hl": 1
+                },
+                {
+                  "t": "y = 2x + 1"
+                }
+              ],
+              "target": "read"
+            }
+          ],
+          "steps": [
+            {
+              "name": "Axes",
+              "mood": "neutral",
+              "narration": "Every chart starts with axes and a scale. x goes across from −1 to 5; y goes up in steps of 2.",
+              "prompt": "What is the y step?"
+            },
+            {
+              "name": "Plot points",
+              "mood": "think",
+              "narration": "For y = 2x + 1: when x is 0, y is 1; x is 1, y is 3; x is 2, y is 5. Coordinates are (across, up).",
+              "prompt": "Where does (2, 5) go?"
+            },
+            {
+              "name": "Line",
+              "mood": "think",
+              "narration": "The points line up, so join them with a straight line: y = 2x + 1.",
+              "prompt": "Why is it straight?"
+            },
+            {
+              "name": "Gradient and intercept",
+              "mood": "focus",
+              "narration": "Up 2 for every 1 across: the gradient is 2. The line crosses the y axis at 1: the intercept.",
+              "prompt": "What is the gradient?",
+              "target": "tri"
+            },
+            {
+              "name": "Scatter",
+              "mood": "think",
+              "narration": "Scatter graphs show pairs of data. Taller pupils tend to have longer arm spans: positive correlation.",
+              "prompt": "What kind of correlation?"
+            },
+            {
+              "name": "Bars",
+              "mood": "focus",
+              "narration": "Bar charts compare categories on one scale. Grape is the most popular, with 9 votes. Patterns tell the bars apart without colour.",
+              "prompt": "Which fruit is the mode?",
+              "target": "bar"
+            },
+            {
+              "name": "Read a value",
+              "mood": "cheer",
+              "narration": "To read a value, go up from x = 3 to the line, then across: y = 7.",
+              "prompt": "What is y when x = 3?",
+              "target": "read"
+            }
+          ]
+        },
+        "draws": {
+          "chart": [
+            "stage",
+            "o"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {}
+      },
+      "scenes": {
+        "chart": {
+          "parameters": [
+            "stage",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "type": "line",
+              "m": 2,
+              "c": 1,
+              "x": [
+                -1,
+                5
+              ],
+              "y": [
+                -2,
+                12
+              ],
+              "xStep": 1,
+              "yStep": 2,
+              "showLine": false,
+              "info": [
+                {
+                  "t": "x from −1 to 5, step 1"
+                },
+                {
+                  "t": "y from −2 to 12, step 2"
+                },
+                {
+                  "t": "Axes cross at (0, 0)"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F0-15",
+    "path": "F0/F0-15-interactive-table.html",
+    "errors": [],
+    "engineId": "F0-15",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": false,
+      "proof": null,
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F0-15",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "Table",
+            "mood": "neutral",
+            "narration": "A table of values lists x values and works out y for each. Here the rule is y = 3x − 2.",
+            "prompt": "What rule fills the y row?"
+          },
+          {
+            "name": "Fill",
+            "mood": "think",
+            "narration": "Substitute each x. When x is −1: 3 times −1 is −3, take 2 is −5.",
+            "prompt": "What is y when x = 0?"
+          },
+          {
+            "name": "Differences",
+            "mood": "think",
+            "narration": "Look along the row: y goes up by 3 each time x goes up by 1. That constant difference is the gradient.",
+            "prompt": "What is the difference?"
+          },
+          {
+            "name": "Link to graph",
+            "mood": "focus",
+            "narration": "Each column is a coordinate. Plot them and they line up on y = 3x − 2.",
+            "prompt": "Which point comes from x = 1?"
+          },
+          {
+            "name": "Highlight",
+            "mood": "focus",
+            "narration": "Highlight a column and its point lights up too: x = 2, y = 4 is the point (2, 4).",
+            "prompt": "What are the coordinates?",
+            "target": "pt"
+          },
+          {
+            "name": "Spot the error",
+            "mood": "oops",
+            "narration": "If a value is wrong, the point jumps off the line. 5 should be 4: 3 times 2 is 6, take 2 is 4.",
+            "prompt": "Which value is wrong?",
+            "target": "bad"
+          },
+          {
+            "name": "Complete",
+            "mood": "cheer",
+            "narration": "Complete table, steady differences, points on a line: the table and the graph tell the same story.",
+            "prompt": "What is the gradient?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "preset": "linear",
+          "presets": {
+            "linear": {
+              "label": "Table of values y = 3x − 2",
+              "xh": "x",
+              "yh": "y",
+              "xs": [
+                -1,
+                0,
+                1,
+                2,
+                3
+              ],
+              "f": "3x-2",
+              "m": 3,
+              "c": -2,
+              "y": [
+                -6,
+                10
+              ],
+              "ys": 2
+            },
+            "linear2": {
+              "label": "Table of values y = −2x + 5",
+              "xh": "x",
+              "yh": "y",
+              "xs": [
+                -1,
+                0,
+                1,
+                2,
+                3
+              ],
+              "f": "-2x+5",
+              "m": -2,
+              "c": 5,
+              "y": [
+                -2,
+                8
+              ],
+              "ys": 2
+            },
+            "ratio": {
+              "label": "Ratio table: eggs per cake (3 : 2)",
+              "xh": "cakes",
+              "yh": "eggs",
+              "xs": [
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "f": "1.5x",
+              "m": 1.5,
+              "c": 0,
+              "y": [
+                0,
+                16
+              ],
+              "ys": 4
+            },
+            "convert": {
+              "label": "Conversion: miles to km (× 1.6)",
+              "xh": "miles",
+              "yh": "km",
+              "xs": [
+                0,
+                5,
+                10,
+                15,
+                20
+              ],
+              "f": "1.6x",
+              "m": 1.6,
+              "c": 0,
+              "y": [
+                0,
+                32
+              ],
+              "ys": 8
+            },
+            "gcse": {
+              "label": "GCSE: y = x² − 1",
+              "xh": "x",
+              "yh": "y",
+              "xs": [
+                -2,
+                -1,
+                0,
+                1,
+                2
+              ],
+              "f": "x^2-1",
+              "quad": true,
+              "y": [
+                -2,
+                4
+              ],
+              "ys": 1
+            }
+          },
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "DEMO": [
+            {
+              "p": {
+                "label": "Table of values y = 3x − 2",
+                "xh": "x",
+                "yh": "y",
+                "xs": [
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "f": "3x-2",
+                "m": 3,
+                "c": -2,
+                "y": [
+                  -6,
+                  10
+                ],
+                "ys": 2
+              },
+              "blank": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "note": "x values chosen; y to work out."
+            },
+            {
+              "p": {
+                "label": "Table of values y = 3x − 2",
+                "xh": "x",
+                "yh": "y",
+                "xs": [
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "f": "3x-2",
+                "m": 3,
+                "c": -2,
+                "y": [
+                  -6,
+                  10
+                ],
+                "ys": 2
+              },
+              "blank": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "vals": {
+                "0": -5
+              },
+              "note": "x = −1: 3 × (−1) − 2 = −5"
+            },
+            {
+              "p": {
+                "label": "Table of values y = 3x − 2",
+                "xh": "x",
+                "yh": "y",
+                "xs": [
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "f": "3x-2",
+                "m": 3,
+                "c": -2,
+                "y": [
+                  -6,
+                  10
+                ],
+                "ys": 2
+              },
+              "diffs": 1,
+              "note": "Each step in x adds 3 to y: the gradient."
+            },
+            {
+              "p": {
+                "label": "Table of values y = 3x − 2",
+                "xh": "x",
+                "yh": "y",
+                "xs": [
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "f": "3x-2",
+                "m": 3,
+                "c": -2,
+                "y": [
+                  -6,
+                  10
+                ],
+                "ys": 2
+              },
+              "line": 1,
+              "note": "Each column is a point (x, y)."
+            },
+            {
+              "p": {
+                "label": "Table of values y = 3x − 2",
+                "xh": "x",
+                "yh": "y",
+                "xs": [
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "f": "3x-2",
+                "m": 3,
+                "c": -2,
+                "y": [
+                  -6,
+                  10
+                ],
+                "ys": 2
+              },
+              "line": 1,
+              "hl": 3,
+              "note": "Row x = 2 ↔ point (2, 4)",
+              "target": "pt"
+            },
+            {
+              "p": {
+                "label": "Table of values y = 3x − 2",
+                "xh": "x",
+                "yh": "y",
+                "xs": [
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "f": "3x-2",
+                "m": 3,
+                "c": -2,
+                "y": [
+                  -6,
+                  10
+                ],
+                "ys": 2
+              },
+              "line": 1,
+              "vals": {
+                "3": 5
+              },
+              "bad": [
+                3
+              ],
+              "note": "(2, 5) is off the line. 3 × 2 − 2 = 4.",
+              "target": "bad"
+            },
+            {
+              "p": {
+                "label": "Table of values y = 3x − 2",
+                "xh": "x",
+                "yh": "y",
+                "xs": [
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "f": "3x-2",
+                "m": 3,
+                "c": -2,
+                "y": [
+                  -6,
+                  10
+                ],
+                "ys": 2
+              },
+              "line": 1,
+              "diffs": 1,
+              "note": "Complete: y = 3x − 2"
+            }
+          ],
+          "steps": [
+            {
+              "name": "Table",
+              "mood": "neutral",
+              "narration": "A table of values lists x values and works out y for each. Here the rule is y = 3x − 2.",
+              "prompt": "What rule fills the y row?"
+            },
+            {
+              "name": "Fill",
+              "mood": "think",
+              "narration": "Substitute each x. When x is −1: 3 times −1 is −3, take 2 is −5.",
+              "prompt": "What is y when x = 0?"
+            },
+            {
+              "name": "Differences",
+              "mood": "think",
+              "narration": "Look along the row: y goes up by 3 each time x goes up by 1. That constant difference is the gradient.",
+              "prompt": "What is the difference?"
+            },
+            {
+              "name": "Link to graph",
+              "mood": "focus",
+              "narration": "Each column is a coordinate. Plot them and they line up on y = 3x − 2.",
+              "prompt": "Which point comes from x = 1?"
+            },
+            {
+              "name": "Highlight",
+              "mood": "focus",
+              "narration": "Highlight a column and its point lights up too: x = 2, y = 4 is the point (2, 4).",
+              "prompt": "What are the coordinates?",
+              "target": "pt"
+            },
+            {
+              "name": "Spot the error",
+              "mood": "oops",
+              "narration": "If a value is wrong, the point jumps off the line. 5 should be 4: 3 times 2 is 6, take 2 is 4.",
+              "prompt": "Which value is wrong?",
+              "target": "bad"
+            },
+            {
+              "name": "Complete",
+              "mood": "cheer",
+              "narration": "Complete table, steady differences, points on a line: the table and the graph tell the same story.",
+              "prompt": "What is the gradient?"
+            }
+          ]
+        },
+        "draws": {
+          "view": [
+            "stage",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "p": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {}
+      },
+      "scenes": {
+        "view": {
+          "parameters": [
+            "stage",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "p": {
+                "label": "Table of values y = 3x − 2",
+                "xh": "x",
+                "yh": "y",
+                "xs": [
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "f": "3x-2",
+                "m": 3,
+                "c": -2,
+                "y": [
+                  -6,
+                  10
+                ],
+                "ys": 2
+              },
+              "blank": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "note": "x values chosen; y to work out."
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F0-16",
+    "path": "F0/F0-16-geometry-canvas.html",
+    "errors": [],
+    "engineId": "F0-16",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": false,
+      "proof": null,
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F0-16",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "Snap grid",
+            "mood": "neutral",
+            "narration": "Points snap to the grid, so coordinates stay exact. A is at (1, 1), B at (8, 1), C at (3, 6).",
+            "prompt": "Where is C?"
+          },
+          {
+            "name": "Lines",
+            "mood": "think",
+            "narration": "Join the points with line segments to make triangle ABC.",
+            "prompt": "How many sides?"
+          },
+          {
+            "name": "Measure",
+            "mood": "focus",
+            "narration": "The canvas measures each side. AB runs along the grid: 7 units. The slanted sides use Pythagoras behind the scenes.",
+            "prompt": "How long is AB?",
+            "target": "side"
+          },
+          {
+            "name": "Angles",
+            "mood": "focus",
+            "narration": "Each angle is measured at its vertex and marked with an arc.",
+            "prompt": "Which angle is the largest?",
+            "target": "ang"
+          },
+          {
+            "name": "Angle sum",
+            "mood": "cheer",
+            "narration": "Add the three angles: always 180 degrees, whatever the triangle.",
+            "prompt": "What do the angles add to?"
+          },
+          {
+            "name": "Right angle",
+            "mood": "think",
+            "narration": "A right angle gets a square mark, not an arc. This is a 3, 4, 5 triangle.",
+            "prompt": "Where is the right angle?"
+          },
+          {
+            "name": "Straight line",
+            "mood": "cheer",
+            "narration": "Angles on a straight line also add to 180 degrees. Drag the points in Explore to test it.",
+            "prompt": "What do angles on a line add to?"
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "grid": 1,
+          "cols": 10,
+          "rows": 7,
+          "presets": {
+            "scalene": {
+              "label": "Scalene triangle",
+              "pts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  3,
+                  6
+                ]
+              ]
+            },
+            "right": {
+              "label": "Right-angled triangle (3, 4, 5)",
+              "pts": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  6,
+                  1
+                ],
+                [
+                  2,
+                  4
+                ]
+              ]
+            },
+            "isosceles": {
+              "label": "Isosceles triangle",
+              "pts": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  5,
+                  6
+                ]
+              ]
+            },
+            "line": {
+              "label": "Angles on a straight line",
+              "pts": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  5,
+                  2
+                ],
+                [
+                  8,
+                  5
+                ]
+              ],
+              "straight": true
+            },
+            "gcse": {
+              "label": "GCSE: Pythagoras (6, 8, 10)",
+              "pts": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ],
+                [
+                  1,
+                  8
+                ]
+              ],
+              "rows": 9
+            }
+          },
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "DEMO": [
+            {
+              "pts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  3,
+                  6
+                ]
+              ],
+              "upto": 0,
+              "coords": 1
+            },
+            {
+              "pts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  3,
+                  6
+                ]
+              ],
+              "upto": 1,
+              "coords": 1
+            },
+            {
+              "pts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  3,
+                  6
+                ]
+              ],
+              "upto": 2,
+              "side": 0,
+              "target": "side"
+            },
+            {
+              "pts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  3,
+                  6
+                ]
+              ],
+              "upto": 3,
+              "ang": 0,
+              "target": "ang"
+            },
+            {
+              "pts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  3,
+                  6
+                ]
+              ],
+              "upto": 3,
+              "sum": 1
+            },
+            {
+              "pts": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  6,
+                  1
+                ],
+                [
+                  2,
+                  4
+                ]
+              ],
+              "upto": 3,
+              "ang": 0
+            },
+            {
+              "pts": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  5,
+                  2
+                ],
+                [
+                  8,
+                  5
+                ]
+              ],
+              "straight": 1,
+              "upto": 3,
+              "sum": 1
+            }
+          ],
+          "steps": [
+            {
+              "name": "Snap grid",
+              "mood": "neutral",
+              "narration": "Points snap to the grid, so coordinates stay exact. A is at (1, 1), B at (8, 1), C at (3, 6).",
+              "prompt": "Where is C?"
+            },
+            {
+              "name": "Lines",
+              "mood": "think",
+              "narration": "Join the points with line segments to make triangle ABC.",
+              "prompt": "How many sides?"
+            },
+            {
+              "name": "Measure",
+              "mood": "focus",
+              "narration": "The canvas measures each side. AB runs along the grid: 7 units. The slanted sides use Pythagoras behind the scenes.",
+              "prompt": "How long is AB?",
+              "target": "side"
+            },
+            {
+              "name": "Angles",
+              "mood": "focus",
+              "narration": "Each angle is measured at its vertex and marked with an arc.",
+              "prompt": "Which angle is the largest?",
+              "target": "ang"
+            },
+            {
+              "name": "Angle sum",
+              "mood": "cheer",
+              "narration": "Add the three angles: always 180 degrees, whatever the triangle.",
+              "prompt": "What do the angles add to?"
+            },
+            {
+              "name": "Right angle",
+              "mood": "think",
+              "narration": "A right angle gets a square mark, not an arc. This is a 3, 4, 5 triangle.",
+              "prompt": "Where is the right angle?"
+            },
+            {
+              "name": "Straight line",
+              "mood": "cheer",
+              "narration": "Angles on a straight line also add to 180 degrees. Drag the points in Explore to test it.",
+              "prompt": "What do angles on a line add to?"
+            }
+          ]
+        },
+        "draws": {
+          "canvas": [
+            "stage",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "st": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {}
+      },
+      "scenes": {
+        "canvas": {
+          "parameters": [
+            "stage",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "pts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  3,
+                  6
+                ]
+              ],
+              "upto": 0,
+              "coords": 1
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F0-17",
+    "path": "F0/F0-17-static-print.html",
+    "errors": [],
+    "engineId": "F0-17",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": false,
+      "proof": null,
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F0-17",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "Why static",
+            "mood": "neutral",
+            "narration": "Animations are great on screen, but paper and old devices need a still version. Every engine keeps a static fallback.",
+            "prompt": "When would you need a static version?"
+          },
+          {
+            "name": "Snapshot",
+            "mood": "think",
+            "narration": "The renderer copies the live SVG, fixes its colours inline and turns it into a PNG image, with the same alt text.",
+            "prompt": "What file type is the snapshot?",
+            "target": "png"
+          },
+          {
+            "name": "Print theme",
+            "mood": "think",
+            "narration": "Print swaps the dark glowing theme for white paper and black ink. Easier to read, kinder to the printer.",
+            "prompt": "Why switch to a light theme?"
+          },
+          {
+            "name": "Worksheet",
+            "mood": "focus",
+            "narration": "A worksheet has a title, a name line, the seed and questions in two columns with space to answer.",
+            "prompt": "How many questions on this sheet?",
+            "target": "page"
+          },
+          {
+            "name": "Seeds",
+            "mood": "think",
+            "narration": "Change the seed and you get a fresh sheet; keep it and you get the same questions every time, so a class can share one.",
+            "prompt": "What gives the same sheet again?"
+          },
+          {
+            "name": "Answer key",
+            "mood": "cheer",
+            "narration": "The answer key prints on its own page. 3/4 of 24 style questions, answers ready to mark.",
+            "prompt": "Where does the key go?"
+          },
+          {
+            "name": "Export",
+            "mood": "cheer",
+            "narration": "Print it straight away or download a standalone sheet. No internet needed once it is saved.",
+            "prompt": "Name the two export options."
+          }
+        ],
+        "config": {
+          "startMode": "guided",
+          "topic": "fraction",
+          "count": 8,
+          "seed": "SHEET-A",
+          "answers": true,
+          "cols": 2,
+          "presets": {
+            "fractions": {
+              "label": "Fractions of amounts (8 questions)",
+              "topic": "fraction",
+              "count": 8,
+              "seed": "SHEET-A"
+            },
+            "negatives": {
+              "label": "Negative numbers (10 questions)",
+              "topic": "negative",
+              "count": 10,
+              "seed": "NEG-1"
+            },
+            "rounding": {
+              "label": "Rounding to the nearest 10 (12)",
+              "topic": "round",
+              "count": 12,
+              "seed": "RND-7"
+            },
+            "equations": {
+              "label": "Solve ax + b = c (8)",
+              "topic": "equation",
+              "count": 8,
+              "seed": "EQ-3"
+            },
+            "gcse": {
+              "label": "GCSE: percentage change (8)",
+              "topic": "percent",
+              "count": 8,
+              "seed": "PC-9"
+            }
+          },
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "DEMO": [
+            {
+              "topic": "fraction",
+              "seed": "SHEET-A",
+              "count": 8,
+              "title": "Fractions of amounts",
+              "figure": 1,
+              "side": [
+                {
+                  "t": "Live engines need a screen"
+                },
+                {
+                  "t": "Print and slow devices need a still"
+                },
+                {
+                  "t": "Every engine has a static fallback",
+                  "hl": 1
+                }
+              ]
+            },
+            {
+              "topic": "fraction",
+              "seed": "SHEET-A",
+              "count": 8,
+              "title": "Fractions of amounts",
+              "figure": 1,
+              "png": 1,
+              "side": [
+                {
+                  "t": "SVG → inline colours → PNG",
+                  "hl": 1
+                },
+                {
+                  "t": "Same picture, no script needed"
+                },
+                {
+                  "t": "Alt text travels with it"
+                }
+              ],
+              "target": "png"
+            },
+            {
+              "topic": "fraction",
+              "seed": "SHEET-A",
+              "count": 8,
+              "title": "Fractions of amounts",
+              "dark": 1,
+              "side": [
+                {
+                  "t": "Screen theme: dark, glowing"
+                },
+                {
+                  "t": "Print theme: white paper, black ink",
+                  "hl": 1
+                },
+                {
+                  "t": "Saves toner, easy to read"
+                }
+              ]
+            },
+            {
+              "topic": "fraction",
+              "seed": "SHEET-A",
+              "count": 8,
+              "title": "Fractions of amounts",
+              "side": [
+                {
+                  "t": "Title, name line, seed"
+                },
+                {
+                  "t": "Two columns of questions",
+                  "hl": 1
+                },
+                {
+                  "t": "Space to write each answer"
+                }
+              ],
+              "target": "page"
+            },
+            {
+              "topic": "fraction",
+              "seed": "SHEET-B",
+              "count": 8,
+              "title": "Fractions of amounts",
+              "hl": 0,
+              "side": [
+                {
+                  "t": "Seed A: Q1 2/3 of 15"
+                },
+                {
+                  "t": "Seed B: Q1 1/3 of 18",
+                  "hl": 1
+                },
+                {
+                  "t": "Same seed → same sheet, always"
+                }
+              ]
+            },
+            {
+              "topic": "fraction",
+              "seed": "SHEET-A",
+              "count": 8,
+              "title": "Fractions of amounts",
+              "key": 1,
+              "side": [
+                {
+                  "t": "Answer key on its own page",
+                  "hl": 1
+                },
+                {
+                  "t": "Q1: 2/3 of 15 = 10"
+                },
+                {
+                  "t": "Teachers mark in seconds"
+                }
+              ]
+            },
+            {
+              "topic": "fraction",
+              "seed": "SHEET-A",
+              "count": 8,
+              "title": "Fractions of amounts",
+              "side": [
+                {
+                  "t": "Print: opens the browser print dialog"
+                },
+                {
+                  "t": "Download: a standalone HTML sheet",
+                  "hl": 1
+                },
+                {
+                  "t": "Works offline, no login"
+                }
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "name": "Why static",
+              "mood": "neutral",
+              "narration": "Animations are great on screen, but paper and old devices need a still version. Every engine keeps a static fallback.",
+              "prompt": "When would you need a static version?"
+            },
+            {
+              "name": "Snapshot",
+              "mood": "think",
+              "narration": "The renderer copies the live SVG, fixes its colours inline and turns it into a PNG image, with the same alt text.",
+              "prompt": "What file type is the snapshot?",
+              "target": "png"
+            },
+            {
+              "name": "Print theme",
+              "mood": "think",
+              "narration": "Print swaps the dark glowing theme for white paper and black ink. Easier to read, kinder to the printer.",
+              "prompt": "Why switch to a light theme?"
+            },
+            {
+              "name": "Worksheet",
+              "mood": "focus",
+              "narration": "A worksheet has a title, a name line, the seed and questions in two columns with space to answer.",
+              "prompt": "How many questions on this sheet?",
+              "target": "page"
+            },
+            {
+              "name": "Seeds",
+              "mood": "think",
+              "narration": "Change the seed and you get a fresh sheet; keep it and you get the same questions every time, so a class can share one.",
+              "prompt": "What gives the same sheet again?"
+            },
+            {
+              "name": "Answer key",
+              "mood": "cheer",
+              "narration": "The answer key prints on its own page. 3/4 of 24 style questions, answers ready to mark.",
+              "prompt": "Where does the key go?"
+            },
+            {
+              "name": "Export",
+              "mood": "cheer",
+              "narration": "Print it straight away or download a standalone sheet. No internet needed once it is saved.",
+              "prompt": "Name the two export options."
+            }
+          ]
+        },
+        "draws": {
+          "sheet": [
+            "stage",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "st": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {}
+      },
+      "scenes": {
+        "sheet": {
+          "parameters": [
+            "stage",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "topic": "fraction",
+              "seed": "SHEET-A",
+              "count": 8,
+              "title": "Fractions of amounts",
+              "figure": 1,
+              "side": [
+                {
+                  "t": "Live engines need a screen"
+                },
+                {
+                  "t": "Print and slow devices need a still"
+                },
+                {
+                  "t": "Every engine has a static fallback",
+                  "hl": 1
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  }
+]

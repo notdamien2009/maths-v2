@@ -1,0 +1,806 @@
+[
+  {
+    "id": "F8-18",
+    "presetOf": null,
+    "path": "F8/F8-18-iteration-trial-and-improvement.html",
+    "sourceSha256": "fba25def4ad05e80b4c91128e9d1bdacb231d9910c03f9bca38f6145cc93028c",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            960,
+            960
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0.92 1 1.12 1.32 1.5 1.52 1.72 1.92 2",
+          "before": "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "EXPLORE · SQUARE ROOT OF FIVE Find the positive solution to x² = 5. Square root of two Square root of five Cube root of five Cubic with two terms Twice a square Cubic plus x Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the",
+          "after": "EXPLORE · SQUARE ROOT OF FIVE Find the positive solution to x² = 5. Square root of two Square root of five Cube root of five Cubic with two terms Twice a square Cubic plus x Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the",
+          "bi": [
+            "SQUARE-FIVE",
+            "7",
+            "7"
+          ],
+          "ai": [
+            "SQUARE-FIVE",
+            "7",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+            1
+          ],
+          "narrow": [
+            "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+            1
+          ],
+          "back": [
+            "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            960,
+            960
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0.92 1 1.12 1.32 1.5 1.52 1.72 1.92 2",
+          "before": "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "CHALLENGE 1 OF 6 · SQUARE ROOT OF FIVE Find the positive solution to x² = 5. Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the NOVA number line, then test the value. Trial 0 · target 2 decimal places · narrow the interval u",
+          "after": "CHALLENGE 1 OF 6 · SQUARE ROOT OF FIVE Find the positive solution to x² = 5. Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the NOVA number line, then test the value. Trial 0 · target 2 decimal places · narrow the interval u",
+          "bi": [
+            "SQUARE-FIVE",
+            "7",
+            "7"
+          ],
+          "ai": [
+            "SQUARE-FIVE",
+            "7",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+            1
+          ],
+          "narrow": [
+            "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+            1
+          ],
+          "back": [
+            "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+            1
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of: SQUARE-TWO, SQUARE-FIVE, CUBE-FIVE, CUBIC-X, DOUBLE-SQUARE, CUBIC-SUM"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 960,
+            "median": 44.84,
+            "p10": 40.47,
+            "count": 25,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 960,
+            "median": 11.02,
+            "p10": 11,
+            "count": 25,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 960,
+            "median": 11.02,
+            "p10": 11,
+            "count": 25,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.02,
+          "p10": 11,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.02,
+          "p10": 11,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.02,
+          "p10": 11,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.02,
+          "p10": 11,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.02,
+          "p10": 11,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx² = 2\nf(x) = x² − 2\nCURRENT ROOT INTERVAL\n1 < x < 2\n0.92\n1.12\n1.32\n1.52\n1.72\n1.92\n1\n2\n1.5\nMOVE THE GLOWIN",
+          "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx² = 5\nf(x) = x² − 5\nCURRENT ROOT INTERVAL\n2 < x < 3\n1.92\n2.12\n2.32\n2.52\n2.72\n2.92\n2\n3\n2.5\nMOVE THE GLOWIN"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "x² − 2"
+          ],
+          "text": "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx² = 2\nf(x) = x² − 2\nCURRENT ROOT INTERVAL\n1 < x < 2\n0.92\n1.12\n1.32\n1.52\n1.72\n1.92\n1\n2\n1.5\nMOVE THE GLOWING RING FOR YOUR TRIAL\nFind the positive solution to x² =\n2.\nRESULT: BELOW ZERO OR ABOVE ZERO?\nTRIAL x\nf(x)\nSIGN\nWIDTH\n— AWAITING A TRIAL —\n— AWAITING A TRIAL —\n"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 1.414,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "x² − 5"
+          ],
+          "text": "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx² = 5\nf(x) = x² − 5\nCURRENT ROOT INTERVAL\n2 < x < 3\n1.92\n2.12\n2.32\n2.52\n2.72\n2.92\n2\n3\n2.5\nMOVE THE GLOWING RING FOR YOUR TRIAL\nFind the positive solution to x² =\n5.\nRESULT: BELOW ZERO OR ABOVE ZERO?\nTRIAL x\nf(x)\nSIGN\nWIDTH\n— AWAITING A TRIAL —\n— AWAITING A TRIAL —\n"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 2.24,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx² = 2\nf(x) = x² − 2\nCURRENT ROOT INTERVAL\n1 < x < 2\n0.92\n1.12\n1.32\n1.52\n1.72\n1.92\n1\n2\n1.5\nMOVE THE GLOWING RING FOR YOUR TRIAL\nFind the positive solution to x² =\n2.\n"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx² = 2\nf(x) = x² − 2\nCURRE",
+          "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx² = 5\nf(x) = x² − 5\nCURRE",
+          "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx³ = 5\nf(x) = x³ − 5\nCURRE",
+          "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx³ − x = 2\nf(x) = x³ − x −",
+          "TRIAL & IMPROVE\nCLOSE THE BRACKET\n2x² = 7\nf(x) = 2x² − 7\nCUR",
+          "TRIAL & IMPROVE\nCLOSE THE BRACKET\nx³ + x = 4\nf(x) = x³ + x −"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "x² = 2\nf(x) = x² − 2\nCURRENT ROOT INTERVAL\n1 < x < 2\n0.92\n1.12\n1.32\n1.52\n1.72\n1.",
+          "x² = 2\nf(x) = x² − 2\nCURRENT ROOT INTERVAL\n1.25 < x < 1.5\n1.23\n1.28\n1.33\n1.38\n1.",
+          "x² = 2\nf(x) = x² − 2\nCURRENT ROOT INTERVAL\n1.40625 < x < 1.42188\n1.405\n1.407\n1.4",
+          "x² = 2\nf(x) = x² − 2\nCURRENT ROOT INTERVAL\n1.41406 < x < 1.41431\n1.414\n1.4141\n1."
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "x² = 2\nf(x) = x² − 2\nCURRENT ROOT INTERVAL\n1 < x < 2\n0.92\n1.12\n1.32\n1.52\n1.72\n1.92\n1\n2\n1.5\nMOVE THE GLOWING RING FOR YOUR TRIAL\nFind the positive solution to x² =\n2.\nRESULT: BELOW ZERO OR ABOVE ZERO?\n"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "x² = 5\nf(x) = x² − 5\nCURRENT ROOT INTERVAL\n2 < x < 3\n1.92\n2.12\n2.32\n2.52\n2.72\n2.",
+          "x² = 5\nf(x) = x² − 5\nCURRENT ROOT INTERVAL\n2 < x < 2.25\n1.98\n2.03\n2.08\n2.13\n2.18",
+          "x² = 5\nf(x) = x² − 5\nCURRENT ROOT INTERVAL\n2.2344 < x < 2.25\n2.2331\n2.2351\n2.237",
+          "x² = 5\nf(x) = x² − 5\nCURRENT ROOT INTERVAL\n2.2354 < x < 2.2363\n2.2353\n2.2355\n2.2"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "EXPLORE · SQUARE ROOT OF TWO Find the positive solution to x² = 2. Square root of two Square root of five Cube root of five Cubic with two terms Twice a square Cubic plus x Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the NOVA number line, then test the value. Trial 0 · target 3 decimal places · narrow the interval until BOTH endpoints round alike. Next challenge",
+          "inputs": [
+            "SQUARE-TWO",
+            "1.5",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0.92 1 1.12 1.32 1.5 1.52 1.72 1.92 2",
+          "buttons": 1,
+          "vb": 960,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "EXPLORE · SQUARE ROOT OF FIVE Find the positive solution to x² = 5. Square root of two Square root of five Cube root of five Cubic with two terms Twice a square Cubic plus x Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the NOVA number line, then test the value. Trial 0 · target 2 decimal places · narrow the interval until BOTH endpoints round alike. Next challenge",
+          "inputs": [
+            "SQUARE-FIVE",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+          "buttons": 1,
+          "vb": 960,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "EXPLORE · SQUARE ROOT OF FIVE Find the positive solution to x² = 5. Square root of two Square root of five Cube root of five Cubic with two terms Twice a square Cubic plus x Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the NOVA number line, then test the value. Trial 0 · target 2 decimal places · narrow the interval until BOTH endpoints round alike. Next challenge",
+          "inputs": [
+            "SQUARE-FIVE",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+          "buttons": 1,
+          "vb": 960,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "CHALLENGE 1 OF 6 · SQUARE ROOT OF TWO Find the positive solution to x² = 2. Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the NOVA number line, then test the value. Trial 0 · target 3 decimal places · narrow the interval until BOTH endpoints round alike. Next challenge",
+          "inputs": [
+            "SQUARE-TWO",
+            "1.5",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0.92 1 1.12 1.32 1.5 1.52 1.72 1.92 2",
+          "buttons": 1,
+          "vb": 960,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "CHALLENGE 1 OF 6 · SQUARE ROOT OF FIVE Find the positive solution to x² = 5. Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the NOVA number line, then test the value. Trial 0 · target 2 decimal places · narrow the interval until BOTH endpoints round alike. Next challenge",
+          "inputs": [
+            "SQUARE-FIVE",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+          "buttons": 1,
+          "vb": 960,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "CHALLENGE 1 OF 6 · SQUARE ROOT OF FIVE Find the positive solution to x² = 5. Undo trial Restore defaults Hint TRIAL VALUE Test this trial FINAL ANSWER Check accuracy Drag the glowing guess ring along the NOVA number line, then test the value. Trial 0 · target 2 decimal places · narrow the interval until BOTH endpoints round alike. Next challenge",
+          "inputs": [
+            "SQUARE-FIVE",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1.92 2 2.12 2.32 2.5 2.52 2.72 2.92 3 5",
+          "buttons": 1,
+          "vb": 960,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 960,
+        "median": 44.84,
+        "p10": 40.47,
+        "count": 25,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 960,
+        "median": 11.02,
+        "p10": 11,
+        "count": 25,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 960,
+        "median": 11.02,
+        "p10": 11,
+        "count": 25,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": false
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

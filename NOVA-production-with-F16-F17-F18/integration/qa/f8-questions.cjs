@@ -1,0 +1,132 @@
+/* F8 Challenge questions for QA (six per engine). state = {preset, ...overrides of that native preset}. Answers are worked out from the preset maths. */
+const Q={
+'F8-01':[
+ [{preset:'Y7-018',lines:['20 − 2 × (3 + 4)','20 − 2 × 7','20 − 14','6'],focus:['(3 + 4)','2 × 7','20 − 14']},'Work out 20 − 2 × (3 + 4).',6,['20 − 2 × (3 + 4)']],
+ [{preset:'Y7-018',lines:['30 − 4 × (5 − 2)','30 − 4 × 3','30 − 12','18'],focus:['(5 − 2)','4 × 3','30 − 12']},'Work out 30 − 4 × (5 − 2).',18,['30 − 4 × (5 − 2)']],
+ [{preset:'Y8-011'},'Expand and simplify (x + 3)(x + 2). What is the coefficient of x?',5,['(x + 3)(x + 2)']],
+ [{preset:'Y8-011',lines:['(x + 4)(x + 5)','x² + 5x + 4x + 20','x² + (5 + 4)x + 20','x² + 9x + 20'],focus:['Each term × each term','5x + 4x','5 + 4']},'Expand (x + 4)(x + 5). What is the constant term?',20,['(x + 4)(x + 5)']],
+ [{preset:'Y8-012',lines:['15x + 20','5 × 3x + 5 × 4','5(3x + 4)','15x + 20 ≡ 5(3x + 4)'],ops:['Find the common factor','Factor it out','Show identity'],focus:['15x and 20','Both terms contain the factor','Expand to check']},'What is the highest common factor of 15x and 20?',5,['15x + 20']],
+ [{preset:'Y8-015'},'Solve x ÷ 3 + 2 = 7. What is x?',15,['7']]],
+'F8-02':[
+ [{preset:'Y7-033'},'2x + 3 = 15. Work backwards: what is x?',6,['15']],
+ [{preset:'Y7-033',out:21,x:9},'2x + 3 = 21. Work backwards: what is x?',9,['21']],
+ [{preset:'Y7-033',out:25,x:11},'2x + 3 = 25. Work backwards: what is x?',11,['25']],
+ [{preset:'Y8-016',out:31,x:7},'5x − 4 = 31. Work backwards: what is x?',7,['31']],
+ [{preset:'Y8-016',out:36,x:8},'5x − 4 = 36. Work backwards: what is x?',8,['36']],
+ [{preset:'Y8-016',out:46,x:10},'5x − 4 = 46. Work backwards: what is x?',10,['46']]],
+'F8-03':[
+ [{preset:'Y7-028',inputs:[1,2,3,5],chosen:5,challenge:{input:5,want:17}},'The machine is y = 3x + 2. What is y when x = 5?',17,['x = 5']],
+ [{preset:'Y7-028',inputs:[1,2,3,7],chosen:7,challenge:{input:7,want:23}},'The machine is y = 3x + 2. What is y when x = 7?',23,['x = 7']],
+ [{preset:'Y7-030',challenge:{input:4,want:13}},'The machine is y = 2x + 5. What is y when x = 4?',13,['x = 4']],
+ [{preset:'Y7-033',challenge:{givenOutput:21,want:9}},'2x + 3 gives an output of 21. What was the input x?',9,['y = 21']],
+ [{preset:'Y8-016',challenge:{givenOutput:26,want:6}},'y = 5x − 4 and y = 26. What is x?',6,['y = 26']],
+ [{preset:'Y8-016',challenge:{givenOutput:41,want:9}},'y = 5x − 4 and y = 41. What is x?',9,['y = 41']]],
+'F8-04':[
+ [{preset:'Y8-016',input:7,challengeInput:7},'y = 5x − 4. What is y when x = 7?',31,['7']],
+ [{preset:'Y8-016',input:9,challengeInput:9},'y = 5x − 4. What is y when x = 9?',41,['9']],
+ [{preset:'Y8-016-b',challengeInput:8},'y = 2x + 3. What is y when x = 8?',19,['8']],
+ [{preset:'Y8-016-b',challengeInput:10},'y = 2x + 3. What is y when x = 10?',23,['10']],
+ [{preset:'Y8-016-c',challengeInput:3},'y = 5(x + 4). What is y when x = 3?',35,['3']],
+ [{preset:'Y8-016-c',challengeInput:6},'y = 5(x + 4). What is y when x = 6?',50,['6']]],
+'F8-05':[
+ [{preset:'Y7-033'},'Solve 4x + 7 = 31.',6,['4x + 7','31']],
+ [{preset:'Y7-035'},'Solve 3x + 4 = 22.',6,['3x + 4','22']],
+ [{preset:'Y8-013',challenge:{rows:[{L:'2(x + 3)',R:'20',a:2,b:6,c:0,d:20},{L:'2x + 6',R:'20',a:2,b:6,c:0,d:20},{L:'2x',R:'14',a:2,b:0,c:0,d:14},{L:'x',R:'7',a:1,b:0,c:0,d:7}],steps:['expand','sub6','div2'],pool:['expand','sub6','div2','div3'],solution:7,context:'2(x + 3) = 20'}},'Solve 2(x + 3) = 20.',7,['2(x + 3)','20']],
+ [{preset:'Y8-014'},'Solve 6x + 5 = 2x + 29.',6,['6x + 5','2x + 29']],
+ [{preset:'Y8-015'},'Solve x ÷ 4 + 3 = 8.',20,['8']],
+ [{preset:'Y7-033',challenge:{rows:[{L:'5x + 4',R:'39',a:5,b:4,c:0,d:39},{L:'5x',R:'35',a:5,b:0,c:0,d:35},{L:'x',R:'7',a:1,b:0,c:0,d:7}],steps:['sub4','div5'],pool:['sub4','div5','sub5','div4'],solution:7,context:'5x + 4 = 39'}},'Solve 5x + 4 = 39.',7,['5x + 4','39']]],
+'F8-06':[
+ [{preset:'Y8-016-L'},'P = 2l + 2w. Make l the subject, then find l when P = 26 and w = 4.',9,['2l + 2w']],
+ [{preset:'Y8-016-G'},'y = 3x + 5. Make x the subject, then find x when y = 29.',8,['3x + 5']],
+ [{preset:'Y8-016-A'},'A = bh ÷ 2. Make h the subject, then find h when A = 42 and b = 7.',12,['A']],
+ [{preset:'Y9-019-D'},'k = xy. Make y the subject, then find y when k = 60 and x = 5.',12,['xy']],
+ [{preset:'Y9-019-R'},'y = k ÷ x. Make k the subject, then find k when x = 6 and y = 8.',48,['k']],
+ [{preset:'Y8-016-L',inputs:{P:30,w:6}},'P = 2l + 2w. Make l the subject, then find l when P = 30 and w = 6.',9,['2l + 2w']]],
+'F8-07':[
+ [{preset:'Y7-028'},'Build the expression for “five times n, then add three”. What is its value when n = 2?',13,['n = 2']],
+ [{preset:'Y7-034-T'},'Build the expression for seven pounds per ticket plus a two-pound fee. What is it when t = 3?',23,['t = 3']],
+ [{preset:'Y7-034-P'},'Build the expression for twice the sum of l and w. What is it when l = 6 and w = 3?',18,['l = 6']],
+ [{preset:'Y9-007-D'},'Build the expression 2(3d + 5). What is it when d = 4?',34,['d = 4']],
+ [{preset:'Y9-007-G'},'Build the expression n(x + 3) + 4. What is it when n = 3 and x = 2?',19,['n = 3']],
+ [{preset:'Y7-028',values:{n:5}},'Build the expression for “five times n, then add three”. What is its value when n = 5?',28,['n = 5']]],
+'F8-08':[
+ [{preset:'Y7-029-A'},'Work out expression A, 3x + 2x, when x = 4.',20,['3x + 2x']],
+ [{preset:'Y7-029-B'},'Work out expression A, 4x + 3, when x = 4.',19,['4x + 3']],
+ [{preset:'Y9-006-A'},'Work out expression A, 2(x + 3), when x = 4.',14,['2(x + 3)']],
+ [{preset:'Y9-006-B'},'Work out expression A, (x + 2)(x + 3), when x = 4.',42,['(x + 2)(x + 3)']],
+ [{preset:'Y9-006-C'},'Work out expression A, x², when x = 4.',16,['x²']],
+ [{preset:'Y7-029-B'},'Work out expression B, 7x, when x = 5.',35,['7x']]],
+'F8-09':[
+ [{preset:'Y7-028-A'},'y = 3x. What is y when x = 4?',12,['y = 3x']],
+ [{preset:'Y7-030-A'},'y = 2x + 5. What is y when x = 4?',13,['y = 2x + 5']],
+ [{preset:'Y7-039-A'},'y = 3x − 2. What is y when x = 4?',10,['y = 3x − 2']],
+ [{preset:'Y8-030-A'},'y = x² − 2x − 3. What is y when x = 5?',12,['y = x² − 2x − 3']],
+ [{preset:'Y9-007-A'},'C = 12h + 25. What is C when h = 6?',97,['C = 12h + 25']],
+ [{preset:'Y7-028-A',a:4,rule:'y = 4x',term:'4 × x',context:'Four groups of x'},'y = 4x. What is y when x = 4?',16,['y = 4x']]],
+'F8-10':[
+ [{preset:'Y8-029-A'},'Solve y = x + 1 and y = −x + 5 together. Give the point as x, y.','2, 3',['y = x + 1']],
+ [{preset:'Y8-029-B'},'Solve y = 2x + 4 and y = −x + 1 together. Give the point as x, y.','-1, 2',['y = 2x + 4']],
+ [{preset:'Y8-029-C'},'Solve y = x − 4 and y = −2x + 5 together. Give the point as x, y.','3, -1',['y = x − 4']],
+ [{preset:'Y9-009-A'},'Solve y = −x − 3 and y = x + 1 together. Give the point as x, y.','-2, -1',['y = x + 1']],
+ [{preset:'Y9-009-B'},'Solve y = 2x − 1 and y = −2x + 5 together. Give the point as x, y.','1.5, 2',['y = 2x − 1']],
+ [{preset:'Y8-029-A',a:[1,2],b:[-1,4]},'Solve y = x + 2 and y = −x + 4 together. Give the point as x, y.','1, 3',['y = x + 2']]],
+'F8-11':[
+ [{preset:'Y8-017-A',c:13,original:'2x + 3 < 13',steps:['2x + 3 < 13','2x < 10','x < 5']},'Solve 2x + 3 < 13. What is the smallest integer that is NOT a solution?',5,['2x + 3 < 13']],
+ [{preset:'Y8-017-B',b:4,c:-11,original:'4 − 3x ≥ −11',steps:['4 − 3x ≥ −11','−3x ≥ −15','x ≤ 5']},'Solve 4 − 3x ≥ −11. What is the largest integer that is a solution?',5,['4 − 3x ≥ −11']],
+ [{preset:'Y8-017-C',c:33,original:'7x − 2 ≤ 33',steps:['7x − 2 ≤ 33','7x ≤ 35','x ≤ 5']},'Solve 7x − 2 ≤ 33. What is the largest integer that is a solution?',5,['7x − 2 ≤ 33']],
+ [{preset:'Y8-018-A'},'Solve −2(x − 1) > 8. What is the smallest integer that is NOT a solution?',-3,['−2(x − 1) > 8']],
+ [{preset:'Y8-018-B'},'Solve −1 ≤ 2x + 3 < 9. How many integers are solutions?',5,['−1 ≤ 2x + 3 < 9']],
+ [{preset:'Y8-018-C',high:16,original:'1 < 3x − 2 ≤ 16',steps:['1 < 3x − 2 ≤ 16','3 < 3x ≤ 18','1 < x ≤ 6']},'Solve 1 < 3x − 2 ≤ 16. How many integers are solutions?',5,['1 < 3x − 2 ≤ 16']]],
+'F8-12':[
+ [{preset:'Y8-031-A'},'Solve x² − 4 = 0. Give both roots, smaller first, like -1, 5.','-2, 2',['x² − 4 = 0']],
+ [{preset:'Y8-031-B'},'Solve x² − 4x + 3 = 0. Give both roots, smaller first.','1, 3',['x² − 4x + 3 = 0']],
+ [{preset:'Y9-011-A'},'Solve −x² + 2x + 3 = 0. Give both roots, smaller first.','-1, 3',['−x² + 2x + 3 = 0']],
+ [{preset:'Y9-011-B'},'Solve x² + 2x − 3 = 0. Give both roots, smaller first.','-3, 1',['x² + 2x − 3 = 0']],
+ [{preset:'Y9-011-C'},'Solve 2x² − 2x − 4 = 0. Give both roots, smaller first.','-1, 2',['2x² − 2x − 4 = 0']],
+ [{preset:'Y8-031-A',c:-9},'Solve x² − 9 = 0. Give both roots, smaller first.','-3, 3',['x² − 9 = 0']]],
+'F8-13':[
+ [{preset:'Y8-002-M1'},'Simplify a³ × a². What is the index?',5,['a³ × a²']],
+ [{preset:'Y8-002-D1'},'Simplify b⁵ ÷ b². What is the index?',3,['b⁵ ÷ b²']],
+ [{preset:'Y8-002-P1'},'Simplify (x²)³. What is the index?',6,['(x²)³']],
+ [{preset:'Y8-002-M2'},'Simplify y² × y⁴. What is the index?',6,['y² × y⁴']],
+ [{preset:'Y8-002-D2',n:2,label:'Divide · p⁶ ÷ p²'},'Simplify p⁶ ÷ p². What is the index?',4,['p⁶ ÷ p²']],
+ [{preset:'Y8-002-P2'},'Simplify (m³)². What is the index?',6,['(m³)²']]],
+'F8-14':[
+ [{preset:'Y8-BRIDGE-A'},'Simplify 6x ÷ 9x. Write it like 2/5.','2/3',['6x','9x']],
+ [{preset:'Y8-BRIDGE-B'},'Simplify 4xy ÷ 6x. Write it like 3y/4.','2y/3',['4xy','6x']],
+ [{preset:'Y9-FACTOR-C'},'Simplify (x² + 3x) ÷ x. Write it with no spaces, like x+5.','x+3',['x² + 3x']],
+ [{preset:'Y9-FACTOR-D'},'Simplify (x² − 9) ÷ (x − 3). Write it with no spaces, like x+5.','x+3',['x² − 9']],
+ [{preset:'Y9-FACTOR-E'},'Simplify (x² + 5x + 6) ÷ (x + 2). Write it with no spaces, like x+5.','x+3',['x² + 5x + 6']],
+ [{preset:'Y9-FACTOR-F'},'Simplify (x² − 4x) ÷ 2x. Write it with no spaces, like (x-1)/3.','(x-4)/2',['x² − 4x']]],
+'F8-15':[
+ [{preset:'Y7-012-A'},'One line uses the wrong sign rule. Is −3 × (−5) positive or negative? (type positive or negative)','positive',['−3 × (−5)']],
+ [{preset:'Y7-012-B'},'Find the mistake. What is −24 ÷ 6?',-4,['−24 ÷ 6']],
+ [{preset:'Y7-018-A'},'Find the mistake. What is 6 + 2 × 5?',16,['6 + 2 × 5']],
+ [{preset:'Y7-018-B'},'Find the mistake. What is 3 + 4 × 2²?',19,['3 + 4 × 2²']],
+ [{preset:'Y8-018-A'},'Find the mistake. Solve −2x > 8 (write it like x>-1).','x<-4',['−2x > 8']],
+ [{preset:'Y8-018-B'},'Find the mistake. What is the smallest integer that satisfies −6 ≤ 2x − 4 < 10?',-1,['−6 ≤ 2x − 4 < 10']]],
+'F8-16':[
+ [{preset:'Y9-007-A'},'A taxi charges £3 plus £2.50 per mile. Model it and find the cost in £ for 6 miles.',18,['TAXI']],
+ [{preset:'Y9-007-B'},'A rectangle is 8 m long and 5 m wide. Model the fencing and find the perimeter in m.',26,['GARDEN']],
+ [{preset:'Y9-007-C'},'Tickets cost £7 each plus a £5 booking fee. Find the cost in £ for 4 tickets.',33,['TICKET']],
+ [{preset:'Y9-018-B'},'Water is 18 cm deep and falls by 2 cm per minute. After how many minutes is it 8 cm deep?',5,['WATER']],
+ [{preset:'Y9-018-C'},'Use the meeting-point model 4t = 12 + 2t. After how many hours do they meet?',6,['MOVING']],
+ [{preset:'Y9-007-A',input:10,result:28,context:'A taxi charges £3 plus £2.50 per mile. What is the cost for 10 miles?',detail:['Fixed charge plus a rate per mile','Start with the fixed three pounds','Multiply ten miles by two pounds fifty','The total is a sensible fare for ten miles'],bob:['Identify the fixed charge and the cost per mile.','Write a rule for the fare, using m for miles.','Substitute ten miles, multiply first, then add the fixed fee.','Check the units and whether the fare makes sense.']},'A taxi charges £3 plus £2.50 per mile. Model it and find the cost in £ for 10 miles.',28,['TAXI']]],
+'F8-17':[
+ [{preset:'ODD-SUM'},'a = 2m + 1 and b = 2n + 1. Write a + b = 2( … ). What goes in the bracket? (no spaces, like m+n+5)','m+n+1',['TWO ODD NUMBERS']],
+ [{preset:'THREE-CONSEC'},'Simplify (n − 1) + n + (n + 1). (no spaces, like 5n)','3n',['CONSECUTIVE']],
+ [{preset:'EVEN-SQUARE'},'An even number is n = 2k. Using n² = 4k², what is n² when k = 3?',36,['EVEN']],
+ [{preset:'ODD-SQUARE'},'An odd number is n = 2k + 1. Using n² = 2(2k² + 2k) + 1, what is n² when k = 3?',49,['ODD']],
+ [{preset:'MULTIPLE-FIVE'},'a = 5m and b = 5n. Write a + b = 5( … ). What goes in the bracket? (no spaces)','m+n',['FIVE']],
+ [{preset:'SQUARE-DIFF'},'(n + 1)² − n² simplifies to 2n + 1. What is the difference when n = 7?',15,['SQUARE']]],
+'F8-18':[
+ [{preset:'SQUARE-TWO'},'Use trial and improvement to solve x² = 2. Give x to 3 decimal places.',1.414,['x² − 2']],
+ [{preset:'SQUARE-FIVE'},'Use trial and improvement to solve x² = 5. Give x to 2 decimal places.',2.24,['x² − 5']],
+ [{preset:'CUBE-FIVE'},'Use trial and improvement to solve x³ = 5. Give x to 3 decimal places.',1.71,['x³ − 5']],
+ [{preset:'CUBIC-X',dp:3},'Use trial and improvement to solve x³ − x − 2 = 0. Give x to 3 decimal places.',1.521,['x³ − x − 2']],
+ [{preset:'DOUBLE-SQUARE'},'Use trial and improvement to solve 2x² = 7. Give x to 3 decimal places.',1.871,['2x² − 7']],
+ [{preset:'CUBIC-SUM'},'Use trial and improvement to solve x³ + x − 4 = 0. Give x to 2 decimal places.',1.38,['x³ + x − 4']]]};
+const TYPE={'F8-10':'coordinates','F8-12':'ordered'};
+function payload(id,j){const [state,prompt,privateAnswer,expected]=Q[id][j];const type=TYPE[id]||(typeof privateAnswer==='number'?'numeric':'text');
+ return {nativeIndex:0,data:{lesson:{state,phase:5}},id:'C1.Q'+(j+1),source:'SRC',prompt,privateAnswer,answerType:type,hint:'Use the apparatus one step at a time.',wrongFeedback:'Check each step again.',correctFeedback:'Correct.',expected};}
+module.exports={payload,Q};

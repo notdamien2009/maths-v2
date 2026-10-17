@@ -1,0 +1,825 @@
+[
+  {
+    "id": "F10-07",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-07-Parallel-and-Perpendicular-Lines-PREMIUM-REVIEW.html",
+    "sourceSha256": "8050eb4001981237e0ed0a45af3ad6e23bf87aa6a9c2b149b835818e90b85e38",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            640,
+            542
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 90",
+          "before": "0 1 10 2 3 4 90"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Lesson preset Y8-025 · Parallel lines and gradient Y9-010 · Straight-line equations Y9-040 · Coordinate geometry Make parallel Make perpendicular Horizontal ↔ vertical Restore preset Gradient of B · m₂ −2 Y-intercept of B · c₂ −1 Drag B’s green handle along x = 1 to change its gradient, or use arrow",
+          "after": "Lesson preset Y8-025 · Parallel lines and gradient Y9-010 · Straight-line equations Y9-040 · Coordinate geometry Make parallel Make perpendicular Horizontal ↔ vertical Restore preset Gradient of B · m₂ −2 Y-intercept of B · c₂ −1 Drag B’s green handle along x = 1 to change its gradient, or use arrow",
+          "bi": [
+            "Y9-010",
+            "-2",
+            "-1"
+          ],
+          "ai": [
+            "Y9-010",
+            "-2",
+            "-1"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 4 90",
+            1
+          ],
+          "narrow": [
+            "0 1 10 2 4 90",
+            1
+          ],
+          "back": [
+            "0 1 10 2 3 4 90",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            640,
+            542
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 90",
+          "before": "0 1 10 2 3 4 90"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Line A is y = 2x − 1. What gradient must a different parallel line have? CheckHint",
+          "after": "Line A is y = 2x − 1. What gradient must a different parallel line have? CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 4 90",
+            0
+          ],
+          "narrow": [
+            "0 10 2 4 90",
+            0
+          ],
+          "back": [
+            "0 1 10 2 3 4 90",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y8-025, Y9-010, Y9-040"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y8-025",
+            "m": 5
+          },
+          "errors": [
+            "m must be from −4 to 4 in quarters"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 640,
+            "median": 25.5,
+            "p10": 25.5,
+            "count": 17,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 542,
+            "median": 11.44,
+            "p10": 11.44,
+            "count": 11,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 542,
+            "median": 11.44,
+            "p10": 11.44,
+            "count": 11,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 542,
+          "median": 11.44,
+          "p10": 11.44,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 542,
+          "median": 11.44,
+          "p10": 11.44,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 542,
+          "median": 11.44,
+          "p10": 11.44,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 542,
+          "median": 11.44,
+          "p10": 11.44,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 542,
+          "median": 11.44,
+          "p10": 11.44,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES\n−4\n−3\n−2\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nA\n·\nR\nE\nF\nE\nR\nE\nN\nC\nE\nB\n·\nC\nO\nM\nP\nA\nR\n",
+          "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES\n−4\n−3\n−2\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nA\n·\nR\nE\nF\nE\nR\nE\nN\nC\nE\nB\n·\nC\nO\nM\nP\nA\nR\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "m₁"
+          ],
+          "text": "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES\n−4\n−3\n−2\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nA\n·\nR\nE\nF\nE\nR\nE\nN\nC\nE\nB\n·\nC\nO\nM\nP\nA\nR\nE\n∟ · 90°\nT\nE\nS\nT\nTHE LINE RELATIONSHIP\nProve the relationship\nCOMPARE THE GRADIENTS\nA · m₁ =\n2\nB · m₂ =\n?\nTHE MATHEMATICAL TEST\nCheck the gradients without rev"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": -0.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "m₁"
+          ],
+          "text": "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES\n−4\n−3\n−2\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nA\n·\nR\nE\nF\nE\nR\nE\nN\nC\nE\nB\n·\nC\nO\nM\nP\nA\nR\nE\n∟ · 90°\nT\nE\nS\nT\nTHE LINE RELATIONSHIP\nProve the relationship\nCOMPARE THE GRADIENTS\nA · m₁ =\n−2\nB · m₂ =\n?\nTHE MATHEMATICAL TEST\nCheck the gradients without re"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 0.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES\n−4\n−3\n−2\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nA\n·\nR\nE\nF\nE\nR\nE\nN\nC\nE\nB\n·\nC\nO\nM\nP\nA\nR\nE\n∟ · 90°\nT\nE\nS\nT\nTHE LINE RELATIONSHIP\nProve the relationsh"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES",
+            "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES",
+            "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES",
+            "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES",
+            "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES",
+            "F10 · TWO-LINE GEOMETRY STUDIO\nCHALLENGE · JUSTIFY THE LINES"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · TWO-LINE GEOMETRY STUDIOCHALLENGE · JUSTIFY THE LINES\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n",
+          "F10 · TWO-LINE GEOMETRY STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nA\n·\nR\n",
+          "F10 · TWO-LINE GEOMETRY STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nA\n·\nR\n",
+          "F10 · TWO-LINE GEOMETRY STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nA\n·\nR\n"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · TWO-LINE GEOMETRY STUDIOCHALLENGE · JUSTIFY THE LINES\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nA\n·\nR\nE\nF\nE\nR\nE\nN\nC\nE\nB\n·\nC\nO\nM\nP\nA\nR\nE\n∟ · 90°\nT\nE\nS\nT\nTHE LINE RELATIONSHIP\nProve the relationship\nCOMPARE THE G"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · TWO-LINE GEOMETRY STUDIOCHALLENGE · JUSTIFY THE LINES\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n",
+          "F10 · TWO-LINE GEOMETRY STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nA\n·\nR\n",
+          "F10 · TWO-LINE GEOMETRY STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nA\n·\nR\n",
+          "F10 · TWO-LINE GEOMETRY STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nA\n·\nR\n"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Line B gradient handle; gradient 2/",
+          "active": "",
+          "panel": "Lesson preset Y8-025 · Parallel lines and gradient Y9-010 · Straight-line equations Y9-040 · Coordinate geometry Make parallel Make perpendicular Horizontal ↔ vertical Restore preset Gradient of B · m₂ 2 Y-intercept of B · c₂ 2 Drag B’s green handle along x = 1 to change its gradient, or use arrow keys and sliders. Escape cancels a drag. Different y-intercepts shift lines without changing their gradients.",
+          "inputs": [
+            "Y8-025",
+            "2",
+            "2"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 90",
+          "buttons": 1,
+          "vb": 640,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Line B gradient handle; gradient −2/",
+          "active": "",
+          "panel": "Lesson preset Y8-025 · Parallel lines and gradient Y9-010 · Straight-line equations Y9-040 · Coordinate geometry Make parallel Make perpendicular Horizontal ↔ vertical Restore preset Gradient of B · m₂ −2 Y-intercept of B · c₂ −1 Drag B’s green handle along x = 1 to change its gradient, or use arrow keys and sliders. Escape cancels a drag. Different y-intercepts shift lines without changing their gradients.",
+          "inputs": [
+            "Y9-010",
+            "-2",
+            "-1"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 90",
+          "buttons": 1,
+          "vb": 640,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Line B gradient handle; gradient −2/",
+          "active": "",
+          "panel": "Lesson preset Y8-025 · Parallel lines and gradient Y9-010 · Straight-line equations Y9-040 · Coordinate geometry Make parallel Make perpendicular Horizontal ↔ vertical Restore preset Gradient of B · m₂ −2 Y-intercept of B · c₂ −1 Drag B’s green handle along x = 1 to change its gradient, or use arrow keys and sliders. Escape cancels a drag. Different y-intercepts shift lines without changing their gradients.",
+          "inputs": [
+            "Y9-010",
+            "-2",
+            "-1"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 4 90",
+          "buttons": 1,
+          "vb": 542,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "Line A is y = 2x − 1. What gradient must a different parallel line have? CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 90",
+          "buttons": 0,
+          "vb": 640,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "Line A is y = 2x − 1. What gradient must a different parallel line have? CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 90",
+          "buttons": 0,
+          "vb": 640,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "Line A is y = 2x − 1. What gradient must a different parallel line have? CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 4 90",
+          "buttons": 0,
+          "vb": 542,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 640,
+        "median": 25.5,
+        "p10": 25.5,
+        "count": 17,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 542,
+        "median": 11.44,
+        "p10": 11.44,
+        "count": 11,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 542,
+        "median": 11.44,
+        "p10": 11.44,
+        "count": 11,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

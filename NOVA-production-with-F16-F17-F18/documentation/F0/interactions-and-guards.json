@@ -1,0 +1,120 @@
+[
+  {
+    "name": "F0-04 stepper changes actual marker",
+    "pass": true
+  },
+  {
+    "name": "F0-04 marker keyboard changes value",
+    "pass": true
+  },
+  {
+    "name": "F0-04 pointer drag updates marker",
+    "pass": true,
+    "detail": {
+      "gestureMs": 471,
+      "before": "Explore · one valuev = 1.25−1−0.500.511.520.31/3-0.50.251.25v = 1.25v = 1 (Nova the cat, welcome)Nova the cat, welcome",
+      "after": "Explore · one valuev = 1.5−1−0.500.511.520.31/3-0.50.251.5v = 1.5v = 1 (Nova the cat, welcome)Nova the cat, welcome"
+    }
+  },
+  {
+    "name": "F0-15 correct input fills and plots",
+    "pass": true
+  },
+  {
+    "name": "F0-16 keyboard moves original vertex",
+    "pass": true,
+    "detail": {
+      "before": "Point A at (1, 1)",
+      "after": "Point A at (2, 1)"
+    }
+  },
+  {
+    "name": "F0-16 pointer moves original vertex",
+    "pass": true,
+    "detail": {
+      "before": "Point A at (2, 1)",
+      "after": "Point A at (1, 2)"
+    }
+  },
+  {
+    "name": "F0-02 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "Number line needs increasing finite bounds",
+      "Number line step must be positive"
+    ]
+  },
+  {
+    "name": "F0-03 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "Jumps must be an integer 0 to 100",
+      "Jumps must be an integer 0 to 100"
+    ]
+  },
+  {
+    "name": "F0-04 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "Number line step must be positive"
+    ]
+  },
+  {
+    "name": "F0-06 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "Question count must be an integer 1 to 6",
+      "Unsupported question template"
+    ]
+  },
+  {
+    "name": "F0-07 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "Shaded parts must be an integer 0 to 5"
+    ]
+  },
+  {
+    "name": "F0-08 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "Rounding unit must be positive"
+    ]
+  },
+  {
+    "name": "F0-14 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "x axis step must be positive"
+    ]
+  },
+  {
+    "name": "F0-15 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "Table x values must increase (2 to 20 columns)"
+    ]
+  },
+  {
+    "name": "F0-16 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "Angle teaching requires a non-degenerate triangle"
+    ]
+  },
+  {
+    "name": "F0-17 rejects invalid mathematical state",
+    "pass": true,
+    "detail": [
+      "Figure shading must be an integer 0 to 5"
+    ]
+  },
+  {
+    "name": "Original game wrong answer advances round",
+    "pass": true
+  },
+  {
+    "name": "Retry game holds round and exhausts lives",
+    "pass": true
+  }
+]

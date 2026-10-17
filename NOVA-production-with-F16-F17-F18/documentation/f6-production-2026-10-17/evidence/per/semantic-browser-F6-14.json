@@ -1,0 +1,778 @@
+[
+  {
+    "id": "F6-14",
+    "presetOf": null,
+    "path": "F6/F6-14-ratio-fraction-translator.html",
+    "sourceSha256": "1da39b4d668420d7024fc24aab97d3a8b2fd34fa94d20fc573c5b5d5180456d5",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1120,
+            500
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "14 2 3 5 6",
+          "before": "14 3 5 6 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Ratio context Y7-059 · Sharing two to three Y7-059 · Garden plots Y7-059 · Study subjects Y7-059 · Team points Count ALL the parts for the denominator. Drag a fraction into A or B; press A/B from the keyboard, or Delete to return. Check matches Hint Reset Reset. Begin with the equal-part boxes.",
+          "after": "Ratio context Y7-059 · Sharing two to three Y7-059 · Garden plots Y7-059 · Study subjects Y7-059 · Team points Count ALL the parts for the denominator. Drag a fraction into A or B; press A/B from the keyboard, or Delete to return. Check matches Hint Reset Reset. Begin with the equal-part boxes.",
+          "bi": [
+            "Y7-059-garden"
+          ],
+          "ai": [
+            "Y7-059-garden"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "14 3 5 6 8",
+            4
+          ],
+          "narrow": [
+            "14 3 5 6 8",
+            4
+          ],
+          "back": [
+            "14 3 5 6 8",
+            4
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1120,
+            500
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "14 2 3 5 6",
+          "before": "14 2 3 5 6"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "1 / 4 · Ava and Ben share equal parts in the ratio 2:3. Drag the correct fraction onto each labelled part. Check translation Hint Next challenge Fraction placed. Translate both parts before checking. Completed: 0 / 4",
+          "after": "1 / 4 · Ava and Ben share equal parts in the ratio 2:3. Drag the correct fraction onto each labelled part. Check translation Hint Next challenge Fraction placed. Translate both parts before checking. Completed: 0 / 4",
+          "bi": [],
+          "ai": []
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "14 2 3 5 6",
+            4
+          ],
+          "narrow": [
+            "14 2 3 5 6",
+            4
+          ],
+          "back": [
+            "14 2 3 5 6",
+            4
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "lesson.state.a must be greater than zero"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1120,
+            "median": 19.93,
+            "p10": 15.43,
+            "count": 20,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 500,
+            "median": 12.38,
+            "p10": 11,
+            "count": 20,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 500,
+            "median": 12.38,
+            "p10": 11,
+            "count": 20,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 500,
+          "median": 12.38,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 500,
+          "median": 12.38,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 500,
+          "median": 12.38,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 500,
+          "median": 12.38,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 500,
+          "median": 12.38,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n2 : 5\nCOUNT ALL THE EQUAL PARTS\nA\nA\nB\nB\nB\nB\nB\n7 EQUAL PARTS = ONE WHOLE\nAva\n2 PARTS\n?\n?\nBen",
+          "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n3 : 4\nCOUNT ALL THE EQUAL PARTS\nA\nA\nA\nB\nB\nB\nB\n7 EQUAL PARTS = ONE WHOLE\nAva\n3 PARTS\n?\n?\nBen"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "2",
+            "5"
+          ],
+          "text": "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n2 : 5\nCOUNT ALL THE EQUAL PARTS\nA\nA\nB\nB\nB\nB\nB\n7 EQUAL PARTS = ONE WHOLE\nAva\n2 PARTS\n?\n?\nBen\n5 PARTS\n?\n?\nWHICH FRACTIONS MATCH THE GROUPS?\n\nWHOLE\n\n7 equal parts\n\nAdd the ratio parts to count the denominator.\n\nAva\n\n?\n\nFirst share: choose a fraction.\n\nBe"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "2/7",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "3",
+            "4"
+          ],
+          "text": "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n3 : 4\nCOUNT ALL THE EQUAL PARTS\nA\nA\nA\nB\nB\nB\nB\n7 EQUAL PARTS = ONE WHOLE\nAva\n3 PARTS\n?\n?\nBen\n4 PARTS\n?\n?\nWHICH FRACTIONS MATCH THE GROUPS?\n\nWHOLE\n\n7 equal parts\n\nAdd the ratio parts to count the denominator.\n\nAva\n\n?\n\nFirst share: choose a fraction.\n\nBe"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "3/7",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n2 : 5\nCOUNT ALL THE EQUAL PARTS\nA\nA\nB\nB\nB\nB\nB\n7 EQUAL PARTS = ONE WHOLE\nAva\n2 PARTS\n?\n?\nBen\n5 PARTS\n?\n?\nWHICH FRACTIONS MATCH THE GROUPS?\n\nWHOLE\n\n7 equ"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n2 : 5\nCOUNT",
+          "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n3 : 4\nCOUNT",
+          "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n1 : 6\nCOUNT",
+          "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n4 : 5\nCOUNT",
+          "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n5 : 3\nCOUNT",
+          "F6-14\nTRANSLATE THE PARTS\nONE WHOLE · TWO SHARES\n2 : 9\nCOUNT"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "ONE WHOLE · TWO SHARES\n2 : 5\nCOUNT ALL THE EQUAL PARTS\nHOW MANY PARTS IN ALL?\nAv",
+          "ONE WHOLE · TWO SHARES\n2 : 5\nCOUNT ALL THE EQUAL PARTS\nA\nA\nB\nB\nB\nB\nB\n7 EQUAL PAR",
+          "ONE WHOLE · TWO SHARES\n2 : 5\nCOUNT ALL THE EQUAL PARTS\nA\nA\nB\nB\nB\nB\nB\n7 EQUAL PAR",
+          "ONE WHOLE · TWO SHARES\n2 : 5\nCOUNT ALL THE EQUAL PARTS\nA\nA\nB\nB\nB\nB\nB\n7 EQUAL PAR"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "ONE WHOLE · TWO SHARES\n2 : 5\nCOUNT ALL THE EQUAL PARTS\nHOW MANY PARTS IN ALL?\nAva\n2 PARTS\n?\n?\nBen\n5 PARTS\n?\n?\nEVERY PART HAS THE SAME DENOMINATOR\n\nWHOLE\n\n7 equal parts\n\nAdd the ratio parts to count th"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "ONE WHOLE · TWO SHARES\n3 : 4\nCOUNT ALL THE EQUAL PARTS\nHOW MANY PARTS IN ALL?\nAv",
+          "ONE WHOLE · TWO SHARES\n3 : 4\nCOUNT ALL THE EQUAL PARTS\nA\nA\nA\nB\nB\nB\nB\n7 EQUAL PAR",
+          "ONE WHOLE · TWO SHARES\n3 : 4\nCOUNT ALL THE EQUAL PARTS\nA\nA\nA\nB\nB\nB\nB\n7 EQUAL PAR",
+          "ONE WHOLE · TWO SHARES\n3 : 4\nCOUNT ALL THE EQUAL PARTS\nA\nA\nA\nB\nB\nB\nB\n7 EQUAL PAR"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Ratio context Y7-059 · Sharing two to three Y7-059 · Garden plots Y7-059 · Study subjects Y7-059 · Team points Count ALL the parts for the denominator. Drag a fraction into A or B; press A/B from the keyboard, or Delete to return. Check matches Hint Reset Match each stacked fraction to the correct share of the whole.",
+          "inputs": [
+            "Y7-059"
+          ],
+          "stageInputs": [],
+          "nums": "14 2 3 5 6",
+          "buttons": 4,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Ratio context Y7-059 · Sharing two to three Y7-059 · Garden plots Y7-059 · Study subjects Y7-059 · Team points Count ALL the parts for the denominator. Drag a fraction into A or B; press A/B from the keyboard, or Delete to return. Check matches Hint Reset Reset. Begin with the equal-part boxes.",
+          "inputs": [
+            "Y7-059-garden"
+          ],
+          "stageInputs": [],
+          "nums": "14 3 5 6 8",
+          "buttons": 4,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Ratio context Y7-059 · Sharing two to three Y7-059 · Garden plots Y7-059 · Study subjects Y7-059 · Team points Count ALL the parts for the denominator. Drag a fraction into A or B; press A/B from the keyboard, or Delete to return. Check matches Hint Reset Reset. Begin with the equal-part boxes.",
+          "inputs": [
+            "Y7-059-garden"
+          ],
+          "stageInputs": [],
+          "nums": "14 3 5 6 8",
+          "buttons": 4,
+          "vb": 500,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "1 / 4 · Ava and Ben share equal parts in the ratio 2:3. Drag the correct fraction onto each labelled part. Check translation Hint Next challenge Completed: 0 / 4",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "14 2 3 5 6",
+          "buttons": 4,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "1 / 4 · Ava and Ben share equal parts in the ratio 2:3. Drag the correct fraction onto each labelled part. Check translation Hint Next challenge Fraction placed. Translate both parts before checking. Completed: 0 / 4",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "14 2 3 5 6",
+          "buttons": 4,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "1 / 4 · Ava and Ben share equal parts in the ratio 2:3. Drag the correct fraction onto each labelled part. Check translation Hint Next challenge Fraction placed. Translate both parts before checking. Completed: 0 / 4",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "14 2 3 5 6",
+          "buttons": 4,
+          "vb": 500,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1120,
+        "median": 19.93,
+        "p10": 15.43,
+        "count": 20,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 500,
+        "median": 12.38,
+        "p10": 11,
+        "count": 20,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 500,
+        "median": 12.38,
+        "p10": 11,
+        "count": 20,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

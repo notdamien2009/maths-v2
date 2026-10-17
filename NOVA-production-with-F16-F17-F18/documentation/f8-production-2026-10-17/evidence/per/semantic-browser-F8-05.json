@@ -1,0 +1,788 @@
+[
+  {
+    "id": "F8-05",
+    "presetOf": null,
+    "path": "F8/F8-05-both-sides-equation-solver.html",
+    "sourceSha256": "124a8375daa65f0b8b5c46da607b2e419c624d04ac2ec7a28a036e70a4f06060",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1080,
+            440
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "01 02 03 05 20 3 5 8",
+          "before": "01 02 03 05 18 2 3 6 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Y7-033 · One- and two-step equations Y7-035 · Equations from real contexts Y8-013 · Equations with brackets Y8-014 · Unknowns on both sides Y8-015 · Equations with fractions Undo last operation Reset equation − 6 ÷ 2 + 3 ÷ 3 Choose an operation, drag it onto BOTH SIDES or press Enter.",
+          "after": "Y7-033 · One- and two-step equations Y7-035 · Equations from real contexts Y8-013 · Equations with brackets Y8-014 · Unknowns on both sides Y8-015 · Equations with fractions Undo last operation Reset equation − 6 ÷ 2 + 3 ÷ 3 Choose an operation, drag it onto BOTH SIDES or press Enter.",
+          "bi": [
+            "Y7-035"
+          ],
+          "ai": [
+            "Y7-035"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "01 02 03 05 18 2 3 6 8",
+            4
+          ],
+          "narrow": [
+            "01 02 03 05 18 2 3 6 8",
+            4
+          ],
+          "back": [
+            "01 02 03 05 18 2 3 6 8",
+            4
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1080,
+            440
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "01 02 03 05 31 4 5 7 8",
+          "before": "01 02 03 05 24 31 4 5 7 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Challenge 1 of 5 · One- and two-step equations Check solution Hint Undo − 7 ÷ 4 − 5 × 4 Correct transformation: Divide every term on both sides by four.",
+          "after": "Challenge 1 of 5 · One- and two-step equations Check solution Hint Undo − 7 ÷ 4 − 5 × 4 Correct transformation: Divide every term on both sides by four.",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "01 02 03 05 24 31 4 5 7 8",
+            5
+          ],
+          "narrow": [
+            "01 02 03 05 24 31 4 5 7 8",
+            5
+          ],
+          "back": [
+            "01 02 03 05 24 31 4 5 7 8",
+            5
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of: Y7-033, Y7-035, Y8-013, Y8-014, Y8-015"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1080,
+            "median": 22.36,
+            "p10": 19.44,
+            "count": 21,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 11.73,
+            "p10": 11.14,
+            "count": 21,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 11.73,
+            "p10": 11.14,
+            "count": 21,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.73,
+          "p10": 11.14,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.73,
+          "p10": 11.14,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.73,
+          "p10": 11.14,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.73,
+          "p10": 11.14,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.73,
+          "p10": 11.14,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUATION\nLEFT SIDE\n4x + 7\nRIGHT SIDE\n31\n=\nDROP OPERATION\n01\n4x + 7\n=\n31\n02\n? NEXT EQ",
+          "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUATION\nLEFT SIDE\n3x + 4\nRIGHT SIDE\n22\n=\nDROP OPERATION\n01\n3x + 4\n=\n22\n02\n? NEXT EQ"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "4x + 7",
+            "31"
+          ],
+          "text": "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUATION\nLEFT SIDE\n4x + 7\nRIGHT SIDE\n31\n=\nDROP OPERATION\n01\n4x + 7\n=\n31\n02\n? NEXT EQUIVALENT LINE\n03\n· · ·\nCHOOSE A VALID TRANSFORMATION\n− 7\n÷ 4\n− 5\n× 4\nRETURN / UNDO\nWhich operation preserves equality?\nReason carefully\nA valid algebraic transf"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 6,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "3x + 4",
+            "22"
+          ],
+          "text": "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUATION\nLEFT SIDE\n3x + 4\nRIGHT SIDE\n22\n=\nDROP OPERATION\n01\n3x + 4\n=\n22\n02\n? NEXT EQUIVALENT LINE\n03\n· · ·\nCHOOSE A VALID TRANSFORMATION\n− 4\n÷ 3\n+ 3\n× 3\nRETURN / UNDO\nWhich operation preserves equality?\nReason carefully\nA valid algebraic transf"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 6,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUATION\nLEFT SIDE\n4x + 7\nRIGHT SIDE\n31\n=\nDROP OPERATION\n01\n4x + 7\n=\n31\n02\n? NEXT EQUIVALENT LINE\n03\n· · ·\nCHOOSE A VALID TRANSFORMATION\n− 7\n÷ 4"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUA",
+          "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUA",
+          "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUA",
+          "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUA",
+          "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUA",
+          "F8-05 · EQUATION BALANCE\nCHALLENGE THE METHOD\nSOLVE THE EQUA"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "SOLVE THE EQUATION\nLEFT SIDE\n4x + 7\nRIGHT SIDE\n31\n=\nDROP OPERATION\n01\n4x + 7\n=\n3",
+          "EQUAL CHANGES · EQUAL VALUES\nLEFT SIDE\nx\nRIGHT SIDE\n5\n=\n÷ 3\nBOTH\nBOTH\n01\n3x + 5\n",
+          "EQUAL CHANGES · EQUAL VALUES\nLEFT SIDE\nx\nRIGHT SIDE\n5\n=\n÷ 3\nBOTH\nBOTH\n01\n3x + 5\n",
+          "EQUAL CHANGES · EQUAL VALUES\nLEFT SIDE\nx\nRIGHT SIDE\n5\n=\n÷ 3\nBOTH\nBOTH\n01\n3x + 5\n"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "SOLVE THE EQUATION\nLEFT SIDE\n4x + 7\nRIGHT SIDE\n31\n=\nDROP OPERATION\n01\n4x + 7\n=\n31\n02\n? NEXT EQUIVALENT LINE\n03\n· · ·\nCHOOSE A VALID TRANSFORMATION\n− 7\n÷ 4\n− 5\n× 4\nRETURN / UNDO\nWhich operation preserv"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "SOLVE THE EQUATION\nLEFT SIDE\n3x + 4\nRIGHT SIDE\n22\n=\nDROP OPERATION\n01\n3x + 4\n=\n2",
+          "EQUAL CHANGES · EQUAL VALUES\nLEFT SIDE\nx\nRIGHT SIDE\n6\n=\n÷ 2\nBOTH\nBOTH\n01\n2x + 6\n",
+          "EQUAL CHANGES · EQUAL VALUES\nLEFT SIDE\nx\nRIGHT SIDE\n6\n=\n÷ 2\nBOTH\nBOTH\n01\n2x + 6\n",
+          "EQUAL CHANGES · EQUAL VALUES\nLEFT SIDE\nx\nRIGHT SIDE\n6\n=\n÷ 2\nBOTH\nBOTH\n01\n2x + 6\n"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Y7-033 · One- and two-step equations Y7-035 · Equations from real contexts Y8-013 · Equations with brackets Y8-014 · Unknowns on both sides Y8-015 · Equations with fractions Undo last operation Reset equation − 5 ÷ 3 + 5 ÷ 5 Choose an operation, drag it onto BOTH SIDES or press Enter.",
+          "inputs": [
+            "Y7-033"
+          ],
+          "stageInputs": [],
+          "nums": "01 02 03 05 20 3 5 8",
+          "buttons": 4,
+          "vb": 1080,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Y7-033 · One- and two-step equations Y7-035 · Equations from real contexts Y8-013 · Equations with brackets Y8-014 · Unknowns on both sides Y8-015 · Equations with fractions Undo last operation Reset equation − 6 ÷ 2 + 3 ÷ 3 Choose an operation, drag it onto BOTH SIDES or press Enter.",
+          "inputs": [
+            "Y7-035"
+          ],
+          "stageInputs": [],
+          "nums": "01 02 03 05 18 2 3 6 8",
+          "buttons": 4,
+          "vb": 1080,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Y7-033 · One- and two-step equations Y7-035 · Equations from real contexts Y8-013 · Equations with brackets Y8-014 · Unknowns on both sides Y8-015 · Equations with fractions Undo last operation Reset equation − 6 ÷ 2 + 3 ÷ 3 Choose an operation, drag it onto BOTH SIDES or press Enter.",
+          "inputs": [
+            "Y7-035"
+          ],
+          "stageInputs": [],
+          "nums": "01 02 03 05 18 2 3 6 8",
+          "buttons": 4,
+          "vb": 440,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Challenge 1 of 5 · One- and two-step equations Check solution Hint Undo − 7 ÷ 4 − 5 × 4 Apply the valid operations to both sides before entering your value for x.",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "01 02 03 05 31 4 5 7 8",
+          "buttons": 4,
+          "vb": 1080,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Challenge 1 of 5 · One- and two-step equations Check solution Hint Undo − 7 ÷ 4 − 5 × 4 Correct transformation: Divide every term on both sides by four.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "01 02 03 05 24 31 4 5 7 8",
+          "buttons": 5,
+          "vb": 1080,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Challenge 1 of 5 · One- and two-step equations Check solution Hint Undo − 7 ÷ 4 − 5 × 4 Correct transformation: Divide every term on both sides by four.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "01 02 03 05 24 31 4 5 7 8",
+          "buttons": 5,
+          "vb": 440,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1080,
+        "median": 22.36,
+        "p10": 19.44,
+        "count": 21,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 11.73,
+        "p10": 11.14,
+        "count": 21,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 11.73,
+        "p10": 11.14,
+        "count": 21,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

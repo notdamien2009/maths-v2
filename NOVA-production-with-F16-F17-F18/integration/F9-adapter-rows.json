@@ -1,0 +1,1884 @@
+[
+ {
+  "id": "F9-01",
+  "path": "F9/F9-01-matchstick-pattern-builder.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "speech"
+  ],
+  "draws": {
+   "reset": [
+    "stage"
+   ],
+   "renderChallenge": [
+    "stage",
+    "stepState"
+   ],
+   "showEquation": [
+    "stage",
+    "n",
+    "hideValue"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "1086b6e494deebcfee53eae4ea703c820a7ed7f7f118bec07406e5ccd0f9b6aa",
+  "sha256": "e7d73497bcf99654a9a8ce003a10300592ddabf4dd68cf969b02631822107ac4",
+  "engineId": "F9-01",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "rule",
+    "narration": "Three for every stage, plus one starting side. The total is three n plus one.",
+    "prompt": "Explain why the rule is three n plus one.",
+    "mood": "pleased"
+   },
+   "tables": {
+    "speech": [
+     {
+      "name": "first-square",
+      "pose": "explain",
+      "skin": "pip",
+      "text": "Start with one square. Count its four sticks.",
+      "prompt": "Count all four sides of the first square.",
+      "shown": 1,
+      "add": 0
+     },
+     {
+      "name": "share-side",
+      "pose": "point-right",
+      "skin": "pip",
+      "text": "A second square shares one side. We only add three sticks.",
+      "prompt": "Predict the total before counting the second square.",
+      "shown": 2,
+      "add": 1
+     },
+     {
+      "name": "third-square",
+      "pose": "think",
+      "skin": "pip",
+      "text": "Watch the next square. Again, three new sticks, not four.",
+      "prompt": "What stayed the same when the pattern grew?",
+      "shown": 3,
+      "add": 2
+     },
+     {
+      "name": "notice-difference",
+      "pose": "idea",
+      "skin": "pip",
+      "text": "The totals are four, seven and ten. Each step grows by three.",
+      "prompt": "How much is added each time? Look at the differences.",
+      "shown": 3,
+      "add": 2
+     },
+     {
+      "name": "fourth-square",
+      "pose": "point-right",
+      "skin": "pip",
+      "text": "Add one more square. Ten plus three makes thirteen.",
+      "prompt": "Predict the number of sticks in stage four.",
+      "shown": 4,
+      "add": 3
+     },
+     {
+      "name": "rule",
+      "pose": "celebrate",
+      "skin": "pip",
+      "text": "Three for every stage, plus one starting side. The total is three n plus one.",
+      "prompt": "Explain why the rule is three n plus one.",
+      "shown": 5,
+      "add": 3
+     }
+    ]
+   }
+  },
+  "previous_sha256": "1357974432ac216b05f15db216354f3b65ccea86dc758ae81d555a72f1d313d3",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-02",
+  "path": "F9/F9-02-term-to-term-animator.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "speech"
+  ],
+  "draws": {
+   "reset": [
+    "stage"
+   ],
+   "renderExplore": [
+    "stage",
+    "panel"
+   ],
+   "drawChallenge": [
+    "stage",
+    "api"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "ecbbc1c1dd88bc9062a48faed0688df1a61a000edcfeb27cf9257e5efb1fd4d3",
+  "sha256": "f042b101a4c1a378563bfe279ccafd3228921ec7fb83a22d9b1eb06056ec107c",
+  "engineId": "F9-02",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "compare",
+    "narration": "Arithmetic sequences add or subtract a fixed amount. Geometric sequences multiply by a fixed factor.",
+    "prompt": "Compare add three, subtract five and multiply by two.",
+    "mood": "pleased"
+   },
+   "config": {
+    "id": "F9-02",
+    "family": "F9",
+    "startMode": "guided",
+    "preset": "Y7-036-sequence-structure",
+    "presets": {
+     "Y7-036-sequence-structure": {
+      "label": "Year 7 \u00b7 +3 pattern",
+      "type": "arith",
+      "a1": 4,
+      "step": 3,
+      "terms": 5,
+      "focus": "Term-to-term rule"
+     },
+     "Y8-019-arithmetic-sequences": {
+      "label": "Year 8 \u00b7 \u22125 pattern",
+      "type": "arith",
+      "a1": 30,
+      "step": -5,
+      "terms": 5,
+      "focus": "Arithmetic sequence"
+     },
+     "Y8-020-geometric-sequences": {
+      "label": "Year 8 \u00b7 \u00d72 pattern",
+      "type": "geom",
+      "a1": 4,
+      "ratio": 2,
+      "terms": 5,
+      "focus": "Geometric sequence"
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "term",
+      "rule",
+      "challengeTask",
+      "placed"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "6849b69cf3b64e18a162c1a4217dc861ef5e3049a6aa118dde4b367f76f469b2",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-03",
+  "path": "F9/F9-03-position-to-term-table.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "steps",
+   "tasks"
+  ],
+  "draws": {
+   "reset": [
+    "stage"
+   ],
+   "wrap": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "caption"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "5aec0a0bcd51f0cc86c42340f4dc96514107c55201cf60068d761734f3e23f89",
+  "sha256": "a712c062677ab9a1500f6d0e5dd810bc67390b1a2283f5ddc2d2da240c415fec",
+  "engineId": "F9-03",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "generalise",
+    "narration": "The two tells us the sequence grows by two. The plus three adjusts the starting value.",
+    "prompt": "Why would two n alone give the wrong first term?",
+    "mood": "pleased"
+   },
+   "config": {
+    "id": "F9-03",
+    "family": "F9",
+    "startMode": "guided",
+    "preset": "Y7-037-linear-nth-term",
+    "presets": {
+     "Y7-037-linear-nth-term": {
+      "label": "Year 7 \u00b7 nth term of a linear sequence",
+      "a": 3,
+      "b": 3,
+      "from": 1,
+      "to": 10,
+      "objective": "Use position n to calculate the term directly."
+     }
+    },
+    "events": {
+     "value": [
+      "position",
+      "term",
+      "rule",
+      "challengeTask",
+      "placed",
+      "coefficient",
+      "offset"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    },
+    "lessonChallengeTitle": "Concept challenge",
+    "lessonBadgeTitle": "CHALLENGE CHAMPION"
+   }
+  },
+  "previous_sha256": "5287d83b42d6715646749ff03a4bc4b7ff47a233e3b21ea937a89ae232c72f7d",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-04",
+  "path": "F9/F9-04-sequence-on-a-graph.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "steps",
+   "tasks"
+  ],
+  "draws": {
+   "reset": [
+    "stage"
+   ],
+   "wrap": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "speech"
+   ],
+   "renderExplore": [
+    "stage"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "b20e56afedc8f2a128329cde7fc0fcbe6248898777e11db24506d7e344c00c9b",
+  "sha256": "005848501f9ceecf60c819db8f1f756a6981b73c3f9c09a13871bad2ce720ebe",
+  "engineId": "F9-04",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "compare-a-quadratic-pattern",
+    "narration": "These points curve upward. The first differences grow, but the second differences stay at two.",
+    "prompt": "Why is the quadratic graph not a straight pattern?",
+    "mood": "pleased"
+   },
+   "config": {
+    "id": "F9-04",
+    "family": "F9",
+    "startMode": "guided",
+    "preset": "Y7-037-linear-nth-term",
+    "presets": {
+     "Y7-037-linear-nth-term": {
+      "label": "Y7 \u00b7 2n + 1",
+      "year": "Year 7",
+      "kind": "linear",
+      "a": 2,
+      "b": 1,
+      "yMax": 14,
+      "yStep": 2,
+      "formula": "2n + 1",
+      "objective": "Plot a linear nth-term sequence and read the constant difference."
+     },
+     "Y8-019-arithmetic-sequences": {
+      "label": "Y8 \u00b7 14 \u2212 2n",
+      "year": "Year 8",
+      "kind": "linear",
+      "a": -2,
+      "b": 14,
+      "yMax": 14,
+      "yStep": 2,
+      "formula": "14 \u2212 2n",
+      "objective": "See how a negative constant difference makes the sequence fall."
+     },
+     "Y8-021-quadratic-pattern-spotting": {
+      "label": "Y8 \u00b7 n\u00b2 + 1",
+      "year": "Year 8",
+      "kind": "quadratic",
+      "a": 2,
+      "b": 0,
+      "c": 1,
+      "yMax": 30,
+      "yStep": 5,
+      "formula": "n\u00b2 + 1",
+      "objective": "Plot growing first differences and constant second differences."
+     },
+     "Y9-008-quadratic-pattern-structure": {
+      "label": "Y9 \u00b7 n\u00b2 \u2212 n + 2",
+      "year": "Year 9",
+      "kind": "quadratic",
+      "a": 1,
+      "b": -1,
+      "c": 2,
+      "yMax": 25,
+      "yStep": 5,
+      "formula": "n\u00b2 \u2212 n + 2",
+      "objective": "Use the second-difference structure to recognise a simple quadratic pattern."
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "position",
+      "term",
+      "placed",
+      "challengeTask",
+      "rule"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "8b37fa79727cc1e3d83ebcb4dcb8b0197abdf31e145ee29c3768209c59397854",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-05",
+  "path": "F9/F9-05-linear-nth-term-derivation.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "steps",
+   "TASKS"
+  ],
+  "draws": {
+   "reset": [
+    "stage"
+   ],
+   "mountScene": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "speech"
+   ],
+   "exploreDraw": [
+    "stage"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "b944ee00040c8231d594f47297030ee0625f8bdc6d77ed7dae07dbae25df7697",
+  "sha256": "f87b8715b25953d11a386672605c61a42269d0f8e5b0a8c7cdbad1e4af227a99",
+  "engineId": "F9-05",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "write-the-nth-term",
+    "narration": "Three n gives the growing part. Add two for the starting offset. Our rule is three n plus two.",
+    "prompt": "Check the rule at another position; it must work every time.",
+    "mood": "pleased"
+   },
+   "config": {
+    "id": "F9-05",
+    "family": "F9",
+    "startMode": "guided",
+    "preset": "Y7-037-linear-nth-term",
+    "presets": {
+     "Y7-037-linear-nth-term": {
+      "label": "Y7 \u00b7 3n + 2",
+      "year": "Year 7",
+      "a": 4,
+      "c": 2,
+      "objective": "Find and use the nth term of an increasing linear sequence"
+     },
+     "Y8-019-arithmetic-sequences": {
+      "label": "Y8 \u00b7 5n \u2212 3",
+      "year": "Year 8",
+      "a": 5,
+      "c": -3,
+      "objective": "Link the common difference to a linear nth term with negative adjustment"
+     },
+     "Y8-019-decreasing-variant": {
+      "label": "Y8 \u00b7 22 \u2212 4n",
+      "year": "Year 8",
+      "a": -4,
+      "c": 22,
+      "objective": "Derive a decreasing linear rule using the zero term"
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "position",
+      "difference",
+      "zeroTerm",
+      "rule",
+      "placed",
+      "challengeTask"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "c574ef3aa4e94512b07048fad25db2bff12676a647e4e2facf961d4a27bca0f4",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-06",
+  "path": "F9/F9-06-geometric-sequence.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "steps",
+   "TASKS"
+  ],
+  "draws": {
+   "clear": [
+    "stage"
+   ],
+   "mount": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "say"
+   ],
+   "explore": [
+    "stage"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "4e8d0825cc641aa8a021946e146e9602e6f38e187ff987586bf56d97561033b9",
+  "sha256": "5c9be49b6117a091e92099b6c37a8b06ba90926b8ae238a856b4e531dba7be22",
+  "engineId": "F9-06",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "generalise-the-growth",
+    "narration": "The next term is found by multiplying by the same factor each time. For doubling, term n is two times two to the power n minus one.",
+    "prompt": "Explain why a fixed multiplier is not the same as a fixed difference.",
+    "mood": "pleased"
+   },
+   "config": {
+    "id": "F9-06",
+    "family": "F9",
+    "startMode": "guided",
+    "preset": "Y8-020-geometric-sequences",
+    "presets": {
+     "Y8-020-geometric-sequences": {
+      "label": "Y8 \u00b7 Doubling",
+      "a": 3,
+      "r": 2,
+      "terms": 5,
+      "rule": "\u00d72",
+      "context": "Geometric sequences"
+     },
+     "Y9-014-exponential-decay": {
+      "label": "Y9 \u00b7 Halving",
+      "a": 64,
+      "r": 0.5,
+      "terms": 5,
+      "rule": "\u00f72",
+      "context": "Exponential decay"
+     },
+     "Y9-014-exponential-growth": {
+      "label": "Y9 \u00b7 Tripling",
+      "a": 2,
+      "r": 3,
+      "terms": 5,
+      "rule": "\u00d73",
+      "context": "Exponential growth"
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "position",
+      "ratio",
+      "term",
+      "placed",
+      "challengeTask"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "28d00cab9fab583c1e40c259d412ca388ac1fce3e5eb823b474ab46e13022586",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-07",
+  "path": "F9/F9-07-special-sequences.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "kindList",
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "clear": [
+    "stage"
+   ],
+   "mount": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "say"
+   ],
+   "explore": [
+    "stage"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "4fc393dc7e5f2a7b80e8a442596fd4f7c2b02058b54c0e175d321cea17366782",
+  "sha256": "bdaee6b92bbe9f31a7b6c300f2730d766d5d2f09d7867cdf9b6bae33e736f51d",
+  "engineId": "F9-07",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 3,
+   "data": {
+    "name": "cubic-layers",
+    "narration": "Cube numbers add depth. Three layers of three-by-three dots make twenty-seven.",
+    "prompt": "How many dots are in each layer?",
+    "mood": "focus"
+   },
+   "tables": {
+    "STEPS": [
+     {
+      "name": "square-arrays-grow",
+      "kind": "square",
+      "n": 3,
+      "pose": "explain",
+      "text": "Start with square arrays. Three rows of three dots make nine.",
+      "prompt": "What changes in each new square?"
+     },
+     {
+      "name": "square-rule",
+      "kind": "square",
+      "n": 4,
+      "pose": "count",
+      "text": "Four rows of four dots make sixteen. Square numbers multiply the position by itself.",
+      "prompt": "Why does four squared give sixteen?"
+     },
+     {
+      "name": "triangular-rows",
+      "kind": "triangle",
+      "n": 4,
+      "pose": "point-down",
+      "text": "Triangle numbers grow by adding a new row: one, then two, then three, then four.",
+      "prompt": "How many dots altogether in the fourth triangle?"
+     },
+     {
+      "name": "cubic-layers",
+      "kind": "cube",
+      "n": 4,
+      "pose": "point-right",
+      "text": "Cube numbers add depth. Three layers of three-by-three dots make twenty-seven.",
+      "prompt": "How many dots are in each layer?"
+     },
+     {
+      "name": "fibonacci-two-before",
+      "kind": "fibonacci",
+      "n": 6,
+      "pose": "idea",
+      "text": "The Fibonacci rule is different. Add the two previous terms: three and five make eight.",
+      "prompt": "Which two terms combine to make eight?"
+     },
+     {
+      "name": "compare-structure",
+      "kind": "compare",
+      "n": 4,
+      "pose": "celebrate",
+      "text": "Square numbers make arrays, triangular numbers make rows, cubes add layers, and Fibonacci adds the last two terms.",
+      "prompt": "Choose the structure that explains each sequence."
+     }
+    ]
+   }
+  },
+  "previous_sha256": "dd48d845eb8c8bee1274467c2910420bc6bce5611d82d958cd1798554e52f42f",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-08",
+  "path": "F9/F9-08-triangular-numbers-dot-arrays.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "clear": [
+    "stage"
+   ],
+   "mount": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "speech"
+   ],
+   "renderExplore": [
+    "stage"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "c092e15ea0a5e686bb36b07757cefbc9e645d014f5f1d771cece7ad2c14d1652",
+  "sha256": "1d5539418fdeb421687208f8f4dadf6328a4a7019b4eeeb2ff1f9da1f47b1989",
+  "engineId": "F9-08",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "general-rule",
+    "narration": "For position n, double the dots to get n times n plus one. Divide by two for one triangle.",
+    "prompt": "Use n times n plus one divided by two for the sixth triangle.",
+    "mood": "pleased"
+   },
+   "tables": {
+    "STEPS": [
+     {
+      "name": "start-from-one-row",
+      "n": 3,
+      "kind": "triangle",
+      "pose": "explain",
+      "text": "Each row has one more dot. One, two, three: that makes six dots.",
+      "prompt": "Count each row before finding the total."
+     },
+     {
+      "name": "add-the-fourth-row",
+      "n": 4,
+      "kind": "triangle",
+      "pose": "count",
+      "text": "Add a new row of four. Six plus four makes ten.",
+      "prompt": "Can you see exactly which four dots are new?"
+     },
+     {
+      "name": "another-row",
+      "n": 5,
+      "kind": "triangle",
+      "pose": "point-down",
+      "text": "The fifth row adds five more. Ten plus five gives fifteen.",
+      "prompt": "How many will the sixth row add?"
+     },
+     {
+      "name": "double-the-triangle",
+      "n": 4,
+      "kind": "rectangle",
+      "pose": "idea",
+      "text": "Copy the triangle, then turn the copy around. The two triangles make a four-by-five rectangle.",
+      "prompt": "How many dots are in the rectangle? How many are original?"
+     },
+     {
+      "name": "half-the-rectangle",
+      "n": 5,
+      "kind": "rectangle",
+      "pose": "point-right",
+      "text": "Five rows and six columns make thirty dots. Half belongs to one triangle: fifteen.",
+      "prompt": "Why does the rectangle contain twice as many dots?"
+     },
+     {
+      "name": "general-rule",
+      "n": 7,
+      "kind": "rectangle",
+      "pose": "celebrate",
+      "text": "For position n, double the dots to get n times n plus one. Divide by two for one triangle.",
+      "prompt": "Use n times n plus one divided by two for the sixth triangle."
+     }
+    ]
+   }
+  },
+  "previous_sha256": "2a2e7f59d71bbcb52182669f4f720e91eb7ea1f9aa18915b73baa45d2be70f5e",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-09",
+  "path": "F9/F9-09-quadratic-sequence.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "clear": [
+    "stage"
+   ],
+   "mount": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "speech"
+   ],
+   "renderExplore": [
+    "stage"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "43f9bab7480c63bcb4df8e6d7156806d3c46fcb2991fedefe4ff08486a10e9db",
+  "sha256": "925d6f5458f928c2dd07945b67b47107883eff9fb92473d4229a9685f53f621b",
+  "engineId": "F9-09",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "build-the-general-rule",
+    "narration": "The remainder is three n plus one. Add back two n squared: that is the complete rule.",
+    "prompt": "Check the rule by finding the fifth term.",
+    "mood": "pleased"
+   },
+   "config": {
+    "id": "F9-09",
+    "family": "F9",
+    "startMode": "guided",
+    "presets": {
+     "Y8-021-quadratic-spotting": {
+      "label": "Y8 \u00b7 Spot second differences",
+      "a": 3,
+      "b": 3,
+      "c": 1,
+      "context": "First differences change. Second differences stay at four."
+     },
+     "Y9-008-quadratic-structure": {
+      "label": "Y9 \u00b7 Quadratic structure",
+      "a": 1,
+      "b": -2,
+      "c": 4,
+      "context": "The linear remainder can be negative."
+     },
+     "KS3-perfect-squares": {
+      "label": "KS3 \u00b7 Square pattern",
+      "a": 1,
+      "b": 2,
+      "c": 1,
+      "context": "The square numbers 4, 9, 16, 25, 36 also form a quadratic sequence."
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "position",
+      "coefficient",
+      "difference",
+      "remainder",
+      "challengeTask",
+      "placed"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "9e3537368363af7415b1f6c969be87515b1f259a4d53987378e8fd1714c071b1",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-10",
+  "path": "F9/F9-10-pascals-triangle.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "clear": [
+    "stage"
+   ],
+   "mount": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "speech"
+   ],
+   "renderExplore": [
+    "stage"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "736e74b6a2d4af594dd913f92349ec28bbdd410ae38cbfa6d1e74b0db5c0590d",
+  "sha256": "0f5e7e0afc319e1f2f971511ef7f87e91fad2e9b292251a6227fa83069869d9d",
+  "engineId": "F9-10",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "triangles-hidden-in-a-triangle",
+    "narration": "Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal\u2019s triangle.",
+    "prompt": "Explain why that diagonal grows by one more each step.",
+    "mood": "pleased"
+   },
+   "tables": {
+    "STEPS": [
+     {
+      "name": "one-at-the-top",
+      "rows": 2,
+      "pose": "explain",
+      "text": "Start with one. Every new row begins and ends with one.",
+      "prompt": "What do you notice at the outer edges?"
+     },
+     {
+      "name": "two-parents-one-sum",
+      "rows": 3,
+      "focus": [
+       2,
+       1
+      ],
+      "pose": "point-down",
+      "text": "An inside number has two parents. One plus one makes two.",
+      "prompt": "Trace the two numbers above the two."
+     },
+     {
+      "name": "build-the-fourth-row",
+      "rows": 4,
+      "focus": [
+       3,
+       1
+      ],
+      "pose": "count",
+      "text": "To make three, add the one and two directly above it. Repeat across the row.",
+      "prompt": "Can you explain why both middle entries are three?"
+     },
+     {
+      "name": "build-five-rows",
+      "rows": 5,
+      "focus": [
+       4,
+       2
+      ],
+      "pose": "idea",
+      "text": "Three plus three gives six. The new row is one, four, six, four, one.",
+      "prompt": "Find the two parent numbers that make six."
+     },
+     {
+      "name": "row-sums-double",
+      "rows": 6,
+      "kind": "sums",
+      "pose": "compare",
+      "text": "The row totals are one, two, four, eight, sixteen and thirty-two. Each total doubles.",
+      "prompt": "Predict the total of the next row."
+     },
+     {
+      "name": "triangles-hidden-in-a-triangle",
+      "rows": 8,
+      "kind": "diagonal",
+      "pose": "celebrate",
+      "text": "Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal\u2019s triangle.",
+      "prompt": "Explain why that diagonal grows by one more each step."
+     }
+    ]
+   }
+  },
+  "previous_sha256": "8342023c6a7d502bccc98d7a81051a2960c65229f76167834ff84b7ba91d3753",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-11",
+  "path": "F9/F9-11-spot-the-rule-puzzle.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "clear": [
+    "stage"
+   ],
+   "mount": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "speech"
+   ],
+   "exploreDraw": [
+    "stage"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "872956dd8d279f3d5ace82a25187f95dc0682a89612600c2b42c6f51c0e5cbd7",
+  "sha256": "ee7bc3c54d18d2abab05a77bed8e379cef716ce111a51007af2022623cfcabdf",
+  "engineId": "F9-11",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "multiplying-instead",
+    "narration": "Two, four, eight, sixteen. The amounts added change, but doubling works every time.",
+    "prompt": "Why is add two not the rule for the whole sequence?",
+    "mood": "pleased"
+   },
+   "config": {
+    "id": "F9-11",
+    "family": "F9",
+    "startMode": "guided",
+    "presets": {
+     "Y7-036-sequence-structure": {
+      "label": "Y7-036 \u00b7 Rule detective",
+      "kind": "add",
+      "first": 5,
+      "k": 3,
+      "shown": 5
+     },
+     "Y7-036-backwards": {
+      "label": "Y7-036 \u00b7 Decreasing",
+      "kind": "add",
+      "first": 24,
+      "k": -4,
+      "shown": 5
+     },
+     "Y7-036-doubling": {
+      "label": "Y7-036 \u00b7 Doubling",
+      "kind": "mult",
+      "first": 3,
+      "k": 2,
+      "shown": 5
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "term",
+      "trial",
+      "placed",
+      "challengeTask"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "b742300962570c10429e453e515ba843ff3e1c0dcb8d5b123278474286a950c6",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-12",
+  "path": "F9/F9-12-sequence-continuer.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "clear": [
+    "stage"
+   ],
+   "mount": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "speech"
+   ],
+   "exploreDraw": [
+    "stage"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "ef833d67843ded65327c73036e90af09e67d5503877c04e00de01a2d801289fd",
+  "sha256": "5199f991a2df02787ba149bfc6a29236975f416774544bdd27aa38df839e4f41",
+  "engineId": "F9-12",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "continue-a-double",
+    "narration": "Doubling is different from adding. Two, four, eight, sixteen, thirty-two.",
+    "prompt": "Explain why a fixed addition cannot generate every term.",
+    "mood": "pleased"
+   },
+   "config": {
+    "id": "F9-12",
+    "family": "F9",
+    "startMode": "guided",
+    "presets": {
+     "Y7-036-sequence-structure": {
+      "label": "Y7-036 \u00b7 Add three",
+      "operation": "add",
+      "first": 4,
+      "step": 3,
+      "terms": 5
+     },
+     "Y7-036-decreasing": {
+      "label": "Y7-036 \u00b7 Subtract four",
+      "operation": "add",
+      "first": 24,
+      "step": -4,
+      "terms": 5
+     },
+     "Y7-036-doubling": {
+      "label": "Y7-036 \u00b7 Double each term",
+      "operation": "multiply",
+      "first": 3,
+      "factor": 2,
+      "terms": 5
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "term",
+      "reveal",
+      "placed",
+      "challengeTask"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    },
+    "lessonChallengeTitle": "Concept challenge",
+    "lessonBadgeTitle": "CHALLENGE CHAMPION"
+   }
+  },
+  "previous_sha256": "22d99c44dfd9cf33220bfe05b6e56d6d0a3a8f6fb0d339a443bee9c808d3f87a",
+  "f9Production": "2026-10-17"
+ },
+ {
+  "id": "F9-13",
+  "path": "F9/F9-13-fractal-generators.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STORIES",
+   "TASKS"
+  ],
+  "draws": {
+   "clear": [
+    "stage"
+   ],
+   "mount": [
+    "stage",
+    "svg",
+    "cards",
+    "pose",
+    "speech"
+   ],
+   "sceneDraw": [
+    "stage",
+    "presetName",
+    "n",
+    "opts"
+   ],
+   "drawChallenge": [
+    "stage",
+    "api"
+   ],
+   "lessonScene": [
+    "stage",
+    "p"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "585d8c49f08e1ce78d259ff2d6cef14fe0cf6ce69e4732f9f9656b35bc5ef64e",
+  "sha256": "d0b52ce415334e504ec4fd63e68ac4fe81cbae79220a2164433947d4f0a5b221",
+  "engineId": "F9-13",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "koch-repeat-length",
+    "narration": "Each of the four sections becomes four more. Four times four makes sixteen sections.",
+    "prompt": "If the first line was nine centimetres, explain why iteration two totals sixteen centimetres.",
+    "mood": "pleased"
+   },
+   "config": {
+    "id": "F9-13",
+    "family": "F9",
+    "startMode": "guided",
+    "maxIteration": 4,
+    "presets": {
+     "sierpinski-triangle": {
+      "label": "Sierpi\u0144ski \u00b7 triangle",
+      "kind": "sierpinski",
+      "factor": 3,
+      "initial": 1,
+      "max": 4
+     },
+     "koch-curve": {
+      "label": "Koch \u00b7 curve",
+      "kind": "koch",
+      "factor": 5,
+      "initial": 1,
+      "max": 4,
+      "baseCm": 9
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "iteration",
+      "count",
+      "length",
+      "placed",
+      "challengeTask"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    },
+    "challenge": {
+     "types": [
+      "sierpinski-count",
+      "koch-count",
+      "koch-length"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "fd780fa7c807d6b7ba35efee4ed435a6d70d4c0471f5e692a0665d0556e87e24",
+  "f9Production": "2026-10-17"
+ }
+]

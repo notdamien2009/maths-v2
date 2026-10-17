@@ -1,0 +1,836 @@
+[
+  {
+    "id": "F10-10",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-10-Distance-Time-Graph-PREMIUM-REVIEW.html",
+    "sourceSha256": "30477d5b04a35526b77b5247f80a5cfc7f38cc67df45a0d3617da9cb4c4247f7",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            720,
+            552
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 12 2 3 4 5 6 7 8",
+          "before": "0 1 10 12 2 3 4 5 6 7 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Lesson preset Y8-026 · Walk, rest, walk Y9-016 · Out, back and onward JOURNEY TIME 3 hours Explore a segment 0–2 h · away 2–3 h · rest 3–5 h · return 5–6 h · rest 6–8 h · away ← Earlier Later → Drag the glowing marker on the graph, use the arrow keys, the time slider, or choose a section. Escape can",
+          "after": "Lesson preset Y8-026 · Walk, rest, walk Y9-016 · Out, back and onward JOURNEY TIME 3 hours Explore a segment 0–2 h · away 2–3 h · rest 3–5 h · return 5–6 h · rest 6–8 h · away ← Earlier Later → Drag the glowing marker on the graph, use the arrow keys, the time slider, or choose a section. Escape can",
+          "bi": [
+            "Y9-016",
+            "3",
+            "2"
+          ],
+          "ai": [
+            "Y9-016",
+            "3",
+            "2"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 12 2 3 4 5 6 7 8",
+            1
+          ],
+          "narrow": [
+            "0 10 12 2 3 4 6 8",
+            1
+          ],
+          "back": [
+            "0 1 10 12 2 3 4 5 6 7 8",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            720,
+            552
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 12 2 3 4 5 6 7 8",
+          "before": "0 1 10 12 2 3 4 5 6 7 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "How many HOURS does the walker rest at the café between hour 2 and hour 4? Your answer · hours CheckHint",
+          "after": "How many HOURS does the walker rest at the café between hour 2 and hour 4? Your answer · hours CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 12 2 3 4 5 6 7 8",
+            0
+          ],
+          "narrow": [
+            "0 10 12 2 4 6 8",
+            0
+          ],
+          "back": [
+            "0 1 10 12 2 3 4 5 6 7 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y8-026, Y9-016",
+          "state.title is not a field of this component",
+          "state.pts is not a field of this component"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y8-026",
+            "pts": [
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                5
+              ]
+            ]
+          },
+          "errors": [
+            "pts must start at x = 0"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 720,
+            "median": 24.44,
+            "p10": 24.44,
+            "count": 17,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 552,
+            "median": 12.13,
+            "p10": 12.13,
+            "count": 13,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 552,
+            "median": 12.13,
+            "p10": 12.13,
+            "count": 13,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 552,
+          "median": 12.13,
+          "p10": 12.13,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 552,
+          "median": 12.13,
+          "p10": 12.13,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 552,
+          "median": 12.13,
+          "p10": 12.13,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 552,
+          "median": 12.13,
+          "p10": 12.13,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 552,
+          "median": 12.13,
+          "p10": 12.13,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\nTIME · hours\nDISTANCE FROM HOME · km\nR\nI\nS\nE\n·\nM\nO\nV",
+          "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\nTIME · hours\nDISTANCE FROM HOME · km\nR\nI\nS\nE\n·\nM\nO\nV"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "Morning walk"
+          ],
+          "text": "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\nTIME · hours\nDISTANCE FROM HOME · km\nR\nI\nS\nE\n·\nM\nO\nV\nI\nN\nG\nA\nW\nA\nY\nF\nL\nA\nT\n·\nR\nE\nS\nT\nI\nN\nG\nF\nA\nL\nL\n·\nH\nE\nA\nD\nI\nN\nG\nH\nO\nM\nE\nTHE JOURNEY\nMorning walk\nTRAVELLER · DISTANCE FROM HOME\nHOME\nDISTANCE FROM HOME · 0–12 km"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 2.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "Delivery van"
+          ],
+          "text": "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\nTIME · hours\nDISTANCE FROM HOME · km\nR\nI\nS\nE\n·\nM\nO\nV\nI\nN\nG\nA\nW\nA\nY\nF\nL\nA\nT\n·\nR\nE\nS\nT\nI\nN\nG\nF\nA\nL\nL\n·\nH\nE\nA\nD\nI\nN\nG\nH\nO\nM\nE\nTHE JOURNEY\nDelivery van\nTRAVELLER · DISTANCE FROM HOME\nHOME\nDISTANCE FROM HOME · 0–12 km"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 20,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n2\n3\n4\n5\n6\n7\n8\n2\n4\n6\n8\n10\n12\nTIME · hours\nDISTANCE FROM HOME · km\nR\nI\nS\nE\n·\nM\nO\nV\nI\nN\nG\nA\nW\nA\nY\nF\nL\nA\nT\n·\nR\nE\nS\nT\nI\nN\nG\nF\nA\nL\nL\n·\nH\nE\nA\nD\nI\nN"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n",
+            "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n",
+            "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n",
+            "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n",
+            "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n",
+            "F10 · JOURNEY GRAPH STUDIO\nCHALLENGE · READ THE JOURNEY\n0\n1\n"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · JOURNEY GRAPH STUDIOCHALLENGE · READ THE JOURNEY\n0\n2\n4\n6\n8\n2\n4\n6\n8\n10\n12\nT",
+          "F10 · JOURNEY GRAPH STUDIONOVA · NEON CHALK\n0\n2\n4\n6\n8\n2\n4\n6\n8\n10\n12\nTIME · hours",
+          "F10 · JOURNEY GRAPH STUDIONOVA · NEON CHALK\n0\n2\n4\n6\n8\n2\n4\n6\n8\n10\n12\nTIME · hours",
+          "F10 · JOURNEY GRAPH STUDIONOVA · NEON CHALK\n0\n2\n4\n6\n8\n2\n4\n6\n8\n10\n12\nTIME · hours"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · JOURNEY GRAPH STUDIOCHALLENGE · READ THE JOURNEY\n0\n2\n4\n6\n8\n2\n4\n6\n8\n10\n12\nTIME · hours\nDISTANCE FROM HOME · km\nR\nI\nS\nE\n·\nM\nO\nV\nI\nN\nG\nA\nW\nA\nY\nF\nL\nA\nT\n·\nR\nE\nS\nT\nI\nN\nG\nF\nA\nL\nL\n·\nH\nE\nA\nD\nI\nN\nG\nH\nO\nM\n"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · JOURNEY GRAPH STUDIOCHALLENGE · READ THE JOURNEY\n0\n2\n4\n6\n8\n2\n4\n6\n8\n10\n12\nT",
+          "F10 · JOURNEY GRAPH STUDIONOVA · NEON CHALK\n0\n2\n4\n6\n8\n2\n4\n6\n8\n10\n12\nTIME · hours",
+          "F10 · JOURNEY GRAPH STUDIONOVA · NEON CHALK\n0\n2\n4\n6\n8\n2\n4\n6\n8\n10\n12\nTIME · hours",
+          "F10 · JOURNEY GRAPH STUDIONOVA · NEON CHALK\n0\n2\n4\n6\n8\n2\n4\n6\n8\n10\n12\nTIME · hours"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Move traveller along the distance-time graph/",
+          "active": "",
+          "panel": "Lesson preset Y8-026 · Walk, rest, walk Y9-016 · Out, back and onward JOURNEY TIME 3 hours Explore a segment 0–2 h · away 2–4 h · rest 4–6 h · away 6–8 h · rest ← Earlier Later → Drag the glowing marker on the graph, use the arrow keys, the time slider, or choose a section. Escape cancels a drag. Watch the traveller move on the distance-from-home rail. MATCH EACH JOURNEY STORY TO ITS LINE SHAPE Moving further from home Standing still Coming closer to home ↗ RISING SECTION → HORIZONTAL SECTION ↘ FALLING SECTION ↶ RED RETURN TRAY · REMOVE / RETRY Select or drag a story onto a matching graph shape.",
+          "inputs": [
+            "Y8-026",
+            "3",
+            "1"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 2 3 4 5 6 7 8",
+          "buttons": 1,
+          "vb": 720,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Move traveller along the distance-time graph/",
+          "active": "",
+          "panel": "Lesson preset Y8-026 · Walk, rest, walk Y9-016 · Out, back and onward JOURNEY TIME 3 hours Explore a segment 0–2 h · away 2–3 h · rest 3–5 h · return 5–6 h · rest 6–8 h · away ← Earlier Later → Drag the glowing marker on the graph, use the arrow keys, the time slider, or choose a section. Escape cancels a drag. Watch the traveller move on the distance-from-home rail. MATCH EACH JOURNEY STORY TO ITS LINE SHAPE Moving further from home Standing still Coming closer to home ↗ RISING SECTION → HORIZONTAL SECTION ↘ FALLING SECTION ↶ RED RETURN TRAY · REMOVE / RETRY Select or drag a story onto a matching graph shape.",
+          "inputs": [
+            "Y9-016",
+            "3",
+            "2"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 2 3 4 5 6 7 8",
+          "buttons": 1,
+          "vb": 720,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Move traveller along the distance-time graph/",
+          "active": "",
+          "panel": "Lesson preset Y8-026 · Walk, rest, walk Y9-016 · Out, back and onward JOURNEY TIME 3 hours Explore a segment 0–2 h · away 2–3 h · rest 3–5 h · return 5–6 h · rest 6–8 h · away ← Earlier Later → Drag the glowing marker on the graph, use the arrow keys, the time slider, or choose a section. Escape cancels a drag. Watch the traveller move on the distance-from-home rail. MATCH EACH JOURNEY STORY TO ITS LINE SHAPE Moving further from home Standing still Coming closer to home ↗ RISING SECTION → HORIZONTAL SECTION ↘ FALLING SECTION ↶ RED RETURN TRAY · REMOVE / RETRY Select or drag a story onto a matching graph shape.",
+          "inputs": [
+            "Y9-016",
+            "3",
+            "2"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 12 2 3 4 6 8",
+          "buttons": 1,
+          "vb": 552,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "How many HOURS does the walker rest at the café between hour 2 and hour 4? Your answer · hours CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 2 3 4 5 6 7 8",
+          "buttons": 0,
+          "vb": 720,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "How many HOURS does the walker rest at the café between hour 2 and hour 4? Your answer · hours CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 2 3 4 5 6 7 8",
+          "buttons": 0,
+          "vb": 720,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "How many HOURS does the walker rest at the café between hour 2 and hour 4? Your answer · hours CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 12 2 4 6 8",
+          "buttons": 0,
+          "vb": 552,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 720,
+        "median": 24.44,
+        "p10": 24.44,
+        "count": 17,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 552,
+        "median": 12.13,
+        "p10": 12.13,
+        "count": 13,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 552,
+        "median": 12.13,
+        "p10": 12.13,
+        "count": 13,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

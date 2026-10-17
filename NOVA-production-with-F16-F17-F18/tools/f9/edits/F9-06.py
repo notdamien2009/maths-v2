@@ -1,0 +1,2 @@
+# F9-06 phone layout: the hop rule pill is drawn by the engine at the 19-unit floor instead of the core's 13-unit default.
+EDITS=[("""height:small()?48:57,label:options.hideRule?'?':p.rule});""","""height:small()?48:57,label:small()?null:(options.hideRule?'?':p.rule)});if(small())N.svg.pill(svg,(x[i]+17+x[i+1]-17)/2,hop.peak-4,options.hideRule?'?':p.rule,{role:i===actual-2?'focus':'op',size:20});""")]

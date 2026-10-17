@@ -1,0 +1,3914 @@
+{
+  "family": "F3",
+  "revision": "2026-10-16",
+  "productionReady": true,
+  "status": "PASS WITH LIMITATIONS",
+  "componentCount": 15,
+  "note": "All fifteen IDs F3-01 through F3-15 are present.",
+  "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+  "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+  "sharedRestrictions": "Original neon/chalk apparatus retained. Production approval is already settled by the 14 October master release; no stale fraction/TBD approval gate applies. Ready within each declared native numerical domain. Decimal numerals containing digit 4 remain caption-only under the existing pronunciation safeguard. Automated accessibility is not human screen-reader or all-device certification. Future lesson questions still need their own maths/content/layout review. Existing exported lessons embed source snapshots and must be regenerated.",
+  "components": [
+    {
+      "id": "F3-01",
+      "name": "Array builder",
+      "path": "F3/F3-01-array-builder.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "6408d2af577310256137b6abe393f8c4ce892ab2aa54d7d2d478069b4bdff870",
+      "nativeSteps": 6,
+      "nativeDraws": {
+        "scene": [
+          "stage",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "rows",
+        "columns",
+        "maxRows",
+        "maxColumns",
+        "shape",
+        "split",
+        "presets",
+        "events",
+        "challenge"
+      ],
+      "presets": {
+        "Y7-015-prime-factorisation": {
+          "label": "Year 7 · Prime factorisation",
+          "rows": 3,
+          "columns": 4,
+          "min": 2,
+          "max": 144
+        }
+      },
+      "exploreFields": {
+        "state": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Resize array with arrows or drag the corner. Left/right changes columns; up/down changes rows",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Rows",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "3",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            }
+          ]
+        },
+        {
+          "label": "Columns",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "4",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            }
+          ]
+        },
+        {
+          "label": "Cell view",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "tile",
+          "options": [
+            {
+              "value": "tile",
+              "label": "Glass tiles"
+            },
+            {
+              "value": "dot",
+              "label": "Neon dots"
+            }
+          ]
+        },
+        {
+          "label": "Array",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Turn",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Split",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Prime tree",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Integer rows and columns 1–12, up to 144 cells; array, turn, split and prime-tree teaching views. A split needs at least two columns.",
+      "changes": "Exact lesson dimensions/views, validated Explore state, hidden question totals, native phase sequencing and cancellation.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-02",
+      "name": "Area model of multiplication",
+      "path": "F3/F3-02-area-model-of-multiplication.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "704376511ed3a0ae180f00de0da515e3250b66d885fe43ca53c9891173e775e1",
+      "nativeSteps": 8,
+      "nativeDraws": {
+        "scene": [
+          "stage",
+          "p",
+          "opt"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ],
+        [
+          "name",
+          "narration",
+          "prompt",
+          "mood",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "presets",
+        "events",
+        "challenge"
+      ],
+      "presets": {
+        "Y7-009-whole-decimal-multiplication": {
+          "label": "Whole number multiplication",
+          "kind": "numeric",
+          "x": [
+            20,
+            3
+          ],
+          "y": [
+            10,
+            4
+          ]
+        },
+        "Y7-022-fraction-add-subtract": {
+          "label": "Fraction addition / subtraction",
+          "kind": "fraction-add",
+          "den": 6,
+          "a": 3,
+          "b": 2,
+          "op": "+",
+          "wholes": 0
+        },
+        "Y7-023-multiplying-fractions": {
+          "label": "Fraction of a fraction",
+          "kind": "fraction-product",
+          "a": 2,
+          "b": 3,
+          "c": 3,
+          "d": 4
+        },
+        "Y7-031-single-brackets": {
+          "label": "Expanding a single bracket",
+          "kind": "single",
+          "factor": 3,
+          "constant": 2
+        },
+        "Y7-032-factorising-common-factor": {
+          "label": "Factorising common terms",
+          "kind": "factorise",
+          "factor": 3,
+          "constant": 2
+        },
+        "Y8-005-mixed-number-fractions": {
+          "label": "Mixed-number addition / subtraction",
+          "kind": "fraction-add",
+          "den": 4,
+          "a": 6,
+          "b": 3,
+          "op": "+",
+          "wholes": 0
+        },
+        "Y8-011-double-brackets": {
+          "label": "Expanding double brackets",
+          "kind": "double",
+          "xConst": 3,
+          "yConst": 2
+        },
+        "Y9-006-algebraic-equivalence": {
+          "label": "Equivalent algebraic expressions",
+          "kind": "double",
+          "xConst": 3,
+          "yConst": 2
+        },
+        "F5-03-area-model-fractions": {
+          "label": "F5-03 · Fractions area preset",
+          "kind": "fraction-product",
+          "a": 2,
+          "b": 3,
+          "c": 3,
+          "d": 4
+        },
+        "F7-04-expanding-single-brackets": {
+          "label": "F7-04 · Distribute 3 across x + 2",
+          "kind": "single",
+          "factor": 3,
+          "constant": 2
+        },
+        "F7-04-two-times": {
+          "label": "Two lots: 2(x + 3)",
+          "kind": "single",
+          "factor": 2,
+          "constant": 3
+        },
+        "F7-04-four-times": {
+          "label": "Four lots: 4(x + 5)",
+          "kind": "single",
+          "factor": 4,
+          "constant": 5
+        },
+        "F7-04-five-times": {
+          "label": "Five lots: 5(x + 1)",
+          "kind": "single",
+          "factor": 5,
+          "constant": 1
+        },
+        "F7-05-expanding-double-brackets": {
+          "label": "F7-05 · (x + 3)(x + 2)",
+          "kind": "double",
+          "xConst": 3,
+          "yConst": 2
+        },
+        "F7-05-Y8-011": {
+          "label": "Y8 · (x + 2)(x + 4)",
+          "kind": "double",
+          "xConst": 2,
+          "yConst": 4
+        },
+        "F7-05-Y9-006": {
+          "label": "Y9 · (x − 3)(x + 2)",
+          "kind": "double",
+          "xConst": -3,
+          "yConst": 2
+        },
+        "F7-05-Y9-008": {
+          "label": "Y9 · (x − 2)(x − 4)",
+          "kind": "double",
+          "xConst": -2,
+          "yConst": -4
+        },
+        "decimal-tenths": {
+          "label": "Decimal tenths",
+          "kind": "numeric",
+          "x": [
+            2,
+            0.3
+          ],
+          "y": [
+            1,
+            0.4
+          ]
+        }
+      },
+      "exploreFields": {
+        "state": true,
+        "areaSvg.data": {
+          "kind": "factory",
+          "factory": "model",
+          "argCount": 1
+        },
+        "resultFor.m": {
+          "kind": "factory",
+          "factory": "model",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Move the vertical partition between the side lengths",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Move the horizontal partition between the side lengths",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Area model preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-009-whole-decimal-multiplication",
+          "options": [
+            {
+              "value": "Y7-009-whole-decimal-multiplication",
+              "label": "Whole number multiplication"
+            },
+            {
+              "value": "Y7-022-fraction-add-subtract",
+              "label": "Fraction addition / subtraction"
+            },
+            {
+              "value": "Y7-023-multiplying-fractions",
+              "label": "Fraction of a fraction"
+            },
+            {
+              "value": "Y7-031-single-brackets",
+              "label": "Expanding a single bracket"
+            },
+            {
+              "value": "Y7-032-factorising-common-factor",
+              "label": "Factorising common terms"
+            },
+            {
+              "value": "Y8-005-mixed-number-fractions",
+              "label": "Mixed-number addition / subtraction"
+            },
+            {
+              "value": "Y8-011-double-brackets",
+              "label": "Expanding double brackets"
+            },
+            {
+              "value": "Y9-006-algebraic-equivalence",
+              "label": "Equivalent algebraic expressions"
+            },
+            {
+              "value": "F5-03-area-model-fractions",
+              "label": "F5-03 · Fractions area preset"
+            },
+            {
+              "value": "F7-04-expanding-single-brackets",
+              "label": "F7-04 · Distribute 3 across x + 2"
+            },
+            {
+              "value": "F7-04-two-times",
+              "label": "Two lots: 2(x + 3)"
+            },
+            {
+              "value": "F7-04-four-times",
+              "label": "Four lots: 4(x + 5)"
+            },
+            {
+              "value": "F7-04-five-times",
+              "label": "Five lots: 5(x + 1)"
+            },
+            {
+              "value": "F7-05-expanding-double-brackets",
+              "label": "F7-05 · (x + 3)(x + 2)"
+            },
+            {
+              "value": "F7-05-Y8-011",
+              "label": "Y8 · (x + 2)(x + 4)"
+            },
+            {
+              "value": "F7-05-Y9-006",
+              "label": "Y9 · (x − 3)(x + 2)"
+            },
+            {
+              "value": "F7-05-Y9-008",
+              "label": "Y9 · (x − 2)(x − 4)"
+            },
+            {
+              "value": "decimal-tenths",
+              "label": "Decimal tenths"
+            }
+          ]
+        },
+        {
+          "label": "Width part A",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "99.9",
+          "step": "1",
+          "value": "20"
+        },
+        {
+          "label": "Width part B",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "99.9",
+          "step": "1",
+          "value": "3"
+        },
+        {
+          "label": "Height part A",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "99.9",
+          "step": "1",
+          "value": "10"
+        },
+        {
+          "label": "Height part B",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "99.9",
+          "step": "1",
+          "value": "4"
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Numeric parts are positive whole numbers or tenths from 0.1 to 99.9. Single/factorise coefficients 1–12. Double-bracket constants are nonzero integers −9…9. Proper fraction products use denominators 1–12; same-denominator addition/subtraction uses numerators 0–12 and nonnegative results. Dense mixed-number layouts need lesson-level visual review.",
+      "changes": "Exact numeric/fraction/algebra lesson state; signed double-bracket editing works in the F3 entry too. Question overlap/result captions are concealed. The settled stacked fraction renderer is preserved.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-03",
+      "name": "Partitioned grid method",
+      "path": "F3/F3-03-partitioned-grid-method.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "b989d4a2ae15f1d7bd077e9969f008332e6966e642dce83706b509e13a98e25e",
+      "nativeSteps": 8,
+      "nativeDraws": {
+        "scene": [
+          "stage",
+          "p",
+          "opt"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "presets",
+        "events",
+        "challenge"
+      ],
+      "presets": {
+        "Y7-009-whole": {
+          "label": "Year 7 · whole numbers",
+          "a": 23,
+          "b": 14,
+          "partitionA": [
+            20,
+            3
+          ],
+          "partitionB": [
+            10,
+            4
+          ]
+        },
+        "Y7-009-decimals": {
+          "label": "Year 7 · tenths",
+          "a": 2.3,
+          "b": 1.4,
+          "partitionA": [
+            2,
+            0.3
+          ],
+          "partitionB": [
+            1,
+            0.4
+          ]
+        },
+        "Y7-009-large": {
+          "label": "Year 7 · larger factors",
+          "a": 37,
+          "b": 26,
+          "partitionA": [
+            30,
+            7
+          ],
+          "partitionB": [
+            20,
+            6
+          ]
+        },
+        "Y7-009-decimal-and-whole": {
+          "label": "Year 7 · decimal × whole",
+          "a": 3.6,
+          "b": 12,
+          "partitionA": [
+            3,
+            0.6
+          ],
+          "partitionB": [
+            10,
+            2
+          ]
+        }
+      },
+      "exploreFields": {
+        "p": {
+          "kind": "factory",
+          "factory": "copy",
+          "argCount": 1
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Grid preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-009-whole",
+          "options": [
+            {
+              "value": "Y7-009-whole",
+              "label": "Year 7 · whole numbers"
+            },
+            {
+              "value": "Y7-009-decimals",
+              "label": "Year 7 · tenths"
+            },
+            {
+              "value": "Y7-009-large",
+              "label": "Year 7 · larger factors"
+            },
+            {
+              "value": "Y7-009-decimal-and-whole",
+              "label": "Year 7 · decimal × whole"
+            }
+          ]
+        },
+        {
+          "label": "First factor",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "99.9",
+          "step": "1",
+          "value": "23"
+        },
+        {
+          "label": "Second factor",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "99.9",
+          "step": "1",
+          "value": "14"
+        },
+        {
+          "label": "Top left",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "23",
+          "step": "1",
+          "value": "20"
+        },
+        {
+          "label": "Top right",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "23",
+          "step": "1",
+          "value": "3"
+        },
+        {
+          "label": "Side top",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "14",
+          "step": "1",
+          "value": "10"
+        },
+        {
+          "label": "Side bottom",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "0.1",
+          "max": "14",
+          "step": "1",
+          "value": "4"
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Two positive partitions per factor, each 0.1–99.9 in whole numbers or tenths. Parts must sum exactly to their stated factor; maximum combined factor 199.8. The area/grid drawing is schematic for strongly unequal partitions.",
+      "changes": "Exact factor/partition lesson state and existing drag apparatus; partitions are validated against both factors.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-04",
+      "name": "Factor pair rainbow",
+      "path": "F3/F3-04-factor-pair-rainbow.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "7e881ddb2693db9b91bc9a317ecb699a5eebf4b4d43b8cef3bce28a85d1eb697",
+      "nativeSteps": 8,
+      "nativeDraws": {
+        "scene": [
+          "stage",
+          "n",
+          "opt"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "target",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "target",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "target",
+          "prompt",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "prompt",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "parameters",
+        "presets",
+        "events",
+        "challenge"
+      ],
+      "presets": {
+        "Y7-013-factors": {
+          "label": "Factors and multiples · 24",
+          "n": 24,
+          "lesson": "Y7-013"
+        },
+        "Y7-013-square": {
+          "label": "Square number · 36",
+          "n": 36,
+          "lesson": "Y7-013"
+        },
+        "Y7-013-small": {
+          "label": "Factor pairs · 12",
+          "n": 12,
+          "lesson": "Y7-013"
+        },
+        "Y7-014-prime": {
+          "label": "Prime number · 13",
+          "n": 13,
+          "lesson": "Y7-014"
+        },
+        "Y7-014-composite": {
+          "label": "Composite number · 21",
+          "n": 21,
+          "lesson": "Y7-014"
+        }
+      },
+      "exploreFields": {
+        "n": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "preset": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "candidate": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "locked": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "nonFactors": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "message": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Factor-pair preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-013-factors",
+          "options": [
+            {
+              "value": "Y7-013-factors",
+              "label": "Factors and multiples · 24"
+            },
+            {
+              "value": "Y7-013-square",
+              "label": "Square number · 36"
+            },
+            {
+              "value": "Y7-013-small",
+              "label": "Factor pairs · 12"
+            },
+            {
+              "value": "Y7-014-prime",
+              "label": "Prime number · 13"
+            },
+            {
+              "value": "Y7-014-composite",
+              "label": "Composite number · 21"
+            }
+          ]
+        },
+        {
+          "label": "Target number",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "36",
+          "step": "1",
+          "value": "24"
+        },
+        {
+          "label": "Candidate to test",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "2",
+          "options": [
+            {
+              "value": "1",
+              "label": "Try 1"
+            },
+            {
+              "value": "2",
+              "label": "Try 2"
+            },
+            {
+              "value": "3",
+              "label": "Try 3"
+            },
+            {
+              "value": "4",
+              "label": "Try 4"
+            }
+          ]
+        },
+        {
+          "label": "Proposed factor partner",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "12",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "15",
+              "label": "15"
+            },
+            {
+              "value": "16",
+              "label": "16"
+            },
+            {
+              "value": "17",
+              "label": "17"
+            },
+            {
+              "value": "18",
+              "label": "18"
+            },
+            {
+              "value": "19",
+              "label": "19"
+            },
+            {
+              "value": "20",
+              "label": "20"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            }
+          ]
+        },
+        {
+          "label": "Connect pair",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "No exact partner",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Show complete factor proof",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Integer factor targets 2–36 on the native number line; exact positive pairs, square centre pairs and prime/composite classification.",
+      "changes": "Custom factor target/stages; accessible question scaffolding and generic initial Explore guidance replace fixed-number advice.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-05",
+      "name": "Prime sieve and factor tree",
+      "path": "F3/F3-05-prime-sieve-and-factor-tree.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "850cc5d33767a19090dffd472a58cf398288e48e7bf549a767304b858d23bcb5",
+      "nativeSteps": 10,
+      "nativeDraws": {
+        "dock": [
+          "stage",
+          "key"
+        ],
+        "assemble": [
+          "stage",
+          "kind",
+          "data",
+          "opt"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "kind",
+          "num",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "kind",
+          "num",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "kind",
+          "num",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "kind",
+          "num",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "kind",
+          "num",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "kind",
+          "num",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "kind",
+          "level",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "kind",
+          "level",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "kind",
+          "level",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "kind",
+          "level",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "parameters",
+        "presets",
+        "events",
+        "challenge"
+      ],
+      "presets": {
+        "Y7-014-sieve": {
+          "label": "Y7 · Prime numbers to 100",
+          "view": "sieve",
+          "limit": 100,
+          "lesson": "Y7-014"
+        },
+        "Y7-014-early": {
+          "label": "Y7 · Prime numbers to 30",
+          "view": "sieve",
+          "limit": 30,
+          "lesson": "Y7-014"
+        },
+        "Y7-015-tree60": {
+          "label": "Y7 · Prime factorisation: 60",
+          "view": "tree",
+          "n": 60,
+          "lesson": "Y7-015"
+        },
+        "Y7-015-tree90": {
+          "label": "Y7 · Prime factorisation: 90",
+          "view": "tree",
+          "n": 90,
+          "lesson": "Y7-015"
+        },
+        "Y8-004-tree84": {
+          "label": "Y8 · Prime factors: 84",
+          "view": "tree",
+          "n": 84,
+          "lesson": "Y8-004"
+        }
+      },
+      "exploreFields": {
+        "state": true,
+        "preset": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "message": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Curriculum preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-014-sieve",
+          "options": [
+            {
+              "value": "Y7-014-sieve",
+              "label": "Y7 · Prime numbers to 100"
+            },
+            {
+              "value": "Y7-014-early",
+              "label": "Y7 · Prime numbers to 30"
+            },
+            {
+              "value": "Y7-015-tree60",
+              "label": "Y7 · Prime factorisation: 60"
+            },
+            {
+              "value": "Y7-015-tree90",
+              "label": "Y7 · Prime factorisation: 90"
+            },
+            {
+              "value": "Y8-004-tree84",
+              "label": "Y8 · Prime factors: 84"
+            }
+          ]
+        },
+        {
+          "label": "Representation",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "sieve",
+          "options": [
+            {
+              "value": "sieve",
+              "label": "Prime sieve"
+            },
+            {
+              "value": "tree",
+              "label": "Factor tree"
+            }
+          ]
+        },
+        {
+          "label": "Prime to sweep",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "2",
+          "options": [
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            }
+          ]
+        },
+        {
+          "label": "Sweep multiples",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Undo sweep",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Sieve limits 10–100. Factor-tree targets 2–144; valid integer factor splits. Deep trees adapt their native spacing; required divisors are available in the original card/control system.",
+      "changes": "Custom sieve/tree stages; independent initial representation/target. Native deep-tree spacing stays above the collector; factor 11 is supplied for targets such as 121. Sieve grid has proper grid/row semantics.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-06",
+      "name": "Prime factor ladder",
+      "path": "F3/F3-06-prime-factor-ladder.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "c3a05aeaa650ffaddb4662601fb8513ea54897ee8574dd1c215436d758a44198",
+      "nativeSteps": 7,
+      "nativeDraws": {
+        "dock": [
+          "stage",
+          "key"
+        ],
+        "assemble": [
+          "stage",
+          "n",
+          "parts",
+          "opt"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "rungs",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rungs",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rungs",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rungs",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rungs",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rungs",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rungs",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "parameters",
+        "presets",
+        "events",
+        "challenge"
+      ],
+      "presets": {
+        "Y7-015-60": {
+          "label": "Year 7 · Prime decomposition of 60",
+          "n": 60,
+          "lesson": "Y7-015"
+        },
+        "Y7-015-90": {
+          "label": "Year 7 · Prime decomposition of 90",
+          "n": 90,
+          "lesson": "Y7-015"
+        },
+        "Y7-016-180": {
+          "label": "Year 7 · HCF/LCM preparation: 180",
+          "n": 180,
+          "lesson": "Y7-016"
+        },
+        "Y8-004-84": {
+          "label": "Year 8 · Prime decomposition of 84",
+          "n": 84,
+          "lesson": "Y8-004"
+        },
+        "Y8-004-420": {
+          "label": "Year 8 · Extended number: 420",
+          "n": 420,
+          "lesson": "Y8-004"
+        }
+      },
+      "exploreFields": {
+        "preset": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "n": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Curriculum preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-015-60",
+          "options": [
+            {
+              "value": "Y7-015-60",
+              "label": "Year 7 · Prime decomposition of 60"
+            },
+            {
+              "value": "Y7-015-90",
+              "label": "Year 7 · Prime decomposition of 90"
+            },
+            {
+              "value": "Y7-016-180",
+              "label": "Year 7 · HCF/LCM preparation: 180"
+            },
+            {
+              "value": "Y8-004-84",
+              "label": "Year 8 · Prime decomposition of 84"
+            },
+            {
+              "value": "Y8-004-420",
+              "label": "Year 8 · Extended number: 420"
+            }
+          ]
+        },
+        {
+          "label": "Starting whole number",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "420",
+          "step": "1",
+          "value": "60"
+        },
+        {
+          "label": "Prime divisor",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "2",
+          "options": [
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "17",
+              "label": "17"
+            },
+            {
+              "value": "19",
+              "label": "19"
+            }
+          ]
+        },
+        {
+          "label": "Add rung",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Undo last",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Integer targets 2–420. Every rung must use the smallest prime divisor; complete factorisation ends at 1. Prime remainder candidates are retained.",
+      "changes": "Custom target/rung stages use the native smallest-prime ladder and exact index form.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-07",
+      "name": "Hcf and lcm venn",
+      "path": "F3/F3-07-hcf-and-lcm-venn.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "341af100dd9b09b986d1844bdd4ebb9c2fbed9b433525f6dd57fe1a3bcfb21a9",
+      "nativeSteps": 6,
+      "nativeDraws": {
+        "dock": [
+          "stage",
+          "key"
+        ],
+        "showStage": [
+          "stage",
+          "a",
+          "b",
+          "placement",
+          "opt"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "phase",
+          "show",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "show",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "show",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "show",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "show",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "show",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "parameters",
+        "presets",
+        "events",
+        "challenge"
+      ],
+      "presets": {
+        "Y7-016": {
+          "label": "Year 7 · HCF and LCM · 12 & 18",
+          "a": 12,
+          "b": 18,
+          "lesson": "Y7-016"
+        },
+        "Y7-032": {
+          "label": "Year 7 · Common factor bridge · 20 & 30",
+          "a": 20,
+          "b": 30,
+          "lesson": "Y7-032"
+        },
+        "Y8-004": {
+          "label": "Year 8 · Prime factors · 24 & 36",
+          "a": 24,
+          "b": 36,
+          "lesson": "Y8-004"
+        },
+        "Y8-012": {
+          "label": "Year 8 · Factorising bridge · 18 & 30",
+          "a": 18,
+          "b": 30,
+          "lesson": "Y8-012"
+        },
+        "Extension-60": {
+          "label": "Extension · 36 & 60",
+          "a": 36,
+          "b": 60,
+          "lesson": "GCSE bridge"
+        }
+      },
+      "exploreFields": {
+        "preset": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "a": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "b": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Curriculum preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-016",
+          "options": [
+            {
+              "value": "Y7-016",
+              "label": "Year 7 · HCF and LCM · 12 & 18"
+            },
+            {
+              "value": "Y7-032",
+              "label": "Year 7 · Common factor bridge · 20 & 30"
+            },
+            {
+              "value": "Y8-004",
+              "label": "Year 8 · Prime factors · 24 & 36"
+            },
+            {
+              "value": "Y8-012",
+              "label": "Year 8 · Factorising bridge · 18 & 30"
+            },
+            {
+              "value": "Extension-60",
+              "label": "Extension · 36 & 60"
+            }
+          ]
+        },
+        {
+          "label": "First number",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "420",
+          "step": null,
+          "value": "12"
+        },
+        {
+          "label": "Second number",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "420",
+          "step": null,
+          "value": "18"
+        },
+        {
+          "label": "Choose a prime factor card",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "a0",
+          "options": [
+            {
+              "value": "a0",
+              "label": "2 · from A"
+            },
+            {
+              "value": "a1",
+              "label": "2 · from A"
+            },
+            {
+              "value": "a2",
+              "label": "3 · from A"
+            },
+            {
+              "value": "b2",
+              "label": "3 · from B"
+            }
+          ]
+        },
+        {
+          "label": "Choose destination region",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "A",
+          "options": [
+            {
+              "value": "A",
+              "label": "A only"
+            },
+            {
+              "value": "AB",
+              "label": "Overlap"
+            },
+            {
+              "value": "B",
+              "label": "B only"
+            }
+          ]
+        },
+        {
+          "label": "Place card",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Undo last",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Show products",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Integer targets 2–420 for each number. Prime-factor token multiplicities are preserved; HCF is the overlap product and LCM the whole token product.",
+      "changes": "Custom number pair/token stages and reveals; accessible title now respects hidden HCF/LCM answers.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-08",
+      "name": "Multiples overlap tracks",
+      "path": "F3/F3-08-multiples-overlap-tracks.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "421316a5419222908a069761b92b97fe4a02870d1b1015f7e2df9c415a9e2d67",
+      "nativeSteps": 6,
+      "nativeDraws": {
+        "dock": [
+          "stage",
+          "key"
+        ],
+        "showStage": [
+          "stage",
+          "a",
+          "b",
+          "selected",
+          "opt"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "preset",
+        "startMode",
+        "parameters",
+        "presets",
+        "challenge",
+        "events"
+      ],
+      "presets": {
+        "Y7-013": {
+          "label": "Year 7 · Factors and multiples · 3 and 4",
+          "a": 3,
+          "b": 4,
+          "lesson": "Y7-013"
+        },
+        "Y7-016": {
+          "label": "Year 7 · HCF and LCM · 6 and 8",
+          "a": 6,
+          "b": 8,
+          "lesson": "Y7-016"
+        }
+      },
+      "exploreFields": {
+        "a": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "b": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Curriculum preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-013",
+          "options": [
+            {
+              "value": "Y7-013",
+              "label": "Year 7 · Factors and multiples · 3 and 4"
+            },
+            {
+              "value": "Y7-016",
+              "label": "Year 7 · HCF and LCM · 6 and 8"
+            }
+          ]
+        },
+        {
+          "label": "Track A jump size",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "12",
+          "step": null,
+          "value": "3"
+        },
+        {
+          "label": "Track B jump size",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "12",
+          "step": null,
+          "value": "4"
+        },
+        {
+          "label": "Candidate landing value",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "1",
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Place marker",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Remove marker",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Integer jump sizes 2–12; shared scale and native bounded range through 144. The first common positive landing is the LCM.",
+      "changes": "Custom jump pair/phase and first-landing concealment on the original shared scale.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-09",
+      "name": "Square and cube builders",
+      "path": "F3/F3-09-square-and-cube-builders.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "9183eb80ba18757a25ccef316abfcb5002303f5e037e9c81452a9fb3b7e5f7f4",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "present": [
+          "stage",
+          "n",
+          "p",
+          "occ",
+          "opt"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "preset",
+        "startMode",
+        "parameters",
+        "presets",
+        "challenge",
+        "events"
+      ],
+      "presets": {
+        "Y7-017": {
+          "label": "Year 7 · Squares, cubes and roots",
+          "n": 3,
+          "power": 2,
+          "lesson": "Y7-017"
+        },
+        "Y8-001": {
+          "label": "Year 8 · Repeated multiplication",
+          "n": 3,
+          "power": 3,
+          "lesson": "Y8-001"
+        },
+        "Y9-002": {
+          "label": "Year 9 · Powers and roots",
+          "n": 4,
+          "power": 3,
+          "lesson": "Y9-002"
+        },
+        "Y9-003": {
+          "label": "Year 9 · Fractional indices",
+          "n": 3,
+          "power": 3,
+          "lesson": "Y9-003"
+        }
+      },
+      "exploreFields": {
+        "n": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "p": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Curriculum preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-017",
+          "options": [
+            {
+              "value": "Y7-017",
+              "label": "Year 7 · Squares, cubes and roots"
+            },
+            {
+              "value": "Y8-001",
+              "label": "Year 8 · Repeated multiplication"
+            },
+            {
+              "value": "Y9-002",
+              "label": "Year 9 · Powers and roots"
+            },
+            {
+              "value": "Y9-003",
+              "label": "Year 9 · Fractional indices"
+            }
+          ]
+        },
+        {
+          "label": "Side length",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "5",
+          "step": null,
+          "value": "3"
+        },
+        {
+          "label": "Square or cube",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "2",
+          "options": [
+            {
+              "value": "2",
+              "label": "Square: n²"
+            },
+            {
+              "value": "3",
+              "label": "Cube: n³"
+            }
+          ]
+        },
+        {
+          "label": "Add unit",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Fill row",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Fill layer",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Undo",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Square sides 2–5; cube sides 2–4. Filled units 0…n^power. Equations and inverse answers remain unknown until a complete build, or when concealed.",
+      "changes": "Native square/cube scene added to drawing catalog; custom shape/fill/stages. Partial cubes no longer show a false complete-power equality; inverse results respect build completion. Native drag-source semantics repaired.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-10",
+      "name": "Index law animator",
+      "path": "F3/F3-10-index-law-animator.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "9bfa1761277a1a3b78ac0b3ccb99f46075b4b9de08ed948df4a764442188dbde",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "present": [
+          "stage",
+          "s",
+          "opt"
+        ],
+        "live": [
+          "stage",
+          "panel",
+          "s0",
+          "challenge",
+          "api"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "preset",
+        "startMode",
+        "parameters",
+        "presets",
+        "challenge",
+        "events"
+      ],
+      "presets": {
+        "Y8-001": {
+          "label": "Repeated multiplication",
+          "kind": "multiply",
+          "base": 2,
+          "m": 2,
+          "n": 2
+        },
+        "Y8-002-MULTIPLY": {
+          "label": "Multiply powers",
+          "kind": "multiply",
+          "base": 2,
+          "m": 3,
+          "n": 2
+        },
+        "Y8-002-DIVIDE": {
+          "label": "Divide powers",
+          "kind": "divide",
+          "base": 3,
+          "m": 5,
+          "n": 2
+        },
+        "F8-13": {
+          "label": "Algebraic index laws",
+          "kind": "power",
+          "base": "a",
+          "m": 2,
+          "n": 3
+        },
+        "Y9-003": {
+          "label": "Fractional indices",
+          "kind": "fraction",
+          "base": 27,
+          "m": 2,
+          "n": 3
+        }
+      },
+      "exploreFields": {
+        "state": true
+      },
+      "exploreControls": [
+        {
+          "label": "Index law preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y8-002-MULTIPLY",
+          "options": [
+            {
+              "value": "Y8-001",
+              "label": "Repeated multiplication"
+            },
+            {
+              "value": "Y8-002-MULTIPLY",
+              "label": "Multiply powers"
+            },
+            {
+              "value": "Y8-002-DIVIDE",
+              "label": "Divide powers"
+            },
+            {
+              "value": "F8-13",
+              "label": "Algebraic index laws"
+            },
+            {
+              "value": "Y9-003",
+              "label": "Fractional indices"
+            }
+          ]
+        },
+        {
+          "label": "Base",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "2",
+          "options": [
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ]
+        },
+        {
+          "label": "First index",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "1",
+          "max": "5",
+          "step": null,
+          "value": "3"
+        },
+        {
+          "label": "Second index",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "1",
+          "max": "5",
+          "step": null,
+          "value": "2"
+        },
+        {
+          "label": "Join strips",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Undo",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Hint",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Numeric bases 2–5 or symbolic a. Multiply/divide/power laws use positive integer indices and at most 8 expanded factors. Native division requires m ≥ n. Fractional indices use exact square/cube-root bases ≤216, numerator 1–3 and denominator 2/3.",
+      "changes": "Custom law/base/indices/stages; fractional-index drawings now use their actual denominator and numerator rather than a fixed cube-root-then-square example.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-11",
+      "name": "Root finder",
+      "path": "F3/F3-11-root-finder.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "0024a6df276bba1f4ea4f53d3311ea243cf97fd21c854f4dcaa2f29fccddc015",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "dock": [
+          "stage",
+          "k"
+        ],
+        "present": [
+          "stage",
+          "s",
+          "estimate",
+          "opt"
+        ],
+        "live": [
+          "stage",
+          "panel",
+          "initial",
+          "challenge",
+          "api"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "preset",
+        "startMode",
+        "parameters",
+        "presets",
+        "challenge",
+        "events"
+      ],
+      "presets": {
+        "Y7-017": {
+          "label": "Y7 · Square and cube roots",
+          "kind": "square",
+          "target": 36,
+          "initial": 4.5
+        },
+        "Y9-002": {
+          "label": "Y9 · Exact and approximate roots",
+          "kind": "square",
+          "target": 50,
+          "initial": 6
+        },
+        "Y9-003": {
+          "label": "Y9 · Fractional indices and roots",
+          "kind": "cube",
+          "target": 125,
+          "initial": 3.5
+        }
+      },
+      "exploreFields": {
+        "state": true
+      },
+      "exploreControls": [
+        {
+          "label": "Side-length estimate",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "4",
+          "max": "8",
+          "step": null
+        },
+        {
+          "label": "Curriculum preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-017",
+          "options": [
+            {
+              "value": "Y7-017",
+              "label": "Y7 · Square and cube roots"
+            },
+            {
+              "value": "Y9-002",
+              "label": "Y9 · Exact and approximate roots"
+            },
+            {
+              "value": "Y9-003",
+              "label": "Y9 · Fractional indices and roots"
+            }
+          ]
+        },
+        {
+          "label": "Square or cube root",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "square",
+          "options": [
+            {
+              "value": "square",
+              "label": "Square root"
+            },
+            {
+              "value": "cube",
+              "label": "Cube root"
+            }
+          ]
+        },
+        {
+          "label": "Target area or volume",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "216",
+          "step": null,
+          "value": "36"
+        },
+        {
+          "label": "Keyboard accessible side estimate",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "4",
+          "max": "8",
+          "step": "0.1",
+          "value": "4.5"
+        },
+        {
+          "label": "− 0.1",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "+ 0.1",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Undo",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Square-root targets 2–144; cube-root targets 8–216. Nonnegative estimates through 14/8 respectively, quantised to tenths in Explore. The scale includes the configured initial estimate. Nonexact roots remain estimates.",
+      "changes": "Custom root target/estimate/stages and independent Explore state; drop zones cover the continuous scale without gaps, and the axis includes the configured estimate.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-12",
+      "name": "Divisibility explorer",
+      "path": "F3/F3-12-divisibility-explorer.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "91e67f2a9cab653afdf24e2e379d644440d301380d14b2a00f6db0e9c0a57fdd",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "dock": [
+          "stage",
+          "k"
+        ],
+        "show": [
+          "stage",
+          "n",
+          "focus",
+          "opt"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "rule",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rule",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rule",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rule",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "rule",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "parameters",
+        "presets",
+        "challenge",
+        "events"
+      ],
+      "presets": {
+        "Y7-014": {
+          "label": "Year 7 · Prime and composite numbers",
+          "number": 234
+        },
+        "Y7-Digits": {
+          "label": "Digit sum and final digits · 135",
+          "number": 135
+        },
+        "Y7-All": {
+          "label": "Multiple rules · 360",
+          "number": 360
+        },
+        "Y7-Edge": {
+          "label": "No basic tests pass · 437",
+          "number": 437
+        }
+      },
+      "exploreFields": {
+        "preset": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "n": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Curriculum preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-014",
+          "options": [
+            {
+              "value": "Y7-014",
+              "label": "Year 7 · Prime and composite numbers"
+            },
+            {
+              "value": "Y7-Digits",
+              "label": "Digit sum and final digits · 135"
+            },
+            {
+              "value": "Y7-All",
+              "label": "Multiple rules · 360"
+            },
+            {
+              "value": "Y7-Edge",
+              "label": "No basic tests pass · 437"
+            }
+          ]
+        },
+        {
+          "label": "Number to test",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "10",
+          "max": "9999",
+          "step": null,
+          "value": "234"
+        },
+        {
+          "label": "÷ 2",
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 3",
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 4",
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 5",
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 6",
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 9",
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "÷ 10",
+          "tag": "button",
+          "role": null,
+          "type": "button",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Another number",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Integer targets 10–9999. Native rules 2,3,4,5,6,9,10. Question verdicts remain concealed until teaching/reveal.",
+      "changes": "Custom number/rule/phase and hidden question verdict in accessible descriptions.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-13",
+      "name": "Division sharing and grouping",
+      "path": "F3/F3-13-division-sharing-and-grouping.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "d16100901bc467a3068c3166deac75cd415d17ea4a278b574228fc784ec8465c",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "show": [
+          "stage",
+          "s",
+          "p",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "parameters",
+        "presets",
+        "challenge",
+        "events"
+      ],
+      "presets": {
+        "Y7-010-Share": {
+          "label": "Sharing · 20 ÷ 4",
+          "units": 20,
+          "divisor": 4,
+          "method": "sharing",
+          "unitValue": 1
+        },
+        "Y7-010-Group": {
+          "label": "Grouping · 24 ÷ 6",
+          "units": 24,
+          "divisor": 6,
+          "method": "grouping",
+          "unitValue": 1
+        },
+        "Y7-010-Remain": {
+          "label": "Remainder · 26 ÷ 4",
+          "units": 26,
+          "divisor": 4,
+          "method": "grouping",
+          "unitValue": 1
+        },
+        "Y7-010-Decimal": {
+          "label": "Tenths · 3.6 ÷ 4",
+          "units": 36,
+          "divisor": 4,
+          "method": "sharing",
+          "unitValue": 0.1
+        }
+      },
+      "exploreFields": {
+        "state": true
+      },
+      "exploreControls": [
+        {
+          "label": "Choose preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-010-Share",
+          "options": [
+            {
+              "value": "Y7-010-Share",
+              "label": "Sharing · 20 ÷ 4"
+            },
+            {
+              "value": "Y7-010-Group",
+              "label": "Grouping · 24 ÷ 6"
+            },
+            {
+              "value": "Y7-010-Remain",
+              "label": "Remainder · 26 ÷ 4"
+            },
+            {
+              "value": "Y7-010-Decimal",
+              "label": "Tenths · 3.6 ÷ 4"
+            }
+          ]
+        },
+        {
+          "label": "Number of counters",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "36",
+          "step": null,
+          "value": "20"
+        },
+        {
+          "label": "Number of hoops or group size",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "6",
+          "step": null,
+          "value": "4"
+        },
+        {
+          "label": "Sharing or grouping",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "sharing",
+          "options": [
+            {
+              "value": "sharing",
+              "label": "Sharing"
+            },
+            {
+              "value": "grouping",
+              "label": "Grouping"
+            }
+          ]
+        },
+        {
+          "label": "Target hoop",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "hoop-0",
+          "options": [
+            {
+              "value": "hoop-0",
+              "label": "Hoop 1"
+            },
+            {
+              "value": "hoop-1",
+              "label": "Hoop 2"
+            },
+            {
+              "value": "hoop-2",
+              "label": "Hoop 3"
+            },
+            {
+              "value": "hoop-3",
+              "label": "Hoop 4"
+            }
+          ]
+        },
+        {
+          "label": "Deal one",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Undo",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Hint",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "2–36 counters, divisor 2–6, units 1 or 0.1. Sharing and grouping have different unit interpretations. Grouping uses at most six hoops. Remainders account for all counters.",
+      "changes": "Custom sharing/grouping state and stages; decimal grouping now divides by the group amount and reports a group count, while decimal sharing reports an amount per hoop.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-14",
+      "name": "Multiplication table explorer",
+      "path": "F3/F3-14-multiplication-table-explorer.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "1293d4586014d8db734de2bc0a6aa1d7932d3a0468be85db15cba34c2c20b32e",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "show": [
+          "stage",
+          "s",
+          "o"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "prompt",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "prompt",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "prompt",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "prompt",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "prompt",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "startMode",
+        "preset",
+        "parameters",
+        "presets",
+        "challenge",
+        "events"
+      ],
+      "presets": {
+        "Y7-012-PosNeg": {
+          "label": "Positive × negative",
+          "rowSign": 1,
+          "colSign": -1,
+          "row": 3,
+          "col": 4
+        },
+        "Y7-012-NegPos": {
+          "label": "Negative × positive",
+          "rowSign": -1,
+          "colSign": 1,
+          "row": 6,
+          "col": 5
+        },
+        "Y7-012-NegNeg": {
+          "label": "Negative × negative",
+          "rowSign": -1,
+          "colSign": -1,
+          "row": 7,
+          "col": 8
+        },
+        "Y7-012-PosPos": {
+          "label": "Positive × positive",
+          "rowSign": 1,
+          "colSign": 1,
+          "row": 9,
+          "col": 6
+        }
+      },
+      "exploreFields": {
+        "state": true
+      },
+      "exploreControls": [
+        {
+          "label": "Choose multiplication preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y7-012-PosNeg",
+          "options": [
+            {
+              "value": "Y7-012-PosNeg",
+              "label": "Positive × negative"
+            },
+            {
+              "value": "Y7-012-NegPos",
+              "label": "Negative × positive"
+            },
+            {
+              "value": "Y7-012-NegNeg",
+              "label": "Negative × negative"
+            },
+            {
+              "value": "Y7-012-PosPos",
+              "label": "Positive × positive"
+            }
+          ]
+        },
+        {
+          "label": "Row magnitude",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "1",
+          "max": "12",
+          "step": null,
+          "value": "3"
+        },
+        {
+          "label": "Row sign",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "1",
+          "options": [
+            {
+              "value": "1",
+              "label": "Positive"
+            },
+            {
+              "value": "-1",
+              "label": "Negative"
+            }
+          ]
+        },
+        {
+          "label": "Column magnitude",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "1",
+          "max": "12",
+          "step": null,
+          "value": "4"
+        },
+        {
+          "label": "Column sign",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "-1",
+          "options": [
+            {
+              "value": "1",
+              "label": "Positive"
+            },
+            {
+              "value": "-1",
+              "label": "Negative"
+            }
+          ]
+        },
+        {
+          "label": "Row −",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Row +",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Column −",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Column +",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "3 × −4 equals minus 12",
+          "tag": "span",
+          "role": "math",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Row/column magnitudes 1–12 and each sign ±1. Products cover all four sign combinations in the original table.",
+      "changes": "Custom signed table state/stages and independent Explore binding; proper grid/row and drag-handle semantics keep the crosshair above the grid.",
+      "evidence": "audit/f3-production-2026-10-16"
+    },
+    {
+      "id": "F3-15",
+      "name": "Surd and exact value builder",
+      "path": "F3/F3-15-surd-and-exact-value-builder.html",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "sourceSha256": "65e559f532f4704e220790f787491e108a3752b716b93404fe6e049c61fce685",
+      "nativeSteps": 5,
+      "nativeDraws": {
+        "view": [
+          "stage",
+          "n",
+          "options"
+        ]
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ],
+        [
+          "name",
+          "phase",
+          "say",
+          "narration",
+          "lesson"
+        ]
+      ],
+      "configurationKeys": [
+        "id",
+        "preset",
+        "startMode",
+        "parameters",
+        "presets",
+        "challenge",
+        "events"
+      ],
+      "presets": {
+        "Y9-002": {
+          "label": "Y9 · Powers, roots and exact values",
+          "n": 72
+        },
+        "Y9-002-50": {
+          "label": "Y9 · Extract a square factor of 50",
+          "n": 50
+        },
+        "Y9-002-108": {
+          "label": "Y9 · Simplify the root of 108",
+          "n": 108
+        },
+        "Y9-002-45": {
+          "label": "Y9 · Exact root of 45",
+          "n": 45
+        },
+        "Y9-002-64": {
+          "label": "Y9 · Perfect square 64",
+          "n": 64
+        }
+      },
+      "exploreFields": {
+        "n": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "message": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "exploreControls": [
+        {
+          "label": "Choose surd preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "Y9-002",
+          "options": [
+            {
+              "value": "Y9-002",
+              "label": "Y9 · Powers, roots and exact values"
+            },
+            {
+              "value": "Y9-002-50",
+              "label": "Y9 · Extract a square factor of 50"
+            },
+            {
+              "value": "Y9-002-108",
+              "label": "Y9 · Simplify the root of 108"
+            },
+            {
+              "value": "Y9-002-45",
+              "label": "Y9 · Exact root of 45"
+            },
+            {
+              "value": "Y9-002-64",
+              "label": "Y9 · Perfect square 64"
+            }
+          ]
+        },
+        {
+          "label": "Area to simplify",
+          "tag": "input",
+          "role": null,
+          "type": "number",
+          "min": "2",
+          "max": "200",
+          "step": "1",
+          "value": "72"
+        },
+        {
+          "label": "Find factor",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Use 36",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Use 9",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Use 4",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "lessonField": "data.lesson",
+      "lessonMotionFields": [
+        "data.lesson.phase",
+        "data.lesson.motion.from",
+        "data.lesson.motion.to",
+        "data.lesson.motion.durationMs"
+      ],
+      "previewRule": "animated:true plays native teaching phases. Static previews show motion.from. phase chooses one native working stage. Watch storedDur must accommodate motion and reading time.",
+      "numericDomain": "Integer radicands 2–200, exact surd extraction using the largest square factor, square-free residual and properly rendered root notation.",
+      "changes": "Custom exact radicand/stages; existing surd drawing and native mathematical typesetting retained.",
+      "evidence": "audit/f3-production-2026-10-16"
+    }
+  ]
+}

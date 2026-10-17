@@ -1,0 +1,833 @@
+[
+  {
+    "id": "F10-08",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-08-Graph-Intersections-PREMIUM-REVIEW.html",
+    "sourceSha256": "9abfe46b177a55ba85842196e972d29d3aa8d7efc54b37203565797f640a9f58",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            680,
+            605
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 1.5 10 2 2.5 3 3.5 4 5",
+          "before": "0 1 1.5 1.75 10 2 3 4"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Lesson preset Y8-029 · Simultaneous equations Y8-031 · Quadratic features Y8-033 · Graphical problem solving Y9-018 · Graphical modelling Y9-051 · Best-fit prediction Move graph B up or down 0 Reading marker · x 1.5 Same graph Touch once · tangent No crossings Restore Drag the teal reading marker al",
+          "after": "Lesson preset Y8-029 · Simultaneous equations Y8-031 · Quadratic features Y8-033 · Graphical problem solving Y9-018 · Graphical modelling Y9-051 · Best-fit prediction Move graph B up or down 0 Reading marker · x 1.5 Same graph Touch once · tangent No crossings Restore Drag the teal reading marker al",
+          "bi": [
+            "Y8-031",
+            "0",
+            "1.5"
+          ],
+          "ai": [
+            "Y8-031",
+            "0",
+            "1.5"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 1.5 1.75 10 2 3 4",
+            1
+          ],
+          "narrow": [
+            "0 10 2 4",
+            1
+          ],
+          "back": [
+            "0 1 1.5 1.75 10 2 3 4",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            680,
+            605
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 5",
+          "before": "0 1 10 2 3 4 5"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "The two straight lines meet at one point. Enter its x and y coordinates. x coordinate y coordinate CheckHint",
+          "after": "The two straight lines meet at one point. Enter its x and y coordinates. x coordinate y coordinate CheckHint",
+          "bi": [
+            "7",
+            "7"
+          ],
+          "ai": [
+            "7",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 4 5",
+            0
+          ],
+          "narrow": [
+            "0 1 10 2 4 5",
+            0
+          ],
+          "back": [
+            "0 1 10 2 3 4 5",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y8-029, Y8-031, Y8-033, Y9-018, Y9-051"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y8-029",
+            "A": [
+              0,
+              1
+            ]
+          },
+          "errors": [
+            "A must be three coefficients from −10 to 10"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 680,
+            "median": 23,
+            "p10": 23,
+            "count": 19,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 605,
+            "median": 11,
+            "p10": 11,
+            "count": 11,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 605,
+            "median": 11,
+            "p10": 11,
+            "count": 11,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 605,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 605,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 605,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 605,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 605,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTION\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nG\nR\nA\nP\nH\nA\nG\nR\nA\nP\nH\nB\nR\nE\nA\nD\n",
+          "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTION\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nG\nR\nA\nP\nH\nA\nG\nR\nA\nP\nH\nB\nR\nE\nA\nD\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "GRAPH A"
+          ],
+          "text": "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTION\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nG\nR\nA\nP\nH\nA\nG\nR\nA\nP\nH\nB\nR\nE\nA\nD\nB\nO\nT\nH\nA\nX\nE\nS\nTWO RELATIONSHIPS\nA · FIRST GRAPH\ny = x + 1\nB · SECOND GRAPH\ny = −x + 5\nTHE INTERSECTION\nFIND THEIR MEETING POINT\nCOMMON COORDINATES\nRead the gr"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "2, 3",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "GRAPH A"
+          ],
+          "text": "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTION\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nG\nR\nA\nP\nH\nA\nG\nR\nA\nP\nH\nB\nR\nE\nA\nD\nB\nO\nT\nH\nA\nX\nE\nS\nTWO RELATIONSHIPS\nA · FIRST GRAPH\ny = 2x + 1\nB · SECOND GRAPH\ny = −x + 4\nTHE INTERSECTION\nFIND THEIR MEETING POINT\nCOMMON COORDINATES\nRead the g"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "1, 3",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTION\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n0\nx\ny\nG\nR\nA\nP\nH\nA\nG\nR\nA\nP\nH\nB\nR\nE\nA\nD\nB\nO\nT\nH\nA\nX\nE\nS\nTWO RELATIONSHIPS\nA · FIRST GRAPH\ny = x + 1\n"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTIO",
+            "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTIO",
+            "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTIO",
+            "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTIO",
+            "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTIO",
+            "F10 · GRAPH INTERSECTION STUDIO\nCHALLENGE · FIND THE SOLUTIO"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · GRAPH INTERSECTION STUDIOCHALLENGE · FIND THE SOLUTION\n−4\n−2\n2\n4\n−4\n−2\n2\n4",
+          "F10 · GRAPH INTERSECTION STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nG\nR\nA",
+          "F10 · GRAPH INTERSECTION STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nG\nR\nA",
+          "F10 · GRAPH INTERSECTION STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nG\nR\nA"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · GRAPH INTERSECTION STUDIOCHALLENGE · FIND THE SOLUTION\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nG\nR\nA\nP\nH\nA\nG\nR\nA\nP\nH\nB\nR\nE\nA\nD\nB\nO\nT\nH\nA\nX\nE\nS\nTWO RELATIONSHIPS\nA · FIRST GRAPHy = x + 1\nB · SECOND GRAPHy = −x"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · GRAPH INTERSECTION STUDIOCHALLENGE · FIND THE SOLUTION\n−4\n−2\n2\n4\n−4\n−2\n2\n4",
+          "F10 · GRAPH INTERSECTION STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nG\nR\nA",
+          "F10 · GRAPH INTERSECTION STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nG\nR\nA",
+          "F10 · GRAPH INTERSECTION STUDIONOVA · NEON CHALK\n−4\n−2\n2\n4\n−4\n−2\n2\n4\n0\nx\ny\nG\nR\nA"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Move the reading marker horizontally to inspect graphs/",
+          "active": "",
+          "panel": "Lesson preset Y8-029 · Simultaneous equations Y8-031 · Quadratic features Y8-033 · Graphical problem solving Y9-018 · Graphical modelling Y9-051 · Best-fit prediction Move graph B up or down 0 Reading marker · x 1.5 No solution · parallel Same graph Restore Drag the teal reading marker along graph A, use arrow keys, or use the x slider. The second graph can move without changing its mathematical shape. Escape cancels a drag. MATCH THE EQUATION TO THE GRAPH ORANGE A · y = x + 1 GREEN B · y = −x + 5 ORANGE GRAPH A · DROP HERE GREEN GRAPH B · DROP HERE ↶ RED RETURN TRAY · REMOVE / RETRY Select an equation, then drop it onto the orange or green graph target.",
+          "inputs": [
+            "Y8-029",
+            "0",
+            "1.5"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 1.5 10 2 2.5 3 3.5 4 5",
+          "buttons": 1,
+          "vb": 680,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Move the reading marker horizontally to inspect graphs/",
+          "active": "",
+          "panel": "Lesson preset Y8-029 · Simultaneous equations Y8-031 · Quadratic features Y8-033 · Graphical problem solving Y9-018 · Graphical modelling Y9-051 · Best-fit prediction Move graph B up or down 0 Reading marker · x 1.5 Same graph Touch once · tangent No crossings Restore Drag the teal reading marker along graph A, use arrow keys, or use the x slider. The second graph can move without changing its mathematical shape. Escape cancels a drag. MATCH THE EQUATION TO THE GRAPH ORANGE A · y = x² − 4 GREEN B · y = 0 ORANGE GRAPH A · DROP HERE GREEN GRAPH B · DROP HERE ↶ RED RETURN TRAY · REMOVE / RETRY Select an equation, then drop it onto the orange or green graph target.",
+          "inputs": [
+            "Y8-031",
+            "0",
+            "1.5"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 1.5 1.75 10 2 3 4",
+          "buttons": 1,
+          "vb": 680,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Move the reading marker horizontally to inspect graphs/",
+          "active": "",
+          "panel": "Lesson preset Y8-029 · Simultaneous equations Y8-031 · Quadratic features Y8-033 · Graphical problem solving Y9-018 · Graphical modelling Y9-051 · Best-fit prediction Move graph B up or down 0 Reading marker · x 1.5 Same graph Touch once · tangent No crossings Restore Drag the teal reading marker along graph A, use arrow keys, or use the x slider. The second graph can move without changing its mathematical shape. Escape cancels a drag. MATCH THE EQUATION TO THE GRAPH ORANGE A · y = x² − 4 GREEN B · y = 0 ORANGE GRAPH A · DROP HERE GREEN GRAPH B · DROP HERE ↶ RED RETURN TRAY · REMOVE / RETRY Select an equation, then drop it onto the orange or green graph target.",
+          "inputs": [
+            "Y8-031",
+            "0",
+            "1.5"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 4",
+          "buttons": 1,
+          "vb": 605,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "The two straight lines meet at one point. Enter its x and y coordinates. x coordinate y coordinate CheckHint",
+          "inputs": [
+            "",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5",
+          "buttons": 0,
+          "vb": 680,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "The two straight lines meet at one point. Enter its x and y coordinates. x coordinate y coordinate CheckHint",
+          "inputs": [
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5",
+          "buttons": 0,
+          "vb": 680,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "The two straight lines meet at one point. Enter its x and y coordinates. x coordinate y coordinate CheckHint",
+          "inputs": [
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 4 5",
+          "buttons": 0,
+          "vb": 605,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 680,
+        "median": 23,
+        "p10": 23,
+        "count": 19,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 605,
+        "median": 11,
+        "p10": 11,
+        "count": 11,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 605,
+        "median": 11,
+        "p10": 11,
+        "count": 11,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

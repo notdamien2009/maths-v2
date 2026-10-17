@@ -1,0 +1,481 @@
+[
+  {
+    "id": "F16-02",
+    "checks": [
+      {
+        "name": "trusted touch drag runs without exception",
+        "pass": true
+      },
+      {
+        "name": "touch drag produces native state/event update",
+        "pass": true
+      }
+    ],
+    "points": {
+      "start": {
+        "x": 109.3203239440918,
+        "y": 980.9053344726562
+      },
+      "end": {
+        "x": 109.32032012939453,
+        "y": 893.7944946289062
+      }
+    },
+    "started": true,
+    "dragged": {
+      "active": true,
+      "moved": true,
+      "captured": true
+    },
+    "trace": [
+      {
+        "type": "pointerdown",
+        "target": "rect",
+        "active": false,
+        "x": 109.32032775878906,
+        "y": 980.9053344726562
+      },
+      {
+        "type": "gotpointercapture",
+        "target": "g",
+        "active": true,
+        "x": 109.32032012939453,
+        "y": 970.0164794921875
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 109.32032012939453,
+        "y": 970.0164794921875
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 109.32032012939453,
+        "y": 959.1276245117188
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 109.32032012939453,
+        "y": 948.23876953125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 109.32032012939453,
+        "y": 937.3499145507812
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 109.32032012939453,
+        "y": 926.4610595703125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 109.32032012939453,
+        "y": 915.5722045898438
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 109.32032012939453,
+        "y": 904.683349609375
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 109.32032012939453,
+        "y": 893.7944946289062
+      },
+      {
+        "type": "pointerup",
+        "target": "g",
+        "active": false,
+        "x": 109.32032012939453,
+        "y": 893.7944946289062
+      },
+      {
+        "type": "lostpointercapture",
+        "active": false,
+        "x": 109.32032012939453,
+        "y": 893.7944946289062
+      }
+    ],
+    "events": [
+      {
+        "type": "value",
+        "time": 1792233423330,
+        "detail": {
+          "engine": "F16-02",
+          "key": "bar:0",
+          "control": "bar:0",
+          "value": 10
+        }
+      }
+    ]
+  },
+  {
+    "id": "F17-08",
+    "checks": [
+      {
+        "name": "trusted touch drag runs without exception",
+        "pass": true
+      },
+      {
+        "name": "touch drag produces native state/event update",
+        "pass": true
+      },
+      {
+        "name": "touch alternative places an outcome",
+        "pass": true
+      }
+    ],
+    "points": {
+      "start": {
+        "x": 60.60113334655762,
+        "y": 500.07362365722656
+      },
+      "end": {
+        "x": 115.00067138671875,
+        "y": 220.0759735107422
+      }
+    },
+    "started": true,
+    "dragged": {
+      "active": true,
+      "moved": true,
+      "captured": true
+    },
+    "trace": [
+      {
+        "type": "pointerdown",
+        "target": "rect",
+        "active": false,
+        "x": 60.60113525390625,
+        "y": 500.0736083984375
+      },
+      {
+        "type": "gotpointercapture",
+        "target": "g",
+        "active": true,
+        "x": 67.40107727050781,
+        "y": 465.07391357421875
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 67.40107727050781,
+        "y": 465.07391357421875
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 74.20101928710938,
+        "y": 430.07421875
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 81.00096130371094,
+        "y": 395.0744934082031
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 87.8009033203125,
+        "y": 360.0747985839844
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 94.60084533691406,
+        "y": 325.0751037597656
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 101.40078735351562,
+        "y": 290.07537841796875
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 108.20072937011719,
+        "y": 255.07568359375
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 115.00067138671875,
+        "y": 220.0759735107422
+      },
+      {
+        "type": "pointerup",
+        "target": "g",
+        "active": false,
+        "x": 115.00067138671875,
+        "y": 220.0759735107422
+      },
+      {
+        "type": "lostpointercapture",
+        "active": false,
+        "x": 115.00067138671875,
+        "y": 220.0759735107422
+      },
+      {
+        "type": "scroll",
+        "active": false
+      },
+      {
+        "type": "pointerdown",
+        "target": "BUTTON",
+        "active": false,
+        "x": 91.79000091552734,
+        "y": 786.1799926757812
+      },
+      {
+        "type": "gotpointercapture",
+        "target": "BUTTON",
+        "active": false,
+        "x": 91.79000091552734,
+        "y": 786.1799926757812
+      },
+      {
+        "type": "pointerup",
+        "target": "BUTTON",
+        "active": false,
+        "x": 91.79000091552734,
+        "y": 786.1799926757812
+      },
+      {
+        "type": "lostpointercapture",
+        "target": "BUTTON",
+        "active": false,
+        "x": 91.79000091552734,
+        "y": 786.1799926757812
+      }
+    ],
+    "events": [
+      {
+        "type": "value",
+        "time": 1792233425503,
+        "detail": {
+          "engine": "F17-08",
+          "key": "placedCount",
+          "value": 1
+        }
+      },
+      {
+        "type": "value",
+        "time": 1792233425503,
+        "detail": {
+          "engine": "F17-08",
+          "key": "correctCount",
+          "value": 1
+        }
+      },
+      {
+        "type": "value",
+        "time": 1792233425503,
+        "detail": {
+          "engine": "F17-08",
+          "key": "eventProbability",
+          "value": 0.75
+        }
+      },
+      {
+        "type": "value",
+        "time": 1792233426054,
+        "detail": {
+          "engine": "F17-08",
+          "key": "outcome",
+          "value": 1
+        }
+      },
+      {
+        "type": "value",
+        "time": 1792233426054,
+        "detail": {
+          "engine": "F17-08",
+          "key": "region",
+          "value": "a"
+        }
+      },
+      {
+        "type": "value",
+        "time": 1792233426058,
+        "detail": {
+          "engine": "F17-08",
+          "key": "placedCount",
+          "value": 1
+        }
+      },
+      {
+        "type": "value",
+        "time": 1792233426058,
+        "detail": {
+          "engine": "F17-08",
+          "key": "correctCount",
+          "value": 1
+        }
+      },
+      {
+        "type": "value",
+        "time": 1792233426058,
+        "detail": {
+          "engine": "F17-08",
+          "key": "eventProbability",
+          "value": 0.75
+        }
+      }
+    ]
+  },
+  {
+    "id": "F18-01",
+    "checks": [
+      {
+        "name": "trusted touch drag runs without exception",
+        "pass": true
+      },
+      {
+        "name": "touch drag produces native state/event update",
+        "pass": true
+      }
+    ],
+    "points": {
+      "start": {
+        "x": 235.06080627441406,
+        "y": 500.2939453125
+      },
+      "end": {
+        "x": 280.06080627441406,
+        "y": 500.2939453125
+      }
+    },
+    "started": true,
+    "dragged": {
+      "active": true,
+      "moved": true,
+      "captured": true
+    },
+    "trace": [
+      {
+        "type": "scroll",
+        "active": false
+      },
+      {
+        "type": "pointerdown",
+        "target": "rect",
+        "active": false,
+        "x": 235.06080627441406,
+        "y": 500.2939453125
+      },
+      {
+        "type": "gotpointercapture",
+        "target": "g",
+        "active": true,
+        "x": 240.68580627441406,
+        "y": 500.2939453125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 240.68580627441406,
+        "y": 500.2939453125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 246.31080627441406,
+        "y": 500.2939453125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 251.93580627441406,
+        "y": 500.2939453125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 257.560791015625,
+        "y": 500.2939453125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 263.185791015625,
+        "y": 500.2939453125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 268.810791015625,
+        "y": 500.2939453125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 274.435791015625,
+        "y": 500.2939453125
+      },
+      {
+        "type": "pointermove",
+        "target": "g",
+        "active": true,
+        "x": 280.060791015625,
+        "y": 500.2939453125
+      },
+      {
+        "type": "pointerup",
+        "target": "g",
+        "active": false,
+        "x": 280.060791015625,
+        "y": 500.2939453125
+      },
+      {
+        "type": "lostpointercapture",
+        "active": false,
+        "x": 280.060791015625,
+        "y": 500.2939453125
+      }
+    ],
+    "events": [
+      {
+        "type": "value",
+        "time": 1792233429009,
+        "detail": {
+          "engine": "F18-01",
+          "control": "rulerReading",
+          "value": 8.2
+        }
+      }
+    ]
+  }
+]

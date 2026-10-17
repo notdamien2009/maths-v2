@@ -1,0 +1,2168 @@
+[
+  {
+    "id": "F3-01",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Resize array with arrows or drag the corner. Left/right changes columns; up/down changes rows",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Rows",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "3",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          },
+          {
+            "value": "9",
+            "label": "9"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          },
+          {
+            "value": "11",
+            "label": "11"
+          },
+          {
+            "value": "12",
+            "label": "12"
+          }
+        ]
+      },
+      {
+        "label": "Columns",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "4",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          },
+          {
+            "value": "9",
+            "label": "9"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          },
+          {
+            "value": "11",
+            "label": "11"
+          },
+          {
+            "value": "12",
+            "label": "12"
+          }
+        ]
+      },
+      {
+        "label": "Cell view",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "tile",
+        "options": [
+          {
+            "value": "tile",
+            "label": "Glass tiles"
+          },
+          {
+            "value": "dot",
+            "label": "Neon dots"
+          }
+        ]
+      },
+      {
+        "label": "Array",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Turn",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Split",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Prime tree",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"01 Array builder · Premium Edition\":\n  - heading \"01 Array builder · Premium Edition\" [level=2]\n  - heading \"Interactive maths workshop\" [level=3]\n  - tablist \"Array builder modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Mathematical equipment Array builder\n  - img \"Factor tree for 12 ending in prime factors 2, 2, 3\": Keep splitting until the leaves are prime 2 2 3 6 12 12 = 2 × 2 × 3\n  - text: ARRAY PRODUCT 3 × 4\n  - math \"12\"\n  - text: PRIME LEAVES 2 × 2 × 3 NOTICE The final prime leaves multiply to rebuild the original product. The final prime leaves are two, two and three. Multiplying them rebuilds twelve.\n  - img \"The final prime leaves are two, two and three. Multiplying them rebuilds twelve. (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\":\n    - img \"Sir Bob Maximus, maths tutor\"\n  - text: Sir Bob Maximus · watch Collect the prime leaves. Two times two times three rebuilds twelve. Every prime leaf was needed, and the product is unchanged.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · collect\n    - slider \"Scrub through steps\": \"5\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-02",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Move the vertical partition between the side lengths",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Move the horizontal partition between the side lengths",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Area model preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-009-whole-decimal-multiplication",
+        "options": [
+          {
+            "value": "Y7-009-whole-decimal-multiplication",
+            "label": "Whole number multiplication"
+          },
+          {
+            "value": "Y7-022-fraction-add-subtract",
+            "label": "Fraction addition / subtraction"
+          },
+          {
+            "value": "Y7-023-multiplying-fractions",
+            "label": "Fraction of a fraction"
+          },
+          {
+            "value": "Y7-031-single-brackets",
+            "label": "Expanding a single bracket"
+          },
+          {
+            "value": "Y7-032-factorising-common-factor",
+            "label": "Factorising common terms"
+          },
+          {
+            "value": "Y8-005-mixed-number-fractions",
+            "label": "Mixed-number addition / subtraction"
+          },
+          {
+            "value": "Y8-011-double-brackets",
+            "label": "Expanding double brackets"
+          },
+          {
+            "value": "Y9-006-algebraic-equivalence",
+            "label": "Equivalent algebraic expressions"
+          },
+          {
+            "value": "F5-03-area-model-fractions",
+            "label": "F5-03 · Fractions area preset"
+          },
+          {
+            "value": "F7-04-expanding-single-brackets",
+            "label": "F7-04 · Distribute 3 across x + 2"
+          },
+          {
+            "value": "F7-04-two-times",
+            "label": "Two lots: 2(x + 3)"
+          },
+          {
+            "value": "F7-04-four-times",
+            "label": "Four lots: 4(x + 5)"
+          },
+          {
+            "value": "F7-04-five-times",
+            "label": "Five lots: 5(x + 1)"
+          },
+          {
+            "value": "F7-05-expanding-double-brackets",
+            "label": "F7-05 · (x + 3)(x + 2)"
+          },
+          {
+            "value": "F7-05-Y8-011",
+            "label": "Y8 · (x + 2)(x + 4)"
+          },
+          {
+            "value": "F7-05-Y9-006",
+            "label": "Y9 · (x − 3)(x + 2)"
+          },
+          {
+            "value": "F7-05-Y9-008",
+            "label": "Y9 · (x − 2)(x − 4)"
+          },
+          {
+            "value": "decimal-tenths",
+            "label": "Decimal tenths"
+          }
+        ]
+      },
+      {
+        "label": "Width part A",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "99.9",
+        "step": "1",
+        "value": "20"
+      },
+      {
+        "label": "Width part B",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "99.9",
+        "step": "1",
+        "value": "3"
+      },
+      {
+        "label": "Height part A",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "99.9",
+        "step": "1",
+        "value": "10"
+      },
+      {
+        "label": "Height part B",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "99.9",
+        "step": "1",
+        "value": "4"
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"02 Area model of multiplication · Premium Edition\":\n  - heading \"02 Area model of multiplication · Premium Edition\" [level=2]\n  - heading \"Interactive maths workshop\" [level=3]\n  - tablist \"Area model of multiplication modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Area evidence Multiply by splitting the rectangle\n  - 'img \"Area model: 23 × 14; mathematical area evidence shown by neon rectangles and chalk labels.\"': 200 30 80 12 20 3 10 4 Each region is counted exactly once.\n  - text: THE WHOLE PRODUCT\n  - math \"23 × 14\"\n  - math \"322\"\n  - text: PARTS REBUILD THE WHOLE\n  - math \"200 plus 30 plus 80 plus 12 equals 322\": 200 + 30 + 80 + 12 = 322\n  - text: WHY THIS WORKS\n  - paragraph: Each part is the product of one horizontal and one vertical section.\n  - text: The distributive law guarantees that the parts have the same total as the original product.\n  - img \"The distributive law guarantees that the parts have the same total as the original product. (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\":\n    - img \"Sir Bob Maximus, maths tutor\"\n  - text: Sir Bob Maximus · watch Two hundred plus thirty plus eighty plus twelve is three hundred and twenty-two. So twenty-three times fourteen is three hundred and twenty-two.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 8 of 8 · total\n    - slider \"Scrub through steps\": \"7\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-03",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Grid preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-009-whole",
+        "options": [
+          {
+            "value": "Y7-009-whole",
+            "label": "Year 7 · whole numbers"
+          },
+          {
+            "value": "Y7-009-decimals",
+            "label": "Year 7 · tenths"
+          },
+          {
+            "value": "Y7-009-large",
+            "label": "Year 7 · larger factors"
+          },
+          {
+            "value": "Y7-009-decimal-and-whole",
+            "label": "Year 7 · decimal × whole"
+          }
+        ]
+      },
+      {
+        "label": "First factor",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "99.9",
+        "step": "1",
+        "value": "23"
+      },
+      {
+        "label": "Second factor",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "99.9",
+        "step": "1",
+        "value": "14"
+      },
+      {
+        "label": "Top left",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "23",
+        "step": "1",
+        "value": "20"
+      },
+      {
+        "label": "Top right",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "23",
+        "step": "1",
+        "value": "3"
+      },
+      {
+        "label": "Side top",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "14",
+        "step": "1",
+        "value": "10"
+      },
+      {
+        "label": "Side bottom",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "0.1",
+        "max": "14",
+        "step": "1",
+        "value": "4"
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"03 Partitioned grid method · Premium Review\":\n  - heading \"03 Partitioned grid method · Premium Review\" [level=2]\n  - heading \"Interactive mathematics\" [level=3]\n  - tablist \"Partitioned grid method modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: \"Grid method Add the products: row sums, then total\"\n  - 'group \"NOVA partitioned multiplication grid: two number partitions along the top and left, four partial product cells, row sums and final whole total.\"':\n    - text: ×\n    - 'button \"first top header: 20\"': \"20\"\n    - 'button \"second top header: 3\"': \"3\"\n    - 'button \"top left header: 10\"': \"10\"\n    - 'button \"bottom left header: 4\"': \"4\"\n    - 'button \"top-left product: 200\"': \"200\"\n    - 'button \"top-right product: 30\"': \"30\"\n    - 'button \"bottom-left product: 80\"': \"80\"\n    - 'button \"bottom-right product: 12\"': \"12\"\n    - text: Σ 230 92 Total 322\n  - complementary:\n    - text: FACTORS\n    - paragraph: 23 × 14\n    - text: REBUILD THE PRODUCT\n    - math \"322\"\n    - text: MATHEMATICAL EVIDENCE\n    - paragraph: \"The four products: 200 + 30 + 80 + 12 = 322\"\n  - text: Add the two row sums, two hundred and thirty and ninety-two. We have proved three hundred and twenty-two.\n  - img \"Add the two row sums, two hundred and thirty and ninety-two. We have proved three hundred and twenty-two. (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\":\n    - img \"Sir Bob Maximus, mathematics tutor\"\n  - text: Sir Bob Maximus · watch Two hundred and thirty plus ninety-two equals three hundred and twenty-two. The grid method accounts for every partial product.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 8 of 8 · total\n    - slider \"Scrub through steps\": \"7\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-04",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Factor-pair preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-013-factors",
+        "options": [
+          {
+            "value": "Y7-013-factors",
+            "label": "Factors and multiples · 24"
+          },
+          {
+            "value": "Y7-013-square",
+            "label": "Square number · 36"
+          },
+          {
+            "value": "Y7-013-small",
+            "label": "Factor pairs · 12"
+          },
+          {
+            "value": "Y7-014-prime",
+            "label": "Prime number · 13"
+          },
+          {
+            "value": "Y7-014-composite",
+            "label": "Composite number · 21"
+          }
+        ]
+      },
+      {
+        "label": "Target number",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "36",
+        "step": "1",
+        "value": "24"
+      },
+      {
+        "label": "Candidate to test",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "2",
+        "options": [
+          {
+            "value": "1",
+            "label": "Try 1"
+          },
+          {
+            "value": "2",
+            "label": "Try 2"
+          },
+          {
+            "value": "3",
+            "label": "Try 3"
+          },
+          {
+            "value": "4",
+            "label": "Try 4"
+          }
+        ]
+      },
+      {
+        "label": "Proposed factor partner",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "12",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          },
+          {
+            "value": "9",
+            "label": "9"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          },
+          {
+            "value": "11",
+            "label": "11"
+          },
+          {
+            "value": "12",
+            "label": "12"
+          },
+          {
+            "value": "13",
+            "label": "13"
+          },
+          {
+            "value": "14",
+            "label": "14"
+          },
+          {
+            "value": "15",
+            "label": "15"
+          },
+          {
+            "value": "16",
+            "label": "16"
+          },
+          {
+            "value": "17",
+            "label": "17"
+          },
+          {
+            "value": "18",
+            "label": "18"
+          },
+          {
+            "value": "19",
+            "label": "19"
+          },
+          {
+            "value": "20",
+            "label": "20"
+          },
+          {
+            "value": "21",
+            "label": "21"
+          },
+          {
+            "value": "22",
+            "label": "22"
+          },
+          {
+            "value": "23",
+            "label": "23"
+          },
+          {
+            "value": "24",
+            "label": "24"
+          }
+        ]
+      },
+      {
+        "label": "Connect pair",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "No exact partner",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Show complete factor proof",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"04 Factor-pair rainbow · Premium Review\":\n  - heading \"04 Factor-pair rainbow · Premium Review\" [level=2]\n  - heading \"Interactive mathematics\" [level=3]\n  - tablist \"Factor-pair rainbow modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Factor-pair rainbow Complete factor proof\n  - img \"NOVA factor-pair rainbow showing the number line from 0 to 24, factor-pair arches, and the square-root stopping point.\": \"Join factors in pairs 24 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 1 × 24 2 × 12 3 × 8 4 × 6 √24 ≈ 4.9 Factors: 1, 2, 3, 4, 6, 8, 12, 24\"\n  - complementary:\n    - text: TARGET NUMBER\n    - paragraph: \"24\"\n    - text: EXACT FACTOR PAIRS\n    - paragraph: 1 × 24 · 2 × 12 · 3 × 8 · 4 × 6\n    - text: MATHEMATICAL TEST\n    - paragraph: Test candidates only through 4. Larger factor partners have already appeared.\n    - paragraph: \"Factors divide 24 exactly. Multiples grow: 24, 48, 72.\"\n  - text: All the arches are here. Read each endpoint once to collect every factor.\n  - img \"All the arches are here. Read each endpoint once to collect every factor. (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\":\n    - img \"Sir Bob Maximus, mathematics tutor\"\n  - text: Sir Bob Maximus · watch The factors of twenty-four are one, two, three, four, six, eight, twelve and twenty-four. They divide exactly. Multiples of twenty-four begin twenty-four, forty-eight and seventy-two.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 8 of 8 · proof\n    - slider \"Scrub through steps\": \"7\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-05",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 22,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Curriculum preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-014-sieve",
+        "options": [
+          {
+            "value": "Y7-014-sieve",
+            "label": "Y7 · Prime numbers to 100"
+          },
+          {
+            "value": "Y7-014-early",
+            "label": "Y7 · Prime numbers to 30"
+          },
+          {
+            "value": "Y7-015-tree60",
+            "label": "Y7 · Prime factorisation: 60"
+          },
+          {
+            "value": "Y7-015-tree90",
+            "label": "Y7 · Prime factorisation: 90"
+          },
+          {
+            "value": "Y8-004-tree84",
+            "label": "Y8 · Prime factors: 84"
+          }
+        ]
+      },
+      {
+        "label": "Representation",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "sieve",
+        "options": [
+          {
+            "value": "sieve",
+            "label": "Prime sieve"
+          },
+          {
+            "value": "tree",
+            "label": "Factor tree"
+          }
+        ]
+      },
+      {
+        "label": "Prime to sweep",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "2",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          }
+        ]
+      },
+      {
+        "label": "Sweep multiples",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Undo sweep",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"05 Prime sieve and factor tree · Premium Review\":\n  - heading \"05 Prime sieve and factor tree · Premium Review\" [level=2]\n  - heading \"Live demo · F3-05\" [level=3]\n  - tablist \"Prime sieve & factor tree modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Factor tree Collect prime factors\n  - img \"A branching prime factor tree with neon connecting tubes and prime leaves highlighted green.\":\n    - text: 60 · factor tree\n    - group \"60 composite\": \"60\"\n    - group \"6 composite\": \"6\"\n    - group \"2 prime\": \"2\"\n    - group \"3 prime\": \"3\"\n    - group \"10 composite\": \"10\"\n    - group \"2 prime\": \"2\"\n    - group \"5 prime\": \"5\"\n    - text: Prime leaves 2 × 2 × 3 × 5 Remove / undo\n    - group \"Drag factor 2 to a composite node\": \"2\"\n    - group \"Drag factor 3 to a composite node\": \"3\"\n    - group \"Drag factor 4 to a composite node\": \"4\"\n    - group \"Drag factor 5 to a composite node\": \"5\"\n    - group \"Drag factor 6 to a composite node\": \"6\"\n    - group \"Drag factor 7 to a composite node\": \"7\"\n    - group \"Drag factor 10 to a composite node\": \"10\"\n  - complementary:\n    - text: SPLIT RULE\n    - paragraph: Exact products\n    - text: PRIME LEAVES\n    - paragraph: \"4\"\n    - text: MATHEMATICAL CHECK\n    - paragraph: Every split must multiply back to its parent. Every final leaf must be prime.\n  - text: All prime!\n  - img \"All prime! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\":\n    - img \"Sir Bob Maximus, mathematics tutor\"\n  - text: Sir Bob Maximus · watch The prime factorisation of sixty is two times two times three times five, or two squared times three times five. Multiplying the leaves must recover the starting number.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 10 of 10 · Collect prime factors\n    - slider \"Scrub through steps\": \"9\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-06",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Curriculum preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-015-60",
+        "options": [
+          {
+            "value": "Y7-015-60",
+            "label": "Year 7 · Prime decomposition of 60"
+          },
+          {
+            "value": "Y7-015-90",
+            "label": "Year 7 · Prime decomposition of 90"
+          },
+          {
+            "value": "Y7-016-180",
+            "label": "Year 7 · HCF/LCM preparation: 180"
+          },
+          {
+            "value": "Y8-004-84",
+            "label": "Year 8 · Prime decomposition of 84"
+          },
+          {
+            "value": "Y8-004-420",
+            "label": "Year 8 · Extended number: 420"
+          }
+        ]
+      },
+      {
+        "label": "Starting whole number",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "420",
+        "step": "1",
+        "value": "60"
+      },
+      {
+        "label": "Prime divisor",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "2",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          },
+          {
+            "value": "11",
+            "label": "11"
+          },
+          {
+            "value": "13",
+            "label": "13"
+          },
+          {
+            "value": "17",
+            "label": "17"
+          },
+          {
+            "value": "19",
+            "label": "19"
+          }
+        ]
+      },
+      {
+        "label": "Add rung",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Undo last",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"06 Prime factor ladder · Premium Review\":\n  - heading \"06 Prime factor ladder · Premium Review\" [level=2]\n  - heading \"Live demo · F3-06\" [level=3]\n  - tablist \"Prime factor ladder modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Prime factor ladder Write index form\n  - img \"Division ladder for 60. Prime divisors on the left and successive quotients on the right, followed by their product in index form.\":\n    - text: 60 Prime Quotient\n    - group \"Prime 2, quotient 30\": 2 30\n    - group \"Prime 2, quotient 15\": 2 15\n    - group \"Prime 3, quotient 5\": 3 5\n    - group \"Prime 5, quotient 1\": 5 1\n    - text: 2 2 × 3 × 5\n  - complementary:\n    - text: NEXT QUOTIENT\n    - paragraph: \"1\"\n    - text: PRIMES COLLECTED\n    - paragraph: 2 × 2 × 3 × 5\n    - text: THE CHECK\n    - paragraph: Every factor is prime and the product recreates 60.\n  - text: Spot the powers!\n  - img \"Spot the powers! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch Two appears twice, so write two squared. Three and five each appear once. Sixty equals two squared times three times five.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Write index form\n    - slider \"Scrub through steps\": \"6\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-07",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Curriculum preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-016",
+        "options": [
+          {
+            "value": "Y7-016",
+            "label": "Year 7 · HCF and LCM · 12 & 18"
+          },
+          {
+            "value": "Y7-032",
+            "label": "Year 7 · Common factor bridge · 20 & 30"
+          },
+          {
+            "value": "Y8-004",
+            "label": "Year 8 · Prime factors · 24 & 36"
+          },
+          {
+            "value": "Y8-012",
+            "label": "Year 8 · Factorising bridge · 18 & 30"
+          },
+          {
+            "value": "Extension-60",
+            "label": "Extension · 36 & 60"
+          }
+        ]
+      },
+      {
+        "label": "First number",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "420",
+        "step": null,
+        "value": "12"
+      },
+      {
+        "label": "Second number",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "420",
+        "step": null,
+        "value": "18"
+      },
+      {
+        "label": "Choose a prime factor card",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "a0",
+        "options": [
+          {
+            "value": "a0",
+            "label": "2 · from A"
+          },
+          {
+            "value": "a1",
+            "label": "2 · from A"
+          },
+          {
+            "value": "a2",
+            "label": "3 · from A"
+          },
+          {
+            "value": "b2",
+            "label": "3 · from B"
+          }
+        ]
+      },
+      {
+        "label": "Choose destination region",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "A",
+        "options": [
+          {
+            "value": "A",
+            "label": "A only"
+          },
+          {
+            "value": "AB",
+            "label": "Overlap"
+          },
+          {
+            "value": "B",
+            "label": "B only"
+          }
+        ]
+      },
+      {
+        "label": "Place card",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Undo last",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Show products",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"07 HCF and LCM Venn · Premium Review\":\n  - heading \"07 HCF and LCM Venn · Premium Review\" [level=2]\n  - heading \"Live demo · F3-07\" [level=3]\n  - tablist \"HCF and LCM Venn modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: HCF and LCM Venn Multiply every factor once\n  - img \"Two overlapping neon Venn circles for 12 and 18. Shared prime factors are in the middle. Highest common factor 6. Lowest common multiple 36.\":\n    - text: A · 12 B · 18 2 × 2 × 3 2 × 3 × 3 Shared\n    - group \"Prime 2 from A; A\": \"2\"\n    - group \"Prime 2 from A; AB\": \"2\"\n    - group \"Prime 3 from A; AB\": \"3\"\n    - group \"Prime 3 from B; B\": \"3\"\n    - text: Each prime is counted once HCF 6 LCM 36\n  - complementary:\n    - text: PRIME FACTORS\n    - paragraph: \"12: 2 × 2 × 3\"\n    - paragraph: \"18: 2 × 3 × 3\"\n    - text: HIGHEST COMMON FACTOR\n    - math \"2 × 3 equals 6\": 2 × 3 = 6\n    - text: LOWEST COMMON MULTIPLE\n    - math \"2 × 2 × 3 × 3 equals 36\": 2 × 2 × 3 × 3 = 36\n    - paragraph: The overlap is multiplied for HCF. The entire diagram is multiplied once for LCM.\n  - text: Count them all!\n  - img \"Count them all! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch For the lowest common multiple, multiply each factor in the whole Venn diagram once. Two times two times three times three gives thirty-six.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Multiply every factor once\n    - slider \"Scrub through steps\": \"5\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-08",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Curriculum preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-013",
+        "options": [
+          {
+            "value": "Y7-013",
+            "label": "Year 7 · Factors and multiples · 3 and 4"
+          },
+          {
+            "value": "Y7-016",
+            "label": "Year 7 · HCF and LCM · 6 and 8"
+          }
+        ]
+      },
+      {
+        "label": "Track A jump size",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "12",
+        "step": null,
+        "value": "3"
+      },
+      {
+        "label": "Track B jump size",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "12",
+        "step": null,
+        "value": "4"
+      },
+      {
+        "label": "Candidate landing value",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "1",
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Place marker",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Remove marker",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"08 Multiples Overlap Tracks · Premium Review\":\n  - heading \"08 Multiples Overlap Tracks · Premium Review\" [level=2]\n  - heading \"Live demo · F3-08\" [level=3]\n  - tablist \"Multiples Overlap Tracks modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Multiples Overlap Tracks Prove the lowest common multiple\n  - 'img \"Parallel NOVA number lines: jumps of 3 above, jumps of 4 below. Both lines have the same scale from 0 to 36. The lowest common multiple is 12.\"': Track A · +3 Track B · +4 Same distance between equal numbers 0 3 6 9 12 15 18 21 24 27 30 33 36 0 3 6 9 12 15 18 21 24 27 30 33 36 +3 +4 Shared landings 12 is first LCM(3, 4) = 12\n  - complementary:\n    - text: UPPER TRACK · MULTIPLES OF 3\n    - paragraph: 3 · 6 · 9 · 12 · 15 · 18 · 21 · 24 …\n    - text: LOWER TRACK · MULTIPLES OF 4\n    - paragraph: 4 · 8 · 12 · 16 · 20 · 24 · 28 · 32 …\n    - text: FIRST SHARED LANDING\n    - paragraph: \"12\"\n    - paragraph: \"Same scale on both tracks: vertical connections are matching numbers, never approximate positions.\"\n  - text: You found it!\n  - img \"You found it! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch The first meeting point is twelve. Three times four is twelve, and four times three is twelve. The lowest common multiple is twelve.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Prove the lowest common multiple\n    - slider \"Scrub through steps\": \"5\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-09",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Curriculum preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-017",
+        "options": [
+          {
+            "value": "Y7-017",
+            "label": "Year 7 · Squares, cubes and roots"
+          },
+          {
+            "value": "Y8-001",
+            "label": "Year 8 · Repeated multiplication"
+          },
+          {
+            "value": "Y9-002",
+            "label": "Year 9 · Powers and roots"
+          },
+          {
+            "value": "Y9-003",
+            "label": "Year 9 · Fractional indices"
+          }
+        ]
+      },
+      {
+        "label": "Side length",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "5",
+        "step": null,
+        "value": "3"
+      },
+      {
+        "label": "Square or cube",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "2",
+        "options": [
+          {
+            "value": "2",
+            "label": "Square: n²"
+          },
+          {
+            "value": "3",
+            "label": "Cube: n³"
+          }
+        ]
+      },
+      {
+        "label": "Add unit",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Fill row",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Fill layer",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Undo",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"09 Square and Cube Builders · Premium Review\":\n  - heading \"09 Square and Cube Builders · Premium Review\" [level=2]\n  - heading \"Live demo · F3-09\" [level=3]\n  - tablist \"Square and Cube Builders modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Square and Cube Builders Connect powers and roots\n  - img \"3 by 3 by 3 cube built from unit cubes. 27 of 27 units placed.\": Build a solid cube 3 across · 3 deep · 3 high Every unit is in place 3 layers 3 deep 3 3 = 27\n  - complementary:\n    - text: SIDE LENGTH\n    - paragraph: \"3\"\n    - paragraph: Each unit has edge length one.\n    - text: BUILT UNITS\n    - paragraph: 27 of 27\n    - paragraph: Count the tiles or cubes you can see.\n    - text: THE POWER\n    - paragraph: 3³\n    - paragraph: Volume = n × n × n\n    - text: INVERSE OPERATION\n    - paragraph: ∛27 = 3\n    - paragraph: Roots recover the side length.\n    - text: FRACTIONAL INDEX\n    - math \"27 to the power 1 over 3 equals 3\":\n      - text: \"27\"\n      - superscript: 1 3\n      - text: = 3\n    - paragraph: The cube root is the one-third power.\n  - math \"27 to the power 1 over 3 equals 3\":\n    - text: \"27\"\n    - superscript: 1 3\n    - text: = 3\n  - text: Cube root = power of one-third Count them all!\n  - img \"Count them all! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch Three cubed is twenty-seven. The cube root of twenty-seven is three, because three equal lengths build the cube.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Connect powers and roots\n    - slider \"Scrub through steps\": \"4\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-10",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Index law preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y8-002-MULTIPLY",
+        "options": [
+          {
+            "value": "Y8-001",
+            "label": "Repeated multiplication"
+          },
+          {
+            "value": "Y8-002-MULTIPLY",
+            "label": "Multiply powers"
+          },
+          {
+            "value": "Y8-002-DIVIDE",
+            "label": "Divide powers"
+          },
+          {
+            "value": "F8-13",
+            "label": "Algebraic index laws"
+          },
+          {
+            "value": "Y9-003",
+            "label": "Fractional indices"
+          }
+        ]
+      },
+      {
+        "label": "Base",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "2",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          }
+        ]
+      },
+      {
+        "label": "First index",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "1",
+        "max": "5",
+        "step": null,
+        "value": "3"
+      },
+      {
+        "label": "Second index",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "1",
+        "max": "5",
+        "step": null,
+        "value": "2"
+      },
+      {
+        "label": "Join strips",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Undo",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Hint",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"10 Index Law Animator · Premium Review\":\n  - heading \"10 Index Law Animator · Premium Review\" [level=2]\n  - heading \"Live demo · F3-10\" [level=3]\n  - tablist \"Index Law Animator modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Index Law Animator Apply the law\n  - 'img \"Index laws using multiply: expanded factors and raised indices show why the resulting power is correct.\"': Multiplying powers 2 3 × 2 2 2 2 2 2 2 3 factors 2 more 2 2 2 2 2 3 + 2 = 5 factors 2 to the power of 5\n  - complementary:\n    - text: MATHEMATICAL LAW\n    - paragraph: Add indices\n    - paragraph: \"Same base: collect all factors.\"\n    - text: EXPANDED FORM\n    - paragraph: 3 plus 2\n    - paragraph: Count the factors rather than guessing a rule.\n    - text: TARGET\n    - paragraph: 2^5\n    - paragraph: Match the visual evidence to the expression.\n  - text: You proved it!\n  - img \"You proved it! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch For multiplication with the same base, a to the power of m times a to the power of n is a to the power of m plus n. We have proved this by counting the factors.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Apply the law\n    - slider \"Scrub through steps\": \"4\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-11",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Side-length estimate",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "4",
+        "max": "8",
+        "step": null
+      },
+      {
+        "label": "Curriculum preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-017",
+        "options": [
+          {
+            "value": "Y7-017",
+            "label": "Y7 · Square and cube roots"
+          },
+          {
+            "value": "Y9-002",
+            "label": "Y9 · Exact and approximate roots"
+          },
+          {
+            "value": "Y9-003",
+            "label": "Y9 · Fractional indices and roots"
+          }
+        ]
+      },
+      {
+        "label": "Square or cube root",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "square",
+        "options": [
+          {
+            "value": "square",
+            "label": "Square root"
+          },
+          {
+            "value": "cube",
+            "label": "Cube root"
+          }
+        ]
+      },
+      {
+        "label": "Target area or volume",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "216",
+        "step": null,
+        "value": "36"
+      },
+      {
+        "label": "Keyboard accessible side estimate",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "4",
+        "max": "8",
+        "step": "0.1",
+        "value": "4.5"
+      },
+      {
+        "label": "− 0.1",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "+ 0.1",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Undo",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"11 Root Finder · Premium Review\":\n  - heading \"11 Root Finder · Premium Review\" [level=2]\n  - heading \"Live demo · F3-11\" [level=3]\n  - tablist \"Root Finder modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Root Finder Make a better estimate\n  - 'img \"Root finder: area 50, a changing square and a draggable side estimate on the NOVA number line.\"': Area = 50 square units side = 7.1 7.1 × 7.1 7.1² = 50.41 5 6 7 8 9 10 7.1 Drag the gold side marker\n  - complementary:\n    - text: KNOWN\n    - paragraph: 50 square units\n    - paragraph: The target stays fixed while the side changes.\n    - text: CURRENT SIDE\n    - paragraph: 7.1 units\n    - paragraph: 7.1 to the power of 2 gives 50.41.\n    - text: INFERENCE\n    - paragraph: Between 7 and 8\n    - paragraph: Increasing the side increases the area or volume.\n  - text: That fits!\n  - img \"That fits! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch Adjust the side to about seven point one. This gives an area close to fifty. The estimate is sensible because it lies between seven and eight.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Make a better estimate\n    - slider \"Scrub through steps\": \"4\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-12",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Curriculum preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-014",
+        "options": [
+          {
+            "value": "Y7-014",
+            "label": "Year 7 · Prime and composite numbers"
+          },
+          {
+            "value": "Y7-Digits",
+            "label": "Digit sum and final digits · 135"
+          },
+          {
+            "value": "Y7-All",
+            "label": "Multiple rules · 360"
+          },
+          {
+            "value": "Y7-Edge",
+            "label": "No basic tests pass · 437"
+          }
+        ]
+      },
+      {
+        "label": "Number to test",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "10",
+        "max": "9999",
+        "step": null,
+        "value": "234"
+      },
+      {
+        "label": "÷ 2",
+        "tag": "button",
+        "role": null,
+        "type": "button",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 3",
+        "tag": "button",
+        "role": null,
+        "type": "button",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 4",
+        "tag": "button",
+        "role": null,
+        "type": "button",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 5",
+        "tag": "button",
+        "role": null,
+        "type": "button",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 6",
+        "tag": "button",
+        "role": null,
+        "type": "button",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 9",
+        "tag": "button",
+        "role": null,
+        "type": "button",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 10",
+        "tag": "button",
+        "role": null,
+        "type": "button",
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Another number",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"12 Divisibility Explorer · Premium Review\":\n  - heading \"12 Divisibility Explorer · Premium Review\" [level=2]\n  - heading \"Live demo · F3-12\" [level=3]\n  - tablist \"Divisibility Explorer modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Divisibility Explorer Try a different rule\n  - img \"Divisibility test for 234; rule 4; digit sum 9; Look at the last two digits.\":\n    - text: 2 3 4 Last two digits = 34 34 is not a multiple of 4.\n    - group \"Rule 2\": ÷ 2\n    - group \"Rule 3\": ÷ 3\n    - group \"Rule 4\": ÷ 4\n    - group \"Rule 5\": ÷ 5\n    - group \"Rule 6\": ÷ 6\n    - group \"Rule 9\": ÷ 9\n    - group \"Rule 10\": ÷ 10\n    - text: 234 is not divisible by 4 Remainder 2 when divided by 4\n  - complementary:\n    - text: Rule 2\n    - paragraph: Test the digits\n    - paragraph: Choose this lens to investigate\n    - text: Rule 3\n    - paragraph: Test the digits\n    - paragraph: Choose this lens to investigate\n    - text: Rule 4\n    - paragraph: Look at the last two digits\n    - paragraph: Not divisible\n    - text: Rule 5\n    - paragraph: Test the digits\n    - paragraph: Choose this lens to investigate\n    - text: Rule 6\n    - paragraph: Test the digits\n    - paragraph: Choose this lens to investigate\n    - text: Rule 9\n    - paragraph: Test the digits\n    - paragraph: Choose this lens to investigate\n    - text: Rule 10\n    - paragraph: Test the digits\n    - paragraph: Choose this lens to investigate\n  - text: Test another!\n  - img \"Test another! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch Now test divisibility by four. The last two digits are thirty-four. Thirty-four is not a multiple of four, so the number does not divide exactly by four.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Try a different rule\n    - slider \"Scrub through steps\": \"4\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-13",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Choose preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-010-Share",
+        "options": [
+          {
+            "value": "Y7-010-Share",
+            "label": "Sharing · 20 ÷ 4"
+          },
+          {
+            "value": "Y7-010-Group",
+            "label": "Grouping · 24 ÷ 6"
+          },
+          {
+            "value": "Y7-010-Remain",
+            "label": "Remainder · 26 ÷ 4"
+          },
+          {
+            "value": "Y7-010-Decimal",
+            "label": "Tenths · 3.6 ÷ 4"
+          }
+        ]
+      },
+      {
+        "label": "Number of counters",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "36",
+        "step": null,
+        "value": "20"
+      },
+      {
+        "label": "Number of hoops or group size",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "6",
+        "step": null,
+        "value": "4"
+      },
+      {
+        "label": "Sharing or grouping",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "sharing",
+        "options": [
+          {
+            "value": "sharing",
+            "label": "Sharing"
+          },
+          {
+            "value": "grouping",
+            "label": "Grouping"
+          }
+        ]
+      },
+      {
+        "label": "Target hoop",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "hoop-0",
+        "options": [
+          {
+            "value": "hoop-0",
+            "label": "Hoop 1"
+          },
+          {
+            "value": "hoop-1",
+            "label": "Hoop 2"
+          },
+          {
+            "value": "hoop-2",
+            "label": "Hoop 3"
+          },
+          {
+            "value": "hoop-3",
+            "label": "Hoop 4"
+          }
+        ]
+      },
+      {
+        "label": "Deal one",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Undo",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Hint",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"13 Division Sharing and Grouping · Premium Review\":\n  - heading \"13 Division Sharing and Grouping · Premium Review\" [level=2]\n  - heading \"Live demo · F3-13\" [level=3]\n  - tablist \"Division Sharing and Grouping modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Division Sharing and Grouping Explain the division\n  - img \"Sharing 20 among 4 equal hoops\": \"20 ÷ 4 = 5 How many in each hoop? 1: 5 2: 5 3: 5 4: 5 Every counter allocated Remove Quotient 5 · Remainder 0\"\n  - complementary:\n    - strong: Sharing\n    - paragraph: Equal groups are given. Count how many each receives.\n    - strong: 20 ÷ 4\n    - paragraph: Each bright counter is one whole unit.\n  - text: Nice work!\n  - img \"Nice work! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch Sharing asks how many in each group. Grouping asks how many groups we can make. Both can give the same division answer.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Explain the division\n    - slider \"Scrub through steps\": \"4\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-14",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Choose multiplication preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y7-012-PosNeg",
+        "options": [
+          {
+            "value": "Y7-012-PosNeg",
+            "label": "Positive × negative"
+          },
+          {
+            "value": "Y7-012-NegPos",
+            "label": "Negative × positive"
+          },
+          {
+            "value": "Y7-012-NegNeg",
+            "label": "Negative × negative"
+          },
+          {
+            "value": "Y7-012-PosPos",
+            "label": "Positive × positive"
+          }
+        ]
+      },
+      {
+        "label": "Row magnitude",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "1",
+        "max": "12",
+        "step": null,
+        "value": "3"
+      },
+      {
+        "label": "Row sign",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "1",
+        "options": [
+          {
+            "value": "1",
+            "label": "Positive"
+          },
+          {
+            "value": "-1",
+            "label": "Negative"
+          }
+        ]
+      },
+      {
+        "label": "Column magnitude",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "1",
+        "max": "12",
+        "step": null,
+        "value": "4"
+      },
+      {
+        "label": "Column sign",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "-1",
+        "options": [
+          {
+            "value": "1",
+            "label": "Positive"
+          },
+          {
+            "value": "-1",
+            "label": "Negative"
+          }
+        ]
+      },
+      {
+        "label": "Row −",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Row +",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Column −",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Column +",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "3 × −4 equals minus 12",
+        "tag": "span",
+        "role": "math",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"14 Multiplication-Table Explorer · Premium Review\":\n  - heading \"14 Multiplication-Table Explorer · Premium Review\" [level=2]\n  - heading \"Live demo · F3-14\" [level=3]\n  - tablist \"Multiplication-Table Explorer modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Multiplication-Table Explorer Decide the sign\n  - group \"Twelve by twelve times table; current row 3 column −4.\":\n    - text: 3 × −4 = -12 Different signs · negative product + rows 1 1\n    - grid \"Mathematical grid\":\n      - row \"Row 1, column −1, product -1Row 1, column −2, product -2Row 1, column −3, product -3Row 1, column −4, product -4Row 1, column −5, product -5Row 1, column −6, product -6Row 1, column −7, product -7Row 1, column −8, product -8Row 1, column −9, product -9Row 1, column −10, product -10Row 1, column −11, product -11Row 1, column −12, product -12\":\n        - gridcell \"Row 1, column −1, product -1\"\n        - gridcell \"Row 1, column −2, product -2\"\n        - gridcell \"Row 1, column −3, product -3\"\n        - gridcell \"Row 1, column −4, product -4\"\n        - gridcell \"Row 1, column −5, product -5\"\n        - gridcell \"Row 1, column −6, product -6\"\n        - gridcell \"Row 1, column −7, product -7\"\n        - gridcell \"Row 1, column −8, product -8\"\n        - gridcell \"Row 1, column −9, product -9\"\n        - gridcell \"Row 1, column −10, product -10\"\n        - gridcell \"Row 1, column −11, product -11\"\n        - gridcell \"Row 1, column −12, product -12\"\n      - row \"Row 2, column −1, product -2Row 2, column −2, product -4Row 2, column −3, product -6Row 2, column −4, product -8Row 2, column −5, product -10Row 2, column −6, product -12Row 2, column −7, product -14Row 2, column −8, product -16Row 2, column −9, product -18Row 2, column −10, product -20Row 2, column −11, product -22Row 2, column −12, product -24\":\n        - gridcell \"Row 2, column −1, product -2\"\n        - gridcell \"Row 2, column −2, product -4\"\n        - gridcell \"Row 2, column −3, product -6\"\n        - gridcell \"Row 2, column −4, product -8\"\n        - gridcell \"Row 2, column −5, product -10\"\n        - gridcell \"Row 2, column −6, product -12\"\n        - gridcell \"Row 2, column −7, product -14\"\n        - gridcell \"Row 2, column −8, product -16\"\n        - gridcell \"Row 2, column −9, product -18\"\n        - gridcell \"Row 2, column −10, product -20\"\n        - gridcell \"Row 2, column −11, product -22\"\n        - gridcell \"Row 2, column −12, product -24\"\n      - row \"Row 3, column −1, product -3Row 3, column −2, product -6Row 3, column −3, product -9Row 3, column −4, product -12Row 3, column −5, product -15Row 3, column −6, product -18Row 3, column −7, product -21Row 3, column −8, product -24Row 3, column −9, product -27Row 3, column −10, product -30Row 3, column −11, product -33Row 3, column −12, product -36\":\n        - gridcell \"Row 3, column −1, product -3\"\n        - gridcell \"Row 3, column −2, product -6\"\n        - gridcell \"Row 3, column −3, product -9\"\n        - gridcell \"Row 3, column −4, product -12\"\n        - gridcell \"Row 3, column −5, product -15\"\n        - gridcell \"Row 3, column −6, product -18\"\n        - gridcell \"Row 3, column −7, product -21\"\n        - gridcell \"Row 3, column −8, product -24\"\n        - gridcell \"Row 3, column −9, product -27\"\n        - gridcell \"Row 3, column −10, product -30\"\n        - gridcell \"Row 3, column −11, product -33\"\n        - gridcell \"Row 3, column −12, product -36\"\n      - row \"Row 4, column −1, product -4Row 4, column −2, product -8Row 4, column −3, product -12Row 4, column −4, product -16Row 4, column −5, product -20Row 4, column −6, product -24Row 4, column −7, product -28Row 4, column −8, product -32Row 4, column −9, product -36Row 4, column −10, product -40Row 4, column −11, product -44Row 4, column −12, product -48\":\n        - gridcell \"Row 4, column −1, product -4\"\n        - gridcell \"Row 4, column −2, product -8\"\n        - gridcell \"Row 4, column −3, product -12\"\n        - gridcell \"Row 4, column −4, product -16\"\n        - gridcell \"Row 4, column −5, product -20\"\n        - gridcell \"Row 4, column −6, product -24\"\n        - gridcell \"Row 4, column −7, product -28\"\n        - gridcell \"Row 4, column −8, product -32\"\n        - gridcell \"Row 4, column −9, product -36\"\n        - gridcell \"Row 4, column −10, product -40\"\n        - gridcell \"Row 4, column −11, product -44\"\n        - gridcell \"Row 4, column −12, product -48\"\n      - row \"Row 5, column −1, product -5Row 5, column −2, product -10Row 5, column −3, product -15Row 5, column −4, product -20Row 5, column −5, product -25Row 5, column −6, product -30Row 5, column −7, product -35Row 5, column −8, product -40Row 5, column −9, product -45Row 5, column −10, product -50Row 5, column −11, product -55Row 5, column −12, product -60\":\n        - gridcell \"Row 5, column −1, product -5\"\n        - gridcell \"Row 5, column −2, product -10\"\n        - gridcell \"Row 5, column −3, product -15\"\n        - gridcell \"Row 5, column −4, product -20\"\n        - gridcell \"Row 5, column −5, product -25\"\n        - gridcell \"Row 5, column −6, product -30\"\n        - gridcell \"Row 5, column −7, product -35\"\n        - gridcell \"Row 5, column −8, product -40\"\n        - gridcell \"Row 5, column −9, product -45\"\n        - gridcell \"Row 5, column −10, product -50\"\n        - gridcell \"Row 5, column −11, product -55\"\n        - gridcell \"Row 5, column −12, product -60\"\n      - row \"Row 6, column −1, product -6Row 6, column −2, product -12Row 6, column −3, product -18Row 6, column −4, product -24Row 6, column −5, product -30Row 6, column −6, product -36Row 6, column −7, product -42Row 6, column −8, product -48Row 6, column −9, product -54Row 6, column −10, product -60Row 6, column −11, product -66Row 6, column −12, product -72\":\n        - gridcell \"Row 6, column −1, product -6\"\n        - gridcell \"Row 6, column −2, product -12\"\n        - gridcell \"Row 6, column −3, product -18\"\n        - gridcell \"Row 6, column −4, product -24\"\n        - gridcell \"Row 6, column −5, product -30\"\n        - gridcell \"Row 6, column −6, product -36\"\n        - gridcell \"Row 6, column −7, product -42\"\n        - gridcell \"Row 6, column −8, product -48\"\n        - gridcell \"Row 6, column −9, product -54\"\n        - gridcell \"Row 6, column −10, product -60\"\n        - gridcell \"Row 6, column −11, product -66\"\n        - gridcell \"Row 6, column −12, product -72\"\n      - row \"Row 7, column −1, product -7Row 7, column −2, product -14Row 7, column −3, product -21Row 7, column −4, product -28Row 7, column −5, product -35Row 7, column −6, product -42Row 7, column −7, product -49Row 7, column −8, product -56Row 7, column −9, product -63Row 7, column −10, product -70Row 7, column −11, product -77Row 7, column −12, product -84\":\n        - gridcell \"Row 7, column −1, product -7\"\n        - gridcell \"Row 7, column −2, product -14\"\n        - gridcell \"Row 7, column −3, product -21\"\n        - gridcell \"Row 7, column −4, product -28\"\n        - gridcell \"Row 7, column −5, product -35\"\n        - gridcell \"Row 7, column −6, product -42\"\n        - gridcell \"Row 7, column −7, product -49\"\n        - gridcell \"Row 7, column −8, product -56\"\n        - gridcell \"Row 7, column −9, product -63\"\n        - gridcell \"Row 7, column −10, product -70\"\n        - gridcell \"Row 7, column −11, product -77\"\n        - gridcell \"Row 7, column −12, product -84\"\n      - row \"Row 8, column −1, product -8Row 8, column −2, product -16Row 8, column −3, product -24Row 8, column −4, product -32Row 8, column −5, product -40Row 8, column −6, product -48Row 8, column −7, product -56Row 8, column −8, product -64Row 8, column −9, product -72Row 8, column −10, product -80Row 8, column −11, product -88Row 8, column −12, product -96\":\n        - gridcell \"Row 8, column −1, product -8\"\n        - gridcell \"Row 8, column −2, product -16\"\n        - gridcell \"Row 8, column −3, product -24\"\n        - gridcell \"Row 8, column −4, product -32\"\n        - gridcell \"Row 8, column −5, product -40\"\n        - gridcell \"Row 8, column −6, product -48\"\n        - gridcell \"Row 8, column −7, product -56\"\n        - gridcell \"Row 8, column −8, product -64\"\n        - gridcell \"Row 8, column −9, product -72\"\n        - gridcell \"Row 8, column −10, product -80\"\n        - gridcell \"Row 8, column −11, product -88\"\n        - gridcell \"Row 8, column −12, product -96\"\n      - row \"Row 9, column −1, product -9Row 9, column −2, product -18Row 9, column −3, product -27Row 9, column −4, product -36Row 9, column −5, product -45Row 9, column −6, product -54Row 9, column −7, product -63Row 9, column −8, product -72Row 9, column −9, product -81Row 9, column −10, product -90Row 9, column −11, product -99Row 9, column −12, product -108\":\n        - gridcell \"Row 9, column −1, product -9\"\n        - gridcell \"Row 9, column −2, product -18\"\n        - gridcell \"Row 9, column −3, product -27\"\n        - gridcell \"Row 9, column −4, product -36\"\n        - gridcell \"Row 9, column −5, product -45\"\n        - gridcell \"Row 9, column −6, product -54\"\n        - gridcell \"Row 9, column −7, product -63\"\n        - gridcell \"Row 9, column −8, product -72\"\n        - gridcell \"Row 9, column −9, product -81\"\n        - gridcell \"Row 9, column −10, product -90\"\n        - gridcell \"Row 9, column −11, product -99\"\n        - gridcell \"Row 9, column −12, product -108\"\n      - row \"Row 10, column −1, product -10Row 10, column −2, product -20Row 10, column −3, product -30Row 10, column −4, product -40Row 10, column −5, product -50Row 10, column −6, product -60Row 10, column −7, product -70Row 10, column −8, product -80Row 10, column −9, product -90Row 10, column −10, product -100Row 10, column −11, product -110Row 10, column −12, product -120\":\n        - gridcell \"Row 10, column −1, product -10\"\n        - gridcell \"Row 10, column −2, product -20\"\n        - gridcell \"Row 10, column −3, product -30\"\n        - gridcell \"Row 10, column −4, product -40\"\n        - gridcell \"Row 10, column −5, product -50\"\n        - gridcell \"Row 10, column −6, product -60\"\n        - gridcell \"Row 10, column −7, product -70\"\n        - gridcell \"Row 10, column −8, product -80\"\n        - gridcell \"Row 10, column −9, product -90\"\n        - gridcell \"Row 10, column −10, product -100\"\n        - gridcell \"Row 10, column −11, product -110\"\n        - gridcell \"Row 10, column −12, product -120\"\n      - row \"Row 11, column −1, product -11Row 11, column −2, product -22Row 11, column −3, product -33Row 11, column −4, product -44Row 11, column −5, product -55Row 11, column −6, product -66Row 11, column −7, product -77Row 11, column −8, product -88Row 11, column −9, product -99Row 11, column −10, product -110Row 11, column −11, product -121Row 11, column −12, product -132\":\n        - gridcell \"Row 11, column −1, product -11\"\n        - gridcell \"Row 11, column −2, product -22\"\n        - gridcell \"Row 11, column −3, product -33\"\n        - gridcell \"Row 11, column −4, product -44\"\n        - gridcell \"Row 11, column −5, product -55\"\n        - gridcell \"Row 11, column −6, product -66\"\n        - gridcell \"Row 11, column −7, product -77\"\n        - gridcell \"Row 11, column −8, product -88\"\n        - gridcell \"Row 11, column −9, product -99\"\n        - gridcell \"Row 11, column −10, product -110\"\n        - gridcell \"Row 11, column −11, product -121\"\n        - gridcell \"Row 11, column −12, product -132\"\n      - row \"Row 12, column −1, product -12Row 12, column −2, product -24Row 12, column −3, product -36Row 12, column −4, product -48Row 12, column −5, product -60Row 12, column −6, product -72Row 12, column −7, product -84Row 12, column −8, product -96Row 12, column −9, product -108Row 12, column −10, product -120Row 12, column −11, product -132Row 12, column −12, product -144\":\n        - gridcell \"Row 12, column −1, product -12\"\n        - gridcell \"Row 12, column −2, product -24\"\n        - gridcell \"Row 12, column −3, product -36\"\n        - gridcell \"Row 12, column −4, product -48\"\n        - gridcell \"Row 12, column −5, product -60\"\n        - gridcell \"Row 12, column −6, product -72\"\n        - gridcell \"Row 12, column −7, product -84\"\n        - gridcell \"Row 12, column −8, product -96\"\n        - gridcell \"Row 12, column −9, product -108\"\n        - gridcell \"Row 12, column −10, product -120\"\n        - gridcell \"Row 12, column −11, product -132\"\n        - gridcell \"Row 12, column −12, product -144\"\n    - text: 2 3 4 5 6 7 8 9 10 11 12 2 3 4 5 6 7 8 9 10 11 12\n    - group \"Drag the crosshair to select another row and column\"\n    - text: 3 × 4 = 12 equal cells 3 × −4 = -12 · negative\n  - complementary:\n    - strong: A 12 × 12 array\n    - paragraph: Each cell marks a row-column product. The highlighted rectangle contains row × column unit squares.\n    - strong: Signs are separate\n    - paragraph: Unlike signs give a negative product. The size comes from the array; the sign comes from the factors.\n  - text: You got it!\n  - img \"You got it! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch Here the row factor is positive and the column factor is negative. Unlike signs give a negative product. Three multiplied by negative four is negative twelve.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Decide the sign\n    - slider \"Scrub through steps\": \"4\"\n  - group: \"▸ Developer: component specification\""
+  },
+  {
+    "id": "F3-15",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Choose surd preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "Y9-002",
+        "options": [
+          {
+            "value": "Y9-002",
+            "label": "Y9 · Powers, roots and exact values"
+          },
+          {
+            "value": "Y9-002-50",
+            "label": "Y9 · Extract a square factor of 50"
+          },
+          {
+            "value": "Y9-002-108",
+            "label": "Y9 · Simplify the root of 108"
+          },
+          {
+            "value": "Y9-002-45",
+            "label": "Y9 · Exact root of 45"
+          },
+          {
+            "value": "Y9-002-64",
+            "label": "Y9 · Perfect square 64"
+          }
+        ]
+      },
+      {
+        "label": "Area to simplify",
+        "tag": "input",
+        "role": null,
+        "type": "number",
+        "min": "2",
+        "max": "200",
+        "step": "1",
+        "value": "72"
+      },
+      {
+        "label": "Find factor",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Use 36",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Use 9",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Use 4",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"15 Surd and Exact-Value Builder · Premium Review\":\n  - heading \"15 Surd and Exact-Value Builder · Premium Review\" [level=2]\n  - heading \"Live demo · F3-15\" [level=3]\n  - tablist \"Surd and Exact-Value Builder modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Surd and Exact-Value Builder Write simplest surd form\n  - img \"Glass square with area 72, its largest square factor and remaining factor, and matching exact surd cards.\": Area = 72 72 square units Unknown side Square factor 36 × Other factor 2 36 × 2 = 72 Keep the remaining root exact\n  - complementary:\n    - strong: Exact, not rounded\n    - paragraph: A root may be irrational. Keep its exact value using surd notation unless an approximation is requested.\n    - strong: Why the factors multiply\n    - paragraph: 72 = 36 × 2. Taking a square root extracts the perfect-square factor.\n  - math \"square root of 72 equals 6 square root of 2\": 72 = 6 2\n  - text: A square factor leaves the root; the remaining factor stays inside. Brilliant!\n  - img \"Brilliant! (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, neutral\"\n  - text: Sir Bob Maximus · watch The square root of seventy-two equals six square root two. The number under the root no longer contains a square factor greater than one.\n  - img \"Nova the cat, idle\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Write simplest surd form\n    - slider \"Scrub through steps\": \"4\"\n  - group: \"▸ Developer: component specification\""
+  }
+]

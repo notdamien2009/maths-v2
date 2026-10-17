@@ -1,0 +1,931 @@
+{
+ "family": "F4",
+ "revision": "2026-10-16",
+ "productionReady": true,
+ "status": "PASS WITH LIMITATIONS",
+ "componentCount": 12,
+ "note": "Eleven engine files F4-01…F4-09, F4-11, F4-12 plus F4-10 as a preset of F4-08 (no separate file, per master AL table). F4-05 is a preset of F5-11.",
+ "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+ "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+ "sharedRestrictions": "Original neon/chalk apparatus retained; no redesign. Ready within each declared native numerical domain. Decimal numerals containing digit 4 stay caption-only (existing speech safeguard). Automated accessibility is not human screen-reader certification. Tested headless on Linux Google Chrome 154 via Playwright 1.62 (F0–F3 used Microsoft Edge on Windows). Lessons exported earlier embed source snapshots and must be regenerated.",
+ "components": [
+  {
+   "id": "F4-01",
+   "name": "Part–whole bar",
+   "presetOf": null,
+   "engineId": "F4-01",
+   "path": "F4/F4-01-part-whole-bar.html",
+   "status": "PASS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "f4384d698195d6511728576579fdaead8ba1e4f49c094d8004477c3ea8966f9d",
+   "originalSha256": "769b2a89a7e6e692abc023dff006d4d604f7002e713e5878d838a621a42e3606",
+   "lessonField": "data.lesson",
+   "lessonState": "whole, known:[k] or [k1,k2]",
+   "numericDomain": "Integer whole 8–150; one or two positive known parts; missing part = whole − Σknown > 0.",
+   "phases": 6,
+   "phaseSequence": "Notice the whole → split → name known → predict → subtract → prove by addition.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "dock": [
+     "stage",
+     "k"
+    ],
+    "present": [
+     "stage",
+     "s",
+     "opts"
+    ]
+   },
+   "nativeSteps": 6,
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events"
+   ],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Glass whole bar (neonBox) on top with brace and total chip; parts bar beneath split into labelled glass segments; unknown part as a gold placeholder.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): whole appears > splits into parts > known parts fill > unknown pulses > value resolves.\n- Drag int",
+   "masterLessons": [
+    "Y7-035"
+   ],
+   "events": {
+    "value": [
+     "preset",
+     "whole",
+     "known",
+     "part",
+     "remove",
+     "resize",
+     "answer",
+     "reset",
+     "proof"
+    ],
+    "types": [
+     "mode",
+     "step",
+     "correct",
+     "hintUsed"
+    ]
+   },
+   "limitations": "",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-01-badge-1440.png",
+     "F4-01-bob-1440.png",
+     "F4-01-challenge-1024.png",
+     "F4-01-challenge-1440.png",
+     "F4-01-challenge-390.png",
+     "F4-01-guided-1440.png",
+     "F4-01-native-watch-1024.png",
+     "F4-01-native-watch-1440.png",
+     "F4-01-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-02",
+   "name": "Comparison bar",
+   "presetOf": null,
+   "engineId": "F4-02",
+   "path": "F4/F4-02-comparison-bar.html",
+   "status": "PASS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "66f53d36b000d4d9c26cb72a56bba747bccadfdf04718996e31962b10e6c57c9",
+   "originalSha256": "e1c348cb0493feddbfa7473d36cc51d58c1c3e858d43ee29440f62aeea76927b",
+   "lessonField": "data.lesson",
+   "lessonState": "a, b; optional mode (difference/shorter), knownDiff",
+   "numericDomain": "Integers 1–24 per bar; difference mode or shorter-quantity mode (knownDiff = a − b).",
+   "phases": 6,
+   "phaseSequence": "Align → B → pair → gap → subtract → check.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "helper": [
+     "stage",
+     "state"
+    ],
+    "present": [
+     "stage",
+     "s",
+     "o"
+    ]
+   },
+   "nativeSteps": 6,
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events"
+   ],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Two stacked glass bars on a shared left edge with a gold difference segment and brace; value chips on each.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): bar A grows > bar B grows > difference segment lights > difference value.\n- Drag interactions (NOVA.ui.svgDrag + zones, F2 v3.6.2 rules: lif",
+   "masterLessons": [
+    "Y7-007"
+   ],
+   "events": {
+    "value": [
+     "preset",
+     "longer",
+     "shorter",
+     "difference",
+     "part",
+     "brace",
+     "remove",
+     "resize",
+     "answer",
+     "proof",
+     "reset"
+    ],
+    "types": [
+     "mode",
+     "step",
+     "correct",
+     "hintUsed"
+    ]
+   },
+   "limitations": "",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-02-badge-1440.png",
+     "F4-02-bob-1440.png",
+     "F4-02-challenge-1024.png",
+     "F4-02-challenge-1440.png",
+     "F4-02-challenge-390.png",
+     "F4-02-guided-1440.png",
+     "F4-02-native-watch-1024.png",
+     "F4-02-native-watch-1440.png",
+     "F4-02-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-03",
+   "name": "Cuisenaire rod builder",
+   "presetOf": null,
+   "engineId": "F4-03",
+   "path": "F4/F4-03-cuisenaire-rod-builder.html",
+   "status": "PASS WITH LIMITATIONS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "8d676cfb7f5a9bc36f0e0510f66371c9c333df777a10892201fbf7fccc2adf48",
+   "originalSha256": "b86ee914e6e20936200c02f13f87df69742e05cfc8557cf78e39c2ef71aa72b5",
+   "lessonField": "data.lesson",
+   "lessonState": "a:[rod lengths], b:[rod lengths]",
+   "numericDomain": "Rod lengths 1–10; each train at most 10 units (native track). Relation equal / half shown natively; step-6 fraction now computed from the trains.",
+   "phases": 7,
+   "phaseSequence": "Whole rod → second train grows rod by rod → equal/relation.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "mascot": [
+     "stage",
+     "step"
+    ],
+    "present": [
+     "stage",
+     "s",
+     "o"
+    ]
+   },
+   "nativeSteps": 7,
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events"
+   ],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Tray of coloured glass Cuisenaire rods (neonBox, lengths 1-10, each colour + length label) and a build track on a 1-unit snap grid.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): rods slide in > train forms > equal-length trains glow > relation shown.\n- Drag interactions (NOVA.ui.svgDrag + zone",
+   "masterLessons": [
+    "Y7-019"
+   ],
+   "events": {
+    "value": [
+     "preset",
+     "activeTrain",
+     "rodAdd",
+     "rodMove",
+     "rodRemove",
+     "rodOrder",
+     "reset",
+     "proof",
+     "answer"
+    ],
+    "types": [
+     "step",
+     "correct",
+     "hintUsed",
+     "mode"
+    ]
+   },
+   "limitations": "Native track caps each train at 10 units; Challenge concealment hides train B until the answer, so questions should ask about the second train.",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-03-badge-1440.png",
+     "F4-03-bob-1440.png",
+     "F4-03-challenge-1024.png",
+     "F4-03-challenge-1440.png",
+     "F4-03-challenge-390.png",
+     "F4-03-guided-1440.png",
+     "F4-03-native-watch-1024.png",
+     "F4-03-native-watch-1440.png",
+     "F4-03-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-04",
+   "name": "Multi-step bar model",
+   "presetOf": null,
+   "engineId": "F4-04",
+   "path": "F4/F4-04-multi-step-bar-model.html",
+   "status": "PASS WITH LIMITATIONS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "aa97f55c2361a4ef115a77f215e6c88efbb1118d62e90128d53da0be5eb69630",
+   "originalSha256": "ec1846d461a779531eb7a451bde0876f936289d3e04217af8669a68162c1d0ab",
+   "lessonField": "data.lesson",
+   "lessonState": "start, changes:[p1,p2]",
+   "numericDomain": "Start £0.01–£5000 (2 dp); exactly two nonzero successive percentage changes −99…+150.",
+   "phases": 8,
+   "phaseSequence": "Base → tenths → change 1 → carry result → change 2 → final → connect.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "helper": [
+     "stage",
+     "key"
+    ],
+    "present": [
+     "stage",
+     "data",
+     "o"
+    ]
+   },
+   "nativeSteps": 8,
+   "configurationKeys": [],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Stack of 2-3 linked glass bars, each step's result feeding the next (connector neonPath arrows via NOVA.svg.arrow); unknowns gold.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): step 1 bar > result carried down > step 2 bar > final answer chip.\n- Drag interactions (NOVA.ui.svgDrag + zones, F2 v",
+   "masterLessons": [
+    "Y8-038"
+   ],
+   "events": null,
+   "limitations": "Explore drag (carry chip) appears only after step 1 is computed — by native design.",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "9/9",
+    "axe": [],
+    "screenshots": [
+     "F4-04-badge-1440.png",
+     "F4-04-bob-1440.png",
+     "F4-04-challenge-1024.png",
+     "F4-04-challenge-1440.png",
+     "F4-04-challenge-390.png",
+     "F4-04-guided-1440.png",
+     "F4-04-native-watch-1024.png",
+     "F4-04-native-watch-1440.png",
+     "F4-04-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-05",
+   "name": "Fraction of an amount bar (preset of F5-11)",
+   "presetOf": "F5-11",
+   "engineId": "F5-11",
+   "path": "F4/F4-05-fraction-of-amount-bar.html",
+   "status": "PASS WITH LIMITATIONS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "54a8c89dc1d0b5137a9837ad8f53cc162db3391e23dac045127be58e60571703",
+   "originalSha256": "a50e20765a6d4cfd66fae20200c86a23e283a28c36793a902844fdabe4ceee47",
+   "lessonField": "data.lesson",
+   "lessonState": "a, n, d",
+   "numericDomain": "Amount 0–48 integer; denominator 2–8; numerator 0–d. Exact fractional results kept as NOVA Chalk stacked/mixed fractions.",
+   "phases": 6,
+   "phaseSequence": "Count → d equal parts → share → select n → combine → exact calculation.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "renderF405Bar": [
+     "stage",
+     "o",
+     "opt"
+    ],
+    "render": [
+     "stage",
+     "o",
+     "opt"
+    ]
+   },
+   "nativeSteps": 6,
+   "configurationKeys": [],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Preset of F5-11: bar of n glass units split into d equal sections, k shaded.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): split > shade > one part value > k parts.\n- Drag interactions (NOVA.ui.svgDrag + zones, F2 v3.6.2 rules: lift on pick-up, green target glow, snap, re-grab, tray = red remo",
+   "masterLessons": [],
+   "events": null,
+   "limitations": "Runs on the F5-11 engine (NovaLessonComponent.id = \"F5-11\"). F5 is not in this pack, so cross-checks against the separate F5-11 source were not possible; keep F5-11 in step when F5 passes its audit.",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-05-badge-1440.png",
+     "F4-05-bob-1440.png",
+     "F4-05-challenge-1024.png",
+     "F4-05-challenge-1440.png",
+     "F4-05-challenge-390.png",
+     "F4-05-guided-1440.png",
+     "F4-05-native-watch-1024.png",
+     "F4-05-native-watch-1440.png",
+     "F4-05-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-06",
+   "name": "Percentage bar",
+   "presetOf": null,
+   "engineId": "F4-06",
+   "path": "F4/F4-06-percentage-bar.html",
+   "status": "PASS WITH LIMITATIONS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "fce9238fdee784db9fde0fba6536fdb4858208e8a96566a85dbd30b949116cdd",
+   "originalSha256": "26f2dcd18b979ccd84a10b776c7b6e4a3d8b61e940fad9c63cd4734347d2084b",
+   "lessonField": "data.lesson",
+   "lessonState": "kind (of/compare/increase/decrease/interest/reverse), base or final, pct; part (compare), years (interest)",
+   "numericDomain": "Percent 0–150 (decrease ≤ 100); money ≤ £5000, 2 dp.",
+   "phases": 8,
+   "phaseSequence": "100% = whole → tenths → 10% → 1% → build p% → amount → link scales → check.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "helper": [
+     "stage",
+     "key"
+    ],
+    "present": [
+     "stage",
+     "data",
+     "opt"
+    ]
+   },
+   "nativeSteps": 8,
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events"
+   ],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. 100% glass bar split into 10 tenths (neonBox cells) with a percent NOVA.numberLine above and amount line below (double line); known/unknown chips.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): 100% = amount > split tenths > 10% value > build p% > answer.\n- Drag interactions (NOVA.ui.svgDrag + ",
+   "masterLessons": [
+    "Y7-026",
+    "Y7-027",
+    "Y7-062",
+    "Y7-063",
+    "Y8-007",
+    "Y8-008",
+    "Y8-038",
+    "Y8-040",
+    "Y9-005"
+   ],
+   "events": {
+    "value": [
+     "preset",
+     "percent",
+     "base",
+     "amount",
+     "answer",
+     "placed",
+     "removed",
+     "check",
+     "reset",
+     "reveal",
+     "method"
+    ],
+    "types": [
+     "step",
+     "correct",
+     "hintUsed",
+     "mode"
+    ]
+   },
+   "limitations": "In Challenge, interior amount-scale labels show \"?\" (otherwise the double number line gives the answer); the percent scale stays visible.",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-06-badge-1440.png",
+     "F4-06-bob-1440.png",
+     "F4-06-challenge-1024.png",
+     "F4-06-challenge-1440.png",
+     "F4-06-challenge-390.png",
+     "F4-06-guided-1440.png",
+     "F4-06-native-watch-1024.png",
+     "F4-06-native-watch-1440.png",
+     "F4-06-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-07",
+   "name": "Ratio bar",
+   "presetOf": null,
+   "engineId": "F4-07",
+   "path": "F4/F4-07-ratio-bar.html",
+   "status": "PASS WITH LIMITATIONS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "29dea99e05133194413461cce07ee28919f66e186f9bad83364be37f46c0533e",
+   "originalSha256": "7d25336319ed82e4cf22516d8d1dddaf7779b86b28976afcf43f488ecf9f175e",
+   "lessonField": "data.lesson",
+   "lessonState": "mode (share/simplify), a, b, total, names",
+   "numericDomain": "Ratio terms 0.5–10 (1 dp; decimal ratios converted to whole units natively); share total ≤ 10000; ≤ 10 unit boxes per bar natively.",
+   "phases": 8,
+   "phaseSequence": "Read → bar A units → bar B units → total parts → one unit → shares → compare → done.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "helper": [
+     "stage",
+     "state"
+    ],
+    "present": [
+     "stage",
+     "o",
+     "v"
+    ]
+   },
+   "nativeSteps": 8,
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events"
+   ],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Ratio bars: one glass bar per share with equal unit boxes; total brace; one-unit value chip.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): boxes appear per ratio > total brace > one unit = total / units > shares fill.\n- Drag interactions (NOVA.ui.svgDrag + zones, F2 v3.6.2 rules: lift on pick-",
+   "masterLessons": [
+    "Y7-058",
+    "Y7-059",
+    "Y8-034"
+   ],
+   "events": {
+    "value": [
+     "preset",
+     "ratio",
+     "unit",
+     "added",
+     "moved",
+     "removed",
+     "check",
+     "answer",
+     "reset",
+     "reveal"
+    ],
+    "types": [
+     "step",
+     "correct",
+     "hintUsed",
+     "mode"
+    ]
+   },
+   "limitations": "Native maximum of 10 unit boxes per bar.",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-07-badge-1440.png",
+     "F4-07-bob-1440.png",
+     "F4-07-challenge-1024.png",
+     "F4-07-challenge-1440.png",
+     "F4-07-challenge-390.png",
+     "F4-07-guided-1440.png",
+     "F4-07-native-watch-1024.png",
+     "F4-07-native-watch-1440.png",
+     "F4-07-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-08",
+   "name": "Algebra bar",
+   "presetOf": null,
+   "engineId": "F4-08",
+   "path": "F4/F4-08-algebra-bar.html",
+   "status": "PASS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "5f008f9af49b25b33586fe37485f41b15334864b353fd5caa49028dea77e7750",
+   "originalSha256": "9ec4f36c64549987a09c00534638c963d236fe2431e422a4b22dc61a81943d9a",
+   "lessonField": "data.lesson",
+   "lessonState": "mode (expression/equation/translator/bar-equation), n, b, total",
+   "numericDomain": "1–5 equal x-parts; known 0–12; total gives an exact positive integer x.",
+   "phases": 8,
+   "phaseSequence": "Whole → x-parts → known → balance → subtract both sides → divide → x → proof.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title",
+    "data.lesson.overlay"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "helper": [
+     "stage",
+     "k"
+    ],
+    "present": [
+     "stage",
+     "o",
+     "v"
+    ]
+   },
+   "nativeSteps": 8,
+   "configurationKeys": [],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Bar of x-boxes (glass, gold x label) and number boxes equal to a total bar; balance with equation chip.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): build expression bar > match total > remove knowns > x revealed.\n- Drag interactions (NOVA.ui.svgDrag + zones, F2 v3.6.2 rules: lift on pick-up,",
+   "masterLessons": [
+    "Y7-034"
+   ],
+   "events": null,
+   "limitations": "",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-08-badge-1440.png",
+     "F4-08-bob-1440.png",
+     "F4-08-challenge-1024.png",
+     "F4-08-challenge-1440.png",
+     "F4-08-challenge-390.png",
+     "F4-08-guided-1440.png",
+     "F4-08-native-watch-1024.png",
+     "F4-08-native-watch-1440.png",
+     "F4-08-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-09",
+   "name": "Before-and-after bar",
+   "presetOf": null,
+   "engineId": "F4-09",
+   "path": "F4/F4-09-before-and-after-bar.html",
+   "status": "PASS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "1e1286f5597ce5da2312c52519054bef5e129ba65c6197431de1f06bbe0d8463",
+   "originalSha256": "ad1b3360220f07eda786d34fb859861ce58c3b01dc7a8d37f37699c6cc776b3d",
+   "lessonField": "data.lesson",
+   "lessonState": "kind (increase/decrease), before, rate, unknown (before/after/change)",
+   "numericDomain": "Rate 1–75%; amounts £1–£2000, 2 dp.",
+   "phases": 8,
+   "phaseSequence": "Original whole → change % → after bar → change segment → work → solve → proof.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "mascot": [
+     "stage",
+     "key"
+    ],
+    "present": [
+     "stage",
+     "o",
+     "v"
+    ]
+   },
+   "nativeSteps": 8,
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events"
+   ],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Before and after bars stacked with change segment (green increase / red decrease) and arrow via NOVA.svg.arrow.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): before bar > change segment animates > after bar > relation.\n- Drag interactions (NOVA.ui.svgDrag + zones, F2 v3.6.2 rules: lift on pick",
+   "masterLessons": [
+    "Y8-008"
+   ],
+   "events": {
+    "value": [
+     "preset",
+     "amount",
+     "change",
+     "changeRemoved",
+     "valuePlaced",
+     "valueRemoved",
+     "check",
+     "reset"
+    ],
+    "types": [
+     "step",
+     "correct",
+     "hintUsed",
+     "mode"
+    ]
+   },
+   "limitations": "",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-09-badge-1440.png",
+     "F4-09-bob-1440.png",
+     "F4-09-challenge-1024.png",
+     "F4-09-challenge-1440.png",
+     "F4-09-challenge-390.png",
+     "F4-09-guided-1440.png",
+     "F4-09-native-watch-1024.png",
+     "F4-09-native-watch-1440.png",
+     "F4-09-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-10",
+   "name": "Bar-to-equation translator (preset of F4-08)",
+   "presetOf": "F4-08",
+   "engineId": "F4-08",
+   "path": "F4/F4-08-algebra-bar.html",
+   "status": "PASS WITH LIMITATIONS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "5f008f9af49b25b33586fe37485f41b15334864b353fd5caa49028dea77e7750",
+   "originalSha256": "9ec4f36c64549987a09c00534638c963d236fe2431e422a4b22dc61a81943d9a",
+   "lessonField": "data.lesson",
+   "lessonState": "mode:\"translator\", n, b, total; lesson.overlay \"equation\"",
+   "numericDomain": "Same domain as F4-08. Phases 0–3: bar → x-term mapped → known term mapped → equation assembled, with glowing NOVA connectors.",
+   "phases": 4,
+   "phaseSequence": "Bar → each part maps to a term → equation assembles.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title",
+    "data.lesson.overlay"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "helper": [
+     "stage",
+     "k"
+    ],
+    "present": [
+     "stage",
+     "o",
+     "v"
+    ]
+   },
+   "nativeSteps": 8,
+   "configurationKeys": [],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Preset of F4-08: bar model on the left, equation chips on the right, linked by glowing connectors.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): bar > each part maps to a term > equation assembles.\n- Drag interactions (NOVA.ui.svgDrag + zones, F2 v3.6.2 rules: lift on pick-up, green target glo",
+   "masterLessons": [
+    "Y7-035"
+   ],
+   "events": null,
+   "limitations": "Text answers are marked by an exact string match (canonical template), so prompts must give the format (e.g. 3x+5=26, no spaces).",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-10-badge-1440.png",
+     "F4-10-bob-1440.png",
+     "F4-10-challenge-1024.png",
+     "F4-10-challenge-1440.png",
+     "F4-10-challenge-390.png",
+     "F4-10-guided-1440.png",
+     "F4-10-overlay-phase1-1440.png",
+     "F4-10-overlay-phase1-390.png",
+     "F4-10-overlay-phase3-1440.png",
+     "F4-10-overlay-phase3-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-11",
+   "name": "Word-problem highlighter",
+   "presetOf": null,
+   "engineId": "F4-11",
+   "path": "F4/F4-11-word-problem-highlighter.html",
+   "status": "PASS WITH LIMITATIONS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "15ff3b25c7fce366bf5c03a085ef47f79becfd274c336653648609fdfc9319ab",
+   "originalSha256": "5ee4771e2d60db90bd2e786978a393dedc46bd5e7c6f81df8231337beb8b42ea",
+   "lessonField": "data.lesson",
+   "lessonState": "kind, n, extra, total, expected, segments:[{text,id?,short?}] with whole/part/difference ids",
+   "numericDomain": "1–5 equal groups; story segments must mark whole, part and difference phrases.",
+   "phases": 6,
+   "phaseSequence": "Read → part → whole → map → difference → proof.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "mascot": [
+     "stage",
+     "key"
+    ],
+    "present": [
+     "stage",
+     "o",
+     "v"
+    ]
+   },
+   "nativeSteps": 6,
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events"
+   ],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Word problem in chalk-write with tap/drag highlighter colours (whole, part, difference); highlighted phrases fly into an empty bar model.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): read > highlight quantities > phrases fly to bar > bar labelled.\n- Drag interactions (NOVA.ui.svgDrag + zones,",
+   "masterLessons": [
+    "Y7-034"
+   ],
+   "events": {
+    "value": [
+     "preset",
+     "tool",
+     "highlight",
+     "unhighlight",
+     "place",
+     "remove",
+     "expression",
+     "check",
+     "reset"
+    ],
+    "types": [
+     "step",
+     "correct",
+     "hintUsed",
+     "mode"
+    ]
+   },
+   "limitations": "Expression answers are marked by an exact string match; Explore drag appears only after a phrase is highlighted (native design).",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "9/9",
+    "axe": [],
+    "screenshots": [
+     "F4-11-badge-1440.png",
+     "F4-11-bob-1440.png",
+     "F4-11-challenge-1024.png",
+     "F4-11-challenge-1440.png",
+     "F4-11-challenge-390.png",
+     "F4-11-guided-1440.png",
+     "F4-11-native-watch-1024.png",
+     "F4-11-native-watch-1440.png",
+     "F4-11-native-watch-390.png"
+    ]
+   }
+  },
+  {
+   "id": "F4-12",
+   "name": "Rates tape diagram",
+   "presetOf": null,
+   "engineId": "F4-12",
+   "path": "F4/F4-12-rates-tape-diagram.html",
+   "status": "PASS",
+   "challengeReady": true,
+   "productionReady": true,
+   "sourceSha256": "7519bad658b1099e523c807e43cd832f69af23a324654e65cf27817df9ec5d35",
+   "originalSha256": "da7b2160f26000571e9241f1ee1b3023e6ae65959ce3214a7008ee73be06b110",
+   "lessonField": "data.lesson",
+   "lessonState": "kind (rate/amount/units), units, rate, total, u, q, rateUnit",
+   "numericDomain": "1–6 time units; rate ≤ 10000 (2 dp); total = units × rate.",
+   "phases": 7,
+   "phaseSequence": "Read quantities → one unit → copy units → rate → fill → total → proof.",
+   "lessonMotionFields": [
+    "data.lesson.phase",
+    "data.lesson.motion.from",
+    "data.lesson.motion.to",
+    "data.lesson.motion.durationMs",
+    "data.lesson.title"
+   ],
+   "previewRule": "animated:true advances native teaching phases on the host clock; static preview shows motion.from; reduced motion shows motion.to; concealAnswers renders the unanswered phase with answer readouts, data attributes and aria hidden.",
+   "nativeDraws": {
+    "mascot": [
+     "stage",
+     "key"
+    ],
+    "present": [
+     "stage",
+     "o",
+     "v"
+    ]
+   },
+   "nativeSteps": 7,
+   "configurationKeys": [],
+   "masterSpec": "WHAT TO BUILD (NOVA studio spec, follow exactly, do not invent):\n- Stage layout at 380px: the main drawing fills at least 60% of the stage height (taller viewBox, stacked), helper strip and controls below, no empty band; at 1280 drawing and side neon cards side by side. Tape diagram: two aligned glass tapes (quantity 1 per unit, quantity 2) with unit dividers and rate chip.\n- Animation steps (named, NOVA.motion only, reduced motion = instant end state): unit tape > copy units > read matching amount.\n- Drag interactions (NOVA.ui.svgDrag + zones, F2 v3.6.2 rules: lift on pick-up, green target gl",
+   "masterLessons": [
+    "Y8-041"
+   ],
+   "events": null,
+   "limitations": "",
+   "evidence": {
+    "semanticChecks": "33/33",
+    "nativeChecks": "12/12",
+    "axe": [],
+    "screenshots": [
+     "F4-12-badge-1440.png",
+     "F4-12-bob-1440.png",
+     "F4-12-challenge-1024.png",
+     "F4-12-challenge-1440.png",
+     "F4-12-challenge-390.png",
+     "F4-12-guided-1440.png",
+     "F4-12-native-watch-1024.png",
+     "F4-12-native-watch-1440.png",
+     "F4-12-native-watch-390.png"
+    ]
+   }
+  }
+ ]
+}

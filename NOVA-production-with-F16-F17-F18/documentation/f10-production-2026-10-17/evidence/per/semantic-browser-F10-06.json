@@ -1,0 +1,844 @@
+[
+  {
+    "id": "F10-06",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-06-Gradient-Visual-PREMIUM-REVIEW.html",
+    "sourceSha256": "352e2a02d8de276cbe3393d975e0b8422519af92d02911136e5ee994d0086bf9",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            640,
+            572
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1.5 10 2 3 4 5 6 8",
+          "before": "0 1 10 2 3 4 5 6 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Lesson preset Y8-022 · Straight-line gradient Y8-023 · Gradient and intercept Y8-025 · Parallel gradients Y8-026 · Distance–time speed Y8-027 · Velocity–time acceleration Y8-028 · Gradient as a real-world rate Y9-017 · Velocity change and direction Point A · x −2 Point A · y 3 Point B · x 2 Point B ",
+          "after": "Lesson preset Y8-022 · Straight-line gradient Y8-023 · Gradient and intercept Y8-025 · Parallel gradients Y8-026 · Distance–time speed Y8-027 · Velocity–time acceleration Y8-028 · Gradient as a real-world rate Y9-017 · Velocity change and direction Point A · x −2 Point A · y 3 Point B · x 2 Point B ",
+          "bi": [
+            "Y8-023",
+            "-2",
+            "3",
+            "2",
+            "-1"
+          ],
+          "ai": [
+            "Y8-023",
+            "-2",
+            "3",
+            "2",
+            "-1"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 4 5 6 8",
+            2
+          ],
+          "narrow": [
+            "0 1 10 2 3 4 5 6 8",
+            2
+          ],
+          "back": [
+            "0 1 10 2 3 4 5 6 8",
+            2
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            640,
+            572
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 10 2 3 4 5 6 8",
+          "before": "0 10 2 3 4 5 6 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "A is (−3, −2) and B is (1, 4). What is the gradient? CheckHint",
+          "after": "A is (−3, −2) and B is (1, 4). What is the gradient? CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 10 2 3 4 5 6 8",
+            0
+          ],
+          "narrow": [
+            "0 10 2 3 4 5 6 8",
+            0
+          ],
+          "back": [
+            "0 10 2 3 4 5 6 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y8-022, Y8-023, Y8-025, Y8-026, Y8-027, Y8-028, Y9-017"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y8-022",
+            "A": [
+              1,
+              0
+            ],
+            "B": [
+              1,
+              4
+            ]
+          },
+          "errors": [
+            "A and B need different x values"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 640,
+            "median": 27.63,
+            "p10": 27.63,
+            "count": 21,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 572,
+            "median": 13.01,
+            "p10": 13.01,
+            "count": 15,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 572,
+            "median": 13.01,
+            "p10": 13.01,
+            "count": 15,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 572,
+          "median": 13.01,
+          "p10": 13.01,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 572,
+          "median": 13.01,
+          "p10": 13.01,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 572,
+          "median": 13.01,
+          "p10": 13.01,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 572,
+          "median": 13.01,
+          "p10": 13.01,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 572,
+          "median": 13.01,
+          "p10": 13.01,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n−5\n−4\n−3\n−2\n2\n3\n4\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8\n0\nx\ny\nA\nB\nA\n·\nS\nT\nA\nR\nT\nB\n·\nF\nI\nN\nI\nS\nH\n",
+          "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n−5\n−4\n−3\n−2\n2\n3\n4\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8\n0\nx\ny\nA\nB\nA\n·\nS\nT\nA\nR\nT\nB\n·\nF\nI\nN\nI\nS\nH\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "A",
+            "B"
+          ],
+          "text": "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n−5\n−4\n−3\n−2\n2\n3\n4\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8\n0\nx\ny\nA\nB\nA\n·\nS\nT\nA\nR\nT\nB\n·\nF\nI\nN\nI\nS\nH\nΔ ·\nC\nH\nA\nN\nG\nE\nTHE GRADIENT\nFind the missing rate\nUSE THE TWO POINTS\n?\n?\n=\nFind it\nTHE TWO CHANGES\nVERTICAL · Δy\n?\nHORIZONTAL · Δx\n?\nMEANING & UNITS\nRead chang"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 1.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "A",
+            "B"
+          ],
+          "text": "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n−5\n−4\n−3\n−2\n2\n3\n4\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8\n0\nx\ny\nA\nB\nA\n·\nS\nT\nA\nR\nT\nB\n·\nF\nI\nN\nI\nS\nH\nΔ ·\nC\nH\nA\nN\nG\nE\nTHE GRADIENT\nFind the missing rate\nUSE THE TWO POINTS\n?\n?\n=\nFind it\nTHE TWO CHANGES\nVERTICAL · Δy\n?\nHORIZONTAL · Δx\n?\nMEANING & UNITS\nRead chang"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": -1.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n−5\n−4\n−3\n−2\n2\n3\n4\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8\n0\nx\ny\nA\nB\nA\n·\nS\nT\nA\nR\nT\nB\n·\nF\nI\nN\nI\nS\nH\nΔ ·\nC\nH\nA\nN\nG\nE\nTHE GRADIENT\nFind the missing rate\nUSE THE T"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n",
+            "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n",
+            "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n",
+            "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n",
+            "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n",
+            "F10 · GRADIENT MEASUREMENT STUDIO\nCHALLENGE · FIND THE RATE\n"
+          ],
+          "distinctText": 3,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · GRADIENT MEASUREMENT STUDIOCHALLENGE · FIND THE RATE\n−5\n−3\n3\n5\n−8\n−6\n−4\n−2",
+          "F10 · GRADIENT MEASUREMENT STUDIONOVA · NEON CHALK\n−5\n−3\n3\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8",
+          "F10 · GRADIENT MEASUREMENT STUDIONOVA · NEON CHALK\n−5\n−3\n3\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8",
+          "F10 · GRADIENT MEASUREMENT STUDIONOVA · NEON CHALK\n−5\n−3\n3\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · GRADIENT MEASUREMENT STUDIOCHALLENGE · FIND THE RATE\n−5\n−3\n3\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8\n0\nx\ny\nA\n·\nS\nT\nA\nR\nT\nB\n·\nF\nI\nN\nI\nS\nH\nΔ ·\nC\nH\nA\nN\nG\nE\nTHE GRADIENT\nFind the missing rate\nUSE THE TWO POINTS\n??=Fi"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · GRADIENT MEASUREMENT STUDIOCHALLENGE · FIND THE RATE\n−5\n−3\n3\n5\n−8\n−6\n−4\n−2",
+          "F10 · GRADIENT MEASUREMENT STUDIONOVA · NEON CHALK\n−5\n−3\n3\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8",
+          "F10 · GRADIENT MEASUREMENT STUDIONOVA · NEON CHALK\n−5\n−3\n3\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8",
+          "F10 · GRADIENT MEASUREMENT STUDIONOVA · NEON CHALK\n−5\n−3\n3\n5\n−8\n−6\n−4\n−2\n2\n4\n6\n8"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Point A; x −3, y −2/(−3, −2) || Point B; x 1, y 4/(1, 4)",
+          "active": "",
+          "panel": "Lesson preset Y8-022 · Straight-line gradient Y8-023 · Gradient and intercept Y8-025 · Parallel gradients Y8-026 · Distance–time speed Y8-027 · Velocity–time acceleration Y8-028 · Gradient as a real-world rate Y9-017 · Velocity change and direction Point A · x −3 Point A · y −2 Point B · x 1 Point B · y 4 Restore preset Make horizontal Drag either luminous point to a grid intersection, or focus it and use arrow keys. Horizontal movement changes x by 1; vertical movement changes y by 0.5. Escape cancels a drag.",
+          "inputs": [
+            "Y8-022",
+            "-3",
+            "-2",
+            "1",
+            "4"
+          ],
+          "stageInputs": [],
+          "nums": "0 1.5 10 2 3 4 5 6 8",
+          "buttons": 2,
+          "vb": 640,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Point A; x −2, y 3/(−2, 3) || Point B; x 2, y −1/(2, −1)",
+          "active": "",
+          "panel": "Lesson preset Y8-022 · Straight-line gradient Y8-023 · Gradient and intercept Y8-025 · Parallel gradients Y8-026 · Distance–time speed Y8-027 · Velocity–time acceleration Y8-028 · Gradient as a real-world rate Y9-017 · Velocity change and direction Point A · x −2 Point A · y 3 Point B · x 2 Point B · y −1 Restore preset Make horizontal Drag either luminous point to a grid intersection, or focus it and use arrow keys. Horizontal movement changes x by 1; vertical movement changes y by 0.5. Escape cancels a drag.",
+          "inputs": [
+            "Y8-023",
+            "-2",
+            "3",
+            "2",
+            "-1"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 8",
+          "buttons": 2,
+          "vb": 640,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Point A; x −2, y 3/(−2, 3) || Point B; x 2, y −1/(2, −1)",
+          "active": "",
+          "panel": "Lesson preset Y8-022 · Straight-line gradient Y8-023 · Gradient and intercept Y8-025 · Parallel gradients Y8-026 · Distance–time speed Y8-027 · Velocity–time acceleration Y8-028 · Gradient as a real-world rate Y9-017 · Velocity change and direction Point A · x −2 Point A · y 3 Point B · x 2 Point B · y −1 Restore preset Make horizontal Drag either luminous point to a grid intersection, or focus it and use arrow keys. Horizontal movement changes x by 1; vertical movement changes y by 0.5. Escape cancels a drag.",
+          "inputs": [
+            "Y8-023",
+            "-2",
+            "3",
+            "2",
+            "-1"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 8",
+          "buttons": 2,
+          "vb": 572,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "A is (−3, −2) and B is (1, 4). What is the gradient? CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 3 4 5 6 8",
+          "buttons": 0,
+          "vb": 640,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "A is (−3, −2) and B is (1, 4). What is the gradient? CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 3 4 5 6 8",
+          "buttons": 0,
+          "vb": 640,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "A is (−3, −2) and B is (1, 4). What is the gradient? CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 3 4 5 6 8",
+          "buttons": 0,
+          "vb": 572,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 640,
+        "median": 27.63,
+        "p10": 27.63,
+        "count": 21,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 572,
+        "median": 13.01,
+        "p10": 13.01,
+        "count": 15,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 572,
+        "median": 13.01,
+        "p10": 13.01,
+        "count": 15,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

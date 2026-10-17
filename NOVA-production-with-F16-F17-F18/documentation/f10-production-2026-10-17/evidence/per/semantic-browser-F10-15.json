@@ -1,0 +1,828 @@
+[
+  {
+    "id": "F10-15",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-15-Inequality-Region-Shader-PREMIUM-REVIEW.html",
+    "sourceSha256": "2f7a5d53b2be48db83af4e567752209454c4c266a5ce1dd5c0911bc89cc82d98",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            658,
+            658
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 6",
+          "before": "0 1 10 2 4 6"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "CHOOSE AN INEQUALITY Y8-017 · x > 2 Y8 · x ≥ 2 Y8 · x ≤ −1 Y8 · x < −2 GCSE · y > x + 1 GCSE · y ≤ −x + 2 GCSE · two inequalities BOUNDARY SYMBOL Greater than (>) At least (≥) Less than (<) At most (≤) BOUNDARY x = 2 Drag the cyan boundary and green test point (or use arrow keys). Valid positions sn",
+          "after": "CHOOSE AN INEQUALITY Y8-017 · x > 2 Y8 · x ≥ 2 Y8 · x ≤ −1 Y8 · x < −2 GCSE · y > x + 1 GCSE · y ≤ −x + 2 GCSE · two inequalities BOUNDARY SYMBOL Greater than (>) At least (≥) Less than (<) At most (≤) BOUNDARY x = 2 Drag the cyan boundary and green test point (or use arrow keys). Valid positions sn",
+          "bi": [
+            "Y8-017-INCLUSIVE",
+            "≥",
+            "2"
+          ],
+          "ai": [
+            "Y8-017-INCLUSIVE",
+            "≥",
+            "2"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 4 6",
+            2
+          ],
+          "narrow": [
+            "0 1 10 2 4 6",
+            2
+          ],
+          "back": [
+            "0 1 10 2 4 6",
+            2
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            658,
+            658
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 6",
+          "before": "0 1 10 2 3 4 6"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "For x > 2, does x = 2 satisfy the inequality? Enter YES or NO. YOUR ANSWER CheckHint",
+          "after": "For x > 2, does x = 2 satisfy the inequality? Enter YES or NO. YOUR ANSWER CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 4 6",
+            0
+          ],
+          "narrow": [
+            "0 1 10 2 3 4 6",
+            0
+          ],
+          "back": [
+            "0 1 10 2 3 4 6",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "state.point[0] is out of range"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y8-017",
+            "point": [
+              7,
+              0
+            ]
+          },
+          "errors": [
+            "point must be [x, y] with x from −6 to 6 and y from −5 to 7"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 658,
+            "median": 25.63,
+            "p10": 23.49,
+            "count": 22,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 658,
+            "median": 11.31,
+            "p10": 11,
+            "count": 22,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 658,
+            "median": 11.31,
+            "p10": 11,
+            "count": 22,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 658,
+          "median": 11.31,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 658,
+          "median": 11.31,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 658,
+          "median": 11.31,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 658,
+          "median": 11.31,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 658,
+          "median": 11.31,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny\nX SOLUTION SET\n−6\n−4\n−2\n0\n2\n4\n6\nDASHED · EXCLUDED",
+          "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny\nX SOLUTION SET\n−6\n−4\n−2\n0\n2\n4\n6\nSOLID · INCLUDED\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "x > 2"
+          ],
+          "text": "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny\nX SOLUTION SET\n−6\n−4\n−2\n0\n2\n4\n6\nDASHED · EXCLUDED\nSTRIPED · SOLUTION REGION\nINEQUALITY\nx > 2\nBOUNDARY\nx = 2\nLINE RULE\nDashed = equality excluded\nTEST POINT\n(4, 1) · DECIDE: does it satisfy?\nDECISION\nOnly the v"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "yes",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "x ≥ 2"
+          ],
+          "text": "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny\nX SOLUTION SET\n−6\n−4\n−2\n0\n2\n4\n6\nSOLID · INCLUDED\nSTRIPED · SOLUTION REGION\nINEQUALITY\nx ≥ 2\nBOUNDARY\nx = 2\nLINE RULE\nSolid = equality allowed\nTEST POINT\n(2, −3) · DECIDE: does it satisfy?\nDECISION\nOnly the val"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "yes",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny\nX SOLUTION SET\n−6\n−4\n−2\n0\n2\n4\n6\nDASHED · EXCLUDED\nSTRIPED · SOLUTION REGION\nINEQUALITY\nx > 2\nBOUNDARY\nx = 2\nL"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6",
+            "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6",
+            "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6",
+            "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6",
+            "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6",
+            "F10 · INEQUALITY REGION STUDIO\nCHALLENGE · TEST THE CLAIM\n−6"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · INEQUALITY REGION STUDIOCHALLENGE · TEST THE CLAIM\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n",
+          "F10 · INEQUALITY REGION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny",
+          "F10 · INEQUALITY REGION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny",
+          "F10 · INEQUALITY REGION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · INEQUALITY REGION STUDIOCHALLENGE · TEST THE CLAIM\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny\nX SOLUTION SET\n−6\n−4\n−2\n0\n2\n4\n6\nDASHED · EXCLUDEDSTRIPED · SOLUTION REGION\nINEQUALITY\nx > 2\nBOUNDARY\nx = 2\nLIN"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · INEQUALITY REGION STUDIOCHALLENGE · TEST THE CLAIM\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n",
+          "F10 · INEQUALITY REGION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny",
+          "F10 · INEQUALITY REGION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny",
+          "F10 · INEQUALITY REGION STUDIONOVA · NEON CHALK\n−6\n−4\n−2\n2\n4\n6\n−4\n−2\n2\n4\n6\n0\nx\ny"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Test point 3,1; arrow keys move by one grid unit/ || Drag to change the x boundary/",
+          "active": "",
+          "panel": "CHOOSE AN INEQUALITY Y8-017 · x > 2 Y8 · x ≥ 2 Y8 · x ≤ −1 Y8 · x < −2 GCSE · y > x + 1 GCSE · y ≤ −x + 2 GCSE · two inequalities BOUNDARY SYMBOL Greater than (>) At least (≥) Less than (<) At most (≤) BOUNDARY x = 2 Drag the cyan boundary and green test point (or use arrow keys). Valid positions snap; an invalid drop springs back. Test a point ON the line to compare open and filled endpoints. MATCH EACH REGION TO ITS BOUNDARY x > 2 x ≥ 2 x ≤ −1 DASHED, RIGHT, OPEN SOLID, RIGHT, FILLED SOLID, LEFT, FILLED ↶ RED RETURN TRAY · REMOVE SELECTED CARD Select or drag an inequality card to the correct boundary description.",
+          "inputs": [
+            "Y8-017",
+            ">",
+            "2"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 6",
+          "buttons": 2,
+          "vb": 658,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Test point 2,1; arrow keys move by one grid unit/ || Drag to change the x boundary/",
+          "active": "",
+          "panel": "CHOOSE AN INEQUALITY Y8-017 · x > 2 Y8 · x ≥ 2 Y8 · x ≤ −1 Y8 · x < −2 GCSE · y > x + 1 GCSE · y ≤ −x + 2 GCSE · two inequalities BOUNDARY SYMBOL Greater than (>) At least (≥) Less than (<) At most (≤) BOUNDARY x = 2 Drag the cyan boundary and green test point (or use arrow keys). Valid positions snap; an invalid drop springs back. Test a point ON the line to compare open and filled endpoints. MATCH EACH REGION TO ITS BOUNDARY x > 2 x ≥ 2 x ≤ −1 DASHED, RIGHT, OPEN SOLID, RIGHT, FILLED SOLID, LEFT, FILLED ↶ RED RETURN TRAY · REMOVE SELECTED CARD Select or drag an inequality card to the correct boundary description.",
+          "inputs": [
+            "Y8-017-INCLUSIVE",
+            "≥",
+            "2"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 4 6",
+          "buttons": 2,
+          "vb": 658,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Test point 2,1; arrow keys move by one grid unit/ || Drag to change the x boundary/",
+          "active": "",
+          "panel": "CHOOSE AN INEQUALITY Y8-017 · x > 2 Y8 · x ≥ 2 Y8 · x ≤ −1 Y8 · x < −2 GCSE · y > x + 1 GCSE · y ≤ −x + 2 GCSE · two inequalities BOUNDARY SYMBOL Greater than (>) At least (≥) Less than (<) At most (≤) BOUNDARY x = 2 Drag the cyan boundary and green test point (or use arrow keys). Valid positions snap; an invalid drop springs back. Test a point ON the line to compare open and filled endpoints. MATCH EACH REGION TO ITS BOUNDARY x > 2 x ≥ 2 x ≤ −1 DASHED, RIGHT, OPEN SOLID, RIGHT, FILLED SOLID, LEFT, FILLED ↶ RED RETURN TRAY · REMOVE SELECTED CARD Select or drag an inequality card to the correct boundary description.",
+          "inputs": [
+            "Y8-017-INCLUSIVE",
+            "≥",
+            "2"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 4 6",
+          "buttons": 2,
+          "vb": 658,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "For x > 2, does x = 2 satisfy the inequality? Enter YES or NO. YOUR ANSWER CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 6",
+          "buttons": 0,
+          "vb": 658,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "For x > 2, does x = 2 satisfy the inequality? Enter YES or NO. YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 6",
+          "buttons": 0,
+          "vb": 658,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "For x > 2, does x = 2 satisfy the inequality? Enter YES or NO. YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 6",
+          "buttons": 0,
+          "vb": 658,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 658,
+        "median": 25.63,
+        "p10": 23.49,
+        "count": 22,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 658,
+        "median": 11.31,
+        "p10": 11,
+        "count": 22,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 658,
+        "median": 11.31,
+        "p10": 11,
+        "count": 22,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": false
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

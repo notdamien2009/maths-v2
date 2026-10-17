@@ -1,0 +1,786 @@
+[
+  {
+    "id": "F8-07",
+    "presetOf": null,
+    "path": "F8/F8-07-expression-builder.html",
+    "sourceSha256": "bfe5c84dc60fa5e55b9908c0f1bce4a2a973ed1f866b98af5e9ebeb760b6065e",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1080,
+            440
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "028 07 2 3 5 7 8",
+          "before": "034 07 2 3 7 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Y7 · Translating an algebraic phrase Y7 · Ticket cost Y7 · Rectangle perimeter Y9 · Two taxi trips Y9 · Groups and delivery Undo last tile Reset expression Check expression Drag a tile onto a rail slot, or click to fill the next empty slot.",
+          "after": "Y7 · Translating an algebraic phrase Y7 · Ticket cost Y7 · Rectangle perimeter Y9 · Two taxi trips Y9 · Groups and delivery Undo last tile Reset expression Check expression Drag a tile onto a rail slot, or click to fill the next empty slot.",
+          "bi": [
+            "Y7-034-T"
+          ],
+          "ai": [
+            "Y7-034-T"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "034 07 2 3 7 8",
+            8
+          ],
+          "narrow": [
+            "034 07 2 3 7 8",
+            8
+          ],
+          "back": [
+            "034 07 2 3 7 8",
+            8
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1080,
+            440
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "028 07 2 3 5 7 8",
+          "before": "028 07 2 3 5 7 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Undo last tile Reset expression Check expression Challenge 1 / 5 · Five times a number, then add three Tile placed. Read the expression from left to right. Next expression",
+          "after": "Undo last tile Reset expression Check expression Challenge 1 / 5 · Five times a number, then add three Tile placed. Read the expression from left to right. Next expression",
+          "bi": [
+            "Y7-034-T"
+          ],
+          "ai": [
+            "Y7-034-T"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "028 07 2 3 5 7 8",
+            8
+          ],
+          "narrow": [
+            "028 07 2 3 5 7 8",
+            8
+          ],
+          "back": [
+            "028 07 2 3 5 7 8",
+            8
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of: Y7-028, Y7-034-T, Y7-034-P, Y9-007-D, Y9-007-G"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1080,
+            "median": 30.14,
+            "p10": 21.39,
+            "count": 28,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 13.49,
+            "p10": 11,
+            "count": 29,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 13.49,
+            "p10": 11,
+            "count": 29,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 29,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 29,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 29,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 29,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 29,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFROM WORDS TO ALGEBRA\nY7-028 · BUILD THE RULE FROM ITS MEANING\nA NUMBER IS n\nMULTI",
+          "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFROM WORDS TO ALGEBRA\nY7-034 · BUILD THE RULE FROM ITS MEANING\nEACH TICKET COSTS £"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "n = 2"
+          ],
+          "text": "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFROM WORDS TO ALGEBRA\nY7-028 · BUILD THE RULE FROM ITS MEANING\nA NUMBER IS n\nMULTIPLY IT BY FIVE\nTHEN ADD THREE\nEXPRESSION RAIL\n?\n?\n?\n?\nREAD THE MATHEMATICS\nComplete the rail above\nThe expression must match the meaning of the whole descriptio"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 13,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "t = 3"
+          ],
+          "text": "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFROM WORDS TO ALGEBRA\nY7-034 · BUILD THE RULE FROM ITS MEANING\nEACH TICKET COSTS £7\nBUY t TICKETS\nADD A £2 BOOKING FEE\nEXPRESSION RAIL\n?\n?\n?\n?\nREAD THE MATHEMATICS\nComplete the rail above\nThe expression must match the meaning of the whole des"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 23,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFROM WORDS TO ALGEBRA\nY7-028 · BUILD THE RULE FROM ITS MEANING\nA NUMBER IS n\nMULTIPLY IT BY FIVE\nTHEN ADD THREE\nEXPRESSION RAIL\n?\n?\n?\n?\nREAD T"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFR",
+          "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFR",
+          "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFR",
+          "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFR",
+          "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFR",
+          "F8-07 · EXPRESSION STUDIO\nBUILD THE MATHEMATICAL LANGUAGE\nFR"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "FROM WORDS TO ALGEBRA\nY7-028 · BUILD THE RULE\nA NUMBER IS n\nMULTIPLY IT BY FIVE\n",
+          "FROM WORDS TO ALGEBRA\nY7-028 · BUILD THE RULE\nA NUMBER IS n\nMULTIPLY IT BY FIVE\n",
+          "FROM WORDS TO ALGEBRA\nY7-028 · BUILD THE RULE\nA NUMBER IS n\nMULTIPLY IT BY FIVE\n",
+          "FROM WORDS TO ALGEBRA\nY7-028 · BUILD THE RULE\nA NUMBER IS n\nMULTIPLY IT BY FIVE\n"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "FROM WORDS TO ALGEBRA\nY7-028 · BUILD THE RULE\nA NUMBER IS n\nMULTIPLY IT BY FIVE\nTHEN ADD THREE\nEXPRESSION RAIL\n?\n?\n?\n?\nREAD THE MATHEMATICS\nComplete the rail above\nThe expression must match the meanin"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "FROM WORDS TO ALGEBRA\nY7-034 · BUILD THE RULE\nEACH TICKET COSTS £7\nBUY t TICKETS",
+          "FROM WORDS TO ALGEBRA\nY7-034 · BUILD THE RULE\nEACH TICKET COSTS £7\nBUY t TICKETS",
+          "FROM WORDS TO ALGEBRA\nY7-034 · BUILD THE RULE\nEACH TICKET COSTS £7\nBUY t TICKETS",
+          "FROM WORDS TO ALGEBRA\nY7-034 · BUILD THE RULE\nEACH TICKET COSTS £7\nBUY t TICKETS"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Y7 · Translating an algebraic phrase Y7 · Ticket cost Y7 · Rectangle perimeter Y9 · Two taxi trips Y9 · Groups and delivery Undo last tile Reset expression Check expression Drag a tile onto a rail slot, or click to fill the next empty slot.",
+          "inputs": [
+            "Y7-028"
+          ],
+          "stageInputs": [],
+          "nums": "028 07 2 3 5 7 8",
+          "buttons": 8,
+          "vb": 1080,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Y7 · Translating an algebraic phrase Y7 · Ticket cost Y7 · Rectangle perimeter Y9 · Two taxi trips Y9 · Groups and delivery Undo last tile Reset expression Check expression Drag a tile onto a rail slot, or click to fill the next empty slot.",
+          "inputs": [
+            "Y7-034-T"
+          ],
+          "stageInputs": [],
+          "nums": "034 07 2 3 7 8",
+          "buttons": 8,
+          "vb": 1080,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Y7 · Translating an algebraic phrase Y7 · Ticket cost Y7 · Rectangle perimeter Y9 · Two taxi trips Y9 · Groups and delivery Undo last tile Reset expression Check expression Drag a tile onto a rail slot, or click to fill the next empty slot.",
+          "inputs": [
+            "Y7-034-T"
+          ],
+          "stageInputs": [],
+          "nums": "034 07 2 3 7 8",
+          "buttons": 8,
+          "vb": 440,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Undo last tile Reset expression Check expression Challenge 1 / 5 · Five times a number, then add three Use every slot. Wrong tiles return to the tray; keep the original meaning. Next expression",
+          "inputs": [
+            "Y7-028"
+          ],
+          "stageInputs": [],
+          "nums": "028 07 2 3 5 7 8",
+          "buttons": 8,
+          "vb": 1080,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Undo last tile Reset expression Check expression Challenge 1 / 5 · Five times a number, then add three Tile placed. Read the expression from left to right. Next expression",
+          "inputs": [
+            "Y7-034-T"
+          ],
+          "stageInputs": [],
+          "nums": "028 07 2 3 5 7 8",
+          "buttons": 8,
+          "vb": 1080,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Undo last tile Reset expression Check expression Challenge 1 / 5 · Five times a number, then add three Tile placed. Read the expression from left to right. Next expression",
+          "inputs": [
+            "Y7-034-T"
+          ],
+          "stageInputs": [],
+          "nums": "028 07 2 3 5 7 8",
+          "buttons": 8,
+          "vb": 440,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1080,
+        "median": 30.14,
+        "p10": 21.39,
+        "count": 28,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 13.49,
+        "p10": 11,
+        "count": 29,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 13.49,
+        "p10": 11,
+        "count": 29,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

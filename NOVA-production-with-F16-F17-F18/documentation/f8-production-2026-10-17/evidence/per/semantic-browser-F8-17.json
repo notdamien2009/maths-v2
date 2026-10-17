@@ -1,0 +1,776 @@
+[
+  {
+    "id": "F8-17",
+    "presetOf": null,
+    "path": "F8/F8-17-algebraic-proof-builder.html",
+    "sourceSha256": "24b5dcf7c4f1a44ed3875dbb20e9732411f3e43f9fb851851753bbec5dc3b1de",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            960,
+            960
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "2 3",
+          "before": "2 3"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "EXPLORE · THREE CONSECUTIVE → MULTIPLE OF 3 Prove that the sum of three consecutive integers is divisible by three. Odd + odd = even Three consecutive → multiple of 3 Even number squared → multiple of 4 Odd squared stays odd Multiples of 5 stay multiples Consecutive square difference → odd Undo Rese",
+          "after": "EXPLORE · THREE CONSECUTIVE → MULTIPLE OF 3 Prove that the sum of three consecutive integers is divisible by three. Odd + odd = even Three consecutive → multiple of 3 Even number squared → multiple of 4 Odd squared stays odd Multiples of 5 stay multiples Consecutive square difference → odd Undo Rese",
+          "bi": [
+            "THREE-CONSEC"
+          ],
+          "ai": [
+            "THREE-CONSEC"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "2 3",
+            9
+          ],
+          "narrow": [
+            "2 3",
+            9
+          ],
+          "back": [
+            "2 3",
+            9
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            960,
+            960
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "2 3",
+          "before": "1 2 3"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "PROOF 1 OF 6 · ODD + ODD = EVEN Prove that the sum of any two odd whole numbers must be even. Complete the chain without using false statements. Undo Reset Hint Select a card, then click a slot or drag the card from the board. Proof-card bank STATEMENT a + b = 2(m + n + 1) REASON Collect terms and f",
+          "after": "PROOF 1 OF 6 · ODD + ODD = EVEN Prove that the sum of any two odd whole numbers must be even. Complete the chain without using false statements. Undo Reset Hint Select a card, then click a slot or drag the card from the board. Proof-card bank STATEMENT a + b = 2(m + n + 1) REASON Collect terms and f",
+          "bi": [],
+          "ai": []
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "1 2 3",
+            9
+          ],
+          "narrow": [
+            "1 2 3",
+            9
+          ],
+          "back": [
+            "1 2 3",
+            9
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of: ODD-SUM, THREE-CONSEC, EVEN-SQUARE, ODD-SQUARE, MULTIPLE-FIVE, SQUARE-DIFF"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 960,
+            "median": 45.94,
+            "p10": 31.72,
+            "count": 20,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 960,
+            "median": 11.29,
+            "p10": 11,
+            "count": 20,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 960,
+            "median": 11.29,
+            "p10": 11,
+            "count": 20,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.29,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.29,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.29,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.29,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 960,
+          "median": 11.29,
+          "p10": 11,
+          "count": 20,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nTWO ODD NUMBERS\nPREMISE\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 2\nDROP A STA",
+          "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nTHREE CONSECUTIVE NUMBERS\nPREMISE\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 2\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "TWO ODD NUMBERS"
+          ],
+          "text": "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nTWO ODD NUMBERS\nPREMISE\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 2\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 3\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nCONCLUSION\nDROP A STATEMENT\nEACH LINK MUST BE TRUE FOR ALL INTEGERS\nSELECT BELOW"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "m+n+1",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "CONSECUTIVE"
+          ],
+          "text": "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nTHREE CONSECUTIVE NUMBERS\nPREMISE\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 2\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 3\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nCONCLUSION\nDROP A STATEMENT\nEACH LINK MUST BE TRUE FOR ALL INTEGERS\nSE"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "3n",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nTWO ODD NUMBERS\nPREMISE\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 2\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 3\nDROP A STATEMENT\nPL"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nTWO O",
+          "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nTHREE",
+          "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nSQUAR",
+          "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nSQUAR",
+          "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nADDIN",
+          "ALGEBRAIC PROOF\nBUILD A VALID PROOF\nBUILD THE ARGUMENT\nDIFFE"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "BUILD THE ARGUMENT\nTWO ODD NUMBERS\nPREMISE\nDROP A STATEMENT\nPLACE A JUSTIFICATIO",
+          "EVERY STEP NEEDS A REASON\nTWO ODD NUMBERS\nPREMISE\na = 2m + 1; b = 2n + 1\nSubstit",
+          "EVERY STEP NEEDS A REASON\nTWO ODD NUMBERS\nPREMISE\na = 2m + 1; b = 2n + 1\nSubstit",
+          "EVERY STEP NEEDS A REASON\nTWO ODD NUMBERS\nPREMISE\na = 2m + 1; b = 2n + 1\nSubstit"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "BUILD THE ARGUMENT\nTWO ODD NUMBERS\nPREMISE\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 2\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nSTATEMENT 3\nDROP A STATEMENT\nPLACE A JUSTIFICATION\nCONCLUSION\nDROP "
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "BUILD THE ARGUMENT\nTHREE CONSECUTIVE NUMBERS\nPREMISE\nDROP A STATEMENT\nPLACE A JU",
+          "EVERY STEP NEEDS A REASON\nTHREE CONSECUTIVE NUMBERS\nPREMISE\nn − 1, n, n + 1\nWrit",
+          "EVERY STEP NEEDS A REASON\nTHREE CONSECUTIVE NUMBERS\nPREMISE\nn − 1, n, n + 1\nWrit",
+          "EVERY STEP NEEDS A REASON\nTHREE CONSECUTIVE NUMBERS\nPREMISE\nn − 1, n, n + 1\nWrit"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "EXPLORE · ODD + ODD = EVEN Prove that the sum of any two odd whole numbers must be even. Odd + odd = even Three consecutive → multiple of 3 Even number squared → multiple of 4 Odd squared stays odd Multiples of 5 stay multiples Consecutive square difference → odd Undo Reset Hint Select a card, then click a slot or drag the card from the board. Proof-card bank STATEMENT a + b = 2(m + n + 1) REASON Collect terms and factor 2 STATEMENT a + b = 2m + 2n + 1 STATEMENT a = 2m + 1; b = 2n + 1 REASON The sum of odd numbers is always odd STATEMENT a + b is even REASON Substitute the values of a and b STATEMENT a + b = (2m + 1) + (2n + 1) REASON 2 times an integer is even Check entire proof Next proof Select a proof card, then drag it to the matching position. 0 of 7 proof positions correctly filled. A numerical example can test a claim, but proving it for all integers needs a valid algebraic argument.",
+          "inputs": [
+            "ODD-SUM"
+          ],
+          "stageInputs": [],
+          "nums": "2 3",
+          "buttons": 9,
+          "vb": 960,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "EXPLORE · THREE CONSECUTIVE → MULTIPLE OF 3 Prove that the sum of three consecutive integers is divisible by three. Odd + odd = even Three consecutive → multiple of 3 Even number squared → multiple of 4 Odd squared stays odd Multiples of 5 stay multiples Consecutive square difference → odd Undo Reset Hint Select a card, then click a slot or drag the card from the board. Proof-card bank STATEMENT 3n REASON Collect like terms: −1 + 1 = 0 STATEMENT The sum is 3n + 1 STATEMENT n − 1, n, n + 1 REASON Consecutive integers are all multiples of 3 STATEMENT The sum is a multiple of 3 REASON Write the sum of all three STATEMENT (n − 1) + n + (n + 1) REASON 3 times an integer is divisible by 3 Check entire proof Next proof Select a proof card, then drag it to the matching position. 0 of 7 proof positions correctly filled. A numerical example can test a claim, but proving it for all integers needs a valid algebraic argument.",
+          "inputs": [
+            "THREE-CONSEC"
+          ],
+          "stageInputs": [],
+          "nums": "2 3",
+          "buttons": 9,
+          "vb": 960,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "EXPLORE · THREE CONSECUTIVE → MULTIPLE OF 3 Prove that the sum of three consecutive integers is divisible by three. Odd + odd = even Three consecutive → multiple of 3 Even number squared → multiple of 4 Odd squared stays odd Multiples of 5 stay multiples Consecutive square difference → odd Undo Reset Hint Select a card, then click a slot or drag the card from the board. Proof-card bank STATEMENT 3n REASON Collect like terms: −1 + 1 = 0 STATEMENT The sum is 3n + 1 STATEMENT n − 1, n, n + 1 REASON Consecutive integers are all multiples of 3 STATEMENT The sum is a multiple of 3 REASON Write the sum of all three STATEMENT (n − 1) + n + (n + 1) REASON 3 times an integer is divisible by 3 Check entire proof Next proof Select a proof card, then drag it to the matching position. 0 of 7 proof positions correctly filled. A numerical example can test a claim, but proving it for all integers needs a valid algebraic argument.",
+          "inputs": [
+            "THREE-CONSEC"
+          ],
+          "stageInputs": [],
+          "nums": "2 3",
+          "buttons": 9,
+          "vb": 960,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "PROOF 1 OF 6 · ODD + ODD = EVEN Prove that the sum of any two odd whole numbers must be even. Complete the chain without using false statements. Undo Reset Hint Select a card, then click a slot or drag the card from the board. Proof-card bank STATEMENT a + b = 2(m + n + 1) REASON Collect terms and factor 2 STATEMENT a + b = 2m + 2n + 1 STATEMENT a = 2m + 1; b = 2n + 1 REASON The sum of odd numbers is always odd STATEMENT a + b is even REASON Substitute the values of a and b STATEMENT a + b = (2m + 1) + (2n + 1) REASON 2 times an integer is even Check entire proof Next proof Select a proof card, then drag it to the matching position. 0 of 7 proof positions correctly filled. A numerical example can test a claim, but proving it for all integers needs a valid algebraic argument.",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "2 3",
+          "buttons": 9,
+          "vb": 960,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "PROOF 1 OF 6 · ODD + ODD = EVEN Prove that the sum of any two odd whole numbers must be even. Complete the chain without using false statements. Undo Reset Hint Select a card, then click a slot or drag the card from the board. Proof-card bank STATEMENT a + b = 2(m + n + 1) REASON Collect terms and factor 2 STATEMENT a + b = 2m + 2n + 1 STATEMENT a = 2m + 1; b = 2n + 1 REASON The sum of odd numbers is always odd STATEMENT a + b is even REASON Substitute the values of a and b STATEMENT a + b = (2m + 1) + (2n + 1) REASON 2 times an integer is even Check entire proof Next proof This is not the correct statement for step 1. Follow the previous line. 0 of 7 proof positions correctly filled. A numerical example can test a claim, but proving it for all integers needs a valid algebraic argument.",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "1 2 3",
+          "buttons": 9,
+          "vb": 960,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "PROOF 1 OF 6 · ODD + ODD = EVEN Prove that the sum of any two odd whole numbers must be even. Complete the chain without using false statements. Undo Reset Hint Select a card, then click a slot or drag the card from the board. Proof-card bank STATEMENT a + b = 2(m + n + 1) REASON Collect terms and factor 2 STATEMENT a + b = 2m + 2n + 1 STATEMENT a = 2m + 1; b = 2n + 1 REASON The sum of odd numbers is always odd STATEMENT a + b is even REASON Substitute the values of a and b STATEMENT a + b = (2m + 1) + (2n + 1) REASON 2 times an integer is even Check entire proof Next proof This is not the correct statement for step 1. Follow the previous line. 0 of 7 proof positions correctly filled. A numerical example can test a claim, but proving it for all integers needs a valid algebraic argument.",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "1 2 3",
+          "buttons": 9,
+          "vb": 960,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 960,
+        "median": 45.94,
+        "p10": 31.72,
+        "count": 20,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 960,
+        "median": 11.29,
+        "p10": 11,
+        "count": 20,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 960,
+        "median": 11.29,
+        "p10": 11,
+        "count": 20,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": false
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

@@ -1,0 +1,786 @@
+[
+  {
+    "id": "F8-03",
+    "presetOf": null,
+    "path": "F8/F8-03-function-machine.html",
+    "sourceSha256": "0af7a2f29b9f0f12a69feacad34e7264a52301c80299b823c652c4f2f1862a47",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1090,
+            440
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "03 1 2 3 4 8",
+          "before": "0 03 1 2 3 5 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Lesson preset Algebraic notation Substitution into formulae Inverse operations Rearranging formulae Reset machine Explore inverse New lesson preset selected. Choose an input card and put it in the hopper.",
+          "after": "Lesson preset Algebraic notation Substitution into formulae Inverse operations Rearranging formulae Reset machine Explore inverse New lesson preset selected. Choose an input card and put it in the hopper.",
+          "bi": [
+            "Y7-030"
+          ],
+          "ai": [
+            "Y7-030"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 03 1 2 3 5 8",
+            8
+          ],
+          "narrow": [
+            "0 03 1 2 3 5 8",
+            8
+          ],
+          "back": [
+            "0 03 1 2 3 5 8",
+            8
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1090,
+            440
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "03 1 2 3 8",
+          "before": "03 1 2 3 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Challenge 1 of 4 · Algebraic notation · Calculate the output y Check rule and value Hint Rule 2 selected.",
+          "after": "Challenge 1 of 4 · Algebraic notation · Calculate the output y Check rule and value Hint Rule 2 selected.",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "03 1 2 3 8",
+            6
+          ],
+          "narrow": [
+            "03 1 2 3 8",
+            6
+          ],
+          "back": [
+            "03 1 2 3 8",
+            6
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "inputs[0] is outside the range this apparatus can draw"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1090,
+            "median": 26.01,
+            "p10": 18.3,
+            "count": 21,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 14.66,
+            "p10": 11,
+            "count": 21,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 14.66,
+            "p10": 11,
+            "count": 21,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 14.66,
+          "p10": 11,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 14.66,
+          "p10": 11,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 14.66,
+          "p10": 11,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 14.66,
+          "p10": 11,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 14.66,
+          "p10": 11,
+          "count": 21,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F8-03 · ALGEBRAIC NOTATION\nFIND THE RULE AND OUTPUT\nFROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n5\nINPUT → HOPPER\nNOVA FUNCTION ENGINE\n?\n?\nR",
+          "F8-03 · ALGEBRAIC NOTATION\nFIND THE RULE AND OUTPUT\nFROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n7\nINPUT → HOPPER\nNOVA FUNCTION ENGINE\n?\n?\nR"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "x = 5"
+          ],
+          "text": "F8-03 · ALGEBRAIC NOTATION\nFIND THE RULE AND OUTPUT\nFROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n5\nINPUT → HOPPER\nNOVA FUNCTION ENGINE\n?\n?\nRULE 1\nDROP RULE\nRULE 2\nDROP RULE\nOUTPUT y\n?\nWHAT VALUE GOES THROUGH THE MACHINE?\nx = 5\ny = ?\n× 3\n+ 2\n+ 3\n× 2\nRULE CARD TRAY · DRAG INTO THE GEARS\nProve the whol"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 17,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "x = 7"
+          ],
+          "text": "F8-03 · ALGEBRAIC NOTATION\nFIND THE RULE AND OUTPUT\nFROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n7\nINPUT → HOPPER\nNOVA FUNCTION ENGINE\n?\n?\nRULE 1\nDROP RULE\nRULE 2\nDROP RULE\nOUTPUT y\n?\nWHAT VALUE GOES THROUGH THE MACHINE?\nx = 7\ny = ?\n× 3\n+ 2\n+ 3\n× 2\nRULE CARD TRAY · DRAG INTO THE GEARS\nProve the whol"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 23,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F8-03 · ALGEBRAIC NOTATION\nFIND THE RULE AND OUTPUT\nFROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n5\nINPUT → HOPPER\nNOVA FUNCTION ENGINE\n?\n?\nRULE 1\nDROP RULE\nRULE 2\nDROP RULE\nOUTPUT y\n?\nWHAT VALUE GOES "
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F8-03 · ALGEBRAIC NOTATION\nFIND THE RULE AND OUTPUT\nFROM A V",
+          "F8-03 · ALGEBRAIC NOTATION\nFIND THE RULE AND OUTPUT\nFROM A V",
+          "F8-03 · SUBSTITUTION INTO FORMULAE\nFIND THE RULE AND OUTPUT\n",
+          "F8-03 · INVERSE OPERATIONS\nFIND THE RULE AND OUTPUT\nUNDO AN ",
+          "F8-03 · REARRANGING FORMULAE\nFIND THE RULE AND OUTPUT\nMAKE x",
+          "F8-03 · REARRANGING FORMULAE\nFIND THE RULE AND OUTPUT\nMAKE x"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "FROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n5\nINPUT HOPPER\nNOVA FUNCTION ENGINE",
+          "FROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n1\n2\n3\n5\nINPUT HOPPER\nNOVA FUNCTION ",
+          "FROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n1\n2\n3\n5\nINPUT HOPPER\nNOVA FUNCTION ",
+          "FROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n1\n2\n3\n5\nINPUT HOPPER\nNOVA FUNCTION "
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "FROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n5\nINPUT HOPPER\nNOVA FUNCTION ENGINE\n?\n?\nRULE 1\nDROP RULE\nRULE 2\nDROP RULE\nOUTPUT y\n?\nWHAT VALUE GOES THROUGH THE MACHINE?\nx = 5\ny = ?\n× 3\n+ 2\n+ 3\n× 2\nDRAG "
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "FROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n7\nINPUT HOPPER\nNOVA FUNCTION ENGINE",
+          "FROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n1\n2\n3\n7\nINPUT HOPPER\nNOVA FUNCTION ",
+          "FROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n1\n2\n3\n7\nINPUT HOPPER\nNOVA FUNCTION ",
+          "FROM A VALUE TO AN EXPRESSION\nRETURN / CLEAR\n1\n2\n3\n7\nINPUT HOPPER\nNOVA FUNCTION "
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Lesson preset Algebraic notation Substitution into formulae Inverse operations Rearranging formulae Reset machine Explore inverse Choose an input card and put it in the hopper.",
+          "inputs": [
+            "Y7-028"
+          ],
+          "stageInputs": [],
+          "nums": "03 1 2 3 4 8",
+          "buttons": 8,
+          "vb": 1090,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Lesson preset Algebraic notation Substitution into formulae Inverse operations Rearranging formulae Reset machine Explore inverse New lesson preset selected. Choose an input card and put it in the hopper.",
+          "inputs": [
+            "Y7-030"
+          ],
+          "stageInputs": [],
+          "nums": "0 03 1 2 3 5 8",
+          "buttons": 8,
+          "vb": 1090,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Lesson preset Algebraic notation Substitution into formulae Inverse operations Rearranging formulae Reset machine Explore inverse New lesson preset selected. Choose an input card and put it in the hopper.",
+          "inputs": [
+            "Y7-030"
+          ],
+          "stageInputs": [],
+          "nums": "0 03 1 2 3 5 8",
+          "buttons": 8,
+          "vb": 440,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Challenge 1 of 4 · Algebraic notation · Calculate the output y Check rule and value Hint Drag the two rules into the gears, then enter the missing value.",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "03 1 2 3 8",
+          "buttons": 4,
+          "vb": 1090,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Challenge 1 of 4 · Algebraic notation · Calculate the output y Check rule and value Hint Rule 2 selected.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "03 1 2 3 8",
+          "buttons": 6,
+          "vb": 1090,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Challenge 1 of 4 · Algebraic notation · Calculate the output y Check rule and value Hint Rule 2 selected.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "03 1 2 3 8",
+          "buttons": 6,
+          "vb": 440,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1090,
+        "median": 26.01,
+        "p10": 18.3,
+        "count": 21,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 14.66,
+        "p10": 11,
+        "count": 21,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 14.66,
+        "p10": 11,
+        "count": 21,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

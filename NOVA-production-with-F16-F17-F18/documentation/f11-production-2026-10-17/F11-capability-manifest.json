@@ -1,0 +1,3801 @@
+{
+ "family": "F11",
+ "revision": "2026-10-17",
+ "componentCount": 11,
+ "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+ "templateSha256": "740c125af623ab5fb5896b3e9655a6d10b093ffcda53127a6eb67eb80eef26ec",
+ "components": [
+  {
+   "id": "F11-01",
+   "name": "Protractor",
+   "path": "F11/F11-01-protractor.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "125ce18bae54b444a18dc925d9a1c3b27966b0333d7f4e8d7d422ae03a334c8d",
+   "originalSha256": "cbc74f790c8ed35a881e77d5281c91637ba48c2949b814f2e63db51d7282e126",
+   "nativeSteps": 9,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "drawing": [
+     "stage",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-040": {
+     "label": "Y7-040 \u00b7 Measure and draw",
+     "angle": 58,
+     "base": "right",
+     "fact": "Measure from the zero on the baseline.",
+     "why": "Place the centre on the vertex; line up zero with the starting ray."
+    },
+    "Y7-041": {
+     "label": "Y7-041 \u00b7 Lines and angles",
+     "angle": 125,
+     "base": "right",
+     "fact": "Obtuse angles are greater than 90\u00b0 and less than 180\u00b0.",
+     "why": "This is 125\u00b0, not its complementary reading of 55\u00b0."
+    },
+    "Y7-067": {
+     "label": "Y7-067 \u00b7 Pie-chart sectors",
+     "angle": 72,
+     "base": "right",
+     "fact": "20% of a whole turn is 72\u00b0.",
+     "why": "One complete turn is 360\u00b0: 0.2 \u00d7 360\u00b0 = 72\u00b0."
+    },
+    "EXT-LEFT": {
+     "label": "Extension \u00b7 Left-starting angle",
+     "angle": 135,
+     "base": "left",
+     "fact": "Read the scale that begins at the LEFT-hand zero.",
+     "why": "The starting ray points left. The matching degree scale must start at 0\u00b0 on the left."
+    },
+    "EXT-REFLEX": {
+     "label": "Extension \u00b7 Reflex angle",
+     "angle": 120,
+     "base": "right",
+     "reflex": true,
+     "fact": "The outside turn is 240\u00b0.",
+     "why": "A semicircular protractor gives the smaller 120\u00b0: 360\u00b0 \u2212 120\u00b0 = 240\u00b0."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": false,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 760,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.178947368421053,
+     "p10": 10.557894736842107,
+     "count": 15,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 760,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.178947368421053,
+     "p10": 10.557894736842107,
+     "count": 15,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "drawing",
+     "arguments": {
+      "o": {
+       "challenge": true,
+       "construction": false,
+       "editable": false,
+       "correct": false,
+       "angle": 47,
+       "base": "right",
+       "step": 8,
+       "pose": "think",
+       "caption": "Find the zero on the starting ray, then read the scale."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Measure the marked angle with the protractor. The starting ray points right.",
+    "privateAnswer": 47,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-02",
+   "name": "Angle Estimator",
+   "path": "F11/F11-02-angle-estimator.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "f022fe47097669d0281bc40ff1f7a1b0023b8150c76c7cafeae95a459baeed9f",
+   "originalSha256": "a14be9d0c901913a775b4d76f98880d43ca9e37c67c53e0d91d39b285ef22b0b",
+   "nativeSteps": 10,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "mood",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "geom": [
+     "stage",
+     "opts"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS",
+    "reasons"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "acute": {
+     "label": "Acute \u00b7 less than a right angle",
+     "angle": 63,
+     "base": "right",
+     "benchmark": 90,
+     "why": "Compare the opening with a right angle, then estimate the part of that quarter turn."
+    },
+    "obtuse": {
+     "label": "Obtuse \u00b7 between 90\u00b0 and 180\u00b0",
+     "angle": 132,
+     "base": "right",
+     "benchmark": 90,
+     "why": "A wide angle is more than one quarter turn but less than a half turn."
+    },
+    "right": {
+     "label": "Right angle \u00b7 quarter turn",
+     "angle": 90,
+     "base": "right",
+     "benchmark": 90,
+     "why": "A quarter turn is exactly ninety degrees."
+    },
+    "straight": {
+     "label": "Straight angle \u00b7 half turn",
+     "angle": 180,
+     "base": "right",
+     "benchmark": 180,
+     "why": "A half turn forms a straight line: one hundred and eighty degrees."
+    },
+    "left": {
+     "label": "Left-starting baseline",
+     "angle": 147,
+     "base": "left",
+     "benchmark": 180,
+     "why": "The angle is the opening between rays. Rotating its baseline does not change its size."
+    },
+    "reflex": {
+     "label": "Reflex \u00b7 more than a half turn",
+     "angle": 238,
+     "base": "right",
+     "benchmark": 180,
+     "why": "The marked direction sweeps past a straight angle. That is more than one hundred and eighty degrees."
+    },
+    "gcse": {
+     "label": "GCSE \u00b7 fine estimation",
+     "angle": 107,
+     "base": "right",
+     "benchmark": 90,
+     "why": "The opening is just past ninety degrees: estimate the overshoot before measuring."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": false,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 760,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.8,
+     "p10": 9.005263157894737,
+     "count": 4,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 760,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.8,
+     "p10": 9.005263157894737,
+     "count": 4,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "geom",
+     "arguments": {
+      "opts": {
+       "step": 9,
+       "challenge": true,
+       "angle": 62,
+       "base": "right",
+       "estimate": 45,
+       "revealed": false,
+       "benchmark": 45,
+       "editable": false,
+       "pose": "think",
+       "caption": "Compare the opening with 45\u00b0, 90\u00b0 and 180\u00b0."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Estimate the size of the angle in degrees (within 10\u00b0).",
+    "privateAnswer": 62,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct.",
+    "tolerance": 10
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-03",
+   "name": "Angle Facts",
+   "path": "F11/F11-03-angle-facts.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "073486781cd71f6fa8fbdeebec4bfadc4f7d909ce149a884c241fb078576e345",
+   "originalSha256": "5f6a501ac6890daf654f04fd2da2e646b0fb202f000278dc5c3ec5ce0a509ca7",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ],
+    [
+     "name",
+     "mood",
+     "narration",
+     "kind",
+     "angle",
+     "show"
+    ]
+   ],
+   "draws": {
+    "renderFigure": [
+     "stage",
+     "settings"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "straight": {
+     "label": "Y7-041 \u00b7 Angles on a straight line",
+     "kind": "straight",
+     "angle": 123,
+     "sub": "Adjacent angles form a half turn."
+    },
+    "point": {
+     "label": "Y7-041 \u00b7 Angles around a point",
+     "kind": "point",
+     "angle": 78,
+     "sub": "All the turns together make one full revolution."
+    },
+    "vertical": {
+     "label": "Y7-041 \u00b7 Vertically opposite angles",
+     "kind": "vertical",
+     "angle": 68,
+     "sub": "Opposite sectors of two crossing straight lines are equal."
+    },
+    "parallel": {
+     "label": "Y7-042 \u00b7 Angles in parallel lines",
+     "kind": "parallel",
+     "angle": 63,
+     "sub": "Corresponding and alternate angles match when lines are parallel."
+    },
+    "triangle": {
+     "label": "Y7-043 \u00b7 Angles in triangles",
+     "kind": "triangle",
+     "angle": 58,
+     "sub": "All three interior angles add to 180\u00b0."
+    },
+    "bearing": {
+     "label": "Y8-052 / Y9-039 \u00b7 Bearings",
+     "kind": "bearing",
+     "angle": 125,
+     "sub": "Three-figure bearings turn clockwise from north."
+    },
+    "proof": {
+     "label": "Y9-041 \u00b7 Simple geometric proof",
+     "kind": "vertical",
+     "angle": 67,
+     "sub": "Use a justified chain of angle facts."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": false,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 730,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.315068493150685,
+     "p10": 10.021917808219179,
+     "count": 3,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 730,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.315068493150685,
+     "p10": 10.021917808219179,
+     "count": 3,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "renderFigure",
+     "arguments": {
+      "settings": {
+       "kind": "straight",
+       "angle": 48,
+       "apex": [
+        374,
+        160
+       ],
+       "step": 11,
+       "show": 0,
+       "challenge": true,
+       "task": {
+        "kind": "straight",
+        "a": 48,
+        "known": 132,
+        "answer": 48
+       },
+       "revealed": false,
+       "pose": "think",
+       "caption": "Find x, then give the angle fact."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "One angle on a straight line is 132\u00b0. Find the adjacent angle x.",
+    "privateAnswer": 48,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 169,
+     "total": 169,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-04",
+   "name": "Triangle Angle-Sum Tear-Off",
+   "path": "F11/F11-04-triangle-angle-sum-tear-off.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "36d050f294ab98daf2a058e22edc3fb93472e4b1910de440de35050b747b3504",
+   "originalSha256": "d6fe47a7f2ce9c5ab0fabb575b9e5b6dedfd76cd060ff1461a36ef62d247f0b0",
+   "nativeSteps": 11,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "p",
+     "place",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "place",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "place",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "place",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "place",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "place",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "place",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "place",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "place",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "quad",
+     "phase",
+     "mood",
+     "narration"
+    ],
+    [
+     "name",
+     "p",
+     "quad",
+     "phase",
+     "mood",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "stageFrame": [
+     "stage",
+     "tag"
+    ],
+    "drawTriangle": [
+     "stage",
+     "o"
+    ],
+    "drawQuadrilateral": [
+     "stage",
+     "o"
+    ]
+   },
+   "tables": [
+    "AKEY",
+    "palette",
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {
+    "state": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "startMode",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "scalene": {
+     "label": "Y7-043 \u00b7 Unequal-sided triangle",
+     "points": [
+      [
+       154,
+       317
+      ],
+      [
+       568,
+       317
+      ],
+      [
+       360,
+       71
+      ]
+     ]
+    },
+    "right": {
+     "label": "Y7-043 \u00b7 Right-angled triangle",
+     "points": [
+      [
+       161,
+       317
+      ],
+      [
+       572,
+       317
+      ],
+      [
+       161,
+       84
+      ]
+     ]
+    },
+    "isosceles": {
+     "label": "Y7-043 \u00b7 Isosceles triangle",
+     "points": [
+      [
+       151,
+       317
+      ],
+      [
+       573,
+       317
+      ],
+      [
+       362,
+       65
+      ]
+     ]
+    },
+    "obtuse": {
+     "label": "Y7-043 \u00b7 Obtuse triangle",
+     "points": [
+      [
+       142,
+       316
+      ],
+      [
+       578,
+       316
+      ],
+      [
+       251,
+       190
+      ]
+     ]
+    },
+    "quad": {
+     "label": "Y7-044 \u00b7 Quadrilateral angle sum",
+     "quad": true,
+     "points": [
+      [
+       178,
+       348
+      ],
+      [
+       538,
+       348
+      ],
+      [
+       570,
+       125
+      ],
+      [
+       269,
+       79
+      ]
+     ]
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": false,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 730,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.638356164383563,
+     "p10": 8.728767123287671,
+     "count": 8,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 730,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.638356164383563,
+     "p10": 8.728767123287671,
+     "count": 8,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "drawTriangle",
+     "arguments": {
+      "o": {
+       "preset": "scalene",
+       "task": {
+        "type": "missing",
+        "p": "scalene",
+        "given": [
+         52,
+         73
+        ],
+        "answer": 55,
+        "reason": "sum"
+       },
+       "placed": [
+        false,
+        false,
+        false
+       ],
+       "phase": 1,
+       "challenge": true,
+       "pose": "think",
+       "showLabels": true,
+       "caption": "Use the angle sum of a triangle."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Two angles of the triangle are 52\u00b0 and 73\u00b0. Find the third angle.",
+    "privateAnswer": 55,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 170,
+     "total": 170,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-05",
+   "name": "Parallel Lines Explorer",
+   "path": "F11/F11-05-parallel-lines-explorer.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "534e2de48571971c82b1c1dd32f8896ac5bc311df72169d550ed39aa56cb7bfa",
+   "originalSha256": "19a397d0bec39114a4cd26cf22fd0218e89624d63bcfd72788670fe17a3be41c",
+   "nativeSteps": 13,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "theta",
+     "kind",
+     "phase",
+     "pose",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "stageFrame": [
+     "stage",
+     "label"
+    ],
+    "draw": [
+     "stage",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {
+    "state": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "startMode",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "year7": {
+     "label": "Y7-042 \u00b7 Parallel line angle facts",
+     "theta": 57,
+     "kind": "corresponding"
+    },
+    "year9": {
+     "label": "Y9-025 \u00b7 Multi-step angle chase",
+     "theta": 64,
+     "kind": "cointerior"
+    },
+    "bearings8": {
+     "label": "Y8-052 \u00b7 Parallel north lines",
+     "theta": 52,
+     "kind": "bearings"
+    },
+    "bearings9": {
+     "label": "Y9-039 \u00b7 Bearings and transfer",
+     "theta": 68,
+     "kind": "bearings"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 526,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.665399239543726,
+     "p10": 11.665399239543726,
+     "count": 6,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 526,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.665399239543726,
+     "p10": 11.665399239543726,
+     "count": 6,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "o": {
+       "theta": 54,
+       "kind": "corresponding",
+       "phase": 3,
+       "challenge": true,
+       "givenOnly": true,
+       "complete": false,
+       "pose": "think",
+       "caption": "Follow the coloured angle sectors."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "An angle is 54\u00b0. Find the corresponding angle.",
+    "privateAnswer": 54,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 69,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 167,
+     "total": 167,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-06",
+   "name": "Polygon Angles Turtle",
+   "path": "F11/F11-06-polygon-angles-turtle.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "24d9494f51b3cf1613343b5afff75881709145f02efd974481ae00080dc55d88",
+   "originalSha256": "95c55df2854d0dfe18302a5153f4b8c5a22e85647afedb551ee12bf1332b2ecf",
+   "nativeSteps": 14,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "irregular",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "progress",
+     "pose",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "frame": [
+     "stage"
+    ],
+    "draw": [
+     "stage",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {
+    "s": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "startMode",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y7": {
+     "label": "Y7-044 \u00b7 Quadrilateral walk",
+     "n": 4,
+     "irregular": false
+    },
+    "y8": {
+     "label": "Y8-049 \u00b7 Regular polygons",
+     "n": 6,
+     "irregular": false
+    },
+    "y9": {
+     "label": "Y9-026 \u00b7 Irregular polygon proof",
+     "n": 4,
+     "irregular": true
+    },
+    "triangle": {
+     "label": "Equilateral triangle",
+     "n": 3,
+     "irregular": false
+    },
+    "pentagon": {
+     "label": "Regular pentagon",
+     "n": 5,
+     "irregular": false
+    },
+    "octagon": {
+     "label": "Regular octagon",
+     "n": 8,
+     "irregular": false
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 507,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.637080867850099,
+     "p10": 11.637080867850099,
+     "count": 5,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 507,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.637080867850099,
+     "p10": 11.637080867850099,
+     "count": 5,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "opt": {
+       "n": 5,
+       "irregular": false,
+       "phase": 4,
+       "progress": 0,
+       "selectVertex": 0,
+       "hide": true,
+       "pose": "think",
+       "caption": "Study the turns of the turtle."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "This regular polygon has 5 sides. What is one exterior angle?",
+    "privateAnswer": 72,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-07",
+   "name": "Regular Polygon Builder",
+   "path": "F11/F11-07-regular-polygon-builder.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "a67d5b4f68b0a95603a2a8180a8b98a50ae7c9ad6abd55be679eb0c486029793",
+   "originalSha256": "150b91ec0386b16b457afb3cfe770a3caad2307b38e5c1624a1a9b7c2f6e2fdf",
+   "nativeSteps": 14,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "n",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "show",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "show",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "show",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "show",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "show",
+     "pose",
+     "narration"
+    ],
+    [
+     "name",
+     "n",
+     "phase",
+     "show",
+     "pose",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "shell": [
+     "stage"
+    ],
+    "draw": [
+     "stage",
+     "opt"
+    ]
+   },
+   "tables": [
+    "C",
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {
+    "state": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "startMode",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y7": {
+     "label": "Y7-044 \u00b7 Regular pentagon",
+     "n": 5
+    },
+    "y8": {
+     "label": "Y8-049 \u00b7 Polygon angle facts",
+     "n": 6
+    },
+    "y9": {
+     "label": "Y9-026 \u00b7 Polygon reasoning",
+     "n": 8
+    },
+    "triangle": {
+     "label": "Equilateral triangle",
+     "n": 3
+    },
+    "square": {
+     "label": "Square",
+     "n": 4
+    },
+    "decagon": {
+     "label": "Regular decagon",
+     "n": 10
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 530,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 12.022641509433962,
+     "p10": 12.022641509433962,
+     "count": 6,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 530,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 12.022641509433962,
+     "p10": 12.022641509433962,
+     "count": 6,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "opt": {
+       "n": 4,
+       "radius": 188,
+       "rotation": -90,
+       "phase": 8,
+       "show": "central",
+       "hide": true,
+       "pose": "think",
+       "caption": "Count the equal sectors."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A regular polygon with 4 sides is drawn in a circle. What is one angle at the centre?",
+    "privateAnswer": 90,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-08",
+   "name": "Compass Constructions",
+   "path": "F11/F11-08-compass-constructions.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "5d2c15a6abeef01a6fa4bd0a1c27df8ead592a790e437bd8b9a28821909ffe4a",
+   "originalSha256": "0c56fd4741d08358e6561496a9ce92d71e3242d15dac5fd4ecec1a73e1ebdadc",
+   "nativeSteps": 21,
+   "nativeFieldsByStep": [
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "stageShell": [
+     "stage"
+    ],
+    "draw": [
+     "stage",
+     "opts"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {
+    "state": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "startMode",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y7_056": {
+     "label": "Y7-056 \u00b7 Perpendicular bisector",
+     "kind": "perpendicular"
+    },
+    "y7_057": {
+     "label": "Y7-057 \u00b7 Equilateral construction",
+     "kind": "equilateral"
+    },
+    "y8_050": {
+     "label": "Y8-050 \u00b7 Angle bisector",
+     "kind": "angle"
+    },
+    "y8_051": {
+     "label": "Y8-051 \u00b7 Fixed-distance locus",
+     "kind": "locus"
+    },
+    "y8_056": {
+     "label": "Y8-056 \u00b7 SSS construction",
+     "kind": "sss"
+    },
+    "y9_027": {
+     "label": "Y9-027 \u00b7 Intersecting loci",
+     "kind": "locus"
+    },
+    "y9_028": {
+     "label": "Y9-028 \u00b7 SSS congruence",
+     "kind": "sss"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 490,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 13.485714285714286,
+     "p10": 11.559183673469388,
+     "count": 4,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 490,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 13.485714285714286,
+     "p10": 11.559183673469388,
+     "count": 4,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "opts": {
+       "kind": "angle",
+       "angle": 84,
+       "phase": 6,
+       "hide": true,
+       "pose": "think",
+       "caption": "Use the construction marks."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "An angle of 84\u00b0 is bisected with compasses. What is each half?",
+    "privateAnswer": 42,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-09",
+   "name": "Locus Builder",
+   "path": "F11/F11-09-locus-builder.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "dea60533af0e2a94671444135e3cca558d701d4bc8487772da629196754925c8",
+   "originalSha256": "646efd0cb8f81d9a11ed58efb51bf34f28df57618cb1c097f7994fa9569421cf",
+   "nativeSteps": 30,
+   "nativeFieldsByStep": [
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "stageShell": [
+     "stage"
+    ],
+    "draw": [
+     "stage",
+     "opts"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    },
+    "drawGeometry.m": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 2
+    },
+    "info.m": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 2
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "startMode",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y8_050": {
+     "label": "Y8-050 \u00b7 Bisector constructions",
+     "kind": "perp"
+    },
+    "y8_051": {
+     "label": "Y8-051 \u00b7 Distance loci",
+     "kind": "point"
+    },
+    "y9_027": {
+     "label": "Y9-027 \u00b7 Intersecting loci",
+     "kind": "circles"
+    },
+    "y9_028": {
+     "label": "Y9-028 \u00b7 Equidistant points",
+     "kind": "perp"
+    },
+    "y9_041": {
+     "label": "Y9-041 \u00b7 Angle-bisector proof",
+     "kind": "angle"
+    },
+    "y8_line": {
+     "label": "Line locus \u00b7 Equal offsets",
+     "kind": "line"
+    },
+    "y9_region": {
+     "label": "Compound regions \u00b7 Overlap",
+     "kind": "region"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 508,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.149606299212598,
+     "p10": 11.149606299212598,
+     "count": 2,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 508,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.149606299212598,
+     "p10": 11.149606299212598,
+     "count": 2,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "opts": {
+       "kind": "point",
+       "radius": 150,
+       "phase": 6,
+       "hide": true,
+       "pose": "think",
+       "caption": "Use the exact locus condition."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "P is on the locus of points 150 units from A. What is AP?",
+    "privateAnswer": 150,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 169,
+     "total": 169,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-10",
+   "name": "Bearings",
+   "path": "F11/F11-10-bearings.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "29d532fe2e5ff1f00d4c4a9fda8f47c636c66e039dd210e932e1cad5b53324b9",
+   "originalSha256": "db731d655f38d48a83efa36e43ae126e210974a00d7d74147064acf1a46fded0",
+   "nativeSteps": 27,
+   "nativeFieldsByStep": [
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "bearing",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "bearing",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "bearing",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "bearing",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "stageShell": [
+     "stage"
+    ],
+    "draw": [
+     "stage",
+     "opts"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    },
+    "drawGeometry.m": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    },
+    "info.m": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "startMode",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y8_052": {
+     "label": "Y8-052 \u00b7 Three-figure bearings",
+     "kind": "single",
+     "bearing": 65
+    },
+    "y9_039": {
+     "label": "Y9-039 \u00b7 Reverse bearings",
+     "kind": "reverse",
+     "bearing": 65
+    },
+    "y9_027": {
+     "label": "Y9-027 \u00b7 Intersection of bearings",
+     "kind": "intersection",
+     "bearing": 45
+    },
+    "y9_route": {
+     "label": "Year 9 \u00b7 Multi-step route",
+     "kind": "route",
+     "bearing": 40,
+     "second": 125
+    },
+    "y8_cardinals": {
+     "label": "Compass bearings \u00b7 090\u00b0 East",
+     "kind": "single",
+     "bearing": 90
+    },
+    "y9_obtuse": {
+     "label": "Bearings over 180\u00b0",
+     "kind": "single",
+     "bearing": 225
+    },
+    "y9_northwest": {
+     "label": "Three-figure bearings \u00b7 315\u00b0",
+     "kind": "single",
+     "bearing": 315
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 475,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 13.414736842105263,
+     "p10": 12.421052631578949,
+     "count": 6,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 475,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 13.414736842105263,
+     "p10": 12.421052631578949,
+     "count": 6,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "opts": {
+       "kind": "single",
+       "bearing": 72,
+       "phase": 6,
+       "hide": true,
+       "pose": "think",
+       "caption": "Measure clockwise from north."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Give the bearing of P from O (enter the number of degrees).",
+    "privateAnswer": 72,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F11-11",
+   "name": "Angle Chase",
+   "path": "F11/F11-11-angle-chase.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "7d7e59b8a359479cfb587ee475370c7912a16fc76f669c5ca579abde2ba1442e",
+   "originalSha256": "5570484b741fb557d1d77789ed75361d8fb1f5f39ce03c14da87729a56e53821",
+   "nativeSteps": 32,
+   "nativeFieldsByStep": [
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "sides",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "sides",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "sides",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "sides",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "angle",
+     "proof",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "angle",
+     "proof",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "angle",
+     "proof",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ],
+    [
+     "kind",
+     "angle",
+     "proof",
+     "phase",
+     "name",
+     "pose",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "stageShell": [
+     "stage"
+    ],
+    "draw": [
+     "stage",
+     "opts"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    },
+    "assertMath.m": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and its option object (challenge/hide flags keep the answer hidden); validated by NovaF11Contracts; see F11-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "defaultPreset",
+    "presets",
+    "events",
+    "lessonGame",
+    "startMode",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y7_line": {
+     "label": "Y7-041 \u00b7 Angles on a line",
+     "kind": "line",
+     "angle": 65
+    },
+    "y7_point": {
+     "label": "Y7-041 \u00b7 Around a point",
+     "kind": "point",
+     "angle": 70
+    },
+    "y7_opposite": {
+     "label": "Y7-041 \u00b7 Vertically opposite",
+     "kind": "opposite",
+     "angle": 73
+    },
+    "y7_parallel": {
+     "label": "Y7-042 \u00b7 Parallel lines",
+     "kind": "parallel",
+     "angle": 62
+    },
+    "y7_triangle": {
+     "label": "Y7-043 \u00b7 Triangle angle chase",
+     "kind": "triangle",
+     "angle": 55
+    },
+    "y8_polygon": {
+     "label": "Y8-049 \u00b7 Polygon angles",
+     "kind": "polygon",
+     "sides": 6
+    },
+    "y8_congruence": {
+     "label": "Y8-056 \u00b7 Isosceles triangle reasoning",
+     "kind": "isosceles",
+     "angle": 48
+    },
+    "y9_parallel": {
+     "label": "Y9-025 \u00b7 Multi-step parallel proof",
+     "kind": "parallel",
+     "angle": 58,
+     "proof": true
+    },
+    "y9_polygon": {
+     "label": "Y9-026 \u00b7 Polygon angle proof",
+     "kind": "polygon",
+     "sides": 8,
+     "proof": true
+    },
+    "y9_proof": {
+     "label": "F11-13 \u00b7 Formal geometry proof stepper",
+     "kind": "triangle",
+     "angle": 55,
+     "proof": true
+    },
+    "y9_congruence": {
+     "label": "Y9-028 \u00b7 Equal base angles proof",
+     "kind": "isosceles",
+     "angle": 48,
+     "proof": true
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 550,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.156363636363636,
+     "p10": 11.156363636363636,
+     "count": 5,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 550,
+     "svgWidth": 236,
+     "stageWidth": 262,
+     "median": 11.156363636363636,
+     "p10": 11.156363636363636,
+     "count": 5,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "opts": {
+       "kind": "line",
+       "angle": 58,
+       "phase": 6,
+       "hide": true,
+       "proof": false,
+       "pose": "think",
+       "caption": "Chase the angles step by step."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The marked angle on the straight line is 58\u00b0. Find the neighbouring angle.",
+    "privateAnswer": 122,
+    "answerType": "numeric",
+    "hint": "Use the given values and the angle fact.",
+    "wrongFeedback": "Check the given values and the angle fact.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f11Production": {
+     "passed": 169,
+     "total": 169,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  }
+ ]
+}

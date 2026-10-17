@@ -1,0 +1,456 @@
+[
+  {
+    "id": "F2-12",
+    "sourceSha256": "db66fe7ee6ae6cf71aed79424e8214481cbdd3061ffbc6eb84815f95100cc68e",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F2-12 · LESSON APPARATUS\nQUESTION\npositive (+1 each)\nnegative (−1 each)\n+\n+\n−\ntray\ndrag back here to remove\n+\n−\n−10\n−9\n−",
+          "F2-12 · LESSON APPARATUS\nQUESTION\npositive (+1 each)\nnegative (−1 each)\n+\n+\n+\n−\n−\ntray\ndrag back here to remove\n+\n−\n−10\n"
+        ]
+      },
+      {
+        "name": "question 1 rendered mathematics",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "question 2 rendered mathematics",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "docks": 1,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "docks": 1,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          },
+          "result": {
+            "score": 85,
+            "correct": 6,
+            "played": 7,
+            "pct": 100,
+            "stars": 3,
+            "best": 6,
+            "hints": 0,
+            "livesLeft": 2
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          },
+          "result": {
+            "score": 85,
+            "correct": 6,
+            "played": 7,
+            "pct": 100,
+            "stars": 3,
+            "best": 6,
+            "hints": 0,
+            "livesLeft": 2
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128,
+          "stage": {
+            "x": 37,
+            "y": 176.34375,
+            "width": 1054,
+            "height": 1072.359375,
+            "top": 176.34375,
+            "right": 1091,
+            "bottom": 1248.703125,
+            "left": 37
+          }
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912,
+          "stage": {
+            "x": 37,
+            "y": 176.34375,
+            "width": 838,
+            "height": 1072.359375,
+            "top": 176.34375,
+            "right": 875,
+            "bottom": 1248.703125,
+            "left": 37
+          }
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312,
+          "stage": {
+            "x": 25,
+            "y": 164.34375,
+            "width": 262,
+            "height": 851.71875,
+            "top": 164.34375,
+            "right": 287,
+            "bottom": 1016.0625,
+            "left": 25
+          }
+        }
+      },
+      {
+        "name": "guided shell ready",
+        "pass": true
+      },
+      {
+        "name": "four guided states rendered",
+        "pass": true,
+        "detail": [
+          "F2-12 · lesson apparatusLessonCounters: 2 positive, 1 negative. Value 1.positive",
+          "F2-12 · lesson apparatusLessonCounters: 3 positive, 2 negative. Value 1.positive",
+          "F2-12 · lesson apparatusLessonCounters: 4 positive, 3 negative. Value 1.positive",
+          "F2-12 · lesson apparatusLessonCounters: 5 positive, 4 negative. Value 1.positive"
+        ]
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "<div class=\"nv-cap\" style=\"display: none;\"><span>F2-12 · lesson apparatus</span>",
+          "<div class=\"nv-cap\" style=\"display: none;\"><span>F2-12 · lesson apparatus</span>",
+          "<div class=\"nv-cap\" style=\"display: none;\"><span>F2-12 · lesson apparatus</span>",
+          "<div class=\"nv-cap\" style=\"display: none;\"><span>F2-12 · lesson apparatus</span>"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "visuals": [
+      {
+        "text": "F2-12 · LESSON APPARATUS\nQUESTION\npositive (+1 each)\nnegative (−1 each)\n+\n+\n−\ntray\ndrag back here to remove\n+\n−\n−10\n−9\n−8\n−7\n−6\n−5\n−4\n−3\n−2\n−1\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\nUse the given mathematical values.",
+        "svg": "<svg viewBox=\"0 0 600 400\" role=\"group\" aria-label=\"Counters: 2 positive, 1 negative.\" class=\"nv-svg nv-house\" data-nova-id-scope=\"nova-view-5-\"><title>Counters: 2 positive, 1 negative.</title><defs><marker id=\"nova-view-5-nv-arr-given\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-given)\"></path></marker><marker id=\"nova-view-5-nv-arr-unknown\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-unknown)\"></path></marker><marker id=\"nova-view-5-nv-arr-op\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-op)\"></path></marker><marker id=\"nova-view-5-nv-arr-result\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-result)\"></path></marker><marker id=\"nova-view-5-nv-arr-error\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-error)\"></path></marker><marker id=\"nova-view-5-nv-arr-focus\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-focus)\"></path></marker><marker id=\"nova-view-5-nv-arr-support\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-support)\"></path></marker><marker id=\"nova-view-5-nv-arr-ink\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"4\" markerHeight=\"4\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--v-ink)\"></path></marker><filter id=\"nova-view-5-nv-glow\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-5-nv-shadow\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"2.5\" flood-color=\"#000\" flood-opacity=\"0.45\"></feDropShadow></filter><pattern id=\"nova-view-5-nv-hatch\" width=\"6\" height=\"6\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"6\" stroke-width=\"3\" style=\"stroke:var(--m-error)\"></line></pattern><linearGradient id=\"nova-view-5-nv-track\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--v-panel2)\"></stop><stop offset=\"1\" style=\"stop-color:var(--v-bg)\"></stop></linearGradient><radialGradient id=\"nova-view-5-nv-pip\" cx=\"35%\" cy=\"30%\" r=\"75%\"><stop offset=\"0\" stop-color=\"#ffd29a\"></stop><stop offset=\"0.45\" stop-color=\"#ff873d\"></stop><stop offset=\"1\" stop-color=\"#d9480f\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ground\"><stop offset=\"0\" stop-color=\"#000\" stop-opacity=\"0.55\"></stop><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\"0\"></stop></radialGradient><linearGradient id=\"nova-view-5-nv-fill-given\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-given);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-given);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-unknown\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-unknown);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-unknown);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-op\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-op);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-op);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-result\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-result);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-result);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-error\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-error);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-error);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-focus\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-focus);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-focus);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-support\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-support);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-support);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-sky\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--v-bg);stop-opacity:0\"></stop><stop offset=\"1\" style=\"stop-color:var(--v-panel);stop-opacity:.55\"></stop></linearGradient><radialGradient id=\"nova-view-5-nv-horizon\"><stop offset=\"0\" style=\"stop-color:var(--math-cyan);stop-opacity:.16\"></stop><stop offset=\"1\" style=\"stop-color:var(--math-cyan);stop-opacity:0\"></stop></radialGradient><linearGradient id=\"nova-view-5-nv-water\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#0b4a6e\" stop-opacity=\"0.75\"></stop><stop offset=\"1\" stop-color=\"#06111b\" stop-opacity=\"0.2\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-wood\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#b9783f\"></stop><stop offset=\"1\" stop-color=\"#6b3f1d\"></stop></linearGradient><radialGradient id=\"nova-view-5-nv-owl\" cx=\"40%\" cy=\"30%\" r=\"80%\"><stop offset=\"0\" stop-color=\"#a58bff\"></stop><stop offset=\"1\" stop-color=\"#5b3fd1\"></stop></radialGradient><linearGradient id=\"nova-view-5-nv-die\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffffff\"></stop><stop offset=\"1\" stop-color=\"#cfdced\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-metal\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#e7c27a\"></stop><stop offset=\"1\" stop-color=\"#9a6c2a\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-drone\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#2a3b57\"></stop><stop offset=\"1\" stop-color=\"#0b1424\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-asphalt\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#1b2638\"></stop><stop offset=\"1\" stop-color=\"#0c1422\"></stop></linearGradient><filter id=\"nova-view-5-nv-neon\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"2.4\" result=\"b1\"></feGaussianBlur><feGaussianBlur stdDeviation=\"6.2\" in=\"SourceGraphic\" result=\"b2\"></feGaussianBlur><feMerge><feMergeNode in=\"b2\"></feMergeNode><feMergeNode in=\"b1\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-5-nv-neon-halo\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"7.2\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-5-nv-neon-soft\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"9\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-5-nv-chalk\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"3\" seed=\"7\" result=\"n\"></feTurbulence><feDisplacementMap in=\"SourceGraphic\" in2=\"n\" scale=\"1.6\" xChannelSelector=\"R\" yChannelSelector=\"G\" result=\"disp\"></feDisplacementMap><feGaussianBlur in=\"disp\" stdDeviation=\".25\"></feGaussianBlur></filter><linearGradient id=\"nova-view-5-nv-panel-shine\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#ffffff;stop-opacity:.07\"></stop><stop offset=\"0.45\" style=\"stop-color:#ffffff;stop-opacity:0\"></stop><stop offset=\"1\" style=\"stop-color:#22d3ee;stop-opacity:.04\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-glass-track\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#1d2853;stop-opacity:.95\"></stop><stop offset=\"0.45\" style=\"stop-color:#060d20;stop-opacity:.98\"></stop><stop offset=\"1\" style=\"stop-color:#122956;stop-opacity:.95\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-pill-engrave\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#1d2853\"></stop><stop offset=\"0.48\" style=\"stop-color:#080d25\"></stop><stop offset=\"1\" style=\"stop-color:#102140\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-ink-lit\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"0\"><stop offset=\"0\" style=\"stop-color:#63e8ff\"></stop><stop offset=\"0.5\" style=\"stop-color:#eef8ff\"></stop><stop offset=\"1\" style=\"stop-color:#ab72ff\"></stop></linearGradient><radialGradient id=\"nova-view-5-nv-ring-given\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-given);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-given);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-given);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-unknown\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-unknown);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-unknown);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-unknown);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-op\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-op);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-op);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-op);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-result\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-result);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-result);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-result);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-error\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-error);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-error);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-error);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-focus\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-focus);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-focus);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-focus);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-support\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-support);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-support);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-support);stop-opacity:.15\"></stop></radialGradient></defs><g class=\"nv-neon-box\"><rect x=\"27\" y=\"23\" width=\"546\" height=\"202\" rx=\"21\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:none;stroke:#7dd3fc\"></rect><rect x=\"30\" y=\"26\" width=\"540\" height=\"196\" rx=\"18\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-5-nv-neon)\" style=\"fill:#050c1fcc;stroke:#7dd3fc\"></rect><rect x=\"31.5\" y=\"27.5\" width=\"537\" height=\"58.8\" rx=\"16.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"54\" y=\"62\" text-anchor=\"start\" font-size=\"14\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#2dd4bf;font-family:var(--nova-font-chalk-draw);opacity:.97\">positive (+1 each)</text><text x=\"54\" y=\"146\" text-anchor=\"start\" font-size=\"14\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f87171;font-family:var(--nova-font-chalk-draw);opacity:.97\">negative (−1 each)</text><line x1=\"46\" y1=\"126\" x2=\"554\" y2=\"126\" stroke-dasharray=\"3 8\" stroke-width=\"1.4\" style=\"stroke:#7dd3fc;opacity:.4\"></line><g data-c=\"p0\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"70\" cy=\"92\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#2dd4bf;opacity:.3\" filter=\"url(#nova-view-5-nv-neon)\"></circle><circle cx=\"70\" cy=\"92\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(45,212,191,.32);stroke:#2dd4bf\"></circle><text x=\"70\" y=\"100\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill: rgb(45, 212, 191); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">+</text><rect class=\"nv-hit\" x=\"49\" y=\"71\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g data-c=\"p1\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"121\" cy=\"92\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#2dd4bf;opacity:.3\" filter=\"url(#nova-view-5-nv-neon)\"></circle><circle cx=\"121\" cy=\"92\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(45,212,191,.32);stroke:#2dd4bf\"></circle><text x=\"121\" y=\"100\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill: rgb(45, 212, 191); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">+</text><rect class=\"nv-hit\" x=\"100\" y=\"71\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g data-c=\"n0\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"70\" cy=\"176\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#f87171;opacity:.3\" filter=\"url(#nova-view-5-nv-neon)\"></circle><circle cx=\"70\" cy=\"176\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(10,20,40,.9);stroke:#f87171\"></circle><text x=\"70\" y=\"184\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill: rgb(248, 113, 113); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">−</text><rect class=\"nv-hit\" x=\"49\" y=\"155\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g class=\"nv-neon-box\"><rect x=\"27\" y=\"229\" width=\"546\" height=\"68\" rx=\"19\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-op)\"></rect><rect x=\"30\" y=\"232\" width=\"540\" height=\"62\" rx=\"16\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-5-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-op)\"></rect><rect x=\"31.5\" y=\"233.5\" width=\"537\" height=\"18.599999999999998\" rx=\"14.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"54\" y=\"270\" text-anchor=\"start\" font-size=\"14\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--v-muted);font-family:var(--nova-font-chalk-draw);opacity:.97\">tray</text><text x=\"546\" y=\"270\" text-anchor=\"end\" font-size=\"12\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--v-muted);font-family:var(--nova-font-chalk-draw);opacity:.97\">drag back here to remove</text><g data-src=\"pos\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\" aria-label=\"Positive counter. Enter adds one, Delete removes one\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"240\" cy=\"263\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#2dd4bf;opacity:.3\" filter=\"url(#nova-view-5-nv-neon)\"></circle><circle cx=\"240\" cy=\"263\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(45,212,191,.32);stroke:#2dd4bf\"></circle><text x=\"240\" y=\"271\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill: rgb(45, 212, 191); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">+</text><rect class=\"nv-hit\" x=\"219\" y=\"242\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g data-src=\"neg\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\" aria-label=\"Negative counter. Enter adds one, Delete removes one\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"330\" cy=\"263\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#f87171;opacity:.3\" filter=\"url(#nova-view-5-nv-neon)\"></circle><circle cx=\"330\" cy=\"263\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(10,20,40,.9);stroke:#f87171\"></circle><text x=\"330\" y=\"271\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill: rgb(248, 113, 113); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">−</text><rect class=\"nv-hit\" x=\"309\" y=\"242\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g class=\"nv-numberline\"><rect x=\"38\" y=\"341\" width=\"524\" height=\"18\" rx=\"9\" style=\"fill:url(#nova-view-5-nv-glass-track);stroke:#67b8e5\" filter=\"url(#nova-view-5-nv-neon-soft)\"></rect><rect x=\"42\" y=\"345\" width=\"516\" height=\"10\" rx=\"5\" style=\"fill:none;stroke:#59ddff3d\"></rect><line x1=\"42\" y1=\"350\" x2=\"558\" y2=\"350\" stroke-width=\"2.8\" stroke-linecap=\"round\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:url(#nova-view-5-nv-ink-lit)\" marker-end=\"url(#nova-view-5-nv-arr-ink)\" marker-start=\"url(#nova-view-5-nv-arr-ink)\"></line><line x1=\"50.5\" y1=\"337\" x2=\"50.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"50.5\" y1=\"337\" x2=\"50.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"50.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−10</text><line x1=\"75.5\" y1=\"337\" x2=\"75.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"75.5\" y1=\"337\" x2=\"75.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"75.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−9</text><line x1=\"100.5\" y1=\"337\" x2=\"100.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"100.5\" y1=\"337\" x2=\"100.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"100.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−8</text><line x1=\"125.5\" y1=\"337\" x2=\"125.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"125.5\" y1=\"337\" x2=\"125.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"125.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−7</text><line x1=\"150.5\" y1=\"337\" x2=\"150.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"150.5\" y1=\"337\" x2=\"150.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"150.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−6</text><line x1=\"175.5\" y1=\"337\" x2=\"175.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"175.5\" y1=\"337\" x2=\"175.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"175.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−5</text><line x1=\"200.5\" y1=\"337\" x2=\"200.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"200.5\" y1=\"337\" x2=\"200.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"200.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−4</text><line x1=\"225.5\" y1=\"337\" x2=\"225.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"225.5\" y1=\"337\" x2=\"225.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"225.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−3</text><line x1=\"250.5\" y1=\"337\" x2=\"250.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"250.5\" y1=\"337\" x2=\"250.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"250.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−2</text><line x1=\"275.5\" y1=\"337\" x2=\"275.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"275.5\" y1=\"337\" x2=\"275.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"275.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−1</text><line x1=\"300.5\" y1=\"337\" x2=\"300.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"300.5\" y1=\"337\" x2=\"300.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"300.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">0</text><line x1=\"325.5\" y1=\"337\" x2=\"325.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"325.5\" y1=\"337\" x2=\"325.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"325.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">1</text><line x1=\"350.5\" y1=\"337\" x2=\"350.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"350.5\" y1=\"337\" x2=\"350.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"350.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">2</text><line x1=\"375.5\" y1=\"337\" x2=\"375.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"375.5\" y1=\"337\" x2=\"375.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"375.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">3</text><line x1=\"400.5\" y1=\"337\" x2=\"400.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"400.5\" y1=\"337\" x2=\"400.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"400.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">4</text><line x1=\"425.5\" y1=\"337\" x2=\"425.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"425.5\" y1=\"337\" x2=\"425.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"425.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">5</text><line x1=\"450.5\" y1=\"337\" x2=\"450.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"450.5\" y1=\"337\" x2=\"450.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"450.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">6</text><line x1=\"475.5\" y1=\"337\" x2=\"475.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"475.5\" y1=\"337\" x2=\"475.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"475.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">7</text><line x1=\"500.5\" y1=\"337\" x2=\"500.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"500.5\" y1=\"337\" x2=\"500.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"500.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">8</text><line x1=\"525.5\" y1=\"337\" x2=\"525.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"525.5\" y1=\"337\" x2=\"525.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"525.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">9</text><line x1=\"550.5\" y1=\"337\" x2=\"550.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"550.5\" y1=\"337\" x2=\"550.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"550.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">10</text></g><line x1=\"300\" y1=\"320\" x2=\"300\" y2=\"356\" stroke-width=\"2\" stroke-dasharray=\"3 4\" style=\"stroke:#ffcc58;opacity:.7\"></line></svg>",
+        "expected": [],
+        "fractionCount": 0,
+        "markScheme": "",
+        "answers": []
+      },
+      {
+        "text": "F2-12 · LESSON APPARATUS\nQUESTION\npositive (+1 each)\nnegative (−1 each)\n+\n+\n+\n−\n−\ntray\ndrag back here to remove\n+\n−\n−10\n−9\n−8\n−7\n−6\n−5\n−4\n−3\n−2\n−1\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\nUse the given mathematical values.",
+        "svg": "<svg viewBox=\"0 0 600 400\" role=\"group\" aria-label=\"Counters: 3 positive, 2 negative.\" class=\"nv-svg nv-house\" data-nova-id-scope=\"nova-view-7-\"><title>Counters: 3 positive, 2 negative.</title><defs><marker id=\"nova-view-7-nv-arr-given\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-given)\"></path></marker><marker id=\"nova-view-7-nv-arr-unknown\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-unknown)\"></path></marker><marker id=\"nova-view-7-nv-arr-op\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-op)\"></path></marker><marker id=\"nova-view-7-nv-arr-result\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-result)\"></path></marker><marker id=\"nova-view-7-nv-arr-error\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-error)\"></path></marker><marker id=\"nova-view-7-nv-arr-focus\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-focus)\"></path></marker><marker id=\"nova-view-7-nv-arr-support\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-support)\"></path></marker><marker id=\"nova-view-7-nv-arr-ink\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"4\" markerHeight=\"4\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--v-ink)\"></path></marker><filter id=\"nova-view-7-nv-glow\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-7-nv-shadow\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"2.5\" flood-color=\"#000\" flood-opacity=\"0.45\"></feDropShadow></filter><pattern id=\"nova-view-7-nv-hatch\" width=\"6\" height=\"6\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"6\" stroke-width=\"3\" style=\"stroke:var(--m-error)\"></line></pattern><linearGradient id=\"nova-view-7-nv-track\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--v-panel2)\"></stop><stop offset=\"1\" style=\"stop-color:var(--v-bg)\"></stop></linearGradient><radialGradient id=\"nova-view-7-nv-pip\" cx=\"35%\" cy=\"30%\" r=\"75%\"><stop offset=\"0\" stop-color=\"#ffd29a\"></stop><stop offset=\"0.45\" stop-color=\"#ff873d\"></stop><stop offset=\"1\" stop-color=\"#d9480f\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ground\"><stop offset=\"0\" stop-color=\"#000\" stop-opacity=\"0.55\"></stop><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\"0\"></stop></radialGradient><linearGradient id=\"nova-view-7-nv-fill-given\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-given);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-given);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-unknown\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-unknown);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-unknown);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-op\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-op);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-op);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-result\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-result);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-result);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-error\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-error);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-error);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-focus\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-focus);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-focus);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-support\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-support);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-support);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-sky\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--v-bg);stop-opacity:0\"></stop><stop offset=\"1\" style=\"stop-color:var(--v-panel);stop-opacity:.55\"></stop></linearGradient><radialGradient id=\"nova-view-7-nv-horizon\"><stop offset=\"0\" style=\"stop-color:var(--math-cyan);stop-opacity:.16\"></stop><stop offset=\"1\" style=\"stop-color:var(--math-cyan);stop-opacity:0\"></stop></radialGradient><linearGradient id=\"nova-view-7-nv-water\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#0b4a6e\" stop-opacity=\"0.75\"></stop><stop offset=\"1\" stop-color=\"#06111b\" stop-opacity=\"0.2\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-wood\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#b9783f\"></stop><stop offset=\"1\" stop-color=\"#6b3f1d\"></stop></linearGradient><radialGradient id=\"nova-view-7-nv-owl\" cx=\"40%\" cy=\"30%\" r=\"80%\"><stop offset=\"0\" stop-color=\"#a58bff\"></stop><stop offset=\"1\" stop-color=\"#5b3fd1\"></stop></radialGradient><linearGradient id=\"nova-view-7-nv-die\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffffff\"></stop><stop offset=\"1\" stop-color=\"#cfdced\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-metal\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#e7c27a\"></stop><stop offset=\"1\" stop-color=\"#9a6c2a\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-drone\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#2a3b57\"></stop><stop offset=\"1\" stop-color=\"#0b1424\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-asphalt\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#1b2638\"></stop><stop offset=\"1\" stop-color=\"#0c1422\"></stop></linearGradient><filter id=\"nova-view-7-nv-neon\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"2.4\" result=\"b1\"></feGaussianBlur><feGaussianBlur stdDeviation=\"6.2\" in=\"SourceGraphic\" result=\"b2\"></feGaussianBlur><feMerge><feMergeNode in=\"b2\"></feMergeNode><feMergeNode in=\"b1\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-7-nv-neon-halo\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"7.2\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-7-nv-neon-soft\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"9\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-7-nv-chalk\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"3\" seed=\"7\" result=\"n\"></feTurbulence><feDisplacementMap in=\"SourceGraphic\" in2=\"n\" scale=\"1.6\" xChannelSelector=\"R\" yChannelSelector=\"G\" result=\"disp\"></feDisplacementMap><feGaussianBlur in=\"disp\" stdDeviation=\".25\"></feGaussianBlur></filter><linearGradient id=\"nova-view-7-nv-panel-shine\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#ffffff;stop-opacity:.07\"></stop><stop offset=\"0.45\" style=\"stop-color:#ffffff;stop-opacity:0\"></stop><stop offset=\"1\" style=\"stop-color:#22d3ee;stop-opacity:.04\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-glass-track\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#1d2853;stop-opacity:.95\"></stop><stop offset=\"0.45\" style=\"stop-color:#060d20;stop-opacity:.98\"></stop><stop offset=\"1\" style=\"stop-color:#122956;stop-opacity:.95\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-pill-engrave\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#1d2853\"></stop><stop offset=\"0.48\" style=\"stop-color:#080d25\"></stop><stop offset=\"1\" style=\"stop-color:#102140\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-ink-lit\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"0\"><stop offset=\"0\" style=\"stop-color:#63e8ff\"></stop><stop offset=\"0.5\" style=\"stop-color:#eef8ff\"></stop><stop offset=\"1\" style=\"stop-color:#ab72ff\"></stop></linearGradient><radialGradient id=\"nova-view-7-nv-ring-given\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-given);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-given);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-given);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-unknown\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-unknown);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-unknown);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-unknown);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-op\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-op);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-op);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-op);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-result\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-result);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-result);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-result);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-error\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-error);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-error);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-error);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-focus\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-focus);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-focus);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-focus);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-support\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-support);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-support);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-support);stop-opacity:.15\"></stop></radialGradient></defs><g class=\"nv-neon-box\"><rect x=\"27\" y=\"23\" width=\"546\" height=\"202\" rx=\"21\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:none;stroke:#7dd3fc\"></rect><rect x=\"30\" y=\"26\" width=\"540\" height=\"196\" rx=\"18\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-7-nv-neon)\" style=\"fill:#050c1fcc;stroke:#7dd3fc\"></rect><rect x=\"31.5\" y=\"27.5\" width=\"537\" height=\"58.8\" rx=\"16.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"54\" y=\"62\" text-anchor=\"start\" font-size=\"14\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#2dd4bf;font-family:var(--nova-font-chalk-draw);opacity:.97\">positive (+1 each)</text><text x=\"54\" y=\"146\" text-anchor=\"start\" font-size=\"14\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f87171;font-family:var(--nova-font-chalk-draw);opacity:.97\">negative (−1 each)</text><line x1=\"46\" y1=\"126\" x2=\"554\" y2=\"126\" stroke-dasharray=\"3 8\" stroke-width=\"1.4\" style=\"stroke:#7dd3fc;opacity:.4\"></line><g data-c=\"p0\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"70\" cy=\"92\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#2dd4bf;opacity:.3\" filter=\"url(#nova-view-7-nv-neon)\"></circle><circle cx=\"70\" cy=\"92\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(45,212,191,.32);stroke:#2dd4bf\"></circle><text x=\"70\" y=\"100\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill: rgb(45, 212, 191); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">+</text><rect class=\"nv-hit\" x=\"49\" y=\"71\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g data-c=\"p1\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"121\" cy=\"92\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#2dd4bf;opacity:.3\" filter=\"url(#nova-view-7-nv-neon)\"></circle><circle cx=\"121\" cy=\"92\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(45,212,191,.32);stroke:#2dd4bf\"></circle><text x=\"121\" y=\"100\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill: rgb(45, 212, 191); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">+</text><rect class=\"nv-hit\" x=\"100\" y=\"71\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g data-c=\"p2\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"172\" cy=\"92\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#2dd4bf;opacity:.3\" filter=\"url(#nova-view-7-nv-neon)\"></circle><circle cx=\"172\" cy=\"92\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(45,212,191,.32);stroke:#2dd4bf\"></circle><text x=\"172\" y=\"100\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill: rgb(45, 212, 191); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">+</text><rect class=\"nv-hit\" x=\"151\" y=\"71\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g data-c=\"n0\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"70\" cy=\"176\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#f87171;opacity:.3\" filter=\"url(#nova-view-7-nv-neon)\"></circle><circle cx=\"70\" cy=\"176\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(10,20,40,.9);stroke:#f87171\"></circle><text x=\"70\" y=\"184\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill: rgb(248, 113, 113); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">−</text><rect class=\"nv-hit\" x=\"49\" y=\"155\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g data-c=\"n1\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"121\" cy=\"176\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#f87171;opacity:.3\" filter=\"url(#nova-view-7-nv-neon)\"></circle><circle cx=\"121\" cy=\"176\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(10,20,40,.9);stroke:#f87171\"></circle><text x=\"121\" y=\"184\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill: rgb(248, 113, 113); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">−</text><rect class=\"nv-hit\" x=\"100\" y=\"155\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g class=\"nv-neon-box\"><rect x=\"27\" y=\"229\" width=\"546\" height=\"68\" rx=\"19\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-op)\"></rect><rect x=\"30\" y=\"232\" width=\"540\" height=\"62\" rx=\"16\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-7-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-op)\"></rect><rect x=\"31.5\" y=\"233.5\" width=\"537\" height=\"18.599999999999998\" rx=\"14.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"54\" y=\"270\" text-anchor=\"start\" font-size=\"14\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--v-muted);font-family:var(--nova-font-chalk-draw);opacity:.97\">tray</text><text x=\"546\" y=\"270\" text-anchor=\"end\" font-size=\"12\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--v-muted);font-family:var(--nova-font-chalk-draw);opacity:.97\">drag back here to remove</text><g data-src=\"pos\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\" aria-label=\"Positive counter. Enter adds one, Delete removes one\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"240\" cy=\"263\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#2dd4bf;opacity:.3\" filter=\"url(#nova-view-7-nv-neon)\"></circle><circle cx=\"240\" cy=\"263\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(45,212,191,.32);stroke:#2dd4bf\"></circle><text x=\"240\" y=\"271\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill: rgb(45, 212, 191); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">+</text><rect class=\"nv-hit\" x=\"219\" y=\"242\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g data-src=\"neg\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\" aria-label=\"Negative counter. Enter adds one, Delete removes one\" data-drag=\"1\" style=\"cursor: grab; touch-action: none;\"><circle cx=\"330\" cy=\"263\" r=\"17\" stroke-width=\"6\" style=\"fill:none;stroke:#f87171;opacity:.3\" filter=\"url(#nova-view-7-nv-neon)\"></circle><circle cx=\"330\" cy=\"263\" r=\"17\" stroke-width=\"2.6\" style=\"fill:rgba(10,20,40,.9);stroke:#f87171\"></circle><text x=\"330\" y=\"271\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill: rgb(248, 113, 113); font-family: var(--nova-font-chalk-write); opacity: 0.97;\">−</text><rect class=\"nv-hit\" x=\"309\" y=\"242\" width=\"42\" height=\"42\" fill=\"transparent\" style=\"pointer-events:all\"></rect></g><g class=\"nv-numberline\"><rect x=\"38\" y=\"341\" width=\"524\" height=\"18\" rx=\"9\" style=\"fill:url(#nova-view-7-nv-glass-track);stroke:#67b8e5\" filter=\"url(#nova-view-7-nv-neon-soft)\"></rect><rect x=\"42\" y=\"345\" width=\"516\" height=\"10\" rx=\"5\" style=\"fill:none;stroke:#59ddff3d\"></rect><line x1=\"42\" y1=\"350\" x2=\"558\" y2=\"350\" stroke-width=\"2.8\" stroke-linecap=\"round\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:url(#nova-view-7-nv-ink-lit)\" marker-end=\"url(#nova-view-7-nv-arr-ink)\" marker-start=\"url(#nova-view-7-nv-arr-ink)\"></line><line x1=\"50.5\" y1=\"337\" x2=\"50.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"50.5\" y1=\"337\" x2=\"50.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"50.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−10</text><line x1=\"75.5\" y1=\"337\" x2=\"75.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"75.5\" y1=\"337\" x2=\"75.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"75.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−9</text><line x1=\"100.5\" y1=\"337\" x2=\"100.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"100.5\" y1=\"337\" x2=\"100.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"100.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−8</text><line x1=\"125.5\" y1=\"337\" x2=\"125.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"125.5\" y1=\"337\" x2=\"125.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"125.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−7</text><line x1=\"150.5\" y1=\"337\" x2=\"150.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"150.5\" y1=\"337\" x2=\"150.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"150.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−6</text><line x1=\"175.5\" y1=\"337\" x2=\"175.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"175.5\" y1=\"337\" x2=\"175.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"175.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−5</text><line x1=\"200.5\" y1=\"337\" x2=\"200.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"200.5\" y1=\"337\" x2=\"200.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"200.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−4</text><line x1=\"225.5\" y1=\"337\" x2=\"225.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"225.5\" y1=\"337\" x2=\"225.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"225.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−3</text><line x1=\"250.5\" y1=\"337\" x2=\"250.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"250.5\" y1=\"337\" x2=\"250.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"250.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−2</text><line x1=\"275.5\" y1=\"337\" x2=\"275.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"275.5\" y1=\"337\" x2=\"275.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"275.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">−1</text><line x1=\"300.5\" y1=\"337\" x2=\"300.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"300.5\" y1=\"337\" x2=\"300.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"300.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">0</text><line x1=\"325.5\" y1=\"337\" x2=\"325.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"325.5\" y1=\"337\" x2=\"325.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"325.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">1</text><line x1=\"350.5\" y1=\"337\" x2=\"350.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"350.5\" y1=\"337\" x2=\"350.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"350.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">2</text><line x1=\"375.5\" y1=\"337\" x2=\"375.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"375.5\" y1=\"337\" x2=\"375.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"375.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">3</text><line x1=\"400.5\" y1=\"337\" x2=\"400.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"400.5\" y1=\"337\" x2=\"400.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"400.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">4</text><line x1=\"425.5\" y1=\"337\" x2=\"425.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"425.5\" y1=\"337\" x2=\"425.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"425.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">5</text><line x1=\"450.5\" y1=\"337\" x2=\"450.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"450.5\" y1=\"337\" x2=\"450.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"450.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">6</text><line x1=\"475.5\" y1=\"337\" x2=\"475.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"475.5\" y1=\"337\" x2=\"475.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"475.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">7</text><line x1=\"500.5\" y1=\"337\" x2=\"500.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"500.5\" y1=\"337\" x2=\"500.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"500.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">8</text><line x1=\"525.5\" y1=\"337\" x2=\"525.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"525.5\" y1=\"337\" x2=\"525.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"525.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">9</text><line x1=\"550.5\" y1=\"337\" x2=\"550.5\" y2=\"365\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"stroke:#59ddff;opacity:.28\"></line><line x1=\"550.5\" y1=\"337\" x2=\"550.5\" y2=\"365\" stroke-width=\"2.6\" stroke-linecap=\"butt\" style=\"stroke:#e8fbff\"></line><text x=\"550.5\" y=\"384\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:#f3efe4;font-family:var(--nova-font-chalk-draw);opacity:.97\">10</text></g><line x1=\"300\" y1=\"320\" x2=\"300\" y2=\"356\" stroke-width=\"2\" stroke-dasharray=\"3 4\" style=\"stroke:#ffcc58;opacity:.7\"></line></svg>",
+        "expected": [],
+        "fractionCount": 0,
+        "markScheme": "",
+        "answers": []
+      }
+    ],
+    "multiple": {
+      "count": 2,
+      "docks": 1,
+      "distinct": true,
+      "duplicateIds": []
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      },
+      "result": {
+        "score": 85,
+        "correct": 6,
+        "played": 7,
+        "pct": 100,
+        "stars": 3,
+        "best": 6,
+        "hints": 0,
+        "livesLeft": 2
+      }
+    }
+  }
+]

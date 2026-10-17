@@ -1,0 +1,5 @@
+/* F6 lesson records drive the approved native apparatus through its own step and Challenge renderers (audit 2026-10-17). Phases before the engine's reveal step use its own concealed Challenge view. */
+const f6NativeRender=DEF.render,f6Noop=()=>{};
+function f6Lesson(l,stage){return window.NovaF4Runtime.run(C,stage,l,(l,p,hidden)=>{const keep=C.preset,base=window.NovaV2Integration.mutable(C.presets[keep]||{});C.presets.__lesson={...base,...window.NovaV2Integration.mutable(l.state||{})};C.preset='__lesson';const rm=window.NOVA.reducedMotion;window.NOVA.reducedMotion=()=>true;try{const P=C.presets.__lesson;if((hidden||p<__REV__)&&__HDRAW__){__HCODE__;}else{let q=Math.min(p,STEPS.length-1);if(hidden)q=Math.min(q,__HID__);f6NativeRender.call(DEF,q,stage);}}finally{window.NOVA.reducedMotion=rm;C.preset=keep;delete C.presets.__lesson;}});}
+for(const step of STEPS)step.lesson=null;
+DEF.render=function(i,stage){const a=window.NovaLessonComponent?.active,l=(a?.data||a?.nativeData)?.lesson;return l?f6Lesson(l,stage):f6NativeRender.call(DEF,i,stage);};

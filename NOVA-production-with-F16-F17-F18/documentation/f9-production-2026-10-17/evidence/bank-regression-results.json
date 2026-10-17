@@ -1,0 +1,4622 @@
+[
+  {
+    "id": "F9-01",
+    "path": "F9/F9-01-matchstick-pattern-builder.html",
+    "errors": [],
+    "engineId": "F9-01",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "table",
+        "key": "speech",
+        "path": [
+          "5",
+          "shown"
+        ],
+        "from": 4,
+        "to": 5,
+        "beforeText": "Sequence workshopMatchstick pattern builderConnected matchstick squares. Stage 4 contains 13 sticks.Stage 4Every new square adds three13 sticks+34Stage 17Stage 210Stage 313Stage 4Difference = +3STICK COUNT13Nth TERM3n + 1TERM TABLEStage1234Sticks471013PROVE THE RULECan you explain where the one extra starting side comes from?3 sticks per square+1 starting side=3n + 1Three for every stage, plus one starting side. The total is three n plus one.Three for every stage, plus one starting side. The total is three n plus one. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopMatchstick pattern builderConnected matchstick squares. Stage 5 contains 16 sticks.Stage 5Every new square adds three16 sticks+34Stage 17Stage 210Stage 313Stage 4Difference = +3STICK COUNT16Nth TERM3n + 1TERM TABLEStage1234Sticks471013PROVE THE RULECan you explain where the one extra starting side comes from?3 sticks per square+1 starting side=3n + 1Three for every stage, plus one starting side. The total is three n plus one.Three for every stage, plus one starting side. The total is three n plus one. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "rule",
+            "narration": "Three for every stage, plus one starting side. The total is three n plus one.",
+            "prompt": "Explain why the rule is three n plus one.",
+            "mood": "pleased"
+          },
+          "tables": {
+            "speech": [
+              {
+                "name": "first-square",
+                "pose": "explain",
+                "skin": "pip",
+                "text": "Start with one square. Count its four sticks.",
+                "prompt": "Count all four sides of the first square.",
+                "shown": 1,
+                "add": 0
+              },
+              {
+                "name": "share-side",
+                "pose": "point-right",
+                "skin": "pip",
+                "text": "A second square shares one side. We only add three sticks.",
+                "prompt": "Predict the total before counting the second square.",
+                "shown": 2,
+                "add": 1
+              },
+              {
+                "name": "third-square",
+                "pose": "think",
+                "skin": "pip",
+                "text": "Watch the next square. Again, three new sticks, not four.",
+                "prompt": "What stayed the same when the pattern grew?",
+                "shown": 3,
+                "add": 2
+              },
+              {
+                "name": "notice-difference",
+                "pose": "idea",
+                "skin": "pip",
+                "text": "The totals are four, seven and ten. Each step grows by three.",
+                "prompt": "How much is added each time? Look at the differences.",
+                "shown": 3,
+                "add": 2
+              },
+              {
+                "name": "fourth-square",
+                "pose": "point-right",
+                "skin": "pip",
+                "text": "Add one more square. Ten plus three makes thirteen.",
+                "prompt": "Predict the number of sticks in stage four.",
+                "shown": 4,
+                "add": 3
+              },
+              {
+                "name": "rule",
+                "pose": "celebrate",
+                "skin": "pip",
+                "text": "Three for every stage, plus one starting side. The total is three n plus one.",
+                "prompt": "Explain why the rule is three n plus one.",
+                "shown": 5,
+                "add": 3
+              }
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-01",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "first-square",
+            "narration": "Start with one square. Count its four sticks.",
+            "prompt": "Count all four sides of the first square.",
+            "mood": "focus"
+          },
+          {
+            "name": "share-side",
+            "narration": "A second square shares one side. We only add three sticks.",
+            "prompt": "Predict the total before counting the second square.",
+            "mood": "focus"
+          },
+          {
+            "name": "third-square",
+            "narration": "Watch the next square. Again, three new sticks, not four.",
+            "prompt": "What stayed the same when the pattern grew?",
+            "mood": "focus"
+          },
+          {
+            "name": "notice-difference",
+            "narration": "The totals are four, seven and ten. Each step grows by three.",
+            "prompt": "How much is added each time? Look at the differences.",
+            "mood": "focus"
+          },
+          {
+            "name": "fourth-square",
+            "narration": "Add one more square. Ten plus three makes thirteen.",
+            "prompt": "Predict the number of sticks in stage four.",
+            "mood": "focus"
+          },
+          {
+            "name": "rule",
+            "narration": "Three for every stage, plus one starting side. The total is three n plus one.",
+            "prompt": "Explain why the rule is three n plus one.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-01",
+          "family": "F9",
+          "startMode": "guided",
+          "preset": "Y7-036-sequence-structure",
+          "minStage": 1,
+          "maxStage": 7,
+          "firstTerm": 4,
+          "difference": 3,
+          "presets": {
+            "Y7-036-sequence-structure": {
+              "label": "Year 7 · Sequence rules",
+              "shape": "joined-squares",
+              "minStage": 1,
+              "maxStage": 7,
+              "difference": 3
+            }
+          },
+          "events": {
+            "value": [
+              "stage",
+              "stick",
+              "count",
+              "rule",
+              "target",
+              "challengeTask",
+              "placed"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "challenge": {
+            "targets": [
+              13,
+              16,
+              22
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "speech": [
+            {
+              "name": "first-square",
+              "pose": "explain",
+              "skin": "pip",
+              "text": "Start with one square. Count its four sticks.",
+              "prompt": "Count all four sides of the first square.",
+              "shown": 1,
+              "add": 0
+            },
+            {
+              "name": "share-side",
+              "pose": "point-right",
+              "skin": "pip",
+              "text": "A second square shares one side. We only add three sticks.",
+              "prompt": "Predict the total before counting the second square.",
+              "shown": 2,
+              "add": 1
+            },
+            {
+              "name": "third-square",
+              "pose": "think",
+              "skin": "pip",
+              "text": "Watch the next square. Again, three new sticks, not four.",
+              "prompt": "What stayed the same when the pattern grew?",
+              "shown": 3,
+              "add": 2
+            },
+            {
+              "name": "notice-difference",
+              "pose": "idea",
+              "skin": "pip",
+              "text": "The totals are four, seven and ten. Each step grows by three.",
+              "prompt": "How much is added each time? Look at the differences.",
+              "shown": 3,
+              "add": 2
+            },
+            {
+              "name": "fourth-square",
+              "pose": "point-right",
+              "skin": "pip",
+              "text": "Add one more square. Ten plus three makes thirteen.",
+              "prompt": "Predict the number of sticks in stage four.",
+              "shown": 4,
+              "add": 3
+            },
+            {
+              "name": "rule",
+              "pose": "celebrate",
+              "skin": "pip",
+              "text": "Three for every stage, plus one starting side. The total is three n plus one.",
+              "prompt": "Explain why the rule is three n plus one.",
+              "shown": 4,
+              "add": 3
+            }
+          ]
+        },
+        "draws": {
+          "reset": [
+            "stage"
+          ],
+          "renderChallenge": [
+            "stage",
+            "stepState"
+          ],
+          "showEquation": [
+            "stage",
+            "n",
+            "hideValue"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "reset": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-02",
+    "path": "F9/F9-02-term-to-term-animator.html",
+    "errors": [],
+    "engineId": "F9-02",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "config",
+        "path": [
+          "presets",
+          "Y8-020-geometric-sequences",
+          "a1"
+        ],
+        "from": 3,
+        "to": 4,
+        "beforeText": "Sequence workshopTerm-to-term animatorTerms in a sequence connected by hops labelled with a term-to-term rule.Year 8 · ×2 patternCompare the three rule types×2×2×23Term 16Term 212Term 324Term 4…+3−5×2Same idea: one fixed rule from term to termRULE×2NEXT TERM24WHAT TO NOTICEMultiplying by two is different from adding a fixed amount.Arithmetic sequences add or subtract a fixed amount. Geometric sequences multiply by a fixed factor.Arithmetic sequences add or subtract a fixed amount. Geometric sequences multiply by a fixed factor. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopTerm-to-term animatorTerms in a sequence connected by hops labelled with a term-to-term rule.Year 8 · ×2 patternCompare the three rule types×2×2×24Term 18Term 216Term 332Term 4…+3−5×2Same idea: one fixed rule from term to termRULE×2NEXT TERM32WHAT TO NOTICEMultiplying by two is different from adding a fixed amount.Arithmetic sequences add or subtract a fixed amount. Geometric sequences multiply by a fixed factor.Arithmetic sequences add or subtract a fixed amount. Geometric sequences multiply by a fixed factor. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "compare",
+            "narration": "Arithmetic sequences add or subtract a fixed amount. Geometric sequences multiply by a fixed factor.",
+            "prompt": "Compare add three, subtract five and multiply by two.",
+            "mood": "pleased"
+          },
+          "config": {
+            "id": "F9-02",
+            "family": "F9",
+            "startMode": "guided",
+            "preset": "Y7-036-sequence-structure",
+            "presets": {
+              "Y7-036-sequence-structure": {
+                "label": "Year 7 · +3 pattern",
+                "type": "arith",
+                "a1": 4,
+                "step": 3,
+                "terms": 5,
+                "focus": "Term-to-term rule"
+              },
+              "Y8-019-arithmetic-sequences": {
+                "label": "Year 8 · −5 pattern",
+                "type": "arith",
+                "a1": 30,
+                "step": -5,
+                "terms": 5,
+                "focus": "Arithmetic sequence"
+              },
+              "Y8-020-geometric-sequences": {
+                "label": "Year 8 · ×2 pattern",
+                "type": "geom",
+                "a1": 4,
+                "ratio": 2,
+                "terms": 5,
+                "focus": "Geometric sequence"
+              }
+            },
+            "events": {
+              "value": [
+                "preset",
+                "term",
+                "rule",
+                "challengeTask",
+                "placed"
+              ],
+              "types": [
+                "step",
+                "correct",
+                "hintUsed",
+                "mode"
+              ]
+            },
+            "lessonGame": {},
+            "lessonChallengeTitle": "Concept challenge",
+            "lessonBadgeTitle": "CHALLENGE CHAMPION"
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-02",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "notice-terms",
+            "narration": "Look at the terms: four, seven, ten. Something is repeating.",
+            "prompt": "What changes from one term to the next?",
+            "mood": "focus"
+          },
+          {
+            "name": "reveal-hop",
+            "narration": "From four to seven, and seven to ten, we add three each time.",
+            "prompt": "Say the term-to-term rule out loud.",
+            "mood": "focus"
+          },
+          {
+            "name": "predict-next",
+            "narration": "If the rule is add three, the next term after ten is thirteen.",
+            "prompt": "Predict the next term before it appears.",
+            "mood": "focus"
+          },
+          {
+            "name": "decreasing",
+            "narration": "A term-to-term rule can also decrease. Here the sequence goes down by five.",
+            "prompt": "How do you know the rule is subtract five?",
+            "mood": "focus"
+          },
+          {
+            "name": "geometric",
+            "narration": "Some sequences multiply. Three, six, twelve, twenty-four doubles each time.",
+            "prompt": "What makes this different from an arithmetic sequence?",
+            "mood": "focus"
+          },
+          {
+            "name": "compare",
+            "narration": "Arithmetic sequences add or subtract a fixed amount. Geometric sequences multiply by a fixed factor.",
+            "prompt": "Compare add three, subtract five and multiply by two.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-02",
+          "family": "F9",
+          "startMode": "guided",
+          "preset": "Y7-036-sequence-structure",
+          "presets": {
+            "Y7-036-sequence-structure": {
+              "label": "Year 7 · +3 pattern",
+              "type": "arith",
+              "a1": 4,
+              "step": 3,
+              "terms": 5,
+              "focus": "Term-to-term rule"
+            },
+            "Y8-019-arithmetic-sequences": {
+              "label": "Year 8 · −5 pattern",
+              "type": "arith",
+              "a1": 30,
+              "step": -5,
+              "terms": 5,
+              "focus": "Arithmetic sequence"
+            },
+            "Y8-020-geometric-sequences": {
+              "label": "Year 8 · ×2 pattern",
+              "type": "geom",
+              "a1": 3,
+              "ratio": 2,
+              "terms": 5,
+              "focus": "Geometric sequence"
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "term",
+              "rule",
+              "challengeTask",
+              "placed"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "speech": [
+            {
+              "name": "notice-terms",
+              "preset": "Y7-036-sequence-structure",
+              "pose": "explain",
+              "skin": "pip",
+              "text": "Look at the terms: four, seven, ten. Something is repeating.",
+              "prompt": "What changes from one term to the next?"
+            },
+            {
+              "name": "reveal-hop",
+              "preset": "Y7-036-sequence-structure",
+              "pose": "point-right",
+              "skin": "pip",
+              "text": "From four to seven, and seven to ten, we add three each time.",
+              "prompt": "Say the term-to-term rule out loud."
+            },
+            {
+              "name": "predict-next",
+              "preset": "Y7-036-sequence-structure",
+              "pose": "idea",
+              "skin": "pip",
+              "text": "If the rule is add three, the next term after ten is thirteen.",
+              "prompt": "Predict the next term before it appears."
+            },
+            {
+              "name": "decreasing",
+              "preset": "Y8-019-arithmetic-sequences",
+              "pose": "think",
+              "skin": "pip",
+              "text": "A term-to-term rule can also decrease. Here the sequence goes down by five.",
+              "prompt": "How do you know the rule is subtract five?"
+            },
+            {
+              "name": "geometric",
+              "preset": "Y8-020-geometric-sequences",
+              "pose": "point-right",
+              "skin": "nova",
+              "text": "Some sequences multiply. Three, six, twelve, twenty-four doubles each time.",
+              "prompt": "What makes this different from an arithmetic sequence?"
+            },
+            {
+              "name": "compare",
+              "preset": "Y8-020-geometric-sequences",
+              "pose": "celebrate",
+              "skin": "pip",
+              "text": "Arithmetic sequences add or subtract a fixed amount. Geometric sequences multiply by a fixed factor.",
+              "prompt": "Compare add three, subtract five and multiply by two."
+            }
+          ]
+        },
+        "draws": {
+          "reset": [
+            "stage"
+          ],
+          "renderExplore": [
+            "stage",
+            "panel"
+          ],
+          "drawChallenge": [
+            "stage",
+            "api"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "reset": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-03",
+    "path": "F9/F9-03-position-to-term-table.html",
+    "errors": [],
+    "engineId": "F9-03",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "config",
+        "path": [
+          "presets",
+          "Y7-037-linear-nth-term",
+          "a"
+        ],
+        "from": 2,
+        "to": 3,
+        "beforeText": "Sequence workshopPosition-to-term tableTwo-row position-to-term table: position n maps to term T(n) using 2n + 3.FIND THE GENERAL RULEThe difference and adjustmentPOSITION   nTERM   T(n)152739411513MAPPING RULE2n + 3Difference: +2     Starting adjustment: +3CURRENT POSITION1–5RULE2n + 3WHY IT WORKSThe coefficient 2 gives the constant difference; the adjustment 3 shifts the sequence.The two tells us the sequence grows by two. The plus three adjusts the starting value.The two tells us the sequence grows by two. The plus three adjusts the starting value. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopPosition-to-term tableTwo-row position-to-term table: position n maps to term T(n) using 3n + 3.FIND THE GENERAL RULEThe difference and adjustmentPOSITION   nTERM   T(n)1629312415518MAPPING RULE3n + 3Difference: +3     Starting adjustment: +3CURRENT POSITION1–5RULE3n + 3WHY IT WORKSThe coefficient 3 gives the constant difference; the adjustment 3 shifts the sequence.The two tells us the sequence grows by two. The plus three adjusts the starting value.The two tells us the sequence grows by two. The plus three adjusts the starting value. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "generalise",
+            "narration": "The two tells us the sequence grows by two. The plus three adjusts the starting value.",
+            "prompt": "Why would two n alone give the wrong first term?",
+            "mood": "pleased"
+          },
+          "config": {
+            "id": "F9-03",
+            "family": "F9",
+            "startMode": "guided",
+            "preset": "Y7-037-linear-nth-term",
+            "presets": {
+              "Y7-037-linear-nth-term": {
+                "label": "Year 7 · nth term of a linear sequence",
+                "a": 3,
+                "b": 3,
+                "from": 1,
+                "to": 10,
+                "objective": "Use position n to calculate the term directly."
+              }
+            },
+            "events": {
+              "value": [
+                "position",
+                "term",
+                "rule",
+                "challengeTask",
+                "placed",
+                "coefficient",
+                "offset"
+              ],
+              "types": [
+                "step",
+                "correct",
+                "hintUsed",
+                "mode"
+              ]
+            },
+            "lessonGame": {},
+            "lessonChallengeTitle": "Concept challenge",
+            "lessonBadgeTitle": "CHALLENGE CHAMPION"
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-03",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "positions-first",
+            "narration": "The top row gives each term its position. Position is not the term itself.",
+            "prompt": "Point to position one. What should go beneath it?",
+            "mood": "focus"
+          },
+          {
+            "name": "apply-rule",
+            "narration": "For the first position, multiply one by two, then add three.",
+            "prompt": "What is two times one, plus three?",
+            "mood": "focus"
+          },
+          {
+            "name": "reveal-first-term",
+            "narration": "That gives five. The first term is five, not one.",
+            "prompt": "Which row shows the answer?",
+            "mood": "focus"
+          },
+          {
+            "name": "map-several",
+            "narration": "Apply the same rule to every position. Two n plus three makes five, seven, nine, eleven and thirteen.",
+            "prompt": "Test the rule using position four.",
+            "mood": "focus"
+          },
+          {
+            "name": "jump-to-tenth",
+            "narration": "You do not need every term in between. Put ten into the rule to find term twenty-three.",
+            "prompt": "Could you calculate term twenty without counting all the way?",
+            "mood": "focus"
+          },
+          {
+            "name": "generalise",
+            "narration": "The two tells us the sequence grows by two. The plus three adjusts the starting value.",
+            "prompt": "Why would two n alone give the wrong first term?",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-03",
+          "family": "F9",
+          "startMode": "guided",
+          "preset": "Y7-037-linear-nth-term",
+          "presets": {
+            "Y7-037-linear-nth-term": {
+              "label": "Year 7 · nth term of a linear sequence",
+              "a": 2,
+              "b": 3,
+              "from": 1,
+              "to": 10,
+              "objective": "Use position n to calculate the term directly."
+            }
+          },
+          "events": {
+            "value": [
+              "position",
+              "term",
+              "rule",
+              "challengeTask",
+              "placed",
+              "coefficient",
+              "offset"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "steps": [
+            {
+              "name": "positions-first",
+              "pose": "explain",
+              "text": "The top row gives each term its position. Position is not the term itself.",
+              "prompt": "Point to position one. What should go beneath it?"
+            },
+            {
+              "name": "apply-rule",
+              "pose": "point-down",
+              "text": "For the first position, multiply one by two, then add three.",
+              "prompt": "What is two times one, plus three?"
+            },
+            {
+              "name": "reveal-first-term",
+              "pose": "count",
+              "text": "That gives five. The first term is five, not one.",
+              "prompt": "Which row shows the answer?"
+            },
+            {
+              "name": "map-several",
+              "pose": "point-right",
+              "text": "Apply the same rule to every position. Two n plus three makes five, seven, nine, eleven and thirteen.",
+              "prompt": "Test the rule using position four."
+            },
+            {
+              "name": "jump-to-tenth",
+              "pose": "idea",
+              "text": "You do not need every term in between. Put ten into the rule to find term twenty-three.",
+              "prompt": "Could you calculate term twenty without counting all the way?"
+            },
+            {
+              "name": "generalise",
+              "pose": "celebrate",
+              "text": "The two tells us the sequence grows by two. The plus three adjusts the starting value.",
+              "prompt": "Why would two n alone give the wrong first term?"
+            }
+          ],
+          "tasks": [
+            {
+              "title": "01 · Map a growing sequence",
+              "a": 2,
+              "b": 3,
+              "choices": [
+                11,
+                13,
+                10,
+                12,
+                14,
+                16
+              ],
+              "rules": [
+                "2n+3",
+                "2n",
+                "3n+2"
+              ],
+              "correct": [
+                11,
+                13
+              ],
+              "rule": "2n+3",
+              "known": [
+                5,
+                7,
+                9
+              ],
+              "hint": "The rule is 2 times the position, then add 3. Position 4 is not the fourth jump.",
+              "trap": {
+                "10": "You may have counted a jump rather than substituting n = 4.",
+                "12": "Check two times four, then add three.",
+                "14": "Recheck which column you are filling.",
+                "16": "Sixteen is one of the choices, but it is not this term.",
+                "2n": "Two n has the right difference, but it misses the plus three.",
+                "3n+2": "Look at the jump from five to seven. It is plus two, not plus three."
+              }
+            },
+            {
+              "title": "02 · The adjustment can be negative",
+              "a": 3,
+              "b": -2,
+              "choices": [
+                10,
+                13,
+                7,
+                12,
+                15,
+                16
+              ],
+              "rules": [
+                "3n−2",
+                "3n+2",
+                "2n−3"
+              ],
+              "correct": [
+                10,
+                13
+              ],
+              "rule": "3n−2",
+              "known": [
+                1,
+                4,
+                7
+              ],
+              "hint": "The terms rise by three, but the first term is one. Try 3n minus 2.",
+              "trap": {
+                "7": "Seven is the third term. Use position four.",
+                "12": "Remember to subtract two after multiplying.",
+                "15": "Three times five is fifteen; subtract the adjustment.",
+                "16": "You have added rather than subtracted the adjustment.",
+                "3n+2": "The adjustment is minus two, not plus two.",
+                "2n−3": "The coefficient must match the +3 difference."
+              }
+            },
+            {
+              "title": "03 · Work with a larger difference",
+              "a": 4,
+              "b": 1,
+              "choices": [
+                17,
+                21,
+                16,
+                20,
+                22,
+                25
+              ],
+              "rules": [
+                "4n+1",
+                "4n",
+                "n+4"
+              ],
+              "correct": [
+                17,
+                21
+              ],
+              "rule": "4n+1",
+              "known": [
+                5,
+                9,
+                13
+              ],
+              "hint": "The terms increase by four. What must be added to 4n to produce five at n = 1?",
+              "trap": {
+                "16": "Four times four is sixteen. What is the adjustment?",
+                "20": "Four times five is twenty. Add one.",
+                "22": "Try substituting position five precisely.",
+                "25": "This is not the next term from twenty-one.",
+                "4n": "The difference four is right, but the extra one is missing.",
+                "n+4": "The coefficient is not one: each term increases by four."
+              }
+            }
+          ]
+        },
+        "draws": {
+          "reset": [
+            "stage"
+          ],
+          "wrap": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "caption"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "reset": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "wrap": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "caption"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {}
+            ],
+            "explain",
+            "The top row gives each term its position. Position is not the term itself."
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-04",
+    "path": "F9/F9-04-sequence-on-a-graph.html",
+    "errors": [],
+    "engineId": "F9-04",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "config",
+        "path": [
+          "presets",
+          "Y8-021-quadratic-pattern-spotting",
+          "a"
+        ],
+        "from": 1,
+        "to": 2,
+        "beforeText": "Sequence workshopSequence on a graphSequence values plotted as neon points on a coordinate graph.Y8 · n² + 1The changes themselves grow0123456051015202530Position nTerm value(1, 2)(2, 5)(3, 10)(4, 17)(5, 26)FIRST DIFFERENCES: +3  ·  +5  ·  +7  ·  +9SECOND DIFFERENCES: +2  ·  +2  ·  +2RULEn² + 1POINTS PLOTTED5WHAT TO NOTICEQuadratic first differences grow by two, so the plotted pattern bends upward.These points curve upward. The first differences grow, but the second differences stay at two.These points curve upward. The first differences grow, but the second differences stay at two. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopSequence on a graphSequence values plotted as neon points on a coordinate graph.Y8 · n² + 1The changes themselves grow0123456051015202530Position nTerm value(1, 3)(2, 9)(3, 19)(4, 33)(5, 51)FIRST DIFFERENCES: +6  ·  +10  ·  +14  ·  +18SECOND DIFFERENCES: +4  ·  +4  ·  +4RULEn² + 1POINTS PLOTTED5WHAT TO NOTICEQuadratic first differences grow by two, so the plotted pattern bends upward.These points curve upward. The first differences grow, but the second differences stay at two.These points curve upward. The first differences grow, but the second differences stay at two. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "compare-a-quadratic-pattern",
+            "narration": "These points curve upward. The first differences grow, but the second differences stay at two.",
+            "prompt": "Why is the quadratic graph not a straight pattern?",
+            "mood": "pleased"
+          },
+          "config": {
+            "id": "F9-04",
+            "family": "F9",
+            "startMode": "guided",
+            "preset": "Y7-037-linear-nth-term",
+            "presets": {
+              "Y7-037-linear-nth-term": {
+                "label": "Y7 · 2n + 1",
+                "year": "Year 7",
+                "kind": "linear",
+                "a": 2,
+                "b": 1,
+                "yMax": 14,
+                "yStep": 2,
+                "formula": "2n + 1",
+                "objective": "Plot a linear nth-term sequence and read the constant difference."
+              },
+              "Y8-019-arithmetic-sequences": {
+                "label": "Y8 · 14 − 2n",
+                "year": "Year 8",
+                "kind": "linear",
+                "a": -2,
+                "b": 14,
+                "yMax": 14,
+                "yStep": 2,
+                "formula": "14 − 2n",
+                "objective": "See how a negative constant difference makes the sequence fall."
+              },
+              "Y8-021-quadratic-pattern-spotting": {
+                "label": "Y8 · n² + 1",
+                "year": "Year 8",
+                "kind": "quadratic",
+                "a": 2,
+                "b": 0,
+                "c": 1,
+                "yMax": 30,
+                "yStep": 5,
+                "formula": "n² + 1",
+                "objective": "Plot growing first differences and constant second differences."
+              },
+              "Y9-008-quadratic-pattern-structure": {
+                "label": "Y9 · n² − n + 2",
+                "year": "Year 9",
+                "kind": "quadratic",
+                "a": 1,
+                "b": -1,
+                "c": 2,
+                "yMax": 25,
+                "yStep": 5,
+                "formula": "n² − n + 2",
+                "objective": "Use the second-difference structure to recognise a simple quadratic pattern."
+              }
+            },
+            "events": {
+              "value": [
+                "preset",
+                "position",
+                "term",
+                "placed",
+                "challengeTask",
+                "rule"
+              ],
+              "types": [
+                "step",
+                "correct",
+                "hintUsed",
+                "mode"
+              ]
+            },
+            "lessonGame": {},
+            "lessonChallengeTitle": "Concept challenge",
+            "lessonBadgeTitle": "CHALLENGE CHAMPION"
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-04",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "plot-the-first-point",
+            "narration": "On this graph, the horizontal axis gives the position. The vertical axis gives the term value.",
+            "prompt": "Find position one. How high should we plot its term?",
+            "mood": "focus"
+          },
+          {
+            "name": "plot-the-next-term",
+            "narration": "Move one place to the right, then plot the next term two units higher.",
+            "prompt": "Compare the positions and term values.",
+            "mood": "focus"
+          },
+          {
+            "name": "see-the-common-difference",
+            "narration": "The terms grow by two each time. The points rise by the same amount.",
+            "prompt": "What is the change in term value for each one-step move?",
+            "mood": "focus"
+          },
+          {
+            "name": "reveal-the-linear-trend",
+            "narration": "These plotted terms lie on a straight trend. Only whole-number positions are sequence terms.",
+            "prompt": "Do the points make a straight pattern?",
+            "mood": "focus"
+          },
+          {
+            "name": "plot-a-decreasing-sequence",
+            "narration": "A constant negative difference makes the points fall as the position grows.",
+            "prompt": "Why does this graph slope down?",
+            "mood": "focus"
+          },
+          {
+            "name": "compare-a-quadratic-pattern",
+            "narration": "These points curve upward. The first differences grow, but the second differences stay at two.",
+            "prompt": "Why is the quadratic graph not a straight pattern?",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-04",
+          "family": "F9",
+          "startMode": "guided",
+          "preset": "Y7-037-linear-nth-term",
+          "presets": {
+            "Y7-037-linear-nth-term": {
+              "label": "Y7 · 2n + 1",
+              "year": "Year 7",
+              "kind": "linear",
+              "a": 2,
+              "b": 1,
+              "yMax": 14,
+              "yStep": 2,
+              "formula": "2n + 1",
+              "objective": "Plot a linear nth-term sequence and read the constant difference."
+            },
+            "Y8-019-arithmetic-sequences": {
+              "label": "Y8 · 14 − 2n",
+              "year": "Year 8",
+              "kind": "linear",
+              "a": -2,
+              "b": 14,
+              "yMax": 14,
+              "yStep": 2,
+              "formula": "14 − 2n",
+              "objective": "See how a negative constant difference makes the sequence fall."
+            },
+            "Y8-021-quadratic-pattern-spotting": {
+              "label": "Y8 · n² + 1",
+              "year": "Year 8",
+              "kind": "quadratic",
+              "a": 1,
+              "b": 0,
+              "c": 1,
+              "yMax": 30,
+              "yStep": 5,
+              "formula": "n² + 1",
+              "objective": "Plot growing first differences and constant second differences."
+            },
+            "Y9-008-quadratic-pattern-structure": {
+              "label": "Y9 · n² − n + 2",
+              "year": "Year 9",
+              "kind": "quadratic",
+              "a": 1,
+              "b": -1,
+              "c": 2,
+              "yMax": 25,
+              "yStep": 5,
+              "formula": "n² − n + 2",
+              "objective": "Use the second-difference structure to recognise a simple quadratic pattern."
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "position",
+              "term",
+              "placed",
+              "challengeTask",
+              "rule"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "steps": [
+            {
+              "name": "plot-the-first-point",
+              "preset": "Y7-037-linear-nth-term",
+              "visible": 1,
+              "trend": false,
+              "pose": "explain",
+              "text": "On this graph, the horizontal axis gives the position. The vertical axis gives the term value.",
+              "prompt": "Find position one. How high should we plot its term?"
+            },
+            {
+              "name": "plot-the-next-term",
+              "preset": "Y7-037-linear-nth-term",
+              "visible": 2,
+              "trend": false,
+              "pose": "point-right",
+              "text": "Move one place to the right, then plot the next term two units higher.",
+              "prompt": "Compare the positions and term values."
+            },
+            {
+              "name": "see-the-common-difference",
+              "preset": "Y7-037-linear-nth-term",
+              "visible": 4,
+              "trend": false,
+              "pose": "count",
+              "text": "The terms grow by two each time. The points rise by the same amount.",
+              "prompt": "What is the change in term value for each one-step move?"
+            },
+            {
+              "name": "reveal-the-linear-trend",
+              "preset": "Y7-037-linear-nth-term",
+              "visible": 5,
+              "trend": true,
+              "pose": "idea",
+              "text": "These plotted terms lie on a straight trend. Only whole-number positions are sequence terms.",
+              "prompt": "Do the points make a straight pattern?"
+            },
+            {
+              "name": "plot-a-decreasing-sequence",
+              "preset": "Y8-019-arithmetic-sequences",
+              "visible": 5,
+              "trend": true,
+              "pose": "point-right",
+              "text": "A constant negative difference makes the points fall as the position grows.",
+              "prompt": "Why does this graph slope down?"
+            },
+            {
+              "name": "compare-a-quadratic-pattern",
+              "preset": "Y8-021-quadratic-pattern-spotting",
+              "visible": 5,
+              "trend": true,
+              "pose": "celebrate",
+              "text": "These points curve upward. The first differences grow, but the second differences stay at two.",
+              "prompt": "Why is the quadratic graph not a straight pattern?"
+            }
+          ],
+          "tasks": [
+            {
+              "key": "Y7-037-linear-nth-term",
+              "title": "01 · Plot a growing linear sequence",
+              "guide": "Plot the missing fourth and fifth terms of 3, 5, 7, 9, 11.",
+              "show": [
+                3,
+                5,
+                7
+              ],
+              "missing": [
+                4,
+                5
+              ],
+              "choices": [
+                [
+                  4,
+                  9
+                ],
+                [
+                  4,
+                  8
+                ],
+                [
+                  4,
+                  10
+                ],
+                [
+                  5,
+                  11
+                ],
+                [
+                  5,
+                  10
+                ],
+                [
+                  5,
+                  12
+                ]
+              ],
+              "traps": {
+                "4,8": "Position four needs the next +2 jump from seven: it is nine.",
+                "4,10": "Count one jump of two, not three, from seven.",
+                "5,10": "That does not keep the +2 difference.",
+                "5,12": "You have gone one too high: eleven follows nine."
+              }
+            },
+            {
+              "key": "Y8-019-arithmetic-sequences",
+              "title": "02 · Plot a falling linear sequence",
+              "guide": "Plot the missing terms for 12, 10, 8, 6, 4. The graph slopes down.",
+              "show": [
+                12,
+                10,
+                8
+              ],
+              "missing": [
+                4,
+                5
+              ],
+              "choices": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  4,
+                  4
+                ],
+                [
+                  4,
+                  10
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  2
+                ]
+              ],
+              "traps": {
+                "4,4": "Four is the FIFTH term, not the fourth.",
+                "4,10": "The terms fall by two; do not go back to term two.",
+                "5,6": "Six belongs at position four.",
+                "5,2": "Subtract two only once more after term four."
+              }
+            },
+            {
+              "key": "Y8-021-quadratic-pattern-spotting",
+              "title": "03 · Plot a quadratic sequence",
+              "guide": "Plot the missing values of 2, 5, 10, 17, 26. The gaps grow.",
+              "show": [
+                2,
+                5,
+                10
+              ],
+              "missing": [
+                4,
+                5
+              ],
+              "choices": [
+                [
+                  4,
+                  17
+                ],
+                [
+                  4,
+                  15
+                ],
+                [
+                  4,
+                  16
+                ],
+                [
+                  5,
+                  26
+                ],
+                [
+                  5,
+                  22
+                ],
+                [
+                  5,
+                  25
+                ]
+              ],
+              "traps": {
+                "4,15": "The difference is not always five. Here the next gap is seven.",
+                "4,16": "n² alone misses the extra one.",
+                "5,22": "This misses the growing differences. Try the fifth-square value plus one.",
+                "5,25": "You have worked out n² but missed the +1 adjustment."
+              }
+            }
+          ]
+        },
+        "draws": {
+          "reset": [
+            "stage"
+          ],
+          "wrap": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "renderExplore": [
+            "stage"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "reset": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "wrap": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {}
+            ],
+            "explain",
+            "On this graph, the horizontal axis gives the position. The vertical axis gives the term value."
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-05",
+    "path": "F9/F9-05-linear-nth-term-derivation.html",
+    "errors": [],
+    "engineId": "F9-05",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "config",
+        "path": [
+          "presets",
+          "Y7-037-linear-nth-term",
+          "a"
+        ],
+        "from": 3,
+        "to": 4,
+        "beforeText": "Sequence workshopLinear nth term derivationPosition-to-term table showing differences, the d times n row and the zero term.READ THE SEQUENCEWrite and verify the full linear rulePOSITION n12345TERM T(n)58111417THE SAME DIFFERENCE+3+3+3+3MULTIPLY THE POSITION BY d3691215COMPARE TERM AND dn+2+2+2+2+2T(n) − dn = 2n = 0  →  T(0) = 2Reverse the first +3 jump to find cT(n) = 3n + 2COMMON DIFFERENCE+3ZERO TERM+2YOUR NEXT THOUGHTCheck the rule at another position; it must work every time.NTH TERM3n + 2Three n gives the growing part. Add two for the starting offset. Our rule is three n plus two.Three n gives the growing part. Add two for the starting offset. Our rule is three n plus two. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopLinear nth term derivationPosition-to-term table showing differences, the d times n row and the zero term.READ THE SEQUENCEWrite and verify the full linear rulePOSITION n12345TERM T(n)610141822THE SAME DIFFERENCE+4+4+4+4MULTIPLY THE POSITION BY d48121620COMPARE TERM AND dn+2+2+2+2+2T(n) − dn = 2n = 0  →  T(0) = 2Reverse the first +4 jump to find cT(n) = 4n + 2COMMON DIFFERENCE+3ZERO TERM+2YOUR NEXT THOUGHTCheck the rule at another position; it must work every time.NTH TERM3n + 2Three n gives the growing part. Add two for the starting offset. Our rule is three n plus two.Three n gives the growing part. Add two for the starting offset. Our rule is three n plus two. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "write-the-nth-term",
+            "narration": "Three n gives the growing part. Add two for the starting offset. Our rule is three n plus two.",
+            "prompt": "Check the rule at another position; it must work every time.",
+            "mood": "pleased"
+          },
+          "config": {
+            "id": "F9-05",
+            "family": "F9",
+            "startMode": "guided",
+            "preset": "Y7-037-linear-nth-term",
+            "presets": {
+              "Y7-037-linear-nth-term": {
+                "label": "Y7 · 3n + 2",
+                "year": "Year 7",
+                "a": 4,
+                "c": 2,
+                "objective": "Find and use the nth term of an increasing linear sequence"
+              },
+              "Y8-019-arithmetic-sequences": {
+                "label": "Y8 · 5n − 3",
+                "year": "Year 8",
+                "a": 5,
+                "c": -3,
+                "objective": "Link the common difference to a linear nth term with negative adjustment"
+              },
+              "Y8-019-decreasing-variant": {
+                "label": "Y8 · 22 − 4n",
+                "year": "Year 8",
+                "a": -4,
+                "c": 22,
+                "objective": "Derive a decreasing linear rule using the zero term"
+              }
+            },
+            "events": {
+              "value": [
+                "preset",
+                "position",
+                "difference",
+                "zeroTerm",
+                "rule",
+                "placed",
+                "challengeTask"
+              ],
+              "types": [
+                "step",
+                "correct",
+                "hintUsed",
+                "mode"
+              ]
+            },
+            "lessonGame": {},
+            "lessonChallengeTitle": "Concept challenge",
+            "lessonBadgeTitle": "CHALLENGE CHAMPION"
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-05",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "notice-the-term-row",
+            "narration": "Look at the positions and their terms. What changes every time the position goes up by one?",
+            "prompt": "Read positions one to five. Read the term underneath each.",
+            "mood": "focus"
+          },
+          {
+            "name": "find-the-common-difference",
+            "narration": "The same three is added each time. That is the common difference.",
+            "prompt": "Find the equal differences between adjacent terms.",
+            "mood": "focus"
+          },
+          {
+            "name": "build-the-dn-row",
+            "narration": "Multiply each position by three. This builds the three n part of the rule.",
+            "prompt": "Compare the new row with the original terms.",
+            "mood": "focus"
+          },
+          {
+            "name": "find-the-adjustment",
+            "narration": "The original terms are always two more than three times the position. That missing two is the adjustment.",
+            "prompt": "What is the same gap between the original term and three n?",
+            "mood": "focus"
+          },
+          {
+            "name": "step-back-to-zero",
+            "narration": "Step back one term. Five subtract three gives two. That is the zero term.",
+            "prompt": "Why does the zero term tell us what to add? ",
+            "mood": "focus"
+          },
+          {
+            "name": "write-the-nth-term",
+            "narration": "Three n gives the growing part. Add two for the starting offset. Our rule is three n plus two.",
+            "prompt": "Check the rule at another position; it must work every time.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-05",
+          "family": "F9",
+          "startMode": "guided",
+          "preset": "Y7-037-linear-nth-term",
+          "presets": {
+            "Y7-037-linear-nth-term": {
+              "label": "Y7 · 3n + 2",
+              "year": "Year 7",
+              "a": 3,
+              "c": 2,
+              "objective": "Find and use the nth term of an increasing linear sequence"
+            },
+            "Y8-019-arithmetic-sequences": {
+              "label": "Y8 · 5n − 3",
+              "year": "Year 8",
+              "a": 5,
+              "c": -3,
+              "objective": "Link the common difference to a linear nth term with negative adjustment"
+            },
+            "Y8-019-decreasing-variant": {
+              "label": "Y8 · 22 − 4n",
+              "year": "Year 8",
+              "a": -4,
+              "c": 22,
+              "objective": "Derive a decreasing linear rule using the zero term"
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "position",
+              "difference",
+              "zeroTerm",
+              "rule",
+              "placed",
+              "challengeTask"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "steps": [
+            {
+              "name": "notice-the-term-row",
+              "idx": 0,
+              "pose": "explain",
+              "narration": "Look at the positions and their terms. What changes every time the position goes up by one?",
+              "prompt": "Read positions one to five. Read the term underneath each."
+            },
+            {
+              "name": "find-the-common-difference",
+              "idx": 1,
+              "pose": "count",
+              "narration": "The same three is added each time. That is the common difference.",
+              "prompt": "Find the equal differences between adjacent terms."
+            },
+            {
+              "name": "build-the-dn-row",
+              "idx": 2,
+              "pose": "point-right",
+              "narration": "Multiply each position by three. This builds the three n part of the rule.",
+              "prompt": "Compare the new row with the original terms."
+            },
+            {
+              "name": "find-the-adjustment",
+              "idx": 3,
+              "pose": "think",
+              "narration": "The original terms are always two more than three times the position. That missing two is the adjustment.",
+              "prompt": "What is the same gap between the original term and three n?"
+            },
+            {
+              "name": "step-back-to-zero",
+              "idx": 4,
+              "pose": "idea",
+              "narration": "Step back one term. Five subtract three gives two. That is the zero term.",
+              "prompt": "Why does the zero term tell us what to add? "
+            },
+            {
+              "name": "write-the-nth-term",
+              "idx": 5,
+              "pose": "celebrate",
+              "narration": "Three n gives the growing part. Add two for the starting offset. Our rule is three n plus two.",
+              "prompt": "Check the rule at another position; it must work every time."
+            }
+          ],
+          "TASKS": [
+            {
+              "key": "Y7-037-linear-nth-term",
+              "title": "01 · Find the growing rule",
+              "guide": "The terms are 5, 8, 11, 14, 17. Build T(n) = dn + c and check the sixth term.",
+              "d": [
+                "+3",
+                "+4",
+                "+2"
+              ],
+              "c": [
+                "+2",
+                "+5",
+                "−2"
+              ],
+              "next": 20,
+              "traps": {
+                "+4": "Compare 5 to 8: the difference is three, not four.",
+                "+2": "The difference between consecutive terms is three.",
+                "+5": "Five is the first term, not the zero term.",
+                "−2": "Step back from five by three. The zero term is positive two."
+              }
+            },
+            {
+              "key": "Y8-019-arithmetic-sequences",
+              "title": "02 · Find the negative adjustment",
+              "guide": "The terms are 2, 7, 12, 17, 22. Build T(n) = dn + c and check the sixth term.",
+              "d": [
+                "+5",
+                "+2",
+                "×5"
+              ],
+              "c": [
+                "−3",
+                "+2",
+                "+3"
+              ],
+              "next": 27,
+              "traps": {
+                "+2": "Step back from position one using the difference.",
+                "×5": "Multiplying by five is not the same as adding five.",
+                "+3": "The zero term is less than the first term; check the sign."
+              }
+            },
+            {
+              "key": "Y8-019-decreasing-variant",
+              "title": "03 · Derive a decreasing rule",
+              "guide": "The terms are 18, 14, 10, 6, 2. Build T(n) = dn + c and check the sixth term.",
+              "d": [
+                "−4",
+                "+4",
+                "−2"
+              ],
+              "c": [
+                "+22",
+                "+18",
+                "−22"
+              ],
+              "next": -2,
+              "traps": {
+                "+4": "The terms go DOWN by four each time.",
+                "−2": "The sequence decreases by four, not two.",
+                "+18": "Eighteen is term one. Step back by reversing the minus-four change.",
+                "−22": "Step backward from eighteen by adding four, giving a positive zero term."
+              }
+            }
+          ]
+        },
+        "draws": {
+          "reset": [
+            "stage"
+          ],
+          "mountScene": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "exploreDraw": [
+            "stage"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "reset": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "mountScene": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {}
+            ],
+            "explain",
+            "Look at the positions and their terms. What changes every time the position goes up by one?"
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-06",
+    "path": "F9/F9-06-geometric-sequence.html",
+    "errors": [],
+    "engineId": "F9-06",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "config",
+        "path": [
+          "presets",
+          "Y8-020-geometric-sequences",
+          "a"
+        ],
+        "from": 2,
+        "to": 3,
+        "beforeText": "Sequence workshopGeometric sequenceGlowing glass bars showing a geometric sequence; curved multiplication hops show the common ratio.BUILD THE MULTIPLIERA fixed multiplier builds a geometric sequence2Term 14Term 28Term 316Term 432Term 5×2×2×2×2T(n) = 2 × 2n−1n − 1 counts the number of multiplying stepsCOMMON RATIO×2LATEST TERM32LOOK CLOSELYRead each value and use the same operation to build the next one.POSITION RULE2 × 2n−1The next term is found by multiplying by the same factor each time. For doubling, term n is two times two to the power n minus one.The next term is found by multiplying by the same factor each time. For doubling, term n is two times two to the power n minus one. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopGeometric sequenceGlowing glass bars showing a geometric sequence; curved multiplication hops show the common ratio.BUILD THE MULTIPLIERA fixed multiplier builds a geometric sequence3Term 16Term 212Term 324Term 448Term 5×2×2×2×2T(n) = 2 × 2n−1n − 1 counts the number of multiplying stepsCOMMON RATIO×2LATEST TERM48LOOK CLOSELYRead each value and use the same operation to build the next one.POSITION RULE2 × 2n−1The next term is found by multiplying by the same factor each time. For doubling, term n is two times two to the power n minus one.The next term is found by multiplying by the same factor each time. For doubling, term n is two times two to the power n minus one. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "generalise-the-growth",
+            "narration": "The next term is found by multiplying by the same factor each time. For doubling, term n is two times two to the power n minus one.",
+            "prompt": "Explain why a fixed multiplier is not the same as a fixed difference.",
+            "mood": "pleased"
+          },
+          "config": {
+            "id": "F9-06",
+            "family": "F9",
+            "startMode": "guided",
+            "preset": "Y8-020-geometric-sequences",
+            "presets": {
+              "Y8-020-geometric-sequences": {
+                "label": "Y8 · Doubling",
+                "a": 3,
+                "r": 2,
+                "terms": 5,
+                "rule": "×2",
+                "context": "Geometric sequences"
+              },
+              "Y9-014-exponential-decay": {
+                "label": "Y9 · Halving",
+                "a": 64,
+                "r": 0.5,
+                "terms": 5,
+                "rule": "÷2",
+                "context": "Exponential decay"
+              },
+              "Y9-014-exponential-growth": {
+                "label": "Y9 · Tripling",
+                "a": 2,
+                "r": 3,
+                "terms": 5,
+                "rule": "×3",
+                "context": "Exponential growth"
+              }
+            },
+            "events": {
+              "value": [
+                "preset",
+                "position",
+                "ratio",
+                "term",
+                "placed",
+                "challengeTask"
+              ],
+              "types": [
+                "step",
+                "correct",
+                "hintUsed",
+                "mode"
+              ]
+            },
+            "lessonGame": {},
+            "lessonChallengeTitle": "Concept challenge",
+            "lessonBadgeTitle": "CHALLENGE CHAMPION"
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-06",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "see-the-first-term",
+            "narration": "Start with two. That is term one, not the amount we add each time.",
+            "prompt": "Read the first value. What could make it grow?",
+            "mood": "focus"
+          },
+          {
+            "name": "multiply-once",
+            "narration": "Multiply two by two to reach four. The bar doubles.",
+            "prompt": "Why does multiplication give the next bar?",
+            "mood": "focus"
+          },
+          {
+            "name": "multiply-again",
+            "narration": "Multiply by two again. Four becomes eight.",
+            "prompt": "What operation stays the same?",
+            "mood": "focus"
+          },
+          {
+            "name": "keep-the-ratio",
+            "narration": "Every step doubles: two, four, eight, sixteen, thirty-two. The jumps get bigger, but the multiplier is unchanged.",
+            "prompt": "Do we add the same number each time?",
+            "mood": "focus"
+          },
+          {
+            "name": "halving-contrast",
+            "narration": "Geometric sequences can shrink too. Sixty-four divided by two becomes thirty-two, then sixteen, then eight.",
+            "prompt": "How can you tell that each value is halved?",
+            "mood": "focus"
+          },
+          {
+            "name": "generalise-the-growth",
+            "narration": "The next term is found by multiplying by the same factor each time. For doubling, term n is two times two to the power n minus one.",
+            "prompt": "Explain why a fixed multiplier is not the same as a fixed difference.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-06",
+          "family": "F9",
+          "startMode": "guided",
+          "preset": "Y8-020-geometric-sequences",
+          "presets": {
+            "Y8-020-geometric-sequences": {
+              "label": "Y8 · Doubling",
+              "a": 2,
+              "r": 2,
+              "terms": 5,
+              "rule": "×2",
+              "context": "Geometric sequences"
+            },
+            "Y9-014-exponential-decay": {
+              "label": "Y9 · Halving",
+              "a": 64,
+              "r": 0.5,
+              "terms": 5,
+              "rule": "÷2",
+              "context": "Exponential decay"
+            },
+            "Y9-014-exponential-growth": {
+              "label": "Y9 · Tripling",
+              "a": 2,
+              "r": 3,
+              "terms": 5,
+              "rule": "×3",
+              "context": "Exponential growth"
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "position",
+              "ratio",
+              "term",
+              "placed",
+              "challengeTask"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "steps": [
+            {
+              "name": "see-the-first-term",
+              "pose": "explain",
+              "text": "Start with two. That is term one, not the amount we add each time.",
+              "prompt": "Read the first value. What could make it grow?"
+            },
+            {
+              "name": "multiply-once",
+              "pose": "point-right",
+              "text": "Multiply two by two to reach four. The bar doubles.",
+              "prompt": "Why does multiplication give the next bar?"
+            },
+            {
+              "name": "multiply-again",
+              "pose": "count",
+              "text": "Multiply by two again. Four becomes eight.",
+              "prompt": "What operation stays the same?"
+            },
+            {
+              "name": "keep-the-ratio",
+              "pose": "think",
+              "text": "Every step doubles: two, four, eight, sixteen, thirty-two. The jumps get bigger, but the multiplier is unchanged.",
+              "prompt": "Do we add the same number each time?"
+            },
+            {
+              "name": "halving-contrast",
+              "pose": "point-right",
+              "text": "Geometric sequences can shrink too. Sixty-four divided by two becomes thirty-two, then sixteen, then eight.",
+              "prompt": "How can you tell that each value is halved?"
+            },
+            {
+              "name": "generalise-the-growth",
+              "pose": "celebrate",
+              "text": "The next term is found by multiplying by the same factor each time. For doubling, term n is two times two to the power n minus one.",
+              "prompt": "Explain why a fixed multiplier is not the same as a fixed difference."
+            }
+          ],
+          "TASKS": [
+            {
+              "title": "01 · Double the sequence",
+              "guide": "Sequence 3, 6, 12, 24, … Choose the common ratio and the next term.",
+              "a": 3,
+              "r": 2,
+              "ratio": "×2",
+              "next": "48",
+              "ratios": [
+                "×2",
+                "+3",
+                "×3"
+              ],
+              "terms": [
+                "48",
+                "27",
+                "36"
+              ],
+              "traps": {
+                "27": "Adding three again does not continue the doubling.",
+                "36": "Adding twelve is not the rule for every step.",
+                "48": "Correct.",
+                " +3": "The sequence is not adding a fixed amount.",
+                "+3": "Three to six adds three, but six to twelve adds six. The addition changes.",
+                "×3": "Three multiplied by three is nine, not six."
+              }
+            },
+            {
+              "title": "02 · Multiply by three",
+              "guide": "Sequence 2, 6, 18, 54, … Place the common ratio and term five.",
+              "a": 2,
+              "r": 3,
+              "ratio": "×3",
+              "next": "162",
+              "ratios": [
+                "×3",
+                "+4",
+                "×2"
+              ],
+              "terms": [
+                "162",
+                "58",
+                "108"
+              ],
+              "traps": {
+                "58": "Adding four does not continue the pattern.",
+                "108": "This is twice fifty-four. We need three times fifty-four.",
+                "+4": "The increase from 6 to 18 is twelve, not four.",
+                "×2": "Two doubled is four, not six."
+              }
+            },
+            {
+              "title": "03 · A sequence that halves",
+              "guide": "Sequence 64, 32, 16, 8, … Drag the shrinking rule and fifth term.",
+              "a": 64,
+              "r": 0.5,
+              "ratio": "÷2",
+              "next": "4",
+              "ratios": [
+                "÷2",
+                "−8",
+                "×2"
+              ],
+              "terms": [
+                "4",
+                "0",
+                "16"
+              ],
+              "traps": {
+                "0": "Subtracting eight works once only, not for the full sequence.",
+                "16": "That repeats the third term. Halve eight to find the fifth.",
+                "−8": "Sixty-four to thirty-two is a decrease of thirty-two, not eight.",
+                "×2": "Multiplying by two grows the terms. These bars shrink."
+              }
+            }
+          ]
+        },
+        "draws": {
+          "clear": [
+            "stage"
+          ],
+          "mount": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "say"
+          ],
+          "explore": [
+            "stage"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "clear": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "mount": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "say"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {}
+            ],
+            "explain",
+            "Start with two. That is term one, not the amount we add each time."
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-07",
+    "path": "F9/F9-07-special-sequences.html",
+    "errors": [],
+    "engineId": "F9-07",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 3,
+        "kind": "table",
+        "key": "STEPS",
+        "path": [
+          "3",
+          "n"
+        ],
+        "from": 3,
+        "to": 4,
+        "beforeText": "Sequence workshopSpecial sequencesNeon dot patterns for square, triangular, cube and Fibonacci sequences.CUBE NUMBERSAdd another layer of dotsStage 3   ·   27 dotsStage 11Stage 28Stage 327Stage 4643 × 3 × 3 = 27DOT COUNT27PATTERNCUBE NUMBERSMATHEMATICAL EVIDENCEThree layers. Each has 3 × 3 = 9 dots. Total 3 × 9 = 27.Cube numbers add depth. Three layers of three-by-three dots make twenty-seven.Cube numbers add depth. Three layers of three-by-three dots make twenty-seven. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopSpecial sequencesNeon dot patterns for square, triangular, cube and Fibonacci sequences.CUBE NUMBERSAdd another layer of dotsStage 4   ·   64 dotsStage 11Stage 28Stage 327Stage 4644 × 4 × 4 = 64DOT COUNT64PATTERNCUBE NUMBERSMATHEMATICAL EVIDENCEThree layers. Each has 3 × 3 = 9 dots. Total 3 × 9 = 27.Cube numbers add depth. Three layers of three-by-three dots make twenty-seven.Cube numbers add depth. Three layers of three-by-three dots make twenty-seven. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 3,
+          "data": {
+            "name": "cubic-layers",
+            "narration": "Cube numbers add depth. Three layers of three-by-three dots make twenty-seven.",
+            "prompt": "How many dots are in each layer?",
+            "mood": "focus"
+          },
+          "tables": {
+            "STEPS": [
+              {
+                "name": "square-arrays-grow",
+                "kind": "square",
+                "n": 3,
+                "pose": "explain",
+                "text": "Start with square arrays. Three rows of three dots make nine.",
+                "prompt": "What changes in each new square?"
+              },
+              {
+                "name": "square-rule",
+                "kind": "square",
+                "n": 4,
+                "pose": "count",
+                "text": "Four rows of four dots make sixteen. Square numbers multiply the position by itself.",
+                "prompt": "Why does four squared give sixteen?"
+              },
+              {
+                "name": "triangular-rows",
+                "kind": "triangle",
+                "n": 4,
+                "pose": "point-down",
+                "text": "Triangle numbers grow by adding a new row: one, then two, then three, then four.",
+                "prompt": "How many dots altogether in the fourth triangle?"
+              },
+              {
+                "name": "cubic-layers",
+                "kind": "cube",
+                "n": 4,
+                "pose": "point-right",
+                "text": "Cube numbers add depth. Three layers of three-by-three dots make twenty-seven.",
+                "prompt": "How many dots are in each layer?"
+              },
+              {
+                "name": "fibonacci-two-before",
+                "kind": "fibonacci",
+                "n": 6,
+                "pose": "idea",
+                "text": "The Fibonacci rule is different. Add the two previous terms: three and five make eight.",
+                "prompt": "Which two terms combine to make eight?"
+              },
+              {
+                "name": "compare-structure",
+                "kind": "compare",
+                "n": 4,
+                "pose": "celebrate",
+                "text": "Square numbers make arrays, triangular numbers make rows, cubes add layers, and Fibonacci adds the last two terms.",
+                "prompt": "Choose the structure that explains each sequence."
+              }
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-07",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "square-arrays-grow",
+            "narration": "Start with square arrays. Three rows of three dots make nine.",
+            "prompt": "What changes in each new square?",
+            "mood": "focus"
+          },
+          {
+            "name": "square-rule",
+            "narration": "Four rows of four dots make sixteen. Square numbers multiply the position by itself.",
+            "prompt": "Why does four squared give sixteen?",
+            "mood": "focus"
+          },
+          {
+            "name": "triangular-rows",
+            "narration": "Triangle numbers grow by adding a new row: one, then two, then three, then four.",
+            "prompt": "How many dots altogether in the fourth triangle?",
+            "mood": "focus"
+          },
+          {
+            "name": "cubic-layers",
+            "narration": "Cube numbers add depth. Three layers of three-by-three dots make twenty-seven.",
+            "prompt": "How many dots are in each layer?",
+            "mood": "focus"
+          },
+          {
+            "name": "fibonacci-two-before",
+            "narration": "The Fibonacci rule is different. Add the two previous terms: three and five make eight.",
+            "prompt": "Which two terms combine to make eight?",
+            "mood": "focus"
+          },
+          {
+            "name": "compare-structure",
+            "narration": "Square numbers make arrays, triangular numbers make rows, cubes add layers, and Fibonacci adds the last two terms.",
+            "prompt": "Choose the structure that explains each sequence.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-07",
+          "family": "F9",
+          "startMode": "guided",
+          "presets": {
+            "Y7-036-sequence-structures": {
+              "label": "Y7 · Shapes & patterns",
+              "defaultKind": "square",
+              "context": "square, triangular, cube and Fibonacci sequence structures"
+            },
+            "Y8-020-compare-geometric": {
+              "label": "Y8 · Compare rules",
+              "defaultKind": "cube",
+              "context": "recognise patterns that are not constant-ratio geometric sequences"
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "pattern",
+              "position",
+              "count",
+              "placed",
+              "challengeTask"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "kindList": [
+            "square",
+            "triangle",
+            "cube",
+            "fibonacci"
+          ],
+          "STEPS": [
+            {
+              "name": "square-arrays-grow",
+              "kind": "square",
+              "n": 3,
+              "pose": "explain",
+              "text": "Start with square arrays. Three rows of three dots make nine.",
+              "prompt": "What changes in each new square?"
+            },
+            {
+              "name": "square-rule",
+              "kind": "square",
+              "n": 4,
+              "pose": "count",
+              "text": "Four rows of four dots make sixteen. Square numbers multiply the position by itself.",
+              "prompt": "Why does four squared give sixteen?"
+            },
+            {
+              "name": "triangular-rows",
+              "kind": "triangle",
+              "n": 4,
+              "pose": "point-down",
+              "text": "Triangle numbers grow by adding a new row: one, then two, then three, then four.",
+              "prompt": "How many dots altogether in the fourth triangle?"
+            },
+            {
+              "name": "cubic-layers",
+              "kind": "cube",
+              "n": 3,
+              "pose": "point-right",
+              "text": "Cube numbers add depth. Three layers of three-by-three dots make twenty-seven.",
+              "prompt": "How many dots are in each layer?"
+            },
+            {
+              "name": "fibonacci-two-before",
+              "kind": "fibonacci",
+              "n": 6,
+              "pose": "idea",
+              "text": "The Fibonacci rule is different. Add the two previous terms: three and five make eight.",
+              "prompt": "Which two terms combine to make eight?"
+            },
+            {
+              "name": "compare-structure",
+              "kind": "compare",
+              "n": 4,
+              "pose": "celebrate",
+              "text": "Square numbers make arrays, triangular numbers make rows, cubes add layers, and Fibonacci adds the last two terms.",
+              "prompt": "Choose the structure that explains each sequence."
+            }
+          ],
+          "TASKS": [
+            {
+              "kind": "square",
+              "title": "01 · Recognise the square pattern",
+              "guide": "Look at the equal rows and columns. Match the pattern to its number sequence."
+            },
+            {
+              "kind": "triangle",
+              "title": "02 · Recognise the triangular pattern",
+              "guide": "Each new triangular shape adds a longer row. Match the sequence."
+            },
+            {
+              "kind": "cube",
+              "title": "03 · Recognise the cube pattern",
+              "guide": "This pattern grows in three dimensions, with layers of dots. Match the sequence."
+            },
+            {
+              "kind": "fibonacci",
+              "title": "04 · Recognise the Fibonacci pattern",
+              "guide": "Each new count comes from adding the previous two. Match the sequence."
+            }
+          ]
+        },
+        "draws": {
+          "clear": [
+            "stage"
+          ],
+          "mount": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "say"
+          ],
+          "explore": [
+            "stage"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "clear": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "mount": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "say"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {}
+            ],
+            "explain",
+            "Start with square arrays. Three rows of three dots make nine."
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-08",
+    "path": "F9/F9-08-triangular-numbers-dot-arrays.html",
+    "errors": [],
+    "engineId": "F9-08",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "table",
+        "key": "STEPS",
+        "path": [
+          "5",
+          "n"
+        ],
+        "from": 6,
+        "to": 7,
+        "beforeText": "Sequence workshopTriangular numbers dot arraysTriangular dots, one through n in growing rows; duplicated copy forms n by n plus one rectangle.DOUBLE IT INTO A RECTANGLEGeneral rule for any position nn rows   ×   (n + 1) columnsTwo equal triangles = 6 × 7 = 42One triangle = 42 ÷ 2 = 21T(n) = n(n + 1) ÷ 2RECTANGLE DOTS42ONE TRIANGLE21WHY DIVIDE BY TWO?The cyan and gold triangles contain exactly the same number of dots.GENERAL RULET(n) = n(n + 1) ÷ 2For position n, double the dots to get n times n plus one. Divide by two for one triangle.For position n, double the dots to get n times n plus one. Divide by two for one triangle. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopTriangular numbers dot arraysTriangular dots, one through n in growing rows; duplicated copy forms n by n plus one rectangle.DOUBLE IT INTO A RECTANGLEGeneral rule for any position nn rows   ×   (n + 1) columnsTwo equal triangles = 7 × 8 = 56One triangle = 56 ÷ 2 = 28T(n) = n(n + 1) ÷ 2RECTANGLE DOTS56ONE TRIANGLE28WHY DIVIDE BY TWO?The cyan and gold triangles contain exactly the same number of dots.GENERAL RULET(n) = n(n + 1) ÷ 2For position n, double the dots to get n times n plus one. Divide by two for one triangle.For position n, double the dots to get n times n plus one. Divide by two for one triangle. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "general-rule",
+            "narration": "For position n, double the dots to get n times n plus one. Divide by two for one triangle.",
+            "prompt": "Use n times n plus one divided by two for the sixth triangle.",
+            "mood": "pleased"
+          },
+          "tables": {
+            "STEPS": [
+              {
+                "name": "start-from-one-row",
+                "n": 3,
+                "kind": "triangle",
+                "pose": "explain",
+                "text": "Each row has one more dot. One, two, three: that makes six dots.",
+                "prompt": "Count each row before finding the total."
+              },
+              {
+                "name": "add-the-fourth-row",
+                "n": 4,
+                "kind": "triangle",
+                "pose": "count",
+                "text": "Add a new row of four. Six plus four makes ten.",
+                "prompt": "Can you see exactly which four dots are new?"
+              },
+              {
+                "name": "another-row",
+                "n": 5,
+                "kind": "triangle",
+                "pose": "point-down",
+                "text": "The fifth row adds five more. Ten plus five gives fifteen.",
+                "prompt": "How many will the sixth row add?"
+              },
+              {
+                "name": "double-the-triangle",
+                "n": 4,
+                "kind": "rectangle",
+                "pose": "idea",
+                "text": "Copy the triangle, then turn the copy around. The two triangles make a four-by-five rectangle.",
+                "prompt": "How many dots are in the rectangle? How many are original?"
+              },
+              {
+                "name": "half-the-rectangle",
+                "n": 5,
+                "kind": "rectangle",
+                "pose": "point-right",
+                "text": "Five rows and six columns make thirty dots. Half belongs to one triangle: fifteen.",
+                "prompt": "Why does the rectangle contain twice as many dots?"
+              },
+              {
+                "name": "general-rule",
+                "n": 7,
+                "kind": "rectangle",
+                "pose": "celebrate",
+                "text": "For position n, double the dots to get n times n plus one. Divide by two for one triangle.",
+                "prompt": "Use n times n plus one divided by two for the sixth triangle."
+              }
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-08",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "start-from-one-row",
+            "narration": "Each row has one more dot. One, two, three: that makes six dots.",
+            "prompt": "Count each row before finding the total.",
+            "mood": "focus"
+          },
+          {
+            "name": "add-the-fourth-row",
+            "narration": "Add a new row of four. Six plus four makes ten.",
+            "prompt": "Can you see exactly which four dots are new?",
+            "mood": "focus"
+          },
+          {
+            "name": "another-row",
+            "narration": "The fifth row adds five more. Ten plus five gives fifteen.",
+            "prompt": "How many will the sixth row add?",
+            "mood": "focus"
+          },
+          {
+            "name": "double-the-triangle",
+            "narration": "Copy the triangle, then turn the copy around. The two triangles make a four-by-five rectangle.",
+            "prompt": "How many dots are in the rectangle? How many are original?",
+            "mood": "focus"
+          },
+          {
+            "name": "half-the-rectangle",
+            "narration": "Five rows and six columns make thirty dots. Half belongs to one triangle: fifteen.",
+            "prompt": "Why does the rectangle contain twice as many dots?",
+            "mood": "focus"
+          },
+          {
+            "name": "general-rule",
+            "narration": "For position n, double the dots to get n times n plus one. Divide by two for one triangle.",
+            "prompt": "Use n times n plus one divided by two for the sixth triangle.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-08",
+          "family": "F9",
+          "startMode": "guided",
+          "presets": {
+            "Y7-036-sequence-structure": {
+              "label": "Y7 · Growing rows",
+              "mode": "triangle",
+              "stage": 4,
+              "context": "Count one more dot in each new row"
+            },
+            "KS3-triangular-visual-proof": {
+              "label": "KS3 · Double & halve",
+              "mode": "rectangle",
+              "stage": 5,
+              "context": "Use two copies to derive a general formula"
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "position",
+              "view",
+              "count",
+              "row",
+              "answer",
+              "placed",
+              "challengeTask"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "start-from-one-row",
+              "n": 3,
+              "kind": "triangle",
+              "pose": "explain",
+              "text": "Each row has one more dot. One, two, three: that makes six dots.",
+              "prompt": "Count each row before finding the total."
+            },
+            {
+              "name": "add-the-fourth-row",
+              "n": 4,
+              "kind": "triangle",
+              "pose": "count",
+              "text": "Add a new row of four. Six plus four makes ten.",
+              "prompt": "Can you see exactly which four dots are new?"
+            },
+            {
+              "name": "another-row",
+              "n": 5,
+              "kind": "triangle",
+              "pose": "point-down",
+              "text": "The fifth row adds five more. Ten plus five gives fifteen.",
+              "prompt": "How many will the sixth row add?"
+            },
+            {
+              "name": "double-the-triangle",
+              "n": 4,
+              "kind": "rectangle",
+              "pose": "idea",
+              "text": "Copy the triangle, then turn the copy around. The two triangles make a four-by-five rectangle.",
+              "prompt": "How many dots are in the rectangle? How many are original?"
+            },
+            {
+              "name": "half-the-rectangle",
+              "n": 5,
+              "kind": "rectangle",
+              "pose": "point-right",
+              "text": "Five rows and six columns make thirty dots. Half belongs to one triangle: fifteen.",
+              "prompt": "Why does the rectangle contain twice as many dots?"
+            },
+            {
+              "name": "general-rule",
+              "n": 6,
+              "kind": "rectangle",
+              "pose": "celebrate",
+              "text": "For position n, double the dots to get n times n plus one. Divide by two for one triangle.",
+              "prompt": "Use n times n plus one divided by two for the sixth triangle."
+            }
+          ],
+          "TASKS": [
+            {
+              "n": 4,
+              "prev": 6,
+              "choices": [
+                3,
+                4,
+                5
+              ],
+              "counts": [
+                10,
+                16,
+                9
+              ],
+              "heading": "01 · Build the fourth triangle",
+              "guide": "Three rows contain six dots. Add the missing row, then choose the total."
+            },
+            {
+              "n": 5,
+              "prev": 10,
+              "choices": [
+                4,
+                5,
+                6
+              ],
+              "counts": [
+                15,
+                25,
+                14
+              ],
+              "heading": "02 · Build the fifth triangle",
+              "guide": "Four rows contain ten dots. Add the fifth row and choose the new total."
+            },
+            {
+              "n": 6,
+              "prev": 15,
+              "choices": [
+                5,
+                6,
+                7
+              ],
+              "counts": [
+                21,
+                36,
+                20
+              ],
+              "heading": "03 · Build the sixth triangle",
+              "guide": "Five rows contain fifteen dots. Extend the pattern and find the total."
+            }
+          ]
+        },
+        "draws": {
+          "clear": [
+            "stage"
+          ],
+          "mount": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "renderExplore": [
+            "stage"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "clear": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "mount": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {},
+              {}
+            ],
+            "explain",
+            "Each row has one more dot. One, two, three: that makes six dots."
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-09",
+    "path": "F9/F9-09-quadratic-sequence.html",
+    "errors": [],
+    "engineId": "F9-09",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "config",
+        "path": [
+          "presets",
+          "Y8-021-quadratic-spotting",
+          "a"
+        ],
+        "from": 2,
+        "to": 3,
+        "beforeText": "Sequence workshopQuadratic sequenceQuadratic term table with first and second difference rows, square-dot evidence and a quadratic nth-term rule.LOOK FOR A CONSTANT SECOND DIFFERENCEComplete the nth-term rulePosition n12345Term615284566First Δ9131721Second Δ444a n²28183250Remainder47101316A QUADRATIC HAS AN n² PARTTwo 2 × 2 squares = 8 dotsSubtract a n² from the termsRemainder: 4, 7, 10, ...T(n) = 2n² + 3n + 1FIRST DIFFERENCES9, 13, 17, 21SECOND DIFFERENCE4REMAINDER4, 7, 10, 13WHY THIS WORKSNow T(n)=2n² + 3n + 1. Check by substitution.The remainder is three n plus one. Add back two n squared: that is the complete rule.The remainder is three n plus one. Add back two n squared: that is the complete rule. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopQuadratic sequenceQuadratic term table with first and second difference rows, square-dot evidence and a quadratic nth-term rule.LOOK FOR A CONSTANT SECOND DIFFERENCEComplete the nth-term rulePosition n12345Term719376191First Δ12182430Second Δ666a n²312274875Remainder47101316A QUADRATIC HAS AN n² PARTTwo 2 × 2 squares = 12 dotsSubtract a n² from the termsRemainder: 4, 7, 10, ...T(n) = 3n² + 3n + 1FIRST DIFFERENCES12, 18, 24, 30SECOND DIFFERENCE6REMAINDER4, 7, 10, 13WHY THIS WORKSNow T(n)=3n² + 3n + 1. Check by substitution.The remainder is three n plus one. Add back two n squared: that is the complete rule.The remainder is three n plus one. Add back two n squared: that is the complete rule. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "build-the-general-rule",
+            "narration": "The remainder is three n plus one. Add back two n squared: that is the complete rule.",
+            "prompt": "Check the rule by finding the fifth term.",
+            "mood": "pleased"
+          },
+          "config": {
+            "id": "F9-09",
+            "family": "F9",
+            "startMode": "guided",
+            "presets": {
+              "Y8-021-quadratic-spotting": {
+                "label": "Y8 · Spot second differences",
+                "a": 3,
+                "b": 3,
+                "c": 1,
+                "context": "First differences change. Second differences stay at four."
+              },
+              "Y9-008-quadratic-structure": {
+                "label": "Y9 · Quadratic structure",
+                "a": 1,
+                "b": -2,
+                "c": 4,
+                "context": "The linear remainder can be negative."
+              },
+              "KS3-perfect-squares": {
+                "label": "KS3 · Square pattern",
+                "a": 1,
+                "b": 2,
+                "c": 1,
+                "context": "The square numbers 4, 9, 16, 25, 36 also form a quadratic sequence."
+              }
+            },
+            "events": {
+              "value": [
+                "preset",
+                "position",
+                "coefficient",
+                "difference",
+                "remainder",
+                "challengeTask",
+                "placed"
+              ],
+              "types": [
+                "step",
+                "correct",
+                "hintUsed",
+                "mode"
+              ]
+            },
+            "lessonGame": {},
+            "lessonChallengeTitle": "Concept challenge",
+            "lessonBadgeTitle": "CHALLENGE CHAMPION"
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-09",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "read-the-terms",
+            "narration": "Six, fifteen, twenty-eight, forty-five, sixty-six. Notice how the gaps grow.",
+            "prompt": "Compare each pair of terms. Do the gaps stay the same?",
+            "mood": "focus"
+          },
+          {
+            "name": "find-first-differences",
+            "narration": "The jumps are nine, thirteen, seventeen and twenty-one. The first differences are changing.",
+            "prompt": "What is happening to the jumps?",
+            "mood": "focus"
+          },
+          {
+            "name": "constant-second-differences",
+            "narration": "The jumps increase by four each time. That constant second difference signals a quadratic pattern.",
+            "prompt": "Find the constant second difference.",
+            "mood": "focus"
+          },
+          {
+            "name": "find-the-squared-part",
+            "narration": "The second difference is twice the n-squared coefficient. Half of four is two.",
+            "prompt": "Why is the n-squared coefficient two, not four?",
+            "mood": "focus"
+          },
+          {
+            "name": "subtract-the-squared-part",
+            "narration": "Take two n squared away from each term. The remainder is four, seven, ten, thirteen, sixteen.",
+            "prompt": "What simple linear rule remains?",
+            "mood": "focus"
+          },
+          {
+            "name": "build-the-general-rule",
+            "narration": "The remainder is three n plus one. Add back two n squared: that is the complete rule.",
+            "prompt": "Check the rule by finding the fifth term.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-09",
+          "family": "F9",
+          "startMode": "guided",
+          "presets": {
+            "Y8-021-quadratic-spotting": {
+              "label": "Y8 · Spot second differences",
+              "a": 2,
+              "b": 3,
+              "c": 1,
+              "context": "First differences change. Second differences stay at four."
+            },
+            "Y9-008-quadratic-structure": {
+              "label": "Y9 · Quadratic structure",
+              "a": 1,
+              "b": -2,
+              "c": 4,
+              "context": "The linear remainder can be negative."
+            },
+            "KS3-perfect-squares": {
+              "label": "KS3 · Square pattern",
+              "a": 1,
+              "b": 2,
+              "c": 1,
+              "context": "The square numbers 4, 9, 16, 25, 36 also form a quadratic sequence."
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "position",
+              "coefficient",
+              "difference",
+              "remainder",
+              "challengeTask",
+              "placed"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "read-the-terms",
+              "preset": "Y8-021-quadratic-spotting",
+              "phase": 0,
+              "pose": "explain",
+              "text": "Six, fifteen, twenty-eight, forty-five, sixty-six. Notice how the gaps grow.",
+              "prompt": "Compare each pair of terms. Do the gaps stay the same?"
+            },
+            {
+              "name": "find-first-differences",
+              "preset": "Y8-021-quadratic-spotting",
+              "phase": 1,
+              "pose": "count",
+              "text": "The jumps are nine, thirteen, seventeen and twenty-one. The first differences are changing.",
+              "prompt": "What is happening to the jumps?"
+            },
+            {
+              "name": "constant-second-differences",
+              "preset": "Y8-021-quadratic-spotting",
+              "phase": 2,
+              "pose": "point-down",
+              "text": "The jumps increase by four each time. That constant second difference signals a quadratic pattern.",
+              "prompt": "Find the constant second difference."
+            },
+            {
+              "name": "find-the-squared-part",
+              "preset": "Y8-021-quadratic-spotting",
+              "phase": 3,
+              "pose": "idea",
+              "text": "The second difference is twice the n-squared coefficient. Half of four is two.",
+              "prompt": "Why is the n-squared coefficient two, not four?"
+            },
+            {
+              "name": "subtract-the-squared-part",
+              "preset": "Y8-021-quadratic-spotting",
+              "phase": 4,
+              "pose": "think",
+              "text": "Take two n squared away from each term. The remainder is four, seven, ten, thirteen, sixteen.",
+              "prompt": "What simple linear rule remains?"
+            },
+            {
+              "name": "build-the-general-rule",
+              "preset": "Y8-021-quadratic-spotting",
+              "phase": 5,
+              "pose": "celebrate",
+              "text": "The remainder is three n plus one. Add back two n squared: that is the complete rule.",
+              "prompt": "Check the rule by finding the fifth term."
+            }
+          ],
+          "TASKS": [
+            {
+              "preset": "KS3-perfect-squares",
+              "heading": "01 · Find the square pattern rule",
+              "guide": "4, 9, 16, 25, 36. Find a from the second differences, then find b and c.",
+              "options": {
+                "a": [
+                  1,
+                  2,
+                  3
+                ],
+                "b": [
+                  1,
+                  2,
+                  4
+                ],
+                "c": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            },
+            {
+              "preset": "Y8-021-quadratic-spotting",
+              "heading": "02 · Identify the quadratic coefficients",
+              "guide": "6, 15, 28, 45, 66. Use the second differences, then subtract a n².",
+              "options": {
+                "a": [
+                  2,
+                  4,
+                  1
+                ],
+                "b": [
+                  3,
+                  4,
+                  2
+                ],
+                "c": [
+                  0,
+                  2,
+                  1
+                ]
+              }
+            },
+            {
+              "preset": "Y9-008-quadratic-structure",
+              "heading": "03 · Include the negative linear term",
+              "guide": "3, 4, 7, 12, 19. The remainder after removing n² is decreasing.",
+              "options": {
+                "a": [
+                  1,
+                  2,
+                  3
+                ],
+                "b": [
+                  -1,
+                  -2,
+                  2
+                ],
+                "c": [
+                  2,
+                  3,
+                  4
+                ]
+              }
+            }
+          ]
+        },
+        "draws": {
+          "clear": [
+            "stage"
+          ],
+          "mount": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "renderExplore": [
+            "stage"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "clear": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "mount": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {}
+            ],
+            "explain",
+            "Six, fifteen, twenty-eight, forty-five, sixty-six. Notice how the gaps grow."
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-10",
+    "path": "F9/F9-10-pascals-triangle.html",
+    "errors": [],
+    "engineId": "F9-10",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "table",
+        "key": "STEPS",
+        "path": [
+          "5",
+          "rows"
+        ],
+        "from": 7,
+        "to": 8,
+        "beforeText": "Sequence workshopPascal’s trianglePascal triangle. Every edge is one and every interior cell is the sum of the two cells directly above.A TRIANGULAR DIAGONAL1, 3, 6, 10, 15, …111121133114641151010511615201561THIRD DIAGONAL1  ·  3  ·  6  ·  10  ·  15Add 2, then 3, then 4, then 5ROW NUMBER6DIAGONAL1, 3, 6, 10REASONThis diagonal forms the triangular-number sequence.YOUR TURNExplain why that diagonal grows by one more each step.Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal’s triangle.Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal’s triangle. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopPascal’s trianglePascal triangle. Every edge is one and every interior cell is the sum of the two cells directly above.A TRIANGULAR DIAGONAL1, 3, 6, 10, 15, …111121133114641151010511615201561172135352171THIRD DIAGONAL1  ·  3  ·  6  ·  10  ·  15Add 2, then 3, then 4, then 5ROW NUMBER7DIAGONAL1, 3, 6, 10REASONThis diagonal forms the triangular-number sequence.YOUR TURNExplain why that diagonal grows by one more each step.Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal’s triangle.Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal’s triangle. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "triangles-hidden-in-a-triangle",
+            "narration": "Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal’s triangle.",
+            "prompt": "Explain why that diagonal grows by one more each step.",
+            "mood": "pleased"
+          },
+          "tables": {
+            "STEPS": [
+              {
+                "name": "one-at-the-top",
+                "rows": 2,
+                "pose": "explain",
+                "text": "Start with one. Every new row begins and ends with one.",
+                "prompt": "What do you notice at the outer edges?"
+              },
+              {
+                "name": "two-parents-one-sum",
+                "rows": 3,
+                "focus": [
+                  2,
+                  1
+                ],
+                "pose": "point-down",
+                "text": "An inside number has two parents. One plus one makes two.",
+                "prompt": "Trace the two numbers above the two."
+              },
+              {
+                "name": "build-the-fourth-row",
+                "rows": 4,
+                "focus": [
+                  3,
+                  1
+                ],
+                "pose": "count",
+                "text": "To make three, add the one and two directly above it. Repeat across the row.",
+                "prompt": "Can you explain why both middle entries are three?"
+              },
+              {
+                "name": "build-five-rows",
+                "rows": 5,
+                "focus": [
+                  4,
+                  2
+                ],
+                "pose": "idea",
+                "text": "Three plus three gives six. The new row is one, four, six, four, one.",
+                "prompt": "Find the two parent numbers that make six."
+              },
+              {
+                "name": "row-sums-double",
+                "rows": 6,
+                "kind": "sums",
+                "pose": "compare",
+                "text": "The row totals are one, two, four, eight, sixteen and thirty-two. Each total doubles.",
+                "prompt": "Predict the total of the next row."
+              },
+              {
+                "name": "triangles-hidden-in-a-triangle",
+                "rows": 8,
+                "kind": "diagonal",
+                "pose": "celebrate",
+                "text": "Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal’s triangle.",
+                "prompt": "Explain why that diagonal grows by one more each step."
+              }
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-10",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "one-at-the-top",
+            "narration": "Start with one. Every new row begins and ends with one.",
+            "prompt": "What do you notice at the outer edges?",
+            "mood": "focus"
+          },
+          {
+            "name": "two-parents-one-sum",
+            "narration": "An inside number has two parents. One plus one makes two.",
+            "prompt": "Trace the two numbers above the two.",
+            "mood": "focus"
+          },
+          {
+            "name": "build-the-fourth-row",
+            "narration": "To make three, add the one and two directly above it. Repeat across the row.",
+            "prompt": "Can you explain why both middle entries are three?",
+            "mood": "focus"
+          },
+          {
+            "name": "build-five-rows",
+            "narration": "Three plus three gives six. The new row is one, four, six, four, one.",
+            "prompt": "Find the two parent numbers that make six.",
+            "mood": "focus"
+          },
+          {
+            "name": "row-sums-double",
+            "narration": "The row totals are one, two, four, eight, sixteen and thirty-two. Each total doubles.",
+            "prompt": "Predict the total of the next row.",
+            "mood": "focus"
+          },
+          {
+            "name": "triangles-hidden-in-a-triangle",
+            "narration": "Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal’s triangle.",
+            "prompt": "Explain why that diagonal grows by one more each step.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-10",
+          "family": "F9",
+          "startMode": "guided",
+          "presets": {
+            "KS3-grow": {
+              "label": "KS3 · Grow the rows",
+              "rows": 6,
+              "focus": "addition",
+              "context": "Each interior cell adds the two directly above."
+            },
+            "KS3-row-sums": {
+              "label": "KS3 · Powers of two",
+              "rows": 7,
+              "focus": "sums",
+              "context": "The sum of row r is two to the power r."
+            },
+            "KS3-diagonals": {
+              "label": "KS3 · Diagonal patterns",
+              "rows": 7,
+              "focus": "diagonal",
+              "context": "The third diagonal contains triangular numbers."
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "row",
+              "pattern",
+              "answer",
+              "placed",
+              "challengeTask"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "one-at-the-top",
+              "rows": 2,
+              "pose": "explain",
+              "text": "Start with one. Every new row begins and ends with one.",
+              "prompt": "What do you notice at the outer edges?"
+            },
+            {
+              "name": "two-parents-one-sum",
+              "rows": 3,
+              "focus": [
+                2,
+                1
+              ],
+              "pose": "point-down",
+              "text": "An inside number has two parents. One plus one makes two.",
+              "prompt": "Trace the two numbers above the two."
+            },
+            {
+              "name": "build-the-fourth-row",
+              "rows": 4,
+              "focus": [
+                3,
+                1
+              ],
+              "pose": "count",
+              "text": "To make three, add the one and two directly above it. Repeat across the row.",
+              "prompt": "Can you explain why both middle entries are three?"
+            },
+            {
+              "name": "build-five-rows",
+              "rows": 5,
+              "focus": [
+                4,
+                2
+              ],
+              "pose": "idea",
+              "text": "Three plus three gives six. The new row is one, four, six, four, one.",
+              "prompt": "Find the two parent numbers that make six."
+            },
+            {
+              "name": "row-sums-double",
+              "rows": 6,
+              "kind": "sums",
+              "pose": "compare",
+              "text": "The row totals are one, two, four, eight, sixteen and thirty-two. Each total doubles.",
+              "prompt": "Predict the total of the next row."
+            },
+            {
+              "name": "triangles-hidden-in-a-triangle",
+              "rows": 7,
+              "kind": "diagonal",
+              "pose": "celebrate",
+              "text": "Look diagonally. One, three, six, ten, fifteen are triangular numbers hidden inside Pascal’s triangle.",
+              "prompt": "Explain why that diagonal grows by one more each step."
+            }
+          ],
+          "TASKS": [
+            {
+              "row": 3,
+              "col": 1,
+              "choices": [
+                2,
+                3,
+                4
+              ],
+              "heading": "01 · Find the first pair sum",
+              "guide": "The row with 1, 2, 1 makes a new interior cell. Add its two parents."
+            },
+            {
+              "row": 4,
+              "col": 2,
+              "choices": [
+                3,
+                6,
+                9
+              ],
+              "heading": "02 · Make the middle of row four",
+              "guide": "Find the middle cell. Its two parents are directly above, one left and one right."
+            },
+            {
+              "row": 6,
+              "col": 3,
+              "choices": [
+                10,
+                20,
+                30
+              ],
+              "heading": "03 · Add the two middle parents",
+              "guide": "Look at the centre of row six. Both parents are tens: add them."
+            }
+          ]
+        },
+        "draws": {
+          "clear": [
+            "stage"
+          ],
+          "mount": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "renderExplore": [
+            "stage"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "clear": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "mount": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {},
+              {}
+            ],
+            "explain",
+            "Start with one. Every new row begins and ends with one."
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-11",
+    "path": "F9/F9-11-spot-the-rule-puzzle.html",
+    "errors": [],
+    "engineId": "F9-11",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "config",
+        "path": [
+          "presets",
+          "Y7-036-doubling",
+          "first"
+        ],
+        "from": 2,
+        "to": 3,
+        "beforeText": "Sequence workshopSpot-the-rule puzzleFive terms of a mystery number sequence, connected by hop arcs. Try one mathematical rule on every jump.MULTIPLICATION MYSTERYOne rule works from start to finish×2×2×2×22Term 14Term 28Term 316Term 432Term 5THE ADDITIONS CHANGE2 + 2 = 44 + 4 = 8×2 worksProved: multiply by two each timeMYSTERY TERMS2   ·   4   ·   8   ·   16   ·   32RULE STATUS×2  ·  MATCHTEST THE PATTERNCheck the same rule between each consecutive pair.YOUR TURNWhy is add two not the rule for the whole sequence?Two, four, eight, sixteen. The amounts added change, but doubling works every time.Two, four, eight, sixteen. The amounts added change, but doubling works every time. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopSpot-the-rule puzzleFive terms of a mystery number sequence, connected by hop arcs. Try one mathematical rule on every jump.MULTIPLICATION MYSTERYOne rule works from start to finish×2×2×2×23Term 16Term 212Term 324Term 448Term 5THE ADDITIONS CHANGE2 + 2 = 44 + 4 = 8×2 worksProved: multiply by two each timeMYSTERY TERMS3   ·   6   ·   12   ·   24   ·   48RULE STATUS×2  ·  MATCHTEST THE PATTERNCheck the same rule between each consecutive pair.YOUR TURNWhy is add two not the rule for the whole sequence?Two, four, eight, sixteen. The amounts added change, but doubling works every time.Two, four, eight, sixteen. The amounts added change, but doubling works every time. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "multiplying-instead",
+            "narration": "Two, four, eight, sixteen. The amounts added change, but doubling works every time.",
+            "prompt": "Why is add two not the rule for the whole sequence?",
+            "mood": "pleased"
+          },
+          "config": {
+            "id": "F9-11",
+            "family": "F9",
+            "startMode": "guided",
+            "presets": {
+              "Y7-036-sequence-structure": {
+                "label": "Y7-036 · Rule detective",
+                "kind": "add",
+                "first": 5,
+                "k": 3,
+                "shown": 5
+              },
+              "Y7-036-backwards": {
+                "label": "Y7-036 · Decreasing",
+                "kind": "add",
+                "first": 24,
+                "k": -4,
+                "shown": 5
+              },
+              "Y7-036-doubling": {
+                "label": "Y7-036 · Doubling",
+                "kind": "mult",
+                "first": 3,
+                "k": 2,
+                "shown": 5
+              }
+            },
+            "events": {
+              "value": [
+                "preset",
+                "term",
+                "trial",
+                "placed",
+                "challengeTask"
+              ],
+              "types": [
+                "step",
+                "correct",
+                "hintUsed",
+                "mode"
+              ]
+            },
+            "lessonGame": {},
+            "lessonChallengeTitle": "Concept challenge",
+            "lessonBadgeTitle": "CHALLENGE CHAMPION"
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-11",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "the-mystery",
+            "narration": "Five, eight, eleven. What might the hidden rule be?",
+            "prompt": "Read the numbers. What changes every time?",
+            "mood": "focus"
+          },
+          {
+            "name": "check-every-hop",
+            "narration": "The first difference is three. Check the next jump too.",
+            "prompt": "Does adding three work twice in a row?",
+            "mood": "focus"
+          },
+          {
+            "name": "test-a-false-rule",
+            "narration": "If we doubled five, we would get ten, not eight. That rule fails.",
+            "prompt": "Why does multiply by two fail the very first step?",
+            "mood": "focus"
+          },
+          {
+            "name": "the-matched-rule",
+            "narration": "Add three works on every jump. Now the mystery rule is proven.",
+            "prompt": "Use the rule to predict the next term.",
+            "mood": "focus"
+          },
+          {
+            "name": "a-reverse-mystery",
+            "narration": "This mystery gets smaller by four each time. Every hop subtracts four.",
+            "prompt": "What is twenty minus four, then sixteen minus four?",
+            "mood": "focus"
+          },
+          {
+            "name": "multiplying-instead",
+            "narration": "Two, four, eight, sixteen. The amounts added change, but doubling works every time.",
+            "prompt": "Why is add two not the rule for the whole sequence?",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-11",
+          "family": "F9",
+          "startMode": "guided",
+          "presets": {
+            "Y7-036-sequence-structure": {
+              "label": "Y7-036 · Rule detective",
+              "kind": "add",
+              "first": 5,
+              "k": 3,
+              "shown": 5
+            },
+            "Y7-036-backwards": {
+              "label": "Y7-036 · Decreasing",
+              "kind": "add",
+              "first": 24,
+              "k": -4,
+              "shown": 5
+            },
+            "Y7-036-doubling": {
+              "label": "Y7-036 · Doubling",
+              "kind": "mult",
+              "first": 2,
+              "k": 2,
+              "shown": 5
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "term",
+              "trial",
+              "placed",
+              "challengeTask"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "the-mystery",
+              "preset": "Y7-036-sequence-structure",
+              "visible": 3,
+              "showRule": false,
+              "kind": "mystery",
+              "pose": "question",
+              "text": "Five, eight, eleven. What might the hidden rule be?",
+              "prompt": "Read the numbers. What changes every time?"
+            },
+            {
+              "name": "check-every-hop",
+              "preset": "Y7-036-sequence-structure",
+              "visible": 4,
+              "showRule": false,
+              "kind": "differences",
+              "pose": "point-right",
+              "text": "The first difference is three. Check the next jump too.",
+              "prompt": "Does adding three work twice in a row?"
+            },
+            {
+              "name": "test-a-false-rule",
+              "preset": "Y7-036-sequence-structure",
+              "visible": 4,
+              "showRule": false,
+              "kind": "false",
+              "pose": "think",
+              "text": "If we doubled five, we would get ten, not eight. That rule fails.",
+              "prompt": "Why does multiply by two fail the very first step?"
+            },
+            {
+              "name": "the-matched-rule",
+              "preset": "Y7-036-sequence-structure",
+              "visible": 5,
+              "showRule": true,
+              "kind": "correct",
+              "pose": "idea",
+              "text": "Add three works on every jump. Now the mystery rule is proven.",
+              "prompt": "Use the rule to predict the next term."
+            },
+            {
+              "name": "a-reverse-mystery",
+              "preset": "Y7-036-backwards",
+              "visible": 5,
+              "showRule": true,
+              "kind": "reverse",
+              "pose": "point-down",
+              "text": "This mystery gets smaller by four each time. Every hop subtracts four.",
+              "prompt": "What is twenty minus four, then sixteen minus four?"
+            },
+            {
+              "name": "multiplying-instead",
+              "preset": "Y7-036-doubling",
+              "visible": 5,
+              "showRule": true,
+              "kind": "multiply",
+              "pose": "celebrate",
+              "text": "Two, four, eight, sixteen. The amounts added change, but doubling works every time.",
+              "prompt": "Why is add two not the rule for the whole sequence?"
+            }
+          ],
+          "TASKS": [
+            {
+              "preset": "Y7-036-sequence-structure",
+              "heading": "01 · Which rule always works?",
+              "guide": "Mystery sequence: 5, 8, 11, 14, 17. Choose the same operation for every jump.",
+              "choices": [
+                "+3",
+                "+4",
+                "×2"
+              ],
+              "answer": "+3",
+              "trap": {
+                "+4": "Adding four to five gives nine, not eight. Try the first jump again.",
+                "×2": "Doubling five gives ten, not eight. Multiplying is not this rule."
+              }
+            },
+            {
+              "preset": "Y7-036-backwards",
+              "heading": "02 · A shrinking pattern",
+              "guide": "Mystery sequence: 24, 20, 16, 12, 8. Each term is smaller. Find the fixed change.",
+              "choices": [
+                "−4",
+                "+4",
+                "÷2"
+              ],
+              "answer": "−4",
+              "trap": {
+                "+4": "The terms are shrinking. Adding four would make them bigger.",
+                "÷2": "Half of twenty-four is twelve, not twenty. This is a fixed subtraction."
+              }
+            },
+            {
+              "preset": "Y7-036-doubling",
+              "heading": "03 · What makes it double?",
+              "guide": "Mystery sequence: 2, 4, 8, 16, 32. The gaps change; the rule must not.",
+              "choices": [
+                "×2",
+                "+2",
+                "×3"
+              ],
+              "answer": "×2",
+              "trap": {
+                "+2": "Two plus two gives four, but four plus two is six, not eight. The rule must work twice.",
+                "×3": "Two times three gives six, not four. Test the first jump."
+              }
+            }
+          ]
+        },
+        "draws": {
+          "clear": [
+            "stage"
+          ],
+          "mount": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "exploreDraw": [
+            "stage"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "clear": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "mount": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {},
+              {}
+            ],
+            "question",
+            "Five, eight, eleven. What might the hidden rule be?"
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-12",
+    "path": "F9/F9-12-sequence-continuer.html",
+    "errors": [],
+    "engineId": "F9-12",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "config",
+        "path": [
+          "presets",
+          "Y7-036-doubling",
+          "first"
+        ],
+        "from": 2,
+        "to": 3,
+        "beforeText": "Sequence workshopSequence continuerA five-term sequence linked with repeated jump arrows. Empty slots become correct next terms.MULTIPLYING PATTERNEvery hop follows the SAME rule×2×2×2×22Term 14Term 28Term 316Term 432Term 5MULTIPLY, DO NOT ADD A FIXED GAP8 × 2 = 1616 × 2 = 32Rule found: ×2SEQUENCE2   ·   4   ·   8   ·   16   ·   32REPEATED RULE×2LOOK CLOSELYMultiplying by two gives each next term; adding a constant does not.YOUR TURNExplain why a fixed addition cannot generate every term.Doubling is different from adding. Two, four, eight, sixteen, thirty-two.Doubling is different from adding. Two, four, eight, sixteen, thirty-two. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopSequence continuerA five-term sequence linked with repeated jump arrows. Empty slots become correct next terms.MULTIPLYING PATTERNEvery hop follows the SAME rule×2×2×2×23Term 16Term 212Term 324Term 448Term 5MULTIPLY, DO NOT ADD A FIXED GAP8 × 2 = 1616 × 2 = 32Rule found: ×2SEQUENCE3   ·   6   ·   12   ·   24   ·   48REPEATED RULE×2LOOK CLOSELYMultiplying by two gives each next term; adding a constant does not.YOUR TURNExplain why a fixed addition cannot generate every term.Doubling is different from adding. Two, four, eight, sixteen, thirty-two.Doubling is different from adding. Two, four, eight, sixteen, thirty-two. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "continue-a-double",
+            "narration": "Doubling is different from adding. Two, four, eight, sixteen, thirty-two.",
+            "prompt": "Explain why a fixed addition cannot generate every term.",
+            "mood": "pleased"
+          },
+          "config": {
+            "id": "F9-12",
+            "family": "F9",
+            "startMode": "guided",
+            "presets": {
+              "Y7-036-sequence-structure": {
+                "label": "Y7-036 · Add three",
+                "operation": "add",
+                "first": 4,
+                "step": 3,
+                "terms": 5
+              },
+              "Y7-036-decreasing": {
+                "label": "Y7-036 · Subtract four",
+                "operation": "add",
+                "first": 24,
+                "step": -4,
+                "terms": 5
+              },
+              "Y7-036-doubling": {
+                "label": "Y7-036 · Double each term",
+                "operation": "multiply",
+                "first": 3,
+                "factor": 2,
+                "terms": 5
+              }
+            },
+            "events": {
+              "value": [
+                "preset",
+                "term",
+                "reveal",
+                "placed",
+                "challengeTask"
+              ],
+              "types": [
+                "step",
+                "correct",
+                "hintUsed",
+                "mode"
+              ]
+            },
+            "lessonGame": {},
+            "lessonChallengeTitle": "Concept challenge",
+            "lessonBadgeTitle": "CHALLENGE CHAMPION"
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-12",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "look-for-a-pattern",
+            "narration": "Four, seven, ten. What would you expect to come next?",
+            "prompt": "Find what changes between each pair of numbers.",
+            "mood": "focus"
+          },
+          {
+            "name": "check-the-same-hop",
+            "narration": "Four plus three is seven. Seven plus three is ten. Same hop, twice.",
+            "prompt": "Explain why the rule adds three each time.",
+            "mood": "focus"
+          },
+          {
+            "name": "fill-the-next-slot",
+            "narration": "Ten plus three gives thirteen. The first empty slot is filled.",
+            "prompt": "Predict the next term before it appears.",
+            "mood": "focus"
+          },
+          {
+            "name": "continue-again",
+            "narration": "Now thirteen plus three makes sixteen. We continued the same sequence twice.",
+            "prompt": "How could you check both new terms?",
+            "mood": "focus"
+          },
+          {
+            "name": "continue-a-decrease",
+            "narration": "A sequence can shrink. Subtract four again to continue this pattern.",
+            "prompt": "Why is twelve followed by eight?",
+            "mood": "focus"
+          },
+          {
+            "name": "continue-a-double",
+            "narration": "Doubling is different from adding. Two, four, eight, sixteen, thirty-two.",
+            "prompt": "Explain why a fixed addition cannot generate every term.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-12",
+          "family": "F9",
+          "startMode": "guided",
+          "presets": {
+            "Y7-036-sequence-structure": {
+              "label": "Y7-036 · Add three",
+              "operation": "add",
+              "first": 4,
+              "step": 3,
+              "terms": 5
+            },
+            "Y7-036-decreasing": {
+              "label": "Y7-036 · Subtract four",
+              "operation": "add",
+              "first": 24,
+              "step": -4,
+              "terms": 5
+            },
+            "Y7-036-doubling": {
+              "label": "Y7-036 · Double each term",
+              "operation": "multiply",
+              "first": 2,
+              "factor": 2,
+              "terms": 5
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "term",
+              "reveal",
+              "placed",
+              "challengeTask"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "look-for-a-pattern",
+              "preset": "Y7-036-sequence-structure",
+              "visible": 3,
+              "hop": 0,
+              "kind": "notice",
+              "pose": "question",
+              "text": "Four, seven, ten. What would you expect to come next?",
+              "prompt": "Find what changes between each pair of numbers."
+            },
+            {
+              "name": "check-the-same-hop",
+              "preset": "Y7-036-sequence-structure",
+              "visible": 3,
+              "hop": 2,
+              "kind": "compare",
+              "pose": "point-right",
+              "text": "Four plus three is seven. Seven plus three is ten. Same hop, twice.",
+              "prompt": "Explain why the rule adds three each time."
+            },
+            {
+              "name": "fill-the-next-slot",
+              "preset": "Y7-036-sequence-structure",
+              "visible": 4,
+              "hop": 3,
+              "kind": "first-fill",
+              "pose": "count",
+              "text": "Ten plus three gives thirteen. The first empty slot is filled.",
+              "prompt": "Predict the next term before it appears."
+            },
+            {
+              "name": "continue-again",
+              "preset": "Y7-036-sequence-structure",
+              "visible": 5,
+              "hop": 4,
+              "kind": "complete",
+              "pose": "idea",
+              "text": "Now thirteen plus three makes sixteen. We continued the same sequence twice.",
+              "prompt": "How could you check both new terms?"
+            },
+            {
+              "name": "continue-a-decrease",
+              "preset": "Y7-036-decreasing",
+              "visible": 5,
+              "hop": 4,
+              "kind": "decreasing",
+              "pose": "point-down",
+              "text": "A sequence can shrink. Subtract four again to continue this pattern.",
+              "prompt": "Why is twelve followed by eight?"
+            },
+            {
+              "name": "continue-a-double",
+              "preset": "Y7-036-doubling",
+              "visible": 5,
+              "hop": 4,
+              "kind": "doubling",
+              "pose": "celebrate",
+              "text": "Doubling is different from adding. Two, four, eight, sixteen, thirty-two.",
+              "prompt": "Explain why a fixed addition cannot generate every term."
+            }
+          ],
+          "TASKS": [
+            {
+              "preset": "Y7-036-sequence-structure",
+              "title": "01 · Finish the growing sequence",
+              "guide": "4, 7, 10, __, __. Use the same add-three rule for both spaces.",
+              "options": [
+                13,
+                16,
+                14,
+                17,
+                10
+              ],
+              "expected": [
+                13,
+                16
+              ],
+              "trap": {
+                "10": "Ten is already the third term. Continue forward, not backwards.",
+                "14": "Fourteen is four more than ten. This rule adds three, not four.",
+                "17": "Seventeen is four more than thirteen. Check the hop size."
+              }
+            },
+            {
+              "preset": "Y7-036-decreasing",
+              "title": "02 · Keep subtracting four",
+              "guide": "24, 20, 16, __, __. Both missing terms must keep the same subtraction.",
+              "options": [
+                12,
+                8,
+                10,
+                4,
+                20
+              ],
+              "expected": [
+                12,
+                8
+              ],
+              "trap": {
+                "4": "Four is too many steps ahead. Continue one hop at a time.",
+                "10": "Sixteen subtract four gives twelve, not ten.",
+                "20": "Twenty already appears as term two. Continue downwards."
+              }
+            },
+            {
+              "preset": "Y7-036-doubling",
+              "title": "03 · Double to continue",
+              "guide": "2, 4, 8, __, __. Check what happens to the multiplication rule each time.",
+              "options": [
+                16,
+                32,
+                12,
+                24,
+                18
+              ],
+              "expected": [
+                16,
+                32
+              ],
+              "trap": {
+                "12": "Eight plus four gives twelve, but the sequence doubles instead.",
+                "18": "Eighteen is not twice eight. Try multiplication by two.",
+                "24": "Twenty-four is eight more than sixteen. Doubling gives thirty-two."
+              }
+            }
+          ]
+        },
+        "draws": {
+          "clear": [
+            "stage"
+          ],
+          "mount": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "exploreDraw": [
+            "stage"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "clear": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "mount": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {},
+              {}
+            ],
+            "question",
+            "Four, seven, ten. What would you expect to come next?"
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F9-13",
+    "path": "F9/F9-13-fractal-generators.html",
+    "errors": [],
+    "engineId": "F9-13",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "scene",
+        "key": "sceneDraw",
+        "path": [
+          "2"
+        ],
+        "from": 0,
+        "to": 1,
+        "beforeText": "Sequence workshopFractal generatorsFractal iteration 2 of Koch · curve. 16 pieces.KOCH CURVEKoch iteration 2: sixteen segmentsEvery straight segment becomes FOUR smaller onesITERATION  →  NUMBER OF PIECES01142163644256Iteration 2 · 16 segmentsFRACTALKoch curveITERATION2PIECES16REPEAT THE RULEThe number of straight sections is multiplied by FOUR each iteration.9 CM ORIGINAL → LENGTH16 cmLENGTH IS DIFFERENTThe number of pieces grows by four; each new piece is one third the length.Each of the four sections becomes four more. Four times four makes sixteen sections.Each of the four sections becomes four more. Four times four makes sixteen sections. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "Sequence workshopFractal generatorsFractal iteration 1 of Koch · curve. 4 pieces.KOCH CURVEKoch iteration 2: sixteen segmentsEvery straight segment becomes FOUR smaller onesITERATION  →  NUMBER OF PIECES01142163644256Iteration 1 · 4 segmentsFRACTALKoch curveITERATION1PIECES4REPEAT THE RULEThe number of straight sections is multiplied by FOUR each iteration.9 CM ORIGINAL → LENGTH12 cmLENGTH IS DIFFERENTThe number of pieces grows by four; each new piece is one third the length.Each of the four sections becomes four more. Four times four makes sixteen sections.Each of the four sections becomes four more. Four times four makes sixteen sections. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "koch-repeat-length",
+            "narration": "Each of the four sections becomes four more. Four times four makes sixteen sections.",
+            "prompt": "If the first line was nine centimetres, explain why iteration two totals sixteen centimetres.",
+            "mood": "pleased"
+          },
+          "scene": {
+            "function": "sceneDraw",
+            "arguments": {
+              "n": 1
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F9-13",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "whole-triangle",
+            "narration": "We begin with one whole triangle. That is iteration zero.",
+            "prompt": "How many triangles can you see before anything changes?",
+            "mood": "focus"
+          },
+          {
+            "name": "split-and-remove",
+            "narration": "Keep the three corner triangles. The middle triangle is removed.",
+            "prompt": "Count only the remaining corner triangles.",
+            "mood": "focus"
+          },
+          {
+            "name": "repeat-the-rule",
+            "narration": "Repeat that same step for every triangle. Each one leaves three new triangles.",
+            "prompt": "How many remain after each of the three triangles is split?",
+            "mood": "focus"
+          },
+          {
+            "name": "generalise-the-pattern",
+            "narration": "One, three, nine, twenty-seven. The number of triangles triples each time.",
+            "prompt": "Explain why the number is three to the power of the iteration.",
+            "mood": "focus"
+          },
+          {
+            "name": "koch-four-for-one",
+            "narration": "Now watch a different fractal. Each straight section becomes four short sections.",
+            "prompt": "Count the four new sections in place of the original one.",
+            "mood": "focus"
+          },
+          {
+            "name": "koch-repeat-length",
+            "narration": "Each of the four sections becomes four more. Four times four makes sixteen sections.",
+            "prompt": "If the first line was nine centimetres, explain why iteration two totals sixteen centimetres.",
+            "mood": "pleased"
+          }
+        ],
+        "config": {
+          "id": "F9-13",
+          "family": "F9",
+          "startMode": "guided",
+          "maxIteration": 4,
+          "presets": {
+            "sierpinski-triangle": {
+              "label": "Sierpiński · triangle",
+              "kind": "sierpinski",
+              "factor": 3,
+              "initial": 1,
+              "max": 4
+            },
+            "koch-curve": {
+              "label": "Koch · curve",
+              "kind": "koch",
+              "factor": 4,
+              "initial": 1,
+              "max": 4,
+              "baseCm": 9
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "iteration",
+              "count",
+              "length",
+              "placed",
+              "challengeTask"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "challenge": {
+            "types": [
+              "sierpinski-count",
+              "koch-count",
+              "koch-length"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STORIES": [
+            {
+              "name": "whole-triangle",
+              "preset": "sierpinski-triangle",
+              "iteration": 0,
+              "pose": "explain",
+              "text": "We begin with one whole triangle. That is iteration zero.",
+              "question": "How many triangles can you see before anything changes?",
+              "detail": "Iteration 0: one whole triangle"
+            },
+            {
+              "name": "split-and-remove",
+              "preset": "sierpinski-triangle",
+              "iteration": 1,
+              "pose": "point-right",
+              "text": "Keep the three corner triangles. The middle triangle is removed.",
+              "question": "Count only the remaining corner triangles.",
+              "detail": "Iteration 1: three smaller triangles"
+            },
+            {
+              "name": "repeat-the-rule",
+              "preset": "sierpinski-triangle",
+              "iteration": 2,
+              "pose": "count",
+              "text": "Repeat that same step for every triangle. Each one leaves three new triangles.",
+              "question": "How many remain after each of the three triangles is split?",
+              "detail": "Iteration 2: nine smaller triangles"
+            },
+            {
+              "name": "generalise-the-pattern",
+              "preset": "sierpinski-triangle",
+              "iteration": 3,
+              "pose": "idea",
+              "text": "One, three, nine, twenty-seven. The number of triangles triples each time.",
+              "question": "Explain why the number is three to the power of the iteration.",
+              "detail": "Iteration 3: twenty-seven smaller triangles"
+            },
+            {
+              "name": "koch-four-for-one",
+              "preset": "koch-curve",
+              "iteration": 1,
+              "pose": "point-right",
+              "text": "Now watch a different fractal. Each straight section becomes four short sections.",
+              "question": "Count the four new sections in place of the original one.",
+              "detail": "Koch iteration 1: four segments"
+            },
+            {
+              "name": "koch-repeat-length",
+              "preset": "koch-curve",
+              "iteration": 2,
+              "pose": "celebrate",
+              "text": "Each of the four sections becomes four more. Four times four makes sixteen sections.",
+              "question": "If the first line was nine centimetres, explain why iteration two totals sixteen centimetres.",
+              "detail": "Koch iteration 2: sixteen segments"
+            }
+          ],
+          "TASKS": [
+            {
+              "preset": "sierpinski-triangle",
+              "iteration": 3,
+              "title": "01 · Count the surviving triangles",
+              "guide": "After three Sierpiński iterations, how many of the smallest triangles remain?",
+              "options": [
+                27,
+                9,
+                81
+              ],
+              "answer": 27,
+              "suffix": "triangles",
+              "traps": {
+                "9": "Nine is iteration two. Repeat the three-for-one rule once more.",
+                "81": "Eighty-one is iteration four. You have repeated the rule one step too far."
+              }
+            },
+            {
+              "preset": "koch-curve",
+              "iteration": 2,
+              "title": "02 · Count the Koch sections",
+              "guide": "The Koch curve is at iteration two. How many short straight sections does it have?",
+              "options": [
+                16,
+                8,
+                12
+              ],
+              "answer": 16,
+              "suffix": "segments",
+              "traps": {
+                "8": "Eight assumes only two new sections per previous section. Each becomes four.",
+                "12": "Twelve treats the growth as adding a fixed number. Multiply by four each time."
+              }
+            },
+            {
+              "preset": "koch-curve",
+              "iteration": 2,
+              "title": "03 · Find the total length",
+              "guide": "The original Koch line was 9 cm. After two iterations, what is its TOTAL length?",
+              "options": [
+                16,
+                9,
+                36
+              ],
+              "answer": 16,
+              "suffix": "cm",
+              "traps": {
+                "9": "The total length is not unchanged: each segment is replaced by four third-length pieces.",
+                "36": "Thirty-six multiplies the length by four without accounting for each new piece being one third as long."
+              }
+            }
+          ]
+        },
+        "draws": {
+          "clear": [
+            "stage"
+          ],
+          "mount": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "sceneDraw": [
+            "stage",
+            "presetName",
+            "n",
+            "opts"
+          ],
+          "drawChallenge": [
+            "stage",
+            "api"
+          ],
+          "lessonScene": [
+            "stage",
+            "p"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "sceneDraw": {
+          "parameters": [
+            "stage",
+            "presetName",
+            "n",
+            "opts"
+          ],
+          "sample": [
+            "[native stage]",
+            "sierpinski-triangle",
+            0,
+            {
+              "step": {
+                "name": "whole-triangle",
+                "preset": "sierpinski-triangle",
+                "iteration": 0,
+                "pose": "explain",
+                "text": "We begin with one whole triangle. That is iteration zero.",
+                "question": "How many triangles can you see before anything changes?",
+                "detail": "Iteration 0: one whole triangle"
+              },
+              "title": "Iteration 0: one whole triangle"
+            }
+          ]
+        },
+        "clear": {
+          "parameters": [
+            "stage"
+          ],
+          "sample": [
+            "[native stage]"
+          ]
+        },
+        "mount": {
+          "parameters": [
+            "stage",
+            "svg",
+            "cards",
+            "pose",
+            "speech"
+          ],
+          "sample": [
+            "[native stage]",
+            {},
+            [
+              {},
+              {},
+              {},
+              {},
+              {}
+            ],
+            "explain",
+            "We begin with one whole triangle. That is iteration zero."
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  }
+]

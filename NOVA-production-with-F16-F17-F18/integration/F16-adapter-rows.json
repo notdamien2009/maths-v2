@@ -1,0 +1,3491 @@
+[
+  {
+    "id": "F16-01",
+    "path": "F16/F16-01-tally-frequency-pictogram.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEP"
+    ],
+    "draws": {
+      "render": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "c4c177cae591fc26319183f3329309da7e6bc2ba595f1dc6b5ad278b3c002fad",
+    "sha256": "7068b46094d416372c9b3687280423a565f90876dd02ada0e060c9d4ed20ff67",
+    "engineId": "F16-01",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "mood",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "7068b46094d416372c9b3687280423a565f90876dd02ada0e060c9d4ed20ff67"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Read and check",
+        "pose": "celebrate",
+        "mood": "cheer",
+        "narration": "Add the frequencies to check the total. The table and pictogram must represent the same data.",
+        "prompt": "Which category has the greatest frequency? Check the total."
+      },
+      "config": {
+        "startMode": "guided",
+        "preset": "collect",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "hintUsed",
+          "correct"
+        ],
+        "presets": {
+          "collect": {
+            "label": "Y7-065 · Collect and organise data",
+            "title": "Favourite fruit survey",
+            "cats": [
+              "Apples",
+              "Pears",
+              "Bananas",
+              "Grapes"
+            ],
+            "base": [
+              5,
+              2,
+              6,
+              4
+            ],
+            "icon": "fruit",
+            "context": "pupils",
+            "key": 2
+          },
+          "picture": {
+            "label": "Y7-066 · Bar charts and pictograms",
+            "title": "Books borrowed by class",
+            "cats": [
+              "Owls",
+              "Foxes",
+              "Bears",
+              "Lions"
+            ],
+            "base": [
+              6,
+              4,
+              8,
+              2
+            ],
+            "icon": "book",
+            "context": "books",
+            "key": 2
+          },
+          "stem": {
+            "label": "Y7-068 · Preparing data for stem-and-leaf",
+            "title": "Travel times to school",
+            "cats": [
+              "0–9",
+              "10–19",
+              "20–29",
+              "30–39"
+            ],
+            "base": [
+              3,
+              5,
+              7,
+              3
+            ],
+            "icon": "clock",
+            "context": "journeys",
+            "key": 2
+          },
+          "grouped": {
+            "label": "Y8-064 · Grouped frequency tables",
+            "title": "Reading minutes per day",
+            "cats": [
+              "0–9",
+              "10–19",
+              "20–29",
+              "30–39"
+            ],
+            "base": [
+              5,
+              7,
+              4,
+              2
+            ],
+            "icon": "book",
+            "context": "pupils",
+            "key": 2
+          }
+        }
+      }
+    },
+    "previous_sha256": "5bb046e3b2622920e79d7f26b765df02b09e31b1b18d9a2874c45e38240c1013",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-02",
+    "path": "F16/F16-02-bar-chart-builder.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "watch.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      },
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "01b827dfc12ca8045936c9e17426734151d05b872865cefb11569c10619de40a",
+    "sha256": "fa4b6741c6d6505fe98efed50413911feb2bb74c6baec470dd379a042fb568b3",
+    "engineId": "F16-02",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 8,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "fa4b6741c6d6505fe98efed50413911feb2bb74c6baec470dd379a042fb568b3"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 7,
+      "data": {
+        "name": "Interpret the chart carefully",
+        "pose": "idea",
+        "narration": "Always check the vertical-axis baseline. If the chart starts above zero, the heights exaggerate small differences.",
+        "prompt": "How can a missing zero make a bar chart misleading?"
+      },
+      "config": {
+        "preset": "books",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "hintUsed",
+          "correct"
+        ],
+        "presets": {
+          "books": {
+            "label": "Y7-066 · Bar charts and pictograms",
+            "name": "Books borrowed this week",
+            "cats": [
+              "Owls",
+              "Foxes",
+              "Bears",
+              "Lions"
+            ],
+            "values": [
+              7,
+              9,
+              4,
+              7
+            ],
+            "max": 12,
+            "minor": 1,
+            "unit": "books",
+            "question": "Which class borrowed the most books?"
+          },
+          "mislead": {
+            "label": "Y7-071 · Misleading graphs",
+            "name": "Visits to the sports club",
+            "cats": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu"
+            ],
+            "values": [
+              5,
+              6,
+              7,
+              8
+            ],
+            "max": 10,
+            "minor": 1,
+            "unit": "visits",
+            "question": "Does this difference look bigger if we crop the scale?"
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "22ea5b8d323af6521b8b50d58326cff29adf5ddffaab97e00d07f431f2c522bf",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-03",
+    "path": "F16/F16-03-line-graph.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "options"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "43f5120f0284a5d55ed603206a678cde6753d2d2718abdd84783243830816e0e",
+    "sha256": "cbd60dcc72604d271873bec2a56be74ffba868799a6885992748b03709037d8c",
+    "engineId": "F16-03",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 9,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "cbd60dcc72604d271873bec2a56be74ffba868799a6885992748b03709037d8c"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 8,
+      "data": {
+        "name": "Interpret the trend and scale",
+        "pose": "compare",
+        "narration": "Check the marked intervals and the labels. Cropping an axis changes the visual steepness but not the observations themselves.",
+        "prompt": "Would a cropped axis change any actual data values?"
+      },
+      "config": {
+        "preset": "temperature",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "hintUsed",
+          "correct"
+        ],
+        "presets": {
+          "temperature": {
+            "label": "Y7-072 · Line graphs and trends",
+            "title": "Temperature across the day",
+            "unit": "°C",
+            "measure": "Temperature (°C)",
+            "timeUnit": "hour",
+            "times": [
+              9,
+              10,
+              12,
+              14,
+              16,
+              18
+            ],
+            "values": [
+              6,
+              10,
+              15,
+              14,
+              12,
+              8
+            ],
+            "max": 18,
+            "crop": 6,
+            "step": 3,
+            "context": "An outdoor sensor recorded the temperature every two hours.",
+            "trend": "Temperature climbs until midday, then falls."
+          },
+          "misleading": {
+            "label": "Y7-071 · Misleading graphs",
+            "title": "Daily library visits",
+            "unit": "visits",
+            "measure": "Number of visits",
+            "timeUnit": "day",
+            "times": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "labels": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
+              "Sat"
+            ],
+            "values": [
+              11,
+              12,
+              13,
+              12,
+              14,
+              15
+            ],
+            "max": 18,
+            "crop": 10,
+            "step": 3,
+            "context": "The library counted visitors at equally spaced daily observations.",
+            "trend": "Visits generally rise, with one dip on Thursday."
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "422ef06d508c370fdd1ca7763a9fbbc92ac2471aa64eae199fdfe7cfe94cf393",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-04",
+    "path": "F16/F16-04-pie-chart-builder.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "ROLES",
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "bb58952976e317a9a06d14d35035c1f5e65ea770c731c0e1222a1eee67aaf266",
+    "sha256": "bb4d1b132ff45c03b8b957dd8c14d0b0a1b6ab23a0f73e3bb103b245a9c517ea",
+    "engineId": "F16-04",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 9,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 173,
+        "checks": 173,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "bb4d1b132ff45c03b8b957dd8c14d0b0a1b6ab23a0f73e3bb103b245a9c517ea"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 8,
+      "data": {
+        "name": "Read and check the chart",
+        "pose": "celebrate",
+        "narration": "Read the coloured sectors alongside the frequency key. Check that all frequencies, angles and percentages agree.",
+        "prompt": "How can you check your finished pie chart?"
+      },
+      "config": {
+        "preset": "clubs",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "hintUsed",
+          "correct"
+        ],
+        "presets": {
+          "clubs": {
+            "label": "Y7-067 · After-school clubs",
+            "title": "Favourite school clubs",
+            "context": "Twenty pupils each choose their favourite club.",
+            "names": [
+              "Sport",
+              "Art",
+              "Music",
+              "Coding"
+            ],
+            "counts": [
+              9,
+              6,
+              4,
+              2
+            ],
+            "short": [
+              "Sport",
+              "Art",
+              "Music",
+              "Code"
+            ]
+          },
+          "travel": {
+            "label": "Y7-067 · Travel to school",
+            "title": "Journeys to school",
+            "context": "Twenty pupils report how they usually travel.",
+            "names": [
+              "Walk",
+              "Bus",
+              "Car",
+              "Cycle"
+            ],
+            "counts": [
+              6,
+              5,
+              5,
+              4
+            ],
+            "short": [
+              "Walk",
+              "Bus",
+              "Car",
+              "Cycle"
+            ]
+          },
+          "lunch": {
+            "label": "Y7-067 · Lunch choices",
+            "title": "Most popular lunches",
+            "context": "Twenty pupils choose one lunch each.",
+            "names": [
+              "Sandwich",
+              "Pasta",
+              "Salad",
+              "Jacket potato"
+            ],
+            "counts": [
+              9,
+              4,
+              4,
+              3
+            ],
+            "short": [
+              "Sandwich",
+              "Pasta",
+              "Salad",
+              "Potato"
+            ]
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "03f0a70a40cc5daf7ffe6166cff363559b25a7626afd49c2e0f911dd741621b0",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-05",
+    "path": "F16/F16-05-stem-and-leaf-plot.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "7a3c41652ff396a92fbf9fc6d08a6734a506a51b830fe5981c6cf483cf67b024",
+    "sha256": "6b089cefcb775d54f3515f72971f09aa07b7724fd3e46b7d6a453f5d21810bd6",
+    "engineId": "F16-05",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 9,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "6b089cefcb775d54f3515f72971f09aa07b7724fd3e46b7d6a453f5d21810bd6"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 8,
+      "data": {
+        "name": "Explain the completed plot",
+        "pose": "celebrate",
+        "narration": "Check the key, count all leaves and explain what the ordered data shows.",
+        "prompt": "Do the number of leaves and number of observations agree?"
+      },
+      "config": {
+        "preset": "construct",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "hintUsed",
+          "correct"
+        ],
+        "presets": {
+          "construct": {
+            "label": "Y7-068 · Construct a stem-and-leaf",
+            "title": "Mathematics quiz scores",
+            "context": "Sixteen pupils took a maths quiz.",
+            "A": [
+              13,
+              14,
+              14,
+              18,
+              21,
+              23,
+              25,
+              26,
+              26,
+              31,
+              33,
+              34,
+              37,
+              41,
+              43,
+              48
+            ],
+            "chips": {
+              "A": [
+                2,
+                7,
+                14
+              ]
+            },
+            "two": false
+          },
+          "compare": {
+            "label": "Y7-070 · Compare distributions",
+            "title": "Two teams · training scores",
+            "context": "Compare fifteen scores for each team.",
+            "A": [
+              12,
+              14,
+              18,
+              21,
+              23,
+              25,
+              26,
+              31,
+              33,
+              34,
+              37,
+              41,
+              43,
+              45,
+              48
+            ],
+            "B": [
+              11,
+              15,
+              19,
+              20,
+              22,
+              27,
+              28,
+              29,
+              30,
+              32,
+              36,
+              38,
+              40,
+              42,
+              44
+            ],
+            "chips": {
+              "A": [
+                6,
+                12
+              ],
+              "B": [
+                4,
+                11
+              ]
+            },
+            "two": true
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "e50bde323f579e5aee59a61647be4da5eb6f537a47c8b8437e6e28a99f47dd62",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-06",
+    "path": "F16/F16-06-dot-plot-and-averages.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "96af298cd88400dcf9e508b79056ffe2fcf7d3554426971dcb3f4eab4ebe292f",
+    "sha256": "472f62bceff27735e13e88c00546782e599eaf4d97015cc6fab4bc8a901b78d2",
+    "engineId": "F16-06",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 10,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "472f62bceff27735e13e88c00546782e599eaf4d97015cc6fab4bc8a901b78d2"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 9,
+      "data": {
+        "name": "Make an evidence-based conclusion",
+        "pose": "celebrate",
+        "narration": "Explain the pattern with numbers from the data: centre, spread, and any unusual observation.",
+        "prompt": "Which measures support your conclusion?"
+      },
+      "config": {
+        "preset": "y7-stems",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "hintUsed",
+          "correct"
+        ],
+        "presets": {
+          "y7-stems": {
+            "lesson": "Y7-068",
+            "label": "Y7-068 · Read a dot plot",
+            "title": "Quiz marks · each dot is one pupil",
+            "context": "How do we show repeated scores without losing any?",
+            "A": [
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              6,
+              6,
+              7,
+              7,
+              8
+            ]
+          },
+          "y7-averages": {
+            "lesson": "Y7-069",
+            "label": "Y7-069 · Mean, median, mode, range",
+            "title": "Scores in a maths challenge",
+            "context": "Read the centre and spread from eleven results.",
+            "A": [
+              2,
+              3,
+              4,
+              4,
+              5,
+              6,
+              6,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "y7-compare": {
+            "lesson": "Y7-070",
+            "label": "Y7-070 · Compare two distributions",
+            "title": "Training results · Teams A and B",
+            "context": "Compare two groups using their centres and spread.",
+            "A": [
+              3,
+              4,
+              4,
+              5,
+              5,
+              6,
+              6,
+              7,
+              7,
+              8
+            ],
+            "B": [
+              2,
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              6,
+              7,
+              9
+            ]
+          },
+          "y8-compare": {
+            "lesson": "Y8-069",
+            "label": "Y8-069 · Averages and spread",
+            "title": "Two science investigations",
+            "context": "Which class has the more consistent results?",
+            "A": [
+              4,
+              5,
+              5,
+              6,
+              6,
+              6,
+              7,
+              7,
+              8,
+              9,
+              9
+            ],
+            "B": [
+              3,
+              4,
+              4,
+              5,
+              5,
+              6,
+              6,
+              7,
+              7,
+              8,
+              10
+            ]
+          },
+          "y9-outliers": {
+            "lesson": "Y9-048",
+            "label": "Y9-048 · Averages, spread, outliers",
+            "title": "Journeys to school · minutes",
+            "context": "One very long journey affects the average.",
+            "A": [
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              6,
+              6,
+              12
+            ]
+          },
+          "y9-compare": {
+            "lesson": "Y9-049",
+            "label": "Y9-049 · Evidence-based comparison",
+            "title": "Reading challenge · two groups",
+            "context": "Use centre, range and unusual values to justify a comparison.",
+            "A": [
+              4,
+              5,
+              6,
+              6,
+              7,
+              7,
+              8,
+              8,
+              9
+            ],
+            "B": [
+              1,
+              3,
+              4,
+              6,
+              6,
+              8,
+              9,
+              10,
+              11
+            ]
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "662fe0028f559369cb20b35d9edc3233608e30e9ca5b409ceda1f87703b8fa26",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-07",
+    "path": "F16/F16-07-mean-explorer.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "10dfbcc105eb70d7d30a0743efe465f8ce606169afc7ad1947c202d155a09f01",
+    "sha256": "2219d3876c890d85bb47610d9bd2aed6fb365e2288c41a9b9ad69657e758aca4",
+    "engineId": "F16-07",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 9,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 170,
+        "checks": 170,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "2219d3876c890d85bb47610d9bd2aed6fb365e2288c41a9b9ad69657e758aca4"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 8,
+      "data": {
+        "name": "Interpret the meaning",
+        "pose": "celebrate",
+        "narration": "Explain what the mean tells us and what it does not.",
+        "prompt": "Is the mean always an observed score?"
+      },
+      "scene": {
+        "function": "scene",
+        "arguments": {
+          "o": {
+            "state": {
+              "heights": [
+                3,
+                7,
+                4,
+                6,
+                6
+              ]
+            },
+            "phase": 0,
+            "pose": "count",
+            "speech": "These five scores are two, seven, four, six and six. We must include each one."
+          }
+        }
+      }
+    },
+    "previous_sha256": "7c3fb71ffecca302a01ca523999f533e5788d53d3044b39df5ca92536656bbeb",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-08",
+    "path": "F16/F16-08-range-and-spread.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "e305dba8ce9b7bf69bb61eeee5518e27c1d3cacae866e8f0b9c13ecc0eb7e4be",
+    "sha256": "62598d06ec96a9adce9c35f79d0f98e2ba5484a0bda0d1747114c99a38f8f479",
+    "engineId": "F16-08",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 9,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 166,
+        "checks": 166,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "62598d06ec96a9adce9c35f79d0f98e2ba5484a0bda0d1747114c99a38f8f479"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 8,
+      "data": {
+        "name": "Explain an outlier",
+        "pose": "think",
+        "narration": "A very unusual extreme value can make the range much larger.",
+        "prompt": "What happens if the outlier is removed?"
+      },
+      "config": {
+        "preset": "y7-range",
+        "events": [
+          "value",
+          "observation",
+          "endpoint",
+          "reset",
+          "preset",
+          "step",
+          "mode",
+          "hintUsed",
+          "correct"
+        ],
+        "presets": {
+          "y7-range": {
+            "lesson": "Y7-069",
+            "label": "Y7-069 · Find the range",
+            "title": "Range of test scores",
+            "context": "Find the distance from the smallest score to the largest score.",
+            "scale": [
+              1,
+              16
+            ],
+            "a": [
+              6,
+              3,
+              8,
+              5,
+              9,
+              7,
+              4
+            ],
+            "units": "marks",
+            "ext": 12
+          },
+          "y7-compare": {
+            "lesson": "Y7-070",
+            "label": "Y7-070 · Compare distributions",
+            "title": "Two reading groups",
+            "context": "Compare how widely the scores are spread across two groups.",
+            "scale": [
+              0,
+              16
+            ],
+            "a": [
+              8,
+              4,
+              10,
+              7,
+              6,
+              9,
+              5
+            ],
+            "b": [
+              7,
+              2,
+              13,
+              4,
+              11,
+              6,
+              8
+            ],
+            "units": "books"
+          },
+          "y8-compare": {
+            "lesson": "Y8-069",
+            "label": "Y8-069 · Compare spread",
+            "title": "Two sports teams",
+            "context": "Identify which team has a greater range before drawing a conclusion.",
+            "scale": [
+              0,
+              16
+            ],
+            "a": [
+              8,
+              3,
+              11,
+              5,
+              7,
+              4,
+              9
+            ],
+            "b": [
+              7,
+              1,
+              13,
+              5,
+              9,
+              3,
+              11
+            ],
+            "units": "points"
+          },
+          "y9-outlier": {
+            "lesson": "Y9-048",
+            "label": "Y9-048 · Spread and outliers",
+            "title": "Investigate an outlier",
+            "context": "An unusual value can widen the range without shifting most observations.",
+            "scale": [
+              0,
+              22
+            ],
+            "a": [
+              9,
+              5,
+              11,
+              8,
+              20,
+              7,
+              6,
+              10
+            ],
+            "b": [
+              8,
+              4,
+              10,
+              12,
+              6,
+              9,
+              7,
+              8
+            ],
+            "units": "minutes",
+            "outlier": 20
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "03fbc2f28b00f6e1f7a228e61e7845023c0d906c6c1ca890b5c8ed7a2ae86c03",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-09",
+    "path": "F16/F16-09-grouped-frequency.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS",
+      "speeches"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "821482d4ae75ccb584582a4af8d83842fb8bc1072c6ef90d616bbf47e9bf1ab2",
+    "sha256": "4077ffa8c574cd6c0f02138918994152b2d79518fca3031c14bc19d998c7ff18",
+    "engineId": "F16-09",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 9,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "4077ffa8c574cd6c0f02138918994152b2d79518fca3031c14bc19d998c7ff18"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 8,
+      "data": {
+        "name": "Interpret the estimate",
+        "pose": "celebrate",
+        "narration": "Divide the weighted midpoint total by the total frequency. Without the original values, this is an estimate.",
+        "prompt": "Why is the grouped mean not necessarily exact?"
+      },
+      "config": {
+        "preset": "y8-tables",
+        "events": [
+          "value",
+          "frequency",
+          "observation",
+          "preset",
+          "mode",
+          "step",
+          "hintUsed",
+          "correct",
+          "reset"
+        ],
+        "presets": {
+          "y8-tables": {
+            "lesson": "Y8-064",
+            "label": "Y8-064 · Grouped frequencies",
+            "title": "Journeys to school",
+            "context": "How are journey times distributed across equal ten-minute intervals?",
+            "bounds": [
+              1,
+              10,
+              20,
+              30,
+              40
+            ],
+            "frequencies": [
+              3,
+              5,
+              4,
+              2
+            ],
+            "raw": [
+              6,
+              15,
+              24,
+              3,
+              34,
+              14,
+              26,
+              19,
+              11,
+              22,
+              9,
+              37,
+              18,
+              27
+            ],
+            "unit": "minutes"
+          },
+          "y8-mean": {
+            "lesson": "Y8-065",
+            "label": "Y8-065 · Estimated mean",
+            "title": "Grouped travel times",
+            "context": "Use class midpoints and frequencies to estimate a mean time.",
+            "bounds": [
+              0,
+              10,
+              20,
+              30,
+              40
+            ],
+            "frequencies": [
+              2,
+              5,
+              4,
+              1
+            ],
+            "raw": [
+              2,
+              11,
+              25,
+              15,
+              4,
+              32,
+              12,
+              21,
+              19,
+              26,
+              24,
+              17
+            ],
+            "unit": "minutes"
+          },
+          "y9-repr": {
+            "lesson": "Y9-047",
+            "label": "Y9-047 · Represent grouped data",
+            "title": "Practice scores",
+            "context": "Choose a scale, read grouped bars and use class midpoints cautiously.",
+            "bounds": [
+              0,
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            "frequencies": [
+              2,
+              3,
+              6,
+              4,
+              1
+            ],
+            "raw": [
+              2,
+              14,
+              25,
+              33,
+              8,
+              22,
+              45,
+              19,
+              29,
+              16,
+              31,
+              23,
+              38,
+              27,
+              36,
+              24
+            ],
+            "unit": "marks"
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "59e5bd2e8d3d2b68ea6ab9505602e4b3d5a83ead19049ffb2d2ad8fe0ea39f87",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-10",
+    "path": "F16/F16-10-scatter-and-best-fit.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS",
+      "speech"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "82e65653098977151b688455f8c59e0417efa8db5a410d56ed0db825a8654308",
+    "sha256": "062e6c9787717f79af9cc22cbe33eb343c3805d6a96aba065986046d079e115b",
+    "engineId": "F16-10",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 10,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 173,
+        "checks": 173,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "062e6c9787717f79af9cc22cbe33eb343c3805d6a96aba065986046d079e115b"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 9,
+      "data": {
+        "name": "Interpret the relationship",
+        "pose": "explain",
+        "narration": "Association does not prove causation. Interpret what the data can and cannot establish.",
+        "prompt": "What other variables could explain the pattern?"
+      },
+      "config": {
+        "preset": "y8-scatter",
+        "events": [
+          "value",
+          "point",
+          "line",
+          "preset",
+          "mode",
+          "step",
+          "hintUsed",
+          "correct",
+          "reset"
+        ],
+        "presets": {
+          "y8-scatter": {
+            "lesson": "Y8-066",
+            "label": "Y8-066 · Scatter and best fit",
+            "title": "Revision and assessment",
+            "context": "Does greater revision time tend to go with a higher assessment score?",
+            "xLab": "Revision hours",
+            "yLab": "Score (%)",
+            "xMax": 11,
+            "xTick": 2,
+            "yMax": 100,
+            "yTick": 20,
+            "pairs": [
+              [
+                1,
+                22
+              ],
+              [
+                2,
+                36
+              ],
+              [
+                3,
+                37
+              ],
+              [
+                4,
+                51
+              ],
+              [
+                5,
+                59
+              ],
+              [
+                6,
+                67
+              ],
+              [
+                7,
+                74
+              ],
+              [
+                8,
+                83
+              ],
+              [
+                9,
+                84
+              ]
+            ],
+            "predictX": 6,
+            "compareX": 10,
+            "warning": "The points suggest an association, not a guarantee for any pupil."
+          },
+          "y9-correlation": {
+            "lesson": "Y9-050",
+            "label": "Y9-050 · Correlation",
+            "title": "Activity and resting pulse",
+            "context": "Look for a negative association, but do not assume one variable causes the other.",
+            "xLab": "Activity hours",
+            "yLab": "Pulse rate",
+            "xMax": 10,
+            "xTick": 2,
+            "yMax": 100,
+            "yTick": 20,
+            "pairs": [
+              [
+                1,
+                91
+              ],
+              [
+                2,
+                82
+              ],
+              [
+                3,
+                79
+              ],
+              [
+                4,
+                65
+              ],
+              [
+                5,
+                70
+              ],
+              [
+                6,
+                57
+              ],
+              [
+                7,
+                50
+              ],
+              [
+                8,
+                45
+              ],
+              [
+                9,
+                40
+              ]
+            ],
+            "predictX": 5,
+            "compareX": 10,
+            "warning": "Correlation cannot prove cause and effect. Other factors may matter."
+          },
+          "y9-prediction": {
+            "lesson": "Y9-051",
+            "label": "Y9-051 · Prediction and fit",
+            "title": "Distance and delivery cost",
+            "context": "Use a reasonable best-fit line for estimates within and beyond the observed distances.",
+            "xLab": "Distance (km)",
+            "yLab": "Cost (£)",
+            "xMax": 12,
+            "xTick": 2,
+            "yMax": 80,
+            "yTick": 20,
+            "pairs": [
+              [
+                1,
+                13
+              ],
+              [
+                2,
+                14
+              ],
+              [
+                3,
+                23
+              ],
+              [
+                4,
+                23
+              ],
+              [
+                5,
+                29
+              ],
+              [
+                6,
+                33
+              ],
+              [
+                7,
+                33
+              ],
+              [
+                8,
+                42
+              ],
+              [
+                9,
+                46
+              ]
+            ],
+            "predictX": 6,
+            "compareX": 11,
+            "warning": "Predictions outside observed x-values are extrapolations and become less reliable."
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "a36f19fbfabe3f647619e8d58fbd843f6b030f081d402aeb3f2b983e0bc5cf1b",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-11",
+    "path": "F16/F16-11-two-way-tables.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "d5165bb12e8d8e98be6cf045b1ee31d3f4f9fb4a6a3ac3adf0a6fe60919df177",
+    "sha256": "1b644ecb42d7c9fa00cde1303dc4df5a380dbdad2648f1faba2b1f15bfe0fcc3",
+    "engineId": "F16-11",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 10,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "1b644ecb42d7c9fa00cde1303dc4df5a380dbdad2648f1faba2b1f15bfe0fcc3"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 9,
+      "data": {
+        "name": "Explain and check",
+        "pose": "celebrate",
+        "narration": "A clear two-way table connects the inside counts to the row, column and grand totals. Always state which group a fraction describes.",
+        "prompt": "How can you check that nobody has been counted twice?"
+      },
+      "config": {
+        "preset": "y8-table",
+        "events": [
+          "value",
+          "cell",
+          "preset",
+          "mode",
+          "step",
+          "correct",
+          "hintUsed",
+          "reset"
+        ],
+        "presets": {
+          "y7-probability": {
+            "lesson": "Y7-077",
+            "label": "Y7-077 · Probability tables",
+            "title": "Travel to school",
+            "context": "Students in two classes recorded whether they travelled by bus or walked.",
+            "rows": [
+              "Class A",
+              "Class B"
+            ],
+            "cols": [
+              "Bus",
+              "Walk"
+            ],
+            "counts": [
+              [
+                12,
+                8
+              ],
+              [
+                6,
+                14
+              ]
+            ],
+            "question": {
+              "type": "joint",
+              "row": 0,
+              "col": 0,
+              "description": "Class A AND travelled by bus"
+            }
+          },
+          "y8-table": {
+            "lesson": "Y8-067",
+            "label": "Y8-067 · Two-way tables",
+            "title": "After-school activities",
+            "context": "Two classes recorded their choice of after-school activities.",
+            "rows": [
+              "Class A",
+              "Class B"
+            ],
+            "cols": [
+              "Art",
+              "Sport",
+              "Music"
+            ],
+            "counts": [
+              [
+                15,
+                6,
+                5
+              ],
+              [
+                8,
+                12,
+                10
+              ]
+            ],
+            "question": {
+              "type": "conditional",
+              "row": 1,
+              "col": 2,
+              "description": "chose Music, among Class B"
+            }
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "588bc16edb62164ccd323ddd0a85f306cefce2df545fc4924b7e09525383e85d",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-12",
+    "path": "F16/F16-12-histogram.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "d1bf1977914123def5fb1938cc0f46424a36f3ad8b5dbe7df79403a483c05a6e",
+    "sha256": "c4d12c745611b0b05dd92c99db630fc6aa370f9bd9b7b9ebe934ba22fe1ade19",
+    "engineId": "F16-12",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 9,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 171,
+        "checks": 171,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "c4d12c745611b0b05dd92c99db630fc6aa370f9bd9b7b9ebe934ba22fe1ade19"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 8,
+      "data": {
+        "name": "Explain what the histogram means",
+        "pose": "celebrate",
+        "narration": "A correct histogram has a continuous horizontal scale, bars that touch, and frequency density on the vertical axis. Area represents frequency.",
+        "prompt": "What is the difference between a histogram and a bar chart?"
+      },
+      "config": {
+        "preset": "y8-frequency",
+        "events": [
+          "value",
+          "frequency",
+          "density",
+          "preset",
+          "mode",
+          "step",
+          "correct",
+          "hintUsed",
+          "reset"
+        ],
+        "presets": {
+          "y8-frequency": {
+            "lesson": "Y8-064",
+            "label": "Y8-064 · Class intervals",
+            "title": "Journey durations",
+            "context": "Grouped journey times show why different class widths need frequency density.",
+            "bounds": [
+              1,
+              5,
+              15,
+              20,
+              40
+            ],
+            "frequencies": [
+              4,
+              8,
+              6,
+              10
+            ],
+            "unit": "min"
+          },
+          "y8-mean": {
+            "lesson": "Y8-065",
+            "label": "Y8-065 · Grouped estimates",
+            "title": "Travel times and estimates",
+            "context": "Read uneven class widths and use midpoints for an estimated mean.",
+            "bounds": [
+              0,
+              10,
+              20,
+              40,
+              60
+            ],
+            "frequencies": [
+              5,
+              9,
+              12,
+              4
+            ],
+            "unit": "min"
+          },
+          "y9-represent": {
+            "lesson": "Y9-047",
+            "label": "Y9-047 · Represent grouped data",
+            "title": "Study time distribution",
+            "context": "Compare unequal-width histogram bars by area, rather than height alone.",
+            "bounds": [
+              0,
+              5,
+              15,
+              35,
+              50
+            ],
+            "frequencies": [
+              3,
+              12,
+              10,
+              6
+            ],
+            "unit": "min"
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "479f918dd1f2f8ed03ffe273ed3de0e970d51741744d8206e538947928178350",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-13",
+    "path": "F16/F16-13-box-plot-and-cumulative-frequency.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "26f59c4f71aa3eb26216dcf1f8c2c7ccdbf023a427d84bd7876ce29c122e1600",
+    "sha256": "01064b789dd75d687d6fd7df6f9803b3cba9a49d08e3d345a349519dd27e19db",
+    "engineId": "F16-13",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 10,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 171,
+        "checks": 171,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "01064b789dd75d687d6fd7df6f9803b3cba9a49d08e3d345a349519dd27e19db"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 9,
+      "data": {
+        "name": "State a justified conclusion",
+        "pose": "celebrate",
+        "narration": "Use the median and interquartile range as evidence. For grouped data, say explicitly that the quartiles are estimates.",
+        "prompt": "What evidence supports your comparison?"
+      },
+      "config": {
+        "preset": "y8-compare",
+        "events": [
+          "value",
+          "observation",
+          "quartile",
+          "frequency",
+          "preset",
+          "mode",
+          "step",
+          "correct",
+          "hintUsed",
+          "reset"
+        ],
+        "presets": {
+          "y8-compare": {
+            "lesson": "Y8-069",
+            "label": "Y8-069 · Compare spread",
+            "title": "Compare practice scores",
+            "desc": "Compare two distributions using the median and interquartile range.",
+            "scale": [
+              1,
+              20
+            ],
+            "sets": [
+              [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              [
+                4,
+                5,
+                5,
+                6,
+                7,
+                8,
+                8,
+                9,
+                9,
+                10,
+                11,
+                12
+              ]
+            ]
+          },
+          "y9-grouped": {
+            "lesson": "Y9-047",
+            "label": "Y9-047 · Grouped cumulative frequency",
+            "title": "Journey times · grouped",
+            "desc": "Read estimated quartiles from cumulative frequency, using class-width interpolation.",
+            "scale": [
+              0,
+              50
+            ],
+            "bounds": [
+              0,
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            "freq": [
+              2,
+              6,
+              10,
+              6,
+              2
+            ],
+            "grouped": true
+          },
+          "y9-outlier": {
+            "lesson": "Y9-048",
+            "label": "Y9-048 · Spread and outliers",
+            "title": "Outlying journey time",
+            "desc": "See how an extreme observation changes the range but not necessarily the middle 50%.",
+            "scale": [
+              0,
+              30
+            ],
+            "sets": [
+              [
+                6,
+                7,
+                7,
+                8,
+                8,
+                9,
+                9,
+                10,
+                10,
+                11,
+                12,
+                27
+              ]
+            ]
+          },
+          "y9-compare": {
+            "lesson": "Y9-049",
+            "label": "Y9-049 · Evidence-based comparison",
+            "title": "Compare examination scores",
+            "desc": "Use both median and IQR when comparing two sets, rather than a single extreme.",
+            "scale": [
+              0,
+              20
+            ],
+            "sets": [
+              [
+                6,
+                7,
+                7,
+                8,
+                8,
+                9,
+                10,
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              [
+                4,
+                5,
+                6,
+                7,
+                7,
+                8,
+                9,
+                10,
+                10,
+                11,
+                12,
+                16
+              ]
+            ]
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "b79e8192f9d1127468b034bc5ceb9d90ee0ae152049fe05c17b85d7eeb427c95",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-14",
+    "path": "F16/F16-14-misleading-graph-spotter.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "07bc97067161409934d01939febe88cda0aee11a5cf5e85f60013cde7eba43db",
+    "sha256": "e13a35aee1580ef04379d27c4268d8e83d517853113033d2148934f8ec5041df",
+    "engineId": "F16-14",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 9,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "e13a35aee1580ef04379d27c4268d8e83d517853113033d2148934f8ec5041df"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 8,
+      "data": {
+        "name": "Defend an evidence-based conclusion",
+        "pose": "celebrate",
+        "narration": "State a conclusion supported by the data and acknowledge the limits of that evidence.",
+        "prompt": "How would you explain the correction?"
+      },
+      "config": {
+        "preset": "y7-bar",
+        "events": [
+          "value",
+          "repair",
+          "preset",
+          "mode",
+          "step",
+          "correct",
+          "hintUsed",
+          "reset"
+        ],
+        "presets": {
+          "y7-pictogram": {
+            "lesson": "Y7-066",
+            "label": "Y7-066 · Pictogram key",
+            "title": "Reading a picture chart",
+            "kind": "pictogram",
+            "desc": "Every icon represents three pupils, but the misleading key claims six.",
+            "names": [
+              "Apples",
+              "Bananas",
+              "Pears"
+            ],
+            "counts": [
+              12,
+              19,
+              9
+            ],
+            "trueKey": 3,
+            "falseKey": 6,
+            "expected": 18,
+            "wrong": 36,
+            "fault": "An incorrect pictogram key exaggerates every category.",
+            "repair": "One symbol = 3 pupils. The key agrees with the frequency data.",
+            "prompt": "Which key makes the symbols match the source counts?",
+            "options": [
+              "The key must agree with frequencies",
+              "More symbols always mean the key is correct",
+              "A pictogram needs no key"
+            ],
+            "correct": 0
+          },
+          "y7-bar": {
+            "lesson": "Y7-071",
+            "label": "Y7-071 · Cropped bar axis",
+            "title": "A very dramatic bar chart?",
+            "kind": "bar",
+            "desc": "A vertical scale starting at 48 makes a difference of seven look enormous.",
+            "names": [
+              "Oak",
+              "Ash",
+              "Elm"
+            ],
+            "counts": [
+              52,
+              56,
+              59
+            ],
+            "expected": 7,
+            "wrong": 59,
+            "fault": "The axis begins at 48, making small differences look much larger.",
+            "repair": "The vertical scale now starts at zero; the same values are plotted.",
+            "prompt": "What changed when the graph was repaired?",
+            "options": [
+              "The underlying values changed",
+              "The vertical axis now starts at zero",
+              "The categories were renamed"
+            ],
+            "correct": 1
+          },
+          "y9-distribution": {
+            "lesson": "Y9-049",
+            "label": "Y9-049 · Comparing spread",
+            "title": "Same mean, different spread",
+            "kind": "spread",
+            "desc": "Two teams have the same mean, but very different ranges.",
+            "sets": [
+              [
+                6,
+                8,
+                10,
+                12,
+                14
+              ],
+              [
+                9,
+                9,
+                10,
+                11,
+                11
+              ]
+            ],
+            "expected": 8,
+            "wrong": 2,
+            "fault": "The claim compares only means and ignores a much wider range for Team A.",
+            "repair": "Both means are 10, but Team A has range 8 and Team B range 2.",
+            "prompt": "Which statement is justified by both datasets?",
+            "options": [
+              "Equal means prove the spreads are equal",
+              "Team B has a greater mean",
+              "The means are equal but Team A has greater spread"
+            ],
+            "correct": 2
+          },
+          "y9-correlation": {
+            "lesson": "Y9-050",
+            "label": "Y9-050 · Correlation and causation",
+            "title": "Association is not proof",
+            "kind": "scatter",
+            "desc": "Six pairs show positive association but not proof that one variable causes another.",
+            "points": [
+              [
+                2,
+                35
+              ],
+              [
+                3,
+                42
+              ],
+              [
+                4,
+                56
+              ],
+              [
+                5,
+                59
+              ],
+              [
+                6,
+                70
+              ],
+              [
+                7,
+                73
+              ]
+            ],
+            "expected": 6,
+            "wrong": 73,
+            "fault": "The title claims the graph proves a causal relationship.",
+            "repair": "The pattern shows positive association; other variables may be involved.",
+            "prompt": "What conclusion follows from the scatter graph alone?",
+            "options": [
+              "There is positive association, not proven causation",
+              "Every extra hour must cause ten extra marks",
+              "The two measures have no relationship"
+            ],
+            "correct": 0
+          },
+          "y9-sampling": {
+            "lesson": "Y9-052",
+            "label": "Y9-052 · Sampling bias",
+            "title": "Who was actually asked?",
+            "kind": "sample",
+            "desc": "Sixteen of twenty members of a sports club preferred an activity. It does not describe the entire school.",
+            "names": [
+              "Yes",
+              "No"
+            ],
+            "counts": [
+              16,
+              4
+            ],
+            "expected": 80,
+            "wrong": 100,
+            "fault": "The caption generalises twenty club members to every school pupil.",
+            "repair": "80% of twenty surveyed sports-club members preferred it; the school-wide result is unknown.",
+            "prompt": "Which limitation must be reported?",
+            "options": [
+              "Twenty surveyed people represent every pupil",
+              "One club may not represent the whole school",
+              "The sample had no respondents"
+            ],
+            "correct": 1
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "f21a7c095c363b7754ddbd0a0c4ae7dac1de27ddd5c53f23244f21d4677e597d",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-15",
+    "path": "F16/F16-15-sampling-visual.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "ROLES",
+      "STEPS"
+    ],
+    "draws": {
+      "stageScene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "seed": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "0be773a615feb1bdd758acc4ab7ae93971c114d3e3faaa47c9fc5e0216f6441a",
+    "sha256": "6031eb90ab096351f6280ea01cff754efded0fa1c69f5eee61212943831132d2",
+    "engineId": "F16-15",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 10,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "6031eb90ab096351f6280ea01cff754efded0fa1c69f5eee61212943831132d2"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 9,
+      "data": {
+        "name": "Give a careful conclusion",
+        "pose": "celebrate",
+        "narration": "Describe the sampled group, its method and any uncertainty before making a claim about the population.",
+        "prompt": "What can the evidence support?"
+      },
+      "config": {
+        "preset": "y7-065",
+        "events": [
+          "value",
+          "selected",
+          "removed",
+          "method",
+          "preset",
+          "step",
+          "correct",
+          "hintUsed",
+          "mode",
+          "reset"
+        ],
+        "presets": {
+          "y7-065": {
+            "lesson": "Y7-065",
+            "label": "Y7-065 · Collecting data",
+            "title": "Who did we ask?",
+            "description": "A school has 60 pupils wearing three team colours. Which 12 could we ask?",
+            "groups": [
+              "Blue",
+              "Orange",
+              "Cyan"
+            ],
+            "counts": [
+              31,
+              18,
+              12
+            ],
+            "context": "team colours",
+            "warning": "A sample only represents the pupils it reaches."
+          },
+          "y9-052": {
+            "lesson": "Y9-052",
+            "label": "Y9-052 · Sampling and bias",
+            "title": "Do we represent the school?",
+            "description": "Of 60 journeys to school, 30 walk, 18 use the bus and 12 cycle.",
+            "groups": [
+              "Walk",
+              "Bus",
+              "Cycle"
+            ],
+            "counts": [
+              30,
+              18,
+              12
+            ],
+            "context": "travel choices",
+            "warning": "Asking only at the cycle shelter gives a biased sample."
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "bc3acdcbdc790d0c58bb352f00cc37d9416312a2f6652ea77b9222bde591bd90",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F16-16",
+    "path": "F16/F16-16-data-collection-designer.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "R",
+      "STEPS"
+    ],
+    "draws": {
+      "stageScene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "0f6bf19577eb114f1716ba75eeda93b6a4544037ad7d67f40e4645ee03927202",
+    "sha256": "4a0396b00966405607570f303c2944357422f72ff510d43acacd2415793a6dad",
+    "engineId": "F16-16",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 10,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 166,
+        "checks": 166,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "4a0396b00966405607570f303c2944357422f72ff510d43acacd2415793a6dad"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 9,
+      "data": {
+        "name": "Make a fair conclusion",
+        "pose": "celebrate",
+        "narration": "Report what the data actually says, alongside the survey question and how the pupils were selected.",
+        "prompt": "What evidence supports the claim?"
+      },
+      "config": {
+        "preset": "y7-065",
+        "events": [
+          "value",
+          "question",
+          "audience",
+          "recorded",
+          "removed",
+          "preset",
+          "step",
+          "correct",
+          "hintUsed",
+          "mode",
+          "reset"
+        ],
+        "presets": {
+          "y7-065": {
+            "lesson": "Y7-065",
+            "label": "Y7-065 · Collect and organise",
+            "title": "Design a class survey",
+            "subtitle": "Which after-school activity is most popular?",
+            "groups": [
+              "Reading",
+              "Sport",
+              "Art",
+              "Music"
+            ],
+            "data": [
+              2,
+              0,
+              3,
+              1,
+              2,
+              1,
+              0,
+              3,
+              2,
+              1,
+              3,
+              1
+            ],
+            "question": [
+              "Which activity do you enjoy most after school?",
+              "Everyone loves sport. Is it your favourite?",
+              "Which sports and books do you like?"
+            ],
+            "audience": [
+              "Across the class",
+              "Only the sports club"
+            ],
+            "venue": "school classroom",
+            "totals": [
+              2,
+              5,
+              2,
+              3
+            ]
+          },
+          "y9-052": {
+            "lesson": "Y9-052",
+            "label": "Y9-052 · Sampling and bias",
+            "title": "Design a travel survey",
+            "subtitle": "How do pupils usually travel to school?",
+            "groups": [
+              "Walk",
+              "Bus",
+              "Cycle",
+              "Car"
+            ],
+            "data": [
+              2,
+              0,
+              1,
+              2,
+              0,
+              3,
+              1,
+              2,
+              0,
+              1,
+              0,
+              2
+            ],
+            "question": [
+              "How do you usually get to school?",
+              "Cycling is best. Do you agree?",
+              "How do you walk and cycle to school?"
+            ],
+            "audience": [
+              "Across the whole school",
+              "Only the cycle shelter"
+            ],
+            "venue": "school gates and classes",
+            "totals": [
+              4,
+              3,
+              4,
+              1
+            ]
+          }
+        },
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "1d57ee15518a4ade44667730198993715faf178749fd7a99b789c3e06746c01f",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  }
+]

@@ -1,0 +1,566 @@
+{
+ "family": "F6",
+ "revision": "2026-10-17",
+ "componentCount": 14,
+ "upgradedCount": 11,
+ "presetOnlyCount": 3,
+ "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+ "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+ "components": [
+  {
+   "id": "F6-01",
+   "name": "Ratio table",
+   "path": "F6/F6-01-ratio-table.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "9cc1f7dfc526d6330fb011575d56da2a4793dec49db2e795ae18d49cee15f357",
+   "originalSha256": "1d3eb649e81b197f13c0c37b5cbf48252a2fd87e8c63d716976a6b034ab78477",
+   "nativeSteps": 6,
+   "draws": "{\"stageScene\":[\"stage\",\"p\",\"opt\"]}",
+   "tables": "['STEPS','CHALLENGES']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 12.5,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 12.5,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native step-1 view (capped there), which shows only the known pair and \"?\" cells. The relationship card shows y/x as a rate, which is a given, not the answer.",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [689]",
+    "F6 data.lesson hook (concealed view: step cap 1) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F6-02",
+   "name": "Double number line",
+   "path": "F6/F6-02-double-number-line.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "dada71ed6f48b5503d73721e0d596efe789e1fda2ea91f124abb4097554e12ec",
+   "originalSha256": "6b5fc035c98581a7ab4cdfacad1934640aaa1f6d74a871e8cf24a73be6dc2480",
+   "nativeSteps": 5,
+   "draws": "{\"makeScene\":[\"stage\",\"p\",\"opt\"]}",
+   "tables": "['STEPS','CHALLENGES']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11.93,
+     "p10": 11.93
+    },
+    "fresh": {
+     "median": 11.93,
+     "p10": 11.93
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Phase 0 and the concealed view use the native Challenge view, which labels only 0 and the known pair on the bottom line. From native step 3 (\"both lines stretch\") onwards the full bottom scale is labelled by design, so the answer is visible from phase 2.",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [680]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F6-03",
+   "name": "Sharing in a ratio",
+   "path": "F6/F6-03-sharing-in-a-ratio.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "e8917ad3c3880a26d270cbd0389b930ec2f5c76be88f6e36d20487a59826e391",
+   "originalSha256": "dff23e20a6130f830ecdf616596201b26809f72b42fa4b6b0bd7072adc491a6c",
+   "nativeSteps": 7,
+   "draws": "{\"stageScene\":[\"stage\",\"p\",\"o\"]}",
+   "tables": "['STEPS']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 12.05,
+     "p10": 11.05
+    },
+    "fresh": {
+     "median": 12.05,
+     "p10": 11.05
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view (total and parts, shares \"?\"). The step 5 and 6 captions now come from the drawn ratio; they had been fixed to the 2:3 / £30 example.",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind",
+    "step 5/6 captions computed from the ratio (were fixed to the 2:3 £30 example)"
+   ]
+  },
+  {
+   "id": "F6-04",
+   "name": "Simplifying ratios",
+   "path": "F6/F6-04-simplifying-ratios.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "1c427ff7b31aac1865da3666fffbac637f135c8bb48f861978e5c88a069bf501",
+   "originalSha256": "a4bb3c01df7d95622e7ff64f82559502d54d60c91e8791f2ad08abcd3214a34f",
+   "nativeSteps": 6,
+   "draws": "{\"scene\":[\"stage\",\"p\",\"o\"]}",
+   "tables": "['STEPS']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11.31,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11.31,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view at step 2. Answers are text (for example 2:3).",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F6-05",
+   "name": "Recipe scaler",
+   "path": "F6/F6-05-recipe-scaler.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "64860b397c7592f488cedc04c724af51b944f364a6d0f26873892ad867de52c7",
+   "originalSha256": "dee139ce24f79c0f383fbb67534a0ab99ce046f898f9c3f529b38c531d10d719",
+   "nativeSteps": 6,
+   "draws": "{\"scene\":[\"stage\",\"p\",\"o\"]}",
+   "tables": "['STEPS']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11.4,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11.4,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view (start and target servings, factor, every new amount \"?\").",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F6-06",
+   "name": "Best-buy comparer",
+   "path": "F6/F6-06-best-buy-comparer.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "80b17aeede631b387dc9a616017dbeb84684d115c37729f5be1e960f679f8106",
+   "originalSha256": "90cccc095d2386d9a9bafe694ea1ae0ca04dcd6e1ac68f22cbaf08319be63a2d",
+   "nativeSteps": 6,
+   "draws": "{\"draw\":[\"stage\",\"p\",\"o\"]}",
+   "tables": "['STEPS']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11.9,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11.9,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view. The lesson answer is pack A’s pence per comparison amount; the native verdict (best buy) is not used as an answer.",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F6-07",
+   "name": "Map and scale drawing",
+   "path": "F6/F6-07-map-and-scale-drawing.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "6ab5bd840a040e21f51262399e59eb2236f5509799b7d872ec17743b39959e21",
+   "originalSha256": "bd4e273883baeb914497a9aff0da5af5b39ef760fc2b3b3f022c7270c96b26e9",
+   "nativeSteps": 6,
+   "draws": "{\"draw\":[\"stage\",\"p\",\"o\"]}",
+   "tables": "['STEPS']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view. The ruler and scale bar stay visible (they are the apparatus), so the questions avoid answers that appear as ruler or scale-bar numbers.",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F6-08",
+   "name": "Direct proportion graph",
+   "path": "F6/F6-08-direct-proportion-GALLERY-PREVIEW.html",
+   "status": "PRESET ONLY – NOT RUNNABLE",
+   "productionReady": false,
+   "challengeReady": false,
+   "presetOf": "F10-05",
+   "hostEngineAvailable": false,
+   "sourceSha256": "766ace632a5eecfba92b1f92b83c532dc4713c6d93c924f6eae8e7ff75f61003",
+   "reason": "Config-only preset for F10-05. That host engine is not in this codebase, so there is nothing to mount, wire into F0-12 or test. The file is delivered unchanged."
+  },
+  {
+   "id": "F6-09",
+   "name": "Inverse proportion rectangle",
+   "path": "F6/F6-09-inverse-proportion-rectangle.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "ec802c39272bdea35ada2a54f42f5b1006686194602dcba80ef847c2d4a677c3",
+   "originalSha256": "4c830dbc803f89838fe7884a5c8185c4ce09d57e6b53b9ce10b4f59c33f4f462",
+   "nativeSteps": 6,
+   "draws": "{\"graphic\":[\"stage\",\"p\",\"o\"]}",
+   "tables": "['STEPS']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Phase 0 and the concealed view use the native Challenge view; native step 0 states y for the start width. The questions avoid answers that appear as axis numbers.",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [1000]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F6-10",
+   "name": "Speed-distance-time",
+   "path": "F6/F6-10-speed-distance-time.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "c9d251b59116b691e57c2b17ac561f163e2e7d1eac073c2711badc3c8931f9bf",
+   "originalSha256": "a791461a02b178b955900e551302db881d29dda57f59202bb51f8b0ae522714e",
+   "nativeSteps": 7,
+   "draws": "{\"makeSVG\":[\"stage\",\"p\",\"o\"]}",
+   "tables": "['STEPS']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Phase 0 and the concealed view use the native Challenge view (the covered unknown). The leg values come from the lesson state. The native view shows the vehicle 60% of the way along (for example 90 km at 1.8 h). That position is consistent with the question but is not the answer, so the speed can still be worked out from it.",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [1000]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F6-11",
+   "name": "Rates-of-change tank",
+   "path": "F6/F6-11-rates-of-change-tank.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "70807a3294ff5a3e0c4afae3ce6140baae6c15b17e9302dbdf9da7cb6c7c9435",
+   "originalSha256": "8902c680a41dcdb960e5bc632883aefcd6d5c549eafdecca4e694c86f25765cd",
+   "nativeSteps": 8,
+   "draws": "{\"makeScene\":[\"stage\",\"p\",\"o\"]}",
+   "tables": "['STEPS']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Phase 0 and the concealed view use the native Challenge view. The graph end-point (for example 64 cm at 8 min) is a given, so pupils can work out the gradient.",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [1000]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F6-12",
+   "name": "Currency and unit bridges",
+   "path": "F6/F6-12-currency-unit-bridges-GALLERY-PREVIEW.html",
+   "status": "PRESET ONLY – NOT RUNNABLE",
+   "productionReady": false,
+   "challengeReady": false,
+   "presetOf": "F18-02",
+   "hostEngineAvailable": false,
+   "sourceSha256": "d56bcef20d84424d2ae44d8100a951777f881a5a3bb92f71d7cb129f9c5119fe",
+   "reason": "Config-only preset for F18-02. That host engine is not in this codebase, so there is nothing to mount, wire into F0-12 or test. The file is delivered unchanged."
+  },
+  {
+   "id": "F6-13",
+   "name": "Proportion in geometry",
+   "path": "F6/F6-13-proportion-in-geometry-GALLERY-PREVIEW.html",
+   "status": "PRESET ONLY – NOT RUNNABLE",
+   "productionReady": false,
+   "challengeReady": false,
+   "presetOf": "F14-11",
+   "hostEngineAvailable": false,
+   "sourceSha256": "51afe7e3e7e15a41c09ce53262934dcb2624d71a3336d7c0a10137907c2469d8",
+   "reason": "Config-only preset for F14-11. That host engine is not in this codebase, so there is nothing to mount, wire into F0-12 or test. The file is delivered unchanged."
+  },
+  {
+   "id": "F6-14",
+   "name": "Ratio and fraction translator",
+   "path": "F6/F6-14-ratio-fraction-translator.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "1da39b4d668420d7024fc24aab97d3a8b2fd34fa94d20fc573c5b5d5180456d5",
+   "originalSha256": "0421971deea9fcccf7085d0d229e6fd99dc957fd0b9606f1f4e1ae9a5557dfcb",
+   "nativeSteps": 6,
+   "draws": "{\"draw\":[\"stage\",\"p\",\"o\"]}",
+   "tables": "['STEPS']",
+   "valueInterface": "data.lesson = {state: partial native preset (same keys as the native presets), phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the concealed view.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 12.38,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 12.38,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view with the fraction dock hidden, so no option shows the answer. The step 4 and 5 captions now come from the ratio; they had been fixed to 2:3.",
+   "buildChanges": [
+    "canonical lesson API + F6 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F6 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind",
+    "step 4/5 captions computed from the ratio (were fixed to 2:3)"
+   ]
+  }
+ ]
+}
