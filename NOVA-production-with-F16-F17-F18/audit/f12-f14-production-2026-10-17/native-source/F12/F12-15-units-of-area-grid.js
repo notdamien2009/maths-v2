@@ -1,0 +1,83 @@
+
+/* ===== F12-15 CONFIG: parameters + named presets ===== */
+var NOVA_F12_15_CONFIG={
+  startMode:'watch',
+  preset:'cm',
+  pairs:[{id:'mm-cm',small:'mm',big:'cm',n:10},{id:'cm-m',small:'cm',big:'m',n:100},{id:'m-km',small:'m',big:'km',n:1000}],
+  presets:{
+    cm:{label:'mm² and cm²',pair:0,view:'grid',dir:'down',val:3},
+    m: {label:'cm² and m²',pair:1,view:'grid',dir:'down',val:2.5},
+    km:{label:'m² and km²',pair:2,view:'grid',dir:'down',val:0.5}
+  }
+};
+/* ===== F12-15 ENGINE ===== */
+(function(){
+var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=window.NovaV2Integration.configuration(NOVA_F12_15_CONFIG),P=C.presets,PR=C.pairs,strip=F.strip,fmt=F.fmt,clone=F.clone,VW=440,VH=290;
+function th(x){var s=String(Math.round(x*1e6)/1e6),p=s.split('.');p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,' ');return p.join('.');}
+/* st={pair,view:'grid'|'line',dir:'down'(big→small)|'up',val} */
+function draw(stage,st){
+if(window.NovaLessonComponent?.active){[stage,st]=window.NovaLessonComponent.args("draw",arguments);}
+var pr=PR[st.pair],n=pr.n,sv=S.root(VW,VH,'1 '+pr.big+' by 1 '+pr.big+' square split into '+n+' by '+n+' squares of 1 '+pr.small+', so 1 '+pr.big+'² = '+th(n*n)+' '+pr.small+'².');sv.classList.add('f12-sv');
+  if(st.view==='line'){var x0=50,x1=390,y=120,seg=(x1-x0)/10;NOVA.neonLine(sv,x0,y,x1,y,{role:'op',width:4});for(var i=0;i<=10;i++){NOVA.neonPath(sv,'M'+(x0+i*seg)+','+(y-(i%5===0?16:10))+' L'+(x0+i*seg)+','+(y+(i%5===0?16:10)),{role:'support',width:2});}
+    NOVA.dimLine(sv,x0,y,x1,y,'1 '+pr.big+' = '+th(n)+' '+pr.small,{role:'focus',off:44});S.pill(sv,x0+seg/2,y-34,'1 '+pr.small+(n>10?' ×'+n/10:''),{role:'given',size:12});
+    stage.appendChild(sv);return;}
+  var zoom=n>=100,S1=zoom?150:190,gx=zoom?34:(VW-S1)/2,gy=zoom?58:44,cells=10,cs=S1/cells;
+  NOVA.neonCells(sv,gx,gy,cells,cells,cs,{role:'result',hatch:'dots',cells:function(c,r){return !zoom||(c===0&&r===0);}});
+  var sq=NOVA.neonShape(sv,[[gx,gy],[gx+S1,gy],[gx+S1,gy+S1],[gx,gy+S1]],{role:'op',fill:false,width:3});sq.setAttribute('data-maths','square');
+  NOVA.dimLine(sv,gx,gy,gx+S1,gy,'1 '+pr.big,{role:'op',off:-22});if(!zoom)NOVA.dimLine(sv,gx+S1,gy,gx+S1,gy+S1,th(n)+' '+pr.small,{role:'given',off:24});
+  if(zoom){var zx=250,zy=gy;NOVA.neonCells(sv,zx,zy,10,10,cs,{role:'focus',hatch:'diag',cells:function(){return true;}});NOVA.neonShape(sv,[[zx,zy],[zx+S1,zy],[zx+S1,zy+S1],[zx,zy+S1]],{role:'focus',fill:false,width:3});
+    F.dash(sv,[gx+cs,gy],[zx,zy],'focus',1.6);F.dash(sv,[gx+cs,gy+cs],[zx,zy+S1],'focus',1.6);
+    var bl=n===100?'10 cm':'100 m',cl=n===100?'1 cm² each':'100 m² each',bt=n===100?'100 cm²':'10 000 m²';
+    S.pill(sv,gx+S1/2,gy+S1+22,'100 blocks',{role:'result',size:12});S.pill(sv,zx+S1/2,gy+S1+22,'one block = '+bt,{role:'focus',size:12});S.pill(sv,zx+S1/2,gy-18,'100 squares, '+cl,{role:'given',size:11});}
+  else S.pill(sv,gx+S1/2,gy+S1+30,'10 × 10 = 100 small squares',{role:'result',size:12});
+  stage.appendChild(sv);}
+function chips(stage,st,o){o=o||{};var pr=PR[st.pair],n=pr.n,f=n*n,items;
+  items=[['length','1 '+pr.big+' = '+th(n)+' '+pr.small,'given'],['area of 1 '+pr.big+'²',n+' × '+n+' = '+th(f)+' '+pr.small+'²','result']];
+  if(o.trap)items.push(['not','× '+n+' only','error']);
+  if(o.conv){var v=st.val;items.push(['convert',st.dir==='down'?th(v)+' '+pr.big+'² × '+th(f)+' = '+th(v*f)+' '+pr.small+'²':th(v)+' '+pr.small+'² ÷ '+th(f)+' = '+th(v/f)+' '+pr.big+'²','focus']);}
+  if(st.view==='line')items=[['length','1 '+pr.big+' = '+th(n)+' '+pr.small,'given'],['length factor','× '+n,'op']];
+  strip(stage,items);}
+var steps=[
+ {name:'Length first',mood:'neutral',narration:'Start with lengths. One centimetre is made of 10 millimetres. To change centimetres to millimetres you multiply by 10.',prompt:'How many millimetres in a centimetre?',st:{pair:0,view:'line',dir:'down',val:1},o:{}},
+ {name:'A square centimetre',mood:'focus',narration:'Now take a square that is 1 centimetre by 1 centimetre. Cut each side into 10 millimetres and the square is covered by 10 rows of 10 small squares: 100 square millimetres.',prompt:'How many small squares cover it?',st:{pair:0,view:'grid',dir:'down',val:1},o:{},target:'square'},
+ {name:'Not times 10',mood:'think',narration:'Lengths are times 10, but areas are times 10 times 10, which is 100. That is why 1 square centimetre is 100 square millimetres, not 10.',prompt:'Why is the area factor 100?',st:{pair:0,view:'grid',dir:'down',val:1},o:{trap:1}},
+ {name:'A square metre',mood:'cheer',narration:'A square metre is 100 centimetres by 100 centimetres. One block, 10 cm by 10 cm, holds 100 square centimetres, and there are 100 blocks. So 1 square metre is 10 000 square centimetres.',prompt:'How many blocks make a square metre?',st:{pair:1,view:'grid',dir:'down',val:1},o:{},target:'square'},
+ {name:'Convert down',mood:'focus',narration:'Going to a smaller unit, multiply. 2.5 square metres is 2.5 times 10 000, which is 25 000 square centimetres.',prompt:'Do you multiply or divide to go to a smaller unit?',st:{pair:1,view:'grid',dir:'down',val:2.5},o:{conv:1}},
+ {name:'Convert up',mood:'think',narration:'Going to a bigger unit, divide. 350 square millimetres divided by 100 is 3.5 square centimetres.',prompt:'Is 3.5 bigger or smaller than 350?',st:{pair:0,view:'grid',dir:'up',val:350},o:{conv:1}},
+ {name:'Square kilometres',mood:'cheer',narration:'A kilometre is 1000 metres, so a square kilometre is 1000 times 1000, which is 1 000 000 square metres. One block here is 100 m by 100 m, 10 000 square metres, and there are 100 blocks.',prompt:'How many square metres in a square kilometre?',st:{pair:2,view:'grid',dir:'down',val:1},o:{}}];
+function render(i,stage){stage.innerHTML='';var s=steps[i];NOVA.cap(stage,'Units of area grid · '+s.name,'step '+(i+1)+'/'+steps.length);draw(stage,s.st);chips(stage,s.st,s.o);NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
+var def={id:'F12-15',title:'Units of area grid',config:C,steps:steps,render:render,
+ alt:'Units of area grid: a square of side 1 unit is split into n by n small squares, showing that area units convert by n squared (100, 10 000, 1 000 000), not by n.',
+ staticAlt:'1 cm² = 100 mm². 1 m² = 10 000 cm². 1 km² = 1 000 000 m². Multiply to go to a smaller unit, divide to go to a larger unit.',
+ exploreIntro:'Explore: pick a pair of units, switch between the length line and the area grid, and convert a number up or down. The grid shows why the factor is squared.',
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var key=C.preset,st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>clone(...a),[P[key]]):(clone(P[key]))),box=h('div');
+   window.NovaLessonComponent?.applyExploreModels();function pg(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+PR[st.pair].big+'² and '+PR[st.pair].small+'²',st.view==='line'?'length':'area');draw(stage,st);chips(stage,st,{conv:st.view==='grid'});NOVA.scene.helperStrip(stage,'explain','factor '+th(PR[st.pair].n*PR[st.pair].n));}
+   window.NovaLessonComponent?.applyExploreModels();function build(){box.innerHTML='';box.appendChild(U.slider({label:'Number to convert',min:.5,max:50,step:.5,value:st.val,engine:'F12-15',onChange:function(v){st.val=v;pg();}}));}
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Units'});window.NovaLessonComponent?.applyExploreModels();Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=key;
+   window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){key=pre.value;st=clone(P[key]);vw.value=st.view;dr.value=st.dir;build();pg();NOVA.events.emit('value',{engine:'F12-15',control:'units',value:key});};
+   window.NovaLessonComponent?.applyExploreModels();var vw=h('select',{class:'nova-input','aria-label':'View'});window.NovaLessonComponent?.applyExploreModels();[['grid','Area grid'],['line','Length line']].forEach(function(o){vw.appendChild(h('option',{value:o[0],text:o[1]}));});window.NovaLessonComponent?.applyExploreModels();vw.value=st.view;window.NovaLessonComponent?.applyExploreModels();vw.onchange=function(){st.view=vw.value;pg();};
+   window.NovaLessonComponent?.applyExploreModels();var dr=h('select',{class:'nova-input','aria-label':'Direction'});window.NovaLessonComponent?.applyExploreModels();[['down','To the smaller unit (multiply)'],['up','To the bigger unit (divide)']].forEach(function(o){dr.appendChild(h('option',{value:o[0],text:o[1]}));});window.NovaLessonComponent?.applyExploreModels();dr.value=st.dir;window.NovaLessonComponent?.applyExploreModels();dr.onchange=function(){st.dir=dr.value;pg();NOVA.events.emit('value',{engine:'F12-15',control:'direction',value:st.dir});};
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Units ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['View ',vw]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Convert ',dr]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(box);window.NovaLessonComponent?.applyExploreModels();build();window.NovaLessonComponent?.applyExploreModels();pg();},
+ challenge:function(panel,api,stage){var A={pair:0,view:'grid',dir:'down',val:4},B={pair:1,view:'grid',dir:'up',val:30000},Cc={pair:1,view:'grid',dir:'down',val:1};
+   var tasks=[
+    {q:'Convert 4 cm² into mm².',build:NOVA.entryTask('Area (mm²)','F12-15'),check:function(x){var ok=x===400;return [ok,ok?'Yes: 4 × 100 = 400 mm².':x===40?'That multiplies by 10, which is for lengths. Area needs × 10 × 10 = × 100.':x===0.04?'You divided. Going to a smaller unit, multiply.':'Multiply by 100 (10 × 10).'];},hint:'1 cm² = 100 mm². Multiply 4 by 100.',solve:function(c){c._A.input.value='400';}},
+    {q:'Convert 30 000 cm² into m².',build:NOVA.entryTask('Area (m²)','F12-15'),check:function(x){var ok=x===3;return [ok,ok?'Yes: 30 000 ÷ 10 000 = 3 m².':x===300?'That divides by 100, which is for lengths. Area needs ÷ 100 ÷ 100 = ÷ 10 000.':x===3000?'That divides by 10 only. A square metre is 10 000 square centimetres.':'Divide by 10 000.'];},hint:'1 m² = 10 000 cm². Divide 30 000 by 10 000.',solve:function(c){c._A.input.value='3';}},
+    {q:'How many square centimetres are in 1 square metre?',build:NOVA.choiceTask(['100 cm²','1 000 cm²','10 000 cm²'],'F12-15'),check:function(x){var ok=x==='10 000 cm²';return [ok,ok?'Yes: 100 × 100 = 10 000.':x==='100 cm²'?'100 is the number of cm in 1 m. For area, square it: 100 × 100.':x==='1 000 cm²'?'1 000 does not come from 100 × 100. Square the 100.':'Pick one first.'];},hint:'1 m = 100 cm, so 1 m² = 100 × 100 cm².',solve:function(c){c._G.set('10 000 cm²');}}];
+   function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['cm² to mm²','cm² to m²','how many'][k]);draw(stage,[A,B,Cc][k]);strip(stage,[['find',['mm²','m²','cm² in 1 m²'][k],'focus']]);NOVA.scene.helperStrip(stage,'think',['× 100','÷ 10 000','Square it'][k]);}
+   NOVA.challengeRun(panel,api,tasks,paintC,C);}
+};
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F12-15',def,{models:{},tables:{"steps":()=>steps},draws:{"draw":["stage","st"]},exploreFields:{"st":{"kind":"factory","factory":"clone","argCount":1}}});
+NOVA.bankMount({id:'F12-15',num:'F12·15',title:'Units of area grid',def:def,linked:['F0-02','F0-11','F12-05','F12-14','F12-06','F13-12','F18-02'],
+ spec:{purpose:'Why area units convert by the square of the length factor. A 1-unit square is cut into n by n small squares, so 1 cm² is 100 mm², 1 m² is 10 000 cm² and 1 km² is 1 000 000 m². Multiply to go to a smaller unit, divide to go to a larger one.',
+  params:'preset (mm and cm, cm and m, m and km) with length factor n (10, 100, 1000); view (length line, area grid); direction (down or up); number to convert (0.5 to 50). For n of 100 or more the grid shows 100 blocks and zooms into one. Core: NOVA.neonCells / neonShape / dimLine / neonTile, NOVA.f12.dash. Year groups: KS3 Years 7–9 (12–15).',
+  presets:'mm² and cm² · cm² and m² · m² and km²',
+  steps:'Length first → A square centimetre → Not times 10 → A square metre → Convert down → Convert up → Square kilometres. Each step has a Sir Bob line and a Guided prompt; the helper points at the square.',
+  interactions:'Watch: auto-play. Guided: step with prompts. Explore: units, view, direction and a number slider; chips show the length factor, the area factor and the conversion. Challenge (3 tasks): cm² to mm²; cm² to m²; how many cm² in 1 m². Events: value, correct, step, hintUsed.',
+  traps:'Using the length factor for area (× 10 instead of × 100) · multiplying when going to a bigger unit · dividing by 100 instead of 10 000 for cm² to m² · counting 100 as the number of cm² in a m²',
+  gcse:'Extension: volume units (cm³ and m³, factor cubed), density and pressure unit conversions, speed units; linked: F12-05 area by counting, F12-14 area and perimeter, F13-12 capacity and volume conversion, F18-02 unit-conversion bridges'}});
+var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
+document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+

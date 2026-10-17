@@ -1,0 +1,90 @@
+
+/* ===== F12-10 CONFIG: parameters + named presets ===== */
+var NOVA_F12_10_CONFIG={
+  startMode:'watch',
+  preset:'L',
+  unit:'cm',
+  presets:{
+    L:    {label:'L-shape',kind:'L',W:6,H:5,t:2,params:[['Width','W',5,9,1],['Height','H',4,8,1],['Arm thickness','t',1,3,1]]},
+    T:    {label:'T-shape',kind:'T',W:8,t:2,s:2,hs:4,params:[['Bar width','W',6,10,2],['Bar thickness','t',1,3,1],['Stem width','s',2,4,2],['Stem height','hs',3,5,1]]},
+    frame:{label:'Frame (with a hole)',kind:'frame',W:8,H:6,w:3,hh:2,params:[['Outer width','W',6,10,1],['Outer height','H',5,8,1],['Hole width','w',1,5,1],['Hole height','hh',1,3,1]]},
+    semi: {label:'Rectangle and semicircle',kind:'semi',W:8,H:4,params:[['Width (diameter)','W',4,10,2],['Rectangle height','H',2,6,1]]}
+  }
+};
+/* ===== F12-10 ENGINE ===== */
+(function(){
+var h=NOVA.h,S=NOVA.svg,U=NOVA.ui,F=NOVA.f12,C=window.NovaV2Integration.configuration(NOVA_F12_10_CONFIG),P=C.presets,strip=F.strip,fmt=F.fmt,clone=F.clone,UN=C.unit,VW=440,VH=280,PI=Math.PI;
+function r2(x){return fmt(Math.round(x*100)/100);}
+function rc(r){return [[r[0],r[1]],[r[0]+r[2],r[1]],[r[0]+r[2],r[1]+r[3]],[r[0],r[1]+r[3]]];}
+/* geometry in cm, y down. returns outer polygon, holes, add parts, sub (box + cuts), area, perimeter, edge list */
+function geo(st){var W=st.W,H=st.H,t=st.t,o={holes:[],add:[],cuts:[],box:null,views:['shape','add','sub','perim']};
+  if(st.kind==='L'){o.poly=[[0,0],[W,0],[W,t],[t,t],[t,H],[0,H]];o.add=[{p:rc([0,0,W,t]),a:W*t},{p:rc([0,t,t,H-t]),a:t*(H-t)}];o.box=[0,0,W,H];o.cuts=[[t,t,W-t,H-t]];o.area=W*t+t*(H-t);}
+  else if(st.kind==='T'){var a=(W-st.s)/2,hs=st.hs;o.poly=[[0,0],[W,0],[W,t],[a+st.s,t],[a+st.s,t+hs],[a,t+hs],[a,t],[0,t]];o.add=[{p:rc([0,0,W,t]),a:W*t},{p:rc([a,t,st.s,hs]),a:st.s*hs}];o.box=[0,0,W,t+hs];o.cuts=[[0,t,a,hs],[a+st.s,t,a,hs]];o.area=W*t+st.s*hs;}
+  else if(st.kind==='frame'){var w=Math.min(st.w,W-2),hh=Math.min(st.hh,H-2),hx=(W-w)/2,hy=(H-hh)/2;o.poly=rc([0,0,W,H]);o.holes=[rc([hx,hy,w,hh])];o.add=[{p:rc([0,0,W,hy]),a:W*hy},{p:rc([0,hy+hh,W,hy]),a:W*hy},{p:rc([0,hy,hx,hh]),a:hx*hh},{p:rc([hx+w,hy,hx,hh]),a:hx*hh}];o.box=[0,0,W,H];o.cuts=[[hx,hy,w,hh]];o.area=W*H-w*hh;o.w=w;o.hh=hh;}
+  else{var r=W/2,arc=[];for(var k=0;k<=24;k++){var q=k*PI/24;arc.push([r+r*Math.cos(q),-r*Math.sin(q)]);}o.poly=[[0,H],[W,H]].concat(arc);o.add=[{p:rc([0,0,W,H]),a:W*H},{p:arc.concat([[0,0]]).slice(),a:PI*r*r/2,semi:1}];o.area=W*H+PI*r*r/2;o.views=['shape','add','perim'];o.r=r;}
+  var per=0,ed=[];if(st.kind==='semi'){ed=[[[0,H],[W,H],W],[[W,H],[W,0],H],[[0,0],[0,H],H]];per=W+2*H+PI*o.r;}
+  else{var polys=[o.poly].concat(o.holes);polys.forEach(function(Pl,pi){for(var i=0;i<Pl.length;i++){var a=Pl[i],b=Pl[(i+1)%Pl.length],l=Math.hypot(b[0]-a[0],b[1]-a[1]);per+=l;ed.push([a,b,l,pi]);}});}
+  o.perim=per;o.edges=ed;return o;}
+function fillEO(sv,polys,role,hatch){var d=polys.map(function(Pl){return 'M'+Pl.map(function(q){return q[0]+','+q[1];}).join(' L')+'Z';}).join(' ');S.el('path',{d:d,css:'fill:url(#nv-fill-'+role+');fill-rule:evenodd;stroke:none'},sv);if(hatch)S.el('path',{d:d,css:'fill:url(#'+NOVA.hatchId(sv,role,hatch)+');fill-rule:evenodd;stroke:none'},sv);}
+var ROLES=['op','focus','result','given'];
+function draw(stage,st,view){
+if(window.NovaLessonComponent?.active){[stage,st,view]=window.NovaLessonComponent.args("draw",arguments);}
+var g=geo(st),all=g.poly.concat.apply(g.poly,g.holes);var bb=g.box?rc(g.box):[];var m=F.map(all.concat(bb),VW,VH,40,48),Q=m(g.poly),H2=g.holes.map(m),
+  sv=S.root(VW,VH,'Compound shape ('+st.kind+') with area '+r2(g.area)+' '+UN+' squared.');sv.classList.add('f12-sv');
+  var hasV=g.views.indexOf(view)>=0?view:'add';
+  if(hasV==='shape'||hasV==='perim'){fillEO(sv,[Q].concat(H2),'op',hasV==='shape'?'cross':null);var gg=NOVA.neonShape(sv,Q,{role:hasV==='perim'?'result':'op',fill:false,width:3.2});gg.setAttribute('data-maths','shape');H2.forEach(function(hq){NOVA.neonShape(sv,hq,{role:hasV==='perim'?'result':'unknown',fill:false,width:3,dash:hasV==='perim'?null:'6 5'});});}
+  if(hasV==='add'){g.add.forEach(function(a,i){var q=m(a.p),sh=NOVA.neonShape(sv,q,{role:ROLES[i%4],hatch:i%2?'diag':'dots',width:2.6});sh.setAttribute('data-maths','part'+i);var c=F.cent(q);S.pill(sv,c[0],c[1]+(a.semi?-8:0),r2(a.a),{role:ROLES[i%4],size:12});});}
+  if(hasV==='sub'){var bx=m(rc(g.box));NOVA.neonShape(sv,bx,{role:'unknown',fill:false,width:2,dash:'8 6'});fillEO(sv,[Q],'op','cross');NOVA.neonShape(sv,Q,{role:'op',fill:false,width:3});g.cuts.forEach(function(c){var q=m(rc(c));NOVA.neonShape(sv,q,{role:'error',hatch:'diag',width:2.2});var cc=F.cent(q);S.pill(sv,cc[0],cc[1],r2(c[2]*c[3]),{role:'error',size:11});});var bc=m([[g.box[0]+g.box[2]/2,g.box[1]]])[0];S.pill(sv,bc[0],bc[1]-16,'box '+r2(g.box[2]*g.box[3]),{role:'given',size:12});}
+  if(hasV==='perim'){if(st.kind==='semi'){var E=g.edges.map(function(e){return [m([e[0]])[0],m([e[1]])[0],e[2]];});E.forEach(function(e,i){var mx=(e[0][0]+e[1][0])/2,my=(e[0][1]+e[1][1])/2,ox=i===1?30:i===2?-30:0,oy=i===0?18:0;S.pill(sv,mx+ox,my+oy,r2(e[2])+' '+UN,{role:'given',size:12});});var top=m([[g.r,-g.r]])[0];S.pill(sv,top[0],top[1]-16,'arc πr = '+r2(PI*g.r)+' '+UN,{role:'focus',size:11});}
+    else{var polys=[Q].concat(H2),cnt=0;polys.forEach(function(Pl,pi){for(var i=0;i<Pl.length;i++){var e=g.edges[cnt++],o2=F.outward(Pl,i,pi>0?-15:17);S.pill(sv,o2[0],o2[1],r2(e[2]),{role:'given',size:12});}});}}
+  stage.appendChild(sv);return g;}
+function chips(stage,st,view,g){var items=[];if(view==='add'||(view!=='shape'&&view!=='sub'&&view!=='perim')){items.push(['parts',g.add.map(function(a){return r2(a.a);}).join(' + ')+' = '+r2(g.area)+' '+UN+'²','result']);}
+  else if(view==='sub')items.push(['box minus cut',r2(g.box[2]*g.box[3])+' − '+g.cuts.map(function(c){return r2(c[2]*c[3]);}).join(' − ')+' = '+r2(g.area)+' '+UN+'²','result']);
+  else if(view==='perim')items.push(['perimeter',(st.kind==='semi'?st.W+' + '+st.H+' + '+st.H+' + '+r2(PI*g.r):g.edges.map(function(e){return r2(e[2]);}).join(' + '))+' = '+r2(g.perim)+' '+UN,'focus']);
+  else items.push(['area',r2(g.area)+' '+UN+'²','result'],['perimeter',r2(g.perim)+' '+UN,'focus']);strip(stage,items);}
+var L1=P.L,T1=P.T,F1=P.frame,S1=P.semi;
+var steps=[
+ {name:'A compound shape',mood:'neutral',narration:'A compound shape is built from simpler shapes. This L-shape is made from rectangles. To find its area we split it up, or take pieces away.',prompt:'What simple shapes can you see inside the L?',st:L1,view:'shape',target:'shape'},
+ {name:'Split into rectangles',mood:'focus',narration:'Cut the L into two rectangles: 6 by 2 is 12, and 2 by 3 is 6. Add them: 12 + 6 = 18 square centimetres.',prompt:'What is 12 + 6?',st:L1,view:'add',target:'part0'},
+ {name:'Or take a piece away',mood:'think',narration:'Or start with the big 6 by 5 rectangle, 30, and subtract the empty corner, 4 by 3, which is 12. 30 − 12 = 18. Same answer, different route.',prompt:'Which route is quicker for you?',st:L1,view:'sub'},
+ {name:'Perimeter: walk round',mood:'focus',narration:'For the perimeter, walk round the outside edge and add every side: 6 + 2 + 4 + 3 + 2 + 5 = 22. It equals the perimeter of the 6 by 5 box.',prompt:'Why does the L-shape have the same perimeter as its box?',st:L1,view:'perim'},
+ {name:'A T-shape',mood:'think',narration:'Split the T into a bar and a stem. The bar is 8 by 2, which is 16, and the stem is 2 by 4, which is 8. Together: 24 square centimetres.',prompt:'Which two rectangles make the T?',st:T1,view:'add'},
+ {name:'A shape with a hole',mood:'think',narration:'For a frame, subtract the hole. The outside is 8 by 6, 48. The hole is 3 by 2, 6. Area: 42. The perimeter counts both outlines: 28 + 10 = 38.',prompt:'Why does the hole add to the perimeter?',st:F1,view:'sub'},
+ {name:'Add a semicircle',mood:'cheer',narration:'Put a semicircle on a rectangle. The rectangle is 8 by 4, which is 32. The semicircle has radius 4: half of pi times 16 is about 25.13. Total: about 57.13.',prompt:'What fraction of a circle is a semicircle?',st:S1,view:'add'},
+ {name:'Perimeter with a curve',mood:'cheer',narration:'Walk round the outside: bottom 8, two sides of 4, and the curved edge. The arc is half a circumference, pi times 4, about 12.57. Total about 28.57.',prompt:'Is the straight edge across the top part of the perimeter?',st:S1,view:'perim'}];
+function render(i,stage){stage.innerHTML='';var s=steps[i];NOVA.cap(stage,'Compound shape decomposer · '+s.name,'step '+(i+1)+'/'+steps.length);var g=draw(stage,s.st,s.view);chips(stage,s.st,s.view,g);NOVA.scene.helperStrip(stage,i===steps.length-1?'cheer':'explain',s.name);}
+var def={id:'F12-10',title:'Compound shape decomposer',config:C,steps:steps,render:render,
+ alt:'Compound shape decomposer: L, T, frame and semicircle-on-rectangle shapes split into simple parts, or a cut taken away from a box, with area and perimeter.',
+ staticAlt:'L-shape: 12 + 6 = 18, or 30 − 12 = 18, perimeter 22. T-shape: 16 + 8 = 24. Frame 8 by 6 with a 3 by 2 hole: 42, perimeter 38. Rectangle 8 by 4 with a semicircle: about 57.13, perimeter about 28.57.',
+ exploreIntro:'Explore: pick a shape, change its sizes, then switch the view between the whole shape, adding parts, subtracting a piece and the perimeter.',
+ explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var key=C.preset,st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>clone(...a),[P[key]]):(clone(P[key]))),view='shape',box=h('div'),vw=h('select',{class:'nova-input','aria-label':'View'});
+   window.NovaLessonComponent?.applyExploreModels();var VN={shape:'Whole shape',add:'Add the parts',sub:'Subtract a piece',perim:'Perimeter'};
+   window.NovaLessonComponent?.applyExploreModels();function pg(){stage.innerHTML='';var g=geo(st);if(g.views.indexOf(view)<0){view='add';vw.value=view;}NOVA.cap(stage,'Explore · '+P[key].label,VN[view]);draw(stage,st,view);chips(stage,st,view,g);NOVA.scene.helperStrip(stage,'explain',VN[view]);}
+   window.NovaLessonComponent?.applyExploreModels();function fillV(){vw.innerHTML='';geo(st).views.forEach(function(v){vw.appendChild(h('option',{value:v,text:VN[v]}));});vw.value=view=geo(st).views.indexOf(view)>=0?view:'shape';}
+   window.NovaLessonComponent?.applyExploreModels();function build(){box.innerHTML='';st.params.forEach(function(q){box.appendChild(U.slider({label:q[0],min:q[2],max:q[3],step:q[4],value:st[q[1]],engine:'F12-10',onChange:function(v){st[q[1]]=v;if(st.kind==='L'){st.t=Math.min(st.t,Math.min(st.W,st.H)-1);}pg();}}));});}
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Shape'});window.NovaLessonComponent?.applyExploreModels();Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=key;
+   window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){key=pre.value;st=clone(P[key]);fillV();build();pg();NOVA.events.emit('value',{engine:'F12-10',control:'preset',value:key});};window.NovaLessonComponent?.applyExploreModels();vw.onchange=function(){view=vw.value;pg();NOVA.events.emit('value',{engine:'F12-10',control:'view',value:view});};
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Shape ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['View ',vw]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(box);window.NovaLessonComponent?.applyExploreModels();fillV();window.NovaLessonComponent?.applyExploreModels();build();window.NovaLessonComponent?.applyExploreModels();pg();},
+ challenge:function(panel,api,stage){var A={kind:'L',W:8,H:6,t:3},B={kind:'frame',W:10,H:8,w:4,hh:3},Cc={kind:'semi',W:6,H:3},semi=18+4.5*PI;
+   var tasks=[
+    {q:'Find the area of this L-shape (8 cm wide, 6 cm tall, arms 3 cm thick).',build:NOVA.entryTask('Area (cm²)','F12-10'),check:function(x){var ok=x===33;return [ok,ok?'Yes: 8 × 3 = 24 and 3 × 3 = 9, so 33. Or 48 − 15 = 33.':x===48?'48 is the whole 8 by 6 box. Take away the empty corner, 5 by 3.':x===42?'Check the cut-out corner: it is 5 wide and 3 tall, which is 15.':'Split into two rectangles, or box minus corner.'];},hint:'Top bar 8 by 3, plus the stem 3 by 3. Or box 48 minus the 5 by 3 corner.',solve:function(c){c._A.input.value='33';}},
+    {q:'A 10 cm by 8 cm frame has a 4 cm by 3 cm hole in the middle. What is its area?',build:NOVA.entryTask('Area (cm²)','F12-10'),check:function(x){var ok=x===68;return [ok,ok?'Yes: 80 − 12 = 68 cm².':x===80?'80 is the whole 10 by 8 rectangle. Take away the hole, 12.':x===92?'You added the hole. A hole is taken away.':'Whole rectangle minus the hole.'];},hint:'Whole 10 × 8, minus the hole 4 × 3.',solve:function(c){c._A.input.value='68';}},
+    {q:'A 6 cm by 3 cm rectangle has a semicircle of diameter 6 cm on top. What is the total area? (1 decimal place)',build:NOVA.entryTask('Area (cm²)','F12-10'),check:function(x){var ok=Math.abs(x-semi)<.12;return [ok,ok?'Yes: 18 + ½ × π × 3² ≈ 32.1 cm².':Math.abs(x-(18+9*PI))<.2?'That adds a whole circle. A semicircle is half: ½ × π × 9.':Math.abs(x-(4.5*PI))<.2?'That is only the semicircle. Add the rectangle too, 18.':x===18?'Add the semicircle: ½ × π × 3² ≈ 14.1.':'Rectangle 18, plus half a circle of radius 3.'];},hint:'Radius is 3. Semicircle = ½ × π × 3².',solve:function(c){c._A.input.value=String(Math.round(semi*10)/10);}}];
+   function paintC(k){stage.innerHTML='';NOVA.cap(stage,'Challenge '+(k+1)+' of 3',['L-shape','hole','semicircle'][k]);draw(stage,[A,B,Cc][k],k===1?'sub':'shape');strip(stage,[['find','the area','focus']]);NOVA.scene.helperStrip(stage,'think',['Split or subtract','Subtract the hole','Add a semicircle'][k]);}
+   NOVA.challengeRun(panel,api,tasks,paintC,C);}
+};
+
+/* Versioned native lesson hook; no artwork replacement. */
+window.NovaV2Integration.register('F12-10',def,{models:{},tables:{"ROLES":()=>ROLES,"steps":()=>steps},draws:{"draw":["stage","st","view"]},exploreFields:{"st":{"kind":"factory","factory":"clone","argCount":1}}});
+NOVA.bankMount({id:'F12-10',num:'F12·10',title:'Compound shape decomposer',def:def,linked:['F0-02','F0-11','F12-03','F12-04','F12-05','F12-12'],
+ spec:{purpose:'Find the area and perimeter of compound shapes by splitting them into rectangles (and a semicircle), or by taking a cut-out away from a bounding box. Perimeter is walked edge by edge, including the inner edges of a hole and the arc of a semicircle.',
+  params:'preset (L, T, frame, semi) with named sizes and slider ranges; view (whole, add, subtract, perimeter). Geometry in cm; arcs sampled from the semicircle; hole fill uses even-odd. Core: NOVA.neonShape / neonTile / svg.pill, NOVA.f12.map / outward / cent. Year groups: KS3 Years 7–9 (12–15).',
+  presets:'L-shape · T-shape · Frame (with a hole) · Rectangle and semicircle',
+  steps:'A compound shape → Split into rectangles → Or take a piece away → Perimeter: walk round → A T-shape → A shape with a hole → Add a semicircle → Perimeter with a curve. Each step has a Sir Bob line and a Guided prompt.',
+  interactions:'Watch: auto-play. Guided: step with prompts. Explore: shape, size sliders and a view switch; chips show the parts, the subtraction or the perimeter sum. Challenge (3 tasks): area of an L-shape; area of a frame with a hole; area of a rectangle with a semicircle. Events: value, correct, step, hintUsed.',
+  traps:'Counting the empty corner as part of the shape · adding a hole instead of subtracting it · forgetting the inner edges in a perimeter · using a whole circle for a semicircle · forgetting the straight edge is not part of the outside of a semicircle shape',
+  gcse:'Extension: composite shapes with sectors and quarter circles, exact answers in terms of π, area and perimeter with algebraic lengths; linked: F12-03 geoboard, F12-04 perimeter tracer, F12-12 circle area'}});
+var log=document.getElementById('log');var addLog=function(e){log.textContent=new Date(e.time).toLocaleTimeString()+' '+e.type+' '+JSON.stringify(e.detail)+'\n'+log.textContent.slice(0,6000);};NOVA.events.history().forEach(addLog);NOVA.events.on('*',addLog);
+document.getElementById('clearlog').onclick=function(){log.textContent='';};
+})();
+

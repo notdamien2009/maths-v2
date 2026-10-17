@@ -1,0 +1,142 @@
+{
+  "READ_ME": "EXAMPLE SCHEMA ONLY. DO NOT PASS AS QA. Fill with genuine browser screenshots/traces from final lesson.",
+  "component-mode-coverage.json": {
+    "lessonId": "Y7-001",
+    "requiredIds": [
+      "F0-12",
+      "F2-01",
+      "F2-03",
+      "F2-04",
+      "F2-08"
+    ],
+    "namedActivity": "Digit Vault: drag digit cards into place-value slots to match a target number and unlock the safe.",
+    "namedActivityExecution": {
+      "tested": false,
+      "interactionSummary": "REQUIRED: actual digit card dragging into slots and safe opening, with native apparatus",
+      "nativeSourceIds": [
+        "F2-01"
+      ],
+      "evidenceFile": "qa/Y7-001-DigitVault-test.json"
+    },
+    "canonicalF012": {
+      "runtimeVerified": false,
+      "runtimeConstructor": "READ ACTUAL CONTROLLER FROM SOURCE",
+      "sourceSha256": "COPY FROM IMMUTABLE LOCK",
+      "canonicalAdapterSha256": "COPY FROM IMMUTABLE LOCK",
+      "evidenceFile": "qa/f012-provenance.json"
+    },
+    "modeAssignments": [
+      {
+        "concept": 1,
+        "mode": "Watch",
+        "mappedId": "F2-01",
+        "sourceId": "F2-01",
+        "nativePreset": null,
+        "nativeStateRef": "ACTUAL IMPLEMENTED CONFIG REF",
+        "questionIds": [],
+        "evidenceFile": "qa/watch-c1.png"
+      }
+    ]
+  },
+  "assessment-visual-matrix.json": {
+    "lessonId": "Y7-001",
+    "items": [
+      {
+        "id": "S1",
+        "questionText": "What number is three hundreds, two tens and six ones?",
+        "publicGivens": [
+          "3",
+          "2",
+          "6"
+        ],
+        "visual": {
+          "kind": "native",
+          "mappedId": "F2-01",
+          "sourceId": "F2-01",
+          "nativePreset": null,
+          "nativeConfig": {
+            "REPLACE": "with documented consumed original F2-01 config for the PUBLIC givens"
+          },
+          "renderedGivens": [
+            "3",
+            "2",
+            "6"
+          ],
+          "answerVisibleBeforeFeedback": false,
+          "browserInspected": false,
+          "mathsChecked": false,
+          "evidenceFile": "qa/S1-real-native-capture.png"
+        }
+      },
+      {
+        "id": "P1",
+        "questionText": "Example question 43.07 — illustrative only",
+        "publicGivens": [
+          "43.07"
+        ],
+        "visual": {
+          "kind": "native",
+          "mappedId": "F2-04",
+          "sourceId": "F2-03",
+          "nativePreset": "decimal blocks are a preset of base-ten blocks",
+          "nativeConfig": {
+            "REPLACE": "actual decimal-base-ten-blocks native state"
+          },
+          "renderedGivens": [
+            "43.07"
+          ],
+          "answerVisibleBeforeFeedback": false,
+          "browserInspected": false,
+          "mathsChecked": false,
+          "evidenceFile": "qa/P1-real-native-capture.png"
+        }
+      }
+    ]
+  },
+  "bob-board-teaching-audit.json": {
+    "lessonId": "Y7-001",
+    "beats": [
+      {
+        "concept": 1,
+        "beat": 1,
+        "name": "Notice/Predict",
+        "sourceId": "F2-01",
+        "publicGivens": [
+          "43.07"
+        ],
+        "pupilQuestion": "Why is the 4 worth 40 instead of 4?",
+        "writtenExplanation": "The 4 is in the tens column, so it is four groups of ten.",
+        "bobTts": "The position of a digit changes how much it is worth. Four tens means forty, not four.",
+        "nativeStartState": "REAL STATE REFERENCE",
+        "nativeEndState": "REAL STATE REFERENCE",
+        "caption": "FULL EXPLANATION",
+        "audioLifecycleTest": "UNVERIFIED",
+        "imageEvidence": "qa/bob-c1-b1.png"
+      }
+    ],
+    "requiredBeats": 20,
+    "continuousSkipTest": "UNVERIFIED",
+    "stopTest": "UNVERIFIED"
+  },
+  "challenge-visual-audit.json": {
+    "lessonId": "Y7-001",
+    "requiredItems": 190,
+    "items": [
+      {
+        "id": "C1-Q001",
+        "publicGivens": [
+          "43.07"
+        ],
+        "mappedId": "F2-01",
+        "actualRenderedGivens": "BROWSER INSPECT",
+        "preFeedbackAnswerHidden": null,
+        "nativeConfig": "REAL CONFIG REF",
+        "imageEvidence": "qa/C1-Q001.png",
+        "mathsChecked": false
+      }
+    ],
+    "sixRoundComplete": false,
+    "sevenRoundComplete": false,
+    "eightRoundComplete": false
+  }
+}

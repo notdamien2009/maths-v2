@@ -1,0 +1,67 @@
+{
+  "contractVersion": "35.3",
+  "lessonId": "Y7-001",
+  "masterSha256": "992550e1b224ab1846a0e353bdc65bd84e77bbcd82f5f63f23cc648f89e74b19",
+  "sourceArchiveSha256": "9f66890abbf6f43c6ee11a09aeeec9fb7c45ee93025c6f7eb6cf7b89a6f95429",
+  "title": "Place value in integers and decimals",
+  "objective": "Understand the base-10 place-value system on both sides of the decimal point.",
+  "scope": "Read, write and partition integers and decimals; identify digit values; use zero as a placeholder; explain ×10/÷10 relationships between adjacent places.",
+  "namedActivity": "Digit Vault: drag digit cards into place-value slots to match a target number and unlock the safe.",
+  "requiredIds": [
+    "F0-12",
+    "F2-01",
+    "F2-03",
+    "F2-04",
+    "F2-08"
+  ],
+  "componentSources": {
+    "F0-12": {
+      "mappedId": "F0-12",
+      "sourceId": "F0-12",
+      "sourcePath": "NOVA-F0-F3-production/F0/F0-12-game-wrapper.html",
+      "sourceSha256": "d99ea83cdbdb1465fbf4d8fbbdf663990e7f2762a5eeac7f177cab0d386c9da1",
+      "aliasChain": [],
+      "presetRequirement": null,
+      "canonicalAdapterPath": "NOVA-F0-F3-production/integration/nova-f0-12-game-wrapper.js",
+      "canonicalAdapterSha256": "73e5e034b9ce0098b438ff9fed05c2a0ba367fb59e8bea6c337f0fb64d3a7409"
+    },
+    "F2-01": {
+      "mappedId": "F2-01",
+      "sourceId": "F2-01",
+      "sourcePath": "NOVA-F0-F3-production/F2/F2-01-place-value-chart-slider.html",
+      "sourceSha256": "dd6f04f3b696ebaf1f73aec8361ef7f27066f1688c419d32144ae3312a301547",
+      "aliasChain": [],
+      "presetRequirement": null
+    },
+    "F2-03": {
+      "mappedId": "F2-03",
+      "sourceId": "F2-03",
+      "sourcePath": "NOVA-F0-F3-production/F2/F2-03-base-ten-blocks.html",
+      "sourceSha256": "f1b2dec01c67c296727e6a139b5825ca59546f883ed18da78c1386bc40e7b927",
+      "aliasChain": [],
+      "presetRequirement": null
+    },
+    "F2-04": {
+      "mappedId": "F2-04",
+      "sourceId": "F2-03",
+      "sourcePath": "NOVA-F0-F3-production/F2/F2-03-base-ten-blocks.html",
+      "sourceSha256": "f1b2dec01c67c296727e6a139b5825ca59546f883ed18da78c1386bc40e7b927",
+      "aliasChain": [
+        {
+          "aliasId": "F2-04",
+          "sourceId": "F2-03",
+          "meaning": "decimal blocks are a preset of base-ten blocks"
+        }
+      ],
+      "presetRequirement": "decimal blocks are a preset of base-ten blocks"
+    },
+    "F2-08": {
+      "mappedId": "F2-08",
+      "sourceId": "F2-08",
+      "sourcePath": "NOVA-F0-F3-production/F2/F2-08-number-expander.html",
+      "sourceSha256": "d4042efac10447c4de67f6c6e3df586bf1c8657356c06c5e19e953868e4b3f7f",
+      "aliasChain": [],
+      "presetRequirement": null
+    }
+  }
+}

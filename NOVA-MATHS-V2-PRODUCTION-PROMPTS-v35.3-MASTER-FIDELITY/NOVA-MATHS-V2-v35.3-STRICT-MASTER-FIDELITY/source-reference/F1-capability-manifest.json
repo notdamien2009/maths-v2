@@ -1,0 +1,3104 @@
+{
+  "family": "F1",
+  "revision": "2026-10-16-fraction-correction",
+  "productionReady": true,
+  "readiness": "PASS WITH DOCUMENTED LIMITATIONS",
+  "componentCount": 10,
+  "sourceRoot": "Desktop/CODEX/bank-v3-neon-chalk",
+  "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+  "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+  "verificationBrowser": "Microsoft Edge via Playwright on Windows",
+  "sharedRestrictions": [
+    "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+    "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+    "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+    "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+  ],
+  "numericContract": {
+    "finiteAbsoluteMaximum": 1000000000.0,
+    "axisMaximumIntervals": 200,
+    "displayDecimalPlaces": 9,
+    "note": "Individual domain/precision constraints above take precedence; nine-place formatting is not a claim of exact arithmetic for arbitrary floating-point calculations."
+  },
+  "components": [
+    {
+      "id": "F1-01",
+      "name": "Configurable number line",
+      "entry": "F1/F1-01-configurable-number-line.html",
+      "runtimeEngineId": "F1-01",
+      "sha256": "a9d7fde2b60578ab1a3af11e3f62b808a77a5d8d68eda3772783f6c7b7a477b9",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Locating, ordering and comparing signed numbers/decimals, two native parallel lines and a vertical thermometer. Exact fractional positions in the approved NOVA stacked notation.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "integers",
+        "presets": {
+          "integers": {
+            "label": "Integers 0 to 10",
+            "kind": "line",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "labelStep": 1,
+            "value": 7
+          },
+          "negatives": {
+            "label": "Directed numbers −10 to 10",
+            "kind": "line",
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "labelStep": 2,
+            "value": -4
+          },
+          "tenths": {
+            "label": "Decimals: tenths 0 to 1",
+            "kind": "line",
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "labelStep": 0.1,
+            "value": 0.6
+          },
+          "hundredths": {
+            "label": "Decimals: hundredths 2.3 to 2.4",
+            "kind": "line",
+            "min": 2.3,
+            "max": 2.4,
+            "step": 0.01,
+            "labelStep": 0.02,
+            "value": 2.37
+          },
+          "thousands": {
+            "label": "GCSE: thousands 0 to 10 000",
+            "kind": "line",
+            "min": 0,
+            "max": 10000,
+            "step": 250,
+            "labelStep": 2000,
+            "value": 6750
+          },
+          "thermometer": {
+            "label": "Thermometer −20 °C to 40 °C (F1-04)",
+            "kind": "vertical",
+            "min": -20,
+            "max": 40,
+            "step": 1,
+            "labelStep": 10,
+            "value": -5,
+            "unit": "°C"
+          },
+          "comparer": {
+            "label": "Comparer: two values (F1-12)",
+            "kind": "compare",
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "labelStep": 2,
+            "value": -6,
+            "value2": -2
+          },
+          "fractions": {
+            "label": "Fractions on a line · NOVA stacked notation",
+            "kind": "line",
+            "notation": "fraction",
+            "n": 3,
+            "d": 4,
+            "min": 0,
+            "max": 2,
+            "step": 0.25,
+            "labelStep": 1,
+            "value": 0.75
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "vline": [
+          "stage",
+          "st",
+          "v",
+          "o"
+        ],
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Value marker",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "0",
+          "max": "10",
+          "step": null
+        },
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "integers",
+          "options": [
+            {
+              "value": "integers",
+              "label": "Integers 0 to 10"
+            },
+            {
+              "value": "negatives",
+              "label": "Directed numbers −10 to 10"
+            },
+            {
+              "value": "tenths",
+              "label": "Decimals: tenths 0 to 1"
+            },
+            {
+              "value": "hundredths",
+              "label": "Decimals: hundredths 2.3 to 2.4"
+            },
+            {
+              "value": "thousands",
+              "label": "GCSE: thousands 0 to 10 000"
+            },
+            {
+              "value": "thermometer",
+              "label": "Thermometer −20 °C to 40 °C (F1-04)"
+            },
+            {
+              "value": "comparer",
+              "label": "Comparer: two values (F1-12)"
+            },
+            {
+              "value": "fractions",
+              "label": "Fractions on a line (F5-04, design TBD)"
+            }
+          ]
+        },
+        {
+          "label": "Value",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0",
+          "max": "10",
+          "step": "1",
+          "value": "7"
+        },
+        {
+          "label": "Stepper",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Down one step",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Up one step",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Denominator",
+          "tag": "div",
+          "role": "group",
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "availableWhen": "fraction preset"
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Upgraded lesson/Explore interface; corrected offset snap/neighbour grids and live neighbour labels. Replaced the stale fraction preset annotation with approved F5-04 chalk numerators/denominators and neon bars, editable rational partitions and native fraction controls.",
+      "limitations": [
+        "Approved NOVA stacked fraction notation; editable integer numerator and denominator 1–12, whole-number line bounds and at most 200 subdivisions. The legacy kind=tbd name remains an alias for compatibility; no placeholder is rendered.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "a9d7fde2b60578ab1a3af11e3f62b808a77a5d8d68eda3772783f6c7b7a477b9",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "kind": [
+          "line",
+          "vertical",
+          "compare"
+        ],
+        "step": {
+          "exclusiveMin": 0
+        },
+        "labelStep": {
+          "exclusiveMin": 0
+        },
+        "notation": [
+          "fraction"
+        ],
+        "n": {
+          "integer": true,
+          "min": "min*d",
+          "max": "max*d"
+        },
+        "d": {
+          "integer": true,
+          "min": 1,
+          "max": 12
+        },
+        "(max-min)*d": {
+          "max": 200
+        }
+      },
+      "operations": [
+        "locate",
+        "compare",
+        "temperature change",
+        "exact fraction placement"
+      ],
+      "fractionNotationSource": "Existing F5-04 stack(): chalkText numerator/denominator plus neonLine bar; locked by 00-master/PRODUCTION-RELEASE-F0-F18-2026-10-14.md"
+    },
+    {
+      "id": "F1-02",
+      "name": "Zoomable number line",
+      "entry": "F1/F1-02-zoomable-number-line.html",
+      "runtimeEngineId": "F1-02",
+      "sha256": "fdc8d97be6982acb30397903558bcd7fa5e29ee7e9b89082d402c8fae942f7fe",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Nested decimal intervals: each native zoom divides a base gap into ten.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "decimals",
+        "presets": {
+          "decimals": {
+            "label": "Ones → tenths → hundredths (3.47)",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "value": 3.47,
+            "levels": 2
+          },
+          "tenths": {
+            "label": "Ones → tenths (2.6)",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "value": 2.6,
+            "levels": 1
+          },
+          "negative": {
+            "label": "Negatives: −1 to 0 (−0.35)",
+            "min": -5,
+            "max": 5,
+            "step": 1,
+            "value": -0.35,
+            "levels": 2
+          },
+          "thousandths": {
+            "label": "GCSE: thousandths (0.125)",
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "value": 0.125,
+            "levels": 2
+          },
+          "big": {
+            "label": "Big numbers: 0 to 1000 (470)",
+            "min": 0,
+            "max": 1000,
+            "step": 100,
+            "value": 470,
+            "levels": 1
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "L",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "L",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "L",
+          "o",
+          "chips",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "L",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "v",
+          "L",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "v",
+          "L",
+          "o",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "zoomDraw": [
+          "stage",
+          "st",
+          "v",
+          "levels",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        },
+        "v": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "decimals",
+          "options": [
+            {
+              "value": "decimals",
+              "label": "Ones → tenths → hundredths (3.47)"
+            },
+            {
+              "value": "tenths",
+              "label": "Ones → tenths (2.6)"
+            },
+            {
+              "value": "negative",
+              "label": "Negatives: −1 to 0 (−0.35)"
+            },
+            {
+              "value": "thousandths",
+              "label": "GCSE: thousandths (0.125)"
+            },
+            {
+              "value": "big",
+              "label": "Big numbers: 0 to 1000 (470)"
+            }
+          ]
+        },
+        {
+          "label": "Value",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0",
+          "max": "9.99",
+          "step": "0.01",
+          "value": "3.47"
+        },
+        {
+          "label": "Zoom",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease Zoom",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase Zoom",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Upgraded lesson/Explore interface; concealed unknown-point value in accessible title; native precision retained to nine decimal places.",
+      "limitations": [
+        "0–2 nested zooms. Base scale must contain whole positive gaps; located value must lie on its axis.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "fdc8d97be6982acb30397903558bcd7fa5e29ee7e9b89082d402c8fae942f7fe",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "levels": {
+          "min": 0,
+          "max": 2,
+          "integer": true
+        }
+      },
+      "operations": [
+        "decimal zoom",
+        "locate"
+      ]
+    },
+    {
+      "id": "F1-03",
+      "name": "Jump-arc operator",
+      "entry": "F1/F1-03-jump-arc-operator.html",
+      "runtimeEngineId": "F1-03",
+      "sha256": "8f49f9e5135d5231bc1d927bd3438cffe8ee12c4ff681fde03b07125ed24f58c",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Directed addition/subtraction, split jumps and repeated jumps using original neon arcs.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "crossZero",
+        "presets": {
+          "crossZero": {
+            "label": "Cross zero: −3 + 5",
+            "min": -6,
+            "max": 6,
+            "labelStep": 1,
+            "start": -3,
+            "jumps": [
+              5
+            ]
+          },
+          "back": {
+            "label": "Count back: 7 − 9",
+            "min": -4,
+            "max": 8,
+            "labelStep": 1,
+            "start": 7,
+            "jumps": [
+              -9
+            ]
+          },
+          "split": {
+            "label": "Friendly jumps: 48 + 27",
+            "min": 40,
+            "max": 80,
+            "labelStep": 5,
+            "start": 48,
+            "jumps": [
+              2,
+              20,
+              5
+            ]
+          },
+          "repeat": {
+            "label": "Repeated jumps: 4 × 3",
+            "min": 0,
+            "max": 14,
+            "labelStep": 1,
+            "start": 0,
+            "jumps": [
+              3,
+              3,
+              3,
+              3
+            ]
+          },
+          "negSub": {
+            "label": "Subtract a negative: 4 − (−3)",
+            "min": -2,
+            "max": 9,
+            "labelStep": 1,
+            "start": 4,
+            "jumps": [
+              3
+            ]
+          },
+          "decimals": {
+            "label": "Decimals: 2.6 + 0.7",
+            "min": 2,
+            "max": 4,
+            "labelStep": 0.1,
+            "start": 2.6,
+            "jumps": [
+              0.4,
+              0.3
+            ]
+          },
+          "gcse": {
+            "label": "GCSE: −12 − 15",
+            "min": -30,
+            "max": 0,
+            "labelStep": 5,
+            "start": -12,
+            "jumps": [
+              -15
+            ]
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "crossZero",
+          "options": [
+            {
+              "value": "crossZero",
+              "label": "Cross zero: −3 + 5"
+            },
+            {
+              "value": "back",
+              "label": "Count back: 7 − 9"
+            },
+            {
+              "value": "split",
+              "label": "Friendly jumps: 48 + 27"
+            },
+            {
+              "value": "repeat",
+              "label": "Repeated jumps: 4 × 3"
+            },
+            {
+              "value": "negSub",
+              "label": "Subtract a negative: 4 − (−3)"
+            },
+            {
+              "value": "decimals",
+              "label": "Decimals: 2.6 + 0.7"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: −12 − 15"
+            }
+          ]
+        },
+        {
+          "label": "Start",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-6",
+          "max": "6",
+          "step": "1",
+          "value": "-3"
+        },
+        {
+          "label": "Jump",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-12",
+          "max": "12",
+          "step": "1",
+          "value": "5"
+        },
+        {
+          "label": "Jumps",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease Jumps",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase Jumps",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Added partial native arc progress and mathematical intermediate endpoint; configurable signed jumps and cancellable hosted motion.",
+      "limitations": [
+        "1–100 finite signed jumps inside the declared line. Default Explore count control is 1–6; lesson control policy may narrow it. Partial motion uses o.progress.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "8f49f9e5135d5231bc1d927bd3438cffe8ee12c4ff681fde03b07125ed24f58c",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "jumps.length": {
+          "min": 1,
+          "max": 100
+        },
+        "o.progress": {
+          "min": 0,
+          "max": "jumps.length"
+        }
+      },
+      "operations": [
+        "add",
+        "subtract",
+        "partition",
+        "repeat"
+      ]
+    },
+    {
+      "id": "F1-05",
+      "name": "Rounding rolling-ball",
+      "entry": "F1/F1-05-rounding-rolling-ball.html",
+      "runtimeEngineId": "F1-05",
+      "sha256": "6d969ec77c89d8c32ae4b67b3e5cddcda150349a8ee4540527cd409a8fe6477a",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Nearest power-of-ten rounding, halfway decisions and the original hill/rolling-ball representation.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "tens",
+        "presets": {
+          "tens": {
+            "label": "Nearest 10 (37)",
+            "place": 10,
+            "value": 37
+          },
+          "ones": {
+            "label": "Nearest whole (6.4)",
+            "place": 1,
+            "value": 6.4
+          },
+          "tenths": {
+            "label": "1 decimal place (4.63)",
+            "place": 0.1,
+            "value": 4.63
+          },
+          "hundreds": {
+            "label": "Nearest 100 (6748)",
+            "place": 100,
+            "value": 6748
+          },
+          "negative": {
+            "label": "Negatives: nearest 10 (−23)",
+            "place": 10,
+            "value": -23
+          },
+          "gcse": {
+            "label": "GCSE: 2 decimal places (0.4372)",
+            "place": 0.01,
+            "value": 0.4372
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "p",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "p",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "p",
+          "o",
+          "chips",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "p",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "p",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "p",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "v",
+          "p",
+          "o",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "draw": [
+          "stage",
+          "v",
+          "p",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Round to",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "tens",
+          "options": [
+            {
+              "value": "tens",
+              "label": "Nearest 10 (37)"
+            },
+            {
+              "value": "ones",
+              "label": "Nearest whole (6.4)"
+            },
+            {
+              "value": "tenths",
+              "label": "1 decimal place (4.63)"
+            },
+            {
+              "value": "hundreds",
+              "label": "Nearest 100 (6748)"
+            },
+            {
+              "value": "negative",
+              "label": "Negatives: nearest 10 (−23)"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: 2 decimal places (0.4372)"
+            }
+          ]
+        },
+        {
+          "label": "Number",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "10",
+          "max": "60",
+          "step": "0.1",
+          "value": "37"
+        },
+        {
+          "label": "Roll",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Added explicit native ball rollProgress and conceal flag; unanswered rounding titles/highlights no longer disclose the result.",
+      "limitations": [
+        "Power-of-ten place at least 0.0001; native halfway convention rounds toward the greater landmark, including negative ties.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "6d969ec77c89d8c32ae4b67b3e5cddcda150349a8ee4540527cd409a8fe6477a",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "p": {
+          "min": 0.0001,
+          "powerOfTen": true
+        },
+        "o.rollProgress": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "operations": [
+        "round"
+      ]
+    },
+    {
+      "id": "F1-06",
+      "name": "Inequality line",
+      "entry": "F1/F1-06-inequality-line.html",
+      "runtimeEngineId": "F1-06",
+      "sha256": "3dfd3f588de990b04abbf612943ce6c3c919a6c723ad995c274a443d0c22d426",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Strict/inclusive rays, double inequalities, integer solutions and testing a value.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "gt",
+        "presets": {
+          "gt": {
+            "label": "x > 2",
+            "min": -5,
+            "max": 5,
+            "op": ">",
+            "a": 2
+          },
+          "ge": {
+            "label": "x ≥ 2",
+            "min": -5,
+            "max": 5,
+            "op": ">=",
+            "a": 2
+          },
+          "lt": {
+            "label": "x < −1",
+            "min": -5,
+            "max": 5,
+            "op": "<",
+            "a": -1
+          },
+          "le": {
+            "label": "x ≤ 3",
+            "min": -5,
+            "max": 5,
+            "op": "<=",
+            "a": 3
+          },
+          "between": {
+            "label": "−2 < x ≤ 3",
+            "min": -5,
+            "max": 5,
+            "op": "between",
+            "a": -2,
+            "b": 3,
+            "incA": false,
+            "incB": true
+          },
+          "decimal": {
+            "label": "x ≥ 1.5 (decimals)",
+            "min": 0,
+            "max": 3,
+            "op": ">=",
+            "a": 1.5,
+            "labelStep": 0.5
+          },
+          "gcse": {
+            "label": "GCSE: −3 ≤ x < 4, integers",
+            "min": -5,
+            "max": 5,
+            "op": "between",
+            "a": -3,
+            "b": 4,
+            "incA": true,
+            "incB": false,
+            "ints": true
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "target",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "t": true,
+        "showI": true,
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Inequality",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "gt",
+          "options": [
+            {
+              "value": "gt",
+              "label": "x > 2"
+            },
+            {
+              "value": "ge",
+              "label": "x ≥ 2"
+            },
+            {
+              "value": "lt",
+              "label": "x < −1"
+            },
+            {
+              "value": "le",
+              "label": "x ≤ 3"
+            },
+            {
+              "value": "between",
+              "label": "−2 < x ≤ 3"
+            },
+            {
+              "value": "decimal",
+              "label": "x ≥ 1.5 (decimals)"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: −3 ≤ x < 4, integers"
+            }
+          ]
+        },
+        {
+          "label": "Boundary",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-5",
+          "max": "5",
+          "step": "1",
+          "value": "2"
+        },
+        {
+          "label": "Test x",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-5",
+          "max": "5",
+          "step": "0.25",
+          "value": "0"
+        },
+        {
+          "label": "Show integers",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Added optional chips in every native step without losing default derived information; bounded between-boundary controls and lesson-owned initial test x/show-integers state.",
+      "limitations": [
+        "At most 200 units when listing integers; a between interval requires a < b. Initial test value is constrained to its axis.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "3dfd3f588de990b04abbf612943ce6c3c919a6c723ad995c274a443d0c22d426",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "op": [
+          ">",
+          ">=",
+          "<",
+          "<=",
+          "between"
+        ],
+        "integerListingSpan": {
+          "max": 200
+        },
+        "between": "a < b; native Explore boundary control requires b at least one native boundary step above min"
+      },
+      "operations": [
+        "inequality",
+        "membership",
+        "integer solutions"
+      ]
+    },
+    {
+      "id": "F1-07",
+      "name": "Card-placing line",
+      "entry": "F1/F1-07-card-placing-line.html",
+      "runtimeEngineId": "F1-07",
+      "sha256": "e01f31f4752a909c093d45301340f98eda42483a14fca2f63f3027ce6ce7b5b0",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Placing/order/estimation of numerical cards with stems on the original line.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "mixed",
+        "presets": {
+          "mixed": {
+            "label": "Directed numbers",
+            "min": -5,
+            "max": 5,
+            "labelStep": 1,
+            "cards": [
+              -3,
+              2,
+              -0.5,
+              4,
+              0
+            ]
+          },
+          "decimals": {
+            "label": "Decimals 0 to 1",
+            "min": 0,
+            "max": 1,
+            "labelStep": 0.1,
+            "cards": [
+              0.3,
+              0.75,
+              0.05,
+              0.5
+            ]
+          },
+          "hundred": {
+            "label": "Estimate 0 to 100",
+            "min": 0,
+            "max": 100,
+            "labelStep": 10,
+            "cards": [
+              25,
+              68,
+              90,
+              7
+            ]
+          },
+          "big": {
+            "label": "Thousands",
+            "min": 0,
+            "max": 10000,
+            "labelStep": 1000,
+            "cards": [
+              2500,
+              7100,
+              500,
+              9900
+            ]
+          },
+          "tricky": {
+            "label": "Tricky decimals",
+            "min": 0,
+            "max": 1,
+            "labelStep": 0.1,
+            "cards": [
+              0.4,
+              0.25,
+              0.125,
+              0.6
+            ]
+          },
+          "gcse": {
+            "label": "GCSE: negatives and decimals",
+            "min": -2,
+            "max": 2,
+            "labelStep": 0.5,
+            "cards": [
+              -1.25,
+              0.8,
+              -0.3,
+              1.5
+            ]
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "n",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "n",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "n",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "n",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "n",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "n",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "draw": [
+          "stage",
+          "st",
+          "placed",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        },
+        "placed": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        },
+        "guess": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Place card −3",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "-5",
+          "max": "5",
+          "step": null
+        },
+        {
+          "label": "Card set",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "mixed",
+          "options": [
+            {
+              "value": "mixed",
+              "label": "Directed numbers"
+            },
+            {
+              "value": "decimals",
+              "label": "Decimals 0 to 1"
+            },
+            {
+              "value": "hundred",
+              "label": "Estimate 0 to 100"
+            },
+            {
+              "value": "big",
+              "label": "Thousands"
+            },
+            {
+              "value": "tricky",
+              "label": "Tricky decimals"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: negatives and decimals"
+            }
+          ]
+        },
+        {
+          "label": "Place",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Start again",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Upgraded lesson/Explore/instance hooks; retained native card/guess/place/reset controls; validated numerical card labels and axis positions.",
+      "limitations": [
+        "1–20 finite number cards; optional label strings must equal their actual positions. Specialist fraction artwork is outside this component.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "e01f31f4752a909c093d45301340f98eda42483a14fca2f63f3027ce6ce7b5b0",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "cards.length": {
+          "min": 1,
+          "max": 20
+        }
+      },
+      "operations": [
+        "place",
+        "order",
+        "estimate"
+      ]
+    },
+    {
+      "id": "F1-08",
+      "name": "Estimation line",
+      "entry": "F1/F1-08-estimation-line.html",
+      "runtimeEngineId": "F1-08",
+      "sha256": "a69a66ff5a94161f0c49a3547f7513669b6b5c55db2ade1adac4165b1f9e968f",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Positive multiplication/division estimates using one significant figure and square-root bounds.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "whole",
+        "presets": {
+          "whole": {
+            "label": "49 × 21",
+            "a": 49,
+            "b": 21,
+            "op": "×"
+          },
+          "decimal": {
+            "label": "3.87 × 19.6",
+            "a": 3.87,
+            "b": 19.6,
+            "op": "×"
+          },
+          "divide": {
+            "label": "612 ÷ 29",
+            "a": 612,
+            "b": 29,
+            "op": "÷"
+          },
+          "big": {
+            "label": "382 × 47",
+            "a": 382,
+            "b": 47,
+            "op": "×"
+          },
+          "small": {
+            "label": "GCSE: 0.0487 × 612",
+            "a": 0.0487,
+            "b": 612,
+            "op": "×"
+          },
+          "root": {
+            "label": "√50 (irrational)",
+            "root": 50
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Calculation",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "whole",
+          "options": [
+            {
+              "value": "whole",
+              "label": "49 × 21"
+            },
+            {
+              "value": "decimal",
+              "label": "3.87 × 19.6"
+            },
+            {
+              "value": "divide",
+              "label": "612 ÷ 29"
+            },
+            {
+              "value": "big",
+              "label": "382 × 47"
+            },
+            {
+              "value": "small",
+              "label": "GCSE: 0.0487 × 612"
+            },
+            {
+              "value": "root",
+              "label": "√50 (irrational)"
+            }
+          ]
+        },
+        {
+          "label": "First number",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0.1",
+          "max": "99",
+          "step": "0.1",
+          "value": "49"
+        },
+        {
+          "label": "Second number",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0.1",
+          "max": "99",
+          "step": "0.1",
+          "value": "21"
+        },
+        {
+          "label": "Show exact",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Corrected preset sliders silently changing small/large operand values; exact square roots use equal lower/upper integers; validated positive domains/division.",
+      "limitations": [
+        "Positive operands and positive radicand only. Multiplication/division result must lie between 1e-7 and 1e9; radicand at most 1e8. No signed-estimate extension is claimed.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "a69a66ff5a94161f0c49a3547f7513669b6b5c55db2ade1adac4165b1f9e968f",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "a": {
+          "exclusiveMin": 0
+        },
+        "b": {
+          "exclusiveMin": 0
+        },
+        "op": [
+          "×",
+          "÷"
+        ],
+        "root": {
+          "exclusiveMin": 0,
+          "max": 100000000.0
+        },
+        "result": {
+          "min": 1e-07,
+          "max": 1000000000.0
+        }
+      },
+      "operations": [
+        "multiply estimate",
+        "divide estimate",
+        "root bounds"
+      ]
+    },
+    {
+      "id": "F1-09",
+      "name": "Scale reader",
+      "entry": "F1/F1-09-scale-reader.html",
+      "runtimeEngineId": "F1-09",
+      "sha256": "c9326654dcafd982c4c011abcc6642edec35500d29f883a9956dfebd02f1ff83",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Horizontal scales, vertical jugs/thermometers, round dials, divisions, readings and measurement bounds.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "scale",
+        "presets": {
+          "scale": {
+            "label": "Scale in 4s (kg)",
+            "kind": "h",
+            "min": 0,
+            "max": 100,
+            "major": 20,
+            "div": 5,
+            "value": 68,
+            "unit": "kg"
+          },
+          "ruler": {
+            "label": "Ruler in mm (cm)",
+            "kind": "h",
+            "min": 0,
+            "max": 10,
+            "major": 1,
+            "div": 10,
+            "value": 7.3,
+            "unit": "cm"
+          },
+          "jug": {
+            "label": "Measuring jug (ml)",
+            "kind": "v",
+            "min": 0,
+            "max": 500,
+            "major": 100,
+            "div": 5,
+            "value": 340,
+            "unit": "ml"
+          },
+          "temp": {
+            "label": "Thermometer in 2s (°C)",
+            "kind": "v",
+            "min": -20,
+            "max": 40,
+            "major": 10,
+            "div": 5,
+            "value": -6,
+            "unit": "°C"
+          },
+          "dial": {
+            "label": "Round dial (kg)",
+            "kind": "dial",
+            "min": 0,
+            "max": 10,
+            "major": 2,
+            "div": 4,
+            "value": 6.5,
+            "unit": "kg"
+          },
+          "halves": {
+            "label": "Scale in 0.5s (l)",
+            "kind": "h",
+            "min": 0,
+            "max": 5,
+            "major": 1,
+            "div": 2,
+            "value": 3.5,
+            "unit": "l"
+          },
+          "bounds": {
+            "label": "GCSE: error interval 7.3 cm (1 dp)",
+            "kind": "bounds",
+            "value": 7.3,
+            "dp": 1,
+            "unit": "cm"
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Scale",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "scale",
+          "options": [
+            {
+              "value": "scale",
+              "label": "Scale in 4s (kg)"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler in mm (cm)"
+            },
+            {
+              "value": "jug",
+              "label": "Measuring jug (ml)"
+            },
+            {
+              "value": "temp",
+              "label": "Thermometer in 2s (°C)"
+            },
+            {
+              "value": "dial",
+              "label": "Round dial (kg)"
+            },
+            {
+              "value": "halves",
+              "label": "Scale in 0.5s (l)"
+            },
+            {
+              "value": "bounds",
+              "label": "GCSE: error interval 7.3 cm (1 dp)"
+            }
+          ]
+        },
+        {
+          "label": "Reading",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0",
+          "max": "100",
+          "step": "4",
+          "value": "68"
+        },
+        {
+          "label": "Gaps between labels",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease Gaps between labels",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase Gaps between labels",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Concealed unknown reading in accessible title; retained exact division arithmetic and offset-origin snapping; repaired bounded decimal-accuracy control ranges and dial label origins.",
+      "limitations": [
+        "1–20 divisions per major gap, at most 200 scale intervals. Rounded measurements support 0–4 decimal places and must match that accuracy.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "c9326654dcafd982c4c011abcc6642edec35500d29f883a9956dfebd02f1ff83",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "kind": [
+          "h",
+          "v",
+          "dial",
+          "bounds"
+        ],
+        "div": {
+          "min": 1,
+          "max": 20,
+          "integer": true
+        },
+        "dp": {
+          "min": 0,
+          "max": 4,
+          "integer": true
+        }
+      },
+      "operations": [
+        "read scale",
+        "divide major gaps",
+        "measurement bounds"
+      ]
+    },
+    {
+      "id": "F1-10",
+      "name": "Powers-of-ten zoom",
+      "entry": "F1/F1-10-powers-of-ten-zoom.html",
+      "runtimeEngineId": "F1-10",
+      "sha256": "e434489e859172e78bd9c9c34f6d66793d2cf74280c4d11920eabd629df0767e",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Positive standard form on powers and decade lines, comparison and ordinary notation.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "large",
+        "presets": {
+          "large": {
+            "label": "Large: 320 000",
+            "m": 3.2,
+            "e": 5,
+            "lo": 0,
+            "hi": 9
+          },
+          "million": {
+            "label": "Millions: 7 500 000",
+            "m": 7.5,
+            "e": 6,
+            "lo": 0,
+            "hi": 9
+          },
+          "small": {
+            "label": "Small: 0.0045",
+            "m": 4.5,
+            "e": -3,
+            "lo": -6,
+            "hi": 2
+          },
+          "tiny": {
+            "label": "Tiny: 0.000 08",
+            "m": 8,
+            "e": -5,
+            "lo": -6,
+            "hi": 2
+          },
+          "compare": {
+            "label": "Compare 3.2 × 10⁵ and 8 × 10⁴",
+            "m": 3.2,
+            "e": 5,
+            "lo": 0,
+            "hi": 9,
+            "other": {
+              "m": 8,
+              "e": 4
+            }
+          },
+          "gcse": {
+            "label": "GCSE: 6.02 × 10²³ (huge)",
+            "m": 6.02,
+            "e": 23,
+            "lo": 18,
+            "hi": 27
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Number",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "large",
+          "options": [
+            {
+              "value": "large",
+              "label": "Large: 320 000"
+            },
+            {
+              "value": "million",
+              "label": "Millions: 7 500 000"
+            },
+            {
+              "value": "small",
+              "label": "Small: 0.0045"
+            },
+            {
+              "value": "tiny",
+              "label": "Tiny: 0.000 08"
+            },
+            {
+              "value": "compare",
+              "label": "Compare 3.2 × 10⁵ and 8 × 10⁴"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: 6.02 × 10²³ (huge)"
+            }
+          ]
+        },
+        {
+          "label": "Number part",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "1",
+          "max": "9.9",
+          "step": "0.1",
+          "value": "3.2"
+        },
+        {
+          "label": "Power of ten",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease Power of ten",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase Power of ten",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Replaced integer-rounding ordinary formatter with exact decimal-point placement; small, fractional and huge ordinary forms remain correct.",
+      "limitations": [
+        "1 ≤ m < 10, integer exponent −30 to 30, axis spanning 1–30 powers and containing the value’s decade. Positive numbers only.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "e434489e859172e78bd9c9c34f6d66793d2cf74280c4d11920eabd629df0767e",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "m": {
+          "min": 1,
+          "exclusiveMax": 10
+        },
+        "e": {
+          "min": -30,
+          "max": 30,
+          "integer": true
+        },
+        "hi-lo": {
+          "min": 1,
+          "max": 30
+        }
+      },
+      "operations": [
+        "standard form",
+        "compare",
+        "ordinary notation"
+      ]
+    },
+    {
+      "id": "F1-11",
+      "name": "Error-interval line",
+      "entry": "F1/F1-11-error-interval-line.html",
+      "runtimeEngineId": "F1-11",
+      "sha256": "8681839425953da00e0e724acf718eaf6d2d79a8fbcdb0b0155ff015e1c10821",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "mathematics": "Rounded/truncated measurement intervals and native positive-multiplier perimeter bounds.",
+      "nativeConfiguration": {
+        "startMode": "watch",
+        "preset": "dp1",
+        "presets": {
+          "dp1": {
+            "label": "7.3 cm to 1 dp",
+            "v": 7.3,
+            "u": 0.1,
+            "unit": "cm",
+            "acc": "to 1 decimal place"
+          },
+          "ten": {
+            "label": "340 people to the nearest 10",
+            "v": 340,
+            "u": 10,
+            "unit": "",
+            "acc": "to the nearest 10"
+          },
+          "whole": {
+            "label": "5 cm to the nearest cm",
+            "v": 5,
+            "u": 1,
+            "unit": "cm",
+            "acc": "to the nearest cm"
+          },
+          "dp2": {
+            "label": "2.46 kg to 2 dp",
+            "v": 2.46,
+            "u": 0.01,
+            "unit": "kg",
+            "acc": "to 2 decimal places"
+          },
+          "trunc": {
+            "label": "4.7 s truncated to 1 dp",
+            "v": 4.7,
+            "u": 0.1,
+            "unit": "s",
+            "acc": "truncated to 1 dp",
+            "trunc": true
+          },
+          "gcse": {
+            "label": "GCSE: square of side 5 cm (perimeter bounds)",
+            "v": 5,
+            "u": 1,
+            "unit": "cm",
+            "acc": "to the nearest cm",
+            "calc": "perimeter",
+            "k": 4
+          }
+        }
+      },
+      "nativeFieldsByStep": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "st",
+          "o",
+          "chips"
+        ]
+      ],
+      "drawArguments": {
+        "draw": [
+          "stage",
+          "st",
+          "o"
+        ]
+      },
+      "exploreFields": {
+        "st": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "availableExploreControls": [
+        {
+          "label": "Accuracy",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "dp1",
+          "options": [
+            {
+              "value": "dp1",
+              "label": "7.3 cm to 1 dp"
+            },
+            {
+              "value": "ten",
+              "label": "340 people to the nearest 10"
+            },
+            {
+              "value": "whole",
+              "label": "5 cm to the nearest cm"
+            },
+            {
+              "value": "dp2",
+              "label": "2.46 kg to 2 dp"
+            },
+            {
+              "value": "trunc",
+              "label": "4.7 s truncated to 1 dp"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: square of side 5 cm (perimeter bounds)"
+            }
+          ]
+        },
+        {
+          "label": "Measured value",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "5.3",
+          "max": "9.3",
+          "step": "0.1",
+          "value": "7.3"
+        }
+      ],
+      "modes": [
+        "Watch",
+        "Explore",
+        "Challenge",
+        "Guided Examples",
+        "Bob Board"
+      ],
+      "layouts": [
+        "rows",
+        "columns",
+        "responsive stacking"
+      ],
+      "isolatedExploreInstances": {
+        "count": "1–4",
+        "sameSourceIndependence": "Different starting values, left/right keyboard isolation and exact independent reset tested for this source; pointer/mobile additionally tested using F1-01.",
+        "perFamilyLayouts": "rows/columns tested for every F1 source",
+        "combinedApparatus": "Mixed original F1-01/F1-09 engine/configuration state tested."
+      },
+      "motion": {
+        "from": "native endpoint record with data/scene",
+        "to": "native endpoint record with data/scene",
+        "durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "interpolation": "native numeric states/positions; integer fields and nonnumeric reveals switch at endpoint; fixed measured interval reveal for F1-11",
+        "cancel": true,
+        "pauseResume": "hosted clock; actual narrated F1-03 tested"
+      },
+      "explorePolicyFields": [
+        "hidden",
+        "disabled",
+        "min",
+        "max",
+        "step",
+        "value",
+        "allowedValues",
+        "selector"
+      ],
+      "events": [
+        "step",
+        "value",
+        "correct",
+        "hintUsed"
+      ],
+      "changes": "Corrected negative truncation to an open lower/closed upper interval; retained sign in truncation controls; concealed future bounds in accessible descriptions.",
+      "limitations": [
+        "Power-of-ten accuracy at least 0.0001; measurement must be a multiple of that accuracy. Zero truncation is explicitly rejected as a distinct two-sided case. Continuous interval motion keeps measurement/accuracy fixed; use separate records for changed values. Only native positive-multiplier perimeter calculations are supported.",
+        "Spoken decimal numerals containing digit 4 remain suppressed until pronunciation is verified; captions and fallback timing remain available.",
+        "Readiness applies to declared native schemas and executed Windows/Edge lesson fixtures, not arbitrary lesson data or every device/browser.",
+        "Automated WCAG-tagged checks and accessibility trees are evidence, not human screen-reader or full WCAG certification. Incomplete axe checks are retained for human review.",
+        "Existing exported lessons contain embedded source snapshots and must be regenerated to receive these changes."
+      ],
+      "verification": {
+        "lessonAssertions": 23,
+        "passed": 23,
+        "axeViolations": 0,
+        "axeIncomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ],
+        "sourceSha256": "8681839425953da00e0e724acf718eaf6d2d79a8fbcdb0b0155ff015e1c10821",
+        "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+        "evidence": "audit/f1-production-2026-10-16"
+      },
+      "parameterRanges": {
+        "u": {
+          "min": 0.0001,
+          "powerOfTen": true
+        },
+        "trunc.v": {
+          "nonzero": true
+        },
+        "calc": [
+          "perimeter"
+        ],
+        "k": {
+          "exclusiveMin": 0
+        }
+      },
+      "operations": [
+        "rounding bounds",
+        "signed truncation bounds",
+        "perimeter bounds"
+      ]
+    }
+  ]
+}

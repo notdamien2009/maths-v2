@@ -1,0 +1,2236 @@
+[
+  {
+    "id": "F12-01",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Trapezium",
+            "found": true
+          }
+        ],
+        "text": "SHAPE FAMILY TREE · TRIANGLES\nSTEP 1/6\nQuadrilateral\nTrapezium\nKite\nParallelogram\nRectangle\nRhombus\nSquare\nsides\n?\nparallel pairs\n1\nright angles\n0\nlines of symmetry\n0 ​(1 ​\ni\nf\n ​\ni\ns\no\ns\nc\ne\nl\ne\ns\n)\nalso a\nQ\nu\na\nd\nr\ni\nl\na\nt\ne\nr\na\nl\nangles add to\n180°\nTriangles"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Kite",
+            "found": true
+          }
+        ],
+        "text": "SHAPE FAMILY TREE · TRIANGLES\nSTEP 1/6\nQuadrilateral\nTrapezium\nKite\nParallelogram\nRectangle\nRhombus\nSquare\nsides\n?\nparallel pairs\n0\nright angles\n0\nlines of symmetry\n1\nalso a\nQ\nu\na\nd\nr\ni\nl\na\nt\ne\nr\na\nl\nangles add to\n180°\nTriangles"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Parallelogram",
+            "found": true
+          }
+        ],
+        "text": "SHAPE FAMILY TREE · TRIANGLES\nSTEP 1/6\nQuadrilateral\nTrapezium\nKite\nParallelogram\nRectangle\nRhombus\nSquare\nsides\n?\nparallel pairs\n2\nright angles\n0\nlines of symmetry\n0\nalso a\nQ\nu\na\nd\nr\ni\nl\na\nt\ne\nr\na\nl\nangles add to\n180°\nTriangles"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Rectangle",
+            "found": true
+          }
+        ],
+        "text": "SHAPE FAMILY TREE · TRIANGLES\nSTEP 1/6\nQuadrilateral\nTrapezium\nKite\nParallelogram\nRectangle\nRhombus\nSquare\nsides\n?\nparallel pairs\n2\nright angles\n?\nlines of symmetry\n2\nalso a\nP\na\nr\na\nl\nl\ne\nl\no\ng\nr\na\nm\n ​· ​\nQ\nu\na\nd\nr\ni\nl\na\nt\ne\nr\na\nl\nangles add to\n180°\nTriangles"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Rhombus",
+            "found": true
+          }
+        ],
+        "text": "SHAPE FAMILY TREE · TRIANGLES\nSTEP 1/6\nQuadrilateral\nTrapezium\nKite\nParallelogram\nRectangle\nRhombus\nSquare\nsides\n?\nparallel pairs\n2\nright angles\n0\nlines of symmetry\n2\nalso a\nP\na\nr\na\nl\nl\ne\nl\no\ng\nr\na\nm\n ​· ​\nQ\nu\na\nd\nr\ni\nl\na\nt\ne\nr\na\nl\nangles add to\n180°\nTriangles"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Square",
+            "found": true
+          }
+        ],
+        "text": "SHAPE FAMILY TREE · TRIANGLES\nSTEP 1/6\nQuadrilateral\nTrapezium\nKite\nParallelogram\nRectangle\nRhombus\nSquare\nsides\n?\nparallel pairs\n2\nright angles\n?\nlines of symmetry\n?\nalso a\nR\ne\nc\nt\na\nn\ng\nl\ne\n ​· ​\nP\na\nr\na\nl\nl\ne\nl\no\ng\nr\na\nm\n ​· ​\nR\nh\no\nm\nb\nu\ns\n ​· ​\nQ\nu\na\nd\nr\ni\nl\na\nt\ne\nr\na\nl\nangles add to\n180°\nTriangles"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-02",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "YES",
+            "found": true
+          }
+        ],
+        "text": "PROPERTY SORTER · ONE PROPERTY: RIGHT ANGLE\nSTEP 1/6\nHas a right angle?\nYES · ?\nNO · 9\nYES: Right‑angled triangle, Square, Rectangle\nNO: Equilateral triangle, Isosceles triangle, Scalene triangle, Parallelogram, Rhombus, Isosceles trapezium, Kite, Regular pentagon, Regular hexagon\nOne property: right angle"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "YES",
+            "found": true
+          }
+        ],
+        "text": "PROPERTY SORTER · ONE PROPERTY: RIGHT ANGLE\nSTEP 1/6\nHas all sides equal?\nYES · ?\nNO · 7\nYES: Equilateral triangle, Square, Rhombus, Regular pentagon, Regular hexagon\nNO: Isosceles triangle, Scalene triangle, Right‑angled triangle, Rectangle, Parallelogram, Isosceles trapezium, Kite\nOne property: right angle"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "YES",
+            "found": true
+          }
+        ],
+        "text": "PROPERTY SORTER · ONE PROPERTY: RIGHT ANGLE\nSTEP 1/6\nHas 2 or more pairs of parallel sides?\nYES · ?\nNO · 7\nYES: Square, Rectangle, Parallelogram, Rhombus, Regular hexagon\nNO: Equilateral triangle, Isosceles triangle, Scalene triangle, Right‑angled triangle, Isosceles trapezium, Kite, Regular pentagon\nOne property: right angle"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "YES",
+            "found": true
+          }
+        ],
+        "text": "PROPERTY SORTER · ONE PROPERTY: RIGHT ANGLE\nSTEP 1/?\nHas at least 1 pair of parallel sides?\nYES · ?\nNO · 6\nYES: Square, Rectangle, Parallelogram, Rhombus, Isosceles trapezium, Regular hexagon\nNO: Equilateral triangle, Isosceles triangle, Scalene triangle, Right‑angled triangle, Kite, Regular pentagon\nOne property: right angle"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "YES",
+            "found": true
+          }
+        ],
+        "text": "PROPERTY SORTER · ONE PROPERTY: RIGHT ANGLE\nSTEP 1/6\nIs a triangle?\nYES · ?\nNO · 8\nYES: Equilateral triangle, Isosceles triangle, Scalene triangle, Right‑angled triangle\nNO: Square, Rectangle, Parallelogram, Rhombus, Isosceles trapezium, Kite, Regular pentagon, Regular hexagon\nOne property: right angle"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "YES",
+            "found": true
+          }
+        ],
+        "text": "PROPERTY SORTER · ONE PROPERTY: RIGHT ANGLE\nSTEP 1/?\nHas 4 sides?\nYES · ?\nNO · 6\nYES: Square, Rectangle, Parallelogram, Rhombus, Isosceles trapezium, Kite\nNO: Equilateral triangle, Isosceles triangle, Scalene triangle, Right‑angled triangle, Regular pentagon, Regular hexagon\nOne property: right angle"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-03",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "GEOBOARD · THE BOARD\nSTEP 1/7\nA\nB\nC\nD\nshape\nS\nq\nu\na\nr\ne\narea\n4 ​\nu\nn\ni\nt\n ​\ns\nq\nu\na\nr\ne\ns\nperimeter\n?\nThe board"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "GEOBOARD · THE BOARD\nSTEP 1/7\nA\nB\nC\nD\nshape\nR\ne\nc\nt\na\nn\ng\nl\ne\narea\n6 ​\nu\nn\ni\nt\n ​\ns\nq\nu\na\nr\ne\ns\nperimeter\n?\nThe board"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "GEOBOARD · THE BOARD\nSTEP 1/7\nA\nB\nC\nD\nshape\nR\ne\nc\nt\na\nn\ng\nl\ne\narea\n8 ​\nu\nn\ni\nt\n ​\ns\nq\nu\na\nr\ne\ns\nperimeter\n?\nThe board"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "GEOBOARD · THE BOARD\nSTEP 1/7\nA\nB\nC\nD\nshape\nR\ne\nc\nt\na\nn\ng\nl\ne\narea\n6 ​\nu\nn\ni\nt\n ​\ns\nq\nu\na\nr\ne\ns\nperimeter\n?\nThe board"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "GEOBOARD · THE BOARD\nSTEP 1/7\nA\nB\nC\nD\nshape\nS\nq\nu\na\nr\ne\narea\n9 ​\nu\nn\ni\nt\n ​\ns\nq\nu\na\nr\ne\ns\nperimeter\n?\nThe board"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "GEOBOARD · THE BOARD\nSTEP 1/7\nA\nB\nC\nD\nshape\nR\ne\nc\nt\na\nn\ng\nl\ne\narea\n12 ​\nu\nn\ni\nt\n ​\ns\nq\nu\na\nr\ne\ns\nperimeter\n?\nThe board"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-04",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "3",
+            "found": true
+          }
+        ],
+        "text": "PERIMETER TRACER · THE OUTLINE\nSTEP 1/7\n3 cm\n2 cm\n3 cm\n2 cm\nperimeter\nt\nh\ne\n ​\nd\ni\ns\nt\na\nn\nc\ne\n ​\na\nl\nl\n ​\nt\nh\ne\n ​\nw\na\ny\n ​\nr\no\nu\nn\nd\nThe outline"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "4",
+            "found": true
+          }
+        ],
+        "text": "PERIMETER TRACER · THE OUTLINE\nSTEP 1/7\n4 cm\n2 cm\n4 cm\n2 cm\nperimeter\nt\nh\ne\n ​\nd\ni\ns\nt\na\nn\nc\ne\n ​\na\nl\nl\n ​\nt\nh\ne\n ​\nw\na\ny\n ​\nr\no\nu\nn\nd\nThe outline"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          }
+        ],
+        "text": "PERIMETER TRACER · THE OUTLINE\nSTEP 1/7\n5 cm\n2 cm\n5 cm\n2 cm\nperimeter\nt\nh\ne\n ​\nd\ni\ns\nt\na\nn\nc\ne\n ​\na\nl\nl\n ​\nt\nh\ne\n ​\nw\na\ny\n ​\nr\no\nu\nn\nd\nThe outline"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          }
+        ],
+        "text": "PERIMETER TRACER · THE OUTLINE\nSTEP 1/7\n6 cm\n2 cm\n6 cm\n2 cm\nperimeter\nt\nh\ne\n ​\nd\ni\ns\nt\na\nn\nc\ne\n ​\na\nl\nl\n ​\nt\nh\ne\n ​\nw\na\ny\n ​\nr\no\nu\nn\nd\nThe outline"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          }
+        ],
+        "text": "PERIMETER TRACER · THE OUTLINE\nSTEP 1/7\n7 cm\n2 cm\n7 cm\n2 cm\nperimeter\nt\nh\ne\n ​\nd\ni\ns\nt\na\nn\nc\ne\n ​\na\nl\nl\n ​\nt\nh\ne\n ​\nw\na\ny\n ​\nr\no\nu\nn\nd\nThe outline"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "PERIMETER TRACER · THE OUTLINE\nSTEP 1/7\n8 cm\n2 cm\n8 cm\n2 cm\nperimeter\nt\nh\ne\n ​\nd\ni\ns\nt\na\nn\nc\ne\n ​\na\nl\nl\n ​\nt\nh\ne\n ​\nw\na\ny\n ​\nr\no\nu\nn\nd\nThe outline"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-05",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "whole",
+            "found": true
+          }
+        ],
+        "text": "AREA BY COUNTING · COVER WITH SQUARES\nSTEP 1/7\nwhole squares\n?\nCover with squares"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "whole",
+            "found": true
+          }
+        ],
+        "text": "AREA BY COUNTING · COVER WITH SQUARES\nSTEP 1/7\nwhole squares\n?\nCover with squares"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "whole",
+            "found": true
+          }
+        ],
+        "text": "AREA BY COUNTING · COVER WITH SQUARES\nSTEP 1/7\nwhole squares\n?\nCover with squares"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "whole",
+            "found": true
+          }
+        ],
+        "text": "AREA BY COUNTING · COVER WITH SQUARES\nSTEP 1/7\nwhole squares\n?\nCover with squares"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "whole",
+            "found": true
+          }
+        ],
+        "text": "AREA BY COUNTING · COVER WITH SQUARES\nSTEP 1/7\nwhole squares\n?\nCover with squares"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "whole",
+            "found": true
+          }
+        ],
+        "text": "AREA BY COUNTING · COVER WITH SQUARES\nSTEP 1/7\nwhole squares\n?\nCover with squares"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-06",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "3",
+            "found": true
+          }
+        ],
+        "text": "PARALLELOGRAM SHEAR · THE PARALLELOGRAM\nSTEP 1/?\n3 cm\n2 cm\nbase\n3 ​\nc\nm\nheight\n2 ​\nc\nm\narea\n3 ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nThe parallelogram"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "4",
+            "found": true
+          }
+        ],
+        "text": "PARALLELOGRAM SHEAR · THE PARALLELOGRAM\nSTEP 1/6\n4 cm\n2 cm\nbase\n4 ​\nc\nm\nheight\n2 ​\nc\nm\narea\n4 ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nThe parallelogram"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          }
+        ],
+        "text": "PARALLELOGRAM SHEAR · THE PARALLELOGRAM\nSTEP 1/6\n5 cm\n2 cm\nbase\n5 ​\nc\nm\nheight\n2 ​\nc\nm\narea\n5 ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nThe parallelogram"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          }
+        ],
+        "text": "PARALLELOGRAM SHEAR · THE PARALLELOGRAM\nSTEP 1/6\n6 cm\n2 cm\nbase\n6 ​\nc\nm\nheight\n2 ​\nc\nm\narea\n6 ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nThe parallelogram"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          }
+        ],
+        "text": "PARALLELOGRAM SHEAR · THE PARALLELOGRAM\nSTEP 1/6\n7 cm\n2 cm\nbase\n7 ​\nc\nm\nheight\n2 ​\nc\nm\narea\n7 ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nThe parallelogram"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "PARALLELOGRAM SHEAR · THE PARALLELOGRAM\nSTEP 1/6\n8 cm\n2 cm\nbase\n8 ​\nc\nm\nheight\n2 ​\nc\nm\narea\n8 ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nThe parallelogram"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-07",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "3",
+            "found": true
+          }
+        ],
+        "text": "TRIANGLE AREA BY DOUBLING · A TRIANGLE\nSTEP 1/7\n3 cm\n2 cm\nbase\n? ​\nc\nm\nheight\n2 ​\nc\nm\ntriangle\n½ ​× ​? ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA triangle"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "4",
+            "found": true
+          }
+        ],
+        "text": "TRIANGLE AREA BY DOUBLING · A TRIANGLE\nSTEP 1/7\n4 cm\n2 cm\nbase\n? ​\nc\nm\nheight\n2 ​\nc\nm\ntriangle\n½ ​× ​? ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA triangle"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          }
+        ],
+        "text": "TRIANGLE AREA BY DOUBLING · A TRIANGLE\nSTEP 1/7\n5 cm\n2 cm\nbase\n? ​\nc\nm\nheight\n2 ​\nc\nm\ntriangle\n½ ​× ​? ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA triangle"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          }
+        ],
+        "text": "TRIANGLE AREA BY DOUBLING · A TRIANGLE\nSTEP 1/7\n6 cm\n2 cm\nbase\n? ​\nc\nm\nheight\n2 ​\nc\nm\ntriangle\n½ ​× ​? ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA triangle"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          }
+        ],
+        "text": "TRIANGLE AREA BY DOUBLING · A TRIANGLE\nSTEP 1/?\n7 cm\n2 cm\nbase\n? ​\nc\nm\nheight\n2 ​\nc\nm\ntriangle\n½ ​× ​? ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA triangle"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "TRIANGLE AREA BY DOUBLING · A TRIANGLE\nSTEP 1/7\n8 cm\n2 cm\nbase\n? ​\nc\nm\nheight\n2 ​\nc\nm\ntriangle\n½ ​× ​? ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA triangle"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-08",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "2",
+            "found": true
+          },
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "TRAPEZIUM AREA · A TRAPEZIUM\nSTEP 1/7\n2 cm\n8 cm\n2 cm\nparallel sides\n2 ​\na\nn\nd\n ​8\nheight\n2 ​\nc\nm\ntrapezium\n½ ​× ​(2 ​\n+\n ​8) ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA trapezium"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "3",
+            "found": true
+          },
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "TRAPEZIUM AREA · A TRAPEZIUM\nSTEP 1/7\n3 cm\n8 cm\n2 cm\nparallel sides\n3 ​\na\nn\nd\n ​8\nheight\n2 ​\nc\nm\ntrapezium\n½ ​× ​(3 ​\n+\n ​8) ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA trapezium"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "4",
+            "found": true
+          },
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "TRAPEZIUM AREA · A TRAPEZIUM\nSTEP 1/7\n4 cm\n8 cm\n2 cm\nparallel sides\n4 ​\na\nn\nd\n ​8\nheight\n2 ​\nc\nm\ntrapezium\n½ ​× ​(4 ​\n+\n ​8) ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA trapezium"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          },
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "TRAPEZIUM AREA · A TRAPEZIUM\nSTEP 1/7\n5 cm\n8 cm\n2 cm\nparallel sides\n5 ​\na\nn\nd\n ​8\nheight\n2 ​\nc\nm\ntrapezium\n½ ​× ​(5 ​\n+\n ​8) ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA trapezium"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          },
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "TRAPEZIUM AREA · A TRAPEZIUM\nSTEP 1/7\n6 cm\n8 cm\n2 cm\nparallel sides\n6 ​\na\nn\nd\n ​8\nheight\n2 ​\nc\nm\ntrapezium\n½ ​× ​(6 ​\n+\n ​8) ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA trapezium"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          },
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "TRAPEZIUM AREA · A TRAPEZIUM\nSTEP 1/7\n7 cm\n8 cm\n2 cm\nparallel sides\n7 ​\na\nn\nd\n ​8\nheight\n2 ​\nc\nm\ntrapezium\n½ ​× ​(7 ​\n+\n ​8) ​× ​2 ​\n=\n ​? ​\nc\nm\n²\nA trapezium"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-09",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "4",
+            "found": true
+          }
+        ],
+        "text": "KITE AND RHOMBUS AREA · A KITE AND ITS DIAGONALS\nSTEP 1/6\n4 cm\n4 cm\ndiagonals\n4 ​\na\nn\nd\n ​4\narea\n½ ​× ​4 ​× ​4 ​\n=\n ​? ​\nc\nm\n²\nA kite and its diagonals"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          }
+        ],
+        "text": "KITE AND RHOMBUS AREA · A KITE AND ITS DIAGONALS\nSTEP 1/6\n5 cm\n4 cm\ndiagonals\n5 ​\na\nn\nd\n ​4\narea\n½ ​× ​5 ​× ​4 ​\n=\n ​? ​\nc\nm\n²\nA kite and its diagonals"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          }
+        ],
+        "text": "KITE AND RHOMBUS AREA · A KITE AND ITS DIAGONALS\nSTEP 1/6\n6 cm\n4 cm\ndiagonals\n6 ​\na\nn\nd\n ​4\narea\n½ ​× ​6 ​× ​4 ​\n=\n ​? ​\nc\nm\n²\nA kite and its diagonals"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          }
+        ],
+        "text": "KITE AND RHOMBUS AREA · A KITE AND ITS DIAGONALS\nSTEP 1/6\n7 cm\n4 cm\ndiagonals\n7 ​\na\nn\nd\n ​4\narea\n½ ​× ​7 ​× ​4 ​\n=\n ​? ​\nc\nm\n²\nA kite and its diagonals"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "KITE AND RHOMBUS AREA · A KITE AND ITS DIAGONALS\nSTEP 1/6\n8 cm\n4 cm\ndiagonals\n8 ​\na\nn\nd\n ​4\narea\n½ ​× ​8 ​× ​4 ​\n=\n ​? ​\nc\nm\n²\nA kite and its diagonals"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "9",
+            "found": true
+          }
+        ],
+        "text": "KITE AND RHOMBUS AREA · A KITE AND ITS DIAGONALS\nSTEP 1/6\n9 cm\n4 cm\ndiagonals\n9 ​\na\nn\nd\n ​4\narea\n½ ​× ​9 ​× ​4 ​\n=\n ​? ​\nc\nm\n²\nA kite and its diagonals"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-10",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          }
+        ],
+        "text": "COMPOUND SHAPE DECOMPOSER · A COMPOUND SHAPE\nSTEP 1/?\n5\n1\n4\n3\n1\n4\nperimeter\n5 ​\n+\n ​1 ​\n+\n ​4 ​\n+\n ​3 ​\n+\n ​1 ​\n+\n ​4 ​\n=\n ​18 ​\nc\nm\nA compound shape"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          }
+        ],
+        "text": "COMPOUND SHAPE DECOMPOSER · A COMPOUND SHAPE\nSTEP 1/8\n6\n1\n5\n3\n1\n4\nperimeter\n6 ​\n+\n ​1 ​\n+\n ​5 ​\n+\n ​3 ​\n+\n ​1 ​\n+\n ​4 ​\n=\n ​20 ​\nc\nm\nA compound shape"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          }
+        ],
+        "text": "COMPOUND SHAPE DECOMPOSER · A COMPOUND SHAPE\nSTEP 1/8\n7\n1\n6\n3\n1\n4\nperimeter\n7 ​\n+\n ​1 ​\n+\n ​6 ​\n+\n ​3 ​\n+\n ​1 ​\n+\n ​4 ​\n=\n ​22 ​\nc\nm\nA compound shape"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          }
+        ],
+        "text": "COMPOUND SHAPE DECOMPOSER · A COMPOUND SHAPE\nSTEP 1/8\n5\n1\n4\n4\n1\n5\nperimeter\n5 ​\n+\n ​1 ​\n+\n ​4 ​\n+\n ​4 ​\n+\n ​1 ​\n+\n ​5 ​\n=\n ​20 ​\nc\nm\nA compound shape"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          }
+        ],
+        "text": "COMPOUND SHAPE DECOMPOSER · A COMPOUND SHAPE\nSTEP 1/8\n6\n1\n5\n4\n1\n5\nperimeter\n6 ​\n+\n ​1 ​\n+\n ​5 ​\n+\n ​4 ​\n+\n ​1 ​\n+\n ​5 ​\n=\n ​22 ​\nc\nm\nA compound shape"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          }
+        ],
+        "text": "COMPOUND SHAPE DECOMPOSER · A COMPOUND SHAPE\nSTEP 1/8\n7\n1\n6\n4\n1\n5\nperimeter\n7 ​\n+\n ​1 ​\n+\n ​6 ​\n+\n ​4 ​\n+\n ​1 ​\n+\n ​5 ​\n=\n ​24 ​\nc\nm\nA compound shape"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-11",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "2",
+            "found": true
+          }
+        ],
+        "text": "CIRCUMFERENCE UNROLLING · CIRCLE VOCABULARY\nSTEP 1/8\nradius\ndiameter\nchord\narc\ncircumference\nradius r\n2 ​\nc\nm\ndiameter d\n2 ​× ​\nr\n ​\n=\n ​? ​\nc\nm\nCircle vocabulary"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "3",
+            "found": true
+          }
+        ],
+        "text": "CIRCUMFERENCE UNROLLING · CIRCLE VOCABULARY\nSTEP 1/8\nradius\ndiameter\nchord\narc\ncircumference\nradius r\n3 ​\nc\nm\ndiameter d\n2 ​× ​\nr\n ​\n=\n ​? ​\nc\nm\nCircle vocabulary"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "4",
+            "found": true
+          }
+        ],
+        "text": "CIRCUMFERENCE UNROLLING · CIRCLE VOCABULARY\nSTEP 1/?\nradius\ndiameter\nchord\narc\ncircumference\nradius r\n4 ​\nc\nm\ndiameter d\n2 ​× ​\nr\n ​\n=\n ​? ​\nc\nm\nCircle vocabulary"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          }
+        ],
+        "text": "CIRCUMFERENCE UNROLLING · CIRCLE VOCABULARY\nSTEP 1/8\nradius\ndiameter\nchord\narc\ncircumference\nradius r\n5 ​\nc\nm\ndiameter d\n2 ​× ​\nr\n ​\n=\n ​? ​\nc\nm\nCircle vocabulary"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          }
+        ],
+        "text": "CIRCUMFERENCE UNROLLING · CIRCLE VOCABULARY\nSTEP 1/8\nradius\ndiameter\nchord\narc\ncircumference\nradius r\n6 ​\nc\nm\ndiameter d\n2 ​× ​\nr\n ​\n=\n ​? ​\nc\nm\nCircle vocabulary"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          }
+        ],
+        "text": "CIRCUMFERENCE UNROLLING · CIRCLE VOCABULARY\nSTEP 1/8\nradius\ndiameter\nchord\narc\ncircumference\nradius r\n7 ​\nc\nm\ndiameter d\n2 ​× ​\nr\n ​\n=\n ​? ​\nc\nm\nCircle vocabulary"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-12",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "2",
+            "found": true
+          }
+        ],
+        "text": "CIRCLE AREA UNWRAP · SLICE THE CIRCLE\nSTEP 1/7\nr = 2 cm\nradius\n2 ​\nc\nm\nslices\n8\narea\n?\nSlice the circle"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "3",
+            "found": true
+          }
+        ],
+        "text": "CIRCLE AREA UNWRAP · SLICE THE CIRCLE\nSTEP 1/7\nr = 3 cm\nradius\n3 ​\nc\nm\nslices\n8\narea\n?\nSlice the circle"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "4",
+            "found": true
+          }
+        ],
+        "text": "CIRCLE AREA UNWRAP · SLICE THE CIRCLE\nSTEP 1/7\nr = 4 cm\nradius\n4 ​\nc\nm\nslices\n8\narea\n?\nSlice the circle"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          }
+        ],
+        "text": "CIRCLE AREA UNWRAP · SLICE THE CIRCLE\nSTEP 1/7\nr = 5 cm\nradius\n5 ​\nc\nm\nslices\n8\narea\n?\nSlice the circle"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          }
+        ],
+        "text": "CIRCLE AREA UNWRAP · SLICE THE CIRCLE\nSTEP 1/7\nr = 6 cm\nradius\n6 ​\nc\nm\nslices\n8\narea\n?\nSlice the circle"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          }
+        ],
+        "text": "CIRCLE AREA UNWRAP · SLICE THE CIRCLE\nSTEP 1/7\nr = 7 cm\nradius\n7 ​\nc\nm\nslices\n8\narea\n?\nSlice the circle"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-13",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "30",
+            "found": true
+          }
+        ],
+        "text": "ARC AND SECTOR EXPLORER · SECTOR AND ARC\nSTEP 1/7\n30°\narc 3.14 cm\nr = 6\n30 ÷ 360 = 1/12 of the circle\nfraction\n1/12\nradius\n6 ​\nc\nm\nSector and arc"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "60",
+            "found": true
+          }
+        ],
+        "text": "ARC AND SECTOR EXPLORER · SECTOR AND ARC\nSTEP 1/7\n60°\narc 6.28 cm\nr = 6\n60 ÷ 360 = 1/6 of the circle\nfraction\n1/6\nradius\n6 ​\nc\nm\nSector and arc"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "90",
+            "found": true
+          }
+        ],
+        "text": "ARC AND SECTOR EXPLORER · SECTOR AND ARC\nSTEP 1/7\n90°\narc 9.42 cm\nr = 6\n90 ÷ 360 = 1/4 of the circle\nfraction\n1/4\nradius\n6 ​\nc\nm\nSector and arc"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "120",
+            "found": true
+          }
+        ],
+        "text": "ARC AND SECTOR EXPLORER · SECTOR AND ARC\nSTEP 1/7\n120°\narc 12.57 cm\nr = 6\n120 ÷ 360 = 1/3 of the circle\nfraction\n1/3\nradius\n6 ​\nc\nm\nSector and arc"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "150",
+            "found": true
+          }
+        ],
+        "text": "ARC AND SECTOR EXPLORER · SECTOR AND ARC\nSTEP 1/7\n150°\narc 15.71 cm\nr = 6\n150 ÷ 360 = 5/12 of the circle\nfraction\n5/12\nradius\n6 ​\nc\nm\nSector and arc"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "180",
+            "found": true
+          }
+        ],
+        "text": "ARC AND SECTOR EXPLORER · SECTOR AND ARC\nSTEP 1/7\n180°\narc 18.85 cm\nr = 6\n180 ÷ 360 = 1/2 of the circle\nfraction\n1/2\nradius\n6 ​\nc\nm\nSector and arc"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-14",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "3",
+            "found": true
+          }
+        ],
+        "text": "AREA AND PERIMETER RELATIONSHIP · SAME FENCE, DIFFERENT FIELDS\nSTEP 1/6\nA: 3 × 2\nB: 5 × 3\nP ? · A 6\nP 16 · A 15\nperimeter\nB\n ​\ni\ns\n ​\nl\no\nn\ng\ne\nr\narea\nB\n ​\ni\ns\n ​\nb\ni\ng\ng\ne\nr\nSame fence, different fields"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "4",
+            "found": true
+          }
+        ],
+        "text": "AREA AND PERIMETER RELATIONSHIP · SAME FENCE, DIFFERENT FIELDS\nSTEP 1/6\nA: 4 × 2\nB: 5 × 3\nP ? · A 8\nP 16 · A 15\nperimeter\nB\n ​\ni\ns\n ​\nl\no\nn\ng\ne\nr\narea\nB\n ​\ni\ns\n ​\nb\ni\ng\ng\ne\nr\nSame fence, different fields"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "5",
+            "found": true
+          }
+        ],
+        "text": "AREA AND PERIMETER RELATIONSHIP · SAME FENCE, DIFFERENT FIELDS\nSTEP 1/6\nA: 5 × 2\nB: 5 × 3\nP ? · A 10\nP 16 · A 15\nperimeter\nB\n ​\ni\ns\n ​\nl\no\nn\ng\ne\nr\narea\nB\n ​\ni\ns\n ​\nb\ni\ng\ng\ne\nr\nSame fence, different fields"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "6",
+            "found": true
+          }
+        ],
+        "text": "AREA AND PERIMETER RELATIONSHIP · SAME FENCE, DIFFERENT FIELDS\nSTEP 1/6\nA: 6 × 2\nB: 5 × 3\nP ? · A 12\nP ? · A 15\nperimeter\nt\nh\ne\n ​\ns\na\nm\ne\narea\nB\n ​\ni\ns\n ​\nb\ni\ng\ng\ne\nr\nSame fence, different fields"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "7",
+            "found": true
+          }
+        ],
+        "text": "AREA AND PERIMETER RELATIONSHIP · SAME FENCE, DIFFERENT FIELDS\nSTEP 1/6\nA: 7 × 2\nB: 5 × 3\nP ? · A 14\nP 16 · A 15\nperimeter\nA\n ​\ni\ns\n ​\nl\no\nn\ng\ne\nr\narea\nB\n ​\ni\ns\n ​\nb\ni\ng\ng\ne\nr\nSame fence, different fields"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "8",
+            "found": true
+          }
+        ],
+        "text": "AREA AND PERIMETER RELATIONSHIP · SAME FENCE, DIFFERENT FIELDS\nSTEP 1/6\nA: 8 × 2\nB: 5 × 3\nP ? · A 16\nP 16 · A 15\nperimeter\nA\n ​\ni\ns\n ​\nl\no\nn\ng\ne\nr\narea\nA\n ​\ni\ns\n ​\nb\ni\ng\ng\ne\nr\nSame fence, different fields"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F12-15",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "100",
+            "found": true
+          }
+        ],
+        "text": "UNITS OF AREA GRID · LENGTH FIRST\nSTEP 1/7\n1 cm\n10 mm\n10 × 10 = 100 small squares\nlength\n1 ​\nc\nm\n ​\n=\n ​10 ​\nm\nm\narea of 1 cm²\n10 ​× ​10 ​\n=\n ​100 ​\nm\nm\n²\nLength first"
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "100",
+            "found": true
+          }
+        ],
+        "text": "UNITS OF AREA GRID · LENGTH FIRST\nSTEP 1/7\n1 cm\n10 mm\n10 × 10 = 100 small squares\nlength\n1 ​\nc\nm\n ​\n=\n ​10 ​\nm\nm\narea of 1 cm²\n10 ​× ​10 ​\n=\n ​100 ​\nm\nm\n²\nLength first"
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "100",
+            "found": true
+          }
+        ],
+        "text": "UNITS OF AREA GRID · LENGTH FIRST\nSTEP 1/7\n1 cm\n10 mm\n10 × 10 = 100 small squares\nlength\n1 ​\nc\nm\n ​\n=\n ​10 ​\nm\nm\narea of 1 cm²\n10 ​× ​10 ​\n=\n ​100 ​\nm\nm\n²\nLength first"
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "100",
+            "found": true
+          }
+        ],
+        "text": "UNITS OF AREA GRID · LENGTH FIRST\nSTEP 1/7\n1 cm\n10 mm\n10 × 10 = 100 small squares\nlength\n1 ​\nc\nm\n ​\n=\n ​10 ​\nm\nm\narea of 1 cm²\n10 ​× ​10 ​\n=\n ​100 ​\nm\nm\n²\nLength first"
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "100",
+            "found": true
+          }
+        ],
+        "text": "UNITS OF AREA GRID · LENGTH FIRST\nSTEP 1/7\n1 cm\n10 mm\n10 × 10 = 100 small squares\nlength\n1 ​\nc\nm\n ​\n=\n ​10 ​\nm\nm\narea of 1 cm²\n10 ​× ​10 ​\n=\n ​100 ​\nm\nm\n²\nLength first"
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "100",
+            "found": true
+          }
+        ],
+        "text": "UNITS OF AREA GRID · LENGTH FIRST\nSTEP 1/7\n1 cm\n10 mm\n10 × 10 = 100 small squares\nlength\n1 ​\nc\nm\n ​\n=\n ​10 ​\nm\nm\narea of 1 cm²\n10 ​× ​10 ​\n=\n ​100 ​\nm\nm\n²\nLength first"
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 0,
+      "guards": [],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-01",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "REFLECTION · MEET THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nMirror workshop · x = 0\nA′\nB′\nC′\nA\nB\nC\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "REFLECTION · MEET THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nMirror workshop · x = 0\nA′\nB′\nC′\nA\nB\nC\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "REFLECTION · MEET THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nMirror workshop · x = 0\nA′\nB′\nC′\nA\nB\nC\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "REFLECTION · MEET THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nMirror workshop · x = 0\nA′\nB′\nC′\nA\nB\nC\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "REFLECTION · MEET THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nMirror workshop · x = 0\nA′\nB′\nC′\nA\nB\nC\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "REFLECTION · MEET THE SHAPE\nSTEP ?/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nMirror workshop · x = 0\nA′\nB′\nC′\nA\nB\nC\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-02",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ROTATION · ORIGINAL SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nRotation workshop · 90° ACW\nA\nB\nC\nA′\nB′\nC′\nO\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ROTATION · ORIGINAL SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nRotation workshop · 90° ACW\nA\nB\nC\nA′\nB′\nC′\nO\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ROTATION · ORIGINAL SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nRotation workshop · 90° ACW\nA\nB\nC\nA′\nB′\nC′\nO\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ROTATION · ORIGINAL SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nRotation workshop · 90° ACW\nA\nB\nC\nA′\nB′\nC′\nO\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ROTATION · ORIGINAL SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nRotation workshop · 90° ACW\nA\nB\nC\nA′\nB′\nC′\nO\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ROTATION · ORIGINAL SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nRotation workshop · 90° ACW\nA\nB\nC\nA′\nB′\nC′\nO\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-03",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "TRANSLATION · START WITH THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nTranslation workshop · (+1, +1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "TRANSLATION · START WITH THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nTranslation workshop · (+2, +1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "TRANSLATION · START WITH THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nTranslation workshop · (+3, +1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "TRANSLATION · START WITH THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nTranslation workshop · (+1, +1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "TRANSLATION · START WITH THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nTranslation workshop · (+2, +1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "TRANSLATION · START WITH THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nTranslation workshop · (+3, +1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-04",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ENLARGEMENT · START WITH THE ORIGINAL\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nEnlargement workshop · scale factor 0.5\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ENLARGEMENT · START WITH THE ORIGINAL\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nEnlargement workshop · scale factor 1\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ENLARGEMENT · START WITH THE ORIGINAL\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nEnlargement workshop · scale factor 1.5\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ENLARGEMENT · START WITH THE ORIGINAL\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nEnlargement workshop · scale factor 2\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ENLARGEMENT · START WITH THE ORIGINAL\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nEnlargement workshop · scale factor 2.5\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "ENLARGEMENT · START WITH THE ORIGINAL\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nEnlargement workshop · scale factor 3\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-05",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "COMBINED TRANSFORMATIONS · START WITH ABC\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal → Image 1 → Image 2\nA\nB\nC\nA′\nB′\nC′\nA″\nB″\nC″\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "COMBINED TRANSFORMATIONS · START WITH ABC\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal → Image 1 → Image ?\nA\nB\nC\nA′\nB′\nC′\nA″\nB″\nC″\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "COMBINED TRANSFORMATIONS · START WITH ABC\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal → Image 1 → Image 2\nA\nB\nC\nA′\nB′\nC′\nA″\nB″\nC″\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "COMBINED TRANSFORMATIONS · START WITH ABC\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal → Image 1 → Image 2\nA\nB\nC\nA′\nB′\nC′\nA″\nB″\nC″\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "COMBINED TRANSFORMATIONS · START WITH ABC\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal → Image 1 → Image 2\nA\nB\nC\nA′\nB′\nC′\nA″\nB″\nC″\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "COMBINED TRANSFORMATIONS · START WITH ABC\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal → Image 1 → Image 2\nA\nB\nC\nA′\nB′\nC′\nA″\nB″\nC″\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-06",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER THE TRANSFORMATION · READ THE TWO SHAPES\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal ABC → Image A′B′C′\n(1, 1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER THE TRANSFORMATION · READ THE TWO SHAPES\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal ABC → Image A′B′C′\n(2, 1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER THE TRANSFORMATION · READ THE TWO SHAPES\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal ABC → Image A′B′C′\n(3, 1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER THE TRANSFORMATION · READ THE TWO SHAPES\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal ABC → Image A′B′C′\n(1, 1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER THE TRANSFORMATION · READ THE TWO SHAPES\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal ABC → Image A′B′C′\n(2, 1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "A",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER THE TRANSFORMATION · READ THE TWO SHAPES\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nOriginal ABC → Image A′B′C′\n(3, 1)\nA\nB\nC\nA′\nB′\nC′\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-07",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Kite",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER LINE SYMMETRY · LOOK AT HALF THE SHAPE\nSTEP ?/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWould both halves match?\nx = 0\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Rectangle",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER LINE SYMMETRY · LOOK AT HALF THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWould both halves match?\nx = 0\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Square",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER LINE SYMMETRY · LOOK AT HALF THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWould both halves match?\nx = 0\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Isosceles triangle",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER LINE SYMMETRY · LOOK AT HALF THE SHAPE\nSTEP ?/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWould both halves match?\nx = 0\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Regular hexagon",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER LINE SYMMETRY · LOOK AT HALF THE SHAPE\nSTEP 1/?\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWould both halves match?\nx = 0\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "Irregular L-shape",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER LINE SYMMETRY · LOOK AT HALF THE SHAPE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWould both halves match?\nx = ?\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-08",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "match",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER ROTATIONAL SYMMETRY · BEGIN WITH A SQUARE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWhich turns make an exact match?\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "match",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER ROTATIONAL SYMMETRY · BEGIN WITH A SQUARE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWhich turns make an exact match?\n15°\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "match",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER ROTATIONAL SYMMETRY · BEGIN WITH A SQUARE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWhich turns make an exact match?\n30°\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "match",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER ROTATIONAL SYMMETRY · BEGIN WITH A SQUARE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWhich turns make an exact match?\n45°\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "match",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER ROTATIONAL SYMMETRY · BEGIN WITH A SQUARE\nSTEP 1/?\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWhich turns make an exact match?\n60°\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "match",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER ROTATIONAL SYMMETRY · BEGIN WITH A SQUARE\nSTEP 1/6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\nWhich turns make an exact match?\n75°\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-09",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "tile",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TESSELLATION\nTHE FIRST TILE\nFit the edges, not just the corners\nNo gaps. No overlaps.\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "tile",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TESSELLATION\nTHE FIRST TILE\nFit the edges, not just the corners\nNo gaps. No overlaps.\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "tile",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TESSELLATION\nTHE FIRST TILE\nFit the edges, not just the corners\nNo gaps. No overlaps.\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "tile",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TESSELLATION\nTHE FIRST TILE\nFit the edges, not just the corners\nNo gaps. No overlaps.\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "tile",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TESSELLATION\nTHE FIRST TILE\nFit the edges, not just the corners\nNo gaps. No overlaps.\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "tile",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TESSELLATION\nTHE FIRST TILE\nFit the edges, not just the corners\nNo gaps. No overlaps.\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-10",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "triangle",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TRIANGLE CONGRUENCE\nSTEP 1 / 6\nHow do we know triangles match?\nORIGINAL\nCANDIDATE\nA\nB\nC\nD\nE\nF\nMove · turn · flip · compare\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "triangle",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TRIANGLE CONGRUENCE\nSTEP 1 / 6\nHow do we know triangles match?\nORIGINAL\nCANDIDATE\nA\nB\nC\nD\nE\nF\nMove · turn · flip · compare\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "triangle",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TRIANGLE CONGRUENCE\nSTEP 1 / 6\nHow do we know triangles match?\nORIGINAL\nCANDIDATE\nA\nB\nC\nD\nE\nF\nMove · turn · flip · compare\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "triangle",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TRIANGLE CONGRUENCE\nSTEP 1 / 6\nHow do we know triangles match?\nORIGINAL\nCANDIDATE\nA\nB\nC\nD\nE\nF\nMove · turn · flip · compare\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "triangle",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TRIANGLE CONGRUENCE\nSTEP 1 / 6\nHow do we know triangles match?\nORIGINAL\nCANDIDATE\nA\nB\nC\nD\nE\nF\nMove · turn · flip · compare\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "triangle",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER TRIANGLE CONGRUENCE\nSTEP 1 / 6\nHow do we know triangles match?\nORIGINAL\nCANDIDATE\nA\nB\nC\nD\nE\nF\nMove · turn · flip · compare\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-11",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "ORIGINAL",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER SIMILAR SHAPES\nSTEP 1 / 6\nSame shape · new size\nORIGINAL\nIMAGE\nP\nQ\nR\nA\nB\nC\nCompare corresponding side lengths\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "ORIGINAL",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER SIMILAR SHAPES\nSTEP 1 / 6\nSame shape · new size\nORIGINAL\nIMAGE\nP\nQ\nR\nA\nB\nC\nCompare corresponding side lengths\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "ORIGINAL",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER SIMILAR SHAPES\nSTEP 1 / 6\nSame shape · new size\nORIGINAL\nIMAGE\nP\nQ\nR\nA\nB\nC\nCompare corresponding side lengths\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "ORIGINAL",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER SIMILAR SHAPES\nSTEP 1 / 6\nSame shape · new size\nORIGINAL\nIMAGE\nP\nQ\nR\nA\nB\nC\nCompare corresponding side lengths\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "ORIGINAL",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER SIMILAR SHAPES\nSTEP 1 / 6\nSame shape · new size\nORIGINAL\nIMAGE\nP\nQ\nR\nA\nB\nC\nCompare corresponding side lengths\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "ORIGINAL",
+            "found": true
+          }
+        ],
+        "text": "DISCOVER SIMILAR SHAPES\nSTEP 1 / 6\nSame shape · new size\nORIGINAL\nIMAGE\nP\nQ\nR\nA\nB\nC\nCompare corresponding side lengths\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-12",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "u",
+            "found": true
+          }
+        ],
+        "text": "VECTOR BUILDER\nSTEP 1 / 6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\nA vector has two components\nA\nB\nC\nu\nv\n1\n1\n1\n1\n?\n?\n+\n=\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "u",
+            "found": true
+          }
+        ],
+        "text": "VECTOR BUILDER\nSTEP 1 / 6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\nA vector has two components\nA\nB\nC\nu\nv\n2\n1\n1\n1\n?\n2\n+\n=\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "u",
+            "found": true
+          }
+        ],
+        "text": "VECTOR BUILDER\nSTEP 1 / 6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\nA vector has two components\nA\nB\nC\nu\nv\n3\n1\n1\n1\n?\n2\n+\n=\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "u",
+            "found": true
+          }
+        ],
+        "text": "VECTOR BUILDER\nSTEP 1 / 6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\nA vector has two components\nA\nB\nC\nu\nv\n1\n1\n1\n2\n2\n3\n+\n=\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "u",
+            "found": true
+          }
+        ],
+        "text": "VECTOR BUILDER\nSTEP 1 / 6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\nA vector has two components\nA\nB\nC\nu\nv\n2\n1\n1\n2\n?\n?\n+\n=\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "u",
+            "found": true
+          }
+        ],
+        "text": "VECTOR BUILDER\nSTEP 1 / 6\nx\ny\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\n−6\n−5\n−4\n−3\n−2\n−1\n1\n2\n3\n4\n5\n6\nA vector has two components\nA\nB\nC\nu\nv\n3\n1\n1\n2\n?\n3\n+\n=\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  },
+  {
+    "id": "F14-13",
+    "errors": [],
+    "checks": [
+      {
+        "id": "C1.Q1",
+        "pass": true,
+        "expected": [
+          {
+            "value": "motif",
+            "found": true
+          }
+        ],
+        "text": "PATTERN MAKERS\nSTEP 1 / 6\nStudy the motif\nSLIDE 1.8 UNITS\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q2",
+        "pass": true,
+        "expected": [
+          {
+            "value": "motif",
+            "found": true
+          }
+        ],
+        "text": "PATTERN MAKERS\nSTEP 1 / 6\nStudy the motif\nSLIDE 1.9 UNITS\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q3",
+        "pass": true,
+        "expected": [
+          {
+            "value": "motif",
+            "found": true
+          }
+        ],
+        "text": "PATTERN MAKERS\nSTEP 1 / ?\nStudy the motif\nSLIDE 2.0 UNITS\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q4",
+        "pass": true,
+        "expected": [
+          {
+            "value": "motif",
+            "found": true
+          }
+        ],
+        "text": "PATTERN MAKERS\nSTEP 1 / 6\nStudy the motif\nSLIDE 2.1 UNITS\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q5",
+        "pass": true,
+        "expected": [
+          {
+            "value": "motif",
+            "found": true
+          }
+        ],
+        "text": "PATTERN MAKERS\nSTEP 1 / 6\nStudy the motif\nSLIDE 2.2 UNITS\nUse the given coordinates and transformation."
+      },
+      {
+        "id": "C1.Q6",
+        "pass": true,
+        "expected": [
+          {
+            "value": "motif",
+            "found": true
+          }
+        ],
+        "text": "PATTERN MAKERS\nSTEP 1 / 6\nStudy the motif\nSLIDE 2.3 UNITS\nUse the given coordinates and transformation."
+      }
+    ],
+    "touch": {
+      "coarse": true,
+      "interactiveSVG": 1,
+      "guards": [
+        "none"
+      ],
+      "pass": true
+    }
+  }
+]

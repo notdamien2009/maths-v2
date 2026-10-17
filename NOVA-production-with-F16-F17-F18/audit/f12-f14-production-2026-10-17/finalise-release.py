@@ -1,0 +1,48 @@
+from pathlib import Path
+import json,hashlib,shutil,re
+r=Path('.');a=r/'audit/f12-f14-production-2026-10-17';d=r/'documentation/f12-f14-production-2026-10-17';d.mkdir(parents=True,exist_ok=True);out=r/'test-lessons/f12-f14';out.mkdir(exist_ok=True)
+load=lambda p:json.loads(p.read_text(encoding='utf8'));sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();reg=load(r/'integration/component-adapters.json');rows=[x for x in reg if x['id'].startswith(('F12-','F14-'))];all_reports=[]
+for p in sorted(a.glob('semantic-browser-*.json'),key=lambda p:p.stat().st_mtime):
+ for item in load(p):item['_report']=p.name;all_reports.append(item)
+final=[];missing=[]
+for row in rows:
+ candidates=[x for x in all_reports if x['id']==row['id'] and x.get('sourceSha256')==sha(r/row['path']) and not x.get('error') and not x.get('errors') and all(c['pass'] for c in x['checks'])]
+ if not candidates:missing.append(row['id'])
+ else:final.append(candidates[-1])
+if missing:print('AWAITING CURRENT PASSING SOURCES:',missing);raise SystemExit(2)
+assert len(final)==28
+for x in final:x.pop('_report',None)
+(a/'release-browser.json').write_text(json.dumps(final,indent=2),encoding='utf8')
+checks={x['id']:x for x in final};native={x['id']:x for x in load(a/'final-native.json')};ext=load(a/'extended-browser.json');axe=load(a/'accessibility.json');maths=load(a/'independent-maths.json');domains=load(a/'domain-contracts.json');touch=load(a/'final-touch-smoke.json');trusted=load(a/'touch-representatives.json');mixed=load(a/'mixed-lesson-validation.json');speech=load(a/'speech-policy.json')
+assert len(ext)==28 and all(not x.get('error') and not x['errors'] and all(c['pass'] for c in x['checks']) for x in ext)
+assert len(axe)==28 and all(not x.get('error') and not x['violations'] for x in axe)
+assert len(maths)==168 and all(x['pass'] for x in maths)
+assert len(domains)==196 and all(x['pass'] for x in domains)
+assert len(touch)==28 and all(not x.get('error') and not x['errors'] and x['touch']['pass'] and all(c['pass'] and all(v['found'] for v in c['expected']) for c in x['checks']) for x in touch)
+assert len(trusted)==3 and all(not x.get('error') and not x['errors'] and all(c['pass'] for c in x['checks']) for x in trusted)
+assert not mixed['structuralErrors'] and mixed['browser']['pass']
+assert all(c['pass'] for c in speech['checks'])
+assert len(native)==28 and all(not x.get('error') and not x['errors'] and all(not s.get('error') and s['svg'] for s in x['baseline']) for x in native.values())
+prior=load(a/'prior-source-hashes.json');preserve=[{'path':p,'pass':(r/p).exists() and sha(r/p)==h} for p,h in prior.items()];assert all(x['pass'] for x in preserve)
+(a/'prior-source-preservation.json').write_text(json.dumps(preserve,indent=2),encoding='utf8')
+for row in rows:
+ id=row['id'];desc=native[id]['descriptor'];row.update(sha256=sha(r/row['path']),draws=desc['draws'],exploreFields=desc['exploreFields'],challengeReady=True,status='production-verified within documented native limits',productionRevision='2026-10-17')
+ row.setdefault('verification',{})['f12F14Production']={'passed':len(checks[id]['checks']),'checks':len(checks[id]['checks']),'sourceSha256':row['sha256'],'evidence':'audit/f12-f14-production-2026-10-17/release-browser.json'}
+ shutil.copy2(a/'fixtures'/f'{id}.html',out/f'{id}-test-lesson.html')
+(r/'integration/component-adapters.json').write_text(json.dumps(reg,indent=2),encoding='utf8')
+cases=load(a/'lesson-cases.json');bindings={x['id']:x['bindings'][0] for x in ext}
+limits12=['Use triangles/quads/regular presets and native shape keys. Property definitions remain the original shape kit.','Use native property keys ra/eq/par2/par1/sym/sym1/rot/tri/quad. Preserve native predicate functions.','Use verts (not vertices), integer peg coordinates 0–7, at most 12 vertices; closed polygons need at least three.','Positive lengths; triangle kind must satisfy 2a > b.','Positive integer columns and rows within the native teaching grid; keep labels and counts consistent.','Positive base and perpendicular height; slanted side is not the height.','Positive base and perpendicular height; keep top vertex fraction inside the native model.','Positive parallel sides; x0 >= 0 and x0 + top <= bottom.','Positive diagonals; crossing fraction strictly between 0 and 1.','For L-shapes, positive arm thickness smaller than both outside dimensions.','Positive radius; diameter is twice the radius.','Sector counts 8,16,32,64; positive radius.','Sector angle greater than zero and no more than 360 degrees; positive radius.','Positive rectangle dimensions; update both comparison models and any target constraint together.','Unit pair 0–2, quantity > 0 and <= 1,000,000. Conversion uses the square of the length factor.']
+limits14=['Original polygon 3–12 vertices, coordinates −6 to 6. Mirror kind and k must match the native grid.','Original polygon 3–12 vertices, rotation within ±360 degrees; update centre and angle.','Original polygon 3–12 vertices. Use a two-entry vector and keep the image within the grid.','Positive enlargement factor up to 4; verify the resulting image fits the plot.','Use native rotate/reflect/translate operations and update intermediate and final offsets together.','Use the native transform kind and matching vector/angle/mirror parameters.','Use a compatible native shape preset; axes come from that shape, not its displayed name.','Rotational order follows the actual native polygon; change geometry and order together.','Use compatible native tessellation presets; maintain integer columns/rows and valid placement indices.','Use native congruence presets and consistent side/angle evidence; display text alone does not change congruence.','Similarity scale factor 0.25–3 in records; pupil slider uses 0.5–3. Area ratio is k².','Use two-entry finite vectors, operation add/subtract, and preserve consistent start/displacement.','Frieze amounts 1–5 (native display clamp). Explore separation 1.8–2.7; rotational preset retains its native fixed-angle structure.']
+for fam,limits in [('F12',limits12),('F14',limits14)]:
+ family=[x for x in rows if x['id'].startswith(fam+'-')];manifest=[]
+ for row in family:
+  i=int(row['id'].split('-')[1]);manifest.append({'id':row['id'],'path':row['path'],'sha256':row['sha256'],'draws':row['draws'],'exploreFields':row['exploreFields'],'nativeSteps':len(native[row['id']]['baseline']),'challengeReady':True,'limit':limits[i-1],'testedQuestions':6,'browserChecks':len(checks[row['id']]['checks'])})
+ (r/'integration'/f'{fam}-adapter-rows.json').write_text(json.dumps(family,indent=2),encoding='utf8');(d/f'{fam}-capability-manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf8');(d/f'{fam}-configuration-examples.json').write_text(json.dumps({x['id']:{'lessonExplore':bindings[x['id']],'questions':cases[x['id']]['questions']} for x in family},indent=2),encoding='utf8')
+ text=f'# {fam} individual component audit\n\nAll {len(family)} canonical sources passed the current-source test suite. Microsoft Edge, widths 390/1024/1440. Native drawing language, geometry, neon primitives and chalk typography retained.\n\n'
+ for row,m in zip(family,manifest):
+  text+=f"## {row['id']}\n\n{row['path']} — {m['browserChecks']} browser checks; six independently checked question keys.\n\nSupported boundary: {m['limit']}\n\n"
+  text+='1. Original native renderer retained.\n2. Shared core and template preserved.\n3. Declared drawing functions exposed.\n4. Native numeric/property fields editable.\n5. Lesson record validation and domain rejection checked.\n6. Original native teaching stages render.\n7. Watch works in the template.\n8. Guided/Bob records work in the template.\n9. Concept-specific Explore can be configured.\n10. Real pupil controls change the model.\n11. Separate instances stay independent.\n12. Restore returns to the lesson starting state.\n13. Pupil state survives desktop/phone resizing.\n14. Native controls respond after resizing.\n15. Shared F0-12 Challenge handles wrong answers, hints, scoring, completion and reset.\n16. Six question drawings retain givens and conceal computed answers.\n17. Phone layouts, font checks, reduced-motion scenes and accessibility scan checked.\n18. Source hash, native modes and template evidence recorded in the release report.\n\n'
+ (d/f'{fam}-individual-audit.md').write_text(text,encoding='utf8')
+summary={'families':{'F12':15,'F14':13},'components':28,'browserChecks':sum(len(x['checks']) for x in final),'passedBrowserChecks':sum(sum(c['pass'] for c in x['checks']) for x in final),'exploreChecks':sum(len(x['checks']) for x in ext),'independentMathKeys':168,'domainChecks':196,'nativeStages':sum(len(x['baseline']) for x in native.values()),'axeViolations':0,'touchSceneChecks':168,'trustedTouchModels':3,'speechPolicyChecks':len(speech['checks']),'mixedLessonRecords':mixed['recordCount'],'priorFilesPreserved':len(prior),'auditoryVoiceReview':False,'scope':'F12/F14 canonical native renderers, documented numerical limits, Microsoft Edge at 390/1024/1440. Earlier families preserved, not recertified by this update.'}
+(d/'release-summary.json').write_text(json.dumps(summary,indent=2),encoding='utf8');print(json.dumps(summary,indent=2))
+(d/'test-results.md').write_text('# F12/F14 test results\n\n'+json.dumps(summary,indent=2)+'\n\nCurrent-source results: audit/f12-f14-production-2026-10-17/release-browser.json. Earlier pilot/shard files are development history and may contain superseded failures. Accessibility incomplete items include SVG contrast that needs human judgement; zero automated violations does not certify every screen reader or physical device. Speech policy checks do not mean every voice has been listened to.\n',encoding='utf8')

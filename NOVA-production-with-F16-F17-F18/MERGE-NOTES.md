@@ -780,3 +780,8 @@ Files (178):
 - tools/f6/probe.cjs
 - tools/f6/run-f6.sh
 - tools/f6/steps.cjs
+
+
+## Current update: F12 and F14 completed
+
+F12 and F14 are now included with current-source verification. Their earlier pending status above is historical. See documentation/f12-f14-production-2026-10-17. F0–F18 are all present; existing canonical family/core/master source bytes were preserved.
