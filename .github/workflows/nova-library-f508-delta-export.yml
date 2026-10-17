@@ -1,0 +1,51 @@
+name: NOVA F5-08 Library Delta Export
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/nova-library-f508-delta-export.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+          persist-credentials: false
+      - name: Verify and archive added production documents since Library snapshot
+        env:
+          BASELINE: 4820fe55740f5f1bf4a080536c3cd96575bc28a4
+        shell: bash
+        run: |
+          python - <<'PY'
+          import subprocess, zipfile, pathlib, json, hashlib, os
+          base=os.environ['BASELINE']; head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          subprocess.run(['git','cat-file','-e',base+'^{commit}'],check=True)
+          changed=subprocess.check_output(['git','diff','--name-only','--diff-filter=AMR',base,head,'--','NOVA-production'],text=True).splitlines()
+          removed=subprocess.check_output(['git','diff','--name-only','--diff-filter=D',base,head,'--','NOVA-production'],text=True).splitlines()
+          if not changed:raise SystemExit('No production changes since source snapshot')
+          out=pathlib.Path('_nova_delta');out.mkdir(exist_ok=True)
+          data={'repository':'notdamien2009/maths-v2','baseline_commit':base,'source_commit':head,'modified_or_added':{},'removed':removed}
+          with zipfile.ZipFile(out/'NOVA-F5-08-UPDATE.zip','w',allowZip64=True) as z:
+              for name in sorted(changed):
+                  f=pathlib.Path(name)
+                  if not f.is_file():raise SystemExit('Missing changed source: '+name)
+                  blob=f.read_bytes()
+                  data['modified_or_added'][name]={'sha256':hashlib.sha256(blob).hexdigest(),'size_bytes':len(blob)}
+                  compress=zipfile.ZIP_STORED if f.suffix.lower() in ('.png','.jpg','.zip','.webp') else zipfile.ZIP_DEFLATED
+                  z.writestr(name,blob,compress_type=compress)
+              z.writestr('NOVA-F5-08-UPDATE-MANIFEST.json',json.dumps(data,indent=2)+'\n',compress_type=zipfile.ZIP_DEFLATED)
+          print(json.dumps({'base':base,'head':head,'file_count':len(changed),'removed':removed,'archive_bytes':(out/'NOVA-F5-08-UPDATE.zip').stat().st_size}))
+          PY
+      - name: Upload F5-08 patch
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-f508-library-update
+          path: _nova_delta/NOVA-F5-08-UPDATE.zip
+          retention-days: 14
+          if-no-files-found: error
