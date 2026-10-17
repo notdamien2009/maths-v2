@@ -1,0 +1,137 @@
+name: NOVA Maths V2 Library Snapshot Export
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/nova-library-snapshot-export.yml
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          persist-credentials: false
+      - name: Package exact F0-F18 production sources, prompts and hashes
+        shell: bash
+        run: |
+          python - <<'PY'
+          import pathlib, zipfile, json, hashlib, os, collections
+          roots=[pathlib.Path('NOVA-production'),pathlib.Path('NOVA-MATHS-V2-PROMPTS')]
+          out=pathlib.Path('_nova_exports');out.mkdir(exist_ok=True)
+          groups=collections.defaultdict(list)
+          def group_for(p):
+              parts=p.parts
+              if parts[0]=='NOVA-MATHS-V2-PROMPTS':return 'prompts'
+              sub=parts[1] if len(parts)>1 else ''
+              if sub.startswith('F') and sub[1:].isdigit():
+                  n=int(sub[1:]);return ('visuals-00-03' if n<4 else 'visuals-04-07' if n<8 else 'visuals-08-11' if n<12 else 'visuals-12-15' if n<16 else 'visuals-16-18')
+              if sub=='documentation':
+                  second=parts[2] if len(parts)>2 else ''
+                  import re
+                  m=re.match(r'^[fF](\d+)',second)
+                  if m:return 'documentation-a' if int(m.group(1))<10 else 'documentation-b'
+                  return 'documentation-b' if second.lower().startswith(('s','t','v')) else 'documentation-a'
+              if sub=='audit':return 'audit'
+              if sub=='test-lessons':return 'test-lessons'
+              return 'runtime-and-master'
+          for root in roots:
+              if not root.exists():raise SystemExit('Missing source folder: '+str(root))
+              for p in root.rglob('*'):
+                  if p.is_file():groups[group_for(p)].append(p)
+          expected=['visuals-00-03','visuals-04-07','visuals-08-11','visuals-12-15','visuals-16-18','runtime-and-master','documentation-a','documentation-b','audit','test-lessons','prompts']
+          manifest={'repository':'notdamien2009/maths-v2','commit':os.environ.get('GITHUB_SHA'),'paths':{},'bundles':{}}
+          for group in expected:
+              items=sorted(groups[group]);manifest['bundles'][group]={'files':len(items),'total_bytes':sum(x.stat().st_size for x in items)}
+              if not items:raise SystemExit('Missing bundle: '+group)
+              with zipfile.ZipFile(out/(group+'.zip'),'w',allowZip64=True) as archive:
+                  for p in items:
+                      d=p.read_bytes();manifest['paths'][str(p)]={'sha256':hashlib.sha256(d).hexdigest(),'size':len(d),'bundle':group}
+                      compression=zipfile.ZIP_STORED if p.suffix.lower() in ('.png','.jpg','.jpeg','.webp','.zip','.woff','.woff2','.mp4','.pdf') else zipfile.ZIP_DEFLATED
+                      archive.writestr(str(p),d,compress_type=compression,compresslevel=6 if compression==zipfile.ZIP_DEFLATED else None)
+              print(group,len(items),'files',round((out/(group+'.zip')).stat().st_size/1048576,1),'MB',flush=True)
+          with zipfile.ZipFile(out/'runtime-and-master.zip','a') as archive:
+              archive.writestr('NOVA-LIBRARY-SNAPSHOT-MANIFEST.json',json.dumps(manifest,indent=2)+'\n',compress_type=zipfile.ZIP_DEFLATED)
+          print('TOTAL',len(manifest['paths']),'files; commit',manifest['commit'],flush=True)
+          PY
+      - name: Upload visuals-00-03
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-visuals-00-03
+          path: _nova_exports/visuals-00-03.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload visuals-04-07
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-visuals-04-07
+          path: _nova_exports/visuals-04-07.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload visuals-08-11
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-visuals-08-11
+          path: _nova_exports/visuals-08-11.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload visuals-12-15
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-visuals-12-15
+          path: _nova_exports/visuals-12-15.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload visuals-16-18
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-visuals-16-18
+          path: _nova_exports/visuals-16-18.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload runtime-and-master
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-runtime-and-master
+          path: _nova_exports/runtime-and-master.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload documentation-a
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-documentation-a
+          path: _nova_exports/documentation-a.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload documentation-b
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-documentation-b
+          path: _nova_exports/documentation-b.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-audit
+          path: _nova_exports/audit.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload test-lessons
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-test-lessons
+          path: _nova_exports/test-lessons.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload prompts
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-library-prompts
+          path: _nova_exports/prompts.zip
+          if-no-files-found: error
+          retention-days: 14
