@@ -1,7 +1,7 @@
 # RUN 3 — Assemble Lesson HTML with NOVA English v2.0 (Global)
 
 ## Source of truth
-Use **unmodified** `NOVA-ENGLISH-CLEAN-EMPTY-PRODUCTION-MASTER-v2.0.html`, the approved Run 2 full JSON, `NOVA-ENGLISH-INSERT-AND-VALIDATE-v2.0.py`, Run 1 route, and v2.0 global contract. Verify input hashes and source version. Never use the filled Y7-001 HTML as a base for another lesson, and never substitute screenshots of broken activity engines for interactions.
+Use **unmodified** `NOVA-ENGLISH-CLEAN-EMPTY-PRODUCTION-MASTER-v2.2.html`, the approved Run 2 full JSON, `NOVA-ENGLISH-INSERT-AND-VALIDATE-v2.2.py`, Run 1 route, and v2.0 global contract. Verify input hashes and source version. Never use the filled Y7-001 HTML as a base for another lesson, and never substitute screenshots of broken activity engines for interactions.
 
 ## Build
 - Preflight `meta.year`, `meta.lesson`, `meta.websiteRef`, `meta.templateMode=false`; confirm exact lesson scope and accepted canonical `challenge.type` from the normalized map (review any Run1 override).
@@ -14,6 +14,9 @@ Use **unmodified** `NOVA-ENGLISH-CLEAN-EMPTY-PRODUCTION-MASTER-v2.0.html`, the a
 
 ## Execute / output
 Example command:
-`python NOVA-ENGLISH-INSERT-AND-VALIDATE-v2.0.py --template NOVA-ENGLISH-CLEAN-EMPTY-PRODUCTION-MASTER-v2.0.html --data Y7-008-R2-LESSON-DATA.json --output NOVA-ENGLISH-Y7-008-R3-REVIEW.html`
+`python NOVA-ENGLISH-INSERT-AND-VALIDATE-v2.2.py --template NOVA-ENGLISH-CLEAN-EMPTY-PRODUCTION-MASTER-v2.2.html --data Y7-008-R2-LESSON-DATA.json --output NOVA-ENGLISH-Y7-008-R3-REVIEW.html`
 
 Produce standalone `.html` plus `Y{year}-{NNN}-R3-BUILD-REPORT.md` containing input names + SHA256, route, validation output, asset/runtime integrity, known untested behaviours and stop conditions. Run local JS syntax, DOM smoke checks and every page. Build is not GOLD without Run 4.
+
+**v2.2 assembly gate:** Confirm exactly 5 Start warm-ups, 15 Practice and 5 Exit individual tasks; enforce one credit per Practice/Exit question. Insert data using the matching v2.2 validator/master pair only. On Challenge render inspect the `.rd-mission-panel` vertical layout: source above task, full-width textarea for writing, checklist below, action buttons and feedback visible. Include all four task kinds in shared-engine regression before releasing an updated master; check 1360/1024/768/390 widths. A paragraph is one question. Never work around a shared CSS defect by mutating per-lesson HTML.
+
