@@ -1,5 +1,12 @@
 # RUN 2 — Original English Teaching + Assessment Authoring (Global)
 
+## v2.5 ADDITIONAL MANDATORY RUN 2 GATE
+**Write answer keys as part of lesson authoring, not as post-processing.** Exactly 5 Start + 15 Practice + 5 Exit plus each Challenge mission must have a verifiable target and source. Correct choice/line/spelling indices, accepted equivalent answers, question-specific right/wrong feedback and a reason from the actual source are mandatory.
+For `marking:"judgement"` and Challenge `kind:"writing"`, include in the lesson JSON:
+`parentGuide: {exampleAnswer, lookFor:[2–5 specific checks], acceptAlternatives, commonMistakes:[...], nextStep}`.
+The model must **answer the specific question** at the intended pupil level with real source quotation/reasoning. No generic "check against rubric", unexplained word-count grading or copying CGP content. Preserve Practice exact/live vs judgement/deferred, Exit independent. Produce a **private** `Y{year}-{NNN}-R2-PARENT-ANSWER-KEY-MANIFEST.json` with a row for each question and Challenge task, source reference, correct response/model and key misconception. Validate against the actual passage and run the v2.5 answer-key validator; a structural pass cannot certify English interpretations.
+
+
 ## Required inputs
 Read complete Run 1 architecture/route, current master/contract and canonical curriculum/lesson plan and normalized Challenge map; consult the three CGP books as **teaching method references** as directed. Do NOT imitate CGP text, artwork, quirky wording or question sequence. Build a full teaching lesson from the beginning, not a compressed revision summary. No HTML engine edits during this run.
 
