@@ -1,3 +1,9 @@
+## Mandatory first check — normal lesson OR assessment
+
+Before any Year 7–9 English production, read [NOVA English Production Router v1.0](./Assessment%20Studio/NOVA-ENGLISH-PRODUCTION-ROUTER-v1.0.md) and [Assessment Unit Map](./Assessment%20Studio/ASSESSMENT-UNIT-MAP.json). If the numbered lesson is an assessment, use the **Assessment Studio** four-run prompts and student/parent assessment templates instead of this teaching lesson pack. Year 7 Lesson 015 is an assessment. Always confirm against the actual numbered curriculum, not merely the map. The assessment engine is a review candidate; protect real private mark schemes and pupil data from this public repository. Other English lessons continue using the existing seven-stage master and v2.5 answer-key gate.
+
+---
+
 # NOVA English — Automatic Lesson Production Launch v2.5
 
 **Status: review branch.** Use this instruction for any future "Year 7 Lesson 004" / "run all 4" / "English production" request **after the common runtime is approved**.
