@@ -1,5 +1,10 @@
 # RUN 4 — Strict English Teaching, Visual and Functional QA (Global)
 
+## v2.5 ADDITIONAL BLOCKING RUN 4 GATE
+**Fail any missing or generic answer key.** Assert 5/15/5 assessment IDs and unique keys, one credit each, plus every Challenge mission. Independently compare every answer, MCQ and line index, quotation, supported alternative and feedback to the *actual visible source*. Require source-specific parent model answers and 2–5 checkable criteria for ALL judgement/writing questions including Challenge writing, not just placeholders.
+Test at least one short and one extended parent review per lesson at desktop and 390px; a parent unfamiliar with the topic must be able to decide whether the evidence supports the child's answer. Test alternate valid responses without exact wording matches; check pupil answers remain invisible prior to submission, Exit has no hint/live key and Practice exact/live versus writing/deferred behave correctly. Test server parent authentication separately; standalone role-toggle is only a preview. Run `NOVA-ENGLISH-ANSWER-KEY-VALIDATOR-v2.5.py`; mechanical PASS is not proof of textual accuracy. Block GOLD until browser/audio/accessibility/hand-in gates are evidenced.
+
+
 ## Purpose
 Independently audit and repair a single English R3 HTML against actual Run1/Run2 sources, the approved English master, v2.0 contract, 256-lesson plan and **the three CGP books' instructional approach**, never by copying their passages. Do not rubber-stamp a pretty lesson. Report evidence for each check and label result REVIEW CANDIDATE unless GOLD evidence is complete.
 

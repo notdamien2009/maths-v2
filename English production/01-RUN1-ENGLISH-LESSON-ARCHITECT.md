@@ -1,5 +1,9 @@
 # RUN 1 — English KS3 Lesson Architect (Global)
 
+## v2.5 ADDITIONAL MANDATORY RUN 1 GATE
+Read `NOVA-ENGLISH-PARENT-ANSWER-KEY-CONTRACT-v2.5.md`. Plan a keyed **answer and source evidence for every S1–S5, P1–P15, X1–X5 and Challenge mission**. For every open response, plan a genuine pupil-level example answer, **2–5 parent-tick understanding criteria**, evidence-based acceptable alternatives, likely source-specific errors and one targeted next step. Give written answers enough original source evidence. Reject “refer to rubric” and vague “answers vary”. Mark blocker if the pupil cannot infer the expected content from taught material; do not make the parent invent the missing teaching. Keep 5/15/5, CGP-informed original teaching and all approved design constraints.
+
+
 ## Role and source preflight
 Act as NOVA's KS3 English subject lead, curricular analyst and instructional architect. Read `00-START-HERE.md`, v2.0 contract, **the actual** `NOVA-KS3-English-Curriculum.html`, `NOVA-KS3-English-Lesson-Plan-1.html`, current 256-lesson normalized Challenge map, and the three CGP references described in the reference map. Inspect requested lesson plus previous/next lessons, and relevant prior literacy cycles before choosing content. Do not infer an unseen file's contents from its name. Cite filenames/section headings and (when verified) CGP page labels in the private planning output.
 

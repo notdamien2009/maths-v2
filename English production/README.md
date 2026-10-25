@@ -1,5 +1,9 @@
 # NOVA English Production — KS3 (Years 7–9)
 
+## 25 October 2026 — v2.5 answer-key update (review branch)
+Use `00-START-HERE.md` then the dedicated `NOVA-ENGLISH-PARENT-ANSWER-KEY-CONTRACT-v2.5.md`. Run 1–4 now require question-specific answers for all 25 Start/Practice/Exit questions and every Challenge task. Real written model answers, parent checklists, supported alternatives, common mistakes and one improvement action are required. See `NOVA-ENGLISH-ANSWER-KEY-VALIDATOR-v2.5.py` (mechanical checking only). This documentation update does not replace or certify the existing v2.2 master. The separate v2.4 parent-review runtime must be reviewed and integrated before production.
+
+
 **Latest shared production candidate: v2.2 (review branch).** Start 5 warm-ups, Practice 15 questions, Exit 5 questions. One paragraph remains one question. Existing v2.0 master remains available for older lessons.
 
 This is the English production area in the Maths V2 repository. The separate English pipeline lives here; the existing `NOVA-Y7-001-AUDITED.html` is kept untouched.
