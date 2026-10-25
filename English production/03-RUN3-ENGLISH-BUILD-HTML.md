@@ -1,5 +1,9 @@
 # RUN 3 — Assemble Lesson HTML with NOVA English v2.0 (Global)
 
+## v2.5 ADDITIONAL MANDATORY RUN 3 GATE
+Only assemble lessons that passed the v2.5 answer-key and parent-guide checks. Preserve exact answers/accepted alternatives/feedback and the `parentGuide` model/checklist/alternatives/mistakes/next-step data. One answer-key entry per 25 S/P/X questions plus every Challenge task is mandatory; *do not* embed private answer-key manifests as a pupil download. Render parent guides after hand-in only, within the tested v2.4-compatible parent-review UI. **A standalone HTML source is not an access-control mechanism**; the deployed site needs authenticated server-side parent approval and restricted key delivery. The existing v2.2 empty master is not assumed to have that approved renderer: BLOCK production until a compatible master has been reviewed. Preserve Bob Board 750px, royal blue, seven stages, original Challenge, mascot and audio.
+
+
 ## Source of truth
 Use **unmodified** `NOVA-ENGLISH-CLEAN-EMPTY-PRODUCTION-MASTER-v2.2.html`, the approved Run 2 full JSON, `NOVA-ENGLISH-INSERT-AND-VALIDATE-v2.2.py`, Run 1 route, and v2.0 global contract. Verify input hashes and source version. Never use the filled Y7-001 HTML as a base for another lesson, and never substitute screenshots of broken activity engines for interactions.
 
