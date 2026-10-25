@@ -1,0 +1,194 @@
+{
+  "schema": "nova-english-assessment/v1",
+  "assessmentId": "ENG-Y7-015-DEMO",
+  "paperVersion": "1.0.0-demo",
+  "year": 7,
+  "lesson": "015",
+  "unit": "Reading & Writing Foundations",
+  "title": "Short Story Assessment",
+  "subtitle": "Read closely. Use evidence. Explain your ideas.",
+  "profile": "short-story-response",
+  "duration": {
+    "mode": "guidance",
+    "minutes": 60
+  },
+  "instructions": [
+    "Read the original story before answering.",
+    "Use details from the text to support your ideas.",
+    "You may move between questions and change your answers until you submit.",
+    "This sample paper is for testing the assessment template, not an official final assessment."
+  ],
+  "maxMarks": 40,
+  "sources": [
+    {
+      "id": "story",
+      "type": "prose",
+      "title": "The Bell in the Reeds",
+      "credit": "Original NOVA demonstration text",
+      "lines": [
+        {
+          "n": "1",
+          "text": "On the morning the river returned the bell, Mara was the first to notice. It lay among the reeds, green with age and small enough to fit inside her cupped hands."
+        },
+        {
+          "n": "2",
+          "text": "Her father had told her the bell belonged to the old ferry, before the bridge had been built. He had said it was lost in the flood that carried away half the village market."
+        },
+        {
+          "n": "3",
+          "text": "Mara had never seen the river so quiet. Usually it argued with the stones. Today its surface held the sky without a single wrinkle."
+        },
+        {
+          "n": "4",
+          "text": "She brushed a strand of weed from the bell. The metal was colder than she expected. Across the water, the market clock began to strike seven."
+        },
+        {
+          "n": "5",
+          "text": "Her younger brother, Eli, hurried down the bank, his schoolbag bouncing against his coat. “What have you found?” he called."
+        },
+        {
+          "n": "6",
+          "text": "Mara turned the bell over. Along its rim, someone had scratched three tiny stars. She recognised the pattern: her grandmother drew those stars at the bottom of every birthday card."
+        },
+        {
+          "n": "7",
+          "text": "For a moment she imagined the stories the bell might tell: travellers stepping onto a wooden deck, boots slipping on rain-dark boards, the ferry moving towards a bank that no longer looked the same."
+        },
+        {
+          "n": "8",
+          "text": "Eli reached for the bell. Mara pulled it away before she knew why. “It might be important,” she said, sounding more certain than she felt."
+        },
+        {
+          "n": "9",
+          "text": "The path behind them filled with the sound of bicycles and morning voices. Mara knew she ought to take the bell home, where her grandmother could explain the stars."
+        },
+        {
+          "n": "10",
+          "text": "Instead, she listened. The river made a soft ticking sound against the stones, like a clock deciding what to do next."
+        },
+        {
+          "n": "11",
+          "text": "“We will be late,” Eli said. He was right. Mara placed the bell carefully inside her satchel, between her exercise book and her lunch."
+        },
+        {
+          "n": "12",
+          "text": "As they climbed the bank, she no longer thought of the bell as something the river had given away. It felt like a question the river had left for her to answer."
+        }
+      ]
+    },
+    {
+      "id": "edit",
+      "type": "nonfiction",
+      "title": "Editing passage",
+      "credit": "Original demonstration passage",
+      "lines": [
+        {
+          "n": "1",
+          "text": "On monday, Mara and Eli was walking by the river. They had went there early because the weather were clear. Mara put the bell careful in her bag."
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": "Reading and language",
+      "description": "Answer using the story.",
+      "questions": [
+        {
+          "id": "A1",
+          "type": "short-answer",
+          "prompt": "Identify two details from the opening that show where Mara discovers the bell.",
+          "marks": 2,
+          "sourceRefs": [
+            "story"
+          ],
+          "aoTags": [
+            "AO1"
+          ],
+          "placeholder": "Write two details from the story."
+        },
+        {
+          "id": "A2",
+          "type": "evidence-explanation",
+          "prompt": "What does Mara’s reaction when Eli reaches for the bell suggest about her feelings? Support your response with evidence.",
+          "marks": 4,
+          "sourceRefs": [
+            "story"
+          ],
+          "aoTags": [
+            "AO1",
+            "AO2"
+          ]
+        },
+        {
+          "id": "A3",
+          "type": "analysis-paragraph",
+          "prompt": "How does the writer’s description of the unusually quiet river create an atmosphere? Analyse a word or phrase.",
+          "marks": 4,
+          "sourceRefs": [
+            "story"
+          ],
+          "aoTags": [
+            "AO2"
+          ]
+        },
+        {
+          "id": "A4",
+          "type": "analysis-paragraph",
+          "prompt": "How does Mara’s attitude to the bell change from the beginning to the end of the story? Use evidence from two different moments.",
+          "marks": 5,
+          "sourceRefs": [
+            "story"
+          ],
+          "aoTags": [
+            "AO1",
+            "AO2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Extended response",
+      "description": "Spend most of your writing time on this response.",
+      "questions": [
+        {
+          "id": "B1",
+          "type": "extended-writing",
+          "prompt": "Explore how the writer presents Mara as a curious but uncertain character throughout the story. Refer to events and deliberate language choices.",
+          "marks": 20,
+          "sourceRefs": [
+            "story"
+          ],
+          "aoTags": [
+            "AO1",
+            "AO2",
+            "AO4"
+          ],
+          "wordGuide": "Aim for a developed response with connected paragraphs. Quality matters more than length."
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Editing and accuracy",
+      "description": "Correct the mistakes without changing the meaning.",
+      "questions": [
+        {
+          "id": "C1",
+          "type": "proofreading-edit",
+          "prompt": "Rewrite the passage with five language corrections. Keep the meaning the same.",
+          "marks": 5,
+          "sourceRefs": [
+            "edit"
+          ],
+          "aoTags": [
+            "AO6"
+          ],
+          "original": "On monday, Mara and Eli was walking by the river. They had went there early because the weather were clear. Mara put the bell careful in her bag."
+        }
+      ]
+    }
+  ]
+}

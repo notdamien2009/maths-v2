@@ -1,0 +1,37 @@
+# NOVA KS3 English Assessment Production — Non-negotiable Contract v1.0
+
+## A. Assessment is not teaching
+Assessment lesson is an independent, post-unit test. NO Bob Board, Learn, Explore, worked model, instructional hints, auto-correct feedback, model answers, spelling mini-games, help scaffolds, reward animations or TTS revealing answers inside the assessment. The exam interface is **Assessment Brief → source(s) as needed → Sectioned Question Paper → Review → Submit**, with a separate private adult reviewer. A time guide is configurable; avoid enforced timers without accommodation policy.
+
+## B. Prove taught-skill coverage
+1. Read the numbered curriculum and learning outputs of *each* preceding lesson in the unit, not merely filenames or lesson headings. Make a matrix: lesson ID, concept/knowledge, question formats already encountered, stage evidence, understanding level, taught/not verified, chosen assessment objective, weight and new-task transfer. Include all significant unit objectives, yet prioritise the named assessment outcome; do not force a token question on everything or introduce an unseen technique to test.
+2. For each significant assessed criterion trace to **at least one actual teaching instance** (lesson stage and evidence). If teaching cannot be verified, label it `PLAN_ONLY`, not `TAUGHT`. Exclude unverified techniques from a purported summative assessment or label release `BLOCKED_PENDING_SOURCE` until checked.
+3. Do not make an end-of-unit reading assessment principally about unrelated speaking performance or a full spelling test; carry over language/spelling skills only where the task genuinely measures them. Use varied cognitive demands: accurate retrieval → inference/evidence → language/structure reasoning → synthesis/independent transfer. KS3 age-and-year appropriate.
+
+## C. Genuine fresh assessment — zero lesson exercise recycling
+Create independent NOVA-owned or properly licensed **previously unseen** prose, poems, dramatic extracts and nonfiction as the paper requires. All source plots, characters, settings, descriptive motifs, stimulus situations, quotations, question stems, sample responses and editing passages must be distinct from unit examples, earlier questions, prior formal papers **and Assessment Studio demo content**. A new title, synonym or character name does not make recycled tasks unseen.
+- **Retain the skill, change the context and cognitive work.** e.g. If a lesson inferred fear from a character hiding a key, the paper might infer conflicting loyalty from an original character decision with alternative evidence; it must not reuse the key action/stem with different names.
+- No copied or lightly paraphrased Start/Practice/Exit/Explore/Challenge prompts, examples, book extracts, passages or solutions. Same underpinning definition or grammatical rule may recur where necessary, but use fresh sentences and task contexts.
+- Deliberate skill recall is allowed; repeating identical worked tasks is not. New text alone is insufficient if the question sequence and answers merely mirror the original.
+- Reading passage must support its questions and multiple plausible evidence choices. Never reveal a later answer in preceding items, options, task titles, formatting or visual cues.
+- Run exact-string, character-ngram and scenario/semantic review against actual unit outputs, the previous assessment bank and all four supplied demo profiles. An automated similarity gate can flag candidates, but **human semantic review is mandatory**. Without prior files, no honest assertion of validated novelty.
+- Never fabricate literary quotes, actual extracts or citation/licensing status. CGP method as reference only; no CGP question wording, paragraph text, workbook artwork or tasks.
+
+## D. Paper quality and fair measurement
+- One coherent unseen source is often stronger than many unrelated mini-tasks. Give sufficient reading challenge and opportunity to collect evidence. Source and difficulty should fit the year and unit; avoid gratuitously obscure words or adult concepts.
+- Construct *blueprint first*: every question has skill ID, source/line, mark value, response type, difficulty tier, expected evidence, and rationale. Set assessment time according to actual reading + writing load, not a template constant.
+- Use exam-style neutral prompts, no leading explanation, no hints, no source phrases bolded in a way that gives away an answer, no tricks or background knowledge unrelated to lessons. Accept justified alternative interpretations.
+- Separate reading understanding from writing fluency in marking: low spelling should not erase evidence of correct inference unless accuracy is explicitly assessed. Mark bands and criteria must sum exactly to available marks.
+- Each question needs realistic student response space, marks matching required work, and transparent parent-facing criteria; no fake machine marking of nuanced paragraphs.
+
+## E. Engine and data lock
+Student paper schema is `nova-english-assessment/v1`, NOT `novaLessonData`, and NOT the seven-stage teaching engine. Exact proven v1.0 objects: `assessmentId`, `paperVersion`, `year`, `lesson`, `unit`, `title`, `profile`, `duration`, `maxMarks`, `sources`, `sections`; each source `{id,type,title,credit,lines:[{n,text,...}]}`; each section `{id,title,description?,questions:[...]}`; each question `{id,type,prompt,marks,sourceRefs,aoTags?,...}`. Supported response types: `single-choice`, `multi-select`, `short-answer`, `quote-selection`, `evidence-explanation`, `analysis-paragraph`, `extended-writing`, `paired-comparison`, `proofreading-edit`. Choice options use `{id,text}`; proofreading uses `original`; writing may use `allowPlan` and `wordGuide`. The actual delivered v1.0 template/validator and its supplied examples take precedence over any speculative blueprint prose.
+Private scheme `nova-english-mark-scheme/v1` uses same `assessmentId` + `paperVersion`, `{private:true,rubricVersion,questions:[{id,marks,method,model,lookFor,acceptable,guidance}]}`. Add objective-specific criterion allocations and acceptable answers within supported fields, without assuming unsupported rendering; ensure adults can assign partial marks. Do not leak `answer`, `correct`, `modelAnswer`, `rubric`, `lookFor`, `markingScheme`, `acceptedAnswers` etc in public JSON/HTML. Do not put private marking scheme anywhere in student-distributable ZIP/package.
+
+## F. Ethical/security and product truthfulness
+English royalty: preserve approved royal-blue identity, typography, dark source panel contrast. Student attempts are not trusted server submissions just because exported locally. Parent reviewer prototype is a separate HTML, **not proof of access control**. Browser-local autosave is not tested durable website sync; testing must distinguish preview vs deployed. User must approve production; never push GitHub or overwrite master/Library without express instruction.
+
+## G. Evidence-based release labels
+- `BLOCKED`: sources missing or significant teaching/assessment error; major unverified functionality.
+- `REVIEW CANDIDATE`: authored and structurally validated with explicit QA gaps (including unpublished/untested runtime).
+- `GOLD`: only after source coverage, independent originality review, pedagogy + answer marking, browser responsive/accessibility, protected parent access, real saving/hand-in, and deployed integration have evidenced pass. Never auto-award GOLD from prompt completion alone.
