@@ -1,5 +1,9 @@
 # NOVA Academy English — Four-Run Production Pack v2.2
 
+## v2.5 — AUTHORITATIVE PARENT ANSWER-KEY GATE (review branch)
+Read **`NOVA-ENGLISH-PARENT-ANSWER-KEY-CONTRACT-v2.5.md`** before running any of the four prompts. This new contract supersedes older v2.0/v2.2 phrasing on answers, written marking and parent reviews. For every new lesson, all 25 Start/Practice/Exit questions and every Challenge mission need source-verified keys, with actual `parentGuide` examples and criteria for judgement responses. Run `NOVA-ENGLISH-ANSWER-KEY-VALIDATOR-v2.5.py` on Run 2 JSON; inspect outputs manually. Do not start bulk production or claim GOLD until a compatible parent-review renderer/master and server-authorised parent access have been approved and tested. This review branch does **not** replace the production v2.2 empty master.
+
+
 **Status: controlled production CANDIDATE, not GOLD.** Date 24 October 2026. These prompts build original, full KS3 teaching lessons, **not CGP replicas or revision summaries**.
 
 ## Production inputs — retrieve and inspect, never guess
