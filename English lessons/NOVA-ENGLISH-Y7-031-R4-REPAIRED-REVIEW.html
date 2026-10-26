@@ -997,7 +997,8 @@ Use processOverrides only when the lesson genuinely needs different wording. Vis
       },
       "modelAnswer": "The longer flowing line can be read smoothly, helping the reader imagine a wide river moving steadily. The words \"river turns\" and \"wide\" support that idea.",
       "criteria": [
-        "Mentions how the line is spoken or paced",        "Refers to a specific word or phrase from the line",
+        "Mentions how the line is spoken or paced",
+        "Refers to a specific word or phrase from the line",
         "Connects the sound or pacing to the river image"
       ],
       "rubric": [
@@ -1996,7 +1997,8 @@ Use processOverrides only when the lesson genuinely needs different wording. Vis
   width:100%!important;
   margin-top:12px!important;
   padding:14px 16px!important;
-  border-radius:14px!important;  background:#eef8f5!important;
+  border-radius:14px!important;
+  background:#eef8f5!important;
   border:1px solid #b8dfd0!important;
 }
 #bobLessonPage .bob-finish strong{color:#176b56!important}
@@ -2995,7 +2997,8 @@ html[data-nova-theme="light"] .workpad canvas{
 .math-paper .tier-pill.secure{background:#8db1cb!important}
 .math-paper .tier-pill.stretch{background:#ffd66e!important}
 
-/* No component may convert the teaching board or assessment board to white   when the site changes theme. This is intentional and locked. */
+/* No component may convert the teaching board or assessment board to white
+   when the site changes theme. This is intentional and locked. */
 html[data-theme="light"] .bob-board-shell,
 html[data-nova-theme="light"] .bob-board-shell,
 body[data-theme="light"] .bob-board-shell,
@@ -3994,7 +3997,8 @@ html[data-nova-theme="light"] .workpad canvas{
 body:has(#stageTextLab.active) #novaMascotCompanion,
 body:has(#stageExamples.active) #novaMascotCompanion,
 body:has(#bobLessonPage[style*="display: block"]) #novaMascotCompanion{display:none!important}
-/* Native HTML images are never stretched/cropped within the English coach docks. */#bobLessonPage .nova-bob-mascot-img,
+/* Native HTML images are never stretched/cropped within the English coach docks. */
+#bobLessonPage .nova-bob-mascot-img,
 #stageTextLab .nova-v15-mascot img,
 #stageExamples .nova-v15-mascot img{object-fit:contain!important;object-position:center!important}
 #bobLessonPage .nova-bob-stage-companion{isolation:isolate}
@@ -4993,7 +4997,8 @@ try{const v=APP_STATE.lastStage;if(v==='textlab'||v==='challenge')showStage(v)}c
 const D=window.NovaEnglishLessonConfig || JSON.parse(document.getElementById('novaLessonData').textContent);
 if(D.meta?.templateMode)return;
 const C=D.challenge, E=document.getElementById('stageChallenge');
-const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));if(!C||!E||!C.type||!C.id)throw new Error('NOVA Challenge: valid lesson Challenge configuration is required');
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+if(!C||!E||!C.type||!C.id)throw new Error('NOVA Challenge: valid lesson Challenge configuration is required');
 const validTypes=['reading-detective','evidence-analysis','paragraph-builder','creative-writing','language-editing','poetry-studio','speaking-argument','spelling-word-study'];
 if(!validTypes.includes(C.type))throw new Error('NOVA Challenge: unsupported Challenge family '+C.type);
 if(!Array.isArray(C.tasks)||C.tasks.length<1)throw new Error('NOVA Challenge: no task bank supplied');
