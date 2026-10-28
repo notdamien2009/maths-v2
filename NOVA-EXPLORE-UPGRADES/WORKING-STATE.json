@@ -1,0 +1,33 @@
+{
+  "schema": "NOVA-EXPLORE-VNEXT-WORKING-STATE-v1",
+  "branch": "nova/explore-f0-f18-vnext-2026-10-28",
+  "baseline_commit": "fe64a23dc402f08f5c8c7442c80545fbcb7901d3",
+  "candidate_state": "development_static_and_math_checks_passed_browser_unverified",
+  "pilot_batch": "001",
+  "modified_components": [
+    {
+      "id": "F9-01",
+      "path": "NOVA-EXPLORE-UPGRADES/F9/F9-01-matchstick-pattern-builder.html",
+      "old": "9a5b61ba56601023985e0671bee736a1083baab8",
+      "new": "40ffd6dbc8c35dccdb6ebb2aa508397b1aca8b01",
+      "status": "development_unapproved"
+    },
+    {
+      "id": "F12-14",
+      "path": "NOVA-EXPLORE-UPGRADES/F12/F12-14-area-and-perimeter-relationship.html",
+      "old": "8d5a008fee81b46d45e3d1b0a12dcc4c7f23f169",
+      "new": "acee1fa074934c78de8ca6c4fa4333dc19380f43",
+      "status": "development_unapproved"
+    }
+  ],
+  "qa": {
+    "static_math": "passed",
+    "browser": "not_run",
+    "mobile": "not_run",
+    "keyboard": "not_run",
+    "tts": "not_run",
+    "integrated_lessons": "not_run"
+  },
+  "production_integration": false,
+  "source_root_altered": false
+}

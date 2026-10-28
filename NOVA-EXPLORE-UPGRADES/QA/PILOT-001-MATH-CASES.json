@@ -1,0 +1,202 @@
+{
+  "recorded_at": "2026-10-28",
+  "maths": {
+    "f9_1_to_8": [
+      {
+        "stage": 1,
+        "total": 4,
+        "increment": null
+      },
+      {
+        "stage": 2,
+        "total": 7,
+        "increment": 3
+      },
+      {
+        "stage": 3,
+        "total": 10,
+        "increment": 3
+      },
+      {
+        "stage": 4,
+        "total": 13,
+        "increment": 3
+      },
+      {
+        "stage": 5,
+        "total": 16,
+        "increment": 3
+      },
+      {
+        "stage": 6,
+        "total": 19,
+        "increment": 3
+      },
+      {
+        "stage": 7,
+        "total": 22,
+        "increment": 3
+      },
+      {
+        "stage": 8,
+        "total": 25,
+        "increment": 3
+      }
+    ],
+    "f12_fixed_perimeter": [
+      {
+        "perimeter": 12,
+        "maximumArea": 9,
+        "optimalSides": [
+          3,
+          3
+        ]
+      },
+      {
+        "perimeter": 16,
+        "maximumArea": 16,
+        "optimalSides": [
+          4,
+          4
+        ]
+      },
+      {
+        "perimeter": 20,
+        "maximumArea": 25,
+        "optimalSides": [
+          5,
+          5
+        ]
+      },
+      {
+        "perimeter": 24,
+        "maximumArea": 36,
+        "optimalSides": [
+          6,
+          6
+        ]
+      },
+      {
+        "perimeter": 28,
+        "maximumArea": 49,
+        "optimalSides": [
+          7,
+          7
+        ]
+      },
+      {
+        "perimeter": 32,
+        "maximumArea": 64,
+        "optimalSides": [
+          8,
+          8
+        ]
+      },
+      {
+        "perimeter": 40,
+        "maximumArea": 100,
+        "optimalSides": [
+          10,
+          10
+        ]
+      }
+    ],
+    "f12_fixed_area": [
+      {
+        "area": 12,
+        "minimumPerimeter": 14,
+        "witness": [
+          {
+            "l": 4,
+            "w": 3,
+            "perimeter": 14
+          }
+        ]
+      },
+      {
+        "area": 16,
+        "minimumPerimeter": 16,
+        "witness": [
+          {
+            "l": 4,
+            "w": 4,
+            "perimeter": 16
+          }
+        ]
+      },
+      {
+        "area": 24,
+        "minimumPerimeter": 20,
+        "witness": [
+          {
+            "l": 6,
+            "w": 4,
+            "perimeter": 20
+          }
+        ]
+      },
+      {
+        "area": 36,
+        "minimumPerimeter": 24,
+        "witness": [
+          {
+            "l": 6,
+            "w": 6,
+            "perimeter": 24
+          }
+        ]
+      },
+      {
+        "area": 48,
+        "minimumPerimeter": 28,
+        "witness": [
+          {
+            "l": 8,
+            "w": 6,
+            "perimeter": 28
+          }
+        ]
+      }
+    ],
+    "f12_equal_area_counterexample": {
+      "A": [
+        8,
+        2
+      ],
+      "B": [
+        4,
+        4
+      ],
+      "areas": [
+        16,
+        16
+      ],
+      "perimeters": [
+        20,
+        16
+      ]
+    }
+  },
+  "sourceAudits": [
+    {
+      "id": "F9-01",
+      "sourceLength": 1221958,
+      "changedLength": 1226035,
+      "styled": true,
+      "challengeByteIdentical": true,
+      "singleMission": true,
+      "headTitlePreserved": true,
+      "exploreFunctionPresent": true
+    },
+    {
+      "id": "F12-14",
+      "sourceLength": 1229079,
+      "changedLength": 1232937,
+      "styled": true,
+      "challengeByteIdentical": true,
+      "singleMission": true,
+      "headTitlePreserved": true,
+      "exploreFunctionPresent": true
+    }
+  ]
+}

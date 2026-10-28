@@ -801,7 +801,18 @@ I.register=function(id,def,scope){scope=scope||{};if(!scope.validate&&w.NovaF9Co
 })(window);
 
 </script>
-</head><body data-topic="algebra"><div class="nova-wrap"><header id="nova-header" data-run="F9 · SEQUENCES AND PATTERNS" data-title="Matchstick Pattern Builder" data-sub="Discover why each joined square adds exactly three sticks. Build the pattern, then prove its rule."></header><main id="gallery"></main></div><script>/* === NOVA FAMILY CORE v1.4 : JS START === (extract this block for later runs) */
+<style id="nova-vnext-explore-css">
+.nova-vnext-mission{display:grid;gap:10px;margin:14px 0;padding:16px;border:2px solid #5fc7bd;border-radius:14px;background:#102d3d;color:#f6fffe;font:inherit}
+.nova-vnext-mission h4,.nova-vnext-mission p{margin:0;color:inherit;line-height:1.5}
+.nova-vnext-mission h4{font-size:1.12rem}
+.nova-vnext-row,.nova-vnext-mission label{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.nova-vnext-mission input,.nova-vnext-mission select{max-width:100%;min-height:44px;padding:8px;border:2px solid #78bdbd;border-radius:8px;background:white;color:#142b31}
+.nova-vnext-mission input[type=number]{width:125px}
+.nova-vnext-mission button{min-height:44px;padding:8px 14px;border:2px solid #7bdbce;border-radius:8px;background:#d8fff4;color:#102c38;font:inherit;font-weight:700;cursor:pointer}
+.nova-vnext-mission input:focus-visible,.nova-vnext-mission button:focus-visible,.nova-vnext-mission select:focus-visible{outline:3px solid #ffdc78;outline-offset:2px}
+.nova-vnext-mission [role=status]{min-height:1.5em;font-weight:700}
+@media(max-width:580px){.nova-vnext-mission{padding:12px}.nova-vnext-mission label{width:100%}}
+</style></head><body data-topic="algebra"><div class="nova-wrap"><header id="nova-header" data-run="F9 · SEQUENCES AND PATTERNS" data-title="Matchstick Pattern Builder" data-sub="Discover why each joined square adds exactly three sticks. Build the pattern, then prove its rule."></header><main id="gallery"></main></div><script>/* === NOVA FAMILY CORE v1.4 : JS START === (extract this block for later runs) */
 (function(){
 'use strict';
 var NOVA = window.NOVA = window.NOVA || {};
@@ -2078,6 +2089,45 @@ const def={id,title:'Matchstick pattern builder',config:C,
   window.NovaLessonComponent?.applyExploreModels();function draw(){let n=exploreStage;renderLearning(5,stage,{exploreStage:n});out.textContent='Stage '+n+' · '+answer(n)+' sticks';ev('stage',n);ev('count',answer(n));}
   window.NovaLessonComponent?.applyExploreModels();slide.addEventListener('input',()=>{exploreStage=Number(slide.value);draw();});
   window.NovaLessonComponent?.applyExploreModels();panel.append(start,H('div',{class:'f901-control'},[H('label',{},['Stage ',slide]),out,hbtn('Next stage',()=>{slide.value=String(exploreStage===7?1:exploreStage+1);exploreStage=+slide.value;draw();})]));
+
+  /* Explore VNext: prediction and mathematical reasoning only. */
+  let attempts=0;
+  const missionTitle=H('h4',{text:''});
+  const guess=H('input',{type:'number',min:'0',max:'100',step:'1',inputmode:'numeric','aria-label':'Predicted matchsticks in the next stage',placeholder:'Sticks'});
+  const reason=H('select',{'aria-label':'Why does each new square add three sticks'},[
+    H('option',{value:'',text:'Choose why the pattern grows'}),
+    H('option',{value:'shared',text:'A new square shares one side'}),
+    H('option',{value:'four',text:'Every side is new'}),
+    H('option',{value:'random',text:'The increase is random'})]);
+  const feedback=H('p',{role:'status','aria-live':'polite',text:''});
+  const comparison=H('p',{text:''});
+  function resetPrediction(){
+    attempts=0;guess.value='';reason.value='';feedback.textContent='';
+    missionTitle.textContent='Predict stage '+(exploreStage+1);
+    comparison.textContent='Current stage '+exploreStage+' uses '+answer(exploreStage)+' sticks. What comes next?';
+  }
+  function checkPrediction(){
+    const raw=guess.value.trim(),n=exploreStage,target=answer(n+1);
+    if(raw===''||!Number.isInteger(Number(raw))||Number(raw)<0){feedback.textContent='Enter a whole-number prediction before checking.';return;}
+    attempts++;
+    const correct=Number(raw)===target,explained=reason.value==='shared';
+    ev('explorePrediction',{stage:n+1,correct:correct,reasonCorrect:explained});
+    if(correct&&explained)feedback.textContent='Correct. A new square shares a side, so only three new sticks are added.';
+    else if(correct)feedback.textContent='Your total is right. Explain why the increase is three rather than four.';
+    else if(attempts===1)feedback.textContent='Look again. The next square shares one existing side: add three sticks, not four.';
+    else feedback.textContent='Use the pattern '+answer(n)+' + 3 = '+target+'. Enter the total and select the shared-side explanation.';
+    comparison.textContent='Comparison: '+answer(n)+' sticks at stage '+n+', '+target+' at stage '+(n+1)+'; an increase of three.';
+  }
+  const checkBtn=H('button',{type:'button',text:'Check prediction'});
+  checkBtn.addEventListener('click',checkPrediction);
+  guess.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();checkPrediction();}});
+  panel.appendChild(H('section',{class:'nova-vnext-mission','aria-label':'Matchstick prediction investigation'},[
+    missionTitle,H('p',{text:'Before moving the slider, predict the next count and explain why the number increases.'}),
+    H('div',{class:'nova-vnext-row'},[H('label',{},['Next count ',guess]),H('label',{},['Reason ',reason]),checkBtn]),feedback,comparison
+  ]));
+  slide.addEventListener('input',resetPrediction);
+  panel.querySelectorAll('button').forEach(button=>{if(button.textContent.trim()==='Next stage')button.addEventListener('click',resetPrediction);});
+  resetPrediction();
   window.NovaLessonComponent?.applyExploreModels();draw();
  },
  challenge(panel,api,stage){

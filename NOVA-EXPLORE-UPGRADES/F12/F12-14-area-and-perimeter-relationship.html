@@ -710,7 +710,18 @@ I.register=function(id,def,scope){const nativeChallenge=w.NOVA.challengeRun;w.NO
 (function(w){'use strict';let serial=0;function apply(stage){if(!stage?.querySelectorAll)return;const prefix=stage.__novaControlPrefix||(stage.__novaControlPrefix='nova-native-control-'+ ++serial);let i=0;for(const e of stage.querySelectorAll('svg [role="button"]')){const texts=[...e.querySelectorAll('text')].filter(t=>t.textContent.trim());if(!texts.length)continue;for(const t of texts)t.id=prefix+'-'+ ++i;e.setAttribute('aria-labelledby',texts.map(t=>t.id).join(' '));if(e.getAttribute('aria-label'))e.setAttribute('aria-description',e.getAttribute('aria-label'));}}w.NovaControlLabels={apply,wrap(fn){return function(){const v=fn.apply(this,arguments);apply(arguments[0]);return v;};}};})(window);
 
 </script>
-<style data-nova-touch-policy="1">@media(pointer:coarse){.nova-stage svg:has([data-drag]){touch-action:none!important}}</style></head>
+<style data-nova-touch-policy="1">@media(pointer:coarse){.nova-stage svg:has([data-drag]){touch-action:none!important}}</style><style id="nova-vnext-explore-css">
+.nova-vnext-mission{display:grid;gap:10px;margin:14px 0;padding:16px;border:2px solid #5fc7bd;border-radius:14px;background:#102d3d;color:#f6fffe;font:inherit}
+.nova-vnext-mission h4,.nova-vnext-mission p{margin:0;color:inherit;line-height:1.5}
+.nova-vnext-mission h4{font-size:1.12rem}
+.nova-vnext-row,.nova-vnext-mission label{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.nova-vnext-mission input,.nova-vnext-mission select{max-width:100%;min-height:44px;padding:8px;border:2px solid #78bdbd;border-radius:8px;background:white;color:#142b31}
+.nova-vnext-mission input[type=number]{width:125px}
+.nova-vnext-mission button{min-height:44px;padding:8px 14px;border:2px solid #7bdbce;border-radius:8px;background:#d8fff4;color:#102c38;font:inherit;font-weight:700;cursor:pointer}
+.nova-vnext-mission input:focus-visible,.nova-vnext-mission button:focus-visible,.nova-vnext-mission select:focus-visible{outline:3px solid #ffdc78;outline-offset:2px}
+.nova-vnext-mission [role=status]{min-height:1.5em;font-weight:700}
+@media(max-width:580px){.nova-vnext-mission{padding:12px}.nova-vnext-mission label{width:100%}}
+</style></head>
 <body data-topic="geometry">
 <div class="nova-wrap">
 <header id="nova-header" data-run="F12 · 2D shapes, perimeter and area · F12-14" data-title="Area and perimeter relationship" data-sub="See that rectangles with the same perimeter can have different areas, and the other way round."></header>
@@ -2001,7 +2012,7 @@ var def={id:'F12-14',title:'Area and perimeter relationship',config:C,steps:step
  alt:'Area and perimeter relationship: rectangles with the same perimeter have different areas, rectangles with the same area have different perimeters, and the square is the extreme in both cases.',
  staticAlt:'Perimeter 24: 11 by 1 has area 11, 6 by 6 has area 36. Area 36: 12 by 3 has perimeter 30, 6 by 6 has perimeter 24. 10 by 1 has perimeter 22 and area 10; 5 by 5 has perimeter 20 and area 25.',
  exploreIntro:'Explore: fix the perimeter or the area, slide through the rectangles and watch the bar chart. Or compare any two rectangles side by side.',
- explore:function(panel,stage,api){function pg(){const v=nativeExplorePaint.apply(this,arguments);window.NovaF12Runtime.finish(stage);window.NovaControlLabels.apply(stage);return v;}window.NovaLessonComponent?.applyExploreModels();var key=C.preset,st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>clone(...a),[P[key]]):(clone(P[key]))),box=h('div');
+ explore:function(panel,stage,api){function pg(){const v=nativeExplorePaint.apply(this,arguments);window.NovaF12Runtime.finish(stage);window.NovaControlLabels.apply(stage);refreshMission();return v;}window.NovaLessonComponent?.applyExploreModels();var key=C.preset,st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",(...a)=>clone(...a),[P[key]]):(clone(P[key]))),box=h('div');
    window.NovaLessonComponent?.applyExploreModels();function nativeExplorePaint(){stage.innerHTML='';NOVA.cap(stage,'Explore · '+({perim:'same perimeter',area:'same area',compare:'compare'}[st.mode]),st.mode==='perim'?'P = '+st.P:st.mode==='area'?'A = '+st.A:'two rectangles');var r=draw(stage,st);chips(stage,st,r);NOVA.scene.helperStrip(stage,'explain','Area ≠ perimeter');}
    window.NovaLessonComponent?.applyExploreModels();function build(){box.innerHTML='';
      if(st.mode==='perim'){var sel=h('select',{class:'nova-input','aria-label':'Perimeter'});C.perims.forEach(function(p){sel.appendChild(h('option',{value:p,text:'Perimeter '+p+' '+UN}));});sel.value=st.P;sel.onchange=function(){st.P=+sel.value;st.l=Math.min(st.l,st.P/2-1);build();pg();};box.appendChild(h('label',{class:'pr-row'},['Fixed ',sel]));
@@ -2011,7 +2022,48 @@ var def={id:'F12-14',title:'Area and perimeter relationship',config:C,steps:step
      else{[['A length','la'],['A width','wa'],['B length','lb'],['B width','wb']].forEach(function(q){box.appendChild(U.slider({label:q[0],min:1,max:q[1].charAt(0)==='l'?12:6,step:1,value:st[q[1]],engine:'F12-14',onChange:function(v){st[q[1]]=v;pg();}}));});}}
    window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Mode'});window.NovaLessonComponent?.applyExploreModels();Object.keys(P).forEach(function(k){pre.appendChild(h('option',{value:k,text:P[k].label}));});window.NovaLessonComponent?.applyExploreModels();pre.value=key;
    window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){key=pre.value;st=clone(P[key]);build();pg();NOVA.events.emit('value',{engine:'F12-14',control:'mode',value:st.mode});};
-   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Mode ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(box);window.NovaLessonComponent?.applyExploreModels();build();window.NovaLessonComponent?.applyExploreModels();pg();const live=panel.firstElementChild;window.NovaF12Runtime.onRelayout("explore",()=>{pg();window.NovaF12Runtime.finish(stage);},()=>!!live?.isConnected);window.NovaF12Runtime.finish(stage);},
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Mode ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(box);window.NovaLessonComponent?.applyExploreModels();build();
+   /* Explore VNext: investigate with the native controls; other modes unchanged. */
+   const missionTitle=h('h4',{text:''}),missionGuide=h('p',{text:''});
+   const missionFeedback=h('p',{role:'status','aria-live':'polite',text:''});
+   const missionCheck=h('button',{type:'button',text:'Check investigation'});
+   function refreshMission(){
+     missionFeedback.textContent='';
+     if(st.mode==='perim'){
+       missionTitle.textContent='Maximise the enclosed area';
+       missionGuide.textContent='Keep the perimeter at '+st.P+' '+UN+'. Use the length slider to find the largest possible rectangle area.';
+     }else if(st.mode==='area'){
+       missionTitle.textContent='Minimise the fencing';
+       missionGuide.textContent='Keep area '+st.A+' '+UN+'². Use the shape slider to find the smallest possible whole-number perimeter.';
+     }else{
+       missionTitle.textContent='Prove area and perimeter can differ';
+       missionGuide.textContent='Adjust rectangles A and B so they have the SAME AREA but DIFFERENT PERIMETERS.';
+     }
+   }
+   missionCheck.addEventListener('click',function(){
+     let correct=false,message='';
+     if(st.mode==='perim'){
+       const w=st.P/2-st.l,area=st.l*w,maximum=(st.P/4)*(st.P/4);
+       correct=area===maximum;
+       message=correct?'Correct: '+st.l+' × '+w+' has area '+area+' '+UN+'². The square is best for a fixed perimeter.':'Your area is '+area+' '+UN+'². Move length and width closer to equal while keeping the same fence length.';
+     }else if(st.mode==='area'){
+       const pair=pairs(st.A)[st.i],perimeter=2*(pair[0]+pair[1]);
+       const minimum=Math.min.apply(null,pairs(st.A).map(function(q){return 2*(q[0]+q[1]);}));
+       correct=perimeter===minimum;
+       message=correct?'Correct: '+pair[0]+' × '+pair[1]+' gives the minimum whole-number perimeter, '+perimeter+' '+UN+'.':'Your perimeter is '+perimeter+' '+UN+'. Try a factor pair with sides closer together.';
+     }else{
+       const areaA=st.la*st.wa,areaB=st.lb*st.wb,perA=2*(st.la+st.wa),perB=2*(st.lb+st.wb);
+       correct=areaA===areaB&&perA!==perB;
+       message=correct?'Well proven. Both areas are '+areaA+' '+UN+'², but the perimeters are '+perA+' and '+perB+' '+UN+'.':'Current areas are '+areaA+' and '+areaB+' '+UN+'²; perimeters '+perA+' and '+perB+' '+UN+'. Make the areas equal but the perimeters different.';
+     }
+     missionFeedback.textContent=message;
+     NOVA.events.emit('exploreMission',{engine:'F12-14',mode:st.mode,correct:correct});
+   });
+   panel.appendChild(h('section',{class:'nova-vnext-mission','aria-label':'Area perimeter investigation'},[
+     missionTitle,missionGuide,missionCheck,missionFeedback
+   ]));
+   window.NovaLessonComponent?.applyExploreModels();pg();
+const live=panel.firstElementChild;window.NovaF12Runtime.onRelayout("explore",()=>{pg();window.NovaF12Runtime.finish(stage);},()=>!!live?.isConnected);window.NovaF12Runtime.finish(stage);},
  challenge:function(panel,api,stage){var A=mk({mode:'perim',P:40,l:10}),B=mk({mode:'area',A:36,i:2}),Cc=mk({mode:'compare',la:8,wa:2,lb:4,wb:4});
    var tasks=[
     {q:'A farmer has 40 m of fence and wants the biggest rectangular field with whole-number sides. What is the largest area?',build:NOVA.entryTask('Area (m²)','F12-14'),check:function(x){var ok=x===100;return [ok,ok?'Yes: a 10 by 10 square has area 100 m².':x===400?'400 is 40 squared. The sides must add up to 20 (half the perimeter).':x<100&&x>0?'That is a field you can make, but not the biggest. Try sides closer to equal.':'Sides add to 20. The most area is when they are equal.'];},hint:'Two lengths and two widths use 40 m, so length + width = 20. Which pair has the biggest product?',solve:function(c){c._A.input.value='100';}},
