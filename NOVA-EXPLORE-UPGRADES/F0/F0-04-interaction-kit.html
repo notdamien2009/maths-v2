@@ -1860,7 +1860,7 @@ var def={id:'F0-04',title:'Interaction kit',config:C,steps:steps,render:render,
    function draw(){stage.innerHTML='';cap(stage,'Explore · one value','v = '+fmt(v));var r=line(stage,st,order.map(function(t,i){var x=val(t);return isFinite(x)&&x>=st.min&&x<=st.max?{v:x,role:'support',label:t,hi:i%2===1}:null;}).filter(Boolean));
      mk=U.dragSnap(r.sv,r.ax,{y:r.ax.y0,value:v,min:st.min,max:st.max,step:st.step,role:'focus',label:'Value marker',engine:'F0-04',onChange:function(x){set(x,'drag');}});
      NOVA.scene.helperStrip(stage,'explain','v = '+fmt(v));}
-   function set(x,src){v=+(+x).toFixed(6);if(src!=='slider')sl.input.value=v;sl.querySelector('output').textContent=fmt(v);if(src!=='stepper')sp.set&&sp.querySelector('output')&&(sp.querySelector('output').textContent=fmt(v));sp._v=v;if(src!=='drag')draw();else{stage.querySelector('.nv-cap .tag').textContent='v = '+fmt(v);var b=stage.querySelector('.nv-dockbub');if(b)b.textContent='v = '+fmt(v);}}
+   function set(x,src){v=+(+x).toFixed(6);if(src!=='slider')sl.input.value=v;sl.querySelector('output').textContent=fmt(v);if(sp&&sp.querySelector('output'))sp.querySelector('output').textContent=fmt(v);sp._v=v;if(src!=='drag')draw();else{stage.querySelector('.nv-cap .tag').textContent='v = '+fmt(v);var b=stage.querySelector('.nv-dockbub');if(b)b.textContent='v = '+fmt(v);}}
    var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});
    var ctl=h('div');function build(){ctl.innerHTML='';
      sl=U.slider({label:'Slider',min:st.min,max:st.max,step:st.step,value:v,engine:'F0-04',onChange:function(x){set(x,'slider');}});
@@ -1870,7 +1870,7 @@ var def={id:'F0-04',title:'Interaction kit',config:C,steps:steps,render:render,
    function step(d){var x=NOVA.clamp(Math.round((v+d*st.step)/st.step)*st.step,st.min,st.max);NOVA.events.emit('value',{engine:'F0-04',control:'Stepper',value:x});set(x,'stepper');}
    function go(){var x=val(en.get());if(!isFinite(x)){fb.className='nova-fb bad';fb.textContent='I can read 0.75, 3/4, 1 1/2 or 75%.';return;}var sx=NOVA.clamp(Math.round(x/st.step)*st.step,st.min,st.max);fb.className='nova-fb hint';fb.textContent=fmt(x)+(Math.abs(sx-x)>1e-9?' snaps to '+fmt(sx):' is on the line')+'.';set(sx,'entry');}
    pre.onchange=function(){var q=C.presets[pre.value];['min','max','step','labelStep','value'].forEach(function(k){st[k]=q[k];});v=st.value;build();draw();NOVA.events.emit('value',{engine:'F0-04',control:'preset',value:pre.value});};
-   var so=U.sort({items:order,label:'Sort these by value',engine:'F0-04'});NOVA.events.on('value',function(e){if(e.detail&&e.detail.control==='Sort these by value'&&mode()){order=e.detail.value;draw();}});
+   var so=U.sort({items:order,label:'Sort these by value',engine:'F0-04'});var offSort=NOVA.events.on('value',function(e){if(e.detail&&e.detail.control==='Sort these by value'&&mode()){order=e.detail.value;draw();}});api.onCleanup(offSort);
    function mode(){return stage.isConnected&&panel.contains(so);}
    panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(ctl);panel.appendChild(h('p',{class:'pr-task',text:'Sort (top = smallest)'}));panel.appendChild(so);
    panel.appendChild(h('p',{class:'pr-task',text:'Match: pick a fraction, then its decimal'}));panel.appendChild(U.match({left:st.matchLeft,right:st.matchRight,label:'Match fractions to decimals',engine:'F0-04'}));

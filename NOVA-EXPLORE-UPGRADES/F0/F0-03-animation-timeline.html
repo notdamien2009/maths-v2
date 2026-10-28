@@ -1854,21 +1854,34 @@ var def={id:'F0-03',title:'Animation timeline',config:C,steps:steps,render:funct
  exploreIntro:'Explore: change the jumps and the speed, scrub any frame, and preview reduced motion.',
  explore:function(panel,stage,api){var st=window.NovaLessonComponent.exploreInit("st",()=>JSON.parse(JSON.stringify(C))),p=0,anim=null;
    function draw(){stage.innerHTML='';cap(stage,'Explore · frame','p = '+p.toFixed(2));var r=frame(stage,p,st);sumLine(stage,st,r.done);NOVA.scene.helperStrip(stage,'explain',st.jumps+' × '+fmt(st.size)+' from '+fmt(st.start));}
-   function emit(k,v){NOVA.events.emit('value',{engine:'F0-03',control:k,value:v});}
+   function emit(k,v){if(k==='preset'||k==='jumps'||k==='size'){if(typeof prediction!=='undefined'){prediction.value='';predictionFeedback.textContent='';}}NOVA.events.emit('value',{engine:'F0-03',control:k,value:v});}
    var fr=h('input',{type:'range',min:0,max:st.jumps+1,step:.01,value:0,'aria-label':'Frame'});fr.oninput=function(){p=+fr.value;stop();draw();emit('frame',p);};
    function stop(){if(anim){anim.stop();anim=null;}}
-   function play(){stop();var from=p,to=st.jumps+1;if(from>=to-.01)from=0;anim=NOVA.tween((to-from)*C.stepMs/st.speed,function(t){p=from+(to-from)*t;fr.value=p;draw();},function(){anim=null;});}
+   function play(){stop();if(NOVA.reducedMotion()){p=st.jumps+1;fr.value=p;draw();emit('reducedMotionEnd',p);return;}var from=p,to=st.jumps+1;if(from>=to-.01)from=0;anim=NOVA.tween((to-from)*C.stepMs/st.speed,function(t){p=from+(to-from)*t;fr.value=p;draw();},function(){anim=null;});}
    var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});
-   pre.onchange=function(){var q=C.presets[pre.value];['start','jumps','size','max'].forEach(function(k){st[k]=q[k];});p=0;fr.max=st.jumps+1;fr.value=0;build();draw();emit('preset',pre.value);};
+   pre.onchange=function(){stop();var q=C.presets[pre.value];['start','jumps','size','max'].forEach(function(k){st[k]=q[k];});p=0;fr.max=st.jumps+1;fr.value=0;build();draw();emit('preset',pre.value);};
    var box=h('div');function build(){box.innerHTML='';
-     box.appendChild(h('div',{class:'pr-row'},[slider('Jumps',1,8,1,st.jumps,function(v){st.jumps=v;fr.max=v+1;p=Math.min(p,v+1);draw();emit('jumps',v);})]));
-     box.appendChild(h('div',{class:'pr-row'},[slider('Size',-6,6,Math.abs(st.size)<1?0.5:1,st.size,function(v){st.size=v||1;draw();emit('size',st.size);})]));
+     box.appendChild(h('div',{class:'pr-row'},[slider('Jumps',1,8,1,st.jumps,function(v){stop();st.jumps=v;fr.max=v+1;p=Math.min(p,v+1);draw();emit('jumps',v);})]));
+     box.appendChild(h('div',{class:'pr-row'},[slider('Size',-6,6,Math.abs(st.size)<1?0.5:1,st.size,function(v){stop();st.size=v||1;draw();emit('size',st.size);})]));
      box.appendChild(h('div',{class:'pr-row'},[slider('Speed',.25,4,.25,st.speed,function(v){st.speed=v;if(eng)eng.timeline.setSpeed(v);})]));}
    var rm=h('input',{type:'checkbox'});rm.checked=NOVA.reducedMotion();rm.onchange=function(){NOVA.setReducedMotion(rm.checked);if(rm.checked){stop();p=st.jumps+1;fr.value=p;draw();}};
    panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(box);
    panel.appendChild(h('label',{class:'pr-row'},['Frame ',fr]));
    panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn primary',text:'Play',onclick:play}),h('button',{class:'nova-btn',text:'Pause',onclick:stop}),h('button',{class:'nova-btn ghost',text:'Reset',onclick:function(){stop();p=0;fr.value=0;draw();}})]));
    panel.appendChild(h('label',{class:'pr-row'},[rm,' Preview reduced motion (jumps straight to the end state)']));
+   var prediction=h('input',{class:'nova-input',type:'number',step:'any','aria-label':'Predicted final landing value',style:'width:120px'});
+   var predictionFeedback=h('p',{class:'nova-fb',role:'status','aria-live':'polite'});
+   function checkPrediction(){
+     if(prediction.value.trim()===''||!isFinite(Number(prediction.value))){predictionFeedback.textContent='Enter a number first.';return;}
+     var landing=+(st.start+st.jumps*st.size).toFixed(6),correct=Math.abs(Number(prediction.value)-landing)<1e-6;
+     predictionFeedback.textContent=correct?'Correct: '+fmt(st.start)+' + '+fmt(st.jumps)+' × ('+fmt(st.size)+') = '+fmt(landing)+'.':
+       'Check: begin at '+fmt(st.start)+', then take '+fmt(st.jumps)+' jumps of '+fmt(st.size)+'. Try again.';
+     NOVA.events.emit('explorePrediction',{engine:'F0-03',correct:correct});
+   }
+   prediction.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();checkPrediction();}});
+   panel.appendChild(h('p',{class:'pr-task',text:'Before pressing Play, predict the final number-line position.'}));
+   panel.appendChild(h('div',{class:'pr-row'},[h('label',{},['Final position ',prediction]),h('button',{class:'nova-btn primary',text:'Check prediction',onclick:checkPrediction})]));
+   panel.appendChild(predictionFeedback);
    build();draw();api.onCleanup(stop);C._explore={set:function(o){Object.assign(st,o);draw();},frame:function(v){p=v;draw();},state:st};},
  challenge:function(panel,api,stage){var st={start:0,jumps:3,size:4},k=0,p=0;
    var T=[

@@ -1872,7 +1872,7 @@ var def={id:'F0-02',title:'SVG primitives',config:C,steps:steps,render:render,re
  exploreIntro:'Explore: change the hop, the angle and the number line. Every primitive updates live.',
  explore:function(panel,stage,api){var st=window.NovaLessonComponent.exploreInit("st",()=>JSON.parse(JSON.stringify(C)));
    function draw(){stage.innerHTML='';cap(stage,'Explore','angle '+fmt(st.angle)+'\u00B0');var r=scene(stage,5,1,st);NOVA.scene.helperStrip(stage,'explain',fmt(st.hop.start)+(st.hop.size<0?' \u2212 ':' + ')+fmt(Math.abs(st.hop.size))+' = '+fmt(r.end));}
-   function emit(k,v){NOVA.events.emit('value',{engine:'F0-02',control:k,value:v});draw();}
+   function emit(k,v){if(typeof pred!=='undefined'){pred.value='';result.textContent='';}NOVA.events.emit('value',{engine:'F0-02',control:k,value:v});draw();}
    var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});
    pre.onchange=function(){var p=C.presets[pre.value];Object.keys(p).forEach(function(k){if(k!=='label')st[k]=JSON.parse(JSON.stringify(p[k]));});build();emit('preset',pre.value);};
    var box=h('div');function build(){box.innerHTML='';var sp=st.line.step;
@@ -1881,7 +1881,20 @@ var def={id:'F0-02',title:'SVG primitives',config:C,steps:steps,render:render,re
      box.appendChild(h('div',{class:'pr-row'},[slider('Angle',0,360,1,st.angle,function(v){st.angle=v;emit('angle',v);})]));
      box.appendChild(h('div',{class:'pr-row'},[slider('Grid',0,40,10,st.grid,function(v){st.grid=v;emit('grid',v);})]));
      var bc=h('input',{type:'checkbox'});bc.checked=st.brace;bc.onchange=function(){st.brace=bc.checked;emit('brace',bc.checked);};box.appendChild(h('label',{class:'pr-row'},[bc,' Show brace']));}
-   panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(box);build();draw();},
+   var pred=h('input',{class:'nova-input',type:'number',step:'any','aria-label':'Predict the signed hop required to reach zero',style:'width:120px'});
+   var result=h('p',{class:'nova-fb',role:'status','aria-live':'polite'});
+   function checkLanding(){
+     if(pred.value.trim()===''||!isFinite(Number(pred.value))){result.textContent='Enter a number before checking.';return;}
+     var needed=+(-st.hop.start).toFixed(6),guess=Number(pred.value),correct=Math.abs(guess-needed)<1e-6;
+     result.textContent=correct?'Correct. '+fmt(st.hop.start)+(needed<0?' − ':' + ')+fmt(Math.abs(needed))+' = 0. Now set Hop to '+fmt(needed)+' to verify.':
+       'Use the opposite of the start. A positive start needs a negative hop to reach zero. Try again.';
+     NOVA.events.emit('explorePrediction',{engine:'F0-02',correct:correct});
+   }
+   pred.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();checkLanding();}});
+   panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(box);
+   panel.appendChild(h('p',{class:'pr-task',text:'Predict the signed hop that takes the start to zero. Check it, then test using the Hop slider.'}));
+   panel.appendChild(h('div',{class:'pr-row'},[h('label',{},['Needed hop ',pred]),h('button',{class:'nova-btn primary',text:'Check prediction',onclick:checkLanding})]));
+   panel.appendChild(result);build();draw();},
  challenge:function(panel,api,stage){var st=window.NovaLessonComponent.exploreInit("st",()=>JSON.parse(JSON.stringify(C))),k=0;st.angle=40;st.hop={start:2,size:1};
    var T=[
     {q:'Set the angle arc to show a right angle.',ctl:'angle',check:function(){return st.angle===90;},why:function(){return st.angle===180?'That is 180°, a straight line. A right angle is a quarter turn.':'Not a right angle yet. Watch for the square box.';},hint:'A right angle is 90°, and the arc turns into a small square.'},

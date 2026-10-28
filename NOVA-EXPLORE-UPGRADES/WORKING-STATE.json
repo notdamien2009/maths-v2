@@ -2,7 +2,7 @@
   "schema": "NOVA-EXPLORE-VNEXT-WORKING-STATE-v1",
   "branch": "nova/explore-f0-f18-vnext-2026-10-28",
   "baseline_commit": "fe64a23dc402f08f5c8c7442c80545fbcb7901d3",
-  "candidate_state": "development_static_and_math_checks_passed_browser_unverified",
+  "candidate_state": "pilot_batches_001_and_002_under_validation",
   "pilot_batch": "001",
   "modified_components": [
     {
@@ -18,6 +18,34 @@
       "old": "8d5a008fee81b46d45e3d1b0a12dcc4c7f23f169",
       "new": "acee1fa074934c78de8ca6c4fa4333dc19380f43",
       "status": "development_unapproved"
+    },
+    {
+      "id": "F0-01",
+      "path": "NOVA-EXPLORE-UPGRADES/F0/F0-01-design-tokens.html",
+      "old": "04a816b8c251a0d851e24af2efacf2c299ae5935",
+      "new": "a6b7b8a84c4885d395193674ca819aa926483c2b",
+      "status": "development_smoke_pass_not_integrated"
+    },
+    {
+      "id": "F0-02",
+      "path": "NOVA-EXPLORE-UPGRADES/F0/F0-02-svg-primitives-PREMIUM.html",
+      "old": "e932dba290e4b3c066593188c7b3d65eb6f78c76",
+      "new": "b68853d0a1a3206db28858ebbc97fd7bbf0fc154",
+      "status": "development_smoke_pass_not_integrated"
+    },
+    {
+      "id": "F0-03",
+      "path": "NOVA-EXPLORE-UPGRADES/F0/F0-03-animation-timeline.html",
+      "old": "a3e4a2c3541df625486f410a53d2831085332e74",
+      "new": "1adcaa062e42a5be21805f941e07e45bd39b6482",
+      "status": "development_smoke_pass_not_integrated"
+    },
+    {
+      "id": "F0-04",
+      "path": "NOVA-EXPLORE-UPGRADES/F0/F0-04-interaction-kit.html",
+      "old": "e3e33ce33a3cc4d1e3014650240fa05e0ba96b35",
+      "new": "da1c539c07572ea008792e0fb03e0ca4f7085ab4",
+      "status": "development_smoke_pass_not_integrated"
     }
   ],
   "qa": {
@@ -29,5 +57,57 @@
     "integrated_lessons": "not_run"
   },
   "production_integration": false,
-  "source_root_altered": false
+  "source_root_altered": false,
+  "latest_batch": "F0-01-through-F0-05",
+  "audit_progress": [
+    {
+      "id": "F0-01",
+      "outcome": "ring glyph added for existing focus role",
+      "source_sha": "04a816b8c251a0d851e24af2efacf2c299ae5935",
+      "development_sha": "a6b7b8a84c4885d395193674ca819aa926483c2b",
+      "status": "candidate_browser_smoke_pass"
+    },
+    {
+      "id": "F0-02",
+      "outcome": "learner predicts signed hop to zero and tests against native sliders",
+      "source_sha": "e932dba290e4b3c066593188c7b3d65eb6f78c76",
+      "development_sha": "b68853d0a1a3206db28858ebbc97fd7bbf0fc154",
+      "status": "candidate_browser_smoke_pass"
+    },
+    {
+      "id": "F0-03",
+      "outcome": "final position prediction; stop in-flight tween on config change; reduced-motion Play jumps to final state",
+      "source_sha": "a3e4a2c3541df625486f410a53d2831085332e74",
+      "development_sha": "1adcaa062e42a5be21805f941e07e45bd39b6482",
+      "status": "candidate_browser_smoke_pass"
+    },
+    {
+      "id": "F0-04",
+      "outcome": "correct stepper output sync and release sort listener on Explore teardown",
+      "source_sha": "e3e33ce33a3cc4d1e3014650240fa05e0ba96b35",
+      "development_sha": "da1c539c07572ea008792e0fb03e0ca4f7085ab4",
+      "status": "candidate_browser_smoke_pass"
+    },
+    {
+      "id": "F0-05",
+      "outcome": "existing markup, standard-form and surd controls sufficient for first pass; preserve",
+      "source_sha": "6d7bcbc5c96776d58035f7c14480edc8bc834732",
+      "development_sha": "6d7bcbc5c96776d58035f7c14480edc8bc834732",
+      "status": "audited_preserved_browser_smoke_pass"
+    }
+  ],
+  "qa_by_batch": {
+    "F0-01-to-F0-05": {
+      "source_hash": "PASS",
+      "math_examples": "PASS",
+      "chromium_standalone": "PASS",
+      "viewport390": "PASS",
+      "viewport1100": "PASS",
+      "keyboard_prediction_enter": "PASS",
+      "tabs_watch_guided_explore_challenge": "PASS",
+      "console_exceptions": "NONE",
+      "real_lesson_integration": "PENDING",
+      "screenreader_audio": "PENDING"
+    }
+  }
 }

@@ -1874,6 +1874,7 @@ function glyph(role,size){var c=T.maths[role].hex,s=size||16,P={
   tick:'<path d="M2.5 8.5 6.5 12.5 13.5 3.5" fill="none" stroke="'+c+'" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>',
   cross:'<path d="M3 3 13 13M13 3 3 13" stroke="'+c+'" stroke-width="2.6" stroke-linecap="round"/>',
   star:'<path d="M8 1 9.9 5.8 15 6.2 11 9.4 12.3 14.5 8 11.7 3.7 14.5 5 9.4 1 6.2 6.1 5.8z" fill="'+c+'"/>',
+  ring:'<circle cx="8" cy="8" r="5" fill="none" stroke="'+c+'" stroke-width="2.5"/>',
   triangle:'<path d="M8 2 14.5 14H1.5z" fill="'+c+'"/>'}[T.maths[role].shape];
   return '<svg class="nv-glyph" viewBox="0 0 16 16" width="'+s+'" height="'+s+'" style="width:'+s+'px;height:'+s+'px;max-width:'+s+'px;display:inline-block;flex:none;margin:0" aria-hidden="true">'+P+'</svg>';}
 /* WCAG contrast */
