@@ -2,7 +2,7 @@
   "schema": "NOVA-EXPLORE-VNEXT-WORKING-STATE-v1",
   "branch": "nova/explore-f0-f18-vnext-2026-10-28",
   "baseline_commit": "fe64a23dc402f08f5c8c7442c80545fbcb7901d3",
-  "candidate_state": "pilot_batches_001_and_002_under_validation",
+  "candidate_state": "three_candidate_batches_saved_standalone_browser_smoke_pass_integration_pending",
   "pilot_batch": "001",
   "modified_components": [
     {
@@ -46,6 +46,41 @@
       "old": "e3e33ce33a3cc4d1e3014650240fa05e0ba96b35",
       "new": "da1c539c07572ea008792e0fb03e0ca4f7085ab4",
       "status": "development_smoke_pass_not_integrated"
+    },
+    {
+      "id": "F0-06",
+      "path": "NOVA-EXPLORE-UPGRADES/F0/F0-06-seeded-randomiser.html",
+      "old": "331526453d23e4121cfaf84c42f5553ebdf5b461",
+      "new": "7c3b90e6da5ab734e35609ca03b1785290c86a55",
+      "status": "development_browser_smoke_pass_not_integrated"
+    },
+    {
+      "id": "F0-07",
+      "path": "NOVA-EXPLORE-UPGRADES/F0/F0-07-state-events.html",
+      "old": "4d471bcbcddeac525ea429c9170841791cb268e6",
+      "new": "ebc24b93bb40113ed8fbb929733e76ffd6339cd7",
+      "status": "development_browser_smoke_pass_not_integrated"
+    },
+    {
+      "id": "F0-08",
+      "path": "NOVA-EXPLORE-UPGRADES/F0/F0-08-narration-hooks.html",
+      "old": "3a6255c6d732bf06d49286be862cacdea0c234c6",
+      "new": "019d838ccb59021fcd2589c113bed1be34358f84",
+      "status": "development_browser_smoke_pass_not_integrated"
+    },
+    {
+      "id": "F0-09",
+      "path": "NOVA-EXPLORE-UPGRADES/F0/F0-09-registry-manifest.html",
+      "old": "a5591652c1de1656070e182db1f15aeca780cae8",
+      "new": "abfd50348f73f71970e2e67114bb15c20efd6824",
+      "status": "development_browser_smoke_pass_not_integrated"
+    },
+    {
+      "id": "F0-10",
+      "path": "NOVA-EXPLORE-UPGRADES/F0/F0-10-gallery-shell.html",
+      "old": "aa2243a1b841958277a6b3788e28e5f5eb05ed24",
+      "new": "3c70d38a9ef953d16c70157bdda578f58a4a962b",
+      "status": "development_browser_smoke_pass_not_integrated"
     }
   ],
   "qa": {
@@ -58,7 +93,7 @@
   },
   "production_integration": false,
   "source_root_altered": false,
-  "latest_batch": "F0-01-through-F0-05",
+  "latest_batch": "F0-06-through-F0-10",
   "audit_progress": [
     {
       "id": "F0-01",
@@ -94,6 +129,41 @@
       "source_sha": "6d7bcbc5c96776d58035f7c14480edc8bc834732",
       "development_sha": "6d7bcbc5c96776d58035f7c14480edc8bc834732",
       "status": "audited_preserved_browser_smoke_pass"
+    },
+    {
+      "id": "F0-06",
+      "outcome": "Reroll selection limited to visible questions; duplicate-safe deterministic rerolls; reproduce-set experiment.",
+      "source_sha": "331526453d23e4121cfaf84c42f5553ebdf5b461",
+      "development_sha": "7c3b90e6da5ab734e35609ca03b1785290c86a55",
+      "status": "candidate_browser_smoke_pass"
+    },
+    {
+      "id": "F0-07",
+      "outcome": "Predict shaded numerator from fraction and total parts; handle impossible subdivisions; cancel pending redraw timers and listeners on teardown.",
+      "source_sha": "4d471bcbcddeac525ea429c9170841791cb268e6",
+      "development_sha": "ebc24b93bb40113ed8fbb929733e76ffd6339cd7",
+      "status": "candidate_browser_smoke_pass"
+    },
+    {
+      "id": "F0-08",
+      "outcome": "Predict rounding result with existing rounding model; correct stale aria-pressed when preset and narration line change.",
+      "source_sha": "3a6255c6d732bf06d49286be862cacdea0c234c6",
+      "development_sha": "019d838ccb59021fcd2589c113bed1be34358f84",
+      "status": "candidate_browser_smoke_pass"
+    },
+    {
+      "id": "F0-09",
+      "outcome": "Validation feedback in Explore now unscored; exercise invalid mode and repair, report all manifest errors and restore.",
+      "source_sha": "a5591652c1de1656070e182db1f15aeca780cae8",
+      "development_sha": "abfd50348f73f71970e2e67114bb15c20efd6824",
+      "status": "candidate_browser_smoke_pass"
+    },
+    {
+      "id": "F0-10",
+      "outcome": "Topic-aware search, clear-filters, empty-results message, live count, print toggle sync.",
+      "source_sha": "aa2243a1b841958277a6b3788e28e5f5eb05ed24",
+      "development_sha": "3c70d38a9ef953d16c70157bdda578f58a4a962b",
+      "status": "candidate_browser_smoke_pass"
     }
   ],
   "qa_by_batch": {
@@ -108,6 +178,19 @@
       "console_exceptions": "NONE",
       "real_lesson_integration": "PENDING",
       "screenreader_audio": "PENDING"
+    },
+    "F0-06-to-F0-10": {
+      "source_hashes": "PASS (5/5)",
+      "mathematical_interactions": "PASS",
+      "chromium_standalone": "PASS",
+      "viewport390": "PASS",
+      "viewport1100": "PASS",
+      "native_tabs_watch_guided_explore_challenge": "PASS",
+      "native_Challenge_code_and_downstream": "BYTE_IDENTICAL",
+      "console_exceptions": "NONE",
+      "full_narration_audio": "NOT_TESTED",
+      "screen_reader": "NOT_TESTED",
+      "real_lesson_integration": "NOT_TESTED"
     }
   }
 }

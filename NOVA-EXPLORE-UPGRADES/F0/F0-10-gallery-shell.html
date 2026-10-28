@@ -1830,7 +1830,7 @@ var NOVA_F0_10_CONFIG={
 (function(){
 var h=NOVA.h,C=window.NovaV2Integration.configuration(NOVA_F0_10_CONFIG),R=NOVA.registry;
 var TOPICS=['all','number','algebra','geometry','ratio','statistics','probability'];
-function filter(o){var q=(o.query||'').toLowerCase();return R.list().filter(function(m){return (o.topic==='all'||m.topics.indexOf(o.topic)>=0)&&(o.kind==='all'||m.kind===o.kind)&&(!q||(m.id+' '+m.title).toLowerCase().indexOf(q)>=0);});}
+function filter(o){var q=(o.query||'').trim().toLowerCase();return R.list().filter(function(m){return (o.topic==='all'||m.topics.indexOf(o.topic)>=0)&&(o.kind==='all'||m.kind===o.kind)&&(!q||(m.id+' '+m.title+' '+(m.topics||[]).join(' ')).toLowerCase().indexOf(q)>=0);});}
 function shell(stage,o){
 if(window.NovaLessonComponent?.active){[stage,o]=window.NovaLessonComponent.args("shell",arguments);}
 var list=filter(o),sh=h('div',{class:'gs-shell'+(o.print?' print':''),'data-topic':o.layer,'aria-label':'Gallery shell preview'});
@@ -1840,6 +1840,7 @@ var list=filter(o),sh=h('div',{class:'gs-shell'+(o.print?' print':''),'data-topi
     if(i===5&&list.length>6){g.appendChild(h('div',{class:cls+' more',text:'+'+(list.length-5)+' more'}));break;}
     if(!m){g.appendChild(h('div',{class:cls+' empty'}));continue;}var b=C.built.indexOf(m.id)>=0;
     g.appendChild(h('div',{class:cls+(o.hl===m.id?' hl':''),'data-topic':m.topics[0]==='all'?o.layer:m.topics[0],'data-maths':o.hl===m.id?'hl':null},[h('small',{text:m.id+' · '+m.kind}),m.title,o.status!==false?h('i',{class:b?'b':'p',text:b?'built':'planned'}):null]));}
+  if(!list.length)sh.appendChild(h('p',{class:'pr-task',role:'status',text:'No matching components. Try a broader search or clear the filters.'}));
   sh.appendChild(g);stage.appendChild(sh);return list;}
 var DEMO=[{topic:'all',kind:'all',layer:'number',status:false},{topic:'all',kind:'all',layer:'number',status:false,hl:'F0-01'},{topic:'geometry',kind:'all',layer:'number',status:false,hl:'F0-16'},{topic:'all',kind:'all',query:'plot',layer:'number',status:false,hl:'F0-14'},
  {topic:'algebra',kind:'all',layer:'algebra',status:false},{topic:'all',kind:'all',layer:'number',hl:'F0-10'},{topic:'all',kind:'all',layer:'number',print:true}];
@@ -1859,14 +1860,19 @@ var def={id:'F0-10',title:'Gallery page shell',config:C,steps:steps,render:rende
  explore:function(panel,stage,api){window.NovaLessonComponent?.applyExploreModels();var st=(window.NovaLessonComponent?window.NovaLessonComponent.exploreInit("st",()=>({topic:C.topic,kind:C.kind,query:C.query,layer:C.layer,print:false})):({topic:C.topic,kind:C.kind,query:C.query,layer:C.layer,print:false}));
    window.NovaLessonComponent?.applyExploreModels();function draw(){stage.innerHTML='';var n=filter(st).length;NOVA.cap(stage,'Explore · gallery shell',n+' shown');shell(stage,st);NOVA.scene.helperStrip(stage,'explain',n+' tiles');}
    window.NovaLessonComponent?.applyExploreModels();function val(k,v){NOVA.events.emit('value',{engine:'F0-10',key:k,value:v});}
-   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Preset'});window.NovaLessonComponent?.applyExploreModels();Object.keys(C.presets).forEach(function(q){pre.appendChild(h('option',{value:q,text:C.presets[q].label}));});window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){Object.assign(st,C.presets[pre.value]);delete st.label;tp.set(st.topic);kd.set(st.kind);ly.value=st.layer;qi.input.value=st.query;val('preset',pre.value);draw();};
+   window.NovaLessonComponent?.applyExploreModels();var pre=h('select',{class:'nova-input','aria-label':'Preset'});window.NovaLessonComponent?.applyExploreModels();Object.keys(C.presets).forEach(function(q){pre.appendChild(h('option',{value:q,text:C.presets[q].label}));});window.NovaLessonComponent?.applyExploreModels();pre.onchange=function(){Object.assign(st,C.presets[pre.value]);delete st.label;st.print=false;pr.setAttribute('aria-pressed','false');tp.set(st.topic);kd.set(st.kind);ly.value=st.layer;qi.input.value=st.query;val('preset',pre.value);draw();};
    window.NovaLessonComponent?.applyExploreModels();var qi=NOVA.ui.entry({label:'Search',engine:'F0-10-ui'});window.NovaLessonComponent?.applyExploreModels();qi.input.setAttribute('inputmode','text');window.NovaLessonComponent?.applyExploreModels();qi.input.addEventListener('input',function(){st.query=qi.input.value;draw();});
    window.NovaLessonComponent?.applyExploreModels();var tp=NOVA.ui.choice(TOPICS,function(v){st.topic=v;draw();},{value:st.topic,engine:'F0-10',key:'topic',label:'Topic'});
    window.NovaLessonComponent?.applyExploreModels();var kd=NOVA.ui.choice(['all','api','primitive','engine','shell'],function(v){st.kind=v;draw();},{value:st.kind,engine:'F0-10',key:'kind',label:'Kind'});
    window.NovaLessonComponent?.applyExploreModels();var ly=h('select',{class:'nova-input','aria-label':'Style layer'});window.NovaLessonComponent?.applyExploreModels();TOPICS.slice(1).forEach(function(t){ly.appendChild(h('option',{value:t,text:t}));});window.NovaLessonComponent?.applyExploreModels();ly.value=st.layer;window.NovaLessonComponent?.applyExploreModels();ly.onchange=function(){st.layer=ly.value;val('layer',st.layer);draw();};
    window.NovaLessonComponent?.applyExploreModels();var pr=h('button',{class:'nova-btn','aria-pressed':'false',text:'Print view',onclick:function(){st.print=!st.print;pr.setAttribute('aria-pressed',String(st.print));val('print',st.print);draw();}});
    window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(qi);window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row'},[h('span',{class:'pr-task',text:'Topic'}),tp]));window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('div',{class:'pr-row'},[h('span',{class:'pr-task',text:'Kind'}),kd]));
-   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Style layer ',ly,pr]));window.NovaLessonComponent?.applyExploreModels();draw();window.NovaLessonComponent?.applyExploreModels();C._explore={state:st};},
+   window.NovaLessonComponent?.applyExploreModels();panel.appendChild(h('label',{class:'pr-row'},['Style layer ',ly,pr]));
+   var count=h('p',{class:'pr-task',role:'status','aria-live':'polite'});
+   function reset(){st.topic='all';st.kind='all';st.query='';st.print=false;tp.set('all');kd.set('all');qi.input.value='';pr.setAttribute('aria-pressed','false');draw();val('filters','reset');}
+   panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn',text:'Clear filters',onclick:reset}),count]));
+   var nativeDraw=draw;draw=function(){nativeDraw();var n=filter(st).length;count.textContent=n+' matching component'+(n===1?'':'s')+'.'+(n>6?' Preview displays only the first five plus a more tile.':'');};
+   window.NovaLessonComponent?.applyExploreModels();draw();window.NovaLessonComponent?.applyExploreModels();C._explore={state:st};},
  challenge:function(panel,api,stage){
    var tasks=[
     {q:'Filter the gallery to geometry. How many tiles are left?',build:NOVA.entryTask('tiles =','F0-10'),check:function(v){var ok=v===2;return [ok,ok?'Yes: F0-02 SVG primitives and F0-16 geometry canvas.':v===17?'That is the whole family. Only geometry tiles stay.':'Count the tiles tagged geometry.'];},hint:'Look for the geometry topic on each registry entry.',solve:function(c){c._A.input.value='2';}},

@@ -1876,18 +1876,34 @@ var def={id:'F0-06',title:'Seeded randomiser',config:C,steps:steps,render:render
  staticAlt:'Seed MATHS7 makes six times-table questions; the same seed on a second device gives the identical six. A new seed QUIZ42 gives a different set. Rules: no repeats, no ×0 or ×1, whole-number answers. Templates: equations, fractions, percentages, directed numbers, standard form.',
  exploreIntro:'Explore: type a seed or roll a new one, pick a template and rules, and re-roll single questions. The layout never jumps.',
  explore:function(panel,stage,api){var st=window.NovaLessonComponent.exploreInit("st",()=>({seed:C.seed,template:C.template,count:C.count,noRepeat:C.noRepeat,avoidTrivial:C.avoidTrivial,showAnswers:C.showAnswers})),rr={};
-   function list(){var L=make(st.seed,st,st.count);Object.keys(rr).forEach(function(k){if(L[k])L[k]=TPL[st.template](R.create(st.seed).fork('re'+k+':'+rr[k]),st);});return L;}
+   function list(){var L=make(st.seed,st,st.count);Object.keys(rr).sort(function(a,b){return +a-+b;}).forEach(function(k){
+     if(!L[k])return;var before=L[k].q;
+     for(var attempt=0;attempt<64;attempt++){
+       var candidate=TPL[st.template](R.create(st.seed).fork('re'+k+':'+rr[k]+':'+attempt),st);
+       if(candidate.q!==before&&(!st.noRepeat||!L.some(function(q,i){return i!==+k&&q.q===candidate.q;}))){L[k]=candidate;break;}
+     }
+   });return L;}
    function draw(){stage.innerHTML='';cap(stage,'Explore · '+C.presets[st.template].label.split('  ')[0],'seed '+st.seed);var w=h('div',{class:'rs-cols'});w.appendChild(col('Your set',st.seed,list(),st,Object.keys(rr).reduce(function(a,k){a[k]='diff';return a;},[])));stage.appendChild(w);NOVA.scene.helperStrip(stage,'explain','Seed '+st.seed);}
    function emit(k,v){NOVA.events.emit('value',{engine:'F0-06',control:k,value:v});}
    var se=NOVA.ui.entry({label:'Seed',engine:'F0-06'});se.input.value=st.seed;se.input.inputMode='text';se.input.oninput=function(){st.seed=se.input.value.trim()||'0';rr={};draw();};
    var roll=h('button',{class:'nova-btn primary',text:'\u2684 New seed',onclick:function(){st.seed=R.code();se.input.value=st.seed;rr={};draw();emit('seed',st.seed);}});
    var pre=h('select',{class:'nova-input','aria-label':'Template'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});pre.value=st.template;pre.onchange=function(){st.template=C.presets[pre.value].template;rr={};draw();emit('template',st.template);};
-   var cnt=NOVA.ui.stepper({label:'Questions',value:st.count,min:1,max:6,step:1,engine:'F0-06',onChange:function(v){st.count=v;draw();}});
+   var cnt=NOVA.ui.stepper({label:'Questions',value:st.count,min:1,max:6,step:1,engine:'F0-06',onChange:function(v){st.count=v;syncReroll();draw();}});
    function cb(lbl,key){var c=h('input',{type:'checkbox'});c.checked=st[key];c.onchange=function(){st[key]=c.checked;draw();emit(key,c.checked);};return h('label',{class:'pr-row'},[c,' '+lbl]);}
    var rq=h('select',{class:'nova-input','aria-label':'Question to re-roll'});for(var i=0;i<6;i++)rq.appendChild(h('option',{value:i,text:'Q'+(i+1)}));
+   var evidence=h('p',{class:'pr-task',role:'status','aria-live':'polite',text:'The same seed and rules recreate the same questions.'});
+   function syncReroll(){Array.from(rq.options).forEach(function(opt){opt.disabled=+opt.value>=st.count;});if(+rq.value>=st.count)rq.value='0';}
+   function verify(){var a=list(),b=list(),same=a.length===b.length&&a.every(function(q,i){return q.q===b[i].q&&String(q.a)===String(b[i].a);});
+     evidence.textContent=same?'Reproduced all '+a.length+' questions from seed '+st.seed+' and the current reroll settings.':'The question set could not be reproduced; check the settings.';
+     NOVA.events.emit('explorePrediction',{engine:'F0-06',reproducible:same,count:a.length});}
    panel.appendChild(h('div',{class:'pr-row'},[se,roll]));panel.appendChild(h('label',{class:'pr-row'},['Template ',pre]));panel.appendChild(cnt);
    panel.appendChild(cb('No repeats','noRepeat'));panel.appendChild(cb('Avoid 0 and 1','avoidTrivial'));panel.appendChild(cb('Show answers','showAnswers'));
-   panel.appendChild(h('div',{class:'pr-row'},['Re-roll only ',rq,h('button',{class:'nova-btn',text:'Re-roll',onclick:function(){var k=+rq.value;rr[k]=(rr[k]||0)+1;draw();emit('reroll','Q'+(k+1));}})]));
+   panel.appendChild(h('div',{class:'pr-row'},['Re-roll only ',rq,h('button',{class:'nova-btn',text:'Re-roll',onclick:function(){var k=+rq.value;if(k>=st.count){evidence.textContent='Choose one of the '+st.count+' visible questions.';return;}
+     var before=list(),prior=before[k]&&before[k].q;rr[k]=(rr[k]||0)+1;var after=list();draw();
+     evidence.textContent=after[k]&&after[k].q!==prior?'Only Q'+(k+1)+' changed. The other questions stayed the same. Re-roll #'+rr[k]+'.':'No different question was available with these constraints. Try another seed.';
+     emit('reroll','Q'+(k+1));}})]));
+   panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn ghost',text:'Verify same seed',onclick:verify})]));
+   panel.appendChild(evidence);syncReroll();
    draw();C._explore={roll:function(){roll.click();},set:function(o){Object.assign(st,o);draw();}};},
  challenge:function(panel,api,stage){var k=0,pick=null,target=make('MATHS7',O(),6),qv=TPL.equation(R.create('NOVA').fork('q0'),O()),A;
    var T=[{q:'Which seed recreates this exact set? Preview each, then pick.',kind:'seed'},{q:'Solve the generated question.',kind:'solve'},{q:'Which rule stops questions like 7 × 1?',kind:'rule'}];

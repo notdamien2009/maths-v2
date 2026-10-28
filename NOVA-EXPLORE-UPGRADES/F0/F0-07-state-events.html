@@ -1877,14 +1877,26 @@ var def={id:'F0-07',title:'State and events API',config:C,steps:steps,render:ren
  alt:'State and events API: a fraction bar whose state changes fire value, step, correct and hintUsed events, shown in a live event stream.',
  staticAlt:'A bar of 4 parts with 3 shaded (3/4). Event stream: value shaded = 1, 2, 3; step 2 Check; correct: true (target 3/4); hintUsed #1; undo and redo. Report: attempts 2, correct 1, hints 1, first try no.',
  exploreIntro:'Explore: shade parts, undo and redo, check against a target and ask for a hint. Watch every event appear.',
- explore:function(panel,stage,api){var st=NOVA.state.create('F0-07',{parts:C.parts,shaded:C.shaded,target:C.target}),offs=[];
+ explore:function(panel,stage,api){var st=NOVA.state.create('F0-07',{parts:C.parts,shaded:C.shaded,target:C.target}),offs=[],pending=new Set(),closed=false;
    function evs(){return NOVA.events.query({engine:'F0-07'}).filter(function(e){return e.type!=='mode';}).slice(-6).reverse();}
    function draw(){var s=st.get();stage.innerHTML='';cap(stage,'Explore · live state','target '+s.target);panelBox(stage,s.parts,s.shaded,evs(),s,st.summary(),null,function(k){st.set({shaded:k+1===s.shaded?k:k+1},'click');});NOVA.scene.helperStrip(stage,'explain',s.shaded+' of '+s.parts);}
-   offs.push(NOVA.events.onEngine('F0-07','*',function(){setTimeout(draw,0);}));api.onCleanup(function(){offs.forEach(function(f){f();});});
-   var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});pre.onchange=function(){var q=C.presets[pre.value];st.set({parts:q.parts,shaded:0,target:q.target},'preset');parts();};
+   offs.push(NOVA.events.onEngine('F0-07','*',function(){var id=setTimeout(function(){pending.delete(id);if(!closed&&stage.isConnected)draw();},0);pending.add(id);}));
+   api.onCleanup(function(){closed=true;offs.forEach(function(f){f();});pending.forEach(clearTimeout);pending.clear();});
+   var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(C.presets).forEach(function(k){pre.appendChild(h('option',{value:k,text:C.presets[k].label}));});pre.onchange=function(){var q=C.presets[pre.value];st.set({parts:q.parts,shaded:0,target:q.target},'preset');prediction.value='';predFeedback.textContent='New fraction target. Make a prediction.';parts();};
    var pb=h('div',{class:'ev-parts',role:'group','aria-label':'Shade parts'});function parts(){pb.innerHTML='';var s=st.get();for(var i=0;i<=s.parts;i++)(function(k){pb.appendChild(h('button',{class:'nova-btn','aria-pressed':String(k===s.shaded),'aria-label':'Shade '+k+' parts',text:String(k),onclick:function(){st.set({shaded:k},'button');parts();}}));})(i);}
-   var n=NOVA.ui.stepper({label:'Parts',value:st.get('parts'),min:2,max:20,step:1,engine:'F0-07-ui',onChange:function(v){st.set({parts:v,shaded:Math.min(st.get('shaded'),v)},'stepper');parts();}});
-   panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(n);panel.appendChild(h('p',{class:'pr-task',text:'Shade (or click the bar)'}));panel.appendChild(pb);
+   var n=NOVA.ui.stepper({label:'Parts',value:st.get('parts'),min:2,max:20,step:1,engine:'F0-07-ui',onChange:function(v){st.set({parts:v,shaded:Math.min(st.get('shaded'),v)},'stepper');prediction.value='';predFeedback.textContent='Number of parts changed. Predict again.';parts();}});
+   panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(n);
+   var prediction=h('input',{class:'nova-input',type:'number',step:'1',min:'0',max:'20',inputmode:'numeric','aria-label':'Predict number of shaded parts',style:'width:110px'});
+   var predFeedback=h('p',{class:'pr-task',role:'status','aria-live':'polite',text:'Use the fraction target to predict how many parts should be shaded.'});
+   function checkPrediction(){var s=st.get(),required=tgt(s.target)*s.parts,answer=Number(prediction.value);
+     if(!prediction.value.trim()||!Number.isInteger(answer)||answer<0||answer>s.parts){predFeedback.textContent='Enter a whole number from 0 to '+s.parts+'.';return;}
+     if(!Number.isInteger(required)){predFeedback.textContent='This target needs '+required+' shaded parts, not a whole number. Change the number of equal parts to make it possible.';return;}
+     var correct=answer===required;
+     predFeedback.textContent=correct?'Correct. '+s.target+' of '+s.parts+' parts is '+required+'. Now shade them to test your prediction.':'Try multiplying '+s.parts+' by '+s.target+' to find how many parts to shade.';
+     NOVA.events.emit('explorePrediction',{engine:'F0-07',correct:correct,required:required,parts:s.parts});}
+   prediction.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();checkPrediction();}});
+   panel.appendChild(h('div',{class:'pr-row'},[h('label',{},['Predict shaded parts ',prediction]),h('button',{class:'nova-btn',text:'Check prediction',onclick:checkPrediction})]));
+   panel.appendChild(predFeedback);panel.appendChild(h('p',{class:'pr-task',text:'Shade (or click the bar)'}));panel.appendChild(pb);
    panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn',text:'\u21B6 Undo',onclick:function(){st.undo();parts();}}),h('button',{class:'nova-btn',text:'\u21B7 Redo',onclick:function(){st.redo();parts();}}),
      h('button',{class:'nova-btn primary',text:'Check',onclick:function(){var s=st.get();st.check(function(x){return Math.abs(x.shaded/x.parts-tgt(x.target))<1e-9;},{target:s.target});}}),
      h('button',{class:'nova-btn ghost',text:'Hint',onclick:function(){var s=st.get();st.hint('Target '+s.target+' of '+s.parts+' parts is '+Math.round(tgt(s.target)*s.parts));}})]));

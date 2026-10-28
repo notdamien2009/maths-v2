@@ -1876,16 +1876,28 @@ var def={id:'F0-08',title:'Bob narration hooks',config:C,steps:steps,render:rend
  alt:'Bob narration hooks: a rounding number line beside a script card whose slots fill with live values, in warm or brisk tone and short or full length, with a transcript.',
  staticAlt:'Rounding 47 to the nearest 10. Script: "{n} sits between {lo} and {hi}" becomes "47 sits between 40 and 50". Halfway is 45; 47 is above 45, so it rounds to 50. Tones: warm, brisk. Lengths: short, full. Transcript keeps every line.',
  exploreIntro:'Explore: pick a number and a rounding unit, then switch tone, length and voice. Press Say to hear Sir Bob fill each line.',
- explore:function(panel,stage,api){var st=window.NovaLessonComponent.exploreInit('st',()=>({n:C.n,u:C.unit,tone:C.tone,len:C.length,key:'bounds',speech:C.speech})),k=0;var tx=[];
+ explore:function(panel,stage,api){var st=window.NovaLessonComponent.exploreInit('st',()=>({n:C.n,u:C.unit,tone:C.tone,len:C.length,key:'bounds',speech:C.speech})),k=0;var tx=[],groups=[];
    function draw(){stage.innerHTML='';cap(stage,'Explore · live script',st.key);board(stage,{n:st.n,u:st.u,key:st.key,fill:true,upto:KEYS.indexOf(st.key),tone:st.tone,len:st.len,tx:tx.slice(-3).reverse(),speech:st.speech});NOVA.scene.helperStrip(stage,'explain',st.tone+' · '+st.len);}
    function val(key,v){NOVA.events.emit('value',{engine:'F0-08',key:key,value:v});}
-   var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(C.presets).forEach(function(q){pre.appendChild(h('option',{value:q,text:C.presets[q].label}));});pre.onchange=function(){var q=C.presets[pre.value];st.n=q.n;st.u=q.unit;num.input.value=String(q.n);val('preset',pre.value);draw();};
-   var num=NOVA.ui.entry({label:'Number',engine:'F0-08-ui'});num.input.value=String(st.n);num.input.addEventListener('change',function(){var v=NOVA.ui.parseNum(num.get());if(isFinite(v)){st.n=v;val('n',v);draw();}});
-   function seg(name,list,key){var o=h('div',{class:'rs-opts',role:'group','aria-label':name});list.forEach(function(x){var b=h('button',{class:'nova-btn','aria-pressed':String(st[key]===x),text:String(x),onclick:function(){st[key]=x;o.querySelectorAll('button').forEach(function(y){y.setAttribute('aria-pressed',String(y===b));});val(key,x);draw();}});o.appendChild(b);});return h('div',{class:'pr-row'},[h('span',{class:'pr-task',text:name}),o]);}
+   var pre=h('select',{class:'nova-input','aria-label':'Preset'});Object.keys(C.presets).forEach(function(q){pre.appendChild(h('option',{value:q,text:C.presets[q].label}));});pre.onchange=function(){var q=C.presets[pre.value];st.n=q.n;st.u=q.unit;num.input.value=String(q.n);syncGroups();resetPrediction();val('preset',pre.value);draw();};
+   var num=NOVA.ui.entry({label:'Number',engine:'F0-08-ui'});num.input.value=String(st.n);num.input.addEventListener('change',function(){var v=NOVA.ui.parseNum(num.get());if(isFinite(v)){st.n=v;resetPrediction();val('n',v);draw();}});
+   function syncGroups(){groups.forEach(function(g){g.buttons.forEach(function(item){item.button.setAttribute('aria-pressed',String(st[g.key]===item.value));});});}
+   function seg(name,list,key){var o=h('div',{class:'rs-opts',role:'group','aria-label':name}),buttons=[];list.forEach(function(x){var b=h('button',{class:'nova-btn','aria-pressed':String(st[key]===x),text:String(x),onclick:function(){st[key]=x;syncGroups();if(key==='u')resetPrediction();val(key,x);draw();}});buttons.push({button:b,value:x});o.appendChild(b);});groups.push({key:key,buttons:buttons});return h('div',{class:'pr-row'},[h('span',{class:'pr-task',text:name}),o]);}
    panel.appendChild(h('label',{class:'pr-row'},['Preset ',pre]));panel.appendChild(num);
    panel.appendChild(seg('Round to',[1000,100,10,1,0.1,0.01],'u'));panel.appendChild(seg('Line',KEYS,'key'));panel.appendChild(seg('Tone',N.TONES,'tone'));panel.appendChild(seg('Length',N.LENGTHS,'len'));
    var sp=h('button',{class:'nova-btn','aria-pressed':String(st.speech),text:'\u266A Voice',onclick:function(){st.speech=!st.speech;sp.setAttribute('aria-pressed',String(st.speech));N.speech=st.speech;val('speech',st.speech);draw();}});
-   panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn primary',text:'Say line',onclick:function(){var t=N.say(api.bubble,'F0-08',st.key,vars(st.n,st.u),{tone:st.tone,length:st.len,mode:'Explore'});tx.push(t);st.key=KEYS[(KEYS.indexOf(st.key)+1)%4];draw();}}),sp]));
+   var predicted=h('input',{class:'nova-input',type:'number',step:'any',inputmode:'decimal','aria-label':'Predict rounded number',style:'width:125px'});
+   var feedback=h('p',{class:'pr-task',role:'status','aria-live':'polite',text:'Predict first, then use Say line to hear the explanation.'});
+   function resetPrediction(){predicted.value='';feedback.textContent='Predict the rounding result using the current number and place value.';}
+   function checkPrediction(){var target=vars(st.n,st.u)._r,raw=predicted.value.trim(),value=Number(raw);
+     if(raw===''||!Number.isFinite(value)){feedback.textContent='Enter a numerical prediction before checking.';return;}
+     var correct=Math.abs(value-target)<1e-9;
+     feedback.textContent=correct?'Correct. '+st.n+' rounds to '+target+' to the nearest '+st.u+'.':'Look at the two surrounding multiples of '+st.u+' and their halfway point. Which is nearer?';
+     NOVA.events.emit('explorePrediction',{engine:'F0-08',correct:correct,number:st.n,unit:st.u});}
+   predicted.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();checkPrediction();}});
+   panel.appendChild(h('div',{class:'pr-row'},[h('label',{},['Rounded answer ',predicted]),h('button',{class:'nova-btn',text:'Check prediction',onclick:checkPrediction})]));
+   panel.appendChild(feedback);
+   panel.appendChild(h('div',{class:'pr-row'},[h('button',{class:'nova-btn primary',text:'Say line',onclick:function(){var t=N.say(api.bubble,'F0-08',st.key,vars(st.n,st.u),{tone:st.tone,length:st.len,mode:'Explore'});tx.push(t);st.key=KEYS[(KEYS.indexOf(st.key)+1)%4];syncGroups();draw();}}),sp]));
    api.onCleanup(function(){N.speech=false;});draw();C._explore={state:st};},
  challenge:function(panel,api,stage){var k=0,pick=null,A;
    var T=[{q:'Fill the {r} slot: 65 to the nearest 10.',n:65,u:10,key:'result'},{q:'1,349 to the nearest 100. Which word fills {side} in "{n} is {side} {mid}"?',n:1349,u:100,key:'compare'},{q:'Fill the {mid} slot for 3.46 to 1 decimal place.',n:3.46,u:0.1,key:'halfway'}];
