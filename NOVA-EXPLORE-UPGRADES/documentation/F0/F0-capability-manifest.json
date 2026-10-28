@@ -1,0 +1,6380 @@
+{
+  "family": "F0",
+  "auditDate": "2026-10-16",
+  "sourceRoot": "C:\\Users\\PC Deals\\Desktop\\CODEX\\bank-v3-neon-chalk",
+  "sourceIdentity": "Local bank-v3-neon-chalk at audit start; already contains prior integration modifications. Earlier originality cannot be independently certified.",
+  "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+  "templateSha256": "dea2f80f6c1478ab772770f53d4b858b851d8bba1ea205348ad7537c997981a0",
+  "productionReady": true,
+  "sharedLimitations": [
+    "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+    "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+    "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+  ],
+  "components": [
+    {
+      "id": "F0-01",
+      "name": "Design tokens",
+      "entry": "F0/F0-01-design-tokens.html",
+      "sha256": "ac4ded4a0b29f122d952c9356484f09a4c743a43b90ff4808d433e7861290f52",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Expression token-role pairs; native role/theme/preset settings",
+      "nativeDrawArguments": {
+        "eq": [
+          "stage",
+          "expr",
+          "opts"
+        ],
+        "legend": [
+          "stage",
+          "only"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "theme": "dark",
+        "vision": "none",
+        "focusRole": "unknown",
+        "minContrast": 4.5,
+        "expression": [
+          [
+            "3",
+            "given"
+          ],
+          [
+            "x",
+            "unknown"
+          ],
+          [
+            "+",
+            "op"
+          ],
+          [
+            "5",
+            "given"
+          ],
+          [
+            "=",
+            "op"
+          ],
+          [
+            "20",
+            "given"
+          ]
+        ],
+        "challengePreset": "linear",
+        "presets": {
+          "linear": {
+            "label": "Equation  3x + 5 = 20",
+            "expression": [
+              [
+                "3",
+                "given"
+              ],
+              [
+                "x",
+                "unknown"
+              ],
+              [
+                "+",
+                "op"
+              ],
+              [
+                "5",
+                "given"
+              ],
+              [
+                "=",
+                "op"
+              ],
+              [
+                "20",
+                "given"
+              ]
+            ]
+          },
+          "solved": {
+            "label": "Solution  x = 5",
+            "expression": [
+              [
+                "x",
+                "unknown"
+              ],
+              [
+                "=",
+                "op"
+              ],
+              [
+                "5",
+                "result"
+              ]
+            ]
+          },
+          "fraction": {
+            "label": "Fraction of amount  \u00be of 48 = 36",
+            "expression": [
+              [
+                "\u00be",
+                "given"
+              ],
+              [
+                "of",
+                "op"
+              ],
+              [
+                "48",
+                "given"
+              ],
+              [
+                "=",
+                "op"
+              ],
+              [
+                "36",
+                "result"
+              ]
+            ]
+          },
+          "angles": {
+            "label": "Angles on a line  a + 130\u00b0 = 180\u00b0",
+            "expression": [
+              [
+                "a",
+                "unknown"
+              ],
+              [
+                "+",
+                "op"
+              ],
+              [
+                "130\u00b0",
+                "given"
+              ],
+              [
+                "=",
+                "op"
+              ],
+              [
+                "180\u00b0",
+                "given"
+              ]
+            ]
+          },
+          "mistake": {
+            "label": "Spot the error  2\u00b3 = 6",
+            "expression": [
+              [
+                "2\u00b3",
+                "given"
+              ],
+              [
+                "=",
+                "op"
+              ],
+              [
+                "6",
+                "error"
+              ],
+              [
+                "\u2192",
+                "support"
+              ],
+              [
+                "8",
+                "result"
+              ]
+            ]
+          },
+          "ratio": {
+            "label": "Ratio  2 : 3 = 10 : n",
+            "expression": [
+              [
+                "2 : 3",
+                "given"
+              ],
+              [
+                "=",
+                "op"
+              ],
+              [
+                "10",
+                "given"
+              ],
+              [
+                ":",
+                "op"
+              ],
+              [
+                "n",
+                "unknown"
+              ]
+            ]
+          },
+          "stdform": {
+            "label": "GCSE: standard form  4.5 \u00d7 10\u2074",
+            "expression": [
+              [
+                "4.5",
+                "focus"
+              ],
+              [
+                "\u00d7",
+                "op"
+              ],
+              [
+                "10\u2074",
+                "given"
+              ],
+              [
+                "=",
+                "op"
+              ],
+              [
+                "45 000",
+                "result"
+              ]
+            ]
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {},
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Added native lesson registration and equation/legend argument hooks  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "scope": "No additional numeric bounds certified; use native descriptor and tested examples."
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "roleAssignment",
+        "colourContrast"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Choose a maths role",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "given",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "unknown",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "op",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "result",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "error",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "undefinedfocus",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "support",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Expression preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "linear",
+          "options": [
+            {
+              "value": "linear",
+              "label": "Equation  3x + 5 = 20"
+            },
+            {
+              "value": "solved",
+              "label": "Solution  x = 5"
+            },
+            {
+              "value": "fraction",
+              "label": "Fraction of amount  \u00be of 48 = 36"
+            },
+            {
+              "value": "angles",
+              "label": "Angles on a line  a + 130\u00b0 = 180\u00b0"
+            },
+            {
+              "value": "mistake",
+              "label": "Spot the error  2\u00b3 = 6"
+            },
+            {
+              "value": "ratio",
+              "label": "Ratio  2 : 3 = 10 : n"
+            },
+            {
+              "value": "stdform",
+              "label": "GCSE: standard form  4.5 \u00d7 10\u2074"
+            }
+          ]
+        },
+        {
+          "label": "Colour-blind preview",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "none",
+          "options": [
+            {
+              "value": "none",
+              "label": "Normal vision"
+            },
+            {
+              "value": "protan",
+              "label": "Protanopia"
+            },
+            {
+              "value": "deutan",
+              "label": "Deuteranopia"
+            },
+            {
+              "value": "tritan",
+              "label": "Tritanopia"
+            },
+            {
+              "value": "grey",
+              "label": "Greyscale"
+            }
+          ]
+        },
+        {
+          "label": "Toggle light / dark",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-02",
+      "name": "SVG primitives",
+      "entry": "F0/F0-02-svg-primitives-PREMIUM.html",
+      "sha256": "175e6b64ff81669689bf61db53133c6dc907dee568081dd8c98b7f4fb298f6aa",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Line bounds/steps, hop start/size, angle and native geometry settings",
+      "nativeDrawArguments": {
+        "scene": [
+          "stage",
+          "upto",
+          "frac",
+          "st"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "line": {
+          "min": -4,
+          "max": 8,
+          "step": 1
+        },
+        "hop": {
+          "start": 2,
+          "size": 3
+        },
+        "brace": true,
+        "angle": 50,
+        "side": 6,
+        "unit": "cm",
+        "grid": 20,
+        "presets": {
+          "addition": {
+            "label": "Addition on a number line  2 + 3",
+            "line": {
+              "min": -4,
+              "max": 8,
+              "step": 1
+            },
+            "hop": {
+              "start": 2,
+              "size": 3
+            },
+            "angle": 50
+          },
+          "negatives": {
+            "label": "Negatives  1 + (\u22125)",
+            "line": {
+              "min": -6,
+              "max": 6,
+              "step": 1
+            },
+            "hop": {
+              "start": 1,
+              "size": -5
+            },
+            "angle": 50
+          },
+          "decimals": {
+            "label": "Decimals  0.2 + 0.5",
+            "line": {
+              "min": 0,
+              "max": 1,
+              "step": 0.1
+            },
+            "hop": {
+              "start": 0.2,
+              "size": 0.5
+            },
+            "angle": 50
+          },
+          "right": {
+            "label": "Right angle  90\u00b0",
+            "angle": 90
+          },
+          "obtuse": {
+            "label": "Obtuse angle  130\u00b0",
+            "angle": 130
+          },
+          "reflex": {
+            "label": "GCSE: reflex angle  250\u00b0",
+            "angle": 250
+          },
+          "perimeter": {
+            "label": "Lengths  base 8 cm",
+            "side": 8,
+            "unit": "cm"
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "st": true
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Added native lesson registration, original scene hooks and Explore state binding  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "angle": {
+          "min": 0,
+          "max": 360
+        },
+        "line.step": {
+          "exclusiveMin": 0
+        },
+        "axisIntervals": {
+          "max": 500
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "hop",
+        "brace",
+        "angle"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "addition",
+          "options": [
+            {
+              "value": "addition",
+              "label": "Addition on a number line  2 + 3"
+            },
+            {
+              "value": "negatives",
+              "label": "Negatives  1 + (\u22125)"
+            },
+            {
+              "value": "decimals",
+              "label": "Decimals  0.2 + 0.5"
+            },
+            {
+              "value": "right",
+              "label": "Right angle  90\u00b0"
+            },
+            {
+              "value": "obtuse",
+              "label": "Obtuse angle  130\u00b0"
+            },
+            {
+              "value": "reflex",
+              "label": "GCSE: reflex angle  250\u00b0"
+            },
+            {
+              "value": "perimeter",
+              "label": "Lengths  base 8 cm"
+            }
+          ]
+        },
+        {
+          "label": "Start",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-4",
+          "max": "8",
+          "step": "1",
+          "value": "2"
+        },
+        {
+          "label": "Hop",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-12",
+          "max": "12",
+          "step": "1",
+          "value": "3"
+        },
+        {
+          "label": "Angle",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0",
+          "max": "360",
+          "step": "1",
+          "value": "50"
+        },
+        {
+          "label": "Grid",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0",
+          "max": "40",
+          "step": "10",
+          "value": "20"
+        }
+      ]
+    },
+    {
+      "id": "F0-03",
+      "name": "Animation timeline",
+      "entry": "F0/F0-03-animation-timeline.html",
+      "sha256": "b946e7e821c3fe4bf6ae3aa415e226d4644774e49db4e1661277f394acc709a8",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Start and jump size; native indices and renderer arguments",
+      "nativeDrawArguments": {
+        "frame": [
+          "stage",
+          "p",
+          "st"
+        ],
+        "sumLine": [
+          "stage",
+          "st",
+          "done"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "phase"
+        ],
+        [
+          "name",
+          "mood",
+          "tween",
+          "narration",
+          "prompt",
+          "phase"
+        ],
+        [
+          "name",
+          "mood",
+          "tween",
+          "narration",
+          "prompt",
+          "phase"
+        ],
+        [
+          "name",
+          "mood",
+          "tween",
+          "narration",
+          "prompt",
+          "phase"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "phase"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "start": 0,
+        "jumps": 3,
+        "size": 4,
+        "max": 16,
+        "speed": 1,
+        "stepMs": 1500,
+        "presets": {
+          "times": {
+            "label": "Repeated addition  3 \u00d7 4",
+            "start": 0,
+            "jumps": 3,
+            "size": 4,
+            "max": 16
+          },
+          "fives": {
+            "label": "Counting in 5s  4 \u00d7 5",
+            "start": 0,
+            "jumps": 4,
+            "size": 5,
+            "max": 24
+          },
+          "countdown": {
+            "label": "Counting back  20 \u2212 3 \u00d7 6",
+            "start": 20,
+            "jumps": 3,
+            "size": -6,
+            "max": 20
+          },
+          "negative": {
+            "label": "Into negatives  4 \u2212 3 \u00d7 3",
+            "start": 4,
+            "jumps": 3,
+            "size": -3,
+            "max": 8
+          },
+          "decimal": {
+            "label": "Decimal steps  4 \u00d7 0.5",
+            "start": 0,
+            "jumps": 4,
+            "size": 0.5,
+            "max": 3
+          },
+          "sequence": {
+            "label": "GCSE: linear sequence 3, 7, 11, 15 (4n \u2212 1)",
+            "start": 3,
+            "jumps": 3,
+            "size": 4,
+            "max": 16
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "st": true
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Start, jump size and endpoint within \u00c2\u00b11 billion; inputs up to four decimal places; 0\u00e2\u20ac\u201c100 jumps. Motion phases must fit the configured sequence.",
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Added native lesson registration, frame/sum hooks and Explore state binding Dynamic step regeneration; explicit native motion phases; proper completion/cancellation; bounded adaptive scales for large and four-place decimal values. Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "jumps": {
+          "min": 0,
+          "max": 100,
+          "integer": true
+        },
+        "start": {
+          "min": -1000000000.0,
+          "max": 1000000000.0,
+          "decimalPlaces": 4
+        },
+        "size": {
+          "min": -1000000000.0,
+          "max": 1000000000.0,
+          "decimalPlaces": 4
+        },
+        "endpoint": {
+          "min": -1000000000.0,
+          "max": 1000000000.0
+        },
+        "motion.durationMs": {
+          "exclusiveMin": 0,
+          "max": 60000
+        },
+        "motion.phase": {
+          "min": 0,
+          "max": "jumps+1"
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "equalJumps",
+        "scrub",
+        "replay"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "times",
+          "options": [
+            {
+              "value": "times",
+              "label": "Repeated addition  3 \u00d7 4"
+            },
+            {
+              "value": "fives",
+              "label": "Counting in 5s  4 \u00d7 5"
+            },
+            {
+              "value": "countdown",
+              "label": "Counting back  20 \u2212 3 \u00d7 6"
+            },
+            {
+              "value": "negative",
+              "label": "Into negatives  4 \u2212 3 \u00d7 3"
+            },
+            {
+              "value": "decimal",
+              "label": "Decimal steps  4 \u00d7 0.5"
+            },
+            {
+              "value": "sequence",
+              "label": "GCSE: linear sequence 3, 7, 11, 15 (4n \u2212 1)"
+            }
+          ]
+        },
+        {
+          "label": "Jumps",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "1",
+          "max": "8",
+          "step": "1",
+          "value": "3"
+        },
+        {
+          "label": "Size",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-6",
+          "max": "6",
+          "step": "1",
+          "value": "4"
+        },
+        {
+          "label": "Speed",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0.25",
+          "max": "4",
+          "step": "0.25",
+          "value": "1"
+        },
+        {
+          "label": "Frame",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0",
+          "max": "4",
+          "step": "0.01",
+          "value": "0"
+        },
+        {
+          "label": "Play",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Pause",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Reset",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ],
+      "motion": {
+        "fromPhase": "native fractional phase",
+        "toPhase": "native fractional phase",
+        "durationMs": "tracked original tween duration",
+        "preview": "fromPhase",
+        "reducedMotion": "toPhase",
+        "cancel": "resolves action and restores native state"
+      }
+    },
+    {
+      "id": "F0-04",
+      "name": "Interaction kit",
+      "entry": "F0/F0-04-interaction-kit.html",
+      "sha256": "0ffba516367eec2985d880e9426802f330f88bbf6a123f8a59b359652d3682fc",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Scale, points, labels, cue and native interaction settings",
+      "nativeDrawArguments": {
+        "line": [
+          "stage",
+          "st",
+          "pts"
+        ],
+        "strip": [
+          "stage",
+          "items"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "apparatus"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "apparatus"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "apparatus"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "apparatus"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "apparatus"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "apparatus"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "apparatus"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "min": -1,
+        "max": 2,
+        "step": 0.25,
+        "labelStep": 0.5,
+        "value": 0.75,
+        "sortItems": [
+          "0.3",
+          "1/3",
+          "-0.5",
+          "0.25"
+        ],
+        "matchLeft": [
+          "1/2",
+          "1/4",
+          "3/5",
+          "1/5"
+        ],
+        "matchRight": [
+          "0.5",
+          "0.25",
+          "0.6",
+          "0.2",
+          "0.35"
+        ],
+        "presets": {
+          "quarters": {
+            "label": "Quarters on 0 to 2",
+            "min": 0,
+            "max": 2,
+            "step": 0.25,
+            "labelStep": 0.5,
+            "value": 0.75
+          },
+          "tenths": {
+            "label": "Tenths on 0 to 1",
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "labelStep": 0.2,
+            "value": 0.3
+          },
+          "integers": {
+            "label": "Integers \u221210 to 10",
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "labelStep": 2,
+            "value": -3
+          },
+          "negatives": {
+            "label": "Halves \u22123 to 3",
+            "min": -3,
+            "max": 3,
+            "step": 0.5,
+            "labelStep": 1,
+            "value": -1.5
+          },
+          "gcse": {
+            "label": "GCSE: thousands, step 250",
+            "min": 0,
+            "max": 5000,
+            "step": 250,
+            "labelStep": 1000,
+            "value": 1750
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "st": true
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Added lesson registration, apparatus records and native Explore state binding Reusable native control/group/visual policies; bounded keyboard/drag/entry; pointer/touch cancellation; accessible interactive SVG grouping. Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "scale.step": {
+          "exclusiveMin": 0
+        },
+        "point.v": {
+          "finite": true
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "snap",
+        "step",
+        "sort",
+        "match",
+        "numericEntry"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Value marker",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "-1",
+          "max": "2",
+          "step": null
+        },
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "quarters",
+          "options": [
+            {
+              "value": "quarters",
+              "label": "Quarters on 0 to 2"
+            },
+            {
+              "value": "tenths",
+              "label": "Tenths on 0 to 1"
+            },
+            {
+              "value": "integers",
+              "label": "Integers \u221210 to 10"
+            },
+            {
+              "value": "negatives",
+              "label": "Halves \u22123 to 3"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: thousands, step 250"
+            }
+          ]
+        },
+        {
+          "label": "Slider",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-1",
+          "max": "2",
+          "step": "0.25",
+          "value": "0.75"
+        },
+        {
+          "label": "Stepper",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease by one step",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase by one step",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Type a value",
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Set",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Sort these by value",
+          "tag": "ol",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Move 0.3 up",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Move 0.3 down",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Move 1/3 up",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Move 1/3 down",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Move -0.5 up",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Move -0.5 down",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Move 0.25 up",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Move 0.25 down",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Match fractions to decimals",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "1/2",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "1/4",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "3/5",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "1/5",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "0.5",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "0.25",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "0.6",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "0.2",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "0.35",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-05",
+      "name": "Maths text renderer",
+      "entry": "F0/F0-05-maths-text.html",
+      "sha256": "33c1ce4a9b87407b0b3ca0e9fa3738bb2952ead6cedf054ba1a6ad50b43f4b7f",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Maths markup lines, note, size and native converter settings",
+      "nativeDrawArguments": {
+        "show": [
+          "stage",
+          "lines",
+          "note",
+          "size"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "lines",
+          "note"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "lines",
+          "note"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "lines",
+          "note"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "lines"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "lines",
+          "note",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "lines",
+          "note",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "lines"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "size": 1,
+        "markup": "\\frac{3}{4}+\\frac{1}{4}=1",
+        "presets": {
+          "fraction": {
+            "label": "Fractions  3/4 + 1/4",
+            "markup": "\\r{given}{\\frac{3}{4}}+\\r{given}{\\frac{1}{4}}=\\r{result}{1}"
+          },
+          "mixed": {
+            "label": "Mixed number  2 1/3 = 7/3",
+            "markup": "\\mixed{2}{1}{3}=\\frac{7}{3}"
+          },
+          "power": {
+            "label": "Powers  2^3 = 8",
+            "markup": "2^{3}=2\\times2\\times2=8"
+          },
+          "algebra": {
+            "label": "Algebra  (x^2)^3 = x^6",
+            "markup": "(x^{2})^{3}=x^{6}"
+          },
+          "root": {
+            "label": "Roots  \u221a49, \u221b27",
+            "markup": "\\sqrt{49}=7,\\ \\sqrt[3]{27}=3"
+          },
+          "surd": {
+            "label": "Surds  \u221a12 = 2\u221a3",
+            "markup": "\\sqrt{12}=\\sqrt{4}\\times\\sqrt{3}=\\r{result}{2\\sqrt{3}}"
+          },
+          "sform": {
+            "label": "Standard form  32 000",
+            "markup": "32000=\\r{result}{\\sf{3.2}{4}}"
+          },
+          "small": {
+            "label": "GCSE: small numbers  0.00056",
+            "markup": "0.00056=\\sf{5.6}{-4}"
+          },
+          "rational": {
+            "label": "GCSE: rationalise  1/\u221a2",
+            "markup": "\\frac{1}{\\sqrt{2}}=\\frac{\\sqrt{2}}{2}"
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "sfx": true,
+        "sn": true
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Added lesson registration, markup rendering hooks, converter state bindings; hide raw source in hosted lessons  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "scope": "No additional numeric bounds certified; use native descriptor and tested examples."
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "fractionTypesetting",
+        "powers",
+        "roots",
+        "surds",
+        "standardForm"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "fraction",
+          "options": [
+            {
+              "value": "fraction",
+              "label": "Fractions  3/4 + 1/4"
+            },
+            {
+              "value": "mixed",
+              "label": "Mixed number  2 1/3 = 7/3"
+            },
+            {
+              "value": "power",
+              "label": "Powers  2^3 = 8"
+            },
+            {
+              "value": "algebra",
+              "label": "Algebra  (x^2)^3 = x^6"
+            },
+            {
+              "value": "root",
+              "label": "Roots  \u221a49, \u221b27"
+            },
+            {
+              "value": "surd",
+              "label": "Surds  \u221a12 = 2\u221a3"
+            },
+            {
+              "value": "sform",
+              "label": "Standard form  32 000"
+            },
+            {
+              "value": "small",
+              "label": "GCSE: small numbers  0.00056"
+            },
+            {
+              "value": "rational",
+              "label": "GCSE: rationalise  1/\u221a2"
+            }
+          ]
+        },
+        {
+          "label": "Maths markup",
+          "tag": "textarea",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "\\frac{3}{4}+\\frac{1}{4}=1"
+        },
+        {
+          "label": "Size",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "0.6",
+          "max": "2",
+          "step": "0.1",
+          "value": "1"
+        },
+        {
+          "label": "Number to standard form",
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "45000"
+        },
+        {
+          "label": "Simplify \u221a",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease Simplify \u221a",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase Simplify \u221a",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-06",
+      "name": "Seeded randomiser",
+      "entry": "F0/F0-06-seeded-randomiser.html",
+      "sha256": "6545ff0325dcb476b94b32c49fd7b8ec9024b0946a27bb6756c9c07a4abd7dda",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Exact question arrays or seed/template/count/rules; showAnswers",
+      "nativeDrawArguments": {},
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "variant"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target",
+          "variant"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "variant"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "variant"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "variant"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "variant"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "variant"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "seed": "MATHS7",
+        "template": "times",
+        "count": 6,
+        "noRepeat": true,
+        "avoidTrivial": true,
+        "showAnswers": false,
+        "presets": {
+          "times": {
+            "label": "Times tables  a \u00d7 b (2 to 12)",
+            "template": "times"
+          },
+          "equation": {
+            "label": "One-step and two-step equations  ax + b = c",
+            "template": "equation"
+          },
+          "fraction": {
+            "label": "Simplify fractions",
+            "template": "fraction"
+          },
+          "percent": {
+            "label": "Percent of an amount",
+            "template": "percent"
+          },
+          "negative": {
+            "label": "Directed numbers  a \u2212 b",
+            "template": "negative"
+          },
+          "sform": {
+            "label": "GCSE: write in standard form",
+            "template": "sform"
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "st": true
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "At most six native cards per variant view; the independent Challenge controller accepts six to eight lesson questions.",
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Added lesson registration, exact/seeded variant records and Explore state binding  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "variant.count": {
+          "min": 1,
+          "max": 6,
+          "integer": true
+        },
+        "variant.questions.length": {
+          "min": 1,
+          "max": 6
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "seed",
+        "fork",
+        "reroll",
+        "generate"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Seed",
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "MATHS7"
+        },
+        {
+          "label": "\u2684 New seed",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Template",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "times",
+          "options": [
+            {
+              "value": "times",
+              "label": "Times tables  a \u00d7 b (2 to 12)"
+            },
+            {
+              "value": "equation",
+              "label": "One-step and two-step equations  ax + b = c"
+            },
+            {
+              "value": "fraction",
+              "label": "Simplify fractions"
+            },
+            {
+              "value": "percent",
+              "label": "Percent of an amount"
+            },
+            {
+              "value": "negative",
+              "label": "Directed numbers  a \u2212 b"
+            },
+            {
+              "value": "sform",
+              "label": "GCSE: write in standard form"
+            }
+          ]
+        },
+        {
+          "label": "Questions",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease Questions",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase Questions",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Question to re-roll",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "0",
+          "options": [
+            {
+              "value": "0",
+              "label": "Q1"
+            },
+            {
+              "value": "1",
+              "label": "Q2"
+            },
+            {
+              "value": "2",
+              "label": "Q3"
+            },
+            {
+              "value": "3",
+              "label": "Q4"
+            },
+            {
+              "value": "4",
+              "label": "Q5"
+            },
+            {
+              "value": "5",
+              "label": "Q6"
+            }
+          ]
+        },
+        {
+          "label": "Re-roll",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-07",
+      "name": "State and events API",
+      "entry": "F0/F0-07-state-events.html",
+      "sha256": "5017fb05ee3b6236143e2862a4b177da84eb565c2c7bee6cab06e49bc2f83a6a",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Part count, shaded count, event list, state and summary",
+      "nativeDrawArguments": {
+        "panelBox": [
+          "stage",
+          "parts",
+          "shaded",
+          "events",
+          "state",
+          "sum",
+          "target",
+          "click"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "parts": 4,
+        "shaded": 0,
+        "target": "3/4",
+        "presets": {
+          "quarters": {
+            "label": "Quarters  target 3/4",
+            "parts": 4,
+            "target": "3/4"
+          },
+          "thirds": {
+            "label": "Sixths  target 2/3",
+            "parts": 6,
+            "target": "2/3"
+          },
+          "fifths": {
+            "label": "Tenths  target 2/5",
+            "parts": 10,
+            "target": "2/5"
+          },
+          "halves": {
+            "label": "Eighths  target 1/2",
+            "parts": 8,
+            "target": "1/2"
+          },
+          "percent": {
+            "label": "GCSE: twentieths  target 35%",
+            "parts": 20,
+            "target": "35%"
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {},
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Added lesson registration, panel arguments and native state tables  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "parts": {
+          "min": 1,
+          "max": 100,
+          "integer": true
+        },
+        "shaded": {
+          "min": 0,
+          "max": "parts",
+          "integer": true
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "shade",
+        "undo",
+        "redo",
+        "emitEvent"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "quarters",
+          "options": [
+            {
+              "value": "quarters",
+              "label": "Quarters  target 3/4"
+            },
+            {
+              "value": "thirds",
+              "label": "Sixths  target 2/3"
+            },
+            {
+              "value": "fifths",
+              "label": "Tenths  target 2/5"
+            },
+            {
+              "value": "halves",
+              "label": "Eighths  target 1/2"
+            },
+            {
+              "value": "percent",
+              "label": "GCSE: twentieths  target 35%"
+            }
+          ]
+        },
+        {
+          "label": "Parts",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease Parts",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase Parts",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Shade parts",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Shade 0 parts",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Shade 1 parts",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Shade 2 parts",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Shade 3 parts",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Shade 4 parts",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "\u21b6 Undo",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "\u21b7 Redo",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Check",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Hint",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-08",
+      "name": "Bob narration hooks",
+      "entry": "F0/F0-08-narration-hooks.html",
+      "sha256": "ffc9223d40c7fcbec3d4cff6b2c522efb1224017cd0e660d2ab160f518764189",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Rounding number/unit, reveal stage, script key/tone/length",
+      "nativeDrawArguments": {
+        "board": [
+          "stage",
+          "o"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "n": 47,
+        "unit": 10,
+        "tone": "warm",
+        "length": "full",
+        "speech": false,
+        "presets": {
+          "tens": {
+            "label": "47 to the nearest 10",
+            "n": 47,
+            "unit": 10
+          },
+          "halfway": {
+            "label": "65 to the nearest 10 (halfway)",
+            "n": 65,
+            "unit": 10
+          },
+          "hundreds": {
+            "label": "1,349 to the nearest 100",
+            "n": 1349,
+            "unit": 100
+          },
+          "tenths": {
+            "label": "3.46 to 1 decimal place",
+            "n": 3.46,
+            "unit": 0.1
+          },
+          "gcse": {
+            "label": "GCSE: 0.0752 to the nearest 0.01",
+            "n": 0.0752,
+            "unit": 0.01
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "st": true
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "The decimal-digit-4 speech restriction is intentionally retained.",
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Added lesson registration, board arguments, transcript tables and Explore state binding Enforced decimal speech policy, maintained captions/transcripts and shared speech timing. Real browser speech coordination tested. Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "roundingUnit": {
+          "exclusiveMin": 0
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "round",
+        "reveal",
+        "caption"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "tens",
+          "options": [
+            {
+              "value": "tens",
+              "label": "47 to the nearest 10"
+            },
+            {
+              "value": "halfway",
+              "label": "65 to the nearest 10 (halfway)"
+            },
+            {
+              "value": "hundreds",
+              "label": "1,349 to the nearest 100"
+            },
+            {
+              "value": "tenths",
+              "label": "3.46 to 1 decimal place"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: 0.0752 to the nearest 0.01"
+            }
+          ]
+        },
+        {
+          "label": "Number",
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "47"
+        },
+        {
+          "label": "Round to",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "1000",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "100",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "10",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "1",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "0.1",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "0.01",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Line",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "bounds",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "halfway",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "compare",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "result",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Tone",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "warm",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "brisk",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Length",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "short",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "full",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Say line",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "\u266a Voice",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-09",
+      "name": "Registry and lesson manifest",
+      "entry": "F0/F0-09-registry-manifest.html",
+      "sha256": "31422b0be9a18aec39583c0cb20ef6f3e9f70030383a872748c0774fb2e37771",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Manifest title/objectives/step records and registry display options",
+      "nativeDrawArguments": {
+        "board": [
+          "stage",
+          "m",
+          "o"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "preset": "fractions",
+        "presets": {
+          "fractions": {
+            "label": "Y7 Fractions of amounts",
+            "lesson": "Y7-FR-03",
+            "title": "Fractions of amounts",
+            "objectives": {
+              "O1": "Find a unit fraction of an amount",
+              "O2": "Find a non-unit fraction of an amount"
+            },
+            "steps": [
+              {
+                "component": "F0-05",
+                "mode": "watch",
+                "objective": "O1",
+                "note": "Show 3/4 of 24"
+              },
+              {
+                "component": "F0-13",
+                "mode": "guided",
+                "objective": "O1",
+                "note": "Worked example: 1/4 of 24"
+              },
+              {
+                "component": "F0-04",
+                "mode": "explore",
+                "objective": "O2",
+                "note": "Entry: 3/4 of 24"
+              },
+              {
+                "component": "F0-11",
+                "mode": "challenge",
+                "objective": "O2",
+                "note": "Quiz: 5 questions"
+              },
+              {
+                "component": "F0-12",
+                "mode": "challenge",
+                "objective": "O2",
+                "note": "Game round"
+              }
+            ]
+          },
+          "graphs": {
+            "label": "Y8 Plotting straight lines",
+            "lesson": "Y8-AL-07",
+            "title": "Plotting y = mx + c",
+            "objectives": {
+              "O1": "Complete a table of values",
+              "O2": "Plot points and draw the line"
+            },
+            "steps": [
+              {
+                "component": "F0-15",
+                "mode": "watch",
+                "objective": "O1",
+                "note": "Table for y = 2x + 1"
+              },
+              {
+                "component": "F0-14",
+                "mode": "guided",
+                "objective": "O2",
+                "note": "Plot the points"
+              },
+              {
+                "component": "F0-15",
+                "mode": "explore",
+                "objective": "O1",
+                "note": "Change m and c"
+              },
+              {
+                "component": "F0-11",
+                "mode": "challenge",
+                "objective": "O2",
+                "note": "Quiz"
+              }
+            ]
+          },
+          "angles": {
+            "label": "Y7 Angles on a line",
+            "lesson": "Y7-GE-02",
+            "title": "Angles on a straight line",
+            "objectives": {
+              "O1": "Angles on a line add to 180\u00b0"
+            },
+            "steps": [
+              {
+                "component": "F0-16",
+                "mode": "watch",
+                "objective": "O1",
+                "note": "Measure two angles"
+              },
+              {
+                "component": "F0-13",
+                "mode": "guided",
+                "objective": "O1",
+                "note": "Find the missing angle"
+              },
+              {
+                "component": "F0-11",
+                "mode": "challenge",
+                "objective": "O1",
+                "note": "Quiz"
+              }
+            ]
+          },
+          "gcse": {
+            "label": "GCSE: Standard form",
+            "lesson": "G-NU-12",
+            "title": "Standard form calculations",
+            "objectives": {
+              "O1": "Write numbers in standard form",
+              "O2": "Multiply in standard form"
+            },
+            "steps": [
+              {
+                "component": "F0-05",
+                "mode": "watch",
+                "objective": "O1",
+                "note": "3.2 \u00d7 10\u2074"
+              },
+              {
+                "component": "F0-06",
+                "mode": "explore",
+                "objective": "O1",
+                "note": "Seeded practice"
+              },
+              {
+                "component": "F0-13",
+                "mode": "guided",
+                "objective": "O2",
+                "note": "(2 \u00d7 10\u00b3)(4 \u00d7 10\u2075)"
+              },
+              {
+                "component": "F0-11",
+                "mode": "challenge",
+                "objective": "O2",
+                "note": "Exam-style"
+              }
+            ]
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "m": {
+          "kind": "factory",
+          "factory": "clone",
+          "argCount": 1
+        }
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Foundation registry/manifest utility; not a substitute for specialist mathematics apparatus.",
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Retained native registry renderer; added input-contract registration  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "scope": "No additional numeric bounds certified; use native descriptor and tested examples."
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "register",
+        "validateManifest"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Lesson",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "fractions",
+          "options": [
+            {
+              "value": "fractions",
+              "label": "Y7 Fractions of amounts"
+            },
+            {
+              "value": "graphs",
+              "label": "Y8 Plotting straight lines"
+            },
+            {
+              "value": "angles",
+              "label": "Y7 Angles on a line"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: Standard form"
+            }
+          ]
+        },
+        {
+          "label": "Step",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease Step",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase Step",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Component",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "F0-05",
+          "options": [
+            {
+              "value": "F0-01",
+              "label": "F0-01 \u00b7 Design tokens"
+            },
+            {
+              "value": "F0-02",
+              "label": "F0-02 \u00b7 SVG primitives"
+            },
+            {
+              "value": "F0-03",
+              "label": "F0-03 \u00b7 Animation timeline"
+            },
+            {
+              "value": "F0-04",
+              "label": "F0-04 \u00b7 Interaction kit"
+            },
+            {
+              "value": "F0-05",
+              "label": "F0-05 \u00b7 Maths text renderer"
+            },
+            {
+              "value": "F0-06",
+              "label": "F0-06 \u00b7 Seeded randomiser"
+            },
+            {
+              "value": "F0-07",
+              "label": "F0-07 \u00b7 State and events API"
+            },
+            {
+              "value": "F0-08",
+              "label": "F0-08 \u00b7 Bob narration hooks"
+            },
+            {
+              "value": "F0-09",
+              "label": "F0-09 \u00b7 Registry and lesson manifest"
+            },
+            {
+              "value": "F0-10",
+              "label": "F0-10 \u00b7 Gallery page shell"
+            },
+            {
+              "value": "F0-11",
+              "label": "F0-11 \u00b7 Assessment engine"
+            },
+            {
+              "value": "F0-12",
+              "label": "F0-12 \u00b7 Game wrapper"
+            },
+            {
+              "value": "F0-13",
+              "label": "F0-13 \u00b7 Worked-example stepper"
+            },
+            {
+              "value": "F0-14",
+              "label": "F0-14 \u00b7 Axes and plotting"
+            },
+            {
+              "value": "F0-15",
+              "label": "F0-15 \u00b7 Interactive table"
+            },
+            {
+              "value": "F0-16",
+              "label": "F0-16 \u00b7 Geometry canvas"
+            },
+            {
+              "value": "F0-17",
+              "label": "F0-17 \u00b7 Static and print renderer"
+            },
+            {
+              "value": "F0-99",
+              "label": "F0-99 (unregistered)"
+            }
+          ]
+        },
+        {
+          "label": "Mode",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "watch",
+          "options": [
+            {
+              "value": "watch",
+              "label": "watch"
+            },
+            {
+              "value": "guided",
+              "label": "guided"
+            },
+            {
+              "value": "explore",
+              "label": "explore"
+            },
+            {
+              "value": "challenge",
+              "label": "challenge"
+            },
+            {
+              "value": "play",
+              "label": "play"
+            }
+          ]
+        },
+        {
+          "label": "Objective",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "O1",
+          "options": [
+            {
+              "value": "O1",
+              "label": "O1"
+            },
+            {
+              "value": "O2",
+              "label": "O2"
+            },
+            {
+              "value": "",
+              "label": "(none)"
+            }
+          ]
+        },
+        {
+          "label": "Validate",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-10",
+      "name": "Gallery page shell",
+      "entry": "F0/F0-10-gallery-shell.html",
+      "sha256": "4956677aaad7f7cbe7f8e62a24c48e5ddc2ba90c2b18862cedf50782ee3606b5",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Topic/kind/query/layer/status filters",
+      "nativeDrawArguments": {
+        "shell": [
+          "stage",
+          "o"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "topic": "all",
+        "kind": "all",
+        "query": "",
+        "layer": "number",
+        "built": [
+          "F0-01",
+          "F0-02",
+          "F0-03",
+          "F0-04",
+          "F0-05",
+          "F0-06",
+          "F0-07",
+          "F0-08",
+          "F0-09",
+          "F0-10"
+        ],
+        "presets": {
+          "all": {
+            "label": "Whole foundation family",
+            "topic": "all",
+            "kind": "all",
+            "query": "",
+            "layer": "number"
+          },
+          "geometry": {
+            "label": "Geometry tools",
+            "topic": "geometry",
+            "kind": "all",
+            "query": "",
+            "layer": "geometry"
+          },
+          "algebra": {
+            "label": "Algebra tools",
+            "topic": "algebra",
+            "kind": "all",
+            "query": "",
+            "layer": "algebra"
+          },
+          "apis": {
+            "label": "Shared APIs only",
+            "topic": "all",
+            "kind": "api",
+            "query": "",
+            "layer": "ratio"
+          },
+          "stats": {
+            "label": "GCSE: statistics and plotting",
+            "topic": "statistics",
+            "kind": "all",
+            "query": "",
+            "layer": "statistics"
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Foundation catalogue utility; not a substitute for specialist mathematics apparatus.",
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Retained native gallery renderer; added input-contract registration  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "scope": "No additional numeric bounds certified; use native descriptor and tested examples."
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "filter",
+        "search"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Preset",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "all",
+          "options": [
+            {
+              "value": "all",
+              "label": "Whole foundation family"
+            },
+            {
+              "value": "geometry",
+              "label": "Geometry tools"
+            },
+            {
+              "value": "algebra",
+              "label": "Algebra tools"
+            },
+            {
+              "value": "apis",
+              "label": "Shared APIs only"
+            },
+            {
+              "value": "stats",
+              "label": "GCSE: statistics and plotting"
+            }
+          ]
+        },
+        {
+          "label": "Search",
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Topic",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "all",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "number",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "algebra",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "geometry",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "ratio",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "statistics",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "probability",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Kind",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "all",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "api",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "primitive",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "engine",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "shell",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Style layer",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "number",
+          "options": [
+            {
+              "value": "number",
+              "label": "number"
+            },
+            {
+              "value": "algebra",
+              "label": "algebra"
+            },
+            {
+              "value": "geometry",
+              "label": "geometry"
+            },
+            {
+              "value": "ratio",
+              "label": "ratio"
+            },
+            {
+              "value": "statistics",
+              "label": "statistics"
+            },
+            {
+              "value": "probability",
+              "label": "probability"
+            }
+          ]
+        },
+        {
+          "label": "Print view",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-11",
+      "name": "Assessment engine",
+      "entry": "F0/F0-11-assessment.html",
+      "sha256": "ca02f738b2191600dc582d7c8408d0a13ea8cdc93dafe16048785b731c310d8b",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Question schema, response, marking state and concealAnswers",
+      "nativeDrawArguments": {
+        "card": [
+          "stage",
+          "o"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "preset": "fractions",
+        "tolerance": 0.001,
+        "presets": {
+          "fractions": {
+            "label": "Y7 Fractions of amounts",
+            "objectives": {
+              "O1": "Unit fractions of amounts",
+              "O2": "Non-unit fractions of amounts"
+            },
+            "qs": [
+              {
+                "id": "q1",
+                "type": "numeric",
+                "prompt": "Find 1/4 of 24.",
+                "answer": 6,
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "20": "That subtracts 4. A quarter means share into 4 equal parts.",
+                  "96": "That is 24 \u00d7 4. A quarter means divide by 4."
+                }
+              },
+              {
+                "id": "q2",
+                "type": "numeric",
+                "prompt": "Find 3/4 of 24.",
+                "answer": 18,
+                "marks": 2,
+                "objective": "O2",
+                "scheme": [
+                  {
+                    "code": "M1",
+                    "text": "24 \u00f7 4 = 6 seen"
+                  },
+                  {
+                    "code": "A1",
+                    "text": "18 cao"
+                  }
+                ],
+                "traps": {
+                  "6": "That is one quarter. Three quarters is 3 lots of 6.",
+                  "8": "That is a third of 24. The denominator is 4."
+                }
+              },
+              {
+                "id": "q3",
+                "type": "numeric",
+                "prompt": "Write 3/4 as a decimal.",
+                "answer": 0.75,
+                "accept": [
+                  "3/4",
+                  ".75"
+                ],
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "0.34": "3/4 is not 0.34. Divide 3 by 4.",
+                  "3.4": "3/4 means 3 \u00f7 4."
+                }
+              },
+              {
+                "id": "q4",
+                "type": "mcq",
+                "prompt": "Which is bigger: 2/3 of 30 or 3/4 of 24?",
+                "options": [
+                  "2/3 of 30",
+                  "3/4 of 24",
+                  "They are equal"
+                ],
+                "answer": "2/3 of 30",
+                "marks": 1,
+                "objective": "O2",
+                "traps": {
+                  "3/4 of 24": "3/4 of 24 = 18 but 2/3 of 30 = 20."
+                }
+              },
+              {
+                "id": "q5",
+                "type": "multi",
+                "prompt": "Select all that equal 12.",
+                "options": [
+                  "1/2 of 24",
+                  "1/3 of 36",
+                  "2/5 of 25",
+                  "3/4 of 16"
+                ],
+                "answer": [
+                  "1/2 of 24",
+                  "1/3 of 36",
+                  "3/4 of 16"
+                ],
+                "marks": 2,
+                "objective": "O2",
+                "scheme": [
+                  {
+                    "code": "B1",
+                    "text": "at least two correct, none wrong"
+                  },
+                  {
+                    "code": "A1",
+                    "text": "all three"
+                  }
+                ]
+              }
+            ]
+          },
+          "integers": {
+            "label": "Y7 Negative numbers",
+            "objectives": {
+              "O1": "Add and subtract negatives",
+              "O2": "Multiply negatives"
+            },
+            "qs": [
+              {
+                "id": "n1",
+                "type": "numeric",
+                "prompt": "\u22123 + 8",
+                "answer": 5,
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "11": "Signs matter: \u22123 + 8 is 5.",
+                  "-11": "Start at \u22123 and move 8 to the right."
+                }
+              },
+              {
+                "id": "n2",
+                "type": "numeric",
+                "prompt": "4 \u2212 (\u22126)",
+                "answer": 10,
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "-2": "Subtracting a negative is adding: 4 + 6."
+                }
+              },
+              {
+                "id": "n3",
+                "type": "numeric",
+                "prompt": "\u22125 \u00d7 \u22123",
+                "answer": 15,
+                "marks": 1,
+                "objective": "O2",
+                "traps": {
+                  "-15": "Negative \u00d7 negative is positive."
+                }
+              },
+              {
+                "id": "n4",
+                "type": "order",
+                "prompt": "Order from smallest: 2, \u22127, 0, \u22121",
+                "answer": [
+                  "-7",
+                  "-1",
+                  "0",
+                  "2"
+                ],
+                "marks": 1,
+                "objective": "O1"
+              },
+              {
+                "id": "n5",
+                "type": "mcq",
+                "prompt": "Which is true?",
+                "options": [
+                  "\u22128 > \u22123",
+                  "\u22128 < \u22123",
+                  "\u22128 = \u22123"
+                ],
+                "answer": "\u22128 < \u22123",
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "\u22128 > \u22123": "\u22128 is further left on the number line, so it is smaller."
+                }
+              }
+            ]
+          },
+          "gcse": {
+            "label": "GCSE: Standard form",
+            "objectives": {
+              "O1": "Convert",
+              "O2": "Calculate"
+            },
+            "qs": [
+              {
+                "id": "s1",
+                "type": "numeric",
+                "prompt": "Write 45 000 in standard form. Give the power of 10.",
+                "answer": 4,
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "3": "4.5 \u00d7 10\u00b3 is 4 500."
+                }
+              },
+              {
+                "id": "s2",
+                "type": "numeric",
+                "prompt": "(2 \u00d7 10\u00b3) \u00d7 (4 \u00d7 10\u2075) = 8 \u00d7 10\u207f. Find n.",
+                "answer": 8,
+                "marks": 2,
+                "objective": "O2",
+                "scheme": [
+                  {
+                    "code": "M1",
+                    "text": "adds the powers"
+                  },
+                  {
+                    "code": "A1",
+                    "text": "n = 8"
+                  }
+                ],
+                "traps": {
+                  "15": "Multiply the numbers but ADD the powers."
+                }
+              },
+              {
+                "id": "s3",
+                "type": "numeric",
+                "prompt": "Write 0.003 as a \u00d7 10\u207f. Find n.",
+                "answer": -3,
+                "marks": 1,
+                "objective": "O1",
+                "traps": {
+                  "3": "Small numbers have negative powers."
+                }
+              }
+            ]
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {},
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Conceal answer scheme while a lesson Challenge is unanswered Robust malformed-response handling, numeric/fraction equivalence, ordered ties and method-credit tests. Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "scope": "No additional numeric bounds certified; use native descriptor and tested examples."
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "mark",
+        "partialCredit",
+        "objectiveResults"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Question set",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "fractions",
+          "options": [
+            {
+              "value": "fractions",
+              "label": "Y7 Fractions of amounts"
+            },
+            {
+              "value": "integers",
+              "label": "Y7 Negative numbers"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: Standard form"
+            }
+          ]
+        },
+        {
+          "label": "Answer",
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "\u25c0 Prev",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Mark",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Next \u25b6",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Results",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-12",
+      "name": "F0-12 game wrapper",
+      "entry": "F0/F0-12-game-wrapper.html",
+      "sha256": "c499ef3a14a56ffdb52925f85223664ffa14ea62c337c1c9af03d60b3f13798a",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Per-question prompt/state plus lessonGame scoring options",
+      "nativeDrawArguments": {
+        "hud": [
+          "stage",
+          "s",
+          "o"
+        ],
+        "qcard": [
+          "stage",
+          "q",
+          "ans",
+          "state"
+        ],
+        "pts": [
+          "stage",
+          "t",
+          "minus"
+        ],
+        "results": [
+          "stage",
+          "r",
+          "stars"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "rounds": 5,
+        "lives": 3,
+        "base": 10,
+        "streakBonus": 5,
+        "hintCost": 5,
+        "stars": [
+          50,
+          70,
+          90
+        ],
+        "seed": "GAME12",
+        "presets": {
+          "quick": {
+            "label": "Quick fire: 5 rounds, 3 lives",
+            "rounds": 5,
+            "lives": 3,
+            "kind": "fraction"
+          },
+          "marathon": {
+            "label": "Marathon: 10 rounds, 3 lives",
+            "rounds": 10,
+            "lives": 3,
+            "kind": "fraction"
+          },
+          "practice": {
+            "label": "Practice: no lives",
+            "rounds": 8,
+            "lives": 0,
+            "kind": "negative"
+          },
+          "tables": {
+            "label": "Times tables sprint",
+            "rounds": 10,
+            "lives": 2,
+            "kind": "times"
+          },
+          "gcse": {
+            "label": "GCSE: percentages of amounts",
+            "rounds": 6,
+            "lives": 3,
+            "kind": "percent"
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {},
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Shared source-derived game factory; opt-in wrong-answer retry; per-lesson game settings  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "scope": "No additional numeric bounds certified; use native descriptor and tested examples."
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "score",
+        "hint",
+        "retry",
+        "advance",
+        "reset",
+        "award"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Game",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "quick",
+          "options": [
+            {
+              "value": "quick",
+              "label": "Quick fire: 5 rounds, 3 lives"
+            },
+            {
+              "value": "marathon",
+              "label": "Marathon: 10 rounds, 3 lives"
+            },
+            {
+              "value": "practice",
+              "label": "Practice: no lives"
+            },
+            {
+              "value": "tables",
+              "label": "Times tables sprint"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: percentages of amounts"
+            }
+          ]
+        },
+        {
+          "label": "Answer",
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Go",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Hint (\u22125)",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "New game",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-13",
+      "name": "Worked-example stepper",
+      "entry": "F0/F0-13-worked-example.html",
+      "sha256": "0d76908476e61410b66e407a8852ec4c4d1dd9a97d7e0f8f0d65b79a8f7bcf22",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Native example phase, lines/reasons, reveal index and filled blanks",
+      "nativeDrawArguments": {
+        "view": [
+          "stage",
+          "ex",
+          "o"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "preset": "linear",
+        "fade": true,
+        "presets": {
+          "linear": {
+            "label": "Solve 3x + 5 = 20",
+            "iDo": {
+              "q": "Solve 3x + 5 = 20",
+              "lines": [
+                [
+                  "3x + 5 = 20",
+                  "Write the equation."
+                ],
+                [
+                  "3x = 15",
+                  "Subtract 5 from both sides."
+                ],
+                [
+                  "x = 5",
+                  "Divide both sides by 3."
+                ],
+                [
+                  "Check: 3 \u00d7 5 + 5 = 20 \u2713",
+                  "Substitute back to check."
+                ]
+              ]
+            },
+            "weDo": {
+              "q": "Solve 4x \u2212 3 = 17",
+              "lines": [
+                [
+                  "4x \u2212 3 = 17",
+                  "Write the equation."
+                ],
+                [
+                  "4x = {20}",
+                  "Add 3 to both sides."
+                ],
+                [
+                  "x = {5}",
+                  "Divide both sides by 4."
+                ],
+                [
+                  "Check: 4 \u00d7 5 \u2212 3 = 17 \u2713",
+                  "Substitute back."
+                ]
+              ]
+            },
+            "youDo": {
+              "q": "Solve 2x + 7 = 19",
+              "answer": 6,
+              "lines": [
+                [
+                  "2x + 7 = 19",
+                  ""
+                ],
+                [
+                  "2x = ?",
+                  ""
+                ],
+                [
+                  "x = ?",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            }
+          },
+          "fraction": {
+            "label": "Find 3/5 of 40",
+            "iDo": {
+              "q": "Find 3/5 of 40",
+              "lines": [
+                [
+                  "40 \u00f7 5 = 8",
+                  "Find one fifth: divide by the denominator."
+                ],
+                [
+                  "8 \u00d7 3 = 24",
+                  "Three fifths: multiply by the numerator."
+                ],
+                [
+                  "3/5 of 40 = 24",
+                  "Write the answer."
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            },
+            "weDo": {
+              "q": "Find 2/7 of 56",
+              "lines": [
+                [
+                  "56 \u00f7 7 = {8}",
+                  "One seventh."
+                ],
+                [
+                  "8 \u00d7 2 = {16}",
+                  "Two sevenths."
+                ],
+                [
+                  "2/7 of 56 = 16",
+                  "Answer."
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            },
+            "youDo": {
+              "q": "Find 3/4 of 36",
+              "answer": 27,
+              "lines": [
+                [
+                  "36 \u00f7 4 = ?",
+                  ""
+                ],
+                [
+                  "? \u00d7 3 = ?",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            }
+          },
+          "percent": {
+            "label": "Increase 80 by 15%",
+            "iDo": {
+              "q": "Increase 80 by 15%",
+              "lines": [
+                [
+                  "10% of 80 = 8",
+                  "Find 10% first."
+                ],
+                [
+                  "5% of 80 = 4",
+                  "Half of 10%."
+                ],
+                [
+                  "15% = 8 + 4 = 12",
+                  "Add to get 15%."
+                ],
+                [
+                  "80 + 12 = 92",
+                  "Add the increase."
+                ]
+              ]
+            },
+            "weDo": {
+              "q": "Increase 60 by 15%",
+              "lines": [
+                [
+                  "10% of 60 = {6}",
+                  "Find 10%."
+                ],
+                [
+                  "5% of 60 = {3}",
+                  "Half of 10%."
+                ],
+                [
+                  "15% = 9",
+                  "Add."
+                ],
+                [
+                  "60 + 9 = {69}",
+                  "Add the increase."
+                ]
+              ]
+            },
+            "youDo": {
+              "q": "Increase 40 by 15%",
+              "answer": 46,
+              "lines": [
+                [
+                  "10% of 40 = ?",
+                  ""
+                ],
+                [
+                  "5% of 40 = ?",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            }
+          },
+          "angles": {
+            "label": "Angles on a straight line",
+            "iDo": {
+              "q": "Find x: x and 130\u00b0 lie on a straight line",
+              "lines": [
+                [
+                  "x + 130 = 180",
+                  "Angles on a straight line add to 180\u00b0."
+                ],
+                [
+                  "x = 180 \u2212 130",
+                  "Subtract 130."
+                ],
+                [
+                  "x = 50\u00b0",
+                  "Answer with units."
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            },
+            "weDo": {
+              "q": "Find y: y and 72\u00b0 lie on a straight line",
+              "lines": [
+                [
+                  "y + 72 = {180}",
+                  "Angles on a line."
+                ],
+                [
+                  "y = {108}\u00b0",
+                  "Subtract 72."
+                ],
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            },
+            "youDo": {
+              "q": "Find z: z and 35\u00b0 lie on a straight line",
+              "answer": 145,
+              "lines": [
+                [
+                  "z + 35 = ?",
+                  ""
+                ],
+                [
+                  "z = ?",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            }
+          },
+          "gcse": {
+            "label": "GCSE: Expand (x + 3)(x + 4)",
+            "iDo": {
+              "q": "Expand (x + 3)(x + 4)",
+              "lines": [
+                [
+                  "x \u00d7 x = x\u00b2",
+                  "First terms."
+                ],
+                [
+                  "x \u00d7 4 + 3 \u00d7 x = 7x",
+                  "Outer and inner terms."
+                ],
+                [
+                  "3 \u00d7 4 = 12",
+                  "Last terms."
+                ],
+                [
+                  "x\u00b2 + 7x + 12",
+                  "Collect."
+                ]
+              ]
+            },
+            "weDo": {
+              "q": "Expand (x + 2)(x + 5)",
+              "lines": [
+                [
+                  "x \u00d7 x = x\u00b2",
+                  "First."
+                ],
+                [
+                  "5x + 2x = {7}x",
+                  "Outer and inner."
+                ],
+                [
+                  "2 \u00d7 5 = {10}",
+                  "Last."
+                ],
+                [
+                  "x\u00b2 + 7x + 10",
+                  "Collect."
+                ]
+              ]
+            },
+            "youDo": {
+              "q": "(x + 1)(x + 6) = x\u00b2 + bx + 6. Find b.",
+              "answer": 7,
+              "lines": [
+                [
+                  "x \u00d7 x = x\u00b2",
+                  ""
+                ],
+                [
+                  "6x + 1x = ?",
+                  ""
+                ],
+                [
+                  "1 \u00d7 6 = 6",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            }
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "phase": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Retained original phased example renderer; added input-contract registration Future solution/reason concealment, real Guided narration adapter and genuine pause/resume/reset. Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "scope": "No additional numeric bounds certified; use native descriptor and tested examples."
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "phase",
+        "reveal",
+        "fillBlank"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Example",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "linear",
+          "options": [
+            {
+              "value": "linear",
+              "label": "Solve 3x + 5 = 20"
+            },
+            {
+              "value": "fraction",
+              "label": "Find 3/5 of 40"
+            },
+            {
+              "value": "percent",
+              "label": "Increase 80 by 15%"
+            },
+            {
+              "value": "angles",
+              "label": "Angles on a straight line"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: Expand (x + 3)(x + 4)"
+            }
+          ]
+        },
+        {
+          "label": "Phase",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "I do",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "We do",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "You do",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "\u25c0 Line",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Line \u25b6",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Blank / answer",
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Check",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Hint",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-14",
+      "name": "Axes and plotting primitive",
+      "entry": "F0/F0-14-axes-plotting.html",
+      "sha256": "8eebefad7b5f532621958529032221db536b4d876d9b54bf6c78dc05aabf1dfe",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Chart type, axes, scales, coefficients, point sets, info and highlights",
+      "nativeDrawArguments": {
+        "chart": [
+          "stage",
+          "o"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "type": "line",
+        "m": 2,
+        "c": 1,
+        "x": [
+          -1,
+          5
+        ],
+        "y": [
+          -2,
+          12
+        ],
+        "xStep": 1,
+        "yStep": 2,
+        "presets": {
+          "line": {
+            "label": "Straight line y = 2x + 1",
+            "type": "line",
+            "m": 2,
+            "c": 1,
+            "x": [
+              -1,
+              5
+            ],
+            "y": [
+              -2,
+              12
+            ],
+            "xStep": 1,
+            "yStep": 2
+          },
+          "negative": {
+            "label": "Negative gradient y = \u2212x + 4",
+            "type": "line",
+            "m": -1,
+            "c": 4,
+            "x": [
+              -2,
+              6
+            ],
+            "y": [
+              -3,
+              7
+            ],
+            "xStep": 1,
+            "yStep": 1
+          },
+          "scatter": {
+            "label": "Scatter: height vs arm span (cm)",
+            "type": "scatter",
+            "x": [
+              140,
+              180
+            ],
+            "y": [
+              140,
+              180
+            ],
+            "xStep": 10,
+            "yStep": 10,
+            "data": [
+              [
+                145,
+                143
+              ],
+              [
+                150,
+                152
+              ],
+              [
+                152,
+                150
+              ],
+              [
+                158,
+                160
+              ],
+              [
+                160,
+                157
+              ],
+              [
+                165,
+                166
+              ],
+              [
+                168,
+                170
+              ],
+              [
+                172,
+                171
+              ],
+              [
+                175,
+                178
+              ]
+            ]
+          },
+          "bars": {
+            "label": "Bar chart: favourite fruit",
+            "type": "bar",
+            "y": [
+              0,
+              12
+            ],
+            "yStep": 2,
+            "data": [
+              [
+                "Apple",
+                7
+              ],
+              [
+                "Banana",
+                4
+              ],
+              [
+                "Grape",
+                9
+              ],
+              [
+                "Kiwi",
+                3
+              ]
+            ]
+          },
+          "gcse": {
+            "label": "GCSE: quadratic y = x\u00b2 \u2212 2x \u2212 3",
+            "type": "curve",
+            "x": [
+              -2,
+              4
+            ],
+            "y": [
+              -5,
+              6
+            ],
+            "xStep": 1,
+            "yStep": 1
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {},
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Native curve preset remains its original fixed quadratic. Other declared line/scatter/bar arguments are editable.",
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Guard invalid axis bounds/steps and excessive intervals  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "axisStep": {
+          "exclusiveMin": 0
+        },
+        "axisIntervals": {
+          "max": 500
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "plot",
+        "line",
+        "scatter",
+        "bars"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Chart",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "line",
+          "options": [
+            {
+              "value": "line",
+              "label": "Straight line y = 2x + 1"
+            },
+            {
+              "value": "negative",
+              "label": "Negative gradient y = \u2212x + 4"
+            },
+            {
+              "value": "scatter",
+              "label": "Scatter: height vs arm span (cm)"
+            },
+            {
+              "value": "bars",
+              "label": "Bar chart: favourite fruit"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: quadratic y = x\u00b2 \u2212 2x \u2212 3"
+            }
+          ]
+        },
+        {
+          "label": "Gradient m",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-3",
+          "max": "3",
+          "step": "0.5",
+          "value": "2"
+        },
+        {
+          "label": "Intercept c",
+          "tag": "input",
+          "role": null,
+          "type": "range",
+          "min": "-2",
+          "max": "6",
+          "step": "1",
+          "value": "1"
+        },
+        {
+          "label": "Clear points",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Check last point",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-15",
+      "name": "Interactive table primitive",
+      "entry": "F0/F0-15-interactive-table.html",
+      "sha256": "146699a9fd7af7e011e77b9440aa61ea773e5d1d843682df473ebfaeaf565993",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Native table rule, x values, bounds, blanks, values and graph options",
+      "nativeDrawArguments": {
+        "view": [
+          "stage",
+          "o"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "preset": "linear",
+        "presets": {
+          "linear": {
+            "label": "Table of values y = 3x \u2212 2",
+            "xh": "x",
+            "yh": "y",
+            "xs": [
+              -1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "f": "3x-2",
+            "m": 3,
+            "c": -2,
+            "y": [
+              -6,
+              10
+            ],
+            "ys": 2
+          },
+          "linear2": {
+            "label": "Table of values y = \u22122x + 5",
+            "xh": "x",
+            "yh": "y",
+            "xs": [
+              -1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "f": "-2x+5",
+            "m": -2,
+            "c": 5,
+            "y": [
+              -2,
+              8
+            ],
+            "ys": 2
+          },
+          "ratio": {
+            "label": "Ratio table: eggs per cake (3 : 2)",
+            "xh": "cakes",
+            "yh": "eggs",
+            "xs": [
+              2,
+              4,
+              6,
+              8,
+              10
+            ],
+            "f": "1.5x",
+            "m": 1.5,
+            "c": 0,
+            "y": [
+              0,
+              16
+            ],
+            "ys": 4
+          },
+          "convert": {
+            "label": "Conversion: miles to km (\u00d7 1.6)",
+            "xh": "miles",
+            "yh": "km",
+            "xs": [
+              0,
+              5,
+              10,
+              15,
+              20
+            ],
+            "f": "1.6x",
+            "m": 1.6,
+            "c": 0,
+            "y": [
+              0,
+              32
+            ],
+            "ys": 8
+          },
+          "gcse": {
+            "label": "GCSE: y = x\u00b2 \u2212 1",
+            "xh": "x",
+            "yh": "y",
+            "xs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "f": "x^2-1",
+            "quad": true,
+            "y": [
+              -2,
+              4
+            ],
+            "ys": 1
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "p": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "The f field is display text. Native linear m/c or native quadratic rule determines the mathematics; no arbitrary expression evaluator is claimed.",
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Guard invalid table x ordering/scales; retain original renderer  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "xs.length": {
+          "min": 2,
+          "max": 20
+        },
+        "xs": {
+          "finite": true,
+          "strictlyIncreasing": true
+        },
+        "yStep": {
+          "exclusiveMin": 0
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "substitute",
+        "fillTable",
+        "linkPlot"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Table",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "linear",
+          "options": [
+            {
+              "value": "linear",
+              "label": "Table of values y = 3x \u2212 2"
+            },
+            {
+              "value": "linear2",
+              "label": "Table of values y = \u22122x + 5"
+            },
+            {
+              "value": "ratio",
+              "label": "Ratio table: eggs per cake (3 : 2)"
+            },
+            {
+              "value": "convert",
+              "label": "Conversion: miles to km (\u00d7 1.6)"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: y = x\u00b2 \u2212 1"
+            }
+          ]
+        },
+        {
+          "label": "Clear",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Hint",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-16",
+      "name": "Geometry canvas primitive",
+      "entry": "F0/F0-16-geometry-canvas.html",
+      "sha256": "1cbf457f3d8ad8781e1e16b27cc8151c26ef100d14f8e7072406183805960568",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Three coordinate pairs, grid size, reveal depth, labels and highlights",
+      "nativeDrawArguments": {
+        "canvas": [
+          "stage",
+          "o"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "grid": 1,
+        "cols": 10,
+        "rows": 7,
+        "presets": {
+          "scalene": {
+            "label": "Scalene triangle",
+            "pts": [
+              [
+                1,
+                1
+              ],
+              [
+                8,
+                1
+              ],
+              [
+                3,
+                6
+              ]
+            ]
+          },
+          "right": {
+            "label": "Right-angled triangle (3, 4, 5)",
+            "pts": [
+              [
+                2,
+                1
+              ],
+              [
+                6,
+                1
+              ],
+              [
+                2,
+                4
+              ]
+            ]
+          },
+          "isosceles": {
+            "label": "Isosceles triangle",
+            "pts": [
+              [
+                2,
+                1
+              ],
+              [
+                8,
+                1
+              ],
+              [
+                5,
+                6
+              ]
+            ]
+          },
+          "line": {
+            "label": "Angles on a straight line",
+            "pts": [
+              [
+                1,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                8,
+                5
+              ]
+            ],
+            "straight": true
+          },
+          "gcse": {
+            "label": "GCSE: Pythagoras (6, 8, 10)",
+            "pts": [
+              [
+                1,
+                0
+              ],
+              [
+                7,
+                0
+              ],
+              [
+                1,
+                8
+              ]
+            ],
+            "rows": 9
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Grid dimensions up to 100. Triangle angle teaching requires three finite, distinct, non-collinear vertices.",
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Guard malformed/degenerate triangles for angle teaching Stable stage pointer capture across redraw, mobile cancellation, non-degenerate triangle protection and accessible coordinate values. Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "pts.length": {
+          "equals": 3
+        },
+        "pts.pair.length": {
+          "equals": 2
+        },
+        "angleTriangle": {
+          "nonDegenerate": true
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "moveVertex",
+        "measureLength",
+        "measureAngle"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Point A at (1, 1)",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "0",
+          "max": "10",
+          "step": null,
+          "selectorHint": "[data-k=\"0\"]"
+        },
+        {
+          "label": "Point B at (8, 1)",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "0",
+          "max": "10",
+          "step": null,
+          "selectorHint": "[data-k=\"1\"]"
+        },
+        {
+          "label": "Point C at (3, 6)",
+          "tag": "g",
+          "role": "slider",
+          "type": null,
+          "min": "0",
+          "max": "10",
+          "step": null,
+          "selectorHint": "[data-k=\"2\"]"
+        },
+        {
+          "label": "Shape",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "scalene",
+          "options": [
+            {
+              "value": "scalene",
+              "label": "Scalene triangle"
+            },
+            {
+              "value": "right",
+              "label": "Right-angled triangle (3, 4, 5)"
+            },
+            {
+              "value": "isosceles",
+              "label": "Isosceles triangle"
+            },
+            {
+              "value": "line",
+              "label": "Angles on a straight line"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: Pythagoras (6, 8, 10)"
+            }
+          ]
+        },
+        {
+          "label": "Check: is there a right angle?",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "F0-17",
+      "name": "Static and print renderer",
+      "entry": "F0/F0-17-static-print.html",
+      "sha256": "0f0fda08499abbcadd1e3f9a7c6b20c5de17187f11d5c650b91d32f3a093b4c6",
+      "status": "PASS WITH LIMITATIONS",
+      "productionReady": true,
+      "challengeReady": true,
+      "supportedModes": [
+        "watch",
+        "explore",
+        "challenge",
+        "guided",
+        "bob"
+      ],
+      "parameters": "Worksheet seed/topic/count; fraction-bar parts/shading/amount/reveal",
+      "nativeDrawArguments": {
+        "sheet": [
+          "stage",
+          "o"
+        ]
+      },
+      "nativeStepFields": [
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt",
+          "target"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ],
+        [
+          "name",
+          "mood",
+          "narration",
+          "prompt"
+        ]
+      ],
+      "nativeConfiguration": {
+        "startMode": "guided",
+        "topic": "fraction",
+        "count": 8,
+        "seed": "SHEET-A",
+        "answers": true,
+        "cols": 2,
+        "presets": {
+          "fractions": {
+            "label": "Fractions of amounts (8 questions)",
+            "topic": "fraction",
+            "count": 8,
+            "seed": "SHEET-A"
+          },
+          "negatives": {
+            "label": "Negative numbers (10 questions)",
+            "topic": "negative",
+            "count": 10,
+            "seed": "NEG-1"
+          },
+          "rounding": {
+            "label": "Rounding to the nearest 10 (12)",
+            "topic": "round",
+            "count": 12,
+            "seed": "RND-7"
+          },
+          "equations": {
+            "label": "Solve ax + b = c (8)",
+            "topic": "equation",
+            "count": 8,
+            "seed": "EQ-3"
+          },
+          "gcse": {
+            "label": "GCSE: percentage change (8)",
+            "topic": "percent",
+            "count": 8,
+            "seed": "PC-9"
+          }
+        },
+        "lessonChallengeTitle": "Concept challenge",
+        "lessonBadgeTitle": "CHALLENGE CHAMPION"
+      },
+      "nativeExploreFields": {
+        "st": {
+          "kind": "value",
+          "factory": null,
+          "argCount": null
+        }
+      },
+      "layouts": {
+        "rows": "tested all 17",
+        "columns": "tested all 17; responsive stacking",
+        "independentExploreInstances": "tested two same-source instances; pointer/keyboard/reset/state isolation",
+        "combinedApparatus": "tested original F0-04 with original F0-16, isolated configuration"
+      },
+      "events": [
+        "value",
+        "correct",
+        "step",
+        "hintUsed"
+      ],
+      "limitations": [
+        "Native worksheet topics and 1\u00e2\u20ac\u201c12 questions; editable fraction figures use their declared part/shading/amount contract.",
+        "Spoken decimal numerals containing digit 4 remain suppressed, with captions and fallback timing retained, until pronunciation is verified.",
+        "Production support covers declared native schemas and the executed Windows/Edge browser contract. New lesson questions still require independent rendered mathematics/answer checks.",
+        "Automated WCAG 2 A/AA and 2.1 AA checks, accessibility trees and keyboard interactions were executed. This is not a claim of a human screen-reader certification or of every browser/device."
+      ],
+      "evidence": [
+        "audit/f0-production-2026-10-16/semantic-browser.json",
+        "audit/f0-completion-2026-10-16/accessibility-reduced-motion.json",
+        "audit/f0-completion-2026-10-16/instance-checks.json"
+      ],
+      "changes": "Parameterise original fraction bar and PNG source; preserve original defaults  Shared R2 lesson policies, independent instances, scoped SVG IDs and hosted-record playback apply.",
+      "parameterRanges": {
+        "worksheet.count": {
+          "min": 1,
+          "max": 12,
+          "integer": true
+        },
+        "figure.parts": {
+          "min": 1,
+          "max": 100,
+          "integer": true
+        },
+        "figure.shaded": {
+          "min": 0,
+          "max": "figure.parts",
+          "integer": true
+        }
+      },
+      "rangeValidationScope": "Permanent configuration, native presets, hydrated Explore state and render records are validated against the declared native contract; control policies constrain pupil interactions.",
+      "operations": [
+        "generateWorksheet",
+        "answerKey",
+        "staticSVG",
+        "PNG"
+      ],
+      "explorePolicy": {
+        "controls": "map keyed by native accessible label or selector rule",
+        "ruleFields": [
+          "hidden",
+          "disabled",
+          "selector",
+          "min",
+          "max",
+          "step",
+          "value",
+          "allowedValues"
+        ],
+        "supportsGroups": true,
+        "supportsVisualElementSelectors": true,
+        "resetsAndModeChanges": "policy retained"
+      },
+      "availableExploreControls": [
+        {
+          "label": "Topic",
+          "tag": "select",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "fractions",
+          "options": [
+            {
+              "value": "fractions",
+              "label": "Fractions of amounts (8 questions)"
+            },
+            {
+              "value": "negatives",
+              "label": "Negative numbers (10 questions)"
+            },
+            {
+              "value": "rounding",
+              "label": "Rounding to the nearest 10 (12)"
+            },
+            {
+              "value": "equations",
+              "label": "Solve ax + b = c (8)"
+            },
+            {
+              "value": "gcse",
+              "label": "GCSE: percentage change (8)"
+            }
+          ]
+        },
+        {
+          "label": "Questions",
+          "tag": "div",
+          "role": "group",
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null
+        },
+        {
+          "label": "Decrease Questions",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Increase Questions",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Seed",
+          "tag": "input",
+          "role": null,
+          "type": "text",
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": "SHEET-A"
+        },
+        {
+          "label": "Include answer key",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Preview answers",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Download worksheet",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        },
+        {
+          "label": "Print",
+          "tag": "button",
+          "role": null,
+          "type": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "lessonRecordFields": {
+    "nativeIndex": "existing native step index",
+    "data": "native step fields",
+    "config": "native configuration patch",
+    "models": "declared native model patches",
+    "tables": "declared native table replacements",
+    "scene": {
+      "function": "declared original drawing function",
+      "arguments": "named original drawing arguments"
+    },
+    "views": "native data objects, or {record: fullRecord} for independently configured original scenes",
+    "layout": "rows or columns",
+    "exploreInstances": "one to four isolated original source documents, each with source/config/explore/title/instructions",
+    "motion": "F0-03 native fromPhase/toPhase/durationMs contract"
+  },
+  "auditRevision": "F0-completion-r2-2026-10-16",
+  "readiness": "PASS WITH DOCUMENTED RESTRICTIONS",
+  "verificationScope": "Original native representations, configured lesson records, native Explore policies, shared Challenge, Guided/Bob playback and declared instance/layout contract tested. The speech restriction remains part of the supported contract.",
+  "guidedNarration": {
+    "optIn": "novaProductionData.narration.examples = true",
+    "controls": "existing Play/Pause/Resume/Reset",
+    "guard": "decimal digit 4 remains caption-only"
+  }
+}

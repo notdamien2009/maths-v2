@@ -1,0 +1,808 @@
+[
+  {
+    "id": "F6-05",
+    "presetOf": null,
+    "path": "F6/F6-05-recipe-scaler.html",
+    "sourceSha256": "64860b397c7592f488cedc04c724af51b944f364a6d0f26873892ad867de52c7",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1120,
+            480
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "05 1.5 120 180 200 300 320 4 480 6",
+          "before": "05 160 2 200 240 4 400 440 480 6 8 80"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Recipe Y7-060 · Pancake batch (4 → 6) Y7-060 · Fruit bowl (4 → 8) Y7-060 · Oat bars (6 → 3) Y7-060 · Smoothies (3 → 9) Servings (keyboard alternative) 8 servings Check recipe Hint Return all Reset Drag the neon servings ring or adjust the slider. Drag the amount tiles onto the correct rows (keyboard",
+          "after": "Recipe Y7-060 · Pancake batch (4 → 6) Y7-060 · Fruit bowl (4 → 8) Y7-060 · Oat bars (6 → 3) Y7-060 · Smoothies (3 → 9) Servings (keyboard alternative) 8 servings Check recipe Hint Return all Reset Drag the neon servings ring or adjust the slider. Drag the amount tiles onto the correct rows (keyboard",
+          "bi": [
+            "Y7-060-double",
+            "8"
+          ],
+          "ai": [
+            "Y7-060-double",
+            "8"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "05 160 2 200 240 4 400 440 480 6 8 80",
+            6
+          ],
+          "narrow": [
+            "05 160 2 200 240 4 400 440 480 6 8 80",
+            6
+          ],
+          "back": [
+            "05 160 2 200 240 4 400 440 480 6 8 80",
+            6
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1120,
+            480
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "05 1.5 120 200 320 4 6",
+          "before": "05 1.5 120 200 320 4 6"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Recipe 1 / 4 · Scale a pancake recipe from four servings to six. Find all four scaled quantities. FLOUR g MILK ml EGGS eggs BERRIES g Check quantities Hint Next recipe Recipes solved: 0 / 4",
+          "after": "Recipe 1 / 4 · Scale a pancake recipe from four servings to six. Find all four scaled quantities. FLOUR g MILK ml EGGS eggs BERRIES g Check quantities Hint Next recipe Recipes solved: 0 / 4",
+          "bi": [
+            "7",
+            "7",
+            "7",
+            "7"
+          ],
+          "ai": [
+            "7",
+            "7",
+            "7",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "05 1.5 120 200 320 4 6",
+            0
+          ],
+          "narrow": [
+            "05 1.5 120 200 320 4 6",
+            0
+          ],
+          "back": [
+            "05 1.5 120 200 320 4 6",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "lesson.state.base must be greater than zero"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1120,
+            "median": 18.64,
+            "p10": 16.71,
+            "count": 23,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11.4,
+            "p10": 11,
+            "count": 24,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11.4,
+            "p10": 11,
+            "count": 24,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.4,
+          "p10": 11,
+          "count": 24,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.4,
+          "p10": 11,
+          "count": 24,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.4,
+          "p10": 11,
+          "count": 24,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.4,
+          "p10": 11,
+          "count": 24,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.4,
+          "p10": 11,
+          "count": 24,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVINGS\nSTART 4\nNEW 6\n→\nSERVINGS\nSCALE FACTOR × 1.5\n6 ÷ 4 = 1.5\nFLOUR\n220 g\n× 1.5\n? g",
+          "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVINGS\nSTART 3\nNEW 9\n→\nSERVINGS\nSCALE FACTOR × 3\n9 ÷ 3 = 3\nFLOUR\n150 g\n× 3\n? g\nMILK\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "4",
+            "220"
+          ],
+          "text": "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVINGS\nSTART 4\nNEW 6\n→\nSERVINGS\nSCALE FACTOR × 1.5\n6 ÷ 4 = 1.5\nFLOUR\n220 g\n× 1.5\n? g\nMILK\n160 ml\n× 1.5\n? ml\nEGGS\n4 eggs\n× 1.5\n? eggs\nBERRIES\n60 g\n× 1.5\n? g\n\nSTARTING BATCH\n\n4 servings\n\nAll original ingredient amounts refer to one batch.\n\nNEW SE"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 330,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "3",
+            "150"
+          ],
+          "text": "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVINGS\nSTART 3\nNEW 9\n→\nSERVINGS\nSCALE FACTOR × 3\n9 ÷ 3 = 3\nFLOUR\n150 g\n× 3\n? g\nMILK\n120 ml\n× 3\n? ml\nEGGS\n3 eggs\n× 3\n? eggs\nBERRIES\n45 g\n× 3\n? g\n\nSTARTING BATCH\n\n3 servings\n\nAll original ingredient amounts refer to one batch.\n\nNEW SERVINGS\n\n9 se"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 450,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVINGS\nSTART 4\nNEW 6\n→\nSERVINGS\nSCALE FACTOR × 1.5\n6 ÷ 4 = 1.5\nFLOUR\n220 g\n× 1.5\n? g\nMILK\n160 ml\n× 1.5\n? ml\nEGGS\n4 eggs\n× 1.5\n? eggs\nBERRIES\n60 "
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVIN",
+          "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVIN",
+          "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVIN",
+          "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVIN",
+          "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVIN",
+          "F6-05\nPANCAKE KITCHEN\nTHE SAME RECIPE · MORE OR FEWER SERVIN"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "THE SAME RECIPE\nMORE OR FEWER SERVINGS\nSTART 4\nNEW ?\n→\nSERVINGS\nFIND THE MULTIPL",
+          "THE SAME RECIPE\nMORE OR FEWER SERVINGS\nSTART 4\nNEW 6\n→\nSERVINGS\nSCALE FACTOR × 1",
+          "THE SAME RECIPE\nMORE OR FEWER SERVINGS\nSTART 4\nNEW 6\n→\nSERVINGS\nSCALE FACTOR × 1",
+          "THE SAME RECIPE\nMORE OR FEWER SERVINGS\nSTART 4\nNEW 6\n→\nSERVINGS\nSCALE FACTOR × 1"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "THE SAME RECIPE\nMORE OR FEWER SERVINGS\nSTART 4\nNEW ?\n→\nSERVINGS\nFIND THE MULTIPLIER\nnew servings ÷ original servings\nFLOUR\n220 g\n× ?\n? g\nMILK\n160 ml\n× ?\n? ml\nEGGS\n4 eggs\n× ?\n? eggs\nBERRIES\n60 g\n× ?\n? "
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "THE SAME RECIPE\nMORE OR FEWER SERVINGS\nSTART 3\nNEW ?\n→\nSERVINGS\nFIND THE MULTIPL",
+          "THE SAME RECIPE\nMORE OR FEWER SERVINGS\nSTART 3\nNEW 9\n→\nSERVINGS\nSCALE FACTOR × 3",
+          "THE SAME RECIPE\nMORE OR FEWER SERVINGS\nSTART 3\nNEW 9\n→\nSERVINGS\nSCALE FACTOR × 3",
+          "THE SAME RECIPE\nMORE OR FEWER SERVINGS\nSTART 3\nNEW 9\n→\nSERVINGS\nSCALE FACTOR × 3"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Recipe Y7-060 · Pancake batch (4 → 6) Y7-060 · Fruit bowl (4 → 8) Y7-060 · Oat bars (6 → 3) Y7-060 · Smoothies (3 → 9) Servings (keyboard alternative) 6 servings Check recipe Hint Return all Reset Drag the neon servings ring or adjust the slider. Drag the amount tiles onto the correct rows (keyboard: focus a tile and press 1–4). Regrab a placed ring and drop it in the red return tray, or press Delete. Drag the servings marker. Then drag scaled amounts onto the ingredient rows.",
+          "inputs": [
+            "Y7-060",
+            "6"
+          ],
+          "stageInputs": [],
+          "nums": "05 1.5 120 180 200 300 320 4 480 6",
+          "buttons": 6,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Recipe Y7-060 · Pancake batch (4 → 6) Y7-060 · Fruit bowl (4 → 8) Y7-060 · Oat bars (6 → 3) Y7-060 · Smoothies (3 → 9) Servings (keyboard alternative) 8 servings Check recipe Hint Return all Reset Drag the neon servings ring or adjust the slider. Drag the amount tiles onto the correct rows (keyboard: focus a tile and press 1–4). Regrab a placed ring and drop it in the red return tray, or press Delete. Double a fruit bowl recipe.",
+          "inputs": [
+            "Y7-060-double",
+            "8"
+          ],
+          "stageInputs": [],
+          "nums": "05 160 2 200 240 4 400 440 480 6 8 80",
+          "buttons": 6,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Recipe Y7-060 · Pancake batch (4 → 6) Y7-060 · Fruit bowl (4 → 8) Y7-060 · Oat bars (6 → 3) Y7-060 · Smoothies (3 → 9) Servings (keyboard alternative) 8 servings Check recipe Hint Return all Reset Drag the neon servings ring or adjust the slider. Drag the amount tiles onto the correct rows (keyboard: focus a tile and press 1–4). Regrab a placed ring and drop it in the red return tray, or press Delete. Double a fruit bowl recipe.",
+          "inputs": [
+            "Y7-060-double",
+            "8"
+          ],
+          "stageInputs": [],
+          "nums": "05 160 2 200 240 4 400 440 480 6 8 80",
+          "buttons": 6,
+          "vb": 480,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Recipe 1 / 4 · Scale a pancake recipe from four servings to six. Find all four scaled quantities. FLOUR g MILK ml EGGS eggs BERRIES g Check quantities Hint Next recipe Recipes solved: 0 / 4",
+          "inputs": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "05 1.5 120 200 320 4 6",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Recipe 1 / 4 · Scale a pancake recipe from four servings to six. Find all four scaled quantities. FLOUR g MILK ml EGGS eggs BERRIES g Check quantities Hint Next recipe Recipes solved: 0 / 4",
+          "inputs": [
+            "7",
+            "7",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "05 1.5 120 200 320 4 6",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Recipe 1 / 4 · Scale a pancake recipe from four servings to six. Find all four scaled quantities. FLOUR g MILK ml EGGS eggs BERRIES g Check quantities Hint Next recipe Recipes solved: 0 / 4",
+          "inputs": [
+            "7",
+            "7",
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "05 1.5 120 200 320 4 6",
+          "buttons": 0,
+          "vb": 480,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1120,
+        "median": 18.64,
+        "p10": 16.71,
+        "count": 23,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11.4,
+        "p10": 11,
+        "count": 24,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11.4,
+        "p10": 11,
+        "count": 24,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

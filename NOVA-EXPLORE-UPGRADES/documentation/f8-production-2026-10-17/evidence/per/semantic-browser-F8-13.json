@@ -1,0 +1,791 @@
+[
+  {
+    "id": "F8-13",
+    "presetOf": null,
+    "path": "F8/F8-13-index-laws-in-algebra.html",
+    "sourceSha256": "6691d8bceb7c285db5a7661e30fb29386874ad35c87b1a329dfb2fbc6ce261d5",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1100,
+            460
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "13 8",
+          "before": "0 13 2 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Preset Multiply · a³ × a² Divide · b⁵ ÷ b² Power · (x²)³ Multiply · y² × y⁴ Divide · p⁶ ÷ p³ Power · (m³)² Divide · b⁵ ÷ b² · YEAR 8 INDEX LAWS Cancel factor pair · 0/2 Undo Reset Hint Resulting index Check index Complete the factor proof before checking the index. Drag the highlighted strip to the ",
+          "after": "Preset Multiply · a³ × a² Divide · b⁵ ÷ b² Power · (x²)³ Multiply · y² × y⁴ Divide · p⁶ ÷ p³ Power · (m³)² Divide · b⁵ ÷ b² · YEAR 8 INDEX LAWS Cancel factor pair · 0/2 Undo Reset Hint Resulting index Check index Complete the factor proof before checking the index. Drag the highlighted strip to the ",
+          "bi": [
+            "Y8-002-D1",
+            "7"
+          ],
+          "ai": [
+            "Y8-002-D1",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 13 2 8",
+            1
+          ],
+          "narrow": [
+            "0 13 2 8",
+            1
+          ],
+          "back": [
+            "0 13 2 8",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1100,
+            460
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "13 8",
+          "before": "13 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Challenge 1 of 6 · Multiply · a³ × a² Join strips · 1/1 Undo Reset Hint Resulting index Check index Factor proof ready. Enter the resulting index. Structure complete. Count the remaining factors.",
+          "after": "Challenge 1 of 6 · Multiply · a³ × a² Join strips · 1/1 Undo Reset Hint Resulting index Check index Factor proof ready. Enter the resulting index. Structure complete. Count the remaining factors.",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "13 8",
+            1
+          ],
+          "narrow": [
+            "13 8",
+            1
+          ],
+          "back": [
+            "13 8",
+            1
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of: Y8-002-M1, Y8-002-D1, Y8-002-P1, Y8-002-M2, Y8-002-D2, Y8-002-P2"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1100,
+            "median": 28.64,
+            "p10": 21.95,
+            "count": 15,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 460,
+            "median": 14.58,
+            "p10": 11,
+            "count": 15,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 460,
+            "median": 14.58,
+            "p10": 11,
+            "count": 15,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 14.58,
+          "p10": 11,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 14.58,
+          "p10": 11,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 14.58,
+          "p10": 11,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 14.58,
+          "p10": 11,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 460,
+          "median": 14.58,
+          "p10": 11,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F8-13\nALGEBRAIC INDEX LAWS\nADD THE INDICES\na³ × a²\na\na\na\nFIRST POWER\na\na\nSECOND POWER\nJOIN THE TWO FACTOR STRIPS\nCOUNT THE FACTORS TO PROVE ",
+          "F8-13\nALGEBRAIC INDEX LAWS\nSUBTRACT THE INDICES\nb⁵ ÷ b²\nb\nb\nb\nb\nb\nFIRST POWER\nb\nb\nSECOND POWER\n0 of 2 PAIRS CANCELLED\nCOUNT THE FACTORS TO P"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "a³ × a²"
+          ],
+          "text": "F8-13\nALGEBRAIC INDEX LAWS\nADD THE INDICES\na³ × a²\na\na\na\nFIRST POWER\na\na\nSECOND POWER\nJOIN THE TWO FACTOR STRIPS\nCOUNT THE FACTORS TO PROVE THE LAW\nRETURN\na\na\nDRAG THE HIGHLIGHTED FACTORS INTO THE PROOF\nBuild the proof!\nSIR BOB · FACTOR PROOF\nProve why a³ × a² simplifies using factor groups and the "
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "b⁵ ÷ b²"
+          ],
+          "text": "F8-13\nALGEBRAIC INDEX LAWS\nSUBTRACT THE INDICES\nb⁵ ÷ b²\nb\nb\nb\nb\nb\nFIRST POWER\nb\nb\nSECOND POWER\n0 of 2 PAIRS CANCELLED\nCOUNT THE FACTORS TO PROVE THE LAW\nRETURN\nb\nb\nDRAG THE HIGHLIGHTED FACTORS INTO THE PROOF\nBuild the proof!\nSIR BOB · FACTOR PROOF\nProve why b⁵ ÷ b² simplifies using factor groups and"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 3,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F8-13\nALGEBRAIC INDEX LAWS\nADD THE INDICES\na³ × a²\na\na\na\nFIRST POWER\na\na\nSECOND POWER\nJOIN THE TWO FACTOR STRIPS\nCOUNT THE FACTORS TO PROVE THE LAW\nRETURN\na\na\nDRAG THE HIGHLIGHTED FACTORS INTO THE PRO"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F8-13\nALGEBRAIC INDEX LAWS\nADD THE INDICES\na³ × a²\na\na\na\nFIR",
+          "F8-13\nALGEBRAIC INDEX LAWS\nSUBTRACT THE INDICES\nb⁵ ÷ b²\nb\nb\n",
+          "F8-13\nALGEBRAIC INDEX LAWS\nMULTIPLY THE INDICES\n(x²)³\nx\nx\nON",
+          "F8-13\nALGEBRAIC INDEX LAWS\nADD THE INDICES\ny² × y⁴\ny\ny\nFIRST",
+          "F8-13\nALGEBRAIC INDEX LAWS\nSUBTRACT THE INDICES\np⁶ ÷ p²\np\np\n",
+          "F8-13\nALGEBRAIC INDEX LAWS\nMULTIPLY THE INDICES\n(m³)²\nm\nm\nm\n"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "ADD THE INDICES\na³ × a²\na\na\na\nFIRST POWER\na\na\nSECOND POWER\nJOIN THE TWO FACTOR S",
+          "ADD THE INDICES\na³ × a²\na\na\na\nFIRST POWER\na\na\nSECOND POWER\nJOIN THE TWO FACTOR S",
+          "ADD THE INDICES\na³ × a²\na\na\na\nFIRST POWER\na\na\nSECOND POWER\nJOINED FACTOR STRIP\na",
+          "ADD THE INDICES\na³ × a²\na\na\na\nFIRST POWER\na\na\nSECOND POWER\nJOINED FACTOR STRIP\na"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "ADD THE INDICES\na³ × a²\na\na\na\nFIRST POWER\na\na\nSECOND POWER\nJOIN THE TWO FACTOR STRIPS\nCOUNT THE FACTORS TO PROVE THE LAW\nRETURN\na\na\nDRAG → TARGET\nBuild the proof!\nSIR BOB · FACTOR PROOFProve why a³ × "
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "SUBTRACT THE INDICES\nb⁵ ÷ b²\nb\nb\nb\nb\nb\nFIRST POWER\nb\nb\nSECOND POWER\n0 of 2 PAIRS",
+          "SUBTRACT THE INDICES\nb⁵ ÷ b²\nb\nb\nb\nb\nb\nFIRST POWER\nb\nb\nSECOND POWER\n0 of 2 PAIRS",
+          "SUBTRACT THE INDICES\nb⁵ ÷ b²\nb\nb\nb\nb\nb\nFIRST POWER\nb\nb\nSECOND POWER\nMATCHING PAI",
+          "SUBTRACT THE INDICES\nb⁵ ÷ b²\nb\nb\nb\nb\nb\nFIRST POWER\nb\nb\nSECOND POWER\nMATCHING PAI"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Preset Multiply · a³ × a² Divide · b⁵ ÷ b² Power · (x²)³ Multiply · y² × y⁴ Divide · p⁶ ÷ p³ Power · (m³)² Multiply · a³ × a² · YEAR 8 INDEX LAWS Join strips · 0/1 Undo Reset Hint Resulting index Check index Complete the factor proof before checking the index. Drag the highlighted strip to the target or use the matching button.",
+          "inputs": [
+            "Y8-002-M1",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "13 8",
+          "buttons": 1,
+          "vb": 1100,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Preset Multiply · a³ × a² Divide · b⁵ ÷ b² Power · (x²)³ Multiply · y² × y⁴ Divide · p⁶ ÷ p³ Power · (m³)² Divide · b⁵ ÷ b² · YEAR 8 INDEX LAWS Cancel factor pair · 0/2 Undo Reset Hint Resulting index Check index Complete the factor proof before checking the index. Drag the highlighted strip to the target or use the matching button.",
+          "inputs": [
+            "Y8-002-D1",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 13 2 8",
+          "buttons": 1,
+          "vb": 1100,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Preset Multiply · a³ × a² Divide · b⁵ ÷ b² Power · (x²)³ Multiply · y² × y⁴ Divide · p⁶ ÷ p³ Power · (m³)² Divide · b⁵ ÷ b² · YEAR 8 INDEX LAWS Cancel factor pair · 0/2 Undo Reset Hint Resulting index Check index Complete the factor proof before checking the index. Drag the highlighted strip to the target or use the matching button.",
+          "inputs": [
+            "Y8-002-D1",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 13 2 8",
+          "buttons": 1,
+          "vb": 460,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Challenge 1 of 6 · Multiply · a³ × a² Join strips · 0/1 Undo Reset Hint Resulting index Check index Complete the factor proof before checking the index. Drag the highlighted strip to the target or use the matching button.",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "13 8",
+          "buttons": 1,
+          "vb": 1100,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Challenge 1 of 6 · Multiply · a³ × a² Join strips · 1/1 Undo Reset Hint Resulting index Check index Factor proof ready. Enter the resulting index. Structure complete. Count the remaining factors.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "13 8",
+          "buttons": 1,
+          "vb": 1100,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Challenge 1 of 6 · Multiply · a³ × a² Join strips · 1/1 Undo Reset Hint Resulting index Check index Factor proof ready. Enter the resulting index. Structure complete. Count the remaining factors.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "13 8",
+          "buttons": 1,
+          "vb": 460,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1100,
+        "median": 28.64,
+        "p10": 21.95,
+        "count": 15,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 460,
+        "median": 14.58,
+        "p10": 11,
+        "count": 15,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 460,
+        "median": 14.58,
+        "p10": 11,
+        "count": 15,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

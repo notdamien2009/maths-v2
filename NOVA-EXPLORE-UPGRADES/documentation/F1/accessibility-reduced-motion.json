@@ -1,0 +1,881 @@
+[
+  {
+    "id": "F1-01",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Value marker",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "0",
+        "max": "10",
+        "step": null
+      },
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "integers",
+        "options": [
+          {
+            "value": "integers",
+            "label": "Integers 0 to 10"
+          },
+          {
+            "value": "negatives",
+            "label": "Directed numbers −10 to 10"
+          },
+          {
+            "value": "tenths",
+            "label": "Decimals: tenths 0 to 1"
+          },
+          {
+            "value": "hundredths",
+            "label": "Decimals: hundredths 2.3 to 2.4"
+          },
+          {
+            "value": "thousands",
+            "label": "GCSE: thousands 0 to 10 000"
+          },
+          {
+            "value": "thermometer",
+            "label": "Thermometer −20 °C to 40 °C (F1-04)"
+          },
+          {
+            "value": "comparer",
+            "label": "Comparer: two values (F1-12)"
+          },
+          {
+            "value": "fractions",
+            "label": "Fractions on a line (F5-04, design TBD)"
+          }
+        ]
+      },
+      {
+        "label": "Value",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0",
+        "max": "10",
+        "step": "1",
+        "value": "7"
+      },
+      {
+        "label": "Stepper",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Down one step",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Up one step",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·01 Configurable number line\":\n  - heading \"F1·01 Configurable number line\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: thousands with step 250, hundredths 2.3–2.4 for bounds and rounding\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F0-02, F0-04, F0-05, F0-11, F0-12, F1-02, F1-03.\n  - heading \"Live demo · F1-01\" [level=3]\n  - tablist \"Configurable number line modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Number line · Big numbers step 7/7\n  - img \"Number line 0 to 10000.\": 0 2000 4000 6000 8000 10000 6750\n  - text: between\n  - math \"6000 and 8000\": 6000 a n d 8000\n  - text: nearer\n  - math \"6000\"\n  - text: Big numbers\n  - img \"Big numbers (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch The same line works for thousands. Each line is two thousand, so this point is six thousand seven hundred and fifty.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Big numbers\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F1-02",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "decimals",
+        "options": [
+          {
+            "value": "decimals",
+            "label": "Ones → tenths → hundredths (3.47)"
+          },
+          {
+            "value": "tenths",
+            "label": "Ones → tenths (2.6)"
+          },
+          {
+            "value": "negative",
+            "label": "Negatives: −1 to 0 (−0.35)"
+          },
+          {
+            "value": "thousandths",
+            "label": "GCSE: thousandths (0.125)"
+          },
+          {
+            "value": "big",
+            "label": "Big numbers: 0 to 1000 (470)"
+          }
+        ]
+      },
+      {
+        "label": "Value",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0",
+        "max": "9.99",
+        "step": "0.01",
+        "value": "3.47"
+      },
+      {
+        "label": "Zoom",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease Zoom",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase Zoom",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·02 Zoomable number line\":\n  - heading \"F1·02 Zoomable number line\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: thousandths and negative decimals for bounds and error intervals\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F1-01, F1-03, F1-05, F1-10, F2-01, F0-04, F0-12.\n  - heading \"Live demo · F1-02\" [level=3]\n  - tablist \"Zoomable number line modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Zoom · Thousandths step 6/6\n  - 'img \"Zoomable number line: 0 to 1, then 0.1 to 0.2, then 0.12 to 0.13. Value 0.125.\"': 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 zoom ×10 0.1 0.11 0.12 0.13 0.14 0.15 0.16 0.17 0.18 0.19 0.2 zoom ×10 0.12 0.121 0.122 0.123 0.124 0.125 0.126 0.127 0.128 0.129 0.13 0.125\n  - text: each gap\n  - math \"0.001\"\n  - text: value\n  - math \"0.125\"\n  - text: Thousandths\n  - img \"Thousandths (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Start at 0 to 1 in tenths and zoom twice: 0.125 is one hundred and twenty-five thousandths.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Thousandths\n    - slider \"Scrub through steps\": \"5\""
+  },
+  {
+    "id": "F1-03",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Preset",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "crossZero",
+        "options": [
+          {
+            "value": "crossZero",
+            "label": "Cross zero: −3 + 5"
+          },
+          {
+            "value": "back",
+            "label": "Count back: 7 − 9"
+          },
+          {
+            "value": "split",
+            "label": "Friendly jumps: 48 + 27"
+          },
+          {
+            "value": "repeat",
+            "label": "Repeated jumps: 4 × 3"
+          },
+          {
+            "value": "negSub",
+            "label": "Subtract a negative: 4 − (−3)"
+          },
+          {
+            "value": "decimals",
+            "label": "Decimals: 2.6 + 0.7"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: −12 − 15"
+          }
+        ]
+      },
+      {
+        "label": "Start",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-6",
+        "max": "6",
+        "step": "1",
+        "value": "-3"
+      },
+      {
+        "label": "Jump",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-12",
+        "max": "12",
+        "step": "1",
+        "value": "5"
+      },
+      {
+        "label": "Jumps",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease Jumps",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase Jumps",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·03 Jump-arc operator\":\n  - heading \"F1·03 Jump-arc operator\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: directed numbers to −30 and decimal jumps\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F1-01, F1-02, F0-02, F0-03, F0-04, F0-12.\n  - heading \"Live demo · F1-03\" [level=3]\n  - tablist \"Jump-arc operator modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Jumps · Decimals step 7/7\n  - img \"Number line 2 to 4. Start 2.6, jumps +0.4, +0.3, end 3.3.\": 2 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4 +0.4 +0.3\n  - text: split\n  - math \"0.4 plus 0.3\": 0.4 + 0.3\n  - text: sum\n  - math \"2.6 plus 0.7 equals 3.3\": 2.6 + 0.7 = 3.3\n  - text: Decimals\n  - img \"Decimals (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Jumps work with decimals too. Two point six add point seven: point four to three, then point three more. Three point three.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Decimals\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F1-05",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Round to",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "tens",
+        "options": [
+          {
+            "value": "tens",
+            "label": "Nearest 10 (37)"
+          },
+          {
+            "value": "ones",
+            "label": "Nearest whole (6.4)"
+          },
+          {
+            "value": "tenths",
+            "label": "1 decimal place (4.63)"
+          },
+          {
+            "value": "hundreds",
+            "label": "Nearest 100 (6748)"
+          },
+          {
+            "value": "negative",
+            "label": "Negatives: nearest 10 (−23)"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: 2 decimal places (0.4372)"
+          }
+        ]
+      },
+      {
+        "label": "Number",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "10",
+        "max": "60",
+        "step": "0.1",
+        "value": "37"
+      },
+      {
+        "label": "Roll",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·05 Rounding rolling-ball\":\n  - heading \"F1·05 Rounding rolling-ball\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: 2 dp and negative numbers\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F1-01, F1-02, F1-08, F1-11, F0-04, F0-12.\n  - heading \"Live demo · F1-05\" [level=3]\n  - tablist \"Rounding rolling-ball modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Rounding · Negatives step 7/7\n  - 'img \"Rounding −23 to the nearest 10: between −30 and −20, rounds to −20.\"': −30 −29 −28 −27 −26 −25 −24 −23 −22 −21 −20 half way −25 −23\n  - text: −23\n  - math \"≈ −20\"\n  - text: Negatives\n  - img \"Negatives (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Negatives work the same way. Minus 23 is between minus 30 and minus 20, nearer minus 20, so it rounds to minus 20.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Negatives\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F1-06",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Inequality",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "gt",
+        "options": [
+          {
+            "value": "gt",
+            "label": "x > 2"
+          },
+          {
+            "value": "ge",
+            "label": "x ≥ 2"
+          },
+          {
+            "value": "lt",
+            "label": "x < −1"
+          },
+          {
+            "value": "le",
+            "label": "x ≤ 3"
+          },
+          {
+            "value": "between",
+            "label": "−2 < x ≤ 3"
+          },
+          {
+            "value": "decimal",
+            "label": "x ≥ 1.5 (decimals)"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: −3 ≤ x < 4, integers"
+          }
+        ]
+      },
+      {
+        "label": "Boundary",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-5",
+        "max": "5",
+        "step": "1",
+        "value": "2"
+      },
+      {
+        "label": "Test x",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "-5",
+        "max": "5",
+        "step": "0.25",
+        "value": "0"
+      },
+      {
+        "label": "Show integers",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·06 Inequality line\":\n  - heading \"F1·06 Inequality line\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: integer solutions of double inequalities and solving linear inequalities\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F1-01, F1-11, F0-04, F0-05, F0-12.\n  - heading \"Live demo · F1-06\" [level=3]\n  - tablist \"Inequality line modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Inequality · Decimals step 6/6\n  - img \"Number line showing x ≥ 1.5.\": 0 0.5 1 1.5 2 2.5 3\n  - text: inequality\n  - math \"x ≥ 1.5\"\n  - text: end\n  - math \"filled equals included\": f i l l e d = i n c l u d e d\n  - text: x ≥ 1.5\n  - img \"x ≥ 1.5 (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Solutions are not only whole numbers. x is at least 1.5, so 1.5, 1.8 and 2.75 all work.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Decimals\n    - slider \"Scrub through steps\": \"5\""
+  },
+  {
+    "id": "F1-07",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Place card −3",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "-5",
+        "max": "5",
+        "step": null
+      },
+      {
+        "label": "Card set",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "mixed",
+        "options": [
+          {
+            "value": "mixed",
+            "label": "Directed numbers"
+          },
+          {
+            "value": "decimals",
+            "label": "Decimals 0 to 1"
+          },
+          {
+            "value": "hundred",
+            "label": "Estimate 0 to 100"
+          },
+          {
+            "value": "big",
+            "label": "Thousands"
+          },
+          {
+            "value": "tricky",
+            "label": "Tricky decimals"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: negatives and decimals"
+          }
+        ]
+      },
+      {
+        "label": "Place",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Start again",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·07 Card-placing line\":\n  - heading \"F1·07 Card-placing line\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: mixed negatives and decimals\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F1-01, F1-02, F1-05, F0-04, F0-12.\n  - heading \"Live demo · F1-07\" [level=3]\n  - tablist \"Card-placing line modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Cards · Estimate step 6/6\n  - img \"Number line from 0 to 100 with cards 25, 68, 90, 7.\": 0 10 20 30 40 50 60 70 80 90 100 25 68 90 7\n  - text: order\n  - math \"7, 25, 68, 90\"\n  - text: Estimate\n  - img \"Estimate (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch With only tens marked, estimate. 68 is just before 70; 7 is close to 0.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Estimate\n    - slider \"Scrub through steps\": \"5\""
+  },
+  {
+    "id": "F1-08",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Calculation",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "whole",
+        "options": [
+          {
+            "value": "whole",
+            "label": "49 × 21"
+          },
+          {
+            "value": "decimal",
+            "label": "3.87 × 19.6"
+          },
+          {
+            "value": "divide",
+            "label": "612 ÷ 29"
+          },
+          {
+            "value": "big",
+            "label": "382 × 47"
+          },
+          {
+            "value": "small",
+            "label": "GCSE: 0.0487 × 612"
+          },
+          {
+            "value": "root",
+            "label": "√50 (irrational)"
+          }
+        ]
+      },
+      {
+        "label": "First number",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0.1",
+        "max": "99",
+        "step": "0.1",
+        "value": "49"
+      },
+      {
+        "label": "Second number",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0.1",
+        "max": "99",
+        "step": "0.1",
+        "value": "21"
+      },
+      {
+        "label": "Show exact",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·08 Estimation line\":\n  - heading \"F1·08 Estimation line\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: 1 s.f. estimates with small decimals, square-root bounds\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F1-05, F1-07, F1-10, F1-11, F0-04.\n  - heading \"Live demo · F1-08\" [level=3]\n  - tablist \"Estimation line modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Estimate · Square roots step 6/6\n  - img \"Estimate of √50 on a number line.\": 6 7 8 9 √49 = 7 √64 = 8 = 7.071\n  - text: √50\n  - math \"between 7 and 8\": b e t w e e n 7 a n d 8\n  - text: ≈\n  - math \"7.071\"\n  - text: Square roots\n  - img \"Square roots (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, look here\"\n  - text: \"Sir Bob Maximus · watch Square root of 50 is not a whole number. 49 is 7 squared and 64 is 8 squared, so root 50 is just over 7. It is irrational: the decimal never ends.\"\n  - img \"Nova the cat, pointing\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Square roots\n    - slider \"Scrub through steps\": \"5\""
+  },
+  {
+    "id": "F1-09",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Scale",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "scale",
+        "options": [
+          {
+            "value": "scale",
+            "label": "Scale in 4s (kg)"
+          },
+          {
+            "value": "ruler",
+            "label": "Ruler in mm (cm)"
+          },
+          {
+            "value": "jug",
+            "label": "Measuring jug (ml)"
+          },
+          {
+            "value": "temp",
+            "label": "Thermometer in 2s (°C)"
+          },
+          {
+            "value": "dial",
+            "label": "Round dial (kg)"
+          },
+          {
+            "value": "halves",
+            "label": "Scale in 0.5s (l)"
+          },
+          {
+            "value": "bounds",
+            "label": "GCSE: error interval 7.3 cm (1 dp)"
+          }
+        ]
+      },
+      {
+        "label": "Reading",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "0",
+        "max": "100",
+        "step": "4",
+        "value": "68"
+      },
+      {
+        "label": "Gaps between labels",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease Gaps between labels",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase Gaps between labels",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·09 Scale reader\":\n  - heading \"F1·09 Scale reader\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: error intervals with ≤ and <\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F1-01, F1-05, F1-06, F1-11, F0-04.\n  - heading \"Live demo · F1-09\" [level=3]\n  - tablist \"Scale reader modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Scale · Error interval step 7/7\n  - img \"Scale reading 7.3 cm.\": 7.2 7.25 7.3 7.35 7.4 measured 7.3 cm\n  - text: interval\n  - math \"7.25 ≤ L is less than 7.35\": 7.25 ≤ L < 7.35\n  - text: Error interval\n  - img \"Error interval (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch A length of 7.3 centimetres to one decimal place could be anything from 7.25 up to, but not including, 7.35.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Error interval\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F1-10",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Number",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "large",
+        "options": [
+          {
+            "value": "large",
+            "label": "Large: 320 000"
+          },
+          {
+            "value": "million",
+            "label": "Millions: 7 500 000"
+          },
+          {
+            "value": "small",
+            "label": "Small: 0.0045"
+          },
+          {
+            "value": "tiny",
+            "label": "Tiny: 0.000 08"
+          },
+          {
+            "value": "compare",
+            "label": "Compare 3.2 × 10⁵ and 8 × 10⁴"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: 6.02 × 10²³ (huge)"
+          }
+        ]
+      },
+      {
+        "label": "Number part",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "1",
+        "max": "9.9",
+        "step": "0.1",
+        "value": "3.2"
+      },
+      {
+        "label": "Power of ten",
+        "tag": "div",
+        "role": "group",
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      {
+        "label": "Decrease Power of ten",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Increase Power of ten",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·10 Powers-of-ten zoom\":\n  - heading \"F1·10 Powers-of-ten zoom\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: very large and very small numbers (10²³, 10⁻⁵)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F1-02, F1-07, F1-08, F0-05.\n  - heading \"Live demo · F1-10\" [level=3]\n  - tablist \"Powers-of-ten zoom modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Powers of ten · Huge step 6/6\n  - img \"6.02 × 10²³ on a powers of ten line.\": \"1018 1019 1020 1021 1022 1023 1024 1025 1026 1027 6.02 × 10²³ 1 2 3 4 5 6 7 8 9 10 6.02 zoom: × 10²³\"\n  - text: 10²³\n  - math \"1 then 23 zeros\": 1 t h e n 23 z e r o s\n  - text: ordinary\n  - math \"602 000 000 000 000 000 000 000\"\n  - text: Huge\n  - img \"Huge (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Standard form handles enormous numbers too. 6.02 times 10 to the 23 is just past the 10 to the 23 mark.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Huge\n    - slider \"Scrub through steps\": \"5\""
+  },
+  {
+    "id": "F1-11",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Accuracy",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "dp1",
+        "options": [
+          {
+            "value": "dp1",
+            "label": "7.3 cm to 1 dp"
+          },
+          {
+            "value": "ten",
+            "label": "340 people to the nearest 10"
+          },
+          {
+            "value": "whole",
+            "label": "5 cm to the nearest cm"
+          },
+          {
+            "value": "dp2",
+            "label": "2.46 kg to 2 dp"
+          },
+          {
+            "value": "trunc",
+            "label": "4.7 s truncated to 1 dp"
+          },
+          {
+            "value": "gcse",
+            "label": "GCSE: square of side 5 cm (perimeter bounds)"
+          }
+        ]
+      },
+      {
+        "label": "Measured value",
+        "tag": "input",
+        "role": null,
+        "type": "range",
+        "min": "5.3",
+        "max": "9.3",
+        "step": "0.1",
+        "value": "7.3"
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F1·11 Error-interval line\":\n  - heading \"F1·11 Error-interval line\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: bounds in calculations (perimeter, and later area and speed)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F1-05, F1-06, F1-08, F1-09, F0-04.\n  - heading \"Live demo · F1-11\" [level=3]\n  - tablist \"Error-interval line modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Error interval · Bounds in a calculation step 6/6\n  - img \"Error interval 4.5 ≤ x < 5.5.\": 4 4.5 5 5.5 6 measured 5 cm 4.5 5.5\n  - text: side\n  - math \"4.5 ≤ s is less than 5.5\": 4.5 ≤ s < 5.5\n  - text: perimeter\n  - math \"18 ≤ P is less than 22\": 18 ≤ P < 22\n  - text: Bounds in a calculation\n  - img \"Bounds in a calculation (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch A square has side 5 centimetres to the nearest centimetre, so the side is from 4.5 up to 5.5. The perimeter is from 4 times 4.5 equals 18, up to 4 times 5.5 equals 22.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Bounds in a calculation\n    - slider \"Scrub through steps\": \"5\""
+  }
+]

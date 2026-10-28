@@ -1,0 +1,793 @@
+[
+  {
+    "id": "F6-02",
+    "presetOf": null,
+    "path": "F6/F6-02-double-number-line.html",
+    "sourceSha256": "dada71ed6f48b5503d73721e0d596efe789e1fda2ea91f124abb4097554e12ec",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1120,
+            440
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 02 10 12 18 2 24 3 30 4 6 8",
+          "before": "0 02 1.25 100 20 25 40 50 6 60 75 80"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Now inspect the Y8 · Increase by 25% scale. Relationship Y7 · Tickets and cost Y8 · Increase by 25% Y8 · Equation y = kx Y8 · Pound to euro conversion Marker step ← One mark One mark → Remove marker Restore marker Undo Reset Drag the connected neon rings to another aligned mark on either line, or us",
+          "after": "Now inspect the Y8 · Increase by 25% scale. Relationship Y7 · Tickets and cost Y8 · Increase by 25% Y8 · Equation y = kx Y8 · Pound to euro conversion Marker step ← One mark One mark → Remove marker Restore marker Undo Reset Drag the connected neon rings to another aligned mark on either line, or us",
+          "bi": [
+            "Y8-007",
+            "7"
+          ],
+          "ai": [
+            "Y8-007",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 02 1.25 100 20 25 40 50 6 60 75 80",
+            1
+          ],
+          "narrow": [
+            "0 02 1.25 100 20 25 40 50 6 60 75 80",
+            1
+          ],
+          "back": [
+            "0 02 1.25 100 20 25 40 50 6 60 75 80",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1120,
+            440
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 02 10 2 3 4 6 8",
+          "before": "0 02 10 2 3 4 6 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Challenge 1 of 4 · Two tickets cost six pounds. What do eight tickets cost? Check value Hint Next challenge The answer on the bottom line is hidden until you answer. Izaac is checking your matching value.",
+          "after": "Challenge 1 of 4 · Two tickets cost six pounds. What do eight tickets cost? Check value Hint Next challenge The answer on the bottom line is hidden until you answer. Izaac is checking your matching value.",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 02 10 2 3 4 6 8",
+            0
+          ],
+          "narrow": [
+            "0 02 10 2 3 4 6 8",
+            0
+          ],
+          "back": [
+            "0 02 10 2 3 4 6 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "lesson.state.known must be greater than zero"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1120,
+            "median": 18.43,
+            "p10": 18.43,
+            "count": 24,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 11.93,
+            "p10": 11.93,
+            "count": 22,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 11.93,
+            "p10": 11.93,
+            "count": 22,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.93,
+          "p10": 11.93,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.93,
+          "p10": 11.93,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.93,
+          "p10": 11.93,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.93,
+          "p10": 11.93,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 11.93,
+          "p10": 11.93,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\nTickets\nCost (£)\nKnown 2\nMatche",
+          "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£12\nTickets\nCost (£)\nKnown 4\nMatch"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "2",
+            "6"
+          ],
+          "text": "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\nTickets\nCost (£)\nKnown 2\nMatches £6\n8\n?\nFIND THE PAIR\nFactor ×3\nUnknown value hidden\nLook vertically: the marks link."
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 24,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "4",
+            "12"
+          ],
+          "text": "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£12\nTickets\nCost (£)\nKnown 4\nMatches £12\n12\n?\nFIND THE PAIR\nFactor ×3\nUnknown value hidden\nLook vertically: the marks link."
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 36,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\nTickets\nCost (£)\nKnown 2\nMatches £6\n8\n?\nFIND THE PAIR\nFactor ×3\nUnknown value hidden"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATI",
+          "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATI",
+          "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATI",
+          "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATI",
+          "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATI",
+          "DOUBLE NUMBER LINE · F6-02\nYOUR TURN\nTWO SCALES · ONE RELATI"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "TWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\nTickets\n",
+          "TWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\n£12\n£18\n",
+          "TWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\n£12\n£18\n",
+          "TWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\n£12\n£18\n"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "TWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\nTickets\nCost (£)\nKnown 2\nMatches £6\n8\n?\nFIND THE PAIR\nFactor ×3\nUnknown value hidden\nLook vertically: the marks link."
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "TWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£12\nTickets",
+          "TWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\n£12\n£18\n",
+          "TWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\n£12\n£18\n",
+          "TWO SCALES · ONE RELATIONSHIP\nRate ×3\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n£0\n£6\n£12\n£18\n"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Move the linked rings. Both values must move together. Relationship Y7 · Tickets and cost Y8 · Increase by 25% Y8 · Equation y = kx Y8 · Pound to euro conversion Marker step ← One mark One mark → Remove marker Restore marker Undo Reset Drag the connected neon rings to another aligned mark on either line, or use Arrow keys and the controls. The green and gold rings stay vertically matched. Drag to the red RETURN tray to remove.",
+          "inputs": [
+            "Y7-060",
+            "2"
+          ],
+          "stageInputs": [],
+          "nums": "0 02 10 12 18 2 24 3 30 4 6 8",
+          "buttons": 1,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Now inspect the Y8 · Increase by 25% scale. Relationship Y7 · Tickets and cost Y8 · Increase by 25% Y8 · Equation y = kx Y8 · Pound to euro conversion Marker step ← One mark One mark → Remove marker Restore marker Undo Reset Drag the connected neon rings to another aligned mark on either line, or use Arrow keys and the controls. The green and gold rings stay vertically matched. Drag to the red RETURN tray to remove.",
+          "inputs": [
+            "Y8-007",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 02 1.25 100 20 25 40 50 6 60 75 80",
+          "buttons": 1,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Now inspect the Y8 · Increase by 25% scale. Relationship Y7 · Tickets and cost Y8 · Increase by 25% Y8 · Equation y = kx Y8 · Pound to euro conversion Marker step ← One mark One mark → Remove marker Restore marker Undo Reset Drag the connected neon rings to another aligned mark on either line, or use Arrow keys and the controls. The green and gold rings stay vertically matched. Drag to the red RETURN tray to remove.",
+          "inputs": [
+            "Y8-007",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 02 1.25 100 20 25 40 50 6 60 75 80",
+          "buttons": 1,
+          "vb": 440,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Challenge 1 of 4 · Two tickets cost six pounds. What do eight tickets cost? Check value Hint Next challenge The answer on the bottom line is hidden until you answer. Izaac is checking your matching value.",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 02 10 2 3 4 6 8",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Challenge 1 of 4 · Two tickets cost six pounds. What do eight tickets cost? Check value Hint Next challenge The answer on the bottom line is hidden until you answer. Izaac is checking your matching value.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 02 10 2 3 4 6 8",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Challenge 1 of 4 · Two tickets cost six pounds. What do eight tickets cost? Check value Hint Next challenge The answer on the bottom line is hidden until you answer. Izaac is checking your matching value.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 02 10 2 3 4 6 8",
+          "buttons": 0,
+          "vb": 440,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1120,
+        "median": 18.43,
+        "p10": 18.43,
+        "count": 24,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 11.93,
+        "p10": 11.93,
+        "count": 22,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 11.93,
+        "p10": 11.93,
+        "count": 22,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

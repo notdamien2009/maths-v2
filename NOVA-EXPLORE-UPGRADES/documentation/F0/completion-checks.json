@@ -1,0 +1,249 @@
+[
+  {
+    "name": "Seven jumps generate nine steps and correct final state",
+    "pass": true,
+    "detail": {
+      "count": 9,
+      "native": "Timeline · Totalp = 8.00StartJump 1Jump 2Jump 3Jump 4Jump 5Jump 6Jump 7Total11.522.533.544.555.5−0.5−0.5−0.5−0.5−0.5−0.5−0.57 × −0.55 − 0.5 − 0.5 − 0.5 − 0.5 − 0.5 − 0.5 − 0.5 = 1.55 − 7 × 0.5 = 1.55 − 7 × 0.5 = 1.5 (Nova the cat, welcome)Nova the cat, goodbye",
+      "temporary": "Timeline · Totalp = 3.00StartJump 1Jump 2Total−2.5−2−1.5−1+0.25+0.252 × 0.25−2 + 0.25 + 0.25 = −1.5−2 + 2 × 0.25 = −1.5−2 + 2 × 0.25 = −1.5 (Nova the cat, goodbye)Nova the cat, goodbye",
+      "restored": 7,
+      "restoredCount": 9,
+      "rejected": true
+    }
+  },
+  {
+    "name": "Temporary two-jump record restores original sequence",
+    "pass": true,
+    "detail": {
+      "count": 9,
+      "native": "Timeline · Totalp = 8.00StartJump 1Jump 2Jump 3Jump 4Jump 5Jump 6Jump 7Total11.522.533.544.555.5−0.5−0.5−0.5−0.5−0.5−0.5−0.57 × −0.55 − 0.5 − 0.5 − 0.5 − 0.5 − 0.5 − 0.5 − 0.5 = 1.55 − 7 × 0.5 = 1.55 − 7 × 0.5 = 1.5 (Nova the cat, welcome)Nova the cat, goodbye",
+      "temporary": "Timeline · Totalp = 3.00StartJump 1Jump 2Total−2.5−2−1.5−1+0.25+0.252 × 0.25−2 + 0.25 + 0.25 = −1.5−2 + 2 × 0.25 = −1.5−2 + 2 × 0.25 = −1.5 (Nova the cat, goodbye)Nova the cat, goodbye",
+      "restored": 7,
+      "restoredCount": 9,
+      "rejected": true
+    }
+  },
+  {
+    "name": "Invalid permanent configuration rejected",
+    "pass": true
+  },
+  {
+    "name": "Large timeline values use a bounded tick count",
+    "pass": true,
+    "detail": 23
+  },
+  {
+    "name": "Small decimal jumps retain their actual value",
+    "pass": true,
+    "detail": "Timeline · Totalp = 8.00StartJump 1Jump 2Jump 3Jump 4Jump 5Jump 6Jump 7Total−0.000200.00020.00040.00060.0008+0.0001+0.0001+0.0001+0.0001+0.0001+0.0001+0.00017 × 0.00010 + 0.0001 + 0.0001 + 0.0001 + 0.0001 + 0.0001 + 0.0001 + 0.0001 = 0.00077 × 0.0001 = 0.00077 × 0.0001 = 0.0007 (Nova the cat, goodbye)Nova the cat, goodbye"
+  },
+  {
+    "name": "Explore hides preset and disables size",
+    "pass": true
+  },
+  {
+    "name": "Explore jump bound constrains actual mathematical state",
+    "pass": true,
+    "detail": {
+      "startMode": "watch",
+      "start": 5,
+      "jumps": 4,
+      "size": -0.5,
+      "max": 16,
+      "speed": 1,
+      "stepMs": 1500,
+      "presets": {
+        "times": {
+          "label": "Repeated addition  3 × 4",
+          "start": 0,
+          "jumps": 3,
+          "size": 4,
+          "max": 16
+        },
+        "fives": {
+          "label": "Counting in 5s  4 × 5",
+          "start": 0,
+          "jumps": 4,
+          "size": 5,
+          "max": 24
+        },
+        "countdown": {
+          "label": "Counting back  20 − 3 × 6",
+          "start": 20,
+          "jumps": 3,
+          "size": -6,
+          "max": 20
+        },
+        "negative": {
+          "label": "Into negatives  4 − 3 × 3",
+          "start": 4,
+          "jumps": 3,
+          "size": -3,
+          "max": 8
+        },
+        "decimal": {
+          "label": "Decimal steps  4 × 0.5",
+          "start": 0,
+          "jumps": 4,
+          "size": 0.5,
+          "max": 3
+        },
+        "sequence": {
+          "label": "GCSE: linear sequence 3, 7, 11, 15 (4n − 1)",
+          "start": 3,
+          "jumps": 3,
+          "size": 4,
+          "max": 16
+        }
+      },
+      "_explore": {
+        "state": {
+          "startMode": "watch",
+          "start": 0,
+          "jumps": 3,
+          "size": 4,
+          "max": 16,
+          "speed": 1,
+          "stepMs": 1500,
+          "presets": {
+            "times": {
+              "label": "Repeated addition  3 × 4",
+              "start": 0,
+              "jumps": 3,
+              "size": 4,
+              "max": 16
+            },
+            "fives": {
+              "label": "Counting in 5s  4 × 5",
+              "start": 0,
+              "jumps": 4,
+              "size": 5,
+              "max": 24
+            },
+            "countdown": {
+              "label": "Counting back  20 − 3 × 6",
+              "start": 20,
+              "jumps": 3,
+              "size": -6,
+              "max": 20
+            },
+            "negative": {
+              "label": "Into negatives  4 − 3 × 3",
+              "start": 4,
+              "jumps": 3,
+              "size": -3,
+              "max": 8
+            },
+            "decimal": {
+              "label": "Decimal steps  4 × 0.5",
+              "start": 0,
+              "jumps": 4,
+              "size": 0.5,
+              "max": 3
+            },
+            "sequence": {
+              "label": "GCSE: linear sequence 3, 7, 11, 15 (4n − 1)",
+              "start": 3,
+              "jumps": 3,
+              "size": 4,
+              "max": 16
+            }
+          }
+        }
+      },
+      "_challenge": {
+        "entry": {}
+      }
+    }
+  },
+  {
+    "name": "Explore restrictions survive mode change",
+    "pass": true
+  },
+  {
+    "name": "Original marker keyboard cannot escape lesson bounds",
+    "pass": true,
+    "detail": "1"
+  },
+  {
+    "name": "Custom native button can be disabled",
+    "pass": true
+  },
+  {
+    "name": "Focused Explore hides irrelevant original groups",
+    "pass": true
+  },
+  {
+    "name": "F0-01 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-02 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-03 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-04 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-05 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-06 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-07 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-08 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-09 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-10 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-11 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-12 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-13 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-14 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-15 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-16 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "F0-17 native modes still mount",
+    "pass": true
+  },
+  {
+    "name": "No runtime errors",
+    "pass": true,
+    "detail": []
+  }
+]

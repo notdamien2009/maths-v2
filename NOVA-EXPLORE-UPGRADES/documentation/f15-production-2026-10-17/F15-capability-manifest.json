@@ -1,0 +1,3674 @@
+{
+ "family": "F15",
+ "revision": "2026-10-17",
+ "componentCount": 11,
+ "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+ "templateSha256": "740c125af623ab5fb5896b3e9655a6d10b093ffcda53127a6eb67eb80eef26ec",
+ "components": [
+  {
+   "id": "F15-01",
+   "name": "Pythagoras Squares-on-Sides",
+   "path": "F15/F15-01-pythagoras-squares-on-sides-PREMIUM-REVIEW.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "4a3d285bcbfd0b93675acb7d0c8e41c38a2cf878dc2e8f6d5e51deec263c5dd4",
+   "originalSha256": "79bbf1218a01eec26a6f403fa2a6c589caa7747c15ca52f8e1b21b47ad85287a",
+   "nativeSteps": 10,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "mood",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "board": [
+     "stage",
+     "st",
+     "o"
+    ],
+    "proof": [
+     "stage",
+     "st",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "preset": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y8areas": {
+     "label": "Y8-044 \u00b7 Squares from areas",
+     "a": 3,
+     "b": 4,
+     "minA": 2,
+     "maxA": 7,
+     "minB": 2,
+     "maxB": 7
+    },
+    "y8lengths": {
+     "label": "Y8-045 \u00b7 Missing side",
+     "a": 5,
+     "b": 12,
+     "minA": 3,
+     "maxA": 8,
+     "minB": 8,
+     "maxB": 15
+    },
+    "y9mastery": {
+     "label": "Y9-030 \u00b7 Mastery",
+     "a": 8,
+     "b": 15,
+     "minA": 5,
+     "maxA": 10,
+     "minB": 10,
+     "maxB": 18
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 390,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.907692307692308,
+     "p10": 11.246153846153845,
+     "count": 6,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 390,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.907692307692308,
+     "p10": 11.246153846153845,
+     "count": 6,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "board",
+     "arguments": {
+      "st": {
+       "a": 3,
+       "b": 4
+      },
+      "o": {
+       "animate": false,
+       "cap": "Challenge",
+       "tag": "CALCULATE \u00b7 VERIFY",
+       "level": 5,
+       "unknown": "c",
+       "grid": false,
+       "readout": false,
+       "pose": "think",
+       "say": "Work with square areas. Is the question asking for a length or an area?"
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A right triangle has shorter sides 3 and 4. What is the area c\u00b2 of the square on its hypotenuse?",
+    "privateAnswer": 25,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 172,
+     "total": 172,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-02",
+   "name": "Pythagoras Finder",
+   "path": "F15/F15-02-Pythagoras-Finder.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "42240a84cc6ae68409465f60d2ca72b6bc90233e5bb7e9cb82fdce912419ac42",
+   "originalSha256": "d8e4b4ae585c592d413e5d14668b189f3ba022b18ff971030785066f16c3bd55",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "board": [
+     "stage",
+     "st",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "preset": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y8areas": {
+     "label": "Y8-044 \u00b7 Compare square areas",
+     "a": 3,
+     "b": 4,
+     "unknown": "c",
+     "scene": "geometry",
+     "dp": 0,
+     "unit": "cm",
+     "minA": 2,
+     "maxA": 7,
+     "minB": 2,
+     "maxB": 7
+    },
+    "y8hyp": {
+     "label": "Y8-045 \u00b7 Find the longest side",
+     "a": 5,
+     "b": 12,
+     "unknown": "c",
+     "scene": "geometry",
+     "dp": 0,
+     "unit": "cm",
+     "minA": 3,
+     "maxA": 8,
+     "minB": 8,
+     "maxB": 15
+    },
+    "y8leg": {
+     "label": "Y8-045 \u00b7 Find a shorter side",
+     "a": 5,
+     "b": 12,
+     "unknown": "a",
+     "scene": "geometry",
+     "dp": 0,
+     "unit": "cm",
+     "minA": 3,
+     "maxA": 8,
+     "minB": 8,
+     "maxB": 15
+    },
+    "y8context": {
+     "label": "F15-04 \u00b7 Ladder against wall",
+     "a": 6,
+     "b": 8,
+     "unknown": "c",
+     "scene": "ladder",
+     "dp": 0,
+     "unit": "m",
+     "minA": 3,
+     "maxA": 9,
+     "minB": 6,
+     "maxB": 11
+    },
+    "y8ramp": {
+     "label": "F15-04 \u00b7 Access ramp",
+     "a": 5,
+     "b": 12,
+     "unknown": "b",
+     "scene": "ramp",
+     "dp": 0,
+     "unit": "m",
+     "minA": 3,
+     "maxA": 8,
+     "minB": 8,
+     "maxB": 15
+    },
+    "y9mastery": {
+     "label": "Y9-030 \u00b7 Longer problem",
+     "a": 8,
+     "b": 15,
+     "unknown": "b",
+     "scene": "geometry",
+     "dp": 0,
+     "unit": "cm",
+     "minA": 5,
+     "maxA": 11,
+     "minB": 10,
+     "maxB": 18
+    },
+    "y9decimal": {
+     "label": "Y9-030 \u00b7 Decimal values",
+     "a": 7.2,
+     "b": 9.6,
+     "unknown": "a",
+     "scene": "geometry",
+     "dp": 1,
+     "unit": "cm",
+     "minA": 5,
+     "maxA": 9,
+     "minB": 8,
+     "maxB": 12
+    },
+    "gcse": {
+     "label": "GCSE extension \u00b7 Surd / rounding",
+     "a": 7,
+     "b": 9,
+     "unknown": "c",
+     "scene": "geometry",
+     "dp": 1,
+     "unit": "cm",
+     "minA": 5,
+     "maxA": 10,
+     "minB": 7,
+     "maxB": 13
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 390,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12.569230769230769,
+     "p10": 11.246153846153845,
+     "count": 7,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 390,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12.569230769230769,
+     "p10": 11.246153846153845,
+     "count": 7,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "board",
+     "arguments": {
+      "st": {
+       "a": 3,
+       "b": 4,
+       "c": 5,
+       "unknown": "c",
+       "unit": "cm",
+       "dp": 0,
+       "scene": "geometry"
+      },
+      "o": {
+       "animate": false,
+       "cap": "Challenge",
+       "tag": "FIND THE UNKNOWN",
+       "level": 3,
+       "work": false,
+       "readout": false,
+       "pose": "think",
+       "say": "Decide which side is the hypotenuse before you add or subtract square areas."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The perpendicular sides are 3 cm and 4 cm. Find the hypotenuse length c in cm.",
+    "privateAnswer": 5,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 70,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 170,
+     "total": 170,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-06",
+   "name": "Trig Ratio Builder",
+   "path": "F15/F15-06-Trig-Ratio-Builder.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "c4ecd85fb74e368de67f26a3bd0b80edbb890d277f7ea6942bd08b9fd58e00cb",
+   "originalSha256": "894eafd5512439feb6bf306e8e0cffe8125fcdf68db4e24be9ae8a3725c21074",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "scene": [
+     "stage",
+     "st",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "current": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    },
+    "st": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "stepRender.st": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y9ratios": {
+     "label": "Y9-031 \u00b7 3\u20134\u20135 side ratios",
+     "a": 4,
+     "o": 3,
+     "unit": "cm",
+     "minA": 3,
+     "maxA": 6,
+     "minO": 2,
+     "maxO": 5,
+     "target": "sin",
+     "kind": "ratio"
+    },
+    "y9similar": {
+     "label": "Y9-031 \u00b7 Similar triangles \u00d72",
+     "a": 8,
+     "o": 6,
+     "unit": "cm",
+     "minA": 6,
+     "maxA": 10,
+     "minO": 4,
+     "maxO": 8,
+     "target": "cos",
+     "kind": "similar"
+    },
+    "y9angles": {
+     "label": "Y9-031 \u00b7 Change the angle",
+     "a": 6,
+     "o": 6,
+     "unit": "cm",
+     "minA": 5,
+     "maxA": 8,
+     "minO": 4,
+     "maxO": 8,
+     "target": "tan",
+     "kind": "ratio"
+    },
+    "y9sine": {
+     "label": "Y9-032 \u00b7 Sine finds opposite",
+     "a": 10.392304845413264,
+     "o": 6,
+     "unit": "cm",
+     "minA": 6,
+     "maxA": 12,
+     "minO": 4,
+     "maxO": 9,
+     "target": "sin",
+     "kind": "solve",
+     "unknown": "o"
+    },
+    "y9cosine": {
+     "label": "Y9-032 \u00b7 Cosine finds adjacent",
+     "a": 5,
+     "o": 8.660254037844386,
+     "unit": "cm",
+     "minA": 3,
+     "maxA": 9,
+     "minO": 5,
+     "maxO": 12,
+     "target": "cos",
+     "kind": "solve",
+     "unknown": "a"
+    },
+    "y9tangent": {
+     "label": "Y9-032 \u00b7 Tangent finds opposite",
+     "a": 8,
+     "o": 5.601660305677678,
+     "unit": "m",
+     "minA": 6,
+     "maxA": 12,
+     "minO": 3,
+     "maxO": 11,
+     "target": "tan",
+     "kind": "solve",
+     "unknown": "o"
+    },
+    "gcse": {
+     "label": "GCSE \u00b7 Find hypotenuse with sine",
+     "a": 8.86597868081248,
+     "o": 9.507598121049217,
+     "unit": "cm",
+     "minA": 6,
+     "maxA": 11,
+     "minO": 6,
+     "maxO": 12,
+     "target": "sin",
+     "kind": "solve",
+     "unknown": "h"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 390,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.907692307692308,
+     "p10": 10.584615384615384,
+     "count": 8,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 390,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.907692307692308,
+     "p10": 10.584615384615384,
+     "count": 8,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "scene",
+     "arguments": {
+      "st": {
+       "a": 4,
+       "o": 3,
+       "unit": "cm",
+       "target": "sin",
+       "kind": "ratio"
+      },
+      "o": {
+       "animate": false,
+       "step": 4,
+       "pose": "think",
+       "say": "Choose the correct sides in the ratio before entering your answer."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "For \u03b8, opposite = 3 cm, adjacent = 4 cm, hypotenuse = 5 cm. Find sin \u03b8 to 2 decimal places.",
+    "privateAnswer": 0.6,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct.",
+    "tolerance": 0.005
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 172,
+     "total": 172,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-07",
+   "name": "Angle Slider and Ratio Table",
+   "path": "F15/F15-07-Angle-Slider-and-Ratio-Table.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "1f991d7a7c795c53161a295f8f0e092933ce93932fa03d71be0f3517be780a6a",
+   "originalSha256": "fa1bc31ee02c1f1aaf81bbe903efdddc23313c5a04690b6c1f43c0d948b66754",
+   "nativeSteps": 14,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "graph": [
+     "stage",
+     "st",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "stepRender.st": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "y9ratios": {
+     "label": "Y9-031 \u00b7 Explore angle ratios",
+     "theta": 35,
+     "c": 10,
+     "min": 15,
+     "max": 75,
+     "unit": "cm",
+     "kind": "angle"
+    },
+    "y9compare": {
+     "label": "Y9-031 \u00b7 Compare 30\u00b0 and 60\u00b0",
+     "theta": 30,
+     "c": 12,
+     "min": 15,
+     "max": 75,
+     "unit": "cm",
+     "kind": "compare"
+    },
+    "y9scale": {
+     "label": "Y9-031 \u00b7 Similar triangles (\u00d72)",
+     "theta": 45,
+     "c": 8,
+     "min": 15,
+     "max": 75,
+     "unit": "cm",
+     "kind": "similar"
+    },
+    "y9invsin": {
+     "label": "Y9-033 \u00b7 Inverse sine",
+     "theta": 30,
+     "c": 10,
+     "min": 15,
+     "max": 75,
+     "unit": "cm",
+     "kind": "inverse",
+     "ratio": "sin"
+    },
+    "y9invcos": {
+     "label": "Y9-033 \u00b7 Inverse cosine",
+     "theta": 60,
+     "c": 10,
+     "min": 15,
+     "max": 75,
+     "unit": "cm",
+     "kind": "inverse",
+     "ratio": "cos"
+    },
+    "y9invtan": {
+     "label": "Y9-033 \u00b7 Inverse tangent",
+     "theta": 45,
+     "c": 10,
+     "min": 15,
+     "max": 75,
+     "unit": "cm",
+     "kind": "inverse",
+     "ratio": "tan"
+    },
+    "gcse": {
+     "label": "GCSE \u00b7 Non-special angle",
+     "theta": 37,
+     "c": 14,
+     "min": 15,
+     "max": 75,
+     "unit": "m",
+     "kind": "inverse",
+     "ratio": "tan"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 11.671428571428573,
+     "count": 41,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 11.671428571428573,
+     "count": 41,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "graph",
+     "arguments": {
+      "st": {
+       "theta": 30,
+       "c": 10,
+       "unit": "cm",
+       "ratio": "sin",
+       "placed": {}
+      },
+      "o": {
+       "animate": false,
+       "step": 10,
+       "pose": "think",
+       "say": "Read opposite, adjacent and hypotenuse relative to the orange angle."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "At \u03b8 = 30\u00b0, find sin \u03b8 to 2 decimal places.",
+    "privateAnswer": 0.5,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct.",
+    "tolerance": 0.005
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 172,
+     "total": 172,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-08",
+   "name": "Unit Circle Explorer",
+   "path": "F15/F15-08-Unit-Circle-Explorer.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "f1e048347ee1448141389af2d37eae49e395028cd68b8e322ea3ac83d4ed41d6",
+   "originalSha256": "e6e4062312356bb5f2bcc46cadcfa4d7acbe1db9967e4f895166845c1d58197e",
+   "nativeSteps": 17,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "theta",
+     "say"
+    ]
+   ],
+   "draws": {
+    "scene": [
+     "stage",
+     "st",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "quadrants": {
+     "label": "All four quadrants",
+     "theta": 45,
+     "min": 0,
+     "max": 360,
+     "kind": "explorer"
+    },
+    "y9first": {
+     "label": "Link to Year 9 trig \u00b7 30\u00b0",
+     "theta": 30,
+     "min": 0,
+     "max": 360,
+     "kind": "trig"
+    },
+    "axes": {
+     "label": "Axis landmarks \u00b7 90\u00b0",
+     "theta": 90,
+     "min": 0,
+     "max": 360,
+     "kind": "axes"
+    },
+    "second": {
+     "label": "Quadrant II \u00b7 120\u00b0",
+     "theta": 120,
+     "min": 0,
+     "max": 360,
+     "kind": "signs"
+    },
+    "third": {
+     "label": "Quadrant III \u00b7 225\u00b0",
+     "theta": 225,
+     "min": 0,
+     "max": 360,
+     "kind": "signs"
+    },
+    "fourth": {
+     "label": "Quadrant IV \u00b7 315\u00b0",
+     "theta": 315,
+     "min": 0,
+     "max": 360,
+     "kind": "signs"
+    },
+    "gcse": {
+     "label": "GCSE extension \u00b7 210\u00b0",
+     "theta": 210,
+     "min": 0,
+     "max": 360,
+     "kind": "extension"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 9.521428571428572,
+     "count": 20,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 9.521428571428572,
+     "count": 20,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "scene",
+     "arguments": {
+      "st": {
+       "theta": 30,
+       "placed": {}
+      },
+      "o": {
+       "animate": false,
+       "step": 16,
+       "pose": "think",
+       "say": "Read the signed coordinates. Check the quadrant before you answer."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "At 30\u00b0, what is the y-coordinate of the unit-circle point? Give 2 decimal places.",
+    "privateAnswer": 0.5,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct.",
+    "tolerance": 0.005
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 173,
+     "total": 173,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-09",
+   "name": "Trig Solver",
+   "path": "F15/F15-09-Trig-Solver.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "881a229d396377fafe7ccff735ac52037528ab56fc166ee85a8fd82b4be49985",
+   "originalSha256": "8f4cee97e79e7838b3d8d192e090fb21d4f93922cc01420f4f25b876dc85a56d",
+   "nativeSteps": 14,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "st",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "clone",
+     "argCount": 1
+    },
+    "stepRender.st": {
+     "kind": "factory",
+     "factory": "clone",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "sinOpp": {
+     "label": "Y9 \u00b7 Sine finds opposite",
+     "mode": "side",
+     "theta": 30,
+     "known": "h",
+     "given": 12,
+     "unknown": "o",
+     "unit": "cm",
+     "dp": 1
+    },
+    "cosAdj": {
+     "label": "Y9 \u00b7 Cosine finds adjacent",
+     "mode": "side",
+     "theta": 60,
+     "known": "h",
+     "given": 14,
+     "unknown": "a",
+     "unit": "cm",
+     "dp": 1
+    },
+    "tanOpp": {
+     "label": "Y9 \u00b7 Tangent finds opposite",
+     "mode": "side",
+     "theta": 35,
+     "known": "a",
+     "given": 8,
+     "unknown": "o",
+     "unit": "m",
+     "dp": 1
+    },
+    "sinHyp": {
+     "label": "Y9 \u00b7 Sine finds hypotenuse",
+     "mode": "side",
+     "theta": 40,
+     "known": "o",
+     "given": 7,
+     "unknown": "h",
+     "unit": "cm",
+     "dp": 1
+    },
+    "cosHyp": {
+     "label": "Y9 \u00b7 Cosine finds hypotenuse",
+     "mode": "side",
+     "theta": 55,
+     "known": "a",
+     "given": 6,
+     "unknown": "h",
+     "unit": "m",
+     "dp": 1
+    },
+    "tanAdj": {
+     "label": "Y9 \u00b7 Tangent finds adjacent",
+     "mode": "side",
+     "theta": 38,
+     "known": "o",
+     "given": 9,
+     "unknown": "a",
+     "unit": "cm",
+     "dp": 1
+    },
+    "inverseSin": {
+     "label": "Y9 \u00b7 Inverse sine finds angle",
+     "mode": "angle",
+     "a": 8,
+     "o": 6,
+     "known": "o",
+     "second": "h",
+     "unit": "cm",
+     "dp": 1
+    },
+    "inverseCos": {
+     "label": "Y9 \u00b7 Inverse cosine finds angle",
+     "mode": "angle",
+     "a": 8,
+     "o": 10.246950765959598,
+     "known": "a",
+     "second": "h",
+     "unit": "cm",
+     "dp": 1
+    },
+    "inverseTan": {
+     "label": "Y9 \u00b7 Inverse tangent finds angle",
+     "mode": "angle",
+     "a": 9,
+     "o": 7,
+     "known": "o",
+     "second": "a",
+     "unit": "m",
+     "dp": 1
+    },
+    "gcse": {
+     "label": "GCSE \u00b7 Divide to find hypotenuse",
+     "mode": "side",
+     "theta": 47,
+     "known": "a",
+     "given": 9,
+     "unknown": "h",
+     "unit": "cm",
+     "dp": 2
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.057142857142857,
+     "p10": 9.214285714285715,
+     "count": 12,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.057142857142857,
+     "p10": 9.214285714285715,
+     "count": 12,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "st": {
+       "label": "Sine finds opposite",
+       "mode": "side",
+       "theta": 30,
+       "known": "h",
+       "given": 12,
+       "unknown": "o",
+       "unit": "cm",
+       "dp": 1
+      },
+      "opt": {
+       "animate": false,
+       "step": 7,
+       "pose": "think",
+       "say": "Identify x or \u03b8, then select the ratio containing the known sides."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Hypotenuse 12 cm, \u03b8 = 30\u00b0. Find the opposite side in cm to 1 decimal place.",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct.",
+    "tolerance": 0.05
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 172,
+     "total": 172,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-10",
+   "name": "Special Triangle Values",
+   "path": "F15/NOVA-F15-10-Special-Triangle-Values.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "d53ecb68ba68f609f977aed46d197c40012ca802bbe80e1e2bcf667b96278d39",
+   "originalSha256": "14baca633bdd91f4d9b7acab2df4ced4fec8261c0167b339382e7c3ad92ee870",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "st",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "clone",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "equilateral": {
+     "label": "30\u00b0 \u00b7 Split an equilateral triangle",
+     "family": "3060",
+     "angle": 30,
+     "scale": 1
+    },
+    "angle60": {
+     "label": "60\u00b0 \u00b7 The other acute angle",
+     "family": "3060",
+     "angle": 60,
+     "scale": 1
+    },
+    "square": {
+     "label": "45\u00b0 \u00b7 Diagonal of a square",
+     "family": "4545",
+     "angle": 45,
+     "scale": 1
+    },
+    "scaled30": {
+     "label": "Year 9 \u00b7 Scaled 30\u00b0 sides",
+     "family": "3060",
+     "angle": 30,
+     "scale": 1.2
+    },
+    "scaled45": {
+     "label": "Year 9 \u00b7 Scaled 45\u00b0 sides",
+     "family": "4545",
+     "angle": 45,
+     "scale": 1.15
+    },
+    "gcse30": {
+     "label": "GCSE \u00b7 Exact 30\u00b0 ratios",
+     "family": "3060",
+     "angle": 30,
+     "scale": 1
+    },
+    "gcse60": {
+     "label": "GCSE \u00b7 Exact 60\u00b0 ratios",
+     "family": "3060",
+     "angle": 60,
+     "scale": 1
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12,
+     "p10": 9.6,
+     "count": 10,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12,
+     "p10": 9.6,
+     "count": 10,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "st": {
+       "family": "3060",
+       "angle": 30,
+       "scale": 1
+      },
+      "opt": {
+       "animate": false,
+       "step": 7,
+       "pose": "think",
+       "say": "Identify the reference angle and the exact side ratio."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The opposite side of a 30\u00b0 right triangle is 6 cm. Find its hypotenuse in cm.",
+    "privateAnswer": 12,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-11",
+   "name": "Circle Parts Diagram",
+   "path": "F15/F15-11-Circle-Parts-Diagram.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "b39290b9367f23abeed436cb5e8c9321738c35e4fae12fe10a78c7db7e5a3032",
+   "originalSha256": "599135e766166e5c30092797fdd317417ed9ead6c57a0738e27e7a3ea39633e6",
+   "nativeSteps": 16,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "st",
+     "op"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "events",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "year8": {
+     "label": "Year 8 \u00b7 Circle vocabulary",
+     "radius": 5,
+     "theta": 30,
+     "delta": 115,
+     "emphasis": "all"
+    },
+    "y8circ": {
+     "label": "Year 8 \u00b7 Circumference from radius",
+     "radius": 4,
+     "theta": 25,
+     "delta": 110,
+     "emphasis": "circumference"
+    },
+    "y8diam": {
+     "label": "Year 8 \u00b7 Diameter and radius",
+     "radius": 6,
+     "theta": 35,
+     "delta": 105,
+     "emphasis": "diameter"
+    },
+    "y9parts": {
+     "label": "Year 9 \u00b7 Chord, sector, segment",
+     "radius": 5,
+     "theta": 48,
+     "delta": 100,
+     "emphasis": "sector"
+    },
+    "y9tangent": {
+     "label": "Year 9 \u00b7 Tangent perpendicular",
+     "radius": 7,
+     "theta": 18,
+     "delta": 110,
+     "emphasis": "tangent"
+    },
+    "y9reverse": {
+     "label": "Year 9 \u00b7 Reverse circumference",
+     "radius": 8,
+     "theta": 35,
+     "delta": 115,
+     "emphasis": "circumference"
+    },
+    "extension": {
+     "label": "GCSE \u00b7 Arc and sector extension",
+     "radius": 6,
+     "theta": 10,
+     "delta": 90,
+     "emphasis": "sector"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": null,
+     "p10": null,
+     "count": 0,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": null,
+     "p10": null,
+     "count": 0,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "st": {
+       "label": "Year 8 \u00b7 Circle vocabulary",
+       "radius": 5,
+       "theta": 30,
+       "delta": 90,
+       "emphasis": "all"
+      },
+      "op": {
+       "animate": false,
+       "step": 3,
+       "challenge": true,
+       "pose": "think",
+       "say": "Identify exactly what the question provides and asks for. Keep units and rounding correct."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A circle has radius 5 cm. What is its diameter in cm?",
+    "privateAnswer": 10,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-12",
+   "name": "Circle Theorems Explorer",
+   "path": "F15/F15-12-Circle-Theorems-Explorer.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "0592443f8901cc8d82e6b87c60a649f77f7dc536c8d7921cb3f47654fb839939",
+   "originalSha256": "6679c6ca3ffbcaffa38a665e4f9ac77f2cbc17eba014061b411280a34587354b",
+   "nativeSteps": 16,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ],
+    [
+     "name",
+     "pose",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "st",
+     "opt"
+    ]
+   },
+   "tables": [
+    "PRESETS",
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "centre": {
+     "label": "Centre and circumference",
+     "kind": "centre",
+     "arc": 130,
+     "p": 72
+    },
+    "segment": {
+     "label": "Angles in the same segment",
+     "kind": "segment",
+     "arc": 130,
+     "p": 65
+    },
+    "semicircle": {
+     "label": "Angle in a semicircle",
+     "kind": "semicircle",
+     "arc": 180,
+     "p": 80
+    },
+    "cyclic": {
+     "label": "Cyclic quadrilateral",
+     "kind": "cyclic",
+     "arc": 130,
+     "p": 130
+    },
+    "tangent": {
+     "label": "Tangent meets radius",
+     "kind": "tangent",
+     "arc": 130,
+     "p": 35
+    },
+    "alternate": {
+     "label": "Alternate segment theorem",
+     "kind": "alternate",
+     "arc": 130,
+     "p": 72
+    },
+    "gcse": {
+     "label": "GCSE combined reasoning",
+     "kind": "centre",
+     "arc": 116,
+     "p": 110
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 10.799999999999999,
+     "count": 4,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 10.799999999999999,
+     "count": 4,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "st": {
+       "label": "Centre and circumference",
+       "kind": "centre",
+       "arc": 130,
+       "p": 72
+      },
+      "opt": {
+       "timeline": false,
+       "animate": false,
+       "step": 15,
+       "challenge": true,
+       "kind": "centre",
+       "pose": "think",
+       "say": "Identify which theorem applies, then use the stated angle."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The centre angle is 130\u00b0. Find the angle at the circumference on the same arc, in degrees.",
+    "privateAnswer": 65,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 172,
+     "total": 172,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-13",
+   "name": "Sine and Cosine Rule",
+   "path": "F15/F15-13-Sine-and-Cosine-Rule.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "f24d465ce8589091e605d083d2aac92c55ec344f47c6d7826e162a4df3ec9291",
+   "originalSha256": "c4a31ccbaf39e06b189c4de108e7a44b694267abbafc89a8f618e0a5a5c8885a",
+   "nativeSteps": 16,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ],
+    [
+     "name",
+     "pose",
+     "say",
+     "rule"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "st",
+     "opt"
+    ]
+   },
+   "tables": [
+    "PRESETS",
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "sine-aas": {
+     "label": "Sine rule \u00b7 two angles",
+     "method": "sine",
+     "b": 10,
+     "A": 42,
+     "B": 67,
+     "find": "a",
+     "unit": "cm"
+    },
+    "sine-second": {
+     "label": "Sine rule \u00b7 second triangle",
+     "method": "sine",
+     "b": 12,
+     "A": 35,
+     "B": 74,
+     "find": "c",
+     "unit": "cm"
+    },
+    "sine-angle": {
+     "label": "Sine rule \u00b7 find an angle",
+     "method": "sine",
+     "b": 8,
+     "A": 53,
+     "B": 32.169359407197355,
+     "find": "B",
+     "unit": "cm"
+    },
+    "cosine-sas": {
+     "label": "Cosine rule \u00b7 two sides + angle",
+     "method": "cosine",
+     "b": 11,
+     "c": 8,
+     "A": 58,
+     "find": "a",
+     "unit": "cm"
+    },
+    "cosine-sss": {
+     "label": "Cosine rule \u00b7 three sides",
+     "method": "cosine",
+     "a": 8,
+     "b": 10,
+     "c": 12,
+     "find": "A",
+     "unit": "cm"
+    },
+    "cosine-obtuse": {
+     "label": "Cosine rule \u00b7 obtuse angle",
+     "method": "cosine",
+     "b": 9,
+     "c": 7,
+     "A": 117,
+     "find": "a",
+     "unit": "cm"
+    },
+    "cosine-angle": {
+     "label": "Cosine rule \u00b7 angle reasoning",
+     "method": "cosine",
+     "a": 13,
+     "b": 12,
+     "c": 9,
+     "find": "A",
+     "unit": "cm"
+    },
+    "gcse-ambiguous": {
+     "label": "GCSE \u00b7 two possible triangles",
+     "method": "sine",
+     "a": 10,
+     "b": 12,
+     "A": 35,
+     "find": "B",
+     "ambiguous": true,
+     "unit": "cm"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 12,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 12,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "st": {
+       "label": "Sine rule \u00b7 two angles",
+       "method": "sine",
+       "b": 10,
+       "A": 42,
+       "B": 67,
+       "find": "a",
+       "unit": "cm"
+      },
+      "opt": {
+       "animate": false,
+       "challenge": true,
+       "given": [
+        "A",
+        "B",
+        "b"
+       ],
+       "step": 0,
+       "kind": "sine",
+       "pose": "think",
+       "say": "Choose the correct rule, keep full calculator precision, and round only at the end."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "In triangle ABC, A = 42\u00b0, B = 67\u00b0, b = 10 cm. Find a in cm to 2 decimal places.",
+    "privateAnswer": 7.27,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct.",
+    "tolerance": 0.005
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 173,
+     "total": 173,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F15-14",
+   "name": "3D Pythagoras and Trigonometry",
+   "path": "F15/F15-14-3D-Pythagoras-and-Trigonometry.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "bc7b98aa9a7eee814368716188b19c2c4aeb306590d76fe35eebbf17c80b7cfc",
+   "originalSha256": "8bf6c90dcaf91af22047510f9421f4de05ca9e9f3bc7a03362261c53f5a53b18",
+   "nativeSteps": 18,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ],
+    [
+     "name",
+     "pose",
+     "say"
+    ]
+   ],
+   "draws": {
+    "draw": [
+     "stage",
+     "p",
+     "opt"
+    ]
+   },
+   "tables": [
+    "PRESETS",
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function; each argument object is MERGED over the native step-0 argument (keys given replace, keys omitted keep the native value), so records override every key the drawing reads (e.g. F15-12 timeline:false); the runtime hides every number token numerically equivalent to the answer while the question is unanswered; validated by NovaF15Contracts; see F15-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "cuboid-345": {
+     "label": "Starter \u00b7 3\u20134\u20135 base",
+     "L": 4,
+     "W": 3,
+     "H": 5,
+     "zoom": 1.55,
+     "ranges": {
+      "L": [
+       3,
+       6
+      ],
+      "W": [
+       2,
+       4
+      ],
+      "H": [
+       3,
+       6
+      ]
+     },
+     "focus": "both",
+     "unit": "cm"
+    },
+    "space-862": {
+     "label": "Space diagonal \u00b7 8 \u00d7 6 \u00d7 2",
+     "L": 8,
+     "W": 6,
+     "H": 2,
+     "zoom": 1.07,
+     "ranges": {
+      "L": [
+       6,
+       10
+      ],
+      "W": [
+       4,
+       8
+      ],
+      "H": [
+       2,
+       4
+      ]
+     },
+     "focus": "space",
+     "unit": "cm"
+    },
+    "base-869": {
+     "label": "Base Pythagoras \u00b7 8 \u00d7 6 \u00d7 9",
+     "L": 8,
+     "W": 6,
+     "H": 9,
+     "zoom": 0.91,
+     "ranges": {
+      "L": [
+       6,
+       10
+      ],
+      "W": [
+       4,
+       8
+      ],
+      "H": [
+       7,
+       9
+      ]
+     },
+     "focus": "base",
+     "unit": "cm"
+    },
+    "gcse-angle": {
+     "label": "GCSE \u00b7 Angle of elevation",
+     "L": 9,
+     "W": 4,
+     "H": 6,
+     "zoom": 1,
+     "ranges": {
+      "L": [
+       7,
+       10
+      ],
+      "W": [
+       3,
+       6
+      ],
+      "H": [
+       4,
+       8
+      ]
+     },
+     "focus": "angle",
+     "unit": "cm"
+    },
+    "gcse-short": {
+     "label": "GCSE \u00b7 Missing height",
+     "L": 6,
+     "W": 8,
+     "H": 5,
+     "zoom": 1.08,
+     "ranges": {
+      "L": [
+       4,
+       8
+      ],
+      "W": [
+       6,
+       8
+      ],
+      "H": [
+       3,
+       7
+      ]
+     },
+     "focus": "reverse",
+     "unit": "cm"
+    },
+    "gcse-room": {
+     "label": "GCSE \u00b7 Room corner to corner",
+     "L": 10,
+     "W": 7,
+     "H": 4,
+     "zoom": 0.97,
+     "ranges": {
+      "L": [
+       8,
+       11
+      ],
+      "W": [
+       5,
+       8
+      ],
+      "H": [
+       3,
+       6
+      ]
+     },
+     "focus": "space",
+     "unit": "m"
+    },
+    "gcse-cube": {
+     "label": "GCSE \u00b7 Cube diagonals",
+     "L": 6,
+     "W": 6,
+     "H": 6,
+     "zoom": 1.03,
+     "ranges": {
+      "L": [
+       4,
+       8
+      ],
+      "W": [
+       4,
+       8
+      ],
+      "H": [
+       4,
+       8
+      ]
+     },
+     "focus": "both",
+     "unit": "cm"
+    },
+    "extension": {
+     "label": "Extension \u00b7 Vertical angle",
+     "L": 7,
+     "W": 5,
+     "H": 8,
+     "zoom": 0.99,
+     "ranges": {
+      "L": [
+       5,
+       8
+      ],
+      "W": [
+       4,
+       6
+      ],
+      "H": [
+       6,
+       9
+      ]
+     },
+     "focus": "vertical",
+     "unit": "cm"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 440,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.14090909090909,
+     "p10": 11.14090909090909,
+     "count": 2,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 440,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.14090909090909,
+     "p10": 11.14090909090909,
+     "count": 2,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "draw",
+     "arguments": {
+      "p": {
+       "label": "Starter \u00b7 3\u20134\u20135 base",
+       "L": 4,
+       "W": 3,
+       "H": 5,
+       "zoom": 1.55,
+       "ranges": {
+        "L": [
+         3,
+         6
+        ],
+        "W": [
+         2,
+         4
+        ],
+        "H": [
+         3,
+         6
+        ]
+       },
+       "focus": "both",
+       "unit": "cm"
+      },
+      "opt": {
+       "animate": false,
+       "challenge": true,
+       "step": 0,
+       "given": [
+        "L",
+        "W",
+        "H"
+       ],
+       "pose": "think",
+       "say": "Use two perpendicular triangles. Your target value is hidden until you check."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A cuboid is 4 by 3 by 5 cm. Calculate its space diagonal in cm to 2 decimal places.",
+    "privateAnswer": 7.07,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the method shown.",
+    "wrongFeedback": "Check which measurements you used and your rounding.",
+    "correctFeedback": "Correct.",
+    "tolerance": 0.005
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f15Production": {
+     "passed": 172,
+     "total": 172,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  }
+ ]
+}

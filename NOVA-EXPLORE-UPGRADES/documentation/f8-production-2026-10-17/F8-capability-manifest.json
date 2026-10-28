@@ -1,0 +1,1033 @@
+{
+ "family": "F8",
+ "revision": "2026-10-17",
+ "componentCount": 18,
+ "upgradedCount": 18,
+ "challengeReadyCount": 18,
+ "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+ "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+ "components": [
+  {
+   "id": "F8-01",
+   "name": "Step by step working animator",
+   "path": "F8/F8-01-step-by-step-working-animator.html",
+   "engineId": "F8-01",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "7be312bb92bac559c83a5ebec655ca4e6d53599ac1994b8f4720726d2722a300",
+   "originalSha256": "e81e8121367514c81d13105eb92cd24df261e0e8e63799e7b4bdc4d916610331",
+   "nativeSteps": 7,
+   "draws": {
+    "surface": [
+     "stage"
+    ],
+    "renderStage": [
+     "stage",
+     "opts"
+    ]
+   },
+   "tables": [
+    "presets",
+    "pose",
+    "STEPS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. Working lines, operations and focus captions are lesson data checked for equivalence line by line. Teacher narration is the native preset text, which is reused unchanged, so override presets should keep the same kind of method. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-02",
+   "name": "Inverse operations flowchart",
+   "path": "F8/F8-02-inverse-operations-flowchart.html",
+   "engineId": "F8-03",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "ef9c6855bc5b2d4442c777658d57d371067c37aadd03bdf8a92540755793553a",
+   "originalSha256": "a78f6225263bde6d98e0a07a2472591e436de8745525b1f6ae8e0d019d089fee",
+   "nativeSteps": 5,
+   "draws": {},
+   "tables": [
+    "operations",
+    "lessons",
+    "STEPS",
+    "F802_PRESETS",
+    "F802_STEPS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 12.9,
+     "p10": 11.73
+    },
+    "fresh": {
+     "median": 12.9,
+     "p10": 11.73
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. The machine output is computed from the gears. The inverse route has to be the true inverse of the forward route. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 2 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-03",
+   "name": "Function machine",
+   "path": "F8/F8-03-function-machine.html",
+   "engineId": "F8-03",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "0af7a2f29b9f0f12a69feacad34e7264a52301c80299b823c652c4f2f1862a47",
+   "originalSha256": "102a8adca4f3d1724dbd0a9236d010c1392b1ce5da07478e9a6828dce536081e",
+   "nativeSteps": 4,
+   "draws": {},
+   "tables": [
+    "operations",
+    "lessons",
+    "STEPS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 14.66,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 14.66,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. The concealed view shows the given input (or given output for reverse questions) and \"?\" for the result. The Guided example input (`chosen`) is lesson data. Challenge Q1/Q2 now use guided input boxes. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-04",
+   "name": "Two way function machine",
+   "path": "F8/F8-04-two-way-function-machine.html",
+   "engineId": "F8-03",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "f848f495c304a0b6dc598f61f3e89fb729ece973e14dd75ec811b3c1b4d38b81",
+   "originalSha256": "91d678c40ffb98e8f2fe83d57b52817abf472d921a86d2b0b8e02bec976af2df",
+   "nativeSteps": 6,
+   "draws": {},
+   "tables": [
+    "operations",
+    "lessons",
+    "STEPS",
+    "F804_PRESETS",
+    "F804_STEPS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 12.31,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 12.31,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Runs on the F8-03 engine configuration (engine id F8-03). Concealed view is the native Challenge view for the lesson preset. The challenge input is drawn and the output stays hidden. The Guided example uses `input`. Challenge Q1/Q2 now use guided input boxes. An earlier full run had one flaky \"two original views mounted\" failure (the two QA questions drew the same text); after the question set was fixed it reran clean at 47/47 twice. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 2 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-05",
+   "name": "Both sides equation solver",
+   "path": "F8/F8-05-both-sides-equation-solver.html",
+   "engineId": "F8-05",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "124a8375daa65f0b8b5c46da607b2e419c624d04ac2ec7a28a036e70a4f06060",
+   "originalSha256": "430d33255c3fad6bf06cf438b4166d86b788adec917beb6b45b26f1482314660",
+   "nativeSteps": 6,
+   "draws": {
+    "draw": [
+     "stage",
+     "opts"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11.73,
+     "p10": 11.14
+    },
+    "fresh": {
+     "median": 11.73,
+     "p10": 11.14
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. The operation tray shows every pool operation label (for example \"− 6\"), so questions are written so that the answer is not a tray number. Row texts are checked against their a, b, c, d coefficients. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-06",
+   "name": "Rearranging formulae",
+   "path": "F8/F8-06-rearranging-formulae.html",
+   "engineId": "F8-06",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "a5b7dfdf634c6a8899d1903b1b72642de984fbe7a4dba790f822695b246e20cf",
+   "originalSha256": "21d58e3b4cb77d5dbd961c0bdb2a7042bf8ec752cf0863602bf014306b27fc3c",
+   "nativeSteps": 6,
+   "draws": {
+    "draw": [
+     "stage",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11.73,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11.73,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. Formula rearrangement is checked with the engine's own validate(make()) routine. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-07",
+   "name": "Expression builder",
+   "path": "F8/F8-07-expression-builder.html",
+   "engineId": "F8-07",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "bfe5c84dc60fa5e55b9908c0f1bce4a2a973ed1f866b98af5e9ebeb760b6065e",
+   "originalSha256": "22d61ced68a9f532ec283088bb44c0dadb6df7d49eb1b651f824b7fb04308b70",
+   "nativeSteps": 6,
+   "draws": {
+    "draw": [
+     "stage",
+     "o"
+    ]
+   },
+   "tables": [
+    "PRESETS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 13.49,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 13.49,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. The token expression is evaluated with the given values. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-08",
+   "name": "Equivalence checker",
+   "path": "F8/F8-08-equivalence-checker.html",
+   "engineId": "F8-08",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "77f5e870745bd91c69e8ada3eae7e047528cb8c54e9a59bd5ce1e5830f49618e",
+   "originalSha256": "11306de1e4d6e2ba2bbed2546d46346291b17fc87f5b28eb5ade684ab281fe4e",
+   "nativeSteps": 6,
+   "draws": {
+    "draw": [
+     "stage",
+     "o"
+    ]
+   },
+   "tables": [
+    "PRESETS",
+    "VALUES"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 13.49,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 13.49,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. The equivalence verdict is checked against sample-based evaluation of both sides. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-09",
+   "name": "Substitution table",
+   "path": "F8/F8-09-substitution-table.html",
+   "engineId": "F8-09",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "96c86fd8ac384b9cea78d723960e9245d7c2042e3e2abb6b03c18d842e875702",
+   "originalSha256": "8262f891cc8ff594b1b11ae4a3e696ee4a6f0471d183dd46fd17a4c8264682c4",
+   "nativeSteps": 7,
+   "draws": {
+    "draw": [
+     "stage",
+     "o"
+    ]
+   },
+   "tables": [
+    "input",
+    "STAGE_NAMES"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 16.42,
+     "p10": 11.14
+    },
+    "fresh": {
+     "median": 16.42,
+     "p10": 11.14
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. The value tray contains native distractor values, so questions avoid answers that equal a tray value. The rule text is checked against value(). Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-10",
+   "name": "Simultaneous equations",
+   "path": "F8/F8-10-simultaneous-equations.html",
+   "engineId": "F8-10",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "b8ce1b0f5712cfd3c4c8af5e2c033a882a444e5da041bd2253e84d23b63c9556",
+   "originalSha256": "0d8b7ba1de9205a9dcbe571f85c2ab52de1481cd95c947545db8595d0d707f2e",
+   "nativeSteps": 7,
+   "draws": {
+    "safePose": [
+     "stage",
+     "pose",
+     "message"
+    ],
+    "draw": [
+     "stage",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STAGES"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. By native design, the graph shows both lines. Pupils can read the intersection from the grid, so this Challenge practises reading and checking a solution rather than hiding it. The intersection must be on the drawable grid (half steps). challengeReady is true because the F0-12 flow works, but the answer can be read off the graph. Treat it as a graphical-solution exercise. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 2 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-11",
+   "name": "Inequality solver",
+   "path": "F8/F8-11-inequality-solver.html",
+   "engineId": "F8-11",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "a80a4ad0f7a94beb32ec3350ad11e60e9bf84bcb2bd507c09e018ec475c243b0",
+   "originalSha256": "6fad50d752dde2930b1059c68f16798cf7602858f2595f7a4df6bbda44763de6",
+   "nativeSteps": 7,
+   "draws": {
+    "mascot": [
+     "stage",
+     "pose",
+     "caption"
+    ],
+    "drawing": [
+     "stage",
+     "o"
+    ]
+   },
+   "tables": [
+    "BEATS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. The step strings and the original inequality are checked against accepts() over −9 to 9. The native reason captions are reused; they describe the operation words (for example \"subtract three\"), so overrides should keep the same operations. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 2 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-12",
+   "name": "Quadratic solve routes",
+   "path": "F8/F8-12-quadratic-solve-routes.html",
+   "engineId": "F8-12",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "7c8707dcbeee474bb8145768b4416814e1fb819efcb9459bfea06caed49fb087",
+   "originalSha256": "531988104c32183498d70f2ccc74e81f23bbbf4cfdbfaacf5e5cd93a40d57a2e",
+   "nativeSteps": 7,
+   "draws": {
+    "draw": [
+     "stage",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. By native design, the parabola shows where it crosses the x-axis, so the roots can be read from the graph. Answers are the ordered roots \"a, b\". challengeReady is true because the F0-12 flow works, but the roots can be read off the graph. Treat it as a graphical-solution exercise. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-13",
+   "name": "Index laws in algebra",
+   "path": "F8/F8-13-index-laws-in-algebra.html",
+   "engineId": "F8-13",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "6691d8bceb7c285db5a7661e30fb29386874ad35c87b1a329dfb2fbc6ce261d5",
+   "originalSha256": "c00c6e28b5536d27cf765eb03d452c7ac6759f2098c8b2d69fbc41af3d8b10d9",
+   "nativeSteps": 6,
+   "draws": {
+    "draw": [
+     "stage",
+     "p",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 14.58,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 14.58,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. The factor-cancel counter shows the second index (n), so questions never ask for n. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-14",
+   "name": "Algebraic fraction simplifier",
+   "path": "F8/F8-14-algebraic-fraction-simplifier.html",
+   "engineId": "F8-14",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "daa074ab3ffd2ff4233b42aa471ab733125a73d192e4778b82faf831c56994a3",
+   "originalSha256": "a95d4a06d33d3908142a3a6fcb4cfdc571631e93497d86ceb550c1d770a29c33",
+   "nativeSteps": 6,
+   "draws": {
+    "draw": [
+     "stage",
+     "p",
+     "s",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEP"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "9/9",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. Text answers must match exactly (format given in the prompt, for example \"x+3\" or \"(x-4)/2\"). The native regression has 9 checks instead of 12 because native Explore has no SVG drag handles (it uses HTML controls), so the three drag and focus checks do not apply. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-15",
+   "name": "Misconception spotter",
+   "path": "F8/F8-15-misconception-spotter.html",
+   "engineId": "F8-15",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "b87ce60a617ef11effa58bebdd6e5e637298625f5fbdb7029366eb2bca005527",
+   "originalSha256": "a966bfb704ef5723067b52211647444a69ed53892d223682d841f2849ae0285a",
+   "nativeSteps": 6,
+   "draws": {
+    "draw": [
+     "stage",
+     "p",
+     "s",
+     "o"
+    ]
+   },
+   "tables": [
+    "CHOICE_ORDER",
+    "BEATS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11.78,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11.78,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. Text answers (for example \"positive\" or \"x<-4\") must match exactly after trimming. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-16",
+   "name": "Modelling cycle stepper",
+   "path": "F8/F8-16-modelling-cycle-stepper.html",
+   "engineId": "F8-16",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "a38224b944ecc319d5fc66d1d79ceb2ac113c0edcff3a684cb7171b7d49c26d5",
+   "originalSha256": "11ab59ad95e4e6c22894bf7aedf4960b25aea0a3e78dcead5f9650ec199784ae",
+   "nativeSteps": 4,
+   "draws": {
+    "draw": [
+     "stage",
+     "p",
+     "s",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STAGES",
+    "TRAY_ORDER",
+    "BEATS"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 13.46,
+     "p10": 11.22
+    },
+    "fresh": {
+     "median": 13.46,
+     "p10": 11.22
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "The concealed view is the native modelling-cycle frame (context title and stage slots). The problem numbers are in the prompt only, because the native Challenge view has no numeric panel. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-17",
+   "name": "Algebraic proof builder",
+   "path": "F8/F8-17-algebraic-proof-builder.html",
+   "engineId": "F8-17",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "24b5dcf7c4f1a44ed3875dbb20e9732411f3e43f9fb851851753bbec5dc3b1de",
+   "originalSha256": "dcc3174b50561bb5fd894cb53d51cf96042169674545600fdb693a9ea7c3deb7",
+   "nativeSteps": 6,
+   "draws": {
+    "draw": [
+     "stage",
+     "p",
+     "s",
+     "opt"
+    ]
+   },
+   "tables": [
+    "BEATS",
+    "TEST_VALUES",
+    "POSES",
+    "SAY"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11.29,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11.29,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "The concealed view is the native proof frame (title and empty statement/reason slots). The numeric and text questions are in the prompt. It has a fixed layout with no innerWidth breakpoint, so a 760 px breakpoint was added for the phone-label floor. Pupil interaction is select-then-place: tap a card in the HTML bank, then tap an SVG slot. QA used this route, and drag was not tested as the pupil action. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  },
+  {
+   "id": "F8-18",
+   "name": "Iteration trial and improvement",
+   "path": "F8/F8-18-iteration-trial-and-improvement.html",
+   "engineId": "F8-18",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "fba25def4ad05e80b4c91128e9d1bdacb231d9910c03f9bca38f6145cc93028c",
+   "originalSha256": "f44a72f47b2e8df842acdda140d84951ac76acfb1374b9d50f12cff72be68a40",
+   "nativeSteps": 6,
+   "draws": {
+    "draw": [
+     "stage",
+     "p",
+     "s",
+     "opt"
+    ]
+   },
+   "tables": [
+    "CASES",
+    "BEATS",
+    "SAY",
+    "POSES"
+   ],
+   "valueInterface": "data.lesson = {state: {preset: native preset key, ...overrides of that preset's data fields}, phase: native step index, motion?: {from,to,durationMs}, title?}. Records with concealAnswers draw the engine's own Challenge view for the lesson preset.",
+   "tests": {
+    "semantic": "47/47",
+    "nativeRegression": "12/12",
+    "resize390_1024_1440": "12/12",
+    "bankRegression": "pass"
+   },
+   "phoneLabels390": {
+    "afterResize": {
+     "median": 11.02,
+     "p10": 11
+    },
+    "fresh": {
+     "median": 11.02,
+     "p10": 11
+    }
+   },
+   "statePreservedOnResize": true,
+   "limitations": "Concealed view is the native Challenge view for the lesson preset. It has a fixed layout with no innerWidth breakpoint, so a 760 px breakpoint was added for the phone-label floor. Answers are decimals to the number of places given in the prompt. Common to all engines: at 390 px the phone-label floor enlarges small SVG labels (up to 2.4x) so they reach 11 px. A drag in progress is cancelled when the 760 px breakpoint is crossed, because the redraw replays the last draw; completed pupil state is kept. Real speech output, screen readers and touch devices were not tested on hardware.",
+   "buildChanges": [
+    "canonical lesson API + F8 support scripts",
+    "core: if(this.timer)return;if(this.i>=this.ste",
+    "core: pause:function(){clearTimeout(this.timer",
+    "core: NOVA.ui.dragSnap=function(svg,ax,o){var ",
+    "core: function snap(x){var s=o.step;return Mat",
+    "core: var drag=false;g.addEventListener('point",
+    "core: if(NOVA.bob.speech&&window.speechSynthes",
+    "core: if(api.speech&&window.speechSynthesis&&!",
+    "core: else if(q.type==='multi'){var A=(v||[]).",
+    "core: NOVA.game={create:function(o){o=Object.a",
+    "core: else{s.streak=0;if(o.lives)s.lives--;s.l",
+    "relayout: 1 draw(s) recorded, breakpoints [760]",
+    "F8 data.lesson hook (concealed view: native Challenge view) + contracts + runtime bind"
+   ]
+  }
+ ]
+}

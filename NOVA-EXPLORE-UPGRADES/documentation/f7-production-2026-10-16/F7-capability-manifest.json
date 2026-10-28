@@ -1,0 +1,4446 @@
+{
+ "family": "F7",
+ "revision": "2026-10-16",
+ "componentCount": 14,
+ "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+ "templateSha256": "740c125af623ab5fb5896b3e9655a6d10b093ffcda53127a6eb67eb80eef26ec",
+ "components": [
+  {
+   "id": "F7-01",
+   "name": "Algebra Tiles",
+   "path": "F7/F7-01-algebra-tiles.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "734cb0c054492dbcb3613d1051a05f2e63d6a84999a9c2ee0d274c2588430630",
+   "originalSha256": "9987c44f8ba761254b819f5fa76992859f6df15da3ff5c5ef2206fd6c5834a66",
+   "nativeSteps": 5,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "phase",
+     "say",
+     "narration"
+    ],
+    [
+     "name",
+     "phase",
+     "say",
+     "narration"
+    ],
+    [
+     "name",
+     "phase",
+     "say",
+     "narration"
+    ],
+    [
+     "name",
+     "phase",
+     "say",
+     "narration"
+    ],
+    [
+     "name",
+     "phase",
+     "say",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "dock": [
+     "stage",
+     "key"
+    ],
+    "view": [
+     "stage",
+     "tiles",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "message": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-029": {
+     "label": "Year 7 \u00b7 Collecting like terms",
+     "title": "Collect like terms",
+     "start": [
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       1
+      ]
+     ],
+     "expression": "x + 1 + x + 1 + 1",
+     "proof": "2x + 3",
+     "narration": "Two x tiles and three unit tiles make two x plus three."
+    },
+    "Y7-031": {
+     "label": "Year 7 \u00b7 Expanding one bracket",
+     "title": "Three groups of x plus two",
+     "start": [
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       1
+      ]
+     ],
+     "expression": "3(x + 2)",
+     "proof": "3x + 6",
+     "narration": "Three lots of x plus two each contribute one x tile and two unit tiles."
+    },
+    "SIGNED": {
+     "label": "Signed coefficients \u00b7 extension",
+     "title": "Combine opposite terms",
+     "start": [
+      [
+       "x",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "x",
+       -1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       -1
+      ],
+      [
+       "one",
+       1
+      ]
+     ],
+     "expression": "2x \u2212 x + 1 \u2212 1 + 1",
+     "proof": "x + 1",
+     "narration": "Opposite tiles cancel by adding to zero. The remaining tiles show x plus one."
+    },
+    "GCSE": {
+     "label": "GCSE bridge \u00b7 x-squared",
+     "title": "Three tile families",
+     "start": [
+      [
+       "x2",
+       1
+      ],
+      [
+       "x2",
+       1
+      ],
+      [
+       "x",
+       -1
+      ],
+      [
+       "x",
+       -1
+      ],
+      [
+       "one",
+       1
+      ]
+     ],
+     "expression": "2x\u00b2 \u2212 2x + 1",
+     "proof": "2x\u00b2 \u2212 2x + 1",
+     "narration": "An x squared tile is an area tile. It is not interchangeable with an x tile or a unit."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": false,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 1000,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 12.192,
+     "p10": 8.382,
+     "count": 13,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 1000,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 12.192,
+     "p10": 8.382,
+     "count": 13,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "view",
+     "arguments": {
+      "tiles": [
+       {
+        "id": "x2p0",
+        "type": "x2",
+        "sign": 1
+       },
+       {
+        "id": "xp0",
+        "type": "x",
+        "sign": 1
+       },
+       {
+        "id": "xp1",
+        "type": "x",
+        "sign": 1
+       },
+       {
+        "id": "xp2",
+        "type": "x",
+        "sign": 1
+       },
+       {
+        "id": "xn0",
+        "type": "x",
+        "sign": -1
+       },
+       {
+        "id": "onep0",
+        "type": "one",
+        "sign": 1
+       },
+       {
+        "id": "onep1",
+        "type": "one",
+        "sign": 1
+       }
+      ],
+      "opt": {
+       "caption": "Question 1",
+       "formula": "?"
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Remove the zero pairs. What is the coefficient of x?",
+    "privateAnswer": 2,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 162,
+     "total": 162,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-02",
+   "name": "Zero-Pair Animation",
+   "path": "F7/F7-02-zero-pair-animation.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "39831771c48c2c79b152176f3a473aad2cf5c446941d7de1da5617ffbb20907b",
+   "originalSha256": "6c6c21e2bd1e3c00b9d698f9763041e63e2e1cfb81e1f0be3e2362006a70ef4b",
+   "nativeSteps": 5,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "say",
+     "narration"
+    ],
+    [
+     "name",
+     "say",
+     "narration"
+    ],
+    [
+     "name",
+     "say",
+     "narration"
+    ],
+    [
+     "name",
+     "say",
+     "narration"
+    ],
+    [
+     "name",
+     "say",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "dock": [
+     "stage",
+     "k"
+    ],
+    "view": [
+     "stage",
+     "tiles",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-011": {
+     "label": "Year 7 \u00b7 \u22123 + 5",
+     "expression": "\u22123 + 5",
+     "pos": 5,
+     "neg": 3,
+     "why": "Five positive units and three negative units leave two positive units."
+    },
+    "NEGATIVE": {
+     "label": "Addition \u00b7 \u22125 + 2",
+     "expression": "\u22125 + 2",
+     "pos": 2,
+     "neg": 5,
+     "why": "Two zero pairs disappear, leaving three negative units."
+    },
+    "ZERO": {
+     "label": "Additive inverse \u00b7 4 + (\u22124)",
+     "expression": "4 + (\u22124)",
+     "pos": 4,
+     "neg": 4,
+     "why": "Four opposite pairs cancel completely to give zero."
+    },
+    "SUBTRACT": {
+     "label": "Subtract negative \u00b7 3 \u2212 (\u22122)",
+     "expression": "3 \u2212 (\u22122)",
+     "pos": 5,
+     "neg": 0,
+     "why": "Subtracting two negative units is adding two positives: three plus two gives five."
+    },
+    "SUBTRACT_POS": {
+     "label": "Subtract positive \u00b7 2 \u2212 5",
+     "expression": "2 \u2212 5",
+     "pos": 2,
+     "neg": 5,
+     "why": "Subtracting five is adding five negative units. Two opposite pairs cancel; three negative units remain."
+    },
+    "GCSE": {
+     "label": "GCSE bridge \u00b7 \u22127 + 5",
+     "expression": "\u22127 + 5",
+     "pos": 5,
+     "neg": 7,
+     "why": "Cancel five pairs; the extra two negative tiles give minus two."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 620,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 17.616129032258065,
+     "p10": 13.929032258064517,
+     "count": 14,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 620,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 17.616129032258065,
+     "p10": 13.929032258064517,
+     "count": 14,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "view",
+     "arguments": {
+      "tiles": [
+       {
+        "id": "onep0",
+        "type": "one",
+        "sign": 1
+       },
+       {
+        "id": "onep1",
+        "type": "one",
+        "sign": 1
+       },
+       {
+        "id": "onep2",
+        "type": "one",
+        "sign": 1
+       },
+       {
+        "id": "onep3",
+        "type": "one",
+        "sign": 1
+       },
+       {
+        "id": "onep4",
+        "type": "one",
+        "sign": 1
+       },
+       {
+        "id": "onen0",
+        "type": "one",
+        "sign": -1
+       },
+       {
+        "id": "onen1",
+        "type": "one",
+        "sign": -1
+       },
+       {
+        "id": "onen2",
+        "type": "one",
+        "sign": -1
+       }
+      ],
+      "o": {
+       "caption": "Question 1",
+       "headline": "Pair the opposite units",
+       "formula": "+5 + (\u22123) = ?",
+       "mathText": "+5 + (\u22123) = ?",
+       "showPairLines": false,
+       "arrive": false,
+       "celebrate": false,
+       "pairs": 0
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Work out +5 + (\u22123).",
+    "privateAnswer": 2,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 69,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 164,
+     "total": 164,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-03",
+   "name": "Collecting Like Terms",
+   "path": "F7/F7-03-collecting-like-terms.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "3c9d936c697e12fa9e99cdee99a0e9d354545a9068588c6f8094c85c874cfd17",
+   "originalSha256": "a81849de33a62c698946699cd29af0478fb8399fb515170a1d9a7919a103ce98",
+   "nativeSteps": 4,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "cue",
+     "narration"
+    ],
+    [
+     "name",
+     "cue",
+     "narration"
+    ],
+    [
+     "name",
+     "cue",
+     "narration"
+    ],
+    [
+     "name",
+     "cue",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "dock": [
+     "stage",
+     "k"
+    ],
+    "show": [
+     "stage",
+     "tiles",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-029": {
+     "label": "Y7-029 \u00b7 First like terms",
+     "title": "x + 3 + 2x + 1",
+     "tokens": [
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       1
+      ]
+     ],
+     "purpose": "Three x rods and four units remain separate families."
+    },
+    "Y7-SIGNED": {
+     "label": "Year 7 \u00b7 Signed coefficients",
+     "title": "3x \u2212 x + 4 \u2212 2",
+     "tokens": [
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       -1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       -1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       -1
+      ]
+     ],
+     "purpose": "Keep the minus sign with the term when collecting."
+    },
+    "Y8-REVISIT": {
+     "label": "Year 8 \u00b7 Variable and constants",
+     "title": "\u2212x + 5 + 2x \u2212 1",
+     "tokens": [
+      [
+       "x",
+       -1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "one",
+       -1
+      ]
+     ],
+     "purpose": "Opposite signed x terms combine to x, while constants combine to four."
+    },
+    "GCSE-X2": {
+     "label": "GCSE bridge \u00b7 Quadratic terms",
+     "title": "x\u00b2 + 2x + x\u00b2 \u2212 x + 2",
+     "tokens": [
+      [
+       "x2",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x2",
+       1
+      ],
+      [
+       "x",
+       -1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       1
+      ]
+     ],
+     "purpose": "Keep x squared, x and constants in three distinct groups."
+    },
+    "GCSE-SIGNS": {
+     "label": "GCSE bridge \u00b7 Signed powers",
+     "title": "\u2212x\u00b2 + 3x \u2212 x + 2",
+     "tokens": [
+      [
+       "x2",
+       -1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ],
+      [
+       "x",
+       -1
+      ],
+      [
+       "x",
+       1
+      ],
+      [
+       "one",
+       1
+      ]
+     ],
+     "purpose": "A negative x squared tile is not a negative x tile."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 460,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 20.982608695652175,
+     "p10": 16.01304347826087,
+     "count": 17,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 460,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 20.982608695652175,
+     "p10": 16.01304347826087,
+     "count": 17,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "show",
+     "arguments": {
+      "tiles": [
+       {
+        "id": "q0",
+        "type": "x",
+        "sign": 1,
+        "home": "scatter"
+       },
+       {
+        "id": "q1",
+        "type": "x",
+        "sign": 1,
+        "home": "scatter"
+       },
+       {
+        "id": "q2",
+        "type": "one",
+        "sign": 1,
+        "home": "scatter"
+       },
+       {
+        "id": "q3",
+        "type": "one",
+        "sign": 1,
+        "home": "scatter"
+       },
+       {
+        "id": "q4",
+        "type": "one",
+        "sign": 1,
+        "home": "scatter"
+       },
+       {
+        "id": "q5",
+        "type": "x",
+        "sign": 1,
+        "home": "scatter"
+       },
+       {
+        "id": "q6",
+        "type": "one",
+        "sign": 1,
+        "home": "scatter"
+       },
+       {
+        "id": "q7",
+        "type": "one",
+        "sign": 1,
+        "home": "scatter"
+       }
+      ],
+      "opt": {
+       "caption": "Question 1",
+       "title": "Collect like terms",
+       "cue": "scatter",
+       "showCount": false,
+       "proof": "?",
+       "animate": false,
+       "celebrate": false
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Collect like terms. How many x terms are there altogether?",
+    "privateAnswer": 3,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 162,
+     "total": 162,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-04",
+   "name": "Expanding Single Brackets",
+   "path": "F7/F7-04-expanding-single-brackets.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "3f024004894aa9eb95718aff5c1649fb4876754fc648ea2d12b4103c1bf40b12",
+   "originalSha256": "39b528f7baac029255521e7913206df63ad733b2b99e70320c94c16fce91318a",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "scene": [
+     "stage",
+     "p",
+     "opt"
+    ]
+   },
+   "tables": [
+    "roles",
+    "standardSteps",
+    "F704_STEPS",
+    "F704_TALK"
+   ],
+   "exploreFields": {
+    "areaSvg.data": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    },
+    "resultFor.m": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "challenge",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-009-whole-decimal-multiplication": {
+     "label": "Whole number multiplication",
+     "kind": "numeric",
+     "x": [
+      20,
+      3
+     ],
+     "y": [
+      10,
+      4
+     ]
+    },
+    "Y7-022-fraction-add-subtract": {
+     "label": "Fraction addition / subtraction",
+     "kind": "fraction-add",
+     "den": 6,
+     "a": 3,
+     "b": 2,
+     "op": "+",
+     "wholes": 0
+    },
+    "Y7-023-multiplying-fractions": {
+     "label": "Fraction of a fraction",
+     "kind": "fraction-product",
+     "a": 2,
+     "b": 3,
+     "c": 3,
+     "d": 4
+    },
+    "Y7-031-single-brackets": {
+     "label": "Expanding a single bracket",
+     "kind": "single",
+     "factor": 3,
+     "constant": 2
+    },
+    "Y7-032-factorising-common-factor": {
+     "label": "Factorising common terms",
+     "kind": "factorise",
+     "factor": 3,
+     "constant": 2
+    },
+    "Y8-005-mixed-number-fractions": {
+     "label": "Mixed-number addition / subtraction",
+     "kind": "fraction-add",
+     "den": 4,
+     "a": 6,
+     "b": 3,
+     "op": "+",
+     "wholes": 0
+    },
+    "Y8-011-double-brackets": {
+     "label": "Expanding double brackets",
+     "kind": "double",
+     "xConst": 3,
+     "yConst": 2
+    },
+    "Y9-006-algebraic-equivalence": {
+     "label": "Equivalent algebraic expressions",
+     "kind": "double",
+     "xConst": 3,
+     "yConst": 2
+    },
+    "F5-03-area-model-fractions": {
+     "label": "F5-03 \u00b7 Fractions area preset",
+     "kind": "fraction-product",
+     "a": 2,
+     "b": 3,
+     "c": 3,
+     "d": 4
+    },
+    "F7-04-expanding-single-brackets": {
+     "label": "F7-04 \u00b7 Distribute 3 across x + 2",
+     "kind": "single",
+     "factor": 3,
+     "constant": 2
+    },
+    "F7-04-two-times": {
+     "label": "Two lots: 2(x + 3)",
+     "kind": "single",
+     "factor": 2,
+     "constant": 3
+    },
+    "F7-04-four-times": {
+     "label": "Four lots: 4(x + 5)",
+     "kind": "single",
+     "factor": 4,
+     "constant": 5
+    },
+    "F7-04-five-times": {
+     "label": "Five lots: 5(x + 1)",
+     "kind": "single",
+     "factor": 5,
+     "constant": 1
+    },
+    "F7-05-expanding-double-brackets": {
+     "label": "F7-05 \u00b7 Double bracket preset",
+     "kind": "double",
+     "xConst": 3,
+     "yConst": 2
+    },
+    "decimal-tenths": {
+     "label": "Decimal tenths",
+     "kind": "numeric",
+     "x": [
+      2,
+      0.3
+     ],
+     "y": [
+      1,
+      0.4
+     ]
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 585,
+     "svgWidth": 244,
+     "stageWidth": 262,
+     "median": 11.261538461538462,
+     "p10": 11.261538461538462,
+     "count": 1,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 585,
+     "svgWidth": 244,
+     "stageWidth": 262,
+     "median": 11.261538461538462,
+     "p10": 11.261538461538462,
+     "count": 1,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "scene",
+     "arguments": {
+      "p": {
+       "label": "Expand 3(x + 4)",
+       "kind": "single",
+       "factor": 3,
+       "constant": 4
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Expand 3(x + 4). Enter the constant term.",
+    "privateAnswer": 12,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 166,
+     "total": 166,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-05",
+   "name": "Expanding Double Brackets",
+   "path": "F7/F7-05-expanding-double-brackets.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "4f270e717d8b882db2edeabafcf4a69ab61937869cbea6aa5f1110b744604ed6",
+   "originalSha256": "065dfa79665c07a5da53895284b91f32d11ddcd96dd71efbf89c80e9fa413232",
+   "nativeSteps": 8,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "scene": [
+     "stage",
+     "p",
+     "opt"
+    ]
+   },
+   "tables": [
+    "roles",
+    "standardSteps",
+    "F704_STEPS",
+    "F704_TALK",
+    "F705_STEPS",
+    "F705_TALK"
+   ],
+   "exploreFields": {
+    "areaSvg.data": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    },
+    "resultFor.m": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "challenge",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-009-whole-decimal-multiplication": {
+     "label": "Whole number multiplication",
+     "kind": "numeric",
+     "x": [
+      20,
+      3
+     ],
+     "y": [
+      10,
+      4
+     ]
+    },
+    "Y7-022-fraction-add-subtract": {
+     "label": "Fraction addition / subtraction",
+     "kind": "fraction-add",
+     "den": 6,
+     "a": 3,
+     "b": 2,
+     "op": "+",
+     "wholes": 0
+    },
+    "Y7-023-multiplying-fractions": {
+     "label": "Fraction of a fraction",
+     "kind": "fraction-product",
+     "a": 2,
+     "b": 3,
+     "c": 3,
+     "d": 4
+    },
+    "Y7-031-single-brackets": {
+     "label": "Expanding a single bracket",
+     "kind": "single",
+     "factor": 3,
+     "constant": 2
+    },
+    "Y7-032-factorising-common-factor": {
+     "label": "Factorising common terms",
+     "kind": "factorise",
+     "factor": 3,
+     "constant": 2
+    },
+    "Y8-005-mixed-number-fractions": {
+     "label": "Mixed-number addition / subtraction",
+     "kind": "fraction-add",
+     "den": 4,
+     "a": 6,
+     "b": 3,
+     "op": "+",
+     "wholes": 0
+    },
+    "Y8-011-double-brackets": {
+     "label": "Expanding double brackets",
+     "kind": "double",
+     "xConst": 3,
+     "yConst": 2
+    },
+    "Y9-006-algebraic-equivalence": {
+     "label": "Equivalent algebraic expressions",
+     "kind": "double",
+     "xConst": 3,
+     "yConst": 2
+    },
+    "F5-03-area-model-fractions": {
+     "label": "F5-03 \u00b7 Fractions area preset",
+     "kind": "fraction-product",
+     "a": 2,
+     "b": 3,
+     "c": 3,
+     "d": 4
+    },
+    "F7-04-expanding-single-brackets": {
+     "label": "F7-04 \u00b7 Distribute 3 across x + 2",
+     "kind": "single",
+     "factor": 3,
+     "constant": 2
+    },
+    "F7-04-two-times": {
+     "label": "Two lots: 2(x + 3)",
+     "kind": "single",
+     "factor": 2,
+     "constant": 3
+    },
+    "F7-04-four-times": {
+     "label": "Four lots: 4(x + 5)",
+     "kind": "single",
+     "factor": 4,
+     "constant": 5
+    },
+    "F7-04-five-times": {
+     "label": "Five lots: 5(x + 1)",
+     "kind": "single",
+     "factor": 5,
+     "constant": 1
+    },
+    "F7-05-expanding-double-brackets": {
+     "label": "F7-05 \u00b7 (x + 3)(x + 2)",
+     "kind": "double",
+     "xConst": 3,
+     "yConst": 2
+    },
+    "F7-05-Y8-011": {
+     "label": "Y8 \u00b7 (x + 2)(x + 4)",
+     "kind": "double",
+     "xConst": 2,
+     "yConst": 4
+    },
+    "F7-05-Y9-006": {
+     "label": "Y9 \u00b7 (x \u2212 3)(x + 2)",
+     "kind": "double",
+     "xConst": -3,
+     "yConst": 2
+    },
+    "F7-05-Y9-008": {
+     "label": "Y9 \u00b7 (x \u2212 2)(x \u2212 4)",
+     "kind": "double",
+     "xConst": -2,
+     "yConst": -4
+    },
+    "decimal-tenths": {
+     "label": "Decimal tenths",
+     "kind": "numeric",
+     "x": [
+      2,
+      0.3
+     ],
+     "y": [
+      1,
+      0.4
+     ]
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 585,
+     "svgWidth": 244,
+     "stageWidth": 262,
+     "median": 11.261538461538462,
+     "p10": 11.261538461538462,
+     "count": 2,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 585,
+     "svgWidth": 244,
+     "stageWidth": 262,
+     "median": 11.261538461538462,
+     "p10": 11.261538461538462,
+     "count": 2,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "scene",
+     "arguments": {
+      "p": {
+       "label": "(x + 3)(x + 5)",
+       "kind": "double",
+       "xConst": 3,
+       "yConst": 5
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Expand (x + 3)(x + 5). Enter the constant term.",
+    "privateAnswer": 15,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 168,
+     "total": 168,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-06",
+   "name": "Factorising with Tiles",
+   "path": "F7/F7-06-factorising-with-tiles.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "d6679025e4f84ede4602c12fda16253c7b93c400e9ed7ee6cbfc13b666d0a101",
+   "originalSha256": "47bc2471acffb8bd2fba7684e9a5d122054fbb6a0bbba0d57938b0780f2cd3e6",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "cue",
+     "narration"
+    ],
+    [
+     "name",
+     "cue",
+     "narration"
+    ],
+    [
+     "name",
+     "cue",
+     "narration"
+    ],
+    [
+     "name",
+     "cue",
+     "narration"
+    ],
+    [
+     "name",
+     "cue",
+     "narration"
+    ],
+    [
+     "name",
+     "cue",
+     "narration"
+    ]
+   ],
+   "draws": {
+    "dock": [
+     "stage",
+     "cue"
+    ],
+    "show": [
+     "stage",
+     "p",
+     "tiles",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-032": {
+     "label": "Year 7 \u00b7 Common factor",
+     "title": "3x + 6",
+     "k": 3,
+     "a": 1,
+     "b": 2,
+     "lesson": "Y7-032",
+     "context": "A rectangle made of three identical rows."
+    },
+    "Y7-032-alt": {
+     "label": "Year 7 \u00b7 Four groups",
+     "title": "4x + 8",
+     "k": 4,
+     "a": 1,
+     "b": 2,
+     "lesson": "Y7-032",
+     "context": "Four equal rows reveal four as a common factor."
+    },
+    "Y8-012": {
+     "label": "Year 8 \u00b7 Two different counts",
+     "title": "6x + 9",
+     "k": 3,
+     "a": 2,
+     "b": 3,
+     "lesson": "Y8-012",
+     "context": "Three identical rows, each containing two x rods and three units."
+    },
+    "Y8-012-alt": {
+     "label": "Year 8 \u00b7 Greatest common factor",
+     "title": "6x + 8",
+     "k": 2,
+     "a": 3,
+     "b": 4,
+     "lesson": "Y8-012",
+     "context": "Two equal rows; both coefficients are divisible by two."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 500,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 15.24,
+     "p10": 9.070848000000002,
+     "count": 32,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 500,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 15.24,
+     "p10": 9.070848000000002,
+     "count": 32,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "show",
+     "arguments": {
+      "p": {
+       "label": "Question 1",
+       "title": "3x + 6",
+       "k": 3,
+       "a": 1,
+       "b": 2,
+       "lesson": "",
+       "context": "Find the largest common factor."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Factorise 3x + 6 fully. Enter the common factor outside the bracket.",
+    "privateAnswer": 3,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 162,
+     "total": 162,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-07",
+   "name": "Completing the Square",
+   "path": "F7/F7-07-completing-the-square.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "9b69fffc3acff33a813de05a2bb3cd3008aeaac647d2f12769d5db002e08907d",
+   "originalSha256": "bb860bfb7b03c2aa7038a33c03ef05e0012d18460f9930a86175c2f215fe1957",
+   "nativeSteps": 8,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "show": [
+     "stage",
+     "p",
+     "tiles",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y9-square-6x": {
+     "label": "x\u00b2 + 6x + 5",
+     "n": 3,
+     "c": 5,
+     "context": "Find a missing four-unit corner."
+    },
+    "bridge-4x": {
+     "label": "x\u00b2 + 4x + 1",
+     "n": 2,
+     "c": 1,
+     "context": "Split four rods evenly and fill three missing squares."
+    },
+    "bridge-8x": {
+     "label": "x\u00b2 + 8x + 12",
+     "n": 4,
+     "c": 12,
+     "context": "Build a five-by-five shape language with x plus four."
+    },
+    "already-square": {
+     "label": "x\u00b2 + 6x + 9",
+     "n": 3,
+     "c": 9,
+     "context": "Recognise a complete square without adding anything."
+    },
+    "gcse-8x": {
+     "label": "x\u00b2 + 8x + 9",
+     "n": 4,
+     "c": 9,
+     "context": "Seven small squares fill the missing corner."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 540,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 15.051851851851852,
+     "p10": 12.22962962962963,
+     "count": 21,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 540,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 15.051851851851852,
+     "p10": 12.22962962962963,
+     "count": 21,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "show",
+     "arguments": {
+      "p": {
+       "label": "x\u00b2 + 6x + 5",
+       "n": 3,
+       "c": 5,
+       "context": "Complete the square."
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Write x\u00b2 + 6x + 5 as (x + 3)\u00b2 + q. Enter q.",
+    "privateAnswer": -4,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 167,
+     "total": 167,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-08",
+   "name": "Balance Scales",
+   "path": "F7/F7-08-balance-scales.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "cdc210de416c2a4c6d7368b87f48b2bb813f274d35bdec5ef1628a616bf08a5a",
+   "originalSha256": "4a0cb905e30803b5b462145b0c32284c72c8e7ffc51ad376a88c2db2db8f01d4",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ]
+   ],
+   "draws": {
+    "dock": [
+     "stage",
+     "cue"
+    ],
+    "renderScene": [
+     "stage",
+     "m",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "SIGNED_STEPS",
+    "CUPS_STEPS"
+   ],
+   "exploreFields": {
+    "mathOp.r": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "cupsWatch.b": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "cupsWatch.m": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "signedWatch.initial": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "watch.base": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "watch.m": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "cupsChallenge",
+    "signedChallenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-033-one-step": {
+     "label": "Y7 \u00b7 One-step equation",
+     "a": 1,
+     "b": 3,
+     "c": 0,
+     "d": 7,
+     "skin": "bags",
+     "context": "One mystery bag and three weights balance seven weights."
+    },
+    "Y7-035-context": {
+     "label": "Y7 \u00b7 Bags in a story",
+     "a": 2,
+     "b": 2,
+     "c": 0,
+     "d": 8,
+     "skin": "bags",
+     "context": "Two bags and two weights equal eight weights."
+    },
+    "Y8-013-brackets": {
+     "label": "Y8 \u00b7 Brackets first",
+     "a": 2,
+     "b": 4,
+     "c": 0,
+     "d": 10,
+     "skin": "bags",
+     "display": "2(x + 2) = 10",
+     "context": "Expand the bracket before removing equal weights."
+    },
+    "Y8-014-both-sides": {
+     "label": "Y8 \u00b7 Unknown on both sides",
+     "a": 2,
+     "b": 3,
+     "c": 1,
+     "d": 8,
+     "skin": "bags",
+     "context": "Both pans contain mystery bags; cancel one from each."
+    },
+    "F7-09-negatives": {
+     "label": "F7-09 \u00b7 Negative balloons",
+     "a": 2,
+     "b": -3,
+     "c": 1,
+     "d": 2,
+     "skin": "balloons",
+     "context": "Negative balloons lift up. Keep both sides equal."
+    },
+    "F7-09-signed-unit": {
+     "label": "F7-09 \u00b7 Signed one-step",
+     "a": 1,
+     "b": -2,
+     "c": 0,
+     "d": 4,
+     "skin": "balloons",
+     "context": "Add two weights to each pan to cancel two negative balloons."
+    },
+    "F7-09-unknowns-both": {
+     "label": "F7-09 \u00b7 Signed unknowns on both pans",
+     "a": 3,
+     "b": -2,
+     "c": 2,
+     "d": 4,
+     "skin": "balloons",
+     "context": "Remove two x bags on each side, then cancel negative balloons."
+    },
+    "F7-09-negative-x": {
+     "label": "F7-09 \u00b7 Negative unknown",
+     "a": -1,
+     "b": 8,
+     "c": 0,
+     "d": 3,
+     "skin": "balloons",
+     "context": "A negative x bag lifts: \u2212x + 8 = 3. Remove equal units and reverse the sign."
+    },
+    "F7-10-cups": {
+     "label": "F7-10 \u00b7 Cups and counters",
+     "a": 2,
+     "b": 2,
+     "c": 0,
+     "d": 10,
+     "skin": "cups",
+     "context": "Two mystery cups and two counters have the same value as ten counters."
+    },
+    "F7-10-one-cup": {
+     "label": "F7-10 \u00b7 One mystery cup",
+     "a": 1,
+     "b": 3,
+     "c": 0,
+     "d": 7,
+     "skin": "cups",
+     "context": "Remove three counters from both sides to reveal one cup."
+    },
+    "F7-10-three-cups": {
+     "label": "F7-10 \u00b7 Three cups",
+     "a": 3,
+     "b": 3,
+     "c": 0,
+     "d": 12,
+     "skin": "cups",
+     "context": "Remove three counters from both sides, then share nine between three cups."
+    },
+    "F7-10-context": {
+     "label": "F7-10 \u00b7 Equal-share story",
+     "a": 2,
+     "b": 4,
+     "c": 0,
+     "d": 12,
+     "skin": "cups",
+     "context": "Two sealed cups and four loose counters match twelve counters."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 620,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 12.351774193548387,
+     "p10": 11.983064516129032,
+     "count": 23,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 620,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 12.351774193548387,
+     "p10": 11.983064516129032,
+     "count": 23,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "renderScene",
+     "arguments": {
+      "m": {
+       "a": 2,
+       "b": 3,
+       "c": 0,
+       "d": 11,
+       "skin": "bags",
+       "display": "2x + 3 = 11",
+       "context": "Keep both sides equal.",
+       "_transition": true
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Solve 2x + 3 = 11.",
+    "privateAnswer": 4,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 162,
+     "total": 162,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-09",
+   "name": "Balance with Negatives and Unknowns",
+   "path": "F7/F7-09-balance-negatives-unknowns.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "eab5172964ad6459f80da8a6be83a62191d4772d91d82145283fb146173ea3fc",
+   "originalSha256": "e69df664e300030e54f8f3825dce6ada89ee10e523e95633b2823450ab8b076b",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ]
+   ],
+   "draws": {
+    "dock": [
+     "stage",
+     "cue"
+    ],
+    "renderScene": [
+     "stage",
+     "m",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "SIGNED_STEPS",
+    "CUPS_STEPS"
+   ],
+   "exploreFields": {
+    "mathOp.r": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "cupsWatch.b": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "cupsWatch.m": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "signedWatch.initial": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "watch.base": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "watch.m": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "cupsChallenge",
+    "signedChallenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-033-one-step": {
+     "label": "Y7 \u00b7 One-step equation",
+     "a": 1,
+     "b": 3,
+     "c": 0,
+     "d": 7,
+     "skin": "bags",
+     "context": "One mystery bag and three weights balance seven weights."
+    },
+    "Y7-035-context": {
+     "label": "Y7 \u00b7 Bags in a story",
+     "a": 2,
+     "b": 2,
+     "c": 0,
+     "d": 8,
+     "skin": "bags",
+     "context": "Two bags and two weights equal eight weights."
+    },
+    "Y8-013-brackets": {
+     "label": "Y8 \u00b7 Brackets first",
+     "a": 2,
+     "b": 4,
+     "c": 0,
+     "d": 10,
+     "skin": "bags",
+     "display": "2(x + 2) = 10",
+     "context": "Expand the bracket before removing equal weights."
+    },
+    "Y8-014-both-sides": {
+     "label": "Y8 \u00b7 Unknown on both sides",
+     "a": 2,
+     "b": 3,
+     "c": 1,
+     "d": 8,
+     "skin": "bags",
+     "context": "Both pans contain mystery bags; cancel one from each."
+    },
+    "F7-09-negatives": {
+     "label": "F7-09 \u00b7 Negative balloons",
+     "a": 2,
+     "b": -3,
+     "c": 1,
+     "d": 2,
+     "skin": "balloons",
+     "context": "Negative balloons lift up. Keep both sides equal."
+    },
+    "F7-09-signed-unit": {
+     "label": "F7-09 \u00b7 Signed one-step",
+     "a": 1,
+     "b": -2,
+     "c": 0,
+     "d": 4,
+     "skin": "balloons",
+     "context": "Add two weights to each pan to cancel two negative balloons."
+    },
+    "F7-09-unknowns-both": {
+     "label": "F7-09 \u00b7 Signed unknowns on both pans",
+     "a": 3,
+     "b": -2,
+     "c": 2,
+     "d": 4,
+     "skin": "balloons",
+     "context": "Remove two x bags on each side, then cancel negative balloons."
+    },
+    "F7-09-negative-x": {
+     "label": "F7-09 \u00b7 Negative unknown",
+     "a": -1,
+     "b": 8,
+     "c": 0,
+     "d": 3,
+     "skin": "balloons",
+     "context": "A negative x bag lifts: \u2212x + 8 = 3. Remove equal units and reverse the sign."
+    },
+    "F7-10-cups": {
+     "label": "F7-10 \u00b7 Cups and counters",
+     "a": 2,
+     "b": 2,
+     "c": 0,
+     "d": 10,
+     "skin": "cups",
+     "context": "Two mystery cups and two counters have the same value as ten counters."
+    },
+    "F7-10-one-cup": {
+     "label": "F7-10 \u00b7 One mystery cup",
+     "a": 1,
+     "b": 3,
+     "c": 0,
+     "d": 7,
+     "skin": "cups",
+     "context": "Remove three counters from both sides to reveal one cup."
+    },
+    "F7-10-three-cups": {
+     "label": "F7-10 \u00b7 Three cups",
+     "a": 3,
+     "b": 3,
+     "c": 0,
+     "d": 12,
+     "skin": "cups",
+     "context": "Remove three counters from both sides, then share nine between three cups."
+    },
+    "F7-10-context": {
+     "label": "F7-10 \u00b7 Equal-share story",
+     "a": 2,
+     "b": 4,
+     "c": 0,
+     "d": 12,
+     "skin": "cups",
+     "context": "Two sealed cups and four loose counters match twelve counters."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 620,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 12.351774193548387,
+     "p10": 11.061290322580644,
+     "count": 19,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 620,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 12.351774193548387,
+     "p10": 11.061290322580644,
+     "count": 19,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "renderScene",
+     "arguments": {
+      "m": {
+       "a": 2,
+       "b": -3,
+       "c": 0,
+       "d": 7,
+       "skin": "balloons",
+       "display": "2x \u2212 3 = 7",
+       "context": "Keep both sides equal.",
+       "_transition": true
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Solve 2x \u2212 3 = 7.",
+    "privateAnswer": 5,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 162,
+     "total": 162,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-10",
+   "name": "Cups-and-Counters Solver",
+   "path": "F7/F7-10-cups-and-counters.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "12c393c7b88d2c596eac73b0acf03c44938d7c871f8938e895e18d9238ef028f",
+   "originalSha256": "3dd3d27c1367b04946b7521cbe419b51f3557cdf20cf7f81ef1b7bb36938644a",
+   "nativeSteps": 7,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ]
+   ],
+   "draws": {
+    "dock": [
+     "stage",
+     "cue"
+    ],
+    "renderScene": [
+     "stage",
+     "m",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "SIGNED_STEPS",
+    "CUPS_STEPS"
+   ],
+   "exploreFields": {
+    "mathOp.r": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "cupsWatch.b": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "cupsWatch.m": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "signedWatch.initial": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "watch.base": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    },
+    "watch.m": {
+     "kind": "factory",
+     "factory": "copy",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "cupsChallenge",
+    "signedChallenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-033-one-step": {
+     "label": "Y7 \u00b7 One-step equation",
+     "a": 1,
+     "b": 3,
+     "c": 0,
+     "d": 7,
+     "skin": "bags",
+     "context": "One mystery bag and three weights balance seven weights."
+    },
+    "Y7-035-context": {
+     "label": "Y7 \u00b7 Bags in a story",
+     "a": 2,
+     "b": 2,
+     "c": 0,
+     "d": 8,
+     "skin": "bags",
+     "context": "Two bags and two weights equal eight weights."
+    },
+    "Y8-013-brackets": {
+     "label": "Y8 \u00b7 Brackets first",
+     "a": 2,
+     "b": 4,
+     "c": 0,
+     "d": 10,
+     "skin": "bags",
+     "display": "2(x + 2) = 10",
+     "context": "Expand the bracket before removing equal weights."
+    },
+    "Y8-014-both-sides": {
+     "label": "Y8 \u00b7 Unknown on both sides",
+     "a": 2,
+     "b": 3,
+     "c": 1,
+     "d": 8,
+     "skin": "bags",
+     "context": "Both pans contain mystery bags; cancel one from each."
+    },
+    "F7-09-negatives": {
+     "label": "F7-09 \u00b7 Negative balloons",
+     "a": 2,
+     "b": -3,
+     "c": 1,
+     "d": 2,
+     "skin": "balloons",
+     "context": "Negative balloons lift up. Keep both sides equal."
+    },
+    "F7-09-signed-unit": {
+     "label": "F7-09 \u00b7 Signed one-step",
+     "a": 1,
+     "b": -2,
+     "c": 0,
+     "d": 4,
+     "skin": "balloons",
+     "context": "Add two weights to each pan to cancel two negative balloons."
+    },
+    "F7-09-unknowns-both": {
+     "label": "F7-09 \u00b7 Signed unknowns on both pans",
+     "a": 3,
+     "b": -2,
+     "c": 2,
+     "d": 4,
+     "skin": "balloons",
+     "context": "Remove two x bags on each side, then cancel negative balloons."
+    },
+    "F7-09-negative-x": {
+     "label": "F7-09 \u00b7 Negative unknown",
+     "a": -1,
+     "b": 8,
+     "c": 0,
+     "d": 3,
+     "skin": "balloons",
+     "context": "A negative x bag lifts: \u2212x + 8 = 3. Remove equal units and reverse the sign."
+    },
+    "F7-10-cups": {
+     "label": "F7-10 \u00b7 Cups and counters",
+     "a": 2,
+     "b": 2,
+     "c": 0,
+     "d": 10,
+     "skin": "cups",
+     "context": "Two mystery cups and two counters have the same value as ten counters."
+    },
+    "F7-10-one-cup": {
+     "label": "F7-10 \u00b7 One mystery cup",
+     "a": 1,
+     "b": 3,
+     "c": 0,
+     "d": 7,
+     "skin": "cups",
+     "context": "Remove three counters from both sides to reveal one cup."
+    },
+    "F7-10-three-cups": {
+     "label": "F7-10 \u00b7 Three cups",
+     "a": 3,
+     "b": 3,
+     "c": 0,
+     "d": 12,
+     "skin": "cups",
+     "context": "Remove three counters from both sides, then share nine between three cups."
+    },
+    "F7-10-context": {
+     "label": "F7-10 \u00b7 Equal-share story",
+     "a": 2,
+     "b": 4,
+     "c": 0,
+     "d": 12,
+     "skin": "cups",
+     "context": "Two sealed cups and four loose counters match twelve counters."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 620,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 12.29032258064516,
+     "p10": 11.470967741935484,
+     "count": 21,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 620,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 12.29032258064516,
+     "p10": 11.470967741935484,
+     "count": 21,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "renderScene",
+     "arguments": {
+      "m": {
+       "a": 2,
+       "b": 2,
+       "c": 0,
+       "d": 10,
+       "skin": "cups",
+       "display": "2x + 2 = 10",
+       "context": "Keep both sides equal.",
+       "_transition": true
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "2 cups and 2 counters equal 10 counters. How many counters are in each cup?",
+    "privateAnswer": 4,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 162,
+     "total": 162,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-11",
+   "name": "Bar-Model Equation",
+   "path": "F7/F7-11-bar-model-equation.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "fd3d3b45b97207680e1fd6655983d51ab33a4bb2ed290c3878cd91f4f2db7041",
+   "originalSha256": "cc352aa5cdbd6dbb350eeac3a6561785a6ef208e82896e4e2e514cf83cc8a996",
+   "nativeSteps": 8,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "helper": [
+     "stage",
+     "k"
+    ],
+    "present": [
+     "stage",
+     "o",
+     "v"
+    ]
+   },
+   "tables": [
+    "F711_STEPS",
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "f711Challenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-034": {
+     "label": "Y7 \u00b7 Expressions from contexts",
+     "mode": "expression",
+     "n": 2,
+     "b": 4,
+     "total": null,
+     "context": "Two identical mystery packs and four loose counters. Build the expression.",
+     "names": [
+      "Mystery packs",
+      "Loose counters"
+     ]
+    },
+    "Y7-035": {
+     "label": "Y7 \u00b7 Form and solve equations",
+     "mode": "equation",
+     "n": 3,
+     "b": 5,
+     "total": 26,
+     "context": "Three identical mystery packs and five loose counters have a total of twenty-six.",
+     "names": [
+      "Unknown packs",
+      "Known counters"
+     ]
+    },
+    "F4-10": {
+     "label": "F4-10 \u00b7 Bar to equation",
+     "mode": "translator",
+     "n": 2,
+     "b": 5,
+     "total": 19,
+     "context": "Two identical mystery packs and five loose counters together make nineteen. Match the model to the equation.",
+     "names": [
+      "Mystery packs",
+      "Known counters"
+     ]
+    },
+    "F7-11": {
+     "label": "F7-11 \u00b7 Bar-model equation",
+     "mode": "bar-equation",
+     "n": 3,
+     "b": 5,
+     "total": 26,
+     "context": "Three identical mystery packs plus five known counters have a total value of twenty-six. Model the relationship, subtract the known part, and find one mystery pack.",
+     "names": [
+      "Equal mystery packs",
+      "Known counters"
+     ],
+     "lesson": "Y7-034"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 810,
+     "svgWidth": 240,
+     "stageWidth": 262,
+     "median": 14.814814814814813,
+     "p10": 12.444444444444443,
+     "count": 12,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 810,
+     "svgWidth": 240,
+     "stageWidth": 262,
+     "median": 14.814814814814813,
+     "p10": 12.444444444444443,
+     "count": 12,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "present",
+     "arguments": {
+      "o": {
+       "mode": "equation",
+       "n": 3,
+       "b": 5,
+       "total": 26,
+       "context": "3 identical packs and 5 loose counters make 26.",
+       "names": [
+        "Unknown packs",
+        "Known counters"
+       ]
+      },
+      "v": {
+       "task": true,
+       "count": 0,
+       "known": false,
+       "step": 0,
+       "pose": "start",
+       "title": "Question 1"
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "3x + 5 = 26. Find x.",
+    "privateAnswer": 7,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 162,
+     "total": 162,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-12",
+   "name": "Substitution Machine",
+   "path": "F7/F7-12-substitution-machine.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "756145b1fd16e675bfa9a1f13f7b54d013ca2c68b7ddda0edb9811036ad5abf1",
+   "originalSha256": "fbca868b51988512d36078b97e137ac4de31e5db2a79b84be650700b22c83f62",
+   "nativeSteps": 8,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "dock": [
+     "stage",
+     "cue"
+    ],
+    "display": [
+     "stage",
+     "p",
+     "opt"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "F7-12-Y7-030": {
+     "label": "Y7-030 \u00b7 Substitute into 3x + 2",
+     "a": 3,
+     "b": 2,
+     "c": 0,
+     "power": 1,
+     "x": 5,
+     "context": "Value the expression at x equals five."
+    },
+    "Y7-030-subtraction": {
+     "label": "Subtracting \u00b7 5x \u2212 3",
+     "a": 5,
+     "b": -3,
+     "c": 0,
+     "power": 1,
+     "x": 4,
+     "context": "Multiply before subtracting."
+    },
+    "Y7-030-signed": {
+     "label": "Negative x \u00b7 2x + 5",
+     "a": 2,
+     "b": 5,
+     "c": 0,
+     "power": 1,
+     "x": -3,
+     "context": "Substitute a negative number using brackets."
+    },
+    "Y7-030-squared": {
+     "label": "Powers \u00b7 x\u00b2 + 2x + 1",
+     "a": 1,
+     "b": 2,
+     "c": 1,
+     "power": 2,
+     "x": 3,
+     "context": "Square the value before multiplying."
+    },
+    "Y7-030-formula": {
+     "label": "Formula \u00b7 2x + 7",
+     "a": 2,
+     "b": 7,
+     "c": 0,
+     "power": 1,
+     "x": 6,
+     "context": "A simple cost formula."
+    },
+    "Y8-substitution-bridge": {
+     "label": "GCSE bridge \u00b7 3x\u00b2 \u2212 2x + 1",
+     "a": 3,
+     "b": -2,
+     "c": 1,
+     "power": 2,
+     "x": 2,
+     "context": "Evaluate a quadratic with order of operations."
+    },
+    "F8-03-function-rule": {
+     "label": "Function input/output \u00b7 2x + 3",
+     "a": 2,
+     "b": 3,
+     "c": 0,
+     "power": 1,
+     "x": 5,
+     "context": "A function sends each input through a rule to an output."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 540,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 16.933333333333334,
+     "p10": 12.700000000000001,
+     "count": 11,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 540,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 16.933333333333334,
+     "p10": 12.700000000000001,
+     "count": 11,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "display",
+     "arguments": {
+      "p": {
+       "label": "Question 1",
+       "a": 3,
+       "b": 2,
+       "c": 0,
+       "power": 1,
+       "x": 5,
+       "context": "Substitute, then evaluate."
+      },
+      "opt": {
+       "hideResult": true,
+       "loaded": false,
+       "reveal": 0,
+       "caption": "Question 1"
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Find the value of 3x + 2 when x = 5.",
+    "privateAnswer": 17,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 168,
+     "total": 168,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-13",
+   "name": "Difference of Two Squares",
+   "path": "F7/F7-13-difference-of-two-squares.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "27b4027748a9e8e7248c3ac01824538d1d3100ad8014a79e60051640f5fd4edb",
+   "originalSha256": "c4d1b18e2b2c97036ad44074114964baa43a09d47daec92805f923df72a51266",
+   "nativeSteps": 7,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "cue"
+    ]
+   ],
+   "draws": {
+    "cues": [
+     "stage",
+     "name"
+    ],
+    "scene": [
+     "stage",
+     "p",
+     "opts"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y9-006-difference-of-squares": {
+     "label": "Year 9: x\u00b2 \u2212 9",
+     "b": 3,
+     "demo": 9,
+     "context": "A three by three square removed from a larger square."
+    },
+    "square-4": {
+     "label": "x\u00b2 \u2212 4",
+     "b": 2,
+     "demo": 8,
+     "context": "A two by two cut-out."
+    },
+    "square-16": {
+     "label": "x\u00b2 \u2212 16",
+     "b": 4,
+     "demo": 10,
+     "context": "A four by four cut-out."
+    },
+    "square-1": {
+     "label": "x\u00b2 \u2212 1",
+     "b": 1,
+     "demo": 7,
+     "context": "A single unit square removed."
+    },
+    "square-25": {
+     "label": "x\u00b2 \u2212 25",
+     "b": 5,
+     "demo": 12,
+     "context": "A five by five cut-out."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": false,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 700,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 16.32857142857143,
+     "p10": 13.425714285714287,
+     "count": 5,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 700,
+     "svgWidth": 254,
+     "stageWidth": 262,
+     "median": 16.32857142857143,
+     "p10": 13.425714285714287,
+     "count": 5,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "scene",
+     "arguments": {
+      "p": {
+       "label": "x\u00b2 \u2212 9",
+       "b": 3,
+       "demo": 6,
+       "context": "A square removed from a larger square."
+      },
+      "opts": {
+       "caption": "Question 1"
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "x\u00b2 \u2212 9 = (x + a)(x \u2212 a). Enter a.",
+    "privateAnswer": 3,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 162,
+     "total": 162,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F7-14",
+   "name": "Identity Visualiser",
+   "path": "F7/F7-14-identity-visualiser.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "9a6ec388cba3fe9de2f01ff03226f458e6eb8bc90c3a6e9c0ebe399d6cb6042d",
+   "originalSha256": "265f98c133ef515b5229f4e04fe2473c373949c56067a742ac85a0f213894e87",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "cue",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "helper": [
+     "stage",
+     "cue"
+    ],
+    "renderStage": [
+     "stage",
+     "p",
+     "ts",
+     "o"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "keys"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native draw function and argument names in \"draws\"; see F7-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "startMode",
+    "preset",
+    "parameters",
+    "presets",
+    "challenge",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y9-006-algebraic-identity": {
+     "label": "Year 9 \u00b7 Distributive identity",
+     "left": "2(x + 1)",
+     "right": "2x + 2",
+     "A": {
+      "x2": 0,
+      "x": 2,
+      "one": 2
+     },
+     "B": {
+      "x2": 0,
+      "x": 2,
+      "one": 2
+     },
+     "context": "Distributing a number does not change the expression."
+    },
+    "Y9-006-quadratic": {
+     "label": "Year 9 \u00b7 Quadratic identity",
+     "left": "(x + 2)(x + 1)",
+     "right": "x\u00b2 + 3x + 2",
+     "A": {
+      "x2": 1,
+      "x": 3,
+      "one": 2
+     },
+     "B": {
+      "x2": 1,
+      "x": 3,
+      "one": 2
+     },
+     "context": "Four area products collected into three tile families."
+    },
+    "Y9-006-cancellation": {
+     "label": "Year 9 \u00b7 Difference of squares",
+     "left": "(x + 1)(x \u2212 1)",
+     "right": "x\u00b2 \u2212 1",
+     "A": {
+      "x2": 1,
+      "x": 0,
+      "one": -1
+     },
+     "B": {
+      "x2": 1,
+      "x": 0,
+      "one": -1
+     },
+     "context": "Two x terms cancel while the constant is negative."
+    },
+    "Y9-006-false": {
+     "label": "Watch the missed term",
+     "left": "(x + 1)\u00b2",
+     "right": "x\u00b2 + 1",
+     "A": {
+      "x2": 1,
+      "x": 2,
+      "one": 1
+     },
+     "B": {
+      "x2": 1,
+      "x": 0,
+      "one": 1
+     },
+     "context": "Squaring a bracket also creates two x terms."
+    },
+    "Y9-006-single-value": {
+     "label": "One equal value is not an identity",
+     "left": "x\u00b2 + x",
+     "right": "x\u00b2",
+     "A": {
+      "x2": 1,
+      "x": 1,
+      "one": 0
+     },
+     "B": {
+      "x2": 1,
+      "x": 0,
+      "one": 0
+     },
+     "context": "These are equal when x is zero but not for every x."
+    },
+    "Y9-006-signed": {
+     "label": "Signed coefficients",
+     "left": "3x \u2212 2x \u2212 1",
+     "right": "x \u2212 1",
+     "A": {
+      "x2": 0,
+      "x": 1,
+      "one": -1
+     },
+     "B": {
+      "x2": 0,
+      "x": 1,
+      "one": -1
+     },
+     "context": "Combine signed terms before comparing."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 640,
+     "svgWidth": 252,
+     "stageWidth": 262,
+     "median": 13.78125,
+     "p10": 11.8125,
+     "count": 7,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 640,
+     "svgWidth": 252,
+     "stageWidth": 262,
+     "median": 13.78125,
+     "p10": 11.8125,
+     "count": 7,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "renderStage",
+     "arguments": {
+      "p": {
+       "label": "Question 1",
+       "left": "2(x + 3)",
+       "right": "2x + 6",
+       "A": {
+        "x2": 0,
+        "x": 2,
+        "one": 6
+       },
+       "B": {
+        "x2": 0,
+        "x": 2,
+        "one": 6
+       },
+       "context": "Compare every coefficient."
+      },
+      "ts": [],
+      "o": {
+       "caption": "Question 1",
+       "reveal": false
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Is 2(x + 3) identical to 2x + 6 for every x? Enter 1 for yes or 0 for no.",
+    "privateAnswer": 1,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 8,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f7Production": {
+     "passed": 162,
+     "total": 162,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  }
+ ]
+}

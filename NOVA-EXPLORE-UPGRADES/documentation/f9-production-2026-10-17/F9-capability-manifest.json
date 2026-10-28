@@ -1,0 +1,2999 @@
+{
+ "family": "F9",
+ "revision": "2026-10-17",
+ "componentCount": 13,
+ "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+ "templateSha256": "740c125af623ab5fb5896b3e9655a6d10b093ffcda53127a6eb67eb80eef26ec",
+ "components": [
+  {
+   "id": "F9-01",
+   "name": "Matchstick Pattern Builder",
+   "path": "F9/F9-01-matchstick-pattern-builder.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "e7d73497bcf99654a9a8ce003a10300592ddabf4dd68cf969b02631822107ac4",
+   "originalSha256": "66eaeadb276798f3f140057bddf83a3306b40a4067c767cd794207289e171360",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "reset": [
+     "stage"
+    ],
+    "renderChallenge": [
+     "stage",
+     "stepState"
+    ],
+    "showEquation": [
+     "stage",
+     "n",
+     "hideValue"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "speech"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "preset",
+    "minStage",
+    "maxStage",
+    "firstTerm",
+    "difference",
+    "presets",
+    "events",
+    "challenge",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-036-sequence-structure": {
+     "label": "Year 7 \u00b7 Sequence rules",
+     "shape": "joined-squares",
+     "minStage": 1,
+     "maxStage": 7,
+     "difference": 3
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 14.399999999999999,
+     "p10": 14.399999999999999,
+     "count": 4,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 14.399999999999999,
+     "p10": 14.399999999999999,
+     "count": 4,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "stage": 3,
+       "ask": 7
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Stage 3 of the pattern is shown. How many sticks are needed for stage 7?",
+    "privateAnswer": 22,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 169,
+     "total": 169,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-02",
+   "name": "Term-to-term Animator",
+   "path": "F9/F9-02-term-to-term-animator.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "f042b101a4c1a378563bfe279ccafd3228921ec7fb83a22d9b1eb06056ec107c",
+   "originalSha256": "8d2dc7906c288adfbc9c7eb735a5f327473a7ad03e1cff7b5829105c67601db1",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "reset": [
+     "stage"
+    ],
+    "renderExplore": [
+     "stage",
+     "panel"
+    ],
+    "drawChallenge": [
+     "stage",
+     "api"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "speech"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-036-sequence-structure": {
+     "label": "Year 7 \u00b7 +3 pattern",
+     "type": "arith",
+     "a1": 4,
+     "step": 3,
+     "terms": 5,
+     "focus": "Term-to-term rule"
+    },
+    "Y8-019-arithmetic-sequences": {
+     "label": "Year 8 \u00b7 \u22125 pattern",
+     "type": "arith",
+     "a1": 30,
+     "step": -5,
+     "terms": 5,
+     "focus": "Arithmetic sequence"
+    },
+    "Y8-020-geometric-sequences": {
+     "label": "Year 8 \u00b7 \u00d72 pattern",
+     "type": "geom",
+     "a1": 3,
+     "ratio": 2,
+     "terms": 5,
+     "focus": "Geometric sequence"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 14,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 14,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "type": "arith",
+       "a1": 4,
+       "visible": 4,
+       "step": 3
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "What is the next term of the sequence?",
+    "privateAnswer": 16,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 168,
+     "total": 168,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-03",
+   "name": "Position-to-Term Table",
+   "path": "F9/F9-03-position-to-term-table.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "a712c062677ab9a1500f6d0e5dd810bc67390b1a2283f5ddc2d2da240c415fec",
+   "originalSha256": "0c828fe27c1d3ffcf484b8b40fb05e8f207c79783557e2d8f4997d691fd569c6",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "reset": [
+     "stage"
+    ],
+    "wrap": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "caption"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "steps",
+    "tasks"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-037-linear-nth-term": {
+     "label": "Year 7 \u00b7 nth term of a linear sequence",
+     "a": 2,
+     "b": 3,
+     "from": 1,
+     "to": 10,
+     "objective": "Use position n to calculate the term directly."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 360,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 15.766666666666667,
+     "p10": 13.616666666666667,
+     "count": 17,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 360,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 15.766666666666667,
+     "p10": 13.616666666666667,
+     "count": 17,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "a": 2,
+       "b": 3,
+       "ask": 10
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The rule is T(n) = 2n + 3. Find T(10).",
+    "privateAnswer": 23,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 169,
+     "total": 169,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-04",
+   "name": "Sequence on a Graph",
+   "path": "F9/F9-04-sequence-on-a-graph.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "005848501f9ceecf60c819db8f1f756a6981b73c3f9c09a13871bad2ce720ebe",
+   "originalSha256": "cdf2d6a6fc29c2b33ff3ac0e950e7b1b7d66985e683f422cdfe6ce6cde5eec02",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "reset": [
+     "stage"
+    ],
+    "wrap": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "speech"
+    ],
+    "renderExplore": [
+     "stage"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "steps",
+    "tasks"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-037-linear-nth-term": {
+     "label": "Y7 \u00b7 2n + 1",
+     "year": "Year 7",
+     "kind": "linear",
+     "a": 2,
+     "b": 1,
+     "yMax": 14,
+     "yStep": 2,
+     "formula": "2n + 1",
+     "objective": "Plot a linear nth-term sequence and read the constant difference."
+    },
+    "Y8-019-arithmetic-sequences": {
+     "label": "Y8 \u00b7 14 \u2212 2n",
+     "year": "Year 8",
+     "kind": "linear",
+     "a": -2,
+     "b": 14,
+     "yMax": 14,
+     "yStep": 2,
+     "formula": "14 \u2212 2n",
+     "objective": "See how a negative constant difference makes the sequence fall."
+    },
+    "Y8-021-quadratic-pattern-spotting": {
+     "label": "Y8 \u00b7 n\u00b2 + 1",
+     "year": "Year 8",
+     "kind": "quadratic",
+     "a": 1,
+     "b": 0,
+     "c": 1,
+     "yMax": 30,
+     "yStep": 5,
+     "formula": "n\u00b2 + 1",
+     "objective": "Plot growing first differences and constant second differences."
+    },
+    "Y9-008-quadratic-pattern-structure": {
+     "label": "Y9 \u00b7 n\u00b2 \u2212 n + 2",
+     "year": "Year 9",
+     "kind": "quadratic",
+     "a": 1,
+     "b": -1,
+     "c": 2,
+     "yMax": 25,
+     "yStep": 5,
+     "formula": "n\u00b2 \u2212 n + 2",
+     "objective": "Use the second-difference structure to recognise a simple quadratic pattern."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 23,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 23,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "kind": "linear",
+       "a": 2,
+       "b": 1,
+       "c": 0,
+       "visible": 4
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The graph shows the first 4 terms. What is term 5?",
+    "privateAnswer": 11,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 70,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 167,
+     "total": 167,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-05",
+   "name": "Linear nth Term Derivation",
+   "path": "F9/F9-05-linear-nth-term-derivation.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "f87b8715b25953d11a386672605c61a42269d0f8e5b0a8c7cdbad1e4af227a99",
+   "originalSha256": "c5e98a30556bb6bfbf8c507adf89fbc1d10eec7544da12ef9cb15594f06a4226",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "reset": [
+     "stage"
+    ],
+    "mountScene": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "speech"
+    ],
+    "exploreDraw": [
+     "stage"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "steps",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-037-linear-nth-term": {
+     "label": "Y7 \u00b7 3n + 2",
+     "year": "Year 7",
+     "a": 3,
+     "c": 2,
+     "objective": "Find and use the nth term of an increasing linear sequence"
+    },
+    "Y8-019-arithmetic-sequences": {
+     "label": "Y8 \u00b7 5n \u2212 3",
+     "year": "Year 8",
+     "a": 5,
+     "c": -3,
+     "objective": "Link the common difference to a linear nth term with negative adjustment"
+    },
+    "Y8-019-decreasing-variant": {
+     "label": "Y8 \u00b7 22 \u2212 4n",
+     "year": "Year 8",
+     "a": -4,
+     "c": 22,
+     "objective": "Derive a decreasing linear rule using the zero term"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12.6,
+     "p10": 11.4,
+     "count": 26,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12.6,
+     "p10": 11.4,
+     "count": 26,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "a": 3,
+       "c": 8
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The nth term is 3n + c. Use the table to find c.",
+    "privateAnswer": 8,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 68,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 165,
+     "total": 165,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-06",
+   "name": "Geometric Sequence",
+   "path": "F9/F9-06-geometric-sequence.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "5c9be49b6117a091e92099b6c37a8b06ba90926b8ae238a856b4e531dba7be22",
+   "originalSha256": "545565eaff221eaff306d0ae8ee5ebf021298ac43a754aa04e30985132a05c40",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "clear": [
+     "stage"
+    ],
+    "mount": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "say"
+    ],
+    "explore": [
+     "stage"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "steps",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "preset",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y8-020-geometric-sequences": {
+     "label": "Y8 \u00b7 Doubling",
+     "a": 2,
+     "r": 2,
+     "terms": 5,
+     "rule": "\u00d72",
+     "context": "Geometric sequences"
+    },
+    "Y9-014-exponential-decay": {
+     "label": "Y9 \u00b7 Halving",
+     "a": 64,
+     "r": 0.5,
+     "terms": 5,
+     "rule": "\u00f72",
+     "context": "Exponential decay"
+    },
+    "Y9-014-exponential-growth": {
+     "label": "Y9 \u00b7 Tripling",
+     "a": 2,
+     "r": 3,
+     "terms": 5,
+     "rule": "\u00d73",
+     "context": "Exponential growth"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12,
+     "p10": 11.4,
+     "count": 16,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12,
+     "p10": 11.4,
+     "count": 16,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "a": 3,
+       "r": 2,
+       "shown": 4
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Each term is multiplied by the same number. What is term 5?",
+    "privateAnswer": 48,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 168,
+     "total": 168,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-07",
+   "name": "Special Sequences",
+   "path": "F9/F9-07-special-sequences.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "bdaee6b92bbe9f31a7b6c300f2730d766d5d2f09d7867cdf9b6bae33e736f51d",
+   "originalSha256": "60aa428ab9d3ea0b71371547f8492a17c914fa26795afd4eb086444bd8a78624",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "clear": [
+     "stage"
+    ],
+    "mount": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "say"
+    ],
+    "explore": [
+     "stage"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "kindList",
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-036-sequence-structures": {
+     "label": "Y7 \u00b7 Shapes & patterns",
+     "defaultKind": "square",
+     "context": "square, triangular, cube and Fibonacci sequence structures"
+    },
+    "Y8-020-compare-geometric": {
+     "label": "Y8 \u00b7 Compare rules",
+     "defaultKind": "cube",
+     "context": "recognise patterns that are not constant-ratio geometric sequences"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 13.2,
+     "p10": 11.4,
+     "count": 12,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 13.2,
+     "p10": 11.4,
+     "count": 12,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "kind": "square",
+       "n": 3,
+       "ask": 5
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "How many dots are there at stage 5?",
+    "privateAnswer": 25,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 168,
+     "total": 168,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-08",
+   "name": "Triangular Numbers Dot Arrays",
+   "path": "F9/F9-08-triangular-numbers-dot-arrays.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "1d5539418fdeb421687208f8f4dadf6328a4a7019b4eeeb2ff1f9da1f47b1989",
+   "originalSha256": "46f2aa53d4d18952f44d1e0861ae06d496583211fe319cd0b8bd0fc51c77cee4",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "clear": [
+     "stage"
+    ],
+    "mount": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "speech"
+    ],
+    "renderExplore": [
+     "stage"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-036-sequence-structure": {
+     "label": "Y7 \u00b7 Growing rows",
+     "mode": "triangle",
+     "stage": 4,
+     "context": "Count one more dot in each new row"
+    },
+    "KS3-triangular-visual-proof": {
+     "label": "KS3 \u00b7 Double & halve",
+     "mode": "rectangle",
+     "stage": 5,
+     "context": "Use two copies to derive a general formula"
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12.6,
+     "p10": 11.4,
+     "count": 12,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 12.6,
+     "p10": 11.4,
+     "count": 12,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "n": 4,
+       "ask": 6
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Stage 4 is shown. How many dots are in stage 6?",
+    "privateAnswer": 21,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 169,
+     "total": 169,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-09",
+   "name": "Quadratic Sequence",
+   "path": "F9/F9-09-quadratic-sequence.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "925d6f5458f928c2dd07945b67b47107883eff9fb92473d4229a9685f53f621b",
+   "originalSha256": "f963c9872d1a74ba746775f0870dfc0f85b2a1334d9242ec382af3e5783fe8f7",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "clear": [
+     "stage"
+    ],
+    "mount": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "speech"
+    ],
+    "renderExplore": [
+     "stage"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y8-021-quadratic-spotting": {
+     "label": "Y8 \u00b7 Spot second differences",
+     "a": 2,
+     "b": 3,
+     "c": 1,
+     "context": "First differences change. Second differences stay at four."
+    },
+    "Y9-008-quadratic-structure": {
+     "label": "Y9 \u00b7 Quadratic structure",
+     "a": 1,
+     "b": -2,
+     "c": 4,
+     "context": "The linear remainder can be negative."
+    },
+    "KS3-perfect-squares": {
+     "label": "KS3 \u00b7 Square pattern",
+     "a": 1,
+     "b": 2,
+     "c": 1,
+     "context": "The square numbers 4, 9, 16, 25, 36 also form a quadratic sequence."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 36,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 36,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "a": 1,
+       "b": 2,
+       "c": 1
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The first four terms of a quadratic sequence are shown. Find the fifth term.",
+    "privateAnswer": 36,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 169,
+     "total": 169,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-10",
+   "name": "Pascal\u2019s Triangle",
+   "path": "F9/F9-10-pascals-triangle.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "0f5e7e0afc319e1f2f971511ef7f87e91fad2e9b292251a6227fa83069869d9d",
+   "originalSha256": "cd6b0a2b2afd5d088f65108c5b987d6d43699ea3d3cefde23a950a5e15f59c39",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "clear": [
+     "stage"
+    ],
+    "mount": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "speech"
+    ],
+    "renderExplore": [
+     "stage"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "KS3-grow": {
+     "label": "KS3 \u00b7 Grow the rows",
+     "rows": 6,
+     "focus": "addition",
+     "context": "Each interior cell adds the two directly above."
+    },
+    "KS3-row-sums": {
+     "label": "KS3 \u00b7 Powers of two",
+     "rows": 7,
+     "focus": "sums",
+     "context": "The sum of row r is two to the power r."
+    },
+    "KS3-diagonals": {
+     "label": "KS3 \u00b7 Diagonal patterns",
+     "rows": 7,
+     "focus": "diagonal",
+     "context": "The third diagonal contains triangular numbers."
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 13.2,
+     "p10": 13.2,
+     "count": 18,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 13.2,
+     "p10": 13.2,
+     "count": 18,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "rows": 5,
+       "ask": "centre"
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Find the missing number in the bottom row.",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 70,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 167,
+     "total": 167,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-11",
+   "name": "Spot-the-Rule Puzzle",
+   "path": "F9/F9-11-spot-the-rule-puzzle.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "ee7bc3c54d18d2abab05a77bed8e379cef716ce111a51007af2022623cfcabdf",
+   "originalSha256": "7270257f5dcd5b51d393c5d8cd54c6b76d0af1b6a2463a022f489fc2210e929c",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "clear": [
+     "stage"
+    ],
+    "mount": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "speech"
+    ],
+    "exploreDraw": [
+     "stage"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-036-sequence-structure": {
+     "label": "Y7-036 \u00b7 Rule detective",
+     "kind": "add",
+     "first": 5,
+     "k": 3,
+     "shown": 5
+    },
+    "Y7-036-backwards": {
+     "label": "Y7-036 \u00b7 Decreasing",
+     "kind": "add",
+     "first": 24,
+     "k": -4,
+     "shown": 5
+    },
+    "Y7-036-doubling": {
+     "label": "Y7-036 \u00b7 Doubling",
+     "kind": "mult",
+     "first": 2,
+     "k": 2,
+     "shown": 5
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 13.799999999999999,
+     "p10": 11.4,
+     "count": 13,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 13.799999999999999,
+     "p10": 11.4,
+     "count": 13,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "kind": "add",
+       "first": 5,
+       "k": 7
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "What is added to each term to get the next term? (Use a negative number if the terms go down.)",
+    "privateAnswer": 7,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 68,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 165,
+     "total": 165,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-12",
+   "name": "Sequence Continuer",
+   "path": "F9/F9-12-sequence-continuer.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "5199f991a2df02787ba149bfc6a29236975f416774544bdd27aa38df839e4f41",
+   "originalSha256": "cbc8915f7fc499017cba4cb0fe262540a2bdbd203fae0447635d2560e5153ca5",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "clear": [
+     "stage"
+    ],
+    "mount": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "speech"
+    ],
+    "exploreDraw": [
+     "stage"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "STEPS",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "presets",
+    "events",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "Y7-036-sequence-structure": {
+     "label": "Y7-036 \u00b7 Add three",
+     "operation": "add",
+     "first": 4,
+     "step": 3,
+     "terms": 5
+    },
+    "Y7-036-decreasing": {
+     "label": "Y7-036 \u00b7 Subtract four",
+     "operation": "add",
+     "first": 24,
+     "step": -4,
+     "terms": 5
+    },
+    "Y7-036-doubling": {
+     "label": "Y7-036 \u00b7 Double each term",
+     "operation": "multiply",
+     "first": 2,
+     "factor": 2,
+     "terms": 5
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 15,
+     "p10": 12,
+     "count": 13,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 15,
+     "p10": 12,
+     "count": 13,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "operation": "add",
+       "first": 4,
+       "step": 3
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Continue the sequence. What is term 5?",
+    "privateAnswer": 16,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 168,
+     "total": 168,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F9-13",
+   "name": "Fractal Generators",
+   "path": "F9/F9-13-fractal-generators.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "d0b52ce415334e504ec4fd63e68ac4fe81cbae79220a2164433947d4f0a5b221",
+   "originalSha256": "0f1a6f2a11a851a230d23799329c7449fa106282b99d269c4cef2069cc0913c8",
+   "nativeSteps": 6,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "mood"
+    ]
+   ],
+   "draws": {
+    "clear": [
+     "stage"
+    ],
+    "mount": [
+     "stage",
+     "svg",
+     "cards",
+     "pose",
+     "speech"
+    ],
+    "sceneDraw": [
+     "stage",
+     "presetName",
+     "n",
+     "opts"
+    ],
+    "drawChallenge": [
+     "stage",
+     "api"
+    ],
+    "lessonScene": [
+     "stage",
+     "p"
+    ]
+   },
+   "tables": [
+    "STORIES",
+    "TASKS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function:\"lessonScene\",arguments:{p}} (value-driven, answer never drawn); validated by NovaF9Contracts; see F9-configuration-examples.json",
+   "configurationKeys": [
+    "id",
+    "family",
+    "startMode",
+    "maxIteration",
+    "presets",
+    "events",
+    "challenge",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "sierpinski-triangle": {
+     "label": "Sierpi\u0144ski \u00b7 triangle",
+     "kind": "sierpinski",
+     "factor": 3,
+     "initial": 1,
+     "max": 4
+    },
+    "koch-curve": {
+     "label": "Koch \u00b7 curve",
+     "kind": "koch",
+     "factor": 4,
+     "initial": 1,
+     "max": 4,
+     "baseCm": 9
+    }
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 14,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 430,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.4,
+     "p10": 11.4,
+     "count": 14,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "lessonScene",
+     "arguments": {
+      "p": {
+       "kind": "sierpinski",
+       "n": 1,
+       "ask": 3
+      }
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "How many small triangles are there at iteration 3?",
+    "privateAnswer": 27,
+    "answerType": "numeric",
+    "hint": "Use the given values and the original apparatus.",
+    "wrongFeedback": "Check the given values.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 10,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f9Production": {
+     "passed": 168,
+     "total": 168,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  }
+ ]
+}

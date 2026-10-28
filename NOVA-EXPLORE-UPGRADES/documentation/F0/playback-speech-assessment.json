@@ -1,0 +1,326 @@
+[
+  {
+    "name": "Pause freezes an in-flight original tween",
+    "pass": true,
+    "detail": 0.03699999999999995
+  },
+  {
+    "name": "Play resumes the paused original motion",
+    "pass": true
+  },
+  {
+    "name": "Lesson motion waits for actual final mathematical state",
+    "pass": true,
+    "detail": {
+      "pendingAt100": true,
+      "text": "Timeline · Totalp = 5.00StartJump 1Jump 2Jump 3Jump 4Total−1.5−1−0.500.511.5+0.5+0.5+0.5+0.54 × 0.5−1 + 0.5 + 0.5 + 0.5 + 0.5 = 14 × 0.5 = 24 × 0.5 = 2 (Nova the cat, cheering)Nova the cat, cheering",
+      "config": 3
+    }
+  },
+  {
+    "name": "Lesson motion cancels without hanging or later redraw",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion reaches final native frame immediately",
+    "pass": true
+  },
+  {
+    "name": "Speech guard suppresses unsafe decimal utterances",
+    "pass": true,
+    "detail": {
+      "spoken": [
+        "Round 3.26 to one decimal place."
+      ],
+      "blockedCaption": "Sir Bob MaximusRound 3.46 to one decimal place.",
+      "transcript": {
+        "time": 1792178314750,
+        "engine": "QA",
+        "step": "test",
+        "text": "Round 14.2."
+      },
+      "cases": [
+        [
+          "3.46",
+          false
+        ],
+        [
+          "14.2",
+          false
+        ],
+        [
+          ".4",
+          false
+        ],
+        [
+          "0.04",
+          false
+        ],
+        [
+          "3.26",
+          true
+        ],
+        [
+          "44",
+          true
+        ],
+        [
+          "0.005",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "name": "Speech restriction retains captions and transcript",
+    "pass": true,
+    "detail": {
+      "spoken": [
+        "Round 3.26 to one decimal place."
+      ],
+      "blockedCaption": "Sir Bob MaximusRound 3.46 to one decimal place.",
+      "transcript": {
+        "time": 1792178314750,
+        "engine": "QA",
+        "step": "test",
+        "text": "Round 14.2."
+      },
+      "cases": [
+        [
+          "3.46",
+          false
+        ],
+        [
+          "14.2",
+          false
+        ],
+        [
+          ".4",
+          false
+        ],
+        [
+          "0.04",
+          false
+        ],
+        [
+          "3.26",
+          true
+        ],
+        [
+          "44",
+          true
+        ],
+        [
+          "0.005",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "name": "Actual browser speech engine probe",
+    "pass": null,
+    "detail": {
+      "available": true,
+      "voices": [],
+      "events": [
+        "start",
+        {
+          "type": "boundary",
+          "index": 0
+        },
+        {
+          "type": "boundary",
+          "index": 0
+        },
+        {
+          "type": "boundary",
+          "index": 6
+        },
+        {
+          "type": "boundary",
+          "index": 12
+        },
+        {
+          "type": "boundary",
+          "index": 16
+        },
+        {
+          "type": "boundary",
+          "index": 20
+        },
+        {
+          "type": "boundary",
+          "index": 27
+        },
+        {
+          "type": "boundary",
+          "index": 30
+        },
+        {
+          "type": "boundary",
+          "index": 36
+        },
+        {
+          "type": "boundary",
+          "index": 42
+        }
+      ],
+      "result": {
+        "event": "end"
+      }
+    },
+    "audiblePronunciationVerified": false
+  },
+  {
+    "name": "Equivalent fraction",
+    "pass": true,
+    "detail": {
+      "marks": 1,
+      "max": 1,
+      "correct": true,
+      "awarded": [],
+      "feedback": "Correct.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Blank is not zero",
+    "pass": true,
+    "detail": {
+      "marks": 0,
+      "max": 1,
+      "correct": false,
+      "awarded": [],
+      "feedback": "Not yet.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Choice correct",
+    "pass": true,
+    "detail": {
+      "marks": 1,
+      "max": 1,
+      "correct": true,
+      "awarded": [],
+      "feedback": "Correct.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Choice wrong",
+    "pass": true,
+    "detail": {
+      "marks": 0,
+      "max": 1,
+      "correct": false,
+      "awarded": [],
+      "feedback": "Not yet.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Select all unordered",
+    "pass": true,
+    "detail": {
+      "marks": 1,
+      "max": 1,
+      "correct": true,
+      "awarded": [],
+      "feedback": "Correct.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Select all missing",
+    "pass": true,
+    "detail": {
+      "marks": 0,
+      "max": 1,
+      "correct": false,
+      "awarded": [],
+      "feedback": "Not yet.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Order right",
+    "pass": true,
+    "detail": {
+      "marks": 1,
+      "max": 1,
+      "correct": true,
+      "awarded": [],
+      "feedback": "Correct.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Numerically equal ordered ties",
+    "pass": true,
+    "detail": {
+      "marks": 1,
+      "max": 1,
+      "correct": true,
+      "awarded": [],
+      "feedback": "Correct.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Order wrong",
+    "pass": true,
+    "detail": {
+      "marks": 0,
+      "max": 1,
+      "correct": false,
+      "awarded": [],
+      "feedback": "Not yet.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Malformed select all response",
+    "pass": true,
+    "detail": {
+      "marks": 0,
+      "max": 1,
+      "correct": false,
+      "awarded": [],
+      "feedback": "Not yet.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Malformed ordered response",
+    "pass": true,
+    "detail": {
+      "marks": 0,
+      "max": 1,
+      "correct": false,
+      "awarded": [],
+      "feedback": "Not yet.",
+      "trap": null
+    }
+  },
+  {
+    "name": "Method credit without answer credit",
+    "pass": true,
+    "detail": {
+      "marks": 1,
+      "max": 2,
+      "correct": false,
+      "awarded": [
+        "M1"
+      ],
+      "feedback": "Method seen, but the answer is not right.",
+      "trap": null
+    }
+  },
+  {
+    "name": "No runtime errors",
+    "pass": true,
+    "detail": []
+  }
+]

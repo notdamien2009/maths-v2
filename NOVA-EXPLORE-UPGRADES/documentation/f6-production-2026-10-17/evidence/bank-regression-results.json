@@ -1,0 +1,3754 @@
+[
+  {
+    "id": "F6-01",
+    "path": "F6/F6-01-ratio-table.html",
+    "errors": [],
+    "engineId": "F6-01",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "scene",
+        "key": "stageScene",
+        "path": [
+          "1",
+          "a0"
+        ],
+        "from": 2,
+        "to": 3,
+        "beforeText": "RATIO LAB · F6-01LEARN & REVEALInteractive NOVA ratio table: two quantities, one known row and a linked scaled row; green targets receive multipliers or answer tiles.RATIO TABLE · KEEP THE RELATIONSAME FACTOR · BOTH COLUMNSQUANTITY ATicketsKnown2×3New6QUANTITY BCostKnown£6×3New£18Each row must describe the same relationship.y / x = constantRELATIONSHIPRate = 3WORK IT BOTH WAYS× the first side× the second sidePROOFEqual factor keeps the ratio equalReverse to check your answer.Reverse to check your answer. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "RATIO LAB · F6-01LEARN & REVEALInteractive NOVA ratio table: two quantities, one known row and a linked scaled row; green targets receive multipliers or answer tiles.RATIO TABLE · KEEP THE RELATIONSAME FACTOR · BOTH COLUMNSQUANTITY ATicketsKnown3×3New9QUANTITY BCostKnown£6×3New£18Each row must describe the same relationship.y / x = constantRELATIONSHIPRate = 2WORK IT BOTH WAYS× the first side× the second sidePROOFEqual factor keeps the ratio equalReverse to check your answer.Reverse to check your answer. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "Prove and transfer",
+            "narration": "We can divide each new quantity by three to return to the first row. Try another scale factor yourself.",
+            "prompt": "Can you reverse the operation and still keep the relationship?",
+            "pose": "cheer",
+            "cat": "success",
+            "lesson": null
+          },
+          "scene": {
+            "function": "stageScene",
+            "arguments": {
+              "p": {
+                "label": "Y7 · Direct proportion",
+                "a": "Tickets",
+                "b": "Cost",
+                "a0": 3,
+                "b0": 6,
+                "f": 3,
+                "type": "direct",
+                "unitA": "",
+                "unitB": "£"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-01",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "Begin with a known pair",
+            "narration": "Start with two related quantities. These numbers describe one complete, known pair.",
+            "prompt": "Read both columns before you calculate.",
+            "pose": "explain",
+            "cat": "checking",
+            "lesson": null
+          },
+          {
+            "name": "Notice how the quantities connect",
+            "narration": "A ratio table preserves the relationship between its quantities. Compare a pair, not isolated numbers.",
+            "prompt": "Look across the row to compare quantities.",
+            "pose": "point",
+            "cat": "think",
+            "lesson": null
+          },
+          {
+            "name": "Choose the scale factor",
+            "narration": "The number of tickets grows from two to six. That is three times as many. We mark the factor clearly.",
+            "prompt": "How does the first column change?",
+            "pose": "count",
+            "cat": "checking",
+            "lesson": null
+          },
+          {
+            "name": "Apply the same factor",
+            "narration": "In direct proportion, the cost must grow by the same factor. Multiply both quantities by three.",
+            "prompt": "Direct proportion changes both columns together.",
+            "pose": "think",
+            "cat": "point",
+            "lesson": null
+          },
+          {
+            "name": "Reveal the matching value",
+            "narration": "Six tickets cost eighteen pounds. Both quantities have tripled, so the relationship is unchanged.",
+            "prompt": "Check the new pair against the old pair.",
+            "pose": "point",
+            "cat": "success",
+            "lesson": null
+          },
+          {
+            "name": "Prove and transfer",
+            "narration": "We can divide each new quantity by three to return to the first row. Try another scale factor yourself.",
+            "prompt": "Can you reverse the operation and still keep the relationship?",
+            "pose": "cheer",
+            "cat": "success",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-01",
+          "startMode": "guided",
+          "preset": "Y7-060",
+          "parameters": {
+            "relation": [
+              "direct",
+              "inverse"
+            ],
+            "minimumFactor": 0.25,
+            "maximumFactor": 6,
+            "precision": 3
+          },
+          "presets": {
+            "Y7-058": {
+              "label": "Y7 · Ratio notation",
+              "a": "Red beads",
+              "b": "Blue beads",
+              "a0": 3,
+              "b0": 5,
+              "f": 2,
+              "type": "direct",
+              "unitA": "",
+              "unitB": ""
+            },
+            "Y7-060": {
+              "label": "Y7 · Direct proportion",
+              "a": "Tickets",
+              "b": "Cost",
+              "a0": 2,
+              "b0": 6,
+              "f": 3,
+              "type": "direct",
+              "unitA": "",
+              "unitB": "£"
+            },
+            "Y7-061": {
+              "label": "Y7 · Unit price and best buy",
+              "a": "Cans",
+              "b": "Cost",
+              "a0": 4,
+              "b0": 12,
+              "f": 0.25,
+              "type": "direct",
+              "unitA": "",
+              "unitB": "£"
+            },
+            "Y8-034": {
+              "label": "Y8 · Fractional/decimal ratios",
+              "a": "Paint A (L)",
+              "b": "Paint B (L)",
+              "a0": 0.5,
+              "b0": 1.5,
+              "f": 4,
+              "type": "direct",
+              "unitA": "",
+              "unitB": ""
+            },
+            "Y8-035": {
+              "label": "Y8 · Tables and equations",
+              "a": "Input x",
+              "b": "Output y",
+              "a0": 2,
+              "b0": 7.5,
+              "f": 3,
+              "type": "direct",
+              "unitA": "",
+              "unitB": ""
+            },
+            "Y8-036": {
+              "label": "Y8 · Direct proportion graphs",
+              "a": "Horizontal x",
+              "b": "Vertical y",
+              "a0": 1,
+              "b0": 3,
+              "f": 5,
+              "type": "direct",
+              "unitA": "",
+              "unitB": ""
+            },
+            "Y8-037": {
+              "label": "Y8 · Inverse proportion contrast",
+              "a": "Workers",
+              "b": "Hours",
+              "a0": 2,
+              "b0": 12,
+              "f": 3,
+              "type": "inverse",
+              "unitA": "",
+              "unitB": ""
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "factor",
+              "factorA",
+              "factorB",
+              "tile",
+              "answer",
+              "reset",
+              "remove",
+              "hint",
+              "relation"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Begin with a known pair",
+              "narration": "Start with two related quantities. These numbers describe one complete, known pair.",
+              "prompt": "Read both columns before you calculate.",
+              "pose": "explain",
+              "cat": "checking",
+              "lesson": null
+            },
+            {
+              "name": "Notice how the quantities connect",
+              "narration": "A ratio table preserves the relationship between its quantities. Compare a pair, not isolated numbers.",
+              "prompt": "Look across the row to compare quantities.",
+              "pose": "point",
+              "cat": "think",
+              "lesson": null
+            },
+            {
+              "name": "Choose the scale factor",
+              "narration": "The number of tickets grows from two to six. That is three times as many. We mark the factor clearly.",
+              "prompt": "How does the first column change?",
+              "pose": "count",
+              "cat": "checking",
+              "lesson": null
+            },
+            {
+              "name": "Apply the same factor",
+              "narration": "In direct proportion, the cost must grow by the same factor. Multiply both quantities by three.",
+              "prompt": "Direct proportion changes both columns together.",
+              "pose": "think",
+              "cat": "point",
+              "lesson": null
+            },
+            {
+              "name": "Reveal the matching value",
+              "narration": "Six tickets cost eighteen pounds. Both quantities have tripled, so the relationship is unchanged.",
+              "prompt": "Check the new pair against the old pair.",
+              "pose": "point",
+              "cat": "success",
+              "lesson": null
+            },
+            {
+              "name": "Prove and transfer",
+              "narration": "We can divide each new quantity by three to return to the first row. Try another scale factor yourself.",
+              "prompt": "Can you reverse the operation and still keep the relationship?",
+              "pose": "cheer",
+              "cat": "success",
+              "lesson": null
+            }
+          ],
+          "CHALLENGES": [
+            {
+              "title": "Keep the ratio",
+              "a": "Red counters",
+              "b": "Blue counters",
+              "a0": 3,
+              "b0": 5,
+              "f": 2,
+              "type": "direct",
+              "unitA": "",
+              "unitB": "",
+              "hint": "Both parts need the same multiplication factor."
+            },
+            {
+              "title": "Find the unit cost",
+              "a": "Packs",
+              "b": "Cost",
+              "a0": 4,
+              "b0": 12,
+              "f": 0.25,
+              "type": "direct",
+              "unitA": "",
+              "unitB": "£",
+              "hint": "Four packs become one pack. Divide both quantities by four."
+            },
+            {
+              "title": "Inverse comparison",
+              "a": "Workers",
+              "b": "Hours",
+              "a0": 2,
+              "b0": 12,
+              "f": 3,
+              "type": "inverse",
+              "unitA": "",
+              "unitB": "",
+              "hint": "More workers need fewer hours. Multiply x and divide y by the same factor."
+            },
+            {
+              "title": "Scale a decimal ratio",
+              "a": "Liquid A (L)",
+              "b": "Liquid B (L)",
+              "a0": 0.5,
+              "b0": 1.5,
+              "f": 4,
+              "type": "direct",
+              "unitA": "",
+              "unitB": "",
+              "hint": "The ratio stays equal even with decimals. Use the same factor in both columns."
+            }
+          ]
+        },
+        "draws": {
+          "stageScene": [
+            "stage",
+            "p",
+            "opt"
+          ]
+        },
+        "exploreFields": {
+          "chosen": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          },
+          "p": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          },
+          "challenge.question": {
+            "kind": "factory",
+            "factory": "state",
+            "argCount": 2
+          },
+          "challenge.row": {
+            "kind": "factory",
+            "factory": "state",
+            "argCount": 2
+          },
+          "challenge.stat": {
+            "kind": "factory",
+            "factory": "state",
+            "argCount": 2
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "stageScene": {
+          "parameters": [
+            "stage",
+            "p",
+            "opt"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y7 · Direct proportion",
+              "a": "Tickets",
+              "b": "Cost",
+              "a0": 2,
+              "b0": 6,
+              "f": 3,
+              "type": "direct",
+              "unitA": "",
+              "unitB": "£"
+            },
+            {
+              "step": 0,
+              "pose": "explain",
+              "caption": "Start from a known pair.",
+              "animate": false
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-02",
+    "path": "F6/F6-02-double-number-line.html",
+    "errors": [],
+    "engineId": "F6-02",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 5,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 4,
+        "kind": "scene",
+        "key": "makeScene",
+        "path": [
+          "1",
+          "known"
+        ],
+        "from": 2,
+        "to": 3,
+        "beforeText": "DOUBLE NUMBER LINE · F6-02WATCH THE LINKTwo aligned F0 neon-glass number lines; a shared pair marker joins equivalent top and bottom positions at the same horizontal coordinate.TWO SCALES · ONE RELATIONSHIPRate ×30246810£0£6£12£18£24£30TicketsCost (£)Known 2Matches £68£24LINKED QUANTITIESFactor ×3A / B remains linked£6 ÷ 2 = 3Same rate. Great work!Same rate. Great work! (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "DOUBLE NUMBER LINE · F6-02WATCH THE LINKTwo aligned F0 neon-glass number lines; a shared pair marker joins equivalent top and bottom positions at the same horizontal coordinate.TWO SCALES · ONE RELATIONSHIPRate ×20246810£0£4£8£12£16£20TicketsCost (£)Known 3Matches £68£16LINKED QUANTITIESFactor ×2A / B remains linked£6 ÷ 3 = 2Same rate. Great work!Same rate. Great work! (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 4,
+          "data": {
+            "name": "Check the constant relationship",
+            "narration": "Six divided by two is three pounds per ticket. Twenty-four divided by eight is also three. The rate stayed constant.",
+            "pose": "cheer",
+            "cat": "success",
+            "caption": "Same rate. Great work!",
+            "lesson": null
+          },
+          "scene": {
+            "function": "makeScene",
+            "arguments": {
+              "p": {
+                "label": "Y7 · Tickets and cost",
+                "a": "Tickets",
+                "b": "Cost (£)",
+                "unitA": "",
+                "unitB": "£",
+                "known": 3,
+                "knownB": 6,
+                "target": 8,
+                "max": 10,
+                "major": 2,
+                "minor": 1,
+                "steps": 10,
+                "context": "Two tickets cost six pounds. What do eight tickets cost?"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-02",
+        "version": "1.0.0",
+        "stepCount": 5,
+        "steps": [
+          {
+            "name": "Start with zero on both lines",
+            "narration": "Both number lines start from zero. The top counts the first quantity and the bottom counts the matching quantity. Their zero marks must line up.",
+            "pose": "explain",
+            "cat": "explain",
+            "caption": "Line up both zeros.",
+            "lesson": null
+          },
+          {
+            "name": "Show one known pair",
+            "narration": "Read a pair at the same position on both lines. Two tickets match six pounds. Both rings sit directly one above the other.",
+            "pose": "point",
+            "cat": "checking",
+            "caption": "One place, two values.",
+            "lesson": null
+          },
+          {
+            "name": "Scale both lines together",
+            "narration": "Move along the top number line from two tickets to eight tickets. That is four times as many. The bottom number line stretches by the same factor.",
+            "pose": "count",
+            "cat": "point",
+            "caption": "Both lines stretch together!",
+            "lesson": null
+          },
+          {
+            "name": "Find the matching unknown",
+            "narration": "The ring at eight tickets connects to twenty-four pounds. The vertical linking line proves the two values go together.",
+            "pose": "think",
+            "cat": "think",
+            "caption": "Follow the linked marks.",
+            "lesson": null
+          },
+          {
+            "name": "Check the constant relationship",
+            "narration": "Six divided by two is three pounds per ticket. Twenty-four divided by eight is also three. The rate stayed constant.",
+            "pose": "cheer",
+            "cat": "success",
+            "caption": "Same rate. Great work!",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-02",
+          "startMode": "guided",
+          "preset": "Y7-060",
+          "parameters": {
+            "xMin": 0,
+            "snap": "aligned proportional marks",
+            "linkedScale": true,
+            "roundingDp": 4
+          },
+          "presets": {
+            "Y7-060": {
+              "label": "Y7 · Tickets and cost",
+              "a": "Tickets",
+              "b": "Cost (£)",
+              "unitA": "",
+              "unitB": "£",
+              "known": 2,
+              "knownB": 6,
+              "target": 8,
+              "max": 10,
+              "major": 2,
+              "minor": 1,
+              "steps": 10,
+              "context": "Two tickets cost six pounds. What do eight tickets cost?"
+            },
+            "Y8-007": {
+              "label": "Y8 · Increase by 25%",
+              "a": "Original (£)",
+              "b": "Increased (£)",
+              "unitA": "£",
+              "unitB": "£",
+              "known": 40,
+              "knownB": 50,
+              "target": 60,
+              "max": 80,
+              "major": 20,
+              "minor": 10,
+              "steps": 8,
+              "context": "Forty pounds becomes fifty pounds. What does sixty pounds become at the same multiplier?"
+            },
+            "Y8-035": {
+              "label": "Y8 · Equation y = kx",
+              "a": "Input x",
+              "b": "Output y",
+              "unitA": "",
+              "unitB": "",
+              "known": 3,
+              "knownB": 7.5,
+              "target": 9,
+              "max": 12,
+              "major": 3,
+              "minor": 1.5,
+              "steps": 8,
+              "context": "Three maps to seven point five. Find the value for nine."
+            },
+            "Y8-039": {
+              "label": "Y8 · Pound to euro conversion",
+              "a": "Pounds",
+              "b": "Euros",
+              "unitA": "£",
+              "unitB": "€",
+              "known": 5,
+              "knownB": 6,
+              "target": 15,
+              "max": 20,
+              "major": 5,
+              "minor": 2.5,
+              "steps": 8,
+              "context": "At the given classroom rate, five pounds equals six euros. How many euros for fifteen pounds?"
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "mark",
+              "markerRemoved",
+              "restore",
+              "reset",
+              "answer",
+              "hint",
+              "undo",
+              "step",
+              "showFactor"
+            ],
+            "types": [
+              "step",
+              "correct",
+              "hintUsed",
+              "mode"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Start with zero on both lines",
+              "narration": "Both number lines start from zero. The top counts the first quantity and the bottom counts the matching quantity. Their zero marks must line up.",
+              "pose": "explain",
+              "cat": "explain",
+              "caption": "Line up both zeros.",
+              "lesson": null
+            },
+            {
+              "name": "Show one known pair",
+              "narration": "Read a pair at the same position on both lines. Two tickets match six pounds. Both rings sit directly one above the other.",
+              "pose": "point",
+              "cat": "checking",
+              "caption": "One place, two values.",
+              "lesson": null
+            },
+            {
+              "name": "Scale both lines together",
+              "narration": "Move along the top number line from two tickets to eight tickets. That is four times as many. The bottom number line stretches by the same factor.",
+              "pose": "count",
+              "cat": "point",
+              "caption": "Both lines stretch together!",
+              "lesson": null
+            },
+            {
+              "name": "Find the matching unknown",
+              "narration": "The ring at eight tickets connects to twenty-four pounds. The vertical linking line proves the two values go together.",
+              "pose": "think",
+              "cat": "think",
+              "caption": "Follow the linked marks.",
+              "lesson": null
+            },
+            {
+              "name": "Check the constant relationship",
+              "narration": "Six divided by two is three pounds per ticket. Twenty-four divided by eight is also three. The rate stayed constant.",
+              "pose": "cheer",
+              "cat": "success",
+              "caption": "Same rate. Great work!",
+              "lesson": null
+            }
+          ],
+          "CHALLENGES": [
+            {
+              "preset": "Y7-060",
+              "target": 8,
+              "hint": "The first quantity goes from two to eight: multiply by four. Apply the same factor to the cost."
+            },
+            {
+              "preset": "Y8-007",
+              "target": 60,
+              "hint": "The ratio fifty divided by forty is one point two five. Multiply the new original by this factor."
+            },
+            {
+              "preset": "Y8-035",
+              "target": 9,
+              "hint": "Work out the constant k by dividing seven point five by three."
+            },
+            {
+              "preset": "Y8-039",
+              "target": 15,
+              "hint": "Five pounds equals six euros. One pound is one point two euros; scale to fifteen pounds."
+            }
+          ]
+        },
+        "draws": {
+          "makeScene": [
+            "stage",
+            "p",
+            "opt"
+          ]
+        },
+        "exploreFields": {},
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "makeScene": {
+          "parameters": [
+            "stage",
+            "p",
+            "opt"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y7 · Tickets and cost",
+              "a": "Tickets",
+              "b": "Cost (£)",
+              "unitA": "",
+              "unitB": "£",
+              "known": 2,
+              "knownB": 6,
+              "target": 8,
+              "max": 10,
+              "major": 2,
+              "minor": 1,
+              "steps": 10,
+              "context": "Two tickets cost six pounds. What do eight tickets cost?"
+            },
+            {
+              "step": 0,
+              "animate": false,
+              "pose": "explain",
+              "caption": "Line up both zeros."
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-03",
+    "path": "F6/F6-03-sharing-in-a-ratio.html",
+    "errors": [],
+    "engineId": "F6-03",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 6,
+        "kind": "scene",
+        "key": "stageScene",
+        "path": [
+          "1",
+          "a"
+        ],
+        "from": 2,
+        "to": 3,
+        "beforeText": "F6-03 · SHARING IN A RATIOHOW SHARES WORKNOVA ratio bar with equal-value neon boxes, an overall total brace and two share trays for sorting values.ONE WHOLE · TWO SHARES2 : 3COUNT THE PARTSAva2 partsBen3 partsA£6A£6B£6B£6B£6£30 = 5 EQUAL PARTS£30 ÷ 5 = £6 PER PARTAva · 2 PARTS£12Ben · 3 PARTS£18£12 + £18 = £30PARTS5 equalCount 2 + 3Ava£122 groupsBen£183 groupsBoth checks agree!Both checks agree! (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "F6-03 · SHARING IN A RATIOHOW SHARES WORKNOVA ratio bar with equal-value neon boxes, an overall total brace and two share trays for sorting values.ONE WHOLE · TWO SHARES3 : 3COUNT THE PARTSAva3 partsBen3 partsA£5A£5A£5B£5B£5B£5£30 = 6 EQUAL PARTS£30 ÷ 6 = £5 PER PARTAva · 3 PARTS£15Ben · 3 PARTS£15£15 + £15 = £30PARTS6 equalCount 3 + 3Ava£153 groupsBen£153 groupsBoth checks agree!Both checks agree! (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 6,
+          "data": {
+            "name": "Prove the total and ratio",
+            "narration": "Twelve pounds plus eighteen pounds gives thirty pounds. And twelve to eighteen simplifies to two to three. Both tests agree.",
+            "caption": "Both checks agree!",
+            "pose": "celebrate",
+            "lesson": null
+          },
+          "scene": {
+            "function": "stageScene",
+            "arguments": {
+              "p": {
+                "label": "Y7-059 · Share thirty pounds",
+                "a": 3,
+                "b": 3,
+                "total": 30,
+                "symbol": "£",
+                "names": [
+                  "Ava",
+                  "Ben"
+                ],
+                "context": "Ava and Ben share thirty pounds in the ratio two to three."
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-03",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "Deal counters into ratio groups",
+            "narration": "The ratio two to three tells us to make two equal parts for Ava and three equal parts for Ben. These are parts, not pounds yet.",
+            "caption": "Count the parts first!",
+            "pose": "count",
+            "lesson": null
+          },
+          {
+            "name": "Build the equal-part bar",
+            "narration": "Every outlined box stands for the same quantity. Ava gets two boxes and Ben gets three. None is worth more than another.",
+            "caption": "All boxes have equal value.",
+            "pose": "point",
+            "lesson": null
+          },
+          {
+            "name": "Count the whole and total parts",
+            "narration": "Two parts plus three parts gives five parts altogether. Those five equal parts make the full thirty pounds.",
+            "caption": "How many boxes altogether?",
+            "pose": "count",
+            "lesson": null
+          },
+          {
+            "name": "Find the value of one part",
+            "narration": "Divide the total thirty pounds by five equal parts. One part is worth six pounds. Every box is worth the same six pounds.",
+            "caption": "Total divided by parts.",
+            "pose": "idea",
+            "lesson": null
+          },
+          {
+            "name": "Build the first share",
+            "narration": "Ava has two equal parts. Two lots of six pounds makes twelve pounds for Ava.",
+            "caption": "Two parts make twelve.",
+            "pose": "point",
+            "lesson": null
+          },
+          {
+            "name": "Build the second share",
+            "narration": "Ben has three equal parts. Three lots of six pounds makes eighteen pounds for Ben.",
+            "caption": "Three parts make eighteen.",
+            "pose": "count",
+            "lesson": null
+          },
+          {
+            "name": "Prove the total and ratio",
+            "narration": "Twelve pounds plus eighteen pounds gives thirty pounds. And twelve to eighteen simplifies to two to three. Both tests agree.",
+            "caption": "Both checks agree!",
+            "pose": "celebrate",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-03",
+          "startMode": "guided",
+          "preset": "Y7-059",
+          "parameters": {
+            "total": 30,
+            "ratioA": 2,
+            "ratioB": 3,
+            "unit": "£",
+            "positiveWholeRatios": true,
+            "integerShares": true
+          },
+          "presets": {
+            "Y7-059": {
+              "label": "Y7-059 · Share thirty pounds",
+              "a": 2,
+              "b": 3,
+              "total": 30,
+              "symbol": "£",
+              "names": [
+                "Ava",
+                "Ben"
+              ],
+              "context": "Ava and Ben share thirty pounds in the ratio two to three."
+            },
+            "Y7-059-sweets": {
+              "label": "Y7-059 · Sweets",
+              "a": 3,
+              "b": 2,
+              "total": 45,
+              "symbol": "",
+              "names": [
+                "Kim",
+                "Leo"
+              ],
+              "context": "Kim and Leo share forty-five sweets in the ratio three to two."
+            },
+            "Y7-059-time": {
+              "label": "Y7-059 · Study time",
+              "a": 1,
+              "b": 4,
+              "total": 60,
+              "symbol": "",
+              "names": [
+                "Art",
+                "Maths"
+              ],
+              "context": "Sixty study minutes are shared in the ratio one to four."
+            },
+            "Y7-059-points": {
+              "label": "Y7-059 · Team points",
+              "a": 5,
+              "b": 7,
+              "total": 96,
+              "symbol": "",
+              "names": [
+                "Blue",
+                "Teal"
+              ],
+              "context": "Ninety-six points are shared by Blue and Teal in the ratio five to seven."
+            }
+          },
+          "events": {
+            "value": [
+              "preset",
+              "part",
+              "shareAssign",
+              "shareRemove",
+              "unitPlace",
+              "reset",
+              "answer",
+              "hint",
+              "stage"
+            ],
+            "types": [
+              "step",
+              "mode",
+              "correct",
+              "hintUsed"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Deal counters into ratio groups",
+              "narration": "The ratio two to three tells us to make two equal parts for Ava and three equal parts for Ben. These are parts, not pounds yet.",
+              "caption": "Count the parts first!",
+              "pose": "count",
+              "lesson": null
+            },
+            {
+              "name": "Build the equal-part bar",
+              "narration": "Every outlined box stands for the same quantity. Ava gets two boxes and Ben gets three. None is worth more than another.",
+              "caption": "All boxes have equal value.",
+              "pose": "point",
+              "lesson": null
+            },
+            {
+              "name": "Count the whole and total parts",
+              "narration": "Two parts plus three parts gives five parts altogether. Those five equal parts make the full thirty pounds.",
+              "caption": "How many boxes altogether?",
+              "pose": "count",
+              "lesson": null
+            },
+            {
+              "name": "Find the value of one part",
+              "narration": "Divide the total thirty pounds by five equal parts. One part is worth six pounds. Every box is worth the same six pounds.",
+              "caption": "Total divided by parts.",
+              "pose": "idea",
+              "lesson": null
+            },
+            {
+              "name": "Build the first share",
+              "narration": "Ava has two equal parts. Two lots of six pounds makes twelve pounds for Ava.",
+              "caption": "Two parts make twelve.",
+              "pose": "point",
+              "lesson": null
+            },
+            {
+              "name": "Build the second share",
+              "narration": "Ben has three equal parts. Three lots of six pounds makes eighteen pounds for Ben.",
+              "caption": "Three parts make eighteen.",
+              "pose": "count",
+              "lesson": null
+            },
+            {
+              "name": "Prove the total and ratio",
+              "narration": "Twelve pounds plus eighteen pounds gives thirty pounds. And twelve to eighteen simplifies to two to three. Both tests agree.",
+              "caption": "Both checks agree!",
+              "pose": "celebrate",
+              "lesson": null
+            }
+          ]
+        },
+        "draws": {
+          "stageScene": [
+            "stage",
+            "p",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "preset": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          },
+          "message": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "stageScene": {
+          "parameters": [
+            "stage",
+            "p",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y7-059 · Share thirty pounds",
+              "a": 2,
+              "b": 3,
+              "total": 30,
+              "symbol": "£",
+              "names": [
+                "Ava",
+                "Ben"
+              ],
+              "context": "Ava and Ben share thirty pounds in the ratio two to three."
+            },
+            {
+              "step": 0,
+              "pose": "count",
+              "caption": "Count the parts first!"
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-04",
+    "path": "F6/F6-04-simplifying-ratios.html",
+    "errors": [],
+    "engineId": "F6-04",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "scene",
+        "key": "scene",
+        "path": [
+          "1",
+          "display",
+          "0"
+        ],
+        "from": "6",
+        "to": "7",
+        "beforeText": "F6-04SIMPLIFYING RATIOSTwo sets of blue and teal glowing counters showing the same proportional comparison before and after grouping. Lasso or drag a ratio chip to simplify.SAME COMPARISON · FEWER PARTS6 : 9QUANTITY A62 BUNDLES OF 3QUANTITY B93 BUNDLES OF 3THE SAME FACTOR ON BOTH SIDES÷ 3 ON BOTH SIDESTHE BUNDLES KEEP THE COMPARISONSIMPLEST RATIO2:3PROOF · 2 × 3 = 6     3 × 3 = 9ORIGINAL6 : 9Y7-058 · ordered comparisonWHOLE-NUMBER FORM6 : 9Same starting valuesCOMMON FACTOR3Divide BOTH whole numbersSIMPLIFIED2:3No shared whole-number factor remainsCheck the same multiplier.Check the same multiplier. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "F6-04SIMPLIFYING RATIOSTwo sets of blue and teal glowing counters showing the same proportional comparison before and after grouping. Lasso or drag a ratio chip to simplify.SAME COMPARISON · FEWER PARTS7 : 9QUANTITY A62 BUNDLES OF 3QUANTITY B93 BUNDLES OF 3THE SAME FACTOR ON BOTH SIDES÷ 3 ON BOTH SIDESTHE BUNDLES KEEP THE COMPARISONSIMPLEST RATIO2:3PROOF · 2 × 3 = 6     3 × 3 = 9ORIGINAL7 : 9Y7-058 · ordered comparisonWHOLE-NUMBER FORM7 : 9Same starting valuesCOMMON FACTOR3Divide BOTH whole numbersSIMPLIFIED2:3No shared whole-number factor remainsCheck the same multiplier.Check the same multiplier. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "Prove the equivalent ratio",
+            "caption": "Check the same multiplier.",
+            "pose": "celebrate",
+            "narration": "Multiply both parts of two to three by three and you return to six to nine. The ratio is equivalent and the new pair has no common factor above one.",
+            "lesson": null
+          },
+          "scene": {
+            "function": "scene",
+            "arguments": {
+              "p": {
+                "label": "Y7-058 · Counters 6 : 9",
+                "context": "Six blue counters to nine teal counters.",
+                "display": [
+                  "7",
+                  "9"
+                ],
+                "raw": [
+                  6,
+                  9
+                ],
+                "whole": [
+                  6,
+                  9
+                ],
+                "clear": 1,
+                "units": "counters",
+                "lesson": "Y7-058"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-04",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "Notice the two quantities",
+            "caption": "Keep the same comparison.",
+            "pose": "explain",
+            "narration": "A ratio compares two quantities in order. Six blue counters and nine teal counters make a ratio of six to nine.",
+            "lesson": null
+          },
+          {
+            "name": "Represent equal-sized bundles",
+            "caption": "Can we make equal bundles?",
+            "pose": "count",
+            "narration": "We can organise both collections into bundles of the same size. Each bundle must contain an equal number of counters.",
+            "lesson": null
+          },
+          {
+            "name": "Find the common factor",
+            "caption": "Group both sides alike.",
+            "pose": "point",
+            "narration": "Three is a common factor of six and nine. There are two bundles on one side and three on the other.",
+            "lesson": null
+          },
+          {
+            "name": "Collapse equal bundles",
+            "caption": "One bundle becomes one part.",
+            "pose": "idea",
+            "narration": "Count bundles instead of individual counters. The comparison has not changed because both sides used groups of three.",
+            "lesson": null
+          },
+          {
+            "name": "State the simplest ratio",
+            "caption": "Both sides change together.",
+            "pose": "point",
+            "narration": "Six to nine simplifies to two to three. Both parts were divided by the same positive common factor.",
+            "lesson": null
+          },
+          {
+            "name": "Prove the equivalent ratio",
+            "caption": "Check the same multiplier.",
+            "pose": "celebrate",
+            "narration": "Multiply both parts of two to three by three and you return to six to nine. The ratio is equivalent and the new pair has no common factor above one.",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-04",
+          "startMode": "guided",
+          "preset": "Y7-058",
+          "parameters": {
+            "ratioA": 6,
+            "ratioB": 9,
+            "stage": "group/collapse/verify",
+            "positiveValues": true,
+            "decimalAndFractionPresets": true
+          },
+          "presets": {
+            "Y7-058": {
+              "label": "Y7-058 · Counters 6 : 9",
+              "context": "Six blue counters to nine teal counters.",
+              "display": [
+                "6",
+                "9"
+              ],
+              "raw": [
+                6,
+                9
+              ],
+              "whole": [
+                6,
+                9
+              ],
+              "clear": 1,
+              "units": "counters",
+              "lesson": "Y7-058"
+            },
+            "Y7-058-extend": {
+              "label": "Y7-058 · Bundles 12 : 18",
+              "context": "Twelve blue counters to eighteen teal counters.",
+              "display": [
+                "12",
+                "18"
+              ],
+              "raw": [
+                12,
+                18
+              ],
+              "whole": [
+                12,
+                18
+              ],
+              "clear": 1,
+              "units": "counters",
+              "lesson": "Y7-058"
+            },
+            "Y8-034-decimals": {
+              "label": "Y8-034 · Decimals 1.5 : 2.25",
+              "context": "A decimal ratio of one point five to two point two five.",
+              "display": [
+                "1.5",
+                "2.25"
+              ],
+              "raw": [
+                1.5,
+                2.25
+              ],
+              "whole": [
+                6,
+                9
+              ],
+              "clear": 4,
+              "units": "quantities",
+              "lesson": "Y8-034"
+            },
+            "Y8-034-fractions": {
+              "label": "Y8-034 · Fractions ¾ : ½",
+              "context": "A ratio of three quarters to one half.",
+              "display": [
+                "3/4",
+                "1/2"
+              ],
+              "raw": [
+                0.75,
+                0.5
+              ],
+              "whole": [
+                3,
+                2
+              ],
+              "clear": 4,
+              "units": "fraction units",
+              "lesson": "Y8-034"
+            }
+          },
+          "events": {
+            "values": [
+              "preset",
+              "lasso",
+              "ratioDrop",
+              "ratioRemove",
+              "answer",
+              "hint",
+              "reset",
+              "stage"
+            ],
+            "types": [
+              "value",
+              "step",
+              "correct",
+              "hintUsed"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Notice the two quantities",
+              "caption": "Keep the same comparison.",
+              "pose": "explain",
+              "narration": "A ratio compares two quantities in order. Six blue counters and nine teal counters make a ratio of six to nine.",
+              "lesson": null
+            },
+            {
+              "name": "Represent equal-sized bundles",
+              "caption": "Can we make equal bundles?",
+              "pose": "count",
+              "narration": "We can organise both collections into bundles of the same size. Each bundle must contain an equal number of counters.",
+              "lesson": null
+            },
+            {
+              "name": "Find the common factor",
+              "caption": "Group both sides alike.",
+              "pose": "point",
+              "narration": "Three is a common factor of six and nine. There are two bundles on one side and three on the other.",
+              "lesson": null
+            },
+            {
+              "name": "Collapse equal bundles",
+              "caption": "One bundle becomes one part.",
+              "pose": "idea",
+              "narration": "Count bundles instead of individual counters. The comparison has not changed because both sides used groups of three.",
+              "lesson": null
+            },
+            {
+              "name": "State the simplest ratio",
+              "caption": "Both sides change together.",
+              "pose": "point",
+              "narration": "Six to nine simplifies to two to three. Both parts were divided by the same positive common factor.",
+              "lesson": null
+            },
+            {
+              "name": "Prove the equivalent ratio",
+              "caption": "Check the same multiplier.",
+              "pose": "celebrate",
+              "narration": "Multiply both parts of two to three by three and you return to six to nine. The ratio is equivalent and the new pair has no common factor above one.",
+              "lesson": null
+            }
+          ]
+        },
+        "draws": {
+          "scene": [
+            "stage",
+            "p",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "message": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "scene": {
+          "parameters": [
+            "stage",
+            "p",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y7-058 · Counters 6 : 9",
+              "context": "Six blue counters to nine teal counters.",
+              "display": [
+                "6",
+                "9"
+              ],
+              "raw": [
+                6,
+                9
+              ],
+              "whole": [
+                6,
+                9
+              ],
+              "clear": 1,
+              "units": "counters",
+              "lesson": "Y7-058"
+            },
+            {
+              "step": 0,
+              "pose": "explain",
+              "caption": "Keep the same comparison."
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-05",
+    "path": "F6/F6-05-recipe-scaler.html",
+    "errors": [],
+    "engineId": "F6-05",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "scene",
+        "key": "scene",
+        "path": [
+          "1",
+          "base"
+        ],
+        "from": 4,
+        "to": 5,
+        "beforeText": "F6-05PANCAKE KITCHENRecipe scaling studio with four neon ingredient rows, a servings slider, proportional factor and draggable ingredient amounts.THE SAME RECIPE · MORE OR FEWER SERVINGSSTART   4NEW   6→SERVINGSSCALE FACTOR   × 1.56 ÷ 4 = 1.5FLOUR200 g× 1.5300 gMILK320 ml× 1.5480 mlEGGS4 eggs× 1.56 eggsBERRIES120 g× 1.5180 gSAME QUANTITY PER SERVING  ·  RECIPE PROVEDSTARTING BATCH4 servingsAll original ingredient amounts refer to one batch.NEW SERVINGS6 servingsThe whole recipe changes together.SCALE FACTOR× 1.56 ÷ 4PER-SERVING CHECK50 gEqual per-person quantities prove proportion.Same amount per serving.Same amount per serving. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "F6-05PANCAKE KITCHENRecipe scaling studio with four neon ingredient rows, a servings slider, proportional factor and draggable ingredient amounts.THE SAME RECIPE · MORE OR FEWER SERVINGSSTART   5NEW   6→SERVINGSSCALE FACTOR   × 1.26 ÷ 5 = 1.2FLOUR200 g× 1.2240 gMILK320 ml× 1.2384 mlEGGS4 eggs× 1.24.8 eggsBERRIES120 g× 1.2144 gSAME QUANTITY PER SERVING  ·  RECIPE PROVEDSTARTING BATCH5 servingsAll original ingredient amounts refer to one batch.NEW SERVINGS6 servingsThe whole recipe changes together.SCALE FACTOR× 1.26 ÷ 5PER-SERVING CHECK40 gEqual per-person quantities prove proportion.Same amount per serving.Same amount per serving. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "Prove the recipe is proportional",
+            "caption": "Same amount per serving.",
+            "pose": "celebrate",
+            "narration": "Dividing any scaled amount by the new servings gives the same amount per person as before. That proves the recipe stayed proportional.",
+            "lesson": null
+          },
+          "scene": {
+            "function": "scene",
+            "arguments": {
+              "p": {
+                "label": "Y7-060 · Pancake batch (4 → 6)",
+                "title": "PANCAKE KITCHEN",
+                "context": "Scale a pancake recipe from four servings to six.",
+                "base": 5,
+                "target": 6,
+                "ingredients": [
+                  {
+                    "name": "FLOUR",
+                    "base": 200,
+                    "unit": "g",
+                    "icon": "flour"
+                  },
+                  {
+                    "name": "MILK",
+                    "base": 320,
+                    "unit": "ml",
+                    "icon": "milk"
+                  },
+                  {
+                    "name": "EGGS",
+                    "base": 4,
+                    "unit": "eggs",
+                    "icon": "egg"
+                  },
+                  {
+                    "name": "BERRIES",
+                    "base": 120,
+                    "unit": "g",
+                    "icon": "berry"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-05",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "Read the original recipe",
+            "caption": "How many people does this serve?",
+            "pose": "explain",
+            "narration": "The recipe is written for a starting number of servings. Every ingredient belongs to that same batch.",
+            "lesson": null
+          },
+          {
+            "name": "Change the serving count",
+            "caption": "The number of servings changes.",
+            "pose": "point",
+            "narration": "The servings change, but the recipe needs to keep the same flavour balance.",
+            "lesson": null
+          },
+          {
+            "name": "Find the scale factor",
+            "caption": "Find the scale factor first.",
+            "pose": "idea",
+            "narration": "Divide the new number of servings by the original servings. The result is the multiplier for every ingredient.",
+            "lesson": null
+          },
+          {
+            "name": "Scale the first ingredient",
+            "caption": "Multiply, do not add.",
+            "pose": "count",
+            "narration": "Multiply the first ingredient by the scale factor. We use that same multiplier throughout the recipe.",
+            "lesson": null
+          },
+          {
+            "name": "Scale every ingredient",
+            "caption": "Every ingredient uses one factor.",
+            "pose": "point",
+            "narration": "Now scale the milk, fruit, and every remaining ingredient the same way. Check the units for each row.",
+            "lesson": null
+          },
+          {
+            "name": "Prove the recipe is proportional",
+            "caption": "Same amount per serving.",
+            "pose": "celebrate",
+            "narration": "Dividing any scaled amount by the new servings gives the same amount per person as before. That proves the recipe stayed proportional.",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-05",
+          "startMode": "guided",
+          "preset": "Y7-060",
+          "parameters": {
+            "minServings": 2,
+            "maxServings": 10,
+            "step": 1,
+            "positive": true,
+            "exactUnits": true
+          },
+          "presets": {
+            "Y7-060": {
+              "label": "Y7-060 · Pancake batch (4 → 6)",
+              "title": "PANCAKE KITCHEN",
+              "context": "Scale a pancake recipe from four servings to six.",
+              "base": 4,
+              "target": 6,
+              "ingredients": [
+                {
+                  "name": "FLOUR",
+                  "base": 200,
+                  "unit": "g",
+                  "icon": "flour"
+                },
+                {
+                  "name": "MILK",
+                  "base": 320,
+                  "unit": "ml",
+                  "icon": "milk"
+                },
+                {
+                  "name": "EGGS",
+                  "base": 4,
+                  "unit": "eggs",
+                  "icon": "egg"
+                },
+                {
+                  "name": "BERRIES",
+                  "base": 120,
+                  "unit": "g",
+                  "icon": "berry"
+                }
+              ]
+            },
+            "Y7-060-double": {
+              "label": "Y7-060 · Fruit bowl (4 → 8)",
+              "title": "FRUIT BOWL",
+              "context": "Double a fruit bowl recipe.",
+              "base": 4,
+              "target": 8,
+              "ingredients": [
+                {
+                  "name": "STRAWBERRIES",
+                  "base": 200,
+                  "unit": "g",
+                  "icon": "berry"
+                },
+                {
+                  "name": "YOGURT",
+                  "base": 240,
+                  "unit": "g",
+                  "icon": "milk"
+                },
+                {
+                  "name": "OATS",
+                  "base": 80,
+                  "unit": "g",
+                  "icon": "flour"
+                },
+                {
+                  "name": "BANANAS",
+                  "base": 4,
+                  "unit": "bananas",
+                  "icon": "egg"
+                }
+              ]
+            },
+            "Y7-060-half": {
+              "label": "Y7-060 · Oat bars (6 → 3)",
+              "title": "OAT BAR WORKSHOP",
+              "context": "Halve the quantities in a six-serving batch.",
+              "base": 6,
+              "target": 3,
+              "ingredients": [
+                {
+                  "name": "OATS",
+                  "base": 240,
+                  "unit": "g",
+                  "icon": "flour"
+                },
+                {
+                  "name": "MILK",
+                  "base": 300,
+                  "unit": "ml",
+                  "icon": "milk"
+                },
+                {
+                  "name": "BANANAS",
+                  "base": 6,
+                  "unit": "bananas",
+                  "icon": "egg"
+                },
+                {
+                  "name": "HONEY",
+                  "base": 30,
+                  "unit": "g",
+                  "icon": "berry"
+                }
+              ]
+            },
+            "Y7-060-triple": {
+              "label": "Y7-060 · Smoothies (3 → 9)",
+              "title": "SMOOTHIE LAB",
+              "context": "Triple a three-serving smoothie recipe.",
+              "base": 3,
+              "target": 9,
+              "ingredients": [
+                {
+                  "name": "MANGO",
+                  "base": 90,
+                  "unit": "g",
+                  "icon": "berry"
+                },
+                {
+                  "name": "MILK",
+                  "base": 150,
+                  "unit": "ml",
+                  "icon": "milk"
+                },
+                {
+                  "name": "YOGURT",
+                  "base": 180,
+                  "unit": "g",
+                  "icon": "flour"
+                },
+                {
+                  "name": "BANANAS",
+                  "base": 3,
+                  "unit": "bananas",
+                  "icon": "egg"
+                }
+              ]
+            }
+          },
+          "events": {
+            "types": [
+              "value",
+              "step",
+              "correct",
+              "hintUsed"
+            ],
+            "names": [
+              "preset",
+              "servings",
+              "amount",
+              "removed",
+              "check",
+              "reset",
+              "hint"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Read the original recipe",
+              "caption": "How many people does this serve?",
+              "pose": "explain",
+              "narration": "The recipe is written for a starting number of servings. Every ingredient belongs to that same batch.",
+              "lesson": null
+            },
+            {
+              "name": "Change the serving count",
+              "caption": "The number of servings changes.",
+              "pose": "point",
+              "narration": "The servings change, but the recipe needs to keep the same flavour balance.",
+              "lesson": null
+            },
+            {
+              "name": "Find the scale factor",
+              "caption": "Find the scale factor first.",
+              "pose": "idea",
+              "narration": "Divide the new number of servings by the original servings. The result is the multiplier for every ingredient.",
+              "lesson": null
+            },
+            {
+              "name": "Scale the first ingredient",
+              "caption": "Multiply, do not add.",
+              "pose": "count",
+              "narration": "Multiply the first ingredient by the scale factor. We use that same multiplier throughout the recipe.",
+              "lesson": null
+            },
+            {
+              "name": "Scale every ingredient",
+              "caption": "Every ingredient uses one factor.",
+              "pose": "point",
+              "narration": "Now scale the milk, fruit, and every remaining ingredient the same way. Check the units for each row.",
+              "lesson": null
+            },
+            {
+              "name": "Prove the recipe is proportional",
+              "caption": "Same amount per serving.",
+              "pose": "celebrate",
+              "narration": "Dividing any scaled amount by the new servings gives the same amount per person as before. That proves the recipe stayed proportional.",
+              "lesson": null
+            }
+          ]
+        },
+        "draws": {
+          "scene": [
+            "stage",
+            "p",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "message": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "scene": {
+          "parameters": [
+            "stage",
+            "p",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y7-060 · Pancake batch (4 → 6)",
+              "title": "PANCAKE KITCHEN",
+              "context": "Scale a pancake recipe from four servings to six.",
+              "base": 4,
+              "target": 6,
+              "ingredients": [
+                {
+                  "name": "FLOUR",
+                  "base": 200,
+                  "unit": "g",
+                  "icon": "flour"
+                },
+                {
+                  "name": "MILK",
+                  "base": 320,
+                  "unit": "ml",
+                  "icon": "milk"
+                },
+                {
+                  "name": "EGGS",
+                  "base": 4,
+                  "unit": "eggs",
+                  "icon": "egg"
+                },
+                {
+                  "name": "BERRIES",
+                  "base": 120,
+                  "unit": "g",
+                  "icon": "berry"
+                }
+              ]
+            },
+            {
+              "mode": "watch",
+              "step": 0,
+              "pose": "explain",
+              "caption": "How many people does this serve?"
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-06",
+    "path": "F6/F6-06-best-buy-comparer.html",
+    "errors": [],
+    "engineId": "F6-06",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "scene",
+        "key": "draw",
+        "path": [
+          "1",
+          "compareAmount"
+        ],
+        "from": 100,
+        "to": 101,
+        "beforeText": "F6-06PASTA PACKSTwo differently priced neon product packages compared using prices per equal quantities, with two price bars and an interactive best-buy marker.TWO PACKS · ONE FAIR COMPARISONCOMPARE THE COST PER 100 GPACK A£1.80500 gPACK B£2.40750 gUNIT PRICE · PENCE PER 100 GPACK A36.00pPACK B32.00pSMALLER UNIT PRICE = BETTER VALUEPACK B IS BEST VALUEFAIR COMPARISON100 gBoth bars use the very same quantity.PACK A · PER 100 g36.00p£1.80 for 500 gPACK B · PER 100 g32.00p£2.40 for 750 gMATHEMATICAL VERDICTPack BThe lowest pence per equal amount wins.Choose with mathematical evidence.Choose with mathematical evidence. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "F6-06PASTA PACKSTwo differently priced neon product packages compared using prices per equal quantities, with two price bars and an interactive best-buy marker.TWO PACKS · ONE FAIR COMPARISONCOMPARE THE COST PER 100 GPACK A£1.80500 gPACK B£2.40750 gUNIT PRICE · PENCE PER 100 GPACK A36.36pPACK B32.32pSMALLER UNIT PRICE = BETTER VALUEPACK B IS BEST VALUEFAIR COMPARISON100 gBoth bars use the very same quantity.PACK A · PER 100 g36.36p£1.80 for 500 gPACK B · PER 100 g32.32p£2.40 for 750 gMATHEMATICAL VERDICTPack BThe lowest pence per equal amount wins.Choose with mathematical evidence.Choose with mathematical evidence. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "Prove the best buy",
+            "caption": "Choose with mathematical evidence.",
+            "pose": "celebrate",
+            "narration": "The smaller unit price is the better value, even when its shelf price is higher. If they match, both packs give equal value.",
+            "lesson": null
+          },
+          "scene": {
+            "function": "draw",
+            "arguments": {
+              "p": {
+                "label": "Y7-061 · Pasta packs",
+                "context": "Two pasta packs. Which buys more food for each pound?",
+                "title": "PASTA PACKS",
+                "category": "bag",
+                "unit": "g",
+                "compareAmount": 101,
+                "compareLabel": "100 g",
+                "items": [
+                  {
+                    "name": "PACK A",
+                    "pricePence": 180,
+                    "amount": 500
+                  },
+                  {
+                    "name": "PACK B",
+                    "pricePence": 240,
+                    "amount": 750
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-06",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "Two prices, two pack sizes",
+            "caption": "Look at both price and amount.",
+            "pose": "explain",
+            "narration": "The shelf prices are different, and so are the pack sizes. We cannot decide which one is best just from the total price.",
+            "lesson": null
+          },
+          {
+            "name": "Choose a common unit",
+            "caption": "Compare the same amount.",
+            "pose": "point",
+            "narration": "Pick one fair unit to compare. We will find out how much each pack costs for exactly the same quantity.",
+            "lesson": null
+          },
+          {
+            "name": "Find the first unit price",
+            "caption": "Divide before you compare.",
+            "pose": "count",
+            "narration": "For the first pack, divide its price by its size, then multiply by the common comparison amount.",
+            "lesson": null
+          },
+          {
+            "name": "Find the second unit price",
+            "caption": "Same method for both.",
+            "pose": "count",
+            "narration": "Do exactly the same calculation for the second pack. Keep both answers in pence for the same quantity.",
+            "lesson": null
+          },
+          {
+            "name": "Make the price bars",
+            "caption": "Shorter means less cost.",
+            "pose": "checking",
+            "narration": "Now place the two unit prices side by side. A shorter price bar means less money for the same amount.",
+            "lesson": null
+          },
+          {
+            "name": "Prove the best buy",
+            "caption": "Choose with mathematical evidence.",
+            "pose": "celebrate",
+            "narration": "The smaller unit price is the better value, even when its shelf price is higher. If they match, both packs give equal value.",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-06",
+          "startMode": "guided",
+          "preset": "Y7-061",
+          "parameters": {
+            "currency": "GBP",
+            "precisionPence": 2,
+            "baseUnits": [
+              "100 g",
+              "100 ml",
+              "item"
+            ]
+          },
+          "presets": {
+            "Y7-061": {
+              "label": "Y7-061 · Pasta packs",
+              "context": "Two pasta packs. Which buys more food for each pound?",
+              "title": "PASTA PACKS",
+              "category": "bag",
+              "unit": "g",
+              "compareAmount": 100,
+              "compareLabel": "100 g",
+              "items": [
+                {
+                  "name": "PACK A",
+                  "pricePence": 180,
+                  "amount": 500
+                },
+                {
+                  "name": "PACK B",
+                  "pricePence": 240,
+                  "amount": 750
+                }
+              ]
+            },
+            "Y7-061-cereal": {
+              "label": "Y7-061 · Cereal boxes",
+              "context": "Compare breakfast cereal prices per 100 grams.",
+              "title": "BREAKFAST CEREAL",
+              "category": "box",
+              "unit": "g",
+              "compareAmount": 100,
+              "compareLabel": "100 g",
+              "items": [
+                {
+                  "name": "BOX A",
+                  "pricePence": 220,
+                  "amount": 400
+                },
+                {
+                  "name": "BOX B",
+                  "pricePence": 300,
+                  "amount": 600
+                }
+              ]
+            },
+            "Y7-061-juice": {
+              "label": "Y7-061 · Juice cartons",
+              "context": "Compare juice cartons sold in different sizes.",
+              "title": "FRUIT JUICE",
+              "category": "carton",
+              "unit": "ml",
+              "compareAmount": 100,
+              "compareLabel": "100 ml",
+              "items": [
+                {
+                  "name": "JUICE A",
+                  "pricePence": 180,
+                  "amount": 1000
+                },
+                {
+                  "name": "JUICE B",
+                  "pricePence": 255,
+                  "amount": 1500
+                }
+              ]
+            },
+            "Y7-061-soap": {
+              "label": "Y7-061 · Hand soap",
+              "context": "The bigger bottle is not necessarily better value.",
+              "title": "HAND SOAP",
+              "category": "bottle",
+              "unit": "ml",
+              "compareAmount": 100,
+              "compareLabel": "100 ml",
+              "items": [
+                {
+                  "name": "SOAP A",
+                  "pricePence": 125,
+                  "amount": 250
+                },
+                {
+                  "name": "SOAP B",
+                  "pricePence": 220,
+                  "amount": 400
+                }
+              ]
+            },
+            "Y7-061-equal": {
+              "label": "Y7-061 · Equal value",
+              "context": "Two bars multipacks: is there always just one best buy?",
+              "title": "OAT BAR PACKS",
+              "category": "bar",
+              "unit": "bars",
+              "compareAmount": 1,
+              "compareLabel": "1 bar",
+              "items": [
+                {
+                  "name": "SIX PACK",
+                  "pricePence": 270,
+                  "amount": 6
+                },
+                {
+                  "name": "TEN PACK",
+                  "pricePence": 450,
+                  "amount": 10
+                }
+              ]
+            }
+          },
+          "events": {
+            "types": [
+              "value",
+              "step",
+              "correct",
+              "hintUsed"
+            ],
+            "names": [
+              "preset",
+              "selection",
+              "removed",
+              "check",
+              "hint",
+              "reset"
+            ]
+          },
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Two prices, two pack sizes",
+              "caption": "Look at both price and amount.",
+              "pose": "explain",
+              "narration": "The shelf prices are different, and so are the pack sizes. We cannot decide which one is best just from the total price.",
+              "lesson": null
+            },
+            {
+              "name": "Choose a common unit",
+              "caption": "Compare the same amount.",
+              "pose": "point",
+              "narration": "Pick one fair unit to compare. We will find out how much each pack costs for exactly the same quantity.",
+              "lesson": null
+            },
+            {
+              "name": "Find the first unit price",
+              "caption": "Divide before you compare.",
+              "pose": "count",
+              "narration": "For the first pack, divide its price by its size, then multiply by the common comparison amount.",
+              "lesson": null
+            },
+            {
+              "name": "Find the second unit price",
+              "caption": "Same method for both.",
+              "pose": "count",
+              "narration": "Do exactly the same calculation for the second pack. Keep both answers in pence for the same quantity.",
+              "lesson": null
+            },
+            {
+              "name": "Make the price bars",
+              "caption": "Shorter means less cost.",
+              "pose": "checking",
+              "narration": "Now place the two unit prices side by side. A shorter price bar means less money for the same amount.",
+              "lesson": null
+            },
+            {
+              "name": "Prove the best buy",
+              "caption": "Choose with mathematical evidence.",
+              "pose": "celebrate",
+              "narration": "The smaller unit price is the better value, even when its shelf price is higher. If they match, both packs give equal value.",
+              "lesson": null
+            }
+          ]
+        },
+        "draws": {
+          "draw": [
+            "stage",
+            "p",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "chosen": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          },
+          "message": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "draw": {
+          "parameters": [
+            "stage",
+            "p",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y7-061 · Pasta packs",
+              "context": "Two pasta packs. Which buys more food for each pound?",
+              "title": "PASTA PACKS",
+              "category": "bag",
+              "unit": "g",
+              "compareAmount": 100,
+              "compareLabel": "100 g",
+              "items": [
+                {
+                  "name": "PACK A",
+                  "pricePence": 180,
+                  "amount": 500
+                },
+                {
+                  "name": "PACK B",
+                  "pricePence": 240,
+                  "amount": 750
+                }
+              ]
+            },
+            {
+              "step": 0,
+              "mode": "watch",
+              "pose": "explain",
+              "caption": "Look at both price and amount."
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-07",
+    "path": "F6/F6-07-map-and-scale-drawing.html",
+    "errors": [],
+    "engineId": "F6-07",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "scene",
+        "key": "draw",
+        "path": [
+          "1",
+          "scale"
+        ],
+        "from": 0.5,
+        "to": 1.5,
+        "beforeText": "F6-07SCHOOL TO PARKMathematical route map showing SCHOOL and PARK, ruler and core NOVA scale number line.MAP AND SCALE DRAWINGFROM SCHOOL TO PARKNSCHOOLPARK4 cmMAP RULER · centimetres01234MAP LENGTH  4 cmSCALE BAR · REAL DISTANCE00.511.521 cm ON MAP = 0.5 km IN REAL LIFEREAL DISTANCE  2 kmMAP MEASUREMENT4 cmDistance between the landmark centres.SCALE FACTOR0.5 km/cmRead the same scale from the bar.REAL DISTANCE2 kmMultiply map cm by km per cm.THE EVIDENCESCHOOL → PARKStraight-line distance, not the length of a road.Match the drawing to real life.Match the drawing to real life. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "F6-07SCHOOL TO PARKMathematical route map showing SCHOOL and PARK, ruler and core NOVA scale number line.MAP AND SCALE DRAWINGFROM SCHOOL TO PARKNSCHOOLPARK4 cmMAP RULER · centimetres01234MAP LENGTH  4 cmSCALE BAR · REAL DISTANCE01.534.561 cm ON MAP = 1.5 km IN REAL LIFEREAL DISTANCE  6 kmMAP MEASUREMENT4 cmDistance between the landmark centres.SCALE FACTOR1.5 km/cmRead the same scale from the bar.REAL DISTANCE6 kmMultiply map cm by km per cm.THE EVIDENCESCHOOL → PARKStraight-line distance, not the length of a road.Match the drawing to real life.Match the drawing to real life. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "Prove the distance",
+            "pose": "celebrate",
+            "caption": "Match the drawing to real life.",
+            "narration": "We can now prove the distance from SCHOOL to PARK is 2 kilometres because each map centimetre is worth 0.5 kilometres.",
+            "lesson": null
+          },
+          "scene": {
+            "function": "draw",
+            "arguments": {
+              "p": {
+                "label": "Y7-064 · School to park",
+                "title": "SCHOOL TO PARK",
+                "context": "Use the map scale to find the real distance between the school and park.",
+                "from": "SCHOOL",
+                "to": "PARK",
+                "dx": 4,
+                "dy": 0,
+                "scale": 1.5,
+                "route": "straight"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-07",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "Read the map",
+            "pose": "explain",
+            "caption": "Two landmarks, one journey.",
+            "narration": "A map is a smaller drawing of a real place. First, find the two points we want to measure.",
+            "lesson": null
+          },
+          {
+            "name": "Connect the points",
+            "pose": "point",
+            "caption": "Measure between the centres.",
+            "narration": "Connect SCHOOL to PARK with a ruler. Measure the straight line from the centre of one marker to the centre of the other.",
+            "lesson": null
+          },
+          {
+            "name": "Read the map length",
+            "pose": "ruler",
+            "caption": "Count the map centimetres.",
+            "narration": "Our two points are 4 centimetres apart on this map. The drawing is smaller than the real route.",
+            "lesson": null
+          },
+          {
+            "name": "Read the scale bar",
+            "pose": "checking",
+            "caption": "One centimetre stands for more.",
+            "narration": "Read the scale bar. One centimetre on the map stands for 0.5 kilometres in real life.",
+            "lesson": null
+          },
+          {
+            "name": "Multiply by the scale",
+            "pose": "count",
+            "caption": "Distance equals map length times scale.",
+            "narration": "Multiply 4 centimetres by 0.5 kilometres per centimetre. The result is 2 kilometres.",
+            "lesson": null
+          },
+          {
+            "name": "Prove the distance",
+            "pose": "celebrate",
+            "caption": "Match the drawing to real life.",
+            "narration": "We can now prove the distance from SCHOOL to PARK is 2 kilometres because each map centimetre is worth 0.5 kilometres.",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-07",
+          "startMode": "guided",
+          "preset": "Y7-064",
+          "parameters": {
+            "precisionKm": 3,
+            "measurementUnit": "cm",
+            "realUnit": "km",
+            "useNOVAcore": true
+          },
+          "presets": {
+            "Y7-064": {
+              "label": "Y7-064 · School to park",
+              "title": "SCHOOL TO PARK",
+              "context": "Use the map scale to find the real distance between the school and park.",
+              "from": "SCHOOL",
+              "to": "PARK",
+              "dx": 4,
+              "dy": 0,
+              "scale": 0.5,
+              "route": "straight"
+            },
+            "Y7-064-library": {
+              "label": "Y7-064 · Library route",
+              "title": "LIBRARY WALK",
+              "context": "A diagonal route is longer than just its horizontal part.",
+              "from": "LIBRARY",
+              "to": "SPORTS",
+              "dx": 3,
+              "dy": 4,
+              "scale": 0.4,
+              "route": "diagonal"
+            },
+            "Y9-021": {
+              "label": "Y9-021 · Country trail",
+              "title": "COUNTRY TRAIL",
+              "context": "Apply a scale factor and justify the distance from the scale bar.",
+              "from": "STATION",
+              "to": "LAKE",
+              "dx": 6,
+              "dy": 8,
+              "scale": 1.25,
+              "route": "diagonal"
+            },
+            "Y9-021-urban": {
+              "label": "Y9-021 · City survey",
+              "title": "CITY SURVEY",
+              "context": "A scale drawing represents a route accurately when measured in centimetres.",
+              "from": "MUSEUM",
+              "to": "BRIDGE",
+              "dx": 5,
+              "dy": 0,
+              "scale": 0.75,
+              "route": "straight"
+            }
+          },
+          "events": [
+            "value",
+            "correct",
+            "step",
+            "hintUsed"
+          ],
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Read the map",
+              "pose": "explain",
+              "caption": "Two landmarks, one journey.",
+              "narration": "A map is a smaller drawing of a real place. First, find the two points we want to measure.",
+              "lesson": null
+            },
+            {
+              "name": "Connect the points",
+              "pose": "point",
+              "caption": "Measure between the centres.",
+              "narration": "Connect SCHOOL to PARK with a ruler. Measure the straight line from the centre of one marker to the centre of the other.",
+              "lesson": null
+            },
+            {
+              "name": "Read the map length",
+              "pose": "ruler",
+              "caption": "Count the map centimetres.",
+              "narration": "Our two points are 4 centimetres apart on this map. The drawing is smaller than the real route.",
+              "lesson": null
+            },
+            {
+              "name": "Read the scale bar",
+              "pose": "checking",
+              "caption": "One centimetre stands for more.",
+              "narration": "Read the scale bar. One centimetre on the map stands for 0.5 kilometres in real life.",
+              "lesson": null
+            },
+            {
+              "name": "Multiply by the scale",
+              "pose": "count",
+              "caption": "Distance equals map length times scale.",
+              "narration": "Multiply 4 centimetres by 0.5 kilometres per centimetre. The result is 2 kilometres.",
+              "lesson": null
+            },
+            {
+              "name": "Prove the distance",
+              "pose": "celebrate",
+              "caption": "Match the drawing to real life.",
+              "narration": "We can now prove the distance from SCHOOL to PARK is 2 kilometres because each map centimetre is worth 0.5 kilometres.",
+              "lesson": null
+            }
+          ]
+        },
+        "draws": {
+          "draw": [
+            "stage",
+            "p",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "placed": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          },
+          "message": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "draw": {
+          "parameters": [
+            "stage",
+            "p",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y7-064 · School to park",
+              "title": "SCHOOL TO PARK",
+              "context": "Use the map scale to find the real distance between the school and park.",
+              "from": "SCHOOL",
+              "to": "PARK",
+              "dx": 4,
+              "dy": 0,
+              "scale": 0.5,
+              "route": "straight"
+            },
+            {
+              "mode": "watch",
+              "step": 0,
+              "pose": "explain",
+              "caption": "Two landmarks, one journey."
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-09",
+    "path": "F6/F6-09-inverse-proportion-rectangle.html",
+    "errors": [],
+    "engineId": "F6-09",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "scene",
+        "key": "graphic",
+        "path": [
+          "2",
+          "x"
+        ],
+        "from": 4,
+        "to": 5,
+        "beforeText": "F6-09ONE CONSTANT AREAFixed-area neon rectangle and coordinate graph showing reciprocal inverse proportion.INVERSE PROPORTIONTHE AREA NEVER CHANGESONE AREA · MANY RECTANGLESONE CURVE · MANY PAIRSx = 4y = 6AREA = 24 square unitsWIDTH × HEIGHT = CONSTANTMATCHING WIDTH AND HEIGHT024681012024681012WIDTH  xHEIGHT  yWIDTH · x4 unitsChoose a width from the available slots.HEIGHT · y6 unitsHeight changes whenever the width changes.FIXED AREA · xy24 square unitsThis product stays the same.PATTERN4 × 6 = 24An inverse relationship traces a curve.Curved, not straight.Curved, not straight. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "F6-09ONE CONSTANT AREAFixed-area neon rectangle and coordinate graph showing reciprocal inverse proportion.INVERSE PROPORTIONTHE AREA NEVER CHANGESONE AREA · MANY RECTANGLESONE CURVE · MANY PAIRSx = 5y = 4.8AREA = 24 square unitsWIDTH × HEIGHT = CONSTANTMATCHING WIDTH AND HEIGHT024681012024681012WIDTH  xHEIGHT  yWIDTH · x5 unitsChoose a width from the available slots.HEIGHT · y4.8 unitsHeight changes whenever the width changes.FIXED AREA · xy24 square unitsThis product stays the same.PATTERN5 × 4.8 = 24An inverse relationship traces a curve.Count the same area.Count the same area. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "Trace the reciprocal curve",
+            "pose": "celebrate",
+            "caption": "Curved, not straight.",
+            "narration": "Joining the matching pairs traces a curve. When one number goes up, the other goes down. This is inverse proportion.",
+            "lesson": null
+          },
+          "scene": {
+            "function": "graphic",
+            "arguments": {
+              "o": {
+                "mode": "watch",
+                "step": 0,
+                "x": 5,
+                "pose": "explain",
+                "caption": "Count the same area."
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-09",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "Start with fixed area",
+            "pose": "explain",
+            "caption": "Count the same area.",
+            "narration": "We have a rectangle made from equal square units. The area is its width multiplied by its height.",
+            "lesson": null
+          },
+          {
+            "name": "Stretch the width",
+            "pose": "point",
+            "caption": "Wider means shorter.",
+            "narration": "Stretching the width changes the height. The height must shrink if the area is to remain the same.",
+            "lesson": null
+          },
+          {
+            "name": "Squash the width",
+            "pose": "count",
+            "caption": "Shorter means taller.",
+            "narration": "Now make the rectangle narrower. The height grows to keep exactly the same area.",
+            "lesson": null
+          },
+          {
+            "name": "Prove the constant",
+            "pose": "checking",
+            "caption": "Multiply to check.",
+            "narration": "For this rectangle, width 4 times height 6 makes 24. The area stays constant.",
+            "lesson": null
+          },
+          {
+            "name": "Plot the pairs",
+            "pose": "point-down",
+            "caption": "A pair is one point.",
+            "narration": "Each width and matching height gives a coordinate. Mark the pairs on the graph.",
+            "lesson": null
+          },
+          {
+            "name": "Trace the reciprocal curve",
+            "pose": "celebrate",
+            "caption": "Curved, not straight.",
+            "narration": "Joining the matching pairs traces a curve. When one number goes up, the other goes down. This is inverse proportion.",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-09",
+          "preset": "Y8-037",
+          "startMode": "guided",
+          "parameters": {
+            "areaFixed": true,
+            "allowAreaZero": false,
+            "displayPrecision": 3
+          },
+          "presets": {
+            "Y8-037": {
+              "label": "Y8-037 · Fixed area, 24 squares",
+              "title": "AREA STAYS THE SAME",
+              "k": 24,
+              "xs": [
+                2,
+                3,
+                4,
+                6,
+                8,
+                12
+              ],
+              "initial": 4,
+              "context": "A 24-square-unit rectangle changes shape without changing its area."
+            },
+            "Y9-013": {
+              "label": "Y9-013 · Reciprocal curve, 36",
+              "title": "RECIPROCAL CURVE",
+              "k": 36,
+              "xs": [
+                3,
+                4,
+                6,
+                9,
+                12
+              ],
+              "initial": 6,
+              "context": "Trace a reciprocal curve from the exact constant-product pairs."
+            },
+            "Y9-019": {
+              "label": "Y9-019 · xy = 48",
+              "title": "INVERSE FORMULA",
+              "k": 48,
+              "xs": [
+                4,
+                6,
+                8,
+                12,
+                16
+              ],
+              "initial": 8,
+              "context": "Use xy = 48 to find the height for each width."
+            },
+            "Y9-020": {
+              "label": "Y9-020 · Direct or inverse?",
+              "title": "DIRECT OR INVERSE?",
+              "k": 30,
+              "xs": [
+                2,
+                3,
+                5,
+                6,
+                10,
+                15
+              ],
+              "initial": 5,
+              "context": "A shrinking height and growing width make a curved, not straight, graph."
+            }
+          },
+          "events": [
+            "value",
+            "correct",
+            "step",
+            "hintUsed"
+          ],
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Start with fixed area",
+              "pose": "explain",
+              "caption": "Count the same area.",
+              "narration": "We have a rectangle made from equal square units. The area is its width multiplied by its height.",
+              "lesson": null
+            },
+            {
+              "name": "Stretch the width",
+              "pose": "point",
+              "caption": "Wider means shorter.",
+              "narration": "Stretching the width changes the height. The height must shrink if the area is to remain the same.",
+              "lesson": null
+            },
+            {
+              "name": "Squash the width",
+              "pose": "count",
+              "caption": "Shorter means taller.",
+              "narration": "Now make the rectangle narrower. The height grows to keep exactly the same area.",
+              "lesson": null
+            },
+            {
+              "name": "Prove the constant",
+              "pose": "checking",
+              "caption": "Multiply to check.",
+              "narration": "For this rectangle, width 4 times height 6 makes 24. The area stays constant.",
+              "lesson": null
+            },
+            {
+              "name": "Plot the pairs",
+              "pose": "point-down",
+              "caption": "A pair is one point.",
+              "narration": "Each width and matching height gives a coordinate. Mark the pairs on the graph.",
+              "lesson": null
+            },
+            {
+              "name": "Trace the reciprocal curve",
+              "pose": "celebrate",
+              "caption": "Curved, not straight.",
+              "narration": "Joining the matching pairs traces a curve. When one number goes up, the other goes down. This is inverse proportion.",
+              "lesson": null
+            }
+          ]
+        },
+        "draws": {
+          "graphic": [
+            "stage",
+            "p",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "x": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          },
+          "message": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "graphic": {
+          "parameters": [
+            "stage",
+            "p",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y8-037 · Fixed area, 24 squares",
+              "title": "AREA STAYS THE SAME",
+              "k": 24,
+              "xs": [
+                2,
+                3,
+                4,
+                6,
+                8,
+                12
+              ],
+              "initial": 4,
+              "context": "A 24-square-unit rectangle changes shape without changing its area."
+            },
+            {
+              "mode": "watch",
+              "step": 0,
+              "x": 4,
+              "pose": "explain",
+              "caption": "Count the same area."
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-10",
+    "path": "F6/F6-10-speed-distance-time.html",
+    "errors": [],
+    "engineId": "F6-10",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 7,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 6,
+        "kind": "scene",
+        "key": "makeSVG",
+        "path": [
+          "1",
+          "legs",
+          "0",
+          "d"
+        ],
+        "from": 45,
+        "to": 46,
+        "beforeText": "F6-10THE SPEED–DISTANCE–TIME CONNECTIONNeon journey track with movable car, labelled time number line and speed-distance-time formula triangle.ONE JOURNEY · THREE QUANTITIESDISTANCE = SPEED × TIMEFORMULA TRIANGLEDSTS = D ÷ TTHE JOURNEY TRACKSTARTFINISHLEG 1DISTANCE · 90 kmTIME ELAPSED IN HOURS00.511.5ELAPSED · 1.5 hTHE THREE QUANTITIES MUST AGREEDISTANCE · D90 kmTotal route travelled, in kilometres.SPEED · S60 km/hAverage distance per hour.TIME · T1.5 hDuration of the complete route.RELATIONSHIPS = D ÷ TUse the same journey interval each time.Does the journey fit?Does the journey fit? (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "F6-10THE SPEED–DISTANCE–TIME CONNECTIONNeon journey track with movable car, labelled time number line and speed-distance-time formula triangle.ONE JOURNEY · THREE QUANTITIESDISTANCE = SPEED × TIMEFORMULA TRIANGLEDSTS = D ÷ TTHE JOURNEY TRACKSTARTFINISHLEG 1DISTANCE · 90 kmTIME ELAPSED IN HOURS00.511.5ELAPSED · 1.483 hTHE THREE QUANTITIES MUST AGREEDISTANCE · D90 kmTotal route travelled, in kilometres.SPEED · S60 km/hAverage distance per hour.TIME · T1.5 hDuration of the complete route.RELATIONSHIPS = D ÷ TUse the same journey interval each time.Does the journey fit?Does the journey fit? (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 6,
+          "data": {
+            "name": "Check the answer",
+            "pose": "celebrate",
+            "caption": "Does the journey fit?",
+            "narration": "Check the units and put the result back into the formula. The three quantities must agree.",
+            "lesson": null
+          },
+          "scene": {
+            "function": "makeSVG",
+            "arguments": {
+              "p": {
+                "label": "Y8-041 · Find the speed",
+                "title": "A JOURNEY AT STEADY SPEED",
+                "distance": 90,
+                "time": 1.5,
+                "target": "speed",
+                "legs": [
+                  {
+                    "d": 46,
+                    "t": 0.75
+                  },
+                  {
+                    "d": 45,
+                    "t": 0.75
+                  }
+                ],
+                "context": "A coach travels 90 kilometres in 1.5 hours. Find its average speed."
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-10",
+        "version": "1.0.0",
+        "stepCount": 7,
+        "steps": [
+          {
+            "name": "See the journey",
+            "pose": "explain",
+            "caption": "What do we know?",
+            "narration": "A journey has a distance and a time. We use these together to find its average speed.",
+            "lesson": null
+          },
+          {
+            "name": "Watch the movement",
+            "pose": "point",
+            "caption": "Follow the route.",
+            "narration": "Watch the position ring move along the route. Distance grows as the journey continues.",
+            "lesson": null
+          },
+          {
+            "name": "Measure the distance",
+            "pose": "count",
+            "caption": "Read the distance.",
+            "narration": "Distance tells us how far the journey travels. We measure the complete route, not just a short part.",
+            "lesson": null
+          },
+          {
+            "name": "Measure the time",
+            "pose": "checking",
+            "caption": "Read the clock.",
+            "narration": "Time is how long the complete journey takes. Match the distance with the same time interval.",
+            "lesson": null
+          },
+          {
+            "name": "Choose the unknown",
+            "pose": "think",
+            "caption": "What is missing?",
+            "narration": "Cover the quantity you need to calculate in the formula triangle. Distance equals speed multiplied by time.",
+            "lesson": null
+          },
+          {
+            "name": "Show the calculation",
+            "pose": "point-down",
+            "caption": "Use the correct units.",
+            "narration": "To find average speed, divide the total distance by the total time. To find distance, multiply speed by time. To find time, divide distance by speed.",
+            "lesson": null
+          },
+          {
+            "name": "Check the answer",
+            "pose": "celebrate",
+            "caption": "Does the journey fit?",
+            "narration": "Check the units and put the result back into the formula. The three quantities must agree.",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-10",
+          "preset": "Y8-041",
+          "startMode": "guided",
+          "parameters": {
+            "distanceUnit": "km",
+            "timeUnit": "h",
+            "speedUnit": "km/h",
+            "allowZeroTime": false,
+            "precision": 3
+          },
+          "presets": {
+            "Y8-041": {
+              "label": "Y8-041 · Find the speed",
+              "title": "A JOURNEY AT STEADY SPEED",
+              "distance": 90,
+              "time": 1.5,
+              "target": "speed",
+              "legs": [
+                {
+                  "d": 45,
+                  "t": 0.75
+                },
+                {
+                  "d": 45,
+                  "t": 0.75
+                }
+              ],
+              "context": "A coach travels 90 kilometres in 1.5 hours. Find its average speed."
+            },
+            "Y9-016": {
+              "label": "Y9-016 · Read a whole journey",
+              "title": "THE COMPLETE JOURNEY",
+              "distance": 180,
+              "time": 3,
+              "target": "speed",
+              "legs": [
+                {
+                  "d": 60,
+                  "t": 1
+                },
+                {
+                  "d": 30,
+                  "t": 1
+                },
+                {
+                  "d": 90,
+                  "t": 1
+                }
+              ],
+              "context": "A journey has three stages. The whole route covers 180 kilometres in 3 hours. Find the average speed."
+            },
+            "Y9-022-distance": {
+              "label": "Y9-022 · Find the distance",
+              "title": "HOW FAR DID IT TRAVEL?",
+              "distance": 180,
+              "time": 2.5,
+              "target": "distance",
+              "legs": [
+                {
+                  "d": 72,
+                  "t": 1
+                },
+                {
+                  "d": 108,
+                  "t": 1.5
+                }
+              ],
+              "context": "A vehicle travels at 72 kilometres per hour for 2.5 hours. Find its distance."
+            },
+            "Y9-022-time": {
+              "label": "Y9-022 · Find the time",
+              "title": "HOW LONG IS THE JOURNEY?",
+              "distance": 165,
+              "time": 3,
+              "target": "time",
+              "legs": [
+                {
+                  "d": 55,
+                  "t": 1
+                },
+                {
+                  "d": 110,
+                  "t": 2
+                }
+              ],
+              "context": "A vehicle travels 165 kilometres at 55 kilometres per hour. Find its time."
+            }
+          },
+          "events": [
+            "value",
+            "correct",
+            "step",
+            "hintUsed"
+          ],
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "See the journey",
+              "pose": "explain",
+              "caption": "What do we know?",
+              "narration": "A journey has a distance and a time. We use these together to find its average speed.",
+              "lesson": null
+            },
+            {
+              "name": "Watch the movement",
+              "pose": "point",
+              "caption": "Follow the route.",
+              "narration": "Watch the position ring move along the route. Distance grows as the journey continues.",
+              "lesson": null
+            },
+            {
+              "name": "Measure the distance",
+              "pose": "count",
+              "caption": "Read the distance.",
+              "narration": "Distance tells us how far the journey travels. We measure the complete route, not just a short part.",
+              "lesson": null
+            },
+            {
+              "name": "Measure the time",
+              "pose": "checking",
+              "caption": "Read the clock.",
+              "narration": "Time is how long the complete journey takes. Match the distance with the same time interval.",
+              "lesson": null
+            },
+            {
+              "name": "Choose the unknown",
+              "pose": "think",
+              "caption": "What is missing?",
+              "narration": "Cover the quantity you need to calculate in the formula triangle. Distance equals speed multiplied by time.",
+              "lesson": null
+            },
+            {
+              "name": "Show the calculation",
+              "pose": "point-down",
+              "caption": "Use the correct units.",
+              "narration": "To find average speed, divide the total distance by the total time. To find distance, multiply speed by time. To find time, divide distance by speed.",
+              "lesson": null
+            },
+            {
+              "name": "Check the answer",
+              "pose": "celebrate",
+              "caption": "Does the journey fit?",
+              "narration": "Check the units and put the result back into the formula. The three quantities must agree.",
+              "lesson": null
+            }
+          ]
+        },
+        "draws": {
+          "makeSVG": [
+            "stage",
+            "p",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "message": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "makeSVG": {
+          "parameters": [
+            "stage",
+            "p",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y8-041 · Find the speed",
+              "title": "A JOURNEY AT STEADY SPEED",
+              "distance": 90,
+              "time": 1.5,
+              "target": "speed",
+              "legs": [
+                {
+                  "d": 45,
+                  "t": 0.75
+                },
+                {
+                  "d": 45,
+                  "t": 0.75
+                }
+              ],
+              "context": "A coach travels 90 kilometres in 1.5 hours. Find its average speed."
+            },
+            {
+              "mode": "watch",
+              "step": 0,
+              "progress": 0,
+              "cover": "speed",
+              "pose": "explain",
+              "caption": "What do we know?"
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-11",
+    "path": "F6/F6-11-rates-of-change-tank.html",
+    "errors": [],
+    "engineId": "F6-11",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 8,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 7,
+        "kind": "scene",
+        "key": "makeScene",
+        "path": [
+          "1",
+          "rate"
+        ],
+        "from": 3,
+        "to": 4,
+        "beforeText": "F6-11TANK · GRAPH · RATEInteractive glass tank with a fluid level linked to an accurate graph. Change the rate and place the matching gradient card.ONE CHANGE · TWO VIEWSRATE = CHANGE ÷ INTERVALGLASS RATE TANKWATER DEPTH24 cmDEPTH–TIME GRAPHxy88162432404808 min48 cmTIME (min)3 cm/minTHE TANK LEVEL AND GRAPH MUST AGREEHORIZONTAL · TIME8 minThe interval along the horizontal axis.VERTICAL · DEPTH24 cmWhat changes over that interval.RATE · GRADIENT3 cm/minChange ÷ interval. Unit matches the axes.INTERPRETDEPTH ADDED / TIMESame multiplier, every equal interval.Both representations agree.Both representations agree. (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "F6-11TANK · GRAPH · RATEInteractive glass tank with a fluid level linked to an accurate graph. Change the rate and place the matching gradient card.ONE CHANGE · TWO VIEWSRATE = CHANGE ÷ INTERVALGLASS RATE TANKWATER DEPTH32 cmDEPTH–TIME GRAPHxy112233445508 min64 cmTIME (min)4 cm/minTHE TANK LEVEL AND GRAPH MUST AGREEHORIZONTAL · TIME8 minThe interval along the horizontal axis.VERTICAL · DEPTH32 cmWhat changes over that interval.RATE · GRADIENT4 cm/minChange ÷ interval. Unit matches the axes.INTERPRETDEPTH ADDED / TIMESame multiplier, every equal interval.Both representations agree.Both representations agree. (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 7,
+          "data": {
+            "name": "Check the evidence",
+            "pose": "celebrate",
+            "caption": "Both representations agree.",
+            "narration": "Check that the tank, graph and rate calculation all tell the same story.",
+            "lesson": null
+          },
+          "scene": {
+            "function": "makeScene",
+            "arguments": {
+              "p": {
+                "label": "Y8-028 · Graph gradient",
+                "title": "WATER LEVEL RISING",
+                "kind": "flow",
+                "rate": 4,
+                "xMax": 8,
+                "xUnit": "min",
+                "yUnit": "cm",
+                "rateUnit": "cm/min",
+                "quantity": "WATER DEPTH",
+                "context": "The water rises at a steady number of centimetres each minute. Find the gradient.",
+                "unitDescription": "cm of height per minute"
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-11",
+        "version": "1.0.0",
+        "stepCount": 8,
+        "steps": [
+          {
+            "name": "Notice the tank",
+            "pose": "explain",
+            "caption": "Look at the two measurements.",
+            "narration": "Look at the container and the graph. We can measure how one quantity changes as another quantity increases.",
+            "lesson": null
+          },
+          {
+            "name": "Open the tap",
+            "pose": "point-down",
+            "caption": "Start the flow.",
+            "narration": "When the flow starts, the height of the liquid begins to rise.",
+            "lesson": null
+          },
+          {
+            "name": "Compare intervals",
+            "pose": "count",
+            "caption": "Compare equal intervals.",
+            "narration": "In equal time intervals, the same flow rate adds the same amount. Equal steps help us see the rate.",
+            "lesson": null
+          },
+          {
+            "name": "Watch the depth rise",
+            "pose": "point",
+            "caption": "Follow the rising level.",
+            "narration": "The level climbs at a steady speed. A faster flow gives a larger change over the same time.",
+            "lesson": null
+          },
+          {
+            "name": "Trace the graph",
+            "pose": "checking",
+            "caption": "Look at the slope.",
+            "narration": "Put the measurements on a graph. The gradient shows how much the quantity increases for one unit along the horizontal axis.",
+            "lesson": null
+          },
+          {
+            "name": "Calculate the rate",
+            "pose": "think",
+            "caption": "Rise divided by run.",
+            "narration": "Find the change on the vertical axis and divide by the change on the horizontal axis. Remember the units.",
+            "lesson": null
+          },
+          {
+            "name": "Test a new rate",
+            "pose": "magnify",
+            "caption": "What if the rate doubles?",
+            "narration": "Keep the same horizontal interval. Doubling the rate doubles the vertical change and makes the graph steeper.",
+            "lesson": null
+          },
+          {
+            "name": "Check the evidence",
+            "pose": "celebrate",
+            "caption": "Both representations agree.",
+            "narration": "Check that the tank, graph and rate calculation all tell the same story.",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-11",
+          "preset": "Y8-028",
+          "startMode": "guided",
+          "parameters": {
+            "precision": 3,
+            "levelPositions": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "rateFactors": [
+              0.5,
+              1,
+              1.5,
+              2
+            ],
+            "independentVariable": "time or volume"
+          },
+          "presets": {
+            "Y8-028": {
+              "label": "Y8-028 · Graph gradient",
+              "title": "WATER LEVEL RISING",
+              "kind": "flow",
+              "rate": 3,
+              "xMax": 8,
+              "xUnit": "min",
+              "yUnit": "cm",
+              "rateUnit": "cm/min",
+              "quantity": "WATER DEPTH",
+              "context": "The water rises at a steady number of centimetres each minute. Find the gradient.",
+              "unitDescription": "cm of height per minute"
+            },
+            "Y8-041": {
+              "label": "Y8-041 · Speed as a rate",
+              "title": "SAME RATE · NEW CONTEXT",
+              "kind": "journey",
+              "rate": 12,
+              "xMax": 5,
+              "xUnit": "min",
+              "yUnit": "km",
+              "rateUnit": "km/min",
+              "quantity": "DISTANCE METRE",
+              "context": "A distance meter gains kilometres as time passes. Read the rate of change, like water rising in a tank.",
+              "unitDescription": "kilometres per minute"
+            },
+            "Y8-042": {
+              "label": "Y8-042 · Density",
+              "title": "MASS PER LITRE",
+              "kind": "density",
+              "rate": 2,
+              "xMax": 8,
+              "xUnit": "L",
+              "yUnit": "kg",
+              "rateUnit": "kg/L",
+              "quantity": "TANK CONTENTS",
+              "context": "Each extra litre adds the same mass. The gradient of a mass–volume graph gives density.",
+              "unitDescription": "kilograms per litre"
+            },
+            "Y9-022": {
+              "label": "Y9-022 · Compound speed",
+              "title": "INTERPRETING A FASTER RATE",
+              "kind": "journey",
+              "rate": 9,
+              "xMax": 8,
+              "xUnit": "min",
+              "yUnit": "km",
+              "rateUnit": "km/min",
+              "quantity": "DISTANCE METRE",
+              "context": "The distance meter fills faster when the rate is higher. Compare steep and shallow gradients.",
+              "unitDescription": "kilometres per minute"
+            },
+            "Y9-023": {
+              "label": "Y9-023 · Density reasoning",
+              "title": "COMPARE TWO MATERIALS",
+              "kind": "density",
+              "rate": 1.5,
+              "xMax": 8,
+              "xUnit": "L",
+              "yUnit": "kg",
+              "rateUnit": "kg/L",
+              "quantity": "MASS ADDED",
+              "context": "Two materials can occupy the same volume yet have different mass. Compare their gradient.",
+              "unitDescription": "kilograms per litre"
+            }
+          },
+          "events": [
+            "value",
+            "correct",
+            "step",
+            "hintUsed"
+          ],
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Notice the tank",
+              "pose": "explain",
+              "caption": "Look at the two measurements.",
+              "narration": "Look at the container and the graph. We can measure how one quantity changes as another quantity increases.",
+              "lesson": null
+            },
+            {
+              "name": "Open the tap",
+              "pose": "point-down",
+              "caption": "Start the flow.",
+              "narration": "When the flow starts, the height of the liquid begins to rise.",
+              "lesson": null
+            },
+            {
+              "name": "Compare intervals",
+              "pose": "count",
+              "caption": "Compare equal intervals.",
+              "narration": "In equal time intervals, the same flow rate adds the same amount. Equal steps help us see the rate.",
+              "lesson": null
+            },
+            {
+              "name": "Watch the depth rise",
+              "pose": "point",
+              "caption": "Follow the rising level.",
+              "narration": "The level climbs at a steady speed. A faster flow gives a larger change over the same time.",
+              "lesson": null
+            },
+            {
+              "name": "Trace the graph",
+              "pose": "checking",
+              "caption": "Look at the slope.",
+              "narration": "Put the measurements on a graph. The gradient shows how much the quantity increases for one unit along the horizontal axis.",
+              "lesson": null
+            },
+            {
+              "name": "Calculate the rate",
+              "pose": "think",
+              "caption": "Rise divided by run.",
+              "narration": "Find the change on the vertical axis and divide by the change on the horizontal axis. Remember the units.",
+              "lesson": null
+            },
+            {
+              "name": "Test a new rate",
+              "pose": "magnify",
+              "caption": "What if the rate doubles?",
+              "narration": "Keep the same horizontal interval. Doubling the rate doubles the vertical change and makes the graph steeper.",
+              "lesson": null
+            },
+            {
+              "name": "Check the evidence",
+              "pose": "celebrate",
+              "caption": "Both representations agree.",
+              "narration": "Check that the tank, graph and rate calculation all tell the same story.",
+              "lesson": null
+            }
+          ]
+        },
+        "draws": {
+          "makeScene": [
+            "stage",
+            "p",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "makeScene.m": {
+            "kind": "factory",
+            "factory": "model",
+            "argCount": 3
+          }
+        },
+        "exploreInitials": {
+          "makeScene.m": {
+            "rate": 3,
+            "x": 1.92,
+            "y": 5.76,
+            "cap": 48,
+            "factor": 1,
+            "fill": 0.12
+          }
+        },
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "makeScene": {
+          "parameters": [
+            "stage",
+            "p",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y8-028 · Graph gradient",
+              "title": "WATER LEVEL RISING",
+              "kind": "flow",
+              "rate": 3,
+              "xMax": 8,
+              "xUnit": "min",
+              "yUnit": "cm",
+              "rateUnit": "cm/min",
+              "quantity": "WATER DEPTH",
+              "context": "The water rises at a steady number of centimetres each minute. Find the gradient.",
+              "unitDescription": "cm of height per minute"
+            },
+            {
+              "mode": "watch",
+              "step": 0,
+              "progress": 0.24,
+              "rateIndex": 1,
+              "pose": "explain",
+              "caption": "Look at the two measurements."
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  },
+  {
+    "id": "F6-14",
+    "path": "F6/F6-14-ratio-fraction-translator.html",
+    "errors": [],
+    "engineId": "F6-14",
+    "native": {
+      "modes": {
+        "watch": true,
+        "guided": true,
+        "explore": true,
+        "challenge": true
+      },
+      "steps": 6,
+      "stepErrors": []
+    },
+    "integration": {
+      "hook": "1.0.0",
+      "invalidRejected": true,
+      "changed": true,
+      "proof": {
+        "index": 5,
+        "kind": "scene",
+        "key": "draw",
+        "path": [
+          "1",
+          "a"
+        ],
+        "from": 2,
+        "to": 3,
+        "beforeText": "F6-14FROM A RATIO TO FRACTIONSOne whole is split into 5 equal neon boxes. The first 2 belong to Ava and the last 3 belong to Ben. Translate each share into a stacked fraction of the whole.ONE WHOLE · TWO SHARES2 : 3COUNT ALL THE EQUAL PARTSAABBB5 EQUAL PARTS = ONE WHOLEAva2 PARTS25Ben3 PARTS35A PART + B PART = ONE WHOLEWHOLE5 equal partsAdd the ratio parts to count the denominator.Ava252 equal parts out of 5.Ben353 equal parts out of 5.WHOLE CHECK2 + 3 = 5Numerators add to the denominator.Both fractions make one whole!Both fractions make one whole! (Nova the cat, welcome)Nova the cat, welcome",
+        "afterText": "F6-14FROM A RATIO TO FRACTIONSOne whole is split into 6 equal neon boxes. The first 3 belong to Ava and the last 3 belong to Ben. Translate each share into a stacked fraction of the whole.ONE WHOLE · TWO SHARES3 : 3COUNT ALL THE EQUAL PARTSAAABBB6 EQUAL PARTS = ONE WHOLEAva3 PARTS36Ben3 PARTS36A PART + B PART = ONE WHOLEWHOLE6 equal partsAdd the ratio parts to count the denominator.Ava363 equal parts out of 6.Ben363 equal parts out of 6.WHOLE CHECK3 + 3 = 6Numerators add to the denominator.Both fractions make one whole!Both fractions make one whole! (Nova the cat, welcome)Nova the cat, welcome",
+        "record": {
+          "nativeIndex": 5,
+          "data": {
+            "name": "Prove the whole",
+            "pose": "celebrate",
+            "caption": "Both fractions make one whole!",
+            "narration": "Two fifths plus three fifths equals five fifths, which is one whole. Both fractions use the same denominator.",
+            "lesson": null
+          },
+          "scene": {
+            "function": "draw",
+            "arguments": {
+              "p": {
+                "label": "Y7-059 · Sharing two to three",
+                "a": 3,
+                "b": 3,
+                "names": [
+                  "Ava",
+                  "Ben"
+                ],
+                "context": "Ava and Ben share equal parts in the ratio 2:3."
+              }
+            }
+          }
+        }
+      },
+      "failures": [],
+      "exploreRendered": true,
+      "game": {
+        "wrongHeld": true,
+        "correctAdvanced": true
+      },
+      "descriptor": {
+        "id": "F6-14",
+        "version": "1.0.0",
+        "stepCount": 6,
+        "steps": [
+          {
+            "name": "Notice the two-part ratio",
+            "pose": "explain",
+            "caption": "First, count the groups.",
+            "narration": "A ratio compares parts. In two to three, the first group has two equal parts and the second has three.",
+            "lesson": null
+          },
+          {
+            "name": "Build the one-whole bar",
+            "pose": "point-down",
+            "caption": "Together, they make one whole.",
+            "narration": "Join all the equally sized parts into one whole. Each outlined box represents exactly one equal part.",
+            "lesson": null
+          },
+          {
+            "name": "Count the denominator",
+            "pose": "count",
+            "caption": "Count every equal box.",
+            "narration": "Add two and three. There are five equal parts in the whole. Five becomes the denominator for both fractions.",
+            "lesson": null
+          },
+          {
+            "name": "Translate the first part",
+            "pose": "point",
+            "caption": "Ava has two of five.",
+            "narration": "The first group owns two of the five equal parts. Its fraction of the whole is two fifths, not two thirds.",
+            "lesson": null
+          },
+          {
+            "name": "Translate the second part",
+            "pose": "count",
+            "caption": "Ben has three of five.",
+            "narration": "The second group owns the other three parts. Its fraction of the whole is three fifths.",
+            "lesson": null
+          },
+          {
+            "name": "Prove the whole",
+            "pose": "celebrate",
+            "caption": "Both fractions make one whole!",
+            "narration": "Two fifths plus three fifths equals five fifths, which is one whole. Both fractions use the same denominator.",
+            "lesson": null
+          }
+        ],
+        "config": {
+          "id": "F6-14",
+          "startMode": "guided",
+          "preset": "Y7-059",
+          "parameters": {
+            "a": 2,
+            "b": 3,
+            "labels": [
+              "Ava",
+              "Ben"
+            ],
+            "fractions": "stacked",
+            "normalize": true
+          },
+          "presets": {
+            "Y7-059": {
+              "label": "Y7-059 · Sharing two to three",
+              "a": 2,
+              "b": 3,
+              "names": [
+                "Ava",
+                "Ben"
+              ],
+              "context": "Ava and Ben share equal parts in the ratio 2:3."
+            },
+            "Y7-059-garden": {
+              "label": "Y7-059 · Garden plots",
+              "a": 3,
+              "b": 5,
+              "names": [
+                "Flowers",
+                "Vegetables"
+              ],
+              "context": "Three parts flowers to five parts vegetables."
+            },
+            "Y7-059-study": {
+              "label": "Y7-059 · Study subjects",
+              "a": 1,
+              "b": 4,
+              "names": [
+                "Art",
+                "Maths"
+              ],
+              "context": "One part art to four parts maths."
+            },
+            "Y7-059-points": {
+              "label": "Y7-059 · Team points",
+              "a": 5,
+              "b": 7,
+              "names": [
+                "Blue",
+                "Teal"
+              ],
+              "context": "Five parts blue to seven parts teal."
+            }
+          },
+          "events": [
+            "value",
+            "correct",
+            "step",
+            "hintUsed"
+          ],
+          "lessonGame": {},
+          "lessonChallengeTitle": "Concept challenge",
+          "lessonBadgeTitle": "CHALLENGE CHAMPION"
+        },
+        "models": {},
+        "tables": {
+          "STEPS": [
+            {
+              "name": "Notice the two-part ratio",
+              "pose": "explain",
+              "caption": "First, count the groups.",
+              "narration": "A ratio compares parts. In two to three, the first group has two equal parts and the second has three.",
+              "lesson": null
+            },
+            {
+              "name": "Build the one-whole bar",
+              "pose": "point-down",
+              "caption": "Together, they make one whole.",
+              "narration": "Join all the equally sized parts into one whole. Each outlined box represents exactly one equal part.",
+              "lesson": null
+            },
+            {
+              "name": "Count the denominator",
+              "pose": "count",
+              "caption": "Count every equal box.",
+              "narration": "Add two and three. There are five equal parts in the whole. Five becomes the denominator for both fractions.",
+              "lesson": null
+            },
+            {
+              "name": "Translate the first part",
+              "pose": "point",
+              "caption": "Ava has two of five.",
+              "narration": "The first group owns two of the five equal parts. Its fraction of the whole is two fifths, not two thirds.",
+              "lesson": null
+            },
+            {
+              "name": "Translate the second part",
+              "pose": "count",
+              "caption": "Ben has three of five.",
+              "narration": "The second group owns the other three parts. Its fraction of the whole is three fifths.",
+              "lesson": null
+            },
+            {
+              "name": "Prove the whole",
+              "pose": "celebrate",
+              "caption": "Both fractions make one whole!",
+              "narration": "Two fifths plus three fifths equals five fifths, which is one whole. Both fractions use the same denominator.",
+              "lesson": null
+            }
+          ]
+        },
+        "draws": {
+          "draw": [
+            "stage",
+            "p",
+            "o"
+          ]
+        },
+        "exploreFields": {
+          "placed": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          },
+          "message": {
+            "kind": "value",
+            "factory": null,
+            "argCount": null
+          }
+        },
+        "exploreInitials": {},
+        "exploreControls": {
+          "rules": {},
+          "matched": []
+        }
+      },
+      "scenes": {
+        "draw": {
+          "parameters": [
+            "stage",
+            "p",
+            "o"
+          ],
+          "sample": [
+            "[native stage]",
+            {
+              "label": "Y7-059 · Sharing two to three",
+              "a": 2,
+              "b": 3,
+              "names": [
+                "Ava",
+                "Ben"
+              ],
+              "context": "Ava and Ben share equal parts in the ratio 2:3."
+            },
+            {
+              "mode": "watch",
+              "step": 0,
+              "pose": "explain",
+              "caption": "First, count the groups."
+            }
+          ]
+        }
+      }
+    },
+    "guided": true,
+    "bob": true
+  }
+]

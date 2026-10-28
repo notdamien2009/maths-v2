@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Narration cue conceals motion until its boundary",
+    "pass": true,
+    "detail": "5 = 5"
+  },
+  {
+    "name": "Bob waits for speech after native motion finishes",
+    "pass": true,
+    "detail": {
+      "state": {
+        "concept": 0,
+        "index": 0,
+        "playing": true,
+        "paused": false,
+        "ready": true,
+        "boardHeight": 596
+      },
+      "events": [
+        {
+          "type": "cancel",
+          "at": 517.1999999880791
+        },
+        {
+          "type": "speak",
+          "text": "Notice this moving point.",
+          "at": 528.7999999821186
+        },
+        {
+          "type": "start",
+          "at": 550.0999999940395
+        }
+      ],
+      "text": "5 + 0.5 = 5.5"
+    }
+  },
+  {
+    "name": "Speech completion advances the visual beat",
+    "pass": true
+  },
+  {
+    "name": "Bob pause holds narration and current beat",
+    "pass": true
+  },
+  {
+    "name": "Bob resumes coordinated narration and motion",
+    "pass": true
+  },
+  {
+    "name": "Silent speech service cannot hang the lesson",
+    "pass": true
+  },
+  {
+    "name": "Hosted decimal restriction retains caption without speaking",
+    "pass": true,
+    "detail": {
+      "spoken": [],
+      "caption": "Round 3.46 to one decimal place."
+    }
+  }
+]

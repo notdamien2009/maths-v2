@@ -1,0 +1,673 @@
+{
+ "note": "Lesson records for each upgraded F6 engine (the first two Challenge rounds used in QA). privateAnswer is read by the F0-12 controller and is never drawn.",
+ "examples": {
+  "F6-01": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "a": "Tickets",
+       "b": "Cost",
+       "a0": 2,
+       "b0": 7,
+       "f": 3,
+       "type": "direct",
+       "unitA": "",
+       "unitB": "£"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "2 tickets cost £7. What do 6 tickets cost in pounds?",
+    "privateAnswer": 21,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "a": "Tickets",
+       "b": "Cost",
+       "a0": 3,
+       "b0": 4,
+       "f": 2,
+       "type": "direct",
+       "unitA": "",
+       "unitB": "£"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "3 tickets cost £4. What do 6 tickets cost in pounds?",
+    "privateAnswer": 8,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-02": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "known": 2,
+       "knownB": 6,
+       "target": 8,
+       "max": 20,
+       "major": 2,
+       "minor": 1,
+       "steps": 10,
+       "context": "Use the matching pair to find the unknown value."
+      },
+      "phase": 4
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "2 on the top line matches 6 on the bottom line. What matches 8?",
+    "privateAnswer": 24,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "known": 4,
+       "knownB": 12,
+       "target": 12,
+       "max": 20,
+       "major": 2,
+       "minor": 1,
+       "steps": 10,
+       "context": "Use the matching pair to find the unknown value."
+      },
+      "phase": 4
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "4 on the top line matches 12 on the bottom line. What matches 12?",
+    "privateAnswer": 36,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-03": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "a": 2,
+       "b": 3,
+       "total": 35,
+       "symbol": "£",
+       "names": [
+        "Ava",
+        "Ben"
+       ],
+       "context": "Share the total in the ratio."
+      },
+      "phase": 6
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "£35 is shared in the ratio 2 : 3. How much does Ava receive?",
+    "privateAnswer": 14,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "a": 3,
+       "b": 4,
+       "total": 35,
+       "symbol": "£",
+       "names": [
+        "Ava",
+        "Ben"
+       ],
+       "context": "Share the total in the ratio."
+      },
+      "phase": 6
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "£35 is shared in the ratio 3 : 4. How much does Ava receive?",
+    "privateAnswer": 15,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-04": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "display": [
+        "8",
+        "12"
+       ],
+       "raw": [
+        8,
+        12
+       ],
+       "whole": [
+        8,
+        12
+       ],
+       "clear": 1,
+       "units": "counters",
+       "context": "Simplify the ratio."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Simplify 8 : 12 fully (write it like 2:3).",
+    "privateAnswer": "2:3",
+    "answerType": "text",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "display": [
+        "10",
+        "15"
+       ],
+       "raw": [
+        10,
+        15
+       ],
+       "whole": [
+        10,
+        15
+       ],
+       "clear": 1,
+       "units": "counters",
+       "context": "Simplify the ratio."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Simplify 10 : 15 fully (write it like 2:3).",
+    "privateAnswer": "2:3",
+    "answerType": "text",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-05": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "base": 4,
+       "target": 6,
+       "ingredients": [
+        {
+         "name": "FLOUR",
+         "base": 220,
+         "unit": "g",
+         "icon": "flour"
+        },
+        {
+         "name": "MILK",
+         "base": 160,
+         "unit": "ml",
+         "icon": "milk"
+        },
+        {
+         "name": "EGGS",
+         "base": 4,
+         "unit": "eggs",
+         "icon": "egg"
+        },
+        {
+         "name": "BERRIES",
+         "base": 60,
+         "unit": "g",
+         "icon": "berry"
+        }
+       ],
+       "context": "Scale the recipe."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A recipe for 4 uses 220 g of flour. How much flour is needed for 6?",
+    "privateAnswer": 330,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "base": 3,
+       "target": 9,
+       "ingredients": [
+        {
+         "name": "FLOUR",
+         "base": 150,
+         "unit": "g",
+         "icon": "flour"
+        },
+        {
+         "name": "MILK",
+         "base": 120,
+         "unit": "ml",
+         "icon": "milk"
+        },
+        {
+         "name": "EGGS",
+         "base": 3,
+         "unit": "eggs",
+         "icon": "egg"
+        },
+        {
+         "name": "BERRIES",
+         "base": 45,
+         "unit": "g",
+         "icon": "berry"
+        }
+       ],
+       "context": "Scale the recipe."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "A recipe for 3 uses 150 g of flour. How much flour is needed for 9?",
+    "privateAnswer": 450,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-06": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "compareAmount": 100,
+       "items": [
+        {
+         "name": "PACK A",
+         "pricePence": 210,
+         "amount": 700
+        },
+        {
+         "name": "PACK B",
+         "pricePence": 260,
+         "amount": 1000
+        }
+       ],
+       "context": "Compare the packs fairly."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Pack A costs 210p for 700 g. What is its price in pence per 100 g?",
+    "privateAnswer": 30,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "compareAmount": 100,
+       "items": [
+        {
+         "name": "PACK A",
+         "pricePence": 150,
+         "amount": 500
+        },
+        {
+         "name": "PACK B",
+         "pricePence": 330,
+         "amount": 1000
+        }
+       ],
+       "context": "Compare the packs fairly."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Pack A costs 150p for 500 g. What is its price in pence per 100 g?",
+    "privateAnswer": 30,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-07": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "dx": 6,
+       "dy": 0,
+       "scale": 2,
+       "route": "straight",
+       "from": "SCHOOL",
+       "to": "PARK",
+       "context": "Use the scale bar."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Measure the map distance and use the scale. How many kilometres is the real journey?",
+    "privateAnswer": 12,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "dx": 3,
+       "dy": 4,
+       "scale": 4,
+       "route": "diagonal",
+       "from": "SCHOOL",
+       "to": "PARK",
+       "context": "Use the scale bar."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Measure the map distance and use the scale. How many kilometres is the real journey?",
+    "privateAnswer": 20,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-09": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "k": 30,
+       "xs": [
+        2,
+        3,
+        5,
+        6,
+        10
+       ],
+       "initial": 10,
+       "context": "The area stays the same."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A rectangle has area 30. Its width is 10. What is its height?",
+    "privateAnswer": 3,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "k": 40,
+       "xs": [
+        2,
+        4,
+        5,
+        8,
+        10
+       ],
+       "initial": 8,
+       "context": "The area stays the same."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "A rectangle has area 40. Its width is 8. What is its height?",
+    "privateAnswer": 5,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-10": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "distance": 120,
+       "time": 2,
+       "target": "speed",
+       "legs": [
+        {
+         "d": 60,
+         "t": 1
+        },
+        {
+         "d": 60,
+         "t": 1
+        }
+       ],
+       "context": "Find the average speed."
+      },
+      "phase": 6
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A journey of 120 km takes 2 hours. What is the average speed in km/h?",
+    "privateAnswer": 60,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "distance": 150,
+       "time": 3,
+       "target": "speed",
+       "legs": [
+        {
+         "d": 75,
+         "t": 1.5
+        },
+        {
+         "d": 75,
+         "t": 1.5
+        }
+       ],
+       "context": "Find the average speed."
+      },
+      "phase": 6
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "A journey of 150 km takes 3 hours. What is the average speed in km/h?",
+    "privateAnswer": 50,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-11": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "kind": "flow",
+       "rate": 4,
+       "xMax": 8,
+       "context": "Find the rate of change."
+      },
+      "phase": 7
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Read the tank graph. By how many cm does the depth rise each minute?",
+    "privateAnswer": 4,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "kind": "flow",
+       "rate": 5,
+       "xMax": 6,
+       "context": "Find the rate of change."
+      },
+      "phase": 7
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Read the tank graph. By how many cm does the depth rise each minute?",
+    "privateAnswer": 5,
+    "answerType": "numeric",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F6-14": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "a": 2,
+       "b": 5,
+       "names": [
+        "Ava",
+        "Ben"
+       ],
+       "context": "Translate the ratio."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "In the ratio 2 : 5, what fraction of the whole is Ava's share? (write it like 2/5)",
+    "privateAnswer": "2/7",
+    "answerType": "text",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "a": 3,
+       "b": 4,
+       "names": [
+        "Ava",
+        "Ben"
+       ],
+       "context": "Translate the ratio."
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "In the ratio 3 : 4, what fraction of the whole is Ava's share? (write it like 2/5)",
+    "privateAnswer": "3/7",
+    "answerType": "text",
+    "hint": "Use the matching pair and one multiplier.",
+    "wrongFeedback": "Check the relationship again.",
+    "correctFeedback": "Correct."
+   }
+  ]
+ }
+}

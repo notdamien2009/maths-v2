@@ -1,0 +1,316 @@
+[
+  {
+    "name": "F1-01 signed decimal comparison concealed",
+    "pass": true,
+    "detail": "Number line · Build the linestep 1/7Two number lines comparing −0.5 and −1.25.−2−1.5−1−0.500.511.52−2−1.5−1−0.500.511.52A = −0.5B = −1.25compare−0.5 ? −1.25further right is bigger→Build the lineBuild the line (Nova the cat, welcome)Nova the cat, welcome"
+  },
+  {
+    "name": "F1-01 thermometer rise is +8",
+    "pass": true,
+    "detail": [
+      "Vertical scale −20 °C to 40 °C, reading 3 °C.",
+      "Build the line (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-01 marker keyboard reaches labelled hundredth",
+    "pass": true,
+    "detail": {
+      "value": 2.38,
+      "text": "Explore · Decimals: hundredths 2.3 to 2.42.38Number line 2.3 to 2.4.2.32.322.342.362.382.42.38value2.38on a labelled lineyes2.372.37 (Nova the cat, welcome)Nova the cat, welcome"
+    }
+  },
+  {
+    "name": "F1-01 neighbour label follows drag/keyboard state",
+    "pass": true,
+    "detail": {
+      "value": 2.37,
+      "text": "Explore · Decimals: hundredths 2.3 to 2.42.37Number line 2.3 to 2.4.2.32.322.342.362.382.42.37value2.37between2.36 and 2.382.372.37 (Nova the cat, welcome)Nova the cat, welcome"
+    }
+  },
+  {
+    "name": "F1-01 rejects inverted axis",
+    "pass": true
+  },
+  {
+    "name": "F1-02 negative nested ranges preserve hundredths/thousandths",
+    "pass": true,
+    "detail": [
+      "Zoomable number line: −1 to 0, then −0.1 to 0, then −0.04 to −0.03. Value −0.037.",
+      "Whole numbers (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-02 unknown point not disclosed in accessible title",
+    "pass": true,
+    "detail": [
+      "Zoomable number line: 0 to 1, then 0.1 to 0.2, then 0.12 to 0.13.",
+      "Whole numbers (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-02 rejects unsupported zoom depth",
+    "pass": true
+  },
+  {
+    "name": "F1-03 mixed signed fractional jumps end at 2.25",
+    "pass": true,
+    "detail": [
+      "Number line −3 to 4. Start −2, jumps +1.5, −0.25, +3, end 2.25.",
+      "Start (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-03 partial arc endpoint preserves arithmetic",
+    "pass": true,
+    "detail": [
+      "Number line −3 to 4. Start −2, jumps +1.5, −0.25, end −0.625.",
+      "Start (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-03 rejects endpoint outside axis",
+    "pass": true
+  },
+  {
+    "name": "F1-05 rounding -25 / 10",
+    "pass": true,
+    "detail": [
+      "Rounding −25 to the nearest 10: between −30 and −20, rounds to −20.",
+      "Landmarks (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-05 rounding 3.45 / 0.1",
+    "pass": true,
+    "detail": [
+      "Rounding 3.45 to the nearest 0.1: between 3.4 and 3.5, rounds to 3.5.",
+      "Landmarks (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-05 rounding 0.4372 / 0.01",
+    "pass": true,
+    "detail": [
+      "Rounding 0.4372 to the nearest 0.01: between 0.43 and 0.44, rounds to 0.44.",
+      "Landmarks (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-05 rounding 1250 / 100",
+    "pass": true,
+    "detail": [
+      "Rounding 1250 to the nearest 100: between 1200 and 1300, rounds to 1300.",
+      "Landmarks (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-05 unanswered rounding conceals arrow/result/title",
+    "pass": true,
+    "detail": [
+      "Rounding 68 to the nearest 10: between 60 and 70.",
+      "Landmarks (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-05 rejects zero rounding unit",
+    "pass": true
+  },
+  {
+    "name": "F1-06 open/closed interval has exactly five integer solutions",
+    "pass": true,
+    "detail": "Explore · −2 < x ≤ 3solutionNumber line showing −2 < x ≤ 3.−5−4−3−2−1012345inequality−2 < x ≤ 3test x0worksyesintegers−1, 0, 1, 2, 3x = 0x = 0 (Nova the cat, welcome)Nova the cat, welcome"
+  },
+  {
+    "name": "F1-06 boundary slider preserves interval ordering",
+    "pass": true,
+    "detail": {
+      "label": "x > 2",
+      "min": -5,
+      "max": 5,
+      "op": "between",
+      "a": 2,
+      "b": 3,
+      "incA": false,
+      "incB": true,
+      "labelStep": 1
+    }
+  },
+  {
+    "name": "F1-06 rejects reversed interval",
+    "pass": true
+  },
+  {
+    "name": "F1-07 independently configured card placed accurately",
+    "pass": true,
+    "detail": {
+      "placed": [
+        -0.75
+      ],
+      "text": "Explore · Lesson cards1/3 placedNumber line from −2 to 2 with cards −0.75.−2−1.5−1−0.500.511.52−0.75next card0.25off by0Place 0.25Place 0.25 (Nova the cat, welcome)Nova the cat, welcome"
+    }
+  },
+  {
+    "name": "F1-07 reset clears placements",
+    "pass": true
+  },
+  {
+    "name": "F1-07 rejects misleading numerical labels",
+    "pass": true
+  },
+  {
+    "name": "F1-08 small/big preset sliders retain actual operands",
+    "pass": true,
+    "detail": {
+      "values": [
+        0.0487,
+        612
+      ],
+      "math": {
+        "ra": 0.05,
+        "rb": 600,
+        "est": 30,
+        "exact": 29.8044,
+        "txt": "0.0487 × 612",
+        "etxt": "0.05 × 600 = 30"
+      }
+    }
+  },
+  {
+    "name": "F1-08 exact square root is 7",
+    "pass": true,
+    "detail": [
+      "Estimate of √49 on a number line.",
+      "The question (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-08 rejects division by zero",
+    "pass": true
+  },
+  {
+    "name": "F1-09 four divisions between tens equal 2.5 g",
+    "pass": true,
+    "detail": [
+      "Scale.",
+      "Big marks (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-09 measured bounds retain scale precision",
+    "pass": true,
+    "detail": [
+      "Scale reading 4.6 m.",
+      "Big marks (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-09 rejects zero divisions",
+    "pass": true
+  },
+  {
+    "name": "F1-10 ordinary notation 3.2 × 10^0",
+    "pass": true,
+    "detail": "Explore · 3.2 × 10⁰3.23.2 × 10⁰ on a powers of ten line.10−310−210−11001011021031043.2 × 10⁰123456789103.2zoom: × 10⁰standard form3.2 × 10⁰ordinary3.23.2 × 10⁰3.2 × 10⁰ (Nova the cat, welcome)Nova the cat, welcome"
+  },
+  {
+    "name": "F1-10 ordinary notation 1.25 × 10^1",
+    "pass": true,
+    "detail": "Explore · 1.25 × 10¹12.51.25 × 10¹ on a powers of ten line.10−210−11001011021031041051.25 × 10¹123456789101.25zoom: × 10¹standard form1.25 × 10¹ordinary12.51.25 × 10¹1.25 × 10¹ (Nova the cat, welcome)Nova the cat, welcome"
+  },
+  {
+    "name": "F1-10 ordinary notation 4.5 × 10^-3",
+    "pass": true,
+    "detail": "Explore · 4.5 × 10⁻³0.00454.5 × 10⁻³ on a powers of ten line.10−610−510−410−310−210−11001014.5 × 10⁻³123456789104.5zoom: × 10⁻³standard form4.5 × 10⁻³ordinary0.00454.5 × 10⁻³4.5 × 10⁻³ (Nova the cat, welcome)Nova the cat, welcome"
+  },
+  {
+    "name": "F1-10 ordinary notation 6.02 × 10^23",
+    "pass": true,
+    "detail": "Explore · 6.02 × 10²³6020000000000000000000006.02 × 10²³ on a powers of ten line.102010211022102310241025102610276.02 × 10²³123456789106.02zoom: × 10²³standard form6.02 × 10²³ordinary6020000000000000000000006.02 × 10²³6.02 × 10²³ (Nova the cat, welcome)Nova the cat, welcome"
+  },
+  {
+    "name": "F1-10 rejects nonstandard mantissa",
+    "pass": true
+  },
+  {
+    "name": "F1-11 bounds {\"v\":8.4,\"u\":0.1}",
+    "pass": true,
+    "detail": [
+      "Error interval 8.35 ≤ x < 8.45.",
+      "Measured (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-11 bounds {\"v\":-3.9,\"u\":0.1,\"trunc\":true}",
+    "pass": true,
+    "detail": [
+      "Error interval −4 < x ≤ −3.9.",
+      "Measured (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-11 bounds {\"v\":340,\"u\":10}",
+    "pass": true,
+    "detail": [
+      "Error interval 335 ≤ x < 345.",
+      "Measured (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-11 unanswered bounds not exposed in accessibility text",
+    "pass": true,
+    "detail": [
+      "Measured 8.4 cm.",
+      "Measured (Nova the cat, welcome)"
+    ]
+  },
+  {
+    "name": "F1-11 rejects incompatible measured accuracy",
+    "pass": true
+  },
+  {
+    "name": "F1-01 offset snap and neighbour grids retain axis origin",
+    "pass": true,
+    "detail": {
+      "value": 1.15,
+      "text": "Explore · Integers 0 to 101.15Number line 1.03 to 2.03.1.031.131.231.331.431.531.631.731.831.932.031.15value1.15between1.13 and 1.231.131.13 (Nova the cat, welcome)Nova the cat, welcome"
+    }
+  },
+  {
+    "name": "F1-06 lesson controls exact independent test value",
+    "pass": true,
+    "detail": {
+      "st": {
+        "label": "x > 2",
+        "min": 20,
+        "max": 30,
+        "op": ">=",
+        "a": 25,
+        "labelStep": 1
+      },
+      "t": 27
+    }
+  },
+  {
+    "name": "F1-09 division change snaps relative to nonzero scale origin",
+    "pass": true,
+    "detail": {
+      "v": 8,
+      "text": "Explore · Scale in 4s (kg)8 gScale reading 8 g.38131823g1.666666667 geach division1.666666667 greading8 g8 g8 g (Nova the cat, welcome)Nova the cat, welcome"
+    }
+  },
+  {
+    "name": "F1-11 negative truncation controls retain a negative measurement",
+    "pass": true,
+    "detail": "-0.1"
+  },
+  {
+    "name": "F1-11 rejects ambiguous zero truncation",
+    "pass": true
+  },
+  {
+    "name": "No runtime errors",
+    "pass": true,
+    "detail": []
+  }
+]

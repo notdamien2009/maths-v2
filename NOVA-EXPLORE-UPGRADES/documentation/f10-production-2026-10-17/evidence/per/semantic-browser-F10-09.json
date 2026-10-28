@@ -1,0 +1,834 @@
+[
+  {
+    "id": "F10-09",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-09-Real-Life-Graph-Interpreter-PREMIUM-REVIEW.html",
+    "sourceSha256": "55da5dd7818ea5ed1cead51ca5c852a5faeeda87b3e0f817fac2a7e43e516d09",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            680,
+            630
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 12 2 3 3.5 4 5 6 7 8 9",
+          "before": "0 1 10 2 3 3.5 4 5 6 7 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Lesson preset Y7-072 · Changing temperature Y8-026 · Distance–time Y8-027 · Velocity–time Y8-028 · Rate of change Y8-033 · Break-even point Y9-013 · Reciprocal model Y9-014 · Exponential growth Y9-015 · Piecewise pricing READ-OFF POSITION · x 3.5 − 0.25 + 0.25 Drag the neon reading marker along the ",
+          "after": "Lesson preset Y7-072 · Changing temperature Y8-026 · Distance–time Y8-027 · Velocity–time Y8-028 · Rate of change Y8-033 · Break-even point Y9-013 · Reciprocal model Y9-014 · Exponential growth Y9-015 · Piecewise pricing READ-OFF POSITION · x 3.5 − 0.25 + 0.25 Drag the neon reading marker along the ",
+          "bi": [
+            "Y8-027",
+            "3.5"
+          ],
+          "ai": [
+            "Y8-027",
+            "3.5"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 3.5 4 5 6 7 8",
+            1
+          ],
+          "narrow": [
+            "0 10 2 3.5 4 6 8",
+            1
+          ],
+          "back": [
+            "0 1 10 2 3 3.5 4 5 6 7 8",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            680,
+            630
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 12 2 3 4 5 6 7 8 9",
+          "before": "0 1 10 12 2 3 4 5 6 7 8 9"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "The distance stays at 6 km between which two times? Enter the duration of that stop, in hours. Your answer · hours CheckHint",
+          "after": "The distance stays at 6 km between which two times? Enter the duration of that stop, in hours. Your answer · hours CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 12 2 3 4 5 6 7 8 9",
+            0
+          ],
+          "narrow": [
+            "0 10 12 2 3 4 6 8 9",
+            0
+          ],
+          "back": [
+            "0 1 10 12 2 3 4 5 6 7 8 9",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y7-072, Y8-026, Y8-027, Y8-028, Y8-033, Y9-013, Y9-014, Y9-015",
+          "state.points is not a field of this component"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y8-026",
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                2,
+                3
+              ]
+            ]
+          },
+          "errors": [
+            "points x values must increase"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 680,
+            "median": 25,
+            "p10": 25,
+            "count": 15,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 630,
+            "median": 11,
+            "p10": 11,
+            "count": 11,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 630,
+            "median": 11,
+            "p10": 11,
+            "count": 11,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 630,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 630,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 630,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 630,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 630,
+          "median": 11,
+          "p10": 11,
+          "count": 11,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRAPH\n1\n2\n3\n4\n5\n6\n7\n8\n0\n3\n6\n9\n12\nx\ny\nI\nN\nP\nU\nT\n→\nO\nU\nT\nP\nU\nT\nR\nE\nA\nD\nT\nH\nE\nU\nN\nI\nT\n",
+          "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRAPH\n1\n2\n3\n4\n5\n6\n7\n8\n0\n5\n10\n15\nx\ny\nI\nN\nP\nU\nT\n→\nO\nU\nT\nP\nU\nT\nR\nE\nA\nD\nT\nH\nE\nU\nN\nI\nT\nS"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "A walk and a rest"
+          ],
+          "text": "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRAPH\n1\n2\n3\n4\n5\n6\n7\n8\n0\n3\n6\n9\n12\nx\ny\nI\nN\nP\nU\nT\n→\nO\nU\nT\nP\nU\nT\nR\nE\nA\nD\nT\nH\nE\nU\nN\nI\nT\nS\nR\nA\nT\nE\n≠\nH\nE\nI\nG\nH\nT\nREAL-LIFE STORY\nA walk and a rest\nMEASURED QUANTITIES\nHORIZONTAL · x\nhours\nVERTICAL · y\nkm\nREAD-OFF · THE POINT\nUse the graph: the answe"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 2.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "Temperature through the day"
+          ],
+          "text": "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRAPH\n1\n2\n3\n4\n5\n6\n7\n8\n0\n5\n10\n15\nx\ny\nI\nN\nP\nU\nT\n→\nO\nU\nT\nP\nU\nT\nR\nE\nA\nD\nT\nH\nE\nU\nN\nI\nT\nS\nR\nA\nT\nE\n≠\nH\nE\nI\nG\nH\nT\nREAL-LIFE STORY\nTemperature through the day\nMEASURED QUANTITIES\nHORIZONTAL · x\nhours\nVERTICAL · y\n°C\nREAD-OFF · THE POINT\nUse the graph: "
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 3.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRAPH\n1\n2\n3\n4\n5\n6\n7\n8\n0\n3\n6\n9\n12\nx\ny\nI\nN\nP\nU\nT\n→\nO\nU\nT\nP\nU\nT\nR\nE\nA\nD\nT\nH\nE\nU\nN\nI\nT\nS\nR\nA\nT\nE\n≠\nH\nE\nI\nG\nH\nT\nREAL-LIFE STORY\nA walk and a rest\nME"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRA",
+            "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRA",
+            "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRA",
+            "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRA",
+            "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRA",
+            "F10 · REAL-LIFE GRAPH STUDIO\nCHALLENGE · REASON WITH THE GRA"
+          ],
+          "distinctText": 5,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · REAL-LIFE GRAPH STUDIOCHALLENGE · REASON WITH THE GRAPH\n2\n4\n6\n8\n0\n3\n6\n9\n12",
+          "F10 · REAL-LIFE GRAPH STUDIONOVA · NEON CHALK\n2\n4\n6\n8\n0\n3\n6\n9\n12\nx\ny\nI\nN\nP\nU\nT\n→",
+          "F10 · REAL-LIFE GRAPH STUDIONOVA · NEON CHALK\n2\n4\n6\n8\n0\n3\n6\n9\n12\nx\ny\nI\nN\nP\nU\nT\n→",
+          "F10 · REAL-LIFE GRAPH STUDIONOVA · NEON CHALK\n2\n4\n6\n8\n0\n3\n6\n9\n12\nx\ny\nI\nN\nP\nU\nT\n→"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · REAL-LIFE GRAPH STUDIOCHALLENGE · REASON WITH THE GRAPH\n2\n4\n6\n8\n0\n3\n6\n9\n12\nx\ny\nI\nN\nP\nU\nT\n→\nO\nU\nT\nP\nU\nT\nR\nE\nA\nD\nT\nH\nE\nU\nN\nI\nT\nS\nR\nA\nT\nE\n≠\nH\nE\nI\nG\nH\nT\nREAL-LIFE STORY\nA walk and a rest\nMEASURED QU"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · REAL-LIFE GRAPH STUDIOCHALLENGE · REASON WITH THE GRAPH\n2\n4\n6\n8\n0\n5\n10\n15\n",
+          "F10 · REAL-LIFE GRAPH STUDIONOVA · NEON CHALK\n2\n4\n6\n8\n0\n5\n10\n15\nx\ny\nI\nN\nP\nU\nT\n→\n",
+          "F10 · REAL-LIFE GRAPH STUDIONOVA · NEON CHALK\n2\n4\n6\n8\n0\n5\n10\n15\nx\ny\nI\nN\nP\nU\nT\n→\n",
+          "F10 · REAL-LIFE GRAPH STUDIONOVA · NEON CHALK\n2\n4\n6\n8\n0\n5\n10\n15\nx\ny\nI\nN\nP\nU\nT\n→\n"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Move graph reading marker to another input/",
+          "active": "",
+          "panel": "Lesson preset Y7-072 · Changing temperature Y8-026 · Distance–time Y8-027 · Velocity–time Y8-028 · Rate of change Y8-033 · Break-even point Y9-013 · Reciprocal model Y9-014 · Exponential growth Y9-015 · Piecewise pricing READ-OFF POSITION · x 3.5 − 0.25 + 0.25 Drag the neon reading marker along the line or curve, use the arrow keys, or move the slider. Escape cancels a drag. Each scenario retains its own axis units and number range. MATCH THE STORY TO THE GRAPH SHAPE Walker is standing still More workers, less time Population doubles repeatedly LEVEL SECTION · no distance gained DECREASING CURVE · inverse relationship RISING CURVE · accelerating growth ↶ RED RETURN TRAY · REMOVE / RETRY Choose a story card, then select its graph-shape target or drag it there.",
+          "inputs": [
+            "Y8-026",
+            "3.5"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 2 3 3.5 4 5 6 7 8 9",
+          "buttons": 1,
+          "vb": 680,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Move graph reading marker to another input/",
+          "active": "",
+          "panel": "Lesson preset Y7-072 · Changing temperature Y8-026 · Distance–time Y8-027 · Velocity–time Y8-028 · Rate of change Y8-033 · Break-even point Y9-013 · Reciprocal model Y9-014 · Exponential growth Y9-015 · Piecewise pricing READ-OFF POSITION · x 3.5 − 0.25 + 0.25 Drag the neon reading marker along the line or curve, use the arrow keys, or move the slider. Escape cancels a drag. Each scenario retains its own axis units and number range. MATCH THE STORY TO THE GRAPH SHAPE Walker is standing still More workers, less time Population doubles repeatedly LEVEL SECTION · no distance gained DECREASING CURVE · inverse relationship RISING CURVE · accelerating growth ↶ RED RETURN TRAY · REMOVE / RETRY Choose a story card, then select its graph-shape target or drag it there.",
+          "inputs": [
+            "Y8-027",
+            "3.5"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 3.5 4 5 6 7 8",
+          "buttons": 1,
+          "vb": 680,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Move graph reading marker to another input/",
+          "active": "",
+          "panel": "Lesson preset Y7-072 · Changing temperature Y8-026 · Distance–time Y8-027 · Velocity–time Y8-028 · Rate of change Y8-033 · Break-even point Y9-013 · Reciprocal model Y9-014 · Exponential growth Y9-015 · Piecewise pricing READ-OFF POSITION · x 3.5 − 0.25 + 0.25 Drag the neon reading marker along the line or curve, use the arrow keys, or move the slider. Escape cancels a drag. Each scenario retains its own axis units and number range. MATCH THE STORY TO THE GRAPH SHAPE Walker is standing still More workers, less time Population doubles repeatedly LEVEL SECTION · no distance gained DECREASING CURVE · inverse relationship RISING CURVE · accelerating growth ↶ RED RETURN TRAY · REMOVE / RETRY Choose a story card, then select its graph-shape target or drag it there.",
+          "inputs": [
+            "Y8-027",
+            "3.5"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 3.5 4 6 8",
+          "buttons": 1,
+          "vb": 630,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "The distance stays at 6 km between which two times? Enter the duration of that stop, in hours. Your answer · hours CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 2 3 4 5 6 7 8 9",
+          "buttons": 0,
+          "vb": 680,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "The distance stays at 6 km between which two times? Enter the duration of that stop, in hours. Your answer · hours CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 2 3 4 5 6 7 8 9",
+          "buttons": 0,
+          "vb": 680,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "The distance stays at 6 km between which two times? Enter the duration of that stop, in hours. Your answer · hours CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 12 2 3 4 6 8 9",
+          "buttons": 0,
+          "vb": 630,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 680,
+        "median": 25,
+        "p10": 25,
+        "count": 15,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 630,
+        "median": 11,
+        "p10": 11,
+        "count": 11,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 630,
+        "median": 11,
+        "p10": 11,
+        "count": 11,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

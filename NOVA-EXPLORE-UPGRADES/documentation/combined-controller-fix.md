@@ -1,0 +1,1 @@
+Clear the native challenge feedback region when drawing a fresh round, including New game. This removes stale red feedback after reset. No apparatus/source changes. Canonical controller and embedded template controller updated together. Earlier family audit hashes identify the earlier template; the combined release records its own hashes and tests.

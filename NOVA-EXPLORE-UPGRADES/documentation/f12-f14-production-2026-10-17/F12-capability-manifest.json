@@ -1,0 +1,417 @@
+[
+  {
+    "id": "F12-01",
+    "path": "F12/F12-01-shape-family-tree.html",
+    "sha256": "a616380a187d8b42d6f1be164e03a623b8553e68af54ea3615cf4da60abf19c3",
+    "draws": {
+      "draw": [
+        "stage",
+        "pk",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "pk": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "act": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Use triangles/quads/regular presets and native shape keys. Property definitions remain the original shape kit.",
+    "testedQuestions": 6,
+    "browserChecks": 167
+  },
+  {
+    "id": "F12-02",
+    "path": "F12/F12-02-property-sorter.html",
+    "sha256": "f430362e1bcabf6ed87e82d9188406f342533933b4dbf24fa1c7e21cffbbb969",
+    "draws": {
+      "drawOne": [
+        "stage",
+        "a",
+        "hl"
+      ],
+      "drawCar": [
+        "stage",
+        "a",
+        "b",
+        "hl"
+      ],
+      "paint": [
+        "stage",
+        "st",
+        "hl"
+      ]
+    },
+    "exploreFields": {
+      "a": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "b": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Use native property keys ra/eq/par2/par1/sym/sym1/rot/tri/quad. Preserve native predicate functions.",
+    "testedQuestions": 6,
+    "browserChecks": 167
+  },
+  {
+    "id": "F12-03",
+    "path": "F12/F12-03-geoboard-builder.html",
+    "sha256": "adaecab328f18a861707d5e52807797eabd57d06fd71ce3916325cde15e451ae",
+    "draws": {
+      "board": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "seed": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 7,
+    "challengeReady": true,
+    "limit": "Use verts (not vertices), integer peg coordinates 0\u20137, at most 12 vertices; closed polygons need at least three.",
+    "testedQuestions": 6,
+    "browserChecks": 168
+  },
+  {
+    "id": "F12-04",
+    "path": "F12/F12-04-perimeter-tracer.html",
+    "sha256": "5004f6334efaefc6d842b97f58f912423b5f32d8d626defe707f3298b1c310a4",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 7,
+    "challengeReady": true,
+    "limit": "Positive lengths; triangle kind must satisfy 2a > b.",
+    "testedQuestions": 6,
+    "browserChecks": 171
+  },
+  {
+    "id": "F12-05",
+    "path": "F12/F12-05-area-by-counting.html",
+    "sha256": "1da587ee44fc676f590ce230eb644871a64ea5d4b27df6e6aefc63d8cffff401",
+    "draws": {
+      "drawGrid": [
+        "stage",
+        "st",
+        "show"
+      ],
+      "drawPyth": [
+        "stage",
+        "st"
+      ],
+      "drawEnc": [
+        "stage",
+        "st"
+      ],
+      "chipsGrid": [
+        "stage",
+        "st",
+        "cn",
+        "show"
+      ],
+      "chipsPyth": [
+        "stage",
+        "st"
+      ],
+      "paint": [
+        "stage",
+        "st",
+        "show"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 7,
+    "challengeReady": true,
+    "limit": "Positive integer columns and rows within the native teaching grid; keep labels and counts consistent.",
+    "testedQuestions": 6,
+    "browserChecks": 169
+  },
+  {
+    "id": "F12-06",
+    "path": "F12/F12-06-parallelogram-shear.html",
+    "sha256": "fbaf45874ca791a5fed7ffd93db962fd92df370b552ca4a1252512cabd4f5636",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Positive base and perpendicular height; slanted side is not the height.",
+    "testedQuestions": 6,
+    "browserChecks": 169
+  },
+  {
+    "id": "F12-07",
+    "path": "F12/F12-07-triangle-area-by-doubling.html",
+    "sha256": "50dcbbf1c10509b8fd27efcdbf20f7515a509a30c61fa03542f29dad0bb641bf",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 7,
+    "challengeReady": true,
+    "limit": "Positive base and perpendicular height; keep top vertex fraction inside the native model.",
+    "testedQuestions": 6,
+    "browserChecks": 167
+  },
+  {
+    "id": "F12-08",
+    "path": "F12/F12-08-trapezium-area.html",
+    "sha256": "d22aecfc2c9fbb769518f61ca7eb503f9c98d916baac388f3a8fdb650c42034e",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 7,
+    "challengeReady": true,
+    "limit": "Positive parallel sides; x0 >= 0 and x0 + top <= bottom.",
+    "testedQuestions": 6,
+    "browserChecks": 170
+  },
+  {
+    "id": "F12-09",
+    "path": "F12/F12-09-kite-and-rhombus-area.html",
+    "sha256": "fb0dabfeb5c8b9cf8c76153e9581247c7c577cdb94d13fb9689f0fa29f239d6a",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Positive diagonals; crossing fraction strictly between 0 and 1.",
+    "testedQuestions": 6,
+    "browserChecks": 170
+  },
+  {
+    "id": "F12-10",
+    "path": "F12/F12-10-compound-shape-decomposer.html",
+    "sha256": "0105eea9c350cccb6e6b13b5e9ae516163026c0891c4fbe508a507d4d9ddeab4",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "view"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 8,
+    "challengeReady": true,
+    "limit": "For L-shapes, positive arm thickness smaller than both outside dimensions.",
+    "testedQuestions": 6,
+    "browserChecks": 167
+  },
+  {
+    "id": "F12-11",
+    "path": "F12/F12-11-circumference-unrolling.html",
+    "sha256": "245ee2984c1dff33802314e1388525b0d469a0eae0197627794319c353c7f58d",
+    "draws": {
+      "drawRoll": [
+        "stage",
+        "st"
+      ],
+      "drawVocab": [
+        "stage",
+        "st",
+        "hl"
+      ],
+      "drawCan": [
+        "stage",
+        "st"
+      ],
+      "draw": [
+        "stage",
+        "st",
+        "hl"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 8,
+    "challengeReady": true,
+    "limit": "Positive radius; diameter is twice the radius.",
+    "testedQuestions": 6,
+    "browserChecks": 168
+  },
+  {
+    "id": "F12-12",
+    "path": "F12/F12-12-circle-area-unwrap.html",
+    "sha256": "6935aaa8942d57c3acece835450b9f8b35550fba6d64f2dedbe5f7a227be6228",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 7,
+    "challengeReady": true,
+    "limit": "Sector counts 8,16,32,64; positive radius.",
+    "testedQuestions": 6,
+    "browserChecks": 173
+  },
+  {
+    "id": "F12-13",
+    "path": "F12/F12-13-arc-and-sector-explorer.html",
+    "sha256": "1d4507f3c7fa1056c0130ea7dfa63c2680fcbe9985e09c5be5a31b5cbdefa8df",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 7,
+    "challengeReady": true,
+    "limit": "Sector angle greater than zero and no more than 360 degrees; positive radius.",
+    "testedQuestions": 6,
+    "browserChecks": 173
+  },
+  {
+    "id": "F12-14",
+    "path": "F12/F12-14-area-and-perimeter-relationship.html",
+    "sha256": "4d7bb8b2ebada099cfb1bdaa81285dc400948acad917ae6d189efc87fb8002e7",
+    "draws": {
+      "draw": [
+        "stage",
+        "st"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Positive rectangle dimensions; update both comparison models and any target constraint together.",
+    "testedQuestions": 6,
+    "browserChecks": 171
+  },
+  {
+    "id": "F12-15",
+    "path": "F12/F12-15-units-of-area-grid.html",
+    "sha256": "982d7473a18c9dd210d0bd11556ab9e84a030a8c656dde03629c66da7cf52725",
+    "draws": {
+      "draw": [
+        "stage",
+        "st"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 7,
+    "challengeReady": true,
+    "limit": "Unit pair 0\u20132, quantity > 0 and <= 1,000,000. Conversion uses the square of the length factor.",
+    "testedQuestions": 6,
+    "browserChecks": 173
+  }
+]

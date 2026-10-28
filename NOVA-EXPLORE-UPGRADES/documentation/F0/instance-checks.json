@@ -1,0 +1,830 @@
+[
+  {
+    "name": "F0-01 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 300.421875
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 300.421875
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 266.734375
+        },
+        {
+          "x": 39,
+          "y": 457.078125,
+          "width": 1050,
+          "height": 222.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-02 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 410.765625
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 410.765625
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 550.359375
+        },
+        {
+          "x": 39,
+          "y": 740.703125,
+          "width": 1050,
+          "height": 550.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-03 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 359.546875
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 359.546875
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 453.359375
+        },
+        {
+          "x": 39,
+          "y": 643.703125,
+          "width": 1050,
+          "height": 453.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-04 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 266.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 266.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 333.359375
+        },
+        {
+          "x": 39,
+          "y": 523.703125,
+          "width": 1050,
+          "height": 333.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "Independent interactive starting values",
+    "pass": true
+  },
+  {
+    "name": "Left input does not change right apparatus",
+    "pass": true,
+    "detail": {
+      "left": 0.5,
+      "right": 0.75,
+      "debug": {
+        "actual": 0.5,
+        "clicks": [
+          {
+            "type": "pointerdown",
+            "target": "<button class=\"nova-btn\" aria-label=\"Increase by one step\">+</button>"
+          },
+          {
+            "type": "pointerup",
+            "target": "<button class=\"nova-btn\" aria-label=\"Increase by one step\">+</button>"
+          },
+          {
+            "type": "click",
+            "target": "<button class=\"nova-btn\" aria-label=\"Increase by one step\">+</button>"
+          }
+        ],
+        "frame": "width: 100%; min-width: 0px; border: 0px; display: block; height: 1287px;",
+        "outer": "height: 1711px;",
+        "outerClicks": [],
+        "text": "Explore · one valuev = 0.5−1−0.500.511.520.31/3-0.50.250.5v = 0.5v = 0.5 (Nova the cat, explaining)Nova the cat, explaining",
+        "policy": {
+          "rules": {},
+          "matched": []
+        },
+        "events": [
+          {
+            "type": "step",
+            "time": 1792178475019,
+            "detail": {
+              "engine": "F0-04",
+              "index": 0,
+              "name": "Inspect the original representation.",
+              "source": "mode"
+            }
+          },
+          {
+            "type": "value",
+            "time": 1792178475041,
+            "detail": {
+              "engine": "F0-04",
+              "control": "speed",
+              "value": 0.48
+            }
+          },
+          {
+            "type": "mode",
+            "time": 1792178475057,
+            "detail": {
+              "engine": "F0-04",
+              "mode": "explore"
+            }
+          },
+          {
+            "type": "value",
+            "time": 1792178476833,
+            "detail": {
+              "engine": "F0-04",
+              "control": "Stepper",
+              "value": 0.5
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "Right keyboard does not change left apparatus",
+    "pass": true,
+    "detail": {
+      "left": 0.5,
+      "right": 1,
+      "debug": {
+        "actual": 0.5,
+        "clicks": [
+          {
+            "type": "pointerdown",
+            "target": "<button class=\"nova-btn\" aria-label=\"Increase by one step\">+</button>"
+          },
+          {
+            "type": "pointerup",
+            "target": "<button class=\"nova-btn\" aria-label=\"Increase by one step\">+</button>"
+          },
+          {
+            "type": "click",
+            "target": "<button class=\"nova-btn\" aria-label=\"Increase by one step\">+</button>"
+          }
+        ],
+        "frame": "width: 100%; min-width: 0px; border: 0px; display: block; height: 1287px;",
+        "outer": "height: 1711px;",
+        "outerClicks": [],
+        "text": "Explore · one valuev = 0.5−1−0.500.511.520.31/3-0.50.250.5v = 0.5v = 0.5 (Nova the cat, explaining)Nova the cat, explaining",
+        "policy": {
+          "rules": {},
+          "matched": []
+        },
+        "events": [
+          {
+            "type": "step",
+            "time": 1792178475019,
+            "detail": {
+              "engine": "F0-04",
+              "index": 0,
+              "name": "Inspect the original representation.",
+              "source": "mode"
+            }
+          },
+          {
+            "type": "value",
+            "time": 1792178475041,
+            "detail": {
+              "engine": "F0-04",
+              "control": "speed",
+              "value": 0.48
+            }
+          },
+          {
+            "type": "mode",
+            "time": 1792178475057,
+            "detail": {
+              "engine": "F0-04",
+              "mode": "explore"
+            }
+          },
+          {
+            "type": "value",
+            "time": 1792178476833,
+            "detail": {
+              "engine": "F0-04",
+              "control": "Stepper",
+              "value": 0.5
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "Instance reset restores lesson state independently",
+    "pass": true,
+    "detail": {
+      "left": 0.5,
+      "right": 0.75,
+      "debug": {
+        "actual": 0.5,
+        "clicks": [
+          {
+            "type": "pointerdown",
+            "target": "<button class=\"nova-btn\" aria-label=\"Increase by one step\">+</button>"
+          },
+          {
+            "type": "pointerup",
+            "target": "<button class=\"nova-btn\" aria-label=\"Increase by one step\">+</button>"
+          },
+          {
+            "type": "click",
+            "target": "<button class=\"nova-btn\" aria-label=\"Increase by one step\">+</button>"
+          }
+        ],
+        "frame": "width: 100%; min-width: 0px; border: 0px; display: block; height: 1287px;",
+        "outer": "height: 1711px;",
+        "outerClicks": [],
+        "text": "Explore · one valuev = 0.5−1−0.500.511.520.31/3-0.50.250.5v = 0.5v = 0.5 (Nova the cat, explaining)Nova the cat, explaining",
+        "policy": {
+          "rules": {},
+          "matched": []
+        },
+        "events": [
+          {
+            "type": "step",
+            "time": 1792178475019,
+            "detail": {
+              "engine": "F0-04",
+              "index": 0,
+              "name": "Inspect the original representation.",
+              "source": "mode"
+            }
+          },
+          {
+            "type": "value",
+            "time": 1792178475041,
+            "detail": {
+              "engine": "F0-04",
+              "control": "speed",
+              "value": 0.48
+            }
+          },
+          {
+            "type": "mode",
+            "time": 1792178475057,
+            "detail": {
+              "engine": "F0-04",
+              "mode": "explore"
+            }
+          },
+          {
+            "type": "value",
+            "time": 1792178476833,
+            "detail": {
+              "engine": "F0-04",
+              "control": "Stepper",
+              "value": 0.5
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "Independent instances stack and fit mobile",
+    "pass": true,
+    "detail": {
+      "a": [
+        {
+          "x": 27,
+          "y": 166.34375,
+          "width": 258
+        },
+        {
+          "x": 27,
+          "y": 2023.34375,
+          "width": 258
+        }
+      ],
+      "scroll": 312,
+      "client": 312
+    }
+  },
+  {
+    "name": "Navigation disposes nested instances",
+    "pass": true
+  },
+  {
+    "name": "Different original apparatus mount without configuration leakage",
+    "pass": true
+  },
+  {
+    "name": "F0-05 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 211.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 211.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 211.359375
+        },
+        {
+          "x": 39,
+          "y": 401.703125,
+          "width": 1050,
+          "height": 211.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-06 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 295.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 295.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 295.359375
+        },
+        {
+          "x": 39,
+          "y": 485.703125,
+          "width": 1050,
+          "height": 295.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-07 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 331.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 331.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 331.359375
+        },
+        {
+          "x": 39,
+          "y": 521.703125,
+          "width": 1050,
+          "height": 331.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-08 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 311.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 311.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 311.359375
+        },
+        {
+          "x": 39,
+          "y": 501.703125,
+          "width": 1050,
+          "height": 311.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-09 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 320.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 320.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 305.359375
+        },
+        {
+          "x": 39,
+          "y": 495.703125,
+          "width": 1050,
+          "height": 305.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-10 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 284.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 284.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 284.359375
+        },
+        {
+          "x": 39,
+          "y": 474.703125,
+          "width": 1050,
+          "height": 284.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-11 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 251.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 251.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 251.359375
+        },
+        {
+          "x": 39,
+          "y": 441.703125,
+          "width": 1050,
+          "height": 251.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-12 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 238.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 238.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 238.359375
+        },
+        {
+          "x": 39,
+          "y": 428.703125,
+          "width": 1050,
+          "height": 238.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-13 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 307.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 307.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 307.359375
+        },
+        {
+          "x": 39,
+          "y": 497.703125,
+          "width": 1050,
+          "height": 307.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-14 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 266.046875
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 266.046875
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 489.0625
+        },
+        {
+          "x": 39,
+          "y": 679.40625,
+          "width": 1050,
+          "height": 489.0625
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-15 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 228.015625
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 228.015625
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 405.015625
+        },
+        {
+          "x": 39,
+          "y": 595.359375,
+          "width": 1050,
+          "height": 405.015625
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-16 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 268.96875
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 268.96875
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 495.15625
+        },
+        {
+          "x": 39,
+          "y": 685.5,
+          "width": 1050,
+          "height": 495.15625
+        }
+      ]
+    }
+  },
+  {
+    "name": "F0-17 columns and rows have correct arrangement",
+    "pass": true,
+    "detail": {
+      "columns": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 519,
+          "height": 232.359375
+        },
+        {
+          "x": 570,
+          "y": 178.34375,
+          "width": 519,
+          "height": 232.359375
+        }
+      ],
+      "rows": [
+        {
+          "x": 39,
+          "y": 178.34375,
+          "width": 1050,
+          "height": 237.75
+        },
+        {
+          "x": 39,
+          "y": 428.09375,
+          "width": 1050,
+          "height": 232.359375
+        }
+      ]
+    }
+  },
+  {
+    "name": "No runtime errors",
+    "pass": true,
+    "detail": []
+  }
+]

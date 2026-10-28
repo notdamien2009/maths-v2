@@ -1,0 +1,2218 @@
+[
+ {
+  "id": "F11-01",
+  "path": "F11/F11-01-protractor.html",
+  "api": "1.0.0",
+  "models": [
+   "S"
+  ],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "drawing": [
+    "stage",
+    "o"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "4b914076f573e376aea8cb615cf092a7bcbafb22bd31756fc4563b4817a2aad2",
+  "sha256": "125ce18bae54b444a18dc925d9a1c3b27966b0333d7f4e8d7d422ae03a334c8d",
+  "engineId": "F11-01",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 9,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 0,
+   "data": {
+    "name": "An angle is a turn",
+    "mood": "explain",
+    "narration": "Two rays meet at the vertex. The angle tells us how far one ray turns from the other."
+   },
+   "scene": {
+    "function": "drawing",
+    "arguments": {
+     "o": {
+      "step": 1,
+      "angle": 58,
+      "base": "right",
+      "pose": "explain",
+      "caption": "Inspect the original representation."
+     }
+    }
+   }
+  },
+  "previous_sha256": "c69f59c7dbfcd70f7bddc78142d19164bff02a42b7fbbb9ad4c04013f5b319b1",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-02",
+  "path": "F11/F11-02-angle-estimator.html",
+  "api": "1.0.0",
+  "models": [
+   "S"
+  ],
+  "tables": [
+   "STEPS",
+   "TASKS",
+   "reasons"
+  ],
+  "draws": {
+   "geom": [
+    "stage",
+    "opts"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "cc15ab46899d866480972236248165771dd59c9638d918d5b783bb220b42f515",
+  "sha256": "f022fe47097669d0281bc40ff1f7a1b0023b8150c76c7cafeae95a459baeed9f",
+  "engineId": "F11-02",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "mood",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 10,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 0,
+   "data": {
+    "name": "See the opening",
+    "mood": "explain",
+    "narration": "An angle is the amount of turn between two rays. Before you measure, look at the opening."
+   },
+   "scene": {
+    "function": "geom",
+    "arguments": {
+     "opts": {
+      "step": 1,
+      "angle": 63,
+      "base": "right",
+      "estimate": 55,
+      "benchmark": 90,
+      "revealed": false,
+      "pose": "explain",
+      "caption": "Inspect the original representation."
+     }
+    }
+   }
+  },
+  "previous_sha256": "faca1e8e723291823721d6a5906adc3a1e17b5be46a997823b8f571f7bbaf5f4",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-03",
+  "path": "F11/F11-03-angle-facts.html",
+  "api": "1.0.0",
+  "models": [
+   "S"
+  ],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "renderFigure": [
+    "stage",
+    "settings"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "1b4dca8150bda026d494aac4cc092052ae38e64bbebc3d5c3aca03f43e94cce0",
+  "sha256": "073486781cd71f6fa8fbdeebec4bfadc4f7d909ce149a884c241fb078576e345",
+  "engineId": "F11-03",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ],
+   [
+    "name",
+    "mood",
+    "narration",
+    "kind",
+    "angle",
+    "show"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 12,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 0,
+   "data": {
+    "name": "Two angles, one straight line",
+    "mood": "explain",
+    "narration": "A straight line makes half a turn. Its angles must add to one hundred and eighty degrees.",
+    "kind": "straight",
+    "angle": 124,
+    "show": 0
+   }
+  },
+  "previous_sha256": "925324d43ea45f68b8f981ffc60c9c3ce2be6a989274cd8a6cb6514a87c1a94d",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-04",
+  "path": "F11/F11-04-triangle-angle-sum-tear-off.html",
+  "api": "1.0.0",
+  "models": [
+   "S"
+  ],
+  "tables": [
+   "AKEY",
+   "palette",
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "stageFrame": [
+    "stage",
+    "tag"
+   ],
+   "drawTriangle": [
+    "stage",
+    "o"
+   ],
+   "drawQuadrilateral": [
+    "stage",
+    "o"
+   ]
+  },
+  "exploreFields": {
+   "state": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   }
+  },
+  "original_sha256": "073aa5115b6815c48b45b7ba326e8e8c78e7b9af0d47d7f67a76d0db0d345c0b",
+  "sha256": "36d050f294ab98daf2a058e22edc3fb93472e4b1910de440de35050b747b3504",
+  "engineId": "F11-04",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "p",
+    "place",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "place",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "place",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "place",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "place",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "place",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "place",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "place",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "place",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "quad",
+    "phase",
+    "mood",
+    "narration"
+   ],
+   [
+    "name",
+    "p",
+    "quad",
+    "phase",
+    "mood",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 11,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 10,
+   "data": {
+    "name": "Prove the quadrilateral total",
+    "p": "quad",
+    "quad": true,
+    "phase": 5,
+    "mood": "celebrate",
+    "narration": "Two triangles make two lots of one hundred and eighty degrees. The quadrilateral has three hundred and sixty degrees."
+   },
+   "config": {
+    "id": "F11-04",
+    "family": "F11",
+    "defaultPreset": "scalene",
+    "presets": {
+     "scalene": {
+      "label": "Y7-043 \u00b7 Unequal-sided triangle",
+      "points": [
+       [
+        154,
+        317
+       ],
+       [
+        568,
+        317
+       ],
+       [
+        360,
+        71
+       ]
+      ]
+     },
+     "right": {
+      "label": "Y7-043 \u00b7 Right-angled triangle",
+      "points": [
+       [
+        161,
+        317
+       ],
+       [
+        572,
+        317
+       ],
+       [
+        161,
+        84
+       ]
+      ]
+     },
+     "isosceles": {
+      "label": "Y7-043 \u00b7 Isosceles triangle",
+      "points": [
+       [
+        151,
+        317
+       ],
+       [
+        573,
+        317
+       ],
+       [
+        362,
+        65
+       ]
+      ]
+     },
+     "obtuse": {
+      "label": "Y7-043 \u00b7 Obtuse triangle",
+      "points": [
+       [
+        142,
+        316
+       ],
+       [
+        578,
+        316
+       ],
+       [
+        251,
+        190
+       ]
+      ]
+     },
+     "quad": {
+      "label": "Y7-044 \u00b7 Quadrilateral angle sum",
+      "quad": true,
+      "points": [
+       [
+        179,
+        348
+       ],
+       [
+        538,
+        348
+       ],
+       [
+        570,
+        125
+       ],
+       [
+        269,
+        79
+       ]
+      ]
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "corner",
+      "angle",
+      "answer",
+      "reason",
+      "task",
+      "reset"
+     ],
+     "types": [
+      "step",
+      "mode",
+      "correct",
+      "hintUsed"
+     ]
+    },
+    "startMode": "guided"
+   }
+  },
+  "previous_sha256": "7ad88511e054187d2f0408e3a441541d92857cb63d735b4d5bf3334aa773a6b2",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-05",
+  "path": "F11/F11-05-parallel-lines-explorer.html",
+  "api": "1.0.0",
+  "models": [
+   "S"
+  ],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "stageFrame": [
+    "stage",
+    "label"
+   ],
+   "draw": [
+    "stage",
+    "o"
+   ]
+  },
+  "exploreFields": {
+   "state": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   }
+  },
+  "original_sha256": "6d81a9dca9256a8c5fc284c529af86dcbcf185c73d36cfb8aaf1d2848ad76614",
+  "sha256": "534e2de48571971c82b1c1dd32f8896ac5bc311df72169d550ed39aa56cb7bfa",
+  "engineId": "F11-05",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "theta",
+    "kind",
+    "phase",
+    "pose",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 13,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 12,
+   "data": {
+    "name": "Explain the mathematics",
+    "theta": 65,
+    "kind": "cointerior",
+    "phase": 4,
+    "pose": "celebrate",
+    "narration": "Always state the mathematical reason: corresponding, alternate, vertically opposite, or co-interior."
+   }
+  },
+  "previous_sha256": "8136a7882825d5f34e5e7787209c943c5a042f23e9559701f2de3c76a8118f97",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-06",
+  "path": "F11/F11-06-polygon-angles-turtle.html",
+  "api": "1.0.0",
+  "models": [
+   "S"
+  ],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "frame": [
+    "stage"
+   ],
+   "draw": [
+    "stage",
+    "opt"
+   ]
+  },
+  "exploreFields": {
+   "s": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   }
+  },
+  "original_sha256": "0ffa7b08d5bef35fd840878aeb08647b7072c8b83b1b97cbb903499aba4fdf61",
+  "sha256": "24d9494f51b3cf1613343b5afff75881709145f02efd974481ae00080dc55d88",
+  "engineId": "F11-06",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "irregular",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "progress",
+    "pose",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 14,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 13,
+   "data": {
+    "name": "Explain the rule",
+    "n": 9,
+    "phase": 4,
+    "progress": 8,
+    "pose": "celebrate",
+    "narration": "A regular polygon has exterior angle three hundred and sixty divided by its number of sides. The interior-angle sum is sides minus two, multiplied by one hundred and eighty."
+   }
+  },
+  "previous_sha256": "9a724ba06178b7e343482e7b0e52d4524c1109f1068e3b776ac27d210d0d6bf2",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-07",
+  "path": "F11/F11-07-regular-polygon-builder.html",
+  "api": "1.0.0",
+  "models": [
+   "S"
+  ],
+  "tables": [
+   "C",
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "shell": [
+    "stage"
+   ],
+   "draw": [
+    "stage",
+    "opt"
+   ]
+  },
+  "exploreFields": {
+   "state": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   }
+  },
+  "original_sha256": "5cce2b9dd79709403bae4ce559e23007da71f586b554dcd2deb8725222ee99ec",
+  "sha256": "a67d5b4f68b0a95603a2a8180a8b98a50ae7c9ad6abd55be679eb0c486029793",
+  "engineId": "F11-07",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "n",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "show",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "show",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "show",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "show",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "show",
+    "pose",
+    "narration"
+   ],
+   [
+    "name",
+    "n",
+    "phase",
+    "show",
+    "pose",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 14,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 13,
+   "data": {
+    "name": "Prove the interior angle",
+    "n": 11,
+    "phase": 8,
+    "show": "interior",
+    "pose": "celebrate",
+    "narration": "An interior angle is one hundred and eighty minus the exterior angle. That works for every regular polygon."
+   }
+  },
+  "previous_sha256": "0be3d044d2015d00ee91525246a79e427dde6b0e695a2152a8854ee27c2e45d5",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-08",
+  "path": "F11/F11-08-compass-constructions.html",
+  "api": "1.0.0",
+  "models": [
+   "S"
+  ],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "stageShell": [
+    "stage"
+   ],
+   "draw": [
+    "stage",
+    "opts"
+   ]
+  },
+  "exploreFields": {
+   "state": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   }
+  },
+  "original_sha256": "b3c03c8fa5e0f5a3e459cb11d13c2c7bd2363ff0462ffd874f6b5052c9b7af58",
+  "sha256": "5d2c15a6abeef01a6fa4bd0a1c27df8ead592a790e437bd8b9a28821909ffe4a",
+  "engineId": "F11-08",
+  "nativeFieldsByStep": [
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 21,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 20,
+   "data": {
+    "kind": "locus",
+    "phase": 6,
+    "name": "Intersecting loci",
+    "pose": "idea",
+    "narration": "The points where the two circles intersect meet both distance conditions at once."
+   },
+   "models": {
+    "S": {
+     "kind": "perpendicular",
+     "preset": "y7_056",
+     "radius": 206,
+     "angle": 70,
+     "sideA": 220,
+     "sideB": 260,
+     "phase": 6
+    }
+   }
+  },
+  "previous_sha256": "9a82b271646459952c9493da86132d7cf278156accd29692b6c50cff82b73c21",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-09",
+  "path": "F11/F11-09-locus-builder.html",
+  "api": "1.0.0",
+  "models": [
+   "DEF"
+  ],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "stageShell": [
+    "stage"
+   ],
+   "draw": [
+    "stage",
+    "opts"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   },
+   "drawGeometry.m": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 2
+   },
+   "info.m": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 2
+   }
+  },
+  "original_sha256": "c57cf597bd7f803f771e3520951236b337856159ad85be884723d41175a44ada",
+  "sha256": "dea60533af0e2a94671444135e3cca558d701d4bc8487772da629196754925c8",
+  "engineId": "F11-09",
+  "nativeFieldsByStep": [
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 30,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 29,
+   "data": {
+    "kind": "region",
+    "phase": 6,
+    "name": "Generalise the overlap",
+    "pose": "celebrate",
+    "narration": "The common region is the entire solution, including the valid boundary points."
+   },
+   "models": {
+    "DEF": {
+     "kind": "point",
+     "preset": "y8_051",
+     "radius": 166,
+     "radiusB": 145,
+     "distance": 180,
+     "angle": 80,
+     "phase": 6
+    }
+   }
+  },
+  "previous_sha256": "6cfdc0f6d47937adee7dbcc7f7612254bc3679e20ec028ce8f8b10a6588f0201",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-10",
+  "path": "F11/F11-10-bearings.html",
+  "api": "1.0.0",
+  "models": [
+   "DEF"
+  ],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "stageShell": [
+    "stage"
+   ],
+   "draw": [
+    "stage",
+    "opts"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   },
+   "drawGeometry.m": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   },
+   "info.m": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "00d3c64cd36ad2c1cf055c1edf25d2d1eb8ae27d73ef133613673f7a923530c0",
+  "sha256": "29d532fe2e5ff1f00d4c4a9fda8f47c636c66e039dd210e932e1cad5b53324b9",
+  "engineId": "F11-10",
+  "nativeFieldsByStep": [
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "bearing",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "bearing",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "bearing",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "bearing",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 27,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 26,
+   "data": {
+    "kind": "intersection",
+    "phase": 6,
+    "name": "Verify from both sides",
+    "pose": "celebrate",
+    "narration": "Check the clockwise angles from both stations to the same point."
+   },
+   "scene": {
+    "function": "draw",
+    "arguments": {
+     "opts": {
+      "kind": "single",
+      "preset": "y8_052",
+      "bearing": 66,
+      "second": 125,
+      "phase": 1,
+      "name": "Original representation",
+      "pose": "point-down",
+      "narration": "Inspect the original representation.",
+      "prompt": "Inspect the original representation.",
+      "caption": "Inspect the original representation."
+     }
+    }
+   }
+  },
+  "previous_sha256": "1c9ef2bdc34c8c1e0f3477e864f45af30bb9e4c42be44c54f02d09456eb5d894",
+  "f11Production": "2026-10-17"
+ },
+ {
+  "id": "F11-11",
+  "path": "F11/F11-11-angle-chase.html",
+  "api": "1.0.0",
+  "models": [
+   "DEF"
+  ],
+  "tables": [
+   "STEPS",
+   "TASKS"
+  ],
+  "draws": {
+   "stageShell": [
+    "stage"
+   ],
+   "draw": [
+    "stage",
+    "opts"
+   ]
+  },
+  "exploreFields": {
+   "st": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   },
+   "assertMath.m": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "06e2229323b153f9e760ba98d542ec0f85fd67d1521257416a3d2486798d9d71",
+  "sha256": "7d7e59b8a359479cfb587ee475370c7912a16fc76f669c5ca579abde2ba1442e",
+  "engineId": "F11-11",
+  "nativeFieldsByStep": [
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "sides",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "sides",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "sides",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "sides",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "angle",
+    "proof",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "angle",
+    "proof",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "angle",
+    "proof",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ],
+   [
+    "kind",
+    "angle",
+    "proof",
+    "phase",
+    "name",
+    "pose",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 32,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 31,
+   "data": {
+    "kind": "parallel",
+    "angle": 59,
+    "proof": true,
+    "phase": 6,
+    "name": "Formal proof \u2014 conclude",
+    "pose": "celebrate",
+    "narration": "End your argument with the result and the reason that makes it true."
+   }
+  },
+  "previous_sha256": "7696b19ccd6e8b0595fdcf0ca22c2072aeaaf9aa8bf2e5003486f3708924883c",
+  "f11Production": "2026-10-17"
+ }
+]

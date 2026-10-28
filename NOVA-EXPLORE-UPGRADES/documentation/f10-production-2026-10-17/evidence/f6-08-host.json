@@ -1,0 +1,235 @@
+{
+ "id": "F6-08",
+ "host": "F10-05",
+ "hostFile": "F10/NOVA-F10-05-y-mx-plus-c-Explorer-PREMIUM-REVIEW.html",
+ "f6File": "F6-08-direct-proportion-GALLERY-PREVIEW.html",
+ "checks": [
+  {
+   "name": "F10-05 publishes the F6-08 preset object",
+   "pass": true,
+   "detail": {
+    "id": "F6-08",
+    "kind": "preset",
+    "parent": "F10-05"
+   }
+  },
+  {
+   "name": "prepareForHost accepts F10-05 with the four presets and y = kx constraints",
+   "pass": true,
+   "detail": {
+    "hostId": "F10-05",
+    "reg": "F6-08",
+    "keys": [
+     "Y7-060",
+     "Y8-035",
+     "Y8-036",
+     "Y9-020"
+    ],
+    "constraints": {
+     "interceptMustEqualZero": true,
+     "rule": "y=kx",
+     "throughOrigin": true
+    },
+    "modes": [
+     "watch",
+     "guided",
+     "explore",
+     "challenge"
+    ]
+   }
+  },
+  {
+   "name": "prepareForHost rejects any other host",
+   "pass": true,
+   "detail": "rejected"
+  },
+  {
+   "name": "preset values match the F6-08 file exactly",
+   "pass": true,
+   "detail": [
+    {
+     "k": "Y7-060",
+     "found": true,
+     "same": true
+    },
+    {
+     "k": "Y8-035",
+     "found": true,
+     "same": true
+    },
+    {
+     "k": "Y8-036",
+     "found": true,
+     "same": true
+    },
+    {
+     "k": "Y9-020",
+     "found": true,
+     "same": true
+    }
+   ]
+  },
+  {
+   "name": "F10-05 native presets carry the F6-08 gradient with c = 0 and proportion on",
+   "pass": true,
+   "detail": [
+    {
+     "k": "Y7-060",
+     "m": 2,
+     "slope": 2,
+     "c": 0,
+     "proportion": true,
+     "ok": true
+    },
+    {
+     "k": "Y8-035",
+     "m": 3,
+     "slope": 3,
+     "c": 0,
+     "proportion": true,
+     "ok": true
+    },
+    {
+     "k": "Y8-036",
+     "m": 1.5,
+     "slope": 1.5,
+     "c": 0,
+     "proportion": true,
+     "ok": true
+    },
+    {
+     "k": "Y9-020",
+     "m": 0.75,
+     "slope": 0.75,
+     "c": 0,
+     "proportion": true,
+     "ok": true
+    }
+   ]
+  },
+  {
+   "name": "Y7-060: lesson state validates and mounts in F10-05 through the template",
+   "pass": true,
+   "detail": {
+    "errors": [],
+    "err": null
+   }
+  },
+  {
+   "name": "Y7-060: revealed view draws y = 2x through the origin (no intercept term)",
+   "pass": true,
+   "detail": "F10 · STRAIGHT-LINE EQUATION STUDIO F6-08 · DIRECT PROPORTION 1 2 3 4 5 6 2 4 6 8 10 12 0 x y (0, 0) run 1 rise 2 m · G R A D I E N T c = 0 · O R I G I N THE RULE y = 2x AXES · Tickets → Cost (£) SEE THE MATHEMATICS GRADIENT · m 2 Y-INTERCEPT · c 0 For one step to the right: run = 1; rise = 2. WHY THIS WORKS Through the origin means c = 0. A direct-proportion graph is a straight line through (0, 0"
+  },
+  {
+   "name": "Y7-060: concealed view hides k",
+   "pass": true,
+   "detail": "F10 · STRAIGHT-LINE EQUATION STUDIO CHALLENGE · PROVE THE RULE 1 2 3 4 5 6 2 4 6 8 10 12 0 x y m · G R A D I E N T c = 0 · O R I G I N THE RULE y = kx LOOK FOR EVIDENCE GRADIENT · m Find it Y-INTERCEPT · c Find it YOUR JOB The relationship is proportional: y = kx. Read the drawing. Explain the mathematical evidence. Izaac: find the evidence on the axes, not by guessing. Find the relationship from "
+  },
+  {
+   "name": "Y7-060: c ≠ 0 is rejected for a direct-proportion preset",
+   "pass": true,
+   "detail": [
+    "a direct-proportion preset needs c = 0"
+   ]
+  },
+  {
+   "name": "Y8-035: lesson state validates and mounts in F10-05 through the template",
+   "pass": true,
+   "detail": {
+    "errors": [],
+    "err": null
+   }
+  },
+  {
+   "name": "Y8-035: revealed view draws y = 3x through the origin (no intercept term)",
+   "pass": true,
+   "detail": "F10 · STRAIGHT-LINE EQUATION STUDIO F6-08 · DIRECT PROPORTION 1 2 3 4 5 6 3 6 9 12 15 18 0 x y (0, 0) run 1 rise 3 m · G R A D I E N T c = 0 · O R I G I N THE RULE y = 3x AXES · Packs → Stickers SEE THE MATHEMATICS GRADIENT · m 3 Y-INTERCEPT · c 0 For one step to the right: run = 1; rise = 3. WHY THIS WORKS Through the origin means c = 0. A direct-proportion graph is a straight line through (0, 0)"
+  },
+  {
+   "name": "Y8-035: concealed view hides k",
+   "pass": true,
+   "detail": "F10 · STRAIGHT-LINE EQUATION STUDIO CHALLENGE · PROVE THE RULE 1 2 3 4 5 6 3 6 9 12 15 18 0 x y m · G R A D I E N T c = 0 · O R I G I N THE RULE y = kx LOOK FOR EVIDENCE GRADIENT · m Find it Y-INTERCEPT · c Find it YOUR JOB The relationship is proportional: y = kx. Read the drawing. Explain the mathematical evidence. Izaac: find the evidence on the axes, not by guessing. Find the relationship from"
+  },
+  {
+   "name": "Y8-035: c ≠ 0 is rejected for a direct-proportion preset",
+   "pass": true,
+   "detail": [
+    "a direct-proportion preset needs c = 0"
+   ]
+  },
+  {
+   "name": "Y8-036: lesson state validates and mounts in F10-05 through the template",
+   "pass": true,
+   "detail": {
+    "errors": [],
+    "err": null
+   }
+  },
+  {
+   "name": "Y8-036: revealed view draws y = 1.5x through the origin (no intercept term)",
+   "pass": true,
+   "detail": "F10 · STRAIGHT-LINE EQUATION STUDIO F6-08 · DIRECT PROPORTION 1 2 3 4 5 6 7 8 1.5 3 4.5 6 7.5 9 10.5 12 0 x y (0, 0) run 1 rise 1.5 m · G R A D I E N T c = 0 · O R I G I N THE RULE y = 1.5x AXES · Time (h) → Distance (km) SEE THE MATHEMATICS GRADIENT · m 1.5 Y-INTERCEPT · c 0 For one step to the right: run = 1; rise = 1.5. WHY THIS WORKS Through the origin means c = 0. A direct-proportion graph is"
+  },
+  {
+   "name": "Y8-036: concealed view hides k",
+   "pass": true,
+   "detail": "F10 · STRAIGHT-LINE EQUATION STUDIO CHALLENGE · PROVE THE RULE 1 2 3 4 5 6 7 8 1.5 3 4.5 6 7.5 9 10.5 12 0 x y m · G R A D I E N T c = 0 · O R I G I N THE RULE y = kx LOOK FOR EVIDENCE GRADIENT · m Find it Y-INTERCEPT · c Find it YOUR JOB The relationship is proportional: y = kx. Read the drawing. Explain the mathematical evidence. Izaac: find the evidence on the axes, not by guessing. Find the re"
+  },
+  {
+   "name": "Y8-036: c ≠ 0 is rejected for a direct-proportion preset",
+   "pass": true,
+   "detail": [
+    "a direct-proportion preset needs c = 0"
+   ]
+  },
+  {
+   "name": "Y9-020: lesson state validates and mounts in F10-05 through the template",
+   "pass": true,
+   "detail": {
+    "errors": [],
+    "err": null
+   }
+  },
+  {
+   "name": "Y9-020: revealed view draws y = 0.75x through the origin (no intercept term)",
+   "pass": true,
+   "detail": "F10 · STRAIGHT-LINE EQUATION STUDIO F6-08 · DIRECT PROPORTION 1 2 3 4 5 6 7 8 0.75 1.5 2.25 3 3.75 4.5 5.25 6 0 x y (0, 0) run 1 rise 0.75 m · G R A D I E N T c = 0 · O R I G I N THE RULE y = 0.75x AXES · x → y SEE THE MATHEMATICS GRADIENT · m 0.75 Y-INTERCEPT · c 0 For one step to the right: run = 1; rise = 0.75. WHY THIS WORKS Through the origin means c = 0. A direct-proportion graph is a straig"
+  },
+  {
+   "name": "Y9-020: concealed view hides k",
+   "pass": true,
+   "detail": "F10 · STRAIGHT-LINE EQUATION STUDIO CHALLENGE · PROVE THE RULE 1 2 3 4 5 6 7 8 0.75 1.5 2.25 3 3.75 4.5 5.25 6 0 x y m · G R A D I E N T c = 0 · O R I G I N THE RULE y = kx LOOK FOR EVIDENCE GRADIENT · m Find it Y-INTERCEPT · c Find it YOUR JOB The relationship is proportional: y = kx. Read the drawing. Explain the mathematical evidence. Izaac: find the evidence on the axes, not by guessing. Find "
+  },
+  {
+   "name": "Y9-020: c ≠ 0 is rejected for a direct-proportion preset",
+   "pass": true,
+   "detail": [
+    "a direct-proportion preset needs c = 0"
+   ]
+  },
+  {
+   "name": "no page errors",
+   "pass": true,
+   "detail": []
+  }
+ ],
+ "errors": [],
+ "mountText": {
+  "Y7-060": {
+   "revealed": "F10 · STRAIGHT-LINE EQUATION STUDIO F6-08 · DIRECT PROPORTION 1 2 3 4 5 6 2 4 6 8 10 12 0 x y (0, 0) run 1 rise 2 m · G R A D I E N T c = 0 · O R I G I N THE RULE y = 2x AXES · Tickets → Cost (£) SEE THE MATHEMATICS GRADIENT · m 2 Y-INTERCEPT · c 0 For one step to the right: run = 1; rise = 2. WHY T",
+   "concealed": "F10 · STRAIGHT-LINE EQUATION STUDIO CHALLENGE · PROVE THE RULE 1 2 3 4 5 6 2 4 6 8 10 12 0 x y m · G R A D I E N T c = 0 · O R I G I N THE RULE y = kx LOOK FOR EVIDENCE GRADIENT · m Find it Y-INTERCEPT · c Find it YOUR JOB The relationship is proportional: y = kx. Read the drawing. Explain the mathe"
+  },
+  "Y8-035": {
+   "revealed": "F10 · STRAIGHT-LINE EQUATION STUDIO F6-08 · DIRECT PROPORTION 1 2 3 4 5 6 3 6 9 12 15 18 0 x y (0, 0) run 1 rise 3 m · G R A D I E N T c = 0 · O R I G I N THE RULE y = 3x AXES · Packs → Stickers SEE THE MATHEMATICS GRADIENT · m 3 Y-INTERCEPT · c 0 For one step to the right: run = 1; rise = 3. WHY TH",
+   "concealed": "F10 · STRAIGHT-LINE EQUATION STUDIO CHALLENGE · PROVE THE RULE 1 2 3 4 5 6 3 6 9 12 15 18 0 x y m · G R A D I E N T c = 0 · O R I G I N THE RULE y = kx LOOK FOR EVIDENCE GRADIENT · m Find it Y-INTERCEPT · c Find it YOUR JOB The relationship is proportional: y = kx. Read the drawing. Explain the math"
+  },
+  "Y8-036": {
+   "revealed": "F10 · STRAIGHT-LINE EQUATION STUDIO F6-08 · DIRECT PROPORTION 1 2 3 4 5 6 7 8 1.5 3 4.5 6 7.5 9 10.5 12 0 x y (0, 0) run 1 rise 1.5 m · G R A D I E N T c = 0 · O R I G I N THE RULE y = 1.5x AXES · Time (h) → Distance (km) SEE THE MATHEMATICS GRADIENT · m 1.5 Y-INTERCEPT · c 0 For one step to the rig",
+   "concealed": "F10 · STRAIGHT-LINE EQUATION STUDIO CHALLENGE · PROVE THE RULE 1 2 3 4 5 6 7 8 1.5 3 4.5 6 7.5 9 10.5 12 0 x y m · G R A D I E N T c = 0 · O R I G I N THE RULE y = kx LOOK FOR EVIDENCE GRADIENT · m Find it Y-INTERCEPT · c Find it YOUR JOB The relationship is proportional: y = kx. Read the drawing. E"
+  },
+  "Y9-020": {
+   "revealed": "F10 · STRAIGHT-LINE EQUATION STUDIO F6-08 · DIRECT PROPORTION 1 2 3 4 5 6 7 8 0.75 1.5 2.25 3 3.75 4.5 5.25 6 0 x y (0, 0) run 1 rise 0.75 m · G R A D I E N T c = 0 · O R I G I N THE RULE y = 0.75x AXES · x → y SEE THE MATHEMATICS GRADIENT · m 0.75 Y-INTERCEPT · c 0 For one step to the right: run = ",
+   "concealed": "F10 · STRAIGHT-LINE EQUATION STUDIO CHALLENGE · PROVE THE RULE 1 2 3 4 5 6 7 8 0.75 1.5 2.25 3 3.75 4.5 5.25 6 0 x y m · G R A D I E N T c = 0 · O R I G I N THE RULE y = kx LOOK FOR EVIDENCE GRADIENT · m Find it Y-INTERCEPT · c Find it YOUR JOB The relationship is proportional: y = kx. Read the draw"
+  }
+ }
+}

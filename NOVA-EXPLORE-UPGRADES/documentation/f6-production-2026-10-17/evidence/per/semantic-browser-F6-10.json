@@ -1,0 +1,793 @@
+[
+  {
+    "id": "F6-10",
+    "presetOf": null,
+    "path": "F6/F6-10-speed-distance-time.html",
+    "sourceSha256": "c9d251b59116b691e57c2b17ac561f163e2e7d1eac073c2711badc3c8931f9bf",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1120,
+            480
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.5 0.75 1 1.5 10 100 25 45 50 6 60 75 90",
+          "before": "0 0.5 1 1.5 10 100 180 2 2.5 25 3 50 6 60 75 90"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Choose journey Y8-041 · Find the speed Y9-016 · Read a whole journey Y9-022 · Find the distance Y9-022 · Find the time Check formula Hint Reset Drag the position ring to a journey stop. Drag the ? ring to D, S or T. Keyboard: Left/Right on each ring; Delete returns it. A journey has three stages. Th",
+          "after": "Choose journey Y8-041 · Find the speed Y9-016 · Read a whole journey Y9-022 · Find the distance Y9-022 · Find the time Check formula Hint Reset Drag the position ring to a journey stop. Drag the ? ring to D, S or T. Keyboard: Left/Right on each ring; Delete returns it. A journey has three stages. Th",
+          "bi": [
+            "Y9-016"
+          ],
+          "ai": [
+            "Y9-016"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 0.5 1 1.5 10 100 180 2 2.5 25 3 50 6 60 75 90",
+            2
+          ],
+          "narrow": [
+            "0 0.5 1 1.5 10 100 180 2 2.5 25 3 50 6 60 75 90",
+            2
+          ],
+          "back": [
+            "0 0.5 1 1.5 10 100 180 2 2.5 25 3 50 6 60 75 90",
+            2
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1120,
+            480
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.5 0.9 1 1.5 10 54 6 90",
+          "before": "0 0.5 0.9 1 1.5 10 54 6 90"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Journey 1 of 4. A coach travels 90 kilometres in 1.5 hours. Find its average speed. Enter the missing speed and its correct unit. YOUR ANSWER UNIT km/h km h m/s min Check answer Hint Next journey Journeys solved: 0 / 4",
+          "after": "Journey 1 of 4. A coach travels 90 kilometres in 1.5 hours. Find its average speed. Enter the missing speed and its correct unit. YOUR ANSWER UNIT km/h km h m/s min Check answer Hint Next journey Journeys solved: 0 / 4",
+          "bi": [
+            "7",
+            "km"
+          ],
+          "ai": [
+            "7",
+            "km"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 0.5 0.9 1 1.5 10 54 6 90",
+            0
+          ],
+          "narrow": [
+            "0 0.5 0.9 1 1.5 10 54 6 90",
+            0
+          ],
+          "back": [
+            "0 0.5 0.9 1 1.5 10 54 6 90",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "lesson.state.distance must be greater than zero"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1120,
+            "median": 16.71,
+            "p10": 13.5,
+            "count": 18,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11,
+            "p10": 11,
+            "count": 18,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11,
+            "p10": 11,
+            "count": 18,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\n?\nT\nS = D ÷ T\nMEASURE THE JOURNEY\nSTART\nFINISH\n",
+          "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\n?\nT\nS = D ÷ T\nMEASURE THE JOURNEY\nSTART\nFINISH\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "120",
+            "2"
+          ],
+          "text": "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\n?\nT\nS = D ÷ T\nMEASURE THE JOURNEY\nSTART\nFINISH\nLEG 1\nDISTANCE · 72 km\nTIME ELAPSED IN HOURS\n0\n1\n2\nELAPSED · 1.2 h\nCHOOSE THE FORMULA AND SHOW YOUR UNITS\n\nDISTANCE · D\n\n120 km\n\nTotal route travelled, in kilom"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 60,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "150",
+            "3"
+          ],
+          "text": "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\n?\nT\nS = D ÷ T\nMEASURE THE JOURNEY\nSTART\nFINISH\nLEG 1\nDISTANCE · 90 km\nTIME ELAPSED IN HOURS\n0\n0.5\n1\n1.5\n2\n2.5\n3\nELAPSED · 1.8 h\nCHOOSE THE FORMULA AND SHOW YOUR UNITS\n\nDISTANCE · D\n\n150 km\n\nTotal route trave"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 50,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\n?\nT\nS = D ÷ T\nMEASURE THE JOURNEY\nSTART\nFINISH\nLEG 1\nDISTANCE · 72 km\nTIME ELAPSED IN HOURS\n0\n1\n2\nELAPSED ·"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE =",
+          "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE =",
+          "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE =",
+          "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE =",
+          "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE =",
+          "F6-10\nSOLVE THE UNKNOWN\nFIND THE MISSING QUANTITY\nDISTANCE ="
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "FIND THE MISSING QUANTITY\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\n?\nT\nS = D ÷",
+          "ONE JOURNEY · THREE QUANTITIES\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\nS\nT\nS ",
+          "ONE JOURNEY · THREE QUANTITIES\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\nS\nT\nS ",
+          "ONE JOURNEY · THREE QUANTITIES\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\nS\nT\nS "
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "FIND THE MISSING QUANTITY\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\n?\nT\nS = D ÷ T\nMEASURE THE JOURNEY\nSTART\nFINISH\nL1\nDISTANCE · 72 km\nTIME ELAPSED IN HOURS\n0\n1\n2\nELAPSED · 1.2 h\nCHOOSE THE FORMULA A"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "FIND THE MISSING QUANTITY\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\n?\nT\nS = D ÷",
+          "ONE JOURNEY · THREE QUANTITIES\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\nS\nT\nS ",
+          "ONE JOURNEY · THREE QUANTITIES\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\nS\nT\nS ",
+          "ONE JOURNEY · THREE QUANTITIES\nDISTANCE = SPEED × TIME\nFORMULA TRIANGLE\nD\nS\nT\nS "
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Choose journey Y8-041 · Find the speed Y9-016 · Read a whole journey Y9-022 · Find the distance Y9-022 · Find the time Check formula Hint Reset Drag the position ring to a journey stop. Drag the ? ring to D, S or T. Keyboard: Left/Right on each ring; Delete returns it. Drag the journey marker to a percentage stop, then select the unknown in the formula triangle.",
+          "inputs": [
+            "Y8-041"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 0.75 1 1.5 10 100 25 45 50 6 60 75 90",
+          "buttons": 2,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Choose journey Y8-041 · Find the speed Y9-016 · Read a whole journey Y9-022 · Find the distance Y9-022 · Find the time Check formula Hint Reset Drag the position ring to a journey stop. Drag the ? ring to D, S or T. Keyboard: Left/Right on each ring; Delete returns it. A journey has three stages. The whole route covers 180 kilometres in 3 hours. Find the average speed.",
+          "inputs": [
+            "Y9-016"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 10 100 180 2 2.5 25 3 50 6 60 75 90",
+          "buttons": 2,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Choose journey Y8-041 · Find the speed Y9-016 · Read a whole journey Y9-022 · Find the distance Y9-022 · Find the time Check formula Hint Reset Drag the position ring to a journey stop. Drag the ? ring to D, S or T. Keyboard: Left/Right on each ring; Delete returns it. A journey has three stages. The whole route covers 180 kilometres in 3 hours. Find the average speed.",
+          "inputs": [
+            "Y9-016"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 10 100 180 2 2.5 25 3 50 6 60 75 90",
+          "buttons": 2,
+          "vb": 480,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Journey 1 of 4. A coach travels 90 kilometres in 1.5 hours. Find its average speed. Enter the missing speed and its correct unit. YOUR ANSWER UNIT km/h km h m/s min Check answer Hint Next journey Journeys solved: 0 / 4",
+          "inputs": [
+            "",
+            "km/h"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 0.9 1 1.5 10 54 6 90",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Journey 1 of 4. A coach travels 90 kilometres in 1.5 hours. Find its average speed. Enter the missing speed and its correct unit. YOUR ANSWER UNIT km/h km h m/s min Check answer Hint Next journey Journeys solved: 0 / 4",
+          "inputs": [
+            "7",
+            "km"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 0.9 1 1.5 10 54 6 90",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Journey 1 of 4. A coach travels 90 kilometres in 1.5 hours. Find its average speed. Enter the missing speed and its correct unit. YOUR ANSWER UNIT km/h km h m/s min Check answer Hint Next journey Journeys solved: 0 / 4",
+          "inputs": [
+            "7",
+            "km"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 0.9 1 1.5 10 54 6 90",
+          "buttons": 0,
+          "vb": 480,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1120,
+        "median": 16.71,
+        "p10": 13.5,
+        "count": 18,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11,
+        "p10": 11,
+        "count": 18,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11,
+        "p10": 11,
+        "count": 18,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

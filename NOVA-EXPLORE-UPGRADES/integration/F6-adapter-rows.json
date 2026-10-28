@@ -1,0 +1,2053 @@
+[
+  {
+    "id": "F6-01",
+    "path": "F6/F6-01-ratio-table.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS','CHALLENGES']",
+    "draws": "{\"stageScene\":[\"stage\",\"p\",\"opt\"]}",
+    "exploreFields": "{\"chosen\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null},\"p\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null},\"challenge.question\":{\"kind\":\"factory\",\"factory\":\"state\",\"argCount\":2},\"challenge.row\":{\"kind\":\"factory\",\"factory\":\"state\",\"argCount\":2},\"challenge.stat\":{\"kind\":\"factory\",\"factory\":\"state\",\"argCount\":2}}",
+    "original_sha256": "1d3eb649e81b197f13c0c37b5cbf48252a2fd87e8c63d716976a6b034ab78477",
+    "sha256": "9cc1f7dfc526d6330fb011575d56da2a4793dec49db2e795ae18d49cee15f357",
+    "engineId": "F6-01",
+    "nativeFieldsByStep": "[['name','narration','prompt','pose','cat'],['name','narration','prompt','pose','cat'],['name','narration','prompt','pose','cat'],['name','narration','prompt','pose','cat'],['name','narration','prompt','pose','cat'],['name','narration','prompt','pose','cat']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Prove and transfer",
+        "narration": "We can divide each new quantity by three to return to the first row. Try another scale factor yourself.",
+        "prompt": "Can you reverse the operation and still keep the relationship?",
+        "pose": "cheer",
+        "cat": "success"
+      },
+      "config": {
+        "id": "F6-01",
+        "startMode": "guided",
+        "preset": "Y7-060",
+        "parameters": {
+          "relation": [
+            "direct",
+            "inverse"
+          ],
+          "minimumFactor": 0.25,
+          "maximumFactor": 6,
+          "precision": 3
+        },
+        "presets": {
+          "Y7-058": {
+            "label": "Y7 \u00b7 Ratio notation",
+            "a": "Red beads",
+            "b": "Blue beads",
+            "a0": 3,
+            "b0": 5,
+            "f": 2,
+            "type": "direct",
+            "unitA": "",
+            "unitB": ""
+          },
+          "Y7-060": {
+            "label": "Y7 \u00b7 Direct proportion",
+            "a": "Tickets",
+            "b": "Cost",
+            "a0": 3,
+            "b0": 6,
+            "f": 3,
+            "type": "direct",
+            "unitA": "",
+            "unitB": "\u00a3"
+          },
+          "Y7-061": {
+            "label": "Y7 \u00b7 Unit price and best buy",
+            "a": "Cans",
+            "b": "Cost",
+            "a0": 4,
+            "b0": 12,
+            "f": 0.25,
+            "type": "direct",
+            "unitA": "",
+            "unitB": "\u00a3"
+          },
+          "Y8-034": {
+            "label": "Y8 \u00b7 Fractional/decimal ratios",
+            "a": "Paint A (L)",
+            "b": "Paint B (L)",
+            "a0": 0.5,
+            "b0": 1.5,
+            "f": 4,
+            "type": "direct",
+            "unitA": "",
+            "unitB": ""
+          },
+          "Y8-035": {
+            "label": "Y8 \u00b7 Tables and equations",
+            "a": "Input x",
+            "b": "Output y",
+            "a0": 2,
+            "b0": 7.5,
+            "f": 3,
+            "type": "direct",
+            "unitA": "",
+            "unitB": ""
+          },
+          "Y8-036": {
+            "label": "Y8 \u00b7 Direct proportion graphs",
+            "a": "Horizontal x",
+            "b": "Vertical y",
+            "a0": 1,
+            "b0": 3,
+            "f": 5,
+            "type": "direct",
+            "unitA": "",
+            "unitB": ""
+          },
+          "Y8-037": {
+            "label": "Y8 \u00b7 Inverse proportion contrast",
+            "a": "Workers",
+            "b": "Hours",
+            "a0": 2,
+            "b0": 12,
+            "f": 3,
+            "type": "inverse",
+            "unitA": "",
+            "unitB": ""
+          }
+        },
+        "events": {
+          "value": [
+            "preset",
+            "factor",
+            "factorA",
+            "factorB",
+            "tile",
+            "answer",
+            "reset",
+            "remove",
+            "hint",
+            "relation"
+          ],
+          "types": [
+            "step",
+            "correct",
+            "hintUsed",
+            "mode"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "a5fbb5a9b51e0973b9d88abd013dbac75c70ac02e15427004229a48e2d5bff87",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-02",
+    "path": "F6/F6-02-double-number-line.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS','CHALLENGES']",
+    "draws": "{\"makeScene\":[\"stage\",\"p\",\"opt\"]}",
+    "exploreFields": "{}",
+    "original_sha256": "6b5fc035c98581a7ab4cdfacad1934640aaa1f6d74a871e8cf24a73be6dc2480",
+    "sha256": "dada71ed6f48b5503d73721e0d596efe789e1fda2ea91f124abb4097554e12ec",
+    "engineId": "F6-02",
+    "nativeFieldsByStep": "[['name','narration','pose','cat','caption'],['name','narration','pose','cat','caption'],['name','narration','pose','cat','caption'],['name','narration','pose','cat','caption'],['name','narration','pose','cat','caption']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 5,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 4,
+      "data": {
+        "name": "Check the constant relationship",
+        "narration": "Six divided by two is three pounds per ticket. Twenty-four divided by eight is also three. The rate stayed constant.",
+        "pose": "cheer",
+        "cat": "success",
+        "caption": "Same rate. Great work!"
+      },
+      "config": {
+        "id": "F6-02",
+        "startMode": "guided",
+        "preset": "Y7-060",
+        "parameters": {
+          "xMin": 0,
+          "snap": "aligned proportional marks",
+          "linkedScale": true,
+          "roundingDp": 4
+        },
+        "presets": {
+          "Y7-060": {
+            "label": "Y7 \u00b7 Tickets and cost",
+            "a": "Tickets",
+            "b": "Cost (\u00a3)",
+            "unitA": "",
+            "unitB": "\u00a3",
+            "known": 3,
+            "knownB": 6,
+            "target": 8,
+            "max": 10,
+            "major": 2,
+            "minor": 1,
+            "steps": 10,
+            "context": "Two tickets cost six pounds. What do eight tickets cost?"
+          },
+          "Y8-007": {
+            "label": "Y8 \u00b7 Increase by 25%",
+            "a": "Original (\u00a3)",
+            "b": "Increased (\u00a3)",
+            "unitA": "\u00a3",
+            "unitB": "\u00a3",
+            "known": 40,
+            "knownB": 50,
+            "target": 60,
+            "max": 80,
+            "major": 20,
+            "minor": 10,
+            "steps": 8,
+            "context": "Forty pounds becomes fifty pounds. What does sixty pounds become at the same multiplier?"
+          },
+          "Y8-035": {
+            "label": "Y8 \u00b7 Equation y = kx",
+            "a": "Input x",
+            "b": "Output y",
+            "unitA": "",
+            "unitB": "",
+            "known": 3,
+            "knownB": 7.5,
+            "target": 9,
+            "max": 12,
+            "major": 3,
+            "minor": 1.5,
+            "steps": 8,
+            "context": "Three maps to seven point five. Find the value for nine."
+          },
+          "Y8-039": {
+            "label": "Y8 \u00b7 Pound to euro conversion",
+            "a": "Pounds",
+            "b": "Euros",
+            "unitA": "\u00a3",
+            "unitB": "\u20ac",
+            "known": 5,
+            "knownB": 6,
+            "target": 15,
+            "max": 20,
+            "major": 5,
+            "minor": 2.5,
+            "steps": 8,
+            "context": "At the given classroom rate, five pounds equals six euros. How many euros for fifteen pounds?"
+          }
+        },
+        "events": {
+          "value": [
+            "preset",
+            "mark",
+            "markerRemoved",
+            "restore",
+            "reset",
+            "answer",
+            "hint",
+            "undo",
+            "step",
+            "showFactor"
+          ],
+          "types": [
+            "step",
+            "correct",
+            "hintUsed",
+            "mode"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "f953bf636d1a101ac399bebc9f55c83d13175edee06a88dd511d70219213e915",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-03",
+    "path": "F6/F6-03-sharing-in-a-ratio.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS']",
+    "draws": "{\"stageScene\":[\"stage\",\"p\",\"o\"]}",
+    "exploreFields": "{\"preset\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null},\"message\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null}}",
+    "original_sha256": "dff23e20a6130f830ecdf616596201b26809f72b42fa4b6b0bd7072adc491a6c",
+    "sha256": "e8917ad3c3880a26d270cbd0389b930ec2f5c76be88f6e36d20487a59826e391",
+    "engineId": "F6-03",
+    "nativeFieldsByStep": "[['name','narration','caption','pose'],['name','narration','caption','pose'],['name','narration','caption','pose'],['name','narration','caption','pose'],['name','narration','caption','pose'],['name','narration','caption','pose'],['name','narration','caption','pose']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 6,
+      "data": {
+        "name": "Prove the total and ratio",
+        "narration": "Twelve pounds plus eighteen pounds gives thirty pounds. And twelve to eighteen simplifies to two to three. Both tests agree.",
+        "caption": "Both checks agree!",
+        "pose": "celebrate"
+      },
+      "config": {
+        "id": "F6-03",
+        "startMode": "guided",
+        "preset": "Y7-059",
+        "parameters": {
+          "total": 30,
+          "ratioA": 2,
+          "ratioB": 3,
+          "unit": "\u00a3",
+          "positiveWholeRatios": true,
+          "integerShares": true
+        },
+        "presets": {
+          "Y7-059": {
+            "label": "Y7-059 \u00b7 Share thirty pounds",
+            "a": 3,
+            "b": 3,
+            "total": 30,
+            "symbol": "\u00a3",
+            "names": [
+              "Ava",
+              "Ben"
+            ],
+            "context": "Ava and Ben share thirty pounds in the ratio two to three."
+          },
+          "Y7-059-sweets": {
+            "label": "Y7-059 \u00b7 Sweets",
+            "a": 3,
+            "b": 2,
+            "total": 45,
+            "symbol": "",
+            "names": [
+              "Kim",
+              "Leo"
+            ],
+            "context": "Kim and Leo share forty-five sweets in the ratio three to two."
+          },
+          "Y7-059-time": {
+            "label": "Y7-059 \u00b7 Study time",
+            "a": 1,
+            "b": 4,
+            "total": 60,
+            "symbol": "",
+            "names": [
+              "Art",
+              "Maths"
+            ],
+            "context": "Sixty study minutes are shared in the ratio one to four."
+          },
+          "Y7-059-points": {
+            "label": "Y7-059 \u00b7 Team points",
+            "a": 5,
+            "b": 7,
+            "total": 96,
+            "symbol": "",
+            "names": [
+              "Blue",
+              "Teal"
+            ],
+            "context": "Ninety-six points are shared by Blue and Teal in the ratio five to seven."
+          }
+        },
+        "events": {
+          "value": [
+            "preset",
+            "part",
+            "shareAssign",
+            "shareRemove",
+            "unitPlace",
+            "reset",
+            "answer",
+            "hint",
+            "stage"
+          ],
+          "types": [
+            "step",
+            "mode",
+            "correct",
+            "hintUsed"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "7f8284d08bbc5f378b485e50e01563918283f6b335d11bdd23c29f653a8cf26c",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-04",
+    "path": "F6/F6-04-simplifying-ratios.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS']",
+    "draws": "{\"scene\":[\"stage\",\"p\",\"o\"]}",
+    "exploreFields": "{\"message\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null}}",
+    "original_sha256": "a4bb3c01df7d95622e7ff64f82559502d54d60c91e8791f2ad08abcd3214a34f",
+    "sha256": "1c427ff7b31aac1865da3666fffbac637f135c8bb48f861978e5c88a069bf501",
+    "engineId": "F6-04",
+    "nativeFieldsByStep": "[['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Prove the equivalent ratio",
+        "caption": "Check the same multiplier.",
+        "pose": "celebrate",
+        "narration": "Multiply both parts of two to three by three and you return to six to nine. The ratio is equivalent and the new pair has no common factor above one."
+      },
+      "config": {
+        "id": "F6-04",
+        "startMode": "guided",
+        "preset": "Y7-058",
+        "parameters": {
+          "ratioA": 6,
+          "ratioB": 9,
+          "stage": "group/collapse/verify",
+          "positiveValues": true,
+          "decimalAndFractionPresets": true
+        },
+        "presets": {
+          "Y7-058": {
+            "label": "Y7-058 \u00b7 Counters 6 : 9",
+            "context": "Six blue counters to nine teal counters.",
+            "display": [
+              "7",
+              "9"
+            ],
+            "raw": [
+              6,
+              9
+            ],
+            "whole": [
+              6,
+              9
+            ],
+            "clear": 1,
+            "units": "counters",
+            "lesson": "Y7-058"
+          },
+          "Y7-058-extend": {
+            "label": "Y7-058 \u00b7 Bundles 12 : 18",
+            "context": "Twelve blue counters to eighteen teal counters.",
+            "display": [
+              "12",
+              "18"
+            ],
+            "raw": [
+              12,
+              18
+            ],
+            "whole": [
+              12,
+              18
+            ],
+            "clear": 1,
+            "units": "counters",
+            "lesson": "Y7-058"
+          },
+          "Y8-034-decimals": {
+            "label": "Y8-034 \u00b7 Decimals 1.5 : 2.25",
+            "context": "A decimal ratio of one point five to two point two five.",
+            "display": [
+              "1.5",
+              "2.25"
+            ],
+            "raw": [
+              1.5,
+              2.25
+            ],
+            "whole": [
+              6,
+              9
+            ],
+            "clear": 4,
+            "units": "quantities",
+            "lesson": "Y8-034"
+          },
+          "Y8-034-fractions": {
+            "label": "Y8-034 \u00b7 Fractions \u00be : \u00bd",
+            "context": "A ratio of three quarters to one half.",
+            "display": [
+              "3/4",
+              "1/2"
+            ],
+            "raw": [
+              0.75,
+              0.5
+            ],
+            "whole": [
+              3,
+              2
+            ],
+            "clear": 4,
+            "units": "fraction units",
+            "lesson": "Y8-034"
+          }
+        },
+        "events": {
+          "values": [
+            "preset",
+            "lasso",
+            "ratioDrop",
+            "ratioRemove",
+            "answer",
+            "hint",
+            "reset",
+            "stage"
+          ],
+          "types": [
+            "value",
+            "step",
+            "correct",
+            "hintUsed"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "56aca16cd1a2728829eb38fb1aa8fca45bd9c3fa124c520844aa332c57aab3d8",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-05",
+    "path": "F6/F6-05-recipe-scaler.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS']",
+    "draws": "{\"scene\":[\"stage\",\"p\",\"o\"]}",
+    "exploreFields": "{\"message\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null}}",
+    "original_sha256": "dee139ce24f79c0f383fbb67534a0ab99ce046f898f9c3f529b38c531d10d719",
+    "sha256": "64860b397c7592f488cedc04c724af51b944f364a6d0f26873892ad867de52c7",
+    "engineId": "F6-05",
+    "nativeFieldsByStep": "[['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Prove the recipe is proportional",
+        "caption": "Same amount per serving.",
+        "pose": "celebrate",
+        "narration": "Dividing any scaled amount by the new servings gives the same amount per person as before. That proves the recipe stayed proportional."
+      },
+      "config": {
+        "id": "F6-05",
+        "startMode": "guided",
+        "preset": "Y7-060",
+        "parameters": {
+          "minServings": 2,
+          "maxServings": 10,
+          "step": 1,
+          "positive": true,
+          "exactUnits": true
+        },
+        "presets": {
+          "Y7-060": {
+            "label": "Y7-060 \u00b7 Pancake batch (4 \u2192 6)",
+            "title": "PANCAKE KITCHEN",
+            "context": "Scale a pancake recipe from four servings to six.",
+            "base": 5,
+            "target": 6,
+            "ingredients": [
+              {
+                "name": "FLOUR",
+                "base": 200,
+                "unit": "g",
+                "icon": "flour"
+              },
+              {
+                "name": "MILK",
+                "base": 320,
+                "unit": "ml",
+                "icon": "milk"
+              },
+              {
+                "name": "EGGS",
+                "base": 4,
+                "unit": "eggs",
+                "icon": "egg"
+              },
+              {
+                "name": "BERRIES",
+                "base": 120,
+                "unit": "g",
+                "icon": "berry"
+              }
+            ]
+          },
+          "Y7-060-double": {
+            "label": "Y7-060 \u00b7 Fruit bowl (4 \u2192 8)",
+            "title": "FRUIT BOWL",
+            "context": "Double a fruit bowl recipe.",
+            "base": 4,
+            "target": 8,
+            "ingredients": [
+              {
+                "name": "STRAWBERRIES",
+                "base": 200,
+                "unit": "g",
+                "icon": "berry"
+              },
+              {
+                "name": "YOGURT",
+                "base": 240,
+                "unit": "g",
+                "icon": "milk"
+              },
+              {
+                "name": "OATS",
+                "base": 80,
+                "unit": "g",
+                "icon": "flour"
+              },
+              {
+                "name": "BANANAS",
+                "base": 4,
+                "unit": "bananas",
+                "icon": "egg"
+              }
+            ]
+          },
+          "Y7-060-half": {
+            "label": "Y7-060 \u00b7 Oat bars (6 \u2192 3)",
+            "title": "OAT BAR WORKSHOP",
+            "context": "Halve the quantities in a six-serving batch.",
+            "base": 6,
+            "target": 3,
+            "ingredients": [
+              {
+                "name": "OATS",
+                "base": 240,
+                "unit": "g",
+                "icon": "flour"
+              },
+              {
+                "name": "MILK",
+                "base": 300,
+                "unit": "ml",
+                "icon": "milk"
+              },
+              {
+                "name": "BANANAS",
+                "base": 6,
+                "unit": "bananas",
+                "icon": "egg"
+              },
+              {
+                "name": "HONEY",
+                "base": 30,
+                "unit": "g",
+                "icon": "berry"
+              }
+            ]
+          },
+          "Y7-060-triple": {
+            "label": "Y7-060 \u00b7 Smoothies (3 \u2192 9)",
+            "title": "SMOOTHIE LAB",
+            "context": "Triple a three-serving smoothie recipe.",
+            "base": 3,
+            "target": 9,
+            "ingredients": [
+              {
+                "name": "MANGO",
+                "base": 90,
+                "unit": "g",
+                "icon": "berry"
+              },
+              {
+                "name": "MILK",
+                "base": 150,
+                "unit": "ml",
+                "icon": "milk"
+              },
+              {
+                "name": "YOGURT",
+                "base": 180,
+                "unit": "g",
+                "icon": "flour"
+              },
+              {
+                "name": "BANANAS",
+                "base": 3,
+                "unit": "bananas",
+                "icon": "egg"
+              }
+            ]
+          }
+        },
+        "events": {
+          "types": [
+            "value",
+            "step",
+            "correct",
+            "hintUsed"
+          ],
+          "names": [
+            "preset",
+            "servings",
+            "amount",
+            "removed",
+            "check",
+            "reset",
+            "hint"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "a0093e5469e227820a0c356c03be6e2a8fae838bc7885d02475d877cfdb87677",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-06",
+    "path": "F6/F6-06-best-buy-comparer.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS']",
+    "draws": "{\"draw\":[\"stage\",\"p\",\"o\"]}",
+    "exploreFields": "{\"chosen\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null},\"message\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null}}",
+    "original_sha256": "90cccc095d2386d9a9bafe694ea1ae0ca04dcd6e1ac68f22cbaf08319be63a2d",
+    "sha256": "80b17aeede631b387dc9a616017dbeb84684d115c37729f5be1e960f679f8106",
+    "engineId": "F6-06",
+    "nativeFieldsByStep": "[['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration'],['name','caption','pose','narration']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Prove the best buy",
+        "caption": "Choose with mathematical evidence.",
+        "pose": "celebrate",
+        "narration": "The smaller unit price is the better value, even when its shelf price is higher. If they match, both packs give equal value."
+      },
+      "config": {
+        "id": "F6-06",
+        "startMode": "guided",
+        "preset": "Y7-061",
+        "parameters": {
+          "currency": "GBP",
+          "precisionPence": 2,
+          "baseUnits": [
+            "100 g",
+            "100 ml",
+            "item"
+          ]
+        },
+        "presets": {
+          "Y7-061": {
+            "label": "Y7-061 \u00b7 Pasta packs",
+            "context": "Two pasta packs. Which buys more food for each pound?",
+            "title": "PASTA PACKS",
+            "category": "bag",
+            "unit": "g",
+            "compareAmount": 101,
+            "compareLabel": "100 g",
+            "items": [
+              {
+                "name": "PACK A",
+                "pricePence": 180,
+                "amount": 500
+              },
+              {
+                "name": "PACK B",
+                "pricePence": 240,
+                "amount": 750
+              }
+            ]
+          },
+          "Y7-061-cereal": {
+            "label": "Y7-061 \u00b7 Cereal boxes",
+            "context": "Compare breakfast cereal prices per 100 grams.",
+            "title": "BREAKFAST CEREAL",
+            "category": "box",
+            "unit": "g",
+            "compareAmount": 100,
+            "compareLabel": "100 g",
+            "items": [
+              {
+                "name": "BOX A",
+                "pricePence": 220,
+                "amount": 400
+              },
+              {
+                "name": "BOX B",
+                "pricePence": 300,
+                "amount": 600
+              }
+            ]
+          },
+          "Y7-061-juice": {
+            "label": "Y7-061 \u00b7 Juice cartons",
+            "context": "Compare juice cartons sold in different sizes.",
+            "title": "FRUIT JUICE",
+            "category": "carton",
+            "unit": "ml",
+            "compareAmount": 100,
+            "compareLabel": "100 ml",
+            "items": [
+              {
+                "name": "JUICE A",
+                "pricePence": 180,
+                "amount": 1000
+              },
+              {
+                "name": "JUICE B",
+                "pricePence": 255,
+                "amount": 1500
+              }
+            ]
+          },
+          "Y7-061-soap": {
+            "label": "Y7-061 \u00b7 Hand soap",
+            "context": "The bigger bottle is not necessarily better value.",
+            "title": "HAND SOAP",
+            "category": "bottle",
+            "unit": "ml",
+            "compareAmount": 100,
+            "compareLabel": "100 ml",
+            "items": [
+              {
+                "name": "SOAP A",
+                "pricePence": 125,
+                "amount": 250
+              },
+              {
+                "name": "SOAP B",
+                "pricePence": 220,
+                "amount": 400
+              }
+            ]
+          },
+          "Y7-061-equal": {
+            "label": "Y7-061 \u00b7 Equal value",
+            "context": "Two bars multipacks: is there always just one best buy?",
+            "title": "OAT BAR PACKS",
+            "category": "bar",
+            "unit": "bars",
+            "compareAmount": 1,
+            "compareLabel": "1 bar",
+            "items": [
+              {
+                "name": "SIX PACK",
+                "pricePence": 270,
+                "amount": 6
+              },
+              {
+                "name": "TEN PACK",
+                "pricePence": 450,
+                "amount": 10
+              }
+            ]
+          }
+        },
+        "events": {
+          "types": [
+            "value",
+            "step",
+            "correct",
+            "hintUsed"
+          ],
+          "names": [
+            "preset",
+            "selection",
+            "removed",
+            "check",
+            "hint",
+            "reset"
+          ]
+        }
+      }
+    },
+    "previous_sha256": "7e22e38271643ad83d2f79aa3f2dfbd4b6ffe515230ccce2aca266f9826d7fc6",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-07",
+    "path": "F6/F6-07-map-and-scale-drawing.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS']",
+    "draws": "{\"draw\":[\"stage\",\"p\",\"o\"]}",
+    "exploreFields": "{\"placed\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null},\"message\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null}}",
+    "original_sha256": "bd4e273883baeb914497a9aff0da5af5b39ef760fc2b3b3f022c7270c96b26e9",
+    "sha256": "6ab5bd840a040e21f51262399e59eb2236f5509799b7d872ec17743b39959e21",
+    "engineId": "F6-07",
+    "nativeFieldsByStep": "[['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Prove the distance",
+        "pose": "celebrate",
+        "caption": "Match the drawing to real life.",
+        "narration": "We can now prove the distance from SCHOOL to PARK is 2 kilometres because each map centimetre is worth 0.5 kilometres."
+      },
+      "config": {
+        "id": "F6-07",
+        "startMode": "guided",
+        "preset": "Y7-064",
+        "parameters": {
+          "precisionKm": 3,
+          "measurementUnit": "cm",
+          "realUnit": "km",
+          "useNOVAcore": true
+        },
+        "presets": {
+          "Y7-064": {
+            "label": "Y7-064 \u00b7 School to park",
+            "title": "SCHOOL TO PARK",
+            "context": "Use the map scale to find the real distance between the school and park.",
+            "from": "SCHOOL",
+            "to": "PARK",
+            "dx": 5,
+            "dy": 0,
+            "scale": 0.5,
+            "route": "straight"
+          },
+          "Y7-064-library": {
+            "label": "Y7-064 \u00b7 Library route",
+            "title": "LIBRARY WALK",
+            "context": "A diagonal route is longer than just its horizontal part.",
+            "from": "LIBRARY",
+            "to": "SPORTS",
+            "dx": 3,
+            "dy": 4,
+            "scale": 0.4,
+            "route": "diagonal"
+          },
+          "Y9-021": {
+            "label": "Y9-021 \u00b7 Country trail",
+            "title": "COUNTRY TRAIL",
+            "context": "Apply a scale factor and justify the distance from the scale bar.",
+            "from": "STATION",
+            "to": "LAKE",
+            "dx": 6,
+            "dy": 8,
+            "scale": 1.25,
+            "route": "diagonal"
+          },
+          "Y9-021-urban": {
+            "label": "Y9-021 \u00b7 City survey",
+            "title": "CITY SURVEY",
+            "context": "A scale drawing represents a route accurately when measured in centimetres.",
+            "from": "MUSEUM",
+            "to": "BRIDGE",
+            "dx": 5,
+            "dy": 0,
+            "scale": 0.75,
+            "route": "straight"
+          }
+        },
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "hintUsed"
+        ]
+      }
+    },
+    "previous_sha256": "1b7cbe3afc4ca465b0c8521ca1fad8c1a8ebd8f6c08cbe783603ab8b597d311b",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-08",
+    "path": "F6/F6-08-direct-proportion-GALLERY-PREVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "p",
+        "o"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "766ace632a5eecfba92b1f92b83c532dc4713c6d93c924f6eae8e7ff75f61003",
+    "sha256": "766ace632a5eecfba92b1f92b83c532dc4713c6d93c924f6eae8e7ff75f61003",
+    "engineId": "F6-08",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 3,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 2,
+      "data": {
+        "name": "Read and explain the rule",
+        "pose": "checking",
+        "caption": "Find the multiplier, then test it.",
+        "narration": "Use a non-zero point such as (2, 4). Dividing y by x gives the multiplier 2. The rule y = 2x works for every point and the line goes through the origin.",
+        "prompt": "Use any non-zero point to check the multiplier."
+      },
+      "config": {
+        "id": "F6-08",
+        "preset": "Y7-060",
+        "startMode": "guided",
+        "presets": {
+          "Y7-060": {
+            "label": "Y7-060 \u00b7 Direct proportion",
+            "context": "Tickets",
+            "xLabel": "Tickets",
+            "yLabel": "Cost (\u00a3)",
+            "slope": 3,
+            "intercept": 0,
+            "xMax": 6,
+            "yMax": 12,
+            "xStep": 1,
+            "yStep": 2,
+            "knownX": 2,
+            "queryX": 5,
+            "gcse": false
+          },
+          "Y8-035": {
+            "label": "Y8-035 \u00b7 Table & equation",
+            "context": "Stickers",
+            "xLabel": "Packs",
+            "yLabel": "Stickers",
+            "slope": 3,
+            "intercept": 0,
+            "xMax": 6,
+            "yMax": 18,
+            "xStep": 1,
+            "yStep": 3,
+            "knownX": 2,
+            "queryX": 4,
+            "gcse": false
+          },
+          "Y8-036": {
+            "label": "Y8-036 \u00b7 Through origin",
+            "context": "Distance",
+            "xLabel": "Time (h)",
+            "yLabel": "Distance (km)",
+            "slope": 1.5,
+            "intercept": 0,
+            "xMax": 8,
+            "yMax": 12,
+            "xStep": 1,
+            "yStep": 1.5,
+            "knownX": 2,
+            "queryX": 6,
+            "gcse": false
+          },
+          "Y9-020": {
+            "label": "Y9-020 \u00b7 Proportion signatures",
+            "context": "Rate",
+            "xLabel": "x",
+            "yLabel": "y",
+            "slope": 0.75,
+            "intercept": 0,
+            "xMax": 8,
+            "yMax": 6,
+            "xStep": 1,
+            "yStep": 0.75,
+            "knownX": 4,
+            "queryX": 6,
+            "gcse": true
+          }
+        },
+        "previewOnly": true,
+        "parentEngine": "F10-05"
+      }
+    },
+    "previous_sha256": "ff433e81b4eb10c1fcb1d5c5058e8a206064d012d383d304575c3d6bb0c27bcb",
+    "presetOnly": true,
+    "hostEngine": "F10-05",
+    "status": "config-only preset; host engine not yet built"
+  },
+  {
+    "id": "F6-09",
+    "path": "F6/F6-09-inverse-proportion-rectangle.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS']",
+    "draws": "{\"graphic\":[\"stage\",\"p\",\"o\"]}",
+    "exploreFields": "{\"x\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null},\"message\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null}}",
+    "original_sha256": "4c830dbc803f89838fe7884a5c8185c4ce09d57e6b53b9ce10b4f59c33f4f462",
+    "sha256": "ec802c39272bdea35ada2a54f42f5b1006686194602dcba80ef847c2d4a677c3",
+    "engineId": "F6-09",
+    "nativeFieldsByStep": "[['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Trace the reciprocal curve",
+        "pose": "celebrate",
+        "caption": "Curved, not straight.",
+        "narration": "Joining the matching pairs traces a curve. When one number goes up, the other goes down. This is inverse proportion."
+      },
+      "config": {
+        "id": "F6-09",
+        "preset": "Y8-037",
+        "startMode": "guided",
+        "parameters": {
+          "areaFixed": true,
+          "allowAreaZero": false,
+          "displayPrecision": 3
+        },
+        "presets": {
+          "Y8-037": {
+            "label": "Y8-037 \u00b7 Fixed area, 24 squares",
+            "title": "AREA STAYS THE SAME",
+            "k": 25,
+            "xs": [
+              2,
+              3,
+              4,
+              6,
+              8,
+              12
+            ],
+            "initial": 4,
+            "context": "A 24-square-unit rectangle changes shape without changing its area."
+          },
+          "Y9-013": {
+            "label": "Y9-013 \u00b7 Reciprocal curve, 36",
+            "title": "RECIPROCAL CURVE",
+            "k": 36,
+            "xs": [
+              3,
+              4,
+              6,
+              9,
+              12
+            ],
+            "initial": 6,
+            "context": "Trace a reciprocal curve from the exact constant-product pairs."
+          },
+          "Y9-019": {
+            "label": "Y9-019 \u00b7 xy = 48",
+            "title": "INVERSE FORMULA",
+            "k": 48,
+            "xs": [
+              4,
+              6,
+              8,
+              12,
+              16
+            ],
+            "initial": 8,
+            "context": "Use xy = 48 to find the height for each width."
+          },
+          "Y9-020": {
+            "label": "Y9-020 \u00b7 Direct or inverse?",
+            "title": "DIRECT OR INVERSE?",
+            "k": 30,
+            "xs": [
+              2,
+              3,
+              5,
+              6,
+              10,
+              15
+            ],
+            "initial": 5,
+            "context": "A shrinking height and growing width make a curved, not straight, graph."
+          }
+        },
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "hintUsed"
+        ]
+      }
+    },
+    "previous_sha256": "3d1dfd3aad8900a17a8280cdb8add88098ea3f6bc8b9d6e0eb9944e81fa0a545",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-10",
+    "path": "F6/F6-10-speed-distance-time.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS']",
+    "draws": "{\"makeSVG\":[\"stage\",\"p\",\"o\"]}",
+    "exploreFields": "{\"message\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null}}",
+    "original_sha256": "a791461a02b178b955900e551302db881d29dda57f59202bb51f8b0ae522714e",
+    "sha256": "c9d251b59116b691e57c2b17ac561f163e2e7d1eac073c2711badc3c8931f9bf",
+    "engineId": "F6-10",
+    "nativeFieldsByStep": "[['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 6,
+      "data": {
+        "name": "Check the answer",
+        "pose": "celebrate",
+        "caption": "Does the journey fit?",
+        "narration": "Check the units and put the result back into the formula. The three quantities must agree."
+      },
+      "config": {
+        "id": "F6-10",
+        "preset": "Y8-041",
+        "startMode": "guided",
+        "parameters": {
+          "distanceUnit": "km",
+          "timeUnit": "h",
+          "speedUnit": "km/h",
+          "allowZeroTime": false,
+          "precision": 3
+        },
+        "presets": {
+          "Y8-041": {
+            "label": "Y8-041 \u00b7 Find the speed",
+            "title": "A JOURNEY AT STEADY SPEED",
+            "distance": 91,
+            "time": 1.5,
+            "target": "speed",
+            "legs": [
+              {
+                "d": 45,
+                "t": 0.75
+              },
+              {
+                "d": 45,
+                "t": 0.75
+              }
+            ],
+            "context": "A coach travels 90 kilometres in 1.5 hours. Find its average speed."
+          },
+          "Y9-016": {
+            "label": "Y9-016 \u00b7 Read a whole journey",
+            "title": "THE COMPLETE JOURNEY",
+            "distance": 180,
+            "time": 3,
+            "target": "speed",
+            "legs": [
+              {
+                "d": 60,
+                "t": 1
+              },
+              {
+                "d": 30,
+                "t": 1
+              },
+              {
+                "d": 90,
+                "t": 1
+              }
+            ],
+            "context": "A journey has three stages. The whole route covers 180 kilometres in 3 hours. Find the average speed."
+          },
+          "Y9-022-distance": {
+            "label": "Y9-022 \u00b7 Find the distance",
+            "title": "HOW FAR DID IT TRAVEL?",
+            "distance": 180,
+            "time": 2.5,
+            "target": "distance",
+            "legs": [
+              {
+                "d": 72,
+                "t": 1
+              },
+              {
+                "d": 108,
+                "t": 1.5
+              }
+            ],
+            "context": "A vehicle travels at 72 kilometres per hour for 2.5 hours. Find its distance."
+          },
+          "Y9-022-time": {
+            "label": "Y9-022 \u00b7 Find the time",
+            "title": "HOW LONG IS THE JOURNEY?",
+            "distance": 165,
+            "time": 3,
+            "target": "time",
+            "legs": [
+              {
+                "d": 55,
+                "t": 1
+              },
+              {
+                "d": 110,
+                "t": 2
+              }
+            ],
+            "context": "A vehicle travels 165 kilometres at 55 kilometres per hour. Find its time."
+          }
+        },
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "hintUsed"
+        ]
+      }
+    },
+    "previous_sha256": "4e0962cc870c9d6713a352a5e9601ee7fd8c6aa50f4e7cfd701d215130c5a139",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-11",
+    "path": "F6/F6-11-rates-of-change-tank.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS']",
+    "draws": "{\"makeScene\":[\"stage\",\"p\",\"o\"]}",
+    "exploreFields": "{\"makeScene.m\":{\"kind\":\"factory\",\"factory\":\"model\",\"argCount\":3}}",
+    "original_sha256": "8902c680a41dcdb960e5bc632883aefcd6d5c549eafdecca4e694c86f25765cd",
+    "sha256": "70807a3294ff5a3e0c4afae3ce6140baae6c15b17e9302dbdf9da7cb6c7c9435",
+    "engineId": "F6-11",
+    "nativeFieldsByStep": "[['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 8,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 7,
+      "data": {
+        "name": "Check the evidence",
+        "pose": "celebrate",
+        "caption": "Both representations agree.",
+        "narration": "Check that the tank, graph and rate calculation all tell the same story."
+      },
+      "config": {
+        "id": "F6-11",
+        "preset": "Y8-028",
+        "startMode": "guided",
+        "parameters": {
+          "precision": 3,
+          "levelPositions": [
+            0,
+            0.25,
+            0.5,
+            0.75,
+            1
+          ],
+          "rateFactors": [
+            0.5,
+            1,
+            1.5,
+            2
+          ],
+          "independentVariable": "time or volume"
+        },
+        "presets": {
+          "Y8-028": {
+            "label": "Y8-028 \u00b7 Graph gradient",
+            "title": "WATER LEVEL RISING",
+            "kind": "flow",
+            "rate": 4,
+            "xMax": 8,
+            "xUnit": "min",
+            "yUnit": "cm",
+            "rateUnit": "cm/min",
+            "quantity": "WATER DEPTH",
+            "context": "The water rises at a steady number of centimetres each minute. Find the gradient.",
+            "unitDescription": "cm of height per minute"
+          },
+          "Y8-041": {
+            "label": "Y8-041 \u00b7 Speed as a rate",
+            "title": "SAME RATE \u00b7 NEW CONTEXT",
+            "kind": "journey",
+            "rate": 12,
+            "xMax": 5,
+            "xUnit": "min",
+            "yUnit": "km",
+            "rateUnit": "km/min",
+            "quantity": "DISTANCE METRE",
+            "context": "A distance meter gains kilometres as time passes. Read the rate of change, like water rising in a tank.",
+            "unitDescription": "kilometres per minute"
+          },
+          "Y8-042": {
+            "label": "Y8-042 \u00b7 Density",
+            "title": "MASS PER LITRE",
+            "kind": "density",
+            "rate": 2,
+            "xMax": 8,
+            "xUnit": "L",
+            "yUnit": "kg",
+            "rateUnit": "kg/L",
+            "quantity": "TANK CONTENTS",
+            "context": "Each extra litre adds the same mass. The gradient of a mass\u2013volume graph gives density.",
+            "unitDescription": "kilograms per litre"
+          },
+          "Y9-022": {
+            "label": "Y9-022 \u00b7 Compound speed",
+            "title": "INTERPRETING A FASTER RATE",
+            "kind": "journey",
+            "rate": 9,
+            "xMax": 8,
+            "xUnit": "min",
+            "yUnit": "km",
+            "rateUnit": "km/min",
+            "quantity": "DISTANCE METRE",
+            "context": "The distance meter fills faster when the rate is higher. Compare steep and shallow gradients.",
+            "unitDescription": "kilometres per minute"
+          },
+          "Y9-023": {
+            "label": "Y9-023 \u00b7 Density reasoning",
+            "title": "COMPARE TWO MATERIALS",
+            "kind": "density",
+            "rate": 1.5,
+            "xMax": 8,
+            "xUnit": "L",
+            "yUnit": "kg",
+            "rateUnit": "kg/L",
+            "quantity": "MASS ADDED",
+            "context": "Two materials can occupy the same volume yet have different mass. Compare their gradient.",
+            "unitDescription": "kilograms per litre"
+          }
+        },
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "hintUsed"
+        ]
+      }
+    },
+    "previous_sha256": "b8f0277d84a9cb989b878d0f65a6f1087f389544d0f3aba9cb202045e6f3da3f",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  },
+  {
+    "id": "F6-12",
+    "path": "F6/F6-12-currency-unit-bridges-GALLERY-PREVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "p",
+        "opt"
+      ]
+    },
+    "exploreFields": {},
+    "original_sha256": "d56bcef20d84424d2ae44d8100a951777f881a5a3bb92f71d7cb129f9c5119fe",
+    "sha256": "d56bcef20d84424d2ae44d8100a951777f881a5a3bb92f71d7cb129f9c5119fe",
+    "engineId": "F6-12",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Reverse to verify",
+        "pose": "celebrate",
+        "caption": "Work backwards.",
+        "narration": "Reverse the steps to check. Multiplication going forward becomes division going backward, and vice versa."
+      },
+      "config": {
+        "id": "F6-12",
+        "preset": "Y8-039",
+        "startMode": "guided",
+        "presets": {
+          "Y8-039": {
+            "label": "Y8-039 \u00b7 Given exchange rate",
+            "kind": "currency",
+            "context": "A classroom exchange-rate card gives \u00a31 = \u20ac1.18. Convert a sterling amount into euros.",
+            "units": [
+              "GBP",
+              "EUR"
+            ],
+            "factors": [
+              1.18
+            ],
+            "ops": [
+              "\u00d71.18"
+            ],
+            "start": 25,
+            "query": 40,
+            "precision": 2,
+            "steps": [
+              "GBP",
+              "EUR"
+            ],
+            "unitLabel": [
+              "Pounds (\u00a3)",
+              "Euros (\u20ac)"
+            ],
+            "gcse": false,
+            "rateNote": "Illustrative rate only \u00b7 \u00a31 = \u20ac1.18",
+            "traps": [
+              "\u00f71.18",
+              "\u00d70.82",
+              "\u00d71.18"
+            ]
+          },
+          "Y8-043": {
+            "label": "Y8-043 \u00b7 Compound units",
+            "kind": "compound",
+            "context": "Convert kilometres per hour to metres per second. The numerator and denominator each change.",
+            "units": [
+              "km/h",
+              "m/h",
+              "m/s"
+            ],
+            "factors": [
+              1000,
+              0.0002777777777777778
+            ],
+            "ops": [
+              "\u00d71000",
+              "\u00f73600"
+            ],
+            "start": 73,
+            "query": 54,
+            "precision": 3,
+            "steps": [
+              "km/h",
+              "m/h",
+              "m/s"
+            ],
+            "unitLabel": [
+              "Kilometres/hour",
+              "Metres/hour",
+              "Metres/second"
+            ],
+            "gcse": false,
+            "rateNote": "1 km = 1000 m \u00b7 1 h = 3600 s",
+            "traps": [
+              "\u00f71000",
+              "\u00d73600",
+              "\u00d71000",
+              "\u00f73600"
+            ]
+          },
+          "Y9-024": {
+            "label": "Y9-024 \u00b7 Mixed compound units",
+            "kind": "compound",
+            "context": "Convert litres per minute to millilitres per second. Convert the volume unit, then the time unit.",
+            "units": [
+              "L/min",
+              "mL/min",
+              "mL/s"
+            ],
+            "factors": [
+              1000,
+              0.016666666666666666
+            ],
+            "ops": [
+              "\u00d71000",
+              "\u00f760"
+            ],
+            "start": 1.8,
+            "query": 2.4,
+            "precision": 3,
+            "steps": [
+              "L/min",
+              "mL/min",
+              "mL/s"
+            ],
+            "unitLabel": [
+              "Litres/minute",
+              "Millilitres/minute",
+              "Millilitres/second"
+            ],
+            "gcse": true,
+            "rateNote": "1 L = 1000 mL \u00b7 1 min = 60 s",
+            "traps": [
+              "\u00f71000",
+              "\u00d760",
+              "\u00d71000",
+              "\u00f760"
+            ]
+          }
+        },
+        "previewOnly": true,
+        "parentEngine": "F18-02",
+        "events": [
+          "step",
+          "value",
+          "correct",
+          "hintUsed"
+        ]
+      }
+    },
+    "previous_sha256": "144f311bf7f7268bac5b2fafba4c1bfd0c51e5e6e8c58389b553df2a46702c09",
+    "presetOnly": true,
+    "hostEngine": "F18-02",
+    "status": "config-only preset; host engine not yet built"
+  },
+  {
+    "id": "F6-13",
+    "path": "F6/F6-13-proportion-in-geometry-GALLERY-PREVIEW.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "STEPS"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "p",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "placed": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "51afe7e3e7e15a41c09ce53262934dcb2624d71a3336d7c0a10137907c2469d8",
+    "sha256": "51afe7e3e7e15a41c09ce53262934dcb2624d71a3336d7c0a10137907c2469d8",
+    "engineId": "F6-13",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ],
+      [
+        "name",
+        "pose",
+        "caption",
+        "narration"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 7,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 6,
+      "data": {
+        "name": "Celebrate the match",
+        "pose": "celebrate",
+        "caption": "A matching transformation.",
+        "narration": "You matched the correct sides and applied the same multiplier. That is geometric similarity."
+      },
+      "scene": {
+        "function": "draw",
+        "arguments": {
+          "p": {
+            "label": "Y7-064 \u00b7 Scale drawings",
+            "shape": "triangle",
+            "context": "A right-triangle plan is enlarged without changing its angles.",
+            "small": [
+              4,
+              4
+            ],
+            "k": 2,
+            "units": "cm",
+            "querySide": 1,
+            "teaching": "A scale drawing multiplies every matching length by the same factor.",
+            "trap": "adding instead of multiplying",
+            "gcse": false
+          }
+        }
+      }
+    },
+    "previous_sha256": "e126807146cf85b749e798ecd54daf4ec98867ab149db19fc87acbb35e8e3d73",
+    "presetOnly": true,
+    "hostEngine": "F14-11",
+    "status": "config-only preset; host engine not yet built"
+  },
+  {
+    "id": "F6-14",
+    "path": "F6/F6-14-ratio-fraction-translator.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": "['STEPS']",
+    "draws": "{\"draw\":[\"stage\",\"p\",\"o\"]}",
+    "exploreFields": "{\"placed\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null},\"message\":{\"kind\":\"value\",\"factory\":null,\"argCount\":null}}",
+    "original_sha256": "0421971deea9fcccf7085d0d229e6fd99dc957fd0b9606f1f4e1ae9a5557dfcb",
+    "sha256": "1da39b4d668420d7024fc24aab97d3a8b2fd34fa94d20fc573c5b5d5180456d5",
+    "engineId": "F6-14",
+    "nativeFieldsByStep": "[['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration'],['name','pose','caption','narration']]",
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Prove the whole",
+        "pose": "celebrate",
+        "caption": "Both fractions make one whole!",
+        "narration": "Two fifths plus three fifths equals five fifths, which is one whole. Both fractions use the same denominator."
+      },
+      "config": {
+        "id": "F6-14",
+        "startMode": "guided",
+        "preset": "Y7-059",
+        "parameters": {
+          "a": 2,
+          "b": 3,
+          "labels": [
+            "Ava",
+            "Ben"
+          ],
+          "fractions": "stacked",
+          "normalize": true
+        },
+        "presets": {
+          "Y7-059": {
+            "label": "Y7-059 \u00b7 Sharing two to three",
+            "a": 3,
+            "b": 3,
+            "names": [
+              "Ava",
+              "Ben"
+            ],
+            "context": "Ava and Ben share equal parts in the ratio 2:3."
+          },
+          "Y7-059-garden": {
+            "label": "Y7-059 \u00b7 Garden plots",
+            "a": 3,
+            "b": 5,
+            "names": [
+              "Flowers",
+              "Vegetables"
+            ],
+            "context": "Three parts flowers to five parts vegetables."
+          },
+          "Y7-059-study": {
+            "label": "Y7-059 \u00b7 Study subjects",
+            "a": 1,
+            "b": 4,
+            "names": [
+              "Art",
+              "Maths"
+            ],
+            "context": "One part art to four parts maths."
+          },
+          "Y7-059-points": {
+            "label": "Y7-059 \u00b7 Team points",
+            "a": 5,
+            "b": 7,
+            "names": [
+              "Blue",
+              "Teal"
+            ],
+            "context": "Five parts blue to seven parts teal."
+          }
+        },
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "hintUsed"
+        ]
+      }
+    },
+    "previous_sha256": "31b886c4150e5bddccb850af281e2e24407454119c6191c6885b0aac409cdd58",
+    "f6Production": {
+      "date": "2026-10-17",
+      "lessonData": "data.lesson {state, phase, motion, title}",
+      "contracts": "integration/nova-f6-contracts.js",
+      "runtime": [
+        "integration/nova-f4-runtime.js",
+        "integration/nova-f6-runtime.js"
+      ]
+    }
+  }
+]

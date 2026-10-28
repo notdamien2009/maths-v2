@@ -1,0 +1,793 @@
+[
+  {
+    "id": "F6-04",
+    "presetOf": null,
+    "path": "F6/F6-04-simplifying-ratios.html",
+    "sourceSha256": "1c427ff7b31aac1865da3666fffbac637f135c8bb48f861978e5c88a069bf501",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1130,
+            480
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "04 058 2 3 4 6 7 9",
+          "before": "04 058 10 12 15 18 2 3 4 6 7"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Example Y7-058 · Counters 6 : 9 Y7-058 · Bundles 12 : 18 Y8-034 · Decimals 1.5 : 2.25 Y8-034 · Fractions ¾ : ½ Check simplest ratio Hint Return chip Reset Drag the lasso onto BOTH counter collections (keyboard A/B). Drag a ratio chip to the answer slot (keyboard Enter). Regrab the result ring and dr",
+          "after": "Example Y7-058 · Counters 6 : 9 Y7-058 · Bundles 12 : 18 Y8-034 · Decimals 1.5 : 2.25 Y8-034 · Fractions ¾ : ½ Check simplest ratio Hint Return chip Reset Drag the lasso onto BOTH counter collections (keyboard A/B). Drag a ratio chip to the answer slot (keyboard Enter). Regrab the result ring and dr",
+          "bi": [
+            "Y7-058-extend"
+          ],
+          "ai": [
+            "Y7-058-extend"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "04 058 10 12 15 18 2 3 4 6 7",
+            6
+          ],
+          "narrow": [
+            "04 10 12 15 18 2 3 4 6",
+            6
+          ],
+          "back": [
+            "04 058 10 12 15 18 2 3 4 6 7",
+            6
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1130,
+            480
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "04 058 6 7 9",
+          "before": "04 058 6 7 9"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Challenge 1 / 4 · Six blue counters to nine teal counters. Write the smallest equivalent ratio using WHOLE-NUMBER parts. First part Second part Check ratio Hint Next ratio Find the simplest whole-number ratio. Correctly simplified: 0 / 4",
+          "after": "Challenge 1 / 4 · Six blue counters to nine teal counters. Write the smallest equivalent ratio using WHOLE-NUMBER parts. First part Second part Check ratio Hint Next ratio Find the simplest whole-number ratio. Correctly simplified: 0 / 4",
+          "bi": [
+            "7",
+            "7"
+          ],
+          "ai": [
+            "7",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "04 058 6 7 9",
+            0
+          ],
+          "narrow": [
+            "04 6 9",
+            0
+          ],
+          "back": [
+            "04 058 6 7 9",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "lesson.state.raw[0] must be greater than zero"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1130,
+            "median": 19.75,
+            "p10": 14.65,
+            "count": 13,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11.31,
+            "p10": 11,
+            "count": 13,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11.31,
+            "p10": 11,
+            "count": 13,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.31,
+          "p10": 11,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.31,
+          "p10": 11,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.31,
+          "p10": 11,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.31,
+          "p10": 11,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11.31,
+          "p10": 11,
+          "count": 13,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n8 : 12\nQUANTITY A\n8\nCOUNT THE EQUAL PARTS\nQUANTITY B\n12\nCOUNT THE EQUAL PARTS\nTHE SAM",
+          "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n10 : 15\nQUANTITY A\n10\nCOUNT THE EQUAL PARTS\nQUANTITY B\n15\nCOUNT THE EQUAL PARTS\nTHE S"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "8",
+            "12"
+          ],
+          "text": "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n8 : 12\nQUANTITY A\n8\nCOUNT THE EQUAL PARTS\nQUANTITY B\n12\nCOUNT THE EQUAL PARTS\nTHE SAME FACTOR ON BOTH SIDES\nUSE THE SAME FACTOR\nWRITE THE SIMPLEST WHOLE-NUMBER RATIO\nSIMPLEST RATIO\n? : ?\n\nORIGINAL\n\n8 : 12\n\nY7-058 · ordered comparison\n\nWHOLE-NUMB"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "2:3",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "10",
+            "15"
+          ],
+          "text": "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n10 : 15\nQUANTITY A\n10\nCOUNT THE EQUAL PARTS\nQUANTITY B\n15\nCOUNT THE EQUAL PARTS\nTHE SAME FACTOR ON BOTH SIDES\nUSE THE SAME FACTOR\nWRITE THE SIMPLEST WHOLE-NUMBER RATIO\nSIMPLEST RATIO\n? : ?\n\nORIGINAL\n\n10 : 15\n\nY7-058 · ordered comparison\n\nWHOLE-N"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "2:3",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n8 : 12\nQUANTITY A\n8\nCOUNT THE EQUAL PARTS\nQUANTITY B\n12\nCOUNT THE EQUAL PARTS\nTHE SAME FACTOR ON BOTH SIDES\nUSE THE SAME FACTOR\nWRITE THE SIMPLES"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n8 : 1",
+          "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n10 : ",
+          "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n14 : ",
+          "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n9 : 2",
+          "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n16 : ",
+          "F6-04\nSIMPLIFYING RATIOS\nSAME COMPARISON · FEWER PARTS\n18 : "
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "SAME COMPARISON · FEWER PARTS\n8 : 12\nQUANTITY A\n8\nQUANTITY B\n12\nTHE SAME FACTOR ",
+          "SAME COMPARISON · FEWER PARTS\n8 : 12\nQUANTITY A\n8\n2 BUNDLES OF 4\nQUANTITY B\n12\n3",
+          "SAME COMPARISON · FEWER PARTS\n8 : 12\nQUANTITY A\n8\n2 BUNDLES OF 4\nQUANTITY B\n12\n3",
+          "SAME COMPARISON · FEWER PARTS\n8 : 12\nQUANTITY A\n8\n2 BUNDLES OF 4\nQUANTITY B\n12\n3"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "SAME COMPARISON · FEWER PARTS\n8 : 12\nQUANTITY A\n8\nQUANTITY B\n12\nTHE SAME FACTOR ON BOTH SIDES\nLOOK FOR EQUAL-SIZE BUNDLES\nDIVIDE BOTH QUANTITIES TOGETHER\nSIMPLEST RATIO\n? : ?\n\nORIGINAL\n\n8 : 12\n\nY7-058"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "SAME COMPARISON · FEWER PARTS\n10 : 15\nQUANTITY A\n10\nQUANTITY B\n15\nTHE SAME FACTO",
+          "SAME COMPARISON · FEWER PARTS\n10 : 15\nQUANTITY A\n10\n2 BUNDLES OF 5\nQUANTITY B\n15",
+          "SAME COMPARISON · FEWER PARTS\n10 : 15\nQUANTITY A\n10\n2 BUNDLES OF 5\nQUANTITY B\n15",
+          "SAME COMPARISON · FEWER PARTS\n10 : 15\nQUANTITY A\n10\n2 BUNDLES OF 5\nQUANTITY B\n15"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Example Y7-058 · Counters 6 : 9 Y7-058 · Bundles 12 : 18 Y8-034 · Decimals 1.5 : 2.25 Y8-034 · Fractions ¾ : ½ Check simplest ratio Hint Return chip Reset Drag the lasso onto BOTH counter collections (keyboard A/B). Drag a ratio chip to the answer slot (keyboard Enter). Regrab the result ring and drag to the red return tray (or Delete). Use the lasso on both counter groups, then drag the simplest ratio into the answer slot.",
+          "inputs": [
+            "Y7-058"
+          ],
+          "stageInputs": [],
+          "nums": "04 058 2 3 4 6 7 9",
+          "buttons": 6,
+          "vb": 1130,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Example Y7-058 · Counters 6 : 9 Y7-058 · Bundles 12 : 18 Y8-034 · Decimals 1.5 : 2.25 Y8-034 · Fractions ¾ : ½ Check simplest ratio Hint Return chip Reset Drag the lasso onto BOTH counter collections (keyboard A/B). Drag a ratio chip to the answer slot (keyboard Enter). Regrab the result ring and drag to the red return tray (or Delete). Reset. Count both sides and group them by one shared factor.",
+          "inputs": [
+            "Y7-058-extend"
+          ],
+          "stageInputs": [],
+          "nums": "04 058 10 12 15 18 2 3 4 6 7",
+          "buttons": 6,
+          "vb": 1130,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Example Y7-058 · Counters 6 : 9 Y7-058 · Bundles 12 : 18 Y8-034 · Decimals 1.5 : 2.25 Y8-034 · Fractions ¾ : ½ Check simplest ratio Hint Return chip Reset Drag the lasso onto BOTH counter collections (keyboard A/B). Drag a ratio chip to the answer slot (keyboard Enter). Regrab the result ring and drag to the red return tray (or Delete). Reset. Count both sides and group them by one shared factor.",
+          "inputs": [
+            "Y7-058-extend"
+          ],
+          "stageInputs": [],
+          "nums": "04 10 12 15 18 2 3 4 6",
+          "buttons": 6,
+          "vb": 480,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Challenge 1 / 4 · Six blue counters to nine teal counters. Write the smallest equivalent ratio using WHOLE-NUMBER parts. First part Second part Check ratio Hint Next ratio Find the simplest whole-number ratio. Correctly simplified: 0 / 4",
+          "inputs": [
+            "",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "04 058 6 7 9",
+          "buttons": 0,
+          "vb": 1130,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Challenge 1 / 4 · Six blue counters to nine teal counters. Write the smallest equivalent ratio using WHOLE-NUMBER parts. First part Second part Check ratio Hint Next ratio Find the simplest whole-number ratio. Correctly simplified: 0 / 4",
+          "inputs": [
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "04 058 6 7 9",
+          "buttons": 0,
+          "vb": 1130,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Challenge 1 / 4 · Six blue counters to nine teal counters. Write the smallest equivalent ratio using WHOLE-NUMBER parts. First part Second part Check ratio Hint Next ratio Find the simplest whole-number ratio. Correctly simplified: 0 / 4",
+          "inputs": [
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "04 6 9",
+          "buttons": 0,
+          "vb": 480,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1130,
+        "median": 19.75,
+        "p10": 14.65,
+        "count": 13,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11.31,
+        "p10": 11,
+        "count": 13,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11.31,
+        "p10": 11,
+        "count": 13,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

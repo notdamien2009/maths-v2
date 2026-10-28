@@ -1,0 +1,824 @@
+[
+  {
+    "id": "F10-03",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-03-Midpoint-and-Distance-PREMIUM-REVIEW.html",
+    "sourceSha256": "d1ffcb896430a0e49992585825ba82aee7f9bfdfe5427f48a2f718319650e8b9",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            632,
+            555
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.5 1 10 2 3 4 5",
+          "before": "0 0.5 1 10 2 3 4 5 6 7.81"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Lesson preset Y8 · Pythagoras: unknown side Y8 · Pythagoras problem solving Y9 · Equation of a straight line Y9 · Coordinate geometry F15-03 · Pythagoras on a grid What to investigate Show all evidence Distance triangle Midpoint construction Points and segment Adjust a coordinate point A (−4, 2) B (",
+          "after": "Lesson preset Y8 · Pythagoras: unknown side Y8 · Pythagoras problem solving Y9 · Equation of a straight line Y9 · Coordinate geometry F15-03 · Pythagoras on a grid What to investigate Show all evidence Distance triangle Midpoint construction Points and segment Adjust a coordinate point A (−4, 2) B (",
+          "bi": [
+            "Y8-046",
+            "all",
+            "A"
+          ],
+          "ai": [
+            "Y8-046",
+            "all",
+            "A"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 0.5 1 10 2 3 4 5 6 7.81",
+            2
+          ],
+          "narrow": [
+            "0 0.5 1 10 2 3 4 5 6 7.81",
+            2
+          ],
+          "back": [
+            "0 0.5 1 10 2 3 4 5 6 7.81",
+            2
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            632,
+            555
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 5",
+          "before": "0 1 10 2 3 4 5"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Move midpoint M to the exact halfway coordinate between A and B. Drag the orange M ring, or focus it and use arrow keys in half-unit steps. Then press Check. CheckHint",
+          "after": "Move midpoint M to the exact halfway coordinate between A and B. Drag the orange M ring, or focus it and use arrow keys in half-unit steps. Then press Check. CheckHint",
+          "bi": [],
+          "ai": []
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 4 5",
+            1
+          ],
+          "narrow": [
+            "0 1 10 2 3 4 5",
+            1
+          ],
+          "back": [
+            "0 1 10 2 3 4 5",
+            1
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y8-045, Y8-046, Y9-010, Y9-040, F15-03"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y8-045",
+            "a": {
+              "x": 6,
+              "y": 0
+            },
+            "b": {
+              "x": 1,
+              "y": 1
+            }
+          },
+          "errors": [
+            "a must be a point from -5 to 5"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 632,
+            "median": 27.97,
+            "p10": 27.97,
+            "count": 25,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 555,
+            "median": 15.07,
+            "p10": 15.07,
+            "count": 25,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 555,
+            "median": 15.07,
+            "p10": 15.07,
+            "count": 25,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 555,
+          "median": 15.07,
+          "p10": 15.07,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 555,
+          "median": 15.07,
+          "p10": 15.07,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 555,
+          "median": 15.07,
+          "p10": 15.07,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 555,
+          "median": 15.07,
+          "p10": 15.07,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 555,
+          "median": 15.07,
+          "p10": 15.07,
+          "count": 25,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2\n−1\n−1\n1\n1\n2\n2\n3\n3\n4\n4\n5\n5\n0\nx\ny\nA\nB\nA\n(−4, −3)\nB\n(2, 5)\nl\n",
+          "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2\n−1\n−1\n1\n1\n2\n2\n3\n3\n4\n4\n5\n5\n0\nx\ny\nA\nB\nA\n(−4, 2)\nB\n(2, −3)\nl\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "A",
+            "B"
+          ],
+          "text": "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2\n−1\n−1\n1\n1\n2\n2\n3\n3\n4\n4\n5\n5\n0\nx\ny\nA\nB\nA\n(−4, −3)\nB\n(2, 5)\nl\ni\nn\ne\nGIVEN COORDINATE POINTS\nA\n(−4, −3)\nB\n(2, 5)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\nFind it\nVertical change\nFind it\nMATHEMATICAL CONCLUSION\nShow eac"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 10,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "A",
+            "B"
+          ],
+          "text": "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2\n−1\n−1\n1\n1\n2\n2\n3\n3\n4\n4\n5\n5\n0\nx\ny\nA\nB\nA\n(−4, 2)\nB\n(2, −3)\nl\ni\nn\ne\nGIVEN COORDINATE POINTS\nA\n(−4, 2)\nB\n(2, −3)\nTHE RIGHT-TRIANGLE EVIDENCE\nHorizontal change\nFind it\nVertical change\nFind it\nMATHEMATICAL CONCLUSION\nShow eac"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 7.8,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2\n−1\n−1\n1\n1\n2\n2\n3\n3\n4\n4\n5\n5\n0\nx\ny\nA\nB\nA\n(−4, −3)\nB\n(2, 5)\nl\ni\nn\ne\nGIVEN COORDINATE POINTS\nA\n(−4, −3)\nB\n(2, 5)\nTHE RIGHT-"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5",
+            "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5",
+            "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5",
+            "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5",
+            "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5",
+            "F10 · COORDINATE GEOMETRY STUDIO\nNEON · CHALK · PRECISION\n−5"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · COORDINATE GEOMETRY STUDIONEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2",
+          "F10 · COORDINATE GEOMETRY STUDIONEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2",
+          "F10 · COORDINATE GEOMETRY STUDIONEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2",
+          "F10 · COORDINATE GEOMETRY STUDIONEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · COORDINATE GEOMETRY STUDIONEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2\n−1\n−1\n1\n1\n2\n2\n3\n3\n4\n4\n5\n5\n0\nx\ny\nA\nB\nA\n(−4, −3)\nB\n(2, 5)\nl\ni\nn\ne\nGiven coordinate points\nA(−4, −3)\nB(2, 5)\nThe right-tri"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · COORDINATE GEOMETRY STUDIONEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2",
+          "F10 · COORDINATE GEOMETRY STUDIONEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2",
+          "F10 · COORDINATE GEOMETRY STUDIONEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2",
+          "F10 · COORDINATE GEOMETRY STUDIONEON · CHALK · PRECISION\n−5\n−5\n−4\n−4\n−3\n−3\n−2\n−2"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "A (−3, −2)/ || B (1, 1)/",
+          "active": "",
+          "panel": "Lesson preset Y8 · Pythagoras: unknown side Y8 · Pythagoras problem solving Y9 · Equation of a straight line Y9 · Coordinate geometry F15-03 · Pythagoras on a grid What to investigate Show all evidence Distance triangle Midpoint construction Points and segment Adjust a coordinate point A (−3, −2) B (1, 1) x · horizontal − −3 + y · vertical − −2 + Reset to preset Switch A ↔ B Drag the bright point rings onto grid intersections, or focus a ring and use arrow keys. The midpoint is calculated; it is not freely draggable in Explore.",
+          "inputs": [
+            "Y8-045",
+            "all",
+            "A"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 10 2 3 4 5",
+          "buttons": 2,
+          "vb": 632,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "A (−4, 2)/ || B (2, −3)/",
+          "active": "",
+          "panel": "Lesson preset Y8 · Pythagoras: unknown side Y8 · Pythagoras problem solving Y9 · Equation of a straight line Y9 · Coordinate geometry F15-03 · Pythagoras on a grid What to investigate Show all evidence Distance triangle Midpoint construction Points and segment Adjust a coordinate point A (−4, 2) B (2, −3) x · horizontal − −4 + y · vertical − 2 + Reset to preset Switch A ↔ B Drag the bright point rings onto grid intersections, or focus a ring and use arrow keys. The midpoint is calculated; it is not freely draggable in Explore.",
+          "inputs": [
+            "Y8-046",
+            "all",
+            "A"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 10 2 3 4 5 6 7.81",
+          "buttons": 2,
+          "vb": 632,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "A (−4, 2)/ || B (2, −3)/",
+          "active": "",
+          "panel": "Lesson preset Y8 · Pythagoras: unknown side Y8 · Pythagoras problem solving Y9 · Equation of a straight line Y9 · Coordinate geometry F15-03 · Pythagoras on a grid What to investigate Show all evidence Distance triangle Midpoint construction Points and segment Adjust a coordinate point A (−4, 2) B (2, −3) x · horizontal − −4 + y · vertical − 2 + Reset to preset Switch A ↔ B Drag the bright point rings onto grid intersections, or focus a ring and use arrow keys. The midpoint is calculated; it is not freely draggable in Explore.",
+          "inputs": [
+            "Y8-046",
+            "all",
+            "A"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 10 2 3 4 5 6 7.81",
+          "buttons": 2,
+          "vb": 555,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "M (0, 0)/",
+          "active": "",
+          "panel": "Move midpoint M to the exact halfway coordinate between A and B. Drag the orange M ring, or focus it and use arrow keys in half-unit steps. Then press Check. CheckHint",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5",
+          "buttons": 1,
+          "vb": 632,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "M (0.5, 0)/",
+          "active": "",
+          "panel": "Move midpoint M to the exact halfway coordinate between A and B. Drag the orange M ring, or focus it and use arrow keys in half-unit steps. Then press Check. CheckHint",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5",
+          "buttons": 1,
+          "vb": 632,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "M (0.5, 0)/",
+          "active": "",
+          "panel": "Move midpoint M to the exact halfway coordinate between A and B. Drag the orange M ring, or focus it and use arrow keys in half-unit steps. Then press Check. CheckHint",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5",
+          "buttons": 1,
+          "vb": 555,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 632,
+        "median": 27.97,
+        "p10": 27.97,
+        "count": 25,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 555,
+        "median": 15.07,
+        "p10": 15.07,
+        "count": 25,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 555,
+        "median": 15.07,
+        "p10": 15.07,
+        "count": 25,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

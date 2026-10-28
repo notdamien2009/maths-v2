@@ -1,0 +1,381 @@
+[
+  {
+    "id": "F14-01",
+    "path": "F14/F14-01-reflection-PREMIUM.html",
+    "sha256": "9a4f809cebc135c4cf734ada268d67ae589b1e487054321da550d9c40c9552c0",
+    "draws": {
+      "plot": [
+        "stage",
+        "st",
+        "o"
+      ],
+      "createScene": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Original polygon 3\u201312 vertices, coordinates \u22126 to 6. Mirror kind and k must match the native grid.",
+    "testedQuestions": 6,
+    "browserChecks": 167
+  },
+  {
+    "id": "F14-02",
+    "path": "F14/F14-02-rotation-PREMIUM.html",
+    "sha256": "6caaacac02f42233645a3301a62937a8c086a2d0941e7d0e86786307db012267",
+    "draws": {
+      "tiles": [
+        "stage",
+        "arr"
+      ],
+      "plot": [
+        "stage",
+        "st",
+        "o"
+      ],
+      "scene": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Original polygon 3\u201312 vertices, rotation within \u00b1360 degrees; update centre and angle.",
+    "testedQuestions": 6,
+    "browserChecks": 171
+  },
+  {
+    "id": "F14-03",
+    "path": "F14/F14-03-translation-PREMIUM.html",
+    "sha256": "98a4fee6eacdc0c983252df183d14f1c6a4b22b4e7b1177cfa3b2bf7529cb69a",
+    "draws": {
+      "tiles": [
+        "stage",
+        "arr"
+      ],
+      "drawPlot": [
+        "stage",
+        "st",
+        "o"
+      ],
+      "scene": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Original polygon 3\u201312 vertices. Use a two-entry vector and keep the image within the grid.",
+    "testedQuestions": 6,
+    "browserChecks": 169
+  },
+  {
+    "id": "F14-04",
+    "path": "F14/F14-04-enlargement-PREMIUM.html",
+    "sha256": "53f4774ac2e6c2d6100d41cff4e6fd22679bb8b6dd6b263ee046dc237be9c222",
+    "draws": {
+      "tiles": [
+        "stage",
+        "a"
+      ],
+      "drawPlot": [
+        "stage",
+        "st",
+        "o"
+      ],
+      "scene": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Positive enlargement factor up to 4; verify the resulting image fits the plot.",
+    "testedQuestions": 6,
+    "browserChecks": 171
+  },
+  {
+    "id": "F14-05",
+    "path": "F14/F14-05-combined-transformations-PREMIUM.html",
+    "sha256": "6fd215c3054e8c7aaac80cf3d2e0a40fa3af4b93189196cdf795f71c7555fe04",
+    "draws": {
+      "tiles": [
+        "stage",
+        "st",
+        "visible"
+      ],
+      "dock": [
+        "stage",
+        "pose",
+        "msg"
+      ],
+      "draw": [
+        "stage",
+        "st",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Use native rotate/reflect/translate operations and update intermediate and final offsets together.",
+    "testedQuestions": 6,
+    "browserChecks": 166
+  },
+  {
+    "id": "F14-06",
+    "path": "F14/F14-06-describe-transformation-PREMIUM.html",
+    "sha256": "03bc1ad438f706735e839473a843bd164a3176cb76e996f62046422ef3dd3328",
+    "draws": {
+      "buildStage": [
+        "stage",
+        "st",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "cp.p": {
+        "kind": "factory",
+        "factory": "clone",
+        "argCount": 1
+      },
+      "st": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Use the native transform kind and matching vector/angle/mirror parameters.",
+    "testedQuestions": 6,
+    "browserChecks": 168
+  },
+  {
+    "id": "F14-07",
+    "path": "F14/F14-07-line-symmetry-PREMIUM.html",
+    "sha256": "55fd46bafea5f8db41674da321f9f34285e1d1d58efd7d053033a7f4fea737f2",
+    "draws": {
+      "build": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "stepRender.st": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Use a compatible native shape preset; axes come from that shape, not its displayed name.",
+    "testedQuestions": 6,
+    "browserChecks": 166
+  },
+  {
+    "id": "F14-08",
+    "path": "F14/F14-08-rotational-symmetry-PREMIUM.html",
+    "sha256": "3159d2993cf9866fd1ee37326d914c451789724ce15129172c9e0b1e07621468",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "stepRender.st": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Rotational order follows the actual native polygon; change geometry and order together.",
+    "testedQuestions": 6,
+    "browserChecks": 167
+  },
+  {
+    "id": "F14-09",
+    "path": "F14/F14-09-tessellation-maker-PREMIUM.html",
+    "sha256": "9493e360218b9641bb33b7f9c72592265e9a61ee2f9c0f2df69d1120975fd500",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Use compatible native tessellation presets; maintain integer columns/rows and valid placement indices.",
+    "testedQuestions": 6,
+    "browserChecks": 166
+  },
+  {
+    "id": "F14-10",
+    "path": "F14/F14-10-congruence-tester-PREMIUM.html",
+    "sha256": "464448c77708c26df009ec45e340bd22a9429780c55974e73a4d74b447bf92f0",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "watch.st": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Use native congruence presets and consistent side/angle evidence; display text alone does not change congruence.",
+    "testedQuestions": 6,
+    "browserChecks": 167
+  },
+  {
+    "id": "F14-11",
+    "path": "F14/F14-11-similar-shapes-PREMIUM.html",
+    "sha256": "45dfa5d9566855e85e44f9e1b53ec95a961485211897e5892a5ea814cd885f5c",
+    "draws": {
+      "draw": [
+        "stage",
+        "st",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "st": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Similarity scale factor 0.25\u20133 in records; pupil slider uses 0.5\u20133. Area ratio is k\u00b2.",
+    "testedQuestions": 6,
+    "browserChecks": 170
+  },
+  {
+    "id": "F14-12",
+    "path": "F14/F14-12-vector-builder-PREMIUM.html",
+    "sha256": "78252a3390a72895a5a251f92dbcb209c3aa314a85465b95e068bb5907faff22",
+    "draws": {
+      "draw": [
+        "stage",
+        "s",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "watch.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Use two-entry finite vectors, operation add/subtract, and preserve consistent start/displacement.",
+    "testedQuestions": 6,
+    "browserChecks": 166
+  },
+  {
+    "id": "F14-13",
+    "path": "F14/F14-13-pattern-makers-PREMIUM.html",
+    "sha256": "7cfec71a9d24c6d122965a716d293e3e5c35c56793c6ded246a849ea3c6845a9",
+    "draws": {
+      "plot": [
+        "stage",
+        "s",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeSteps": 6,
+    "challengeReady": true,
+    "limit": "Frieze amounts 1\u20135 (native display clamp). Explore separation 1.8\u20132.7; rotational preset retains its native fixed-angle structure.",
+    "testedQuestions": 6,
+    "browserChecks": 171
+  }
+]

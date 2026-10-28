@@ -1,0 +1,944 @@
+{
+ "note": "Lesson records for each F10 engine (the first two Challenge rounds used in QA). privateAnswer is read by the F0-12 controller and is never drawn.",
+ "examples": {
+  "F10-01": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-038"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "How many units across is it from B to A?",
+    "privateAnswer": 7,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "points": [
+        {
+         "id": "A",
+         "x": -3,
+         "y": 4
+        },
+        {
+         "id": "B",
+         "x": 5,
+         "y": 4
+        },
+        {
+         "id": "C",
+         "x": -3,
+         "y": -2
+        },
+        {
+         "id": "D",
+         "x": 2,
+         "y": -3
+        }
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "How many units across is it from A to B?",
+    "privateAnswer": 8,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-02": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-052"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Translate B three right and two down. Write the coordinates of B′ as x, y.",
+    "privateAnswer": "2, 0",
+    "answerType": "coordinates",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-052",
+       "dx": 2,
+       "dy": 3
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Translate C two right and three up. Write the coordinates of C′ as x, y.",
+    "privateAnswer": "3, 4",
+    "answerType": "coordinates",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-03": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-045",
+       "a": {
+        "x": -4,
+        "y": -3
+       },
+       "b": {
+        "x": 2,
+        "y": 5
+       }
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Find the length of AB.",
+    "privateAnswer": 10,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-046"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Find the length of AB to 1 decimal place.",
+    "privateAnswer": 7.8,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-04": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-022"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Use the rule y = 2x + 1. What is y when x = 4?",
+    "privateAnswer": 9,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-039"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Use the rule y = x + 2. What is y when x = 6?",
+    "privateAnswer": 8,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-05": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-060"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "F6-08 direct proportion: tickets and cost. What do 9 tickets cost in £?",
+    "privateAnswer": 18,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-035"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "F6-08 direct proportion: packs and stickers. How many stickers are in 8 packs?",
+    "privateAnswer": 24,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-06": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-022"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Find the gradient of the line through A and B.",
+    "privateAnswer": 1.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-023",
+       "B": [
+        2,
+        -3
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Find the gradient of the line through A and B.",
+    "privateAnswer": -1.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-07": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-025"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Line B is perpendicular to line A. What is the gradient of line B?",
+    "privateAnswer": -0.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-010"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Line B is perpendicular to line A. What is the gradient of line B?",
+    "privateAnswer": 0.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-08": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-029"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Where do the two lines meet? Write the point as x, y.",
+    "privateAnswer": "2, 3",
+    "answerType": "coordinates",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-029",
+       "A": [
+        0,
+        2,
+        1
+       ],
+       "B": [
+        0,
+        -1,
+        4
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Where do the two lines meet? Write the point as x, y.",
+    "privateAnswer": "1, 3",
+    "answerType": "coordinates",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-09": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-026",
+       "points": [
+        [
+         0,
+         0
+        ],
+        [
+         2,
+         5
+        ],
+        [
+         4,
+         5
+        ],
+        [
+         6,
+         10
+        ],
+        [
+         8,
+         10
+        ]
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "What is the speed during the first 2 hours, in km/h?",
+    "privateAnswer": 2.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-072",
+       "points": [
+        [
+         0,
+         7
+        ],
+        [
+         2,
+         12
+        ],
+        [
+         4,
+         9
+        ],
+        [
+         6,
+         16
+        ],
+        [
+         8,
+         13
+        ]
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "What is the rate of temperature change from 4 to 6 hours, in °C per hour?",
+    "privateAnswer": 3.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-10": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-026",
+       "title": "Morning walk",
+       "pts": [
+        [
+         0,
+         0
+        ],
+        [
+         2,
+         5
+        ],
+        [
+         4,
+         5
+        ],
+        [
+         6,
+         10
+        ],
+        [
+         8,
+         10
+        ]
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "What is the speed during the first 2 hours, in km/h?",
+    "privateAnswer": 2.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-016",
+       "title": "Delivery van"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "What is the total distance travelled, in km?",
+    "privateAnswer": 20,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-11": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-027",
+       "title": "Bus between stops"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "How far does the bus travel in the 8 seconds, in metres?",
+    "privateAnswer": 24,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-017",
+       "title": "Reversing car"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "What is the net displacement after 8 seconds, in metres?",
+    "privateAnswer": 13,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-12": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-030"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Write the turning point of the curve as x, y.",
+    "privateAnswer": "1, -4",
+    "answerType": "coordinates",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-031"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Give the roots of the curve in order, smaller first, as a, b.",
+    "privateAnswer": "-3, 1",
+    "answerType": "ordered",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-13": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-037"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "y = 12 ÷ x. Use the curve rule to find y when x = 8.",
+    "privateAnswer": 1.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-014"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "y = 2ˣ. What is y when x = 6?",
+    "privateAnswer": 64,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-14": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-011"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Write the turning point of the transformed curve as x, y.",
+    "privateAnswer": "2, -3",
+    "answerType": "coordinates",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "SHIFT-RIGHT"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Use the transformed curve y = (x − 3)². What is y when x = −1?",
+    "privateAnswer": 16,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-15": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-017",
+       "point": [
+        4,
+        1
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Does the test point satisfy the inequality? Answer yes or no.",
+    "privateAnswer": "yes",
+    "answerType": "text",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-017-INCLUSIVE",
+       "point": [
+        2,
+        -3
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Does the test point satisfy the inequality? Answer yes or no.",
+    "privateAnswer": "yes",
+    "answerType": "text",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-16": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-040"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Read the radius from the grid. Find the area of the circle to 1 decimal place.",
+    "privateAnswer": 28.3,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-040-DIAMETER"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Read the radius from the grid. What is the diameter of the circle?",
+    "privateAnswer": 8,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-17": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-023"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Which graph matches y = 2x + 1? Choose A, B or C.",
+    "privateAnswer": "A",
+    "answerType": "choice",
+    "choices": [
+     "A",
+     "B",
+     "C"
+    ],
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-032"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Which graph matches y = 5 − x²? Choose A, B or C.",
+    "privateAnswer": "C",
+    "answerType": "choice",
+    "choices": [
+     "A",
+     "B",
+     "C"
+    ],
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-18": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-015",
+       "readX": 6.5
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Read the graph. What is y when x = 6.5?",
+    "privateAnswer": 3.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-015-JOURNEY",
+       "readX": 0.5
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Read the graph. What is y when x = 0.5?",
+    "privateAnswer": 1.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-19": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "GCSE-SINE",
+       "angle": 60
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Use the graph and the unit circle. Give sin 60° to 2 decimal places.",
+    "privateAnswer": 0.87,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "GCSE-TANGENT",
+       "angle": 90
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "What is tan 90°? Give a number or write undefined.",
+    "privateAnswer": "undefined",
+    "answerType": "text",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F10-20": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "GCSE-QUADRATIC"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Use the tangent. What is the gradient of the curve at x = 3?",
+    "privateAnswer": 1.5,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "GCSE-TRAPEZIA-2",
+       "a": 1,
+       "b": 3
+      },
+      "phase": 9
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Estimate the area under the curve from 1 to 3 using the two trapezia.",
+    "privateAnswer": 4.25,
+    "answerType": "numeric",
+    "hint": "Use the grid one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ]
+ }
+}

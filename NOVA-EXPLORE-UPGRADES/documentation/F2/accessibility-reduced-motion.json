@@ -1,0 +1,1798 @@
+[
+  {
+    "id": "F2-01",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "lesson",
+        "options": [
+          {
+            "value": "lesson",
+            "label": "3040.507 (placeholder zeros)"
+          },
+          {
+            "value": "x10",
+            "label": "23.6 then × 10"
+          },
+          {
+            "value": "x100",
+            "label": "4.7 then × 100"
+          },
+          {
+            "value": "d10",
+            "label": "508 then ÷ 10"
+          },
+          {
+            "value": "d100",
+            "label": "61.5 then ÷ 100"
+          },
+          {
+            "value": "x1000",
+            "label": "0.042 then × 1000"
+          },
+          {
+            "value": "blank",
+            "label": "Empty chart (build your own)"
+          }
+        ]
+      },
+      {
+        "label": "× 1000",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "× 100",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "× 10",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 10",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 100",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 1000",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Clear chart",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·01 Place-value chart slider\":\n  - heading \"F2·01 Place-value chart slider\" [level=2]\n  - group: \"Spec card ★ GCSE: Extension: thousandths and × / ÷ 1000\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-02, F2-03, F2-08, F2-09, F1-10, F0-04.\n  - heading \"Live demo · F2-01\" [level=3]\n  - tablist \"Place-value chart slider modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Place value · Divide by 100 step 6/6\n  - img \"Place value chart showing 0.615.\": 0.615 Thousands Hundreds Tens Ones 0 worth 0 Tenths 6 worth 0.6 Hundredths 1 worth 0.01 Thousandths 5 worth 0.005 digit tray\n  - text: Th = Thousands H = Hundreds T = Tens O = Ones t = Tenths h = Hundredths th = Thousandths start\n  - math \"61.5\"\n  - text: operation\n  - math \"÷ 100\"\n  - text: result\n  - math \"0.615\"\n  - text: Divide by 100\n  - img \"Divide by 100 (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch 61.5 divided by 100: two cards to the right. A zero drops into the ones card: 0.615.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Divide by 100\n    - slider \"Scrub through steps\": \"5\""
+  },
+  {
+    "id": "F2-02",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Start",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "whole",
+        "options": [
+          {
+            "value": "whole",
+            "label": "243"
+          },
+          {
+            "value": "dec",
+            "label": "1.36"
+          },
+          {
+            "value": "over",
+            "label": "1.36 + 0.48 (14 hundredths)"
+          },
+          {
+            "value": "borrow",
+            "label": "3.2 (break a one to subtract)"
+          },
+          {
+            "value": "nine",
+            "label": "99 (add one more!)"
+          },
+          {
+            "value": "empty",
+            "label": "Empty grid"
+          }
+        ]
+      },
+      {
+        "label": "Column",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "0",
+        "options": [
+          {
+            "value": "2",
+            "label": "Hundreds"
+          },
+          {
+            "value": "1",
+            "label": "Tens"
+          },
+          {
+            "value": "0",
+            "label": "Ones"
+          },
+          {
+            "value": "-1",
+            "label": "Tenths"
+          },
+          {
+            "value": "-2",
+            "label": "Hundredths"
+          }
+        ]
+      },
+      {
+        "label": "+ counter",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "− counter",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Exchange 10 → 1",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Break 1 → 10",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·02 Counters on place-value grid\":\n  - heading \"F2·02 Counters on place-value grid\" [level=2]\n  - group: \"Spec card ★ GCSE: Foundation support for column methods (F2-06)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-01, F2-03, F2-06, F0-04.\n  - heading \"Live demo · F2-02\" [level=3]\n  - tablist \"Counters on place-value grid modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Counters · Break one step 5/5\n  - group \"Place value counters showing 3.2.\":\n    - text: Hundreds 100 Tens 10 Ones 1 2 Tenths 0.1 12\n    - button \"Exchange 10 tenths for 1 one\": Exchange!\n    - text: Hundredths 0.01\n  - text: H = Hundreds T = Tens O = Ones t = Tenths h = Hundredths O\n  - math \"2\"\n  - text: t\n  - math \"12\"\n  - text: value\n  - math \"3.2\"\n  - text: Break one\n  - img \"Break one (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch To take 1.5 from 3.2, break one of the ones into 10 tenths. They fan out: 2 ones and 12 tenths, still 3.2.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Break one\n    - slider \"Scrub through steps\": \"4\""
+  },
+  {
+    "id": "F2-03",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Start",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "n235",
+        "options": [
+          {
+            "value": "n235",
+            "label": "235"
+          },
+          {
+            "value": "u12",
+            "label": "12 units (make a ten)"
+          },
+          {
+            "value": "r13",
+            "label": "13 rods (make a hundred)"
+          },
+          {
+            "value": "sub",
+            "label": "204 (break to subtract)"
+          },
+          {
+            "value": "dec",
+            "label": "Decimal 1.36 (F2-04: flat = 1)"
+          },
+          {
+            "value": "empty",
+            "label": "Empty mat"
+          }
+        ]
+      },
+      {
+        "label": "Block",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "u",
+        "options": [
+          {
+            "value": "u",
+            "label": "units"
+          },
+          {
+            "value": "r",
+            "label": "rods"
+          },
+          {
+            "value": "f",
+            "label": "flats"
+          }
+        ]
+      },
+      {
+        "label": "+ block",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "− block",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Exchange 10 → 1",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Break 1 → 10",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Scale: flat = 100",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Scale: flat = 1",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·03 Base-ten blocks\":\n  - heading \"F2·03 Base-ten blocks\" [level=2]\n  - group: \"Spec card ★ GCSE: Foundation: decimals with flat = 1 (F2-04)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-01, F2-02, F2-04, F0-04.\n  - heading \"Live demo · F2-03\" [level=3]\n  - tablist \"Base-ten blocks modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Base-ten blocks · Decimal blocks step 5/5\n  - img \"Base-ten blocks showing 1.36.\": Ones 1 flat = 1 Tenths 3 rod = 0.1 Hundredths 6 unit = 0.01\n  - text: flats\n  - math \"1\"\n  - text: rods\n  - math \"3\"\n  - text: units\n  - math \"6\"\n  - text: value\n  - math \"1.36\"\n  - text: Decimal blocks\n  - img \"Decimal blocks (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Change what the flat is worth. If a flat is 1, a rod is 0.1 and a unit is 0.01. This shows 1.36.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Decimal blocks\n    - slider \"Scrub through steps\": \"4\""
+  },
+  {
+    "id": "F2-05",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Start",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "n243",
+        "options": [
+          {
+            "value": "n243",
+            "label": "Abacus 243"
+          },
+          {
+            "value": "n9",
+            "label": "Abacus 199 (add one!)"
+          },
+          {
+            "value": "dec",
+            "label": "Abacus 1.36"
+          },
+          {
+            "value": "g345",
+            "label": "Gattegno 345"
+          },
+          {
+            "value": "g3040",
+            "label": "Gattegno 3040.5 (zeros = no tile)"
+          },
+          {
+            "value": "gdec",
+            "label": "Gattegno 0.63 then × 10"
+          },
+          {
+            "value": "empty",
+            "label": "Empty (build your own)"
+          }
+        ]
+      },
+      {
+        "label": "Abacus",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Gattegno",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Exchange ones",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Exchange tenths",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Exchange hundredths",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "× 10",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 10",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·05 Abacus / Gattegno chart\":\n  - heading \"F2·05 Abacus / Gattegno chart\" [level=2]\n  - group: \"Spec card ★ GCSE: Links to standard form (F2-09) via rows of powers of ten\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-01, F2-02, F2-03, F2-08, F0-04.\n  - heading \"Live demo · F2-05\" [level=3]\n  - tablist \"Abacus / Gattegno chart modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Gattegno chart · × 10 moves up a row step 5/5\n  - 'img \"Gattegno chart: 6.3.\"': Thousands 1000 2000 3000 4000 5000 6000 7000 8000 9000 Hundreds 100 200 300 400 500 600 700 800 900 Tens 10 20 30 40 50 60 70 80 90 Ones 1 2 3 4 5 6 7 8 9 Tenths 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 Hundredths 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 6 + 0.3 = 6.3\n  - text: Th = Thousands H = Hundreds T = Tens O = Ones t = Tenths h = Hundredths number\n  - math \"6.3\"\n  - text: × 10 moves up a row\n  - img \"× 10 moves up a row (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch 0.6 + 0.03 is 0.63. Times 10: every tile glides up one row, giving 6 + 0.3 = 6.3.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · × 10 moves up a row\n    - slider \"Scrub through steps\": \"4\""
+  },
+  {
+    "id": "F2-06",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "add1",
+        "options": [
+          {
+            "value": "add1",
+            "label": "456 + 278 (two carries)"
+          },
+          {
+            "value": "add2",
+            "label": "3.6 + 2.75 (align, placeholder 0)"
+          },
+          {
+            "value": "add3",
+            "label": "999 + 1 (carry chain)"
+          },
+          {
+            "value": "sub1",
+            "label": "742 − 358 (exchanges)"
+          },
+          {
+            "value": "sub2",
+            "label": "5.2 − 1.75 (align, exchange)"
+          },
+          {
+            "value": "sub3",
+            "label": "4000 − 1 (exchange across zeros)"
+          },
+          {
+            "value": "dec",
+            "label": "12.5 + 7.86"
+          }
+        ]
+      },
+      {
+        "label": "Top number",
+        "tag": "input",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "456"
+      },
+      {
+        "label": "Operation",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "+",
+        "options": [
+          {
+            "value": "+",
+            "label": "+"
+          },
+          {
+            "value": "-",
+            "label": "−"
+          }
+        ]
+      },
+      {
+        "label": "Bottom number",
+        "tag": "input",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "278"
+      },
+      {
+        "label": "Play",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Next column",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Your turn",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Check my answer",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·06 Column add and subtract animator\":\n  - heading \"F2·06 Column add and subtract animator\" [level=2]\n  - group: \"Spec card ★ GCSE: Foundation support\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-02, F2-03, F2-01, F0-04.\n  - heading \"Live demo · F2-06\" [level=3]\n  - tablist \"Column add and subtract animator modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: \"Column method · Decimals: align and exchange step 5/5\"\n  - img \"5.2 − 1.75 in columns.\": O t h − 5 4 1 2 1 1 7 0 1 5 3 5 4\n  - text: calculation\n  - math \"5.2 − 1.75\"\n  - text: answer\n  - math \"3.45\"\n  - text: \"Decimals: align and exchange\"\n  - 'img \"Decimals: align and exchange (Nova the cat, welcome)\"':\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, look here\"\n  - text: \"Sir Bob Maximus · watch 5.2 − 1.75: line up the decimal points and drop in a placeholder 0, so 5.20. Then exchange: a tenth becomes 10 hundredths, a one becomes 10 tenths. Answer 3.45.\"\n  - img \"Nova the cat, pointing\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: \"Step 5 of 5 · Decimals: align and exchange\"\n    - slider \"Scrub through steps\": \"4\""
+  },
+  {
+    "id": "F2-07",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "g1",
+        "options": [
+          {
+            "value": "g1",
+            "label": "Grid 23 × 14"
+          },
+          {
+            "value": "g2",
+            "label": "Grid 135 × 4"
+          },
+          {
+            "value": "g3",
+            "label": "Grid 2.3 × 1.4"
+          },
+          {
+            "value": "g4",
+            "label": "Grid 46 × 0.3"
+          },
+          {
+            "value": "d1",
+            "label": "Short division 756 ÷ 3"
+          },
+          {
+            "value": "d2",
+            "label": "Short division 832 ÷ 4 (zero in quotient)"
+          },
+          {
+            "value": "d3",
+            "label": "Short division 7 ÷ 4 (decimal remainder)"
+          },
+          {
+            "value": "d4",
+            "label": "Short division 9.36 ÷ 3"
+          }
+        ]
+      },
+      {
+        "label": "Layout",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "grid",
+        "options": [
+          {
+            "value": "grid",
+            "label": "Grid ×"
+          },
+          {
+            "value": "div",
+            "label": "Short ÷"
+          }
+        ]
+      },
+      {
+        "label": "First number",
+        "tag": "input",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "23"
+      },
+      {
+        "label": "Second number",
+        "tag": "input",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "14"
+      },
+      {
+        "label": "Play",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Next step",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Your turn (÷)",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Check my answer",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·07 Multiplication and division layouts\":\n  - heading \"F2·07 Multiplication and division layouts\" [level=2]\n  - group: \"Spec card ★ GCSE: Foundation: decimal multiplication by estimation\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-06, F2-01, F2-02, F0-04.\n  - heading \"Live demo · F2-07\" [level=3]\n  - tablist \"Multiplication and division layouts modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Short division · Decimal remainder step 5/5\n  - img \"7 divided by 4.\": O t h 4 7 1 0 3 7 0 2 5\n  - text: calculation\n  - math \"7 ÷ 4\"\n  - text: answer\n  - math \"1.75\"\n  - text: Decimal remainder\n  - img \"Decimal remainder (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch 7 ÷ 4 = 1 remainder 3. Put in a decimal point and placeholder zeros: 30 tenths ÷ 4 = 7 r 2, 20 hundredths ÷ 4 = 5. 7 ÷ 4 = 1.75.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Decimal remainder\n    - slider \"Scrub through steps\": \"4\""
+  },
+  {
+    "id": "F2-08",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Expand the number",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "0",
+        "max": "100",
+        "step": null
+      },
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "n1",
+        "options": [
+          {
+            "value": "n1",
+            "label": "3040.507"
+          },
+          {
+            "value": "n2",
+            "label": "5062.08"
+          },
+          {
+            "value": "n3",
+            "label": "724"
+          },
+          {
+            "value": "n4",
+            "label": "0.306"
+          },
+          {
+            "value": "n5",
+            "label": "9000.009"
+          },
+          {
+            "value": "n6",
+            "label": "18.25"
+          }
+        ]
+      },
+      {
+        "label": "Number",
+        "tag": "input",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "3040.507"
+      },
+      {
+        "label": "Form",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "add",
+        "options": [
+          {
+            "value": "add",
+            "label": "parts added"
+          },
+          {
+            "value": "mult",
+            "label": "digit × place"
+          },
+          {
+            "value": "pow",
+            "label": "powers of ten"
+          },
+          {
+            "value": "words",
+            "label": "words"
+          }
+        ]
+      },
+      {
+        "label": "Expand",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Compress",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Build from parts",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·08 Number expander\":\n  - heading \"F2·08 Number expander\" [level=2]\n  - group: \"Spec card ★ GCSE: Powers-of-ten form links to F2-09 standard form\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-01, F2-05, F2-09, F0-05.\n  - heading \"Live demo · F2-08\" [level=3]\n  - tablist \"Number expander modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Number expander · In words step 6/6\n  - img \"3040.507 expanded as 3000 + 40 + 0.5 + 0.007.\": 3000 40 0.5 0.007 + + + 3 thousands, 4 tens, 5 tenths, 7 thousandths\n  - text: Th = Thousands H = Hundreds T = Tens O = Ones t = Tenths h = Hundredths th = Thousandths number\n  - math \"3040.507\"\n  - text: expanded\n  - math \"3000 plus 40 plus 0.5 plus 0.007\": 3000 + 40 + 0.5 + 0.007\n  - text: In words\n  - img \"In words (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Say it in places: 3 thousands, 4 tens, 5 tenths, 7 thousandths.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · In words\n    - slider \"Scrub through steps\": \"5\""
+  },
+  {
+    "id": "F2-09",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Power of ten",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "-6",
+        "max": "6",
+        "step": null
+      },
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "big",
+        "options": [
+          {
+            "value": "big",
+            "label": "3.07 × 10⁴ = 30 700"
+          },
+          {
+            "value": "conv",
+            "label": "Convert 45 000 (point hops)"
+          },
+          {
+            "value": "small",
+            "label": "Convert 0.00062 (point hops right)"
+          },
+          {
+            "value": "earth",
+            "label": "Earth–Sun ≈ 1.5 × 10⁸ km (scaled to 10⁶ strip: 1.5 × 10⁶)"
+          },
+          {
+            "value": "cell",
+            "label": "Cell ≈ 2 × 10⁻⁶ m"
+          },
+          {
+            "value": "cmp",
+            "label": "Compare 3.2 × 10⁵ and 9.1 × 10⁴"
+          }
+        ]
+      },
+      {
+        "label": "Number from 1 to under 10",
+        "tag": "input",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "3.07"
+      },
+      {
+        "label": "× 10",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "÷ 10",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Convert (hops)",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Compare off",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·09 Standard form scaler\":\n  - heading \"F2·09 Standard form scaler\" [level=2]\n  - group: \"Spec card ★ GCSE: Higher: calculations in standard form (extension)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-01, F2-08, F1-10, F0-04.\n  - heading \"Live demo · F2-09\" [level=3]\n  - tablist \"Standard form scaler modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Standard form · Compare step 5/5\n  - 'group \"Standard form: 3.2 times 10 to the 5.\"':\n    - text: 106 105 104 103 102 101 100 10−1 10−2 10−3 10−4 10−5 10−6 0 0 0 0 2 3 3.2 × 105 = 320 000 10−6 10−5 10−4 10−3 10−2 10−1 100 101 102 103 104 105 106 power of ten B\n    - slider \"Power of ten\": A\n  - text: A\n  - math \"320 000\"\n  - text: B\n  - math \"91 000\"\n  - text: bigger\n  - math \"A\"\n  - text: Compare\n  - img \"Compare (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Compare 3.2 × 10⁵ (A) and 9.1 × 10⁴ (B): check the powers first. 10⁵ is bigger, so A is bigger, even though 9.1 > 3.2.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Compare\n    - slider \"Scrub through steps\": \"4\""
+  },
+  {
+    "id": "F2-10",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Side length",
+        "tag": "g",
+        "role": "slider",
+        "type": null,
+        "min": "1",
+        "max": "10",
+        "step": null
+      },
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "sq",
+        "options": [
+          {
+            "value": "sq",
+            "label": "Square 7² (drag the corner)"
+          },
+          {
+            "value": "root",
+            "label": "Square root: find √49"
+          },
+          {
+            "value": "cube",
+            "label": "Cube 3³"
+          },
+          {
+            "value": "croot",
+            "label": "Cube root: find ∛64"
+          },
+          {
+            "value": "chain",
+            "label": "Index notation: build 2⁴"
+          },
+          {
+            "value": "mul",
+            "label": "Law: 2³ × 2²"
+          },
+          {
+            "value": "div",
+            "label": "Law: 3⁵ ÷ 3²"
+          },
+          {
+            "value": "frac",
+            "label": "Fractional index 8^(1/3)"
+          }
+        ]
+      },
+      {
+        "label": "Base",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "2",
+        "options": [
+          {
+            "value": "2",
+            "label": "base 2"
+          },
+          {
+            "value": "3",
+            "label": "base 3"
+          },
+          {
+            "value": "4",
+            "label": "base 4"
+          },
+          {
+            "value": "5",
+            "label": "base 5"
+          },
+          {
+            "value": "10",
+            "label": "base 10"
+          }
+        ]
+      },
+      {
+        "label": "Combine",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·10 Powers and roots builder\":\n  - heading \"F2·10 Powers and roots builder\" [level=2]\n  - group: \"Spec card ★ GCSE: Higher: fractional indices (Y9-003)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-08, F2-09, F0-16, F0-04.\n  - heading \"Live demo · F2-10\" [level=3]\n  - tablist \"Powers and roots builder modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Powers and roots · Fractional index step 7/7\n  - group \"Cube 2 by 2.\":\n    - text: 2 ∛8 = 2 8 1 3 = 2 edge = 2 2³ = 8\n    - slider \"Side length\"\n  - text: cube root of 8\n  - math \"2\"\n  - text: Fractional index\n  - img \"Fractional index (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch 8 to the power one third means the cube root of 8: the edge of a cube with volume 8. The edge is 2.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Fractional index\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F2-11",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "p1",
+        "options": [
+          {
+            "value": "p1",
+            "label": "3 + 4 × 2"
+          },
+          {
+            "value": "p2",
+            "label": "(3 + 4) × 2"
+          },
+          {
+            "value": "p3",
+            "label": "20 − 6 ÷ 2 + 1"
+          },
+          {
+            "value": "p4",
+            "label": "2 + 3² × 4"
+          },
+          {
+            "value": "p5",
+            "label": "12 ÷ 3 × 2 (left to right)"
+          },
+          {
+            "value": "p6",
+            "label": "(8 − 2)² ÷ (5 − 2)"
+          },
+          {
+            "value": "p7",
+            "label": "10 − 2 × (1 + 3) + 6"
+          }
+        ]
+      },
+      {
+        "label": "Expression",
+        "tag": "input",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "3+4×2"
+      },
+      {
+        "label": "Next step",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Auto",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Strict order: on",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·11 BIDMAS collapsing tree\":\n  - heading \"F2·11 BIDMAS collapsing tree\" [level=2]\n  - group: \"Spec card ★ GCSE: Higher: reciprocals and roots in priority (extension)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-10, F0-05, F0-13, F0-11.\n  - heading \"Live demo · F2-11\" [level=3]\n  - tablist \"BIDMAS collapsing tree modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: BIDMAS tree · Put it together step 6/6\n  - img \"Expression tree.\": 8 8\n  - text: next\n  - math \"done\": d o n e\n  - text: value\n  - math \"8\"\n  - text: Put it together\n  - img \"Put it together (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch 10 − 2 × (1 + 3) + 6: brackets 4, then 2 × 4 = 8, then left to right: 10 − 8 = 2, 2 + 6 = 8.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Put it together\n    - slider \"Scrub through steps\": \"5\""
+  },
+  {
+    "id": "F2-12",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "add",
+        "options": [
+          {
+            "value": "add",
+            "label": "4 + (−6): cross zero"
+          },
+          {
+            "value": "zp",
+            "label": "Zero pairs: 3 + (−3)"
+          },
+          {
+            "value": "sub",
+            "label": "2 − 5: add zero pairs, then take away"
+          },
+          {
+            "value": "nn",
+            "label": "−3 − (−4)"
+          },
+          {
+            "value": "temp",
+            "label": "Temperature −2 °C rises 7"
+          },
+          {
+            "value": "free",
+            "label": "Empty mat"
+          }
+        ]
+      },
+      {
+        "label": "+ counter",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "− counter",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Zero pair",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Cancel pairs",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Auto-cancel: off",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·12 Negative place value\":\n  - heading \"F2·12 Negative place value\" [level=2]\n  - group: \"Spec card ★ GCSE: Foundation: directed number calculations\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-02, F1-01, F0-03, F2-01.\n  - heading \"Live demo · F2-12\" [level=3]\n  - tablist \"Negative place value modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Negative numbers · Value reading step 5/5\n  - 'group \"Counters: 1 positive, 0 negative. Value 1.\"':\n    - text: positive (+1 each) negative (−1 each) + tray drag back here to remove\n    - button \"Positive counter. Enter adds one, Delete removes one\": +\n    - button \"Negative counter. Enter adds one, Delete removes one\": −\n    - text: −10 −9 −8 −7 −6 −5 −4 −3 −2 −1 0 1 2 3 4 5 6 7 8 9 10 1\n  - text: + counters\n  - math \"1\"\n  - text: − counters\n  - math \"0\"\n  - text: value\n  - math \"1\"\n  - text: Value reading\n  - img \"Value reading (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch −3 − (−4): take away four − counters. Add one zero pair first, then take four − away: 1 is left.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Value reading\n    - slider \"Scrub through steps\": \"4\""
+  },
+  {
+    "id": "F2-13",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "b10",
+        "options": [
+          {
+            "value": "b10",
+            "label": "Bonds to 10: 7 + ?"
+          },
+          {
+            "value": "b20",
+            "label": "Bonds to 20: 13 + ?"
+          },
+          {
+            "value": "dec",
+            "label": "Bonds to 1: 0.6 + ?"
+          },
+          {
+            "value": "hun",
+            "label": "Bonds to 100: 70 + ?"
+          },
+          {
+            "value": "emp",
+            "label": "Empty frame (bonds to 10)"
+          }
+        ]
+      },
+      {
+        "label": "Show partner",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·13 Number bonds and ten frames\":\n  - heading \"F2·13 Number bonds and ten frames\" [level=2]\n  - group: \"Spec card ★ GCSE: none (KS2–KS3 fluency)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-02, F2-12, F2-06, F0-04.\n  - heading \"Live demo · F2-13\" [level=3]\n  - tablist \"Number bonds and ten frames modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Number bonds · Bonds to 100 step 6/6\n  - group \"Ten frame with 7 counters; bond 70 and 30 make 100.\":\n    - text: each counter = 10 100 whole 70 30 part partner\n    - button \"Counter. Enter adds one to the frame, Delete removes one\"\n    - text: 70 + 30 = 100\n  - text: part\n  - math \"70\"\n  - text: partner\n  - math \"30\"\n  - text: whole\n  - math \"100\"\n  - text: Bonds to 100\n  - img \"Bonds to 100 (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Each counter is 10. Seven make 70; three empty cells are 30: 70 + 30 = 100. Same pattern as 7 + 3 = 10.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · Bonds to 100\n    - slider \"Scrub through steps\": \"5\""
+  },
+  {
+    "id": "F2-14",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "jump",
+        "options": [
+          {
+            "value": "jump",
+            "label": "Jumps from 23"
+          },
+          {
+            "value": "m4",
+            "label": "Multiples of 4"
+          },
+          {
+            "value": "m9",
+            "label": "Multiples of 9 (diagonal)"
+          },
+          {
+            "value": "f24",
+            "label": "Factors of 24"
+          },
+          {
+            "value": "f36",
+            "label": "Factors of 36"
+          },
+          {
+            "value": "m6",
+            "label": "Multiples of 6"
+          }
+        ]
+      },
+      {
+        "label": "Multiples of",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "3",
+        "options": [
+          {
+            "value": "2",
+            "label": "multiples of 2"
+          },
+          {
+            "value": "3",
+            "label": "multiples of 3"
+          },
+          {
+            "value": "4",
+            "label": "multiples of 4"
+          },
+          {
+            "value": "5",
+            "label": "multiples of 5"
+          },
+          {
+            "value": "6",
+            "label": "multiples of 6"
+          },
+          {
+            "value": "7",
+            "label": "multiples of 7"
+          },
+          {
+            "value": "8",
+            "label": "multiples of 8"
+          },
+          {
+            "value": "9",
+            "label": "multiples of 9"
+          },
+          {
+            "value": "10",
+            "label": "multiples of 10"
+          },
+          {
+            "value": "11",
+            "label": "multiples of 11"
+          },
+          {
+            "value": "12",
+            "label": "multiples of 12"
+          }
+        ]
+      },
+      {
+        "label": "Light multiples",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Factors of marker",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·14 Hundred square explorer\":\n  - heading \"F2·14 Hundred square explorer\" [level=2]\n  - group: \"Spec card ★ GCSE: Foundation: factors, multiples, primes\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-13, F2-10, F1-01, F0-15.\n  - heading \"Live demo · F2-14\" [level=3]\n  - tablist \"Hundred square explorer modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Hundred square · Factors step 7/7\n  - group \"Hundred square, marker on 24, factors of 24 lit.\":\n    - grid \"Hundred square\":\n      - row \"1, factor2, factor3, factor4, factor56, factor78, factor910\":\n        - gridcell \"1, factor\": \"1\"\n        - gridcell \"2, factor\": \"2\"\n        - gridcell \"3, factor\": \"3\"\n        - gridcell \"4, factor\": \"4\"\n        - gridcell \"5\"\n        - gridcell \"6, factor\": \"6\"\n        - gridcell \"7\"\n        - gridcell \"8, factor\": \"8\"\n        - gridcell \"9\"\n        - gridcell \"10\"\n      - row \"1112, factor1314151617181920\":\n        - gridcell \"11\"\n        - gridcell \"12, factor\": \"12\"\n        - gridcell \"13\"\n        - gridcell \"14\"\n        - gridcell \"15\"\n        - gridcell \"16\"\n        - gridcell \"17\"\n        - gridcell \"18\"\n        - gridcell \"19\"\n        - gridcell \"20\"\n      - row \"21222324, factor252627282930\":\n        - gridcell \"21\"\n        - gridcell \"22\"\n        - gridcell \"23\"\n        - gridcell \"24, factor\": \"24\"\n        - gridcell \"25\"\n        - gridcell \"26\"\n        - gridcell \"27\"\n        - gridcell \"28\"\n        - gridcell \"29\"\n        - gridcell \"30\"\n      - row \"31323334353637383940\":\n        - gridcell \"31\"\n        - gridcell \"32\"\n        - gridcell \"33\"\n        - gridcell \"34\"\n        - gridcell \"35\"\n        - gridcell \"36\"\n        - gridcell \"37\"\n        - gridcell \"38\"\n        - gridcell \"39\"\n        - gridcell \"40\"\n      - row \"41424344454647484950\":\n        - gridcell \"41\"\n        - gridcell \"42\"\n        - gridcell \"43\"\n        - gridcell \"44\"\n        - gridcell \"45\"\n        - gridcell \"46\"\n        - gridcell \"47\"\n        - gridcell \"48\"\n        - gridcell \"49\"\n        - gridcell \"50\"\n      - row \"51525354555657585960\":\n        - gridcell \"51\"\n        - gridcell \"52\"\n        - gridcell \"53\"\n        - gridcell \"54\"\n        - gridcell \"55\"\n        - gridcell \"56\"\n        - gridcell \"57\"\n        - gridcell \"58\"\n        - gridcell \"59\"\n        - gridcell \"60\"\n      - row \"61626364656667686970\":\n        - gridcell \"61\"\n        - gridcell \"62\"\n        - gridcell \"63\"\n        - gridcell \"64\"\n        - gridcell \"65\"\n        - gridcell \"66\"\n        - gridcell \"67\"\n        - gridcell \"68\"\n        - gridcell \"69\"\n        - gridcell \"70\"\n      - row \"71727374757677787980\":\n        - gridcell \"71\"\n        - gridcell \"72\"\n        - gridcell \"73\"\n        - gridcell \"74\"\n        - gridcell \"75\"\n        - gridcell \"76\"\n        - gridcell \"77\"\n        - gridcell \"78\"\n        - gridcell \"79\"\n        - gridcell \"80\"\n      - row \"81828384858687888990\":\n        - gridcell \"81\"\n        - gridcell \"82\"\n        - gridcell \"83\"\n        - gridcell \"84\"\n        - gridcell \"85\"\n        - gridcell \"86\"\n        - gridcell \"87\"\n        - gridcell \"88\"\n        - gridcell \"89\"\n        - gridcell \"90\"\n      - row \"919293949596979899100\":\n        - gridcell \"91\"\n        - gridcell \"92\"\n        - gridcell \"93\"\n        - gridcell \"94\"\n        - gridcell \"95\"\n        - gridcell \"96\"\n        - gridcell \"97\"\n        - gridcell \"98\"\n        - gridcell \"99\"\n        - gridcell \"100\"\n    - text: jump pills drag onto the square\n    - button \"Jump +1. Press Enter to jump\": \"+1\"\n    - button \"Jump −1. Press Enter to jump\": −1\n    - button \"Jump +10. Press Enter to jump\": \"+10\"\n    - button \"Jump −10. Press Enter to jump\": −10\n    - button \"Jump +9. Press Enter to jump\": \"+9\"\n    - button \"Jump +11. Press Enter to jump\": \"+11\"\n  - text: marker\n  - math \"24\"\n  - text: factors\n  - math \"8 of 24\": 8 o f 24\n  - text: Factors\n  - img \"Factors (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Factors of 24 glow gold: 1, 2, 3, 4, 6, 8, 12, 24. Factors divide 24 exactly; multiples are 24, 48, 72, 96.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 7 of 7 · Factors\n    - slider \"Scrub through steps\": \"6\""
+  },
+  {
+    "id": "F2-15",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Example",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "b2",
+        "options": [
+          {
+            "value": "b2",
+            "label": "Binary 1011"
+          },
+          {
+            "value": "b173",
+            "label": "Binary 173"
+          },
+          {
+            "value": "b5",
+            "label": "Base 5: 3 2 4"
+          },
+          {
+            "value": "b8",
+            "label": "Base 8 (octal): 7 1"
+          },
+          {
+            "value": "b10",
+            "label": "Base 10: 2 0 7"
+          },
+          {
+            "value": "carry",
+            "label": "Binary carry: 0111 + 1"
+          }
+        ]
+      },
+      {
+        "label": "Base",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "2",
+        "options": [
+          {
+            "value": "2",
+            "label": "base 2"
+          },
+          {
+            "value": "3",
+            "label": "base 3"
+          },
+          {
+            "value": "5",
+            "label": "base 5"
+          },
+          {
+            "value": "8",
+            "label": "base 8"
+          },
+          {
+            "value": "10",
+            "label": "base 10"
+          }
+        ]
+      },
+      {
+        "label": "Denary number to show",
+        "tag": "input",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Show in this base",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Clear",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·15 Binary and other bases\":\n  - heading \"F2·15 Binary and other bases\" [level=2]\n  - group: \"Spec card ★ GCSE: none (enrichment / computing)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-01, F2-02, F2-10, F2-09.\n  - heading \"Live demo · F2-15\" [level=3]\n  - tablist \"Binary and other bases modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Bases · Other bases step 5/5\n  - group \"Base 5 place chart, digits 0 3 2 4, worth 89.\":\n    - text: 53 125\n    - button \"Place 5 to the power 3, digit 0. + adds a counter, − removes one\"\n    - text: 0 52 25\n    - button \"Place 5 to the power 2, digit 3. + adds a counter, − removes one\"\n    - text: 3 51 5\n    - button \"Place 5 to the power 1, digit 2. + adds a counter, − removes one\"\n    - text: 2 50 1\n    - button \"Place 5 to the power 0, digit 4. + adds a counter, − removes one\"\n    - text: 4 3×25 + 2×5 + 4×1 = 89\n  - text: base\n  - math \"5\"\n  - text: digits\n  - math \"324\"\n  - text: denary\n  - math \"89\"\n  - text: Other bases\n  - img \"Other bases (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: \"Sir Bob Maximus · watch Base 5: places 125, 25, 5, 1 and digits 0 to 4. 324 in base 5 is 3 × 25 + 2 × 5 + 4 = 89.\"\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 5 of 5 · Other bases\n    - slider \"Scrub through steps\": \"4\""
+  },
+  {
+    "id": "F2-16",
+    "keyboardMode": true,
+    "axe": {
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "controlCatalog": [
+      {
+        "label": "Card set",
+        "tag": "select",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": "mix",
+        "options": [
+          {
+            "value": "mix",
+            "label": "Mixed set"
+          },
+          {
+            "value": "roots",
+            "label": "Square roots"
+          },
+          {
+            "value": "dec",
+            "label": "Decimals"
+          },
+          {
+            "value": "neg",
+            "label": "Negatives"
+          }
+        ]
+      },
+      {
+        "label": "Redraw rings",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      },
+      {
+        "label": "Reset",
+        "tag": "button",
+        "role": null,
+        "type": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "value": ""
+      }
+    ],
+    "exploreRestriction": true,
+    "reducedMotion": true,
+    "labels": "- region \"F2·16 Number set classifier\":\n  - heading \"F2·16 Number set classifier\" [level=2]\n  - group: \"Spec card ★ GCSE: Higher: surds and exact values (link)\"\n  - paragraph:\n    - strong: \"Year groups:\"\n    - text: KS3 Years 7–9 (12–15).\n    - strong: \"Linked components:\"\n    - text: F2-10, F2-12, F2-15, F0-05.\n  - heading \"Live demo · F2-16\" [level=3]\n  - tablist \"Number set classifier modes\":\n    - tab \"Watch\" [selected]\n    - tab \"Guided\"\n    - tab \"Explore\"\n    - tab \"Challenge\"\n  - button \"Restore defaults\"\n  - text: Number sets · All real step 6/6\n  - 'img \"Number sets: natural inside integers inside rationals; rationals and irrationals make the reals.\"': \"ℝ real numbers ℚ rational ℤ integers ℕ natural irrational 7 √9 −3 0 0.75 0.333… √2 π all sorted: drag a card back here to try again\"\n  - text: ℕ\n  - math \"2\"\n  - text: ℤ\n  - math \"2\"\n  - text: ℚ\n  - math \"2\"\n  - text: irrational\n  - math \"2\"\n  - text: All real\n  - img \"All real (Nova the cat, welcome)\":\n    - img \"Nova the cat, goodbye\"\n  - img \"Sir Bob Maximus, pleased\"\n  - text: Sir Bob Maximus · watch Every card sits inside ℝ. Each number goes in the smallest set it fits; it also belongs to every set around it.\n  - img \"Nova the cat, cheering\"\n  - status: \"Nova: Flawless. Like me.\"\n  - group \"Animation controls\":\n    - button \"Reset\"\n    - button \"Step back\"\n    - button \"Play\"\n    - button \"Step forward\" [disabled]\n    - text: Step 6 of 6 · All real\n    - slider \"Scrub through steps\": \"5\""
+  }
+]

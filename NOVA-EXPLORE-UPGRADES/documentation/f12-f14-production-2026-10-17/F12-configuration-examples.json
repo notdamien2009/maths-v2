@@ -1,0 +1,4415 @@
+{
+  "F12-01": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "pk": {
+            "value": "quads"
+          },
+          "act": {
+            "value": "trapezium"
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pk": "quads",
+            "active": "trapezium"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "pk": "quads",
+            "o": {
+              "pk": "quads",
+              "active": "trapezium"
+            }
+          }
+        },
+        "prompt": "How many sides does the highlighted Isosceles trapezium have?",
+        "privateAnswer": 4,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "Trapezium"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pk": "quads",
+            "active": "kite"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "pk": "quads",
+            "o": {
+              "pk": "quads",
+              "active": "kite"
+            }
+          }
+        },
+        "prompt": "How many sides does the highlighted Kite have?",
+        "privateAnswer": 4,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "Kite"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pk": "quads",
+            "active": "parallelogram"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "pk": "quads",
+            "o": {
+              "pk": "quads",
+              "active": "parallelogram"
+            }
+          }
+        },
+        "prompt": "How many sides does the highlighted Parallelogram have?",
+        "privateAnswer": 4,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "Parallelogram"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pk": "quads",
+            "active": "rectangle"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "pk": "quads",
+            "o": {
+              "pk": "quads",
+              "active": "rectangle"
+            }
+          }
+        },
+        "prompt": "How many sides does the highlighted Rectangle have?",
+        "privateAnswer": 4,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "Rectangle"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pk": "quads",
+            "active": "rhombus"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "pk": "quads",
+            "o": {
+              "pk": "quads",
+              "active": "rhombus"
+            }
+          }
+        },
+        "prompt": "How many sides does the highlighted Rhombus have?",
+        "privateAnswer": 4,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "Rhombus"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pk": "quads",
+            "active": "square"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "pk": "quads",
+            "o": {
+              "pk": "quads",
+              "active": "square"
+            }
+          }
+        },
+        "prompt": "How many sides does the highlighted Square have?",
+        "privateAnswer": 4,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "Square"
+        ]
+      }
+    ]
+  },
+  "F12-02": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "a": {
+            "value": "ra"
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "kind": "one",
+            "a": "ra"
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "kind": "one",
+              "a": "ra"
+            },
+            "hl": null
+          }
+        },
+        "prompt": "How many of the shape cards qualify for: has a right angle?",
+        "privateAnswer": 3,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "YES"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "kind": "one",
+            "a": "eq"
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "kind": "one",
+              "a": "eq"
+            },
+            "hl": null
+          }
+        },
+        "prompt": "How many of the shape cards qualify for: has all sides equal?",
+        "privateAnswer": 5,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "YES"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "kind": "one",
+            "a": "par2"
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "kind": "one",
+              "a": "par2"
+            },
+            "hl": null
+          }
+        },
+        "prompt": "How many of the shape cards qualify for: has 2 or more pairs of parallel sides?",
+        "privateAnswer": 5,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "YES"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "kind": "one",
+            "a": "par1"
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "kind": "one",
+              "a": "par1"
+            },
+            "hl": null
+          }
+        },
+        "prompt": "How many of the shape cards qualify for: has at least 1 pair of parallel sides?",
+        "privateAnswer": 6,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "YES"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "kind": "one",
+            "a": "tri"
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "kind": "one",
+              "a": "tri"
+            },
+            "hl": null
+          }
+        },
+        "prompt": "How many of the shape cards qualify for: is a triangle?",
+        "privateAnswer": 4,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "YES"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "kind": "one",
+            "a": "quad"
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "kind": "one",
+              "a": "quad"
+            },
+            "hl": null
+          }
+        },
+        "prompt": "How many of the shape cards qualify for: has 4 sides?",
+        "privateAnswer": 6,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "YES"
+        ]
+      }
+    ]
+  },
+  "F12-03": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "seed": {
+            "value": {
+              "verts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  3,
+                  3
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "closed": true
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "verts": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "closed": true
+          }
+        },
+        "scene": {
+          "function": "board",
+          "arguments": {
+            "st": {
+              "verts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  3,
+                  3
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "closed": true
+            },
+            "o": {
+              "edges": true
+            }
+          }
+        },
+        "prompt": "Find the perimeter of this 2 by 2 peg-grid rectangle, in unit lengths.",
+        "privateAnswer": 8,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "A"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "verts": [
+              [
+                1,
+                1
+              ],
+              [
+                4,
+                1
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "closed": true
+          }
+        },
+        "scene": {
+          "function": "board",
+          "arguments": {
+            "st": {
+              "verts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  4,
+                  1
+                ],
+                [
+                  4,
+                  3
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "closed": true
+            },
+            "o": {
+              "edges": true
+            }
+          }
+        },
+        "prompt": "Find the perimeter of this 3 by 2 peg-grid rectangle, in unit lengths.",
+        "privateAnswer": 10,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "A"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "verts": [
+              [
+                1,
+                1
+              ],
+              [
+                5,
+                1
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "closed": true
+          }
+        },
+        "scene": {
+          "function": "board",
+          "arguments": {
+            "st": {
+              "verts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  5,
+                  3
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "closed": true
+            },
+            "o": {
+              "edges": true
+            }
+          }
+        },
+        "prompt": "Find the perimeter of this 4 by 2 peg-grid rectangle, in unit lengths.",
+        "privateAnswer": 12,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "A"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "verts": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "closed": true
+          }
+        },
+        "scene": {
+          "function": "board",
+          "arguments": {
+            "st": {
+              "verts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  1,
+                  4
+                ]
+              ],
+              "closed": true
+            },
+            "o": {
+              "edges": true
+            }
+          }
+        },
+        "prompt": "Find the perimeter of this 2 by 3 peg-grid rectangle, in unit lengths.",
+        "privateAnswer": 10,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "A"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "verts": [
+              [
+                1,
+                1
+              ],
+              [
+                4,
+                1
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "closed": true
+          }
+        },
+        "scene": {
+          "function": "board",
+          "arguments": {
+            "st": {
+              "verts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  4,
+                  1
+                ],
+                [
+                  4,
+                  4
+                ],
+                [
+                  1,
+                  4
+                ]
+              ],
+              "closed": true
+            },
+            "o": {
+              "edges": true
+            }
+          }
+        },
+        "prompt": "Find the perimeter of this 3 by 3 peg-grid rectangle, in unit lengths.",
+        "privateAnswer": 12,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "A"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "verts": [
+              [
+                1,
+                1
+              ],
+              [
+                5,
+                1
+              ],
+              [
+                5,
+                4
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "closed": true
+          }
+        },
+        "scene": {
+          "function": "board",
+          "arguments": {
+            "st": {
+              "verts": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  1,
+                  4
+                ]
+              ],
+              "closed": true
+            },
+            "o": {
+              "edges": true
+            }
+          }
+        },
+        "prompt": "Find the perimeter of this 4 by 3 peg-grid rectangle, in unit lengths.",
+        "privateAnswer": 14,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "A"
+        ]
+      }
+    ]
+  },
+  "F12-04": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "a": 3,
+              "b": 2,
+              "params": [
+                [
+                  "Length",
+                  "a",
+                  2,
+                  12,
+                  1
+                ],
+                [
+                  "Width",
+                  "b",
+                  2,
+                  12,
+                  1
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "a": 3,
+            "b": 2,
+            "params": [
+              [
+                "Length",
+                "a",
+                2,
+                12,
+                1
+              ],
+              [
+                "Width",
+                "b",
+                2,
+                12,
+                1
+              ]
+            ]
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "a": 3,
+              "b": 2,
+              "params": [
+                [
+                  "Length",
+                  "a",
+                  2,
+                  12,
+                  1
+                ],
+                [
+                  "Width",
+                  "b",
+                  2,
+                  12,
+                  1
+                ]
+              ]
+            },
+            "o": {
+              "t": 0,
+              "hide": false
+            }
+          }
+        },
+        "prompt": "Find the perimeter of the rectangle in centimetres.",
+        "privateAnswer": 10,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "3"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "a": 4,
+            "b": 2,
+            "params": [
+              [
+                "Length",
+                "a",
+                2,
+                12,
+                1
+              ],
+              [
+                "Width",
+                "b",
+                2,
+                12,
+                1
+              ]
+            ]
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "a": 4,
+              "b": 2,
+              "params": [
+                [
+                  "Length",
+                  "a",
+                  2,
+                  12,
+                  1
+                ],
+                [
+                  "Width",
+                  "b",
+                  2,
+                  12,
+                  1
+                ]
+              ]
+            },
+            "o": {
+              "t": 0,
+              "hide": false
+            }
+          }
+        },
+        "prompt": "Find the perimeter of the rectangle in centimetres.",
+        "privateAnswer": 12,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "4"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "a": 5,
+            "b": 2,
+            "params": [
+              [
+                "Length",
+                "a",
+                2,
+                12,
+                1
+              ],
+              [
+                "Width",
+                "b",
+                2,
+                12,
+                1
+              ]
+            ]
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "a": 5,
+              "b": 2,
+              "params": [
+                [
+                  "Length",
+                  "a",
+                  2,
+                  12,
+                  1
+                ],
+                [
+                  "Width",
+                  "b",
+                  2,
+                  12,
+                  1
+                ]
+              ]
+            },
+            "o": {
+              "t": 0,
+              "hide": false
+            }
+          }
+        },
+        "prompt": "Find the perimeter of the rectangle in centimetres.",
+        "privateAnswer": 14,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "a": 6,
+            "b": 2,
+            "params": [
+              [
+                "Length",
+                "a",
+                2,
+                12,
+                1
+              ],
+              [
+                "Width",
+                "b",
+                2,
+                12,
+                1
+              ]
+            ]
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "a": 6,
+              "b": 2,
+              "params": [
+                [
+                  "Length",
+                  "a",
+                  2,
+                  12,
+                  1
+                ],
+                [
+                  "Width",
+                  "b",
+                  2,
+                  12,
+                  1
+                ]
+              ]
+            },
+            "o": {
+              "t": 0,
+              "hide": false
+            }
+          }
+        },
+        "prompt": "Find the perimeter of the rectangle in centimetres.",
+        "privateAnswer": 16,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "a": 7,
+            "b": 2,
+            "params": [
+              [
+                "Length",
+                "a",
+                2,
+                12,
+                1
+              ],
+              [
+                "Width",
+                "b",
+                2,
+                12,
+                1
+              ]
+            ]
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "a": 7,
+              "b": 2,
+              "params": [
+                [
+                  "Length",
+                  "a",
+                  2,
+                  12,
+                  1
+                ],
+                [
+                  "Width",
+                  "b",
+                  2,
+                  12,
+                  1
+                ]
+              ]
+            },
+            "o": {
+              "t": 0,
+              "hide": false
+            }
+          }
+        },
+        "prompt": "Find the perimeter of the rectangle in centimetres.",
+        "privateAnswer": 18,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "a": 8,
+            "b": 2,
+            "params": [
+              [
+                "Length",
+                "a",
+                2,
+                12,
+                1
+              ],
+              [
+                "Width",
+                "b",
+                2,
+                12,
+                1
+              ]
+            ]
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "a": 8,
+              "b": 2,
+              "params": [
+                [
+                  "Length",
+                  "a",
+                  2,
+                  12,
+                  1
+                ],
+                [
+                  "Width",
+                  "b",
+                  2,
+                  12,
+                  1
+                ]
+              ]
+            },
+            "o": {
+              "t": 0,
+              "hide": false
+            }
+          }
+        },
+        "prompt": "Find the perimeter of the rectangle in centimetres.",
+        "privateAnswer": 20,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "8"
+        ]
+      }
+    ]
+  },
+  "F12-05": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "cols": 3,
+              "rows": 2,
+              "params": [
+                [
+                  "Columns",
+                  "cols",
+                  2,
+                  9,
+                  1
+                ],
+                [
+                  "Rows",
+                  "rows",
+                  2,
+                  7,
+                  1
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "cols": 3,
+            "rows": 2,
+            "params": [
+              [
+                "Columns",
+                "cols",
+                2,
+                9,
+                1
+              ],
+              [
+                "Rows",
+                "rows",
+                2,
+                7,
+                1
+              ]
+            ]
+          },
+          "show": {
+            "whole": true,
+            "num": false
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "cols": 3,
+              "rows": 2,
+              "params": [
+                [
+                  "Columns",
+                  "cols",
+                  2,
+                  9,
+                  1
+                ],
+                [
+                  "Rows",
+                  "rows",
+                  2,
+                  7,
+                  1
+                ]
+              ]
+            },
+            "show": {
+              "whole": true,
+              "num": false
+            }
+          }
+        },
+        "prompt": "Count the unit squares in the 3 by 2 rectangle. What is its area?",
+        "privateAnswer": 6,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "whole"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "cols": 4,
+            "rows": 2,
+            "params": [
+              [
+                "Columns",
+                "cols",
+                2,
+                9,
+                1
+              ],
+              [
+                "Rows",
+                "rows",
+                2,
+                7,
+                1
+              ]
+            ]
+          },
+          "show": {
+            "whole": true,
+            "num": false
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "cols": 4,
+              "rows": 2,
+              "params": [
+                [
+                  "Columns",
+                  "cols",
+                  2,
+                  9,
+                  1
+                ],
+                [
+                  "Rows",
+                  "rows",
+                  2,
+                  7,
+                  1
+                ]
+              ]
+            },
+            "show": {
+              "whole": true,
+              "num": false
+            }
+          }
+        },
+        "prompt": "Count the unit squares in the 4 by 2 rectangle. What is its area?",
+        "privateAnswer": 8,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "whole"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "cols": 5,
+            "rows": 2,
+            "params": [
+              [
+                "Columns",
+                "cols",
+                2,
+                9,
+                1
+              ],
+              [
+                "Rows",
+                "rows",
+                2,
+                7,
+                1
+              ]
+            ]
+          },
+          "show": {
+            "whole": true,
+            "num": false
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "cols": 5,
+              "rows": 2,
+              "params": [
+                [
+                  "Columns",
+                  "cols",
+                  2,
+                  9,
+                  1
+                ],
+                [
+                  "Rows",
+                  "rows",
+                  2,
+                  7,
+                  1
+                ]
+              ]
+            },
+            "show": {
+              "whole": true,
+              "num": false
+            }
+          }
+        },
+        "prompt": "Count the unit squares in the 5 by 2 rectangle. What is its area?",
+        "privateAnswer": 10,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "whole"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "cols": 6,
+            "rows": 2,
+            "params": [
+              [
+                "Columns",
+                "cols",
+                2,
+                9,
+                1
+              ],
+              [
+                "Rows",
+                "rows",
+                2,
+                7,
+                1
+              ]
+            ]
+          },
+          "show": {
+            "whole": true,
+            "num": false
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "cols": 6,
+              "rows": 2,
+              "params": [
+                [
+                  "Columns",
+                  "cols",
+                  2,
+                  9,
+                  1
+                ],
+                [
+                  "Rows",
+                  "rows",
+                  2,
+                  7,
+                  1
+                ]
+              ]
+            },
+            "show": {
+              "whole": true,
+              "num": false
+            }
+          }
+        },
+        "prompt": "Count the unit squares in the 6 by 2 rectangle. What is its area?",
+        "privateAnswer": 12,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "whole"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "cols": 7,
+            "rows": 2,
+            "params": [
+              [
+                "Columns",
+                "cols",
+                2,
+                9,
+                1
+              ],
+              [
+                "Rows",
+                "rows",
+                2,
+                7,
+                1
+              ]
+            ]
+          },
+          "show": {
+            "whole": true,
+            "num": false
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "cols": 7,
+              "rows": 2,
+              "params": [
+                [
+                  "Columns",
+                  "cols",
+                  2,
+                  9,
+                  1
+                ],
+                [
+                  "Rows",
+                  "rows",
+                  2,
+                  7,
+                  1
+                ]
+              ]
+            },
+            "show": {
+              "whole": true,
+              "num": false
+            }
+          }
+        },
+        "prompt": "Count the unit squares in the 7 by 2 rectangle. What is its area?",
+        "privateAnswer": 14,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "whole"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Rectangle",
+            "kind": "rect",
+            "cols": 8,
+            "rows": 2,
+            "params": [
+              [
+                "Columns",
+                "cols",
+                2,
+                9,
+                1
+              ],
+              [
+                "Rows",
+                "rows",
+                2,
+                7,
+                1
+              ]
+            ]
+          },
+          "show": {
+            "whole": true,
+            "num": false
+          }
+        },
+        "scene": {
+          "function": "paint",
+          "arguments": {
+            "st": {
+              "label": "Rectangle",
+              "kind": "rect",
+              "cols": 8,
+              "rows": 2,
+              "params": [
+                [
+                  "Columns",
+                  "cols",
+                  2,
+                  9,
+                  1
+                ],
+                [
+                  "Rows",
+                  "rows",
+                  2,
+                  7,
+                  1
+                ]
+              ]
+            },
+            "show": {
+              "whole": true,
+              "num": false
+            }
+          }
+        },
+        "prompt": "Count the unit squares in the 8 by 2 rectangle. What is its area?",
+        "privateAnswer": 16,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "whole"
+        ]
+      }
+    ]
+  },
+  "F12-06": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "b": 3,
+              "h": 2,
+              "s": 1,
+              "k": 0,
+              "t": 0,
+              "mode": "shear"
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 3,
+            "h": 2,
+            "s": 1,
+            "k": 0,
+            "t": 0,
+            "mode": "shear"
+          },
+          "o": {
+            "rect": false
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 3,
+              "h": 2,
+              "s": 1,
+              "k": 0,
+              "t": 0,
+              "mode": "shear"
+            },
+            "o": {
+              "rect": false
+            }
+          }
+        },
+        "prompt": "Find the parallelogram area from its base and perpendicular height, in square centimetres.",
+        "privateAnswer": 6,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "3"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 4,
+            "h": 2,
+            "s": 1,
+            "k": 0,
+            "t": 0,
+            "mode": "shear"
+          },
+          "o": {
+            "rect": false
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 4,
+              "h": 2,
+              "s": 1,
+              "k": 0,
+              "t": 0,
+              "mode": "shear"
+            },
+            "o": {
+              "rect": false
+            }
+          }
+        },
+        "prompt": "Find the parallelogram area from its base and perpendicular height, in square centimetres.",
+        "privateAnswer": 8,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "4"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 5,
+            "h": 2,
+            "s": 1,
+            "k": 0,
+            "t": 0,
+            "mode": "shear"
+          },
+          "o": {
+            "rect": false
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 5,
+              "h": 2,
+              "s": 1,
+              "k": 0,
+              "t": 0,
+              "mode": "shear"
+            },
+            "o": {
+              "rect": false
+            }
+          }
+        },
+        "prompt": "Find the parallelogram area from its base and perpendicular height, in square centimetres.",
+        "privateAnswer": 10,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 6,
+            "h": 2,
+            "s": 1,
+            "k": 0,
+            "t": 0,
+            "mode": "shear"
+          },
+          "o": {
+            "rect": false
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 6,
+              "h": 2,
+              "s": 1,
+              "k": 0,
+              "t": 0,
+              "mode": "shear"
+            },
+            "o": {
+              "rect": false
+            }
+          }
+        },
+        "prompt": "Find the parallelogram area from its base and perpendicular height, in square centimetres.",
+        "privateAnswer": 12,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 7,
+            "h": 2,
+            "s": 1,
+            "k": 0,
+            "t": 0,
+            "mode": "shear"
+          },
+          "o": {
+            "rect": false
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 7,
+              "h": 2,
+              "s": 1,
+              "k": 0,
+              "t": 0,
+              "mode": "shear"
+            },
+            "o": {
+              "rect": false
+            }
+          }
+        },
+        "prompt": "Find the parallelogram area from its base and perpendicular height, in square centimetres.",
+        "privateAnswer": 14,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 8,
+            "h": 2,
+            "s": 1,
+            "k": 0,
+            "t": 0,
+            "mode": "shear"
+          },
+          "o": {
+            "rect": false
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 8,
+              "h": 2,
+              "s": 1,
+              "k": 0,
+              "t": 0,
+              "mode": "shear"
+            },
+            "o": {
+              "rect": false
+            }
+          }
+        },
+        "prompt": "Find the parallelogram area from its base and perpendicular height, in square centimetres.",
+        "privateAnswer": 16,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "8"
+        ]
+      }
+    ]
+  },
+  "F12-07": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "b": 3,
+              "h": 2,
+              "p": 1,
+              "th": 0
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 3,
+            "h": 2,
+            "p": 1,
+            "th": 0
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 3,
+              "h": 2,
+              "p": 1,
+              "th": 0
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the triangle area from the labelled base and perpendicular height, in square centimetres.",
+        "privateAnswer": 3.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "3"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 4,
+            "h": 2,
+            "p": 1,
+            "th": 0
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 4,
+              "h": 2,
+              "p": 1,
+              "th": 0
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the triangle area from the labelled base and perpendicular height, in square centimetres.",
+        "privateAnswer": 4.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "4"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 5,
+            "h": 2,
+            "p": 1,
+            "th": 0
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 5,
+              "h": 2,
+              "p": 1,
+              "th": 0
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the triangle area from the labelled base and perpendicular height, in square centimetres.",
+        "privateAnswer": 5.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 6,
+            "h": 2,
+            "p": 1,
+            "th": 0
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 6,
+              "h": 2,
+              "p": 1,
+              "th": 0
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the triangle area from the labelled base and perpendicular height, in square centimetres.",
+        "privateAnswer": 6.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 7,
+            "h": 2,
+            "p": 1,
+            "th": 0
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 7,
+              "h": 2,
+              "p": 1,
+              "th": 0
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the triangle area from the labelled base and perpendicular height, in square centimetres.",
+        "privateAnswer": 7.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "b": 8,
+            "h": 2,
+            "p": 1,
+            "th": 0
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "b": 8,
+              "h": 2,
+              "p": 1,
+              "th": 0
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the triangle area from the labelled base and perpendicular height, in square centimetres.",
+        "privateAnswer": 8.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "8"
+        ]
+      }
+    ]
+  },
+  "F12-08": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "a": 2,
+              "b": 8,
+              "h": 2,
+              "x0": 1,
+              "th": 0,
+              "mode": "double"
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "a": 2,
+            "b": 8,
+            "h": 2,
+            "x0": 1,
+            "th": 0,
+            "mode": "double"
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "a": 2,
+              "b": 8,
+              "h": 2,
+              "x0": 1,
+              "th": 0,
+              "mode": "double"
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the area of the trapezium in square centimetres.",
+        "privateAnswer": 10.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "2",
+          "8"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "a": 3,
+            "b": 8,
+            "h": 2,
+            "x0": 1,
+            "th": 0,
+            "mode": "double"
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "a": 3,
+              "b": 8,
+              "h": 2,
+              "x0": 1,
+              "th": 0,
+              "mode": "double"
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the area of the trapezium in square centimetres.",
+        "privateAnswer": 11.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "3",
+          "8"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "a": 4,
+            "b": 8,
+            "h": 2,
+            "x0": 1,
+            "th": 0,
+            "mode": "double"
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "a": 4,
+              "b": 8,
+              "h": 2,
+              "x0": 1,
+              "th": 0,
+              "mode": "double"
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the area of the trapezium in square centimetres.",
+        "privateAnswer": 12.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "4",
+          "8"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "a": 5,
+            "b": 8,
+            "h": 2,
+            "x0": 1,
+            "th": 0,
+            "mode": "double"
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "a": 5,
+              "b": 8,
+              "h": 2,
+              "x0": 1,
+              "th": 0,
+              "mode": "double"
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the area of the trapezium in square centimetres.",
+        "privateAnswer": 13.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5",
+          "8"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "a": 6,
+            "b": 8,
+            "h": 2,
+            "x0": 1,
+            "th": 0,
+            "mode": "double"
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "a": 6,
+              "b": 8,
+              "h": 2,
+              "x0": 1,
+              "th": 0,
+              "mode": "double"
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the area of the trapezium in square centimetres.",
+        "privateAnswer": 14.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6",
+          "8"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "a": 7,
+            "b": 8,
+            "h": 2,
+            "x0": 1,
+            "th": 0,
+            "mode": "double"
+          },
+          "o": {}
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "a": 7,
+              "b": 8,
+              "h": 2,
+              "x0": 1,
+              "th": 0,
+              "mode": "double"
+            },
+            "o": {}
+          }
+        },
+        "prompt": "Find the area of the trapezium in square centimetres.",
+        "privateAnswer": 15.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7",
+          "8"
+        ]
+      }
+    ]
+  },
+  "F12-09": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "d1": 4,
+              "d2": 4,
+              "p": 0.5
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "d1": 4,
+            "d2": 4,
+            "p": 0.5
+          },
+          "o": {
+            "view": "diag"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "d1": 4,
+              "d2": 4,
+              "p": 0.5
+            },
+            "o": {
+              "view": "diag"
+            }
+          }
+        },
+        "prompt": "Find the rhombus area from its two perpendicular diagonals, in square centimetres.",
+        "privateAnswer": 8.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "4"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "d1": 5,
+            "d2": 4,
+            "p": 0.5
+          },
+          "o": {
+            "view": "diag"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "d1": 5,
+              "d2": 4,
+              "p": 0.5
+            },
+            "o": {
+              "view": "diag"
+            }
+          }
+        },
+        "prompt": "Find the rhombus area from its two perpendicular diagonals, in square centimetres.",
+        "privateAnswer": 10.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "d1": 6,
+            "d2": 4,
+            "p": 0.5
+          },
+          "o": {
+            "view": "diag"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "d1": 6,
+              "d2": 4,
+              "p": 0.5
+            },
+            "o": {
+              "view": "diag"
+            }
+          }
+        },
+        "prompt": "Find the rhombus area from its two perpendicular diagonals, in square centimetres.",
+        "privateAnswer": 12.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "d1": 7,
+            "d2": 4,
+            "p": 0.5
+          },
+          "o": {
+            "view": "diag"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "d1": 7,
+              "d2": 4,
+              "p": 0.5
+            },
+            "o": {
+              "view": "diag"
+            }
+          }
+        },
+        "prompt": "Find the rhombus area from its two perpendicular diagonals, in square centimetres.",
+        "privateAnswer": 14.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "d1": 8,
+            "d2": 4,
+            "p": 0.5
+          },
+          "o": {
+            "view": "diag"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "d1": 8,
+              "d2": 4,
+              "p": 0.5
+            },
+            "o": {
+              "view": "diag"
+            }
+          }
+        },
+        "prompt": "Find the rhombus area from its two perpendicular diagonals, in square centimetres.",
+        "privateAnswer": 16.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "8"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "d1": 9,
+            "d2": 4,
+            "p": 0.5
+          },
+          "o": {
+            "view": "diag"
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "d1": 9,
+              "d2": 4,
+              "p": 0.5
+            },
+            "o": {
+              "view": "diag"
+            }
+          }
+        },
+        "prompt": "Find the rhombus area from its two perpendicular diagonals, in square centimetres.",
+        "privateAnswer": 18.0,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "9"
+        ]
+      }
+    ]
+  },
+  "F12-10": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "label": "L-shape",
+              "kind": "L",
+              "W": 5,
+              "H": 4,
+              "t": 1,
+              "params": [
+                [
+                  "Width",
+                  "W",
+                  5,
+                  9,
+                  1
+                ],
+                [
+                  "Height",
+                  "H",
+                  4,
+                  8,
+                  1
+                ],
+                [
+                  "Arm thickness",
+                  "t",
+                  1,
+                  3,
+                  1
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "L-shape",
+            "kind": "L",
+            "W": 5,
+            "H": 4,
+            "t": 1,
+            "params": [
+              [
+                "Width",
+                "W",
+                5,
+                9,
+                1
+              ],
+              [
+                "Height",
+                "H",
+                4,
+                8,
+                1
+              ],
+              [
+                "Arm thickness",
+                "t",
+                1,
+                3,
+                1
+              ]
+            ]
+          },
+          "view": "perim"
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "L-shape",
+              "kind": "L",
+              "W": 5,
+              "H": 4,
+              "t": 1,
+              "params": [
+                [
+                  "Width",
+                  "W",
+                  5,
+                  9,
+                  1
+                ],
+                [
+                  "Height",
+                  "H",
+                  4,
+                  8,
+                  1
+                ],
+                [
+                  "Arm thickness",
+                  "t",
+                  1,
+                  3,
+                  1
+                ]
+              ]
+            },
+            "view": "perim"
+          }
+        },
+        "prompt": "Find the area of the L-shape in square centimetres. Each arm has thickness 1 cm.",
+        "privateAnswer": 8,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "L-shape",
+            "kind": "L",
+            "W": 6,
+            "H": 4,
+            "t": 1,
+            "params": [
+              [
+                "Width",
+                "W",
+                5,
+                9,
+                1
+              ],
+              [
+                "Height",
+                "H",
+                4,
+                8,
+                1
+              ],
+              [
+                "Arm thickness",
+                "t",
+                1,
+                3,
+                1
+              ]
+            ]
+          },
+          "view": "perim"
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "L-shape",
+              "kind": "L",
+              "W": 6,
+              "H": 4,
+              "t": 1,
+              "params": [
+                [
+                  "Width",
+                  "W",
+                  5,
+                  9,
+                  1
+                ],
+                [
+                  "Height",
+                  "H",
+                  4,
+                  8,
+                  1
+                ],
+                [
+                  "Arm thickness",
+                  "t",
+                  1,
+                  3,
+                  1
+                ]
+              ]
+            },
+            "view": "perim"
+          }
+        },
+        "prompt": "Find the area of the L-shape in square centimetres. Each arm has thickness 1 cm.",
+        "privateAnswer": 9,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "L-shape",
+            "kind": "L",
+            "W": 7,
+            "H": 4,
+            "t": 1,
+            "params": [
+              [
+                "Width",
+                "W",
+                5,
+                9,
+                1
+              ],
+              [
+                "Height",
+                "H",
+                4,
+                8,
+                1
+              ],
+              [
+                "Arm thickness",
+                "t",
+                1,
+                3,
+                1
+              ]
+            ]
+          },
+          "view": "perim"
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "L-shape",
+              "kind": "L",
+              "W": 7,
+              "H": 4,
+              "t": 1,
+              "params": [
+                [
+                  "Width",
+                  "W",
+                  5,
+                  9,
+                  1
+                ],
+                [
+                  "Height",
+                  "H",
+                  4,
+                  8,
+                  1
+                ],
+                [
+                  "Arm thickness",
+                  "t",
+                  1,
+                  3,
+                  1
+                ]
+              ]
+            },
+            "view": "perim"
+          }
+        },
+        "prompt": "Find the area of the L-shape in square centimetres. Each arm has thickness 1 cm.",
+        "privateAnswer": 10,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "L-shape",
+            "kind": "L",
+            "W": 5,
+            "H": 5,
+            "t": 1,
+            "params": [
+              [
+                "Width",
+                "W",
+                5,
+                9,
+                1
+              ],
+              [
+                "Height",
+                "H",
+                4,
+                8,
+                1
+              ],
+              [
+                "Arm thickness",
+                "t",
+                1,
+                3,
+                1
+              ]
+            ]
+          },
+          "view": "perim"
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "L-shape",
+              "kind": "L",
+              "W": 5,
+              "H": 5,
+              "t": 1,
+              "params": [
+                [
+                  "Width",
+                  "W",
+                  5,
+                  9,
+                  1
+                ],
+                [
+                  "Height",
+                  "H",
+                  4,
+                  8,
+                  1
+                ],
+                [
+                  "Arm thickness",
+                  "t",
+                  1,
+                  3,
+                  1
+                ]
+              ]
+            },
+            "view": "perim"
+          }
+        },
+        "prompt": "Find the area of the L-shape in square centimetres. Each arm has thickness 1 cm.",
+        "privateAnswer": 9,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "L-shape",
+            "kind": "L",
+            "W": 6,
+            "H": 5,
+            "t": 1,
+            "params": [
+              [
+                "Width",
+                "W",
+                5,
+                9,
+                1
+              ],
+              [
+                "Height",
+                "H",
+                4,
+                8,
+                1
+              ],
+              [
+                "Arm thickness",
+                "t",
+                1,
+                3,
+                1
+              ]
+            ]
+          },
+          "view": "perim"
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "L-shape",
+              "kind": "L",
+              "W": 6,
+              "H": 5,
+              "t": 1,
+              "params": [
+                [
+                  "Width",
+                  "W",
+                  5,
+                  9,
+                  1
+                ],
+                [
+                  "Height",
+                  "H",
+                  4,
+                  8,
+                  1
+                ],
+                [
+                  "Arm thickness",
+                  "t",
+                  1,
+                  3,
+                  1
+                ]
+              ]
+            },
+            "view": "perim"
+          }
+        },
+        "prompt": "Find the area of the L-shape in square centimetres. Each arm has thickness 1 cm.",
+        "privateAnswer": 10,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "L-shape",
+            "kind": "L",
+            "W": 7,
+            "H": 5,
+            "t": 1,
+            "params": [
+              [
+                "Width",
+                "W",
+                5,
+                9,
+                1
+              ],
+              [
+                "Height",
+                "H",
+                4,
+                8,
+                1
+              ],
+              [
+                "Arm thickness",
+                "t",
+                1,
+                3,
+                1
+              ]
+            ]
+          },
+          "view": "perim"
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "L-shape",
+              "kind": "L",
+              "W": 7,
+              "H": 5,
+              "t": 1,
+              "params": [
+                [
+                  "Width",
+                  "W",
+                  5,
+                  9,
+                  1
+                ],
+                [
+                  "Height",
+                  "H",
+                  4,
+                  8,
+                  1
+                ],
+                [
+                  "Arm thickness",
+                  "t",
+                  1,
+                  3,
+                  1
+                ]
+              ]
+            },
+            "view": "perim"
+          }
+        },
+        "prompt": "Find the area of the L-shape in square centimetres. Each arm has thickness 1 cm.",
+        "privateAnswer": 11,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7"
+        ]
+      }
+    ]
+  },
+  "F12-11": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "label": "Circle vocabulary",
+              "view": "vocab",
+              "r": 2,
+              "u": 0,
+              "lay": 0,
+              "h": 6
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Circle vocabulary",
+            "view": "vocab",
+            "r": 2,
+            "u": 0,
+            "lay": 0,
+            "h": 6
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Circle vocabulary",
+              "view": "vocab",
+              "r": 2,
+              "u": 0,
+              "lay": 0,
+              "h": 6
+            }
+          }
+        },
+        "prompt": "The circle radius is 2 cm. Find its diameter in centimetres.",
+        "privateAnswer": 4,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "2"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Circle vocabulary",
+            "view": "vocab",
+            "r": 3,
+            "u": 0,
+            "lay": 0,
+            "h": 6
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Circle vocabulary",
+              "view": "vocab",
+              "r": 3,
+              "u": 0,
+              "lay": 0,
+              "h": 6
+            }
+          }
+        },
+        "prompt": "The circle radius is 3 cm. Find its diameter in centimetres.",
+        "privateAnswer": 6,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "3"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Circle vocabulary",
+            "view": "vocab",
+            "r": 4,
+            "u": 0,
+            "lay": 0,
+            "h": 6
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Circle vocabulary",
+              "view": "vocab",
+              "r": 4,
+              "u": 0,
+              "lay": 0,
+              "h": 6
+            }
+          }
+        },
+        "prompt": "The circle radius is 4 cm. Find its diameter in centimetres.",
+        "privateAnswer": 8,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "4"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Circle vocabulary",
+            "view": "vocab",
+            "r": 5,
+            "u": 0,
+            "lay": 0,
+            "h": 6
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Circle vocabulary",
+              "view": "vocab",
+              "r": 5,
+              "u": 0,
+              "lay": 0,
+              "h": 6
+            }
+          }
+        },
+        "prompt": "The circle radius is 5 cm. Find its diameter in centimetres.",
+        "privateAnswer": 10,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Circle vocabulary",
+            "view": "vocab",
+            "r": 6,
+            "u": 0,
+            "lay": 0,
+            "h": 6
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Circle vocabulary",
+              "view": "vocab",
+              "r": 6,
+              "u": 0,
+              "lay": 0,
+              "h": 6
+            }
+          }
+        },
+        "prompt": "The circle radius is 6 cm. Find its diameter in centimetres.",
+        "privateAnswer": 12,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Circle vocabulary",
+            "view": "vocab",
+            "r": 7,
+            "u": 0,
+            "lay": 0,
+            "h": 6
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Circle vocabulary",
+              "view": "vocab",
+              "r": 7,
+              "u": 0,
+              "lay": 0,
+              "h": 6
+            }
+          }
+        },
+        "prompt": "The circle radius is 7 cm. Find its diameter in centimetres.",
+        "privateAnswer": 14,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7"
+        ]
+      }
+    ]
+  },
+  "F12-12": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "r": 2,
+              "n": 8,
+              "m": 0
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 2,
+            "n": 8,
+            "m": 0
+          },
+          "o": {
+            "rad": {
+              "txt": "r = 2 cm"
+            }
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 2,
+              "n": 8,
+              "m": 0
+            },
+            "o": {
+              "rad": {
+                "txt": "r = 2 cm"
+              }
+            }
+          }
+        },
+        "prompt": "Find the area of the circle in square centimetres, to two decimal places.",
+        "privateAnswer": 12.57,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "2"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 3,
+            "n": 8,
+            "m": 0
+          },
+          "o": {
+            "rad": {
+              "txt": "r = 3 cm"
+            }
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 3,
+              "n": 8,
+              "m": 0
+            },
+            "o": {
+              "rad": {
+                "txt": "r = 3 cm"
+              }
+            }
+          }
+        },
+        "prompt": "Find the area of the circle in square centimetres, to two decimal places.",
+        "privateAnswer": 28.27,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "3"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 4,
+            "n": 8,
+            "m": 0
+          },
+          "o": {
+            "rad": {
+              "txt": "r = 4 cm"
+            }
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 4,
+              "n": 8,
+              "m": 0
+            },
+            "o": {
+              "rad": {
+                "txt": "r = 4 cm"
+              }
+            }
+          }
+        },
+        "prompt": "Find the area of the circle in square centimetres, to two decimal places.",
+        "privateAnswer": 50.27,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "4"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 5,
+            "n": 8,
+            "m": 0
+          },
+          "o": {
+            "rad": {
+              "txt": "r = 5 cm"
+            }
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 5,
+              "n": 8,
+              "m": 0
+            },
+            "o": {
+              "rad": {
+                "txt": "r = 5 cm"
+              }
+            }
+          }
+        },
+        "prompt": "Find the area of the circle in square centimetres, to two decimal places.",
+        "privateAnswer": 78.54,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 6,
+            "n": 8,
+            "m": 0
+          },
+          "o": {
+            "rad": {
+              "txt": "r = 6 cm"
+            }
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 6,
+              "n": 8,
+              "m": 0
+            },
+            "o": {
+              "rad": {
+                "txt": "r = 6 cm"
+              }
+            }
+          }
+        },
+        "prompt": "Find the area of the circle in square centimetres, to two decimal places.",
+        "privateAnswer": 113.1,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 7,
+            "n": 8,
+            "m": 0
+          },
+          "o": {
+            "rad": {
+              "txt": "r = 7 cm"
+            }
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 7,
+              "n": 8,
+              "m": 0
+            },
+            "o": {
+              "rad": {
+                "txt": "r = 7 cm"
+              }
+            }
+          }
+        },
+        "prompt": "Find the area of the circle in square centimetres, to two decimal places.",
+        "privateAnswer": 153.94,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7"
+        ]
+      }
+    ]
+  },
+  "F12-13": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "r": 6,
+              "a": 30
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 6,
+            "a": 30
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 6,
+              "a": 30
+            }
+          }
+        },
+        "prompt": "Find the sector area in square centimetres, to two decimal places.",
+        "privateAnswer": 9.42,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "30"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 6,
+            "a": 60
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 6,
+              "a": 60
+            }
+          }
+        },
+        "prompt": "Find the sector area in square centimetres, to two decimal places.",
+        "privateAnswer": 18.85,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "60"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 6,
+            "a": 90
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 6,
+              "a": 90
+            }
+          }
+        },
+        "prompt": "Find the sector area in square centimetres, to two decimal places.",
+        "privateAnswer": 28.27,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "90"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 6,
+            "a": 120
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 6,
+              "a": 120
+            }
+          }
+        },
+        "prompt": "Find the sector area in square centimetres, to two decimal places.",
+        "privateAnswer": 37.7,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "120"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 6,
+            "a": 150
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 6,
+              "a": 150
+            }
+          }
+        },
+        "prompt": "Find the sector area in square centimetres, to two decimal places.",
+        "privateAnswer": 47.12,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "150"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "r": 6,
+            "a": 180
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "r": 6,
+              "a": 180
+            }
+          }
+        },
+        "prompt": "Find the sector area in square centimetres, to two decimal places.",
+        "privateAnswer": 56.55,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "180"
+        ]
+      }
+    ]
+  },
+  "F12-14": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "label": "Same perimeter, different area",
+              "mode": "compare",
+              "P": 24,
+              "l": 10,
+              "A": 36,
+              "i": 4,
+              "la": 3,
+              "wa": 2,
+              "lb": 5,
+              "wb": 3
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Same perimeter, different area",
+            "mode": "compare",
+            "P": 24,
+            "l": 10,
+            "A": 36,
+            "i": 4,
+            "la": 3,
+            "wa": 2,
+            "lb": 5,
+            "wb": 3
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Same perimeter, different area",
+              "mode": "compare",
+              "P": 24,
+              "l": 10,
+              "A": 36,
+              "i": 4,
+              "la": 3,
+              "wa": 2,
+              "lb": 5,
+              "wb": 3
+            }
+          }
+        },
+        "prompt": "Find the perimeter of rectangle A, in metres.",
+        "privateAnswer": 10,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "3"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Same perimeter, different area",
+            "mode": "compare",
+            "P": 24,
+            "l": 10,
+            "A": 36,
+            "i": 4,
+            "la": 4,
+            "wa": 2,
+            "lb": 5,
+            "wb": 3
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Same perimeter, different area",
+              "mode": "compare",
+              "P": 24,
+              "l": 10,
+              "A": 36,
+              "i": 4,
+              "la": 4,
+              "wa": 2,
+              "lb": 5,
+              "wb": 3
+            }
+          }
+        },
+        "prompt": "Find the perimeter of rectangle A, in metres.",
+        "privateAnswer": 12,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "4"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Same perimeter, different area",
+            "mode": "compare",
+            "P": 24,
+            "l": 10,
+            "A": 36,
+            "i": 4,
+            "la": 5,
+            "wa": 2,
+            "lb": 5,
+            "wb": 3
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Same perimeter, different area",
+              "mode": "compare",
+              "P": 24,
+              "l": 10,
+              "A": 36,
+              "i": 4,
+              "la": 5,
+              "wa": 2,
+              "lb": 5,
+              "wb": 3
+            }
+          }
+        },
+        "prompt": "Find the perimeter of rectangle A, in metres.",
+        "privateAnswer": 14,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "5"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Same perimeter, different area",
+            "mode": "compare",
+            "P": 24,
+            "l": 10,
+            "A": 36,
+            "i": 4,
+            "la": 6,
+            "wa": 2,
+            "lb": 5,
+            "wb": 3
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Same perimeter, different area",
+              "mode": "compare",
+              "P": 24,
+              "l": 10,
+              "A": 36,
+              "i": 4,
+              "la": 6,
+              "wa": 2,
+              "lb": 5,
+              "wb": 3
+            }
+          }
+        },
+        "prompt": "Find the perimeter of rectangle A, in metres.",
+        "privateAnswer": 16,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "6"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Same perimeter, different area",
+            "mode": "compare",
+            "P": 24,
+            "l": 10,
+            "A": 36,
+            "i": 4,
+            "la": 7,
+            "wa": 2,
+            "lb": 5,
+            "wb": 3
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Same perimeter, different area",
+              "mode": "compare",
+              "P": 24,
+              "l": 10,
+              "A": 36,
+              "i": 4,
+              "la": 7,
+              "wa": 2,
+              "lb": 5,
+              "wb": 3
+            }
+          }
+        },
+        "prompt": "Find the perimeter of rectangle A, in metres.",
+        "privateAnswer": 18,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "7"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "label": "Same perimeter, different area",
+            "mode": "compare",
+            "P": 24,
+            "l": 10,
+            "A": 36,
+            "i": 4,
+            "la": 8,
+            "wa": 2,
+            "lb": 5,
+            "wb": 3
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "label": "Same perimeter, different area",
+              "mode": "compare",
+              "P": 24,
+              "l": 10,
+              "A": 36,
+              "i": 4,
+              "la": 8,
+              "wa": 2,
+              "lb": 5,
+              "wb": 3
+            }
+          }
+        },
+        "prompt": "Find the perimeter of rectangle A, in metres.",
+        "privateAnswer": 20,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "8"
+        ]
+      }
+    ]
+  },
+  "F12-15": {
+    "lessonExplore": {
+      "config": {},
+      "explore": {
+        "variables": {
+          "st": {
+            "value": {
+              "pair": 0,
+              "view": "grid",
+              "dir": "down",
+              "val": 2
+            }
+          }
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "C1.Q1",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pair": 0,
+            "view": "grid",
+            "dir": "down",
+            "val": 2
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "pair": 0,
+              "view": "grid",
+              "dir": "down",
+              "val": 2
+            }
+          }
+        },
+        "prompt": "Convert 2 square centimetres into square millimetres.",
+        "privateAnswer": 200,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "100"
+        ]
+      },
+      {
+        "id": "C1.Q2",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pair": 0,
+            "view": "grid",
+            "dir": "down",
+            "val": 3
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "pair": 0,
+              "view": "grid",
+              "dir": "down",
+              "val": 3
+            }
+          }
+        },
+        "prompt": "Convert 3 square centimetres into square millimetres.",
+        "privateAnswer": 300,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "100"
+        ]
+      },
+      {
+        "id": "C1.Q3",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pair": 0,
+            "view": "grid",
+            "dir": "down",
+            "val": 4
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "pair": 0,
+              "view": "grid",
+              "dir": "down",
+              "val": 4
+            }
+          }
+        },
+        "prompt": "Convert 4 square centimetres into square millimetres.",
+        "privateAnswer": 400,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "100"
+        ]
+      },
+      {
+        "id": "C1.Q4",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pair": 0,
+            "view": "grid",
+            "dir": "down",
+            "val": 5
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "pair": 0,
+              "view": "grid",
+              "dir": "down",
+              "val": 5
+            }
+          }
+        },
+        "prompt": "Convert 5 square centimetres into square millimetres.",
+        "privateAnswer": 500,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "100"
+        ]
+      },
+      {
+        "id": "C1.Q5",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pair": 0,
+            "view": "grid",
+            "dir": "down",
+            "val": 6
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "pair": 0,
+              "view": "grid",
+              "dir": "down",
+              "val": 6
+            }
+          }
+        },
+        "prompt": "Convert 6 square centimetres into square millimetres.",
+        "privateAnswer": 600,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "100"
+        ]
+      },
+      {
+        "id": "C1.Q6",
+        "source": "SRC",
+        "nativeIndex": 0,
+        "data": {
+          "st": {
+            "pair": 0,
+            "view": "grid",
+            "dir": "down",
+            "val": 7
+          }
+        },
+        "scene": {
+          "function": "draw",
+          "arguments": {
+            "st": {
+              "pair": 0,
+              "view": "grid",
+              "dir": "down",
+              "val": 7
+            }
+          }
+        },
+        "prompt": "Convert 7 square centimetres into square millimetres.",
+        "privateAnswer": 700,
+        "answerType": "numeric",
+        "hint": "Use the given measurements, vertices or transformation rule.",
+        "wrongFeedback": "Check the givens and the requested quantity.",
+        "expected": [
+          "100"
+        ]
+      }
+    ]
+  }
+}

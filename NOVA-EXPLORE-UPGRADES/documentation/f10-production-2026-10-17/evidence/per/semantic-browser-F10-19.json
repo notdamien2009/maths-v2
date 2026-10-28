@@ -1,0 +1,840 @@
+[
+  {
+    "id": "F10-19",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-19-Trigonometric-Graph-Explorer-PREMIUM-REVIEW.html",
+    "sourceSha256": "f42217777c5e9ec213847992f9843138dfb380a1f8d365362f9be6e6f5b6a660",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            785,
+            785
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.5 0.866 1 1.5 10 135 180 2 225 270 315 360 45 60 90",
+          "before": "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 60 90"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "CHOOSE A TRIGONOMETRIC GRAPH GCSE · Sine wave GCSE · Cosine wave GCSE · Tangent and gaps GCSE · Compare sin and cos GCSE · Change the amplitude GCSE · Two cycles GCSE · Phase and translation ANGLE 60° AMPLITUDE 1 FREQUENCY 1 PHASE 0° VERTICAL SHIFT 0 −5° +5° ↶ Restore preset Drag or keyboard-focus t",
+          "after": "CHOOSE A TRIGONOMETRIC GRAPH GCSE · Sine wave GCSE · Cosine wave GCSE · Tangent and gaps GCSE · Compare sin and cos GCSE · Change the amplitude GCSE · Two cycles GCSE · Phase and translation ANGLE 60° AMPLITUDE 1 FREQUENCY 1 PHASE 0° VERTICAL SHIFT 0 −5° +5° ↶ Restore preset Drag or keyboard-focus t",
+          "bi": [
+            "GCSE-COSINE",
+            "60",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          "ai": [
+            "GCSE-COSINE",
+            "60",
+            "1",
+            "1",
+            "0",
+            "0"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 60 90",
+            1
+          ],
+          "narrow": [
+            "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 60 90",
+            1
+          ],
+          "back": [
+            "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 60 90",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            785,
+            785
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 90",
+          "before": "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 90"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Read sin 0°. What is the output? YOUR ANSWER CheckHint",
+          "after": "Read sin 0°. What is the output? YOUR ANSWER CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 90",
+            0
+          ],
+          "narrow": [
+            "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 90",
+            0
+          ],
+          "back": [
+            "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 90",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "state.angle is out of range"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "GCSE-SINE",
+            "angle": 400
+          },
+          "errors": [
+            "angle must be from 0 to 360"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 785,
+            "median": 31.33,
+            "p10": 20.16,
+            "count": 23,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 785,
+            "median": 11,
+            "p10": 11,
+            "count": 23,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 785,
+            "median": 11,
+            "p10": 11,
+            "count": 23,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 785,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 785,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 785,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 785,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 785,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°\n315°\n360°\n−2\n−1.5\n−1\n−0.5\n0\n0.5\n1\n1.5\n2\nOUTPUT · y\nANGLE ·",
+          "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°\n315°\n360°\n−2\n−1.5\n−1\n−0.5\n0\n0.5\n1\n1.5\n2\nOUTPUT · y\nANGLE ·"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "Check the scale"
+          ],
+          "text": "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°\n315°\n360°\n−2\n−1.5\n−1\n−0.5\n0\n0.5\n1\n1.5\n2\nOUTPUT · y\nANGLE · degrees\nREAD THE GRAPH AND DECIDE WHAT IS TRUE\n\nCheck the scale, turning points and gaps before answering.\n\nUNIT CIRCLE · SAME ANGLE\nx\ny\nunit radius = 1\nGRAPH "
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 0.87,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "Check the scale"
+          ],
+          "text": "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°\n315°\n360°\n−2\n−1.5\n−1\n−0.5\n0\n0.5\n1\n1.5\n2\nOUTPUT · y\nANGLE · degrees\nREAD THE GRAPH AND DECIDE WHAT IS TRUE\n\nCheck the scale, turning points and gaps before answering.\n\nUNIT CIRCLE · SAME ANGLE\nx\ny\nunit radius = 1\nGRAPH "
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "undefined",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°\n315°\n360°\n−2\n−1.5\n−1\n−0.5\n0\n0.5\n1\n1.5\n2\nOUTPUT · y\nANGLE · degrees\nREAD THE GRAPH AND DECIDE WHAT IS TRUE\n\nCheck the s"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90",
+            "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90",
+            "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90",
+            "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90",
+            "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90",
+            "F10 · TRIGONOMETRIC GRAPH STUDIO\nNOVA · NEON CHALK\n0°\n45°\n90"
+          ],
+          "distinctText": 5,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · TRIGONOMETRIC GRAPH STUDIONOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°",
+          "F10 · TRIGONOMETRIC GRAPH STUDIONOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°",
+          "F10 · TRIGONOMETRIC GRAPH STUDIONOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°",
+          "F10 · TRIGONOMETRIC GRAPH STUDIONOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · TRIGONOMETRIC GRAPH STUDIONOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°\n315°\n360°\n−2\n−1.5\n−1\n−0.5\n0\n0.5\n1\n1.5\n2\nOUTPUT · y\nANGLE · degrees\nRead the graph and decide what is true\n\nCheck the sc"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · TRIGONOMETRIC GRAPH STUDIONOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°",
+          "F10 · TRIGONOMETRIC GRAPH STUDIONOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°",
+          "F10 · TRIGONOMETRIC GRAPH STUDIONOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°",
+          "F10 · TRIGONOMETRIC GRAPH STUDIONOVA · NEON CHALK\n0°\n45°\n90°\n135°\n180°\n225°\n270°"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Graph angle in degrees/",
+          "active": "",
+          "panel": "CHOOSE A TRIGONOMETRIC GRAPH GCSE · Sine wave GCSE · Cosine wave GCSE · Tangent and gaps GCSE · Compare sin and cos GCSE · Change the amplitude GCSE · Two cycles GCSE · Phase and translation ANGLE 60° AMPLITUDE 1 FREQUENCY 1 PHASE 0° VERTICAL SHIFT 0 −5° +5° ↶ Restore preset Drag or keyboard-focus the graph marker to change the angle. The unit circle moves with the graph. At a tangent asymptote, the output is undefined.",
+          "inputs": [
+            "GCSE-SINE",
+            "60",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 0.866 1 1.5 10 135 180 2 225 270 315 360 45 60 90",
+          "buttons": 1,
+          "vb": 785,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Graph angle in degrees/",
+          "active": "",
+          "panel": "CHOOSE A TRIGONOMETRIC GRAPH GCSE · Sine wave GCSE · Cosine wave GCSE · Tangent and gaps GCSE · Compare sin and cos GCSE · Change the amplitude GCSE · Two cycles GCSE · Phase and translation ANGLE 60° AMPLITUDE 1 FREQUENCY 1 PHASE 0° VERTICAL SHIFT 0 −5° +5° ↶ Restore preset Drag or keyboard-focus the graph marker to change the angle. The unit circle moves with the graph. At a tangent asymptote, the output is undefined.",
+          "inputs": [
+            "GCSE-COSINE",
+            "60",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 60 90",
+          "buttons": 1,
+          "vb": 785,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Graph angle in degrees/",
+          "active": "",
+          "panel": "CHOOSE A TRIGONOMETRIC GRAPH GCSE · Sine wave GCSE · Cosine wave GCSE · Tangent and gaps GCSE · Compare sin and cos GCSE · Change the amplitude GCSE · Two cycles GCSE · Phase and translation ANGLE 60° AMPLITUDE 1 FREQUENCY 1 PHASE 0° VERTICAL SHIFT 0 −5° +5° ↶ Restore preset Drag or keyboard-focus the graph marker to change the angle. The unit circle moves with the graph. At a tangent asymptote, the output is undefined.",
+          "inputs": [
+            "GCSE-COSINE",
+            "60",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 60 90",
+          "buttons": 1,
+          "vb": 785,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "Read sin 0°. What is the output? YOUR ANSWER CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 90",
+          "buttons": 0,
+          "vb": 785,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "Read sin 0°. What is the output? YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 90",
+          "buttons": 0,
+          "vb": 785,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "Read sin 0°. What is the output? YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 10 135 180 2 225 270 315 360 45 90",
+          "buttons": 0,
+          "vb": 785,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 785,
+        "median": 31.33,
+        "p10": 20.16,
+        "count": 23,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 785,
+        "median": 11,
+        "p10": 11,
+        "count": 23,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 785,
+        "median": 11,
+        "p10": 11,
+        "count": 23,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": false
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

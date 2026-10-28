@@ -1,0 +1,793 @@
+[
+  {
+    "id": "F6-01",
+    "presetOf": null,
+    "path": "F6/F6-01-ratio-table.html",
+    "sourceSha256": "9cc1f7dfc526d6330fb011575d56da2a4793dec49db2e795ae18d49cee15f357",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1120,
+            420
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "01 18 2 3 4 6",
+          "before": "01 1 12 2 3 4 6"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "New preset. Use the same factor in both columns. Try a preset Y7 · Ratio notation Y7 · Direct proportion Y7 · Unit price and best buy Y8 · Fractional/decimal ratios Y8 · Tables and equations Y8 · Direct proportion graphs Y8 · Inverse proportion contrast Keyboard drop target Column A Column B Check r",
+          "after": "New preset. Use the same factor in both columns. Try a preset Y7 · Ratio notation Y7 · Direct proportion Y7 · Unit price and best buy Y8 · Fractional/decimal ratios Y8 · Tables and equations Y8 · Direct proportion graphs Y8 · Inverse proportion contrast Keyboard drop target Column A Column B Check r",
+          "bi": [
+            "Y7-061",
+            "0"
+          ],
+          "ai": [
+            "Y7-061",
+            "0"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "01 1 12 2 3 4 6",
+            7
+          ],
+          "narrow": [
+            "01 1 12 2 3 4 6",
+            7
+          ],
+          "back": [
+            "01 1 12 2 3 4 6",
+            7
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1120,
+            420
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "01 1.667 10 2 20 3 5 6",
+          "before": "01 1.667 10 2 20 3 5 6"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Question 1 / 4 · Keep the ratio Check answer Hint Next question Selected 5. Press Check to verify.",
+          "after": "Question 1 / 4 · Keep the ratio Check answer Hint Next question Selected 5. Press Check to verify.",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "01 1.667 10 2 20 3 5 6",
+            4
+          ],
+          "narrow": [
+            "01 10 2 20 3 5 6",
+            4
+          ],
+          "back": [
+            "01 1.667 10 2 20 3 5 6",
+            4
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "lesson.state.a0 must be greater than zero"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1120,
+            "median": 23.13,
+            "p10": 21.11,
+            "count": 25,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 420,
+            "median": 12.5,
+            "p10": 11,
+            "count": 19,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 420,
+            "median": 12.5,
+            "p10": 11,
+            "count": 19,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 12.5,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 12.5,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 12.5,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 12.5,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 12.5,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKnown\n2\n?\nNew\n?\nQUANTITY B\nCo",
+          "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKnown\n3\n?\nNew\n?\nQUANTITY B\nCo"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "2",
+            "7"
+          ],
+          "text": "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKnown\n2\n?\nNew\n?\nQUANTITY B\nCost\nKnown\n£7\n?\nNew\n?\nEach row must describe the same relationship.\ny / x = constant\nRELATIONSHIP\nRate = 3.5\nWORK IT BOTH WAYS\n× the first side\n× the second side\n"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 21,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "3",
+            "4"
+          ],
+          "text": "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKnown\n3\n?\nNew\n?\nQUANTITY B\nCost\nKnown\n£4\n?\nNew\n?\nEach row must describe the same relationship.\ny / x = constant\nRELATIONSHIP\nRate = 1.333\nWORK IT BOTH WAYS\n× the first side\n× the second sid"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 8,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKnown\n2\n?\nNew\n?\nQUANTITY B\nCost\nKnown\n£7\n?\nNew\n?\nEach row must describe the same relation"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELA",
+          "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELA",
+          "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELA",
+          "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELA",
+          "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELA",
+          "RATIO LAB · F6-01\nLEARN & REVEAL\nRATIO TABLE · KEEP THE RELA"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "RATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKn",
+          "RATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKn",
+          "RATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKn",
+          "RATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKn"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "RATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKnown\n2\n?\nNew\n?\nQUANTITY B\nCost\nKnown\n£7\n?\nNew\n?\nEach row must describe the same relationship.\ny / x = constant\nRELATIONSH"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "RATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKn",
+          "RATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKn",
+          "RATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKn",
+          "RATIO TABLE · KEEP THE RELATION\nSAME FACTOR · BOTH COLUMNS\nQUANTITY A\nTickets\nKn"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Choose an operation. Apply it to each column. Try a preset Y7 · Ratio notation Y7 · Direct proportion Y7 · Unit price and best buy Y8 · Fractional/decimal ratios Y8 · Tables and equations Y8 · Direct proportion graphs Y8 · Inverse proportion contrast Keyboard drop target Column A Column B Check relationship Undo last Reset table ×2 ×3 ÷2 ×4 Place A value Place B value Drag multipliers from the tray to the arrows, then drag number tiles into both answer cells. For keyboard use, focus a tile and press Enter or use the matching buttons. Escape cancels a drag.",
+          "inputs": [
+            "Y7-060",
+            "0"
+          ],
+          "stageInputs": [],
+          "nums": "01 18 2 3 4 6",
+          "buttons": 7,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "New preset. Use the same factor in both columns. Try a preset Y7 · Ratio notation Y7 · Direct proportion Y7 · Unit price and best buy Y8 · Fractional/decimal ratios Y8 · Tables and equations Y8 · Direct proportion graphs Y8 · Inverse proportion contrast Keyboard drop target Column A Column B Check relationship Undo last Reset table ×2 ×3 ÷2 ×4 Place A value Place B value Drag multipliers from the tray to the arrows, then drag number tiles into both answer cells. For keyboard use, focus a tile and press Enter or use the matching buttons. Escape cancels a drag.",
+          "inputs": [
+            "Y7-061",
+            "0"
+          ],
+          "stageInputs": [],
+          "nums": "01 1 12 2 3 4 6",
+          "buttons": 7,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "New preset. Use the same factor in both columns. Try a preset Y7 · Ratio notation Y7 · Direct proportion Y7 · Unit price and best buy Y8 · Fractional/decimal ratios Y8 · Tables and equations Y8 · Direct proportion graphs Y8 · Inverse proportion contrast Keyboard drop target Column A Column B Check relationship Undo last Reset table ×2 ×3 ÷2 ×4 Place A value Place B value Drag multipliers from the tray to the arrows, then drag number tiles into both answer cells. For keyboard use, focus a tile and press Enter or use the matching buttons. Escape cancels a drag.",
+          "inputs": [
+            "Y7-061",
+            "0"
+          ],
+          "stageInputs": [],
+          "nums": "01 1 12 2 3 4 6",
+          "buttons": 7,
+          "vb": 420,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Question 1 / 4 · Keep the ratio Check answer Hint Next question Drag a number tile to the question-mark cell or type the value.",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "01 1.667 10 2 20 3 5 6",
+          "buttons": 4,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Question 1 / 4 · Keep the ratio Check answer Hint Next question Selected 5. Press Check to verify.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "01 1.667 10 2 20 3 5 6",
+          "buttons": 4,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Question 1 / 4 · Keep the ratio Check answer Hint Next question Selected 5. Press Check to verify.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "01 10 2 20 3 5 6",
+          "buttons": 4,
+          "vb": 420,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1120,
+        "median": 23.13,
+        "p10": 21.11,
+        "count": 25,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 420,
+        "median": 12.5,
+        "p10": 11,
+        "count": 19,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 420,
+        "median": 12.5,
+        "p10": 11,
+        "count": 19,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

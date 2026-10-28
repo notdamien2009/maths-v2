@@ -1,0 +1,786 @@
+[
+  {
+    "id": "F8-08",
+    "presetOf": null,
+    "path": "F8/F8-08-equivalence-checker.html",
+    "sourceSha256": "77f5e870745bd91c69e8ada3eae7e047528cb8c54e9a59bd5ce1e5830f49618e",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1080,
+            440
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 08 1 2 3 5 8",
+          "before": "0 08 1 2 3 4 7 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Year 7 · Collecting like terms Year 7 · A misleading match Year 9 · Expanding a bracket Year 9 · Double brackets Year 9 · Counterexample Undo value Reset tests Equivalent Not equivalent Check verdict Choose values, inspect the table, then decide whether the expressions are equivalent.",
+          "after": "Year 7 · Collecting like terms Year 7 · A misleading match Year 9 · Expanding a bracket Year 9 · Double brackets Year 9 · Counterexample Undo value Reset tests Equivalent Not equivalent Check verdict Choose values, inspect the table, then decide whether the expressions are equivalent.",
+          "bi": [
+            "Y7-029-B"
+          ],
+          "ai": [
+            "Y7-029-B"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 08 1 2 3 4 7 8",
+            5
+          ],
+          "narrow": [
+            "0 08 1 2 3 4 7 8",
+            5
+          ],
+          "back": [
+            "0 08 1 2 3 4 7 8",
+            5
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1080,
+            440
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 08 1 2 3 5 8",
+          "before": "0 08 1 10 2 3 5 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Undo value Reset tests Equivalent Not equivalent Check verdict Challenge 1 of 5 · Can we combine like terms? Value placed. Compare both outputs in this row. Next comparison",
+          "after": "Undo value Reset tests Equivalent Not equivalent Check verdict Challenge 1 of 5 · Can we combine like terms? Value placed. Compare both outputs in this row. Next comparison",
+          "bi": [
+            "Y9-006-A"
+          ],
+          "ai": [
+            "Y9-006-A"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 08 1 10 2 3 5 8",
+            5
+          ],
+          "narrow": [
+            "0 08 1 10 2 3 5 8",
+            5
+          ],
+          "back": [
+            "0 08 1 10 2 3 5 8",
+            5
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of: Y7-029-A, Y7-029-B, Y9-006-A, Y9-006-B, Y9-006-C"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1080,
+            "median": 30.14,
+            "p10": 22.36,
+            "count": 32,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 13.49,
+            "p10": 11,
+            "count": 33,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 13.49,
+            "p10": 11,
+            "count": 33,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 13.49,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS\nUSE VALUES · COMPARE OUTPUTS\nEXPRESSION A\nEXPRESSION B\n3x + 2x\n5x\n?\nSUBSTITUTIO",
+          "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS\nUSE VALUES · COMPARE OUTPUTS\nEXPRESSION A\nEXPRESSION B\n4x + 3\n7x\n?\nSUBSTITUTION"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "3x + 2x"
+          ],
+          "text": "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS\nUSE VALUES · COMPARE OUTPUTS\nEXPRESSION A\nEXPRESSION B\n3x + 2x\n5x\n?\nSUBSTITUTION TEST TABLE\nx\nA(x)\nB(x)\nMatch?\n?\n· · ·\n· · ·\n?\n?\n· · ·\n· · ·\n?\n?\n· · ·\n· · ·\n?\nTest values, then decide whether the two expressions are always equal.\nDRAG OR T"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 20,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "4x + 3"
+          ],
+          "text": "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS\nUSE VALUES · COMPARE OUTPUTS\nEXPRESSION A\nEXPRESSION B\n4x + 3\n7x\n?\nSUBSTITUTION TEST TABLE\nx\nA(x)\nB(x)\nMatch?\n?\n· · ·\n· · ·\n?\n?\n· · ·\n· · ·\n?\n?\n· · ·\n· · ·\n?\nTest values, then decide whether the two expressions are always equal.\nDRAG OR TA"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 19,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS\nUSE VALUES · COMPARE OUTPUTS\nEXPRESSION A\nEXPRESSION B\n3x + 2x\n5x\n?\nSUBSTITUTION TEST TABLE\nx\nA(x)\nB(x)\nMatch?\n?\n· · ·\n· · ·\n?\n?\n· · ·\n· · "
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS",
+          "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS",
+          "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS",
+          "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS",
+          "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS",
+          "F8-08 · EQUIVALENCE LAB\nTEST THE CLAIM\nTEST BOTH EXPRESSIONS"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "TEST BOTH EXPRESSIONS\nUSE VALUES · COMPARE OUTPUTS\nEXPRESSION A\nEXPRESSION B\n3x ",
+          "CHECK WHETHER THEY MATCH\nSUBSTITUTE · COMPARE · GENERALISE\nEXPRESSION A\nEXPRESSI",
+          "CHECK WHETHER THEY MATCH\nSUBSTITUTE · COMPARE · GENERALISE\nEXPRESSION A\nEXPRESSI",
+          "CHECK WHETHER THEY MATCH\nSUBSTITUTE · COMPARE · GENERALISE\nEXPRESSION A\nEXPRESSI"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "TEST BOTH EXPRESSIONS\nUSE VALUES · COMPARE OUTPUTS\nEXPRESSION A\nEXPRESSION B\n3x + 2x\n5x\n?\nSUBSTITUTION TEST TABLE\nx\nA(x)\nB(x)\nMatch?\n?\n· · ·\n· · ·\n?\n?\n· · ·\n· · ·\n?\n?\n· · ·\n· · ·\n?\nTest values, then d"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "TEST BOTH EXPRESSIONS\nUSE VALUES · COMPARE OUTPUTS\nEXPRESSION A\nEXPRESSION B\n4x ",
+          "CHECK WHETHER THEY MATCH\nSUBSTITUTE · COMPARE · GENERALISE\nEXPRESSION A\nEXPRESSI",
+          "CHECK WHETHER THEY MATCH\nSUBSTITUTE · COMPARE · GENERALISE\nEXPRESSION A\nEXPRESSI",
+          "CHECK WHETHER THEY MATCH\nSUBSTITUTE · COMPARE · GENERALISE\nEXPRESSION A\nEXPRESSI"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Year 7 · Collecting like terms Year 7 · A misleading match Year 9 · Expanding a bracket Year 9 · Double brackets Year 9 · Counterexample Undo value Reset tests Equivalent Not equivalent Check verdict Choose values, inspect the table, then decide whether the expressions are equivalent.",
+          "inputs": [
+            "Y7-029-A"
+          ],
+          "stageInputs": [],
+          "nums": "0 08 1 2 3 5 8",
+          "buttons": 5,
+          "vb": 1080,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Year 7 · Collecting like terms Year 7 · A misleading match Year 9 · Expanding a bracket Year 9 · Double brackets Year 9 · Counterexample Undo value Reset tests Equivalent Not equivalent Check verdict Choose values, inspect the table, then decide whether the expressions are equivalent.",
+          "inputs": [
+            "Y7-029-B"
+          ],
+          "stageInputs": [],
+          "nums": "0 08 1 2 3 4 7 8",
+          "buttons": 5,
+          "vb": 1080,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Year 7 · Collecting like terms Year 7 · A misleading match Year 9 · Expanding a bracket Year 9 · Double brackets Year 9 · Counterexample Undo value Reset tests Equivalent Not equivalent Check verdict Choose values, inspect the table, then decide whether the expressions are equivalent.",
+          "inputs": [
+            "Y7-029-B"
+          ],
+          "stageInputs": [],
+          "nums": "0 08 1 2 3 4 7 8",
+          "buttons": 5,
+          "vb": 440,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Undo value Reset tests Equivalent Not equivalent Check verdict Challenge 1 of 5 · Can we combine like terms? Test three distinct values. Then select and check your verdict. Next comparison",
+          "inputs": [
+            "Y7-029-B"
+          ],
+          "stageInputs": [],
+          "nums": "0 08 1 2 3 5 8",
+          "buttons": 5,
+          "vb": 1080,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Undo value Reset tests Equivalent Not equivalent Check verdict Challenge 1 of 5 · Can we combine like terms? Value placed. Compare both outputs in this row. Next comparison",
+          "inputs": [
+            "Y9-006-A"
+          ],
+          "stageInputs": [],
+          "nums": "0 08 1 10 2 3 5 8",
+          "buttons": 5,
+          "vb": 1080,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Undo value Reset tests Equivalent Not equivalent Check verdict Challenge 1 of 5 · Can we combine like terms? Value placed. Compare both outputs in this row. Next comparison",
+          "inputs": [
+            "Y9-006-A"
+          ],
+          "stageInputs": [],
+          "nums": "0 08 1 10 2 3 5 8",
+          "buttons": 5,
+          "vb": 440,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1080,
+        "median": 30.14,
+        "p10": 22.36,
+        "count": 32,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 13.49,
+        "p10": 11,
+        "count": 33,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 13.49,
+        "p10": 11,
+        "count": 33,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

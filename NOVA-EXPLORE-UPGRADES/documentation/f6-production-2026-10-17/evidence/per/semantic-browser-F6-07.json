@@ -1,0 +1,791 @@
+[
+  {
+    "id": "F6-07",
+    "presetOf": null,
+    "path": "F6/F6-07-map-and-scale-drawing.html",
+    "sourceSha256": "6ab5bd840a040e21f51262399e59eb2236f5509799b7d872ec17743b39959e21",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1120,
+            480
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.5 07 1 1.5 2 3 4 6",
+          "before": "0 0.4 0.8 07 1 1.2 1.6 2 3 4 5 6"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Map scenario Y7-064 · School to park Y7-064 · Library route Y9-021 · Country trail Y9-021 · City survey Check placement Hint Reset Drag ruler ends A and B to the map markers. Drag the 1 cm scale copy onto the first scale-bar segment. Keyboard: focus each handle and press 1 or 2, or S for the scale. ",
+          "after": "Map scenario Y7-064 · School to park Y7-064 · Library route Y9-021 · Country trail Y9-021 · City survey Check placement Hint Reset Drag ruler ends A and B to the map markers. Drag the 1 cm scale copy onto the first scale-bar segment. Keyboard: focus each handle and press 1 or 2, or S for the scale. ",
+          "bi": [
+            "Y7-064-library"
+          ],
+          "ai": [
+            "Y7-064-library"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 0.4 0.8 07 1 1.2 1.6 2 3 4 5 6",
+            3
+          ],
+          "narrow": [
+            "0 0.4 0.8 07 1 1.2 1.6 2 3 4 5 6",
+            3
+          ],
+          "back": [
+            "0 0.4 0.8 07 1 1.2 1.6 2 3 4 5 6",
+            3
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1120,
+            480
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.5 07 1 1.5 2 3 4 6",
+          "before": "0 0.5 07 1 1.5 2 3 4 6"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Map 1 of 4: Use the map scale to find the real distance between the school and park. MAP LENGTH · cm REAL DISTANCE · km Check distance Hint Next map Routes solved: 0 / 4",
+          "after": "Map 1 of 4: Use the map scale to find the real distance between the school and park. MAP LENGTH · cm REAL DISTANCE · km Check distance Hint Next map Routes solved: 0 / 4",
+          "bi": [
+            "7",
+            "7"
+          ],
+          "ai": [
+            "7",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 0.5 07 1 1.5 2 3 4 6",
+            0
+          ],
+          "narrow": [
+            "0 0.5 07 1 1.5 2 3 4 6",
+            0
+          ],
+          "back": [
+            "0 0.5 07 1 1.5 2 3 4 6",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "lesson.state.dx must be greater than zero"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1120,
+            "median": 16.71,
+            "p10": 14.14,
+            "count": 22,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11,
+            "p10": 11,
+            "count": 22,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 480,
+            "median": 11,
+            "p10": 11,
+            "count": 22,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 480,
+          "median": 11,
+          "p10": 11,
+          "count": 22,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\nMAP RULER · centimetres\n0\n1\n2\n3\n4\n5\n6\nMEASURE THE CENTRES\nSCALE",
+          "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\nMAP RULER · centimetres\n0\n1\n2\n3\n4\n5\nMEASURE THE CENTRES\nSCALE B"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "2 km"
+          ],
+          "text": "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\nMAP RULER · centimetres\n0\n1\n2\n3\n4\n5\n6\nMEASURE THE CENTRES\nSCALE BAR · REAL DISTANCE\n0\n2\n4\n6\n8\n1 cm ON MAP = 2 km IN REAL LIFE\nMAP LENGTH × SCALE = ?\n\nMAP MEASUREMENT\n\n? cm\n\nDistance between the landmark centres.\n\nSCALE FACT"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 12,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "4 km"
+          ],
+          "text": "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\nMAP RULER · centimetres\n0\n1\n2\n3\n4\n5\nMEASURE THE CENTRES\nSCALE BAR · REAL DISTANCE\n0\n4\n8\n12\n16\n1 cm ON MAP = 4 km IN REAL LIFE\nMAP LENGTH × SCALE = ?\n\nMAP MEASUREMENT\n\n? cm\n\nDistance between the landmark centres.\n\nSCALE FACT"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 20,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\nMAP RULER · centimetres\n0\n1\n2\n3\n4\n5\n6\nMEASURE THE CENTRES\nSCALE BAR · REAL DISTANCE\n0\n2\n4\n6\n8\n1 cm ON MAP = 2 km IN REAL LI"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PA",
+          "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PA",
+          "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PA",
+          "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PA",
+          "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PA",
+          "F6-07\nSCHOOL TO PARK\nHOW FAR IN REAL LIFE?\nFROM SCHOOL TO PA"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "MAP AND SCALE DRAWING\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\nMAP RULER · centimetres\n",
+          "MAP AND SCALE DRAWING\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\n6 cm\nMAP RULER · centime",
+          "MAP AND SCALE DRAWING\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\n6 cm\nMAP RULER · centime",
+          "MAP AND SCALE DRAWING\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\n6 cm\nMAP RULER · centime"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "MAP AND SCALE DRAWING\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\nMAP RULER · centimetres\n0\n1\n2\n3\n4\n5\n6\nREAD THE MAP LENGTH\nSCALE BAR · REAL DISTANCE\n0\n2\n4\n6\n8\n1 cm ON MAP = 2 km IN REAL LIFE\nMEASURE · SCALE · "
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "MAP AND SCALE DRAWING\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\nMAP RULER · centimetres\n",
+          "MAP AND SCALE DRAWING\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\n5 cm\nMAP RULER · centime",
+          "MAP AND SCALE DRAWING\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\n5 cm\nMAP RULER · centime",
+          "MAP AND SCALE DRAWING\nFROM SCHOOL TO PARK\nN\nSCHOOL\nPARK\n5 cm\nMAP RULER · centime"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Map scenario Y7-064 · School to park Y7-064 · Library route Y9-021 · Country trail Y9-021 · City survey Check placement Hint Reset Drag ruler ends A and B to the map markers. Drag the 1 cm scale copy onto the first scale-bar segment. Keyboard: focus each handle and press 1 or 2, or S for the scale. Delete returns a tool. Move both ruler ends onto the route points, then place a copy of 1 cm on the scale bar.",
+          "inputs": [
+            "Y7-064"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 07 1 1.5 2 3 4 6",
+          "buttons": 3,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Map scenario Y7-064 · School to park Y7-064 · Library route Y9-021 · Country trail Y9-021 · City survey Check placement Hint Reset Drag ruler ends A and B to the map markers. Drag the 1 cm scale copy onto the first scale-bar segment. Keyboard: focus each handle and press 1 or 2, or S for the scale. Delete returns a tool. A diagonal route is longer than just its horizontal part.",
+          "inputs": [
+            "Y7-064-library"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.4 0.8 07 1 1.2 1.6 2 3 4 5 6",
+          "buttons": 3,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Map scenario Y7-064 · School to park Y7-064 · Library route Y9-021 · Country trail Y9-021 · City survey Check placement Hint Reset Drag ruler ends A and B to the map markers. Drag the 1 cm scale copy onto the first scale-bar segment. Keyboard: focus each handle and press 1 or 2, or S for the scale. Delete returns a tool. A diagonal route is longer than just its horizontal part.",
+          "inputs": [
+            "Y7-064-library"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.4 0.8 07 1 1.2 1.6 2 3 4 5 6",
+          "buttons": 3,
+          "vb": 480,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Map 1 of 4: Use the map scale to find the real distance between the school and park. MAP LENGTH · cm REAL DISTANCE · km Check distance Hint Next map Routes solved: 0 / 4",
+          "inputs": [
+            "",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 07 1 1.5 2 3 4 6",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Map 1 of 4: Use the map scale to find the real distance between the school and park. MAP LENGTH · cm REAL DISTANCE · km Check distance Hint Next map Routes solved: 0 / 4",
+          "inputs": [
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 07 1 1.5 2 3 4 6",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Map 1 of 4: Use the map scale to find the real distance between the school and park. MAP LENGTH · cm REAL DISTANCE · km Check distance Hint Next map Routes solved: 0 / 4",
+          "inputs": [
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 07 1 1.5 2 3 4 6",
+          "buttons": 0,
+          "vb": 480,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1120,
+        "median": 16.71,
+        "p10": 14.14,
+        "count": 22,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11,
+        "p10": 11,
+        "count": 22,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 480,
+        "median": 11,
+        "p10": 11,
+        "count": 22,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

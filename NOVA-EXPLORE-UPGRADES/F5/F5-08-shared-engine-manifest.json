@@ -1,0 +1,53 @@
+{
+  "family": "F5",
+  "id": "F5-08",
+  "title": "Multiply fractions",
+  "canonical_engine": "F5-03",
+  "canonical_source": "build/F5-03.src.html",
+  "entry_point": "F5/F5-08-multiply-fractions.html",
+  "alias_is_byte_identical_to": "F5/F5-03-area-model-fractions.html",
+  "lesson_presets": {
+    "Y7-023": {
+      "key": "y7-023",
+      "range": "unit and non-unit fractions with products from zero to one",
+      "objective": "Multiply fractions and interpret a fraction of a fraction"
+    },
+    "Y8-006": {
+      "key": "y8-006",
+      "range": "improper and mixed factors, products above one whole",
+      "objective": "Multiply mixed numbers as improper fractions; division uses F5-09"
+    }
+  },
+  "extension": {
+    "GCSE": {
+      "key": "gcse-extension",
+      "enabled": true
+    }
+  },
+  "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+  ],
+  "named_steps": 6,
+  "events": [
+    "value",
+    "step",
+    "correct",
+    "hintUsed",
+    "mode"
+  ],
+  "math_render": "owner-approved stacked NOVA Chalk fractions",
+  "external_game_wrapper": "F0-12 (not embedded or reimplemented)",
+  "shared_component_dependencies": [
+    "F0-02",
+    "F0-03",
+    "F0-04",
+    "F0-05",
+    "F2-03",
+    "F5-03",
+    "F5-09"
+  ],
+  "qa_status": "review candidate; final F2 comparative sign-off and lesson-shell integration outstanding"
+}

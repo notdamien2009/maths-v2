@@ -1,0 +1,422 @@
+[
+  {
+    "name": "F2-01 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "3042.507",
+      "ra": "3045.507"
+    }
+  },
+  {
+    "name": "F2-01 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "3042.507",
+      "lb": "3047.507"
+    }
+  },
+  {
+    "name": "F2-01 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-01 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "3045.507",
+      "reset": "3045.507"
+    }
+  },
+  {
+    "name": "F2-02 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "242",
+      "ra": "245"
+    }
+  },
+  {
+    "name": "F2-02 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "242",
+      "lb": "243"
+    }
+  },
+  {
+    "name": "F2-02 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-02 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "245",
+      "reset": "245"
+    }
+  },
+  {
+    "name": "F2-03 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "12",
+      "ra": "15"
+    }
+  },
+  {
+    "name": "F2-03 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "12",
+      "lb": "13"
+    }
+  },
+  {
+    "name": "F2-03 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-03 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "15",
+      "reset": "15"
+    }
+  },
+  {
+    "name": "F2-05 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "242",
+      "ra": "245"
+    }
+  },
+  {
+    "name": "F2-05 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "242",
+      "lb": "243"
+    }
+  },
+  {
+    "name": "F2-05 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-05 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "245",
+      "reset": "245"
+    }
+  },
+  {
+    "name": "F2-06 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"a\":{\"c\":{\"0\":1,\"1\":2},\"hi\":1,\"lo\":0},\"b\":{\"c\":{\"0\":2,\"1\":1},\"hi\":1,\"lo\":0},\"lo\":0,\"hi\":1,\"ihi\":1,\"pad\":{},\"top\":{\"0\":1,\"1\":2},\"bot\":{\"0\":2,\"1\":1},\"ev\":[{\"p\":0,\"kind\":\"add\",\"x\":1,\"y\":2,\"cin\":0,\"s\":3,\"d\":3,\"cout\":0},{\"p\":1,\"kind\":\"add\",\"x\":2,\"y\":1,\"cin\":0,\"s\":3,\"d\":3,\"cout\":0}],\"ans\":{\"0\":3,\"1\":3},\"res\":33,\"op\":\"+\",\"A\":\"21\",\"B\":\"12\"}",
+      "ra": "{\"a\":{\"c\":{\"0\":1,\"1\":5},\"hi\":1,\"lo\":0},\"b\":{\"c\":{\"0\":2,\"1\":1},\"hi\":1,\"lo\":0},\"lo\":0,\"hi\":1,\"ihi\":1,\"pad\":{},\"top\":{\"0\":1,\"1\":5},\"bot\":{\"0\":2,\"1\":1},\"ev\":[{\"p\":0,\"kind\":\"add\",\"x\":1,\"y\":2,\"cin\":0,\"s\":3,\"d\":3,\"cout\":0},{\"p\":1,\"kind\":\"add\",\"x\":5,\"y\":1,\"cin\":0,\"s\":6,\"d\":6,\"cout\":0}],\"ans\":{\"0\":3,\"1\":6},\"res\":63,\"op\":\"+\",\"A\":\"51\",\"B\":\"12\"}"
+    }
+  },
+  {
+    "name": "F2-06 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"a\":{\"c\":{\"0\":1,\"1\":2},\"hi\":1,\"lo\":0},\"b\":{\"c\":{\"0\":2,\"1\":1},\"hi\":1,\"lo\":0},\"lo\":0,\"hi\":1,\"ihi\":1,\"pad\":{},\"top\":{\"0\":1,\"1\":2},\"bot\":{\"0\":2,\"1\":1},\"ev\":[{\"p\":0,\"kind\":\"add\",\"x\":1,\"y\":2,\"cin\":0,\"s\":3,\"d\":3,\"cout\":0},{\"p\":1,\"kind\":\"add\",\"x\":2,\"y\":1,\"cin\":0,\"s\":3,\"d\":3,\"cout\":0}],\"ans\":{\"0\":3,\"1\":3},\"res\":33,\"op\":\"+\",\"A\":\"21\",\"B\":\"12\"}",
+      "lb": "{\"a\":{\"c\":{\"0\":1,\"1\":4},\"hi\":1,\"lo\":0},\"b\":{\"c\":{\"0\":2,\"1\":1},\"hi\":1,\"lo\":0},\"lo\":0,\"hi\":1,\"ihi\":1,\"pad\":{},\"top\":{\"0\":1,\"1\":4},\"bot\":{\"0\":2,\"1\":1},\"ev\":[{\"p\":0,\"kind\":\"add\",\"x\":1,\"y\":2,\"cin\":0,\"s\":3,\"d\":3,\"cout\":0},{\"p\":1,\"kind\":\"add\",\"x\":4,\"y\":1,\"cin\":0,\"s\":5,\"d\":5,\"cout\":0}],\"ans\":{\"0\":3,\"1\":5},\"res\":53,\"op\":\"+\",\"A\":\"41\",\"B\":\"12\"}"
+    }
+  },
+  {
+    "name": "F2-06 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-06 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"a\":{\"c\":{\"0\":1,\"1\":5},\"hi\":1,\"lo\":0},\"b\":{\"c\":{\"0\":2,\"1\":1},\"hi\":1,\"lo\":0},\"lo\":0,\"hi\":1,\"ihi\":1,\"pad\":{},\"top\":{\"0\":1,\"1\":5},\"bot\":{\"0\":2,\"1\":1},\"ev\":[{\"p\":0,\"kind\":\"add\",\"x\":1,\"y\":2,\"cin\":0,\"s\":3,\"d\":3,\"cout\":0},{\"p\":1,\"kind\":\"add\",\"x\":5,\"y\":1,\"cin\":0,\"s\":6,\"d\":6,\"cout\":0}],\"ans\":{\"0\":3,\"1\":6},\"res\":63,\"op\":\"+\",\"A\":\"51\",\"B\":\"12\"}",
+      "reset": "{\"a\":{\"c\":{\"0\":1,\"1\":5},\"hi\":1,\"lo\":0},\"b\":{\"c\":{\"0\":2,\"1\":1},\"hi\":1,\"lo\":0},\"lo\":0,\"hi\":1,\"ihi\":1,\"pad\":{},\"top\":{\"0\":1,\"1\":5},\"bot\":{\"0\":2,\"1\":1},\"ev\":[{\"p\":0,\"kind\":\"add\",\"x\":1,\"y\":2,\"cin\":0,\"s\":3,\"d\":3,\"cout\":0},{\"p\":1,\"kind\":\"add\",\"x\":5,\"y\":1,\"cin\":0,\"s\":6,\"d\":6,\"cout\":0}],\"ans\":{\"0\":3,\"1\":6},\"res\":63,\"op\":\"+\",\"A\":\"51\",\"B\":\"12\"}"
+    }
+  },
+  {
+    "name": "F2-07 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "252",
+      "ra": "612"
+    }
+  },
+  {
+    "name": "F2-07 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "252",
+      "lb": "492"
+    }
+  },
+  {
+    "name": "F2-07 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-07 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "612",
+      "reset": "612"
+    }
+  },
+  {
+    "name": "F2-08 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"v\":\"231\",\"e\":0,\"form\":\"add\"}",
+      "ra": "{\"v\":\"531\",\"e\":0,\"form\":\"add\"}"
+    }
+  },
+  {
+    "name": "F2-08 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"v\":\"231\",\"e\":0,\"form\":\"add\"}",
+      "lb": "{\"v\":\"41\",\"e\":0,\"form\":\"add\"}"
+    }
+  },
+  {
+    "name": "F2-08 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-08 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"v\":\"531\",\"e\":0,\"form\":\"add\"}",
+      "reset": "{\"v\":\"531\",\"e\":0,\"form\":\"add\"}"
+    }
+  },
+  {
+    "name": "F2-09 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"m\":\"2.3\",\"n\":2,\"cmp\":null}",
+      "ra": "{\"m\":\"5.3\",\"n\":2,\"cmp\":null}"
+    }
+  },
+  {
+    "name": "F2-09 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"m\":\"2.3\",\"n\":2,\"cmp\":null}",
+      "lb": "{\"m\":\"7.3\",\"n\":2,\"cmp\":null}"
+    }
+  },
+  {
+    "name": "F2-09 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-09 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"m\":\"5.3\",\"n\":2,\"cmp\":null}",
+      "reset": "{\"m\":\"5.3\",\"n\":2,\"cmp\":null}"
+    }
+  },
+  {
+    "name": "F2-10 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"label\":\"Square 7² (drag the corner)\",\"view\":\"square\",\"n\":2}",
+      "ra": "{\"label\":\"Square 7² (drag the corner)\",\"view\":\"square\",\"n\":5}"
+    }
+  },
+  {
+    "name": "F2-10 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"label\":\"Square 7² (drag the corner)\",\"view\":\"square\",\"n\":2}",
+      "lb": "{\"label\":\"Square 7² (drag the corner)\",\"view\":\"square\",\"n\":3}"
+    }
+  },
+  {
+    "name": "F2-10 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-10 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"label\":\"Square 7² (drag the corner)\",\"view\":\"square\",\"n\":5}",
+      "reset": "{\"label\":\"Square 7² (drag the corner)\",\"view\":\"square\",\"n\":5}"
+    }
+  },
+  {
+    "name": "F2-11 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"src\":\"2+3*2\",\"root\":{\"op\":\"+\",\"l\":{\"v\":2},\"r\":{\"op\":\"×\",\"l\":{\"v\":3},\"r\":{\"v\":2}}},\"steps\":0}",
+      "ra": "{\"src\":\"5+3*2\",\"root\":{\"op\":\"+\",\"l\":{\"v\":5},\"r\":{\"op\":\"×\",\"l\":{\"v\":3},\"r\":{\"v\":2}}},\"steps\":0}"
+    }
+  },
+  {
+    "name": "F2-11 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"src\":\"2+3*2\",\"root\":{\"op\":\"+\",\"l\":{\"v\":2},\"r\":{\"op\":\"×\",\"l\":{\"v\":3},\"r\":{\"v\":2}}},\"steps\":0}",
+      "lb": "{\"src\":\"9+3*2\",\"root\":{\"op\":\"+\",\"l\":{\"v\":9},\"r\":{\"op\":\"×\",\"l\":{\"v\":3},\"r\":{\"v\":2}}},\"steps\":0}"
+    }
+  },
+  {
+    "name": "F2-11 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-11 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"src\":\"5+3*2\",\"root\":{\"op\":\"+\",\"l\":{\"v\":5},\"r\":{\"op\":\"×\",\"l\":{\"v\":3},\"r\":{\"v\":2}}},\"steps\":0}",
+      "reset": "{\"src\":\"5+3*2\",\"root\":{\"op\":\"+\",\"l\":{\"v\":5},\"r\":{\"op\":\"×\",\"l\":{\"v\":3},\"r\":{\"v\":2}}},\"steps\":0}"
+    }
+  },
+  {
+    "name": "F2-12 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"pos\":2,\"neg\":1}",
+      "ra": "{\"pos\":5,\"neg\":1}"
+    }
+  },
+  {
+    "name": "F2-12 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"pos\":2,\"neg\":1}",
+      "lb": "{\"pos\":3,\"neg\":1,\"mv\":null}"
+    }
+  },
+  {
+    "name": "F2-12 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-12 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"pos\":5,\"neg\":1}",
+      "reset": "{\"pos\":5,\"neg\":1}"
+    }
+  },
+  {
+    "name": "F2-13 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"frames\":1,\"unit\":1,\"a\":2}",
+      "ra": "{\"frames\":1,\"unit\":1,\"a\":5}"
+    }
+  },
+  {
+    "name": "F2-13 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"frames\":1,\"unit\":1,\"a\":2}",
+      "lb": "{\"frames\":1,\"unit\":1,\"a\":3,\"placed\":false,\"glow\":false}"
+    }
+  },
+  {
+    "name": "F2-13 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-13 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"frames\":1,\"unit\":1,\"a\":5}",
+      "reset": "{\"frames\":1,\"unit\":1,\"a\":5}"
+    }
+  },
+  {
+    "name": "F2-14 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"at\":22}",
+      "ra": "{\"at\":25}"
+    }
+  },
+  {
+    "name": "F2-14 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"at\":22}",
+      "lb": "{\"at\":32}"
+    }
+  },
+  {
+    "name": "F2-14 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-14 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"at\":25}",
+      "reset": "{\"at\":25}"
+    }
+  },
+  {
+    "name": "F2-15 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"base\":5,\"d\":[0,0,1,2]}",
+      "ra": "{\"base\":5,\"d\":[0,0,1,0]}"
+    }
+  },
+  {
+    "name": "F2-15 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"base\":5,\"d\":[0,0,1,2]}",
+      "lb": "{\"base\":5,\"d\":[0,1,3,2],\"shown\":null}"
+    }
+  },
+  {
+    "name": "F2-15 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-15 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"base\":5,\"d\":[0,0,1,0]}",
+      "reset": "{\"base\":5,\"d\":[0,0,1,0]}"
+    }
+  },
+  {
+    "name": "F2-16 separate configured starting states",
+    "pass": true,
+    "detail": {
+      "la": "{\"tray\":[\"2\",\"3/4\"],\"placed\":{\"N\":[],\"Z\":[],\"Q\":[],\"I\":[]}}",
+      "ra": "{\"tray\":[\"5\",\"3/4\"],\"placed\":{\"N\":[],\"Z\":[],\"Q\":[],\"I\":[]}}"
+    }
+  },
+  {
+    "name": "F2-16 left edit isolated",
+    "pass": true,
+    "detail": {
+      "la": "{\"tray\":[\"2\",\"3/4\"],\"placed\":{\"N\":[],\"Z\":[],\"Q\":[],\"I\":[]}}",
+      "lb": "{\"tray\":[\"3/4\"],\"placed\":{\"N\":[\"2\"],\"Z\":[],\"Q\":[],\"I\":[]},\"glow\":null}"
+    }
+  },
+  {
+    "name": "F2-16 right edit isolated",
+    "pass": true
+  },
+  {
+    "name": "F2-16 reset returns exact lesson start",
+    "pass": true,
+    "detail": {
+      "before": "{\"tray\":[\"5\",\"3/4\"],\"placed\":{\"N\":[],\"Z\":[],\"Q\":[],\"I\":[]}}",
+      "reset": "{\"tray\":[\"5\",\"3/4\"],\"placed\":{\"N\":[],\"Z\":[],\"Q\":[],\"I\":[]}}"
+    }
+  }
+]

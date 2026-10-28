@@ -1,0 +1,820 @@
+[
+  {
+    "id": "F10-18",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-18-Piecewise-and-Non-standard-Graph-Builder-PREMIUM-REVIEW.html",
+    "sourceSha256": "cbd8a3911fabce45399ce7febf2b2f841413e7639f2059047e505263ed2ecaa2",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            766,
+            766
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 5 6 7 8",
+          "before": "0 1 10 2 3 4 5 6 7 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "CHOOSE A PIECEWISE GRAPH Y9-015 · Rise / flat / fall Y9-015 · Journey graph Y9-015 · Changing charges Y9-015 · V-shaped rule Y9-015 · Step change Y9-015 · Two-rule jump GCSE EXT · Open and closed limits READ THE GRAPH AT INPUT x 3 MOVE A CONTROL POINT A (0, 1) B (3, 5) C (5, 5) D (8, 2) ← X X → ↓ Y ",
+          "after": "CHOOSE A PIECEWISE GRAPH Y9-015 · Rise / flat / fall Y9-015 · Journey graph Y9-015 · Changing charges Y9-015 · V-shaped rule Y9-015 · Step change Y9-015 · Two-rule jump GCSE EXT · Open and closed limits READ THE GRAPH AT INPUT x 3 MOVE A CONTROL POINT A (0, 1) B (3, 5) C (5, 5) D (8, 2) ← X X → ↓ Y ",
+          "bi": [
+            "Y9-015",
+            "3"
+          ],
+          "ai": [
+            "Y9-015",
+            "3"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 4 5 6 7 8",
+            5
+          ],
+          "narrow": [
+            "0 1 10 2 3 4 5 6 7 8",
+            5
+          ],
+          "back": [
+            "0 1 10 2 3 4 5 6 7 8",
+            5
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            766,
+            766
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 5 6 7 8",
+          "before": "0 1 10 2 3 4 5 6 7 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "At x = 3, what is y on the rise / flat / fall graph? YOUR ANSWER · y CheckHint",
+          "after": "At x = 3, what is y on the rise / flat / fall graph? YOUR ANSWER · y CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 4 5 6 7 8",
+            0
+          ],
+          "narrow": [
+            "0 1 10 2 3 4 5 6 7 8",
+            0
+          ],
+          "back": [
+            "0 1 10 2 3 4 5 6 7 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "state.readX is out of range"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y9-015",
+            "readX": 9
+          },
+          "errors": [
+            "readX must be from 0 to 8 in halves"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 766,
+            "median": 33.29,
+            "p10": 31.33,
+            "count": 23,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 766,
+            "median": 11,
+            "p10": 11,
+            "count": 23,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 766,
+            "median": 11,
+            "p10": 11,
+            "count": 23,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 766,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 766,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 766,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 766,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 766,
+          "median": 11,
+          "p10": 11,
+          "count": 23,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n8\nINPUT • x\nOUTPUT • y\nm = ?\nm = ?\nm = ?\nSTUDY THE GRAPH. E",
+          "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n8\nINPUT • x\nOUTPUT • y\nm = ?\nm = ?\nm = ?\nSTUDY THE GRAPH. E"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "Read the scale"
+          ],
+          "text": "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n8\nINPUT • x\nOUTPUT • y\nm = ?\nm = ?\nm = ?\nSTUDY THE GRAPH. EXPLAIN THE EVIDENCE.\n\nRead the scale and inspect the interval before answering.\n\nSEGMENT 1\nFind its rule\nx from 0 to 3 · increases\nSEGMENT 2\nFind its rule\nx fro"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 3.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "Read the scale"
+          ],
+          "text": "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n8\nINPUT • x\nOUTPUT • y\nm = ?\nm = ?\nm = ?\nSTUDY THE GRAPH. EXPLAIN THE EVIDENCE.\n\nRead the scale and inspect the interval before answering.\n\nSEGMENT 1\nFind its rule\nx from 0 to 2 · increases\nSEGMENT 2\nFind its rule\nx fro"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 1.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n8\nINPUT • x\nOUTPUT • y\nm = ?\nm = ?\nm = ?\nSTUDY THE GRAPH. EXPLAIN THE EVIDENCE.\n\nRead the scale and inspect the interva"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6",
+            "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6",
+            "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6",
+            "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6",
+            "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6",
+            "F10 · PIECEWISE GRAPH STUDIO\nNOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · PIECEWISE GRAPH STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n",
+          "F10 · PIECEWISE GRAPH STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n",
+          "F10 · PIECEWISE GRAPH STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n",
+          "F10 · PIECEWISE GRAPH STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · PIECEWISE GRAPH STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n8\nINPUT • x\nOUTPUT • y\nm = ?\nm = ?\nm = ?\nStudy the graph. Explain the evidence.\n\nRead the scale and inspect the interval"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · PIECEWISE GRAPH STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n",
+          "F10 · PIECEWISE GRAPH STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n",
+          "F10 · PIECEWISE GRAPH STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n",
+          "F10 · PIECEWISE GRAPH STUDIONOVA · NEON CHALK\n0\n1\n2\n3\n4\n5\n6\n7\n8\n0\n1\n2\n3\n4\n5\n6\n7\n"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Drag point A to adjust its coordinates. Arrow keys also work./ || Drag point B to adjust its coordinates. Arrow keys also work./ || Drag point C to adjust its coordinates. Arrow keys also work./ || Drag point D to adjust its coordinates. Arrow keys also work./ || Move the reading position along the x axis/",
+          "active": "",
+          "panel": "CHOOSE A PIECEWISE GRAPH Y9-015 · Rise / flat / fall Y9-015 · Journey graph Y9-015 · Changing charges Y9-015 · V-shaped rule Y9-015 · Step change Y9-015 · Two-rule jump GCSE EXT · Open and closed limits READ THE GRAPH AT INPUT x 4 MOVE A CONTROL POINT A (0, 2) B (4, 6) C (4, 3) D (8, 7) ← X X → ↓ Y Y ↑ Drag any glowing point on the graph or focus it and use arrow keys. Positions snap to whole squares. A red remove zone below returns a selected edit to the starting model. ↶ RESTORE THIS GRAPH TO ITS PRESET",
+          "inputs": [
+            "GCSE-OPEN",
+            "4"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 7 8",
+          "buttons": 5,
+          "vb": 766,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Drag point A to adjust its coordinates. Arrow keys also work./ || Drag point B to adjust its coordinates. Arrow keys also work./ || Drag point C to adjust its coordinates. Arrow keys also work./ || Drag point D to adjust its coordinates. Arrow keys also work./ || Move the reading position along the x axis/",
+          "active": "",
+          "panel": "CHOOSE A PIECEWISE GRAPH Y9-015 · Rise / flat / fall Y9-015 · Journey graph Y9-015 · Changing charges Y9-015 · V-shaped rule Y9-015 · Step change Y9-015 · Two-rule jump GCSE EXT · Open and closed limits READ THE GRAPH AT INPUT x 3 MOVE A CONTROL POINT A (0, 1) B (3, 5) C (5, 5) D (8, 2) ← X X → ↓ Y Y ↑ Drag any glowing point on the graph or focus it and use arrow keys. Positions snap to whole squares. A red remove zone below returns a selected edit to the starting model. ↶ RESTORE THIS GRAPH TO ITS PRESET",
+          "inputs": [
+            "Y9-015",
+            "3"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 7 8",
+          "buttons": 5,
+          "vb": 766,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Drag point A to adjust its coordinates. Arrow keys also work./ || Drag point B to adjust its coordinates. Arrow keys also work./ || Drag point C to adjust its coordinates. Arrow keys also work./ || Drag point D to adjust its coordinates. Arrow keys also work./ || Move the reading position along the x axis/",
+          "active": "",
+          "panel": "CHOOSE A PIECEWISE GRAPH Y9-015 · Rise / flat / fall Y9-015 · Journey graph Y9-015 · Changing charges Y9-015 · V-shaped rule Y9-015 · Step change Y9-015 · Two-rule jump GCSE EXT · Open and closed limits READ THE GRAPH AT INPUT x 3 MOVE A CONTROL POINT A (0, 1) B (3, 5) C (5, 5) D (8, 2) ← X X → ↓ Y Y ↑ Drag any glowing point on the graph or focus it and use arrow keys. Positions snap to whole squares. A red remove zone below returns a selected edit to the starting model. ↶ RESTORE THIS GRAPH TO ITS PRESET",
+          "inputs": [
+            "Y9-015",
+            "3"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 7 8",
+          "buttons": 5,
+          "vb": 766,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "At x = 3, what is y on the rise / flat / fall graph? YOUR ANSWER · y CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 7 8",
+          "buttons": 0,
+          "vb": 766,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "At x = 3, what is y on the rise / flat / fall graph? YOUR ANSWER · y CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 7 8",
+          "buttons": 0,
+          "vb": 766,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "At x = 3, what is y on the rise / flat / fall graph? YOUR ANSWER · y CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 7 8",
+          "buttons": 0,
+          "vb": 766,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 766,
+        "median": 33.29,
+        "p10": 31.33,
+        "count": 23,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 766,
+        "median": 11,
+        "p10": 11,
+        "count": 23,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 766,
+        "median": 11,
+        "p10": 11,
+        "count": 23,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": false
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

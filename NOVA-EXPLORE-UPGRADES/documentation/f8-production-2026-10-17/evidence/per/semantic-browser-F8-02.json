@@ -1,0 +1,791 @@
+[
+  {
+    "id": "F8-02",
+    "presetOf": null,
+    "path": "F8/F8-02-inverse-operations-flowchart.html",
+    "sourceSha256": "ef9c6855bc5b2d4442c777658d57d371067c37aadd03bdf8a92540755793553a",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1110,
+            440
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "1 15 2 3",
+          "before": "1 2 21 4 5"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Lesson Solve two-step equations Rearrange formulae Known output y Reset inverse route Lesson changed. Place an inverse card in each undo step.",
+          "after": "Lesson Solve two-step equations Rearrange formulae Known output y Reset inverse route Lesson changed. Place an inverse card in each undo step.",
+          "bi": [
+            "Y8-016",
+            "7"
+          ],
+          "ai": [
+            "Y8-016",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "1 2 21 4 5",
+            4
+          ],
+          "narrow": [
+            "1 2 21 4 5",
+            4
+          ],
+          "back": [
+            "1 2 21 4 5",
+            4
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1110,
+            440
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "1 19 2 3",
+          "before": "1 19 2 3"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Challenge 1 of 2 · Solve two-step equations · y = 19 Check inverse steps Hint Inverse operation placed.",
+          "after": "Challenge 1 of 2 · Solve two-step equations · y = 19 Check inverse steps Hint Inverse operation placed.",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "1 19 2 3",
+            6
+          ],
+          "narrow": [
+            "1 19 2 3",
+            6
+          ],
+          "back": [
+            "1 19 2 3",
+            6
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of: Y7-033, Y8-016"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1110,
+            "median": 22.7,
+            "p10": 17.97,
+            "count": 28,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 12.9,
+            "p10": 11.73,
+            "count": 28,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 12.9,
+            "p10": 11.73,
+            "count": 28,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.9,
+          "p10": 11.73,
+          "count": 28,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.9,
+          "p10": 11.73,
+          "count": 28,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.9,
+          "p10": 11.73,
+          "count": 28,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.9,
+          "p10": 11.73,
+          "count": 28,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.9,
+          "p10": 11.73,
+          "count": 28,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\n2x + 3 = 15\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nAFTER STEP 1\n?\nOUTPUT y\n15\n× 2\n+ 3",
+          "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\n2x + 3 = 21\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nAFTER STEP 1\n?\nOUTPUT y\n21\n× 2\n+ 3"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "15"
+          ],
+          "text": "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\n2x + 3 = 15\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nAFTER STEP 1\n?\nOUTPUT y\n15\n× 2\n+ 3\nINVERSE · WORK FROM THE OUTPUT BACK TO x\nKNOWN y\n15\nAFTER FIRST\n?\nRECOVER x\n?\nUNDO 1\nPLACE CARD\nUNDO 2\nPLACE CARD\n− 3\n÷ 2\n+ 3\n× 2\nDRAG THE INVERSE OPERATIONS T"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 6,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "21"
+          ],
+          "text": "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\n2x + 3 = 21\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nAFTER STEP 1\n?\nOUTPUT y\n21\n× 2\n+ 3\nINVERSE · WORK FROM THE OUTPUT BACK TO x\nKNOWN y\n21\nAFTER FIRST\n?\nRECOVER x\n?\nUNDO 1\nPLACE CARD\nUNDO 2\nPLACE CARD\n− 3\n÷ 2\n+ 3\n× 2\nDRAG THE INVERSE OPERATIONS T"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 9,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\n2x + 3 = 15\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nAFTER STEP 1\n?\nOUTPUT y\n15\n× 2\n+ 3\nINVERSE · WORK FROM THE OUTPUT BACK TO x\nKNOWN y\n15\nAFTER F"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\n2",
+          "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\n2",
+          "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\n2",
+          "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\ny",
+          "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\ny",
+          "INVERSE OPERATIONS · TWO-WAY ROUTE\nFIND THE ORIGINAL INPUT\ny"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "2x + 3 = 15\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nSTEP 1\n?\nOUTPUT y\n15\n× 2\n+ 3\nINVE",
+          "2x + 3 = 15\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nSTEP 1\n?\nOUTPUT y\n15\n× 2\n+ 3\nINVE",
+          "2x + 3 = 15\nFORWARD · INPUT → OUTPUT\nINPUT x\n6\nSTEP 1\n12\nOUTPUT y\n15\n× 2\n+ 3\nINV",
+          "2x + 3 = 15\nFORWARD · INPUT → OUTPUT\nINPUT x\n6\nSTEP 1\n12\nOUTPUT y\n15\n× 2\n+ 3\nINV"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "2x + 3 = 15\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nSTEP 1\n?\nOUTPUT y\n15\n× 2\n+ 3\nINVERSE · BACK TO x\nKNOWN y\n15\nAFTER 1\n?\nRECOVER x\n?\nUNDO 1\nPLACE\nUNDO 2\nPLACE\n− 3\n÷ 2\n+ 3\n× 2\nDRAG INVERSE CARDS INTO SLOTS"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "2x + 3 = 21\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nSTEP 1\n?\nOUTPUT y\n21\n× 2\n+ 3\nINVE",
+          "2x + 3 = 21\nFORWARD · INPUT → OUTPUT\nINPUT x\n?\nSTEP 1\n?\nOUTPUT y\n21\n× 2\n+ 3\nINVE",
+          "2x + 3 = 21\nFORWARD · INPUT → OUTPUT\nINPUT x\n9\nSTEP 1\n18\nOUTPUT y\n21\n× 2\n+ 3\nINV",
+          "2x + 3 = 21\nFORWARD · INPUT → OUTPUT\nINPUT x\n9\nSTEP 1\n18\nOUTPUT y\n21\n× 2\n+ 3\nINV"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Lesson Solve two-step equations Rearrange formulae Known output y Reset inverse route Place an inverse card in each undo step.",
+          "inputs": [
+            "Y7-033",
+            "15"
+          ],
+          "stageInputs": [],
+          "nums": "1 15 2 3",
+          "buttons": 4,
+          "vb": 1110,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Lesson Solve two-step equations Rearrange formulae Known output y Reset inverse route Lesson changed. Place an inverse card in each undo step.",
+          "inputs": [
+            "Y8-016",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 21 4 5",
+          "buttons": 4,
+          "vb": 1110,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Lesson Solve two-step equations Rearrange formulae Known output y Reset inverse route Lesson changed. Place an inverse card in each undo step.",
+          "inputs": [
+            "Y8-016",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 21 4 5",
+          "buttons": 4,
+          "vb": 440,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Challenge 1 of 2 · Solve two-step equations · y = 19 Check inverse steps Hint Put the inverse cards in reverse order, then enter the recovered x.",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "1 19 2 3",
+          "buttons": 4,
+          "vb": 1110,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Challenge 1 of 2 · Solve two-step equations · y = 19 Check inverse steps Hint Inverse operation placed.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 19 2 3",
+          "buttons": 6,
+          "vb": 1110,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Challenge 1 of 2 · Solve two-step equations · y = 19 Check inverse steps Hint Inverse operation placed.",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 19 2 3",
+          "buttons": 6,
+          "vb": 440,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1110,
+        "median": 22.7,
+        "p10": 17.97,
+        "count": 28,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 12.9,
+        "p10": 11.73,
+        "count": 28,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 12.9,
+        "p10": 11.73,
+        "count": 28,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

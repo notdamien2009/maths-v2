@@ -1,0 +1,492 @@
+[
+  {
+    "id": "F3-02",
+    "sourceSha256": "704376511ed3a0ae180f00de0da515e3250b66d885fe43ca53c9891173e775e1",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "AREA EVIDENCE\nMULTIPLY BY SPLITTING THE RECTANGLE\n?\n?\n?\n?\n10\n2\n10\n3\nUse the given side partitions.\nTHE WHOLE PRODUCT\n12 ",
+          "AREA EVIDENCE\nMULTIPLY BY SPLITTING THE RECTANGLE\n?\n?\n?\n?\n10\n3\n10\n3\nUse the given side partitions.\nTHE WHOLE PRODUCT\n13 "
+        ]
+      },
+      {
+        "name": "question 1 rendered mathematics",
+        "pass": true,
+        "detail": [
+          {
+            "value": "12",
+            "found": true
+          },
+          {
+            "value": "13",
+            "found": true
+          }
+        ]
+      },
+      {
+        "name": "question 2 rendered mathematics",
+        "pass": true,
+        "detail": [
+          {
+            "value": "13",
+            "found": true
+          },
+          {
+            "value": "13",
+            "found": true
+          }
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "docks": 1,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "docks": 1,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          },
+          "result": {
+            "score": 85,
+            "correct": 6,
+            "played": 7,
+            "pct": 100,
+            "stars": 3,
+            "best": 6,
+            "hints": 0,
+            "livesLeft": 2
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          },
+          "result": {
+            "score": 85,
+            "correct": 6,
+            "played": 7,
+            "pct": 100,
+            "stars": 3,
+            "best": 6,
+            "hints": 0,
+            "livesLeft": 2
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128,
+          "stage": {
+            "x": 37,
+            "y": 176.34375,
+            "width": 1054,
+            "height": 1135.421875,
+            "top": 176.34375,
+            "right": 1091,
+            "bottom": 1311.765625,
+            "left": 37
+          }
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912,
+          "stage": {
+            "x": 37,
+            "y": 176.34375,
+            "width": 838,
+            "height": 1015.375,
+            "top": 176.34375,
+            "right": 875,
+            "bottom": 1191.71875,
+            "left": 37
+          }
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312,
+          "stage": {
+            "x": 25,
+            "y": 164.34375,
+            "width": 262,
+            "height": 956,
+            "top": 164.34375,
+            "right": 287,
+            "bottom": 1120.34375,
+            "left": 25
+          }
+        }
+      },
+      {
+        "name": "guided shell ready",
+        "pass": true
+      },
+      {
+        "name": "four guided states rendered",
+        "pass": true,
+        "detail": [
+          "Area evidenceMultiply by splitting the rectangleArea model: 12 × 13; mathematica",
+          "Area evidenceMultiply by splitting the rectangleArea model: 13 × 13; mathematica",
+          "Area evidenceMultiply by splitting the rectangleArea model: 14 × 13; mathematica",
+          "Area evidenceMultiply by splitting the rectangleArea model: 15 × 13; mathematica"
+        ]
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "<div class=\"nv-cap\" style=\"display: none;\"><span>Area evidence</span><span class",
+          "<div class=\"nv-cap\" style=\"display: none;\"><span>Area evidence</span><span class",
+          "<div class=\"nv-cap\" style=\"display: none;\"><span>Area evidence</span><span class",
+          "<div class=\"nv-cap\" style=\"display: none;\"><span>Area evidence</span><span class"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "visuals": [
+      {
+        "text": "AREA EVIDENCE\nMULTIPLY BY SPLITTING THE RECTANGLE\n?\n?\n?\n?\n10\n2\n10\n3\nUse the given side partitions.\nTHE WHOLE PRODUCT\n12 × 13\n?\nPARTIAL PRODUCTS\n?\nWHY THIS WORKS\n\nThe parts rebuild the original product.\n\nUse the given dimensions.",
+        "svg": "<svg viewBox=\"0 0 760 605\" role=\"img\" aria-label=\"Area model: 12 × 13; mathematical area evidence shown by neon rectangles and chalk labels.\" class=\"nv-svg nv-house f302-art\" data-nova-id-scope=\"nova-view-5-\"><title>Area model: 12 × 13; mathematical area evidence shown by neon rectangles and chalk labels.</title><defs><marker id=\"nova-view-5-nv-arr-given\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-given)\"></path></marker><marker id=\"nova-view-5-nv-arr-unknown\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-unknown)\"></path></marker><marker id=\"nova-view-5-nv-arr-op\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-op)\"></path></marker><marker id=\"nova-view-5-nv-arr-result\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-result)\"></path></marker><marker id=\"nova-view-5-nv-arr-error\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-error)\"></path></marker><marker id=\"nova-view-5-nv-arr-focus\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-focus)\"></path></marker><marker id=\"nova-view-5-nv-arr-support\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-support)\"></path></marker><marker id=\"nova-view-5-nv-arr-ink\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"4\" markerHeight=\"4\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--v-ink)\"></path></marker><filter id=\"nova-view-5-nv-glow\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-5-nv-shadow\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"2.5\" flood-color=\"#000\" flood-opacity=\"0.45\"></feDropShadow></filter><pattern id=\"nova-view-5-nv-hatch\" width=\"6\" height=\"6\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"6\" stroke-width=\"3\" style=\"stroke:var(--m-error)\"></line></pattern><linearGradient id=\"nova-view-5-nv-track\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--v-panel2)\"></stop><stop offset=\"1\" style=\"stop-color:var(--v-bg)\"></stop></linearGradient><radialGradient id=\"nova-view-5-nv-pip\" cx=\"35%\" cy=\"30%\" r=\"75%\"><stop offset=\"0\" stop-color=\"#ffd29a\"></stop><stop offset=\"0.45\" stop-color=\"#ff873d\"></stop><stop offset=\"1\" stop-color=\"#d9480f\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ground\"><stop offset=\"0\" stop-color=\"#000\" stop-opacity=\"0.55\"></stop><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\"0\"></stop></radialGradient><linearGradient id=\"nova-view-5-nv-fill-given\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-given);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-given);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-unknown\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-unknown);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-unknown);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-op\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-op);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-op);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-result\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-result);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-result);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-error\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-error);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-error);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-focus\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-focus);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-focus);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-fill-support\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-support);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-support);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-sky\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--v-bg);stop-opacity:0\"></stop><stop offset=\"1\" style=\"stop-color:var(--v-panel);stop-opacity:.55\"></stop></linearGradient><radialGradient id=\"nova-view-5-nv-horizon\"><stop offset=\"0\" style=\"stop-color:var(--math-cyan);stop-opacity:.16\"></stop><stop offset=\"1\" style=\"stop-color:var(--math-cyan);stop-opacity:0\"></stop></radialGradient><linearGradient id=\"nova-view-5-nv-water\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#0b4a6e\" stop-opacity=\"0.75\"></stop><stop offset=\"1\" stop-color=\"#06111b\" stop-opacity=\"0.2\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-wood\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#b9783f\"></stop><stop offset=\"1\" stop-color=\"#6b3f1d\"></stop></linearGradient><radialGradient id=\"nova-view-5-nv-owl\" cx=\"40%\" cy=\"30%\" r=\"80%\"><stop offset=\"0\" stop-color=\"#a58bff\"></stop><stop offset=\"1\" stop-color=\"#5b3fd1\"></stop></radialGradient><linearGradient id=\"nova-view-5-nv-die\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffffff\"></stop><stop offset=\"1\" stop-color=\"#cfdced\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-metal\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#e7c27a\"></stop><stop offset=\"1\" stop-color=\"#9a6c2a\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-drone\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#2a3b57\"></stop><stop offset=\"1\" stop-color=\"#0b1424\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-asphalt\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#1b2638\"></stop><stop offset=\"1\" stop-color=\"#0c1422\"></stop></linearGradient><filter id=\"nova-view-5-nv-neon\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"2.4\" result=\"b1\"></feGaussianBlur><feGaussianBlur stdDeviation=\"6.2\" in=\"SourceGraphic\" result=\"b2\"></feGaussianBlur><feMerge><feMergeNode in=\"b2\"></feMergeNode><feMergeNode in=\"b1\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-5-nv-neon-halo\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"7.2\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-5-nv-neon-soft\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"9\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-5-nv-chalk\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"3\" seed=\"7\" result=\"n\"></feTurbulence><feDisplacementMap in=\"SourceGraphic\" in2=\"n\" scale=\"1.6\" xChannelSelector=\"R\" yChannelSelector=\"G\" result=\"disp\"></feDisplacementMap><feGaussianBlur in=\"disp\" stdDeviation=\".25\"></feGaussianBlur></filter><linearGradient id=\"nova-view-5-nv-panel-shine\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#ffffff;stop-opacity:.07\"></stop><stop offset=\"0.45\" style=\"stop-color:#ffffff;stop-opacity:0\"></stop><stop offset=\"1\" style=\"stop-color:#22d3ee;stop-opacity:.04\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-glass-track\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#1d2853;stop-opacity:.95\"></stop><stop offset=\"0.45\" style=\"stop-color:#060d20;stop-opacity:.98\"></stop><stop offset=\"1\" style=\"stop-color:#122956;stop-opacity:.95\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-pill-engrave\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#1d2853\"></stop><stop offset=\"0.48\" style=\"stop-color:#080d25\"></stop><stop offset=\"1\" style=\"stop-color:#102140\"></stop></linearGradient><linearGradient id=\"nova-view-5-nv-ink-lit\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"0\"><stop offset=\"0\" style=\"stop-color:#63e8ff\"></stop><stop offset=\"0.5\" style=\"stop-color:#eef8ff\"></stop><stop offset=\"1\" style=\"stop-color:#ab72ff\"></stop></linearGradient><radialGradient id=\"nova-view-5-nv-ring-given\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-given);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-given);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-given);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-unknown\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-unknown);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-unknown);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-unknown);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-op\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-op);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-op);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-op);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-result\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-result);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-result);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-result);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-error\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-error);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-error);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-error);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-focus\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-focus);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-focus);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-focus);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-5-nv-ring-support\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-support);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-support);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-support);stop-opacity:.15\"></stop></radialGradient></defs><g class=\"nv-neon-box\"><rect x=\"150\" y=\"130\" width=\"486\" height=\"338\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-support)\"></rect><rect x=\"153\" y=\"133\" width=\"480\" height=\"332\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-5-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-support)\"></rect><rect x=\"154.5\" y=\"134.5\" width=\"477\" height=\"99.6\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><g class=\"f302-region-group\"><g data-region=\"0\" class=\"f302-region\"><g class=\"nv-neon-box\"><rect x=\"159\" y=\"139\" width=\"389.66666666666674\" height=\"245.69230769230774\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-given)\"></rect><rect x=\"162\" y=\"142\" width=\"383.66666666666674\" height=\"239.69230769230774\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-5-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-given)\"></rect><rect x=\"163.5\" y=\"143.5\" width=\"380.66666666666674\" height=\"71.90769230769232\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"353.83333333333337\" y=\"269.84615384615387\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--m-unknown);font-family:var(--nova-font-chalk-draw);opacity:.97\">?</text><g class=\"nv-ring\" aria-hidden=\"true\"><circle cx=\"353.83333333333337\" cy=\"293.84615384615387\" r=\"14\" opacity=\"0.25\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"353.83333333333337\" cy=\"293.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"3.2\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-focus)\"></circle><circle cx=\"353.83333333333337\" cy=\"293.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"1.1\" style=\"stroke:#fff;opacity:.9\"></circle><circle cx=\"353.83333333333337\" cy=\"293.84615384615387\" r=\"2.8\" style=\"fill:#fff\"></circle></g></g><g data-region=\"1\" class=\"f302-region\"><g class=\"nv-neon-box\"><rect x=\"550.6666666666667\" y=\"139\" width=\"76.33333333333326\" height=\"245.69230769230774\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-focus)\"></rect><rect x=\"553.6666666666667\" y=\"142\" width=\"70.33333333333326\" height=\"239.69230769230774\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-5-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-focus)\"></rect><rect x=\"555.1666666666667\" y=\"143.5\" width=\"67.33333333333326\" height=\"71.90769230769232\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"588.8333333333334\" y=\"269.84615384615387\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--m-unknown);font-family:var(--nova-font-chalk-draw);opacity:.97\">?</text><g class=\"nv-ring\" aria-hidden=\"true\"><circle cx=\"588.8333333333334\" cy=\"293.84615384615387\" r=\"14\" opacity=\"0.25\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"588.8333333333334\" cy=\"293.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"3.2\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-focus)\"></circle><circle cx=\"588.8333333333334\" cy=\"293.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"1.1\" style=\"stroke:#fff;opacity:.9\"></circle><circle cx=\"588.8333333333334\" cy=\"293.84615384615387\" r=\"2.8\" style=\"fill:#fff\"></circle></g></g><g data-region=\"2\" class=\"f302-region\"><g class=\"nv-neon-box\"><rect x=\"159\" y=\"386.69230769230774\" width=\"389.66666666666674\" height=\"72.30769230769226\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-op)\"></rect><rect x=\"162\" y=\"389.69230769230774\" width=\"383.66666666666674\" height=\"66.30769230769226\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-5-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-op)\"></rect><rect x=\"163.5\" y=\"391.19230769230774\" width=\"380.66666666666674\" height=\"19.89230769230768\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"353.83333333333337\" y=\"430.84615384615387\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--m-unknown);font-family:var(--nova-font-chalk-draw);opacity:.97\">?</text><g class=\"nv-ring\" aria-hidden=\"true\"><circle cx=\"353.83333333333337\" cy=\"454.84615384615387\" r=\"14\" opacity=\"0.25\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"353.83333333333337\" cy=\"454.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"3.2\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-focus)\"></circle><circle cx=\"353.83333333333337\" cy=\"454.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"1.1\" style=\"stroke:#fff;opacity:.9\"></circle><circle cx=\"353.83333333333337\" cy=\"454.84615384615387\" r=\"2.8\" style=\"fill:#fff\"></circle></g></g><g data-region=\"3\" class=\"f302-region\"><g class=\"nv-neon-box\"><rect x=\"550.6666666666667\" y=\"386.69230769230774\" width=\"76.33333333333326\" height=\"72.30769230769226\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-result)\"></rect><rect x=\"553.6666666666667\" y=\"389.69230769230774\" width=\"70.33333333333326\" height=\"66.30769230769226\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-5-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-result)\"></rect><rect x=\"555.1666666666667\" y=\"391.19230769230774\" width=\"67.33333333333326\" height=\"19.89230769230768\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"588.8333333333334\" y=\"430.84615384615387\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--m-unknown);font-family:var(--nova-font-chalk-draw);opacity:.97\">?</text><g class=\"nv-ring\" aria-hidden=\"true\"><circle cx=\"588.8333333333334\" cy=\"454.84615384615387\" r=\"14\" opacity=\"0.25\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"588.8333333333334\" cy=\"454.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"3.2\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-focus)\"></circle><circle cx=\"588.8333333333334\" cy=\"454.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"1.1\" style=\"stroke:#fff;opacity:.9\"></circle><circle cx=\"588.8333333333334\" cy=\"454.84615384615387\" r=\"2.8\" style=\"fill:#fff\"></circle></g></g></g><g><path d=\"M158.0,115.0 Q158.0,109.6 189.3,109.6 L322.5,109.6 Q353.8,109.6 353.8,102.4 Q353.8,109.6 385.2,109.6 L518.3,109.6 Q549.7,109.6 549.7,115.0\" fill=\"none\" stroke-width=\"13\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"stroke:var(--m-given)\" aria-hidden=\"true\"></path><path d=\"M158.0,115.0 Q158.0,109.6 189.3,109.6 L322.5,109.6 Q353.8,109.6 353.8,102.4 Q353.8,109.6 385.2,109.6 L518.3,109.6 Q549.7,109.6 549.7,115.0\" fill=\"none\" stroke-width=\"7.5\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-halo)\" style=\"stroke:var(--m-given)\" aria-hidden=\"true\"></path><path d=\"M158.0,115.0 Q158.0,109.6 189.3,109.6 L322.5,109.6 Q353.8,109.6 353.8,102.4 Q353.8,109.6 385.2,109.6 L518.3,109.6 Q549.7,109.6 549.7,115.0\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-given)\"></path></g><text x=\"353.83333333333337\" y=\"98\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--m-given);font-family:var(--nova-font-chalk-draw);opacity:.97\">10</text><g><path d=\"M549.7,115.0 Q549.7,109.6 555.9,109.6 L582.6,109.6 Q588.8,109.6 588.8,102.4 Q588.8,109.6 595.1,109.6 L621.7,109.6 Q628.0,109.6 628.0,115.0\" fill=\"none\" stroke-width=\"13\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"stroke:var(--m-focus)\" aria-hidden=\"true\"></path><path d=\"M549.7,115.0 Q549.7,109.6 555.9,109.6 L582.6,109.6 Q588.8,109.6 588.8,102.4 Q588.8,109.6 595.1,109.6 L621.7,109.6 Q628.0,109.6 628.0,115.0\" fill=\"none\" stroke-width=\"7.5\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-halo)\" style=\"stroke:var(--m-focus)\" aria-hidden=\"true\"></path><path d=\"M549.7,115.0 Q549.7,109.6 555.9,109.6 L582.6,109.6 Q588.8,109.6 588.8,102.4 Q588.8,109.6 595.1,109.6 L621.7,109.6 Q628.0,109.6 628.0,115.0\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-focus)\"></path></g><text x=\"588.8333333333334\" y=\"98\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--m-focus);font-family:var(--nova-font-chalk-draw);opacity:.97\">2</text><g><path d=\"M137.0,138.0 Q142.4,138.0 142.4,157.8 L142.4,242.0 Q142.4,261.8 149.6,261.8 Q142.4,261.8 142.4,281.7 L142.4,365.9 Q142.4,385.7 137.0,385.7\" fill=\"none\" stroke-width=\"13\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"stroke:var(--m-op)\" aria-hidden=\"true\"></path><path d=\"M137.0,138.0 Q142.4,138.0 142.4,157.8 L142.4,242.0 Q142.4,261.8 149.6,261.8 Q142.4,261.8 142.4,281.7 L142.4,365.9 Q142.4,385.7 137.0,385.7\" fill=\"none\" stroke-width=\"7.5\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-halo)\" style=\"stroke:var(--m-op)\" aria-hidden=\"true\"></path><path d=\"M137.0,138.0 Q142.4,138.0 142.4,157.8 L142.4,242.0 Q142.4,261.8 149.6,261.8 Q142.4,261.8 142.4,281.7 L142.4,365.9 Q142.4,385.7 137.0,385.7\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-op)\"></path></g><text x=\"107\" y=\"268.84615384615387\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--m-op);font-family:var(--nova-font-chalk-draw);opacity:.97\">10</text><g><path d=\"M137.0,385.7 Q142.4,385.7 142.4,391.6 L142.4,416.9 Q142.4,422.8 149.6,422.8 Q142.4,422.8 142.4,428.8 L142.4,454.1 Q142.4,460.0 137.0,460.0\" fill=\"none\" stroke-width=\"13\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"stroke:var(--m-result)\" aria-hidden=\"true\"></path><path d=\"M137.0,385.7 Q142.4,385.7 142.4,391.6 L142.4,416.9 Q142.4,422.8 149.6,422.8 Q142.4,422.8 142.4,428.8 L142.4,454.1 Q142.4,460.0 137.0,460.0\" fill=\"none\" stroke-width=\"7.5\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-halo)\" style=\"stroke:var(--m-result)\" aria-hidden=\"true\"></path><path d=\"M137.0,385.7 Q142.4,385.7 142.4,391.6 L142.4,416.9 Q142.4,422.8 149.6,422.8 Q142.4,422.8 142.4,428.8 L142.4,454.1 Q142.4,460.0 137.0,460.0\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-result)\"></path></g><text x=\"107\" y=\"429.84615384615387\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--m-result);font-family:var(--nova-font-chalk-draw);opacity:.97\">3</text><g class=\"nv-neon-tube\"><path d=\"M549.6666666666667,138 L549.6666666666667,460\" fill=\"none\" stroke-width=\"14.5\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"stroke:var(--m-focus)\" aria-hidden=\"true\"></path><path d=\"M549.6666666666667,138 L549.6666666666667,460\" fill=\"none\" stroke-width=\"9\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-halo)\" style=\"stroke:var(--m-focus)\" aria-hidden=\"true\"></path><path d=\"M549.6666666666667,138 L549.6666666666667,460\" fill=\"none\" stroke-width=\"4.5\" stroke-linecap=\"round\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-focus)\"></path><path d=\"M549.6666666666667,138 L549.6666666666667,460\" fill=\"none\" stroke-width=\"1.575\" stroke-linecap=\"round\" opacity=\"0.92\" style=\"stroke:#ffffff\"></path><circle cx=\"549.6666666666667\" cy=\"138\" r=\"5.275\" opacity=\"0.3\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"549.6666666666667\" cy=\"138\" r=\"3.875\" style=\"fill:#e0f7ff;stroke:var(--m-focus)\"></circle><circle cx=\"549.6666666666667\" cy=\"460\" r=\"5.275\" opacity=\"0.3\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"549.6666666666667\" cy=\"460\" r=\"3.875\" style=\"fill:#e0f7ff;stroke:var(--m-focus)\"></circle></g><g class=\"nv-neon-tube\"><path d=\"M158,385.69230769230774 L628,385.69230769230774\" fill=\"none\" stroke-width=\"14.5\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"stroke:var(--m-op)\" aria-hidden=\"true\"></path><path d=\"M158,385.69230769230774 L628,385.69230769230774\" fill=\"none\" stroke-width=\"9\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-5-nv-neon-halo)\" style=\"stroke:var(--m-op)\" aria-hidden=\"true\"></path><path d=\"M158,385.69230769230774 L628,385.69230769230774\" fill=\"none\" stroke-width=\"4.5\" stroke-linecap=\"round\" filter=\"url(#nova-view-5-nv-neon)\" style=\"stroke:var(--m-op)\"></path><path d=\"M158,385.69230769230774 L628,385.69230769230774\" fill=\"none\" stroke-width=\"1.575\" stroke-linecap=\"round\" opacity=\"0.92\" style=\"stroke:#ffffff\"></path><circle cx=\"158\" cy=\"385.69230769230774\" r=\"5.275\" opacity=\"0.3\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:var(--m-op)\"></circle><circle cx=\"158\" cy=\"385.69230769230774\" r=\"3.875\" style=\"fill:#e0f7ff;stroke:var(--m-op)\"></circle><circle cx=\"628\" cy=\"385.69230769230774\" r=\"5.275\" opacity=\"0.3\" filter=\"url(#nova-view-5-nv-neon-soft)\" style=\"fill:var(--m-op)\"></circle><circle cx=\"628\" cy=\"385.69230769230774\" r=\"3.875\" style=\"fill:#e0f7ff;stroke:var(--m-op)\"></circle></g><text x=\"390\" y=\"570\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-5-nv-chalk)\" style=\"fill:var(--m-given);font-family:var(--nova-font-chalk-draw);opacity:.97\">Use the given side partitions.</text></svg>",
+        "expected": [
+          {
+            "value": "12",
+            "found": true
+          },
+          {
+            "value": "13",
+            "found": true
+          }
+        ],
+        "fractionCount": 0,
+        "markScheme": "",
+        "answers": []
+      },
+      {
+        "text": "AREA EVIDENCE\nMULTIPLY BY SPLITTING THE RECTANGLE\n?\n?\n?\n?\n10\n3\n10\n3\nUse the given side partitions.\nTHE WHOLE PRODUCT\n13 × 13\n?\nPARTIAL PRODUCTS\n?\nWHY THIS WORKS\n\nThe parts rebuild the original product.\n\nUse the given dimensions.",
+        "svg": "<svg viewBox=\"0 0 760 605\" role=\"img\" aria-label=\"Area model: 13 × 13; mathematical area evidence shown by neon rectangles and chalk labels.\" class=\"nv-svg nv-house f302-art\" data-nova-id-scope=\"nova-view-7-\"><title>Area model: 13 × 13; mathematical area evidence shown by neon rectangles and chalk labels.</title><defs><marker id=\"nova-view-7-nv-arr-given\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-given)\"></path></marker><marker id=\"nova-view-7-nv-arr-unknown\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-unknown)\"></path></marker><marker id=\"nova-view-7-nv-arr-op\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-op)\"></path></marker><marker id=\"nova-view-7-nv-arr-result\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-result)\"></path></marker><marker id=\"nova-view-7-nv-arr-error\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-error)\"></path></marker><marker id=\"nova-view-7-nv-arr-focus\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-focus)\"></path></marker><marker id=\"nova-view-7-nv-arr-support\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"5\" markerHeight=\"5\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--m-support)\"></path></marker><marker id=\"nova-view-7-nv-arr-ink\" viewBox=\"0 0 12 12\" refX=\"8\" refY=\"6\" markerWidth=\"4\" markerHeight=\"4\" orient=\"auto-start-reverse\"><path d=\"M1,1.5 L10,6 L1,10.5 Q3,6 1,1.5z\" style=\"fill:var(--v-ink)\"></path></marker><filter id=\"nova-view-7-nv-glow\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-7-nv-shadow\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"2.5\" flood-color=\"#000\" flood-opacity=\"0.45\"></feDropShadow></filter><pattern id=\"nova-view-7-nv-hatch\" width=\"6\" height=\"6\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"6\" stroke-width=\"3\" style=\"stroke:var(--m-error)\"></line></pattern><linearGradient id=\"nova-view-7-nv-track\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--v-panel2)\"></stop><stop offset=\"1\" style=\"stop-color:var(--v-bg)\"></stop></linearGradient><radialGradient id=\"nova-view-7-nv-pip\" cx=\"35%\" cy=\"30%\" r=\"75%\"><stop offset=\"0\" stop-color=\"#ffd29a\"></stop><stop offset=\"0.45\" stop-color=\"#ff873d\"></stop><stop offset=\"1\" stop-color=\"#d9480f\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ground\"><stop offset=\"0\" stop-color=\"#000\" stop-opacity=\"0.55\"></stop><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\"0\"></stop></radialGradient><linearGradient id=\"nova-view-7-nv-fill-given\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-given);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-given);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-unknown\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-unknown);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-unknown);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-op\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-op);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-op);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-result\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-result);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-result);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-error\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-error);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-error);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-focus\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-focus);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-focus);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-fill-support\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--m-support);stop-opacity:.34\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-support);stop-opacity:.06\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-sky\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:var(--v-bg);stop-opacity:0\"></stop><stop offset=\"1\" style=\"stop-color:var(--v-panel);stop-opacity:.55\"></stop></linearGradient><radialGradient id=\"nova-view-7-nv-horizon\"><stop offset=\"0\" style=\"stop-color:var(--math-cyan);stop-opacity:.16\"></stop><stop offset=\"1\" style=\"stop-color:var(--math-cyan);stop-opacity:0\"></stop></radialGradient><linearGradient id=\"nova-view-7-nv-water\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#0b4a6e\" stop-opacity=\"0.75\"></stop><stop offset=\"1\" stop-color=\"#06111b\" stop-opacity=\"0.2\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-wood\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#b9783f\"></stop><stop offset=\"1\" stop-color=\"#6b3f1d\"></stop></linearGradient><radialGradient id=\"nova-view-7-nv-owl\" cx=\"40%\" cy=\"30%\" r=\"80%\"><stop offset=\"0\" stop-color=\"#a58bff\"></stop><stop offset=\"1\" stop-color=\"#5b3fd1\"></stop></radialGradient><linearGradient id=\"nova-view-7-nv-die\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffffff\"></stop><stop offset=\"1\" stop-color=\"#cfdced\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-metal\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#e7c27a\"></stop><stop offset=\"1\" stop-color=\"#9a6c2a\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-drone\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#2a3b57\"></stop><stop offset=\"1\" stop-color=\"#0b1424\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-asphalt\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#1b2638\"></stop><stop offset=\"1\" stop-color=\"#0c1422\"></stop></linearGradient><filter id=\"nova-view-7-nv-neon\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"2.4\" result=\"b1\"></feGaussianBlur><feGaussianBlur stdDeviation=\"6.2\" in=\"SourceGraphic\" result=\"b2\"></feGaussianBlur><feMerge><feMergeNode in=\"b2\"></feMergeNode><feMergeNode in=\"b1\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-7-nv-neon-halo\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"7.2\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-7-nv-neon-soft\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feGaussianBlur stdDeviation=\"9\" result=\"b\"></feGaussianBlur><feMerge><feMergeNode in=\"b\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><filter id=\"nova-view-7-nv-chalk\" filterUnits=\"userSpaceOnUse\" x=\"-400\" y=\"-400\" width=\"1600\" height=\"1600\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"3\" seed=\"7\" result=\"n\"></feTurbulence><feDisplacementMap in=\"SourceGraphic\" in2=\"n\" scale=\"1.6\" xChannelSelector=\"R\" yChannelSelector=\"G\" result=\"disp\"></feDisplacementMap><feGaussianBlur in=\"disp\" stdDeviation=\".25\"></feGaussianBlur></filter><linearGradient id=\"nova-view-7-nv-panel-shine\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#ffffff;stop-opacity:.07\"></stop><stop offset=\"0.45\" style=\"stop-color:#ffffff;stop-opacity:0\"></stop><stop offset=\"1\" style=\"stop-color:#22d3ee;stop-opacity:.04\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-glass-track\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#1d2853;stop-opacity:.95\"></stop><stop offset=\"0.45\" style=\"stop-color:#060d20;stop-opacity:.98\"></stop><stop offset=\"1\" style=\"stop-color:#122956;stop-opacity:.95\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-pill-engrave\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop offset=\"0\" style=\"stop-color:#1d2853\"></stop><stop offset=\"0.48\" style=\"stop-color:#080d25\"></stop><stop offset=\"1\" style=\"stop-color:#102140\"></stop></linearGradient><linearGradient id=\"nova-view-7-nv-ink-lit\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"0\"><stop offset=\"0\" style=\"stop-color:#63e8ff\"></stop><stop offset=\"0.5\" style=\"stop-color:#eef8ff\"></stop><stop offset=\"1\" style=\"stop-color:#ab72ff\"></stop></linearGradient><radialGradient id=\"nova-view-7-nv-ring-given\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-given);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-given);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-given);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-unknown\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-unknown);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-unknown);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-unknown);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-op\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-op);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-op);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-op);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-result\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-result);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-result);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-result);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-error\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-error);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-error);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-error);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-focus\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-focus);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-focus);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-focus);stop-opacity:.15\"></stop></radialGradient><radialGradient id=\"nova-view-7-nv-ring-support\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" style=\"stop-color:var(--m-support);stop-opacity:0\"></stop><stop offset=\"0.78\" style=\"stop-color:var(--m-support);stop-opacity:.55\"></stop><stop offset=\"1\" style=\"stop-color:var(--m-support);stop-opacity:.15\"></stop></radialGradient></defs><g class=\"nv-neon-box\"><rect x=\"150\" y=\"130\" width=\"486\" height=\"338\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-support)\"></rect><rect x=\"153\" y=\"133\" width=\"480\" height=\"332\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-7-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-support)\"></rect><rect x=\"154.5\" y=\"134.5\" width=\"477\" height=\"99.6\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><g class=\"f302-region-group\"><g data-region=\"0\" class=\"f302-region\"><g class=\"nv-neon-box\"><rect x=\"159\" y=\"139\" width=\"359.53846153846155\" height=\"245.69230769230774\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-given)\"></rect><rect x=\"162\" y=\"142\" width=\"353.53846153846155\" height=\"239.69230769230774\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-7-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-given)\"></rect><rect x=\"163.5\" y=\"143.5\" width=\"350.53846153846155\" height=\"71.90769230769232\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"338.7692307692308\" y=\"269.84615384615387\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--m-unknown);font-family:var(--nova-font-chalk-draw);opacity:.97\">?</text><g class=\"nv-ring\" aria-hidden=\"true\"><circle cx=\"338.7692307692308\" cy=\"293.84615384615387\" r=\"14\" opacity=\"0.25\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"338.7692307692308\" cy=\"293.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"3.2\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-focus)\"></circle><circle cx=\"338.7692307692308\" cy=\"293.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"1.1\" style=\"stroke:#fff;opacity:.9\"></circle><circle cx=\"338.7692307692308\" cy=\"293.84615384615387\" r=\"2.8\" style=\"fill:#fff\"></circle></g></g><g data-region=\"1\" class=\"f302-region\"><g class=\"nv-neon-box\"><rect x=\"520.5384615384615\" y=\"139\" width=\"106.46153846153845\" height=\"245.69230769230774\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-focus)\"></rect><rect x=\"523.5384615384615\" y=\"142\" width=\"100.46153846153845\" height=\"239.69230769230774\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-7-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-focus)\"></rect><rect x=\"525.0384615384615\" y=\"143.5\" width=\"97.46153846153845\" height=\"71.90769230769232\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"573.7692307692307\" y=\"269.84615384615387\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--m-unknown);font-family:var(--nova-font-chalk-draw);opacity:.97\">?</text><g class=\"nv-ring\" aria-hidden=\"true\"><circle cx=\"573.7692307692307\" cy=\"293.84615384615387\" r=\"14\" opacity=\"0.25\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"573.7692307692307\" cy=\"293.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"3.2\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-focus)\"></circle><circle cx=\"573.7692307692307\" cy=\"293.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"1.1\" style=\"stroke:#fff;opacity:.9\"></circle><circle cx=\"573.7692307692307\" cy=\"293.84615384615387\" r=\"2.8\" style=\"fill:#fff\"></circle></g></g><g data-region=\"2\" class=\"f302-region\"><g class=\"nv-neon-box\"><rect x=\"159\" y=\"386.69230769230774\" width=\"359.53846153846155\" height=\"72.30769230769226\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-op)\"></rect><rect x=\"162\" y=\"389.69230769230774\" width=\"353.53846153846155\" height=\"66.30769230769226\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-7-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-op)\"></rect><rect x=\"163.5\" y=\"391.19230769230774\" width=\"350.53846153846155\" height=\"19.89230769230768\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"338.7692307692308\" y=\"430.84615384615387\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--m-unknown);font-family:var(--nova-font-chalk-draw);opacity:.97\">?</text><g class=\"nv-ring\" aria-hidden=\"true\"><circle cx=\"338.7692307692308\" cy=\"454.84615384615387\" r=\"14\" opacity=\"0.25\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"338.7692307692308\" cy=\"454.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"3.2\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-focus)\"></circle><circle cx=\"338.7692307692308\" cy=\"454.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"1.1\" style=\"stroke:#fff;opacity:.9\"></circle><circle cx=\"338.7692307692308\" cy=\"454.84615384615387\" r=\"2.8\" style=\"fill:#fff\"></circle></g></g><g data-region=\"3\" class=\"f302-region\"><g class=\"nv-neon-box\"><rect x=\"520.5384615384615\" y=\"386.69230769230774\" width=\"106.46153846153845\" height=\"72.30769230769226\" rx=\"15\" stroke-width=\"7\" opacity=\"0.22\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:none;stroke:var(--m-result)\"></rect><rect x=\"523.5384615384615\" y=\"389.69230769230774\" width=\"100.46153846153845\" height=\"66.30769230769226\" rx=\"12\" stroke-width=\"2.6\" stroke-dasharray=\"\" filter=\"url(#nova-view-7-nv-neon)\" style=\"fill:#050c1fcc;stroke:var(--m-result)\"></rect><rect x=\"525.0384615384615\" y=\"391.19230769230774\" width=\"97.46153846153845\" height=\"19.89230769230768\" rx=\"10.5\" style=\"fill:#ffffff12;stroke:none\"></rect></g><text x=\"573.7692307692307\" y=\"430.84615384615387\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--m-unknown);font-family:var(--nova-font-chalk-draw);opacity:.97\">?</text><g class=\"nv-ring\" aria-hidden=\"true\"><circle cx=\"573.7692307692307\" cy=\"454.84615384615387\" r=\"14\" opacity=\"0.25\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"573.7692307692307\" cy=\"454.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"3.2\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-focus)\"></circle><circle cx=\"573.7692307692307\" cy=\"454.84615384615387\" r=\"8\" fill=\"none\" stroke-width=\"1.1\" style=\"stroke:#fff;opacity:.9\"></circle><circle cx=\"573.7692307692307\" cy=\"454.84615384615387\" r=\"2.8\" style=\"fill:#fff\"></circle></g></g></g><g><path d=\"M158.0,115.0 Q158.0,109.6 186.9,109.6 L309.8,109.6 Q338.8,109.6 338.8,102.4 Q338.8,109.6 367.7,109.6 L490.6,109.6 Q519.5,109.6 519.5,115.0\" fill=\"none\" stroke-width=\"13\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"stroke:var(--m-given)\" aria-hidden=\"true\"></path><path d=\"M158.0,115.0 Q158.0,109.6 186.9,109.6 L309.8,109.6 Q338.8,109.6 338.8,102.4 Q338.8,109.6 367.7,109.6 L490.6,109.6 Q519.5,109.6 519.5,115.0\" fill=\"none\" stroke-width=\"7.5\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-halo)\" style=\"stroke:var(--m-given)\" aria-hidden=\"true\"></path><path d=\"M158.0,115.0 Q158.0,109.6 186.9,109.6 L309.8,109.6 Q338.8,109.6 338.8,102.4 Q338.8,109.6 367.7,109.6 L490.6,109.6 Q519.5,109.6 519.5,115.0\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-given)\"></path></g><text x=\"338.7692307692308\" y=\"98\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--m-given);font-family:var(--nova-font-chalk-draw);opacity:.97\">10</text><g><path d=\"M519.5,115.0 Q519.5,109.6 528.2,109.6 L565.1,109.6 Q573.8,109.6 573.8,102.4 Q573.8,109.6 582.4,109.6 L619.3,109.6 Q628.0,109.6 628.0,115.0\" fill=\"none\" stroke-width=\"13\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"stroke:var(--m-focus)\" aria-hidden=\"true\"></path><path d=\"M519.5,115.0 Q519.5,109.6 528.2,109.6 L565.1,109.6 Q573.8,109.6 573.8,102.4 Q573.8,109.6 582.4,109.6 L619.3,109.6 Q628.0,109.6 628.0,115.0\" fill=\"none\" stroke-width=\"7.5\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-halo)\" style=\"stroke:var(--m-focus)\" aria-hidden=\"true\"></path><path d=\"M519.5,115.0 Q519.5,109.6 528.2,109.6 L565.1,109.6 Q573.8,109.6 573.8,102.4 Q573.8,109.6 582.4,109.6 L619.3,109.6 Q628.0,109.6 628.0,115.0\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-focus)\"></path></g><text x=\"573.7692307692307\" y=\"98\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--m-focus);font-family:var(--nova-font-chalk-draw);opacity:.97\">3</text><g><path d=\"M137.0,138.0 Q142.4,138.0 142.4,157.8 L142.4,242.0 Q142.4,261.8 149.6,261.8 Q142.4,261.8 142.4,281.7 L142.4,365.9 Q142.4,385.7 137.0,385.7\" fill=\"none\" stroke-width=\"13\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"stroke:var(--m-op)\" aria-hidden=\"true\"></path><path d=\"M137.0,138.0 Q142.4,138.0 142.4,157.8 L142.4,242.0 Q142.4,261.8 149.6,261.8 Q142.4,261.8 142.4,281.7 L142.4,365.9 Q142.4,385.7 137.0,385.7\" fill=\"none\" stroke-width=\"7.5\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-halo)\" style=\"stroke:var(--m-op)\" aria-hidden=\"true\"></path><path d=\"M137.0,138.0 Q142.4,138.0 142.4,157.8 L142.4,242.0 Q142.4,261.8 149.6,261.8 Q142.4,261.8 142.4,281.7 L142.4,365.9 Q142.4,385.7 137.0,385.7\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-op)\"></path></g><text x=\"107\" y=\"268.84615384615387\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--m-op);font-family:var(--nova-font-chalk-draw);opacity:.97\">10</text><g><path d=\"M137.0,385.7 Q142.4,385.7 142.4,391.6 L142.4,416.9 Q142.4,422.8 149.6,422.8 Q142.4,422.8 142.4,428.8 L142.4,454.1 Q142.4,460.0 137.0,460.0\" fill=\"none\" stroke-width=\"13\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"stroke:var(--m-result)\" aria-hidden=\"true\"></path><path d=\"M137.0,385.7 Q142.4,385.7 142.4,391.6 L142.4,416.9 Q142.4,422.8 149.6,422.8 Q142.4,422.8 142.4,428.8 L142.4,454.1 Q142.4,460.0 137.0,460.0\" fill=\"none\" stroke-width=\"7.5\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-halo)\" style=\"stroke:var(--m-result)\" aria-hidden=\"true\"></path><path d=\"M137.0,385.7 Q142.4,385.7 142.4,391.6 L142.4,416.9 Q142.4,422.8 149.6,422.8 Q142.4,422.8 142.4,428.8 L142.4,454.1 Q142.4,460.0 137.0,460.0\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-result)\"></path></g><text x=\"107\" y=\"429.84615384615387\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--m-result);font-family:var(--nova-font-chalk-draw);opacity:.97\">3</text><g class=\"nv-neon-tube\"><path d=\"M519.5384615384615,138 L519.5384615384615,460\" fill=\"none\" stroke-width=\"14.5\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"stroke:var(--m-focus)\" aria-hidden=\"true\"></path><path d=\"M519.5384615384615,138 L519.5384615384615,460\" fill=\"none\" stroke-width=\"9\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-halo)\" style=\"stroke:var(--m-focus)\" aria-hidden=\"true\"></path><path d=\"M519.5384615384615,138 L519.5384615384615,460\" fill=\"none\" stroke-width=\"4.5\" stroke-linecap=\"round\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-focus)\"></path><path d=\"M519.5384615384615,138 L519.5384615384615,460\" fill=\"none\" stroke-width=\"1.575\" stroke-linecap=\"round\" opacity=\"0.92\" style=\"stroke:#ffffff\"></path><circle cx=\"519.5384615384615\" cy=\"138\" r=\"5.275\" opacity=\"0.3\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"519.5384615384615\" cy=\"138\" r=\"3.875\" style=\"fill:#e0f7ff;stroke:var(--m-focus)\"></circle><circle cx=\"519.5384615384615\" cy=\"460\" r=\"5.275\" opacity=\"0.3\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:var(--m-focus)\"></circle><circle cx=\"519.5384615384615\" cy=\"460\" r=\"3.875\" style=\"fill:#e0f7ff;stroke:var(--m-focus)\"></circle></g><g class=\"nv-neon-tube\"><path d=\"M158,385.69230769230774 L628,385.69230769230774\" fill=\"none\" stroke-width=\"14.5\" opacity=\"0.16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"stroke:var(--m-op)\" aria-hidden=\"true\"></path><path d=\"M158,385.69230769230774 L628,385.69230769230774\" fill=\"none\" stroke-width=\"9\" opacity=\"0.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#nova-view-7-nv-neon-halo)\" style=\"stroke:var(--m-op)\" aria-hidden=\"true\"></path><path d=\"M158,385.69230769230774 L628,385.69230769230774\" fill=\"none\" stroke-width=\"4.5\" stroke-linecap=\"round\" filter=\"url(#nova-view-7-nv-neon)\" style=\"stroke:var(--m-op)\"></path><path d=\"M158,385.69230769230774 L628,385.69230769230774\" fill=\"none\" stroke-width=\"1.575\" stroke-linecap=\"round\" opacity=\"0.92\" style=\"stroke:#ffffff\"></path><circle cx=\"158\" cy=\"385.69230769230774\" r=\"5.275\" opacity=\"0.3\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:var(--m-op)\"></circle><circle cx=\"158\" cy=\"385.69230769230774\" r=\"3.875\" style=\"fill:#e0f7ff;stroke:var(--m-op)\"></circle><circle cx=\"628\" cy=\"385.69230769230774\" r=\"5.275\" opacity=\"0.3\" filter=\"url(#nova-view-7-nv-neon-soft)\" style=\"fill:var(--m-op)\"></circle><circle cx=\"628\" cy=\"385.69230769230774\" r=\"3.875\" style=\"fill:#e0f7ff;stroke:var(--m-op)\"></circle></g><text x=\"390\" y=\"570\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"700\" font-style=\"normal\" filter=\"url(#nova-view-7-nv-chalk)\" style=\"fill:var(--m-given);font-family:var(--nova-font-chalk-draw);opacity:.97\">Use the given side partitions.</text></svg>",
+        "expected": [
+          {
+            "value": "13",
+            "found": true
+          },
+          {
+            "value": "13",
+            "found": true
+          }
+        ],
+        "fractionCount": 0,
+        "markScheme": "",
+        "answers": []
+      }
+    ],
+    "multiple": {
+      "count": 2,
+      "docks": 1,
+      "distinct": true,
+      "duplicateIds": []
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      },
+      "result": {
+        "score": 85,
+        "correct": 6,
+        "played": 7,
+        "pct": 100,
+        "stars": 3,
+        "best": 6,
+        "hints": 0,
+        "livesLeft": 2
+      }
+    }
+  }
+]

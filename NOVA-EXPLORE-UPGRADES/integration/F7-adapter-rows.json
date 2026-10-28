@@ -1,0 +1,3065 @@
+[
+ {
+  "id": "F7-01",
+  "path": "F7/F7-01-algebra-tiles.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "dock": [
+    "stage",
+    "key"
+   ],
+   "view": [
+    "stage",
+    "tiles",
+    "opt"
+   ]
+  },
+  "exploreFields": {
+   "message": {
+    "kind": "value",
+    "factory": null,
+    "argCount": null
+   }
+  },
+  "original_sha256": "8bb93582c2f3d52e2f31866e94e6c416cf40a849dd7bf11d16fb44eb83668b72",
+  "sha256": "734cb0c054492dbcb3613d1051a05f2e63d6a84999a9c2ee0d274c2588430630",
+  "engineId": "F7-01",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "phase",
+    "say",
+    "narration"
+   ],
+   [
+    "name",
+    "phase",
+    "say",
+    "narration"
+   ],
+   [
+    "name",
+    "phase",
+    "say",
+    "narration"
+   ],
+   [
+    "name",
+    "phase",
+    "say",
+    "narration"
+   ],
+   [
+    "name",
+    "phase",
+    "say",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 5,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 4,
+   "data": {
+    "name": "Read the expression",
+    "phase": "finish",
+    "say": "finish",
+    "narration": "The simplified expression is two x plus three. The tile layout proves why the coefficients are two and three."
+   },
+   "scene": {
+    "function": "view",
+    "arguments": {
+     "tiles": [
+      {
+       "id": "t7",
+       "type": "x2",
+       "sign": 1
+      },
+      {
+       "id": "t7",
+       "type": "x",
+       "sign": 1
+      },
+      {
+       "id": "t8",
+       "type": "one",
+       "sign": 1
+      }
+     ]
+    }
+   }
+  },
+  "previous_sha256": "43daa677e237fcd16e2c02a5dd08c5c738a04d18a711d1fec8fdded19082b6d2",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-02",
+  "path": "F7/F7-02-zero-pair-animation.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "dock": [
+    "stage",
+    "k"
+   ],
+   "view": [
+    "stage",
+    "tiles",
+    "o"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "e02186e13bdda76845eef49cc9fed186e6a69eb0bfe881823239ec537b351d89",
+  "sha256": "39831771c48c2c79b152176f3a473aad2cf5c446941d7de1da5617ffbb20907b",
+  "engineId": "F7-02",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "say",
+    "narration"
+   ],
+   [
+    "name",
+    "say",
+    "narration"
+   ],
+   [
+    "name",
+    "say",
+    "narration"
+   ],
+   [
+    "name",
+    "say",
+    "narration"
+   ],
+   [
+    "name",
+    "say",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 5,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 4,
+   "data": {
+    "name": "Read the remaining tiles",
+    "say": "remain",
+    "narration": "After cancelling, two positive units remain. Negative three plus positive five is positive two. The remaining tiles prove our answer."
+   },
+   "config": {
+    "id": "F7-02",
+    "startMode": "guided",
+    "preset": "Y7-011",
+    "parameters": {
+     "maxPerSign": 14,
+     "unitValue": 1,
+     "integerOnly": true
+    },
+    "presets": {
+     "Y7-011": {
+      "label": "Year 7 \u00b7 \u22123 + 5",
+      "expression": "\u22123 + 5",
+      "pos": 6,
+      "neg": 3,
+      "why": "Five positive units and three negative units leave two positive units."
+     },
+     "NEGATIVE": {
+      "label": "Addition \u00b7 \u22125 + 2",
+      "expression": "\u22125 + 2",
+      "pos": 2,
+      "neg": 5,
+      "why": "Two zero pairs disappear, leaving three negative units."
+     },
+     "ZERO": {
+      "label": "Additive inverse \u00b7 4 + (\u22124)",
+      "expression": "4 + (\u22124)",
+      "pos": 4,
+      "neg": 4,
+      "why": "Four opposite pairs cancel completely to give zero."
+     },
+     "SUBTRACT": {
+      "label": "Subtract negative \u00b7 3 \u2212 (\u22122)",
+      "expression": "3 \u2212 (\u22122)",
+      "pos": 5,
+      "neg": 0,
+      "why": "Subtracting two negative units is adding two positives: three plus two gives five."
+     },
+     "SUBTRACT_POS": {
+      "label": "Subtract positive \u00b7 2 \u2212 5",
+      "expression": "2 \u2212 5",
+      "pos": 2,
+      "neg": 5,
+      "why": "Subtracting five is adding five negative units. Two opposite pairs cancel; three negative units remain."
+     },
+     "GCSE": {
+      "label": "GCSE bridge \u00b7 \u22127 + 5",
+      "expression": "\u22127 + 5",
+      "pos": 5,
+      "neg": 7,
+      "why": "Cancel five pairs; the extra two negative tiles give minus two."
+     }
+    },
+    "challenge": [
+     {
+      "text": "3 + (\u22122)",
+      "pos": 3,
+      "neg": 2,
+      "answer": 1,
+      "explain": "One positive tile remains."
+     },
+     {
+      "text": "\u22124 + 3",
+      "pos": 3,
+      "neg": 4,
+      "answer": -1,
+      "explain": "One negative tile remains."
+     },
+     {
+      "text": "5 + (\u22125)",
+      "pos": 5,
+      "neg": 5,
+      "answer": 0,
+      "explain": "All pairs cancel, so nothing remains."
+     },
+     {
+      "text": "\u22122 \u2212 (\u22124)",
+      "pos": 4,
+      "neg": 2,
+      "answer": 2,
+      "explain": "Subtracting negative four is adding positive four. Two positive tiles remain."
+     }
+    ],
+    "events": {
+     "value": [
+      "preset",
+      "add",
+      "remove",
+      "pair",
+      "undo",
+      "reset",
+      "keyboard",
+      "answer",
+      "challenge",
+      "proof"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "cb09bca7829b5bb4afee44f09492306358e98cb0e78b82bff13464280a10f8ef",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-03",
+  "path": "F7/F7-03-collecting-like-terms.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "dock": [
+    "stage",
+    "k"
+   ],
+   "show": [
+    "stage",
+    "tiles",
+    "opt"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "d5fcd429ea4549deeda5aa22ee1e4d2d7289299f107f4fd0b97eaee84258b685",
+  "sha256": "3c9d936c697e12fa9e99cdee99a0e9d354545a9068588c6f8094c85c874cfd17",
+  "engineId": "F7-03",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "cue",
+    "narration"
+   ],
+   [
+    "name",
+    "cue",
+    "narration"
+   ],
+   [
+    "name",
+    "cue",
+    "narration"
+   ],
+   [
+    "name",
+    "cue",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 4,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 3,
+   "data": {
+    "name": "Write the simplified expression",
+    "cue": "result",
+    "narration": "Three x rods plus four unit squares simplify to three x plus four. We have combined like terms only, preserving the original value."
+   },
+   "config": {
+    "id": "F7-03",
+    "startMode": "guided",
+    "preset": "Y7-029",
+    "parameters": {
+     "types": [
+      "x2",
+      "x",
+      "one"
+     ],
+     "maxTiles": 10,
+     "maxPerType": 8
+    },
+    "presets": {
+     "Y7-029": {
+      "label": "Y7-029 \u00b7 First like terms",
+      "title": "x + 3 + 2x + 1",
+      "tokens": [
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        1
+       ]
+      ],
+      "purpose": "Three x rods and four units remain separate families."
+     },
+     "Y7-SIGNED": {
+      "label": "Year 7 \u00b7 Signed coefficients",
+      "title": "3x \u2212 x + 4 \u2212 2",
+      "tokens": [
+       [
+        "x",
+        2
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        -1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        -1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        -1
+       ]
+      ],
+      "purpose": "Keep the minus sign with the term when collecting."
+     },
+     "Y8-REVISIT": {
+      "label": "Year 8 \u00b7 Variable and constants",
+      "title": "\u2212x + 5 + 2x \u2212 1",
+      "tokens": [
+       [
+        "x",
+        -1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        -1
+       ]
+      ],
+      "purpose": "Opposite signed x terms combine to x, while constants combine to four."
+     },
+     "GCSE-X2": {
+      "label": "GCSE bridge \u00b7 Quadratic terms",
+      "title": "x\u00b2 + 2x + x\u00b2 \u2212 x + 2",
+      "tokens": [
+       [
+        "x2",
+        1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x2",
+        1
+       ],
+       [
+        "x",
+        -1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        1
+       ]
+      ],
+      "purpose": "Keep x squared, x and constants in three distinct groups."
+     },
+     "GCSE-SIGNS": {
+      "label": "GCSE bridge \u00b7 Signed powers",
+      "title": "\u2212x\u00b2 + 3x \u2212 x + 2",
+      "tokens": [
+       [
+        "x2",
+        -1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        -1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ]
+      ],
+      "purpose": "A negative x squared tile is not a negative x tile."
+     }
+    },
+    "challenge": [
+     {
+      "label": "Like terms",
+      "prompt": "Collect x + 3 + 2x + 1",
+      "tokens": [
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        1
+       ]
+      ],
+      "answer": {
+       "x2": 0,
+       "x": 3,
+       "one": 4
+      }
+     },
+     {
+      "label": "A minus sign",
+      "prompt": "Collect 3x \u2212 x + 4 \u2212 2",
+      "tokens": [
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        -1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        -1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        -1
+       ]
+      ],
+      "answer": {
+       "x2": 0,
+       "x": 2,
+       "one": 2
+      }
+     },
+     {
+      "label": "Negative result",
+      "prompt": "Collect x \u2212 3x + 4 \u2212 1",
+      "tokens": [
+       [
+        "x",
+        1
+       ],
+       [
+        "one",
+        -1
+       ],
+       [
+        "x",
+        -1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        -1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        -1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "one",
+        1
+       ]
+      ],
+      "answer": {
+       "x2": 0,
+       "x": -2,
+       "one": 3
+      }
+     },
+     {
+      "label": "Three families",
+      "prompt": "Collect x\u00b2 + x\u00b2 + 2x \u2212 x + 1",
+      "tokens": [
+       [
+        "x2",
+        1
+       ],
+       [
+        "x",
+        1
+       ],
+       [
+        "x2",
+        1
+       ],
+       [
+        "one",
+        1
+       ],
+       [
+        "x",
+        -1
+       ],
+       [
+        "x",
+        1
+       ]
+      ],
+      "answer": {
+       "x2": 2,
+       "x": 1,
+       "one": 1
+      }
+     }
+    ],
+    "events": {
+     "value": [
+      "preset",
+      "sort",
+      "return",
+      "undo",
+      "reset",
+      "keyboard",
+      "answer",
+      "proof",
+      "round",
+      "hint"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "1eedc58eeafd4d14f8ddbc40438fedc272f8c165252de84a68326d2ff350c421",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-04",
+  "path": "F7/F7-04-expanding-single-brackets.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "roles",
+   "standardSteps",
+   "F704_STEPS",
+   "F704_TALK"
+  ],
+  "draws": {
+   "scene": [
+    "stage",
+    "p",
+    "opt"
+   ]
+  },
+  "exploreFields": {
+   "areaSvg.data": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   },
+   "resultFor.m": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "43827f6acc1d2fecbaa0df075319f832e4d025efb7b3064fb4ea873475bffda6",
+  "sha256": "3f024004894aa9eb95718aff5c1649fb4876754fc648ea2d12b4103c1bf40b12",
+  "engineId": "F3-02",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "total",
+    "narration": "The distributive law is proven: three times open bracket x plus two close bracket equals three x plus six. Multiply everything inside the bracket.",
+    "prompt": "How can you check both parts were multiplied?",
+    "mood": "celebrate"
+   },
+   "config": {
+    "id": "F3-02",
+    "startMode": "guided",
+    "preset": "F7-04-expanding-single-brackets",
+    "presets": {
+     "Y7-009-whole-decimal-multiplication": {
+      "label": "Whole number multiplication",
+      "kind": "numeric",
+      "x": [
+       20,
+       4
+      ],
+      "y": [
+       10,
+       4
+      ]
+     },
+     "Y7-022-fraction-add-subtract": {
+      "label": "Fraction addition / subtraction",
+      "kind": "fraction-add",
+      "den": 6,
+      "a": 3,
+      "b": 2,
+      "op": "+",
+      "wholes": 0
+     },
+     "Y7-023-multiplying-fractions": {
+      "label": "Fraction of a fraction",
+      "kind": "fraction-product",
+      "a": 2,
+      "b": 3,
+      "c": 3,
+      "d": 4
+     },
+     "Y7-031-single-brackets": {
+      "label": "Expanding a single bracket",
+      "kind": "single",
+      "factor": 3,
+      "constant": 2
+     },
+     "Y7-032-factorising-common-factor": {
+      "label": "Factorising common terms",
+      "kind": "factorise",
+      "factor": 3,
+      "constant": 2
+     },
+     "Y8-005-mixed-number-fractions": {
+      "label": "Mixed-number addition / subtraction",
+      "kind": "fraction-add",
+      "den": 4,
+      "a": 6,
+      "b": 3,
+      "op": "+",
+      "wholes": 0
+     },
+     "Y8-011-double-brackets": {
+      "label": "Expanding double brackets",
+      "kind": "double",
+      "xConst": 3,
+      "yConst": 2
+     },
+     "Y9-006-algebraic-equivalence": {
+      "label": "Equivalent algebraic expressions",
+      "kind": "double",
+      "xConst": 3,
+      "yConst": 2
+     },
+     "F5-03-area-model-fractions": {
+      "label": "F5-03 \u00b7 Fractions area preset",
+      "kind": "fraction-product",
+      "a": 2,
+      "b": 3,
+      "c": 3,
+      "d": 4
+     },
+     "F7-04-expanding-single-brackets": {
+      "label": "F7-04 \u00b7 Distribute 3 across x + 2",
+      "kind": "single",
+      "factor": 3,
+      "constant": 2
+     },
+     "F7-04-two-times": {
+      "label": "Two lots: 2(x + 3)",
+      "kind": "single",
+      "factor": 2,
+      "constant": 3
+     },
+     "F7-04-four-times": {
+      "label": "Four lots: 4(x + 5)",
+      "kind": "single",
+      "factor": 4,
+      "constant": 5
+     },
+     "F7-04-five-times": {
+      "label": "Five lots: 5(x + 1)",
+      "kind": "single",
+      "factor": 5,
+      "constant": 1
+     },
+     "F7-05-expanding-double-brackets": {
+      "label": "F7-05 \u00b7 Double bracket preset",
+      "kind": "double",
+      "xConst": 3,
+      "yConst": 2
+     },
+     "decimal-tenths": {
+      "label": "Decimal tenths",
+      "kind": "numeric",
+      "x": [
+       2,
+       0.3
+      ],
+      "y": [
+       1,
+       0.4
+      ]
+     }
+    },
+    "events": {
+     "value": [
+      "preset",
+      "width",
+      "height",
+      "splitX",
+      "splitY",
+      "placedPart",
+      "removedPart",
+      "targetPart",
+      "total",
+      "fractionSelection",
+      "challengeTask"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    },
+    "challenge": {
+     "tasks": [
+      "whole",
+      "decimal",
+      "algebra"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "9d1991b2fa19fa56b329102c4af41bf55dd11214427ccf7054fea7bdc366047a",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-05",
+  "path": "F7/F7-05-expanding-double-brackets.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "roles",
+   "standardSteps",
+   "F704_STEPS",
+   "F704_TALK",
+   "F705_STEPS",
+   "F705_TALK"
+  ],
+  "draws": {
+   "scene": [
+    "stage",
+    "p",
+    "opt"
+   ]
+  },
+  "exploreFields": {
+   "areaSvg.data": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   },
+   "resultFor.m": {
+    "kind": "factory",
+    "factory": "model",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "e80a140972f8bedefbdfeb30a30519f3ccd584285330cd43296fa642e5e4d2b4",
+  "sha256": "4f270e717d8b882db2edeabafcf4a69ab61937869cbea6aa5f1110b744604ed6",
+  "engineId": "F3-02",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "mood"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 8,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 7,
+   "data": {
+    "name": "total",
+    "narration": "So the expanded expression is x squared plus five x plus six. The four regions prove it is equivalent to the original two brackets.",
+    "prompt": "How does each region support the final expression?",
+    "mood": "celebrate"
+   },
+   "scene": {
+    "function": "scene",
+    "arguments": {
+     "p": {
+      "label": "F7-05 \u00b7 (x + 3)(x + 2)",
+      "kind": "double",
+      "xConst": 4,
+      "yConst": 2
+     }
+    }
+   }
+  },
+  "previous_sha256": "3a4da0e8587c674f35cb91d64f738279a63daf18ff45b57566598e8333cc3b8a",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-06",
+  "path": "F7/F7-06-factorising-with-tiles.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "dock": [
+    "stage",
+    "cue"
+   ],
+   "show": [
+    "stage",
+    "p",
+    "tiles",
+    "opt"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "fd304f8622f64ab1ef20028459782365b456ddf152469d0fa4039b67c9c53810",
+  "sha256": "d6679025e4f84ede4602c12fda16253c7b93c400e9ed7ee6cbfc13b666d0a101",
+  "engineId": "F7-06",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "cue",
+    "narration"
+   ],
+   [
+    "name",
+    "cue",
+    "narration"
+   ],
+   [
+    "name",
+    "cue",
+    "narration"
+   ],
+   [
+    "name",
+    "cue",
+    "narration"
+   ],
+   [
+    "name",
+    "cue",
+    "narration"
+   ],
+   [
+    "name",
+    "cue",
+    "narration"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "Write the factorised form",
+    "cue": "proof",
+    "narration": "Three x plus six equals three multiplied by the bracket x plus two. Expand again to check that each original term returns."
+   },
+   "config": {
+    "id": "F7-06",
+    "startMode": "guided",
+    "preset": "Y7-032",
+    "parameters": {
+     "maxTiles": 18,
+     "source": "positive rectangular tiles",
+     "coefficientRange": [
+      2,
+      12
+     ]
+    },
+    "presets": {
+     "Y7-032": {
+      "label": "Year 7 \u00b7 Common factor",
+      "title": "3x + 6",
+      "k": 4,
+      "a": 1,
+      "b": 2,
+      "lesson": "Y7-032",
+      "context": "A rectangle made of three identical rows."
+     },
+     "Y7-032-alt": {
+      "label": "Year 7 \u00b7 Four groups",
+      "title": "4x + 8",
+      "k": 4,
+      "a": 1,
+      "b": 2,
+      "lesson": "Y7-032",
+      "context": "Four equal rows reveal four as a common factor."
+     },
+     "Y8-012": {
+      "label": "Year 8 \u00b7 Two different counts",
+      "title": "6x + 9",
+      "k": 3,
+      "a": 2,
+      "b": 3,
+      "lesson": "Y8-012",
+      "context": "Three identical rows, each containing two x rods and three units."
+     },
+     "Y8-012-alt": {
+      "label": "Year 8 \u00b7 Greatest common factor",
+      "title": "6x + 8",
+      "k": 2,
+      "a": 3,
+      "b": 4,
+      "lesson": "Y8-012",
+      "context": "Two equal rows; both coefficients are divisible by two."
+     }
+    },
+    "challenge": [
+     {
+      "label": "Spot the shared groups",
+      "k": 3,
+      "a": 1,
+      "b": 2
+     },
+     {
+      "label": "Four equal rows",
+      "k": 4,
+      "a": 1,
+      "b": 2
+     },
+     {
+      "label": "Two-term inner bracket",
+      "k": 3,
+      "a": 2,
+      "b": 3
+     },
+     {
+      "label": "Greatest common factor",
+      "k": 2,
+      "a": 3,
+      "b": 4
+     }
+    ],
+    "events": {
+     "value": [
+      "preset",
+      "tile",
+      "place",
+      "return",
+      "undo",
+      "reset",
+      "keyboard",
+      "answer",
+      "proof",
+      "hint",
+      "round"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "7dfb04542ec2eb38708fb80f8a9c0b7ca1929172b0c1e5fc4418b7813ee4333b",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-07",
+  "path": "F7/F7-07-completing-the-square.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "show": [
+    "stage",
+    "p",
+    "tiles",
+    "opt"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "306e9dd98bd6be57a38831bf8fb7f09f4116942dd217ef2f6bfca077f7ce09f3",
+  "sha256": "9b69fffc3acff33a813de05a2bb3cd3008aeaac647d2f12769d5db002e08907d",
+  "engineId": "F7-07",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 8,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 7,
+   "data": {
+    "name": "Preserve the original value",
+    "cue": "proof",
+    "narration": "Because we added four unit squares, we must subtract four. The original expression equals the square of x plus three, minus four.",
+    "prompt": "Why do we subtract the added units?"
+   },
+   "config": {
+    "id": "F7-07",
+    "startMode": "guided",
+    "preset": "Y9-square-6x",
+    "parameters": {
+     "n": [
+      2,
+      4
+     ],
+     "constant": [
+      0,
+      16
+     ],
+     "positiveEvenLinearCoefficient": true
+    },
+    "presets": {
+     "Y9-square-6x": {
+      "label": "x\u00b2 + 6x + 5",
+      "n": 4,
+      "c": 5,
+      "context": "Find a missing four-unit corner."
+     },
+     "bridge-4x": {
+      "label": "x\u00b2 + 4x + 1",
+      "n": 2,
+      "c": 1,
+      "context": "Split four rods evenly and fill three missing squares."
+     },
+     "bridge-8x": {
+      "label": "x\u00b2 + 8x + 12",
+      "n": 4,
+      "c": 12,
+      "context": "Build a five-by-five shape language with x plus four."
+     },
+     "already-square": {
+      "label": "x\u00b2 + 6x + 9",
+      "n": 3,
+      "c": 9,
+      "context": "Recognise a complete square without adding anything."
+     },
+     "gcse-8x": {
+      "label": "x\u00b2 + 8x + 9",
+      "n": 4,
+      "c": 9,
+      "context": "Seven small squares fill the missing corner."
+     }
+    },
+    "challenge": [
+     {
+      "n": 2,
+      "c": 1
+     },
+     {
+      "n": 3,
+      "c": 5
+     },
+     {
+      "n": 4,
+      "c": 12
+     },
+     {
+      "n": 3,
+      "c": 2
+     }
+    ],
+    "events": {
+     "value": [
+      "preset",
+      "tile",
+      "place",
+      "return",
+      "undo",
+      "reset",
+      "answer",
+      "hint",
+      "round",
+      "keyboard",
+      "proof"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "961dfc004fc415f6181a03188e8848725eea5fbd73af8ba5e42d112730009755",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-08",
+  "path": "F7/F7-08-balance-scales.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS",
+   "SIGNED_STEPS",
+   "CUPS_STEPS"
+  ],
+  "draws": {
+   "dock": [
+    "stage",
+    "cue"
+   ],
+   "renderScene": [
+    "stage",
+    "m",
+    "opt"
+   ]
+  },
+  "exploreFields": {
+   "mathOp.r": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "cupsWatch.b": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "cupsWatch.m": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "signedWatch.initial": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "watch.base": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "watch.m": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "821acb997d461e501d94ed9342bc86548f7037018b5b683c59829ad0cdfa67ae",
+  "sha256": "cdc210de416c2a4c6d7368b87f48b2bb813f274d35bdec5ef1628a616bf08a5a",
+  "engineId": "F7-08",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "Read the balanced solution",
+    "narration": "The unknown x is four. Check it by replacing the x bag with four units: four plus three equals seven.",
+    "prompt": "How can you check your answer?",
+    "cue": "solve"
+   },
+   "config": {
+    "id": "F7-08",
+    "startMode": "guided",
+    "preset": "Y7-033-one-step",
+    "parameters": {
+     "a": "integer",
+     "b": "integer",
+     "c": "integer",
+     "d": "integer",
+     "solution": "integer"
+    },
+    "presets": {
+     "Y7-033-one-step": {
+      "label": "Y7 \u00b7 One-step equation",
+      "a": 2,
+      "b": 3,
+      "c": 0,
+      "d": 7,
+      "skin": "bags",
+      "context": "One mystery bag and three weights balance seven weights."
+     },
+     "Y7-035-context": {
+      "label": "Y7 \u00b7 Bags in a story",
+      "a": 2,
+      "b": 2,
+      "c": 0,
+      "d": 8,
+      "skin": "bags",
+      "context": "Two bags and two weights equal eight weights."
+     },
+     "Y8-013-brackets": {
+      "label": "Y8 \u00b7 Brackets first",
+      "a": 2,
+      "b": 4,
+      "c": 0,
+      "d": 10,
+      "skin": "bags",
+      "display": "2(x + 2) = 10",
+      "context": "Expand the bracket before removing equal weights."
+     },
+     "Y8-014-both-sides": {
+      "label": "Y8 \u00b7 Unknown on both sides",
+      "a": 2,
+      "b": 3,
+      "c": 1,
+      "d": 8,
+      "skin": "bags",
+      "context": "Both pans contain mystery bags; cancel one from each."
+     },
+     "F7-09-negatives": {
+      "label": "F7-09 \u00b7 Negative balloons",
+      "a": 2,
+      "b": -3,
+      "c": 1,
+      "d": 2,
+      "skin": "balloons",
+      "context": "Negative balloons lift up. Keep both sides equal."
+     },
+     "F7-09-signed-unit": {
+      "label": "F7-09 \u00b7 Signed one-step",
+      "a": 1,
+      "b": -2,
+      "c": 0,
+      "d": 4,
+      "skin": "balloons",
+      "context": "Add two weights to each pan to cancel two negative balloons."
+     },
+     "F7-09-unknowns-both": {
+      "label": "F7-09 \u00b7 Signed unknowns on both pans",
+      "a": 3,
+      "b": -2,
+      "c": 2,
+      "d": 4,
+      "skin": "balloons",
+      "context": "Remove two x bags on each side, then cancel negative balloons."
+     },
+     "F7-09-negative-x": {
+      "label": "F7-09 \u00b7 Negative unknown",
+      "a": -1,
+      "b": 8,
+      "c": 0,
+      "d": 3,
+      "skin": "balloons",
+      "context": "A negative x bag lifts: \u2212x + 8 = 3. Remove equal units and reverse the sign."
+     },
+     "F7-10-cups": {
+      "label": "F7-10 \u00b7 Cups and counters",
+      "a": 2,
+      "b": 2,
+      "c": 0,
+      "d": 10,
+      "skin": "cups",
+      "context": "Two mystery cups and two counters have the same value as ten counters."
+     },
+     "F7-10-one-cup": {
+      "label": "F7-10 \u00b7 One mystery cup",
+      "a": 1,
+      "b": 3,
+      "c": 0,
+      "d": 7,
+      "skin": "cups",
+      "context": "Remove three counters from both sides to reveal one cup."
+     },
+     "F7-10-three-cups": {
+      "label": "F7-10 \u00b7 Three cups",
+      "a": 3,
+      "b": 3,
+      "c": 0,
+      "d": 12,
+      "skin": "cups",
+      "context": "Remove three counters from both sides, then share nine between three cups."
+     },
+     "F7-10-context": {
+      "label": "F7-10 \u00b7 Equal-share story",
+      "a": 2,
+      "b": 4,
+      "c": 0,
+      "d": 12,
+      "skin": "cups",
+      "context": "Two sealed cups and four loose counters match twelve counters."
+     }
+    },
+    "challenge": [
+     {
+      "a": 1,
+      "b": 3,
+      "c": 0,
+      "d": 7,
+      "skin": "bags"
+     },
+     {
+      "a": 2,
+      "b": 2,
+      "c": 0,
+      "d": 8,
+      "skin": "bags"
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "c": 1,
+      "d": 8,
+      "skin": "bags"
+     },
+     {
+      "a": 2,
+      "b": -3,
+      "c": 1,
+      "d": 2,
+      "skin": "balloons"
+     }
+    ],
+    "cupsChallenge": [
+     {
+      "a": 1,
+      "b": 3,
+      "c": 0,
+      "d": 7,
+      "skin": "cups"
+     },
+     {
+      "a": 2,
+      "b": 2,
+      "c": 0,
+      "d": 10,
+      "skin": "cups"
+     },
+     {
+      "a": 3,
+      "b": 3,
+      "c": 0,
+      "d": 12,
+      "skin": "cups"
+     },
+     {
+      "a": 2,
+      "b": 4,
+      "c": 0,
+      "d": 12,
+      "skin": "cups"
+     }
+    ],
+    "signedChallenge": [
+     {
+      "a": 2,
+      "b": -3,
+      "c": 1,
+      "d": 2,
+      "skin": "balloons"
+     },
+     {
+      "a": 1,
+      "b": -2,
+      "c": 0,
+      "d": 4,
+      "skin": "balloons"
+     },
+     {
+      "a": 3,
+      "b": -2,
+      "c": 2,
+      "d": 4,
+      "skin": "balloons"
+     },
+     {
+      "a": -1,
+      "b": 8,
+      "c": 0,
+      "d": 3,
+      "skin": "balloons"
+     }
+    ],
+    "events": {
+     "value": [
+      "preset",
+      "operation",
+      "pending",
+      "paired",
+      "restore",
+      "answer",
+      "round",
+      "reset",
+      "undo",
+      "add",
+      "remove",
+      "keyboard",
+      "state",
+      "zeroPair",
+      "zeroCancel",
+      "share",
+      "unshare"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "701341658d5ba638334b6c610d8dc8da4214c5dd1bcca6177735123db376edc2",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-09",
+  "path": "F7/F7-09-balance-negatives-unknowns.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS",
+   "SIGNED_STEPS",
+   "CUPS_STEPS"
+  ],
+  "draws": {
+   "dock": [
+    "stage",
+    "cue"
+   ],
+   "renderScene": [
+    "stage",
+    "m",
+    "opt"
+   ]
+  },
+  "exploreFields": {
+   "mathOp.r": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "cupsWatch.b": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "cupsWatch.m": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "signedWatch.initial": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "watch.base": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "watch.m": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "465142544877b17d3f272c7f54fc2025a47db67461782362bd6a38eaca98e8b1",
+  "sha256": "eab5172964ad6459f80da8a6be83a62191d4772d91d82145283fb146173ea3fc",
+  "engineId": "F7-08",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "Check with substitution",
+    "narration": "Replace x with five. Two times five minus three equals seven, and five plus two equals seven. Both pans balance.",
+    "prompt": "How do both sides give seven?",
+    "cue": "solve"
+   },
+   "scene": {
+    "function": "renderScene",
+    "arguments": {
+     "m": {
+      "a": 3,
+      "b": -3,
+      "c": 0,
+      "d": 0,
+      "skin": "balloons",
+      "display": "2x \u2212 3",
+      "context": "Negative balloons lift up. Keep both sides equal.",
+      "_transition": true
+     }
+    }
+   }
+  },
+  "previous_sha256": "b21a40534e57326129fbd8f9342f9553e4ac9593bc2ec5b1a44ba78b71c7739e",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-10",
+  "path": "F7/F7-10-cups-and-counters.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS",
+   "SIGNED_STEPS",
+   "CUPS_STEPS"
+  ],
+  "draws": {
+   "dock": [
+    "stage",
+    "cue"
+   ],
+   "renderScene": [
+    "stage",
+    "m",
+    "opt"
+   ]
+  },
+  "exploreFields": {
+   "mathOp.r": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "cupsWatch.b": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "cupsWatch.m": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "signedWatch.initial": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "watch.base": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   },
+   "watch.m": {
+    "kind": "factory",
+    "factory": "copy",
+    "argCount": 1
+   }
+  },
+  "original_sha256": "3cd03c703557bfdfa0bb40cf7a9bd0bc4835722622b73a417cb7398af083daf1",
+  "sha256": "12c393c7b88d2c596eac73b0acf03c44938d7c871f8938e895e18d9238ef028f",
+  "engineId": "F7-08",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 7,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 3,
+   "data": {
+    "name": "Match one pile to each cup",
+    "narration": "Two x equals eight. Split the eight counters into two equal groups, one group for each cup. The groups must be the same size.",
+    "prompt": "How many counters belong in each equal group?",
+    "cue": "share"
+   },
+   "config": {
+    "id": "F7-08",
+    "startMode": "guided",
+    "preset": "F7-10-cups",
+    "parameters": {
+     "a": "integer",
+     "b": "integer",
+     "c": "integer",
+     "d": "integer",
+     "solution": "integer"
+    },
+    "presets": {
+     "Y7-033-one-step": {
+      "label": "Y7 \u00b7 One-step equation",
+      "a": 1,
+      "b": 3,
+      "c": 0,
+      "d": 7,
+      "skin": "bags",
+      "context": "One mystery bag and three weights balance seven weights."
+     },
+     "Y7-035-context": {
+      "label": "Y7 \u00b7 Bags in a story",
+      "a": 2,
+      "b": 2,
+      "c": 0,
+      "d": 8,
+      "skin": "bags",
+      "context": "Two bags and two weights equal eight weights."
+     },
+     "Y8-013-brackets": {
+      "label": "Y8 \u00b7 Brackets first",
+      "a": 2,
+      "b": 4,
+      "c": 0,
+      "d": 10,
+      "skin": "bags",
+      "display": "2(x + 2) = 10",
+      "context": "Expand the bracket before removing equal weights."
+     },
+     "Y8-014-both-sides": {
+      "label": "Y8 \u00b7 Unknown on both sides",
+      "a": 2,
+      "b": 3,
+      "c": 1,
+      "d": 8,
+      "skin": "bags",
+      "context": "Both pans contain mystery bags; cancel one from each."
+     },
+     "F7-09-negatives": {
+      "label": "F7-09 \u00b7 Negative balloons",
+      "a": 2,
+      "b": -3,
+      "c": 1,
+      "d": 2,
+      "skin": "balloons",
+      "context": "Negative balloons lift up. Keep both sides equal."
+     },
+     "F7-09-signed-unit": {
+      "label": "F7-09 \u00b7 Signed one-step",
+      "a": 1,
+      "b": -2,
+      "c": 1,
+      "d": 4,
+      "skin": "balloons",
+      "context": "Add two weights to each pan to cancel two negative balloons."
+     },
+     "F7-09-unknowns-both": {
+      "label": "F7-09 \u00b7 Signed unknowns on both pans",
+      "a": 3,
+      "b": -2,
+      "c": 2,
+      "d": 4,
+      "skin": "balloons",
+      "context": "Remove two x bags on each side, then cancel negative balloons."
+     },
+     "F7-09-negative-x": {
+      "label": "F7-09 \u00b7 Negative unknown",
+      "a": -1,
+      "b": 8,
+      "c": 0,
+      "d": 3,
+      "skin": "balloons",
+      "context": "A negative x bag lifts: \u2212x + 8 = 3. Remove equal units and reverse the sign."
+     },
+     "F7-10-cups": {
+      "label": "F7-10 \u00b7 Cups and counters",
+      "a": 2,
+      "b": 2,
+      "c": 0,
+      "d": 10,
+      "skin": "cups",
+      "context": "Two mystery cups and two counters have the same value as ten counters."
+     },
+     "F7-10-one-cup": {
+      "label": "F7-10 \u00b7 One mystery cup",
+      "a": 1,
+      "b": 3,
+      "c": 0,
+      "d": 7,
+      "skin": "cups",
+      "context": "Remove three counters from both sides to reveal one cup."
+     },
+     "F7-10-three-cups": {
+      "label": "F7-10 \u00b7 Three cups",
+      "a": 3,
+      "b": 3,
+      "c": 0,
+      "d": 12,
+      "skin": "cups",
+      "context": "Remove three counters from both sides, then share nine between three cups."
+     },
+     "F7-10-context": {
+      "label": "F7-10 \u00b7 Equal-share story",
+      "a": 2,
+      "b": 4,
+      "c": 0,
+      "d": 12,
+      "skin": "cups",
+      "context": "Two sealed cups and four loose counters match twelve counters."
+     }
+    },
+    "challenge": [
+     {
+      "a": 1,
+      "b": 3,
+      "c": 0,
+      "d": 7,
+      "skin": "bags"
+     },
+     {
+      "a": 2,
+      "b": 2,
+      "c": 0,
+      "d": 8,
+      "skin": "bags"
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "c": 1,
+      "d": 8,
+      "skin": "bags"
+     },
+     {
+      "a": 2,
+      "b": -3,
+      "c": 1,
+      "d": 2,
+      "skin": "balloons"
+     }
+    ],
+    "cupsChallenge": [
+     {
+      "a": 1,
+      "b": 3,
+      "c": 0,
+      "d": 7,
+      "skin": "cups"
+     },
+     {
+      "a": 2,
+      "b": 2,
+      "c": 0,
+      "d": 10,
+      "skin": "cups"
+     },
+     {
+      "a": 3,
+      "b": 3,
+      "c": 0,
+      "d": 12,
+      "skin": "cups"
+     },
+     {
+      "a": 2,
+      "b": 4,
+      "c": 0,
+      "d": 12,
+      "skin": "cups"
+     }
+    ],
+    "signedChallenge": [
+     {
+      "a": 2,
+      "b": -3,
+      "c": 1,
+      "d": 2,
+      "skin": "balloons"
+     },
+     {
+      "a": 1,
+      "b": -2,
+      "c": 0,
+      "d": 4,
+      "skin": "balloons"
+     },
+     {
+      "a": 3,
+      "b": -2,
+      "c": 2,
+      "d": 4,
+      "skin": "balloons"
+     },
+     {
+      "a": -1,
+      "b": 8,
+      "c": 0,
+      "d": 3,
+      "skin": "balloons"
+     }
+    ],
+    "events": {
+     "value": [
+      "preset",
+      "operation",
+      "pending",
+      "paired",
+      "restore",
+      "answer",
+      "round",
+      "reset",
+      "undo",
+      "add",
+      "remove",
+      "keyboard",
+      "state",
+      "zeroPair",
+      "zeroCancel",
+      "share",
+      "unshare"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "9faedc7272cff891021d3f7a35b5a68373d76ba062feecd37e005cfd419426b5",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-11",
+  "path": "F7/F7-11-bar-model-equation.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "F711_STEPS",
+   "STEPS"
+  ],
+  "draws": {
+   "helper": [
+    "stage",
+    "k"
+   ],
+   "present": [
+    "stage",
+    "o",
+    "v"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "666a8d5bea34cc7c2cfdac71cfee58a820d107cae929301d37ac367865ec28a0",
+  "sha256": "fd3d3b45b97207680e1fd6655983d51ab33a4bb2ed290c3878cd91f4f2db7041",
+  "engineId": "F4-08",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 8,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 7,
+   "data": {
+    "name": "Check the story",
+    "narration": "Three groups of seven make twenty-one, and five more make twenty-six. Our answer fits the original story.",
+    "prompt": "How can substitution prove our answer?"
+   },
+   "scene": {
+    "function": "present",
+    "arguments": {
+     "v": {
+      "step": 1,
+      "count": 0,
+      "known": false,
+      "pose": "start",
+      "title": "Original representation"
+     }
+    }
+   }
+  },
+  "previous_sha256": "be164bc3392fed7c702e5d39c072faec785dce53004b0b0cf142e13a5543930e",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-12",
+  "path": "F7/F7-12-substitution-machine.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "dock": [
+    "stage",
+    "cue"
+   ],
+   "display": [
+    "stage",
+    "p",
+    "opt"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "c235bfe1c30403a19b88290fc3ee576122b67d2ae21361bd5ca2db3ddea904d7",
+  "sha256": "756145b1fd16e675bfa9a1f13f7b54d013ca2c68b7ddda0edb9811036ad5abf1",
+  "engineId": "F8-03",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 8,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 7,
+   "data": {
+    "name": "Record the output",
+    "cue": "table",
+    "narration": "The function machine pairs this input with one calculated output. The same rule always gives the same output for this input.",
+    "prompt": "Would a new x value give the same output?"
+   },
+   "config": {
+    "id": "F8-03",
+    "startMode": "guided",
+    "preset": "F7-12-Y7-030",
+    "parameters": {
+     "xIntegers": true,
+     "aRange": [
+      -5,
+      6
+     ],
+     "bRange": [
+      -8,
+      9
+     ],
+     "power": [
+      1,
+      2
+     ],
+     "maxTerms": 3
+    },
+    "presets": {
+     "F7-12-Y7-030": {
+      "label": "Y7-030 \u00b7 Substitute into 3x + 2",
+      "a": 4,
+      "b": 2,
+      "c": 0,
+      "power": 1,
+      "x": 5,
+      "context": "Value the expression at x equals five."
+     },
+     "Y7-030-subtraction": {
+      "label": "Subtracting \u00b7 5x \u2212 3",
+      "a": 5,
+      "b": -3,
+      "c": 0,
+      "power": 1,
+      "x": 4,
+      "context": "Multiply before subtracting."
+     },
+     "Y7-030-signed": {
+      "label": "Negative x \u00b7 2x + 5",
+      "a": 2,
+      "b": 5,
+      "c": 0,
+      "power": 1,
+      "x": -3,
+      "context": "Substitute a negative number using brackets."
+     },
+     "Y7-030-squared": {
+      "label": "Powers \u00b7 x\u00b2 + 2x + 1",
+      "a": 1,
+      "b": 2,
+      "c": 1,
+      "power": 2,
+      "x": 3,
+      "context": "Square the value before multiplying."
+     },
+     "Y7-030-formula": {
+      "label": "Formula \u00b7 2x + 7",
+      "a": 2,
+      "b": 7,
+      "c": 0,
+      "power": 1,
+      "x": 6,
+      "context": "A simple cost formula."
+     },
+     "Y8-substitution-bridge": {
+      "label": "GCSE bridge \u00b7 3x\u00b2 \u2212 2x + 1",
+      "a": 3,
+      "b": -2,
+      "c": 1,
+      "power": 2,
+      "x": 2,
+      "context": "Evaluate a quadratic with order of operations."
+     },
+     "F8-03-function-rule": {
+      "label": "Function input/output \u00b7 2x + 3",
+      "a": 2,
+      "b": 3,
+      "c": 0,
+      "power": 1,
+      "x": 5,
+      "context": "A function sends each input through a rule to an output."
+     }
+    },
+    "challenge": [
+     {
+      "a": 3,
+      "b": 2,
+      "c": 0,
+      "power": 1,
+      "x": 5
+     },
+     {
+      "a": 5,
+      "b": -3,
+      "c": 0,
+      "power": 1,
+      "x": 4
+     },
+     {
+      "a": 2,
+      "b": 5,
+      "c": 0,
+      "power": 1,
+      "x": -3
+     },
+     {
+      "a": 1,
+      "b": 2,
+      "c": 1,
+      "power": 2,
+      "x": 3
+     }
+    ],
+    "events": {
+     "value": [
+      "preset",
+      "input",
+      "output",
+      "place",
+      "return",
+      "undo",
+      "reset",
+      "round",
+      "hint",
+      "answer",
+      "keyboard",
+      "tableRow",
+      "rule"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "6345022b55ace26d6ba6e0ec94b13fe6141b50234c51a7bb2b61e66d2e21da0d",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-13",
+  "path": "F7/F7-13-difference-of-two-squares.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS"
+  ],
+  "draws": {
+   "cues": [
+    "stage",
+    "name"
+   ],
+   "scene": [
+    "stage",
+    "p",
+    "opts"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "cfd1745f4d3973ba50d0bc910939c149858eb5d81f67e798d5c598f8048d7ed0",
+  "sha256": "27b4027748a9e8e7248c3ac01824538d1d3100ad8014a79e60051640f5fd4edb",
+  "engineId": "F7-13",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ],
+   [
+    "name",
+    "narration",
+    "prompt",
+    "cue"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 7,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 6,
+   "data": {
+    "name": "Prove identity",
+    "narration": "The rectangle has the same area as the square with its corner removed. So x squared minus b squared equals x plus b times x minus b.",
+    "prompt": "Why does this rule work for every x greater than b?",
+    "cue": "proof"
+   },
+   "scene": {
+    "function": "scene",
+    "arguments": {
+     "p": {
+      "label": "Year 9: x\u00b2 \u2212 9",
+      "b": 4,
+      "demo": 9,
+      "context": "A three by three square removed from a larger square."
+     }
+    }
+   }
+  },
+  "previous_sha256": "458c9d1e672ec15a980c4d25990f3145af7f002058262b72a53b19d8b626ed03",
+  "f7Production": "2026-10-16"
+ },
+ {
+  "id": "F7-14",
+  "path": "F7/F7-14-identity-visualiser.html",
+  "api": "1.0.0",
+  "models": [],
+  "tables": [
+   "STEPS",
+   "keys"
+  ],
+  "draws": {
+   "helper": [
+    "stage",
+    "cue"
+   ],
+   "renderStage": [
+    "stage",
+    "p",
+    "ts",
+    "o"
+   ]
+  },
+  "exploreFields": {},
+  "original_sha256": "117e6d30ad6a10e4b689d15f0c0ece35722f15c9e51d2f173ac0b5befc6dd0f9",
+  "sha256": "9a6ec388cba3fe9de2f01ff03226f458e6eb8bc90c3a6e9c0ebe399d6cb6042d",
+  "engineId": "F7-14",
+  "nativeFieldsByStep": [
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ],
+   [
+    "name",
+    "cue",
+    "narration",
+    "prompt"
+   ]
+  ],
+  "verification": {
+   "nativeModes": true,
+   "nativeSteps": 6,
+   "templateLearn": true,
+   "templateExplore": true,
+   "templateChallengeWrongHold": true,
+   "templateChallengeCorrectAdvance": true,
+   "templateExamples": true,
+   "templateBob": true,
+   "numberOrPropertyChange": true,
+   "utilityDemo": false,
+   "motionQueueDrained": true
+  },
+  "verifiedBinding": {
+   "nativeIndex": 5,
+   "data": {
+    "name": "Prove the identity",
+    "cue": "proof",
+    "narration": "These expressions are identical for every x. Rearrangement has changed their appearance but never their value.",
+    "prompt": "Would choosing a different value of x change this conclusion?"
+   },
+   "config": {
+    "id": "F7-14",
+    "startMode": "guided",
+    "preset": "Y9-006-algebraic-identity",
+    "parameters": {
+     "powers": [
+      "x2",
+      "x",
+      "one"
+     ],
+     "maxTokens": 18,
+     "sampleX": 2
+    },
+    "presets": {
+     "Y9-006-algebraic-identity": {
+      "label": "Year 9 \u00b7 Distributive identity",
+      "left": "2(x + 1)",
+      "right": "2x + 2",
+      "A": {
+       "x2": 1,
+       "x": 2,
+       "one": 2
+      },
+      "B": {
+       "x2": 0,
+       "x": 2,
+       "one": 2
+      },
+      "context": "Distributing a number does not change the expression."
+     },
+     "Y9-006-quadratic": {
+      "label": "Year 9 \u00b7 Quadratic identity",
+      "left": "(x + 2)(x + 1)",
+      "right": "x\u00b2 + 3x + 2",
+      "A": {
+       "x2": 1,
+       "x": 3,
+       "one": 2
+      },
+      "B": {
+       "x2": 1,
+       "x": 3,
+       "one": 2
+      },
+      "context": "Four area products collected into three tile families."
+     },
+     "Y9-006-cancellation": {
+      "label": "Year 9 \u00b7 Difference of squares",
+      "left": "(x + 1)(x \u2212 1)",
+      "right": "x\u00b2 \u2212 1",
+      "A": {
+       "x2": 1,
+       "x": 0,
+       "one": -1
+      },
+      "B": {
+       "x2": 1,
+       "x": 0,
+       "one": -1
+      },
+      "context": "Two x terms cancel while the constant is negative."
+     },
+     "Y9-006-false": {
+      "label": "Watch the missed term",
+      "left": "(x + 1)\u00b2",
+      "right": "x\u00b2 + 1",
+      "A": {
+       "x2": 1,
+       "x": 2,
+       "one": 1
+      },
+      "B": {
+       "x2": 1,
+       "x": 0,
+       "one": 1
+      },
+      "context": "Squaring a bracket also creates two x terms."
+     },
+     "Y9-006-single-value": {
+      "label": "One equal value is not an identity",
+      "left": "x\u00b2 + x",
+      "right": "x\u00b2",
+      "A": {
+       "x2": 1,
+       "x": 1,
+       "one": 0
+      },
+      "B": {
+       "x2": 1,
+       "x": 0,
+       "one": 0
+      },
+      "context": "These are equal when x is zero but not for every x."
+     },
+     "Y9-006-signed": {
+      "label": "Signed coefficients",
+      "left": "3x \u2212 2x \u2212 1",
+      "right": "x \u2212 1",
+      "A": {
+       "x2": 0,
+       "x": 1,
+       "one": -1
+      },
+      "B": {
+       "x2": 0,
+       "x": 1,
+       "one": -1
+      },
+      "context": "Combine signed terms before comparing."
+     }
+    },
+    "challenge": [
+     {
+      "left": "2(x + 1)",
+      "right": "2x + 2",
+      "A": {
+       "x2": 0,
+       "x": 2,
+       "one": 2
+      },
+      "B": {
+       "x2": 0,
+       "x": 2,
+       "one": 2
+      }
+     },
+     {
+      "left": "2(x + 2)",
+      "right": "2x + 2",
+      "A": {
+       "x2": 0,
+       "x": 2,
+       "one": 4
+      },
+      "B": {
+       "x2": 0,
+       "x": 2,
+       "one": 2
+      }
+     },
+     {
+      "left": "(x + 1)(x \u2212 1)",
+      "right": "x\u00b2 \u2212 1",
+      "A": {
+       "x2": 1,
+       "x": 0,
+       "one": -1
+      },
+      "B": {
+       "x2": 1,
+       "x": 0,
+       "one": -1
+      }
+     },
+     {
+      "left": "(x + 1)\u00b2",
+      "right": "x\u00b2 + 1",
+      "A": {
+       "x2": 1,
+       "x": 2,
+       "one": 1
+      },
+      "B": {
+       "x2": 1,
+       "x": 0,
+       "one": 1
+      }
+     }
+    ],
+    "events": {
+     "value": [
+      "preset",
+      "place",
+      "return",
+      "undo",
+      "reset",
+      "compare",
+      "answer",
+      "round",
+      "hint",
+      "keyboard",
+      "complete"
+     ],
+     "types": [
+      "step",
+      "correct",
+      "hintUsed",
+      "mode"
+     ]
+    }
+   }
+  },
+  "previous_sha256": "00fb2bb368f54676b0ff7d412a36bca1fe0d534f005f81585e9fb0efe0305bac",
+  "f7Production": "2026-10-16"
+ }
+]

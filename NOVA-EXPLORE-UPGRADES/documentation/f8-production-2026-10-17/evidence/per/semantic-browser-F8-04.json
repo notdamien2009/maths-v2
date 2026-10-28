@@ -1,0 +1,796 @@
+[
+  {
+    "id": "F8-04",
+    "presetOf": null,
+    "path": "F8/F8-04-two-way-function-machine.html",
+    "sourceSha256": "f848f495c304a0b6dc598f61f3e89fb729ece973e14dd75ec811b3c1b4d38b81",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1110,
+            440
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "1 2 3 4 5",
+          "before": "1 2 3 4 5 6"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Function Rearrange y = 5x − 4 Solve y = 2x + 3 Solve y = 5(x + 4) Input x Reset all four machines Variation loaded. Place the two forward rules first.",
+          "after": "Function Rearrange y = 5x − 4 Solve y = 2x + 3 Solve y = 5(x + 4) Input x Reset all four machines Variation loaded. Place the two forward rules first.",
+          "bi": [
+            "Y8-016-b",
+            "7"
+          ],
+          "ai": [
+            "Y8-016-b",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "1 2 3 4 5 6",
+            8
+          ],
+          "narrow": [
+            "1 2 3 4 5 6",
+            8
+          ],
+          "back": [
+            "1 2 3 4 5 6",
+            8
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1110,
+            440
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "1 2 3 4 5 7",
+          "before": "1 2 3 4 5 7"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Challenge 1 of 3 · y = 5x − 4 · original x = 7 Check both routes Hint Rule placed.",
+          "after": "Challenge 1 of 3 · y = 5x − 4 · original x = 7 Check both routes Hint Rule placed.",
+          "bi": [
+            "7",
+            "7"
+          ],
+          "ai": [
+            "7",
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "1 2 3 4 5 7",
+            10
+          ],
+          "narrow": [
+            "1 2 3 4 5 7",
+            10
+          ],
+          "back": [
+            "1 2 3 4 5 7",
+            10
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "input is outside the range this apparatus can draw"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1110,
+            "median": 23.65,
+            "p10": 14.19,
+            "count": 33,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 12.31,
+            "p10": 11,
+            "count": 33,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 440,
+            "median": 12.31,
+            "p10": 11,
+            "count": 33,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.31,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.31,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.31,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.31,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 440,
+          "median": 12.31,
+          "p10": 11,
+          "count": 33,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n7\nOUTPUT y\n?\nMACHINE 1\n?\nDROP A RULE\nMACHINE 2\n?\n",
+          "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n9\nOUTPUT y\n?\nMACHINE 1\n?\nDROP A RULE\nMACHINE 2\n?\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "7"
+          ],
+          "text": "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n7\nOUTPUT y\n?\nMACHINE 1\n?\nDROP A RULE\nMACHINE 2\n?\nDROP A RULE\n?\nREVERSE · UNDO MACHINE 2 BEFORE MACHINE 1\nUNDO MACHINE 2\n?\nDROP A RULE\nUNDO MACHINE 1\n?\nDROP A RULE\nRECOVER x\n?\nTHE OUTPUT RE-ENTERS THE REVERSE M"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 31,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "9"
+          ],
+          "text": "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n9\nOUTPUT y\n?\nMACHINE 1\n?\nDROP A RULE\nMACHINE 2\n?\nDROP A RULE\n?\nREVERSE · UNDO MACHINE 2 BEFORE MACHINE 1\nUNDO MACHINE 2\n?\nDROP A RULE\nUNDO MACHINE 1\n?\nDROP A RULE\nRECOVER x\n?\nTHE OUTPUT RE-ENTERS THE REVERSE M"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 41,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n7\nOUTPUT y\n?\nMACHINE 1\n?\nDROP A RULE\nMACHINE 2\n?\nDROP A RULE\n?\nREVERSE · UNDO MACHINE 2 BEFORE MACHINE 1\nUNDO"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 5x − 4\nFO",
+          "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 5x − 4\nFO",
+          "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 2x + 3\nFO",
+          "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 2x + 3\nFO",
+          "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 5(x + 4)\n",
+          "TWO-WAY FUNCTION MACHINE\nPROVE BOTH DIRECTIONS\ny = 5(x + 4)\n"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "y = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n7\nOUTPUT y\n?\nMACHINE 1\n?\nDROP A RULE",
+          "y = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n7\nOUTPUT y\n31\nMACHINE 1\n× 5\nFOLLOW T",
+          "y = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n7\nOUTPUT y\n31\nMACHINE 1\n× 5\nFOLLOW T",
+          "y = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n7\nOUTPUT y\n31\nMACHINE 1\n× 5\nFOLLOW T"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "y = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n7\nOUTPUT y\n?\nMACHINE 1\n?\nDROP A RULE\nMACHINE 2\n?\nDROP A RULE\n?\nREVERSE · UNDO IN REVERSE ORDER\nUNDO MACHINE 2\n?\nDROP A RULE\nUNDO MACHINE 1\n?\nDROP A RULE\nREC"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "y = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n9\nOUTPUT y\n?\nMACHINE 1\n?\nDROP A RULE",
+          "y = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n9\nOUTPUT y\n41\nMACHINE 1\n× 5\nFOLLOW T",
+          "y = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n9\nOUTPUT y\n41\nMACHINE 1\n× 5\nFOLLOW T",
+          "y = 5x − 4\nFORWARD · TWO OPERATIONS\nINPUT x\n9\nOUTPUT y\n41\nMACHINE 1\n× 5\nFOLLOW T"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Function Rearrange y = 5x − 4 Solve y = 2x + 3 Solve y = 5(x + 4) Input x Reset all four machines Place the two forward rules first.",
+          "inputs": [
+            "Y8-016",
+            "5"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4 5",
+          "buttons": 8,
+          "vb": 1110,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Function Rearrange y = 5x − 4 Solve y = 2x + 3 Solve y = 5(x + 4) Input x Reset all four machines Variation loaded. Place the two forward rules first.",
+          "inputs": [
+            "Y8-016-b",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4 5 6",
+          "buttons": 8,
+          "vb": 1110,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Function Rearrange y = 5x − 4 Solve y = 2x + 3 Solve y = 5(x + 4) Input x Reset all four machines Variation loaded. Place the two forward rules first.",
+          "inputs": [
+            "Y8-016-b",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4 5 6",
+          "buttons": 8,
+          "vb": 440,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Challenge 1 of 3 · y = 5x − 4 · original x = 7 Check both routes Hint Choose both forward rules and both inverse rules. Enter the output and the recovered input.",
+          "inputs": [
+            "",
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4 5 7",
+          "buttons": 8,
+          "vb": 1110,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Challenge 1 of 3 · y = 5x − 4 · original x = 7 Check both routes Hint Rule placed.",
+          "inputs": [
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4 5 7",
+          "buttons": 10,
+          "vb": 1110,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Challenge 1 of 3 · y = 5x − 4 · original x = 7 Check both routes Hint Rule placed.",
+          "inputs": [
+            "7",
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "1 2 3 4 5 7",
+          "buttons": 10,
+          "vb": 440,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1110,
+        "median": 23.65,
+        "p10": 14.19,
+        "count": 33,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 12.31,
+        "p10": 11,
+        "count": 33,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 440,
+        "median": 12.31,
+        "p10": 11,
+        "count": 33,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

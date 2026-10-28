@@ -1,0 +1,3776 @@
+{
+ "family": "F13",
+ "revision": "2026-10-17",
+ "componentCount": 14,
+ "template": "00-master/NOVA-MATHS-LESSON-LAYOUT-TEMPLATE.html",
+ "templateSha256": "740c125af623ab5fb5896b3e9655a6d10b093ffcda53127a6eb67eb80eef26ec",
+ "components": [
+  {
+   "id": "F13-01",
+   "name": "3D solid viewer",
+   "path": "F13/F13-01-3D-Solid-Viewer-REBUILT.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "d520e79ad9bf572c187c93179ed6ccffd902ac5e535d2173217df4e2ffa6b878",
+   "originalSha256": "c5866150237aee962ac632b198db740e8cc38e7a0d9f6c654928cee482dff8de",
+   "nativeSteps": 7,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "solid",
+     "yaw",
+     "pitch",
+     "show",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "solid",
+     "yaw",
+     "pitch",
+     "show",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "solid",
+     "yaw",
+     "pitch",
+     "show",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "solid",
+     "yaw",
+     "pitch",
+     "show",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "solid",
+     "yaw",
+     "pitch",
+     "show",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "solid",
+     "yaw",
+     "pitch",
+     "show",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "solid",
+     "yaw",
+     "pitch",
+     "show",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "facts": [
+     "stage",
+     "st"
+    ],
+    "mainDrawing": [
+     "stage",
+     "st",
+     "interact"
+    ],
+    "mountStage": [
+     "stage",
+     "st",
+     "caption",
+     "pose",
+     "interactive"
+    ]
+   },
+   "tables": [
+    "DATA",
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "value",
+     "factory": null,
+     "argCount": null
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "show",
+    "xray",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "cube": "Cube",
+    "cuboid": "Cuboid",
+    "triPrism": "Triangular prism",
+    "pyramid": "Square-based pyramid",
+    "cylinder": "Cylinder",
+    "cone": "Cone",
+    "sphere": "Sphere"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.057142857142857,
+     "p10": 8.600000000000001,
+     "count": 3,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.057142857142857,
+     "p10": 8.600000000000001,
+     "count": 3,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "mountStage",
+     "arguments": {
+      "st": {
+       "shape": "cube",
+       "yaw": -0.68,
+       "pitch": 0.41,
+       "show": "none",
+       "xray": false
+      },
+      "caption": "Count without missing the hidden ones.",
+      "pose": "think",
+      "interactive": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "How many edges does this cube have?",
+    "privateAnswer": 12,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 165,
+     "total": 165,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-02",
+   "name": "Net folder",
+   "path": "F13/F13-02-Net-Folder-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "70a4da476ac3816d42c13af6366f0a01f5d5011434059251198e44f6056a9314",
+   "originalSha256": "5a6ce1d287fdf1660a56b3a6403e5d84ffbfabce0c9a4595c3897c5d68348983",
+   "nativeSteps": 8,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "shape",
+     "fold",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "shape",
+     "fold",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "shape",
+     "fold",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "shape",
+     "fold",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "shape",
+     "fold",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "shape",
+     "fold",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "shape",
+     "fold",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "shape",
+     "fold",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "counts": [
+     "stage",
+     "st"
+    ],
+    "scene": [
+     "stage",
+     "st",
+     "caption",
+     "pose",
+     "interact"
+    ]
+   },
+   "tables": [
+    "INFO",
+    "STEPS",
+    "palette"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "makeState",
+     "argCount": 3
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "fold",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "cube": "Cube",
+    "cuboid": "Cuboid",
+    "prism": "Triangular prism",
+    "pyramid": "Square-based pyramid"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": null,
+     "p10": null,
+     "count": 0,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": null,
+     "p10": null,
+     "count": 0,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "scene",
+     "arguments": {
+      "st": {
+       "shape": "cube",
+       "fold": 0,
+       "focus": "all",
+       "showNumbers": false,
+       "selected": "",
+       "yaw": -0.65,
+       "pitch": 0.67,
+       "variant": "cross",
+       "detached": false
+      },
+      "caption": "Imagine folding the net.",
+      "pose": "think",
+      "interact": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "This net folds into a cube. How many faces will the folded solid have?",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 165,
+     "total": 165,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-03",
+   "name": "Isometric drawing studio",
+   "path": "F13/F13-03-Isometric-Drawing-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "f63114d1db30b4212deb9a5bff37f01e3e51f50dd1e295c2b8a0be08f53bbe02",
+   "originalSha256": "584a2bcf0ba1a61321e384b256871871fd2320f6cc70f8969593dafefc48116f",
+   "nativeSteps": 9,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "preset",
+     "focus",
+     "showDots",
+     "showAxes",
+     "wire",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "focus",
+     "showDots",
+     "showAxes",
+     "wire",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "focus",
+     "showDots",
+     "showAxes",
+     "wire",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "focus",
+     "showDots",
+     "showAxes",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "focus",
+     "showDots",
+     "showAxes",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "focus",
+     "showDots",
+     "showAxes",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "focus",
+     "showDots",
+     "showAxes",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "focus",
+     "showDots",
+     "showAxes",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "focus",
+     "showDots",
+     "showAxes",
+     "narration",
+     "prompt",
+     "pose"
+    ]
+   ],
+   "draws": {
+    "visual": [
+     "stage",
+     "st",
+     "caption",
+     "pose",
+     "interactive"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    },
+    "watchState.st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "single": "One unit cube",
+    "row": "Two joined cubes",
+    "platform": "2 by 2 platform",
+    "tower": "Three-high column",
+    "lshape": "L-shaped model",
+    "stairs": "Staircase",
+    "hidden": "Hidden cube challenge"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 11.671428571428573,
+     "count": 3,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 11.671428571428573,
+     "count": 3,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "visual",
+     "arguments": {
+      "st": {
+       "grid": [
+        [
+         2,
+         1,
+         0,
+         0
+        ],
+        [
+         1,
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         0
+        ]
+       ],
+       "focus": [
+        1,
+        1
+       ],
+       "tool": "add",
+       "wire": true,
+       "showDots": true,
+       "showAxes": true,
+       "showNumbers": false,
+       "hover": null,
+       "drag": null,
+       "undo": [],
+       "redo": [],
+       "preset": "own",
+       "onChange": null
+      },
+      "caption": "Count every cube, including any you cannot see.",
+      "pose": "think",
+      "interactive": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "No cubes are hidden behind others. How many unit cubes make this model?",
+    "privateAnswer": 4,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 165,
+     "total": 165,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-04",
+   "name": "Plans and elevations",
+   "path": "F13/F13-04-Plans-and-Elevations-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "51cba920821c0f2554fd4f464409eb852a05d4a3b636c6953a2b5ecc45b973b7",
+   "originalSha256": "d0d86c7ca50b1557ecf4ea9da853c3b36c555c9762dd4cc73fcf3f9ff1836074",
+   "nativeSteps": 9,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "preset",
+     "reveal",
+     "focus",
+     "selectedView",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "reveal",
+     "focus",
+     "selectedView",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "reveal",
+     "focus",
+     "selectedView",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "reveal",
+     "focus",
+     "selectedView",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "reveal",
+     "focus",
+     "selectedView",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "reveal",
+     "focus",
+     "selectedView",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "reveal",
+     "focus",
+     "selectedView",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "reveal",
+     "focus",
+     "selectedView",
+     "narration",
+     "prompt",
+     "pose"
+    ],
+    [
+     "name",
+     "preset",
+     "reveal",
+     "focus",
+     "selectedView",
+     "narration",
+     "prompt",
+     "pose"
+    ]
+   ],
+   "draws": {
+    "renderStage": [
+     "stage",
+     "st",
+     "caption",
+     "pose",
+     "interactive"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    },
+    "watchState.st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "single": "One cube",
+    "row": "Two across",
+    "platform": "Four-cube platform",
+    "tower": "Two-high tower",
+    "corner": "Corner staircase",
+    "stairs": "Three-step wall",
+    "bridge": "Twin-height bridge",
+    "hidden": "Hidden support model"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 11.671428571428573,
+     "count": 11,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 11.671428571428573,
+     "count": 11,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "renderStage",
+     "arguments": {
+      "st": {
+       "grid": [
+        [
+         2,
+         0,
+         0,
+         0
+        ],
+        [
+         1,
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         0
+        ]
+       ],
+       "preset": "own",
+       "focus": [
+        1,
+        1
+       ],
+       "tool": "add",
+       "showHeights": false,
+       "showEdges": true,
+       "view": "live",
+       "showViews": {
+        "top": false,
+        "front": false,
+        "side": false
+       },
+       "selectedView": "all",
+       "challengeTarget": null,
+       "drag": null,
+       "undo": [],
+       "redo": [],
+       "paintOnChange": null
+      },
+      "caption": "Imagine looking straight down.",
+      "pose": "think",
+      "interactive": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "How many squares will the TOP PLAN of this model show?",
+    "privateAnswer": 2,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 165,
+     "total": 165,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-05",
+   "name": "Cube-stacking volume",
+   "path": "F13/F13-05-Cube-Stacking-Volume-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "eb1ecd2f4ea1a384351e9c636587810bcb3accd093cc4fdb506bfe19ac92bc46",
+   "originalSha256": "9ec5ebd8adcf17584d5183fe9193131c318491881d47869f4a47496d23d6167d",
+   "nativeSteps": 10,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ],
+    [
+     "name",
+     "preset",
+     "layer",
+     "reveal",
+     "focus",
+     "pose",
+     "narration",
+     "prompt"
+    ]
+   ],
+   "draws": {
+    "renderStage": [
+     "stage",
+     "st",
+     "message",
+     "pose",
+     "interactive"
+    ]
+   },
+   "tables": [
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    },
+    "state.g": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    },
+    "watchState.st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "one": "One unit cube",
+    "row": "Four-cube row",
+    "base": "3 \u00d7 2 base layer",
+    "tower": "Four-high tower",
+    "cuboid": "3 \u00d7 2 \u00d7 3 cuboid",
+    "cube": "2 \u00d7 2 \u00d7 2 cube",
+    "stairs": "Stepped stack",
+    "corner": "Corner construction",
+    "mixed": "Uneven layers"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 9.214285714285715,
+     "count": 6,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 9.214285714285715,
+     "count": 6,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "renderStage",
+     "arguments": {
+      "st": {
+       "grid": [
+        [
+         2,
+         2,
+         0,
+         0
+        ],
+        [
+         2,
+         2,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         0
+        ]
+       ],
+       "preset": "own",
+       "focus": [
+        1,
+        1
+       ],
+       "tool": "add",
+       "showGhost": false,
+       "showNumbers": false,
+       "reveal": 4,
+       "selectedLayer": 1,
+       "viewMode": "all",
+       "drag": null,
+       "undo": [],
+       "redo": [],
+       "paintOnChange": null,
+       "challengeTarget": null,
+       "_svg": null
+      },
+      "message": "Count each layer, then add the layers.",
+      "pose": "think",
+      "interactive": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "What is the volume of this solid in unit cubes?",
+    "privateAnswer": 8,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 70,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 168,
+     "total": 168,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-06",
+   "name": "Prism volume slicer",
+   "path": "F13/F13-06-Prism-Volume-Slicer-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "bc6df834d9350dd43186689f4d539e820d1a2f09fe3cabc3af103ee99e2d039d",
+   "originalSha256": "a2b831a5ce894da996c95d8dda65e120d081d127a3b6aeb7563bf0a5819c1876",
+   "nativeSteps": 11,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ]
+   ],
+   "draws": {
+    "renderStage": [
+     "stage",
+     "st",
+     "message",
+     "pose"
+    ]
+   },
+   "tables": [
+    "SHAPES",
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    },
+    "stepState.st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "rectangle": "Rectangular prism \u00b7 3 \u00d7 2",
+    "triangle": "Right triangular prism \u00b7 base 4, height 3",
+    "trapezium": "Trapezoidal prism \u00b7 parallel sides 4 and 2",
+    "lshape": "L-section prism \u00b7 4 \u00d7 3 with notch",
+    "pentagon": "House-section prism \u00b7 composite area"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 8,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 8,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "renderStage",
+     "arguments": {
+      "st": {
+       "shape": "rectangle",
+       "length": 7,
+       "cut": 0.55,
+       "showSlabs": true,
+       "showFace": true,
+       "showLabels": true,
+       "ghost": false,
+       "azimuth": 0,
+       "activeDrag": null,
+       "stage": null,
+       "sv": null,
+       "refresh": null,
+       "step": 0
+      },
+      "message": "Find the cross-sectional area, then multiply by the length.",
+      "pose": "think"
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The prism's cross-section has area 6 square units and its length is 7 units. Find its volume.",
+    "privateAnswer": 42,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-07",
+   "name": "Cuboid volume and surface area",
+   "path": "F13/F13-07-Cuboid-Volume-and-Surface-Area-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "5fbc9fce44e21087c50581edfaee6637d9e7b495b331d9ca0db7c1d1b4f4e796",
+   "originalSha256": "47b56f7be8179b0f2f7ef73d28e4ad6a62356ca98a9e7ffeb661d101ccbbbfdf",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ]
+   ],
+   "draws": {
+    "renderStage": [
+     "stage",
+     "st",
+     "message",
+     "pose"
+    ]
+   },
+   "tables": [
+    "PRESETS",
+    "FACES",
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "classic": "Classic cuboid \u00b7 4 \u00d7 3 \u00d7 2",
+    "cube": "Cube \u00b7 3 \u00d7 3 \u00d7 3",
+    "parcel": "Parcel \u00b7 5 \u00d7 3 \u00d7 2",
+    "tower": "Tall column \u00b7 2 \u00d7 2 \u00d7 5",
+    "shallow": "Shallow tray \u00b7 5 \u00d7 2 \u00d7 1"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 12,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 12,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "renderStage",
+     "arguments": {
+      "st": {
+       "preset": "own",
+       "l": 5,
+       "w": 3,
+       "ht": 2,
+       "unfold": 0,
+       "group": "all",
+       "grid": true,
+       "labels": true,
+       "angle": 0,
+       "stage": null,
+       "sv": null,
+       "refresh": null
+      },
+      "message": "Multiply length, width and height.",
+      "pose": "think"
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A cuboid is 5 by 3 by 2 units. Find its volume in cubic units.",
+    "privateAnswer": 30,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-08",
+   "name": "Cylinder unroll",
+   "path": "F13/F13-08-Cylinder-Unroll-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "c139a3fb0165689be2fa46dac2749ef3f4f6683cfa4f3e635b4feb1bd5352ca6",
+   "originalSha256": "ac0b4cec91b85dbbd4f30cd5b3268e611e7f849fde09f1a98f6183a04c381b08",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ]
+   ],
+   "draws": {
+    "stageBuild": [
+     "stage",
+     "st",
+     "message",
+     "pose"
+    ]
+   },
+   "tables": [
+    "PRESETS",
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    },
+    "stepState.q": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "classic": "Standard \u00b7 radius 2, height 3",
+    "slender": "Tall cylinder \u00b7 radius 1, height 5",
+    "wide": "Wide cylinder \u00b7 radius 3, height 2",
+    "balanced": "Equal measures \u00b7 radius 2, height 2",
+    "column": "Column \u00b7 radius 2, height 5"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 10,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 10,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "stageBuild",
+     "arguments": {
+      "st": {
+       "preset": "own",
+       "r": 2,
+       "ht": 4,
+       "unroll": 0,
+       "rotation": 0,
+       "visible": "all",
+       "seams": true,
+       "stage": null,
+       "refresh": null,
+       "svg": null
+      },
+      "message": "The curved surface unrolls into a rectangle.",
+      "pose": "think"
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A cylinder has radius 2 and height 4. Its curved surface area is k\u03c0 square units. Find k.",
+    "privateAnswer": 16,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 71,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 169,
+     "total": 169,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-09",
+   "name": "Pyramid and cone fill",
+   "path": "F13/F13-09-Pyramid-and-Cone-Fill-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "205369df469384b4ecfb3d720fb107c5de537417a6e964ca5baae172a6752f24",
+   "originalSha256": "efe1245184c8d78803fbe925822b4803e7dc6cbf8eccd8aca4badac431fda69f",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ]
+   ],
+   "draws": {
+    "makeStage": [
+     "stage",
+     "st",
+     "message",
+     "pose",
+     "allowDrag"
+    ]
+   },
+   "tables": [
+    "PRESETS",
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "cone": "Cone \u00b7 r 3 \u00b7 h 4",
+    "coneSmall": "Cone \u00b7 r 2 \u00b7 h 6",
+    "coneTall": "Cone \u00b7 r 3 \u00b7 h 7",
+    "pyramid": "Square pyramid \u00b7 side 6 \u00b7 h 5",
+    "pyramidSmall": "Square pyramid \u00b7 side 4 \u00b7 h 6",
+    "pyramidWide": "Square pyramid \u00b7 side 8 \u00b7 h 3"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 18,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 18,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "makeStage",
+     "arguments": {
+      "st": {
+       "preset": "own",
+       "kind": "cone",
+       "base": 3,
+       "ht": 5,
+       "pours": 0,
+       "phase": 0,
+       "flow": false,
+       "showMeasure": true,
+       "showLabels": true,
+       "refresh": null,
+       "cleanup": null,
+       "anim": 0,
+       "svg": null
+      },
+      "message": "One third of the matching cylinder or prism.",
+      "pose": "think",
+      "allowDrag": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A cone has radius 3 and perpendicular height 5. Its volume is k\u03c0 cubic units. Find k.",
+    "privateAnswer": 15,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 72,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 170,
+     "total": 170,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-10",
+   "name": "Sphere volume and surface area",
+   "path": "F13/F13-10-Sphere-Volume-and-Surface-Area-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "d7fecc2ba50d95b966963faf35f9d03929c3e66b6257f6ad1c4828da2fecc63b",
+   "originalSha256": "d479250990604003276398da4e6889ee4f4925e191849218a4e818bdaf4be85c",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ]
+   ],
+   "draws": {
+    "makeStage": [
+     "stage",
+     "s",
+     "msg",
+     "pose",
+     "interactive"
+    ]
+   },
+   "tables": [
+    "PRESETS",
+    "STEPS"
+   ],
+   "exploreFields": {
+    "st": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "r3": "Radius 3 \u00b7 benchmark",
+    "r2": "Radius 2 \u00b7 stacked fractions",
+    "r4": "Radius 4 \u00b7 larger sphere",
+    "r5": "Radius 5 \u00b7 large sphere",
+    "r6": "Radius 6 \u00b7 exact whole \u03c0 coefficients"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 15,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 15,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "makeStage",
+     "arguments": {
+      "s": {
+       "preset": "own",
+       "r": 2,
+       "view": "globe",
+       "yaw": 0.48,
+       "pitch": -0.14,
+       "cut": 0,
+       "showHidden": false,
+       "spin": false,
+       "anim": 0,
+       "refresh": null,
+       "cleanup": null
+      },
+      "msg": "Use the radius in the sphere formula.",
+      "pose": "think",
+      "interactive": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A sphere has radius 2. Its surface area is k\u03c0 square units. Find k.",
+    "privateAnswer": 16,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-11",
+   "name": "Cross-sections explorer",
+   "path": "F13/F13-11-Cross-Sections-Explorer-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "682178d5edd7c4fdfffbe6240d2c6d0e5923c63ae179392f13f58de778744bcd",
+   "originalSha256": "36138a143c1de235e9b90454395e5d8f757768f28b31bdaaeba07b689ef86afe",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ]
+   ],
+   "draws": {
+    "makeStage": [
+     "stage",
+     "s",
+     "msg",
+     "pose",
+     "interactive"
+    ]
+   },
+   "tables": [
+    "META",
+    "STEPS"
+   ],
+   "exploreFields": {
+    "s": {
+     "kind": "factory",
+     "factory": "makeState",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "preset",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "cube": "Cube \u00b7 equal square faces",
+    "cuboid": "Cuboid \u00b7 rectangular faces",
+    "tri": "Triangular prism",
+    "pyramid": "Square-based pyramid",
+    "cylinder": "Cylinder",
+    "cone": "Cone",
+    "sphere": "Sphere"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 13,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 13,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "makeStage",
+     "arguments": {
+      "s": {
+       "shape": "cube",
+       "orient": "horizontal",
+       "pos": 0.5,
+       "yaw": 0.74,
+       "pitch": 0.57,
+       "geometry": null,
+       "refresh": null
+      },
+      "msg": "Picture the flat face the cut reveals.",
+      "pose": "think",
+      "interactive": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The cube is cut horizontally. Find the area of the cross-section in square units.",
+    "privateAnswer": 9,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 67,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 165,
+     "total": 165,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-12",
+   "name": "Capacity and volume conversion",
+   "path": "F13/F13-12-Capacity-and-Volume-Conversion-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "e337f302a8a5cff47ee0026b36bc85fa32d2176d87fd9198a62ba0b970c42d6b",
+   "originalSha256": "05c8b604b8dd677e26a6552fa7feadca6076ffded5630d1d356d5089bd5c02f6",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ]
+   ],
+   "draws": {
+    "makeStage": [
+     "stage",
+     "s",
+     "spoken",
+     "pose",
+     "interactive"
+    ]
+   },
+   "tables": [
+    "PRESETS",
+    "STEPS"
+   ],
+   "exploreFields": {},
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "empty": "Empty litre cube",
+    "hundred": "100 mL",
+    "quarter": "250 mL",
+    "half": "500 mL",
+    "threeQuarter": "750 mL",
+    "full": "1000 mL = 1 litre",
+    "cubicMetre": "One cubic metre"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 19,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 19,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "makeStage",
+     "arguments": {
+      "s": {
+       "preset": "own",
+       "mode": "litre",
+       "fill": 0.35,
+       "yaw": 0,
+       "refresh": null,
+       "anim": 0,
+       "cleanup": null,
+       "svg": null
+      },
+      "spoken": "One cubic centimetre holds one millilitre.",
+      "pose": "think",
+      "interactive": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The litre cube is filled to the level shown. How many millilitres of water are inside?",
+    "privateAnswer": 350,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-13",
+   "name": "Surface-area unfolder",
+   "path": "F13/F13-13-Surface-Area-Unfolder-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "cce3ed3c9e257e0ab0f2bedcf9194f905b5aaf6d58c7f5b9bab937fb07377834",
+   "originalSha256": "bbcb74bf63b323bba5473a905ea76cd820e3440d9e3fd5edb8513409e7f48c30",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ]
+   ],
+   "draws": {
+    "makeStage": [
+     "stage",
+     "s",
+     "message",
+     "pose",
+     "allow"
+    ]
+   },
+   "tables": [
+    "colors",
+    "DATA",
+    "STEPS"
+   ],
+   "exploreFields": {
+    "s": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 1
+    },
+    "folds.fs": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    },
+    "illustration.fs": {
+     "kind": "factory",
+     "factory": "model",
+     "argCount": 1
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "cube2": "Cube \u00b7 side 2",
+    "cube3": "Cube \u00b7 side 3",
+    "cuboid": "Cuboid \u00b7 4 \u00d7 3 \u00d7 2",
+    "parcel": "Cuboid \u00b7 5 \u00d7 2 \u00d7 1",
+    "prism": "Equilateral triangular prism \u00b7 side 4, length 6",
+    "prismSmall": "Equilateral prism \u00b7 side 3, length 5",
+    "pyramid": "Square pyramid \u00b7 base 4, slant height 3",
+    "pyramidLarge": "Square pyramid \u00b7 base 6, slant height 5"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 9,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 9,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "makeStage",
+     "arguments": {
+      "s": {
+       "preset": "cube3",
+       "fold": 1,
+       "selected": "",
+       "included": [],
+       "showAreas": false,
+       "yaw": -0.64,
+       "pitch": 0.68,
+       "sv": null,
+       "refresh": null,
+       "raf": 0,
+       "animation": 0,
+       "finished": false
+      },
+      "message": "Add the areas of every outside face once.",
+      "pose": "think",
+      "allow": false
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "This cube is 3 by 3 by 3 units. Find its total surface area in square units.",
+    "privateAnswer": 54,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 73,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 171,
+     "total": 171,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  },
+  {
+   "id": "F13-14",
+   "name": "Solid enlargement",
+   "path": "F13/F13-14-Solid-Enlargement-PREMIUM-CORE.html",
+   "status": "PASS WITH LIMITATIONS",
+   "productionReady": true,
+   "challengeReady": true,
+   "sourceSha256": "9e14c0be6ee3263bc698049222eba68fe42f012770d747daf8a190d797ee8b78",
+   "originalSha256": "4be322152ac64839f185d18b3743fbf664bee48e5697a99b61eb2131219bc5a2",
+   "nativeSteps": 12,
+   "nativeFieldsByStep": [
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ],
+    [
+     "name",
+     "narration",
+     "prompt",
+     "dur"
+    ]
+   ],
+   "draws": {
+    "makeStage": [
+     "stage",
+     "s",
+     "msg",
+     "pose"
+    ]
+   },
+   "tables": [
+    "DATA",
+    "STEPS"
+   ],
+   "exploreFields": {
+    "s": {
+     "kind": "factory",
+     "factory": "state",
+     "argCount": 2
+    }
+   },
+   "valueInterface": "scene:{function,arguments} with the native value-driven draw function and state values merged over the native defaults (only the keys given are changed); the runtime hides the answer token in every stage readout while the question is unanswered; validated by NovaF13Contracts; see F13-configuration-examples.json",
+   "configurationKeys": [
+    "startMode",
+    "presets",
+    "lessonGame",
+    "lessonChallengeTitle",
+    "lessonBadgeTitle"
+   ],
+   "presets": {
+    "cube": "Cube \u00b7 2 \u00d7 2 \u00d7 2",
+    "cuboid": "Cuboid \u00b7 3 \u00d7 2 \u00d7 2",
+    "slab": "Low cuboid \u00b7 3 \u00d7 2 \u00d7 1",
+    "tower": "Tall cuboid \u00b7 2 \u00d7 2 \u00d7 3",
+    "crate": "Packing crate \u00b7 4 \u00d7 2 \u00d7 3"
+   },
+   "modes": [
+    "watch",
+    "guided",
+    "explore",
+    "challenge"
+   ],
+   "templateModes": [
+    "Learn-Watch",
+    "Learn-Explore",
+    "Learn-Challenge (F0-12)",
+    "Examples-Guided",
+    "Bob Board"
+   ],
+   "events": [
+    "value",
+    "correct",
+    "step",
+    "hintUsed",
+    "mode",
+    "value:layoutRedraw",
+    "value:statePreservedRedraw"
+   ],
+   "statePreservedOnResize": true,
+   "layout390": {
+    "dedicatedNarrowLayout": true,
+    "fresh": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 17,
+     "redraws": 0,
+     "scroll": 312,
+     "client": 312
+    },
+    "afterResize": {
+     "inner": 312,
+     "viewBoxWidth": 420,
+     "svgWidth": 258,
+     "stageWidth": 262,
+     "median": 11.671428571428573,
+     "p10": 8.600000000000001,
+     "count": 17,
+     "redraws": 5,
+     "scroll": 312,
+     "client": 312
+    }
+   },
+   "challengeQuestionExample": {
+    "nativeIndex": 0,
+    "data": {},
+    "scene": {
+     "function": "makeStage",
+     "arguments": {
+      "s": {
+       "preset": "cube",
+       "k": 3,
+       "focus": "length",
+       "yaw": 0,
+       "hold": false,
+       "masked": true,
+       "scene": null,
+       "stats": null,
+       "raf": 0,
+       "onChange": null
+      },
+      "msg": "Lengths scale by k.",
+      "pose": "think"
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The solid is enlarged by scale factor 3. Its volume is multiplied by what number?",
+    "privateAnswer": 27,
+    "answerType": "numeric",
+    "hint": "Use the given measurements and the formula.",
+    "wrongFeedback": "Check the measurements and the formula.",
+    "correctFeedback": "Correct."
+   },
+   "compliance": [
+    {
+     "standard": "F0 foundation: neon filters userSpaceOnUse, no glyph/star leaks",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F1 notation: no inline slash fractions in drawings, no TBD",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F2 chalk typography and no dark frames",
+     "pass": true,
+     "checks": 24,
+     "failed": []
+    },
+    {
+     "standard": "F3 approved mascot pack, containment 390/1024/1440, no undefined/NaN",
+     "pass": true,
+     "checks": 36,
+     "failed": []
+    },
+    {
+     "standard": "Phone layout at 390 inside template (resize redraw + label size)",
+     "pass": true,
+     "checks": 6,
+     "failed": []
+    },
+    {
+     "standard": "Pupil state kept across a 1440\u2192390 layout redraw in native Explore and Challenge",
+     "pass": true,
+     "checks": 11,
+     "failed": []
+    },
+    {
+     "standard": "Template integration: F0-12 Challenge, concealment, Guided, Bob, multi-view, Explore",
+     "pass": true,
+     "checks": 69,
+     "failed": []
+    }
+   ],
+   "tests": {
+    "f13Production": {
+     "passed": 167,
+     "total": 167,
+     "error": null
+    },
+    "bankRegression": true
+   }
+  }
+ ]
+}

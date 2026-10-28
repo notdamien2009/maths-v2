@@ -1,0 +1,796 @@
+[
+  {
+    "id": "F6-11",
+    "presetOf": null,
+    "path": "F6/F6-11-rates-of-change-tank.html",
+    "sourceSha256": "70807a3294ff5a3e0c4afae3ce6140baae6c15b17e9302dbdf9da7cb6c7c9435",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            1120,
+            520
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.5 1 1.5 11 16 18 2 24 3 32 40 48 6 8",
+          "before": "0 0.5 1 1.5 100 11 12 120 2 20 3.75 40 45 5 6 60 80"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Choose context Y8-028 · Graph gradient Y8-041 · Speed as a rate Y8-042 · Density Y9-022 · Compound speed Y9-023 · Density reasoning Check match Hint Reset At 75% of the interval: the tank adds 45 km. Move the rate ring or use Left/Right arrows. Starting values restored.",
+          "after": "Choose context Y8-028 · Graph gradient Y8-041 · Speed as a rate Y8-042 · Density Y9-022 · Compound speed Y9-023 · Density reasoning Check match Hint Reset At 75% of the interval: the tank adds 45 km. Move the rate ring or use Left/Right arrows. Starting values restored.",
+          "bi": [
+            "Y8-041"
+          ],
+          "ai": [
+            "Y8-041"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 0.5 1 1.5 100 11 12 120 2 20 3.75 40 45 5 6 60 80",
+            5
+          ],
+          "narrow": [
+            "0 0.5 1 1.5 100 11 12 120 2 20 3.75 40 45 5 6 60 80",
+            5
+          ],
+          "back": [
+            "0 0.5 1 1.5 100 11 12 120 2 20 3.75 40 45 5 6 60 80",
+            5
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            1120,
+            520
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 11 16 24 32 40 48 6 8",
+          "before": "0 11 16 24 32 40 48 6 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Context 1 of 5. The water rises at a steady number of centimetres each minute. Find the gradient. Calculate the rate from the graph and select its matching slope. RATE UNITS cm/min km/min kg/L cm km kg L/min GRAPH SHAPE Half rate Normal rate One-and-a-half rate Double rate Check answer Hint Next con",
+          "after": "Context 1 of 5. The water rises at a steady number of centimetres each minute. Find the gradient. Calculate the rate from the graph and select its matching slope. RATE UNITS cm/min km/min kg/L cm km kg L/min GRAPH SHAPE Half rate Normal rate One-and-a-half rate Double rate Check answer Hint Next con",
+          "bi": [
+            "7",
+            "km/min",
+            "0"
+          ],
+          "ai": [
+            "7",
+            "km/min",
+            "0"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 11 16 24 32 40 48 6 8",
+            0
+          ],
+          "narrow": [
+            "0 11 16 24 32 40 48 6 8",
+            0
+          ],
+          "back": [
+            "0 11 16 24 32 40 48 6 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "lesson.state.rate must be greater than zero"
+        ]
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 1120,
+            "median": 14.14,
+            "p10": 7.07,
+            "count": 19,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 520,
+            "median": 11,
+            "p10": 11,
+            "count": 19,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 520,
+            "median": 11,
+            "p10": 11,
+            "count": 19,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 520,
+          "median": 11,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 520,
+          "median": 11,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 520,
+          "median": 11,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 520,
+          "median": 11,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 520,
+          "median": 11,
+          "p10": 11,
+          "count": 19,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRATE = CHANGE ÷ INTERVAL\nGLASS RATE TANK\nWATER DEPTH\nREAD THE LEVEL\nDEPTH–TIME GRA",
+          "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRATE = CHANGE ÷ INTERVAL\nGLASS RATE TANK\nWATER DEPTH\nREAD THE LEVEL\nDEPTH–TIME GRA"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "8"
+          ],
+          "text": "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRATE = CHANGE ÷ INTERVAL\nGLASS RATE TANK\nWATER DEPTH\nREAD THE LEVEL\nDEPTH–TIME GRAPH\nx\ny\n11\n22\n33\n44\n55\n0\n8 min\n64 cm\nTIME (min)\nSLOPE = ?\nUSE THE TWO AXES TO FIND THE RATE\n\nHORIZONTAL · TIME\n\nREAD THE GRAPH\n\nThe interval along the horizontal"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 4,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "6"
+          ],
+          "text": "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRATE = CHANGE ÷ INTERVAL\nGLASS RATE TANK\nWATER DEPTH\nREAD THE LEVEL\nDEPTH–TIME GRAPH\nx\ny\n10\n20\n30\n40\n50\n60\n0\n6 min\n60 cm\nTIME (min)\nSLOPE = ?\nUSE THE TWO AXES TO FIND THE RATE\n\nHORIZONTAL · TIME\n\nREAD THE GRAPH\n\nThe interval along the horizon"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": "challenge"
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRATE = CHANGE ÷ INTERVAL\nGLASS RATE TANK\nWATER DEPTH\nREAD THE LEVEL\nDEPTH–TIME GRAPH\nx\ny\n11\n22\n33\n44\n55\n0\n8 min\n64 cm\nTIME (min)\nSLOPE = ?\nUSE"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": [
+          "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRA",
+          "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRA",
+          "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRA",
+          "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRA",
+          "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRA",
+          "F6-11\nFIND THE RATE AND MATCH THE GRAPH\nFIND THE GRADIENT\nRA"
+        ]
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "FIND THE GRADIENT\nRATE = CHANGE ÷ INTERVAL\nGLASS TANK\nWATER DEPTH\nREAD THE LEVEL",
+          "ONE CHANGE · TWO VIEWS\nRATE = CHANGE ÷ INTERVAL\nGLASS TANK\nWATER DEPTH\n19.2 cm\nD",
+          "ONE CHANGE · TWO VIEWS\nRATE = CHANGE ÷ INTERVAL\nGLASS TANK\nWATER DEPTH\n32 cm\nDEP",
+          "ONE CHANGE · TWO VIEWS\nRATE = CHANGE ÷ INTERVAL\nGLASS TANK\nWATER DEPTH\n64 cm\nDEP"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "FIND THE GRADIENT\nRATE = CHANGE ÷ INTERVAL\nGLASS TANK\nWATER DEPTH\nREAD THE LEVEL\nDEPTH–TIME GRAPH\nx\ny\n11\n22\n33\n44\n55\n0\n8 min\n64 cm\nTIME (min)\nSLOPE = ?\nUSE THE TWO AXES TO FIND THE RATE\n\nHORIZONTAL · "
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "FIND THE GRADIENT\nRATE = CHANGE ÷ INTERVAL\nGLASS TANK\nWATER DEPTH\nREAD THE LEVEL",
+          "ONE CHANGE · TWO VIEWS\nRATE = CHANGE ÷ INTERVAL\nGLASS TANK\nWATER DEPTH\n18 cm\nDEP",
+          "ONE CHANGE · TWO VIEWS\nRATE = CHANGE ÷ INTERVAL\nGLASS TANK\nWATER DEPTH\n30 cm\nDEP",
+          "ONE CHANGE · TWO VIEWS\nRATE = CHANGE ÷ INTERVAL\nGLASS TANK\nWATER DEPTH\n30 cm\nDEP"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "panel": "Choose context Y8-028 · Graph gradient Y8-041 · Speed as a rate Y8-042 · Density Y9-022 · Compound speed Y9-023 · Density reasoning Check match Hint Reset At 75% of the interval: the tank adds 18 cm. Move the rate ring or use Left/Right arrows. Move the rate ring, then drag the graph card into MATCH HERE.",
+          "inputs": [
+            "Y8-028"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 11 16 18 2 24 3 32 40 48 6 8",
+          "buttons": 5,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "before": {
+          "panel": "Choose context Y8-028 · Graph gradient Y8-041 · Speed as a rate Y8-042 · Density Y9-022 · Compound speed Y9-023 · Density reasoning Check match Hint Reset At 75% of the interval: the tank adds 45 km. Move the rate ring or use Left/Right arrows. Starting values restored.",
+          "inputs": [
+            "Y8-041"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 100 11 12 120 2 20 3.75 40 45 5 6 60 80",
+          "buttons": 5,
+          "vb": 1120,
+          "redraws": 0
+        },
+        "after": {
+          "panel": "Choose context Y8-028 · Graph gradient Y8-041 · Speed as a rate Y8-042 · Density Y9-022 · Compound speed Y9-023 · Density reasoning Check match Hint Reset At 75% of the interval: the tank adds 45 km. Move the rate ring or use Left/Right arrows. Starting values restored.",
+          "inputs": [
+            "Y8-041"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.5 1 1.5 100 11 12 120 2 20 3.75 40 45 5 6 60 80",
+          "buttons": 5,
+          "vb": 520,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "panel": "Context 1 of 5. The water rises at a steady number of centimetres each minute. Find the gradient. Calculate the rate from the graph and select its matching slope. RATE UNITS cm/min km/min kg/L cm km kg L/min GRAPH SHAPE Half rate Normal rate One-and-a-half rate Double rate Check answer Hint Next context Solved: 0 / 5",
+          "inputs": [
+            "",
+            "cm/min",
+            "0"
+          ],
+          "stageInputs": [],
+          "nums": "0 11 16 24 32 40 48 6 8",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "before": {
+          "panel": "Context 1 of 5. The water rises at a steady number of centimetres each minute. Find the gradient. Calculate the rate from the graph and select its matching slope. RATE UNITS cm/min km/min kg/L cm km kg L/min GRAPH SHAPE Half rate Normal rate One-and-a-half rate Double rate Check answer Hint Next context Solved: 0 / 5",
+          "inputs": [
+            "7",
+            "km/min",
+            "0"
+          ],
+          "stageInputs": [],
+          "nums": "0 11 16 24 32 40 48 6 8",
+          "buttons": 0,
+          "vb": 1120,
+          "redraws": 2
+        },
+        "after": {
+          "panel": "Context 1 of 5. The water rises at a steady number of centimetres each minute. Find the gradient. Calculate the rate from the graph and select its matching slope. RATE UNITS cm/min km/min kg/L cm km kg L/min GRAPH SHAPE Half rate Normal rate One-and-a-half rate Double rate Check answer Hint Next context Solved: 0 / 5",
+          "inputs": [
+            "7",
+            "km/min",
+            "0"
+          ],
+          "stageInputs": [],
+          "nums": "0 11 16 24 32 40 48 6 8",
+          "buttons": 0,
+          "vb": 520,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 1120,
+        "median": 14.14,
+        "p10": 7.07,
+        "count": 19,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 520,
+        "median": 11,
+        "p10": 11,
+        "count": 19,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 520,
+        "median": 11,
+        "p10": 11,
+        "count": 19,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

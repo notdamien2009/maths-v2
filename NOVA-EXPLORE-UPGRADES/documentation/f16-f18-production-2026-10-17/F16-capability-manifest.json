@@ -1,0 +1,396 @@
+[
+  {
+    "id": "F16-01",
+    "path": "F16/F16-01-tally-frequency-pictogram.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "7068b46094d416372c9b3687280423a565f90876dd02ada0e060c9d4ed20ff67",
+    "challengeReady": true,
+    "draws": {
+      "render": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 6,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Four categories; integer counts within the native pictogram capacity; key two."
+  },
+  {
+    "id": "F16-02",
+    "path": "F16/F16-02-bar-chart-builder.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "fa4b6741c6d6505fe98efed50413911feb2bb74c6baec470dd379a042fb568b3",
+    "challengeReady": true,
+    "draws": {
+      "draw": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "watch.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 0
+      },
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 8,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Four bars; nonnegative integer counts within the chosen 1–24 axis maximum."
+  },
+  {
+    "id": "F16-03",
+    "path": "F16/F16-03-line-graph.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "cbd60dcc72604d271873bec2a56be74ffba868799a6885992748b03709037d8c",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "options"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 9,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Six strictly increasing times; readings fit the configured axis."
+  },
+  {
+    "id": "F16-04",
+    "path": "F16/F16-04-pie-chart-builder.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "bb4d1b132ff45c03b8b957dd8c14d0b0a1b6ab23a0f73e3bb103b245a9c517ea",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 9,
+    "mainChecks": 173,
+    "questionExamples": 6,
+    "limits": "Four categories with a positive total. Sector angles and percentages are computed from counts."
+  },
+  {
+    "id": "F16-05",
+    "path": "F16/F16-05-stem-and-leaf-plot.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "6b089cefcb775d54f3515f72971f09aa07b7724fd3e46b7d6a453f5d21810bd6",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 9,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Two to twenty-four observations, integers 10–49; retain the native stem convention."
+  },
+  {
+    "id": "F16-06",
+    "path": "F16/F16-06-dot-plot-and-averages.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "472f62bceff27735e13e88c00546782e599eaf4d97015cc6fab4bc8a901b78d2",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 10,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Two to twenty-four integer observations, 0–12."
+  },
+  {
+    "id": "F16-07",
+    "path": "F16/F16-07-mean-explorer.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "2219d3876c890d85bb47610d9bd2aed6fb365e2288c41a9b9ad69657e758aca4",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 9,
+    "mainChecks": 170,
+    "questionExamples": 6,
+    "limits": "Five stacks, integer heights 0–20 and positive total; grouped alternative uses four classes."
+  },
+  {
+    "id": "F16-08",
+    "path": "F16/F16-08-range-and-spread.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "62598d06ec96a9adce9c35f79d0f98e2ba5484a0bda0d1747114c99a38f8f479",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 9,
+    "mainChecks": 166,
+    "questionExamples": 6,
+    "limits": "Observations and handles must fit the configured scale."
+  },
+  {
+    "id": "F16-09",
+    "path": "F16/F16-09-grouped-frequency.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "4077ffa8c574cd6c0f02138918994152b2d79518fca3031c14bc19d998c7ff18",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 9,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Two to five adjacent classes with strictly increasing bounds and matching frequencies."
+  },
+  {
+    "id": "F16-10",
+    "path": "F16/F16-10-scatter-and-best-fit.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "062e6c9787717f79af9cc22cbe33eb343c3805d6a96aba065986046d079e115b",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 10,
+    "mainChecks": 173,
+    "questionExamples": 6,
+    "limits": "Two to eighteen pairs within axes; at least two distinct x values; line endpoints fit the y scale."
+  },
+  {
+    "id": "F16-11",
+    "path": "F16/F16-11-two-way-tables.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "1b644ecb42d7c9fa00cde1303dc4df5a380dbdad2648f1faba2b1f15bfe0fcc3",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 10,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Two rows with two or three columns; dimensions and category labels must agree."
+  },
+  {
+    "id": "F16-12",
+    "path": "F16/F16-12-histogram.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "c4d12c745611b0b05dd92c99db630fc6aa370f9bd9b7b9ebe934ba22fe1ade19",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 9,
+    "mainChecks": 171,
+    "questionExamples": 6,
+    "limits": "Four classes; frequency density is frequency divided by class width. Frequencies ≤20, density ≤2.4."
+  },
+  {
+    "id": "F16-13",
+    "path": "F16/F16-13-box-plot-and-cumulative-frequency.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "01064b789dd75d687d6fd7df6f9803b3cba9a49d08e3d345a349519dd27e19db",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 10,
+    "mainChecks": 171,
+    "questionExamples": 6,
+    "limits": "One or two raw datasets or the native grouped model. Quartiles use median of halves; grouped quartiles are interpolated estimates. Range questions use the original observation cards."
+  },
+  {
+    "id": "F16-14",
+    "path": "F16/F16-14-misleading-graph-spotter.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "e13a35aee1580ef04379d27c4268d8e83d517853113033d2148934f8ec5041df",
+    "challengeReady": true,
+    "draws": {
+      "scene": [
+        "stage",
+        "opt"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 9,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Three source counts; cropped comparison needs counts at least 48."
+  },
+  {
+    "id": "F16-15",
+    "path": "F16/F16-15-sampling-visual.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "6031eb90ab096351f6280ea01cff754efded0fa1c69f5eee61212943831132d2",
+    "challengeReady": true,
+    "draws": {
+      "stageScene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "seed": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 10,
+    "mainChecks": 172,
+    "questionExamples": 6,
+    "limits": "Population sixty, three groups each at least twelve; sample at most twelve unique member IDs."
+  },
+  {
+    "id": "F16-16",
+    "path": "F16/F16-16-data-collection-designer.html",
+    "status": "PASS WITH DOCUMENTED LIMITS",
+    "sha256": "4a0396b00966405607570f303c2944357422f72ff510d43acacd2415793a6dad",
+    "challengeReady": true,
+    "draws": {
+      "stageScene": [
+        "stage",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "state": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "nativeStageCount": 10,
+    "mainChecks": 166,
+    "questionExamples": 6,
+    "limits": "Four groups, twelve responses; question and audience indices follow the native options."
+  }
+]

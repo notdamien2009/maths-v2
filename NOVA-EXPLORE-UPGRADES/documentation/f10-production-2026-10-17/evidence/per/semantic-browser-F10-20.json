@@ -1,0 +1,836 @@
+[
+  {
+    "id": "F10-20",
+    "presetOf": null,
+    "path": "F10/F10-20-Tangent-and-Area-under-Curve-Estimator.html",
+    "sourceSha256": "3fa35dffba2f81ffe5d27cc691e8cb5f08d648cb3df25c79038851720f23689d",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            806,
+            806
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.167 0.25 1 1.5 10 12 2 3 3.25 4 5 6 8 9.333 9.5",
+          "before": "0 1 10 12 2 3 4 5 6 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "CHOOSE YOUR CURVE GCSE · Quadratic curve GCSE · Straight line control GCSE · Concave-down curve GCSE · Changing curvature GCSE · Two trapezia GCSE · Eight trapezia GCSE · Speed–time distance TANGENT x 3 TRAPEZIUM STRIPS 4 AREA START · a 0 AREA END · b 4 −0.25 +0.25 ↶ Restore preset Drag the tangent ",
+          "after": "CHOOSE YOUR CURVE GCSE · Quadratic curve GCSE · Straight line control GCSE · Concave-down curve GCSE · Changing curvature GCSE · Two trapezia GCSE · Eight trapezia GCSE · Speed–time distance TANGENT x 3 TRAPEZIUM STRIPS 4 AREA START · a 0 AREA END · b 4 −0.25 +0.25 ↶ Restore preset Drag the tangent ",
+          "bi": [
+            "GCSE-LINEAR",
+            "3",
+            "4",
+            "0",
+            "4"
+          ],
+          "ai": [
+            "GCSE-LINEAR",
+            "3",
+            "4",
+            "0",
+            "4"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 12 2 3 4 5 6 8",
+            1
+          ],
+          "narrow": [
+            "0 1 10 12 2 3 4 5 6 8",
+            1
+          ],
+          "back": [
+            "0 1 10 12 2 3 4 5 6 8",
+            1
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            806,
+            806
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 0.25 1 10 12 2 3 3.25 4 5 6 8",
+          "before": "0 0.25 1 10 12 2 3 3.25 4 5 6 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "At x = 3 on the quadratic curve, what is the tangent gradient? YOUR ANSWER CheckHint",
+          "after": "At x = 3 on the quadratic curve, what is the tangent gradient? YOUR ANSWER CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 0.25 1 10 12 2 3 3.25 4 5 6 8",
+            0
+          ],
+          "narrow": [
+            "0 0.25 1 10 12 2 3 3.25 4 5 6 8",
+            0
+          ],
+          "back": [
+            "0 0.25 1 10 12 2 3 3.25 4 5 6 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: GCSE-QUADRATIC, GCSE-LINEAR, GCSE-CONCAVE, GCSE-CUBIC, GCSE-TRAPEZIA-2, GCSE-TRAPEZIA-8, GCSE-SPEED"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "GCSE-QUADRATIC",
+            "a": 4,
+            "b": 3
+          },
+          "errors": [
+            "a must be less than b"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 806,
+            "median": 28.61,
+            "p10": 23.84,
+            "count": 18,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 806,
+            "median": 11,
+            "p10": 11,
+            "count": 18,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 806,
+            "median": 11,
+            "p10": 11,
+            "count": 18,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 806,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 806,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 806,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 806,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 806,
+          "median": 11,
+          "p10": 11,
+          "count": 18,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n12\nOUTPUT · y\nINPUT · x\na\nb\nREAD THE DIAGRAM BEFORE YOU DECI",
+          "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n12\nOUTPUT · y\nINPUT · x\na\nb\nREAD THE DIAGRAM BEFORE YOU DECI"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "TANGENT AT x = 3"
+          ],
+          "text": "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n12\nOUTPUT · y\nINPUT · x\na\nb\nREAD THE DIAGRAM BEFORE YOU DECIDE\n\nUse the gradient and area evidence only after you have tried the question.\n\nCURVE RULE\ny = 1 + 0.25x²\nCurved graph · rising gradient\nTANGENT AT x = 3\nEstima"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 1.5,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "2 strips"
+          ],
+          "text": "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n12\nOUTPUT · y\nINPUT · x\na\nb\nREAD THE DIAGRAM BEFORE YOU DECIDE\n\nUse the gradient and area evidence only after you have tried the question.\n\nCURVE RULE\ny = 1 + 0.25x²\nCurved graph · rising gradient\nTANGENT AT x = 3\nEstima"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 4.25,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n12\nOUTPUT · y\nINPUT · x\na\nb\nREAD THE DIAGRAM BEFORE YOU DECIDE\n\nUse the gradient and area evidence only after you have t"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3",
+            "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3",
+            "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3",
+            "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3",
+            "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3",
+            "F10 · TANGENT & AREA STUDIO\nNOVA · NEON CHALK · GCSE\n0\n1\n2\n3"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · TANGENT & AREA STUDIONOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n1",
+          "F10 · TANGENT & AREA STUDIONOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n1",
+          "F10 · TANGENT & AREA STUDIONOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n1",
+          "F10 · TANGENT & AREA STUDIONOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n1"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · TANGENT & AREA STUDIONOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n12\nOUTPUT · y\nINPUT · x\na\nb\nRead the diagram before you decide\n\nUse the gradient and area evidence only after you have tr"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · TANGENT & AREA STUDIONOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n1",
+          "F10 · TANGENT & AREA STUDIONOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n1",
+          "F10 · TANGENT & AREA STUDIONOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n1",
+          "F10 · TANGENT & AREA STUDIONOVA · NEON CHALK · GCSE\n0\n1\n2\n3\n4\n5\n6\n0\n2\n4\n6\n8\n10\n1"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Tangent x-coordinate/",
+          "active": "",
+          "panel": "CHOOSE YOUR CURVE GCSE · Quadratic curve GCSE · Straight line control GCSE · Concave-down curve GCSE · Changing curvature GCSE · Two trapezia GCSE · Eight trapezia GCSE · Speed–time distance TANGENT x 3 TRAPEZIUM STRIPS 4 AREA START · a 0 AREA END · b 4 −0.25 +0.25 ↶ Restore preset Drag the tangent point, use arrow keys on it, or change x below. The tangent slope is a rate of change; the trapezia estimate the accumulated area.",
+          "inputs": [
+            "GCSE-QUADRATIC",
+            "3",
+            "4",
+            "0",
+            "4"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.167 0.25 1 1.5 10 12 2 3 3.25 4 5 6 8 9.333 9.5",
+          "buttons": 1,
+          "vb": 806,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Tangent x-coordinate/",
+          "active": "",
+          "panel": "CHOOSE YOUR CURVE GCSE · Quadratic curve GCSE · Straight line control GCSE · Concave-down curve GCSE · Changing curvature GCSE · Two trapezia GCSE · Eight trapezia GCSE · Speed–time distance TANGENT x 3 TRAPEZIUM STRIPS 4 AREA START · a 0 AREA END · b 4 −0.25 +0.25 ↶ Restore preset Drag the tangent point, use arrow keys on it, or change x below. The tangent slope is a rate of change; the trapezia estimate the accumulated area.",
+          "inputs": [
+            "GCSE-LINEAR",
+            "3",
+            "4",
+            "0",
+            "4"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 2 3 4 5 6 8",
+          "buttons": 1,
+          "vb": 806,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Tangent x-coordinate/",
+          "active": "",
+          "panel": "CHOOSE YOUR CURVE GCSE · Quadratic curve GCSE · Straight line control GCSE · Concave-down curve GCSE · Changing curvature GCSE · Two trapezia GCSE · Eight trapezia GCSE · Speed–time distance TANGENT x 3 TRAPEZIUM STRIPS 4 AREA START · a 0 AREA END · b 4 −0.25 +0.25 ↶ Restore preset Drag the tangent point, use arrow keys on it, or change x below. The tangent slope is a rate of change; the trapezia estimate the accumulated area.",
+          "inputs": [
+            "GCSE-LINEAR",
+            "3",
+            "4",
+            "0",
+            "4"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 12 2 3 4 5 6 8",
+          "buttons": 1,
+          "vb": 806,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "At x = 3 on the quadratic curve, what is the tangent gradient? YOUR ANSWER CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 0.25 1 10 12 2 3 3.25 4 5 6 8",
+          "buttons": 0,
+          "vb": 806,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "At x = 3 on the quadratic curve, what is the tangent gradient? YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.25 1 10 12 2 3 3.25 4 5 6 8",
+          "buttons": 0,
+          "vb": 806,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "At x = 3 on the quadratic curve, what is the tangent gradient? YOUR ANSWER CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 0.25 1 10 12 2 3 3.25 4 5 6 8",
+          "buttons": 0,
+          "vb": 806,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 806,
+        "median": 28.61,
+        "p10": 23.84,
+        "count": 18,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 806,
+        "median": 11,
+        "p10": 11,
+        "count": 18,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 806,
+        "median": 11,
+        "p10": 11,
+        "count": 18,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": false
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

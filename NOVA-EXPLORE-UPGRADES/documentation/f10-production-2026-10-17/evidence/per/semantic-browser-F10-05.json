@@ -1,0 +1,825 @@
+[
+  {
+    "id": "F10-05",
+    "presetOf": null,
+    "path": "F10/NOVA-F10-05-y-mx-plus-c-Explorer-PREMIUM-REVIEW.html",
+    "sourceSha256": "59280dfd4398110cc29a29ea82b8d8502030cf8d9319a9970bcf53839961ee98",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            640,
+            562
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 5 6 8",
+          "before": "0 1 1.5 10 2 3 4 5 6 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Lesson preset Y7-039 · Tables into straight lines Y7-060 · Direct proportion: tickets Y8-022 · Understanding gradient Y8-023 · Gradient and y-intercept Y8-024 · Plotting straight lines Y8-025 · Parallel-line gradients Y8-029 · Graphical simultaneous equations Y8-032 · Compare graph relationships F6-",
+          "after": "Lesson preset Y7-039 · Tables into straight lines Y7-060 · Direct proportion: tickets Y8-022 · Understanding gradient Y8-023 · Gradient and y-intercept Y8-024 · Plotting straight lines Y8-025 · Parallel-line gradients Y8-029 · Graphical simultaneous equations Y8-032 · Compare graph relationships F6-",
+          "bi": [
+            "Y8-024",
+            "1.5",
+            "-1"
+          ],
+          "ai": [
+            "Y8-024",
+            "1.5",
+            "-1"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 1.5 10 2 3 4 5 6 8",
+            2
+          ],
+          "narrow": [
+            "0 1 1.5 10 2 4 6 8",
+            2
+          ],
+          "back": [
+            "0 1 1.5 10 2 3 4 5 6 8",
+            2
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            640,
+            562
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 1 10 2 3 4 5 6 8",
+          "before": "0 1 10 2 3 4 5 6 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Look at the graph y = −x + c. What is the y-intercept c? CheckHint",
+          "after": "Look at the graph y = −x + c. What is the y-intercept c? CheckHint",
+          "bi": [
+            "7"
+          ],
+          "ai": [
+            "7"
+          ]
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 1 10 2 3 4 5 6 8",
+            0
+          ],
+          "narrow": [
+            "0 10 2 4 6 8",
+            0
+          ],
+          "back": [
+            "0 1 10 2 3 4 5 6 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y7-039, Y7-060, Y8-022, Y8-023, Y8-024, Y8-025, Y8-029, Y8-032, Y8-035, Y8-036, Y9-020"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y7-060",
+            "c": 2
+          },
+          "errors": [
+            "a direct-proportion preset needs c = 0"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 640,
+            "median": 28.69,
+            "p10": 28.69,
+            "count": 15,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 602,
+            "median": 12.36,
+            "p10": 12.36,
+            "count": 15,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 602,
+            "median": 12.36,
+            "p10": 12.36,
+            "count": 15,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 602,
+          "median": 12.36,
+          "p10": 12.36,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 602,
+          "median": 12.36,
+          "p10": 12.36,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 602,
+          "median": 12.36,
+          "p10": 12.36,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 602,
+          "median": 12.36,
+          "p10": 12.36,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 602,
+          "median": 12.36,
+          "p10": 12.36,
+          "count": 15,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RULE\n1\n2\n3\n4\n5\n6\n2\n4\n6\n8\n10\n12\n0\nx\ny\nm\n·\nG\nR\nA\nD\nI\nE\nN\nT\nc\n=\n0 ·\nO\nR\nI\nG\nI\nN\nTHE R",
+          "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RULE\n1\n2\n3\n4\n5\n6\n3\n6\n9\n12\n15\n18\n0\nx\ny\nm\n·\nG\nR\nA\nD\nI\nE\nN\nT\nc\n=\n0 ·\nO\nR\nI\nG\nI\nN\nTHE "
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "y = kx"
+          ],
+          "text": "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RULE\n1\n2\n3\n4\n5\n6\n2\n4\n6\n8\n10\n12\n0\nx\ny\nm\n·\nG\nR\nA\nD\nI\nE\nN\nT\nc\n=\n0 ·\nO\nR\nI\nG\nI\nN\nTHE RULE\ny = kx\nLOOK FOR EVIDENCE\nGRADIENT · m\nFind it\nY-INTERCEPT · c\nFind it\nYOUR JOB\nThe relationship is proportional: y = kx.\nRead the drawing. Explain the mathe"
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 18,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "y = kx"
+          ],
+          "text": "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RULE\n1\n2\n3\n4\n5\n6\n3\n6\n9\n12\n15\n18\n0\nx\ny\nm\n·\nG\nR\nA\nD\nI\nE\nN\nT\nc\n=\n0 ·\nO\nR\nI\nG\nI\nN\nTHE RULE\ny = kx\nLOOK FOR EVIDENCE\nGRADIENT · m\nFind it\nY-INTERCEPT · c\nFind it\nYOUR JOB\nThe relationship is proportional: y = kx.\nRead the drawing. Explain the math"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": 24,
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RULE\n1\n2\n3\n4\n5\n6\n2\n4\n6\n8\n10\n12\n0\nx\ny\nm\n·\nG\nR\nA\nD\nI\nE\nN\nT\nc\n=\n0 ·\nO\nR\nI\nG\nI\nN\nTHE RULE\ny = kx\nLOOK FOR EVIDENCE\nGRADIENT · m\nFind it\nY-INTERCEP"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RU",
+            "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RU",
+            "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RU",
+            "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RU",
+            "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RU",
+            "F10 · STRAIGHT-LINE EQUATION STUDIO\nCHALLENGE · PROVE THE RU"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · STRAIGHT-LINE EQUATION STUDIOCHALLENGE · PROVE THE RULE\n1\n2\n3\n4\n5\n6\n2\n4\n6\n",
+          "F10 · STRAIGHT-LINE EQUATION STUDIOF6-08 · DIRECT PROPORTION\n1\n2\n3\n4\n5\n6\n2\n4\n6\n8",
+          "F10 · STRAIGHT-LINE EQUATION STUDIOF6-08 · DIRECT PROPORTION\n1\n2\n3\n4\n5\n6\n2\n4\n6\n8",
+          "F10 · STRAIGHT-LINE EQUATION STUDIOF6-08 · DIRECT PROPORTION\n1\n2\n3\n4\n5\n6\n2\n4\n6\n8"
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · STRAIGHT-LINE EQUATION STUDIOCHALLENGE · PROVE THE RULE\n1\n2\n3\n4\n5\n6\n2\n4\n6\n8\n10\n12\n0\nx\ny\nm\n·\nG\nR\nA\nD\nI\nE\nN\nT\nc\n=\n0 ·\nO\nR\nI\nG\nI\nN\nTHE RULE\ny = kx\nLOOK FOR EVIDENCE\nGRADIENT · mFind it\nY-INTERCEPT "
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · STRAIGHT-LINE EQUATION STUDIOCHALLENGE · PROVE THE RULE\n1\n2\n3\n4\n5\n6\n3\n6\n9\n",
+          "F10 · STRAIGHT-LINE EQUATION STUDIOF6-08 · DIRECT PROPORTION\n1\n2\n3\n4\n5\n6\n3\n6\n9\n1",
+          "F10 · STRAIGHT-LINE EQUATION STUDIOF6-08 · DIRECT PROPORTION\n1\n2\n3\n4\n5\n6\n3\n6\n9\n1",
+          "F10 · STRAIGHT-LINE EQUATION STUDIOF6-08 · DIRECT PROPORTION\n1\n2\n3\n4\n5\n6\n3\n6\n9\n1"
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Amber intercept c = 3/ || Green gradient m = −1/",
+          "active": "",
+          "panel": "Lesson preset Y7-039 · Tables into straight lines Y7-060 · Direct proportion: tickets Y8-022 · Understanding gradient Y8-023 · Gradient and y-intercept Y8-024 · Plotting straight lines Y8-025 · Parallel-line gradients Y8-029 · Graphical simultaneous equations Y8-032 · Compare graph relationships F6-08 · Sticker packs (direct proportion) F6-08 · Distance and time (direct proportion) F6-08 · Proportion signatures (GCSE bridge) Gradient m −1 Y-intercept c 3 Restore lesson rule Zero gradient Drag the amber y-axis intercept and the green slope handle, or use the sliders and arrow keys. Slope changes tilt; intercept changes slide the line.",
+          "inputs": [
+            "Y8-023",
+            "-1",
+            "3"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 8",
+          "buttons": 2,
+          "vb": 640,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Amber intercept c = −1/ || Green gradient m = 1.5/",
+          "active": "",
+          "panel": "Lesson preset Y7-039 · Tables into straight lines Y7-060 · Direct proportion: tickets Y8-022 · Understanding gradient Y8-023 · Gradient and y-intercept Y8-024 · Plotting straight lines Y8-025 · Parallel-line gradients Y8-029 · Graphical simultaneous equations Y8-032 · Compare graph relationships F6-08 · Sticker packs (direct proportion) F6-08 · Distance and time (direct proportion) F6-08 · Proportion signatures (GCSE bridge) Gradient m 1.5 Y-intercept c −1 Restore lesson rule Zero gradient Drag the amber y-axis intercept and the green slope handle, or use the sliders and arrow keys. Slope changes tilt; intercept changes slide the line.",
+          "inputs": [
+            "Y8-024",
+            "1.5",
+            "-1"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 1.5 10 2 3 4 5 6 8",
+          "buttons": 2,
+          "vb": 640,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Amber intercept c = −1/ || Green gradient m = 1.5/",
+          "active": "",
+          "panel": "Lesson preset Y7-039 · Tables into straight lines Y7-060 · Direct proportion: tickets Y8-022 · Understanding gradient Y8-023 · Gradient and y-intercept Y8-024 · Plotting straight lines Y8-025 · Parallel-line gradients Y8-029 · Graphical simultaneous equations Y8-032 · Compare graph relationships F6-08 · Sticker packs (direct proportion) F6-08 · Distance and time (direct proportion) F6-08 · Proportion signatures (GCSE bridge) Gradient m 1.5 Y-intercept c −1 Restore lesson rule Zero gradient Drag the amber y-axis intercept and the green slope handle, or use the sliders and arrow keys. Slope changes tilt; intercept changes slide the line.",
+          "inputs": [
+            "Y8-024",
+            "1.5",
+            "-1"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 1.5 10 2 4 6 8",
+          "buttons": 2,
+          "vb": 562,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "Look at the graph y = −x + c. What is the y-intercept c? CheckHint",
+          "inputs": [
+            ""
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 8",
+          "buttons": 0,
+          "vb": 640,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "",
+          "panel": "Look at the graph y = −x + c. What is the y-intercept c? CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 1 10 2 3 4 5 6 8",
+          "buttons": 0,
+          "vb": 640,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "",
+          "panel": "Look at the graph y = −x + c. What is the y-intercept c? CheckHint",
+          "inputs": [
+            "7"
+          ],
+          "stageInputs": [],
+          "nums": "0 10 2 4 6 8",
+          "buttons": 0,
+          "vb": 562,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 640,
+        "median": 28.69,
+        "p10": 28.69,
+        "count": 15,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 602,
+        "median": 12.36,
+        "p10": 12.36,
+        "count": 15,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 602,
+        "median": 12.36,
+        "p10": 12.36,
+        "count": 15,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": true
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

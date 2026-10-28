@@ -1,0 +1,807 @@
+[
+  {
+    "id": "F10-17",
+    "presetOf": null,
+    "path": "F10/F10-17-graph-matching-sorter.html",
+    "sourceSha256": "34f4198322efef9ce5b0cbd9353b3bab3c916899366aefbbee370ec68a9d747b",
+    "templateSha256": "2036d10a54de968b6dff5671fc7d2676ecfb494372900128247133bb545bd5bf",
+    "checks": [
+      {
+        "name": "explore: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 0,
+          "after": 1,
+          "vb": [
+            420,
+            420
+          ]
+        }
+      },
+      {
+        "name": "explore: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 023 10 2 4 6 8",
+          "before": "0 032 1 10 2 3 4 6 8"
+        }
+      },
+      {
+        "name": "explore: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "CHOOSE CURRICULUM MATCHING SET Y8-023 · y-intercept and y = mx + c Y8-032 · Linear and quadratic Y8-033 · Graphical problem solving Y9-012 · Linear vs quadratic models Y9-015 · Piecewise graphs Y9-020 · Direct and inverse proportion Drag a mathematical equation or real-world story onto its matching ",
+          "after": "CHOOSE CURRICULUM MATCHING SET Y8-023 · y-intercept and y = mx + c Y8-032 · Linear and quadratic Y8-033 · Graphical problem solving Y9-012 · Linear vs quadratic models Y9-015 · Piecewise graphs Y9-020 · Direct and inverse proportion Drag a mathematical equation or real-world story onto its matching ",
+          "bi": [
+            "Y8-032"
+          ],
+          "ai": [
+            "Y8-032"
+          ]
+        }
+      },
+      {
+        "name": "explore: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 032 1 10 2 3 4 6 8",
+            3
+          ],
+          "narrow": [
+            "0 032 1 10 2 3 4 6 8",
+            3
+          ],
+          "back": [
+            "0 032 1 10 2 3 4 6 8",
+            3
+          ]
+        }
+      },
+      {
+        "name": "challenge: layout redraw happened on 1440→390 without a mode reset",
+        "pass": true,
+        "detail": {
+          "before": 2,
+          "after": 3,
+          "vb": [
+            420,
+            420
+          ]
+        }
+      },
+      {
+        "name": "challenge: pupil actions changed the state before the resize (test is meaningful)",
+        "pass": true,
+        "detail": {
+          "start": "0 023 1 10 2 4 6 8",
+          "before": "0 023 1 10 2 4 6 8"
+        }
+      },
+      {
+        "name": "challenge: panel text and inputs kept across the resize",
+        "pass": true,
+        "detail": {
+          "before": "Which graph matches: y = 2x + 1? Choose A, B or C by tapping the graph button, using the keys below, or dragging this task onto a graph. y = 2x + 1 GRAPH A GRAPH B GRAPH C CheckHint",
+          "after": "Which graph matches: y = 2x + 1? Choose A, B or C by tapping the graph button, using the keys below, or dragging this task onto a graph. y = 2x + 1 GRAPH A GRAPH B GRAPH C CheckHint",
+          "bi": [],
+          "ai": []
+        }
+      },
+      {
+        "name": "challenge: stage values and interactive objects kept across 1440→390→1440",
+        "pass": true,
+        "detail": {
+          "before": [
+            "0 023 1 10 2 4 6 8",
+            0
+          ],
+          "narrow": [
+            "0 023 1 10 2 4 6 8",
+            0
+          ],
+          "back": [
+            "0 023 1 10 2 4 6 8",
+            0
+          ]
+        }
+      },
+      {
+        "name": "contract rejects out-of-domain state",
+        "pass": true,
+        "detail": [
+          "preset must be one of the native presets: Y8-023, Y8-032, Y8-033, Y9-012, Y9-015, Y9-020"
+        ]
+      },
+      {
+        "name": "engine rule rejects an impossible state",
+        "pass": true,
+        "detail": {
+          "state": {
+            "preset": "Y8-023",
+            "matched": {
+              "c1": 7
+            }
+          },
+          "errors": [
+            "state.matched cannot be set: graph-matching lessons choose a preset only (pupil matches start empty)"
+          ]
+        }
+      },
+      {
+        "name": "contract accepts six lesson states",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "resize 1440→390 gives the same layout as a fresh 390 load",
+        "pass": true,
+        "detail": {
+          "wide": {
+            "inner": 1128,
+            "viewBoxWidth": 420,
+            "median": 13.75,
+            "p10": 13.75,
+            "count": 39,
+            "scroll": 1128,
+            "client": 1128
+          },
+          "narrow": {
+            "inner": 312,
+            "viewBoxWidth": 420,
+            "median": 11.31,
+            "p10": 11.31,
+            "count": 39,
+            "scroll": 312,
+            "client": 312
+          },
+          "fresh": {
+            "inner": 312,
+            "viewBoxWidth": 420,
+            "median": 11.31,
+            "p10": 11.31,
+            "count": 39,
+            "scroll": 312,
+            "client": 312
+          }
+        }
+      },
+      {
+        "name": "390 after resize: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 11.31,
+          "p10": 11.31,
+          "count": 39,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 11.31,
+          "p10": 11.31,
+          "count": 39,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 after resize: no horizontal overflow",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 11.31,
+          "p10": 11.31,
+          "count": 39,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: median label ≥ 11px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 11.31,
+          "p10": 11.31,
+          "count": 39,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "390 fresh load: 10th-percentile label ≥ 8px",
+        "pass": true,
+        "detail": {
+          "inner": 312,
+          "viewBoxWidth": 420,
+          "median": 11.31,
+          "p10": 11.31,
+          "count": 39,
+          "scroll": 312,
+          "client": 312
+        }
+      },
+      {
+        "name": "two distinct question states",
+        "pass": true,
+        "detail": [
+          "F10 · GRAPH-MATCHING WORKSHOP\nY8-023 · NOVA NEON CHALK\nWHICH GRAPH?\n\nMatch the rule in the question to graph A, B or C.\n\nA\n−2\n0\n2\n4\n−4\n−2\n0\n",
+          "F10 · GRAPH-MATCHING WORKSHOP\nY8-032 · NOVA NEON CHALK\nWHICH GRAPH?\n\nMatch the rule in the question to graph A, B or C.\n\nA\n−3\n−2\n−1\n0\n1\n2\n3\n"
+        ]
+      },
+      {
+        "name": "question 1 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "CHOOSE A"
+          ],
+          "text": "F10 · GRAPH-MATCHING WORKSHOP\nY8-023 · NOVA NEON CHALK\nWHICH GRAPH?\n\nMatch the rule in the question to graph A, B or C.\n\nA\n−2\n0\n2\n4\n−4\n−2\n0\n2\n4\n6\n8\nx\ny\nCHOOSE A\nInspect the curve\nB\n−2\n0\n2\n4\n−4\n−2\n0\n2\n4\n6\n8\nx\ny\nCHOOSE B\nInspect the curve\nC\n−2\n0\n2\n4\n−4\n−2\n0\n2\n4\n6\n8\nx\ny\nCHOOSE C\nInspect the curve\nLOOK "
+        }
+      },
+      {
+        "name": "question 1 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "A",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "question 2 renders its given values",
+        "pass": true,
+        "detail": {
+          "expected": [
+            "CHOOSE C"
+          ],
+          "text": "F10 · GRAPH-MATCHING WORKSHOP\nY8-032 · NOVA NEON CHALK\nWHICH GRAPH?\n\nMatch the rule in the question to graph A, B or C.\n\nA\n−3\n−2\n−1\n0\n1\n2\n3\n−4\n−2\n0\n2\n4\n6\n8\nx\ny\nCHOOSE A\nInspect the curve\nB\n−3\n−2\n−1\n0\n1\n2\n3\n−4\n−2\n0\n2\n4\n6\n8\nx\ny\nCHOOSE B\nInspect the curve\nC\n−3\n−2\n−1\n0\n1\n2\n3\n−4\n−2\n0\n2\n4\n6\n8\nx\ny\nCHOOSE C"
+        }
+      },
+      {
+        "name": "question 2 answer concealed (text, aria, data)",
+        "pass": true,
+        "detail": {
+          "answer": "C",
+          "leak": [
+            false,
+            false,
+            false
+          ],
+          "data": ""
+        }
+      },
+      {
+        "name": "glow filters userSpaceOnUse",
+        "pass": true,
+        "detail": [
+          [],
+          []
+        ]
+      },
+      {
+        "name": "chalk font on SVG text",
+        "pass": true,
+        "detail": [
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ],
+          [
+            "\"NOVA Chalk\", \"Segoe Print\", cursive"
+          ]
+        ]
+      },
+      {
+        "name": "two original views mounted",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "no duplicate SVG or DOM IDs",
+        "pass": true,
+        "detail": {
+          "count": 2,
+          "distinct": true,
+          "duplicateIds": []
+        }
+      },
+      {
+        "name": "native Explore mounted",
+        "pass": true
+      },
+      {
+        "name": "lesson-authored Watch motion advances phases",
+        "pass": true,
+        "detail": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "unanswered answer control",
+        "pass": true
+      },
+      {
+        "name": "challenge round 1 apparatus conceals answer",
+        "pass": true,
+        "detail": "F10 · GRAPH-MATCHING WORKSHOP\nY8-023 · NOVA NEON CHALK\nWHICH GRAPH?\n\nMatch the rule in the question to graph A, B or C.\n\nA\n−2\n0\n2\n4\n−4\n−2\n0\n2\n4\n6\n8\nx\ny\nCHOOSE A\nInspect the curve\nB\n−2\n0\n2\n4\n−4\n−2\n0\n2\n"
+      },
+      {
+        "name": "wrong answer holds question and costs life",
+        "pass": true,
+        "detail": {
+          "index": 0,
+          "state": {
+            "round": 1,
+            "score": 0,
+            "lives": 2,
+            "streak": 0,
+            "best": 0,
+            "correct": 0,
+            "hints": 0,
+            "over": false,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "each round shows its own apparatus",
+        "pass": true,
+        "detail": {
+          "text": [
+            "F10 · GRAPH-MATCHING WORKSHOP\nY8-023 · NOVA NEON CHALK\nWHICH",
+            "F10 · GRAPH-MATCHING WORKSHOP\nY8-032 · NOVA NEON CHALK\nWHICH",
+            "F10 · GRAPH-MATCHING WORKSHOP\nY8-033 · NOVA NEON CHALK\nWHICH",
+            "F10 · GRAPH-MATCHING WORKSHOP\nY9-012 · NOVA NEON CHALK\nWHICH",
+            "F10 · GRAPH-MATCHING WORKSHOP\nY9-015 · NOVA NEON CHALK\nWHICH",
+            "F10 · GRAPH-MATCHING WORKSHOP\nY9-020 · NOVA NEON CHALK\nWHICH"
+          ],
+          "distinctText": 6,
+          "distinctWithGeometry": 6
+        }
+      },
+      {
+        "name": "no round reveals its answer",
+        "pass": true,
+        "detail": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "name": "six correct auto-advance and completion",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "canonical scoring after retry",
+        "pass": true,
+        "detail": {
+          "index": 6,
+          "state": {
+            "round": 7,
+            "score": 85,
+            "lives": 2,
+            "streak": 6,
+            "best": 6,
+            "correct": 6,
+            "hints": 0,
+            "over": true,
+            "log": [
+              {
+                "round": 1,
+                "ok": false,
+                "points": 0
+              },
+              {
+                "round": 1,
+                "ok": true,
+                "points": 10
+              },
+              {
+                "round": 2,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 3,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 4,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 5,
+                "ok": true,
+                "points": 15
+              },
+              {
+                "round": 6,
+                "ok": true,
+                "points": 15
+              }
+            ],
+            "rounds": 6,
+            "maxLives": 3
+          }
+        }
+      },
+      {
+        "name": "badge and confetti",
+        "pass": true
+      },
+      {
+        "name": "reset score lives and question",
+        "pass": true,
+        "detail": {
+          "round": 1,
+          "score": 0,
+          "lives": 3,
+          "streak": 0,
+          "best": 0,
+          "correct": 0,
+          "hints": 0,
+          "over": false,
+          "log": [],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "hint cost and retry resets streak",
+        "pass": true,
+        "detail": {
+          "round": 2,
+          "score": 10,
+          "lives": 2,
+          "streak": 0,
+          "best": 1,
+          "correct": 1,
+          "hints": 1,
+          "over": false,
+          "log": [
+            {
+              "round": 1,
+              "ok": true,
+              "points": 10
+            },
+            {
+              "round": 2,
+              "ok": false,
+              "points": 0
+            }
+          ],
+          "rounds": 6,
+          "maxLives": 3
+        }
+      },
+      {
+        "name": "lesson page width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "name": "apparatus frame width 1440",
+        "pass": true,
+        "detail": {
+          "client": 1128,
+          "scroll": 1128
+        }
+      },
+      {
+        "name": "lesson page width 1024",
+        "pass": true,
+        "detail": {
+          "client": 1024,
+          "scroll": 1024
+        }
+      },
+      {
+        "name": "apparatus frame width 1024",
+        "pass": true,
+        "detail": {
+          "client": 912,
+          "scroll": 912
+        }
+      },
+      {
+        "name": "lesson page width 390",
+        "pass": true,
+        "detail": {
+          "client": 390,
+          "scroll": 390
+        }
+      },
+      {
+        "name": "apparatus frame width 390",
+        "pass": true,
+        "detail": {
+          "client": 312,
+          "scroll": 312
+        }
+      },
+      {
+        "name": "four guided stages progress",
+        "pass": true,
+        "detail": [
+          "F10 · GRAPH-MATCHING WORKSHOPY8-023 · NOVA NEON CHALK\nWHICH GRAPH?\n\nMatch the ru",
+          "F10 · GRAPH-MATCHING WORKSHOPY8-023 · NOVA NEON CHALK\nLOOK AT THE SHAPE\n\nStraigh",
+          "F10 · GRAPH-MATCHING WORKSHOPY8-023 · NOVA NEON CHALK\nCHECK THE GRADIENT\n\nDoes i",
+          "F10 · GRAPH-MATCHING WORKSHOPY8-023 · NOVA NEON CHALK\nPROVE THE MATCH\n\nTest one "
+        ]
+      },
+      {
+        "name": "guided stage 1 hides final answer",
+        "pass": true,
+        "detail": "F10 · GRAPH-MATCHING WORKSHOPY8-023 · NOVA NEON CHALK\nWHICH GRAPH?\n\nMatch the rule in the question to graph A, B or C.\n\nA\n−2\n0\n2\n4\n−4\n−2\n0\n2\n4\n6\n8\nx\ny\nCHOOSE A\nInspect the curve\nB\n−2\n0\n2\n4\n−4\n−2\n0\n2\n4"
+      },
+      {
+        "name": "four Bob beats rendered",
+        "pass": true,
+        "detail": [
+          "F10 · GRAPH-MATCHING WORKSHOPY8-032 · NOVA NEON CHALK\nWHICH GRAPH?\n\nMatch the ru",
+          "F10 · GRAPH-MATCHING WORKSHOPY8-032 · NOVA NEON CHALK\nLOOK AT THE SHAPE\n\nStraigh",
+          "F10 · GRAPH-MATCHING WORKSHOPY8-032 · NOVA NEON CHALK\nCHECK THE GRADIENT\n\nDoes i",
+          "F10 · GRAPH-MATCHING WORKSHOPY8-032 · NOVA NEON CHALK\nPROVE THE MATCH\n\nTest one "
+        ]
+      },
+      {
+        "name": "no runtime errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "statePreserved": {
+      "explore": {
+        "start": {
+          "handles": "Read graph A by moving its marker horizontally/ || Read graph B by moving its marker horizontally/ || Read graph C by moving its marker horizontally/",
+          "active": "",
+          "panel": "CHOOSE CURRICULUM MATCHING SET Y8-023 · y-intercept and y = mx + c Y8-032 · Linear and quadratic Y8-033 · Graphical problem solving Y9-012 · Linear vs quadratic models Y9-015 · Piecewise graphs Y9-020 · Direct and inverse proportion Drag a mathematical equation or real-world story onto its matching graph. Alternatively select a card, then use MATCH A, B or C. Matched cards can be re-grabbed; remove is the red tray. Use arrow keys on a graph marker to sample a point. SORT THE EQUATIONS AND STORIES y = 2x + 1 y = 2x y = −x + 2 ↶ RETURN SELECTED CARD / REMOVE MATCH Match all three cards. Recheck the axes before deciding.",
+          "inputs": [
+            "Y8-023"
+          ],
+          "stageInputs": [],
+          "nums": "0 023 10 2 4 6 8",
+          "buttons": 3,
+          "vb": 420,
+          "redraws": 0
+        },
+        "before": {
+          "handles": "Read graph A by moving its marker horizontally/ || Read graph B by moving its marker horizontally/ || Read graph C by moving its marker horizontally/",
+          "active": "",
+          "panel": "CHOOSE CURRICULUM MATCHING SET Y8-023 · y-intercept and y = mx + c Y8-032 · Linear and quadratic Y8-033 · Graphical problem solving Y9-012 · Linear vs quadratic models Y9-015 · Piecewise graphs Y9-020 · Direct and inverse proportion Drag a mathematical equation or real-world story onto its matching graph. Alternatively select a card, then use MATCH A, B or C. Matched cards can be re-grabbed; remove is the red tray. Use arrow keys on a graph marker to sample a point. SORT THE EQUATIONS AND STORIES y = x² − 1 y = x + 1 y = 5 − x² ↶ RETURN SELECTED CARD / REMOVE MATCH Match all three cards. Recheck the axes before deciding.",
+          "inputs": [
+            "Y8-032"
+          ],
+          "stageInputs": [],
+          "nums": "0 032 1 10 2 3 4 6 8",
+          "buttons": 3,
+          "vb": 420,
+          "redraws": 0
+        },
+        "after": {
+          "handles": "Read graph A by moving its marker horizontally/ || Read graph B by moving its marker horizontally/ || Read graph C by moving its marker horizontally/",
+          "active": "",
+          "panel": "CHOOSE CURRICULUM MATCHING SET Y8-023 · y-intercept and y = mx + c Y8-032 · Linear and quadratic Y8-033 · Graphical problem solving Y9-012 · Linear vs quadratic models Y9-015 · Piecewise graphs Y9-020 · Direct and inverse proportion Drag a mathematical equation or real-world story onto its matching graph. Alternatively select a card, then use MATCH A, B or C. Matched cards can be re-grabbed; remove is the red tray. Use arrow keys on a graph marker to sample a point. SORT THE EQUATIONS AND STORIES y = x² − 1 y = x + 1 y = 5 − x² ↶ RETURN SELECTED CARD / REMOVE MATCH Match all three cards. Recheck the axes before deciding.",
+          "inputs": [
+            "Y8-032"
+          ],
+          "stageInputs": [],
+          "nums": "0 032 1 10 2 3 4 6 8",
+          "buttons": 3,
+          "vb": 420,
+          "redraws": 1
+        },
+        "changed": true
+      },
+      "challenge": {
+        "start": {
+          "handles": "",
+          "active": "",
+          "panel": "Which graph matches: y = 2x + 1? Choose A, B or C by tapping the graph button, using the keys below, or dragging this task onto a graph. y = 2x + 1 GRAPH A GRAPH B GRAPH C CheckHint",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "0 023 1 10 2 4 6 8",
+          "buttons": 0,
+          "vb": 420,
+          "redraws": 2
+        },
+        "before": {
+          "handles": "",
+          "active": "CHOOSE A|GRAPH A",
+          "panel": "Which graph matches: y = 2x + 1? Choose A, B or C by tapping the graph button, using the keys below, or dragging this task onto a graph. y = 2x + 1 GRAPH A GRAPH B GRAPH C CheckHint",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "0 023 1 10 2 4 6 8",
+          "buttons": 0,
+          "vb": 420,
+          "redraws": 2
+        },
+        "after": {
+          "handles": "",
+          "active": "CHOOSE A|GRAPH A",
+          "panel": "Which graph matches: y = 2x + 1? Choose A, B or C by tapping the graph button, using the keys below, or dragging this task onto a graph. y = 2x + 1 GRAPH A GRAPH B GRAPH C CheckHint",
+          "inputs": [],
+          "stageInputs": [],
+          "nums": "0 023 1 10 2 4 6 8",
+          "buttons": 0,
+          "vb": 420,
+          "redraws": 3
+        },
+        "changed": true
+      }
+    },
+    "resize": {
+      "wide": {
+        "inner": 1128,
+        "viewBoxWidth": 420,
+        "median": 13.75,
+        "p10": 13.75,
+        "count": 39,
+        "scroll": 1128,
+        "client": 1128
+      },
+      "narrow": {
+        "inner": 312,
+        "viewBoxWidth": 420,
+        "median": 11.31,
+        "p10": 11.31,
+        "count": 39,
+        "scroll": 312,
+        "client": 312
+      },
+      "fresh": {
+        "inner": 312,
+        "viewBoxWidth": 420,
+        "median": 11.31,
+        "p10": 11.31,
+        "count": 39,
+        "scroll": 312,
+        "client": 312
+      },
+      "dedicatedNarrowLayout": false
+    },
+    "game": {
+      "index": 6,
+      "state": {
+        "round": 7,
+        "score": 85,
+        "lives": 2,
+        "streak": 6,
+        "best": 6,
+        "correct": 6,
+        "hints": 0,
+        "over": true,
+        "log": [
+          {
+            "round": 1,
+            "ok": false,
+            "points": 0
+          },
+          {
+            "round": 1,
+            "ok": true,
+            "points": 10
+          },
+          {
+            "round": 2,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 3,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 4,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 5,
+            "ok": true,
+            "points": 15
+          },
+          {
+            "round": 6,
+            "ok": true,
+            "points": 15
+          }
+        ],
+        "rounds": 6,
+        "maxLives": 3
+      }
+    }
+  }
+]

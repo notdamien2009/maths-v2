@@ -1,0 +1,790 @@
+{
+ "note": "Lesson records for each F8 engine (the first two Challenge rounds used in QA). privateAnswer is read by the F0-12 controller and is never drawn.",
+ "examples": {
+  "F8-01": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-018",
+       "lines": [
+        "20 − 2 × (3 + 4)",
+        "20 − 2 × 7",
+        "20 − 14",
+        "6"
+       ],
+       "focus": [
+        "(3 + 4)",
+        "2 × 7",
+        "20 − 14"
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Work out 20 − 2 × (3 + 4).",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-018",
+       "lines": [
+        "30 − 4 × (5 − 2)",
+        "30 − 4 × 3",
+        "30 − 12",
+        "18"
+       ],
+       "focus": [
+        "(5 − 2)",
+        "4 × 3",
+        "30 − 12"
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Work out 30 − 4 × (5 − 2).",
+    "privateAnswer": 18,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-02": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-033"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "2x + 3 = 15. Work backwards: what is x?",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-033",
+       "out": 21,
+       "x": 9
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "2x + 3 = 21. Work backwards: what is x?",
+    "privateAnswer": 9,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-03": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-028",
+       "inputs": [
+        1,
+        2,
+        3,
+        5
+       ],
+       "chosen": 5,
+       "challenge": {
+        "input": 5,
+        "want": 17
+       }
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "The machine is y = 3x + 2. What is y when x = 5?",
+    "privateAnswer": 17,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-028",
+       "inputs": [
+        1,
+        2,
+        3,
+        7
+       ],
+       "chosen": 7,
+       "challenge": {
+        "input": 7,
+        "want": 23
+       }
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "The machine is y = 3x + 2. What is y when x = 7?",
+    "privateAnswer": 23,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-04": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-016",
+       "input": 7,
+       "challengeInput": 7
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "y = 5x − 4. What is y when x = 7?",
+    "privateAnswer": 31,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-016",
+       "input": 9,
+       "challengeInput": 9
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "y = 5x − 4. What is y when x = 9?",
+    "privateAnswer": 41,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-05": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-033"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Solve 4x + 7 = 31.",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-035"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Solve 3x + 4 = 22.",
+    "privateAnswer": 6,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-06": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-016-L"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "P = 2l + 2w. Make l the subject, then find l when P = 26 and w = 4.",
+    "privateAnswer": 9,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-016-G"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "y = 3x + 5. Make x the subject, then find x when y = 29.",
+    "privateAnswer": 8,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-07": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-028"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Build the expression for “five times n, then add three”. What is its value when n = 2?",
+    "privateAnswer": 13,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-034-T"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Build the expression for seven pounds per ticket plus a two-pound fee. What is it when t = 3?",
+    "privateAnswer": 23,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-08": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-029-A"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Work out expression A, 3x + 2x, when x = 4.",
+    "privateAnswer": 20,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-029-B"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Work out expression A, 4x + 3, when x = 4.",
+    "privateAnswer": 19,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-09": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-028-A"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "y = 3x. What is y when x = 4?",
+    "privateAnswer": 12,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-030-A"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "y = 2x + 5. What is y when x = 4?",
+    "privateAnswer": 13,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-10": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-029-A"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Solve y = x + 1 and y = −x + 5 together. Give the point as x, y.",
+    "privateAnswer": "2, 3",
+    "answerType": "coordinates",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-029-B"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Solve y = 2x + 4 and y = −x + 1 together. Give the point as x, y.",
+    "privateAnswer": "-1, 2",
+    "answerType": "coordinates",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-11": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-017-A",
+       "c": 13,
+       "original": "2x + 3 < 13",
+       "steps": [
+        "2x + 3 < 13",
+        "2x < 10",
+        "x < 5"
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Solve 2x + 3 < 13. What is the smallest integer that is NOT a solution?",
+    "privateAnswer": 5,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-017-B",
+       "b": 4,
+       "c": -11,
+       "original": "4 − 3x ≥ −11",
+       "steps": [
+        "4 − 3x ≥ −11",
+        "−3x ≥ −15",
+        "x ≤ 5"
+       ]
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Solve 4 − 3x ≥ −11. What is the largest integer that is a solution?",
+    "privateAnswer": 5,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-12": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-031-A"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Solve x² − 4 = 0. Give both roots, smaller first, like -1, 5.",
+    "privateAnswer": "-2, 2",
+    "answerType": "ordered",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-031-B"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Solve x² − 4x + 3 = 0. Give both roots, smaller first.",
+    "privateAnswer": "1, 3",
+    "answerType": "ordered",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-13": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-002-M1"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Simplify a³ × a². What is the index?",
+    "privateAnswer": 5,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-002-D1"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Simplify b⁵ ÷ b². What is the index?",
+    "privateAnswer": 3,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-14": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-BRIDGE-A"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Simplify 6x ÷ 9x. Write it like 2/5.",
+    "privateAnswer": "2/3",
+    "answerType": "text",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y8-BRIDGE-B"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Simplify 4xy ÷ 6x. Write it like 3y/4.",
+    "privateAnswer": "2y/3",
+    "answerType": "text",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-15": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-012-A"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "One line uses the wrong sign rule. Is −3 × (−5) positive or negative? (type positive or negative)",
+    "privateAnswer": "positive",
+    "answerType": "text",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y7-012-B"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Find the mistake. What is −24 ÷ 6?",
+    "privateAnswer": -4,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-16": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-007-A"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "A taxi charges £3 plus £2.50 per mile. Model it and find the cost in £ for 6 miles.",
+    "privateAnswer": 18,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "Y9-007-B"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "A rectangle is 8 m long and 5 m wide. Model the fencing and find the perimeter in m.",
+    "privateAnswer": 26,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-17": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "ODD-SUM"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "a = 2m + 1 and b = 2n + 1. Write a + b = 2( … ). What goes in the bracket? (no spaces, like m+n+5)",
+    "privateAnswer": "m+n+1",
+    "answerType": "text",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "THREE-CONSEC"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Simplify (n − 1) + n + (n + 1). (no spaces, like 5n)",
+    "privateAnswer": "3n",
+    "answerType": "text",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ],
+  "F8-18": [
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "SQUARE-TWO"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q1",
+    "source": "SRC",
+    "prompt": "Use trial and improvement to solve x² = 2. Give x to 3 decimal places.",
+    "privateAnswer": 1.414,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   },
+   {
+    "nativeIndex": 0,
+    "data": {
+     "lesson": {
+      "state": {
+       "preset": "SQUARE-FIVE"
+      },
+      "phase": 5
+     }
+    },
+    "id": "C1.Q2",
+    "source": "SRC",
+    "prompt": "Use trial and improvement to solve x² = 5. Give x to 2 decimal places.",
+    "privateAnswer": 2.24,
+    "answerType": "numeric",
+    "hint": "Use the apparatus one step at a time.",
+    "wrongFeedback": "Check each step again.",
+    "correctFeedback": "Correct."
+   }
+  ]
+ }
+}

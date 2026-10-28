@@ -1,0 +1,2549 @@
+[
+  {
+    "id": "F18-01",
+    "path": "F18/F18-01-ruler-and-measuring-tools.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "measureSvg": [
+        "stage",
+        "s",
+        "o"
+      ],
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "f43140609e358cb5047ce4ec3a1042ca9d28347d510d31e72a6f47f6247961c1",
+    "sha256": "04aa13b7af5d4b567a3160f1727e02656de2a584fe0d6ad1b1b598447936f351",
+    "engineId": "F18-01",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "mood",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "pose",
+        "narration",
+        "prompt"
+      ],
+      [
+        "name",
+        "mood",
+        "pose",
+        "narration",
+        "prompt"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "04aa13b7af5d4b567a3160f1727e02656de2a584fe0d6ad1b1b598447936f351"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Check and explain",
+        "mood": "cheer",
+        "pose": "celebrate",
+        "narration": "The ruler measures the drawing. The scale tells us the actual distance. Both steps matter.",
+        "prompt": "Describe the two steps you use to find a real-world distance."
+      },
+      "config": {
+        "startMode": "guided",
+        "preset": "y7map",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "correct",
+          "hintUsed"
+        ],
+        "presets": {
+          "y7map": {
+            "label": "Y7-064 · map scale, 1 cm = 5 km",
+            "name": "Countryside map",
+            "unit": "km",
+            "ratio": 6,
+            "scaleText": "1 cm = 5 km",
+            "actual": 6.5,
+            "result": 32.5,
+            "kind": "map"
+          },
+          "y7town": {
+            "label": "Y7-064 · town route, 1 cm = 2 km",
+            "name": "Town route",
+            "unit": "km",
+            "ratio": 2,
+            "scaleText": "1 cm = 2 km",
+            "actual": 3.5,
+            "result": 7,
+            "kind": "town"
+          },
+          "plan": {
+            "label": "Scale drawing · 1 : 200",
+            "name": "Room plan",
+            "unit": "m",
+            "ratio": 2,
+            "scaleText": "1 : 200",
+            "actual": 5.5,
+            "result": 11,
+            "kind": "plan"
+          },
+          "gcse": {
+            "label": "GCSE · OS map, 1 : 25 000",
+            "name": "Ordnance map",
+            "unit": "km",
+            "ratio": 0.25,
+            "scaleText": "1 : 25 000",
+            "actual": 4.8,
+            "result": 1.2,
+            "kind": "map"
+          }
+        }
+      }
+    },
+    "previous_sha256": "d7227a0f12655ea4bf0a80e056ec5893ab6f068e522a8ec8dc6db87148a83b83",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-02",
+    "path": "F18/F18-02-unit-conversion-bridges.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "createDrawing": [
+        "stage",
+        "s",
+        "o"
+      ],
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "e2593f43647a80874419797a753facb651ba3e6f1715a87902444b6179cfc314",
+    "sha256": "1e1f92565f88a1a677639d6bf9730b02ddc897712aea4ef5645f25a945fdd6e3",
+    "engineId": "F18-02",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "1e1f92565f88a1a677639d6bf9730b02ddc897712aea4ef5645f25a945fdd6e3"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Check the units",
+        "pose": "celebrate",
+        "narration": "Our converted number is larger because centimetres are smaller than metres. Label the answer centimetres.",
+        "prompt": "What error happens if you write three hundred and twenty metres?",
+        "say": "The units are essential. Three hundred and twenty metres would describe a very different beam."
+      },
+      "config": {
+        "startMode": "guided",
+        "preset": "length",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "correct",
+          "hintUsed"
+        ],
+        "valueKeys": [
+          "preset",
+          "factor",
+          "amount",
+          "answer"
+        ],
+        "presets": {
+          "time": {
+            "label": "Y7-050 · minutes to hours",
+            "context": "Time and timetables",
+            "short": "Time / duration",
+            "story": "A journey takes 150 minutes.",
+            "from": "min",
+            "to": "h",
+            "amount": 150,
+            "factor": 0.016666666666666666,
+            "choices": [
+              "× 60",
+              "÷ 60",
+              "× 100"
+            ],
+            "correct": 1,
+            "relation": "60 minutes = 1 hour",
+            "rule": "Divide the number of minutes by 60.",
+            "why": "There are 60 minutes in one hour.",
+            "kind": "time",
+            "explain": "150 minutes = 2.5 hours = 2 hours 30 minutes."
+          },
+          "length": {
+            "label": "Y7-051 · metres to centimetres",
+            "context": "Length conversion",
+            "short": "Metric length",
+            "story": "A beam is 3.2 metres long.",
+            "from": "m",
+            "to": "cm",
+            "amount": 4.2,
+            "factor": 100,
+            "choices": [
+              "÷ 100",
+              "× 100",
+              "× 10"
+            ],
+            "correct": 1,
+            "relation": "1 m = 100 cm",
+            "rule": "Multiply metres by 100.",
+            "why": "Each metre contains one hundred centimetres.",
+            "kind": "length",
+            "explain": "3.2 m = 320 cm."
+          },
+          "area": {
+            "label": "Y7-051 · square centimetres to square millimetres",
+            "context": "Area conversion",
+            "short": "Square units",
+            "story": "A tile has area 7.5 square centimetres.",
+            "from": "cm²",
+            "to": "mm²",
+            "amount": 7.5,
+            "factor": 100,
+            "choices": [
+              "× 10",
+              "× 100",
+              "× 1,000"
+            ],
+            "correct": 1,
+            "relation": "1 cm² = 100 mm²",
+            "rule": "Square the length factor: 10 × 10 = 100.",
+            "why": "One square centimetre covers a ten-by-ten grid of square millimetres.",
+            "kind": "area",
+            "explain": "7.5 cm² = 750 mm²."
+          },
+          "volume": {
+            "label": "Y7-051 · litres to millilitres",
+            "context": "Capacity conversion",
+            "short": "Capacity",
+            "story": "A jug contains 1.75 litres.",
+            "from": "L",
+            "to": "mL",
+            "amount": 1.75,
+            "factor": 1000,
+            "choices": [
+              "× 100",
+              "÷ 1,000",
+              "× 1,000"
+            ],
+            "correct": 2,
+            "relation": "1 L = 1,000 mL",
+            "rule": "Multiply litres by 1,000.",
+            "why": "Each litre contains exactly one thousand millilitres.",
+            "kind": "volume",
+            "explain": "1.75 L = 1,750 mL."
+          },
+          "euro": {
+            "label": "Y8-039 · pounds to euros",
+            "context": "Given currency rate",
+            "short": "Currency exchange",
+            "story": "Exchange £80 at the stated rate.",
+            "from": "GBP",
+            "to": "EUR",
+            "amount": 80,
+            "factor": 1.25,
+            "choices": [
+              "÷ 1.25",
+              "× 1.25",
+              "× 100"
+            ],
+            "correct": 1,
+            "relation": "GIVEN: £1 = €1.25",
+            "rule": "Multiply the pound amount by euros per pound.",
+            "why": "Each pound buys 1.25 euros at this stated example rate.",
+            "kind": "currency",
+            "explain": "£80 × 1.25 = €100. This is a teaching rate, not a live quote."
+          },
+          "speed": {
+            "label": "Y8-043 · km/h to m/s",
+            "context": "Compound speed",
+            "short": "Speed conversion",
+            "story": "A vehicle travels at 72 kilometres per hour.",
+            "from": "km/h",
+            "to": "m/s",
+            "amount": 72,
+            "factor": 0.2777777777777778,
+            "choices": [
+              "× 3.6",
+              "÷ 3.6",
+              "÷ 60"
+            ],
+            "correct": 1,
+            "relation": "1 km/h = 1 ÷ 3.6 m/s",
+            "rule": "Multiply kilometres by 1,000 and hours by 3,600: divide the speed by 3.6.",
+            "why": "Both the distance and the time units must change.",
+            "kind": "speed",
+            "explain": "72 km/h ÷ 3.6 = 20 m/s."
+          },
+          "density": {
+            "label": "Y9-024 · g/cm³ to kg/m³",
+            "context": "Mixed compound units",
+            "short": "Density conversion",
+            "story": "The density is 1.5 grams per cubic centimetre.",
+            "from": "g/cm³",
+            "to": "kg/m³",
+            "amount": 1.5,
+            "factor": 1000,
+            "choices": [
+              "× 100",
+              "× 1,000",
+              "÷ 1,000"
+            ],
+            "correct": 1,
+            "relation": "1 g/cm³ = 1,000 kg/m³",
+            "rule": "Change grams to kilograms AND cubic centimetres to cubic metres.",
+            "why": "1 g = 0.001 kg, but 1 cm³ = 0.000001 m³, so 0.001 ÷ 0.000001 = 1,000.",
+            "kind": "density",
+            "explain": "1.5 g/cm³ = 1,500 kg/m³."
+          },
+          "dollar": {
+            "label": "F18-09 / F6-12 · pounds to dollars",
+            "context": "Currency-exchange preset",
+            "short": "Exchange bridge",
+            "story": "Exchange £60 at the stated rate.",
+            "from": "GBP",
+            "to": "USD",
+            "amount": 60,
+            "factor": 1.3,
+            "choices": [
+              "× 0.77",
+              "× 1.30",
+              "× 100"
+            ],
+            "correct": 1,
+            "relation": "GIVEN: £1 = $1.30",
+            "rule": "Multiply pounds by the given dollars-per-pound rate.",
+            "why": "One pound converts to 1.30 dollars in this illustrative exercise.",
+            "kind": "currency",
+            "explain": "£60 × 1.30 = $78. This is a teaching rate, not a live quote."
+          }
+        }
+      }
+    },
+    "previous_sha256": "d728fee817fcb83a911e0ad2ee2c60d7b5a007d58b1d76fb50e17ee907c815f0",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-03",
+    "path": "F18/F18-03-analogue-clock.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "51a2ea181df878c9b978f13a460b30cb1c3701e7bcd45c30fb8e29a80631d759",
+    "sha256": "70a880cd3ad4cd91cf597302f4e99b1c76ff5b8bab252a4d8008acadf62bef62",
+    "engineId": "F18-03",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 171,
+        "checks": 171,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "70a880cd3ad4cd91cf597302f4e99b1c76ff5b8bab252a4d8008acadf62bef62"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Check the angles",
+        "pose": "celebrate",
+        "narration": "Between each hour number is thirty degrees. Each minute is six degrees. At seven twenty-five the hour hand has moved from seven.",
+        "prompt": "How could you find an angle between the hands?",
+        "say": "Calculate each hand’s angle from twelve. Remember that the hour hand moves continuously, then compare."
+      },
+      "scene": {
+        "function": "scene",
+        "arguments": {
+          "s": {
+            "p": {
+              "label": "Y7-050 · read an analogue clock",
+              "kind": "time",
+              "h": 8,
+              "m": 25,
+              "story": "Read the analogue clock accurately.",
+              "labelShort": "Reading the clock",
+              "say": "The long hand shows twenty-five minutes; the short hand has moved beyond seven."
+            },
+            "h": 12,
+            "m": 0
+          }
+        }
+      }
+    },
+    "previous_sha256": "8965dd8e615f047e5a2caf406a020a0404438a5e1075d9bece0e798d9b69380f",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-04",
+    "path": "F18/F18-04-timetable-reader.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps",
+      "tasks"
+    ],
+    "draws": {
+      "draw": [
+        "stage",
+        "s",
+        "o"
+      ],
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "chosen": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "s": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      }
+    },
+    "original_sha256": "eba978fd3e87d0c8c216d3bf69c115523097b441441f97135db925ecc27e17d2",
+    "sha256": "e23a9eb2d50165cb1331ca0958b3fde34f929143138b7ce21565f9c120d54125",
+    "engineId": "F18-04",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "e23a9eb2d50165cb1331ca0958b3fde34f929143138b7ce21565f9c120d54125"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Check the journey",
+        "pose": "celebrate",
+        "narration": "Forty-three minutes is the journey time. The answer is a duration, so it needs the unit minutes.",
+        "prompt": "Why must we put minutes after forty-three?",
+        "say": "Arrival time is a clock reading. Journey time is a duration: forty-three minutes."
+      },
+      "config": {
+        "startMode": "guided",
+        "preset": "bus",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "correct",
+          "hintUsed"
+        ],
+        "valueKeys": [
+          "preset",
+          "service",
+          "start",
+          "end",
+          "answer"
+        ],
+        "presets": {
+          "bus": {
+            "label": "Y7 · City bus timetable",
+            "short": "City bus route",
+            "places": [
+              "Maple Park",
+              "Library",
+              "Station",
+              "Leisure Ctr"
+            ],
+            "trips": [
+              [
+                496,
+                507,
+                522,
+                538
+              ],
+              [
+                525,
+                537,
+                552,
+                568
+              ],
+              [
+                555,
+                567,
+                582,
+                598
+              ]
+            ],
+            "names": [
+              "A",
+              "B",
+              "C"
+            ],
+            "from": 0,
+            "to": 3,
+            "selected": 0,
+            "context": "A bus stops at four points across town.",
+            "hint": "Read down ONE service column, never mix two different buses.",
+            "theme": "Journey duration"
+          },
+          "school": {
+            "label": "Y7 · School arrival deadline",
+            "short": "Get to school",
+            "places": [
+              "Hill Road",
+              "Town Square",
+              "Library",
+              "School"
+            ],
+            "trips": [
+              [
+                445,
+                459,
+                467,
+                480
+              ],
+              [
+                475,
+                489,
+                497,
+                510
+              ],
+              [
+                505,
+                519,
+                527,
+                540
+              ]
+            ],
+            "names": [
+              "A",
+              "B",
+              "C"
+            ],
+            "from": 0,
+            "to": 3,
+            "selected": 1,
+            "context": "Find a bus that reaches school by 08:30.",
+            "hint": "Compare the school arrival row with the deadline before choosing a departure.",
+            "theme": "Latest suitable departure"
+          },
+          "rail": {
+            "label": "Y7 · Train connection at a junction",
+            "short": "Change trains",
+            "places": [
+              "West End",
+              "Junction in",
+              "Junction out",
+              "Museum"
+            ],
+            "trips": [
+              [
+                550,
+                572,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                580,
+                605
+              ],
+              [
+                null,
+                null,
+                600,
+                625
+              ]
+            ],
+            "names": [
+              "A",
+              "B",
+              "C"
+            ],
+            "from": 1,
+            "to": 2,
+            "selected": 1,
+            "context": "Take train A to Junction, then connect to B or C.",
+            "hint": "A valid connection departs AFTER the first train arrives. The wait is departure minus arrival.",
+            "theme": "Connection wait"
+          },
+          "night": {
+            "label": "Y7 · Journey across midnight",
+            "short": "Overnight journey",
+            "places": [
+              "Harbour",
+              "Town Hall",
+              "Airport",
+              "Terminal"
+            ],
+            "trips": [
+              [
+                1400,
+                1434,
+                1454,
+                1469
+              ],
+              [
+                1415,
+                1438,
+                1458,
+                1473
+              ],
+              [
+                1430,
+                1453,
+                1473,
+                1488
+              ]
+            ],
+            "names": [
+              "A",
+              "B",
+              "C"
+            ],
+            "from": 0,
+            "to": 3,
+            "selected": 1,
+            "context": "These journeys cross midnight into the next day.",
+            "hint": "Keep the next-day hour above 24:00 when subtracting, then display the time as a 24-hour clock reading.",
+            "theme": "Next-day arrival"
+          },
+          "midday": {
+            "label": "Y7 · Reading times across noon",
+            "short": "Midday services",
+            "places": [
+              "Park",
+              "Town",
+              "River",
+              "Sports"
+            ],
+            "trips": [
+              [
+                715,
+                728,
+                743,
+                762
+              ],
+              [
+                745,
+                758,
+                773,
+                792
+              ],
+              [
+                775,
+                788,
+                803,
+                822
+              ]
+            ],
+            "names": [
+              "A",
+              "B",
+              "C"
+            ],
+            "from": 0,
+            "to": 3,
+            "selected": 0,
+            "context": "Track a bus from before noon into the afternoon.",
+            "hint": "12:00 is noon. 13:00 is one in the afternoon.",
+            "theme": "24-hour times"
+          }
+        }
+      }
+    },
+    "previous_sha256": "f4747d9b32c721a5fb549d7110da6991176b51249c23687b7cba9c68cdcf7885",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-05",
+    "path": "F18/F18-05-money-and-change.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "DENOMS",
+      "steps",
+      "tasks"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "watchRender.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "e05dd932ea61f1e48a128cc5dcf2fc27d9c3ef50c42f7bad06aa30e3dc037509",
+    "sha256": "7c72c1a252297d529e40c0d05c603f9d8d7437c9211c2a834cb8a706a9ddc9a1",
+    "engineId": "F18-05",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "7c72c1a252297d529e40c0d05c603f9d8d7437c9211c2a834cb8a706a9ddc9a1"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Check the answer",
+        "pose": "celebrate",
+        "narration": "Three pounds and sixty-five pence plus six pounds and thirty-five pence makes ten pounds. The change is correct.",
+        "prompt": "How can you prove the change is right?",
+        "say": "Check by adding the price and the change. We land back on ten pounds."
+      },
+      "config": {
+        "startMode": "guided",
+        "preset": "till",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "correct",
+          "hintUsed"
+        ],
+        "valueKeys": [
+          "preset",
+          "coin",
+          "amount",
+          "offer",
+          "answer"
+        ],
+        "presets": {
+          "till": {
+            "label": "Y7 · Correct change at the till",
+            "short": "Till · £10 payment",
+            "type": "change",
+            "cost": 636,
+            "paid": 1000,
+            "amount": 365,
+            "denoms": [
+              200,
+              100,
+              50,
+              20,
+              10,
+              5
+            ],
+            "caption": "Notebook and pencils",
+            "note": "Pay £10.00 for a £6.35 purchase. Build the change from the coins."
+          },
+          "cafe": {
+            "label": "Y7 · Notes, coins and mixed change",
+            "short": "Café · £20 payment",
+            "type": "change",
+            "cost": 1385,
+            "paid": 2000,
+            "amount": 615,
+            "denoms": [
+              500,
+              100,
+              50,
+              20,
+              10,
+              5
+            ],
+            "caption": "Lunch at the café",
+            "note": "A lunch costs £13.85. Pay with £20.00 and count back the change."
+          },
+          "unit": {
+            "label": "Y7 · Best buy and unit prices",
+            "short": "Shop · Best buy",
+            "type": "unit",
+            "amount": 5,
+            "offers": [
+              {
+                "name": "Pack A",
+                "count": 4,
+                "price": 320
+              },
+              {
+                "name": "Pack B",
+                "count": 6,
+                "price": 450
+              }
+            ],
+            "correctOffer": 1,
+            "denoms": [
+              100,
+              50,
+              20,
+              10,
+              5,
+              1
+            ],
+            "caption": "Compare yogurt multipacks",
+            "note": "Four yogurts cost £3.20; six cost £4.50. Compare the price PER yogurt."
+          },
+          "budget": {
+            "label": "Y8 · Wages and spending budget",
+            "short": "Budget · Weekly wages",
+            "type": "budget",
+            "gross": 9800,
+            "bills": 2565,
+            "amount": 7235,
+            "denoms": [
+              5000,
+              2000,
+              200,
+              100,
+              20,
+              10,
+              5
+            ],
+            "caption": "Weekly spending budget",
+            "note": "Your weekly wages are £98.00. Allow £25.65 for travel and food. What remains?"
+          },
+          "discount": {
+            "label": "Y8 · Sale price and change",
+            "short": "Sale · 15% discount",
+            "type": "discount",
+            "cost": 2000,
+            "percentage": 15,
+            "amount": 1700,
+            "denoms": [
+              1000,
+              500,
+              200,
+              100,
+              20,
+              10
+            ],
+            "caption": "Jacket sale",
+            "note": "A £20.00 jacket is reduced by 15%. Work out the new price, not the reduction."
+          },
+          "cash": {
+            "label": "Y8 · Checkout subtraction",
+            "short": "Checkout · £20 payment",
+            "type": "change",
+            "cost": 1290,
+            "paid": 2000,
+            "amount": 710,
+            "denoms": [
+              500,
+              200,
+              100,
+              50,
+              20,
+              10
+            ],
+            "caption": "Sports equipment",
+            "note": "The total is £12.90 and the customer pays £20.00. Count back exactly."
+          }
+        }
+      }
+    },
+    "previous_sha256": "bda7b5769785a98910604ceb606758581dfdb847715270adfd4189dbb46fbf16",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-06",
+    "path": "F18/F18-06-budget-and-payslip.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps",
+      "tasks"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "watchRender.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "c284a727751d3cb04e69cc51d477e747f35441e8edacf31d361abb9fb8e63c5c",
+    "sha256": "2defd33e7d82afb86aa3a5015ed879911dfa9784dac2460fdfe4b89b317d297f",
+    "engineId": "F18-06",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "2defd33e7d82afb86aa3a5015ed879911dfa9784dac2460fdfe4b89b317d297f"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Find money left and verify",
+        "pose": "celebrate",
+        "narration": "One hundred and six pounds, minus twenty-six pounds, leaves eighty pounds unallocated. Check by adding back the twenty-six pounds spent.",
+        "prompt": "How can you check the remaining balance?",
+        "say": "Add spending back to the remaining amount. Eighty pounds plus twenty-six pounds returns to net pay."
+      },
+      "config": {
+        "startMode": "guided",
+        "preset": "shift",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "correct",
+          "hintUsed"
+        ],
+        "valueKeys": [
+          "preset",
+          "allocation",
+          "answer",
+          "reset"
+        ],
+        "presets": {
+          "shift": {
+            "label": "First job · hourly wages",
+            "type": "wage",
+            "short": "First shift",
+            "hours": 12,
+            "rate": 950,
+            "gross": 11401,
+            "deds": [
+              [
+                "Example fee",
+                800
+              ]
+            ],
+            "costs": [
+              [
+                "Bus pass",
+                1700
+              ],
+              [
+                "Lunch",
+                900
+              ]
+            ],
+            "note": "Earn £9.50 for each of 12 hours. Subtract an example £8.00 deduction. Budget for transport and lunch."
+          },
+          "overtime": {
+            "label": "Overtime · two pay rates",
+            "type": "overtime",
+            "short": "Two pay rates",
+            "hours": 16,
+            "rate": 1150,
+            "extraHours": 4,
+            "extraRate": 1450,
+            "gross": 24200,
+            "deds": [
+              [
+                "Example 10%",
+                2420
+              ]
+            ],
+            "costs": [
+              [
+                "Travel",
+                3850
+              ],
+              [
+                "Food",
+                2325
+              ]
+            ],
+            "note": "Work 16 hours at £11.50 and four overtime hours at £14.50. The 10% example deduction is not a real payroll rule."
+          },
+          "payslip": {
+            "label": "Payslip · two deductions",
+            "type": "payslip",
+            "short": "Payslip details",
+            "gross": 42000,
+            "deds": [
+              [
+                "Pension",
+                2100
+              ],
+              [
+                "Example tax",
+                3360
+              ]
+            ],
+            "costs": [
+              [
+                "Travel",
+                3250
+              ],
+              [
+                "Food",
+                6890
+              ],
+              [
+                "Phone",
+                1200
+              ]
+            ],
+            "note": "Read each separate line on an illustrative payslip. Find take-home pay after both deductions."
+          },
+          "weekly": {
+            "label": "Weekly budget · three expenses",
+            "type": "budget",
+            "short": "Weekly budget",
+            "gross": 31500,
+            "deds": [
+              [
+                "Pension",
+                1500
+              ],
+              [
+                "Example fee",
+                750
+              ]
+            ],
+            "costs": [
+              [
+                "Household",
+                11200
+              ],
+              [
+                "Shopping",
+                4380
+              ],
+              [
+                "Phone",
+                1250
+              ]
+            ],
+            "note": "Take-home pay funds everyday expenses. Only subtract spending after finding net pay."
+          },
+          "savings": {
+            "label": "Savings plan · fixed amount",
+            "type": "budget",
+            "short": "Savings plan",
+            "gross": 31000,
+            "deds": [],
+            "costs": [
+              [
+                "Housing",
+                8500
+              ],
+              [
+                "Food",
+                4500
+              ],
+              [
+                "Travel",
+                3000
+              ],
+              [
+                "Savings",
+                7500
+              ]
+            ],
+            "note": "Savings is an allocation of income. Include it when finding unallocated money."
+          },
+          "percent": {
+            "label": "GCSE bridge · percentage deduction",
+            "type": "percent",
+            "short": "7% pay deduction",
+            "hours": 24,
+            "rate": 1120,
+            "gross": 26880,
+            "deds": [
+              [
+                "Example 7%",
+                1882
+              ],
+              [
+                "Fixed fee",
+                500
+              ]
+            ],
+            "costs": [
+              [
+                "Travel",
+                4500
+              ],
+              [
+                "Food",
+                3650
+              ],
+              [
+                "Phone",
+                1200
+              ]
+            ],
+            "note": "Seven percent of £268.80 is £18.816. Round to the nearest penny: £18.82. These deductions are fictional examples."
+          }
+        }
+      }
+    },
+    "previous_sha256": "3f9781f09a051f6ab3d42c5fda9790660224ebab2a053cbbba4a7e464b2c8294",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-07",
+    "path": "F18/F18-07-interest-growth-chart.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps",
+      "tasks"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "values": {
+        "kind": "value",
+        "factory": null,
+        "argCount": null
+      },
+      "watch.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "cda3282e2fc16525c64c78846ed4c9f99513137c9b5d299ccb5b21b039ffaa42",
+    "sha256": "7fdb15da4fc1e105114c0fcc272b71e7642cc2355bdd9e06fdcb1a012dd7b7e8",
+    "engineId": "F18-07",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 173,
+        "checks": 173,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "7fdb15da4fc1e105114c0fcc272b71e7642cc2355bdd9e06fdcb1a012dd7b7e8"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Calculate, compare and verify",
+        "pose": "celebrate",
+        "narration": "After five years, simple interest is fifty pounds. The compound gain, with annual penny rounding, is fifty-five pounds and twenty-seven pence.",
+        "prompt": "What must you add to either interest amount to find the final savings balance?",
+        "say": "Add the original two hundred pounds to the interest gained. Never confuse interest with final balance."
+      },
+      "config": {
+        "preset": "first",
+        "startMode": "guided",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "correct",
+          "hintUsed"
+        ],
+        "valueKeys": [
+          "preset",
+          "principal",
+          "rate",
+          "years",
+          "yearSelection",
+          "reset",
+          "answer"
+        ],
+        "presets": {
+          "first": {
+            "label": "First savings · 5% for 5 years",
+            "p": 20001,
+            "bp": 500,
+            "years": 5,
+            "desc": "Start with £200 and earn five percent each year. Simple interest always uses the original £200."
+          },
+          "holiday": {
+            "label": "Holiday fund · 8% for 3 years",
+            "p": 15000,
+            "bp": 800,
+            "years": 3,
+            "desc": "A £150 savings goal earns eight percent. Compare the same yearly add-on with interest on the growing balance."
+          },
+          "regular": {
+            "label": "Junior saver · 3% for 5 years",
+            "p": 40000,
+            "bp": 300,
+            "years": 5,
+            "desc": "Small annual percentages still build over time. Calculate three percent of the original £400."
+          },
+          "smaller": {
+            "label": "Low rate · 2% for 4 years",
+            "p": 80000,
+            "bp": 200,
+            "years": 4,
+            "desc": "Two percent of £800 is £16. The simple-interest amount repeats every year."
+          },
+          "gcse": {
+            "label": "GCSE extension · 6% for 5 years",
+            "p": 120000,
+            "bp": 600,
+            "years": 5,
+            "desc": "With compound interest, each new yearly percentage is calculated on the updated balance."
+          }
+        }
+      }
+    },
+    "previous_sha256": "49fa9222932c3c2c0bd69acf81766ad4d9df591ac2bb2b7abb3b5b23e73c7db4",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-08",
+    "path": "F18/F18-08-compound-measures.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "steps",
+      "tasks"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "watch.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "taskState.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 2
+      }
+    },
+    "original_sha256": "ed766c227250f2338e5ca72af3a8fc291234da75e0239de2ed550f458f7871f6",
+    "sha256": "439ddd0c6322cf1a7528a8ec6c51168439bc67b692102ea7590eb1c3135fa1c9",
+    "engineId": "F18-08",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "439ddd0c6322cf1a7528a8ec6c51168439bc67b692102ea7590eb1c3135fa1c9"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Generalise and transfer",
+        "pose": "celebrate",
+        "narration": "To find the top quantity, multiply the two bottom quantities. To find either bottom quantity, divide the top by the other bottom.",
+        "prompt": "How would you find mass from density and volume?",
+        "say": "The same structure works for density and pressure. Keep your units consistent."
+      },
+      "config": {
+        "preset": "speed",
+        "startMode": "guided",
+        "events": [
+          "value",
+          "step",
+          "mode",
+          "correct",
+          "hintUsed"
+        ],
+        "valueKeys": [
+          "preset",
+          "variable",
+          "operand",
+          "operandRemoved",
+          "reset",
+          "answer"
+        ],
+        "presets": {
+          "speed": {
+            "label": "Speed · distance and time",
+            "topic": "speed",
+            "top": "Distance",
+            "left": "Speed",
+            "right": "Time",
+            "syms": [
+              "D",
+              "S",
+              "T"
+            ],
+            "values": [
+              151,
+              60,
+              2.5
+            ],
+            "units": [
+              "km",
+              "km h⁻¹",
+              "h"
+            ],
+            "target": 1,
+            "description": "A train travels 150 kilometres in 2.5 hours. Speed is distance divided by time.",
+            "hint": "Start with distance travelled, then divide by the time in hours."
+          },
+          "density": {
+            "label": "Density · mass and volume",
+            "topic": "density",
+            "top": "Mass",
+            "left": "Density",
+            "right": "Volume",
+            "syms": [
+              "m",
+              "ρ",
+              "V"
+            ],
+            "values": [
+              540,
+              2.7,
+              200
+            ],
+            "units": [
+              "g",
+              "g cm⁻³",
+              "cm³"
+            ],
+            "target": 1,
+            "description": "A metal piece has mass 540 grams and volume 200 cubic centimetres. Density is mass per unit volume.",
+            "hint": "Divide the mass by the volume, using matching units."
+          },
+          "conversion": {
+            "label": "Convert rates · km/h to m/s",
+            "topic": "conversion",
+            "top": "Speed in km/h",
+            "left": "Speed in m/s",
+            "right": "Conversion factor",
+            "syms": [
+              "km/h",
+              "m/s",
+              "k"
+            ],
+            "values": [
+              90,
+              25,
+              3.6
+            ],
+            "units": [
+              "km h⁻¹",
+              "m s⁻¹",
+              ""
+            ],
+            "target": 1,
+            "description": "Convert 90 kilometres per hour to metres per second. The factor is 3.6 because 1 kilometre is 1000 metres and 1 hour is 3600 seconds.",
+            "hint": "To change km/h to m/s, divide the number by 3.6."
+          },
+          "multistep": {
+            "label": "Two-step speed · minutes to hours",
+            "topic": "speed",
+            "top": "Distance",
+            "left": "Speed",
+            "right": "Time",
+            "syms": [
+              "D",
+              "S",
+              "T"
+            ],
+            "values": [
+              36,
+              48,
+              0.75
+            ],
+            "clockMinutes": 45,
+            "units": [
+              "km",
+              "km h⁻¹",
+              "h"
+            ],
+            "target": 1,
+            "description": "A cyclist covers 36 kilometres in 45 minutes. Convert 45 minutes to 0.75 hours before dividing.",
+            "hint": "Convert minutes into hours first; 45 minutes is 0.75 hours."
+          },
+          "mass": {
+            "label": "Find mass · density × volume",
+            "topic": "density",
+            "top": "Mass",
+            "left": "Density",
+            "right": "Volume",
+            "syms": [
+              "m",
+              "ρ",
+              "V"
+            ],
+            "values": [
+              20,
+              800,
+              0.025
+            ],
+            "units": [
+              "kg",
+              "kg m⁻³",
+              "m³"
+            ],
+            "target": 0,
+            "description": "A liquid occupies 0.025 cubic metres and has density 800 kilograms per cubic metre. Multiply density by volume to obtain its mass.",
+            "hint": "When finding the top quantity, multiply the two bottom quantities."
+          },
+          "pressure": {
+            "label": "Pressure · force and area",
+            "topic": "pressure",
+            "top": "Force",
+            "left": "Pressure",
+            "right": "Area",
+            "syms": [
+              "F",
+              "P",
+              "A"
+            ],
+            "values": [
+              250,
+              500,
+              0.5
+            ],
+            "units": [
+              "N",
+              "Pa",
+              "m²"
+            ],
+            "target": 1,
+            "description": "A force of 250 newtons acts over an area of 0.5 square metres. Pressure is force divided by area.",
+            "hint": "Pressure in pascals equals newtons divided by square metres."
+          }
+        }
+      }
+    },
+    "previous_sha256": "cd692c6983dbf9234990fd44fb969afb439eff0a0173f97333aeb98ea5512a79",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-10",
+    "path": "F18/F18-10-estimating-in-context.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "presets",
+      "tests",
+      "steps"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "watch.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "276fa55c6ab8df31a4813c6b7740331a887ac19907ed31afc76e2057e737ab0e",
+    "sha256": "89faa2716d37c4949d3781cb2f98cd507d5e0ff129400f5604b1fe19e348bcfd",
+    "engineId": "F18-10",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "89faa2716d37c4949d3781cb2f98cd507d5e0ff129400f5604b1fe19e348bcfd"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Compare and transfer",
+        "pose": "celebrate",
+        "narration": "The exact calculation gives a little more than our estimate. Estimation helps check whether a later exact result is reasonable.",
+        "prompt": "What would make a predicted mass ten times too large?",
+        "say": "Check the place value: one wrong zero can make a prediction ten times too large."
+      },
+      "scene": {
+        "function": "scene",
+        "arguments": {
+          "s": {
+            "p": {
+              "label": "Deliveries · rounded mass",
+              "context": "A school delivery has six full crates and a partially filled crate, equal to 6.1 full-crate loads. One full crate weighs 19.8 kg.",
+              "a": 20.8,
+              "b": 6.1,
+              "round": [
+                20,
+                6
+              ],
+              "bad": [
+                2,
+                60
+              ],
+              "op": "×",
+              "unit": "kg",
+              "sig": "Round to easy whole numbers",
+              "topic": "Delivery mass",
+              "illustration": "crates",
+              "why": "Round the mass to twenty kilograms and the number of crates to six. Multiply to make a quick prediction.",
+              "speech": "A delivery contains about six crates at about twenty kilograms each. That is roughly one hundred and twenty kilograms."
+            },
+            "slots": [
+              null,
+              null
+            ]
+          }
+        }
+      }
+    },
+    "previous_sha256": "5f40c6c05737c3c1362418370922cedce95cfa268517903745f1ef6f1bb6ae1e",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-11",
+    "path": "F18/F18-11-bounds-and-accuracy.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "presets",
+      "tasks",
+      "steps"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "watch.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "fca07dfb0d8864d51b5ea090f62cf83b85c43957efe20fed21293498a9de823e",
+    "sha256": "109e37e3e0096af5e1de0e6f513b9594bec2876b6d1eef3165082e66e3f254ff",
+    "engineId": "F18-11",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 173,
+        "checks": 173,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "109e37e3e0096af5e1de0e6f513b9594bec2876b6d1eef3165082e66e3f254ff"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Transfer to another accuracy",
+        "pose": "celebrate",
+        "narration": "The same idea works for decimals and for rounding to ten or one hundred. Change the rounding step, then halve it.",
+        "prompt": "What changes if a measurement is given to the nearest tenth?",
+        "say": "For tenths, the halfway margin is zero point zero five. The rule still works."
+      },
+      "config": {
+        "preset": "ruler",
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "hintUsed",
+          "mode"
+        ],
+        "valueKeys": [
+          "preset",
+          "lowerMarker",
+          "upperMarker",
+          "reset",
+          "answer",
+          "removed"
+        ],
+        "presets": {
+          "ruler": {
+            "label": "Length · nearest centimetre",
+            "v": 12,
+            "step": 1,
+            "u": "cm",
+            "context": "A pencil is recorded as 12 cm to the nearest centimetre.",
+            "ext": null
+          },
+          "decimal": {
+            "label": "Length · nearest tenth",
+            "v": 3.7,
+            "step": 0.1,
+            "u": "m",
+            "context": "A ribbon is recorded as 3.7 m to the nearest tenth of a metre.",
+            "ext": null
+          },
+          "mass": {
+            "label": "Mass · nearest 10 grams",
+            "v": 250,
+            "step": 10,
+            "u": "g",
+            "context": "A parcel has a recorded mass of 250 g to the nearest 10 g.",
+            "ext": null
+          },
+          "map": {
+            "label": "Distance · nearest 100 metres",
+            "v": 1200,
+            "step": 100,
+            "u": "m",
+            "context": "A map records a distance of 1,200 m to the nearest 100 m.",
+            "ext": null
+          },
+          "rectangle": {
+            "label": "Area · two rounded lengths",
+            "v": 8,
+            "step": 1,
+            "u": "m",
+            "context": "One side of a rectangle measures 8 m and the other measures 5 m, each to the nearest metre.",
+            "ext": {
+              "kind": "area",
+              "other": 6,
+              "otherStep": 1
+            }
+          },
+          "speed": {
+            "label": "Speed · limits from measurements",
+            "v": 2,
+            "step": 0.1,
+            "u": "h",
+            "context": "A journey takes 2.0 h to the nearest 0.1 h; the distance is 120 km to the nearest kilometre.",
+            "ext": {
+              "kind": "speed",
+              "distance": 120,
+              "distanceStep": 1
+            }
+          }
+        },
+        "challengeTasks": [
+          {
+            "key": "ruler",
+            "v": 16,
+            "step": 1,
+            "u": "cm",
+            "q": "A board measures 16 cm to the nearest centimetre. Find its lower and upper bounds."
+          },
+          {
+            "key": "decimal",
+            "v": 5.3,
+            "step": 0.1,
+            "u": "m",
+            "q": "A rope is 5.3 m to the nearest tenth of a metre. Find its error interval."
+          },
+          {
+            "key": "mass",
+            "v": 470,
+            "step": 10,
+            "u": "g",
+            "q": "A package is 470 g to the nearest 10 g. Give the bounds."
+          },
+          {
+            "key": "map",
+            "v": 1800,
+            "step": 100,
+            "u": "m",
+            "q": "A road is measured as 1,800 m to the nearest 100 m. Give its error interval."
+          },
+          {
+            "key": "rectangle",
+            "v": 9,
+            "step": 1,
+            "u": "m",
+            "ext": {
+              "kind": "area",
+              "other": 4,
+              "otherStep": 1
+            },
+            "q": "A garden length is 9 m, rounded to the nearest metre. Give the bounds of this length."
+          },
+          {
+            "key": "speed",
+            "v": 3.2,
+            "step": 0.1,
+            "u": "h",
+            "ext": {
+              "kind": "speed",
+              "distance": 150,
+              "distanceStep": 1
+            },
+            "q": "A journey time is 3.2 h to the nearest 0.1 h. Give the bounds of the time."
+          }
+        ],
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "30c5a5da6c9a56c7bbecf4af3907fd5f78d223f5cae49b2ca4e8046177745570",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  },
+  {
+    "id": "F18-12",
+    "path": "F18/F18-12-standard-unit-stories.html",
+    "api": "1.0.0",
+    "models": [],
+    "tables": [
+      "presets",
+      "tasks",
+      "steps"
+    ],
+    "draws": {
+      "scene": [
+        "stage",
+        "s",
+        "o"
+      ]
+    },
+    "exploreFields": {
+      "s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      },
+      "watch.s": {
+        "kind": "factory",
+        "factory": "state",
+        "argCount": 1
+      }
+    },
+    "original_sha256": "c4668418585b96699679b64bd10b7e4871bad0e9f434c3eadf63dd7d6b2d12ea",
+    "sha256": "68f1d7fe928b468052e8f1bee74c6ebb19a8c144d9c4c63a4fb036e675ea1c63",
+    "engineId": "F18-12",
+    "nativeFieldsByStep": [
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ],
+      [
+        "name",
+        "pose",
+        "narration",
+        "prompt",
+        "say"
+      ]
+    ],
+    "verification": {
+      "nativeModes": true,
+      "nativeSteps": 6,
+      "templateLearn": true,
+      "templateExplore": true,
+      "templateChallengeWrongHold": true,
+      "templateChallengeCorrectAdvance": true,
+      "templateExamples": true,
+      "templateBob": true,
+      "numberOrPropertyChange": true,
+      "utilityDemo": false,
+      "motionQueueDrained": true,
+      "f16F18Production": {
+        "passed": 172,
+        "checks": 172,
+        "evidence": "audit/f16-f18-production-2026-10-17/release-browser.json",
+        "sourceSha256": "68f1d7fe928b468052e8f1bee74c6ebb19a8c144d9c4c63a4fb036e675ea1c63"
+      }
+    },
+    "verifiedBinding": {
+      "nativeIndex": 5,
+      "data": {
+        "name": "Transfer to area and volume",
+        "pose": "celebrate",
+        "narration": "For area, the length scale factor must be squared. For volume, it must be cubed. A squared or cubed unit changes more quickly than a length.",
+        "prompt": "Why does a square metre contain ten thousand square centimetres?",
+        "say": "Remember: length times one hundred, area times ten thousand, volume times one million."
+      },
+      "config": {
+        "preset": "desk",
+        "events": [
+          "value",
+          "correct",
+          "step",
+          "hintUsed",
+          "mode"
+        ],
+        "valueKeys": [
+          "preset",
+          "tilePlaced",
+          "tileRemoved",
+          "reset",
+          "answer"
+        ],
+        "presets": {
+          "desk": {
+            "label": "Desk length · m to cm",
+            "title": "Measuring a desk",
+            "story": "A long studio desk measures 2.6 metres. How many centimetres is that?",
+            "from": 2.6,
+            "fu": "m",
+            "tu": "cm",
+            "factor": 100,
+            "kind": "length",
+            "operation": "×",
+            "tip": "One metre contains one hundred centimetres. Multiply the metres by one hundred.",
+            "decor": "desk"
+          },
+          "trail": {
+            "label": "Walking route · km to m",
+            "title": "Walking-route sign",
+            "story": "A sign gives a walking distance of 1.75 kilometres. Express the distance in metres.",
+            "from": 1.75,
+            "fu": "km",
+            "tu": "m",
+            "factor": 1000,
+            "kind": "length",
+            "operation": "×",
+            "tip": "One kilometre contains one thousand metres.",
+            "decor": "trail"
+          },
+          "floor": {
+            "label": "Room floor · m² to cm²",
+            "title": "Tiling the classroom",
+            "story": "A floor section covers 2.4 square metres. How many square centimetres is that?",
+            "from": 2.4,
+            "fu": "m²",
+            "tu": "cm²",
+            "factor": 10000,
+            "kind": "area",
+            "operation": "×",
+            "tip": "A square metre is one hundred centimetres by one hundred centimetres, so there are ten thousand square centimetres.",
+            "decor": "floor"
+          },
+          "poster": {
+            "label": "Poster area · cm² to m²",
+            "title": "Designing a poster wall",
+            "story": "A poster design occupies 6,500 square centimetres. Express the area in square metres.",
+            "from": 6500,
+            "fu": "cm²",
+            "tu": "m²",
+            "factor": 10000,
+            "kind": "area",
+            "operation": "÷",
+            "tip": "To change square centimetres into square metres, divide by ten thousand.",
+            "decor": "poster"
+          },
+          "crate": {
+            "label": "Storage box · m³ to cm³",
+            "title": "Packing a storage box",
+            "story": "A storage crate has a volume of 0.035 cubic metres. Express this in cubic centimetres.",
+            "from": 0.035,
+            "fu": "m³",
+            "tu": "cm³",
+            "factor": 1000001,
+            "kind": "volume",
+            "operation": "×",
+            "tip": "A cubic metre contains one hundred by one hundred by one hundred cubic centimetres: one million.",
+            "decor": "crate"
+          },
+          "water": {
+            "label": "Drinks dispenser · L to mL",
+            "title": "Filling a drinks dispenser",
+            "story": "A drinks dispenser contains 1.8 litres of water. How many millilitres is that?",
+            "from": 1.8,
+            "fu": "L",
+            "tu": "mL",
+            "factor": 1000,
+            "kind": "capacity",
+            "operation": "×",
+            "tip": "One litre equals one thousand millilitres.",
+            "decor": "water"
+          }
+        },
+        "challengeTasks": [
+          {
+            "key": "desk",
+            "from": 3.7,
+            "story": "A wooden shelf is 3.7 m long. Give the length in cm."
+          },
+          {
+            "key": "trail",
+            "from": 2.45,
+            "story": "A cycle path is 2.45 km long. Give its length in m."
+          },
+          {
+            "key": "floor",
+            "from": 1.8,
+            "story": "A floor mat covers 1.8 m². Give its area in cm²."
+          },
+          {
+            "key": "poster",
+            "from": 45000,
+            "story": "An exhibition panel covers 45,000 cm². Give its area in m²."
+          },
+          {
+            "key": "crate",
+            "from": 0.024,
+            "story": "A case encloses 0.024 m³. Give its volume in cm³."
+          },
+          {
+            "key": "water",
+            "from": 2.75,
+            "story": "A jug holds 2.75 L. Give its capacity in mL."
+          }
+        ],
+        "startMode": "guided"
+      }
+    },
+    "previous_sha256": "a2539aaa59567cbf6efb444ed7c1bd752e7a265f574327aae29c332cdffacd6a",
+    "challengeReady": true,
+    "status": "production-verified within documented native limits",
+    "productionRevision": "2026-10-17"
+  }
+]

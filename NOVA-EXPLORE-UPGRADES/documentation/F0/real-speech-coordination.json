@@ -1,0 +1,181 @@
+[
+  {
+    "name": "Real narration starts and keeps the visual beat active",
+    "pass": true,
+    "detail": {
+      "state": {
+        "concept": 0,
+        "index": 0,
+        "playing": true,
+        "paused": false,
+        "ready": true,
+        "boardHeight": 596
+      },
+      "text": "5 + 0.5 = 5.5",
+      "events": [
+        {
+          "type": "start",
+          "at": 1313.9000000059605,
+          "index": 0,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 1319.199999988079,
+          "index": 0,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 1458.0999999940395,
+          "index": 0,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 1649.300000011921,
+          "index": 4,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 1946.4000000059605,
+          "index": 10,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        }
+      ]
+    }
+  },
+  {
+    "name": "Real speech pause holds the mathematical state",
+    "pass": true,
+    "detail": {
+      "state": {
+        "concept": 0,
+        "index": 0,
+        "playing": true,
+        "paused": true,
+        "ready": true,
+        "boardHeight": 596
+      },
+      "paused": true,
+      "text": "5 + 0.5 = 5.5"
+    }
+  },
+  {
+    "name": "Real speech end completes coordinated visual progression",
+    "pass": true,
+    "detail": {
+      "events": [
+        {
+          "type": "start",
+          "at": 1313.9000000059605,
+          "index": 0,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 1319.199999988079,
+          "index": 0,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 1458.0999999940395,
+          "index": 0,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 1649.300000011921,
+          "index": 4,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 1946.4000000059605,
+          "index": 10,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 2292.9000000059605,
+          "index": 16,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 2492.800000011921,
+          "index": 21,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 2796.0999999940395,
+          "index": 23,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 2943.5999999940395,
+          "index": 26,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 3186.0999999940395,
+          "index": 26,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 3592,
+          "index": 26,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 4791.4000000059605,
+          "index": 31,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 4892.199999988079,
+          "index": 31,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 5191.800000011921,
+          "index": 38,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "boundary",
+          "at": 5292,
+          "index": 42,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        },
+        {
+          "type": "end",
+          "at": 6618.699999988079,
+          "index": 0,
+          "text": "The point moves from 5 to 5.5. Follow the movement."
+        }
+      ],
+      "state": {
+        "concept": 0,
+        "index": 1,
+        "playing": true,
+        "paused": false,
+        "ready": true,
+        "boardHeight": 596
+      }
+    }
+  },
+  {
+    "name": "Stop cancels real narration and leaves playback stopped",
+    "pass": true
+  }
+]
