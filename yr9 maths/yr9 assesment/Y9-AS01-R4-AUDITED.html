@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en-GB" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="NOVA Maths V2 Assessment Studio — five-page assessment template">
+<title>NOVA Maths V2 | Assessment Studio</title>
+<style>
+:root{
+ --math-blue:#367dff; --math-cyan:#2bdcf3; --math-orange:#ff873d; --math-purple:#8b6bf1;
+ --math-green:#4fe2a1; --math-gold:#ffcc58; --math-red:#ff6577;
+ --shell-page:#050914; --shell-page-2:#07111e; --shell-top:#07111d;
+ --shell-surface:#0a1625; --shell-surface-2:#0e1c2d; --shell-surface-3:#111f31;
+ --shell-canvas:#081523; --shell-text:#eef7ff; --shell-ink:#d4e5f4;
+ --shell-muted:#9bb2c7; --shell-line:#20384f; --input:#101f31; --input-border:#2b465e;
+ --shadow:0 18px 50px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{margin:0;background:radial-gradient(ellipse at 12% 0,rgba(54,125,255,.13),transparent 29%),radial-gradient(ellipse at 90% 14%,rgba(43,220,243,.055),transparent 31%),linear-gradient(180deg,var(--shell-page),var(--shell-page-2));background-attachment:fixed;color:var(--shell-ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed;opacity:.5}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--math-gold);outline-offset:3px}
+[hidden]{display:none!important}
+h1,h2,h3{color:var(--shell-text);line-height:1.22;letter-spacing:-.02em}
+p{margin:.6rem 0}
+small,.muted{color:var(--shell-muted)}
+.shell{width:min(1240px,calc(100% - 30px));margin:16px auto 65px}
+.topbar{position:sticky;z-index:30;top:8px;border:1px solid var(--shell-line);background:rgba(7,17,29,.97);border-radius:19px;box-shadow:var(--shadow);backdrop-filter:blur(14px);overflow:hidden}
+.brand-row{display:flex;align-items:center;gap:15px;padding:14px 18px}
+.brandmark{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;border:1px solid #437fd4;background:linear-gradient(135deg,#1f57ac,#102b60);color:#fff;font-weight:900;font-size:.78rem;letter-spacing:.065em;flex:none}
+.brandtext{flex:1;min-width:170px}.brandtext .eyebrow{display:block;color:var(--math-cyan);letter-spacing:.15em;text-transform:uppercase;font-size:.66rem;font-weight:900}.brandtext h1{font-size:1.18rem;margin:2px 0 1px}.brandtext .subtitle{font-size:.77rem;color:var(--shell-muted);margin:0}
+.righthead{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.pill{border:1px solid #33536b;background:#0e2538;border-radius:99px;padding:5px 10px;font-size:.74rem;font-weight:850;color:#cce6f5;white-space:nowrap}
+.pill.orange{border-color:#805632;color:#ffca97;background:rgba(255,135,61,.09)}
+.save{color:#a1dccc;font-size:.73rem;text-align:right}
+.nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;padding:9px 12px 12px;border-top:1px solid var(--shell-line)}
+.nav button{min-height:40px;padding:8px 4px;border-radius:10px;background:#0c2031;border:1px solid #233d54;color:#9fbad0;font-size:.84rem;font-weight:800;transition:background .15s,border .15s}
+.nav button:hover:not(:disabled){background:#143048}.nav button.active{background:linear-gradient(135deg,#173a53,#0e3443);border-color:#23bcd3;color:#f1fcff;box-shadow:inset 0 -2px 0 #30cce5}
+.nav button:disabled{opacity:.42}
+.banner{display:flex;gap:13px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;margin:23px 0 14px}
+.banner .eyebrow{color:var(--math-orange);font-weight:900;letter-spacing:.13em;text-transform:uppercase;font-size:.75rem}
+.banner h2{font-size:clamp(1.52rem,3vw,2.2rem);margin:4px 0}.banner .sub{color:var(--shell-muted);font-size:.92rem;margin:0}
+.demo-label{border:1px dashed #967344;color:#ffda96;padding:6px 10px;border-radius:9px;background:#2a241b;font-size:.74rem;font-weight:800}
+.card{background:linear-gradient(145deg,#0c1c2c,#0a1625);border:1px solid var(--shell-line);border-radius:18px;padding:22px;box-shadow:0 9px 24px rgba(0,0,0,.12)}
+.card h3{font-size:1.1rem;margin:0 0 9px}.card.secondary{background:#0a1727}
+.bob{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:15px;align-items:center;margin:0 0 18px;padding:17px 19px;border:1px solid #286079;border-left:4px solid var(--math-cyan);border-radius:16px;background:linear-gradient(105deg,rgba(25,92,115,.28),rgba(10,27,43,.85))}
+.bobmark{width:57px;height:57px;border:2px solid #2bc7df;border-radius:50%;background:#0c253b;display:grid;place-items:center;color:#d3f8ff;font-size:.83rem;letter-spacing:.1em;font-weight:1000;flex:none}
+.bob small{color:var(--math-cyan);font-weight:900;text-transform:uppercase;letter-spacing:.09em}.bob p{margin:3px 0;color:#e0f0ff}.bob strong{color:#fff}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border-radius:10px;border:1px solid #386180;background:#102a40;color:#edf7ff;font-weight:850;min-height:42px;padding:10px 16px;text-decoration:none}
+.btn:hover:not(:disabled){filter:brightness(1.18)}.btn.primary{background:linear-gradient(135deg,#19708c,#135170);border-color:#35c4de;color:#fff}
+.btn.warm{background:linear-gradient(135deg,#edb959,#d8a349);color:#142035;border-color:#f2ce81}
+.btn.ghost{background:transparent;border-color:#2d485e;color:#c4d9e9}.btn.danger{border-color:#825059;color:#ffc2c5;background:#2c1720}
+.btn.small{font-size:.79rem;min-height:36px;padding:7px 11px}
+button[aria-pressed="true"].btn.ghost{border-color:var(--math-gold);color:#ffdda1;background:#302a1a}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 19px}.stat{min-width:0;padding:20px 16px;border:1px solid #2a506a;background:#0c2133;border-radius:15px}.stat strong{display:block;font-size:2.3rem;line-height:1.14;color:#f8fcff;letter-spacing:-.045em}.stat span{display:block;margin-top:6px;font-size:.78rem;color:#a9c4d5;font-weight:800;text-transform:uppercase;letter-spacing:.035em;overflow-wrap:anywhere}
+.stack{display:grid;gap:17px}.cols2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.checklist li::marker{color:var(--math-cyan)}
+.kicker{color:var(--math-cyan);font-weight:900;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}
+.section-title{margin:4px 0 12px;font-size:1.25rem}
+.instructions{color:#bbd2e4}.inline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.action-row{display:flex;align-items:center;justify-content:space-between;gap:11px;flex-wrap:wrap;margin-top:19px}
+.question-layout{display:grid;grid-template-columns:minmax(0,1fr) 295px;gap:17px;align-items:start}
+.question-card{min-width:0;padding:26px}.qid{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+.qmeta{display:flex;gap:8px;flex-wrap:wrap}.mini-pill{padding:4px 9px;background:#11283a;color:#adc9dc;border:1px solid #2b506a;border-radius:8px;font-size:.75rem;font-weight:800}
+.qstem{font-size:clamp(1.2rem,2.3vw,1.6rem);margin:10px 0 20px;color:#f5fbff;line-height:1.42;white-space:pre-wrap}
+.answer-title{color:#a8cadd;font-size:.74rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;margin:0 0 9px}
+.answerbox{background:#081725;border-radius:13px;border:1px solid #2a475f;padding:17px;margin-top:10px}
+.answerbox input[type="text"],.answerbox textarea{display:block;width:100%;background:var(--input);color:#f2f8ff;border:1px solid var(--input-border);border-radius:10px;padding:12px 13px;font-size:1rem}
+.answerbox textarea{min-height:115px;resize:vertical}
+.answerbox label{display:block;font-size:.9rem;color:#cbdce9;margin-bottom:10px}
+.choice{display:flex!important;align-items:center;gap:12px;margin:8px 0!important;border:1px solid #2d475d;padding:12px 14px;border-radius:10px;cursor:pointer;background:#102239;min-height:47px}
+.choice:hover{border-color:#4d819e}.choice:has(input:checked){border-color:var(--math-cyan);background:#113349}
+.choice input{accent-color:#22cfe4;width:18px;height:18px;flex:none}.choice span{color:#e7f2ff;font-weight:650}
+.workbox{margin-top:18px;padding:15px;background:#0c1b2a;border:1px solid #263f54;border-radius:12px}
+.workbox summary{cursor:pointer;font-weight:800;color:#bdd9e9}.workbox textarea{width:100%;resize:vertical;min-height:92px;margin-top:12px;padding:12px;background:#0b2335;border:1px solid #33566f;color:#ebf8ff;border-radius:9px}
+.question-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;border-top:1px solid #223b50;margin-top:25px}
+.aside{position:sticky;top:168px}.aside h3{margin:0 0 9px}.progress{height:11px;border-radius:99px;overflow:hidden;background:#173045;border:1px solid #34546a}.bar{height:100%;width:0%;background:linear-gradient(90deg,#2f85bd,#31d4e5);transition:width .2s ease}
+.statline{display:flex;justify-content:space-between;gap:7px;margin:8px 0;font-size:.82rem}.statline strong{color:#eff7ff}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px;font-size:.73rem;color:#c0d3e1}.dot{display:inline-block;width:8px;height:8px;border-radius:99px;vertical-align:middle;margin-right:5px;background:#385469}.dot.done{background:#4fe2a1}.dot.flag{background:#ffcc58}
+.navigator{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:17px}
+.qjump{height:36px;min-width:0;border-radius:8px;border:1px solid #365169;background:#142a3b;color:#afc4d4;font-weight:850;font-size:.85rem;position:relative}
+.qjump.answered{border-color:#2b9275;background:#103c35;color:#b6f4db}.qjump.flagged::after{content:"";position:absolute;top:3px;right:3px;background:#ffca5a;width:6px;height:6px;border-radius:50%}.qjump.current{outline:2px solid #29dcf4;outline-offset:1px;color:#fff}
+.review-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.reviewq{width:100%;min-width:0;overflow-wrap:anywhere;padding:11px 5px;border-radius:10px;text-align:center;border:1px solid #39536d;background:#11243a;color:#d8edff;font-size:.89rem;font-weight:800}.reviewq.answered{border-color:#27866e;background:#0e3530}.reviewq.flagged{box-shadow:inset 0 0 0 1px #c49443}.reviewq small{display:block;font-size:.68rem;font-weight:650}
+.notice{padding:13px 15px;margin-top:14px;border:1px solid #646048;border-left:4px solid #f1bb66;background:#272314;border-radius:12px;color:#f5dfb9;font-size:.88rem}
+.notice.info{border-color:#2b5772;border-left-color:#23cde2;background:#102637;color:#c7ecf6}.notice.ok{border-color:#236b56;border-left-color:#4fe2a1;background:#0d2b28;color:#b9f5df}
+.checkbox{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid #40596b;border-radius:12px;background:#0e2234;margin-top:16px}.checkbox input{accent-color:#24cee4;width:20px;height:20px;flex:none;margin-top:2px}
+.results-top{display:grid;grid-template-columns:1fr 1fr;gap:16px}.score{font-size:clamp(2.2rem,5vw,3.3rem);font-weight:900;color:#fff;line-height:1.16}.score small{font-size:.9rem;color:#b1c9d9;letter-spacing:0}
+.resultline{margin:10px 0;border-bottom:1px solid #23435a;padding-bottom:10px;display:flex;justify-content:space-between;gap:10px}
+.resultline strong{color:#effaff}.status-panel{padding:13px 14px;border:1px solid #276b68;background:#0b2c32;border-radius:12px;color:#d4f8ee}
+.topicrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;border-bottom:1px solid #233c52;padding:12px 0}.topicrow strong{color:#e5f6ff}.topicrow:last-child{border:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.footer{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #20384f;margin-top:27px;padding:16px 3px;color:#8da9bf;font-size:.75rem;flex-wrap:wrap}
+@media(max-width:940px){.aside{position:static}.question-layout{grid-template-columns:1fr}.aside .navigator{grid-template-columns:repeat(9,1fr)}.righthead{justify-content:flex-start}.brand-row{flex-wrap:wrap}}
+@media(max-width:620px){.shell{width:calc(100% - 16px);margin-top:8px}.topbar{position:static}.brand-row{padding:12px}.brandmark{width:44px;height:44px}.brandtext h1{font-size:1.02rem}.righthead{width:100%;justify-content:space-between}.nav{gap:4px;padding:6px}.nav button{font-size:.68rem;min-height:43px;padding:4px 2px}.banner{margin-top:17px}.card,.question-card{padding:15px}.bob{grid-template-columns:auto 1fr;gap:10px;padding:12px}.bobmark{width:45px;height:45px}.bob .listen{grid-column:2;justify-self:start}.stats{gap:7px}.stat{padding:14px 10px}.stat strong{font-size:1.65rem}.stat span{font-size:.65rem}.cols2,.results-top{grid-template-columns:1fr}.aside .navigator,.review-grid{grid-template-columns:repeat(6,1fr)}.qid{align-items:flex-start}.question-footer .btn{flex:1}.footer{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{body{background:#fff!important;color:#111!important}.topbar,.bob,.action-row,.footer,.btn,.aside,.banner .demo-label{display:none!important}.card{box-shadow:none;border:1px solid #888;color:#111}.card h3,h1,h2,h3{color:#111}.shell{width:100%}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+  <div class="brand-row">
+    <div class="brandmark" aria-label="NOVA Academy">NOVA</div>
+    <div class="brandtext"><span class="eyebrow">Maths V2 · Assessment Studio</span><h1 id="brandTitle">Number sense and calculation</h1><p class="subtitle" id="brandMeta">Year 7 · Y7-AS01</p></div>
+    <div class="righthead"><span class="pill orange" id="statusPill">Assessment preview</span><span class="pill" id="totalPill">18 questions</span><span class="save" id="saveStatus" role="status" aria-live="polite">Local preview</span></div>
+  </div>
+  <nav class="nav" aria-label="Assessment pages">
+    <button data-page="brief" aria-current="page" type="button">1 · Brief</button>
+    <button data-page="questions" type="button">2 · Questions</button>
+    <button data-page="review" type="button">3 · Review</button>
+    <button data-page="handin" type="button">4 · Hand In</button>
+    <button data-page="results" type="button">5 · Results</button>
+  </nav>
+</header>
+<div class="banner">
+  <div><div class="eyebrow" id="pageEyebrow">Get ready</div><h2 id="pageTitle">Your assessment brief</h2><p class="sub" id="pageSubtitle">A chance to show what you know, at your own pace.</p></div>
+  <div id="demoTag" class="demo-label">TEMPLATE PREVIEW · DEMONSTRATION QUESTIONS</div>
+</div>
+<section class="bob" aria-label="Bob's page guidance">
+  <div class="bobmark" aria-hidden="true">BOB</div>
+  <div><small>Bob · Your NOVA Maths tutor</small><p id="bobMessage">Ready to get started? I'll explain how this works.</p></div>
+  <button id="playBob" class="btn small listen" type="button" aria-label="Read Bob's message aloud">▶ Listen to Bob</button>
+</section>
+<main id="main" tabindex="-1">
+  <section id="page-brief" class="stack" aria-label="Assessment brief">
+    <div class="stats"><div class="stat"><strong id="briefCount">18</strong><span>Questions</span></div><div class="stat"><strong id="briefMarks">20</strong><span>Available marks</span></div><div class="stat"><strong id="briefYear">Year 7</strong><span>KS3 Maths</span></div></div>
+    <div class="cols2"><div class="card"><div class="kicker">Your focus</div><h3 id="briefTitle">Number sense and calculation</h3><p id="briefCoverage" class="instructions"></p><div class="notice info">This is a supportive check of your understanding, not a timed exam. Take your time and use what you have learned.</div></div>
+      <div class="card"><div class="kicker">How it works</div><h3>Five things to know</h3><ul class="checklist"><li>Answer the questions independently.</li><li>Use <strong>Listen</strong> if you'd like a question read aloud.</li><li>You can change an answer before handing in.</li><li>Flag a question to return to it later.</li><li>Review your work, then hand in when ready.</li></ul></div></div>
+    <div class="card"><h3>Ready when you are</h3><p class="instructions">Bob will help you navigate, but won't give away mathematical answers while you're completing the assessment.</p>
+      <div class="action-row"><div><label for="previewSelect" class="kicker" id="previewLabel">Preview another assessment size</label><div><select id="previewSelect" style="max-width:100%;margin-top:6px;background:#102436;border:1px solid #36566b;color:#e8f6ff;border-radius:9px;padding:9px 12px"></select></div></div><button class="btn primary" id="beginButton" type="button">Begin questions →</button></div>
+    </div>
+  </section>
+  <section id="page-questions" class="stack" aria-label="Assessment questions" hidden>
+    <div class="question-layout">
+      <div class="card question-card"><div class="qid"><div><div class="kicker" id="questionNumber">Question 1 of 18</div><div class="qmeta" id="questionTags"></div></div><button class="btn small ghost" type="button" id="flagButton" aria-pressed="false">☆ Flag for review</button></div>
+        <h3 class="qstem" id="questionStem" tabindex="-1">Question</h3>
+        <div class="inline"><button id="readQuestion" class="btn small" type="button">▶ Listen to question</button><span id="voiceStatus" class="muted" role="status" aria-live="polite" style="font-size:.77rem"></span></div>
+        <div class="answerbox"><div class="answer-title">Your answer</div><div id="answerHost"></div></div>
+        <details class="workbox"><summary>Show your working / notes (optional)</summary><label for="working" class="sr-only">Working or notes</label><textarea id="working" placeholder="You can jot down your method here. It is saved with your answer."></textarea></details>
+        <div class="question-footer"><button class="btn ghost" id="prevQuestion" type="button">← Previous</button><button class="btn" id="nextQuestion" type="button">Next question →</button><button class="btn primary" id="reviewFromQuestion" type="button">Review answers</button></div>
+      </div>
+      <aside class="card aside" aria-label="Question progress and navigator"><h3>Your progress</h3><div class="progress" role="progressbar" aria-label="Questions answered" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar"><div class="bar" id="progressFill"></div></div><div class="statline"><span>Answered</span><strong id="answeredCount">0 / 18</strong></div><div class="statline"><span>Flagged for review</span><strong id="flaggedCount">0</strong></div><div class="legend"><span><i class="dot done"></i>Answered</span><span><i class="dot flag"></i>Flagged</span><span><i class="dot"></i>Not yet answered</span></div><div id="questionNav" class="navigator" aria-label="Jump to question"></div><div class="notice info">You can come back to any question before handing in.</div></aside>
+    </div>
+  </section>
+  <section id="page-review" class="stack" aria-label="Review your answers" hidden>
+    <div class="stats"><div class="stat"><strong id="reviewAnswered">0</strong><span>Answered</span></div><div class="stat"><strong id="reviewUnanswered">18</strong><span>Unanswered</span></div><div class="stat"><strong id="reviewFlagged">0</strong><span>Flagged</span></div></div>
+    <div class="card"><div class="kicker">A final check</div><h3 class="section-title">Review your questions</h3><p class="instructions">Choose any question to return to it. Green means you entered an answer; a gold outline means you've flagged it.</p><div class="review-grid" id="reviewGrid"></div><div class="action-row"><button class="btn ghost" id="reviewBack" type="button">← Back to questions</button><button class="btn primary" id="reviewNext" type="button">Continue to hand in →</button></div></div>
+  </section>
+  <section id="page-handin" class="stack" aria-label="Hand in assessment" hidden>
+    <div class="cols2"><div class="card"><div class="kicker">Your hand-in summary</div><h3 class="section-title">Check everything is ready</h3><div class="resultline"><span>Questions answered</span><strong id="handAnswered">0</strong></div><div class="resultline"><span>Still unanswered</span><strong id="handUnanswered">18</strong></div><div class="resultline"><span>Flagged</span><strong id="handFlagged">0</strong></div><div class="notice" id="unansweredNotice">There are unanswered questions. You can return to them before handing in.</div></div>
+      <div class="card"><div class="kicker">Finish with confidence</div><h3 class="section-title">Ready to hand in?</h3><p class="instructions">Once you hand in, your answers are locked and your results page opens. Some reasoning answers may need a teacher or parent to review them.</p>
+        <div id="handinModeNote" class="notice info">Template preview: handing in is simulated on this device. No results are sent to NOVA.</div>
+        <label class="checkbox"><input id="confirmHandin" type="checkbox"><span>I've reviewed my answers and I'm ready to hand in.</span></label>
+        <div class="action-row"><button id="handBack" class="btn ghost" type="button">← Check answers</button><button id="submitButton" class="btn warm" type="button" disabled>Hand in assessment</button></div>
+      </div></div>
+  </section>
+  <section id="page-results" class="stack" aria-label="Assessment results" hidden>
+    <div class="results-top"><div class="card"><div class="kicker">Your assessment summary</div><h3 class="section-title" id="resultHeading">Well done for giving it a go</h3><div class="score" id="resultScore">–</div><p id="resultScoreCaption" class="muted"></p><div class="status-panel" id="resultStatus"></div></div>
+      <div class="card"><div class="kicker">Your next steps</div><h3 class="section-title">What to do next</h3><p id="resultAdvice" class="instructions"></p><div class="notice info">Your assessment is meant to show what you know and where more practice could help. One score never tells the whole story.</div></div></div>
+    <div class="card"><h3 class="section-title">By topic</h3><div id="topicResults"></div><p class="muted" id="topicNote" style="font-size:.8rem"></p><div class="action-row"><button class="btn" type="button" id="downloadReport">Download results JSON</button><button class="btn ghost" type="button" id="startNewPreview">Reset this preview</button></div></div>
+  </section>
+</main>
+<div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+<footer class="footer"><span>NOVA Academy · Maths V2 · Assessment Studio</span><span>Dark Maths identity · No component visuals · Keyboard and reduced-motion friendly</span></footer>
+</div>
+<script id="nova-assessment-data" type="application/json">{"schema":"nova-maths-assessment-v1","mode":"production","assessmentId":"Y9-AS01","version":"Y9-AS01-question-set-v1.0-run4-audited","questions":[{"id":"Q01","section":"Fluency","topic":"Real numbers, powers, accuracy and FDP operators","lessonRefs":["Y9-001"],"marks":1,"type":"mcq","stem":"Which is an irrational real number?","correctAnswer":"c","options":[{"id":"a","text":"0.125"},{"id":"b","text":"-7"},{"id":"c","text":"√7"},{"id":"d","text":"3/11"}]},{"id":"Q02","section":"Fluency","topic":"Real numbers, powers, accuracy and FDP operators","lessonRefs":["Y9-002"],"marks":1,"type":"numeric","stem":"Evaluate 3³ + √81.","correctAnswer":"36","tolerance":0},{"id":"Q03","section":"Application","topic":"Real numbers, powers, accuracy and FDP operators","lessonRefs":["Y9-004"],"marks":2,"type":"written","stem":"A metal rod is recorded as 12.6 cm to the nearest 0.1 cm. State the lower and upper bounds for its actual length, including which endpoint is included."},{"id":"Q04","section":"Fluency","topic":"Real numbers, powers, accuracy and FDP operators","lessonRefs":["Y9-005"],"marks":1,"type":"numeric","stem":"Calculate 125% of 64.","correctAnswer":"80","tolerance":0},{"id":"Q05","section":"Application","topic":"Real numbers, powers, accuracy and FDP operators","lessonRefs":["Y9-002"],"marks":1,"type":"mcq","stem":"A square has area 20 cm². Which is its exact side length?","correctAnswer":"b","options":[{"id":"a","text":"4.47 cm"},{"id":"b","text":"√20 cm"},{"id":"c","text":"10 cm"},{"id":"d","text":"20 cm"}]},{"id":"Q06","section":"Application","topic":"Real numbers, powers, accuracy and FDP operators","lessonRefs":["Y9-005"],"marks":1,"type":"numeric","stem":"A club increases its 240 members by 15%. How many members does it have afterwards?","correctAnswer":"276","tolerance":0},{"id":"Q07","section":"Reasoning","topic":"Real numbers, powers, accuracy and FDP operators","lessonRefs":["Y9-004"],"marks":3,"type":"written","stem":"A rectangle has sides recorded as 8.0 cm and 5.0 cm, each to the nearest 0.1 cm. Someone claims its actual area must be exactly 40 cm². Explain why this is not justified, and give an interval for its possible area."},{"id":"Q08","section":"Reasoning","topic":"Real numbers, powers, accuracy and FDP operators","lessonRefs":["Y9-001"],"marks":2,"type":"written","stem":"A student says: “Every decimal that goes on forever is irrational.” Explain the error and give one counterexample."},{"id":"Q09","section":"Fluency","topic":"Fractional indices","lessonRefs":["Y9-003"],"marks":1,"type":"numeric","stem":"Calculate 64^(2/3). Enter a whole number.","correctAnswer":"16","tolerance":0},{"id":"Q10","section":"Application","topic":"Fractional indices","lessonRefs":["Y9-003"],"marks":1,"type":"mcq","stem":"A cube has volume 125 cm³. Which power of 125 gives the length of one edge in cm?","correctAnswer":"b","options":[{"id":"a","text":"125²"},{"id":"b","text":"125^(1/3)"},{"id":"c","text":"125^(3/2)"},{"id":"d","text":"125^(-1)"}]},{"id":"Q11","section":"Fluency","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-006"],"marks":1,"type":"mcq","stem":"Which expression is equivalent to 3(2x − 5) + 2x for every x?","correctAnswer":"d","options":[{"id":"a","text":"6x − 13"},{"id":"b","text":"8x + 15"},{"id":"c","text":"5x − 15"},{"id":"d","text":"8x − 15"}]},{"id":"Q12","section":"Fluency","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-007"],"marks":1,"type":"mcq","stem":"A taxi charges £4 at the start and £2.50 per mile for m miles. Which formula gives its fare F in pounds?","correctAnswer":"a","options":[{"id":"a","text":"F = 4 + 2.5m"},{"id":"b","text":"F = 6.5m"},{"id":"c","text":"F = 4m + 2.5"},{"id":"d","text":"F = 4 + m/2.5"}]},{"id":"Q13","section":"Fluency","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-008"],"marks":1,"type":"numeric","stem":"The first five terms of a sequence are 2, 5, 10, 17, 26. What is the sixth term?","correctAnswer":"37","tolerance":0},{"id":"Q14","section":"Fluency","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-009"],"marks":1,"type":"numeric","stem":"A point (−3, y) lies on y = 2x + 1. Find y.","correctAnswer":"-5","tolerance":0},{"id":"Q15","section":"Fluency","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-010"],"marks":1,"type":"numeric","stem":"For the line y = −3x + 7, enter the gradient.","correctAnswer":"-3","tolerance":0},{"id":"Q16","section":"Application","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-007"],"marks":3,"type":"written","stem":"A gym charges a £12 joining fee and £8 for each class attended. Define a variable and write a formula for the total cost. Use it to find the cost of seven classes."},{"id":"Q17","section":"Application","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-009"],"marks":1,"type":"mcq","stem":"A delivery route follows y = −2x + 4. Which point lies on it?","correctAnswer":"c","options":[{"id":"a","text":"(−1, 0)"},{"id":"b","text":"(2, 2)"},{"id":"c","text":"(3, −2)"},{"id":"d","text":"(0, −4)"}]},{"id":"Q18","section":"Application","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-010"],"marks":1,"type":"numeric","stem":"Two water tanks follow A = 3t + 8 and B = 5t + 2, where t is time in minutes. After how many minutes do they contain equal amounts?","correctAnswer":"3","tolerance":0},{"id":"Q19","section":"Reasoning","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-006"],"marks":3,"type":"written","stem":"Someone checks x = 2 and concludes x(x + 3) = x² + 3x is always true. Explain whether the identity is true and why checking one value alone is not a proof."},{"id":"Q20","section":"Reasoning","topic":"Algebraic equivalence, modelling, coordinates and equations","lessonRefs":["Y9-008"],"marks":3,"type":"written","stem":"A growing pattern has totals 3, 6, 11, 18, 27. Explain how the first and second differences help you predict the next total, and give that total."}]}</script>
+<script id="nova-assessment-catalog" type="application/json">[{"id":"Y7-AS01","year":7,"title":"Number sense and calculation","after":"Y7-012","count":18},{"id":"Y7-AS02","year":7,"title":"Factors, fractions and percentages","after":"Y7-027","count":18},{"id":"Y7-AS03","year":7,"title":"Algebra, sequences and graphs","after":"Y7-039","count":18},{"id":"Y7-AS04","year":7,"title":"Angles, shapes and measures","after":"Y7-051","count":20},{"id":"Y7-AS05","year":7,"title":"Transformations, ratio and financial maths","after":"Y7-064","count":18},{"id":"Y7-AS06","year":7,"title":"Year 7 cumulative assessment","after":"Y7-077","count":36},{"id":"Y8-AS01","year":8,"title":"Indices, number and accuracy","after":"Y8-010","count":18},{"id":"Y8-AS02","year":8,"title":"Algebra and linear relationships","after":"Y8-023","count":18},{"id":"Y8-AS03","year":8,"title":"Graphs and relationships","after":"Y8-033","count":18},{"id":"Y8-AS04","year":8,"title":"Proportion, rates and early geometry","after":"Y8-049","count":20},{"id":"Y8-AS05","year":8,"title":"Constructions, transformations and 3-D measures","after":"Y8-063","count":18},{"id":"Y8-AS06","year":8,"title":"Year 8 cumulative assessment","after":"Y8-073","count":36},{"id":"Y9-AS01","year":9,"title":"Number and algebra mastery","after":"Y9-010","count":20},{"id":"Y9-AS02","year":9,"title":"Functions and modelling","after":"Y9-018","count":18},{"id":"Y9-AS03","year":9,"title":"Proportional reasoning and rates","after":"Y9-024","count":18},{"id":"Y9-AS04","year":9,"title":"Geometric reasoning and trigonometry","after":"Y9-033","count":18},{"id":"Y9-AS05","year":9,"title":"Circles, 3-D measures and proof","after":"Y9-041","count":18},{"id":"Y9-AS06","year":9,"title":"Year 9 cumulative assessment","after":"Y9-052","count":36}]</script>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id), CATALOG=JSON.parse($('nova-assessment-catalog').textContent);
+const DATA=JSON.parse($('nova-assessment-data').textContent);
+const PAGES=['brief','questions','review','handin','results'];
+const CONFIG={schema:'nova-maths-assessment-v1', maxQuestions:36};
+const findMeta=id=>CATALOG.find(x=>x.id===id);
+const demo=DATA.mode==='preview';
+if(DATA.schema!==CONFIG.schema)throw new Error('Unsupported assessment data schema');
+let meta=findMeta(DATA.assessmentId);
+if(!meta)throw new Error('Assessment ID not present in canonical NOVA assessment catalog');
+const safeNum=x=>Number.isFinite(+x)?+x:0;
+function demoItems(id,count){
+  const seed=Array.from(id).reduce((a,c)=>a+c.charCodeAt(0),0);
+  const out=[];
+  for(let i=0;i<count;i++){
+    const a=18+((seed+i*17)%67), b=3+((seed+i*11)%29), k=i+1;
+    let q={id:'Q'+String(k).padStart(2,'0'),section:k<=Math.round(count*.45)?'Fluency':k<=Math.round(count*.8)?'Application':'Reasoning',topic:['Number','Calculation','Reasoning'][i%3],lessonRefs:[],marks:1,type:'numeric',stem:`Calculate ${a} + ${b}.`,correctAnswer:String(a+b)};
+    if(i%7===3){q={...q,marks:2,type:'written',stem:`Explain how you could check that ${a} + ${b} = ${a+b}.`,correctAnswer:undefined};}
+    else if(i%5===1){let correct=a*b; q={...q,type:'mcq',stem:`What is ${a} × ${b}?`,correctAnswer:'right',options:[{id:'a',text:String(a+b)},{id:'right',text:String(correct)},{id:'c',text:String(correct+a)},{id:'d',text:String(correct+b)}]};}
+    else if(i%6===2){const n=[1,2,3,4][(i+seed)%4],d=[3,5,7,9][(i+seed)%4];q={...q,type:'fraction',stem:`Simplify the fraction ${n*2}/${d*2}.`,correctAnswer:`${n}/${d}`,requireSimplest:true};}
+    else if(i%5===4){q={...q,type:'numeric',stem:`Calculate ${a} − ${b}.`,correctAnswer:String(a-b)};}
+    out.push(q);
+  }
+  return out;
+}
+function validateQuestions(arr, expected){
+  if(!Array.isArray(arr)||arr.length!==expected)throw new Error('Question count must equal the approved curriculum count: '+expected);
+  const seen=new Set();
+  arr.forEach((q,i)=>{
+    if(!q||typeof q!=='object'||!q.id||seen.has(q.id)||!['numeric','fraction','mcq','written'].includes(q.type)||!q.stem||!Number.isInteger(q.marks)||q.marks<1)throw new Error('Invalid question data at position '+(i+1));
+    seen.add(q.id);
+    if(q.type==='mcq'&&(!Array.isArray(q.options)||q.options.length<2||!q.options.some(o=>o.id===q.correctAnswer)))throw new Error('Invalid multiple choice options at '+q.id);
+    if(q.type!=='written'&&q.correctAnswer===undefined)throw new Error('Missing marking key at '+q.id);
+  });
+}
+let questions=demo?demoItems(meta.id,meta.count):DATA.questions;
+validateQuestions(questions,meta.count);
+let active='brief',index=0,state,saveEnabled=true;
+const key=()=>['nova','maths','assessment','v1',demo?'demo':'production',meta.id,DATA.version||'1'].join(':');
+const fresh=()=>({answers:{},working:{},flags:{},handedIn:false,submittedAt:null,lastIndex:0});
+function load(){
+ state=fresh();
+ try{let raw=localStorage.getItem(key());if(raw){let stored=JSON.parse(raw);if(stored&&typeof stored==='object')state={...state,...stored};}}
+ catch(e){saveEnabled=false;}
+ index=Math.max(0,Math.min(questions.length-1,safeNum(state.lastIndex)));
+}
+function save(){
+ state.lastIndex=index;
+ try{localStorage.setItem(key(),JSON.stringify(state));$('saveStatus').textContent='Saved on this device';saveEnabled=true;}
+ catch(e){saveEnabled=false;$('saveStatus').textContent='Not saved · keep this tab open';}
+}
+function answer(q){return String(state.answers[q.id]??'').trim()}
+function isAnswered(q){return answer(q).length>0}
+function counts(){let answered=questions.filter(isAnswered).length,flagged=questions.filter(q=>state.flags[q.id]).length;return {answered,unanswered:questions.length-answered,flagged}}
+function escapeMathSpeech(s){return String(s).replaceAll('×',' multiplied by ').replaceAll('÷',' divided by ').replaceAll('−',' minus ').replaceAll('=',' equals ').replaceAll('≤',' is less than or equal to ').replaceAll('≥',' is greater than or equal to ').replaceAll('²',' squared ').replaceAll('³',' cubed ').replace(/(\d+)\s*\/\s*(\d+)/g,'$1 over $2');}
+let speech=null;
+function stopSpeech(){if('speechSynthesis' in window){try{window.speechSynthesis.cancel()}catch(e){}}speech=null;$('playBob').textContent='▶ Listen to Bob';$('readQuestion').textContent='▶ Listen to question';}
+function speak(text,button){
+ if(!('speechSynthesis' in window)){if(button=== $('readQuestion'))$('voiceStatus').textContent='Speech not supported on this device.';else $('saveStatus').textContent='Speech unavailable in this browser';return;}
+ stopSpeech();
+ if(!text)return;
+ const utterance=new SpeechSynthesisUtterance(escapeMathSpeech(text));utterance.lang='en-GB';utterance.rate=.93;utterance.pitch=1;
+ const voices=window.speechSynthesis.getVoices()||[];
+ const ryan=voices.find(v=>/ryan/i.test(v.name)&&/en[-_]gb/i.test(v.lang||''))||voices.find(v=>/ryan/i.test(v.name));
+ const fallback=voices.find(v=>/en[-_]gb/i.test(v.lang||''));
+ utterance.voice=ryan||fallback||null;
+ const msg=ryan?'Ryan voice':fallback?'UK voice fallback':'Device speech voice';
+ if(button===$('readQuestion'))$('voiceStatus').textContent=msg;
+ button.textContent='■ Stop audio';
+ speech=utterance;
+ utterance.onend=utterance.onerror=()=>{if(speech===utterance){speech=null;button.textContent=button===$('playBob')?'▶ Listen to Bob':'▶ Listen to question';}};
+ try{window.speechSynthesis.speak(utterance)}catch(e){button.textContent=button===$('playBob')?'▶ Listen to Bob':'▶ Listen to question';}
+}
+const PAGE_COPY={
+ brief:['Get ready','Your assessment brief','A chance to show what you know, at your own pace.',"Hi! I'm Bob. This is a chance to see how much you remember. There is no rush. I'll show you how to find questions and hand in your answers."],
+ questions:['Show what you know','Your questions','Take your time. You can move between questions in any order.',"You're doing the thinking now! Read each question carefully. If you're unsure, flag it and try the next one. You can return before handing in."],
+ review:['Look back','Review your answers','Check unfinished questions and anything you flagged.',"Nice work getting this far. Have a look at any unanswered or flagged questions. If you want to change something, jump back in and give it another go."],
+ handin:['One final check','Ready to hand in?','Check your progress before submitting your work.',"You've worked through your assessment. Make sure you're happy with your answers. When you're ready, hand it in and we'll look at what you've learned."],
+ results:['Well done','Your results and next steps','Use the feedback to decide what to practise next.',"Well done for completing this assessment. The important thing is what you've learned and what you can improve next. Let's look at your progress together."]
+};
+function pageTo(page){
+ if(!PAGES.includes(page))return;
+ if(state.handedIn&&page!=='results')return;
+ if(!state.handedIn&&page==='results')return;
+ stopSpeech();active=page;
+ PAGES.forEach(p=>{$('page-'+p).hidden=p!==page;const btn=document.querySelector(`[data-page="${p}"]`);btn.classList.toggle('active',p===page);btn.setAttribute('aria-current',p===page?'page':'false');btn.disabled=(p==='results'&&!state.handedIn)||(state.handedIn&&p!=='results');});
+ const [eyebrow,title,subtitle,bob]=PAGE_COPY[page];$('pageEyebrow').textContent=eyebrow;$('pageTitle').textContent=title;$('pageSubtitle').textContent=subtitle;$('bobMessage').textContent=bob;
+ if(page==='questions')renderQuestion();if(page==='review')renderReview();if(page==='handin')renderHandin();if(page==='results')renderResults();
+ window.scrollTo({top:0,behavior:'instant'});$('announcer').textContent=title;
+}
+function shuffledOptions(q){
+ const o=q.options.slice();let seed=Array.from(meta.id+q.id).reduce((v,c)=>((v*31+c.charCodeAt(0))>>>0),1729);
+ for(let i=o.length-1;i>0;i--){seed=(1664525*seed+1013904223)>>>0;const j=seed%(i+1);[o[i],o[j]]=[o[j],o[i]];}return o;
+}
+function renderQuestion(){
+ const q=questions[index], c=counts();$('questionNumber').textContent=`Question ${index+1} of ${questions.length}`;$('questionStem').textContent=q.stem;
+ const tags=$('questionTags');tags.replaceChildren();[q.section||'Question',`${q.marks} ${q.marks===1?'mark':'marks'}`].forEach(t=>{const e=document.createElement('span');e.className='mini-pill';e.textContent=t;tags.append(e)});
+ const fl=!!state.flags[q.id];$('flagButton').setAttribute('aria-pressed',String(fl));$('flagButton').textContent=fl?'★ Flagged':'☆ Flag for review';
+ const host=$('answerHost');host.replaceChildren();
+ const current=answer(q);
+ if(q.type==='mcq'){
+  shuffledOptions(q).forEach((opt,n)=>{
+   const lab=document.createElement('label');lab.className='choice';const radio=document.createElement('input');radio.type='radio';radio.name='response-'+q.id;radio.value=opt.id;radio.checked=current===String(opt.id);
+   const txt=document.createElement('span');txt.textContent=String.fromCharCode(65+n)+'.  '+opt.text;lab.append(radio,txt);host.append(lab);
+   radio.addEventListener('change',()=>setAnswer(q,radio.value));
+  });
+ }else{
+  const label=document.createElement('label');label.htmlFor='currentAnswer';label.textContent=q.type==='written'?'Write your explanation':q.type==='fraction'?'Enter a fraction (for example 3/4)':'Type your answer';
+  const field=document.createElement(q.type==='written'?'textarea':'input');field.id='currentAnswer';field.value=current;field.autocomplete='off';field.spellcheck=q.type==='written';
+  if(q.type!=='written'){field.type='text';field.inputMode='decimal';field.placeholder=q.type==='fraction'?'e.g. 3/4':'Enter your answer';}else field.placeholder='Explain your reasoning here…';
+  field.addEventListener('input',()=>setAnswer(q,field.value));host.append(label,field);
+ }
+ $('working').value=state.working[q.id]||'';
+ $('prevQuestion').disabled=index===0;$('nextQuestion').disabled=index===questions.length-1;
+ $('progressFill').style.width=100*c.answered/questions.length+'%';$('progressBar').setAttribute('aria-valuenow',String(Math.round(100*c.answered/questions.length)));
+ $('answeredCount').textContent=`${c.answered} / ${questions.length}`;$('flaggedCount').textContent=String(c.flagged);renderNav();$('voiceStatus').textContent='';
+}
+function setAnswer(q,value){state.answers[q.id]=value;save();const c=counts();$('progressFill').style.width=100*c.answered/questions.length+'%';$('progressBar').setAttribute('aria-valuenow',String(Math.round(100*c.answered/questions.length)));$('answeredCount').textContent=`${c.answered} / ${questions.length}`;renderNav()}
+function renderNav(){const host=$('questionNav');host.replaceChildren();questions.forEach((q,i)=>{const b=document.createElement('button');b.type='button';b.className='qjump'+(isAnswered(q)?' answered':'')+(state.flags[q.id]?' flagged':'')+(i===index?' current':'');b.textContent=String(i+1);b.title=`Question ${i+1}: ${isAnswered(q)?'answered':'unanswered'}${state.flags[q.id]?', flagged':''}`;b.setAttribute('aria-label',b.title);if(i===index)b.setAttribute('aria-current','true');b.addEventListener('click',()=>goQuestion(i));host.append(b)})}
+function goQuestion(i){if(state.handedIn)return;index=Math.max(0,Math.min(questions.length-1,i));save();pageTo('questions')}
+function renderReview(){const c=counts();$('reviewAnswered').textContent=String(c.answered);$('reviewUnanswered').textContent=String(c.unanswered);$('reviewFlagged').textContent=String(c.flagged);const host=$('reviewGrid');host.replaceChildren();questions.forEach((q,i)=>{const b=document.createElement('button');b.type='button';b.className='reviewq'+(isAnswered(q)?' answered':'')+(state.flags[q.id]?' flagged':'');const one=document.createElement('span');one.textContent='Q'+(i+1);const status=document.createElement('small');status.textContent=isAnswered(q)?'Answered':'No answer';b.append(one,status);b.title=(state.flags[q.id]?'Flagged · ':'')+status.textContent;b.addEventListener('click',()=>goQuestion(i));host.append(b)})}
+function renderHandin(){const c=counts();$('handAnswered').textContent=`${c.answered} / ${questions.length}`;$('handUnanswered').textContent=String(c.unanswered);$('handFlagged').textContent=String(c.flagged);$('unansweredNotice').textContent=c.unanswered?`${c.unanswered} question${c.unanswered===1?' is':'s are'} unanswered. That's okay if you're ready, but you can return to them first.`:'All questions have an answer. You can still go back and check any you have flagged.';$('confirmHandin').checked=false;$('submitButton').disabled=true;if(!demo&&typeof window.NOVA_ASSESSMENT_SUBMIT!=='function'){$('handinModeNote').textContent='Hand-in integration not connected. Production assessments cannot be submitted until the NOVA backend submission handler is installed.';$('confirmHandin').disabled=true;}else{$('confirmHandin').disabled=false;if(!demo)$('handinModeNote').textContent='Hand in securely through NOVA when you are ready.';}}
+function normNum(s){const n=Number(String(s).replace(/[,£$\s]/g,''));return String(s).trim()!==''&&Number.isFinite(n)?n:null}
+function fraction(s){const x=String(s).trim().replace(/\s+/g,'').match(/^(-?\d+)\/(-?\d+)$/);if(!x||+x[2]===0)return null;return [+x[1],+x[2]]}
+function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){const t=b;b=a%b;a=t;}return a;}
+function isCorrect(q,value){
+ if(q.type==='mcq')return value===String(q.correctAnswer);
+ if(q.type==='numeric'){let a=normNum(value),b=normNum(q.correctAnswer);return a!==null&&b!==null&&Math.abs(a-b)<=Math.max(1e-9,safeNum(q.tolerance));}
+ if(q.type==='fraction'){let a=fraction(value),b=fraction(q.correctAnswer);return !!a&&!!b&&a[0]*b[1]===a[1]*b[0]&&(!q.requireSimplest||gcd(a[0],a[1])===1);}
+ return false;
+}
+function buildReport(){
+ const detail=questions.map(q=>{let response=answer(q),answered=!!response,manual=q.type==='written'||(q.autoMarks!==undefined&&q.autoMarks<q.marks),correct=answered&&isCorrect(q,response);
+   const autoMax=q.type==='written'?0:q.autoMarks===undefined?q.marks:Math.max(0,Math.min(q.marks,q.autoMarks));
+   return {id:q.id,topic:q.topic||q.section||'Other',lessonRefs:q.lessonRefs||[],response,working:state.working[q.id]||'',answered,flagged:!!state.flags[q.id],correct:q.type==='written'?null:correct,marks:q.marks,autoMax,autoAwarded:correct?autoMax:0,awaitingReview:manual&&answered,reviewMarks:answered?q.marks-autoMax:0};
+ });
+ const autoAwarded=detail.reduce((n,q)=>n+q.autoAwarded,0), autoMax=detail.reduce((n,q)=>n+q.autoMax,0),max=detail.reduce((n,q)=>n+q.marks,0),outstanding=detail.reduce((n,q)=>n+q.reviewMarks,0);
+ return {schema:'nova-maths-assessment-result-v1',assessmentId:meta.id,assessmentTitle:meta.title,mode:DATA.mode,locallyHandedIn:true,submittedToNOVA:!demo&&state.handedIn,submittedAt:state.submittedAt,questions:detail,summary:{questions:questions.length,answered:detail.filter(q=>q.answered).length,autoAwarded,autoMax,totalMarks:max,manualReviewMarks:outstanding,hasPendingReview:outstanding>0}};
+}
+function renderResults(){
+ const rep=buildReport(),sum=rep.summary;
+ $('resultScore').textContent=sum.autoAwarded+' / '+sum.totalMarks;
+ $('resultHeading').textContent='Well done for completing your assessment';
+ $('resultScoreCaption').textContent=sum.manualReviewMarks?`Automatically awarded so far · ${sum.manualReviewMarks} mark(s) require review.`:'Automatically scored answers · blanks earn no marks.';
+ $('resultStatus').textContent=sum.manualReviewMarks?'Provisional score — any written reasoning or method marks still need review. A final percentage is not available yet.':'No submitted responses are awaiting manual review. Blank answers earn zero. This is a local template preview, not a recorded NOVA result.';
+ $('resultAdvice').textContent=demo?'These were demonstration questions to test the template. Production assessments will use their approved curriculum questions and teacher marking policy.':'Revisit any topics that were difficult. If written or method questions need review, wait for a teacher or parent to complete the marking.';
+ const topics=new Map();rep.questions.forEach(q=>{const x=topics.get(q.topic)||{auto:0,max:0,pending:0};x.auto+=q.autoAwarded;x.max+=q.autoMax;x.pending+=q.reviewMarks;topics.set(q.topic,x)});
+ const host=$('topicResults');host.replaceChildren();topics.forEach((v,name)=>{let row=document.createElement('div');row.className='topicrow';let label=document.createElement('strong');label.textContent=name;let score=document.createElement('span');score.textContent=`${v.auto}/${v.max} automatically marked${v.pending?' · '+v.pending+' awaiting review':''}`;row.append(label,score);host.append(row)});
+ $('topicNote').textContent=demo?'Demo topic labels are illustrative and not an approved assessment-topic allocation.':'Topic scoring follows the lesson-level assessment data supplied to this template.';
+ $('startNewPreview').hidden=!demo;
+}
+function updateBrand(){
+ $('brandTitle').textContent=meta.title;$('brandMeta').textContent=`Year ${meta.year} · ${meta.id} · After ${meta.after}`;
+ $('totalPill').textContent=`${questions.length} questions`;$('statusPill').textContent=demo?'Assessment preview':'NOVA assessment';
+ $('demoTag').hidden=!demo;$('previewLabel').hidden=!demo;$('previewSelect').hidden=!demo;
+ $('briefCount').textContent=String(questions.length);$('briefMarks').textContent=String(questions.reduce((n,q)=>n+q.marks,0));$('briefYear').textContent='Year '+meta.year;$('briefTitle').textContent=meta.title;
+ $('briefCoverage').textContent=`Assessment ${meta.id}. Taken after ${meta.after}. The approved curriculum determines the topics and question allocation when this template is populated.`;
+ $('beginButton').textContent=state.handedIn?'View results →':'Begin questions →';
+ $('saveStatus').textContent=saveEnabled?'Local preview · device save':'Device storage unavailable';
+}
+function initSelect(){const select=$('previewSelect');select.replaceChildren();CATALOG.forEach(x=>{const o=document.createElement('option');o.value=x.id;o.textContent=`${x.id} · ${x.count} Q · ${x.title}`;select.append(o)});select.value=meta.id;select.addEventListener('change',()=>{
+  if(!demo)return;stopSpeech();meta=findMeta(select.value);questions=demoItems(meta.id,meta.count);validateQuestions(questions,meta.count);load();updateBrand();pageTo(state.handedIn?'results':'brief');
+ });}
+function downloadJson(data,name){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
+initSelect();load();updateBrand();
+document.querySelectorAll('nav button[data-page]').forEach(b=>b.addEventListener('click',()=>pageTo(b.dataset.page)));
+$('playBob').addEventListener('click',()=>speech?stopSpeech():speak($('bobMessage').textContent,$('playBob')));
+$('readQuestion').addEventListener('click',()=>speech?stopSpeech():speak(questions[index].stem,$('readQuestion')));
+$('beginButton').addEventListener('click',()=>pageTo(state.handedIn?'results':'questions'));
+$('prevQuestion').addEventListener('click',()=>goQuestion(index-1));$('nextQuestion').addEventListener('click',()=>goQuestion(index+1));
+$('reviewFromQuestion').addEventListener('click',()=>pageTo('review'));
+$('flagButton').addEventListener('click',()=>{const q=questions[index];state.flags[q.id]=!state.flags[q.id];save();renderQuestion()});
+$('working').addEventListener('input',()=>{state.working[questions[index].id]=$('working').value;save()});
+$('reviewBack').addEventListener('click',()=>pageTo('questions'));$('reviewNext').addEventListener('click',()=>pageTo('handin'));
+$('handBack').addEventListener('click',()=>pageTo('review'));$('confirmHandin').addEventListener('change',()=>$('submitButton').disabled=!$('confirmHandin').checked);
+$('submitButton').addEventListener('click',async()=>{
+ if(!$('confirmHandin').checked||state.handedIn)return;
+ if(!demo){
+  if(typeof window.NOVA_ASSESSMENT_SUBMIT!=='function')return;
+  $('submitButton').disabled=true;$('submitButton').textContent='Handing in…';
+  try{
+   const result=await window.NOVA_ASSESSMENT_SUBMIT({assessmentId:meta.id,answers:{...state.answers},working:{...state.working},flags:{...state.flags}});
+   if(!result||result.success!==true)throw new Error('Submission was not confirmed by NOVA.');
+  }catch(e){$('handinModeNote').textContent='Could not confirm hand-in: '+(e.message||'please try again');$('submitButton').textContent='Hand in assessment';$('submitButton').disabled=false;return;}
+ }
+ state.handedIn=true;state.submittedAt=new Date().toISOString();save();pageTo('results');
+});
+$('downloadReport').addEventListener('click',()=>downloadJson(buildReport(),meta.id+'-LOCAL-RESULT.json'));
+$('startNewPreview').addEventListener('click',()=>{if(!demo||!confirm('Reset this demonstration assessment and all local answers?'))return;try{localStorage.removeItem(key())}catch(e){}state=fresh();index=0;save();updateBrand();pageTo('brief')});
+window.addEventListener('beforeunload',stopSpeech);
+pageTo(state.handedIn?'results':'brief');
+})();
+</script>
+</body>
+</html>

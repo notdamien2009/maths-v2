@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en-GB" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NOVA Maths · Y9-015 · Distance–time problem solving</title>
+<style>
+:root{color-scheme:dark;--page:#061322;--page2:#0c1e30;--panel:#112b42;--panel2:#17384e;--edge:#38627a;--ink:#eafaff;--muted:#b5d1dd;--accent:#47d9e6;--gold:#ffd178;--good:#93e9b6;--bad:#ff9caa}
+html[data-theme="light"]{color-scheme:light;--page:#eaf5f9;--page2:#dbeef5;--panel:#fff;--panel2:#eaf6fa;--edge:#83acbd;--ink:#11324a;--muted:#375b6e;--accent:#006e87;--gold:#795200;--good:#075e3a;--bad:#a40f34}
+*{box-sizing:border-box}body{margin:0;font:16px/1.52 system-ui,Segoe UI,Arial,sans-serif;background:linear-gradient(125deg,var(--page),var(--page2));min-height:100vh;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}button:disabled{opacity:.52;cursor:default}h1,h2,h3{line-height:1.25}h1{font-size:clamp(1.3rem,3.1vw,1.9rem);margin:.1rem 0}h2{font-size:clamp(1.2rem,2.8vw,1.65rem);margin:.2rem 0 1rem}h3{font-size:1.15rem;margin:.2rem 0 .65rem}p{margin:.35rem 0 .9rem}a{color:var(--accent)}
+.shell{max-width:1250px;margin:auto;padding:16px 18px 72px}.head{position:sticky;top:0;z-index:10;border:1px solid var(--edge);background:var(--panel);box-shadow:0 9px 28px #0003;border-radius:16px;padding:14px 18px}.headTop,.brand,.controls,.nav,.flex{display:flex;align-items:center;flex-wrap:wrap;gap:12px}.headTop{justify-content:space-between}.brandLogo{background:linear-gradient(120deg,#173f9f,#02adbb);border-radius:12px;padding:14px;font-weight:900;letter-spacing:.08em;color:#fff}.eyebrow,.small{font-size:.82rem;letter-spacing:.03em;color:var(--muted)}.flag{font-size:.76rem;border:1px solid var(--gold);border-radius:20px;padding:5px 10px;color:var(--gold);font-weight:800}.btn,.nav button{border:1px solid var(--edge);color:var(--ink);background:var(--panel2);border-radius:10px;padding:10px 15px;font-weight:700}.btn.primary,.nav button.active{background:#087b91;color:#fff;border-color:#29c0ce}.btn.secondary{background:transparent}.nav{gap:8px;border-top:1px solid var(--edge);padding-top:12px;margin-top:12px}.nav button{flex:1;min-width:90px}.nav button[aria-current="step"]{box-shadow:inset 0 -3px 0 #fff}.hero,.card,.block{border:1px solid var(--edge);border-radius:16px;background:var(--panel);padding:19px}.hero{margin:18px 0}.hero p{max-width:90ch;color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:15px}.smallgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}.pill{border:1px solid var(--edge);border-radius:100px;padding:5px 11px;font-size:.82rem;font-weight:700}.notice{border-left:4px solid var(--accent);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:12px 0}.muted{color:var(--muted)}.rule{color:var(--good);font-weight:700}.sectionIntro{margin-bottom:14px}.tableWrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{padding:9px 11px;border-bottom:1px solid var(--edge);text-align:left}th{color:var(--accent)}
+.question{padding:15px 16px;margin:12px 0;border:1px solid var(--edge);border-radius:13px;background:var(--panel)}.question h3{font-size:1rem}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.choices label{border:1px solid var(--edge);border-radius:9px;padding:10px 12px;display:flex;gap:9px;align-items:start;background:var(--panel2);cursor:pointer}.choices label:has(input:checked){outline:2px solid var(--accent)}.choices input{margin-top:5px;accent-color:#24b8c8}.hintBtn{margin-top:8px;padding:6px 10px;border:1px solid var(--edge);background:none;color:var(--accent);border-radius:7px}.hintTxt{color:var(--muted);margin:.5rem 0}.kpi{font-weight:800;color:var(--accent)}
+.board{border:1px solid var(--edge);border-radius:15px;background:linear-gradient(155deg,#081f35,#123f54);color:#e9f9ff;height:750px;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:8px;padding:12px;position:relative}.boardHeader{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.boardBody{display:grid;grid-template-columns:minmax(0,1.36fr) minmax(0,.64fr);gap:12px;min-height:0}.boardGraph,.boardTable{background:#072338;border:1px solid #447084;border-radius:10px;min-width:0;min-height:0;padding:10px;display:flex;flex-direction:column}.boardGraph svg{width:100%;height:100%;min-height:0;display:block}.boardTable{overflow:auto}.boardTable table{font-size:.85rem}.boardTable th,.boardTable td{padding:7px 6px}.boardFooter{background:#163c52;border-radius:11px;padding:12px;min-height:170px;display:grid;grid-template-rows:auto auto auto}.boardFooter h3{font-size:1.1rem;margin:0 0 .3rem;color:#8fe9f4}.boardFooter p{margin:.15rem 0;color:#e9f9ff}.boardFooter .prompt{color:#ffe49d;font-weight:650}.boardFooter .controls{justify-content:space-between;gap:7px;margin-top:8px}.boardFooter button{background:#174f62;border:1px solid #83c7d0;color:#fff;border-radius:8px;padding:7px 10px}.conceptTab{flex:1;min-width:125px}.conceptTab.active{outline:2px solid #77ecf5}.board button{color:#fff}.board button:focus-visible{outline-color:#fff}.board select{background:#173f54;color:#fff;border:1px solid #7ad0df;border-radius:8px;padding:7px;max-width:100%}.reading{margin-top:8px;font-size:.85rem;color:#cce8f3}.explorer{margin-top:14px}.explorer label{display:block;margin-bottom:6px}.explorer input{width:min(100%,400px)}.game{border:1px solid var(--edge);background:var(--panel2);border-radius:14px;padding:15px;margin-top:16px}.game h3{color:var(--accent)}.game .question{margin:12px 0}.game .feedback{margin-top:10px}.exampleSteps{margin:0;padding-left:23px}.exampleSteps li{padding:9px 0;border-bottom:1px solid var(--edge)}.exampleSteps li:last-child{border-bottom:0}.exampleActions{display:flex;gap:9px;margin-top:12px}.help{font-size:.85rem;color:var(--muted)}.badgeWin{color:var(--good);font-weight:800}.status{padding:11px 14px;border:1px solid var(--edge);background:var(--panel2);border-radius:10px;margin:12px 0}.footer{color:var(--muted);font-size:.83rem;margin:30px 0;text-align:center}.srOnly{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.confetti{position:fixed;top:4px;left:50%;font-size:1.5rem;pointer-events:none;animation:burst 1.5s ease-out forwards;z-index:30}@keyframes burst{to{transform:translate(var(--dx),400px) rotate(560deg);opacity:0}}.progress{accent-color:#0aa9ba;width:min(100%,360px)}
+@media(max-width:800px){.boardBody{grid-template-columns:1fr;grid-template-rows:minmax(0,2fr) minmax(0,1fr)}.boardTable{font-size:.79rem}.boardTable table{font-size:.73rem}.boardFooter{min-height:198px}.board{padding:8px}.grid2{grid-template-columns:1fr}.head{position:static}.shell{padding:9px 10px 40px}}@media(max-width:500px){.choices{grid-template-columns:1fr}.nav button{min-width:70px;padding:8px 5px}.boardFooter{font-size:.83rem;min-height:220px}.boardFooter h3{font-size:.96rem}.boardFooter .controls button{padding:6px}.board{height:750px}.boardBody{grid-template-rows:minmax(0,1.8fr) minmax(0,1fr)}.boardHeader .pill{display:none}.boardGraph{padding:3px}.boardTable{padding:6px}.boardHeader{font-size:.83rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style></head>
+<body><noscript>Enable JavaScript to use this standalone lesson review.</noscript>
+<div class="shell">
+<header class="head"><div class="headTop"><div class="brand"><div class="brandLogo">NOVA</div><div><div class="eyebrow">KS3 Mathematics · Year 9 · Lesson 015</div><h1>Distance–time problem solving</h1><div class="small">Bob Maximus · V7 GRF-05 motion graphs · Original NOVA teaching</div></div></div><div class="controls"><span class="flag">REVIEW BUILD · NOT GOLD</span><button class="btn secondary" id="themeBtn">Light theme</button><button class="btn primary" id="handin">Hand in</button></div></div><nav class="nav" aria-label="Lesson stages"><button data-stage="start" class="active" aria-current="step">Start</button><button data-stage="learn">Learn</button><button data-stage="examples">Examples</button><button data-stage="practice">Practice</button><button data-stage="exit">Exit</button></nav></header>
+<div class="hero"><div class="eyebrow">Functions and graphs · Journeys</div><h2>How can a graph tell the story of a journey?</h2><p><strong>Learning objective:</strong> Analyse complex journeys using distance–time graphs. You will read distance and time scales, find speed on individual segments, recognise stops, and justify comparisons. <strong>Key distinction:</strong> the meaning of a slope depends on what distance is plotted.</p><div id="submittedSummary" role="status" class="notice" hidden></div><div class="smallgrid"><span class="pill">Start · Retrieve</span><span class="pill">Learn · Bob’s 20 beats + 2 games</span><span class="pill">Examples · 5 models</span><span class="pill">Practice · 15 checks</span><span class="pill">Exit · 10 mastery checks</span></div></div>
+<main id="page" tabindex="-1"></main>
+<footer class="footer">NOVA property · Original KS3 Maths content · Not for redistribution without permission. Local instruction/interaction review only; no authenticated parent marking or real website submission.</footer>
+</div>
+<script type="application/json" id="lessonData">{
+  "id": "Y9-015",
+  "title": "Distance–time problem solving",
+  "objective": "Analyse complex journeys using distance–time graphs.",
+  "stories": {
+    "A": {
+      "title": "Journey A · Delivery route",
+      "axis": "Cumulative distance travelled (km)",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          30
+        ],
+        [
+          1,
+          30
+        ],
+        [
+          2.5,
+          75
+        ],
+        [
+          3,
+          75
+        ],
+        [
+          4,
+          95
+        ]
+      ],
+      "color": "#16c8e2"
+    },
+    "B": {
+      "title": "Journey B · Express route",
+      "axis": "Cumulative distance travelled (km)",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          40
+        ],
+        [
+          1.5,
+          40
+        ],
+        [
+          3,
+          100
+        ],
+        [
+          4,
+          100
+        ]
+      ],
+      "color": "#ffbf69"
+    },
+    "C": {
+      "title": "Journey C · Field trip",
+      "axis": "Cumulative distance travelled (km)",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0.75,
+          18
+        ],
+        [
+          1.25,
+          18
+        ],
+        [
+          2.25,
+          54
+        ],
+        [
+          3,
+          78
+        ]
+      ],
+      "color": "#8cf2b6"
+    },
+    "H": {
+      "title": "Journey H · Distance from home",
+      "axis": "Distance from home (km)",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          30
+        ],
+        [
+          1.5,
+          30
+        ],
+        [
+          2.5,
+          10
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "color": "#f2a4da"
+    }
+  },
+  "concepts": [
+    {
+      "title": "Read the journey",
+      "rule": "Read both scales before describing speed. A flat cumulative-distance line means stopped.",
+      "beats": [
+        [
+          "Know the axes",
+          "The horizontal axis is elapsed time in hours. The vertical axis is the total distance travelled in kilometres. Each plotted point describes one moment of the journey.",
+          "Look at A. What has been measured at 0.5 hours?"
+        ],
+        [
+          "Read an exact point",
+          "At 0.5 h Journey A has travelled 30 km. At 1 h it is still 30 km; the line is horizontal during that half hour.",
+          "Does the height at 1 h describe that single interval or the journey so far?"
+        ],
+        [
+          "Spot a stop",
+          "Horizontal means distance does not change although time passes. A stops from 0.5 to 1 h and again from 2.5 to 3 h.",
+          "How long are the two stops altogether?"
+        ],
+        [
+          "Distinguish height and steepness",
+          "A high graph point means a large cumulative distance. A steep line means distance grows quickly. These are not the same claim.",
+          "Can a vehicle be farther along the trip but currently slower?"
+        ]
+      ]
+    },
+    {
+      "title": "Find speed on each segment",
+      "rule": "Speed (km/h) = change in distance (km) ÷ elapsed time (h). Use differences between endpoints.",
+      "beats": [
+        [
+          "Select two endpoints",
+          "From 0 to 0.5 h Journey A travels from 0 to 30 km. The horizontal run is 0.5 h and the vertical rise is 30 km.",
+          "What two differences must we divide?"
+        ],
+        [
+          "Calculate a steep section",
+          "30 km ÷ 0.5 h = 60 km/h. Dividing by a half makes the hourly rate twice as large as the half-hour distance.",
+          "Why is the answer not 15 km/h?"
+        ],
+        [
+          "Calculate a gentler section",
+          "From 1 to 2.5 h, 75 − 30 = 45 km over 1.5 h. Therefore speed = 45 ÷ 1.5 = 30 km/h.",
+          "Why must we subtract 30 km first?"
+        ],
+        [
+          "Recognise zero speed",
+          "A flat section has change in distance 0, so 0 ÷ time = 0 km/h. Choose Concept 2 Game to practise exact changes and units.",
+          "What happens to the speed if time passes but distance does not change?"
+        ]
+      ]
+    },
+    {
+      "title": "Compare two journeys fairly",
+      "rule": "Compare segments using the same units and axes; compare average speed using total distance ÷ total time.",
+      "beats": [
+        [
+          "Plot both on one scale",
+          "Journeys A and B share the same time and cumulative-distance scales. Each colour shows the distance travelled at that time.",
+          "At 3 h, which journey has travelled farther?"
+        ],
+        [
+          "Compare instantaneous segments",
+          "Journey A’s first leg is 60 km/h. Journey B’s first leg is 40 km/h. The first line for A is steeper.",
+          "Which journey is faster on its first segment?"
+        ],
+        [
+          "Compare totals",
+          "At 4 h, A has travelled 95 km and B has travelled 100 km. B finishes 5 km farther, even though A starts faster.",
+          "Does fastest first segment guarantee most total distance?"
+        ],
+        [
+          "Use average speed correctly",
+          "Average for A = 95 ÷ 4 = 23.75 km/h; for B = 100 ÷ 4 = 25 km/h. Stops count in total time.",
+          "Why is a journey average generally different from its fastest segment?"
+        ]
+      ]
+    },
+    {
+      "title": "Test what the gradient really means",
+      "rule": "A cumulative-distance graph cannot fall. A distance-from-home graph can fall when you travel back.",
+      "beats": [
+        [
+          "Read the heading first",
+          "This graph is different: the vertical axis is distance FROM HOME, not cumulative distance travelled. It may rise or fall.",
+          "What does a falling section imply here?"
+        ],
+        [
+          "Read the return journey",
+          "From 1.5 to 2.5 h the distance from home decreases from 30 km to 10 km. The signed gradient is −20 km/h.",
+          "Is −20 km/h the physical speed?"
+        ],
+        [
+          "Separate speed and direction",
+          "Assuming a straight route, travelling towards home during this segment gives speed 20 km/h. Negative gradient indicates decreasing distance from home, not negative speed.",
+          "What would the total distance travelled graph do over this interval?"
+        ],
+        [
+          "Explain the invariant",
+          "A slope is change in the quantity on the vertical axis divided by time. Its meaning depends on which quantity is plotted.",
+          "Can you justify why a downward slope is impossible for cumulative distance?"
+        ]
+      ]
+    },
+    {
+      "title": "Solve a new journey independently",
+      "rule": "Annotate points, work out each segment, then check the total distance and total duration.",
+      "beats": [
+        [
+          "A new journey",
+          "Journey C travels 18 km in 0.75 h, waits 0.5 h, travels another 36 km in 1 h, then another 24 km in 0.75 h.",
+          "Which interval is the stop?"
+        ],
+        [
+          "Compute rates",
+          "The moving speeds are 18 ÷ 0.75 = 24 km/h, 36 ÷ 1 = 36 km/h and 24 ÷ 0.75 = 32 km/h.",
+          "Which moving stage has the greatest speed?"
+        ],
+        [
+          "Check the whole trip",
+          "Total distance = 18 + 36 + 24 = 78 km. Total time = 3 h, including the half-hour stop.",
+          "What is the trip’s average speed?"
+        ],
+        [
+          "Defend a conclusion",
+          "Average speed = 78 ÷ 3 = 26 km/h. A stop lowers the journey average without changing the speeds of the individual moving legs. Complete Concept 5 Game.",
+          "How do you know 26 km/h is a journey average, not a segment speed?"
+        ]
+      ]
+    }
+  ],
+  "start": [
+    {
+      "id": "S1",
+      "prompt": "On a distance–time graph, which axis usually shows elapsed time?",
+      "options": [
+        "Horizontal axis",
+        "Vertical axis",
+        "Both axes",
+        "Neither axis"
+      ],
+      "answer": 0,
+      "why": "Time is plotted horizontally.",
+      "tier": "retrieval",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "S2",
+      "prompt": "The point (2, 50) has time measured in hours and distance in km. What does it mean?",
+      "options": [
+        "2 km in 50 hours",
+        "50 km by 2 hours",
+        "Speed 100 km/h",
+        "Stopped for 2 hours"
+      ],
+      "answer": 1,
+      "why": "x = 2 h and y = 50 km.",
+      "tier": "retrieval",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "S3",
+      "prompt": "A vehicle travels 60 km in 2 hours at constant speed. Find its speed.",
+      "options": [
+        "120 km/h",
+        "62 km/h",
+        "30 km/h",
+        "58 km/h"
+      ],
+      "answer": 2,
+      "why": "Speed = 60 ÷ 2 = 30 km/h.",
+      "tier": "retrieval",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "S4",
+      "prompt": "On a cumulative-distance graph, what does a horizontal section show?",
+      "options": [
+        "Going backwards",
+        "Distance stays unchanged",
+        "Increasing speed",
+        "Zero elapsed time"
+      ],
+      "answer": 1,
+      "why": "Time changes but cumulative distance does not.",
+      "tier": "retrieval",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "S5",
+      "prompt": "How long is 0.5 hours?",
+      "options": [
+        "30 minutes",
+        "5 minutes",
+        "50 minutes",
+        "120 minutes"
+      ],
+      "answer": 0,
+      "why": "Half of 60 minutes is 30.",
+      "tier": "retrieval",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    }
+  ],
+  "practice": [
+    {
+      "id": "P01",
+      "prompt": "Journey A: how far has the vehicle travelled at 0.5 h?",
+      "options": [
+        "15 km",
+        "30 km",
+        "60 km",
+        "45 km"
+      ],
+      "answer": 1,
+      "why": "Read the graph point (0.5, 30).",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P02",
+      "prompt": "Journey A: which intervals are stops?",
+      "options": [
+        "0–0.5 and 1–2.5 h",
+        "1–2.5 and 3–4 h",
+        "0.5–1 and 2.5–3 h",
+        "0–1 and 2.5–4 h"
+      ],
+      "answer": 2,
+      "why": "The cumulative distance is unchanged on the two horizontal sections.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P03",
+      "prompt": "What are the axis units for Journey A?",
+      "options": [
+        "Hours across, kilometres up",
+        "Kilometres across, hours up",
+        "Minutes across, metres up",
+        "km/h across, hours up"
+      ],
+      "answer": 0,
+      "why": "The horizontal quantity is hours; the vertical quantity is km.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P04",
+      "prompt": "Journey A: speed between 0 and 0.5 h?",
+      "options": [
+        "15 km/h",
+        "30 km/h",
+        "45 km/h",
+        "60 km/h"
+      ],
+      "answer": 3,
+      "why": "30 ÷ 0.5 = 60 km/h.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P05",
+      "prompt": "Journey A: speed between 1 and 2.5 h?",
+      "options": [
+        "45 km/h",
+        "30 km/h",
+        "50 km/h",
+        "20 km/h"
+      ],
+      "answer": 1,
+      "why": "(75−30) ÷ (2.5−1) = 45 ÷ 1.5 = 30 km/h.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P06",
+      "prompt": "Journey A: speed between 3 and 4 h?",
+      "options": [
+        "20 km/h",
+        "95 km/h",
+        "75 km/h",
+        "25 km/h"
+      ],
+      "answer": 0,
+      "why": "(95−75) ÷ (4−3) = 20 km/h.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P07",
+      "prompt": "Journey A: average speed including stops?",
+      "options": [
+        "31.67 km/h",
+        "26 km/h",
+        "23.75 km/h",
+        "60 km/h"
+      ],
+      "answer": 2,
+      "why": "95 km ÷ 4 h = 23.75 km/h.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P08",
+      "prompt": "Why is Journey A fastest in the first 0.5 h?",
+      "options": [
+        "It has the highest ending distance",
+        "Its line has the greatest rise per hour",
+        "It occurs earliest",
+        "The line is flat"
+      ],
+      "answer": 1,
+      "why": "The speed for a segment is the distance rise divided by the time run.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P09",
+      "prompt": "Journey B: what is the speed from 3 to 4 h?",
+      "options": [
+        "100 km/h",
+        "40 km/h",
+        "25 km/h",
+        "0 km/h"
+      ],
+      "answer": 3,
+      "why": "The plotted distance remains 100 km, so speed is zero.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P10",
+      "prompt": "Journey B: speed between 1.5 and 3 h?",
+      "options": [
+        "40 km/h",
+        "60 km/h",
+        "30 km/h",
+        "100 km/h"
+      ],
+      "answer": 0,
+      "why": "(100−40) ÷ (3−1.5) = 60 ÷ 1.5 = 40 km/h.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P11",
+      "prompt": "At 2.5 h, which vehicle is farther and by how much?",
+      "options": [
+        "A by 5 km",
+        "B by 5 km",
+        "B by 25 km",
+        "They are level"
+      ],
+      "answer": 1,
+      "why": "A is at 75 km; B is at 80 km (40 km at 1.5 h, then 40 km in the next hour).",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P12",
+      "prompt": "At 4 h, how much more total distance has B travelled than A?",
+      "options": [
+        "25 km",
+        "10 km",
+        "5 km",
+        "0 km"
+      ],
+      "answer": 2,
+      "why": "B ends at 100 km and A ends at 95 km.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P13",
+      "prompt": "Journey C: speed between 0 and 0.75 h?",
+      "options": [
+        "18 km/h",
+        "32 km/h",
+        "36 km/h",
+        "24 km/h"
+      ],
+      "answer": 3,
+      "why": "18 ÷ 0.75 = 24 km/h.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P14",
+      "prompt": "Journey C: average speed including its stop?",
+      "options": [
+        "26 km/h",
+        "32 km/h",
+        "36 km/h",
+        "39 km/h"
+      ],
+      "answer": 0,
+      "why": "78 km ÷ 3 h = 26 km/h.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "P15",
+      "prompt": "A distance-FROM-HOME graph falls from 30 km to 10 km in one hour. On a direct route, what does this mean?",
+      "options": [
+        "Speed is −20 km/h",
+        "Travelling towards home at 20 km/h",
+        "Has not moved",
+        "Has travelled 40 km"
+      ],
+      "answer": 1,
+      "why": "Distance from home decreased 20 km over one hour; the magnitude is 20 km/h.",
+      "tier": "core",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    }
+  ],
+  "exit": [
+    {
+      "id": "X01",
+      "prompt": "Journey A: what is the cumulative distance at 1 h?",
+      "options": [
+        "0 km",
+        "15 km",
+        "30 km",
+        "60 km"
+      ],
+      "answer": 2,
+      "why": "The flat line ends at the point (1,30).",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "X02",
+      "prompt": "Journey B: what is the total stationary time?",
+      "options": [
+        "0.5 h",
+        "1 h",
+        "2 h",
+        "1.5 h"
+      ],
+      "answer": 3,
+      "why": "B stops 1–1.5 h (0.5 h) and 3–4 h (1 h).",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "X03",
+      "prompt": "Journey A: how much of the 4 h is spent moving?",
+      "options": [
+        "3 h",
+        "2 h",
+        "3.5 h",
+        "4 h"
+      ],
+      "answer": 0,
+      "why": "Total stop time is 1 hour, so moving time is 3 hours.",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "X04",
+      "prompt": "Journey B: average speed over the complete 4 h?",
+      "options": [
+        "40 km/h",
+        "25 km/h",
+        "50 km/h",
+        "20 km/h"
+      ],
+      "answer": 1,
+      "why": "100 ÷ 4 = 25 km/h.",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "X05",
+      "prompt": "Journey C: speed from 1.25 to 2.25 h?",
+      "options": [
+        "18 km/h",
+        "24 km/h",
+        "32 km/h",
+        "36 km/h"
+      ],
+      "answer": 3,
+      "why": "(54−18) ÷ (2.25−1.25) = 36 km/h.",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "X06",
+      "prompt": "On a cumulative-distance graph, a flat segment has what gradient?",
+      "options": [
+        "Zero km/h",
+        "Negative km/h",
+        "Infinite km/h",
+        "Always 1 km/h"
+      ],
+      "answer": 0,
+      "why": "No distance change over positive time gives gradient zero.",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "X07",
+      "prompt": "Which first leg is faster: A 0–0.5 h or B 0–1 h?",
+      "options": [
+        "B: 40 km/h",
+        "A: 60 km/h",
+        "Equal: 40 km/h",
+        "Cannot compare units"
+      ],
+      "answer": 1,
+      "why": "A is 30 ÷ 0.5 = 60; B is 40 ÷ 1 = 40.",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "X08",
+      "prompt": "A student says A travels 75 km during its 2.5–3 h flat section. What is the best correction?",
+      "options": [
+        "A travels 75 km/h",
+        "A travels 30 km in the stop",
+        "A travels 0 km; 75 km is its cumulative total",
+        "A travels backwards 75 km"
+      ],
+      "answer": 2,
+      "why": "The graph stays at 75 km: the total is unchanged.",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "X09",
+      "prompt": "A distance-from-home graph slopes downwards. What follows?",
+      "options": [
+        "Speed is necessarily negative",
+        "The person has stopped",
+        "The trip distance must decrease",
+        "Their distance from home is decreasing"
+      ],
+      "answer": 3,
+      "why": "Downward means the plotted distance from home decreases; speed remains nonnegative.",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    },
+    {
+      "id": "X10",
+      "prompt": "At 3 h, how much farther has B travelled than A?",
+      "options": [
+        "25 km",
+        "5 km",
+        "20 km",
+        "They are equal"
+      ],
+      "answer": 0,
+      "why": "At 3 h A=75 km and B=100 km, difference 25 km.",
+      "tier": "exit",
+      "hint": "Read the axes, find the change in distance and change in time, then check your units."
+    }
+  ],
+  "games": {
+    "C2": [
+      {
+        "id": "G2-1",
+        "prompt": "Build · A moves from 0 km to 30 km in 0.5 h. What is the distance change?",
+        "options": [
+          "0.5 km",
+          "15 km",
+          "30 km",
+          "60 km"
+        ],
+        "answer": 2,
+        "why": "Difference in distance is 30−0=30 km.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G2-2",
+        "prompt": "Build · A moves from 30 km at 1 h to 75 km at 2.5 h. How much time passes?",
+        "options": [
+          "1.5 h",
+          "2.5 h",
+          "3.5 h",
+          "1 h"
+        ],
+        "answer": 0,
+        "why": "2.5−1=1.5 h.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G2-3",
+        "prompt": "Apply · For that 45 km in 1.5 h section, find speed.",
+        "options": [
+          "67.5 km/h",
+          "30 km/h",
+          "45 km/h",
+          "22.5 km/h"
+        ],
+        "answer": 1,
+        "why": "45 ÷ 1.5 = 30 km/h.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G2-4",
+        "prompt": "Apply · A later travels 20 km in 1 h. Its speed is …",
+        "options": [
+          "0 km/h",
+          "95 km/h",
+          "20 km/h",
+          "75 km/h"
+        ],
+        "answer": 2,
+        "why": "20 ÷ 1 = 20 km/h.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G2-5",
+        "prompt": "Reason · Someone divides 75 km by 1.5 h for the middle section. What went wrong?",
+        "options": [
+          "No error",
+          "Should multiply",
+          "Used the entire journey distance, not 45 km gained",
+          "Time should be 2.5 hours"
+        ],
+        "answer": 2,
+        "why": "Speed of a segment uses the change in distance over that segment.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G2-6",
+        "prompt": "Reason · Which statement explains a flat section?",
+        "options": [
+          "Gradient is zero, so the object is stationary",
+          "The object must be accelerating",
+          "The object is returning home",
+          "The object travels faster because time passes"
+        ],
+        "answer": 0,
+        "why": "Cumulative distance unchanged means zero speed.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      }
+    ],
+    "C5": [
+      {
+        "id": "G5-1",
+        "prompt": "Build · Journey C travels 18 km then waits. What cumulative distance is plotted throughout the stop?",
+        "options": [
+          "0 km",
+          "18 km",
+          "36 km",
+          "78 km"
+        ],
+        "answer": 1,
+        "why": "During the stop the total remains 18 km.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G5-2",
+        "prompt": "Build · C waits from 0.75 to 1.25 h. How long is the stop?",
+        "options": [
+          "1.25 h",
+          "0.75 h",
+          "0.5 h",
+          "2 h"
+        ],
+        "answer": 2,
+        "why": "1.25−0.75=0.5 h.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G5-3",
+        "prompt": "Apply · C moves from 18 to 54 km in 1 h. Its speed is …",
+        "options": [
+          "36 km/h",
+          "54 km/h",
+          "72 km/h",
+          "18 km/h"
+        ],
+        "answer": 0,
+        "why": "Difference is 36 km in 1 h.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G5-4",
+        "prompt": "Apply · C travels its final 24 km in 0.75 h. Its speed is …",
+        "options": [
+          "18 km/h",
+          "24 km/h",
+          "36 km/h",
+          "32 km/h"
+        ],
+        "answer": 3,
+        "why": "24 ÷ 0.75 = 32 km/h.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G5-5",
+        "prompt": "Reason · What is C’s average speed including the stop?",
+        "options": [
+          "32 km/h",
+          "26 km/h",
+          "36 km/h",
+          "39 km/h"
+        ],
+        "answer": 1,
+        "why": "78 km in 3 h gives 26 km/h.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      },
+      {
+        "id": "G5-6",
+        "prompt": "Reason · Claim: C travels for 3 hours, so never stops. Best response?",
+        "options": [
+          "True: all graph time is moving",
+          "True: the graph rises overall",
+          "False: it is flat for 0.5 h; elapsed time includes waiting",
+          "False: the graph falls"
+        ],
+        "answer": 2,
+        "why": "From 0.75 to 1.25 h no distance is gained.",
+        "tier": "core",
+        "hint": "Read the axes, find the change in distance and change in time, then check your units."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "title": "Read scales and a stationary interval",
+      "scene": "A",
+      "steps": [
+        "Read the horizontal axis in hours and vertical axis in cumulative km.",
+        "Find A’s point (0.5 h, 30 km): 30 km so far.",
+        "From 0.5 to 1 h the plotted height stays at 30 km.",
+        "Therefore 0 km is added during those 0.5 h: a stop."
+      ]
+    },
+    {
+      "title": "Speed from changes, not from origin",
+      "scene": "A",
+      "steps": [
+        "Pick the section from (1 h, 30 km) to (2.5 h, 75 km).",
+        "Distance gained = 75 − 30 = 45 km. Time = 2.5 − 1 = 1.5 h.",
+        "Speed = 45 ÷ 1.5 = 30 km/h.",
+        "Check: 30 km/h × 1.5 h = 45 km gained."
+      ]
+    },
+    {
+      "title": "Which journey is faster overall?",
+      "scene": "AB",
+      "steps": [
+        "At 4 hours, A has covered 95 km and B has covered 100 km.",
+        "Average A = 95 ÷ 4 = 23.75 km/h.",
+        "Average B = 100 ÷ 4 = 25 km/h.",
+        "Although A’s first leg is faster, B’s overall average is greater."
+      ]
+    },
+    {
+      "title": "Spot the error in a return graph",
+      "scene": "H",
+      "steps": [
+        "Notice the label says distance FROM HOME, not total travelled.",
+        "From 1.5 to 2.5 h it falls from 30 km to 10 km.",
+        "The signed gradient is (10 − 30) ÷ 1 = −20 km/h.",
+        "On a direct route this means travelling towards home at speed 20 km/h, not a negative speed."
+      ]
+    },
+    {
+      "title": "Transfer the method to a new trip",
+      "scene": "C",
+      "steps": [
+        "Read C’s endpoints: 0, 18, 18, 54 and 78 km.",
+        "Its speeds on moving legs are 24, 36 and 32 km/h.",
+        "C finishes 78 km after 3 h, including 0.5 h waiting.",
+        "Average speed = 78 ÷ 3 = 26 km/h. Verify by multiplying 26 × 3 = 78 km."
+      ]
+    }
+  ]
+}</script>
+<script>
+'use strict';
+const D=JSON.parse(document.getElementById('lessonData').textContent);
+const key='nova-demo-y9-015-v1';const $=(s,root=document)=>root.querySelector(s);const esc=(v)=>String(v).replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+function readSave(){try{return JSON.parse(localStorage.getItem(key)||'{}')}catch{return {}}}
+let save=readSave();save.answers ||= {}; save.games ||= {};let stage='start',concept=0,beat=0,scene='A',selected=0,exidx=0,exstep=1,experiment=95;
+function persist(){try{localStorage.setItem(key,JSON.stringify(save))}catch{}}
+function btn(text,id,cls='btn secondary'){return `<button type="button" class="${cls}" id="${id}">${esc(text)}</button>`}
+function sectionIntro(title,desc){return `<div class="sectionIntro"><h2>${esc(title)}</h2><p class="muted">${esc(desc)}</p></div>`}
+function render(){const pages={start:renderStart,learn:renderLearn,examples:renderExamples,practice:renderPractice,exit:renderExit};$('#page').innerHTML=pages[stage]();document.querySelectorAll('.nav button').forEach(b=>{b.classList.toggle('active',b.dataset.stage===stage);if(b.dataset.stage===stage)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});$('#handin').disabled=!!save.submitted;$('#handin').title=save.submitted?'Already handed in locally':'Hand in after at least 60% of Practice and Exit questions are answered';let summary=$('#submittedSummary');summary.hidden=!save.submitted;if(save.submitted)summary.textContent='Local review hand-in · '+save.submitted.correct+'/25 correct ('+fmt(save.submitted.correct/25*100)+'%). '+(save.submitted.pass?'70% target reached.':'Below the 70% target.')+' This is not a NOVA Academy website submission.';if(stage==='learn')paintGraph();if(stage==='examples')paintGraph('exampleGraph',D.examples[exidx].scene);}
+function goto(s){stage=s;render();window.scrollTo({top:0,behavior:'instant'});$('#page').focus({preventScroll:true})}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>goto(b.dataset.stage)));
+$('#themeBtn').addEventListener('click',()=>{let light=document.documentElement.getAttribute('data-theme')==='light';document.documentElement.setAttribute('data-theme',light?'dark':'light');$('#themeBtn').textContent=light?'Light theme':'Dark theme'});
+function renderQuestion(q,i){let a=save.answers[q.id];return `<section class="question"><h3>${esc(q.id)} · ${esc(q.prompt)}</h3><div class="choices">${q.options.map((opt,idx)=>`<label><input type="radio" name="${q.id}" value="${idx}" ${a===idx?'checked':''} ${save.submitted?'disabled':''}><span>${esc(opt)}</span></label>`).join('')}</div><button type="button" class="hintBtn" data-hint="${q.id}" aria-expanded="false">Ask Bob · Hint</button><div class="hintTxt" id="hint-${q.id}" hidden>${esc(q.hint)}</div></section>`}
+function renderSet(kind,qs,desc){let answered=qs.filter(q=>Number.isInteger(save.answers[q.id])).length;return `<section class="card">${sectionIntro(kind,desc)}<p class="kpi">Answered ${answered} / ${qs.length}${save.submitted?' · Handed in locally':''}</p><progress class="progress" value="${answered}" max="${qs.length}" aria-label="${kind} completed"></progress>${qs.map(renderQuestion).join('')}</section>`}
+function renderStart(){return renderSet('Start · Retrieval',D.start,'Recall axes, coordinates and speed before tackling more complex journeys. Your answers save in this browser; no answers are revealed.')}
+function renderPractice(){return renderSet('Practice · 15 questions',D.practice,'Begin by reading points, then calculate segment rates, compare journeys and correct errors. Show workings on paper where needed.')}
+function renderExit(){return renderSet('Exit · 10-question mastery check',D.exit,'Answer independently. Questions test reading, calculation, reasoning and transfer to changed journeys. Your answers can be edited until local hand-in.')}
+function chooseConcept(i){concept=i;beat=0;scene=['A','A','AB','H','C'][concept];selected=0;render()}
+function renderLearn(){let c=D.concepts[concept],b=c.beats[beat];return `<section class="card">${sectionIntro('Learn · Bob’s Board','Five connected concepts · four clear teaching beats each. Graphs are drawn from the same coordinate data used by the tables.')}<div class="flex" style="margin:12px 0">${D.concepts.map((x,i)=>`<button class="btn ${i===concept?'primary':'secondary'} conceptTab ${i===concept?'active':''}" data-concept="${i}">${i+1}. ${esc(x.title)}</button>`).join('')}</div><div class="board" aria-label="Bob’s teaching board"><div class="boardHeader"><span><strong>Bob’s Board</strong> · Concept ${concept+1} of 5 · Beat ${beat+1} of 4</span><span class="pill">750px board · V7 motion-graph contract</span></div><div class="boardBody"><div class="boardGraph"><div class="small" style="color:#bbd9e9" id="graphTitle">${esc(titleOf(scene))}</div><div id="graph" style="flex:1;min-height:0"></div></div><div class="boardTable"><strong>Points and segments</strong><div id="dataTable"></div><div class="reading" id="reading"></div></div></div><div class="boardFooter"><div><h3>${esc(b[0])}</h3><p id="bobSpeech" aria-live="polite">${esc(b[1])}</p><p class="prompt">Think: ${esc(b[2])}</p></div><div class="controls"><button id="beatPrev" ${beat===0&&concept===0?'disabled':''}>Previous</button><button id="beatNext">${beat===3&&concept===4?'Finish board':'Next teaching beat'}</button><button id="voice" title="Uses your browser voice, not an approved NOVA narrator">Read aloud (browser)</button><button id="voiceStop">Stop audio</button></div></div></div><div class="notice"><strong>Deep dive · Why it works</strong><p>${esc(c.rule)}</p>${concept===3?'<p>Important: a distance-from-home graph is not a cumulative-distance graph. A decrease in distance from home can represent returning, not negative physical speed.</p>':''}</div><div class="explorer card"><h3>Interactive graph inspector</h3><p>Select a segment to inspect both endpoint values and calculate its rate. This representation is GRF-05, built over the GRF-02 line layer, with GRF-04 point-table support.</p><div class="flex"><label>View graph <select id="sceneSelect"><option value="A" ${scene==='A'?'selected':''}>A · Delivery</option><option value="AB" ${scene==='AB'?'selected':''}>A and B · Compare</option><option value="B" ${scene==='B'?'selected':''}>B · Express</option><option value="C" ${scene==='C'?'selected':''}>C · Field trip</option><option value="H" ${scene==='H'?'selected':''}>H · Distance from home</option><option value="W" ${scene==='W'?'selected':''}>What-if experiment</option></select></label><label>Segment <select id="segmentSelect">${segmentOptions()}</select></label></div>${scene==='W'?`<div class="notice"><label for="expRange">Experimental A final total at 4 h: <strong>${experiment} km</strong></label><input id="expRange" type="range" min="80" max="115" step="5" value="${experiment}"><p>This changes only the practice experiment, not assessed Journey A. The final section’s rate changes; earlier sections do not.</p></div>`:''}</div>${(concept===1||concept===4)?renderGame(concept===1?'C2':'C5'):''}</section>`}
+function titleOf(s){return s==='AB'?'Journey A and B · Same scale':s==='W'?'What-if · Experiment only':D.stories[s].title}
+function pts(s){if(s==='W')return D.stories.A.points.map((p,i)=>i===5?[4,experiment]:p);return D.stories[s].points}
+function selectedJourney(){return scene==='AB'?'A':scene==='W'?'W':scene}
+function segmentOptions(){const p=pts(selectedJourney());return p.slice(1).map((x,i)=>`<option value="${i}" ${selected===i?'selected':''}>${p[i][0]}–${x[0]} h</option>`).join('')}
+function getSegmentData(s,i){const p=pts(s),a=p[i],b=p[i+1];if(!a||!b)return null;const dt=b[0]-a[0],dd=b[1]-a[1];return {a,b,dt,dd,rate:dd/dt}}
+function fmt(n){return Number(n).toLocaleString('en-GB',{maximumFractionDigits:2})}
+function tableHTML(s){if(s==='AB')return `<p class="small" style="color:#d7eaf2">Select A or B for exact segment values. Both use the same axes.</p>`+['A','B'].map(j=>`<p style="margin:4px 0"><b>${j}</b> · ${D.stories[j].points.at(-1)[1]} km / ${D.stories[j].points.at(-1)[0]} h = <strong>${fmt(D.stories[j].points.at(-1)[1]/D.stories[j].points.at(-1)[0])} km/h</strong> overall</p>`).join('');let points=pts(s);return `<div class="tableWrap"><table><thead><tr><th>Time (h)</th><th>${s==='H'?'From home':'Total'} (km)</th></tr></thead><tbody>${points.map((p,i)=>`<tr><td>${fmt(p[0])}</td><td>${fmt(p[1])}</td></tr>`).join('')}</tbody></table></div>`}
+function graphSVG(s){let lines=s==='AB'?['A','B']:[s];const w=720,h=400,L=74,R=26,T=22,B=58,X=()=>L,Y=()=>T;let xmax=4,ymax=120;let px=t=>L+t/xmax*(w-L-R),py=d=>h-B-d/ymax*(h-T-B);let out=`<svg role="img" aria-label="${esc(titleOf(s))}; x-axis time in hours, y-axis ${s==='H'?'distance from home':'distance travelled'} in km" viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet"><rect x="0" y="0" width="720" height="400" fill="#072338"/>`;
+for(let t=0;t<=4;t+=.5){let x=px(t);out+=`<line x1="${x}" y1="${T}" x2="${x}" y2="${h-B}" stroke="#3c5c6a" stroke-width="1"/><text x="${x}" y="${h-B+22}" text-anchor="middle" fill="#dfecf6" font-size="12">${t}</text>`}
+for(let d=0;d<=120;d+=20){let y=py(d);out+=`<line x1="${L}" y1="${y}" x2="${w-R}" y2="${y}" stroke="#3c5c6a" stroke-width="1"/><text x="${L-12}" y="${y+4}" text-anchor="end" fill="#dfecf6" font-size="12">${d}</text>`}
+out+=`<line x1="${L}" y1="${T}" x2="${L}" y2="${h-B}" stroke="#d2f6ff" stroke-width="2"/><line x1="${L}" y1="${h-B}" x2="${w-R}" y2="${h-B}" stroke="#d2f6ff" stroke-width="2"/><text x="390" y="${h-9}" fill="#fff" text-anchor="middle" font-size="16">Elapsed time (hours)</text><text x="15" y="200" transform="rotate(-90 15 200)" fill="#fff" text-anchor="middle" font-size="14">${s==='H'?'Distance from home (km)':'Cumulative distance (km)'}</text>`;
+for(let j of lines){let p=pts(j),color=j==='W'?D.stories.A.color:D.stories[j].color;out+=`<polyline fill="none" stroke="${color}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" points="${p.map(v=>`${px(v[0])},${py(v[1])}`).join(' ')}"/>`;p.forEach((v,i)=>{out+=`<circle cx="${px(v[0])}" cy="${py(v[1])}" r="5.5" fill="${color}" stroke="#081828" stroke-width="2"/>`});}
+if(s!=='AB'){let p=pts(s),g=getSegmentData(s,Math.min(selected,p.length-2));if(g)out+=`<line x1="${px(g.a[0])}" y1="${py(g.a[1])}" x2="${px(g.b[0])}" y2="${py(g.b[1])}" stroke="#ffe37d" stroke-width="8" stroke-opacity=".46"/><circle cx="${px(g.a[0])}" cy="${py(g.a[1])}" r="7" stroke="#fff" stroke-width="2" fill="none"/><circle cx="${px(g.b[0])}" cy="${py(g.b[1])}" r="7" stroke="#fff" stroke-width="2" fill="none"/>`}
+if(s==='AB'){out+=`<text x="${px(3.62)}" y="${py(104)}" fill="${D.stories.B.color}" font-size="18" font-weight="800">B</text><text x="${px(3.63)}" y="${py(86)}" fill="${D.stories.A.color}" font-size="18" font-weight="800">A</text>`}
+return out+'</svg>'}
+function paintGraph(id='graph',s=scene){const target=$('#'+id);if(!target)return;target.innerHTML=graphSVG(s);if(id==='graph'){let tb=$('#dataTable');if(tb)tb.innerHTML=tableHTML(s);let el=$('#reading');if(el){let sel=selectedJourney();let r=getSegmentData(sel,selected);el.textContent=s==='AB'?'B is 5 km farther at 4 h. A has the faster initial segment.':'Selected section: '+fmt(r.a[0])+'–'+fmt(r.b[0])+' h; distance change '+fmt(r.dd)+' km ÷ '+fmt(r.dt)+' h = '+fmt(r.rate)+' km/h'+(s==='H'?' signed gradient; speed is its magnitude on this direct route.':'.');}}}
+function renderGame(id){let gg=D.games[id],state=save.games[id]||{index:0,complete:false};let i=Math.min(state.index,5),q=gg[i],level=Math.floor(i/2)+1;return `<div class="game" id="game-${id}"><div class="flex"><h3 style="margin:0">${id==='C2'?'Game 1 · Segment speed lab':'Game 2 · Journey detective'}</h3><span class="pill">Level ${Math.min(level,3)} of 3 · 2 checks per level</span>${state.complete?'<span class="badgeWin">Mastered · badge earned</span>':''}</div><p class="small">Correct answers unlock the next check. Mistakes receive an explanation, with no attempt limit.</p>${!state.complete?`<div class="question"><strong>${esc(q.prompt)}</strong><div class="choices" style="margin-top:8px">${q.options.map((v,k)=>`<label><input type="radio" name="game-${id}-choice" value="${k}"><span>${esc(v)}</span></label>`).join('')}</div></div><button class="btn primary" data-game-check="${id}">Check this step</button><p class="feedback" id="gamefeedback-${id}" role="status" aria-live="polite"></p>`:`<p><strong>Three levels completed.</strong> You used the graph evidence to build, calculate and defend a result.</p><button class="btn secondary" data-game-reset="${id}">Play again</button>`}</div>`}
+function renderExamples(){let e=D.examples[exidx];return `<section class="card">${sectionIntro('Examples · Worked models','Follow five worked examples. Each step names the evidence, performs a calculation and checks its meaning.')}<div class="flex">${D.examples.map((ex,i)=>`<button class="btn ${i===exidx?'primary':'secondary'}" data-example="${i}">${i+1}. ${esc(ex.title)}</button>`).join('')}</div><div class="grid2" style="margin-top:15px"><div class="block"><h3>${esc(e.title)}</h3><div id="exampleGraph" style="width:100%;aspect-ratio:720/400;background:#072338;border-radius:9px;overflow:hidden"></div><p class="help">Source points and line use identical graph data. Axes: elapsed hours against ${e.scene==='H'?'distance from home':'cumulative distance'} in km.</p></div><div class="block"><h3>Worked method · ${exstep} of 4</h3><ol class="exampleSteps">${e.steps.slice(0,exstep).map(x=>`<li>${esc(x)}</li>`).join('')}</ol><div class="exampleActions"><button class="btn secondary" id="examplePrev" ${exstep===1?'disabled':''}>Previous step</button><button class="btn primary" id="exampleNext" ${exstep===4?'disabled':''}>Reveal next step</button></div>${exstep===4?'<div class="notice"><strong>Check:</strong> Read the story in words, state all units and verify the arithmetic before practising independently.</div>':''}</div></div></section>`}
+function celebrate(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;for(let i=0;i<16;i++){let e=document.createElement('div');e.className='confetti';e.textContent=['◆','✦','●'][i%3];e.style.color=['#2ed6eb','#f9c85f','#9aefbe'][i%3];e.style.setProperty('--dx',(i*43-330)+'px');document.body.appendChild(e);setTimeout(()=>e.remove(),1600)}}
+function countAnswered(){return [...D.practice,...D.exit].filter(q=>Number.isInteger(save.answers[q.id])).length}
+function handin(){if(save.submitted)return;let count=countAnswered();if(count<15){alert('Complete at least 60% of the 25 scored Practice and Exit questions before hand-in. You have answered '+count+' of 25.');return}if(!confirm('Hand in your work locally? Answers become read-only. This review cannot submit to NOVA Academy or authenticate a parent.'))return;const scored=[...D.practice,...D.exit];let correct=scored.filter(q=>save.answers[q.id]===q.answer).length;save.submitted={when:new Date().toISOString(),answered:count,correct,total:25,pass:correct/25>=.70};persist();render();alert('Local review hand-in recorded. Correct: '+correct+'/25 ('+fmt(correct/25*100)+'%). '+(correct/25>=.7?'70% pass target reached.':'Below the 70% pass target.')+' This is NOT a website submission.')}
+$('#handin').addEventListener('click',handin);
+document.addEventListener('change',e=>{const t=e.target;if(t.matches('.question input[type="radio"]')&&stage!=='learn'&&!save.submitted){save.answers[t.name]=Number(t.value);persist();let focused=document.activeElement;let x=window.scrollY;render();window.scrollTo(0,x);let n=document.querySelector(`input[name="${t.name}"][value="${t.value}"]`);if(n)n.focus({preventScroll:true})}if(t.id==='sceneSelect'){scene=t.value;selected=0;render()}if(t.id==='segmentSelect'){selected=Number(t.value);paintGraph()}if(t.id==='expRange'){experiment=Number(t.value);paintGraph();let x=window.scrollY;render();window.scrollTo(0,x)}});
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button'); if(!b)return;
+ const opts=b.dataset;
+ if(opts.hint){
+  const hint=$('#hint-'+opts.hint);hint.hidden=!hint.hidden;
+  b.setAttribute('aria-expanded',String(!hint.hidden));
+ }
+ if(opts.concept!==undefined)chooseConcept(Number(opts.concept));
+ if(b.id==='beatPrev'){if(beat>0)beat--;else if(concept>0){concept--;beat=3;}render();}
+ if(b.id==='beatNext'){if(beat<3)beat++;else if(concept<4){concept++;beat=0;}render();}
+ if(b.id==='voice'){
+   if('speechSynthesis' in window){
+      speechSynthesis.cancel();
+      const utter=new SpeechSynthesisUtterance(D.concepts[concept].beats[beat][1]);
+      utter.lang='en-GB';utter.rate=.95;speechSynthesis.speak(utter);
+   }else alert('Browser speech is unavailable. Read the transcript on Bob’s Board.');
+ }
+ if(b.id==='voiceStop'&&'speechSynthesis' in window)speechSynthesis.cancel();
+ if(opts.example!==undefined){exidx=Number(opts.example);exstep=1;render();}
+ if(b.id==='exampleNext'&&exstep<4){exstep++;render();}
+ if(b.id==='examplePrev'&&exstep>1){exstep--;render();}
+ if(opts.gameCheck){
+  const id=opts.gameCheck;
+  const rad=$(`input[name="game-${id}-choice"]:checked`);
+  if(!rad){$('#gamefeedback-'+id).textContent='Select a choice before checking.';return;}
+  const state=save.games[id]||{index:0,complete:false};
+  const q=D.games[id][state.index];
+  if(Number(rad.value)!==q.answer){
+    $('#gamefeedback-'+id).textContent='Try again. '+(state.index===0?'Use the difference between the two values.':'Use changes, units and the graph type.');
+    return;
+  }
+  const prev=state.index;state.index++;
+  if(state.index>=6){state.index=6;state.complete=true;}
+  save.games[id]=state;persist();
+  if(prev%2===1)celebrate();
+  render();
+  const info=$('#game-'+id);
+  if(info){
+    info.scrollIntoView({block:'center'});
+    if(!state.complete){
+      const fb=$('#gamefeedback-'+id);
+      if(fb)fb.textContent='Correct. '+q.why+(prev%2===1?' Level complete!':'');
+    }
+  }
+  if(state.complete)alert('Game complete: three levels mastered; your completion badge is displayed.');
+ }
+ if(opts.gameReset){delete save.games[opts.gameReset];persist();render();}
+});
+render();
+</script>
+</body></html>
